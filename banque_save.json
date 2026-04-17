@@ -1,0 +1,14 @@
+{
+    "Player1": {
+        "dettes": 0,
+        "investissements": {}
+    },
+    "Casquey": {
+        "dettes": 0,
+        "investissements": {}
+    },
+    "Player3": {
+        "dettes": 0,
+        "investissements": {}
+    }
+}
