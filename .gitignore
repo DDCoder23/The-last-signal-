@@ -1,0 +1,6 @@
+*.log
+saves/*
+save.txt
+.idea/**
+*.iml
+
