@@ -14,7 +14,6 @@ from PySide6.QtCore import Qt, QTimer
 import table_de_conversion as tc
 import grade_manager as gr
 import configuration as cr
-import gestionnaire as ge
 from horloge import HorlogeJeu, arreter_toutes_horloges
 import atexit
 from admin_manager import IS_ADMIN
@@ -1184,15 +1183,10 @@ def main():
     # Enregistrer la fonction de nettoyage
     atexit.register(on_exit)
     global window
-    try:
-        ge.ecrire()
-    except FileNotFoundError:
-        print("Le fichier est indisponible")
-    finally:
-        app = qt.QApplication([])
-        window = MainFrame()
-        window.show()
-        sys.exit(app.exec())
+    app = qt.QApplication([])
+    window = MainFrame()
+    window.show()
+    sys.exit(app.exec())
 
 
 if __name__ == "__main__":
