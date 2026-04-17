@@ -1,0 +1,13 @@
+﻿Bombardier 
+Chasseur
+Porte avion 
+Croiseur lourd
+Croiseur léger
+Destroyer
+Tank
+Sous marin 
+
+
+Poste de commandement 
+Hangar de stockage
+Hôpital
