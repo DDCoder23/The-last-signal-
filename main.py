@@ -61,9 +61,9 @@ def lister_profils_sauvegardes(base_dir="saves"):
 
 profils = lister_profils_sauvegardes()
 if (
-    not os.path.exists(r"E:\Projetpython\assets\map_height.png")
-    or not os.path.exists(r"E:\Projetpython\assets\map_color.png")
-    or not os.path.exists(r"E:\Projetpython\assets\map_collision.png")
+    not os.path.exists(r".\assets\map_height.png")
+    or not os.path.exists(r".\assets\map_color.png")
+    or not os.path.exists(r".\assets\map_collision.png")
 ):
     gemap.generate_map(
         size=512, style="island", height_scale=1.2, seed=42, output_prefix="map"
@@ -593,7 +593,7 @@ class VispyWidget(qt.QWidget):
         # ==========================
         # MAP 3D (IMAGE HEIGHTMAP)
         # ==========================
-        self.map = Map3D(r"E:\Projetpython\assets\map_height.png", scale_z=12)
+        self.map = Map3D(r".\assets\map_height.png", scale_z=12)
         self.view.camera.center = (
             self.map.width // 2,
             self.map.height // 2,
