@@ -1,0 +1,10 @@
+
+🦘 saut + gravité
+
+🚧 collisions (mur, eau)
+
+🌊 zones (eau = ralentissement)
+
+🧱 map texture + couleur selon hauteur
+
+🗺️ minimap automatique depuis l’image
