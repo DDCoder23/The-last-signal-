@@ -1,7 +1,12 @@
 {
     "Player1": {
         "dettes": 0,
-        "investissements": {}
+        "investissements": {
+            "capital": 4200303,
+            "valeur_future": 24083354.759287655,
+            "mois_total": 420,
+            "date_fin": 420
+        }
     },
     "Casquey": {
         "dettes": 0,

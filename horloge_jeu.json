@@ -1,17 +1,17 @@
 {
-    "Player1 : 1": {
-        "id": 1,
-        "minutes": 22,
-        "heures": 0,
+    "Player1 : 2": {
+        "id": 2,
+        "minutes": 51,
+        "heures": 1,
         "jours": 0,
         "semaines": 0,
         "mois": 0,
         "annees": 0
     },
-    "Player1 : 2": {
-        "id": 2,
-        "minutes": 0,
-        "heures": 0,
+    "Player1 : 1": {
+        "id": 1,
+        "minutes": 6,
+        "heures": 3,
         "jours": 0,
         "semaines": 0,
         "mois": 0,

@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "nom": "épée de bois",
         "image": "epee_bois.png",
@@ -21,7 +21,7 @@
         "type": "de base"
 
     },
-{
+    {
         "nom": "livre enchant niv 3",
         "image": "livre_enchant_niv_3.png",
         "prix": 300000,
@@ -34,7 +34,8 @@
         "prix": 400000,
         "type": "de base"
 
-    },{
+    },
+    {
         "nom": "livre enchant niv 5",
         "image": "livre_enchant_niv_5.png",
         "prix": 500000,
