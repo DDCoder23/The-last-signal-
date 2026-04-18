@@ -1,8 +1,8 @@
 {
     "Player1 : 2": {
         "id": 2,
-        "minutes": 51,
-        "heures": 1,
+        "minutes": 45,
+        "heures": 0,
         "jours": 0,
         "semaines": 0,
         "mois": 0,
@@ -10,8 +10,8 @@
     },
     "Player1 : 1": {
         "id": 1,
-        "minutes": 6,
-        "heures": 3,
+        "minutes": 22,
+        "heures": 5,
         "jours": 0,
         "semaines": 0,
         "mois": 0,
