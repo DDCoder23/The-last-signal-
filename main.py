@@ -14,7 +14,7 @@ from PySide6.QtCore import Qt, QTimer
 import table_de_conversion as tc
 import grade_manager as gr
 import configuration as cr
-from horloge import HorlogeJeu, arreter_toutes_horloges
+from horloge import HorlogeJeu, arreter_toutes_horloges,réinitialiser
 import atexit
 from admin_manager import IS_ADMIN
 from inventaire import (
@@ -702,11 +702,16 @@ class VispyWidget(qt.QWidget):
             horloge2 = HorlogeJeu(2, self.joueur.nom)
             with open("save.txt", "r", encoding="utf-8") as fichier:
                 lignes = fichier.readlines()
-            if lignes and lignes[-2].strip() == "----Nouvelle partie----":
-                horloge2.demarrer(recommencer=True)
-            else:
-                horloge2.demarrer()
-
+                print(lignes)
+                for ligne in reversed(lignes):
+                    if ligne.strip()=="----Nouvelle partie----" or "init":
+                        horloge2.demarrer(recommencer=True)
+                        break
+                    elif ligne.strip()=="reprise du jeu":
+                        horloge2.demarrer()
+                        break
+                    else: 
+                        continue
             afficher_banque(self.joueur, horloge2, parent=self)
 
         elif key == Qt.Key_A and ctrl:

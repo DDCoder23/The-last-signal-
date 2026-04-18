@@ -39,7 +39,7 @@ def qtes(nom, joueur):
     else:
         print(f" Type inattendu pour {nom}: {type(obj)}")
         return 0
-
+from horloge import réinitialiser
 
 class FenetreInventaire(QDialog):
     def __init__(self, inventaire, parent=None):
@@ -869,11 +869,7 @@ class FenetreBanque(QDialog):
         layout.addWidget(self.bouton_emprunter)
         layout.addWidget(self.bouton_investir)
 
-        # Enregistrer l'événement de nouveau mois pour gérer les investissements
-        self.horloge_jeu.enregistrer_evenement(
-            "nouveau_mois", self.verifier_investissements
-        )
-
+        
     def rembourser(self):
         """Permet au joueur de rembourser tout ou partie de ses dettes."""
         if self.dettes <= 0:
@@ -1026,6 +1022,7 @@ class FenetreBanque(QDialog):
                 )
                 self.investissements = {}
                 self.sauvegarder_etat_banque()
+                réinitialiser(self.horloge_jeu,self.joueur)
 
     def sauvegarder_etat_banque(self):
         """Sauvegarde l'état actuel de la banque pour ce joueur."""
@@ -1051,7 +1048,7 @@ class FenetreBanque(QDialog):
 
     def afficher_banque(self, **kwargs):
         with open("save.txt", "a", encoding="utf-8") as fichier:
-            fichier.write("\ncontinuer")
+            fichier.write("\nbanque")
 
         self.charger_etat_banque()
         message = f"Dettes: {self.dettes}\n"
@@ -1072,7 +1069,7 @@ class FenetreBanque(QDialog):
         if os.path.exists("save.txt"):
             with open("save.txt", "r", encoding="utf-8") as fichier:
                 lignes = fichier.readlines()
-                if lignes and lignes[-1].strip() == "reprise du jeu" or "continuer":
+                if lignes and lignes[-1].strip() == "reprise du jeu" or "continuer" or "charge":
                     if os.path.exists(FenetreBanque.FICHIER_SAUVEGARDE_BANQUE):
                         try:
                             with open(
@@ -1090,10 +1087,11 @@ class FenetreBanque(QDialog):
                                 self.investissements = player_data.get(
                                     "investissements", {}
                                 )
+                                
                         except json.JSONDecodeError:
                             raise json.JSONDecodeError
             with open("save.txt", "a", encoding="utf-8") as fichier:
-                fichier.write("\ncontinuer")
+                fichier.write("\ncharge")
 
 
 def afficher_banque(joueur, horloge_jeu, parent=None, **kwargs):
@@ -1105,3 +1103,4 @@ def afficher_banque(joueur, horloge_jeu, parent=None, **kwargs):
         dialog.hide()
     else:
         dialog.exec()
+    dialog.verifier_investissements()

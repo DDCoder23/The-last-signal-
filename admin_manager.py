@@ -202,6 +202,7 @@ class ConsoleAdmin(qt.QWidget):
 
     /help
       Affiche cette aide.
+    /ban <user> <temps> <unit>
 
     /give <objet> (qte)
       Donne un objet.
