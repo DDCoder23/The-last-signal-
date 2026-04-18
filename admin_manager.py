@@ -107,6 +107,8 @@ class ConsoleAdmin(qt.QWidget):
             self._cmd_help()
         elif nom == "exit":
             self._cmd_exit()
+        elif nom=="ban":
+            self._cmd_ban(parts[1:])
         elif nom == "close":
             self._cmd_close()
         elif nom == "inv":
@@ -190,6 +192,8 @@ class ConsoleAdmin(qt.QWidget):
             self.log(f"[ADMIN] Argent +{qte} ")
         except ValueError:
             self.log("Quantité invalide")
+    def _cmd_ban(self,args):
+        self.log(f"[ADMIN] {args[0]} a été banni pour {args[1]} {args[2]}")
 
     def _cmd_help(self):
         self.log(
