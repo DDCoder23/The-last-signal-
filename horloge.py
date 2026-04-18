@@ -45,7 +45,7 @@ class HorlogeJeu:
         if not self.en_cours:
             print(f"horloge{self.id} démarée")
             self.en_cours = True
-            if kwargs.get("recommencer", False) == False:
+            if not kwargs.get("recommencer", False):
                 print("chargée")
                 self.charger_depuis_json()
             self.thread.start()
@@ -213,3 +213,15 @@ def arreter_toutes_horloges():
         horloge.sauvegarder_dans_json()
         horloge.arreter()
     print("Toutes les horloges ont été arrêtées.")
+def chercher(id):
+    for i in horloges:
+        if i.id==id:
+            return horloges[i]
+
+def réinitialiser(id,joueur):
+    horloge=chercher(id)
+    del horloges[id-1]
+    horloge.__init__(id,joueur)
+    with open("save.txt", "a", encoding="utf-8") as fichier:
+        fichier.write("\ninit")
+    print("Réinitialisée")
