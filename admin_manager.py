@@ -121,6 +121,8 @@ class ConsoleAdmin(qt.QWidget):
             self._cmd_give(parts[1:])
         elif nom == "gold":
             self._cmd_gold(parts[1:])
+        elif nom == "clear":
+            self._cmd_clear(parts[1:])
 
         else:
             self.log(f"[ADMIN] Commande inconnue : {nom}")
@@ -212,7 +214,7 @@ class ConsoleAdmin(qt.QWidget):
     /gold <qte>
       Ajoute de l'argent.
 
-    /tp <x> <y>
+    /tp <user> <x> <y> <z>
       Téléporte le joueur.
 
     /stats
@@ -227,7 +229,7 @@ class ConsoleAdmin(qt.QWidget):
 
     Exemples :
       /give livre enchant 1 (1)
-      /tp 64 64
+      /tp user 64 64 64
       /inv
 
     ========================
@@ -235,16 +237,41 @@ class ConsoleAdmin(qt.QWidget):
         )
 
     def _cmd_tp(self, args):
-        if len(args) != 2:
-            self.log("Usage : /tp <x> <y>")
-            return
+        with open(
+               "joueurs.dill", "rb"
+        ) as fichier:
+            try:
+                data = dill.load(fichier)
+            except :
+                data = {}
+        user=args[0]
+        if user=="@s":
+            user=data[self.joueur.nom]
+        else:
+            try:
+                user=data[str(user)]
+            except KeyError:
+                self.log("Ce joueur n'existe pas")
 
-        try:
-            x = float(args[0])
-            y = float(args[1])
-        except ValueError:
-            self.log("Coordonnées invalides")
-            return
+        if isinstance(user, object) and not isinstance(user, (int, float, str, list, dict, tuple, set, bool)):
+            if hasattr(user, "x"):
+                if len(args) != 4:
+                    self.log("Usage : /tp <user> <x> <y> <z>")
+                    return
+                try:
+                    x = float(args[1])
+                    y = float(args[2])
+                    z = float(args[3])
+                except ValueError:
+                    self.log("Coordonnées invalides")
+                    return
+                user = args[0]
+                if user == "@s":
+                    user = self.joueur.nom
+                self.log(f" {user} a été tp a {args[1]},{args[2]},{args[3]}")
+
+
+
 
         self.joueur.x = x
         self.joueur.y = y
@@ -280,7 +307,7 @@ class ConsoleAdmin(qt.QWidget):
         self.joueur.stats["PV"] = 0
         self.joueur.vivant = False
         self.log("[ADMIN] Joueur tué 💀")
-    def _cmd_clear(self, user):
+    def _cmd_clear(self,args):
         with open(
                "joueurs.dill", "rb"
         ) as fichier:
@@ -288,10 +315,22 @@ class ConsoleAdmin(qt.QWidget):
                 data = dill.load(fichier)
             except :
                 data = {}
-        user=data[user]
+        user=args[0]
+        if user=="@s":
+            user=data[self.joueur.nom]
+        else:
+            try:
+                user=data[str(user)]
+            except KeyError:
+                self.log("Ce joueur n'existe pas")
+
         if isinstance(user, object) and not isinstance(user, (int, float, str, list, dict, tuple, set, bool)):
             if hasattr(user, "stuff"):
                 user.stuff={}
+                user = args[0]
+                if user == "@s":
+                    user = self.joueur.nom
+                self.log(f" {user} a été clear")
     def _cmd_setstat(self, args):
         if len(args) != 2:
             self.log("Usage : /setstat <STAT> <valeur>")
