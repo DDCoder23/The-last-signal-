@@ -1,11 +1,6 @@
 {
     "Player1": {
         "dettes": 0,
-        "investissements": {
-            "capital": 50760573,
-            "valeur_future": 291046833.3698113,
-            "mois_total": 420,
-            "date_fin": 840
-        }
+        "investissements": {}
     }
 }

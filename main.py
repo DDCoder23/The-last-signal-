@@ -34,12 +34,13 @@ from inventaire import (
 import sys
 import configparser
 import json
+import dill
 
 configs = configparser.ConfigParser()
 configs.read("config.ini", encoding="utf-8")
 
 mot_de_passe = configs["save"]["password"]
-
+perso= {}
 
 def lister_profils_sauvegardes(base_dir="saves"):
     if not os.path.exists(base_dir):
@@ -212,6 +213,7 @@ class Lutin:
         self.y = 0
         self.z = z
 
+
     @property
     def position(self):
         return (self.x, self.y, self.z)
@@ -244,7 +246,12 @@ class Perso(Lutin):
         if self.stats["PV"] <= 0:
             self.stats["PV"] = 0
             self.vivant = False
-
+    def liste(self):
+        perso[self.nom]=self
+        with open(
+            "joueurs.dill", "wb"
+        ) as fichier:
+            dill.dump(perso, fichier)
     @staticmethod
     def jet_attaque(attaquant: Perso, defenseur: Perso) -> bool:
         jet = de.jet_de_des(20, 1) + attaquant.stats["MOD_FOR"]
@@ -1107,6 +1114,7 @@ class MainFrame(qt.QMainWindow):
             nom=player_name,
             config=kwargs.get("configuration", None),
         )
+        joueur.liste()
         self.horloge.joueur = joueur.nom
         print(self.horloge.joueur)
         self.horloge.demarrer(recommencer=recommencer)
