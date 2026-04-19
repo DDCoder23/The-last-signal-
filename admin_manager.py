@@ -24,6 +24,33 @@ IS_ADMIN = False
 
 _console_frame = None
 
+def calculer_distance_levenshtein(s1, s2):
+    if len(s1) < len(s2):
+        return calculer_distance_levenshtein(s2, s1)
+    if len(s2) == 0:
+        return len(s1)
+    previous_row = range(len(s2) + 1)
+    for i, c1 in enumerate(s1):
+        current_row = [i + 1]
+        for j, c2 in enumerate(s2):
+            insertions = previous_row[j + 1] + 1
+            deletions = current_row[j] + 1
+            substitutions = previous_row[j] + (c1 != c2)
+            current_row.append(min(insertions, deletions, substitutions))
+        previous_row = current_row
+    return previous_row[-1]
+
+def trouver_commandes_similaires(commande_saisie, commandes_disponibles, seuil=0.6):
+    similitudes = []
+    for cmd in commandes_disponibles:
+        distance = calculer_distance_levenshtein(commande_saisie, cmd)
+        max_len = max(len(commande_saisie), len(cmd))
+        similarite = 1 - (distance / max_len) if max_len > 0 else 0
+        if similarite >= seuil:
+            similitudes.append((cmd, similarite))
+    similitudes.sort(key=lambda x: x[1], reverse=True)
+    return [cmd for cmd, similarite in similitudes]
+
 
 def admin_only(func):
     def wrapper(*args, **kwargs):
@@ -102,6 +129,10 @@ class ConsoleAdmin(qt.QWidget):
             return
 
         nom = parts[0]
+        commandes_disponibles = [
+            "help", "exit", "ban", "close", "inv", "kill", "setstat",
+            "give", "gold", "clear", "tp"
+        ]
 
         if nom == "help":
             self._cmd_help()
@@ -125,7 +156,11 @@ class ConsoleAdmin(qt.QWidget):
             self._cmd_clear(parts[1:])
 
         else:
-            self.log(f"[ADMIN] Commande inconnue : {nom}")
+            similitudes = trouver_commandes_similaires(nom, commandes_disponibles)
+            if similitudes:
+                self.log(f"[ADMIN] Commande inconnue. Peut-être vouliez-vous dire : {', '.join(similitudes)}")
+            else:
+                self.log(f"[ADMIN] Commande inconnue : {nom}")
 
     def _cmd_exit(self):
         self.destroy()  # Détruit la console admin
@@ -214,7 +249,7 @@ class ConsoleAdmin(qt.QWidget):
     /gold <qte>
       Ajoute de l'argent.
 
-    /tp <user> <x> <y> <z>
+    /tp <user> <x> <y> 
       Téléporte le joueur.
 
     /stats
@@ -229,7 +264,7 @@ class ConsoleAdmin(qt.QWidget):
 
     Exemples :
       /give livre enchant 1 (1)
-      /tp user 64 64 64
+      /tp user 64 64 
       /inv
 
     ========================
@@ -255,33 +290,32 @@ class ConsoleAdmin(qt.QWidget):
 
         if isinstance(user, object) and not isinstance(user, (int, float, str, list, dict, tuple, set, bool)):
             if hasattr(user, "x"):
-                if len(args) != 4:
-                    self.log("Usage : /tp <user> <x> <y> <z>")
+                if len(args) != 3:
+                    self.log("Usage : /tp <user> <x> <y> ")
                     return
                 try:
                     x = float(args[1])
                     y = float(args[2])
-                    z = float(args[3])
+
                 except ValueError:
                     self.log("Coordonnées invalides")
                     return
                 user = args[0]
                 if user == "@s":
                     user = self.joueur.nom
-                self.log(f" {user} a été tp a {args[1]},{args[2]},{args[3]}")
+                user.x=x
+                user.y=y
 
 
 
-
-        self.joueur.x = x
-        self.joueur.y = y
 
         # recalcul Z si possible
         parent = self.parent()
         if parent and hasattr(parent, "map"):
-            self.joueur.z = parent.map.get_height(x, y)
+            user.z = parent.map.get_height(x, y)
+        self.log(f" [ADMIN] {user} a été téléporté  en ({x:.2f}, {y:.2f})")
 
-        self.log(f"[ADMIN] Téléporté en ({x:.2f}, {y:.2f})")
+
 
     def _cmd_inv(self):
 
