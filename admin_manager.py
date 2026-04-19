@@ -9,7 +9,7 @@ from inventaire import safe_increment, Objet, trier
 import re
 import configparser
 from PySide6.QtWidgets import QMessageBox
-
+import dill
 
 config = configparser.ConfigParser()
 config.read("config.ini", encoding="utf-8")
@@ -202,7 +202,9 @@ class ConsoleAdmin(qt.QWidget):
 
     /help
       Affiche cette aide.
+    
     /ban <user> <temps> <unit>
+    Banni le joueur pour une durée donnée.
 
     /give <objet> (qte)
       Donne un objet.
@@ -278,7 +280,18 @@ class ConsoleAdmin(qt.QWidget):
         self.joueur.stats["PV"] = 0
         self.joueur.vivant = False
         self.log("[ADMIN] Joueur tué 💀")
-
+    def _cmd_clear(self, user):
+        with open(
+               "joueurs.dill", "rb"
+        ) as fichier:
+            try:
+                data = dill.load(fichier)
+            except :
+                data = {}
+        user=data[user]
+        if isinstance(user, object) and not isinstance(user, (int, float, str, list, dict, tuple, set, bool)):
+            if hasattr(user, "stuff"):
+                user.stuff={}
     def _cmd_setstat(self, args):
         if len(args) != 2:
             self.log("Usage : /setstat <STAT> <valeur>")
