@@ -350,20 +350,21 @@ class ConsoleAdmin(qt.QWidget):
             except :
                 data = {}
         user=args[0]
-        if user=="@s":
-            user=data[self.joueur.nom]
+        if user=="@a":
+            for perso in data:
+                user= []
+                user.append(data[perso])
+
         else:
             try:
                 user=data[str(user)]
             except KeyError:
                 self.log("Ce joueur n'existe pas")
+        for users in user:
 
-        if isinstance(user, object) and not isinstance(user, (int, float, str, list, dict, tuple, set, bool)):
-            if hasattr(user, "stuff"):
-                user.stuff={}
-                user = args[0]
-                if user == "@s":
-                    user = self.joueur.nom
+            if isinstance(users, object) and not isinstance(users, (int, float, str, list, dict, tuple, set, bool)):
+                if hasattr(users, "stuff"):
+                    users.stuff={}
                 self.log(f" {user} a été clear")
     def _cmd_setstat(self, args):
         if len(args) != 2:

@@ -28,13 +28,13 @@ from inventaire import (
     liste_outils,
     liste_muni,
     liste_potion,
-    afficher_banque,
-    FenetreBanque,
+
 )
 import sys
 import configparser
 import json
 import dill
+from banque import afficher_banque,FenetreBanque
 
 configs = configparser.ConfigParser()
 configs.read("config.ini", encoding="utf-8")
@@ -707,19 +707,23 @@ class VispyWidget(qt.QWidget):
             )
         elif key == Qt.Key_B:
             horloge2 = HorlogeJeu(2, self.joueur.nom)
+            horloge3 = HorlogeJeu(3, self.joueur.nom)
             with open("save.txt", "r", encoding="utf-8") as fichier:
                 lignes = fichier.readlines()
                 print(lignes)
                 for ligne in reversed(lignes):
                     if ligne.strip()=="----Nouvelle partie----" or "init":
                         horloge2.demarrer(recommencer=True)
+                        
                         break
                     elif ligne.strip()=="reprise du jeu":
                         horloge2.demarrer()
+                        
+
                         break
                     else: 
                         continue
-            afficher_banque(self.joueur, horloge2, parent=self)
+            afficher_banque(self.joueur, horloge2,horloge3, parent=self)
 
         elif key == Qt.Key_A and ctrl:
             if admin_manager.IS_ADMIN:
@@ -1119,6 +1123,7 @@ class MainFrame(qt.QMainWindow):
         print(self.horloge.joueur)
         self.horloge.demarrer(recommencer=recommencer)
         horloge2 = HorlogeJeu(2, joueur.nom)
+        horloge3 = HorlogeJeu(3, joueur.nom)
         with open("save.txt", "r", encoding="utf-8") as fichier:
             lignes = fichier.readlines()
         if (lignes and lignes[-1].strip() == "reprise du jeu") or (
@@ -1129,7 +1134,7 @@ class MainFrame(qt.QMainWindow):
             )
         ):
             horloge2.demarrer()
-        afficher_banque(joueur, horloge2, parent=self, b=False)
+        afficher_banque(joueur, horloge2,horloge3, parent=self, b=False)
         print(recommencer)
         if not recommencer:
             slot = kwargs.get("slot", 1)
