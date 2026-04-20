@@ -28,13 +28,13 @@ from inventaire import (
     liste_outils,
     liste_muni,
     liste_potion,
-    afficher_banque,
-    FenetreBanque,
+
 )
 import sys
 import configparser
 import json
 import dill
+from banque import afficher_banque,FenetreBanque
 
 configs = configparser.ConfigParser()
 configs.read("config.ini", encoding="utf-8")
