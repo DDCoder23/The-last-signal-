@@ -1,4 +1,3 @@
-
 from PySide6.QtWidgets import (QVBoxLayout,QMessageBox,QInputDialog,QPushButton,QDialog)
 from inventaire import qtes,safe_increment
 import json
@@ -7,7 +6,6 @@ import os
 class FenetreBanque(QDialog):
     FICHIER_SAUVEGARDE_BANQUE = "banque_save.json"
 
-    def __init__(self, joueur, horloge_jeu,horloge2, parent=None):
         super(FenetreBanque, self).__init__(parent)
         self.joueur = joueur
         self.horloge_jeu = horloge_jeu
@@ -262,7 +260,6 @@ class FenetreBanque(QDialog):
                 fichier.write("\ncharge")
 
 
-def afficher_banque(joueur, horloge_jeu,horloge2, parent=None, **kwargs):
     b = kwargs.get("b", True)
     dialog = FenetreBanque(joueur, horloge_jeu, parent)
     dialog.afficher_banque(b=b)
