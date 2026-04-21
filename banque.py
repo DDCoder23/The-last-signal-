@@ -261,7 +261,7 @@ class FenetreBanque(QDialog):
 
 
     b = kwargs.get("b", True)
-    dialog = FenetreBanque(joueur, horloge_jeu, parent)
+    dialog = FenetreBanque(joueur, horloge_jeu,horloge2, parent)
     dialog.afficher_banque(b=b)
 
     if b == False:
