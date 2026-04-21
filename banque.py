@@ -5,10 +5,11 @@ from horloge import réinitialiser
 import os
 class FenetreBanque(QDialog):
     FICHIER_SAUVEGARDE_BANQUE = "banque_save.json"
-
+    def __init__(self,joueur,horloge_jeu,horloge2,parent):
         super(FenetreBanque, self).__init__(parent)
         self.joueur = joueur
         self.horloge_jeu = horloge_jeu
+        self.horloge2=horloge2
         self.setWindowTitle("Banque")
         self.resize(400, 200)
 
@@ -34,6 +35,7 @@ class FenetreBanque(QDialog):
 
         layout.addWidget(self.bouton_emprunter)
         layout.addWidget(self.bouton_investir)
+        self.verifier_blocage_boutons()
 
         
     def rembourser(self):
@@ -65,6 +67,7 @@ class FenetreBanque(QDialog):
                 "Remboursement",
                 f"Vous avez remboursé {montant:.2f} pièces d'or. Dettes restantes: {self.dettes:.2f}",
             )
+            self.verifier_blocage_boutons()
 
     def emprunter(self):
         """Demande la quantité à emprunter et met à jour l'inventaire et les dettes."""
@@ -75,12 +78,40 @@ class FenetreBanque(QDialog):
             safe_increment(self.joueur.stuff, "argent", quant=montant)
             self.dettes += montant * 1.10
             self.dettes = round(self.dettes)
-            self.sauvegarder_etat_banque(self.joueur)
+            self.date_emprunt_mois = self.horloge2.mois
+            self.date_emprunt_annees = self.horloge2.annees
+            self.sauvegarder_etat_banque()
             QMessageBox.information(
                 self,
                 "Emprunt",
                 f"Vous avez emprunté {montant} pièces d'or. Dettes totales: {self.dettes}",
             )
+            self.verifier_blocage_boutons()
+
+    def verifier_blocage_boutons(self):
+        if self.dettes > 0:
+            # Bloquer le bouton "Investir" dès qu'il y a des dettes
+            self.bouton_investir.setEnabled(False)
+
+            # Bloquer le bouton "Emprunter" si les dettes dépassent 100 000
+        if self.dettes >= 100000:
+            self.bouton_emprunter.setEnabled(False)
+
+            # Vérifier si le délai de remboursement est dépassé
+        if hasattr(self, 'date_emprunt_mois') and hasattr(self, 'date_emprunt_annees'):
+            # Calculer le nombre de mois écoulés depuis l'emprunt
+            mois_ecoules = (self.horloge2.annees - self.date_emprunt_annees) * 12 + (
+                        self.horloge2.mois - self.date_emprunt_mois)
+
+            # Si plus d'un an (12 mois) s'est écoulé, appliquer les pénalités
+            if mois_ecoules > 12:
+                mois_retard = mois_ecoules - 12
+                self.dettes += self.dettes * 0.10 * mois_retard
+                self.bouton_emprunter.setEnabled(False)
+        else:
+            # Réactiver les boutons si aucune dette
+            self.bouton_emprunter.setEnabled(True)
+            self.bouton_investir.setEnabled(True)
 
     def investir(self):
         """Demande le capital et la durée pour investir, calcule l'intérêt composé."""
@@ -203,8 +234,10 @@ class FenetreBanque(QDialog):
                     data = {}
 
         data[self.joueur.nom] = {
-            "dettes": self.dettes,
-            "investissements": self.investissements,
+           "dettes": self.dettes,
+        "date_emprunt_mois": self.date_emprunt_mois,
+        "date_emprunt_annees": self.date_emprunt_annees,
+        "investissements": self.investissements,
         }
 
         with open(
@@ -253,13 +286,15 @@ class FenetreBanque(QDialog):
                                 self.investissements = player_data.get(
                                     "investissements", {}
                                 )
+                                self.date_emprunt_mois = player_data.get("date_emprunt_mois",0)
+                                self.date_emprunt_annees = player_data.get("date_emprunt_annees",0)
                                 
                         except json.JSONDecodeError:
                             raise json.JSONDecodeError
             with open("save.txt", "a", encoding="utf-8") as fichier:
                 fichier.write("\ncharge")
 
-
+def afficher_banque(joueur,horloge_jeu,horloge2,parent,**kwargs):
     b = kwargs.get("b", True)
     dialog = FenetreBanque(joueur, horloge_jeu,horloge2, parent)
     dialog.afficher_banque(b=b)
