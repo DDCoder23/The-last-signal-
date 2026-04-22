@@ -381,7 +381,7 @@ class tresor:
             },
             6: {
                 **{"argent": de.jet_de_des(6, 4) * 10 * pa},
-                **({"gemmes": 1} if de.jet_de_des(20, 1) >= 9 else {}),
+                **({"gemmes": 1} if de.jet_de_des(20, 1) >= 8 else {}),
             },
             7: {
                 **{"argent": de.jet_de_des(6, 5) * 10 * pa},
