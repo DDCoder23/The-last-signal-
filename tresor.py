@@ -322,6 +322,24 @@ class tresor:
                 "Artefact legendaire": 6,
                 "Artefact admin": 9,
             },
+            46: {
+                "Artefact commun": 9,
+                "Artefact peu commun": 8,
+                "Artefact rare": 8,
+                "Artefact super rare": 7,
+                "Artefact epique": 7,
+                "Artefact legendaire": 6,
+                "Artefact admin": 10,
+            },
+            47: {
+                "Artefact commun": 9,
+                "Artefact peu commun": 8,
+                "Artefact rare": 8,
+                "Artefact super rare": 8,
+                "Artefact epique": 7,
+                "Artefact legendaire": 6,
+                "Artefact admin": 10,
+            },
         }
 
         self.objets_garantis = {
@@ -445,6 +463,22 @@ class tresor:
                 **(
                     {"livre enchant niv 1": random.randint(1, 9)}
                     if de.jet_de_des(20, 1) >= 12
+                    else {}
+                ),
+            }, 
+            46: {
+                **{"argent": de.jet_de_des(20, 15) * 100 * pp, "gemmes": 4},
+                **(
+                    {"livre enchant niv 1": random.randint(1, 9)}
+                    if de.jet_de_des(20, 1) >= 10
+                    else {}
+                ),
+            },
+            47: {
+                **{"argent": de.jet_de_des(20, 16) * 100 * pp, "gemmes": 4},
+                **(
+                    {"livre enchant niv 1": random.randint(1, 9)}
+                    if de.jet_de_des(20, 1) >= 8
                     else {}
                 ),
             },
@@ -601,6 +635,8 @@ class tresor:
             43: 5,
             44: 5,
             45: 5,
+            46: 5,
+            47: 5,
         }
         self.seuil_artefact_peu_commun = {
             6: 20,
@@ -643,6 +679,8 @@ class tresor:
             43: 5,
             44: 5,
             45: 5,
+            46: 5,
+            47: 5,
         }
         self.seuil_artefact_rare = {
             10: 20,
@@ -681,6 +719,8 @@ class tresor:
             43: 5,
             44: 5,
             45: 5,
+            46: 5,
+            47: 5,
         }
         self.seuil_artefact_super_rare = {
             14: 20,
@@ -715,6 +755,8 @@ class tresor:
             43: 5,
             44: 5,
             45: 5,
+            46: 5,
+            47: 5,
         }
         self.seuil_artefact_epique = {
             18: 20,
@@ -745,6 +787,8 @@ class tresor:
             43: 5,
             44: 5,
             45: 5,
+            46: 5,
+            47: 5,
         }
         self.seuil_artefact_legendaire = {
             22: 20,
@@ -771,6 +815,8 @@ class tresor:
             43: 5,
             44: 5,
             45: 5,
+            46: 5,
+            47: 5,
         }
 
         self.fichier_sauvegarde = "echecs.json"
