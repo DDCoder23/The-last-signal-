@@ -695,7 +695,7 @@ class VispyWidget(qt.QWidget):
         elif key == Qt.Key_Right:
             dx = 1
         elif key == Qt.Key_T:
-            self.afficher_tresor(44)
+            self.afficher_tresor(47)
         elif key == Qt.Key_E:
             self.joueur.enchanter_arme(MAX_NIV=6, parent_widget=self)
         elif key == Qt.Key_I:
