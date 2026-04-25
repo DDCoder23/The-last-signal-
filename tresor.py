@@ -870,16 +870,16 @@ class tresor:
             echec_count = self.echecs_par_niveau[niveau].get(objet, 0)
             bonus = 0
             pourcentage = (base_chance / total_base) * 100
-            if pourcentage <= 15:
-                bonus += min(echec_count, 15)
-                if pourcentage <= 10:
-                    bonus += min(echec_count, 10)
-                    if pourcentage <= 5:
-                        bonus += min(echec_count, 5)
-                        if pourcentage < 1:
-                            bonus += min(echec_count, 15)
-                            if pourcentage < 0.1:
-                                bonus += min(echec_count, 30)
+            if pourcentage <= 20:
+                bonus += min(echec_count, 5)
+            elif pourcentage <= 10:
+                bonus += min(echec_count, 7)+3
+            elif pourcentage <= 5:
+                bonus += min(echec_count, 10)+5
+            elif pourcentage < 1:
+                bonus += min(echec_count, 15)+10
+            elif pourcentage < 0.1:
+                bonus += min(echec_count, 30)+15
 
             table.append((objet, base_chance + bonus))
 
