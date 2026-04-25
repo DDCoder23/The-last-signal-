@@ -23,7 +23,7 @@ from inventaire import (
     Armes,
     safe_increment,
     liste_armes,
-    afficher_inventaire,
+
     afficher_magasin,
     liste_outils,
     liste_muni,
@@ -34,7 +34,8 @@ import sys
 import configparser
 import json
 import dill
-from banque import afficher_banque,FenetreBanque
+from inv import afficher_inventaire
+from banque import afficher_banque
 
 configs = configparser.ConfigParser()
 configs.read("config.ini", encoding="utf-8")
@@ -700,7 +701,7 @@ class VispyWidget(qt.QWidget):
             self.joueur.enchanter_arme(MAX_NIV=6, parent_widget=self)
         elif key == Qt.Key_I:
             print(self.joueur.stuff)
-            afficher_inventaire(self.joueur.stuff, parent=self)
+            afficher_inventaire(self.joueur.stuff,self.joueur, parent=self)
         elif key == Qt.Key_S:
             afficher_magasin(
                 self.joueur.stuff, self.joueur.stuff["argent"].quantite, parent=self

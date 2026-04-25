@@ -10,17 +10,8 @@
     },
     "Player1 : 1": {
         "id": 1,
-        "minutes": 18,
-        "heures": 0,
-        "jours": 0,
-        "semaines": 0,
-        "mois": 0,
-        "annees": 0
-    },
-    "Unknown Player : 1": {
-        "id": 1,
-        "minutes": 0,
-        "heures": 0,
+        "minutes": 16,
+        "heures": 1,
         "jours": 0,
         "semaines": 0,
         "mois": 0,
