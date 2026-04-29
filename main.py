@@ -21,9 +21,10 @@ from inventaire import (
     Objet,
     equipement,
     Armes,
+    Potion,
     safe_increment,
     liste_armes,
-
+    Livres,
     afficher_magasin,
     liste_outils,
     liste_muni,
@@ -142,8 +143,11 @@ def reconstruire_stuff(etat_charge):
 
             enchant = data.get("enchant")
             durabilite = data.get("durabilite")
+            effet=data.get("effet")
+            enchants=list(data.get("enchant1"),data.get("enchant2"),data.get("enchant3"))
+            
 
-            # 🗡️ ARME : durabilité réelle
+            #  ARME 
             if isinstance(durabilite, int):
                 stuff_reconstruit[nom_obj] = Armes(
                     nom=data.get("nom", nom_obj),
@@ -153,7 +157,7 @@ def reconstruire_stuff(etat_charge):
                     durabilite=durabilite,
                 )
 
-            # 🛡️ ÉQUIPEMENT (sans durabilité)
+            # ÉQUIPEMENT
             elif isinstance(enchant, int):
                 stuff_reconstruit[nom_obj] = equipement(
                     nom=data.get("nom", nom_obj),
@@ -161,8 +165,27 @@ def reconstruire_stuff(etat_charge):
                     quantite=data.get("quantite", 1),
                     enchant=enchant,
                 )
+            #Potion
+            elif isinstance(effet, str) or isinstance(effet, Nonetype):
+                stuff_reconstruit[nom_obj] = Potion(
+                    nom=data.get("nom", nom_obj),
+                    image=data.get("image", ""),
+                    quantite=data.get("quantite", 1),
+                    effet=effet,
+                )
+            #Livres
 
-            # 📦 OBJET SIMPLE
+            elif isinstance(enchants, list) or isinstance(enchants, Nonetype):
+                stuff_reconstruit[nom_obj] = Livres(
+                    nom=data.get("nom", nom_obj),
+                    image=data.get("image", ""),
+                    quantite=data.get("quantite", 1),
+                    echant1=enchants[0] if isinstance(enchants, list) else None,
+                    enchant2=enchants[1] if isinstance(enchants, list) else None,
+                    echant3=enchants[2] if isinstance(enchants, list) else None
+                )
+
+            # OBJET SIMPLE
             else:
                 stuff_reconstruit[nom_obj] = Objet(
                     nom=data.get("nom", nom_obj),
@@ -319,6 +342,11 @@ class Joueur(Perso):
                     "quantite": v.quantite,
                     "durabilite": getattr(v, "durabilite", None),
                     "enchant": getattr(v, "enchant", None),
+                    "effet":getattr(v,"effet",None),
+                    "enchant1":getattr(v,"echant1",None),
+                    "enchant2":getattr(v,"enchant2",None),
+                    "enchant3":getattr(v,"enchant3",None)
+                    
                 }
             else:
                 stuff_serializable[k] = v
@@ -868,8 +896,20 @@ class TresorDialogQt(qt.QDialog):
                     type_objet="potion",
                     effect=None,
                 )
-            elif nom.startswith("livre_enchant"):
-                safe_increment(self.joueur.stuff, nom, quant=qte,type_objet="livres")
+            
+           
+
+            elif "livre enchant "in nom:
+                safe_increment(
+                    self.joueur.stuff,
+                    nom,
+                    quant=qte,
+                    type_objet="livres",
+                    effect=None,
+                )
+            
+
+
             else:
                 safe_increment(self.joueur.stuff, nom, quant=qte)
 

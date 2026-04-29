@@ -125,15 +125,38 @@ def l4_l5(joueur):
 
 def l5_l6(joueur):
     pass
+def l1_l2inf(joueur, nb2=2):
+    if qtes("livre enchant niv 1", joueur) >= 2 *nb2:
+        safe_increment(
+            joueur.stuff,
+            "livre enchant niv 1",
+            quant=-2*nb2,
+        )
+        safe_increment(joueur.stuff, "livre enchant niv 2", quant=nb2)
+        stats["livres_convertis"] += nb2*2
+        print(f"Conversion réussie : {2*nb2} livres niv 1 → {nb2} livres niv 2.")
+
+        return True
 
 
-def convertir_livres(niveau_cible, nb, joueur):
+def l2_l3inf(joueur,nb3):
+    pass
+def l3_l4inf(joueur,nb4):
+    pass
+
+def l4_l5inf(joueur,nb5):
+    pass
+
+
+def l5_l6inf(joueur,nb6):
+    pass
+def convertir_livres(niveau_cible, nb, joueur,inf=False):
     print(joueur.stuff)
     sta = StatsConversion()
     global stats
     stats = asdict(sta)
 
-    if 1 < niveau_cible < 7:
+    if 1 < niveau_cible < 7 and not inf:
         if niveau_cible == 2:
             l1_l2(joueur)
         elif niveau_cible == 3:
@@ -147,6 +170,20 @@ def convertir_livres(niveau_cible, nb, joueur):
 
         else:
             l5_l6(joueur)
+    if 1 < niveau_cible < 7 and inf:
+        if niveau_cible == 2:
+            l1_l2inf(joueur,nb)
+        elif niveau_cible == 3:
+            l2_l3inf(joueur,nb)
+
+        elif niveau_cible == 4:
+            l3_l4inf(joueur,nb)
+
+        elif niveau_cible == 5:
+            l4_l5inf(joueur,nb)
+
+        else:
+            l5_l6inf(joueur,nb)
 
     stat = stats
     return stat
