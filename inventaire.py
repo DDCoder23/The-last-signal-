@@ -533,7 +533,7 @@ class FenetreMagasin(QDialog):
             safe_increment(self.inventaire, "argent", quant=-prix_total)
             # Ajouter l'objet à l'inventaire
             print(f"Argent restant: {self.argent_joueur}")
-            if objet.get("type") == "de base":
+            if objet.get("type") == "de base" or objet.get("type")=="livres":
                 safe_increment(
                     self.inventaire,
                     objet["nom"],

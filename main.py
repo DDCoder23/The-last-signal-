@@ -14,7 +14,7 @@ from PySide6.QtCore import Qt, QTimer
 import table_de_conversion as tc
 import grade_manager as gr
 import configuration as cr
-from horloge import HorlogeJeu, arreter_toutes_horloges,réinitialiser
+from horloge import HorlogeJeu, arreter_toutes_horloges
 import atexit
 from admin_manager import IS_ADMIN
 from inventaire import (
@@ -868,6 +868,8 @@ class TresorDialogQt(qt.QDialog):
                     type_objet="potion",
                     effect=None,
                 )
+            elif nom.startswith("livre_enchant"):
+                safe_increment(self.joueur.stuff, nom, quant=qte,type_objet="livres")
             else:
                 safe_increment(self.joueur.stuff, nom, quant=qte)
 
