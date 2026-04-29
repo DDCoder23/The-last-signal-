@@ -161,7 +161,7 @@ class FenetreInventaire(QDialog):
 
             self.table_widget.resizeColumnsToContents()
             # 9. Bouton Convertir (UNIQUEMENT POUR LES LIVRES)
-            if getattr(objet, "type_objet", "").lower() == "livre":
+            if getattr(objet, "type_objet", "").lower() == "livres":
                 bouton_convertir = QPushButton("Convertir")
                 bouton_convertir.clicked.connect(
                     lambda _, r=row, n=nom: self.demander_quantite_conversion(r, n)
@@ -246,7 +246,7 @@ class FenetreInventaire(QDialog):
         if ok:
             if (
                     objet.type_objet.lower() == "potion"
-                    or objet.type_objet.lower() == "de base"
+                    or objet.type_objet.lower() == "de base" or objet.type_objet.lower() == "livres"
             ) and not objet == "gemmes":
                 prix_unitaire = (
                         self.prix_objets.get(objet.nom.replace("_", " "), 10) * 0.75

@@ -5,7 +5,7 @@ from PySide6.QtCore import Qt, QTimer
 from functools import wraps
 import json
 from table_de_conversion import qtes
-from inventaire import safe_increment, Objet, trier
+from inventaire import safe_increment, Objet, trier,liste_muni,liste_potion,liste_armes,liste_outils
 import re
 import configparser
 from PySide6.QtWidgets import QMessageBox
@@ -215,7 +215,35 @@ class ConsoleAdmin(qt.QWidget):
             return
 
         # Ajout de l'objet à l'inventaire
-        safe_increment(self.joueur.stuff, nom_objet, quant=qty)
+        if nom_objet in liste_armes:
+            safe_increment(
+                self.joueur.stuff,
+                nom_objet,
+                quant=qty,
+                type_objet="armes",
+                enchant=0,
+                durabilite=100,
+            )
+        elif nom_objet in liste_muni or nom_objet in liste_outils:
+            safe_increment(
+                self.joueur.stuff,
+                nom_objet,
+                quant=qty,
+                type_objet="équipement",
+                enchant=0,
+            )
+        elif nom_objet in liste_potion:
+            safe_increment(
+                self.joueur.stuff,
+                nom_objet,
+                quant=qty,
+                type_objet="potion",
+                effect=None,
+            )
+        elif nom_objet.startswith("livre_enchant"):
+            safe_increment(self.joueur.stuff, nom_objet, quant=qty, type_objet="livres")
+        else:
+            safe_increment(self.joueur.stuff, nom_objet, quant=qty)
         self.log(f"[ADMIN] {nom_objet} x{qty} ajouté à l'inventaire.")
 
     def _cmd_gold(self, args):

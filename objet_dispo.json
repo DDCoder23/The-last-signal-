@@ -1,4 +1,4 @@
-﻿[
+[
     {
         "nom": "épée de bois",
         "image": "epee_bois.png",
@@ -11,42 +11,42 @@
         "nom": "livre enchant niv 1",
         "image": "livre_enchant_niv_1.png",
         "prix": 100000,
-        "type": "de base"
+        "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 2",
         "image": "livre_enchant_niv_2.png",
         "prix": 200000,
-        "type": "de base"
+        "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 3",
         "image": "livre_enchant_niv_3.png",
         "prix": 300000,
-        "type": "de base"
+        "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 4",
         "image": "livre_enchant_niv_4.png",
         "prix": 400000,
-        "type": "de base"
+        "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 5",
         "image": "livre_enchant_niv_5.png",
         "prix": 500000,
-        "type": "de base"
+        "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 6",
         "image": "livre_enchant_niv_6.png",
         "prix": 600000,
-        "type": "de base"
+        "type": "livres"
 
     },
     {
@@ -125,19 +125,17 @@
 
     },
     {
-            "nom": "Carreau d\' arbalète",
-            "image": "carreau d\' arbalète.png",
+            "nom": "Carreau d' arbalète",
+            "image": "carreau d' arbalète.png",
             "prix": 15,
             "type": "équipement",
             "enchant": 0
     
       },
-      {
-        "nom": "torche",
-        "image": "torche.png",
-        "prix": 5,
-        "type": "de base"
-       }
-
-
+    {
+    "nom": "torche",
+    "image": "torche.png",
+    "prix": 5,
+    "type": "de base"
+     }
 ]
