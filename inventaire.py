@@ -70,7 +70,7 @@ liste_potion = [
     "potion de soin modéré",
     "potion de délivrance",
 ]
-
+dict_enchant={1: {"épée":("Aura de feu I", "Durability I"), "armes à feu":("Rapidity I")}}
 
 def trier(inventaire):
     """Trie l'inventaire selon les règles définies."""
@@ -171,31 +171,56 @@ class Armes(equipement):
         enchant=0,
         durabilite=100,
         bonus=5,
+        enchantements=()
     ):
         super().__init__(nom, image, quantite, type_objet)
         self.durabilite = durabilite
         self.enchant = enchant
         self.bonus = bonus
+        self.enchantements=enchantements
 
     def __repr__(self):
 
-        return f"{self.quantite:,} [Enchant +{self.enchant}| bonus :{self.bonus} ]"
+        return f"{self.quantite:,} [Enchant +{self.enchant}| bonus :{self.bonus} | dura : {self.durabilite}]"
 
-    def enchanter(self, niv):
+    def enchanter(self, niv,enc):
         self.enchant += niv
         self.durabilite += niv * 10 + self.enchant * 5
         self.bonus += niv * 5 + self.enchant * 5
+        if niv>0:
+            for  en in self.enchantements:
+                for e in enc:
+                    if e.startswith==en:
+                        del self.enchantements[e]
+            self.enchantements.append(enc)
 
 
 class Potion(Objet):
     def __init__(self, nom, image, quantite=1, type_objet="potion", **kwargs):
         super().__init__(nom, image, quantite, type_objet)
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+        self.effet=kwargs.get("effet",None)
 
     def appliquer_effet(self):
         pass
+class Livres(Objet):
+    def __init__(self, nom, image, quantite=1, type_objet="livres", **kwargs):
+        super().__init__(nom, image, quantite, type_objet)
+        self.enchant1=kwargs.get("enchant1",None)
+        self.enchant2=kwargs.get("enchant2",None)
+        self.enchant3=kwargs.get("enchant3",None)
+    def __repr__(self):
+        if self.enchant3:
+            return f"{self.quantite:,} [{self.enchant1}|{self.enchant2}| {self.enchant3}]"
 
+        elif not self.enchant3 and self.enchant2:
+            return f"{self.quantite:,} [{self.enchant1}|{self.enchant2}]"
+
+        elif not self.enchant3 and not self.enchant2:
+            return f"{self.quantite:,} [{self.enchant1}]"
+
+
+
+        
 
 def nettoyer_stuff_zero(inventaire):
     a_supprimer = []
@@ -252,6 +277,34 @@ def safe_increment(
                 enchant=kwargs.get("enchant", 0),
             )
             return
+    if type_objet == "livres":
+        for _ in range(quant):
+            for key in inventaire:
+                if isinstance(nom,Livres):
+                    if (key.enchant1==kwargs.get("enchant1", None) or key.enchant2==kwargs.get("enchant2", None) or key.enchant3==kwargs.get("enchant3", None)):
+                        globals()[nom] = inventaire[nom]
+                        obj = inventaire[nom]
+                        if isinstance(obj, Objet):
+                            obj.ajouter(quant)
+                        nettoyer_stuff_zero(inventaire)
+                        return
+                        
+
+                
+
+            inventaire[nom] = Livres(
+                nom=nom,
+                image=image,
+                quantite=1,
+                enchant1=kwargs.get("enchant1", None),
+enchant2=kwargs.get("enchant2", None),
+enchant3=kwargs.get("enchant3", None),
+
+            )
+            nettoyer_stuff_zero(inventaire)
+            return
+  
+
     # 1️⃣ L’objet existe déjà
     if nom in inventaire.keys():
         globals()[nom] = inventaire[nom]
@@ -300,6 +353,9 @@ def safe_increment(
         inventaire[nom] = Potion(
             nom, image, quant, type_objet=type_objet, effet=kwargs.get("effet", None)
         )
+
+    elif type_objet == "livres":
+        inventaire[nom] = Livre(nom, image, quant,type_objet=type_objet,enchant1=kwargs.get("enchant1", None), enchant2=kwargs.get("enchant2", None), enchant3=kwargs.get("enchant3", None) )
 
     elif type_objet == "de base" or type_objet == "base":
         inventaire[nom] = Objet(nom, image, quant)
@@ -533,7 +589,7 @@ class FenetreMagasin(QDialog):
             safe_increment(self.inventaire, "argent", quant=-prix_total)
             # Ajouter l'objet à l'inventaire
             print(f"Argent restant: {self.argent_joueur}")
-            if objet.get("type") == "de base" or objet.get("type")=="livres":
+            if objet.get("type") == "de base":
                 safe_increment(
                     self.inventaire,
                     objet["nom"],
