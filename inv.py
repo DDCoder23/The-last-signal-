@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import (
+﻿from PySide6.QtWidgets import (
     QTableWidget,
     QTableWidgetItem,
     QVBoxLayout,
@@ -11,8 +11,8 @@ from PySide6.QtWidgets import (
 )
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt
-from inventaire import Objet,safe_increment
-
+from inventaire import Objet,safe_increment,Potion
+import math
 import json
 import os
 def qtes(nom, joueur):
@@ -41,6 +41,7 @@ class FenetreInventaire(QDialog):
         self.setWindowTitle("Inventaire du Joueur")
         self.resize(800, 500)
         self.prix_objets = self.charger_prix_objets()
+        self.joueur=joueur
 
         # Dossier des images
         self.dossier_images = "assets"
@@ -52,7 +53,7 @@ class FenetreInventaire(QDialog):
 
         # Tableau avec 9 colonnes (8 colonnes existantes + 1 pour le bouton Tout Vendre)
         self.table_widget = QTableWidget()
-        self.table_widget.setColumnCount(10)  # ← CHANGÉ DE 9 À 10
+        self.table_widget.setColumnCount(10)  
         self.table_widget.setHorizontalHeaderLabels(
             [
                 "Image",
@@ -60,7 +61,7 @@ class FenetreInventaire(QDialog):
                 "Quantite",
                 "Type",
                 "Enchantement",
-                "Durabilite/Effet",
+                "Autres infos",
                 "Utiliser",
                 "Vendre",
                 "Tout Vendre",
@@ -127,23 +128,40 @@ class FenetreInventaire(QDialog):
             enchantement = getattr(objet, "enchant", "Aucun")
             self.table_widget.setItem(row, 4, QTableWidgetItem(str(enchantement)))
 
-            # 6. Durabilité/Effet
+            # 6. Autres infos
             if (
                     hasattr(objet, "type_objet")
                     and getattr(objet, "type_objet", "").lower() == "potion"
             ):
                 effet = getattr(objet, "effet", "Aucun effet")
                 self.table_widget.setItem(row, 5, QTableWidgetItem(str(effet)))
+            if (
+                    hasattr(objet, "type_objet")
+                    and getattr(objet, "type_objet", "").lower() == "livres"
+            ):
+                enchant1 = getattr(objet, "enchant1", "Aucun")
+                enchant2 = getattr(objet, "enchant2", "Aucun")
+                enchant3 = getattr(objet, "enchant3", "Aucun")
+                self.table_widget.setItem(row, 5, QTableWidgetItem(f"{str(enchant1)},{str(enchant2)},{str(enchant3)}"))
+
             else:
                 durabilite = getattr(objet, "durabilite", "Indestructible")
                 self.table_widget.setItem(row, 5, QTableWidgetItem(str(durabilite)))
 
-            # 7. Bouton Utiliser
-            bouton_utiliser = QPushButton("Utiliser")
-            bouton_utiliser.clicked.connect(
-                lambda _, r=row, n=nom: self.utiliser_objet(r, n)
+            # 7. Bouton Boire
+            if isinstance(nom, Potion):
+       
+                bouton_boire = QPushButton("Boire")
+                bouton_boire.clicked.connect(
+                lambda _, r=row, n=nom: self.boire(r, n)
             )
-            self.table_widget.setCellWidget(row, 6, bouton_utiliser)
+                self.table_widget.setCellWidget(row, 6, bouton_boire)
+
+            else:
+
+                self.table_widget.setCellWidget(row, 6, QLabel(""))  # Cellule vide
+
+
 
             # 8. Bouton Vendre
             bouton_vendre = QPushButton("Vendre")
@@ -161,7 +179,7 @@ class FenetreInventaire(QDialog):
 
             self.table_widget.resizeColumnsToContents()
             # 9. Bouton Convertir (UNIQUEMENT POUR LES LIVRES)
-            if getattr(objet, "type_objet", "").lower() == "livres":
+            if "livre enchant" in nom and not "6" in nom :
                 bouton_convertir = QPushButton("Convertir")
                 bouton_convertir.clicked.connect(
                     lambda _, r=row, n=nom: self.demander_quantite_conversion(r, n)
@@ -173,7 +191,18 @@ class FenetreInventaire(QDialog):
     def demander_quantite_conversion(self, row, nom):
         """Demander la quantité de livres à convertir."""
         objet = self.inventaire_filtre[nom]
-        quantite_max = getattr(objet, "quantite", 0)
+        if "1" in nom:
+            quantite_max = getattr(objet, "quantite", 0)/2
+        elif "2" in nom:
+            quantite_max = getattr(objet, "quantite", 0)/3
+        elif "3" in nom:
+            quantite_max = getattr(objet, "quantite", 0)/4
+        elif "4" in nom:
+            quantite_max = getattr(objet, "quantite", 0)/5
+        elif "5" in nom:
+            quantite_max = getattr(objet, "quantite", 0)/6
+        math.floor(quantite_max)
+
 
         if quantite_max <= 0:
             QMessageBox.warning(self, "Erreur", "Aucun livre disponible à convertir.")
@@ -205,12 +234,12 @@ class FenetreInventaire(QDialog):
         niveau_actuel = int(nom.split("niv ")[1]) if "niv" in nom else 1
         niveau_cible = niveau_actuel + 1
 
-        if niveau_cible > 6:  # Niveau max = 6
+        if niveau_cible >6:  # Niveau max = 6
             QMessageBox.warning(self, "Erreur", "Niveau maximal atteint (6).")
             return
 
-        # Appeler la fonction de conversion
-        stats = convertir_livres(niveau_cible, quantite, self.joueur)
+       
+        stats = convertir_livres(niveau_cible, quantite, self.joueur,inf=True)
 
         # Mettre à jour l'affichage
         self.mettre_a_jour_inventaire()
@@ -337,7 +366,7 @@ class FenetreInventaire(QDialog):
             )
             self.mettre_a_jour_inventaire()
 
-    def utiliser_objet(self, row, nom):
+    def boire(self, row, nom):
         """Utilise l'objet sélectionné (ex : boire une potion)."""
         noms = list(self.inventaire_filtre.keys())
         if row < 0 or row >= len(noms):
