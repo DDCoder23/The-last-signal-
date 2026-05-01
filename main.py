@@ -16,6 +16,7 @@ import grade_manager as gr
 import configuration as cr
 from horloge import HorlogeJeu, arreter_toutes_horloges
 import atexit
+import logging
 from admin_manager import IS_ADMIN
 from inventaire import (
     Objet,
@@ -29,6 +30,7 @@ from inventaire import (
     liste_outils,
     liste_muni,
     liste_potion,
+    ajouter_enchant
 
 )
 import sys
@@ -37,7 +39,8 @@ import json
 import dill
 from inv import afficher_inventaire
 from banque import afficher_banque
-
+import re
+from collections import defaultdict
 configs = configparser.ConfigParser()
 configs.read("config.ini", encoding="utf-8")
 
@@ -63,16 +66,23 @@ def lister_profils_sauvegardes(base_dir="saves"):
 
 
 profils = lister_profils_sauvegardes()
-if (
-    not os.path.exists(r".\assets\map_height.png")
-    or not os.path.exists(r".\assets\map_color.png")
-    or not os.path.exists(r".\assets\map_collision.png")
-):
-    gemap.generate_map(
-        size=512, style="island", height_scale=1.2, seed=42, output_prefix="map"
+
+ASSETS_DIR = "assets"
+
+# Vérifier que les fichiers de carte existent dans assets/
+REQUIRED_MAP_FILES = [
+    os.path.join(ASSETS_DIR, "map_height.png"),
+    os.path.join(ASSETS_DIR, "map_color.png"),
+    os.path.join(ASSETS_DIR, "map_collision.png")
+]
+
+# Vérification (optionnelle, pour un message d'erreur clair)
+missing_files = [f for f in REQUIRED_MAP_FILES if not os.path.exists(f)]
+if missing_files:
+    raise FileNotFoundError(
+        f"❌ Fichiers de carte manquants dans {ASSETS_DIR}: {missing_files}. "
+        "Assurez-vous que les fichiers sont bien présents."
     )
-
-
 class SaveSelectWidget(qt.QWidget):
     def __init__(self, on_load, on_back, profils):
         super().__init__()
@@ -122,18 +132,24 @@ class SaveSelectWidget(qt.QWidget):
         self.on_load(profil, slot)
 
 
-def reprendre_joueur(nom_profil: str, mot_de_passe: str, slots=1):
+from functools import lru_cache
 
-    try:
-        print(f"[LOAD] tentative slot {slots}")
-        return Secure_save.load_from_slot(nom_profil, slots, mot_de_passe)
+@lru_cache(maxsize=3)  # Cache les 3 dernières sauvegardes
+def reprendre_joueur(nom_profil: str, mot_de_passe: str, slots=(1, 2, 3)):
+    if isinstance(slots, int):
+        slots = (slots,)
 
-    except FileNotFoundError:
-        return
-    except ValueError:
-        return
+    for slot in slots:
+        try:
+            print(f"[LOAD] tentative slot {slot}")
+            return Secure_save.load_from_slot(nom_profil, slot, mot_de_passe)
+        except FileNotFoundError:
+            continue
+        except ValueError:
+            continue
 
-
+    print("[LOAD] aucune sauvegarde valide trouvée")
+    return None
 def reconstruire_stuff(etat_charge):
     stuff_reconstruit = {}
 
@@ -141,11 +157,10 @@ def reconstruire_stuff(etat_charge):
 
         if isinstance(data, dict):
 
-            enchant = data.get("enchant")
+            niv = data.get("niv")
             durabilite = data.get("durabilite")
             effet=data.get("effet")
-            enchants=list(data.get("enchant1"),data.get("enchant2"),data.get("enchant3"))
-            
+            enchants=data.get("enchants")            
 
             #  ARME 
             if isinstance(durabilite, int):
@@ -153,20 +168,20 @@ def reconstruire_stuff(etat_charge):
                     nom=data.get("nom", nom_obj),
                     image=data.get("image", ""),
                     quantite=data.get("quantite", 1),
-                    enchant=enchant or 0,
+                    niv=niv or 1,
                     durabilite=durabilite,
                 )
 
             # ÉQUIPEMENT
-            elif isinstance(enchant, int):
+            elif isinstance(niv, int):
                 stuff_reconstruit[nom_obj] = equipement(
                     nom=data.get("nom", nom_obj),
                     image=data.get("image", ""),
                     quantite=data.get("quantite", 1),
-                    enchant=enchant,
+                    niv=niv or 1,
                 )
             #Potion
-            elif isinstance(effet, str) or isinstance(effet, Nonetype):
+            elif isinstance(effet, str) or effet is None:
                 stuff_reconstruit[nom_obj] = Potion(
                     nom=data.get("nom", nom_obj),
                     image=data.get("image", ""),
@@ -175,14 +190,14 @@ def reconstruire_stuff(etat_charge):
                 )
             #Livres
 
-            elif isinstance(enchants, list) or isinstance(enchants, Nonetype):
+            elif isinstance(enchants, list) or enchants is None:
                 stuff_reconstruit[nom_obj] = Livres(
                     nom=data.get("nom", nom_obj),
                     image=data.get("image", ""),
                     quantite=data.get("quantite", 1),
-                    echant1=enchants[0] if isinstance(enchants, list) else None,
-                    enchant2=enchants[1] if isinstance(enchants, list) else None,
-                    echant3=enchants[2] if isinstance(enchants, list) else None
+                    echants=enchants
+
+
                 )
 
             # OBJET SIMPLE
@@ -319,7 +334,6 @@ class Joueur(Perso):
                 "épée de bois",
                 quant=2,
                 type_objet="armes",
-                enchant=0,
                 durabilite=100,
             )
 
@@ -341,11 +355,14 @@ class Joueur(Perso):
                     "nom": v.nom_base,
                     "quantite": v.quantite,
                     "durabilite": getattr(v, "durabilite", None),
-                    "enchant": getattr(v, "enchant", None),
+                    "niv": getattr(v, "niv", None),
                     "effet":getattr(v,"effet",None),
                     "enchant1":getattr(v,"echant1",None),
                     "enchant2":getattr(v,"enchant2",None),
-                    "enchant3":getattr(v,"enchant3",None)
+                    "enchant3":getattr(v,"enchant3",None),
+                    "enchant4":getattr(v,"echant4",None),
+                    "enchant5":getattr(v,"enchant5",None),
+                    "enchant6":getattr(v,"enchant6",None)
                     
                 }
             else:
@@ -368,184 +385,8 @@ class Joueur(Perso):
             "config": config_dict,
         }
 
-    def enchanter_arme(self, MAX_NIV=6, parent_widget=None):
-        global objet, niveau
-        self.current_widget = parent_widget
+   
 
-        global TAUX_ECHEC
-        if IS_ADMIN:
-            TAUX_ECHEC = 0.5
-        else:
-            TAUX_ECHEC = 0.30
-
-        def qte(nom):
-            obj = self.stuff.get(nom)
-            if isinstance(obj, Objet):
-                return obj.quantite
-            if isinstance(obj, int):
-                return obj
-            return 0
-
-        objets = []
-        for o in self.stuff.values():
-            if hasattr(o, "enchant") and o.enchant < MAX_NIV:
-                objets.append(o)
-        objets.sort(key=lambda o: o.enchant, reverse=True)
-
-        if not bool(objets):
-            dlg = qt.QDialog(self.current_widget)
-            dlg.setWindowTitle("Erreur")
-            layout = qt.QVBoxLayout(dlg)
-            layout.addWidget(qt.QLabel("❌ Aucun objet améliorable."))
-            btn_ok = qt.QPushButton("OK")
-            btn_ok.clicked.connect(dlg.accept)
-            layout.addWidget(btn_ok)
-            dlg.exec()
-            return
-
-            # Créer une boîte de dialogue pour choisir l'objet à enchanter
-        dlg = qt.QDialog(self.current_widget)
-        dlg.setWindowTitle("Choisir un objet à enchanter")
-        dlg.setMinimumWidth(400)
-
-        layout = qt.QVBoxLayout(dlg)
-
-        label = qt.QLabel("Sélectionnez un objet à enchanter:")
-        layout.addWidget(label)
-
-        list_widget = qt.QListWidget()
-        for i, o in enumerate(objets, 1):
-            list_widget.addItem(f"{i}. {o.nom} (Enchant +{o.enchant})")
-        layout.addWidget(list_widget)
-
-        btn_layout = qt.QHBoxLayout()
-        btn_ok = qt.QPushButton("OK")
-        btn_cancel = qt.QPushButton("Annuler")
-        btn_layout.addWidget(btn_ok)
-        btn_layout.addWidget(btn_cancel)
-        layout.addLayout(btn_layout)
-
-        objet = [None]
-
-        def on_ok():
-
-            selected_items = list_widget.selectedItems()
-            if selected_items:
-                objet[0] = objets[list_widget.row(selected_items[0])]
-                dlg.accept()
-
-        def on_cancel():
-            dlg.reject()
-
-        btn_ok.clicked.connect(on_ok)
-        btn_cancel.clicked.connect(on_cancel)
-
-        if dlg.exec() != qt.QDialog.DialogCode.Accepted or objet is None:
-            return
-
-        niveau = max(1, objet[0].enchant + 1)
-        nom_livre = "livre enchant niv " + str(niveau)
-        argent_requis = niveau * 100000
-
-        c = tc.convertir_livres(niveau, niveau, self)
-
-        argent_enchant = 100000 * niveau
-        if qte("argent") < argent_enchant:
-            ratio = 2
-            manque = argent_enchant - qte("argent")
-            if qte("gemmes") < manque * ratio:
-                dlg_erreur = qt.QDialog(self.current_widget)
-                dlg_erreur.setWindowTitle("Erreur")
-                layout_erreur = qt.QVBoxLayout(dlg_erreur)
-                layout_erreur.addWidget(qt.QLabel("Pas assez d'argent pour l'enchant."))
-                btn_ok = qt.QPushButton("OK")
-                btn_ok.clicked.connect(dlg_erreur.accept)
-                layout_erreur.addWidget(btn_ok)
-                dlg_erreur.exec()
-                return False
-
-            safe_increment(
-                self.stuff,
-                "gemmes",
-                quant=-(
-                    ratio * (manque // 10000) + ratio if manque % 10000 != 0 else 0
-                ),
-            )
-            safe_increment(
-                self.stuff,
-                "argent",
-                quant=(ratio * (manque // 10000) + ratio if manque % 10000 != 0 else 0)
-                / 2,
-            )
-            c["gemmes_utilisees"] += (
-                ratio * (manque // 10000) + ratio if manque % 10000 != 0 else 0
-            )
-            safe_increment(self.stuff, "argent", quant=-argent_enchant)
-
-            # =============================
-        # 5️⃣ Risque d'échec
-        # =============================
-        if niveau >= 4 and random.random() < TAUX_ECHEC:
-            dlg_echec = qt.QDialog(self.current_widget)
-            dlg_echec.setWindowTitle("Échec")
-            layout_echec = qt.QVBoxLayout(dlg_echec)
-            layout_echec.addWidget(qt.QLabel("💥 Échec !"))
-            btn_ok = qt.QPushButton("OK")
-            btn_ok.clicked.connect(dlg_echec.accept)
-            layout_echec.addWidget(btn_ok)
-            dlg_echec.exec()
-            objet[0].enchanter(-1)
-            return False
-
-            # =============================
-            # 6️⃣ Application finale
-            # =============================
-        if niveau == 1 and "livre enchant niv 1" in self.stuff:
-
-            safe_increment(self.stuff, "livre enchant niv 1", quant=1, ajouter=False)
-
-        elif niveau == 2 and qte("livre enchant niv 2") >= 2:
-
-            safe_increment(self.stuff, "livre enchant niv 2", quant=-2)
-        elif niveau == 3 and qte("livre enchant niv 3") >= 3:
-
-            safe_increment(self.stuff, "livre enchant niv 3", quant=-3)
-        elif niveau == 4 and qte("livre enchant niv 4") >= 4:
-
-            safe_increment(self.stuff, "livre enchant niv 4", quant=-4)
-        elif niveau == 5 and qte("livre enchant niv 5") >= 5:
-
-            safe_increment(self.stuff, "livre enchant niv 5", quant=-5)
-        elif niveau == 6 and qte("livre enchant niv 6") >= 6:
-
-            safe_increment(self.stuff, "livre enchant niv 6", quant=-6)
-        else:
-            dlg_echec = qt.QDialog(self.current_widget)
-            dlg_echec.setWindowTitle("problème")
-            layout_echec = qt.QVBoxLayout(dlg_echec)
-            layout_echec.addWidget(qt.QLabel("livres insuffisantes !"))
-            btn_ok = qt.QPushButton("OK")
-            btn_ok.clicked.connect(dlg_echec.accept)
-            layout_echec.addWidget(btn_ok)
-            dlg_echec.exec()
-            return False
-
-        objet[0].enchanter(1)
-        dlg_resume = qt.QDialog(self.current_widget)
-        dlg_resume.setWindowTitle("Enchantement réussi")
-        layout_resume = qt.QVBoxLayout(dlg_resume)
-        layout_resume.addWidget(
-            qt.QLabel(
-                f"✨ Votre objet {objet[0].nom} obtient un enchantement de niveau {niveau}\n"
-                f"📘 Livres achetés : {c["livres_achetes"]}\n"
-                f"🔁 Livres convertis : {c["livres_convertis"]}\n"
-                f"💎 Gemmes utilisées : {c["gemmes_utilisees"]}"
-            )
-        )
-        btn_ok = qt.QPushButton("OK")
-        btn_ok.clicked.connect(dlg_resume.accept)
-        layout_resume.addWidget(btn_ok)
-        dlg_resume.exec()
 
 
 class Adversaire(Perso):
@@ -869,51 +710,59 @@ class TresorDialogQt(qt.QDialog):
     # ==========================
     # ACTIONS
     # ==========================
+    global TYPE_OBJETS
+    TYPE_OBJETS = {
+    **{nom: "armes" for nom in liste_armes},
+    **{nom: "équipement" for nom in liste_muni + liste_outils},
+    **{nom: "potion" for nom in liste_potion},
+}
+
+
+
+
+
     def on_take(self):
         for nom, qte in self.tresor.items():
-            if nom in liste_armes:
-                safe_increment(
-                    self.joueur.stuff,
-                    nom,
-                    quant=qte,
-                    type_objet="armes",
-                    enchant=0,
-                    durabilite=100,
-                )
-            elif nom in liste_muni or nom in liste_outils:
-                safe_increment(
-                    self.joueur.stuff,
-                    nom,
-                    quant=qte,
-                    type_objet="équipement",
-                    enchant=0,
-                )
-            elif nom in liste_potion:
-                safe_increment(
-                    self.joueur.stuff,
-                    nom,
-                    quant=qte,
-                    type_objet="potion",
-                    effect=None,
-                )
-            
-           
 
-            elif "livre enchant "in nom:
-                safe_increment(
-                    self.joueur.stuff,
-                    nom,
-                    quant=qte,
-                    type_objet="livres",
-                    effect=None,
-                )
-            
+            if "livre enchant" in nom:
+                try:
+                    niveau = int(nom.split()[-1])  # Récupère le dernier mot et le convertit en int
+                except ValueError:
+                    niveau=1
+                finally:
+                    if 1 <= niveau <= 6:
+                        a = ajouter_enchant(niveau)
+                        safe_increment(
+                        self.joueur.stuff,
+                        nom,
+                        quant=qte,
+                        type_objet="livres",
+                        enchantements=a
+                    )
+            continue
 
+        # 🔹 Gestion des autres objets
+        type_objet = TYPE_OBJETS.get(nom, "base")
+        kwargs = {}
 
-            else:
-                safe_increment(self.joueur.stuff, nom, quant=qte)
+        if type_objet == "armes":
+            kwargs.update({"niv": 1, "durabilite": 100})
+        elif type_objet == "potion":
+            kwargs.update({"effect": None})
+
+        safe_increment(
+            self.joueur.stuff,
+            nom,
+            quant=qte,
+            type_objet=type_objet,
+            **kwargs
+        )
+
+    # ⚡ Tri UNIQUEMENT à la fin
 
         self.close()
+
+       
 
     # ==========================
     # FOCUS (LE POINT VITAL)
