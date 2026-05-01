@@ -51,7 +51,7 @@ class FenetreInventaire(QDialog):
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 9 colonnes (8 colonnes existantes + 1 pour le bouton Tout Vendre)
+        # Tableau avec 9 colonnes
         self.table_widget = QTableWidget()
         self.table_widget.setColumnCount(10)  
         self.table_widget.setHorizontalHeaderLabels(
@@ -60,7 +60,7 @@ class FenetreInventaire(QDialog):
                 "Nom",
                 "Quantite",
                 "Type",
-                "Enchantement",
+                "Niveau",
                 "Autres infos",
                 "Utiliser",
                 "Vendre",
@@ -125,8 +125,8 @@ class FenetreInventaire(QDialog):
             self.table_widget.setItem(row, 3, QTableWidgetItem(str(type_objet)))
 
             # 5. Enchantement
-            enchantement = getattr(objet, "enchant", "Aucun")
-            self.table_widget.setItem(row, 4, QTableWidgetItem(str(enchantement)))
+            niv = getattr(objet, "niv", "Aucun")
+            self.table_widget.setItem(row, 4, QTableWidgetItem(str(niv)))
 
             # 6. Autres infos
             if (
@@ -135,14 +135,12 @@ class FenetreInventaire(QDialog):
             ):
                 effet = getattr(objet, "effet", "Aucun effet")
                 self.table_widget.setItem(row, 5, QTableWidgetItem(str(effet)))
-            if (
+            elif (
                     hasattr(objet, "type_objet")
                     and getattr(objet, "type_objet", "").lower() == "livres"
             ):
-                enchant1 = getattr(objet, "enchant1", "Aucun")
-                enchant2 = getattr(objet, "enchant2", "Aucun")
-                enchant3 = getattr(objet, "enchant3", "Aucun")
-                self.table_widget.setItem(row, 5, QTableWidgetItem(f"{str(enchant1)},{str(enchant2)},{str(enchant3)}"))
+                enchants = getattr(objet, "enchantements", "Aucun")
+                self.table_widget.setItem(row, 5, QTableWidgetItem(f"{str(enchants)}"))
 
             else:
                 durabilite = getattr(objet, "durabilite", "Indestructible")
@@ -231,7 +229,11 @@ class FenetreInventaire(QDialog):
             return
 
         # Extraire le niveau actuel
-        niveau_actuel = int(nom.split("niv ")[1]) if "niv" in nom else 1
+        parts = nom.split()
+        for part in parts:
+            if part.isdigit():  # ✅ Cherche le premier nombre dans le nom
+                niveau_actuel= int(part)
+          
         niveau_cible = niveau_actuel + 1
 
         if niveau_cible >6:  # Niveau max = 6
@@ -239,7 +241,7 @@ class FenetreInventaire(QDialog):
             return
 
        
-        stats = convertir_livres(niveau_cible, quantite, self.joueur,inf=True)
+        stats = convertir_livres(niveau_cible, quantite, self.joueur)
 
         # Mettre à jour l'affichage
         self.mettre_a_jour_inventaire()
@@ -248,6 +250,8 @@ class FenetreInventaire(QDialog):
             "Succès",
             f"{quantite} {nom}(s) converti(s) en niveau {niveau_cible} !\nStatistiques: {stats}"
         )
+        self.mettre_a_jour_inventaire()
+    
 
     def vendre_objet(self, row, nom):
         """Vendre l'objet sélectionné."""
@@ -429,7 +433,7 @@ class FenetreInventaire(QDialog):
                         texte in getattr(objet, "nom", "").lower()
                         or texte in getattr(objet, "type_objet", "").lower()
                         or texte in str(getattr(objet, "effet", "")).lower()
-                        or texte in str(getattr(objet, "enchant", "")).lower()
+                        or texte in str(getattr(objet, "niv", "")).lower()
                 )
             }
         self.mettre_a_jour_inventaire()

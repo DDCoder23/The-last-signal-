@@ -15,7 +15,9 @@ from PySide6.QtWidgets import (
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt
 import asyncio
-
+import random
+global livres_par_enchantements
+livres_par_enchantements = {}
 def qtes(nom, joueur):
 
     if nom not in joueur.stuff:
@@ -70,7 +72,32 @@ liste_potion = [
     "potion de soin modéré",
     "potion de délivrance",
 ]
-dict_enchant={1: {"épée":("Aura de feu I", "Durability I"), "armes à feu":("Rapidity I")}}
+dict_enchant={1: {"épée":["Aura de feu I","Poison I","Durability I"], "armes à feu":["Rapidity I"]},
+             2: {"épée":["Aura de feu II","Poison II", "Durability II"], "armes à feu":["Rapidity II"]},
+             3: {"épée":["Aura de feu III","Poison III", "Durability III"], "armes à feu":["Rapidity III"]},
+             4: {"épée":["Aura de feu IV","Poison IV", "Durability IV"], "armes à feu":["Rapidity IV"]},
+             5: {"épée":["Aura de feu V","Poison V", "Durability V"], "armes à feu":["Rapidity V"]},
+             6: {"épée":["Aura de feu VI","Poison VI", "Durability VI"], "armes à feu":["Rapidity VI"]},
+}
+from itertools import combinations
+
+# Pré-générer TOUTES les combinaisons possibles au démarrage
+toutes_combinaisons = {}
+
+for niveau in dict_enchant:
+    armes = list(dict_enchant[niveau].keys())
+    poids = [0.7, 0.3]
+    arme_aleatoire = random.choices(armes, weights=poids, k=1)[0]
+    enchantements = dict_enchant[niveau][arme_aleatoire]
+
+    # Génère toutes les combinaisons possibles de taille `niveau`
+    combinaisons = list(combinations(enchantements, min(niveau, len(enchantements))))
+    toutes_combinaisons[niveau] = combinaisons
+
+def ajouter_enchant(niveau):
+    combinaisons = toutes_combinaisons[niveau]
+    return list(random.choice(combinaisons))  # ✅ Pioche une combinaison aléatoire
+
 
 def trier(inventaire):
     """Trie l'inventaire selon les règles définies."""
@@ -95,7 +122,7 @@ def trier(inventaire):
         livres_enchant.sort(key=lambda x: int(x[0].split()[-1]), reverse=True)
 
         # Tri des objets enchantés par niveau décroissant
-        objets_enchantes.sort(key=lambda x: x[1].enchant, reverse=True)
+        objets_enchantes.sort(key=lambda x: x[1].niv, reverse=True)
 
         # Tri des autres objets par ordre alphabétique
         autres_objets.sort(key=lambda x: x[0])
@@ -122,12 +149,12 @@ class Objet:
             setattr(self, key, value)
 
     def attribut_superieur_a_un(self, nom_attribut: str) -> bool:
-        return hasattr(self, nom_attribut) and getattr(self, nom_attribut) > 0
+        return hasattr(self, nom_attribut) and getattr(self, nom_attribut) != []
 
     def nom_affiche(self):
         base = self.nom_base
-        if self.attribut_superieur_a_un("enchant"):
-            return f"{base} enchanté niv {self.enchant}"
+        if self.attribut_superieur_a_un("enchantements") and self.type_objet!="livres":
+            return f"{base} enchanté(e)"
         return base
 
     @property
@@ -146,19 +173,27 @@ class Objet:
 
 class equipement(Objet):
     def __init__(
-        self, nom, image, quantite=1, type_objet="equipement", enchant=0, bonus=5
+        self, nom, image, quantite=1, type_objet="equipement", niv=1, bonus=5,enchantements=[]
     ):
+        
         super().__init__(nom, image, quantite, type_objet)
-        self.enchant = enchant
+        self.parts=self.nom.split()
+        self.niv = niv
         self.bonus = bonus
+        self.category=self.parts[0]
+        self.enchantements=enchantements 
 
     def __repr__(self):
+        
+        enchants = self.enchantements if self.enchantements else []
+        return f"{self.quantite:,} [Niveau{self.niv}| bonus :{self.bonus}| enchantements : {enchants}]"
 
-        return f"{self.quantite:,} [Enchant +{self.enchant}| bonus :{self.bonus}  ]"
-
-    def enchanter(self, niv):
-        self.enchant += niv
-        self.bonus += niv * 5 + self.enchant * 5
+    def enchanter(self,enc):
+        for en in self.enchantements:
+            for e in enc:
+                if e.startswith==en:
+                    del self.enchantements[e]
+                self.enchantements.append(enc)
 
 
 class Armes(equipement):
@@ -168,31 +203,32 @@ class Armes(equipement):
         image,
         quantite=1,
         type_objet="Armes",
-        enchant=0,
+        niv=1,
         durabilite=100,
         bonus=5,
-        enchantements=()
+        enchantements=[]
     ):
+        
         super().__init__(nom, image, quantite, type_objet)
         self.durabilite = durabilite
-        self.enchant = enchant
+        self.durabilite_max=durabilite
+        self.niv= niv
         self.bonus = bonus
+        self.parts=self.nom.split()
+        self.category=self.parts[0]
         self.enchantements=enchantements
 
     def __repr__(self):
+        enchants = self.enchantements if self.enchantements else []
+        return f"{self.quantite:,} [Niveau{self.niv}| bonus :{self.bonus}| enchantements : {enchants} | dura : {self.durabilite}/{self.durabilite_max} ]"
 
-        return f"{self.quantite:,} [Enchant +{self.enchant}| bonus :{self.bonus} | dura : {self.durabilite}]"
-
-    def enchanter(self, niv,enc):
-        self.enchant += niv
-        self.durabilite += niv * 10 + self.enchant * 5
-        self.bonus += niv * 5 + self.enchant * 5
-        if niv>0:
-            for  en in self.enchantements:
-                for e in enc:
-                    if e.startswith==en:
-                        del self.enchantements[e]
-            self.enchantements.append(enc)
+        
+    def enchanter(self,enc):
+        for en in self.enchantements:
+            for e in enc:
+                if e.startswith==en:
+                    del self.enchantements[e]
+                self.enchantements.append(enc)
 
 
 class Potion(Objet):
@@ -203,20 +239,19 @@ class Potion(Objet):
     def appliquer_effet(self):
         pass
 class Livres(Objet):
-    def __init__(self, nom, image, quantite=1, type_objet="livres", **kwargs):
+    def __init__(self, nom, image, quantite=1, type_objet="livres",enchantements=None, **kwargs):
+
         super().__init__(nom, image, quantite, type_objet)
-        self.enchant1=kwargs.get("enchant1",None)
-        self.enchant2=kwargs.get("enchant2",None)
-        self.enchant3=kwargs.get("enchant3",None)
+        self.parts=self.nom.split()
+        self.enchantements=enchantements
+        self.category=kwargs.get("category")
+        self.niv=self.parts[-1]
     def __repr__(self):
-        if self.enchant3:
-            return f"{self.quantite:,} [{self.enchant1}|{self.enchant2}| {self.enchant3}]"
+       enchants_str = "|".join(self.enchantements) if self.enchantements else "Aucun"
+       return f"{self.quantite:,} [Niveau {self.niv} | {enchants_str}]"
 
-        elif not self.enchant3 and self.enchant2:
-            return f"{self.quantite:,} [{self.enchant1}|{self.enchant2}]"
-
-        elif not self.enchant3 and not self.enchant2:
-            return f"{self.quantite:,} [{self.enchant1}]"
+        
+    
 
 
 
@@ -233,10 +268,26 @@ def nettoyer_stuff_zero(inventaire):
                     a_supprimer.append(nom)
 
         for nom in a_supprimer:
+            if isinstance(inventaire[nom], Livres):
+                livre = inventaire[nom]
+                cle_enchantements = tuple(livre.enchantements)
+                if cle_enchantements in livres_par_enchantements:
+                    del livres_par_enchantements[cle_enchantements]  # ✅ Supprime de l'index
             del inventaire[nom]
 
     asyncio.run(_nettoyer(inventaire))
 
+def generer_cle_unique(inventaire, nom_base):
+    """Génère une clé unique pour un objet dans l'inventaire."""
+    if nom_base not in inventaire:
+        return nom_base
+
+    i = 1
+    while True:
+        cle = f"{nom_base} n°{i}"
+        if cle not in inventaire:
+            return cle
+        i += 1
 
 def safe_increment(
     inventaire, nom, image=None, quant=1, type_objet="base", ajouter=True, **kwargs
@@ -245,65 +296,57 @@ def safe_increment(
         f"{nom}.png" if os.path.exists(os.path.join("asset", f"{nom}.png")) else None
     )
 
-    trier(inventaire)
     if type_objet == "armes":
         for _ in range(quant):
-            cle = nom
-            i = 1
-            while cle in inventaire:
-                i += 1
-                cle = f"{nom}n°{i}"
-
+            cle = generer_cle_unique(inventaire, nom)
             inventaire[cle] = Armes(
                 nom=nom,
                 image=image,
                 quantite=1,
-                enchant=kwargs.get("enchant", 0),
+                niv=kwargs.get("niv", 1),
                 durabilite=kwargs.get("durabilite", 100),
+                enchantements=kwargs.get("enchantements", []),
             )
         return
+
     if type_objet == "équipement":
         for _ in range(quant):
-            cle = nom
-            i = 1
-            while cle in inventaire:
-                i += 1
-                cle = f"{nom}n°{i}"
-
+            cle = generer_cle_unique(inventaire, nom)
             inventaire[cle] = equipement(
                 nom=nom,
                 image=image,
                 quantite=1,
-                enchant=kwargs.get("enchant", 0),
+                niv=kwargs.get("niv", 1),
+                enchantements=kwargs.get("enchantements", []),
             )
-            return
+        return
+
     if type_objet == "livres":
-        for _ in range(quant):
-            for key in inventaire:
-                if isinstance(nom,Livres):
-                    if (key.enchant1==kwargs.get("enchant1", None) or key.enchant2==kwargs.get("enchant2", None) or key.enchant3==kwargs.get("enchant3", None)):
-                        globals()[nom] = inventaire[nom]
-                        obj = inventaire[nom]
-                        if isinstance(obj, Objet):
-                            obj.ajouter(quant)
-                        nettoyer_stuff_zero(inventaire)
-                        return
-                        
+        enchantements = kwargs.get("enchantements", [])
 
-                
+        # Vérifie si un livre avec les mêmes enchantements existe déjà
+        enchantements = kwargs.get("enchantements", [])
 
-            inventaire[nom] = Livres(
-                nom=nom,
-                image=image,
-                quantite=1,
-                enchant1=kwargs.get("enchant1", None),
-enchant2=kwargs.get("enchant2", None),
-enchant3=kwargs.get("enchant3", None),
-
-            )
-            nettoyer_stuff_zero(inventaire)
+        # ✅ Vérifie si un livre avec ces enchantements existe déjà (en O(1))
+        cle_enchantements = tuple(enchantements)
+        if cle_enchantements in livres_par_enchantements:
+            cle_livre = livres_par_enchantements[cle_enchantements]
+            inventaire[cle_livre].ajouter(quant)
             return
-  
+
+        # ✅ Sinon, crée un nouveau livre
+        cle = generer_cle_unique(inventaire, nom)
+        inventaire[cle] = Livres(
+            nom=nom,
+            image=image,
+            quantite=quant,
+            enchantements=enchantements,
+        )
+        livres_par_enchantements[cle_enchantements] = cle  # ✅ Ajoute à l'index
+        return
+
+
+
 
     # 1️⃣ L’objet existe déjà
     if nom in inventaire.keys():
@@ -315,25 +358,25 @@ enchant3=kwargs.get("enchant3", None),
                 obj.ajouter(quant)
 
                 nettoyer_stuff_zero(inventaire)
-                trier(inventaire)
+                
                 return
 
             elif ajouter == False:
                 obj.retirer(quant)
 
                 nettoyer_stuff_zero(inventaire)
-                trier(inventaire)
+               
                 return
 
         else:
             if ajouter == True:
                 inventaire[nom] += quant
                 nettoyer_stuff_zero(inventaire)
-                trier(inventaire)
+               
             elif ajouter == False:
                 inventaire[nom] += quant
                 nettoyer_stuff_zero(inventaire)
-                trier(inventaire)
+               
 
     if type_objet == "armes":
         inventaire[nom] = Armes(
@@ -355,12 +398,12 @@ enchant3=kwargs.get("enchant3", None),
         )
 
     elif type_objet == "livres":
-        inventaire[nom] = Livre(nom, image, quant,type_objet=type_objet,enchant1=kwargs.get("enchant1", None), enchant2=kwargs.get("enchant2", None), enchant3=kwargs.get("enchant3", None) )
+        inventaire[nom] = Livres(nom, image, quant,type_objet=type_objet,enchants=kwargs.get("enchants"))
 
     elif type_objet == "de base" or type_objet == "base":
         inventaire[nom] = Objet(nom, image, quant)
     nettoyer_stuff_zero(inventaire)
-    trier(inventaire)
+    
 
 
 class QuantiteDialog(QDialog):
@@ -481,7 +524,7 @@ class FenetreMagasin(QDialog):
                 "Nom",
                 "Prix",
                 "Type",
-                "Enchantement",
+                "Niveau",
                 "Durabilité/Effet",
                 "Acheter",
             ]
@@ -547,12 +590,12 @@ class FenetreMagasin(QDialog):
 
             # 4. Type
             self.table_widget.setItem(
-                row, 3, QTableWidgetItem(objet.get("type", "de base"))
+                row, 3, QTableWidgetItem(objet.get("type_objet", "de base"))
             )
 
             # 5. Enchantement
             self.table_widget.setItem(
-                row, 4, QTableWidgetItem(str(objet.get("enchant", "Aucun")))
+                row, 4, QTableWidgetItem(str(objet.get("niv", "Aucun")))
             )
 
             # 6. Durabilité/Effet
@@ -589,26 +632,26 @@ class FenetreMagasin(QDialog):
             safe_increment(self.inventaire, "argent", quant=-prix_total)
             # Ajouter l'objet à l'inventaire
             print(f"Argent restant: {self.argent_joueur}")
-            if objet.get("type") == "de base":
+            if objet.get("type_objet") == "de base":
                 safe_increment(
                     self.inventaire,
                     objet["nom"],
                     quant=quantite,
-                    type_objet=objet.get("type"),
+                    type_objet=objet.get("type_objet"),
                 )
                 print("ajouté")
-            elif objet.get("type").lower() == "potion":
+            elif objet.get("type_objet").lower() == "potion":
                 safe_increment(
                     self.inventaire,
                     objet["nom"],
                     quant=quantite,
-                    type_objet=objet.get("type"),
+                    type_objet=objet.get("type_objet"),
                     effet=objet.get("effet", ""),
                 )
                 print("ajouté")
             elif (
-                objet.get("type").lower() == "equipement"
-                or objet.get("type").lower() == "équipement"
+                objet.get("type_objet").lower() == "equipement"
+                or objet.get("type_objet").lower() == "équipement"
             ):
                 safe_increment(
                     self.inventaire,
@@ -618,7 +661,7 @@ class FenetreMagasin(QDialog):
                     durabilite=100,
                 )
                 print("ajouté")
-            elif objet.get("type").lower() == "armes":
+            elif objet.get("type_objet").lower() == "armes":
                 safe_increment(
                     self.inventaire,
                     objet["nom"],
@@ -626,6 +669,19 @@ class FenetreMagasin(QDialog):
                     type_objet="armes",
                     durabilite=100,
                     enchant=0,
+                )
+                print("ajouté")
+
+            elif objet.get("type_objet").lower() == "livres":
+                niveau = int(objet["nom"][-1])  # ✅ Extrait le niveau
+                enchantements = ajouter_enchant(niveau)  # ✅ Récupère les enchantements
+
+                safe_increment(
+                    self.inventaire,
+                    objet["nom"],
+                    quant=quantite,
+                    type_objet="livres",enchantements=enchantements
+                    
                 )
                 print("ajouté")
 

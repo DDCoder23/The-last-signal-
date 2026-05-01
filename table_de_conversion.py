@@ -1,17 +1,98 @@
-﻿from inventaire import safe_increment, Objet
-
+﻿from inventaire import safe_increment, Objet,Livres,dict_enchant
+import random
 from dataclasses import dataclass, asdict
 
 
 @dataclass
 class StatsConversion:
-    livres_achetes: int = 0
+    
     livres_convertis: int = 0
-    gemmes_utilisees: int = 0
+    
 
 
-# Variables globales pour le suivi des conversions
 
+def vérifier(category,*args):
+    en=[]
+    liste1=[]
+    liste2=[]
+    liste3=[]
+    liste4=[]
+    liste5=[]
+    liste6=[]
+    if len(args)<2:
+        return
+    for lv in args:
+        if not isinstance(lv,Livres):
+            return
+        if not liste1:
+            liste1=lv.enchantements
+        elif not liste2:
+            liste2=lv.enchantements
+        elif not liste3:
+            liste3=lv.enchantements
+        elif not liste4:
+            liste4=lv.enchantements
+        elif not liste5:
+            liste5=lv.enchantements
+        elif not liste6:
+            liste6=lv.enchantements
+
+
+
+
+        while len(en)!= len(args):
+            for ele in liste1:
+                if ele in liste2:
+                    ind=dict_enchant[len(args)-1][category].index(ele)
+                    en.append(dict_enchant[len(args)][category][ind])
+                elif ele in liste3:
+                    ind=dict_enchant[len(args)-1][category].index(ele)
+                    en.append(dict_enchant[len(args)][category][ind])
+                elif ele in liste4:
+                    ind=dict_enchant[len(args)-1][category].index(ele)
+                    en.append(dict_enchant[len(args)][category][ind])
+                elif ele in liste5:
+                    ind=dict_enchant[len(args)-1][category].index(ele)
+                    en.append(dict_enchant[len(args)][category][ind])
+                                         
+                elif ele in liste6:
+                    ind=dict_enchant[len(args)-1][category].index(ele)
+                    en.append(dict_enchant[len(args)][category][ind])
+                en=list(filter(lambda x: x is not None, en))
+            if len(args)>2:
+                for i in range( len(args)-2):
+                    for ele in en:
+                        if ele in liste1:
+                            ind=dict_enchant[len(args)-1][category].index(ele)
+                            en.append(dict_enchant[len(args)][category][ind])
+                        elif ele in liste2:
+                            ind=dict_enchant[len(args)-1][category].index(ele)
+                            en.append(dict_enchant[len(args)][category][ind])
+                        elif ele in liste3:
+                            ind=dict_enchant[len(args)-1][category].index(ele)
+                            en.append(dict_enchant[len(args)][category][ind])
+                        elif ele in liste4:
+                            ind=dict_enchant[len(args)-1][category].index(ele)
+                            en.append(dict_enchant[len(args)][category][ind])
+                        elif ele in liste5:
+                            ind=dict_enchant[len(args)-1][category].index(ele)
+                            en.append(dict_enchant[len(args)][category][ind])
+                        elif ele in liste6:
+                            ind=dict_enchant[len(args)-1][category].index(ele)
+                            en.append(dict_enchant[len(args)][category][ind])
+            en=list(filter(lambda x: x is not None, en))
+            set(en)
+            if len(en)!= len(args):
+                en.append(random.choice(dict_enchant[len(args)-1][category]))
+    return en
+
+
+
+
+
+
+            
+            
 
 def qtes(nom, joueur):
 
@@ -19,7 +100,8 @@ def qtes(nom, joueur):
         return 0
 
     obj = joueur.stuff[nom]
-
+    if isinstance(obj, Livres):
+        return obj.quantite,obj.category
     # Cas 1 : C'est un objet de type Objet
     if isinstance(obj, Objet):
         return obj.quantite
@@ -35,155 +117,55 @@ def qtes(nom, joueur):
 
 
 def l1_l2(joueur, nb2=2):
-
-    manque = nb2 - qtes("livre enchant niv 2", joueur)
-    if manque <= 0:
-        return True
-
-    if qtes("livre enchant niv 1", joueur) >= 2 * manque and manque == 1:
-        safe_increment(
+    l,i= qtes("livre enchant niv 1", joueur)
+    if  l >= 2 *nb2:
+        for i in range (nb2):
+            a=vérifier(i,"livre enchant niv 1","livre enchant niv 1")
+            safe_increment(
             joueur.stuff,
             "livre enchant niv 1",
             quant=-2,
         )
-        safe_increment(joueur.stuff, "livre enchant niv 2", quant=1)
-        stats["livres_convertis"] += 2
-        print(f"Conversion réussie : 2 livres niv 1 → {manque} livres niv 2.")
-
-        return True
-
-    elif qtes("livre enchant niv 1", joueur) >= 2 * manque and manque == 2:
-        safe_increment(
-            joueur.stuff,
-            "livre enchant niv 1",
-            quant=-4,
-        )
-        safe_increment(joueur.stuff, "livre enchant niv 2", quant=2)
-
-        stats["livres_convertis"] += 4
-        print(f"Conversion réussie : 4 livres niv 1 → {manque} livres niv 2.")
-
-        return True
-
-
-def l2_l3(joueur):
-    if qtes("livre enchant niv 3", joueur) >= 3:
-        return True
-
-    else:
-        while qtes("livre enchant niv 3", joueur) < 3:
-            if qtes("livre enchant niv 2", joueur) // 3 < 1:
-                while qtes("livre enchant niv 2", joueur) < 3:
-                    if qtes("livre enchant niv 1", joueur) >= 2:
-                        safe_increment(joueur.stuff, "livre enchant niv 1", quant=-2)
-                        safe_increment(joueur.stuff, "livre enchant niv 2", quant=1)
-                        stats["livres_convertis"] += 2
-                    else:
-                        return False
-
-            safe_increment(joueur.stuff, "livre enchant niv 2", quant=-3)
-            safe_increment(joueur.stuff, "livre enchant niv 3", quant=1)
-            stats["livres_convertis"] += 3
-
-        print("conversion niv 2=> 3 réussie")
-        return True
-
-
-def l3_l4(joueur):
-    if qtes("livre enchant niv 4", joueur) >= 4:
-        return True
-
-    else:
-        while qtes("livre enchant niv 4", joueur) < 4:
-            if qtes("livre enchant niv 3", joueur) // 4 < 1:
-                while qtes("livre enchant niv 3", joueur) < 4:
-                    if qtes("livre enchant niv 2", joueur) // 3 < 1:
-                        while qtes("livre enchant niv 2", joueur) < 3:
-                            safe_increment(
-                                joueur.stuff, "livre enchant niv 1", quant=-2
-                            )
-                            safe_increment(joueur.stuff, "livre enchant niv 2", quant=1)
-                            stats["livres_convertis"] += 2
-
-                    else:
-                        return False
-                    safe_increment(joueur.stuff, "livre enchant niv 2", quant=-3)
-                    safe_increment(joueur.stuff, "livre enchant niv 3", quant=1)
-                    stats["livres_convertis"] += 3
-
-            safe_increment(joueur.stuff, "livre enchant niv 3", quant=-4)
-            safe_increment(joueur.stuff, "livre enchant niv 4", quant=1)
-            stats["livres_convertis"] += 3
-
-        print("conversion niv 3=> 4 réussie")
-        return True
-
-
-def l4_l5(joueur):
-    pass
-
-
-def l5_l6(joueur):
-    pass
-def l1_l2inf(joueur, nb2=2):
-    if qtes("livre enchant niv 1", joueur) >= 2 *nb2:
-        safe_increment(
-            joueur.stuff,
-            "livre enchant niv 1",
-            quant=-2*nb2,
-        )
-        safe_increment(joueur.stuff, "livre enchant niv 2", quant=nb2)
+            safe_increment(joueur.stuff, "livre enchant niv 2", quant=1,enchantements=a,)
         stats["livres_convertis"] += nb2*2
         print(f"Conversion réussie : {2*nb2} livres niv 1 → {nb2} livres niv 2.")
 
         return True
 
 
-def l2_l3inf(joueur,nb3):
+def l2_l3(joueur,nb3):
     pass
-def l3_l4inf(joueur,nb4):
-    pass
-
-def l4_l5inf(joueur,nb5):
+def l3_l4(joueur,nb4):
     pass
 
-
-def l5_l6inf(joueur,nb6):
+def l4_l5(joueur,nb5):
     pass
-def convertir_livres(niveau_cible, nb, joueur,inf=False):
+
+
+def l5_l6(joueur,nb6):
+    pass
+def convertir_livres(niveau_cible, nb, joueur):
     print(joueur.stuff)
     sta = StatsConversion()
     global stats
     stats = asdict(sta)
 
-    if 1 < niveau_cible < 7 and not inf:
+  
+
+    if 1 < niveau_cible < 7 :
         if niveau_cible == 2:
-            l1_l2(joueur)
+            l1_l2(joueur,nb)
         elif niveau_cible == 3:
-            l2_l3(joueur)
+            l2_l3(joueur,nb)
 
         elif niveau_cible == 4:
-            l3_l4(joueur)
+            l3_l4(joueur,nb)
 
         elif niveau_cible == 5:
-            l4_l5(joueur)
+            l4_l5(joueur,nb)
 
         else:
-            l5_l6(joueur)
-    if 1 < niveau_cible < 7 and inf:
-        if niveau_cible == 2:
-            l1_l2inf(joueur,nb)
-        elif niveau_cible == 3:
-            l2_l3inf(joueur,nb)
-
-        elif niveau_cible == 4:
-            l3_l4inf(joueur,nb)
-
-        elif niveau_cible == 5:
-            l4_l5inf(joueur,nb)
-
-        else:
-            l5_l6inf(joueur,nb)
+            l5_l6(joueur,nb)
 
     stat = stats
     return stat
