@@ -30,7 +30,8 @@ from inventaire import (
     liste_outils,
     liste_muni,
     liste_potion,
-    ajouter_enchant
+    ajouter_enchant,
+    clefs
 
 )
 import sys
@@ -195,6 +196,7 @@ def reconstruire_stuff(etat_charge):
                     nom=data.get("nom", nom_obj),
                     image=data.get("image", ""),
                     quantite=data.get("quantite", 1),
+                    category=data.get("category"),
                     echants=enchants
 
 
@@ -269,7 +271,7 @@ class Perso(Lutin):
         self.stats = PersoCore.generer_stats(jeu)
         self.nom = "Inconnu"
         self.vivant = True
-        self.vitesse = 0.3
+        self.vitesse = 0.4
 
     def deplacer(self, dx, dy, game_map):
         if not self.vivant:
@@ -318,11 +320,13 @@ class Joueur(Perso):
         self.index_arme_selectionnee = 0
         self.grade = grade
         self.config = config
+        
 
         if recommencer == False:
             etat_charge = reprendre_joueur(self.nom, mot_de_passe)
             if etat_charge:
                 self.stuff = reconstruire_stuff(etat_charge)
+                clefs=etat_charge.get("clefs",{})
         else:
             self.stuff = {}
             safe_increment(self.stuff, "corde", quant=1)
@@ -357,13 +361,9 @@ class Joueur(Perso):
                     "durabilite": getattr(v, "durabilite", None),
                     "niv": getattr(v, "niv", None),
                     "effet":getattr(v,"effet",None),
-                    "enchant1":getattr(v,"echant1",None),
-                    "enchant2":getattr(v,"enchant2",None),
-                    "enchant3":getattr(v,"enchant3",None),
-                    "enchant4":getattr(v,"echant4",None),
-                    "enchant5":getattr(v,"enchant5",None),
-                    "enchant6":getattr(v,"enchant6",None)
-                    
+                    "category":getattr(v,"category",None),
+                    "enchantements":getattr(v,"enchantements",None),
+                                        
                 }
             else:
                 stuff_serializable[k] = v
@@ -383,6 +383,7 @@ class Joueur(Perso):
             "stuff": stuff_serializable,
             "grade": self.grade,
             "config": config_dict,
+            "clefs" : clefs
         }
 
    
@@ -723,34 +724,40 @@ class TresorDialogQt(qt.QDialog):
 
     def on_take(self):
         for nom, qte in self.tresor.items():
+            
 
             if "livre enchant" in nom:
+                print(qte)
                 try:
                     niveau = int(nom.split()[-1])  # Récupère le dernier mot et le convertit en int
                 except ValueError:
                     niveau=1
                 finally:
-                    if 1 <= niveau <= 6:
-                        a = ajouter_enchant(niveau)
-                        safe_increment(
+                    for i in range(qte):
+                        if 1 <= niveau <= 6:
+                            enchantements, category = ajouter_enchant(niveau)
+                            print(enchantements)
+                            safe_increment(
                         self.joueur.stuff,
-                        nom,
-                        quant=qte,
+                        nom,"livre enchant",
+                        quant=1,
                         type_objet="livres",
-                        enchantements=a
+                        category=category,
+                        enchantements=enchantements,
+                        niv=niveau
                     )
-            continue
 
-        # 🔹 Gestion des autres objets
-        type_objet = TYPE_OBJETS.get(nom, "base")
-        kwargs = {}
 
-        if type_objet == "armes":
-            kwargs.update({"niv": 1, "durabilite": 100})
-        elif type_objet == "potion":
-            kwargs.update({"effect": None})
+            else:
+                type_objet = TYPE_OBJETS.get(nom, "de base")
+                kwargs = {}
 
-        safe_increment(
+                if type_objet == "armes":
+                    kwargs.update({"niv": 1, "durabilite": 100})
+                elif type_objet == "potion":
+                    kwargs.update({"effect": None})
+
+                safe_increment(
             self.joueur.stuff,
             nom,
             quant=qte,
@@ -759,7 +766,6 @@ class TresorDialogQt(qt.QDialog):
         )
 
     # ⚡ Tri UNIQUEMENT à la fin
-
         self.close()
 
        
