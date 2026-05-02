@@ -1,171 +1,376 @@
-﻿from inventaire import safe_increment, Objet,Livres,dict_enchant
+﻿
+from index_manager import mettre_a_jour_index
+from inventaire import safe_increment, Objet, Livres, dict_enchant,nettoyer_stuff_zero,clefs
 import random
 from dataclasses import dataclass, asdict
-
+lvs=[]
 
 @dataclass
 class StatsConversion:
     
-    livres_convertis: int = 0
-    
-
-
-
-def vérifier(category,*args):
-    en=[]
-    liste1=[]
-    liste2=[]
-    liste3=[]
-    liste4=[]
-    liste5=[]
-    liste6=[]
-    if len(args)<2:
-        return
-    for lv in args:
-        if not isinstance(lv,Livres):
-            return
-        if not liste1:
-            liste1=lv.enchantements
-        elif not liste2:
-            liste2=lv.enchantements
-        elif not liste3:
-            liste3=lv.enchantements
-        elif not liste4:
-            liste4=lv.enchantements
-        elif not liste5:
-            liste5=lv.enchantements
-        elif not liste6:
-            liste6=lv.enchantements
-
-
-
-
-        while len(en)!= len(args):
-            for ele in liste1:
-                if ele in liste2:
-                    ind=dict_enchant[len(args)-1][category].index(ele)
-                    en.append(dict_enchant[len(args)][category][ind])
-                elif ele in liste3:
-                    ind=dict_enchant[len(args)-1][category].index(ele)
-                    en.append(dict_enchant[len(args)][category][ind])
-                elif ele in liste4:
-                    ind=dict_enchant[len(args)-1][category].index(ele)
-                    en.append(dict_enchant[len(args)][category][ind])
-                elif ele in liste5:
-                    ind=dict_enchant[len(args)-1][category].index(ele)
-                    en.append(dict_enchant[len(args)][category][ind])
-                                         
-                elif ele in liste6:
-                    ind=dict_enchant[len(args)-1][category].index(ele)
-                    en.append(dict_enchant[len(args)][category][ind])
-                en=list(filter(lambda x: x is not None, en))
-            if len(args)>2:
-                for i in range( len(args)-2):
-                    for ele in en:
-                        if ele in liste1:
-                            ind=dict_enchant[len(args)-1][category].index(ele)
-                            en.append(dict_enchant[len(args)][category][ind])
-                        elif ele in liste2:
-                            ind=dict_enchant[len(args)-1][category].index(ele)
-                            en.append(dict_enchant[len(args)][category][ind])
-                        elif ele in liste3:
-                            ind=dict_enchant[len(args)-1][category].index(ele)
-                            en.append(dict_enchant[len(args)][category][ind])
-                        elif ele in liste4:
-                            ind=dict_enchant[len(args)-1][category].index(ele)
-                            en.append(dict_enchant[len(args)][category][ind])
-                        elif ele in liste5:
-                            ind=dict_enchant[len(args)-1][category].index(ele)
-                            en.append(dict_enchant[len(args)][category][ind])
-                        elif ele in liste6:
-                            ind=dict_enchant[len(args)-1][category].index(ele)
-                            en.append(dict_enchant[len(args)][category][ind])
-            en=list(filter(lambda x: x is not None, en))
-            set(en)
-            if len(en)!= len(args):
-                en.append(random.choice(dict_enchant[len(args)-1][category]))
-    return en
-
-
-
-
-
-
-            
-            
-
-def qtes(nom, joueur):
-
+    livres_utilises = 0
+    livres_crees=0
+def qtes(nom: str, joueur: 'joueur') :
+    """Retourne la quantité et la catégorie d'un objet dans l'inventaire du joueur."""
     if nom not in joueur.stuff:
-        return 0
-
+        return 0, None
     obj = joueur.stuff[nom]
     if isinstance(obj, Livres):
-        return obj.quantite,obj.category
-    # Cas 1 : C'est un objet de type Objet
+        return obj.quantite, obj.category
     if isinstance(obj, Objet):
-        return obj.quantite
+        return obj.quantite, None
+    if isinstance(obj, (int, float)):
+        return obj, None
+    print(f"Type inattendu pour {nom}: {type(obj)}")
+    return 0, None
+def chercher_livre(nb, dict_livre,lv1,clef1,joueur):
+    lvs=[]
+    for i in range(1,nb+1):
+        for cle in dict_livre[1:]:
+            lv_temp = joueur.stuff[cle]
+            if lv_temp.category == lv1.category and lv_temp.enchantements:
+                lvs.append(cle)
+                
+                break
 
-    # Cas 2: C'est un nombre (int ou float)
-    elif isinstance(obj, (int, float)):
-        return obj
+            # Si pas de 2e livre trouvé avec la même catégorie
+        if len(lvs)<i:
+            
+            lvs.append(clef1)
+    return lvs[:nb]
 
-    # Cas 3 : Autre type (ne devrait pas arriver)
+
+def fusionner_enchantements( niv: int,*listes: list) -> list:
+    """
+    Fusionne jusqu'à 6 listes d'enchantements en :
+    - Résolvant les doublons en prenant le niveau supérieur.
+    - Limitant le résultat à `niv` enchantements.
+    - Conservant les enchantements de niveau supérieur si possible.
+    """
+    # Dictionnaire pour suivre les enchantements et leurs niveaux
+    enchantements_fusionnes = {}
+
+    # Traiter chaque liste
+    for liste in listes:
+        for enchant in liste:
+            if enchant not in enchantements_fusionnes:
+                # Si l'enchantement n'est pas encore présent, l'ajouter
+                enchantements_fusionnes[enchant] = enchant
+            else:
+                # Si l'enchantement est déjà présent, essayer de monter de niveau
+                enchant_actuel = enchantements_fusionnes[enchant]
+                enchant_superieur = obtenir_enchantement_superieur(enchant_actuel)
+                if enchant_superieur != enchant_actuel:
+                    enchantements_fusionnes[enchant] = enchant_superieur
+
+    # Convertir en liste et limiter à `niv` enchantements
+    liste_fusionnee = list(enchantements_fusionnes.values())
+
+    # Si on a plus d'enchantements que `niv`, garder les plus élevés
+    if len(liste_fusionnee) > niv:
+        # Trier les enchantements par niveau (du plus élevé au plus bas)
+        def niveau_enchantement(enchant):
+            parts = enchant.split()
+            if len(parts) < 2:
+                return 0
+            niveau_str = parts[-1]
+            niveaux_romains = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
+            return niveaux_romains.get(niveau_str, 0)
+
+        # Trier par niveau décroissant
+        liste_fusionnee.sort(key=niveau_enchantement, reverse=True)
+        # Garder seulement les `niv` premiers
+        liste_fusionnee = liste_fusionnee[:niv]
+
+    return liste_fusionnee
+def obtenir_enchantement_superieur(enchantement: str) -> str:
+    """
+    Retourne l'enchantement de niveau supérieur pour un enchantement donné.
+    Exemple : "Poison I" → "Poison II"
+    """
+    # Extraire le nom et le niveau de l'enchantement
+    parts = enchantement.split()
+    if len(parts) < 2:
+        return enchantement  # Si pas de niveau, retourne l'enchantement tel quel
+
+    nom = " ".join(parts[:-1])  # Ex: "Poison"
+    niveau_str = parts[-1]    # Ex: "I"
+
+    # Trouver le niveau actuel (I=1, II=2, etc.)
+    niveau_actuel = 0
+    if niveau_str == "I":
+        niveau_actuel = 1
+    elif niveau_str == "II":
+        niveau_actuel = 2
+    elif niveau_str == "III":
+        niveau_actuel = 3
+    elif niveau_str == "IV":
+        niveau_actuel = 4
+    elif niveau_str == "V":
+        niveau_actuel = 5
+    elif niveau_str == "VI":
+        niveau_actuel = 6
     else:
-        print(f" Type inattendu pour {nom}: {type(obj)}")
-        return 0
+        return enchantement  # Si le niveau n'est pas reconnu, retourne l'enchantement tel quel
 
-
-def l1_l2(joueur, nb2=2):
-    l,i= qtes("livre enchant niv 1", joueur)
-    if  l >= 2 *nb2:
-        for i in range (nb2):
-            a=vérifier(i,"livre enchant niv 1","livre enchant niv 1")
-            safe_increment(
-            joueur.stuff,
-            "livre enchant niv 1",
-            quant=-2,
-        )
-            safe_increment(joueur.stuff, "livre enchant niv 2", quant=1,enchantements=a,)
-        stats["livres_convertis"] += nb2*2
-        print(f"Conversion réussie : {2*nb2} livres niv 1 → {nb2} livres niv 2.")
-
-        return True
-
-
-def l2_l3(joueur,nb3):
-    pass
-def l3_l4(joueur,nb4):
-    pass
-
-def l4_l5(joueur,nb5):
-    pass
-
-
-def l5_l6(joueur,nb6):
-    pass
-def convertir_livres(niveau_cible, nb, joueur):
-    print(joueur.stuff)
-    sta = StatsConversion()
-    global stats
-    stats = asdict(sta)
-
+    # Trouver l'enchantement de niveau supérieur
+    if niveau_actuel < 6:
+        niveau_superieur = niveau_actuel + 1
+        niveau_romain = ["I", "II", "III", "IV", "V", "VI"][niveau_superieur - 1]
+        return f"{nom} {niveau_romain}"
+    else:
+        return enchantement  # Si déjà au niveau max, retourne l'enchantement tel quel
+def convertir_livres(joueur, niv, nb):
+    stats = StatsConversion()
+    
   
 
-    if 1 < niveau_cible < 7 :
-        if niveau_cible == 2:
-            l1_l2(joueur,nb)
-        elif niveau_cible == 3:
-            l2_l3(joueur,nb)
+    if 1 < niv < 7 :
+        if niv == 2:
+            l1_l2(joueur,nb,stats)
+        elif niv == 3:
+            l2_l3(joueur,nb,stats)
 
-        elif niveau_cible == 4:
-            l3_l4(joueur,nb)
+        elif niv== 4:
+            l3_l4(joueur,nb,stats)
 
-        elif niveau_cible == 5:
-            l4_l5(joueur,nb)
+        elif niv == 5:
+            l4_l5(joueur,nb,stats)
 
         else:
-            l5_l6(joueur,nb)
+            l5_l6(joueur,nb,stats)
+        mettre_a_jour_index(joueur.stuff)
+    return {"livres_utilises" : stats.livres_utilises,"livres_crees" : stats.livres_crees}
+    print(asdict(stats))
+    return asdict(stats) 
+def l1_l2(joueur,nb,stats):
+    for i in range(nb):
+        livres_niv1 = [
+        cle for cle, obj in joueur.stuff.items()
+        if isinstance(obj, Livres) and obj.niv == 1 and obj.quantite > 0
+    ]
 
-    stat = stats
-    return stat
+        
+    for _ in range(nb):
+        
+        random.shuffle(livres_niv1)
+
+        
+        clef1 = livres_niv1[0]
+        lv1 = joueur.stuff[clef1]
+        clef2=None
+        clef2=chercher_livre(1, livres_niv1,lv1,clef1,joueur)[0]
+        
+
+            
+
+        
+        lv2 = joueur.stuff[clef2]
+
+        if (lv1.category == lv2.category and
+            lv1.enchantements and lv2.enchantements):
+            enchantements=fusionner_enchantements(2,lv1.enchantements, lv2.enchantements)
+            print(enchantements)
+            category=lv1.category
+            safe_increment(joueur.stuff, lv1, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv2, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, "livre enchant niv 2", quant=1, type_objet="livres",enchantements=enchantements,category=category)
+            stats.livres_utilises += 2
+            stats.livres_crees +=1
+            
+        else:
+            print(f"Catégories différentes ou pas d'enchantements pour {clef1} et {clef2}")
+def l2_l3(joueur,nb,stats):
+    for i in range(nb):
+        livres_niv2 = [
+        cle for cle, obj in joueur.stuff.items()
+        if isinstance(obj, Livres) and obj.niv == 2 and obj.quantite > 0
+    ]
+
+        
+    for _ in range(nb):
+        
+        random.shuffle(livres_niv2)
+
+        
+        clef1 = livres_niv2[0]
+        lv1 = joueur.stuff[clef1]
+        clef2=None
+        clef3=None
+        clefs_lv=chercher_livre(2, livres_niv2,lv1,clef1,joueur)
+        clef2=clefs_lv[0]
+        clef3=clefs_lv[1]
+        lv2 = joueur.stuff[clef2]
+        lv3 = joueur.stuff[clef3]
+
+        if (lv1.category == lv2.category==lv3.category and
+            lv1.enchantements and lv2.enchantements and lv3.enchantements):
+            enchantements=fusionner_enchantements(3,lv1.enchantements, lv2.enchantements, lv3.enchantements)
+            print(enchantements)
+            category=lv1.category
+            safe_increment(joueur.stuff, lv1, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv2, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv3, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, "livre enchant niv 3", quant=1, type_objet="livres",enchantements=enchantements,category=category)
+            stats.livres_utilises += 3
+            stats.livres_crees +=1
+            
+        else:
+            print(f"Catégories différentes ou pas d'enchantements pour {clef1} et {clef2} et {clef3}")
+def l3_l4(joueur,nb,stats):
+    for i in range(nb):
+        livres_niv3 = [
+        cle for cle, obj in joueur.stuff.items()
+        if isinstance(obj, Livres) and obj.niv == 3 and obj.quantite > 0
+    ]
+
+        
+    for _ in range(nb):
+        
+        random.shuffle(livres_niv3)
+
+        
+        clef1 = livres_niv3[0]
+        lv1 = joueur.stuff[clef1]
+        clef2=None
+        clef3=None
+        clef4=None
+        clefs_lv=chercher_livre(3, livres_niv3,lv1,clef1,joueur)
+        clef2=clefs_lv[0]
+        clef3=clefs_lv[1]
+        clef4=clefs_lv[2]
+        lv2 = joueur.stuff[clef2]
+        lv3 = joueur.stuff[clef3]
+        lv4 = joueur.stuff[clef4]
+
+        if (lv1.category == lv2.category==lv3.category==lv4.category and
+            lv1.enchantements and lv2.enchantements and lv3.enchantements and lv4.enchantements):
+            enchantements=fusionner_enchantements(4,lv1.enchantements, lv2.enchantements, lv3.enchantements,lv4.enchantements)
+            print(enchantements)
+            category=lv1.category
+            safe_increment(joueur.stuff, lv1, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv2, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv3, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv4, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, "livre enchant niv 4", quant=1, type_objet="livres",enchantements=enchantements,category=category)
+            stats.livres_utilises += 4
+            stats.livres_crees +=1
+            
+        else:
+            print(f"Catégories différentes ou pas d'enchantements pour {clef1} et {clef2} et {clef3} et {clef4}")
+            
+def l4_l5(joueur,nb,stats):
+    for i in range(nb):
+        livres_niv4 = [
+        cle for cle, obj in joueur.stuff.items()
+        if isinstance(obj, Livres) and obj.niv == 4 and obj.quantite > 0
+    ]
+
+        
+    for _ in range(nb):
+        
+        random.shuffle(livres_niv4)
+
+        
+        clef1 = livres_niv4[0]
+        lv1 = joueur.stuff[clef1]
+        clef2=None
+        clef3=None
+        clef4=None
+        clef5= None
+        clefs_lv=chercher_livre(4, livres_niv4,lv1,clef1,joueur)
+        clef2=clefs_lv[0]
+        clef3=clefs_lv[1]
+        clef4=clefs_lv[2]
+        clef5=clefs_lv[3]
+        lv2 = joueur.stuff[clef2]
+        lv3 = joueur.stuff[clef3]
+        lv4 = joueur.stuff[clef4]
+        lv5= joueur.stuff[clef5]
+
+
+        if (lv1.category == lv2.category==lv3.category==lv4.category==lv5.category and
+            lv1.enchantements and lv2.enchantements and lv3.enchantements and lv4.enchantements and lv5.enchantements):
+
+            enchantements=fusionner_enchantements(5,lv1.enchantements, lv2.enchantements, lv3.enchantements,lv4.enchantements,lv5.enchantements)
+            print(enchantements)
+            category=lv1.category
+            safe_increment(joueur.stuff, lv1, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv2, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv3, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv4, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv5, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, "livre enchant niv 5", quant=1, type_objet="livres",enchantements=enchantements,category=category)
+            stats.livres_utilises += 5
+            stats.livres_crees +=1
+            
+        else:
+            print(f"Catégories différentes ou pas d'enchantements pour {clef1} et {clef2} et {clef3} et {clef4} et {clef5}")
+
+def l5_l6(joueur,nb,stats):
+    for i in range(nb):
+        livres_niv5 = [
+        cle for cle, obj in joueur.stuff.items()
+        if isinstance(obj, Livres) and obj.niv == 5 and obj.quantite > 0
+    ]
+
+        
+    for _ in range(nb):
+        
+        random.shuffle(livres_niv5)
+
+        
+        clef1 = livres_niv5[0]
+        lv1 = joueur.stuff[clef1]
+        clef2=None
+        clef3=None
+        clef4=None
+        clef5= None
+        clef6=None
+        clefs_lv=chercher_livre(5, livres_niv5,lv1,clef1,joueur)
+        clef2=clefs_lv[0]
+        clef3=clefs_lv[1]
+        clef4=clefs_lv[2]
+        clef5=clefs_lv[3]
+        clef6=clefs_lv[4]
+        lv2 = joueur.stuff[clef2]
+        lv3 = joueur.stuff[clef3]
+        lv4 = joueur.stuff[clef4]
+        lv5= joueur.stuff[clef5]
+        lv6= joueur.stuff[clef6]
+
+
+        if (lv1.category == lv2.category==lv3.category==lv4.category==lv5.category ==lv6.category and
+            lv1.enchantements and lv2.enchantements and lv3.enchantements and lv4.enchantements and lv5.enchantements,lv6.enchantements):
+            enchantements=fusionner_enchantements(6,lv1.enchantements, lv2.enchantements, lv3.enchantements,lv4.enchantements,lv5.enchantements,lv6.enchantements)
+            print(enchantements)
+            category=lv1.category
+            safe_increment(joueur.stuff, lv1, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv2, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv3, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv4, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv5, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, lv6, quant=-1, type_objet="livres", ajouter=False)
+            safe_increment(joueur.stuff, "livre enchant niv 6", quant=1, type_objet="livres",enchantements=enchantements,category=category)
+            stats.livres_utilises += 6
+            stats.livres_crees +=1
+            
+        else:
+            print(f"Catégories différentes ou pas d'enchantements pour {clef1} et {clef2} et {clef3} et {clef4} et {clef5} et {clef6} ")
+
+
+
+
+          
+  
+
+
+
+
+
+
+
+
+            
+            
+
