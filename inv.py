@@ -11,7 +11,8 @@
 )
 from PySide6.QtGui import QPixmap
 from PySide6.QtCore import Qt
-from inventaire import Objet,safe_increment,Potion
+from index_manager import mettre_a_jour_index,rechercher_dans_index
+from inventaire import Objet,safe_increment,Potion,Livres, livres_par_enchantements
 import math
 import json
 import os
@@ -36,12 +37,47 @@ def qtes(nom, joueur):
         return 0
 class FenetreInventaire(QDialog):
 
+    from PySide6.QtWidgets import (
+    QTableWidget,
+    QTableWidgetItem,
+    QVBoxLayout,
+    QLabel,
+    QMessageBox,
+    QInputDialog,
+    QLineEdit,
+    QPushButton,
+    QDialog,
+)
+from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt, QTimer
+from index_manager import mettre_a_jour_index, rechercher_dans_index
+from inventaire import Objet, safe_increment, Potion, Livres
+import math
+import json
+import os
+
+def qtes(nom, joueur):
+    if nom not in joueur.stuff:
+        return 0
+    obj = joueur.stuff[nom]
+    if isinstance(obj, Objet):
+        return obj.quantite
+    elif isinstance(obj, (int, float)):
+        return obj
+    else:
+        print(f" Type inattendu pour {nom}: {type(obj)}")
+        return 0
+
+class FenetreInventaire(QDialog):
     def __init__(self, inventaire, joueur, parent=None):
         super(FenetreInventaire, self).__init__(parent)
         self.setWindowTitle("Inventaire du Joueur")
         self.resize(800, 500)
         self.prix_objets = self.charger_prix_objets()
-        self.joueur=joueur
+        self.joueur = joueur
+        self.inventaire = inventaire
+        self.inventaire_filtre = self.inventaire.copy()
+        mettre_a_jour_index(self.inventaire)
 
         # Dossier des images
         self.dossier_images = "assets"
@@ -51,9 +87,9 @@ class FenetreInventaire(QDialog):
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 9 colonnes
+        # Tableau avec 10 colonnes
         self.table_widget = QTableWidget()
-        self.table_widget.setColumnCount(10)  
+        self.table_widget.setColumnCount(10)
         self.table_widget.setHorizontalHeaderLabels(
             [
                 "Image",
@@ -65,13 +101,11 @@ class FenetreInventaire(QDialog):
                 "Utiliser",
                 "Vendre",
                 "Tout Vendre",
-                "Convertir",  # ← NOUVELLE COLONNE
+                "Convertir",
             ]
         )
         self.table_widget.verticalHeader().setVisible(False)
         self.table_widget.setEditTriggers(QTableWidget.NoEditTriggers)
-
-        # Ajout du tableau au layout
         layout.addWidget(self.table_widget)
 
         # Barre de recherche
@@ -81,110 +115,147 @@ class FenetreInventaire(QDialog):
         )
         layout.addWidget(self.barre_recherche)
 
+        # Timer pour débounce (attendre 300ms avant de chercher)
+        self.search_timer = QTimer()
+        self.search_timer.setSingleShot(True)
+        self.search_timer.timeout.connect(self.effectuer_recherche_optimisee)
+        self.barre_recherche.textChanged.connect(self.on_search_text_changed)
+
         self.bouton_rechercher = QPushButton("Rechercher")
-        self.bouton_rechercher.clicked.connect(self.effectuer_recherche)
+        self.bouton_rechercher.clicked.connect(self.effectuer_recherche_optimisee)
         layout.addWidget(self.bouton_rechercher)
 
+        # Cache pour les images et widgets
+        self.widget_cache = {}
+
         # Chargement initial
-        self.inventaire = inventaire
-        self.inventaire_filtre = self.inventaire
-        self.mettre_a_jour_inventaire()
+        self.mettre_a_jour_inventaire_complet()
 
-    def mettre_a_jour_inventaire(self):
+    def on_search_text_changed(self):
+        """Redémarre le timer à chaque changement de texte"""
+        self.search_timer.stop()
+        self.search_timer.start(300)  # ⏱️ 300ms de délai
 
-        """Met à jour le tableau avec les données actuelles de l'inventaire."""
+    def effectuer_recherche_optimisee(self):
+        """Recherche ultra-rapide avec index"""
+        texte = self.barre_recherche.text().strip()
+        
+        if not texte:
+            self.inventaire_filtre = self.inventaire.copy()
+        else:
+            cles_trouvees = rechercher_dans_index(texte, self.inventaire)
+            self.inventaire_filtre = {
+                cle: self.inventaire[cle]
+                for cle in cles_trouvees
+            }
+        
+        self.mettre_a_jour_inventaire_rapide()
+
+    def mettre_a_jour_inventaire_complet(self):
+        """Reconstruction complète du tableau (au démarrage uniquement)"""
+        mettre_a_jour_index(self.inventaire)
+        self.widget_cache = {}
         self.table_widget.setRowCount(len(self.inventaire_filtre))
 
         for row, (nom, objet) in enumerate(self.inventaire_filtre.items()):
-            # 1. Image
-            image_label = QLabel()
-            chemin_image = os.path.join(
-                self.dossier_images, getattr(objet, "image", "")
-            )
-            if os.path.exists(chemin_image):
-                pixmap = QPixmap(chemin_image)
-                if not pixmap.isNull():
-                    image_label.setPixmap(pixmap.scaled(50, 50, Qt.KeepAspectRatio))
-                else:
-                    image_label.setText("Erreur image")
+            self._remplir_ligne(row, nom, objet)
+
+        self.table_widget.resizeColumnsToContents()
+
+    def mettre_a_jour_inventaire_rapide(self):
+        """Mise à jour rapide du tableau filtré (rechargement uniquement)"""
+        self.table_widget.setRowCount(len(self.inventaire_filtre))
+
+        for row, (nom, objet) in enumerate(self.inventaire_filtre.items()):
+            self._remplir_ligne(row, nom, objet)
+
+        self.table_widget.resizeColumnsToContents()
+
+    def _remplir_ligne(self, row, nom, objet):
+        """Remplit une ligne du tableau"""
+        # 1. Image
+        image_label = QLabel()
+
+        image_label.setStyleSheet("background-color: lightgray;")  # Fond pour voir le label
+        chemin_image = os.path.join(self.dossier_images, getattr(objet, "image", ""))
+        chemin_image = os.path.abspath(chemin_image)
+        
+        if os.path.exists(chemin_image):
+            pixmap = QPixmap(chemin_image)
+            if not pixmap.isNull():
+                image_label.setPixmap(pixmap.scaled(50, 50, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+                
             else:
-                image_label.setText("Aucune image")
-            self.table_widget.setCellWidget(row, 0, image_label)
+                image_label.setText("Erreur image")
+        else:
+            image_label.setText("Aucune image")
+        self.table_widget.setCellWidget(row, 0, image_label)
 
-            # 2. Nom
-            self.table_widget.setItem(
-                row, 1, QTableWidgetItem(getattr(objet, "nom", ""))
-            )
+        # 2. Nom
+        self.table_widget.setItem(row, 1, QTableWidgetItem(getattr(objet, "nom", "")))
 
-            # 3. Quantité
-            quantite = getattr(objet, "quantite", 0)
-            self.table_widget.setItem(row, 2, QTableWidgetItem(str(quantite)))
+        # 3. Quantité
+        quantite = getattr(objet, "quantite", 0)
+        self.table_widget.setItem(row, 2, QTableWidgetItem(str(quantite)))
 
-            # 4. Type
-            type_objet = getattr(objet, "type_objet", "de base")
-            self.table_widget.setItem(row, 3, QTableWidgetItem(str(type_objet)))
+        # 4. Type
+        type_objet = getattr(objet, "type_objet", "de base")
+        self.table_widget.setItem(row, 3, QTableWidgetItem(str(type_objet)))
 
-            # 5. Enchantement
-            niv = getattr(objet, "niv", "Aucun")
-            self.table_widget.setItem(row, 4, QTableWidgetItem(str(niv)))
+        # 5. Niveau
+        niv = getattr(objet, "niv", "Aucun")
+        if isinstance(niv, str) and niv.isdigit():
+            niv = int(niv)
+        self.table_widget.setItem(row, 4, QTableWidgetItem(str(niv)))
 
-            # 6. Autres infos
-            if (
-                    hasattr(objet, "type_objet")
-                    and getattr(objet, "type_objet", "").lower() == "potion"
-            ):
-                effet = getattr(objet, "effet", "Aucun effet")
-                self.table_widget.setItem(row, 5, QTableWidgetItem(str(effet)))
-            elif (
-                    hasattr(objet, "type_objet")
-                    and getattr(objet, "type_objet", "").lower() == "livres"
-            ):
-                enchants = getattr(objet, "enchantements", "Aucun")
-                self.table_widget.setItem(row, 5, QTableWidgetItem(f"{str(enchants)}"))
+        # 6. Autres infos
+        if hasattr(objet, "type_objet") and getattr(objet, "type_objet", "").lower() == "potion":
+            effet = getattr(objet, "effet", "Aucun effet")
+            self.table_widget.setItem(row, 5, QTableWidgetItem(str(effet)))
+        elif hasattr(objet, "type_objet") and getattr(objet, "type_objet", "").lower() == "livres":
+            enchants = getattr(objet, "enchantements", [])
+            enchant_str = ", ".join(enchants) if enchants else "Aucun"
+            self.table_widget.setItem(row, 5, QTableWidgetItem(enchant_str))
+        else:
+            durabilite = getattr(objet, "durabilite", "Indestructible")
+            self.table_widget.setItem(row, 5, QTableWidgetItem(str(durabilite)))
 
-            else:
-                durabilite = getattr(objet, "durabilite", "Indestructible")
-                self.table_widget.setItem(row, 5, QTableWidgetItem(str(durabilite)))
+        # 7. Bouton Boire (potions uniquement)
+        if isinstance(objet, Potion):
+            bouton_boire = QPushButton("Boire")
+            bouton_boire.clicked.connect(lambda _, r=row, n=nom: self.boire(r, n))
+            self.table_widget.setCellWidget(row, 6, bouton_boire)
+        else:
+            self.table_widget.setCellWidget(row, 6, QLabel(""))
 
-            # 7. Bouton Boire
-            if isinstance(nom, Potion):
-       
-                bouton_boire = QPushButton("Boire")
-                bouton_boire.clicked.connect(
-                lambda _, r=row, n=nom: self.boire(r, n)
-            )
-                self.table_widget.setCellWidget(row, 6, bouton_boire)
+        # 8. Bouton Vendre
+        bouton_vendre = QPushButton("Vendre")
+        bouton_vendre.clicked.connect(lambda _, r=row, n=nom: self.vendre_objet(r, n))
+        self.table_widget.setCellWidget(row, 7, bouton_vendre)
 
-            else:
+        # 9. Bouton Tout Vendre
+        bouton_tout_vendre = QPushButton("Tout Vendre")
+        bouton_tout_vendre.setStyleSheet("background-color: #ff6b6b; color: white; font-weight: bold;")
+        bouton_tout_vendre.clicked.connect(
+    lambda _, obj=objet: self.vendre_tous_meme_nom(obj)
+)
+        self.table_widget.setCellWidget(row, 8, bouton_tout_vendre)
 
-                self.table_widget.setCellWidget(row, 6, QLabel(""))  # Cellule vide
-
-
-
-            # 8. Bouton Vendre
-            bouton_vendre = QPushButton("Vendre")
-            bouton_vendre.clicked.connect(
-                lambda _, r=row, n=nom: self.vendre_objet(r, n)
-            )
-            self.table_widget.setCellWidget(row, 7, bouton_vendre)
-
-            bouton_tout_vendre = QPushButton("Tout Vendre")
-            bouton_tout_vendre.setStyleSheet("background-color: #ff6b6b; color: white; font-weight: bold;")
-            bouton_tout_vendre.clicked.connect(
-                lambda _, r=row, n=nom: self.vendre_tous_meme_nom(r, n)
-            )
-            self.table_widget.setCellWidget(row, 8, bouton_tout_vendre)
-
-            self.table_widget.resizeColumnsToContents()
-            # 9. Bouton Convertir (UNIQUEMENT POUR LES LIVRES)
-            if "livre enchant" in nom and not "6" in nom :
+        # 10. Bouton Convertir (livres uniquement)
+        if isinstance(objet, Livres):
+            niv = getattr(objet, "niv", 0)
+            if isinstance(niv, str) and niv.isdigit():
+                niv = int(niv)
+            if int(niv) < 6:
                 bouton_convertir = QPushButton("Convertir")
-                bouton_convertir.clicked.connect(
-                    lambda _, r=row, n=nom: self.demander_quantite_conversion(r, n)
-                )
-                self.table_widget.setCellWidget(row, 9, bouton_convertir)  # ← COLONNE 9
+                bouton_convertir.clicked.connect(lambda _, r=row, n=nom: self.demander_quantite_conversion(r, n))
+                self.table_widget.setCellWidget(row, 9, bouton_convertir)
             else:
-                self.table_widget.setCellWidget(row, 9, QLabel(""))  # Cellule vide
+                self.table_widget.setCellWidget(row, 9, QLabel(""))
+        else:
+            self.table_widget.setCellWidget(row, 9, QLabel(""))
+
+
 
     def demander_quantite_conversion(self, row, nom):
         """Demander la quantité de livres à convertir."""
@@ -199,7 +270,8 @@ class FenetreInventaire(QDialog):
             quantite_max = getattr(objet, "quantite", 0)/5
         elif "5" in nom:
             quantite_max = getattr(objet, "quantite", 0)/6
-        math.floor(quantite_max)
+        quantite_max = math.floor(quantite_max)
+        
 
 
         if quantite_max <= 0:
@@ -241,135 +313,142 @@ class FenetreInventaire(QDialog):
             return
 
        
-        stats = convertir_livres(niveau_cible, quantite, self.joueur)
-
+        stats = convertir_livres(self.joueur, niv=niveau_cible, nb=quantite) 
         # Mettre à jour l'affichage
-        self.mettre_a_jour_inventaire()
+        self.mettre_a_jour_inventaire_rapide()
         QMessageBox.information(
             self,
             "Succès",
             f"{quantite} {nom}(s) converti(s) en niveau {niveau_cible} !\nStatistiques: {stats}"
         )
-        self.mettre_a_jour_inventaire()
-    
+        self.mettre_a_jour_inventaire_complet()
 
+    def _calculer_prix_unitaire(self, objet):
+
+        type_objet = getattr(objet, "type_objet", "").lower()
+        nom_recherche = getattr(objet, "nom_base", getattr(objet, "nom", "inconnu")).replace("_", " ")
+
+        if type_objet in ["potion", "de base", "livres"]:
+            prix_base = self.prix_objets.get(nom_recherche, 10)
+            return round(prix_base * 0.75)
+        elif type_objet in ["equipement", "armes"]:
+            prix_base = self.prix_objets.get(nom_recherche, 10)
+            enchant = getattr(objet, "niv", 0)
+            return round(prix_base * 0.75 + niv * 1000)
+        else:
+            return 10  # Prix par défaut
+
+    def _vendre_objet_interne(self, nom, quantite):
+   
+        if nom.lower() == "argent":
+            raise ValueError("Impossible de vendre de l'argent.")
+
+        objet = self.inventaire_filtre[nom]
+        if quantite > objet.quantite:
+            raise ValueError(f"Quantité demandée ({quantite}) > quantité disponible ({objet.quantite}).")
+
+        prix_unitaire = self._calculer_prix_unitaire(objet)
+        prix_total = quantite * prix_unitaire
+
+        objet.retirer(quantite)
+        if objet.quantite <= 0:
+            del self.inventaire_filtre[nom]
+        if nom in self.inventaire:
+            del self.inventaire[nom]
+
+        safe_increment(self.inventaire, "argent", quant=prix_total)
+        return prix_total
     def vendre_objet(self, row, nom):
-        """Vendre l'objet sélectionné."""
+        
+        self.mettre_a_jour_inventaire_complet()
         noms = list(self.inventaire_filtre.keys())
         if row < 0 or row >= len(noms):
             return
 
         objet = self.inventaire_filtre[nom]
-        if nom.lower() == "argent":
-            QMessageBox.warning(
-                self, "Erreur", "Vous ne pouvez pas vendre de l'argent."
-            )
-            return
-
-        # Demander la quantité à vendre
         quantite, ok = QInputDialog.getInt(
-            self,
-            "Vendre un objet",
-            f"Quantité de {objet.nom} à vendre (max: {objet.quantite}):",
-            1,
-            1,
-            objet.quantite,
-        )
+        self,
+        "Vendre un objet",
+        f"Quantité de {objet.nom} à vendre (max: {objet.quantite}):",
+        1, 1, objet.quantite,
+    )
 
         if ok:
-            if (
-                    objet.type_objet.lower() == "potion"
-                    or objet.type_objet.lower() == "de base" or objet.type_objet.lower() == "livres"
-            ) and not objet == "gemmes":
-                prix_unitaire = (
-                        self.prix_objets.get(objet.nom.replace("_", " "), 10) * 0.75
-                )
-                prix_unitaire = round(prix_unitaire)
-            elif (
-                    objet.type_objet.lower() == "equipement"
-                    or objet.type_objet.lower() == "armes"
-            ):
-                prix_unitaire = (
-                        self.prix_objets.get(objet.nom_base.replace("_", " "), 10) * 0.75
-                        + objet.enchant * 1000
-                )
-                prix_unitaire = round(prix_unitaire)
-            prix_total = quantite * prix_unitaire
-
-            # Mettre à jour la quantité de l'objet
-            objet.retirer(quantite)
-
-            # Si la quantité est à zéro, retirer l'objet de l'inventaire
-            if objet.quantite <= 0:
-                del self.inventaire_filtre[nom]
-
-            QMessageBox.information(
-                self,
-                "Vente",
-                f"Vous avez vendu {quantite} {objet.nom}(s) pour {prix_total} pièces d'or!",
+            try:
+                prix_total = self._vendre_objet_interne(nom, quantite)
+                QMessageBox.information(
+                self, "Vente",
+                f"Vous avez vendu {quantite} {objet.nom}(s) pour {prix_total} pièces d'or!"
             )
-            safe_increment(self.inventaire, "argent", quant=prix_total)
-            # Mettre à jour l'affichage de l'inventaire
-            self.mettre_a_jour_inventaire()
+                self.mettre_a_jour_inventaire_complet()
+            except ValueError as e:
+                QMessageBox.warning(self, "Erreur", str(e))
 
-    def vendre_tous_meme_nom(self, row, nom):
+    def vendre_tous_meme_nom(self, objet):
+        """Vend tous les objets du même type (même nom_base)."""
+        self.mettre_a_jour_inventaire_complet()
 
-        objet = self.inventaire_filtre[nom]
-        objets_similaires = []
-        prix_total = 0
-        quantite_totale = 0
-        if nom.lower() == "argent":
-            QMessageBox.warning(
-                self, "Erreur", "Vous ne pouvez pas vendre de l'argent."
-            )
+        # Trouver le nom_base de l'objet
+        nom_base = getattr(objet, "nom_base", None)
+        if not nom_base:
+            QMessageBox.warning(self, "Erreur", "Impossible de déterminer le type de l'objet.")
             return
 
-        # Trouver tous les objets avec le même nom_base
-        nom_base = getattr(objet, "nom_base", nom)
-        for nom_key, obj in list(self.inventaire_filtre.items()):
-            obj_nom_base = getattr(obj, "nom_base", nom_key)
-            if obj_nom_base == nom_base:
-                objets_similaires.append((nom_key, obj))
+        # Trouver tous les objets avec le même nom_base dans l'inventaire COMPLET
+        objets_similaires = [
+            (nom_key, obj)
+            for nom_key, obj in self.inventaire.items()
+            if getattr(obj, "nom_base", nom_key) == nom_base and obj.quantite > 0
+        ]
 
-        # Calculer le prix et quantité totale
-        for nom_key, obj in objets_similaires:
-            quantite_totale += obj.quantite
-            # Calculer prix unitaire
-            if (obj.type_objet.lower() == "potion" or obj.type_objet.lower() == "de base") and nom_key != "gemmes":
-                prix_unitaire = self.prix_objets.get(obj.nom.replace("_", " "), 10) * 0.75
-            elif obj.type_objet.lower() in ["equipement", "armes"]:
-                prix_unitaire = self.prix_objets.get(obj.nom_base.replace("_", " "), 10) * 0.75 + getattr(obj,
-                                                                                                          "enchant",
-                                                                                                          0) * 1000
-            else:
-                prix_unitaire = 10
-            prix_total += obj.quantite * round(prix_unitaire)
+        if not objets_similaires:
+            QMessageBox.warning(self, "Erreur", "Aucun objet trouvé.")
+            return
+
+        # Calculer quantité totale et prix total
+        quantite_totale = sum(obj.quantite for _, obj in objets_similaires)
+        prix_total = sum(
+            self._calculer_prix_unitaire(obj) * obj.quantite
+            for _, obj in objets_similaires
+        )
 
         # Confirmation
         confirm = QMessageBox.question(
             self,
             "Confirmation de vente",
-            f"Vendre tous les '{nom_base}' ({len(objets_similaires)} ligne(s), {quantite_totale} objet(s)) pour {prix_total} pièces d'or ?",
+            f"Vendre tous les '{nom_base}' ?\n"
+            f"- Nombre d'objets : {quantite_totale}\n"
+            f"- Prix total : {prix_total} pièces d'or\n"
+            f"- Objets concernés : {len(objets_similaires)}",
             QMessageBox.Yes | QMessageBox.No,
         )
 
         if confirm == QMessageBox.Yes:
-            # Vendre tous les objets
-            for nom_key, obj in objets_similaires:
-                obj.retirer(obj.quantite)
-                if obj.quantite <= 0:
-                    del self.inventaire_filtre[nom_key]
-                    if nom_key in self.inventaire:
-                        del self.inventaire[nom_key]
+            try:
+                # Supprimer chaque objet de l'inventaire et de l'index
+                for nom_key, obj in objets_similaires:
+                    if isinstance(obj, Livres):
+                        # Supprimer de livres_par_enchantements
+                        cle_enchantements = tuple(obj.enchantements)
+                        if cle_enchantements in livres_par_enchantements:
+                            del livres_par_enchantements[cle_enchantements]
+                    # Supprimer de l'inventaire
+                    del self.inventaire[nom_key]
 
-            safe_increment(self.inventaire, "argent", quant=prix_total)
-            QMessageBox.information(
-                self,
-                "Vente réussie",
-                f"{quantite_totale} objet(s) vendu(s) pour {prix_total} pièces d'or !",
-            )
-            self.mettre_a_jour_inventaire()
+                # Ajouter l'argent
+                safe_increment(self.inventaire, "argent", quant=prix_total)
 
+                # Mettre à jour l'index et l'interface
+                mettre_a_jour_index(self.inventaire)
+                self.mettre_a_jour_inventaire_complet()
+
+                QMessageBox.information(
+                    self,
+                    "Vente réussie",
+                    f"{quantite_totale} objet(s) vendu(s) pour {prix_total} pièces d'or !"
+                )
+            except Exception as e:
+                QMessageBox.warning(self, "Erreur", f"Une erreur est survenue : {str(e)}")
     def boire(self, row, nom):
         """Utilise l'objet sélectionné (ex : boire une potion)."""
         noms = list(self.inventaire_filtre.keys())
@@ -394,7 +473,7 @@ class FenetreInventaire(QDialog):
                 self, "Erreur", "Seules les potions peuvent être utilisées directement."
             )
 
-        self.mettre_a_jour_inventaire()
+        self.mettre_a_jour_inventaire_rapide()
 
     def charger_prix_objets(self):
 
@@ -412,7 +491,7 @@ class FenetreInventaire(QDialog):
             QMessageBox.warning(
                 self,
                 "Erreur",
-                "Le fichier objet_dispo.json n'est pas un fichier JSON valide.",
+                "Le fichier objet_dispo.json n'est pas un fichiAer JSON valide.",
             )
             return {}
 
@@ -422,22 +501,18 @@ class FenetreInventaire(QDialog):
         self.filtrer_inventaire(texte)
 
     def filtrer_inventaire(self, texte):
-        if not texte:
-            self.inventaire_filtre = self.inventaire.copy()
-        else:
-            texte = texte.lower()
-            self.inventaire_filtre = {
-                nom: objet
-                for nom, objet in self.inventaire.items()
-                if (
-                        texte in getattr(objet, "nom", "").lower()
-                        or texte in getattr(objet, "type_objet", "").lower()
-                        or texte in str(getattr(objet, "effet", "")).lower()
-                        or texte in str(getattr(objet, "niv", "")).lower()
-                )
-            }
-        self.mettre_a_jour_inventaire()
 
+    # ✅ 1. Met à jour l'index avant la recherche
+        mettre_a_jour_index(self.inventaire)
+
+    # ✅ 2. Effectue la recherche dans l'index
+        cles_trouvees = rechercher_dans_index(texte, self.inventaire)
+
+    # ✅ 3. Met à jour l'inventaire filtré
+        self.inventaire_filtre = {
+        cle: self.inventaire[cle]
+        for cle in cles_trouvees
+    }
 
 def afficher_inventaire(inventaire, joueur, parent=None):
     dialog = FenetreInventaire(inventaire, joueur, parent)

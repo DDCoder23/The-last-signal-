@@ -5,7 +5,7 @@ from PySide6.QtCore import Qt, QTimer
 from functools import wraps
 import json
 from table_de_conversion import qtes
-from inventaire import safe_increment, Objet, trier,liste_muni,liste_potion,liste_armes,liste_outils
+from inventaire import safe_increment, Objet, trier,liste_muni,liste_potion,liste_armes,liste_outils,ajouter_enchant
 import re
 import configparser
 from PySide6.QtWidgets import QMessageBox
@@ -221,7 +221,7 @@ class ConsoleAdmin(qt.QWidget):
                 nom_objet,
                 quant=qty,
                 type_objet="armes",
-                enchant=0,
+                niv=1,
                 durabilite=100,
             )
         elif nom_objet in liste_muni or nom_objet in liste_outils:
@@ -230,21 +230,30 @@ class ConsoleAdmin(qt.QWidget):
                 nom_objet,
                 quant=qty,
                 type_objet="équipement",
-                enchant=0,
+                niv=1,
             )
         elif nom_objet in liste_potion:
             safe_increment(
                 self.joueur.stuff,
                 nom_objet,
                 quant=qty,
-                type_objet="potion",
+                type_objet="potion", 
                 effect=None,
             )
-        elif nom_objet.startswith("livre_enchant"):
-            safe_increment(self.joueur.stuff, nom_objet, quant=qty, type_objet="livres")
+        elif nom_objet.startswith("livre enchant"):
+            en=nom_objet.split(" ")[-1]
+            en=int(en)
+            for i in range(qty):
+                
+                enchantements=ajouter_enchant(en)
+                enchantements=enchantements[0]
+                print(enchantements)
+                safe_increment(self.joueur.stuff, nom_objet, quant=1, type_objet="livres",enchantements=enchantements)
+                self.log(f"[ADMIN] {nom_objet} {enchantements} ajouté à l'inventaire.")
+                 
         else:
             safe_increment(self.joueur.stuff, nom_objet, quant=qty)
-        self.log(f"[ADMIN] {nom_objet} x{qty} ajouté à l'inventaire.")
+        self.log(f"[ADMIN] {nom_objet} x{qty} ajouté(e)(s) à l'inventaire.") if not nom_objet.startswith("livre enchant") else self.log (" Vos livres ont bien été ajoutés")
 
     def _cmd_gold(self, args):
         if not args:
