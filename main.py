@@ -1,4 +1,4 @@
-﻿from __future__ import annotations
+from __future__ import annotations
 import random
 import Secure_save
 import os
@@ -336,10 +336,18 @@ class Joueur(Perso):
             safe_increment(
                 self.stuff,
                 "épée de bois",
-                quant=2,
+                quant=1,
                 type_objet="armes",
                 durabilite=100,
             )
+            if self.config and self.config["mode"] == "Militaire":            
+                safe_increment(self.stuff, "C4", quant=2)
+                safe_increment(self.stuff, "grenade", quant=3)
+    
+    
+    
+
+            
 
     def save(self):
         autosave = Secure_save.AutoSaver(

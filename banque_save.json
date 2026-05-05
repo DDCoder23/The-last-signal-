@@ -6,5 +6,16 @@
     "Pneumonoultramicroscopicsilicovolcanoconociose": {
         "dettes": 0,
         "investissements": {}
+    },
+    "Cyril": {
+        "dettes": 0,
+        "date_emprunt_mois": 0,
+        "date_emprunt_annees": 0,
+        "investissements": {
+            "capital": 101000001000000000000999998,
+            "valeur_future": 1.2240577164713956e+27,
+            "mois_total": 600,
+            "date_fin": 600
+        }
     }
 }

@@ -29,7 +29,7 @@ def trouver_cles_par_liste_non_ordonnee(dictionnaire, liste_recherchee):
         if set(valeur) == set(liste_recherchee) and len(valeur) == len(liste_recherchee)
     ]
 
-
+POIDS_CATEGORIES = [0.6, 0.05,0.15,0.10,0.10]
 def qtes(nom, joueur):
 
     if nom not in joueur.stuff:
@@ -84,12 +84,12 @@ liste_potion = [
     "potion de soin modéré",
     "potion de délivrance",
 ]
-dict_enchant={1: {"épée":["Aura de feu I","Poison I","Durability I","Putréfaction I","Foudre I", "Critique I"], "armes à feu":["Rapidity I", "Critique I"],"armure":["Respiration I", "Durability I","Vitality I","Protection I", "Renvoie I"]},
-             2: {"épée":["Aura de feu II","Poison II", "Durability II","Putréfaction II","Foudre II", "Critique II"], "armes à feu":["Rapidity II", "Critique II"],"armure":["Respiration II", "Durability II","Vitality II","Protection II", "Renvoie II"]},
-             3: {"épée":["Aura de feu III","Poison III", "Durability III","Putréfaction III","Foudre III", "Critique III"], "armes à feu":["Rapidity III" "Critique III"],"armure":["Respiration III", "Durability III","Vitality III","Protection III", "Renvoie III"]},
-             4: {"épée":["Aura de feu IV","Poison IV", "Durability IV","Putréfaction IV","Foudre IV","Critique IV"], "armes à feu":["Rapidity IV", "Critique IV"],"armure":["Respiration IV", "Durability IV","Vitality IV","Protection IV", "Renvoie IV"]},
-             5: {"épée":["Aura de feu V","Poison V", "Durability V","Putréfaction V","Foudre V", "Critique V"], "armes à feu":["Rapidity V", "Critique V"],"armure":["Respiration V", "Durability V","Vitality V","Protection V", "Renvoie V"]},
-             6: {"épée":["Aura de feu VI","Poison VI", "Durability VI","Putréfaction VI","Foudre VI", "Critique VI"], "armes à feu":["Rapidity VI", "Critique VI"],"armure":["Respiration VI", "Durability VI","Vitality VI","Protection VI", "Renvoie VI"]},
+dict_enchant={1: {"épée":["Aura de feu I","Poison I","Durability I","Putréfaction I","Foudre I", "Critique I","Cryogenisation I","Précision I"], "armes à feu":["Rapidity I", "Critique I"],"armure":["Respiration I", "Durability I","Vitality I","Protection I", "Renvoie I"], "shield":["Protection I"],"pioche":["luck I"]},
+             2: {"épée":["Aura de feu II","Poison II", "Durability II","Putréfaction II","Foudre II", "Critique II","Cryogenisation II","Précision II"], "armes à feu":["Rapidity II", "Critique II"],"armure":["Respiration II", "Durability II","Vitality II","Protection II", "Renvoie II"], "shield":["Protection II"],"pioche":["luck II"]},
+             3: {"épée":["Aura de feu III","Poison III", "Durability III","Putréfaction III","Foudre III", "Critique III","Cryogenisation III","Précision III"], "armes à feu":["Rapidity III" "Critique III"],"armure":["Respiration III", "Durability III","Vitality III","Protection III", "Renvoie III"], "shield":["Protection III"],"pioche":["luck III"]},
+             4: {"épée":["Aura de feu IV","Poison IV", "Durability IV","Putréfaction IV","Foudre IV","Critique IV","Cryogenisation IV","Précision IV"], "armes à feu":["Rapidity IV", "Critique IV"],"armure":["Respiration IV", "Durability IV","Vitality IV","Protection IV", "Renvoie IV"], "shield":["Protection IV"],"pioche":["luck IV"]},
+             5: {"épée":["Aura de feu V","Poison V", "Durability V","Putréfaction V","Foudre V", "Critique V","Cryogenisation V","Précision V"], "armes à feu":["Rapidity V", "Critique V"],"armure":["Respiration V", "Durability V","Vitality V","Protection V", "Renvoie V"], "shield":["Protection V"],"pioche":["luck V"]},
+             6: {"épée":["Aura de feu VI","Poison VI", "Durability VI","Putréfaction VI","Foudre VI", "Critique VI","Cryogenisation VI","Précision VI"], "armes à feu":["Rapidity VI", "Critique VI"],"armure":["Respiration VI", "Durability VI","Vitality VI","Protection VI", "Renvoie VI"], "shield":["Protection VI"],"pioche":["luck VI"]},
 }
 from itertools import combinations
 
@@ -101,15 +101,15 @@ from itertools import combinations
 
 
 
-
+niveaux_romains = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
 
 def pregenerer_cache_enchantements():
-    """Pré-génère toutes les combinaisons possibles pour chaque niveau et catégorie,
-    en incluant également les enchantements des niveaux inférieurs."""
+    """Pré-génère toutes les combinaisons valides pour chaque niveau et catégorie,
+    en incluant tous les enchantements de niveau ≤ niveau actuel,
+    mais sans doublons de même type (ex: Poison I et Poison II)."""
     global cache_enchantements
-    cache_enchantements = {}  # Réinitialiser le cache
+    cache_enchantements = {}
 
-    # Parcourir chaque niveau
     for niveau in dict_enchant.keys():
         cache_enchantements[niveau] = {}
 
@@ -122,23 +122,36 @@ def pregenerer_cache_enchantements():
                         all_enchantements_by_category[categorie] = []
                     all_enchantements_by_category[categorie].extend(enchantements)
 
-        # Générer les combinaisons pour chaque catégorie
+        # Pour chaque catégorie, générer toutes les combinaisons valides
         for categorie, enchantements in all_enchantements_by_category.items():
+            # Générer toutes les combinaisons possibles (1 à `niveau` enchantements)
             max_taille = min(niveau, len(enchantements))
             combinaisons = []
             for taille in range(1, max_taille + 1):
                 combinaisons.extend(list(combinations(enchantements, taille)))
-            cache_enchantements[niveau][categorie] = [list(combo) for combo in combinaisons]
+
+            # Filtrer les combinaisons invalides (doublons de même type)
+            combinaisons_valides = []
+            for combo in combinaisons:
+                # Extraire les noms des enchantements (ex: "Poison" pour "Poison I")
+                noms = [" ".join(enchant.split()[:-1]) for enchant in combo]
+                # Si tous les noms sont uniques, la combinaison est valide
+                if len(noms) == len(set(noms)):
+                    combinaisons_valides.append(list(combo))
+
+            cache_enchantements[niveau][categorie] = combinaisons_valides
 def ajouter_enchant(niveau: int) -> tuple[list[str], str]:
     """
     Retourne une combinaison aléatoire parmi toutes les possibles pour un niveau donné.
     """
     if niveau not in cache_enchantements:
         pregenerer_cache_enchantements()
+        print(cache_enchantements)
+
 
 
     categories = list(cache_enchantements[niveau].keys())
-    poids = [0.7, 0.05,0.25]
+    poids = POIDS_CATEGORIES
     categorie = random.choices(categories, weights=poids, k=1)[0]
 
     # Choisir une combinaison aléatoire parmi celles possibles pour cette catégorie
@@ -715,6 +728,7 @@ class FenetreMagasin(QDialog):
                 safe_increment(
                     self.inventaire,
                     objet["nom"],
+                    "livre enchant",
                     quant=quantite,
                     category=category,
                     type_objet="livres",enchantements=enchantements
@@ -732,3 +746,5 @@ class FenetreMagasin(QDialog):
 def afficher_magasin(inventaire, argent_joueur, parent=None):
     dialog = FenetreMagasin(inventaire, argent_joueur, parent)
     dialog.exec()
+a=ajouter_enchant(1)
+print(a)
