@@ -9,42 +9,42 @@
     },
     {
         "nom": "livre enchant niv 1",
-        "image": "livre_enchant_niv_1.png",
+        "image": "livre enchant.png",
         "prix": 100000,
         "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 2",
-        "image": "livre_enchant_niv_2.png",
+        "image":"livre enchant.png",
         "prix": 200000,
         "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 3",
-        "image": "livre_enchant_niv_3.png",
+        "image": "livre enchant.png",
         "prix": 300000,
         "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 4",
-        "image": "livre_enchant_niv_4.png",
+        "image": "livre enchant.png",
         "prix": 400000,
         "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 5",
-        "image": "livre_enchant_niv_5.png",
+        "image": "livre enchant.png",
         "prix": 500000,
         "type": "livres"
 
     },
     {
         "nom": "livre enchant niv 6",
-        "image": "livre_enchant_niv_6.png",
+        "image": "livre enchant.png",
         "prix": 600000,
         "type": "livres"
 

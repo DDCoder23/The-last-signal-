@@ -248,7 +248,7 @@ class ConsoleAdmin(qt.QWidget):
                 enchantements=ajouter_enchant(en)
                 enchantements=enchantements[0]
                 print(enchantements)
-                safe_increment(self.joueur.stuff, nom_objet, quant=1, type_objet="livres",enchantements=enchantements)
+                safe_increment(self.joueur.stuff, nom_objet,"livre enchant", quant=1, type_objet="livres",enchantements=enchantements)
                 self.log(f"[ADMIN] {nom_objet} {enchantements} ajouté à l'inventaire.")
                  
         else:

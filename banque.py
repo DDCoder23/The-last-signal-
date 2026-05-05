@@ -163,18 +163,15 @@ class FenetreBanque(QDialog):
             )
         else:
             # Ajout de capital à un investissement existant
-            capital_additionnel, ok1 = QInputDialog.getInt(
+            capital_additionnel, ok1 = QInputDialog.getText(
                 self,
                 "Ajout d'investissement",
                 "Capital supplémentaire à investir:",
-                100,
-                1,
-                argent_disponible,
-                1,
+                text="100"
             )
             if not ok1:
                 return
-
+            capital_additionnel=int(capital_additionnel)
             if capital_additionnel > argent_disponible:
                 QMessageBox.warning(
                     self,

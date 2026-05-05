@@ -1,50 +1,23 @@
 {
-    "Player1 : 2": {
-        "id": 2,
-        "minutes": 0,
-        "heures": 0,
-        "jours": 0,
-        "semaines": 0,
-        "mois": 0,
-        "annees": 0
-    },
-    "Player1 : 1": {
+    "Cyril : 1": {
         "id": 1,
-        "minutes": 29,
-        "heures": 0,
+        "minutes": 10,
+        "heures": 17,
         "jours": 0,
         "semaines": 0,
         "mois": 0,
         "annees": 0
     },
-    "Player1 : 3": {
-        "id": 3,
-        "minutes": 0,
-        "heures": 0,
-        "jours": 0,
-        "semaines": 0,
-        "mois": 0,
-        "annees": 0
-    },
-    "Pneumonoultramicroscopicsilicovolcanoconociose : 1": {
-        "id": 1,
-        "minutes": 19,
-        "heures": 0,
-        "jours": 0,
-        "semaines": 0,
-        "mois": 0,
-        "annees": 0
-    },
-    "Pneumonoultramicroscopicsilicovolcanoconociose : 2": {
+    "Cyril : 2": {
         "id": 2,
-        "minutes": 0,
+        "minutes": 51,
         "heures": 0,
         "jours": 0,
         "semaines": 0,
         "mois": 0,
         "annees": 0
     },
-    "Pneumonoultramicroscopicsilicovolcanoconociose : 3": {
+    "Cyril : 3": {
         "id": 3,
         "minutes": 0,
         "heures": 0,

@@ -40,46 +40,54 @@ def chercher_livre(nb, dict_livre,lv1,clef1,joueur):
     return lvs[:nb]
 
 
-def fusionner_enchantements( niv: int,*listes: list) -> list:
+def fusionner_enchantements(niv: int, *listes: list) -> list:
     """
     Fusionne jusqu'à 6 listes d'enchantements en :
-    - Résolvant les doublons en prenant le niveau supérieur.
+    - Supprimant les enchantements de niveau inférieur si un niveau supérieur existe.
     - Limitant le résultat à `niv` enchantements.
-    - Conservant les enchantements de niveau supérieur si possible.
+    - Conservant les enchantements de niveau supérieur.
     """
-    # Dictionnaire pour suivre les enchantements et leurs niveaux
-    enchantements_fusionnes = {}
+    niveaux_romains = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
+    # Dictionnaire pour suivre le niveau maximal de chaque enchantement
+    enchantements_max = {}
+    def niveau_to_romain(n: int) -> str:
+        romains = {1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI"}
+        return romains.get(n, "I")
+    # Fonction pour extraire le niveau d'un enchantement (ex: "Poison VI" -> 6)
+    def get_niveau(enchant: str) -> int:
+        niveaux_romains = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
+        parts = enchant.split()
+        if len(parts) < 2:
+            return 0
+        niveau_str = parts[-1]
+        return niveaux_romains.get(niveau_str, 0)
+
+    # Fonction pour extraire le nom de l'enchantement (ex: "Poison VI" -> "Poison")
+    def get_nom(enchant: str) -> str:
+        parts = enchant.split()
+        return " ".join(parts[:-1]) if len(parts) > 1 else enchant
 
     # Traiter chaque liste
     for liste in listes:
         for enchant in liste:
-            if enchant not in enchantements_fusionnes:
-                # Si l'enchantement n'est pas encore présent, l'ajouter
-                enchantements_fusionnes[enchant] = enchant
-            else:
-                # Si l'enchantement est déjà présent, essayer de monter de niveau
-                enchant_actuel = enchantements_fusionnes[enchant]
-                enchant_superieur = obtenir_enchantement_superieur(enchant_actuel)
-                if enchant_superieur != enchant_actuel:
-                    enchantements_fusionnes[enchant] = enchant_superieur
+            nom = get_nom(enchant)
+            niveau = get_niveau(enchant)
 
-    # Convertir en liste et limiter à `niv` enchantements
-    liste_fusionnee = list(enchantements_fusionnes.values())
+            # Si l'enchantement n'est pas encore présent ou si le nouveau niveau est supérieur
+            if nom not in enchantements_max or niveau > enchantements_max[nom]:
+                enchantements_max[nom] = niveau
 
-    # Si on a plus d'enchantements que `niv`, garder les plus élevés
+    # Reconstruire la liste des enchantements avec leur niveau maximal
+    liste_fusionnee = [f"{nom} {niveau_to_romain(niveau)}" for nom, niveau in enchantements_max.items()]
+
+    # Fonction pour convertir un niveau en chiffres romains
+
+
+    # Trier par niveau décroissant
+    liste_fusionnee.sort(key=lambda x: get_niveau(x), reverse=True)
+
+    # Limiter à `niv` enchantements
     if len(liste_fusionnee) > niv:
-        # Trier les enchantements par niveau (du plus élevé au plus bas)
-        def niveau_enchantement(enchant):
-            parts = enchant.split()
-            if len(parts) < 2:
-                return 0
-            niveau_str = parts[-1]
-            niveaux_romains = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
-            return niveaux_romains.get(niveau_str, 0)
-
-        # Trier par niveau décroissant
-        liste_fusionnee.sort(key=niveau_enchantement, reverse=True)
-        # Garder seulement les `niv` premiers
         liste_fusionnee = liste_fusionnee[:niv]
 
     return liste_fusionnee

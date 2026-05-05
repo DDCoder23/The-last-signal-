@@ -274,9 +274,7 @@ class FenetreInventaire(QDialog):
         
 
 
-        if quantite_max <= 0:
-            QMessageBox.warning(self, "Erreur", "Aucun livre disponible à convertir.")
-            return
+
 
         # Demander la quantité à convertir
         quantite, ok = QInputDialog.getInt(
@@ -333,7 +331,7 @@ class FenetreInventaire(QDialog):
             return round(prix_base * 0.75)
         elif type_objet in ["equipement", "armes"]:
             prix_base = self.prix_objets.get(nom_recherche, 10)
-            enchant = getattr(objet, "niv", 0)
+            niv = getattr(objet, "niv", 0)
             return round(prix_base * 0.75 + niv * 1000)
         else:
             return 10  # Prix par défaut
@@ -447,6 +445,7 @@ class FenetreInventaire(QDialog):
                     "Vente réussie",
                     f"{quantite_totale} objet(s) vendu(s) pour {prix_total} pièces d'or !"
                 )
+                self.mettre_a_jour_inventaire_complet()
             except Exception as e:
                 QMessageBox.warning(self, "Erreur", f"Une erreur est survenue : {str(e)}")
     def boire(self, row, nom):
