@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 import random
 import Secure_save
 import os
@@ -69,6 +69,7 @@ def lister_profils_sauvegardes(base_dir="saves"):
 profils = lister_profils_sauvegardes()
 
 ASSETS_DIR = "assets"
+chemin_sortie = os.path.join(ASSETS_DIR, "map")
 
 # Vérifier que les fichiers de carte existent dans assets/
 REQUIRED_MAP_FILES = [
@@ -77,13 +78,10 @@ REQUIRED_MAP_FILES = [
     os.path.join(ASSETS_DIR, "map_collision.png")
 ]
 
-# Vérification (optionnelle, pour un message d'erreur clair)
+
 missing_files = [f for f in REQUIRED_MAP_FILES if not os.path.exists(f)]
 if missing_files:
-    raise FileNotFoundError(
-        f"❌ Fichiers de carte manquants dans {ASSETS_DIR}: {missing_files}. "
-        "Assurez-vous que les fichiers sont bien présents."
-    )
+    gemap.generate_map(output_prefix=chemin_sortie)
 class SaveSelectWidget(qt.QWidget):
     def __init__(self, on_load, on_back, profils):
         super().__init__()
