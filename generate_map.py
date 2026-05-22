@@ -1,6 +1,6 @@
 def generate_map(
-    size=128,
-    style="island",        # "island", "mountains", "dungeon"
+    size=1024,
+    style="island",        
     height_scale=1.0,
     seed=None,
     output_prefix="map"
