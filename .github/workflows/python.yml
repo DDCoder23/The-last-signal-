@@ -57,13 +57,13 @@ jobs:
       - name: Create report
         run: |
 
-          echo "# Rapport Python - The Last Signal" > python-report.md
+          echo "# Rapport Python - The Last Signal" > reports/python-report-${{ github.run_number }}.md
 
-          echo "" >> python-report.md
+          echo "" >> reports/python-report-${{ github.run_number }}.md
 
-          echo "Date : $(date)" >> python-report.md
+          echo "Date : $(date)" >> reports/python-report-${{ github.run_number }}.md
 
-          echo "" >> python-report.md
+          echo "" >> reports/python-report-${{ github.run_number }}.md
 
 
 
@@ -72,9 +72,9 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Black" >> python-report.md
+          echo "## Black" >> reports/python-report-${{ github.run_number }}.md
 
-          black --check . >> python-report.md 2>&1
+          black --check . >> reports/python-report-${{ github.run_number }}.md 2>&1
 
 
 
@@ -83,29 +83,29 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Flake8" >> python-report.md
+          echo "## Flake8" >> reports/python-report-${{ github.run_number }}.md
 
-          flake8 . >> python-report.md 2>&1
+          flake8 . >> reports/python-report-${{ github.run_number }}.md 2>&1
       - name: Quality analysis
         continue-on-error: true
         run: |
 
-          echo "## Quality Analysis" >> reports/python-report.md
+          echo "## Quality Analysis" >> reports/reports/python-report-${{ github.run_number }}.md
 
-          echo "### Complexity" >> reports/python-report.md
-          radon cc . -a >> reports/python-report.md
-
-
-          echo "### Security" >> reports/python-report.md
-          bandit -r . >> reports/python-report.md
+          echo "### Complexity" >> reports/reports/python-report-${{ github.run_number }}.md
+          radon cc . -a >> reports/reports/python-report-${{ github.run_number }}.md
 
 
-          echo "### Pylint" >> reports/python-report.md
-          pylint . >> reports/python-report.md
+          echo "### Security" >> reports/reports/python-report-${{ github.run_number }}.md
+          bandit -r . >> reports/reports/python-report-${{ github.run_number }}.md
 
 
-          echo "### Coverage" >> reports/python-report.md
-          pytest --cov . >> reports/python-report.md
+          echo "### Pylint" >> reports/reports/python-report-${{ github.run_number }}.md
+          pylint . >> reports/reports/python-report-${{ github.run_number }}.md
+
+
+          echo "### Coverage" >> reports/reports/python-report-${{ github.run_number }}.md
+          pytest --cov . >> reports/reports/python-report-${{ github.run_number }}.md
 
 
 
@@ -114,19 +114,19 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Tests Pytest" >> python-report.md
+          echo "## Tests Pytest" >> reports/python-report-${{ github.run_number }}.md
 
 
           if [ -d tests ]; then
 
-            pytest >> python-report.md 2>&1
+            pytest >> reports/python-report-${{ github.run_number }}.md 2>&1
 
           else
 
-            echo "Aucun dossier tests trouvé" >> python-report.md
+            echo "Aucun dossier tests trouvé" >> reports/python-report-${{ github.run_number }}.md
 
           fi
-
+      
 
       # Création SQLite
 
@@ -228,8 +228,11 @@ jobs:
 
         run: |
 
-          cat reports/python-report.md >> $GITHUB_STEP_SUMMARY
+          cat reports/reports/python-report-${{ github.run_number }}.md >> $GITHUB_STEP_SUMMARY
 
+
+
+      
 
 
       # Sauvegarde artifact
@@ -247,9 +250,6 @@ jobs:
             reports/python-report-${{ github.run_number }}.md
 
             database/python_reports-${{ github.run_number }}.db
-
-
-
       # Ajout automatique dans le dépôt
 
       - name: Commit generated files
@@ -262,9 +262,9 @@ jobs:
           git config --global user.email "github-actions@github.com"
 
 
-          git add reports/python-report.md
+          git add reports/reports/python-report-${{ github.run_number }}.md
 
-          git add database/python_reports.db
+          git add database/python_reports-${{ github.run_number }}.db
 
 
           git commit -m "Update Python CI report database" || echo "Nothing to commit"
