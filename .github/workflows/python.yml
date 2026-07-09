@@ -56,6 +56,7 @@ jobs:
       # Création du fichier rapport
       - name: Create report
         run: |
+          mkdir -p reports
 
           echo "# Rapport Python - The Last Signal" > reports/python-report-${{ github.run_number }}.md
 
