@@ -90,22 +90,22 @@ jobs:
         continue-on-error: true
         run: |
 
-    echo "## Quality Analysis" >> reports/python-report.md
+          echo "## Quality Analysis" >> reports/python-report.md
 
-    echo "### Complexity" >> reports/python-report.md
-    radon cc . -a >> reports/python-report.md
-
-
-    echo "### Security" >> reports/python-report.md
-    bandit -r . >> reports/python-report.md
+          echo "### Complexity" >> reports/python-report.md
+          radon cc . -a >> reports/python-report.md
 
 
-    echo "### Pylint" >> reports/python-report.md
-    pylint . >> reports/python-report.md
+          echo "### Security" >> reports/python-report.md
+          bandit -r . >> reports/python-report.md
 
 
-    echo "### Coverage" >> reports/python-report.md
-    pytest --cov . >> reports/python-report.md
+          echo "### Pylint" >> reports/python-report.md
+          pylint . >> reports/python-report.md
+
+
+          echo "### Coverage" >> reports/python-report.md
+          pytest --cov . >> reports/python-report.md
 
 
 
