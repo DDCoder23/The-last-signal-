@@ -1,0 +1,8 @@
+
+🦘 saut + gravité
+🚧 collisions (mur, eau)
+🌊 zones (eau,neige = ralentissement,lave,poudreuse)
+🧱 map texture + couleur selon hauteur
+🗺️ minimap automatique depuis l’image
+possibilité de créer une faction en multi
+

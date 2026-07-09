@@ -1,0 +1,821 @@
+﻿{
+  "indicateurs_telephoniques": {
+    "1": {
+      "pays": ["États-Unis", "Canada"],
+      "notes": "Inclut les États-Unis, le Canada et certains territoires."
+    },
+    "7": {
+      "pays": ["Russie", "Kazakhstan"],
+      "notes": "Utilisé principalement par la Russie et le Kazakhstan."
+    },
+    "20": {
+      "pays": ["Égypte"],
+      "notes": ""
+    },
+    "27": {
+      "pays": ["Afrique du Sud"],
+      "notes": ""
+    },
+    "30": {
+      "pays": ["Grèce"],
+      "notes": ""
+    },
+    "31": {
+      "pays": ["Pays-Bas"],
+      "notes": ""
+    },
+    "32": {
+      "pays": ["Belgique"],
+      "notes": ""
+    },
+    "33": {
+      "pays": ["France"],
+      "notes": "Inclut la France métropolitaine et certains territoires d'outre-mer."
+    },
+    "34": {
+      "pays": ["Espagne"],
+      "notes": ""
+    },
+    "36": {
+      "pays": ["Hongrie"],
+      "notes": ""
+    },
+    "39": {
+      "pays": ["Italie"],
+      "notes": ""
+    },
+    "40": {
+      "pays": ["Roumanie"],
+      "notes": ""
+    },
+    "41": {
+      "pays": ["Suisse"],
+      "notes": ""
+    },
+    "43": {
+      "pays": ["Autriche"],
+      "notes": ""
+    },
+    "44": {
+      "pays": ["Royaume-Uni"],
+      "notes": "Inclut le Royaume-Uni et certaines dépendances."
+    },
+    "45": {
+      "pays": ["Danemark"],
+      "notes": ""
+    },
+    "46": {
+      "pays": ["Suède"],
+      "notes": ""
+    },
+    "47": {
+      "pays": ["Norvège"],
+      "notes": ""
+    },
+    "48": {
+      "pays": ["Pologne"],
+      "notes": ""
+    },
+    "49": {
+      "pays": ["Allemagne"],
+      "notes": ""
+    },
+    "51": {
+      "pays": ["Pérou"],
+      "notes": ""
+    },
+    "52": {
+      "pays": ["Mexique"],
+      "notes": ""
+    },
+    "53": {
+      "pays": ["Cuba"],
+      "notes": ""
+    },
+    "54": {
+      "pays": ["Argentine"],
+      "notes": ""
+    },
+    "55": {
+      "pays": ["Brésil"],
+      "notes": ""
+    },
+    "56": {
+      "pays": ["Chili"],
+      "notes": ""
+    },
+    "57": {
+      "pays": ["Colombie"],
+      "notes": ""
+    },
+    "58": {
+      "pays": ["Venezuela"],
+      "notes": ""
+    },
+    "60": {
+      "pays": ["Malaisie"],
+      "notes": ""
+    },
+    "61": {
+      "pays": ["Australie"],
+      "notes": ""
+    },
+    "62": {
+      "pays": ["Indonésie"],
+      "notes": ""
+    },
+    "63": {
+      "pays": ["Philippines"],
+      "notes": ""
+    },
+    "64": {
+      "pays": ["Nouvelle-Zélande"],
+      "notes": ""
+    },
+    "65": {
+      "pays": ["Singapour"],
+      "notes": ""
+    },
+    "66": {
+      "pays": ["Thaïlande"],
+      "notes": ""
+    },
+    "81": {
+      "pays": ["Japon"],
+      "notes": ""
+    },
+    "82": {
+      "pays": ["Corée du Sud"],
+      "notes": ""
+    },
+    "84": {
+      "pays": ["Vietnam"],
+      "notes": ""
+    },
+    "86": {
+      "pays": ["Chine"],
+      "notes": ""
+    },
+    "90": {
+      "pays": ["Turquie"],
+      "notes": ""
+    },
+    "91": {
+      "pays": ["Inde"],
+      "notes": ""
+    },
+    "92": {
+      "pays": ["Pakistan"],
+      "notes": ""
+    },
+    "93": {
+      "pays": ["Afghanistan"],
+      "notes": ""
+    },
+    "94": {
+      "pays": ["Sri Lanka"],
+      "notes": ""
+    },
+    "95": {
+      "pays": ["Myanmar"],
+      "notes": ""
+    },
+    "98": {
+      "pays": ["Iran"],
+      "notes": ""
+    },
+    "211": {
+      "pays": ["Soudan du Sud"],
+      "notes": ""
+    },
+    "212": {
+      "pays": ["Maroc", "Sahara occidental"],
+      "notes": ""
+    },
+    "213": {
+      "pays": ["Algérie"],
+      "notes": ""
+    },
+    "216": {
+      "pays": ["Tunisie"],
+      "notes": ""
+    },
+    "218": {
+      "pays": ["Libye"],
+      "notes": ""
+    },
+    "220": {
+      "pays": ["Gambie"],
+      "notes": ""
+    },
+    "221": {
+      "pays": ["Sénégal"],
+      "notes": ""
+    },
+    "222": {
+      "pays": ["Mauritanie"],
+      "notes": ""
+    },
+    "223": {
+      "pays": ["Mali"],
+      "notes": ""
+    },
+    "224": {
+      "pays": ["Guinée"],
+      "notes": ""
+    },
+    "225": {
+      "pays": ["Côte d'Ivoire"],
+      "notes": ""
+    },
+    "226": {
+      "pays": ["Burkina Faso"],
+      "notes": ""
+    },
+    "227": {
+      "pays": ["Niger"],
+      "notes": ""
+    },
+    "228": {
+      "pays": ["Togo"],
+      "notes": ""
+    },
+    "229": {
+      "pays": ["Bénin"],
+      "notes": ""
+    },
+    "230": {
+      "pays": ["Maurice"],
+      "notes": ""
+    },
+    "231": {
+      "pays": ["Libéria"],
+      "notes": ""
+    },
+    "232": {
+      "pays": ["Sierra Leone"],
+      "notes": ""
+    },
+    "233": {
+      "pays": ["Ghana"],
+      "notes": ""
+    },
+    "234": {
+      "pays": ["Nigeria"],
+      "notes": ""
+    },
+    "235": {
+      "pays": ["Tchad"],
+      "notes": ""
+    },
+    "236": {
+      "pays": ["République centrafricaine"],
+      "notes": ""
+    },
+    "237": {
+      "pays": ["Cameroun"],
+      "notes": ""
+    },
+    "238": {
+      "pays": ["Cap-Vert"],
+      "notes": ""
+    },
+    "239": {
+      "pays": ["Sao Tomé-et-Principe"],
+      "notes": ""
+    },
+    "240": {
+      "pays": ["Guinée équatoriale"],
+      "notes": ""
+    },
+    "241": {
+      "pays": ["Gabon"],
+      "notes": ""
+    },
+    "242": {
+      "pays": ["Congo"],
+      "notes": ""
+    },
+    "243": {
+      "pays": ["République démocratique du Congo"],
+      "notes": ""
+    },
+    "244": {
+      "pays": ["Angola"],
+      "notes": ""
+    },
+    "245": {
+      "pays": ["Guinée-Bissau"],
+      "notes": ""
+    },
+    "246": {
+      "pays": ["Diego Garcia"],
+      "notes": "Territoire britannique de l'océan Indien."
+    },
+    "248": {
+      "pays": ["Seychelles"],
+      "notes": ""
+    },
+    "249": {
+      "pays": ["Soudan"],
+      "notes": ""
+    },
+    "250": {
+      "pays": ["Rwanda"],
+      "notes": ""
+    },
+    "251": {
+      "pays": ["Éthiopie"],
+      "notes": ""
+    },
+    "252": {
+      "pays": ["Somalie"],
+      "notes": ""
+    },
+    "253": {
+      "pays": ["Djibouti"],
+      "notes": ""
+    },
+    "254": {
+      "pays": ["Kenya"],
+      "notes": ""
+    },
+    "255": {
+      "pays": ["Tanzanie"],
+      "notes": ""
+    },
+    "256": {
+      "pays": ["Ouganda"],
+      "notes": ""
+    },
+    "257": {
+      "pays": ["Burundi"],
+      "notes": ""
+    },
+    "258": {
+      "pays": ["Mozambique"],
+      "notes": ""
+    },
+    "260": {
+      "pays": ["Zambie"],
+      "notes": ""
+    },
+    "261": {
+      "pays": ["Madagascar"],
+      "notes": ""
+    },
+    "262": {
+      "pays": ["Réunion", "Mayotte"],
+      "notes": ""
+    },
+    "263": {
+      "pays": ["Zimbabwe"],
+      "notes": ""
+    },
+    "264": {
+      "pays": ["Namibie"],
+      "notes": ""
+    },
+    "265": {
+      "pays": ["Malawi"],
+      "notes": ""
+    },
+    "266": {
+      "pays": ["Lesotho"],
+      "notes": ""
+    },
+    "267": {
+      "pays": ["Botswana"],
+      "notes": ""
+    },
+    "268": {
+      "pays": ["Eswatini"],
+      "notes": ""
+    },
+    "269": {
+      "pays": ["Comores"],
+      "notes": ""
+    },
+    "290": {
+      "pays": ["Sainte-Hélène"],
+      "notes": ""
+    },
+    "291": {
+      "pays": ["Érythrée"],
+      "notes": ""
+    },
+    "297": {
+      "pays": ["Aruba"],
+      "notes": ""
+    },
+    "298": {
+      "pays": ["Îles Féroé"],
+      "notes": ""
+    },
+    "299": {
+      "pays": ["Groenland"],
+      "notes": ""
+    },
+    "350": {
+      "pays": ["Gibraltar"],
+      "notes": ""
+    },
+    "351": {
+      "pays": ["Portugal"],
+      "notes": ""
+    },
+    "352": {
+      "pays": ["Luxembourg"],
+      "notes": ""
+    },
+    "353": {
+      "pays": ["Irlande"],
+      "notes": ""
+    },
+    "354": {
+      "pays": ["Islande"],
+      "notes": ""
+    },
+    "355": {
+      "pays": ["Albanie"],
+      "notes": ""
+    },
+    "356": {
+      "pays": ["Malte"],
+      "notes": ""
+    },
+    "357": {
+      "pays": ["Chypre"],
+      "notes": ""
+    },
+    "358": {
+      "pays": ["Finlande"],
+      "notes": ""
+    },
+    "359": {
+      "pays": ["Bulgarie"],
+      "notes": ""
+    },
+    "370": {
+      "pays": ["Lituanie"],
+      "notes": ""
+    },
+    "371": {
+      "pays": ["Lettonie"],
+      "notes": ""
+    },
+    "372": {
+      "pays": ["Estonie"],
+      "notes": ""
+    },
+    "373": {
+      "pays": ["Moldavie"],
+      "notes": ""
+    },
+    "374": {
+      "pays": ["Arménie"],
+      "notes": ""
+    },
+    "375": {
+      "pays": ["Biélorussie"],
+      "notes": ""
+    },
+    "376": {
+      "pays": ["Andorre"],
+      "notes": ""
+    },
+    "377": {
+      "pays": ["Monaco"],
+      "notes": ""
+    },
+    "378": {
+      "pays": ["Saint-Marin"],
+      "notes": ""
+    },
+    "379": {
+      "pays": ["Vatican"],
+      "notes": ""
+    },
+    "380": {
+      "pays": ["Ukraine"],
+      "notes": ""
+    },
+    "381": {
+      "pays": ["Serbie"],
+      "notes": ""
+    },
+    "382": {
+      "pays": ["Monténégro"],
+      "notes": ""
+    },
+    "383": {
+      "pays": ["Kosovo"],
+      "notes": ""
+    },
+    "385": {
+      "pays": ["Croatie"],
+      "notes": ""
+    },
+    "386": {
+      "pays": ["Slovénie"],
+      "notes": ""
+    },
+    "387": {
+      "pays": ["Bosnie-Herzégovine"],
+      "notes": ""
+    },
+    "389": {
+      "pays": ["Macédoine du Nord"],
+      "notes": ""
+    },
+    "420": {
+      "pays": ["République tchèque"],
+      "notes": ""
+    },
+    "421": {
+      "pays": ["Slovaquie"],
+      "notes": ""
+    },
+    "423": {
+      "pays": ["Liechtenstein"],
+      "notes": ""
+    },
+    "500": {
+      "pays": ["Îles Falkland"],
+      "notes": ""
+    },
+    "501": {
+      "pays": ["Belize"],
+      "notes": ""
+    },
+    "502": {
+      "pays": ["Guatemala"],
+      "notes": ""
+    },
+    "503": {
+      "pays": ["Salvador"],
+      "notes": ""
+    },
+    "504": {
+      "pays": ["Honduras"],
+      "notes": ""
+    },
+    "505": {
+      "pays": ["Nicaragua"],
+      "notes": ""
+    },
+    "506": {
+      "pays": ["Costa Rica"],
+      "notes": ""
+    },
+    "507": {
+      "pays": ["Panama"],
+      "notes": ""
+    },
+    "590": {
+      "pays": ["Guadeloupe", "Saint-Barthélemy", "Saint-Martin"],
+      "notes": ""
+    },
+    "591": {
+      "pays": ["Bolivie"],
+      "notes": ""
+    },
+    "592": {
+      "pays": ["Guyana"],
+      "notes": ""
+    },
+    "593": {
+      "pays": ["Équateur"],
+      "notes": ""
+    },
+    "594": {
+      "pays": ["Guyane française"],
+      "notes": ""
+    },
+    "595": {
+      "pays": ["Paraguay"],
+      "notes": ""
+    },
+    "596": {
+      "pays": ["Martinique"],
+      "notes": ""
+    },
+    "597": {
+      "pays": ["Suriname"],
+      "notes": ""
+    },
+    "598": {
+      "pays": ["Uruguay"],
+      "notes": ""
+    },
+    "599": {
+      "pays": ["Curaçao", "Bonaire", "Saba", "Saint-Eustache"],
+      "notes": ""
+    },
+    "670": {
+      "pays": ["Timor oriental"],
+      "notes": ""
+    },
+    "672": {
+      "pays": ["Îles Ashmore et Cartier", "Îles de la Mer de Corail"],
+      "notes": "Territoires australiens."
+    },
+    "673": {
+      "pays": ["Brunei"],
+      "notes": ""
+    },
+    "674": {
+      "pays": ["Nauru"],
+      "notes": ""
+    },
+    "675": {
+      "pays": ["Papouasie-Nouvelle-Guinée"],
+      "notes": ""
+    },
+    "676": {
+      "pays": ["Tonga"],
+      "notes": ""
+    },
+    "677": {
+      "pays": ["Îles Salomon"],
+      "notes": ""
+    },
+    "678": {
+      "pays": ["Vanuatu"],
+      "notes": ""
+    },
+    "679": {
+      "pays": ["Fidji"],
+      "notes": ""
+    },
+    "680": {
+      "pays": ["Palaos"],
+      "notes": ""
+    },
+    "681": {
+      "pays": ["Wallis-et-Futuna"],
+      "notes": ""
+    },
+    "682": {
+      "pays": ["Îles Cook"],
+      "notes": ""
+    },
+    "683": {
+      "pays": ["Niue"],
+      "notes": ""
+    },
+    "685": {
+      "pays": ["Samoa"],
+      "notes": ""
+    },
+    "686": {
+      "pays": ["Kiribati"],
+      "notes": ""
+    },
+    "687": {
+      "pays": ["Nouvelle-Calédonie"],
+      "notes": ""
+    },
+    "688": {
+      "pays": ["Tuvalu"],
+      "notes": ""
+    },
+    "689": {
+      "pays": ["Polynésie française"],
+      "notes": ""
+    },
+    "690": {
+      "pays": ["Tokelau"],
+      "notes": ""
+    },
+    "691": {
+      "pays": ["Micronésie"],
+      "notes": ""
+    },
+    "692": {
+      "pays": ["Îles Marshall"],
+      "notes": ""
+    },
+    "850": {
+      "pays": ["Corée du Nord"],
+      "notes": ""
+    },
+    "852": {
+      "pays": ["Hong Kong"],
+      "notes": ""
+    },
+    "853": {
+      "pays": ["Macao"],
+      "notes": ""
+    },
+    "855": {
+      "pays": ["Cambodge"],
+      "notes": ""
+    },
+    "856": {
+      "pays": ["Laos"],
+      "notes": ""
+    },
+    "880": {
+      "pays": ["Bangladesh"],
+      "notes": ""
+    },
+    "886": {
+      "pays": ["Taïwan"],
+      "notes": ""
+    },
+    "960": {
+      "pays": ["Maldives"],
+      "notes": ""
+    },
+    "961": {
+      "pays": ["Liban"],
+      "notes": ""
+    },
+    "962": {
+      "pays": ["Jordanie"],
+      "notes": ""
+    },
+    "963": {
+      "pays": ["Syrie"],
+      "notes": ""
+    },
+    "964": {
+      "pays": ["Irak"],
+      "notes": ""
+    },
+    "965": {
+      "pays": ["Koweït"],
+      "notes": ""
+    },
+    "966": {
+      "pays": ["Arabie saoudite"],
+      "notes": ""
+    },
+    "967": {
+      "pays": ["Yémen"],
+      "notes": ""
+    },
+    "968": {
+      "pays": ["Oman"],
+      "notes": ""
+    },
+    "970": {
+      "pays": ["Palestine"],
+      "notes": ""
+    },
+    "971": {
+      "pays": ["Émirats arabes unis"],
+      "notes": ""
+    },
+    "972": {
+      "pays": ["Israël"],
+      "notes": ""
+    },
+    "973": {
+      "pays": ["Bahreïn"],
+      "notes": ""
+    },
+    "974": {
+      "pays": ["Qatar"],
+      "notes": ""
+    },
+    "975": {
+      "pays": ["Bhoutan"],
+      "notes": ""
+    },
+    "976": {
+      "pays": ["Mongolie"],
+      "notes": ""
+    },
+    "977": {
+      "pays": ["Népal"],
+      "notes": ""
+    },
+    "992": {
+      "pays": ["Tadjikistan"],
+      "notes": ""
+    },
+    "993": {
+      "pays": ["Turkménistan"],
+      "notes": ""
+    },
+    "994": {
+      "pays": ["Azerbaïdjan"],
+      "notes": ""
+    },
+    "995": {
+      "pays": ["Géorgie"],
+      "notes": ""
+    },
+    "996": {
+      "pays": ["Kirghizistan"],
+      "notes": ""
+    },
+    "998": {
+      "pays": ["Ouzbékistan"],
+      "notes": ""
+    }
+  }
+}
+
