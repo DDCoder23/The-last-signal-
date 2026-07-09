@@ -35,7 +35,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.12"
+          python-version: "3.14"
 
 
       # Installation des outils
@@ -44,7 +44,7 @@ jobs:
 
           python -m pip install --upgrade pip
 
-          pip install pytest black flake8
+          pip install pytest black flake8 radon pylint bandit pytest-cov interrogate
 
 
           if [ -f requirements.txt ]; then
@@ -86,6 +86,26 @@ jobs:
           echo "## Flake8" >> python-report.md
 
           flake8 . >> python-report.md 2>&1
+      - name: Quality analysis
+      continue-on-error: true
+      run: |
+
+    echo "## Quality Analysis" >> reports/python-report.md
+
+    echo "### Complexity" >> reports/python-report.md
+    radon cc . -a >> reports/python-report.md
+
+
+    echo "### Security" >> reports/python-report.md
+    bandit -r . >> reports/python-report.md
+
+
+    echo "### Pylint" >> reports/python-report.md
+    pylint . >> reports/python-report.md
+
+
+    echo "### Coverage" >> reports/python-report.md
+    pytest --cov . >> reports/python-report.md
 
 
 
@@ -122,6 +142,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
 
-          name: python-report
+          name: python-report-${{ github.run_number }}
 
-          path: python-report.md
+          path: python-report-${{ github.run_number }}.md
