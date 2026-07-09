@@ -87,8 +87,8 @@ jobs:
 
           flake8 . >> python-report.md 2>&1
       - name: Quality analysis
-      continue-on-error: true
-      run: |
+        continue-on-error: true
+        run: |
 
     echo "## Quality Analysis" >> reports/python-report.md
 
