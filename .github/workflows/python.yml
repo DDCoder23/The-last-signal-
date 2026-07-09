@@ -144,7 +144,7 @@ jobs:
 
 
           db = sqlite3.connect(
-              "database/python_reports.db"
+              "database/python_reports-${{ github.run_number }}.db"
           )
 
 
