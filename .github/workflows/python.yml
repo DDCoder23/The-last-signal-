@@ -15,7 +15,8 @@ on:
     # Toutes les heures
     - cron: "0 * * * *"
 
-
+permissions:
+  contents: write
 jobs:
 
   python-check:
@@ -128,20 +129,148 @@ jobs:
           fi
 
 
+      # Création SQLite
 
-      # Affichage dans GitHub
-      - name: Display report
+      - name: Generate SQLite database
         run: |
 
-          cat python-report.md >> $GITHUB_STEP_SUMMARY
+          python <<'PY'
+
+          import sqlite3
+          import datetime
+          import os
+
+
+          os.makedirs("database", exist_ok=True)
+
+
+          db = sqlite3.connect(
+              "database/python_reports.db"
+          )
+
+
+          cursor = db.cursor()
+
+
+          cursor.execute("""
+          CREATE TABLE IF NOT EXISTS reports(
+
+              id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+              date TEXT,
+
+              branch TEXT,
+
+              commit_hash TEXT,
+
+              report TEXT
+
+          )
+          """)
 
 
 
-      # Sauvegarde du rapport
+          with open(
+              "reports/python-report.md",
+              encoding="utf-8"
+          ) as f:
+
+              report = f.read()
+
+
+
+          cursor.execute(
+              """
+              INSERT INTO reports
+              (
+              date,
+              branch,
+              commit_hash,
+              report
+              )
+
+              VALUES (?,?,?,?)
+
+              """,
+
+              (
+
+              str(datetime.datetime.now()),
+
+              os.environ.get(
+                  "GITHUB_REF",
+                  "unknown"
+              ),
+
+              os.environ.get(
+                  "GITHUB_SHA",
+                  "unknown"
+              ),
+
+              report
+
+              )
+
+          )
+
+
+          db.commit()
+
+          db.close()
+
+
+          PY
+
+
+
+      # Affichage GitHub
+
+      - name: Display report
+
+        run: |
+
+          cat reports/python-report.md >> $GITHUB_STEP_SUMMARY
+
+
+
+      # Sauvegarde artifact
+
       - name: Upload report
+
         uses: actions/upload-artifact@v4
+
         with:
 
           name: python-report-${{ github.run_number }}
 
-          path: python-report-${{ github.run_number }}.md
+          path: |
+
+            reports/python-report-${{ github.run_number }}.md
+
+            database/python_reports-${{ github.run_number }}.db
+
+
+
+      # Ajout automatique dans le dépôt
+
+      - name: Commit generated files
+
+        run: |
+
+
+          git config --global user.name "github-actions"
+
+          git config --global user.email "github-actions@github.com"
+
+
+          git add reports/python-report.md
+
+          git add database/python_reports.db
+
+
+          git commit -m "Update Python CI report database" || echo "Nothing to commit"
+
+
+          git push
+
+      
