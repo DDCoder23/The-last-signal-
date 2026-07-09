@@ -1,0 +1,141 @@
+[
+    {
+        "nom": "épée de bois",
+        "image": "epee_bois.png",
+        "prix": 20,
+        "type": "armes",
+        "enchant": 0,
+        "durabilite": 100
+    },
+    {
+        "nom": "livre enchant niv 1",
+        "image": "livre enchant.png",
+        "prix": 100000,
+        "type": "livres"
+
+    },
+    {
+        "nom": "livre enchant niv 2",
+        "image":"livre enchant.png",
+        "prix": 200000,
+        "type": "livres"
+
+    },
+    {
+        "nom": "livre enchant niv 3",
+        "image": "livre enchant.png",
+        "prix": 300000,
+        "type": "livres"
+
+    },
+    {
+        "nom": "livre enchant niv 4",
+        "image": "livre enchant.png",
+        "prix": 400000,
+        "type": "livres"
+
+    },
+    {
+        "nom": "livre enchant niv 5",
+        "image": "livre enchant.png",
+        "prix": 500000,
+        "type": "livres"
+
+    },
+    {
+        "nom": "livre enchant niv 6",
+        "image": "livre enchant.png",
+        "prix": 600000,
+        "type": "livres"
+
+    },
+    {
+        "nom": "viande",
+        "image": "viande.png",
+        "prix": 7,
+        "type": "de base"
+
+    },
+    {
+        "nom": "pain",
+        "image": "pain.png",
+        "prix": 5,
+        "type": "de base"
+
+    },
+    {
+        "nom": "potion de soin léger",
+        "image": "potion_de_soin_léger.png",
+        "prix": 25,
+        "type": "potion",
+        "effet" : "soin"
+
+    },
+    {
+        "nom": "potion de soin modéré",
+        "image": "potion_de_soin_modéré.png",
+        "prix": 35,
+        "type": "potion",
+        "effet" : "soin"
+
+    },
+    {
+        "nom": "potion de délivrance",
+        "image": "potion_de_délivrance.png",
+        "prix": 100,
+        "type": "potion",
+        "effet" : "soin"
+
+    },
+    {
+        "nom": "potion de mana",
+        "image": "potion_de_mana.png",
+        "prix": 75,
+        "type": "potion",
+        "effet" : "mana"
+
+    },
+
+
+    
+    {
+        "nom": "gemmes",
+        "image": "gemmes.png",
+        "prix": 66667,
+        "type": "de base"
+    },
+    {
+        "nom": "sac",
+        "image": "sac.png",
+        "prix": 5,
+        "type": "de base"
+    },
+    {
+        "nom": "corde",
+        "image": "corde.png",
+        "prix": 5,
+        "type": "de base"
+    },
+    {
+        "nom": "chargeur",
+        "image": "chargeur.png",
+        "prix": 120,
+        "type": "équipement",
+        "enchant": 0
+
+    },
+    {
+            "nom": "Carreau d' arbalète",
+            "image": "carreau d' arbalète.png",
+            "prix": 15,
+            "type": "équipement",
+            "enchant": 0
+    
+      },
+    {
+    "nom": "torche",
+    "image": "torche.png",
+    "prix": 5,
+    "type": "de base"
+     }
+]
