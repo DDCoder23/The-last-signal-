@@ -109,8 +109,100 @@ class DatabaseManager:
 
         )
         """)
+        self.cursor.execute("""
+CREATE TABLE IF NOT EXISTS flake8_errors (
 
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
 
+    run_id INTEGER,
+
+    file TEXT,
+
+    line INTEGER,
+
+    column_number INTEGER,
+
+    code TEXT,
+
+    message TEXT,
+
+    FOREIGN KEY(run_id)
+    REFERENCES runs(id)
+
+)
+""")
+        self.cursor.execute("""
+CREATE TABLE IF NOT EXISTS black_files (
+
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    run_id INTEGER,
+
+    file TEXT,
+
+    status TEXT,
+
+    FOREIGN KEY(run_id)
+    REFERENCES runs(id)
+
+)
+""")
+        self.cursor.execute("""
+CREATE TABLE IF NOT EXISTS bandit_issues (
+
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    run_id INTEGER,
+
+    severity TEXT,
+
+    confidence TEXT,
+
+    file TEXT,
+
+    line INTEGER,
+
+    issue TEXT,
+
+    FOREIGN KEY(run_id)
+    REFERENCES runs(id)
+
+)
+""")
+        self.cursor.execute("""
+CREATE TABLE IF NOT EXISTS pytest_results (
+
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    run_id INTEGER,
+
+    test_name TEXT,
+
+    status TEXT,
+
+    duration REAL,
+
+    error TEXT,
+
+    FOREIGN KEY(run_id)
+    REFERENCES runs(id)
+
+)
+""")
+        self.cursor.execute("""
+CREATE TABLE IF NOT EXISTS reports (
+
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    run_id INTEGER,
+
+    markdown TEXT,
+
+    FOREIGN KEY(run_id)
+    REFERENCES runs(id)
+
+)
+""")
         self.connection.commit()
 
 
@@ -126,7 +218,7 @@ class DatabaseManager:
 
         self.cursor.execute(
         """
-        INSERT OR REPLACE INTO runs
+        INSERT INTO runs
         (
             run_number,
             date,
@@ -209,7 +301,99 @@ class DatabaseManager:
         self.connection.commit()
 
 
+    def add_flake8_error(self,run_id,file,line,column,code,message):
 
+        self.cursor.execute(
+        """
+        INSERT INTO flake8_errors
+        (
+            run_id,
+            file,
+            line,
+            column_number,
+            code,
+            message
+        )
+
+        VALUES (?,?,?,?,?,?)
+        """,
+        (
+            run_id,
+            file,
+            line,
+            column,
+            code,
+            message
+        )
+    )
+
+        self.connection.commit()
+
+    def add_black_file(self,run_id,file,status):
+
+        self.cursor.execute(
+        """
+        INSERT INTO black_file
+        (
+            run_id,
+            file,
+            status
+        )
+
+        VALUES (?,?,?)
+        """,
+        (
+            run_id,
+            file,
+            status
+        )
+    )
+
+        self.connection.commit()
+
+
+    def add_bandit_issue(self,run_id,file,status):
+
+        self.cursor.execute(
+        """
+        INSERT INTO bandit_issue
+        (
+            run_id,
+            file,
+            status
+        )
+
+        VALUES (?,?,?)
+        """,
+        (
+            run_id,
+            file,
+            status
+        )
+    )
+
+        self.connection.commit()
+    def add_test(self,run_id,file,status):
+
+        self.cursor.execute(
+        """
+        INSERT INTO test
+        (
+            run_id,
+            file,
+            status
+        )
+
+        VALUES (?,?,?)
+        """,
+        (
+            run_id,
+            file,
+            status
+        )
+    )
+
+        self.connection.commit()
     def close(self):
 
         self.connection.close()
