@@ -31,13 +31,14 @@ jobs:
         uses: actions/checkout@v4
         with:
               fetch-depth: 0
+              persist-credentials: true
 
 
       # Installation Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.14"
+          python-version: "3.13"
 
 
       # Installation des outils
@@ -59,7 +60,7 @@ jobs:
       - name: Create report
         run: |
           mkdir -p reports
-          REPORT="reports/python-report-${GITHUB_RUN_NUMBER}.md"
+          echo "REPORT=reports/python-report-${GITHUB_RUN_NUMBER}.md" >> $GITHUB_ENV
 
           echo "# Rapport Python" > "$REPORT"
 
@@ -158,25 +159,39 @@ jobs:
 
 
           cursor.execute("""
-          CREATE TABLE IF NOT EXISTS reports(
+          CREATE TABLE IF NOT EXISTS reports (
 
-              id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
 
-              date TEXT,
+    run_number INTEGER,
 
-              branch TEXT,
+    date TEXT,
 
-              commit_hash TEXT,
+    branch TEXT,
 
-              report TEXT
+    commit_hash TEXT,
 
-          )
+    black_status TEXT,
+
+    flake8_errors INTEGER,
+
+    pylint_score REAL,
+
+    coverage REAL,
+
+    complexity TEXT,
+
+    bandit_errors INTEGER,
+
+    report TEXT
+
+)
           """)
 
 
 
           with open(
-              f"{$REPORT}",
+              f"reports/python-report-{os.environ['GITHUB_RUN_NUMBER']}.md",
               encoding="utf-8"
           ) as f:
 
@@ -188,6 +203,7 @@ jobs:
               """
               INSERT INTO reports
               (
+              run_number,
               date,
               branch,
               commit_hash,
@@ -199,6 +215,7 @@ jobs:
               """,
 
               (
+              int(os.environ["GITHUB_RUN_NUMBER"]),
 
               str(datetime.datetime.now()),
 
@@ -227,7 +244,10 @@ jobs:
           PY
 
 
-
+      - name: Generate dashboard
+        run: |
+          mkdir -p dashboard
+          python scripts/generate_dashboard.py
       # Affichage GitHub
 
       - name: Display report
@@ -253,7 +273,7 @@ jobs:
 
           path: |
 
-            "$REPORT"
+            ${{ env.REPORT }}
 
             database/python_reports.db
       # Ajout automatique dans le dépôt
@@ -270,6 +290,7 @@ jobs:
           cp -r database /tmp/
           if git show-ref --verify --quiet refs/remotes/origin/ci-reports
           then
+            git fetch origin ci-reports:ci-reports
             git checkout ci-reports
           else
             git checkout --orphan ci-reports
@@ -282,7 +303,7 @@ jobs:
           cp -r /tmp/reports/* reports/
           cp -r /tmp/database/* database/
 
-          git add reports database
+          git add reports database dashboard
 
           git commit -m "Python CI Report #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
 
