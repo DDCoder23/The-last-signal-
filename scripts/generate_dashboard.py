@@ -97,7 +97,7 @@ def generate_dashboard(data):
         )
 
         pylint_values.append(
-            score if score else 0
+            pylint if pylint else 0
         )
 
 
