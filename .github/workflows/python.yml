@@ -189,11 +189,9 @@ jobs:
 
           mkdir -p /tmp/ci-backup
 
-          cp -r reports /tmp/ci-backup/
-
-          cp -r database /tmp/ci-backup/
-
-          cp -r dashboard /tmp/ci-backup/
+          cp -r reports /tmp/ci-backup/ || true
+          cp -r database /tmp/ci-backup/ || true
+          cp -r dashboard /tmp/ci-backup/ || true
 
 
 
@@ -232,26 +230,16 @@ jobs:
 
 
 
-          mkdir -p reports database dashboard
+         
 
     
 
-          mkdir -p reports database dashboard
+         
 
 
 
 
-          git checkout ci-reports
-
-          git pull origin ci-reports
-
-          else
-
-          git checkout --orphan ci-reports
-
-          git rm -rf .
-
-          fi
+          
 
 
 
