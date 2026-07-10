@@ -108,7 +108,7 @@ def generate_dashboard(data):
                 <td>{html.escape(date)}</td>
                 <td>{html.escape(branch)}</td>
                 <td>{cov or 0}%</td>
-                <td>{score or 0}/10</td>
+                <td>{pylint or 0}/10</td>
             </tr>
             """
         )
