@@ -18,14 +18,23 @@ def get_data():
 
     cursor.execute("""
         SELECT
-            run_number,
-            date,
-            branch,
-            commit_hash,
-            coverage,
-            pylint_score,
-            report
-        FROM runs
+
+    runs.id,
+    runs.run_number,
+    runs.date,
+    runs.branch,
+
+    quality_metrics.pylint,
+    quality_metrics.coverage,
+    quality_metrics.complexity,
+
+    tests.failed,
+
+    security.high,
+    security.medium,
+    security.low
+
+FROM runs
 
 LEFT JOIN quality_metrics
 ON runs.id = quality_metrics.run_id
@@ -37,6 +46,7 @@ LEFT JOIN security
 ON runs.id = security.run_id
 
 ORDER BY runs.id ASC
+
     """)
 
     rows = cursor.fetchall()
