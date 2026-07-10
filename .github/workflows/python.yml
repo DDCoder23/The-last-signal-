@@ -282,34 +282,60 @@ jobs:
 
         run: |
 
-
           git config --global user.name "github-actions"
-
           git config --global user.email "github-actions@github.com"
-          cp -r reports /tmp/
-          cp -r database /tmp/
-          cp -r dashboard /tmp/
-          git fetch origin ci-reports:ci-reports
+      # Sauvegarde des fichiers générés
+          mkdir -p /tmp/ci-backup
+
+          cp -r reports /tmp/ci-backup/
+
+          cp -r database /tmp/ci-backup/
+
+          cp -r dashboard /tmp/ci-backup/
+
+
+    # Nettoyage du workspace avant changement de branche
+          git reset --hard
+          git clean -fd
+
+
+    # Récupération des branches distantes
+          git fetch origin
+
+
+    # Passage sur ci-reports
+
           if git show-ref --verify --quiet refs/remotes/origin/ci-reports
           then
-            git checkout ci-reports
+
+          git checkout ci-reports
+
+          git pull origin ci-reports
+
           else
-            git checkout --orphan ci-reports
-            git rm -rf .
+
+          git checkout --orphan ci-reports
+
+          git rm -rf .
+
           fi
 
-          mkdir -p reports
-          mkdir -p database
-          mkdir -p dashboard
+
+         mkdir -p reports database dashboard
 
 
-          cp -r /tmp/reports/* reports/
-          cp -r /tmp/database/* database/
-          cp -r /tmp/dashboard/* dashboard/
+          cp -r /tmp/ci-backup/reports/* reports/
+
+          cp -r /tmp/ci-backup/database/* database/
+
+          cp -r /tmp/ci-backup/dashboard/* dashboard/
+
 
           git add reports database dashboard
 
+
           git commit -m "Python CI Report #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
+
 
           git push origin ci-reports
 
