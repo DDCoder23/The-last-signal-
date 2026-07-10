@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+The Last Signal - CI Dashboard
+</title>
+
+
+<link rel="stylesheet" href="assets/style.css">
+
+
+<script src="assets/chart.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+🚀 The Last Signal - CI Dashboard
+</h1>
+
+
+<p id="generated"></p>
+
+
+
+<section class="cards">
+
+
+<div class="card">
+
+<h3>
+Builds
+</h3>
+
+<p id="runs">
+0
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Qualité moyenne
+</h3>
+
+<p id="quality">
+0
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Coverage
+</h3>
+
+<p id="coverage">
+0
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Pylint
+</h3>
+
+<p id="pylint">
+0
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+Sécurité
+</h3>
+
+<p id="security">
+0
+</p>
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="panel">
+
+<h2>
+Evolution de la couverture
+</h2>
+
+<canvas id="coverageChart"></canvas>
+
+</section>
+
+
+
+
+<section class="panel">
+
+<h2>
+Evolution Pylint
+</h2>
+
+
+<canvas id="pylintChart"></canvas>
+
+
+</section>
+
+
+
+
+
+<section class="panel">
+
+<h2>
+Evolution qualité globale
+</h2>
+
+
+<canvas id="qualityChart"></canvas>
+
+
+</section>
+
+
+
+
+
+<section class="panel">
+
+
+<h2>
+Historique des builds
+</h2>
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Run
+</th>
+
+
+<th>
+Date
+</th>
+
+
+<th>
+Branche
+</th>
+
+
+<th>
+Qualité
+</th>
+
+
+<th>
+Coverage
+</th>
+
+
+<th>
+Pylint</th>
+
+
+<th>
+Tests échoués</th>
+
+
+<th>
+Sécurité</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+<tbody id="history">
+
+</tbody>
+
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+
+<script>
+
+
+async function loadDashboard(){
+
+
+const response = await fetch(
+"data/dashboard.json"
+);
+
+
+const data = await response.json();
+
+
+
+
+
+document.getElementById(
+"generated"
+).innerHTML =
+"Généré : " + data.generated;
+
+
+
+
+
+const summary = data.summary;
+
+
+
+
+document.getElementById(
+"runs"
+).innerHTML =
+summary.total_runs;
+
+
+
+
+document.getElementById(
+"quality"
+).innerHTML =
+summary.average_quality + "/100";
+
+
+
+
+document.getElementById(
+"coverage"
+).innerHTML =
+summary.average_coverage + "%";
+
+
+
+
+document.getElementById(
+"pylint"
+).innerHTML =
+summary.average_pylint + "/10";
+
+
+
+
+document.getElementById(
+"security"
+).innerHTML =
+summary.security_errors;
+
+
+
+
+const history = data.history;
+
+
+
+const labels =
+history.map(
+item => item.run
+);
+
+
+
+const coverage =
+history.map(
+item => item.coverage
+);
+
+
+
+const pylint =
+history.map(
+item => item.pylint
+);
+
+
+
+const quality =
+history.map(
+item => item.quality
+);
+
+
+
+
+
+createChart(
+"coverageChart",
+"Coverage %",
+labels,
+coverage
+);
+
+
+
+
+createChart(
+"pylintChart",
+"Pylint",
+labels,
+pylint
+);
+
+
+
+
+createChart(
+"qualityChart",
+"Score qualité",
+labels,
+quality
+);
+
+
+
+
+
+
+const table =
+document.getElementById(
+"history"
+);
+
+
+
+history.reverse().forEach(
+item => {
+
+
+let row = document.createElement(
+"tr"
+);
+
+
+
+row.innerHTML = `
+
+
+<td>
+${item.run}
+</td>
+
+
+<td>
+${item.date}
+</td>
+
+
+<td>
+${item.branch}
+</td>
+
+
+<td>
+${item.quality}/100
+</td>
+
+
+<td>
+${item.coverage}%
+</td>
+
+
+<td>
+${item.pylint}/10
+</td>
+
+
+<td>
+${item.tests.failed}
+</td>
+
+
+<td>
+${
+
+item.security.high +
+
+item.security.medium +
+
+item.security.low
+
+}
+
+</td>
+
+
+`;
+
+
+
+table.appendChild(row);
+
+
+}
+
+);
+
+
+
+}
+
+
+
+
+
+
+function createChart(
+id,
+label,
+labels,
+values
+){
+
+
+new Chart(
+
+document.getElementById(id),
+
+
+{
+
+type:"line",
+
+
+data:{
+
+
+labels:labels,
+
+
+datasets:[
+
+{
+
+
+label:label,
+
+
+data:values,
+
+
+borderWidth:2
+
+
+}
+
+]
+
+
+},
+
+
+options:{
+
+
+responsive:true,
+
+
+plugins:{
+
+
+legend:{
+
+
+display:true
+
+
+}
+
+
+}
+
+
+}
+
+
+}
+
+
+);
+
+
+
+}
+
+
+
+
+loadDashboard();
+
+
+
+</script>
+
+
+</body>
+
+</html>
