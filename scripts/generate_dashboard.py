@@ -66,7 +66,7 @@ def generate_dashboard(data):
 
     runs = []
     coverage = []
-    pylint = []
+    pylint_values = []
     table_rows = []
 
 
@@ -86,15 +86,17 @@ def generate_dashboard(data):
     low
 ) = row
 
-        runs.append(
-            str(run)
-        )
+        runs.append(str(run))
+
+
+
+
 
         coverage.append(
             cov if cov else 0
         )
 
-        pylint.append(
+        pylint_values.append(
             score if score else 0
         )
 
