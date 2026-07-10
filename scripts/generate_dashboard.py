@@ -72,7 +72,19 @@ def generate_dashboard(data):
 
     for row in data:
 
-        run, date, branch, commit, cov, score, report = row
+        (
+    id,
+    run,
+    date,
+    branch,
+    pylint,
+    cov,
+    complexity,
+    failed,
+    high,
+    medium,
+    low
+) = row
 
         runs.append(
             str(run)
