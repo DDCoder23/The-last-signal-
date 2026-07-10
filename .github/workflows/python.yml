@@ -263,7 +263,7 @@ jobs:
           git config --global user.email "github-actions@github.com"
 
 
-          git add reports/reports/python-report-${{ github.run_number }}.md
+          git add reports/python-report-${{ github.run_number }}.md
 
           git add database/python_reports-${{ github.run_number }}.db
 
