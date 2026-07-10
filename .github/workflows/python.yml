@@ -57,14 +57,17 @@ jobs:
       - name: Create report
         run: |
           mkdir -p reports
+          REPORT="reports/python-report-${GITHUB_RUN_NUMBER}.md"
 
-          echo "# Rapport Python - The Last Signal" > reports/python-report.md
+          echo "# Rapport Python" > "$REPORT"
 
-          echo "" >> reports/python-report.md
+          
 
-          echo "Date : $(date)" >> reports/python-report.md
+          echo "" >> "$REPORT"
 
-          echo "" >> reports/python-report.md
+          echo "Date : $(date)" >> "$REPORT"
+
+          echo "" >> "$REPORT"
 
 
 
@@ -73,9 +76,9 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Black" >> reports/python-report.md
+          echo "## Black" >> "$REPORT"
 
-          black --check . >> reports/python-report.md 2>&1
+          black --check . >> "$REPORT" 2>&1
 
 
 
@@ -84,29 +87,29 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Flake8" >> reports/python-report.md
+          echo "## Flake8" >> "$REPORT"
 
-          flake8 . >> reports/python-report.md 2>&1
+          flake8 . >> "$REPORT" 2>&1
       - name: Quality analysis
         continue-on-error: true
         run: |
 
-          echo "## Quality Analysis" >> reports/reports/python-report.md
+          echo "## Quality Analysis" >> "$REPORT"
 
-          echo "### Complexity" >> reports/reports/python-report.md
-          radon cc . -a >> reports/reports/python-report.md
-
-
-          echo "### Security" >> reports/reports/python-report.md
-          bandit -r . >> reports/reports/python-report.md
+          echo "### Complexity" >> "$REPORT"
+          radon cc . -a >> "$REPORT"
 
 
-          echo "### Pylint" >> reports/reports/python-report.md
-          pylint . >> reports/reports/python-report.md
+          echo "### Security" >> "$REPORT"
+          bandit -r . >> "$REPORT"
 
 
-          echo "### Coverage" >> reports/reports/python-report.md
-          pytest --cov . >> reports/reports/python-report.md
+          echo "### Pylint" >> "$REPORT"
+          pylint . >> "$REPORT"
+
+
+          echo "### Coverage" >> "$REPORT"
+          pytest --cov . >> "$REPORT"
 
 
 
@@ -115,16 +118,16 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Tests Pytest" >> reports/python-report.md
+          echo "## Tests Pytest" >> "$REPORT"
 
 
           if [ -d tests ]; then
 
-            pytest >> reports/python-report.md 2>&1
+            pytest >> "$REPORT" 2>&1
 
           else
 
-            echo "Aucun dossier tests trouvé" >> reports/python-report.md
+            echo "Aucun dossier tests trouvé" >> "$REPORT"
 
           fi
       
@@ -171,7 +174,7 @@ jobs:
 
 
           with open(
-              f"reports/python-report.md",
+              f""$REPORT"",
               encoding="utf-8"
           ) as f:
 
@@ -229,7 +232,7 @@ jobs:
 
         run: |
 
-          cat reports/python-report.md >> $GITHUB_STEP_SUMMARY
+          cat "$REPORT" >> $GITHUB_STEP_SUMMARY
 
 
 
@@ -248,7 +251,7 @@ jobs:
 
           path: |
 
-            reports/python-report.md
+            "$REPORT"
 
             database/python_reports.db
       # Ajout automatique dans le dépôt
@@ -263,7 +266,7 @@ jobs:
           git config --global user.email "github-actions@github.com"
 
 
-          git add reports/python-report.md
+          git add "$REPORT"
 
           git add database/python_reports.db
 
