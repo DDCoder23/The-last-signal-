@@ -60,7 +60,9 @@ jobs:
       - name: Create report
         run: |
           mkdir -p reports
-          echo "REPORT=reports/python-report-${GITHUB_RUN_NUMBER}.md" >> $GITHUB_ENV
+          REPORT="reports/python-report-${GITHUB_RUN_NUMBER}.md"
+
+          echo "REPORT=$REPORT" >> $GITHUB_ENV
 
           echo "# Rapport Python" > "$REPORT"
 
@@ -208,7 +210,7 @@ jobs:
               report
               )
 
-              VALUES (?,?,?,?)
+              VALUES (?,?,?,?,?)
 
               """,
 
@@ -286,9 +288,10 @@ jobs:
           git config --global user.email "github-actions@github.com"
           cp -r reports /tmp/
           cp -r database /tmp/
+          cp -r dashboard /tmp/
+          git fetch origin ci-reports:ci-reports
           if git show-ref --verify --quiet refs/remotes/origin/ci-reports
           then
-            git fetch origin ci-reports:ci-reports
             git checkout ci-reports
           else
             git checkout --orphan ci-reports
@@ -297,9 +300,12 @@ jobs:
 
           mkdir -p reports
           mkdir -p database
+          mkdir -p dashboard
+
 
           cp -r /tmp/reports/* reports/
           cp -r /tmp/database/* database/
+          cp -r /tmp/dashboard/* dashboard/
 
           git add reports database dashboard
 
