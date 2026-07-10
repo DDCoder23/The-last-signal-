@@ -1,14 +1,14 @@
 # Rapport Python - The Last Signal
 
-Date : Fri Jul 10 08:51:07 UTC 2026
+Date : Fri Jul 10 08:52:27 UTC 2026
 
 ## Black
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/admin_manager.py
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
+would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/grade_manager.py
-would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
 would reformat /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
