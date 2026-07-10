@@ -25,8 +25,18 @@ def get_data():
             coverage,
             pylint_score,
             report
-        FROM reports
-        ORDER BY id ASC
+        FROM runs
+
+LEFT JOIN quality_metrics
+ON runs.id = quality_metrics.run_id
+
+LEFT JOIN tests
+ON runs.id = tests.run_id
+
+LEFT JOIN security
+ON runs.id = security.run_id
+
+ORDER BY runs.id ASC
     """)
 
     rows = cursor.fetchall()
