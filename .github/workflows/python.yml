@@ -171,7 +171,7 @@ jobs:
 
 
           with open(
-              f"reports/python-report-{os.environ['GITHUB_RUN_NUMBER']}.md",
+              f"reports/python-report.md",
               encoding="utf-8"
           ) as f:
 
@@ -244,7 +244,7 @@ jobs:
 
         with:
 
-          name: python-report-${{ github.run_number }}
+          name: python-report
 
           path: |
 
