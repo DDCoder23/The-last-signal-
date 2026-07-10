@@ -176,7 +176,7 @@ jobs:
 
 
           with open(
-              f""$REPORT"",
+              f"{$REPORT}",
               encoding="utf-8"
           ) as f:
 
