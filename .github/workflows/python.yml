@@ -161,31 +161,29 @@ jobs:
           cursor.execute("""
           CREATE TABLE IF NOT EXISTS reports (
 
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                 id INTEGER PRIMARY KEY AUTOINCREMENT,
 
-    run_number INTEGER,
+                 run_number INTEGER,
 
-    date TEXT,
+                 date TEXT,
 
-    branch TEXT,
+                 branch TEXT,
 
-    commit_hash TEXT,
+                 commit_hash TEXT,
 
-    black_status TEXT,
+                 black_status TEXT,
 
-    flake8_errors INTEGER,
+                 flake8_errors INTEGER,
 
-    pylint_score REAL,
+                 pylint_score REAL,
 
-    coverage REAL,
+                 coverage REAL,
 
-    complexity TEXT,
+                 complexity TEXT,
 
-    bandit_errors INTEGER,
+                 bandit_errors INTEGER,
 
-    report TEXT
-
-)
+                 report TEXT)
           """)
 
 
