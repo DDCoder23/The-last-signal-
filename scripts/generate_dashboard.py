@@ -1,323 +1,325 @@
 import sqlite3
 import os
-import html
 import json
+from datetime import datetime
 
 
 DB_PATH = "database/python_reports.db"
-OUTPUT = "dashboard/index.html"
+OUTPUT = "dashboard/data/dashboard.json"
 
 
-def get_data():
+def get_database_data():
 
     if not os.path.exists(DB_PATH):
+        print("Base SQLite introuvable")
         return []
 
-    conn = sqlite3.connect(DB_PATH)
-    cursor = conn.cursor()
+
+    connection = sqlite3.connect(DB_PATH)
+    cursor = connection.cursor()
+
 
     cursor.execute("""
-        SELECT
+    SELECT
 
-    runs.id,
-    runs.run_number,
-    runs.date,
-    runs.branch,
+        runs.id,
+        runs.run_number,
+        runs.date,
+        runs.branch,
+        runs.commit_hash,
+        runs.status,
 
-    quality_metrics.pylint,
-    quality_metrics.coverage,
-    quality_metrics.complexity,
+        quality_metrics.pylint,
+        quality_metrics.coverage,
+        quality_metrics.complexity,
+        quality_metrics.documentation,
 
-    tests.failed,
+        tests.total,
+        tests.passed,
+        tests.failed,
+        tests.skipped,
+        tests.duration,
 
-    security.high,
-    security.medium,
-    security.low
+        security.high,
+        security.medium,
+        security.low
 
-FROM runs
 
-LEFT JOIN quality_metrics
-ON runs.id = quality_metrics.run_id
+    FROM runs
 
-LEFT JOIN tests
-ON runs.id = tests.run_id
 
-LEFT JOIN security
-ON runs.id = security.run_id
+    LEFT JOIN quality_metrics
 
-ORDER BY runs.id ASC
+    ON runs.id = quality_metrics.run_id
+
+
+    LEFT JOIN tests
+
+    ON runs.id = tests.run_id
+
+
+    LEFT JOIN security
+
+    ON runs.id = security.run_id
+
+
+    ORDER BY runs.id ASC
 
     """)
 
-    rows = cursor.fetchall()
 
-    conn.close()
+    data = cursor.fetchall()
 
-    return rows
-
+    connection.close()
 
 
-def generate_dashboard(data):
+    return data
+
+
+
+def calculate_quality(
+        coverage,
+        pylint,
+        documentation,
+        security
+):
+
+    coverage = coverage or 0
+    pylint = pylint or 0
+    documentation = documentation or 0
+
+
+    security_score = max(
+        0,
+        100 - security * 10
+    )
+
+
+    score = (
+
+        coverage * 0.4 +
+
+        (pylint * 10) * 0.3 +
+
+        documentation * 0.2 +
+
+        security_score * 0.1
+
+    )
+
+
+    return round(score,2)
+
+
+
+def generate_json(rows):
+
 
     os.makedirs(
-        "dashboard",
+        "dashboard/data",
         exist_ok=True
     )
 
-    runs = []
-    coverage = []
-    pylint_values = []
-    table_rows = []
+
+    dashboard = {
+
+        "generated": str(datetime.now()),
+
+        "summary": {
+
+            "total_runs": len(rows),
+
+            "average_quality": 0,
+
+            "average_coverage": 0,
+
+            "average_pylint": 0,
+
+            "security_errors": 0
+
+        },
 
 
-    for row in data:
+        "history": []
+
+    }
+
+
+    total_quality = 0
+    total_coverage = 0
+    total_pylint = 0
+    total_security = 0
+
+
+
+    for row in rows:
+
 
         (
-    id,
-    run,
-    date,
-    branch,
-    pylint,
-    cov,
-    complexity,
-    failed,
-    high,
-    medium,
-    low
-) = row
+            id,
+            run,
+            date,
+            branch,
+            commit,
+            status,
 
-        runs.append(str(run))
+            pylint,
+            coverage,
+            complexity,
+            documentation,
 
+            tests_total,
+            tests_passed,
+            tests_failed,
+            tests_skipped,
+            duration,
 
+            high,
+            medium,
+            low
 
-
-
-        coverage.append(
-            cov if cov else 0
-        )
-
-        pylint_values.append(
-            pylint if pylint else 0
-        )
+        ) = row
 
 
-        table_rows.append(
-            f"""
-            <tr>
-                <td>{run}</td>
-                <td>{html.escape(date)}</td>
-                <td>{html.escape(branch)}</td>
-                <td>{cov or 0}%</td>
-                <td>{pylint or 0}/10</td>
-            </tr>
-            """
+
+        security_errors = (
+
+            (high or 0)
+            +
+            (medium or 0)
+            +
+            (low or 0)
+
         )
 
 
-    html_content = f"""
-<!DOCTYPE html>
+        quality = calculate_quality(
 
-<html>
+            coverage,
 
-<head>
+            pylint,
 
-<meta charset="UTF-8">
+            documentation,
 
-<title>
-The Last Signal - CI Dashboard
-</title>
+            security_errors
 
+        )
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
-<style>
+        total_quality += quality
 
-body {{
-    font-family: Arial;
-    margin: 40px;
-    background:#111;
-    color:white;
-}}
+        total_coverage += coverage or 0
 
-.card {{
+        total_pylint += pylint or 0
 
-    background:#222;
-    padding:20px;
-    border-radius:10px;
-    margin-bottom:20px;
+        total_security += security_errors
 
-}}
 
 
-table {{
+        dashboard["history"].append({
 
-width:100%;
-border-collapse:collapse;
+            "run": run,
 
-}}
+            "date": date,
 
-td,th {{
+            "branch": branch,
 
-padding:10px;
-border-bottom:1px solid #555;
+            "commit": commit,
 
-}}
+            "status": status,
 
-</style>
 
+            "quality": quality,
 
-</head>
 
+            "coverage": coverage or 0,
 
-<body>
+            "pylint": pylint or 0,
 
+            "complexity": complexity or 0,
 
-<h1>
-🚀 The Last Signal - CI Dashboard
-</h1>
 
+            "tests": {
 
-<div class="card">
+                "total": tests_total or 0,
 
-<h2>
-Evolution couverture des tests
-</h2>
+                "passed": tests_passed or 0,
 
+                "failed": tests_failed or 0,
 
-<canvas id="coverage"></canvas>
+                "skipped": tests_skipped or 0,
 
-</div>
+                "duration": duration or 0
 
+            },
 
 
-<div class="card">
+            "security": {
 
-<h2>
-Evolution Pylint
-</h2>
+                "high": high or 0,
 
+                "medium": medium or 0,
 
-<canvas id="pylint"></canvas>
+                "low": low or 0
 
-</div>
+            }
 
+        })
 
 
 
-<div class="card">
+    if rows:
 
-<h2>
-Historique des builds
-</h2>
 
+        dashboard["summary"]["average_quality"] = round(
+            total_quality / len(rows),
+            2
+        )
 
-<table>
 
-<tr>
-<th>Run</th>
-<th>Date</th>
-<th>Branche</th>
-<th>Coverage</th>
-<th>Pylint</th>
-</tr>
+        dashboard["summary"]["average_coverage"] = round(
+            total_coverage / len(rows),
+            2
+        )
 
 
-{''.join(table_rows)}
+        dashboard["summary"]["average_pylint"] = round(
+            total_pylint / len(rows),
+            2
+        )
 
 
-</table>
+        dashboard["summary"]["security_errors"] = total_security
 
-
-</div>
-
-
-
-<script>
-
-
-new Chart(
-document.getElementById('coverage'),
-{{
-
-type:'line',
-
-data:{{
-labels:{json.dumps(runs)},
-
-datasets:[{{
-
-label:'Coverage %',
-
-data:{json.dumps(coverage)}
-
-}}]
-
-}}
-
-}}
-
-
-
-);
-
-
-
-new Chart(
-
-document.getElementById('pylint'),
-
-{{
-
-type:'line',
-
-data:{{
-
-labels:{json.dumps(runs)},
-
-datasets:[{{
-
-label:'Pylint /10',
-
-data:{json.dumps(pylint)}
-
-}}]
-
-}}
-
-}}
-
-);
-
-
-
-</script>
-
-
-</body>
-
-</html>
-"""
 
 
     with open(
         OUTPUT,
         "w",
         encoding="utf-8"
-    ) as f:
+    ) as file:
 
-        f.write(
-            html_content
+
+        json.dump(
+            dashboard,
+            file,
+            indent=4,
+            ensure_ascii=False
         )
+
+
+
+    print(
+        "Dashboard JSON généré :",
+        OUTPUT
+    )
 
 
 
 if __name__ == "__main__":
 
-    data = get_data()
 
-    generate_dashboard(data)
+    rows = get_database_data()
 
-    print(
-        f"Dashboard généré : {OUTPUT}"
-    )
+    generate_json(rows)
