@@ -229,7 +229,7 @@ jobs:
 
         run: |
 
-          cat reports/reports/python-report-${{ github.run_number }}.md >> $GITHUB_STEP_SUMMARY
+          cat reports/python-report-${{ github.run_number }}.md >> $GITHUB_STEP_SUMMARY
 
 
 
