@@ -308,15 +308,15 @@ jobs:
           if git show-ref --verify --quiet refs/remotes/origin/ci-reports
           then
 
-          git checkout ci-reports
+            git checkout ci-reports
 
-          git pull origin ci-reports
+            git pull origin ci-reports
 
           else
 
-          git checkout --orphan ci-reports
+            git checkout --orphan ci-reports
 
-          git rm -rf .
+            git rm -rf .
 
           fi
 
