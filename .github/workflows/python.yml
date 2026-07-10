@@ -284,7 +284,7 @@ jobs:
 
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-      # Sauvegarde des fichiers générés
+      
           mkdir -p /tmp/ci-backup
 
           cp -r reports /tmp/ci-backup/
@@ -294,16 +294,16 @@ jobs:
           cp -r dashboard /tmp/ci-backup/
 
 
-    # Nettoyage du workspace avant changement de branche
+    
           git reset --hard
           git clean -fd
 
 
-    # Récupération des branches distantes
+    
           git fetch origin
 
 
-    # Passage sur ci-reports
+    
 
           if git show-ref --verify --quiet refs/remotes/origin/ci-reports
           then
@@ -321,7 +321,13 @@ jobs:
           fi
 
 
-         mkdir -p reports database dashboard
+
+          mkdir -p reports database dashboard
+
+    
+
+          mkdir -p reports database dashboard
+
 
 
           cp -r /tmp/ci-backup/reports/* reports/
