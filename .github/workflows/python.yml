@@ -3,7 +3,7 @@ name: Python CI Report
 on:
   push:
     branches:
-      - "**"
+      - main
 
   pull_request:
     branches:
@@ -29,6 +29,8 @@ jobs:
       # Récupération du code
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+              fetch-depth: 0
 
 
       # Installation Python
@@ -264,16 +266,29 @@ jobs:
           git config --global user.name "github-actions"
 
           git config --global user.email "github-actions@github.com"
+          cp -r reports /tmp/
+          cp -r database /tmp/
+          if git show-ref --verify --quiet refs/remotes/origin/ci-reports
+          then
+            git checkout ci-reports
+          else
+            git checkout --orphan ci-reports
+            git rm -rf .
+          fi
+
+          mkdir -p reports
+          mkdir -p database
+
+          cp -r /tmp/reports/* reports/
+          cp -r /tmp/database/* database/
+
+          git add reports database
+
+          git commit -m "Python CI Report #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
+
+          git push origin ci-reports
 
 
-          git add "$REPORT"
-
-          git add database/python_reports.db
-
-
-          git commit -m "Update Python CI report database" || echo "Nothing to commit"
-
-
-          git push
+          
 
       
