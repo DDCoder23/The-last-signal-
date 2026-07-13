@@ -78,7 +78,15 @@ jobs:
           for file in "${files[@]}"; do
             if [ ! -f "$file" ]; then
               cat > "$file" <<EOF
+# ${file%.md}
 
+## Description
+
+À compléter.
+
+---
+
+## Notes
 
 EOF
             fi
