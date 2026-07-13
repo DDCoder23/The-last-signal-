@@ -203,15 +203,6 @@ jobs:
 
     
           git fetch origin
-
-
-    
-
-          git fetch origin
-
-
-
-
           if git show-ref --verify --quiet refs/remotes/origin/ci-reports
           then
 
@@ -229,25 +220,7 @@ jobs:
           fi
 
 
-
-         
-
-    
-
-         
-
-
-
-
-          
-
-
-
-
           mkdir -p reports database dashboard
-
-
-
           cp -r /tmp/ci-backup/reports/* reports/
 
           cp -r /tmp/ci-backup/database/* database/
