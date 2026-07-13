@@ -13,7 +13,7 @@ on:
 
   schedule:
     # Toutes les heures
-    - cron: "5 * * * *"
+    - cron: "7.5 * * * *"
 
 permissions:
   contents: write
