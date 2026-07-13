@@ -173,11 +173,11 @@ jobs:
           name: python-report
 
           path: |
-           reports/**
-           database/**
-           dashboard/**
+             reports/**
+             database/**
+             dashboard/**
       - name: Commit reports
-       uses: ./.github/actions/commit-reports
-       with:
-         report-type: python
-         commit-message: "Python CI Report #${{ github.run_number }}"
+        uses: ./.github/actions/commit-reports
+        with:
+           report-type: python
+           commit-message: "Python CI Report #${{ github.run_number }}"
