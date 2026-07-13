@@ -176,16 +176,8 @@ jobs:
            reports/**
            database/**
            dashboard/**
-  commit-report:
-       needs: python-check
-
-       uses: ./.github/workflows/commit-reports.yml
-
-       permissions:
-        contents: write
-
+      - name: Commit reports
+       uses: ./.github/actions/commit-reports
        with:
-        artifact-name: python-generated-files
-        report-type: python
-        commit-message: "Python CI Report #${{ github.run_number }}"
-        branch: ci-reports
+         report-type: python
+         commit-message: "Python CI Report #${{ github.run_number }}"
