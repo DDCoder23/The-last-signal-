@@ -15,11 +15,4 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 
 ---
 
-## À venir
-- Rédaction du Game Design Document (01_GDD.md)
-- Rédaction du Technical Design Document (TDD).
-- Documentation du Lore.
-- Documentation du Gameplay.
-- Documentation de l'Architecture.
-- Documentation de la Base de données.
-- Documentation du Réseau.
+
