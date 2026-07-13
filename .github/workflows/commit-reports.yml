@@ -1,0 +1,86 @@
+name: Commit Reports
+
+on:
+  workflow_call:
+    inputs:
+      commit-message:
+        required: true
+        type: string
+
+      folders:
+        required: true
+        type: string
+
+      branch:
+        required: false
+        default: ci-reports
+        type: string
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      - name: Backup folders
+        shell: bash
+        run: |
+          mkdir -p /tmp/ci-backup
+
+          for folder in ${INPUT_FOLDERS//,/ }
+          do
+            if [ -d "$folder" ]; then
+              cp -r "$folder" "/tmp/ci-backup/"
+            fi
+          done
+        env:
+          INPUT_FOLDERS: ${{ inputs.folders }}
+
+      - name: Checkout reports branch
+        shell: bash
+        run: |
+          git fetch origin
+
+          if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
+          then
+              git checkout ${{ inputs.branch }}
+              git pull origin ${{ inputs.branch }}
+          else
+              git checkout --orphan ${{ inputs.branch }}
+              git rm -rf . || true
+          fi
+
+      - name: Restore folders
+        shell: bash
+        run: |
+          mkdir -p .
+
+          for folder in ${INPUT_FOLDERS//,/ }
+          do
+            mkdir -p "$folder"
+
+            if [ -d "/tmp/ci-backup/$folder" ]; then
+                cp -r "/tmp/ci-backup/$folder/." "$folder/"
+            fi
+          done
+        env:
+          INPUT_FOLDERS: ${{ inputs.folders }}
+
+      - name: Commit
+        run: |
+          git add .
+
+          git commit -m "${{ inputs.commit-message }}" || echo "Nothing to commit"
+
+          git push origin ${{ inputs.branch }}
