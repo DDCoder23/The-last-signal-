@@ -1,0 +1,103 @@
+name: Rust CI Report
+
+on:
+  push:
+    branches:
+      - "**"
+
+  pull_request:
+    branches:
+      - "**"
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "5.5 * * * *"
+
+jobs:
+  rust-check:
+    name: Rust Tests & Report
+    runs-on: ubuntu-latest
+
+    steps:
+      # Récupération du dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Installation de Rust
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      # Cache Cargo
+      - name: Cache Cargo
+        uses: Swatinem/rust-cache@v2
+
+      # Création du rapport
+      - name: Create report
+        run: |
+          echo "# Rapport Rust - The Last Signal" > rust-report.md
+          echo "" >> rust-report.md
+          echo "Date : $(date)" >> rust-report.md
+          echo "" >> rust-report.md
+
+      # Vérification du format
+      - name: Cargo fmt
+        continue-on-error: true
+        run: |
+          echo "## Cargo fmt" >> rust-report.md
+
+          if find . -name Cargo.toml | grep -q .; then
+            cargo fmt --all --check >> rust-report.md 2>&1
+          else
+            echo "Aucun projet Rust trouvé." >> rust-report.md
+          fi
+
+      # Analyse Clippy
+      - name: Cargo clippy
+        continue-on-error: true
+        run: |
+          echo "" >> rust-report.md
+          echo "## Cargo clippy" >> rust-report.md
+
+          if find . -name Cargo.toml | grep -q .; then
+            cargo clippy --all-targets --all-features -- -D warnings >> rust-report.md 2>&1
+          else
+            echo "Aucun projet Rust trouvé." >> rust-report.md
+          fi
+
+      # Tests
+      - name: Cargo test
+        continue-on-error: true
+        run: |
+          echo "" >> rust-report.md
+          echo "## Cargo test" >> rust-report.md
+
+          if find . -name Cargo.toml | grep -q .; then
+            cargo test >> rust-report.md 2>&1
+          else
+            echo "Aucun test Rust trouvé." >> rust-report.md
+          fi
+
+      # Compilation
+      - name: Cargo build
+        continue-on-error: true
+        run: |
+          echo "" >> rust-report.md
+          echo "## Cargo build" >> rust-report.md
+
+          if find . -name Cargo.toml | grep -q .; then
+            cargo build --release >> rust-report.md 2>&1
+          else
+            echo "Aucune compilation Rust effectuée." >> rust-report.md
+          fi
+
+      # Résumé GitHub
+      - name: Publish summary
+        run: cat rust-report.md >> $GITHUB_STEP_SUMMARY
+
+      # Sauvegarde du rapport
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: rust-report
+          path: rust-report.md
