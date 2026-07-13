@@ -16,7 +16,7 @@ Cette documentation est organisée comme un **wiki** afin de faciliter la naviga
 
 | Document | Description |
 |-----------|-------------|
-| 📖 [Game Design Document (GDD)](01_GDD.md) | Point d'entrée de toute la conception du jeu. |
+| 📖 [Game Design Document (GDD)](..gdd/README.md) | Point d'entrée de toute la conception du jeu. |
 
 ---
 
@@ -26,10 +26,10 @@ Cette documentation est organisée comme un **wiki** afin de faciliter la naviga
 
 | Document | Description |
 |-----------|-------------|
-| 🏗 [Technical Design Document (TDD)](02_TDD.md) | Architecture technique générale. |
-| 🖥 [Architecture](05_ARCHITECTURE.md) | Organisation du code et des modules. |
-| 🗄 [Base de données](06_DATABASE.md) | Structure PostgreSQL. |
-| 🌐 [Réseau](07_NETWORK.md) | Communication Client ↔ Serveur. |
+| 🏗 [Technical Design Document (TDD)](..tdd/README.md) | Architecture technique générale. |
+| 🖥 [Architecture](ARCHITECTURE.md) | Organisation du code et des modules. |
+| 🗄 [Base de données](DATABASE.md) | Structure PostgreSQL. |
+| 🌐 [Réseau](NETWORK.md) | Communication Client ↔ Serveur. |
 
 ---
 
@@ -37,8 +37,8 @@ Cette documentation est organisée comme un **wiki** afin de faciliter la naviga
 
 | Document | Description |
 |-----------|-------------|
-| 📚 [Lore](03_LORE.md) | Univers, scénario et histoire. |
-| 🎮 [Gameplay](04_GAMEPLAY.md) | Mécaniques de jeu. |
+| 📚 [Lore](..lore/README.md) | Univers, scénario et histoire. |
+| 🎮 [Gameplay](..gameplay/README.md) | Mécaniques de jeu. |
 
 ---
 
@@ -46,9 +46,9 @@ Cette documentation est organisée comme un **wiki** afin de faciliter la naviga
 
 | Document | Description |
 |-----------|-------------|
-| 📅 [Roadmap](08_ROADMAP.md) | Planning du développement. |
-| 👥 [Équipe](09_TEAM.md) | Organisation du studio. |
-| 💻 [Règles de développement](10_CODING_RULES.md) | Conventions Git, Python, Rust… |
+| 📅 [Roadmap](ROADMAP.md) | Planning du développement. |
+| 👥 [Équipe](TEAM.md) | Organisation du studio. |
+| 💻 [Règles de développement](CODING_RULES.md) | Conventions Git, Python, Rust… |
 
 ---
 
@@ -81,7 +81,6 @@ docs/
 │
 ├── README.md
 │
-├── 01_GDD.md
 ├── gdd/
 │   ├── README.md
 │   ├── 01_VISION.md
@@ -97,15 +96,15 @@ docs/
 │   ├── 11_GUILDES.md
 │   └── 12_DONJONS.md
 │
-├── 02_TDD.md
-├── 03_LORE.md
-├── 04_GAMEPLAY.md
-├── 05_ARCHITECTURE.md
-├── 06_DATABASE.md
-├── 07_NETWORK.md
-├── 08_ROADMAP.md
-├── 09_TEAM.md
-├── 10_CODING_RULES.md
+├── tdd/
+├── lore/
+├── gameplay/
+├── ARCHITECTURE.md
+├── DATABASE.md
+├── NETWORK.md
+├── ROADMAP.md
+├── TEAM.md
+├── CODING_RULES.md
 └── CHANGELOG.md
 ```
 
