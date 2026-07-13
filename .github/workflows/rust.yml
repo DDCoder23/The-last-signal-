@@ -101,3 +101,8 @@ jobs:
         with:
           name: rust-report
           path: rust-report.md
+      - name: Commit reports
+        uses: ./.github/actions/commit-reports
+        with:
+           report-type: rust
+           commit-message: "Rust CI Report #${{ github.run_number }}"
