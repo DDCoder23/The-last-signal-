@@ -157,7 +157,7 @@ jobs:
       - name: 📊 Calculate documentation score
         run: |
 
-          mkdir -p docs/reports
+          mkdir -p reports/docs
 
           python scripts/docs_score.py
 
