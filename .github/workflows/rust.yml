@@ -105,7 +105,10 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: rust-report
-          path: rust-report.md
+          path: 
+             reports/**
+             database/**
+             dashboard/**
       - name: Commit reports
         uses: ./.github/actions/commit-reports
         with:
