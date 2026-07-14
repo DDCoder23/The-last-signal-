@@ -208,7 +208,32 @@ jobs:
       # =========================
       # Dashboard
       # =========================
+      - name: 📄 Generate final report
+        if: always()
+        run: |
 
+          mkdir -p docs/reports
+
+          pourcentagemin=${DOC_SCORE_MINIMUM}
+          commit=${GITHUB_SHA}
+          auteur=${GITHUB_ACTOR}
+
+          doc=$(cat docs/reports/score.txt 2>/dev/null || echo 0)
+
+          if [ "$doc" -ge "$pourcentagemin" ]; then
+              status="PASS ✅"
+          else
+              status="FAIL ❌"
+          fi
+
+
+          printf "# 📚 Documentation Quality Report\n\n" > docs/reports/report.md
+          printf "## Commit\n\n%s\n\n" "$commit" >> docs/reports/report.md
+          printf "## Author\n\n%s\n\n" "$auteur" >> docs/reports/report.md
+          printf "## Minimum score required\n\n%s%%\n\n" "$pourcentagemin" >> docs/reports/report.md
+          printf "## Obtained score\n\n%s%%\n\n" "$doc" >> docs/reports/report.md
+          printf "## Status\n\n%s\n\n" "$status" >> docs/reports/report.md
+          printf "Generated automatically by GitHub Actions.\n" >> docs/reports/report.md
       - name: 📈 Generate dashboard
         if: success()
         run: |
@@ -217,28 +242,9 @@ jobs:
 
 
 
-      # =========================
-      # Report
-      # =========================
-
-      - name: 📄 Generate final report
-        if: always()
-        run: |
-
-          mkdir -p docs/reports
-
-
-          pourcentagemin=${DOC_SCORE_MINIMUM}
-          commit=${GITHUB_SHA}
-          auteur=${GITHUB_ACTOR}
-          doc=$(cat docs/reports/score.txt)
-          info1=f"Documentation Quality Report \n"
-          info2=f"Commit : {commit} par {auteur}\n"
-          info3=f"Score minimum:{pourcentagemin}% \n"
-          info4= "pass" if doc >= pourcentagemin else "faill"
-          infos=info1+info2+info3+info4
-          cat > docs/reports/report.md <<infos
-
+    
+      
+          
 
 
 
