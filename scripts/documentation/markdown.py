@@ -1,334 +1,188 @@
 from pathlib import Path
 import re
-
-HTML_TAGS = (
-    "font",
-    "center",
-    "marquee"
-)
+from typing import Any
 
 MAX_SCORE = 20
 
+SCORES = {
+    "empty_files": 3,
+    "encoding": 2,
+    "line_length": 3,
+    "trailing_spaces": 2,
+    "code_blocks": 3,
+    "lists": 2,
+    "tables": 2,
+    "html": 3,
+}
 
-def check_markdown():
-    """
-    Analyse la qualité globale des fichiers Markdown.
+HTML_TAGS = ("font", "center", "marquee")
 
-    Returns:
-        dict: {
-            "score": int,
-            "max_score": int,
-            "problems": list[str]
-        }
-    """
+IGNORED_DIRS = {
+    ".git", ".github", ".venv", "venv", "__pycache__",
+    "node_modules", "build", "dist", "target",
+    "reports", ".pytest_cache", ".mypy_cache"
+}
 
-    score = 0
+
+def get_markdown_files() -> list[Path]:
+    files = []
+    for f in Path(".").rglob("*.md"):
+        if any(part in IGNORED_DIRS for part in f.parts):
+            continue
+        files.append(f)
+    return files
+
+
+def add_problem(problems: list[dict], file: Path | str, severity: str, message: str):
+    problems.append({
+        "file": str(file),
+        "severity": severity,
+        "message": message
+    })
+
+
+def check_markdown() -> dict[str, Any]:
     problems = []
-
-    files = list(Path(".").rglob("*.md"))
+    files = get_markdown_files()
 
     if not files:
         return {
             "score": 0,
             "max_score": MAX_SCORE,
-            "problems": ["Aucun fichier Markdown trouvé."]
+            "results": {},
+            "problems": [{
+                "file": "",
+                "severity": "error",
+                "message": "Aucun fichier Markdown trouvé."
+            }]
         }
 
-    results = {}
-
-    results["empty_files"] = check_empty_files(files, problems)
-    results["encoding"] = check_encoding(files, problems)
-    results["line_length"] = check_line_length(files, problems)
-    results["trailing_spaces"] = check_trailing_spaces(files, problems)
-    results["code_blocks"] = check_code_blocks(files, problems)
-    results["lists"] = check_lists(files, problems)
-    results["tables"] = check_tables(files, problems)
-    results["html"] = check_html(files, problems)
-
-    score = sum(results.values())
+    results = {
+        "empty_files": check_empty_files(files, problems),
+        "encoding": check_encoding(files, problems),
+        "line_length": check_line_length(files, problems),
+        "trailing_spaces": check_trailing_spaces(files, problems),
+        "code_blocks": check_code_blocks(files, problems),
+        "lists": check_lists(files, problems),
+        "tables": check_tables(files, problems),
+        "html": check_html(files, problems),
+    }
 
     return {
-    "score": score,
-    "max_score": MAX_SCORE,
-    "results": results,
-    "problems": problems
-}
-
-    
+        "score": sum(results.values()),
+        "max_score": MAX_SCORE,
+        "results": results,
+        "problems": problems
+    }
 
 
-
-
-
-def check_empty_files(files: list[Path], problems: list[dict]) -> int:
-    """
-    Vérifie la qualité du contenu des fichiers Markdown.
-
-    Retourne un score sur 3.
-    """
-
-    empty_files = []
-    almost_empty = []
-
+def check_empty_files(files, problems):
+    empty = 0
+    poor = 0
     for file in files:
-
         try:
-            content = file.read_text(
-                encoding="utf-8",
-                errors="ignore"
-            ).strip()
-
+            content = file.read_text(encoding="utf-8", errors="ignore").strip()
         except Exception:
-            problems.append({"file" : str(file),
-                             "message": "fichier illisible"})
-            empty_files.append(file)
+            empty += 1
+            add_problem(problems, file, "error", "Fichier illisible.")
             continue
 
-        # Fichier complètement vide
         if not content:
-            empty_files.append(file)
+            empty += 1
+            add_problem(problems, file, "error", "Fichier vide.")
             continue
 
-        # Nombre de caractères utiles
-        useful_chars = len(content)
+        lines = [l for l in content.splitlines() if l.strip()]
+        if len(content) < 50 or len(lines) < 3:
+            poor += 1
+            add_problem(problems, file, "warning", "Contenu très faible.")
 
-        # Nombre de lignes utiles
-        useful_lines = [
-            line
-            for line in content.splitlines()
-            if line.strip()
-        ]
+    penalty = empty + poor * 0.5
+    ratio = max(0, 1 - penalty / len(files))
+    return round(ratio * SCORES["empty_files"])
 
-        # Fichier très pauvre
-        if useful_chars < 50 or len(useful_lines) < 3:
-            almost_empty.append(file)
 
-    for file in empty_files:
-        problems.append({"file" : str(file),
-                         "message": "fichier vide"})
-            
-
-    for file in almost_empty:
-        problems.append({"file" : str(file),
-                         "message": "fichier quasiment vide"})
-
-    penalty = (
-        len(empty_files) * 1
-        +
-        len(almost_empty) * 0.5
-    )
-
-    ratio = max(
-        0,
-        1 - penalty / len(files)
-    )
-
-    return round(ratio * 3)
 def check_encoding(files, problems):
-    """
-    Vérifie que tous les fichiers sont encodés en UTF-8.
-    """
-
-    invalid = 0
-
+    bad = 0
     for file in files:
-
         try:
             file.read_text(encoding="utf-8")
+        except Exception:
+            bad += 1
+            add_problem(problems, file, "error", "Encodage UTF-8 invalide.")
+    ratio = 1 if not files else max(0, 1 - bad / len(files))
+    return round(ratio * SCORES["encoding"])
 
-        except UnicodeDecodeError:
 
-            invalid += 1
-
-            problems.append({
-                "file": str(file),
-                "severity": "error",
-                "message": "Encodage UTF-8 invalide."
-            })
-
-    if invalid == 0:
-        return 2
-
-    ratio = 1 - (invalid / len(files))
-
-    return max(0, round(ratio * 2))
 def check_line_length(files, problems):
-    """
-    Vérifie que les lignes ne dépassent pas 120 caractères.
-    """
-
-    total = 0
-    long_lines = 0
-
+    total = errors = 0
     for file in files:
-
-        for number, line in enumerate(
-            file.read_text(
-                encoding="utf-8",
-                errors="ignore"
-            ).splitlines(),
-            start=1
-        ):
-
+        try:
+            lines = file.read_text(encoding="utf-8", errors="ignore").splitlines()
+        except Exception:
+            continue
+        for i, line in enumerate(lines, 1):
             total += 1
-
             if len(line) > 120:
-
-                long_lines += 1
-
-                problems.append({
-                    "file": str(file),
-                    "severity": "warning",
-                    "message": f"Ligne {number} supérieure à 120 caractères."
-                })
-
-    if total == 0:
-        return 3
-
-    ratio = 1 - (long_lines / total)
-
-    return max(0, round(ratio * 3))
-def check_trailing_spaces(files, problems):
-    """
-    Vérifie les espaces en fin de ligne.
-    """
-
-    total = 0
-    errors = 0
-
-    for file in files:
-
-        for number, line in enumerate(
-            file.read_text(
-                encoding="utf-8",
-                errors="ignore"
-            ).splitlines(),
-            start=1
-        ):
-
-            total += 1
-
-            if line.endswith(" "):
-
                 errors += 1
-
-                problems.append({
-                    "file": str(file),
-                    "severity": "warning",
-                    "message": f"Espace inutile ligne {number}."
-                })
-
+                add_problem(problems, file, "warning", f"Ligne {i} > 120 caractères.")
     if total == 0:
-        return 2
+        return SCORES["line_length"]
+    return max(0, round((1-errors/total)*SCORES["line_length"]))
 
-    ratio = 1 - (errors / total)
 
-    return max(0, round(ratio * 2))
-def check_code_blocks(files, problems):
-    """
-    Vérifie que tous les blocs ``` sont fermés.
-    """
-
-    errors = 0
-
+def check_trailing_spaces(files, problems):
+    total = errors = 0
     for file in files:
+        try:
+            lines = file.read_text(encoding="utf-8", errors="ignore").splitlines()
+        except Exception:
+            continue
+        for i, line in enumerate(lines,1):
+            total += 1
+            if line.endswith(" "):
+                errors += 1
+                add_problem(problems,file,"warning",f"Espace en fin de ligne ({i}).")
+    if total==0:
+        return SCORES["trailing_spaces"]
+    return max(0, round((1-errors/total)*SCORES["trailing_spaces"]))
 
-        content = file.read_text(
-            encoding="utf-8",
-            errors="ignore"
-        )
 
-        fences = content.count("```")
-
-        if fences % 2 != 0:
-
-            errors += 1
-
-            problems.append({
-                "file": str(file),
-                "severity": "error",
-                "message": "Bloc de code Markdown non fermé."
-            })
-
-    if errors == 0:
-        return 3
-
-    ratio = 1 - (errors / len(files))
-
-    return max(0, round(ratio * 3))
 def check_code_blocks(files, problems):
-    """
-    Vérifie que tous les blocs ``` sont fermés.
-    """
-
-    errors = 0
-
+    bad=0
     for file in files:
+        try:
+            text=file.read_text(encoding="utf-8",errors="ignore")
+        except Exception:
+            continue
+        if text.count("```") %2:
+            bad+=1
+            add_problem(problems,file,"error","Bloc de code non fermé.")
+    ratio=max(0,1-bad/len(files))
+    return round(ratio*SCORES["code_blocks"])
 
-        content = file.read_text(
-            encoding="utf-8",
-            errors="ignore"
-        )
 
-        fences = content.count("```")
-
-        if fences % 2 != 0:
-
-            errors += 1
-
-            problems.append({
-                "file": str(file),
-                "severity": "error",
-                "message": "Bloc de code Markdown non fermé."
-            })
-
-    if errors == 0:
-        return 3
-
-    ratio = 1 - (errors / len(files))
-
-    return max(0, round(ratio * 3))
 def check_lists(files, problems):
-    """
-    Les listes sont déjà vérifiées par markdownlint.
-    """
+    # TODO: utiliser le rapport markdownlint
+    return SCORES["lists"]
 
-    return 2
+
 def check_tables(files, problems):
-    """
-    Les tableaux sont vérifiés par markdownlint.
-    """
-
-    return 2
-
+    # TODO: utiliser le rapport markdownlint
+    return SCORES["tables"]
 
 
 def check_html(files, problems):
-
-    errors = 0
-
+    bad=0
     for file in files:
-
-        content = file.read_text(
-            encoding="utf-8",
-            errors="ignore"
-        )
-
+        try:
+            text=file.read_text(encoding="utf-8",errors="ignore")
+        except Exception:
+            continue
         for tag in HTML_TAGS:
+            if re.search(fr"<{tag}\b", text):
+                bad+=1
+                add_problem(problems,file,"warning",f"Balise <{tag}> déconseillée.")
+    ratio=max(0,1-bad/len(files))
+    return round(ratio*SCORES["html"])
 
-            if re.search(fr"<{tag}\b", content):
-
-                errors += 1
-
-                problems.append({
-                    "file": str(file),
-                    "severity": "warning",
-                    "message": f"Balise HTML <{tag}> déconseillée."
-                })
-
-    if errors == 0:
-        return 3
-
-    ratio = 1 - (errors / len(files))
-
-    return max(0, round(ratio * 3))
