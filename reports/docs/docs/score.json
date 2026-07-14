@@ -1,0 +1,14 @@
+{
+    "date": "2026-07-14T05:41:11.717510",
+    "score": 60,
+    "details": {
+        "markdown": 10,
+        "titles": 1,
+        "line_length": 9,
+        "spelling": 15,
+        "links": 15,
+        "python": 0,
+        "rust": 0,
+        "organization": 10
+    }
+}
