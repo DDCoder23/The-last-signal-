@@ -140,7 +140,7 @@ def generate_json(rows):
     dashboard = {
 
         "generated": str(datetime.now()),
-        "documentation": documentation,
+        
 
         "summary": {
 
