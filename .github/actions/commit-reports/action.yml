@@ -94,6 +94,7 @@ runs:
       run: |
 
         git add reports database dashboard README.md
+        git commit -m "auto update du jeu"
         for i in 1 2 3
         do
           git pull --rebase origin ${{ inputs.branch }}
