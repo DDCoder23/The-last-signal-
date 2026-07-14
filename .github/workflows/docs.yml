@@ -228,34 +228,17 @@ jobs:
           mkdir -p docs/reports
 
 
-          cat > docs/reports/report.md <<EOF
+          pourcentagemin=${DOC_SCORE_MINIMUM}
+          commit=${GITHUB_SHA}
+          auteur=${GITHUB_ACTOR}
+          doc=$(cat docs/reports/score.txt)
+          info1=f"Documentation Quality Report \n"
+          info2=f"Commit : {commit} par {auteur}\n"
+          info3=f"Score minimum:{pourcentagemin}% \n"
+          info4= "pass" if doc >= pourcentagemin else "faill"
+          infos=info1+info2+info3+info4
+          cat > docs/reports/report.md <<infos
 
-# 📚 Documentation Quality Report
-
-
-## Commit
-
-${GITHUB_SHA}
-
-
-## Author
-
-${GITHUB_ACTOR}
-
-
-## Score minimum
-
-${DOC_SCORE_MINIMUM}%
-
-
-## Status
-
-$(if [ $? -eq 0 ]; then echo "PASSED"; else echo "FAILED"; fi)
-
-
-Generated automatically by GitHub Actions.
-
-EOF
 
 
 
