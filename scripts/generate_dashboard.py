@@ -130,12 +130,12 @@ def calculate_quality(
 
 def generate_json(rows):
 
-    documentation=get_documentation_score()
+    docu=get_documentation_score()
     os.makedirs(
         "dashboard/data",
         exist_ok=True
     )
-    documentation=get_documentation_score()
+    
 
     dashboard = {
 
@@ -208,7 +208,7 @@ def generate_json(rows):
             (low or 0)
 
         )
-        doc_score = documentation.get(
+        doc_score = docu.get(
     "score",
     0
 )
@@ -290,7 +290,7 @@ def generate_json(rows):
     "score": doc_score,
 
     "details":
-        documentation.get(
+        docu.get(
             "details",
             {}
         )
