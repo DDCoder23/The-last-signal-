@@ -7,3 +7,4 @@ Dernière mise à jour : Tue Jul 14 06:45:22 UTC 2026
 - build
 - docs
 - python
+- rust
