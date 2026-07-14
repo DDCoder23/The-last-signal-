@@ -267,13 +267,9 @@ jobs:
       # Commit reports
       # =========================
 
-      - name: 💾 Commit reports
-        if: success() && github.event_name == 'push'
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Commit reports
+        if: always()
+        uses: ./.github/actions/commit-reports
         with:
-
-          commit_message: |
-            📚 Update documentation quality report
-
-          file_pattern: |
-            docs/reports/**
+           report-type: docs
+           commit-message: "Docs CI Report #${{ github.run_number }}"
