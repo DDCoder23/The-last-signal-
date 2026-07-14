@@ -1,19 +1,13 @@
-from documentation.markdown import check_markdown
-from documentation.titles import check_titles
-from documentation.spelling import check_spelling
-from documentation.links import check_links
-from documentation.python_docs import check_python_docs
-from documentation.rust_docs import check_rust_docs
-from documentation.organization import check_organization
-from documentation.navigation import check_navigation
-
-from documentation.report import generate_report
-
-
 def generate_score():
-    scores = {}
 
-    scores["markdown"] = check_markdown()
+    scores = {}
+    details = {}
+
+    markdown = check_markdown()
+
+    scores["markdown"] = markdown["score"]
+    details["markdown"] = markdown
+
     scores["titles"] = check_titles()
     scores["spelling"] = check_spelling()
     scores["links"] = check_links()
@@ -24,6 +18,10 @@ def generate_score():
 
     total = sum(scores.values())
 
-    generate_report(total, scores)
+    generate_report(
+        total,
+        scores,
+        details
+    )
 
     return total
