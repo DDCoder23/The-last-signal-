@@ -4,7 +4,7 @@ from pathlib import Path
 from datetime import datetime
 
 
-REPORT_DIR = Path("docs/reports")
+REPORT_DIR = Path("reports/docs")
 
 REPORT_DIR.mkdir(
     parents=True,
