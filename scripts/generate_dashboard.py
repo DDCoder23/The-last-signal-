@@ -135,7 +135,7 @@ def generate_json(rows):
         "dashboard/data",
         exist_ok=True
     )
-
+    documentation=get_documentation_score()
 
     dashboard = {
 
