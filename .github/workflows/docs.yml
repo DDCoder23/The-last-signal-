@@ -1,0 +1,289 @@
+name: Documentation Quality
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - "**"
+
+  workflow_dispatch:
+
+
+permissions:
+  contents: write
+
+
+env:
+  DOC_SCORE_MINIMUM: 80
+
+
+jobs:
+
+  documentation-check:
+
+    name: 📚 Documentation Quality Check
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      # =========================
+      # Checkout
+      # =========================
+
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+
+      # =========================
+      # Node tools
+      # =========================
+
+      - name: 🟢 Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+
+      - name: Install Markdown tools
+        run: |
+          npm install -g markdownlint-cli2
+          npm install -g cspell
+
+
+      # =========================
+      # Python
+      # =========================
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+
+      - name: Install Python tools
+        run: |
+          pip install interrogate
+          pip install markdown
+          pip install pyyaml
+
+
+      # =========================
+      # Rust
+      # =========================
+
+      - name: 🦀 Setup Rust
+        uses: actions-rust/setup-rust@v1
+        continue-on-error: true
+
+
+      # =========================
+      # Markdown
+      # =========================
+
+      - name: 📑 Check Markdown structure
+        continue-on-error: true
+        run:
+
+          markdownlint-cli2 "**/*.md"
+
+
+
+      # =========================
+      # Spell checking
+      # =========================
+
+      - name: ✍️ Check spelling FR + EN
+        continue-on-error: true
+        run: |
+
+          cspell "**/*.md" \
+          --language-id markdown
+
+
+
+      # =========================
+      # Links
+      # =========================
+
+      - name: 🔗 Check broken links
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v2
+        with:
+
+          args: |
+            "**/*.md"
+
+
+
+      # =========================
+      # Python documentation
+      # =========================
+
+      - name: 📚 Python documentation coverage
+        continue-on-error: true
+        run: |
+
+          mkdir -p docs/reports
+
+          interrogate . \
+          -o markdown \
+          -f docs/reports/python-docs.md
+
+
+
+      # =========================
+      # Rust documentation
+      # =========================
+
+      - name: 🦀 Generate Rust documentation
+        continue-on-error: true
+        run: |
+
+          if [ -f Cargo.toml ]; then
+              cargo doc --no-deps
+          fi
+
+
+
+      # =========================
+      # Generate score
+      # =========================
+
+      - name: 📊 Calculate documentation score
+        run: |
+
+          mkdir -p docs/reports
+
+          python scripts/docs_score.py
+
+
+
+      # =========================
+      # Check score
+      # =========================
+
+      - name: 🚨 Verify documentation score
+        id: score_check
+        run: |
+
+          SCORE=$(cat docs/reports/score.txt)
+
+          echo "Documentation score: $SCORE%"
+
+
+          if [ "$SCORE" -lt "$DOC_SCORE_MINIMUM" ]; then
+
+            echo ""
+            echo "======================================"
+            echo "❌ DOCUMENTATION QUALITY FAILED"
+            echo "======================================"
+            echo ""
+            echo "Score obtenu : $SCORE%"
+            echo "Score minimum requis : $DOC_SCORE_MINIMUM%"
+            echo ""
+            echo "Corrige les problèmes de documentation"
+            echo "avant de fusionner cette modification."
+            echo ""
+
+            exit 1
+
+          else
+
+            echo ""
+            echo "======================================"
+            echo "✅ DOCUMENTATION QUALITY PASSED"
+            echo "======================================"
+            echo ""
+            echo "Score : $SCORE%"
+
+          fi
+
+
+
+      # =========================
+      # Dashboard
+      # =========================
+
+      - name: 📈 Generate dashboard
+        if: success()
+        run: |
+
+          python scripts/docs_dashboard.py
+
+
+
+      # =========================
+      # Report
+      # =========================
+
+      - name: 📄 Generate final report
+        if: always()
+        run: |
+
+          mkdir -p docs/reports
+
+
+          cat > docs/reports/report.md <<EOF
+
+# 📚 Documentation Quality Report
+
+
+## Commit
+
+${GITHUB_SHA}
+
+
+## Author
+
+${GITHUB_ACTOR}
+
+
+## Score minimum
+
+${DOC_SCORE_MINIMUM}%
+
+
+## Status
+
+$(if [ $? -eq 0 ]; then echo "PASSED"; else echo "FAILED"; fi)
+
+
+Generated automatically by GitHub Actions.
+
+EOF
+
+
+
+      # =========================
+      # Upload reports
+      # =========================
+
+      - name: 📦 Upload documentation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+
+          name: documentation-report
+
+          path: docs/reports
+
+
+
+      # =========================
+      # Commit reports
+      # =========================
+
+      - name: 💾 Commit reports
+        if: success() && github.event_name == 'push'
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+
+          commit_message: |
+            📚 Update documentation quality report
+
+          file_pattern: |
+            docs/reports/**
