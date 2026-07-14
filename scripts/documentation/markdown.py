@@ -1,5 +1,11 @@
 from pathlib import Path
+import re
 
+HTML_TAGS = (
+    "font",
+    "center",
+    "marquee"
+)
 
 MAX_SCORE = 20
 
@@ -294,13 +300,7 @@ def check_tables(files, problems):
     """
 
     return 2
-import re
 
-HTML_TAGS = (
-    "font",
-    "center",
-    "marquee"
-)
 
 
 def check_html(files, problems):
