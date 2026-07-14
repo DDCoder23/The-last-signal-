@@ -118,3 +118,217 @@ def check_empty_files(files: list[Path], problems: list[dict]) -> int:
     )
 
     return round(ratio * 3)
+def check_encoding(files, problems):
+    """
+    Vérifie que tous les fichiers sont encodés en UTF-8.
+    """
+
+    invalid = 0
+
+    for file in files:
+
+        try:
+            file.read_text(encoding="utf-8")
+
+        except UnicodeDecodeError:
+
+            invalid += 1
+
+            problems.append({
+                "file": str(file),
+                "severity": "error",
+                "message": "Encodage UTF-8 invalide."
+            })
+
+    if invalid == 0:
+        return 2
+
+    ratio = 1 - (invalid / len(files))
+
+    return max(0, round(ratio * 2))
+def check_line_length(files, problems):
+    """
+    Vérifie que les lignes ne dépassent pas 120 caractères.
+    """
+
+    total = 0
+    long_lines = 0
+
+    for file in files:
+
+        for number, line in enumerate(
+            file.read_text(
+                encoding="utf-8",
+                errors="ignore"
+            ).splitlines(),
+            start=1
+        ):
+
+            total += 1
+
+            if len(line) > 120:
+
+                long_lines += 1
+
+                problems.append({
+                    "file": str(file),
+                    "severity": "warning",
+                    "message": f"Ligne {number} supérieure à 120 caractères."
+                })
+
+    if total == 0:
+        return 3
+
+    ratio = 1 - (long_lines / total)
+
+    return max(0, round(ratio * 3))
+def check_trailing_spaces(files, problems):
+    """
+    Vérifie les espaces en fin de ligne.
+    """
+
+    total = 0
+    errors = 0
+
+    for file in files:
+
+        for number, line in enumerate(
+            file.read_text(
+                encoding="utf-8",
+                errors="ignore"
+            ).splitlines(),
+            start=1
+        ):
+
+            total += 1
+
+            if line.endswith(" "):
+
+                errors += 1
+
+                problems.append({
+                    "file": str(file),
+                    "severity": "warning",
+                    "message": f"Espace inutile ligne {number}."
+                })
+
+    if total == 0:
+        return 2
+
+    ratio = 1 - (errors / total)
+
+    return max(0, round(ratio * 2))
+def check_code_blocks(files, problems):
+    """
+    Vérifie que tous les blocs ``` sont fermés.
+    """
+
+    errors = 0
+
+    for file in files:
+
+        content = file.read_text(
+            encoding="utf-8",
+            errors="ignore"
+        )
+
+        fences = content.count("```")
+
+        if fences % 2 != 0:
+
+            errors += 1
+
+            problems.append({
+                "file": str(file),
+                "severity": "error",
+                "message": "Bloc de code Markdown non fermé."
+            })
+
+    if errors == 0:
+        return 3
+
+    ratio = 1 - (errors / len(files))
+
+    return max(0, round(ratio * 3))
+def check_code_blocks(files, problems):
+    """
+    Vérifie que tous les blocs ``` sont fermés.
+    """
+
+    errors = 0
+
+    for file in files:
+
+        content = file.read_text(
+            encoding="utf-8",
+            errors="ignore"
+        )
+
+        fences = content.count("```")
+
+        if fences % 2 != 0:
+
+            errors += 1
+
+            problems.append({
+                "file": str(file),
+                "severity": "error",
+                "message": "Bloc de code Markdown non fermé."
+            })
+
+    if errors == 0:
+        return 3
+
+    ratio = 1 - (errors / len(files))
+
+    return max(0, round(ratio * 3))
+def check_lists(files, problems):
+    """
+    Les listes sont déjà vérifiées par markdownlint.
+    """
+
+    return 2
+def check_tables(files, problems):
+    """
+    Les tableaux sont vérifiés par markdownlint.
+    """
+
+    return 2
+import re
+
+HTML_TAGS = (
+    "font",
+    "center",
+    "marquee"
+)
+
+
+def check_html(files, problems):
+
+    errors = 0
+
+    for file in files:
+
+        content = file.read_text(
+            encoding="utf-8",
+            errors="ignore"
+        )
+
+        for tag in HTML_TAGS:
+
+            if re.search(fr"<{tag}\b", content):
+
+                errors += 1
+
+                problems.append({
+                    "file": str(file),
+                    "severity": "warning",
+                    "message": f"Balise HTML <{tag}> déconseillée."
+                })
+
+    if errors == 0:
+        return 3
+
+    ratio = 1 - (errors / len(files))
+
+    return max(0, round(ratio * 3))
