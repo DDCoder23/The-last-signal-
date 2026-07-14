@@ -75,8 +75,9 @@ jobs:
       # Rust
       # =========================
 
+         
       - name: 🦀 Setup Rust
-        uses: actions-rust/setup-rust@v1
+        uses: actions-rust-lang/setup-rust-toolchain@v1
         continue-on-error: true
 
 
@@ -86,7 +87,7 @@ jobs:
 
       - name: 📑 Check Markdown structure
         continue-on-error: true
-        run:
+        run: |
 
           markdownlint-cli2 "**/*.md"
 
