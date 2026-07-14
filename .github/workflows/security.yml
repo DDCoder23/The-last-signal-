@@ -34,7 +34,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+              fetch-depth: 0
+              token: ${{ secrets.GITHUB_TOKEN }}
+              persist-credentials: true
 
       ##########################################################
       # Python
