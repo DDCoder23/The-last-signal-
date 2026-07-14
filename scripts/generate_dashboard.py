@@ -5,9 +5,25 @@ from datetime import datetime
 
 
 DB_PATH = "database/python_reports.db"
+DOC_SCORE_PATH = "docs/reports/score.json"
 OUTPUT = "dashboard/data/dashboard.json"
 
+def get_documentation_score():
 
+    if not os.path.exists(DOC_SCORE_PATH):
+        return {
+            "score": 0,
+            "details": {}
+        }
+
+
+    with open(
+        DOC_SCORE_PATH,
+        "r",
+        encoding="utf-8"
+    ) as file:
+
+        return json.load(file)
 def get_database_data():
 
     if not os.path.exists(DB_PATH):
@@ -124,6 +140,7 @@ def generate_json(rows):
     dashboard = {
 
         "generated": str(datetime.now()),
+        "documentation": documentation,
 
         "summary": {
 
@@ -191,6 +208,10 @@ def generate_json(rows):
             (low or 0)
 
         )
+        doc_score = documentation.get(
+    "score",
+    0
+)
 
 
         quality = calculate_quality(
@@ -199,7 +220,7 @@ def generate_json(rows):
 
             pylint,
 
-            documentation,
+             doc_score,
 
             security_errors
 
@@ -263,7 +284,18 @@ def generate_json(rows):
 
                 "low": low or 0
 
-            }
+            },
+            "documentation": {
+
+    "score": doc_score,
+
+    "details":
+        documentation.get(
+            "details",
+            {}
+        )
+
+},
 
         })
 
