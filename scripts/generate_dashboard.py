@@ -130,7 +130,7 @@ def calculate_quality(
 
 def generate_json(rows):
 
-
+    documentation=get_documentation_score()
     os.makedirs(
         "dashboard/data",
         exist_ok=True
