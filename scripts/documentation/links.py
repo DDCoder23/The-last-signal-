@@ -1,2 +1,2 @@
-def check_titles():
+def check_links():
   return 0
