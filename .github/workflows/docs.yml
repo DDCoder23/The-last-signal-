@@ -128,11 +128,11 @@ jobs:
         continue-on-error: true
         run: |
 
-          mkdir -p docs/reports
+          mkdir -p reports/docs
 
           interrogate . \
           -o markdown \
-          -f docs/reports/python-docs.md
+          -f reports/docs/python-docs.md
 
 
 
@@ -171,7 +171,7 @@ jobs:
         id: score_check
         run: |
 
-          SCORE=$(cat docs/reports/score.txt)
+          SCORE=$(cat reports/docs/score.txt)
 
           echo "Documentation score: $SCORE%"
 
@@ -212,13 +212,13 @@ jobs:
         if: always()
         run: |
 
-          mkdir -p docs/reports
+          mkdir -p reports/docs
 
           pourcentagemin=${DOC_SCORE_MINIMUM}
           commit=${GITHUB_SHA}
           auteur=${GITHUB_ACTOR}
 
-          doc=$(cat docs/reports/score.txt 2>/dev/null || echo 0)
+          doc=$(cat reports/docs/score.txt 2>/dev/null || echo 0)
 
           if [ "$doc" -ge "$pourcentagemin" ]; then
               status="PASS ✅"
