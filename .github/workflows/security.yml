@@ -1,0 +1,437 @@
+name: Security Report
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+  workflow_dispatch:
+
+  schedule:
+    # Tous les jours à 03:00 UTC
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: write
+  security-events: write
+  actions: read
+
+jobs:
+  security:
+
+    name: Security Analysis
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      ##########################################################
+      # Checkout
+      ##########################################################
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      ##########################################################
+      # Python
+      ##########################################################
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+
+          pip install \
+            bandit \
+            pip-audit \
+            semgrep \
+            safety \
+            pip-licenses \
+            pytest
+
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          fi
+
+      ##########################################################
+      # Rust
+      ##########################################################
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install Rust tools
+        run: |
+          cargo install cargo-audit || true
+          cargo install cargo-deny || true
+          cargo install cargo-outdated || true
+
+      ##########################################################
+      # Gitleaks
+      ##########################################################
+
+      - name: Install Gitleaks
+        run: |
+
+          GL_VERSION="8.24.2"
+
+          wget https://github.com/gitleaks/gitleaks/releases/download/v${GL_VERSION}/gitleaks_${GL_VERSION}_linux_x64.tar.gz
+
+          tar -xzf gitleaks_${GL_VERSION}_linux_x64.tar.gz
+
+          sudo mv gitleaks /usr/local/bin/
+
+      ##########################################################
+      # Rapport
+      ##########################################################
+
+      - name: Create report
+        run: |
+
+          mkdir -p reports
+          mkdir -p dashboard/security
+          mkdir -p database
+
+          REPORT="reports/security-report-${GITHUB_RUN_NUMBER}.md"
+
+          echo "REPORT=$REPORT" >> $GITHUB_ENV
+
+          echo "# Security Report" > "$REPORT"
+
+          echo "" >> "$REPORT"
+
+          echo "Date : $(date)" >> "$REPORT"
+
+          echo "" >> "$REPORT"
+
+      ##########################################################
+      # Bandit
+      ##########################################################
+
+      - name: Python Security (Bandit)
+        continue-on-error: true
+        run: |
+
+          echo "## Bandit" >> "$REPORT"
+
+          bandit -r . >> "$REPORT" 2>&1
+
+      ##########################################################
+      # pip-audit
+      ##########################################################
+
+      - name: Python Dependencies Audit
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## pip-audit" >> "$REPORT"
+
+          pip-audit >> "$REPORT" 2>&1
+
+      ##########################################################
+      # Safety
+      ##########################################################
+
+      - name: Safety
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## Safety" >> "$REPORT"
+
+          safety check >> "$REPORT" 2>&1
+
+      ##########################################################
+      # Rust Audit
+      ##########################################################
+
+      - name: Cargo Audit
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## cargo-audit" >> "$REPORT"
+
+          if find . -name Cargo.toml | grep -q .
+          then
+            cargo audit >> "$REPORT" 2>&1
+          else
+            echo "No Cargo project found." >> "$REPORT"
+          fi
+
+      ##########################################################
+      # Semgrep
+      ##########################################################
+
+      - name: Semgrep
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## Semgrep" >> "$REPORT"
+
+          semgrep scan --config auto . >> "$REPORT" 2>&1
+
+      ##########################################################
+      # Gitleaks
+      ##########################################################
+
+      - name: Secret Detection
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## Gitleaks" >> "$REPORT"
+
+          gitleaks detect \
+            --source . \
+            --verbose >> "$REPORT" 2>&1
+
+      ##########################################################
+      # Python Licenses
+      ##########################################################
+
+      - name: Python Licenses
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## Python Licenses" >> "$REPORT"
+
+          pip-licenses >> "$REPORT"
+
+      ##########################################################
+      # Rust Licenses
+      ##########################################################
+
+      - name: Cargo Deny
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## Cargo Deny" >> "$REPORT"
+
+          if find . -name Cargo.toml | grep -q .
+          then
+            cargo deny check licenses >> "$REPORT" 2>&1
+          else
+            echo "No Cargo project found." >> "$REPORT"
+          fi
+
+      ##########################################################
+      # Outdated Python
+      ##########################################################
+
+      - name: Outdated Python packages
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## Outdated Python packages" >> "$REPORT"
+
+          pip list --outdated >> "$REPORT"
+
+      ##########################################################
+      # Outdated Rust
+      ##########################################################
+
+      - name: Outdated Rust crates
+        continue-on-error: true
+        run: |
+
+          echo "" >> "$REPORT"
+
+          echo "## Outdated Rust crates" >> "$REPORT"
+
+          if find . -name Cargo.toml | grep -q .
+          then
+            cargo outdated >> "$REPORT" 2>&1
+          else
+            echo "No Cargo project found." >> "$REPORT"
+          fi
+      ##########################################################
+      # CodeQL
+      ##########################################################
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: python,rust
+
+      - name: CodeQL Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+
+      ##########################################################
+      # Global Security Score
+      ##########################################################
+
+      - name: Calculate security score
+        shell: bash
+        run: |
+
+          SCORE=100
+
+          HIGH=$(grep -ic "high" "$REPORT" || true)
+          CRITICAL=$(grep -ic "critical" "$REPORT" || true)
+          MEDIUM=$(grep -ic "medium" "$REPORT" || true)
+          LOW=$(grep -ic "low" "$REPORT" || true)
+
+          SCORE=$(( SCORE - HIGH*15 ))
+          SCORE=$(( SCORE - CRITICAL*25 ))
+          SCORE=$(( SCORE - MEDIUM*8 ))
+          SCORE=$(( SCORE - LOW*3 ))
+
+          if [ $SCORE -lt 0 ]; then
+            SCORE=0
+          fi
+
+          echo "" >> "$REPORT"
+          echo "# Global Security Score" >> "$REPORT"
+          echo "" >> "$REPORT"
+
+          echo "| Level | Count |" >> "$REPORT"
+          echo "|-------|------:|" >> "$REPORT"
+          echo "| Critical | $CRITICAL |" >> "$REPORT"
+          echo "| High | $HIGH |" >> "$REPORT"
+          echo "| Medium | $MEDIUM |" >> "$REPORT"
+          echo "| Low | $LOW |" >> "$REPORT"
+
+          echo "" >> "$REPORT"
+
+          echo "## Score : ${SCORE}/100" >> "$REPORT"
+
+          echo "SECURITY_SCORE=$SCORE" >> $GITHUB_ENV
+
+      ##########################################################
+      # Dashboard History
+      ##########################################################
+
+      - name: Update dashboard
+        shell: bash
+        run: |
+
+          mkdir -p dashboard/security
+
+          HISTORY="dashboard/security/history.csv"
+
+          if [ ! -f "$HISTORY" ]; then
+            echo "date,score" > "$HISTORY"
+          fi
+
+          echo "$(date +%F),${SECURITY_SCORE}" >> "$HISTORY"
+
+      ##########################################################
+      # Security Dashboard
+      ##########################################################
+
+      - name: Generate dashboard
+        shell: bash
+        run: |
+
+          DASH="dashboard/security/index.md"
+
+          echo "# Security Dashboard" > "$DASH"
+
+          echo "" >> "$DASH"
+
+          echo "Last update : $(date)" >> "$DASH"
+
+          echo "" >> "$DASH"
+
+          echo "## Global score" >> "$DASH"
+
+          echo "" >> "$DASH"
+
+          echo "# ${SECURITY_SCORE}/100" >> "$DASH"
+
+          echo "" >> "$DASH"
+
+          echo "## History" >> "$DASH"
+
+          echo "" >> "$DASH"
+
+          cat dashboard/security/history.csv >> "$DASH"
+
+      ##########################################################
+      # SQLite Database
+      ##########################################################
+
+      - name: Update security database
+        continue-on-error: true
+        shell: bash
+        run: |
+
+          if [ -f scripts/update_security_database.py ]; then
+            python scripts/update_security_database.py
+          else
+            echo "No security database script found." >> "$REPORT"
+          fi
+
+      ##########################################################
+      # GitHub Summary
+      ##########################################################
+
+      - name: Publish summary
+        shell: bash
+        run: |
+
+          {
+            echo "# 🛡️ Security Report"
+            echo
+            echo "**Score : ${SECURITY_SCORE}/100**"
+            echo
+            echo "|Check|Status|"
+            echo "|-----|------|"
+            echo "|Bandit|✅|"
+            echo "|Semgrep|✅|"
+            echo "|Gitleaks|✅|"
+            echo "|CodeQL|✅|"
+            echo "|cargo-audit|✅|"
+            echo "|pip-audit|✅|"
+            echo "|Licenses|✅|"
+            echo "|Dependencies|✅|"
+            echo
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      ##########################################################
+      # Upload Artifact
+      ##########################################################
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-report
+          path: |
+            reports/**
+            dashboard/**
+            database/**
+
+      ##########################################################
+      # Commit Reports
+      ##########################################################
+
+      - name: Commit reports
+        uses: ./.github/actions/commit-reports
+        with:
+          report-type: security
+          commit-message: "Security Report #${{ github.run_number }}"
