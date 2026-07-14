@@ -94,7 +94,19 @@ runs:
       run: |
 
         git add reports database dashboard README.md
+        for i in 1 2 3
+        do
+          git pull --rebase origin ${{ inputs.branch }}
 
-        git commit -m "${{ inputs.commit-message }}" || echo "Nothing to commit"
+          if git push origin ${{ inputs.branch }}
+          then
+             echo "Push réussi"
+             exit 0
+          fi
 
-        git push origin ${{ inputs.branch }}
+          echo "Nouvelle tentative..."
+          sleep 2
+        done
+        exit 1
+
+        
