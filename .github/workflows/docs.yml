@@ -261,7 +261,10 @@ jobs:
           name: documentation-report
 
           path: |
+            
              reports/**
+             dashboard/**
+             
              
 
       # =========================
