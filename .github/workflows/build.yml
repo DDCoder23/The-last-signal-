@@ -1,0 +1,110 @@
+name: Build CI Report
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - "**"
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "15 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+
+  build:
+
+    name: Build (${{ matrix.os }})
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Create report
+        shell: bash
+        run: |
+
+          mkdir -p reports
+
+          REPORT="reports/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
+
+          echo "REPORT=$REPORT" >> $GITHUB_ENV
+
+          echo "# Build Report" > "$REPORT"
+          echo "" >> "$REPORT"
+          echo "OS : ${{ matrix.os }}" >> "$REPORT"
+          echo "Date : $(date)" >> "$REPORT"
+
+      - name: Python syntax
+        continue-on-error: true
+        shell: bash
+        run: |
+
+          echo "" >> "$REPORT"
+          echo "## Python" >> "$REPORT"
+
+          python -m compileall . >> "$REPORT" 2>&1
+
+      - name: Rust build
+        continue-on-error: true
+        shell: bash
+        run: |
+
+          echo "" >> "$REPORT"
+          echo "## Rust" >> "$REPORT"
+
+          if find . -name Cargo.toml | grep -q .
+          then
+            cargo build --release >> "$REPORT" 2>&1
+          else
+            echo "Aucun projet Rust trouvé." >> "$REPORT"
+          fi
+
+      - name: Godot build
+        continue-on-error: true
+        shell: bash
+        run: |
+
+          echo "" >> "$REPORT"
+          echo "## Godot" >> "$REPORT"
+
+          echo "Compilation Godot à configurer." >> "$REPORT"
+
+      - name: Display report
+        shell: bash
+        run: |
+
+          cat "$REPORT" >> $GITHUB_STEP_SUMMARY
+
+      - name: Commit reports
+        uses: ./.github/actions/commit-reports
+        with:
+          report-type: build
+          commit-message: "Build Report #${{ github.run_number }}"
