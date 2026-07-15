@@ -194,8 +194,9 @@ Consultez :
 ---
 
 # 📜 Licence
+➡️ [📜 Licence](LICENSE)
 
-Projet actuellement en développement privé.
+
 
 ---
 
