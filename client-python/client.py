@@ -267,11 +267,7 @@ class VispyWidget(qt.QWidget):
         )
         self.info_text.setText(txt)
 
-    @gr.manage(lambda self: self.joueur)
-    def afficher_tresor(self, niveau):
-        te = tresor.create_tresor(niveau)
-        dlg = TresorDialogQt(self, te, self.joueur)
-        self.open_tresors.append(dlg)
+    
 
   
 
