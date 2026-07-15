@@ -1,3 +1,4 @@
+from report.py import generate_report
 def generate_score():
     checks = {
     "markdown": check_markdown,
@@ -19,5 +20,6 @@ def generate_score():
         details[name] = result
 
     total = sum(scores.values())
+    generate_report(total,scores,details)
     
     return total
