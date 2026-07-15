@@ -287,7 +287,7 @@ def generate_json(rows):
             },
             "documentation": {
 
-    "score": doc_score["scores"],
+    "score": doc_score,
 
     "details":
         docu.get(
