@@ -99,89 +99,11 @@ Les fichiers doivent être rangés dans le dossier correspondant à leur fonctio
 
 ---
 
-# 5. Conventions de nommage
-
-## Fichiers
-
-Utiliser le snake_case.
-
-Exemples :
-
-```
-player.py
-inventory.py
-network_client.py
-```
-
----
-
-## Classes
-
-Utiliser le PascalCase.
-
-Exemples :
-
-```python
-Player
-Inventory
-GameServer
-Weapon
-```
-
----
-
-## Fonctions
-
-Utiliser le snake_case.
-
-```python
-create_player()
-save_inventory()
-connect_server()
-```
-
----
-
-## Variables
-
-Utiliser des noms explicites.
-
-✔️
-
-```python
-player_health
-current_weapon
-inventory_size
-```
-
-❌
-
-```python
-a
-tmp
-x
-test
-```
-
----
-
-## Constantes
-
-Utiliser uniquement des MAJUSCULES.
-
-```python
-MAX_LEVEL
-DEFAULT_SPEED
-SERVER_PORT
-```
-
----
 
 # 6. Style Python
 
 Le code Python doit respecter :
 
-- PEP 8
 - Annotations de types
 - Fonctions courtes
 - Variables explicites
@@ -226,7 +148,7 @@ Les commentaires doivent expliquer **pourquoi** le code existe et non **ce qu'il
 
 # 10. Gestion Git
 
-Ne jamais développer directement sur la branche `main`.
+Ne jamais développer directement sur la branche `main`. (les admins sont exemptés des restrictions suivantes et doivent relire le code)
 
 Chaque fonctionnalité possède sa propre branche.
 
@@ -287,7 +209,7 @@ Revue
 Fusion dans main
 ```
 
-Aucune fonctionnalité importante ne doit être fusionnée sans revue de code.
+Aucune fonctionnalité  ne doit être fusionnée sans revue de code et l'accord formel d'un admin agréé.
 
 ---
 
@@ -298,7 +220,7 @@ Chaque Pull Request doit :
 - avoir un titre clair ;
 - expliquer les modifications ;
 - référencer une Issue si nécessaire ;
-- être relue avant fusion.
+- être relue  par un admin avant fusion.
 
 ---
 
@@ -372,7 +294,7 @@ Avant chaque Pull Request :
 # 📚 Documents liés
 
 - [🏠 Documentation](../docs/README.md)
-- [🏗 Technical Design Document](../docs/02_TDD.md)
+- [🏗 Technical Design Document](../docs/tdd/README.md)
 - [🛣 Roadmap](../docs/ROADMAP.md)
 - [📝 Changelog](CHANGELOG.md)
 
