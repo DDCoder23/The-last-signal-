@@ -1,4 +1,4 @@
-# 🎮 The Last Signal Online
+# 🎮 The Last Signal 
 
 > MMORPG de survie post-apocalyptique en monde persistant
 
@@ -9,7 +9,7 @@
 
 ---
 
-# 🌍 Présentation
+## 🌍 Présentation
 
 **The Last Signal Online** est un MMORPG de survie dans un monde post-apocalyptique où les joueurs doivent collaborer, explorer et survivre dans un univers en constante évolution.
 
@@ -28,7 +28,7 @@ Le projet vise à créer une expérience multijoueur immersive combinant :
 
 ---
 
-# 🚀 Vision du projet
+## 🚀 Vision du projet
 
 L'objectif de **The Last Signal Online** est de créer un MMORPG indépendant proposant :
 
@@ -48,9 +48,9 @@ Le jeu est développé avec une approche proche d'un véritable studio :
 
 ---
 
-# 🛠 Technologies utilisées
+## 🛠 Technologies utilisées
 
-## 🎮 Client
+### 🎮 Client
 
 | Technologie | Utilisation |
 |-------------|-------------|
@@ -60,7 +60,7 @@ Le jeu est développé avec une approche proche d'un véritable studio :
 
 ---
 
-## 🌐 Serveur
+### 🌐 Serveur
 
 | Technologie | Utilisation |
 |-------------|-------------|
@@ -70,7 +70,7 @@ Le jeu est développé avec une approche proche d'un véritable studio :
 
 ---
 
-# 📂 Organisation du projet
+## 📂 Organisation du projet
 
 ```text
 The-last-signal/
@@ -98,7 +98,7 @@ The-last-signal/
 
 ---
 
-# 📚 Documentation
+## 📚 Documentation
 
 La documentation complète du projet est disponible ici :
 
@@ -116,7 +116,7 @@ Elle contient :
 
 ---
 
-# 📊 État du projet
+## 📊 État du projet
 
 | Module | État |
 |--------|:----:|
@@ -137,7 +137,7 @@ Légende :
 
 ---
 
-# 🏗 Architecture du développement
+## 🏗 Architecture du développement
 
 Le projet suit une organisation inspirée des studios professionnels :
 
@@ -159,7 +159,7 @@ Chaque fonctionnalité importante doit être documentée avant son implémentati
 
 ---
 
-# 👥 Équipe
+## 👥 Équipe
 
 | Nom | Fonction |
 |------|----------|
@@ -170,8 +170,11 @@ Chaque fonctionnalité importante doit être documentée avant son implémentati
 | Louanne | Illustratrice |
 
 ---
+## Commande de jeu 🎮
+Conférez-vous au fichier suivant:
+➡️ [🎮 Commandes](touches_de_commandes)
 
-# 🤝 Contribution
+## 🤝 Contribution
 
 Les contributions sont organisées autour de plusieurs règles :
 
@@ -186,18 +189,18 @@ Consultez :
 
 ---
 
-# 📅 Roadmap
+## 📅 Roadmap
 Consultez :
 
 ➡️ [📅 Roadmap](docs/ROADMAP.md)
 
 ---
 
-# 📜 Licence
+## 📜 Licence
 ➡️ [📜 Licence](LICENSE)
 
 
 
 ---
 
-> **The Last Signal Online** — Quand le monde disparaît, un dernier signal demeure.
+> **The Last Signal** — Quand le monde disparaît, un dernier signal demeure.
