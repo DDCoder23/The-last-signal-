@@ -74,8 +74,9 @@ jobs:
       - name: 📑 Check Markdown
         continue-on-error: true
         run: |
-          markdownlint-cli2 "**/*.md"
-
+           markdownlint-cli2 \
+           "**/*.md" --json \
+           > reports/docs/markdownlint.json
       # =========================
       # Spelling
       # =========================
