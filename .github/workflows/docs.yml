@@ -238,7 +238,7 @@ jobs:
         if: success()
         run: |
 
-          python scripts/docs_dashboard.py
+          python scripts/generate_dashboard.py
 
 
 
