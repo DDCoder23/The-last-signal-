@@ -1,27 +1,22 @@
 def generate_score():
+    checks = {
+    "markdown": check_markdown,
+    "titles": check_titles,
+    "spelling": check_spelling,
+    "links": check_links,
+    "python": check_python_docs,
+    "rust": check_rust_docs,
+    "organization": check_organization,
+    "navigation": check_navigation,
+}
 
     scores = {}
     details = {}
 
-    markdown = check_markdown()
-
-    scores["markdown"] = markdown["score"]
-    details["markdown"] = markdown
-
-    scores["titles"] = check_titles()
-    scores["spelling"] = check_spelling()
-    scores["links"] = check_links()
-    scores["python"] = check_python_docs()
-    scores["rust"] = check_rust_docs()
-    scores["organization"] = check_organization()
-    scores["navigation"] = check_navigation()
+    for name, check in checks.items():
+        result = check()
+        scores[name] = result["score"]
+        details[name] = result
 
     total = sum(scores.values())
-
-    generate_report(
-        total,
-        scores,
-        details
-    )
-
-    return total
+    with open ():
