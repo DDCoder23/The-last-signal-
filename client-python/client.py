@@ -108,15 +108,6 @@ class Joueur(Perso):
 
             
 
-    def save(self):
-        autosave = Secure_save.AutoSaver(
-            provider=autosave_provider_factory(self),
-            profile=self.nom,
-            slot=1,
-            password=mot_de_passe,
-            interval=5,
-        )
-        autosave.start()
 
     def to_dict(self):
         stuff_serializable = {}
