@@ -19,4 +19,5 @@ def generate_score():
         details[name] = result
 
     total = sum(scores.values())
-    with open ():
+    
+    return total
