@@ -48,25 +48,9 @@ configs.read("config.ini", encoding="utf-8")
 mot_de_passe = configs["save"]["password"]
 perso= {}
 
-def lister_profils_sauvegardes(base_dir="saves"):
-    if not os.path.exists(base_dir):
-        print("[SAVE] Aucun dossier de sauvegarde trouvé.")
-        return {}
-    profils = {}
-    for profil in os.listdir(base_dir):
-        profil_path = os.path.join(base_dir, profil)
-        if not os.path.isdir(profil_path):
-            continue
-        slots = []
-        for i in (1, 2, 3):
-            if os.path.exists(os.path.join(profil_path, f"slot{i}.zip")):
-                slots.append(i)
-        profils[profil] = slots
-
-    return profils
 
 
-profils = lister_profils_sauvegardes()
+    
 
 ASSETS_DIR = "assets"
 chemin_sortie = os.path.join(ASSETS_DIR, "map")
