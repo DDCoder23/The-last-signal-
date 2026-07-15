@@ -21,9 +21,9 @@ def _flatten(details:dict[str,Any])->list[dict]:
             x=dict(p);x.setdefault("module",module);out.append(x)
     return out
 
-def generate_report(total:int,scores:dict[str,int],details:dict[str,Any])->None:
+def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problems:list)->None:
     REPORT_DIR.mkdir(parents=True,exist_ok=True)
-    problems=_flatten(details)
+    
     summary={"generated":datetime.now().isoformat(),"score":total,"status":_status(total),"scores":scores,"problem_count":len(problems)}
     (REPORT_DIR/"score.txt").write_text(str(total),encoding="utf-8")
     (REPORT_DIR/"summary.json").write_text(json.dumps(summary,indent=4,ensure_ascii=False),encoding="utf-8")
@@ -33,12 +33,17 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any])->None:
     for k,v in scores.items(): md.append(f"|{k}|**{v}**|\n")
     md.append("\n## ProblÃ¨mes\n")
     if problems:
-        for p in problems:
-            md.append(f"- [{p.get('severity','info').upper()}] `{p.get('module')}` `{p.get('file')}` : {p.get('message')}\n")
+        for problem in problems:
+
+        markdown += (
+            f"## {problem['file']}\n"
+            f"- **Severity :** {problem['severity']}\n"
+            f"- **Message :** {problem['message']}\n\n"
+        )
+
+
     else:
         md.append("Aucun problÃ¨me dÃ©tectÃ©.\n")
     (REPORT_DIR/"score.md").write_text("".join(md),encoding="utf-8")
-    p=["# ðŸ“‹ ProblÃ¨mes\n\n"]
-    for pr in problems:
-        p.append(f"## {pr.get('module')}\n- {pr.get('file')}\n- {pr.get('severity')}\n- {pr.get('message')}\n\n")
-    (REPORT_DIR/"problems.md").write_text("".join(p),encoding="utf-8")
+    
+    
