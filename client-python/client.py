@@ -3,30 +3,12 @@ import random
 import os
 from vispy import scene
 import numpy as np
-from PIL import Image
-import generate_map as gemap
 import PySide6.QtWidgets as qt
 from PySide6.QtCore import Qt, QTimer
 import atexit
 import logging
 import sys
 
-
-ASSETS_DIR = "assets"
-chemin_sortie = os.path.join(ASSETS_DIR, "map")
-
-# Vérifier que les fichiers de carte existent dans assets/
-REQUIRED_MAP_FILES = [
-    os.path.join(ASSETS_DIR, "map_height.png"),
-    os.path.join(ASSETS_DIR, "map_color.png"),
-    os.path.join(ASSETS_DIR, "map_collision.png")
-]
-
-
-missing_files = [f for f in REQUIRED_MAP_FILES if not os.path.exists(f)]
-if missing_files:
-    gemap.generate_map(output_prefix=chemin_sortie)
-    
 
 class Joueur(Perso):
     def __init__(
