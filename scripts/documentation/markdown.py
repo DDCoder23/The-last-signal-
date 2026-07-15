@@ -24,6 +24,23 @@ IGNORED_DIRS = {
 }
 
 
+import json
+
+MARKDOWNLINT_REPORT = Path("reports/docs/markdownlint.json")
+
+
+def load_markdownlint_report():
+    if not MARKDOWNLINT_REPORT.exists():
+        return []
+
+    try:
+        with MARKDOWNLINT_REPORT.open(
+            encoding="utf-8"
+        ) as file:
+            return json.load(file)
+
+    except Exception:
+        return []
 def get_markdown_files() -> list[Path]:
     files = []
     for f in Path(".").rglob("*.md"):
@@ -56,15 +73,15 @@ def check_markdown() -> dict[str, Any]:
                 "message": "Aucun fichier Markdown trouvé."
             }]
         }
-
+    report = load_markdownlint_report()
     results = {
         "empty_files": check_empty_files(files, problems),
         "encoding": check_encoding(files, problems),
         "line_length": check_line_length(files, problems),
         "trailing_spaces": check_trailing_spaces(files, problems),
         "code_blocks": check_code_blocks(files, problems),
-        "lists": check_lists(files, problems),
-        "tables": check_tables(files, problems),
+        "lists": check_lists(files, problems,report),
+        "tables": check_tables(files, problems,report),
         "html": check_html(files, problems),
     }
 
@@ -162,14 +179,75 @@ def check_code_blocks(files, problems):
     return round(ratio*SCORES["code_blocks"])
 
 
-def check_lists(files, problems):
-    # TODO: utiliser le rapport markdownlint
-    return SCORES["lists"]
+def check_lists(files, problems, report):
+
+    errors = 0
+
+    LIST_RULES = {
+        "MD004",
+        "MD005",
+        "MD006",
+        "MD007",
+        "MD030",
+        "MD032"
+    }
+
+    for issue in report:
+
+        rules = set(issue.get("ruleNames", []))
+
+        if rules & LIST_RULES:
+
+            errors += 1
+
+            problems.append({
+                "file": issue["fileName"],
+                "severity": "warning",
+                "message": issue["ruleDescription"]
+            })
+
+    if not files:
+        return 0
+
+    ratio = max(
+        0,
+        1 - errors / len(files)
+    )
+
+    return round(ratio * SCORES["lists"])
 
 
-def check_tables(files, problems):
-    # TODO: utiliser le rapport markdownlint
-    return SCORES["tables"]
+def check_tables(files, problems, report):
+
+    errors = 0
+
+    TABLE_RULES = {
+        "MD055"
+    }
+
+    for issue in report:
+
+        rules = set(issue.get("ruleNames", []))
+
+        if rules & TABLE_RULES:
+
+            errors += 1
+
+            problems.append({
+                "file": issue["fileName"],
+                "severity": "warning",
+                "message": issue["ruleDescription"]
+            })
+
+    if not files:
+        return 0
+
+    ratio = max(
+        0,
+        1 - errors / len(files)
+    )
+
+    return round(ratio * SCORES["tables"])
 
 
 def check_html(files, problems):
