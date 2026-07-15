@@ -21,13 +21,16 @@ def generate_score():
 
     scores = {}
     details = {}
+    all_problems = []
 
     for name, check in checks.items():
         result = check()
         scores[name] = result["score"]
         details[name] = result
 
+    all_problems.extend(result["problems"])
+
     total = sum(scores.values())
-    generate_report(total,scores,details)
+    generate_report(total,scores,details,all_problems)
     
     return total
