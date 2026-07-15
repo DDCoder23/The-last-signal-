@@ -12,44 +12,29 @@ import sys
 
 class Joueur(Perso):
     def __init__(
-        self, image, jeu: Jeu, nom="Player 1", recommencer=True, grade=None, config=None
+        self, image, jeu: Jeu, 
+        nom="Player 1", 
+        recommencer=True, 
+        grade=None, config=None,stats={}
     ):
         super().__init__(image, jeu)
         self.nom = nom
         self.vivant = True
+        self.stuff = {}
+        self.index_arme_selectionnee = 0
+        self.grade = grade
+        self.config = config
+        self._initialiser_stats(stats)
+        
+
+    def _initialiser_stats(self,stats:dict):
         self.stats["MANA_max"] = 100
         self.stats["MANA"] = self.stats["MANA_max"]
         self.stats["XP"] = 0
         self.stats["niv"] = 1
         self.stats["bouff_max"] = self.stats["niv"] * 10
         self.stats["bouff"] = self.stats["bouff_max"]
-        self.stuff = {}
-        self.index_arme_selectionnee = 0
-        self.grade = grade
-        self.config = config
         
-
-        if recommencer == False:
-            etat_charge = reprendre_joueur(self.nom, mot_de_passe)
-            if etat_charge:
-                self.stuff = reconstruire_stuff(etat_charge)
-                clefs=etat_charge.get("clefs",{})
-        else:
-            self.stuff = {}
-            safe_increment(self.stuff, "corde", quant=1)
-            safe_increment(self.stuff, "torche", quant=2)
-            safe_increment(self.stuff, "argent", quant=100)
-            safe_increment(self.stuff, "sac", quant=2)
-            safe_increment(
-                self.stuff,
-                "épée de bois",
-                quant=1,
-                type_objet="armes",
-                durabilite=100,
-            )
-            if self.config and self.config["mode"] == "Militaire":            
-                safe_increment(self.stuff, "C4", quant=2)
-                safe_increment(self.stuff, "grenade", quant=3)
 class Map3D:
     def __init__(self, image_path, scale_z=5.0):
         self.img = Image.open(image_path).convert("L")  # grayscale
