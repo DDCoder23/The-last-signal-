@@ -5,7 +5,7 @@ from datetime import datetime
 
 
 DB_PATH = "database/python_reports.db"
-DOC_SCORE_PATH = "docs/reports/score.json"
+DOC_SCORE_PATH = "../reports/docs/score.json"
 OUTPUT = "dashboard/data/dashboard.json"
 
 def get_documentation_score():
@@ -287,7 +287,7 @@ def generate_json(rows):
             },
             "documentation": {
 
-    "score": doc_score,
+    "score": doc_score["scores"],
 
     "details":
         docu.get(
