@@ -157,47 +157,10 @@ class Joueur(Perso):
 
 
 
-class Adversaire(Perso):
-    def __init__(self, image, jeu: Jeu, nom="Monstre"):
-        super().__init__(image, jeu)
-        self.nom = nom
-        self.vivant = True
-
-    def cara_sup(self, NC, Mod_cre):
-        self.stats["NC"] = NC
-        self.stats["Mod_cre"] = Mod_cre
-        self.stats["NIvtr"] = (
-            self.stats["NC"] + self.stats["Mod_cre"] + self.stats["MOD_INT"]
-        )
 
 
-class Combat:
-    @staticmethod
-    def attaquer(attaquant: Perso, defenseur: Perso) -> bool:
-        if not attaquant.vivant or not defenseur.vivant:
-            return False
 
-        touche = Perso.jet_attaque(attaquant, defenseur)
-        if touche:
-            degats = Perso.calcul_degats(attaquant)
-            defenseur.subir_degats(degats)
-        return touche
-
-
-def autosave_provider_factory(joueur):
-    slot = 1
-
-    def provider():
-        nonlocal slot
-
-        data = joueur.to_dict()
-
-        data["_slot_used"] = slot
-        slot = 1 if slot == 3 else slot + 1
-
-        return data
-
-    return provider
+    
 
 
 class Map3D:
