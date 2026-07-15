@@ -369,43 +369,22 @@ class MainFrame(qt.QMainWindow):
         # Définir le widget principal comme widget central de la fenêtre
         self.setCentralWidget(self.widget_principal)
 
-        # Créer un timer pour mettre à jour l'affichage de l'horloge
-        self.timer_horloge = QTimer(self)
-        self.timer_horloge.timeout.connect(self.mettre_a_jour_horloge)
-        self.timer_horloge.start(100)  # Mettre à jour toutes les 100ms
+       
+        
 
-        # Enregistrer les callbacks pour les événements de l'horloge
-        self.horloge.enregistrer_evenement("nouveau_jour", self.nouveau_jour)
-        self.horloge.enregistrer_evenement("nouvelle_semaine", self.nouvelle_semaine)
-        self.horloge.enregistrer_evenement("nouveau_mois", self.nouveau_mois)
-        self.horloge.enregistrer_evenement("nouvelle_annee", self.nouvelle_annee)
+        
+        
 
         self.current_widget = None
         self.show_menu()
       
     
-    def mettre_a_jour_horloge(self):
-        """Met à jour l'affichage de l'horloge."""
-        heure_formatee = self.horloge.obtenir_heure_formatee()
-        self.etiquette_horloge.setText(f"⏰ Temps du jeu: {heure_formatee}")
+    
 
-    def nouveau_jour(self):
-        """Callback pour un nouveau jour dans le jeu."""
-        print("🌅 Un nouveau jour commence dans le jeu !")
-        
-
-    def nouvelle_semaine(self):
-        """Callback pour une nouvelle semaine dans le jeu."""
-        print("📅 Une nouvelle semaine commence dans le jeu !")
-       
-    def nouveau_mois(self):
-        """Callback pour un nouveau mois dans le jeu."""
-        print("📆 Un nouveau mois commence dans le jeu !")
+    
        
 
-    def nouvelle_annee(self):
-        """Callback pour une nouvelle année dans le jeu."""
-        print("🎉 Une nouvelle année commence dans le jeu !")
+    
         
     def show_menu(self):
         if hasattr(self, "current_widget") and self.current_widget:
@@ -419,37 +398,11 @@ class MainFrame(qt.QMainWindow):
 
     def start_new_game(self, player_name):
         self.show_empty()
-        with open("save.txt", "a", encoding="utf-8") as fichier:
-            fichier.write("\n----Nouvelle partie----")
-        data = {}
+        
+        
 
-        with open("banque_save.json", "r", encoding="utf-8") as fichier_json:
-            try:
-                data = json.load(fichier_json)
-            except json.JSONDecodeError:
-                data = {}
-
-        data[player_name] = {
-            "dettes": 0,
-            "investissements": {},
-        }
-
-        with open("banque_save.json", "w", encoding="utf-8") as fichier:
-            json.dump(data, fichier, indent=4)
-        config = cr.demander_configuration_jeu(self)
-        grade = None
-        if config:
-            print(f"Mode: {config['mode']}, Difficulté: {config['difficulte']}")
-            if config["mode"] == "Militaire":
-                print(f"Type d'armée: {config['type_armee']}")
-                if config["type_armee"] == "Terre":
-                    grade = "soldat"
-                elif config["type_armee"] == "Marine":
-                    grade = "mousse"
-                elif config["type_armee"] == "Air":
-                    grade = "aviateur"
-                elif config["type_armee"] == "Gendarmerie":
-                    grade = "gendarme adjoint 2e classe"
+       
+                
 
         MainFrame.start_game(
             self, player_name, recommencer=True, grade=grade, configuration=config
@@ -576,7 +529,7 @@ class MainFrame(qt.QMainWindow):
         event.accept()
 
 
-@admin_manager.admin_mode_decorator
+
 def main():
 
     def on_exit():
