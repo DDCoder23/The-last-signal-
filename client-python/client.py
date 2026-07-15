@@ -12,11 +12,6 @@ import logging
 import sys
 
 
-
-
-
-    
-
 ASSETS_DIR = "assets"
 chemin_sortie = os.path.join(ASSETS_DIR, "map")
 
@@ -206,7 +201,7 @@ class VispyWidget(qt.QWidget):
         elif key == Qt.Key_Right:
             dx = 1
         elif key == Qt.Key_T:
-            self.afficher_tresor(47)
+            pass
         elif key == Qt.Key_E:
             pass
         elif key == Qt.Key_I:
