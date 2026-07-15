@@ -408,10 +408,11 @@ class MainFrame(qt.QMainWindow):
                     self.clear_layout(item.layout())
 
     @staticmethod
-    def start_game(self, player_name, recommencer=False, **kwargs):
-        j = kwargs.get("joueur")
-        if isinstance(j, Joueur):
-            print("")
+    def start_game(self, player_name, recommencer=False,
+    grade=None,
+    configuration=None,
+):
+        
         self.clear_layout(self.layout_central)
 
         jeu = Jeu()
@@ -423,46 +424,16 @@ class MainFrame(qt.QMainWindow):
             nom=player_name,
             config=kwargs.get("configuration", None),
         )
-        joueur.liste()
-        self.horloge.joueur = joueur.nom
-        print(self.horloge.joueur)
-        self.horloge.demarrer(recommencer=recommencer)
-        horloge2 = HorlogeJeu(2, joueur.nom)
-        horloge3 = HorlogeJeu(3, joueur.nom)
-        with open("save.txt", "r", encoding="utf-8") as fichier:
-            lignes = fichier.readlines()
-        if (lignes and lignes[-1].strip() == "reprise du jeu") or (
-            lignes
-            and (
-                lignes[-2].strip() == "reprise du jeu"
-                and lignes[-2].strip() == "continuer"
-            )
-        ):
-            horloge2.demarrer()
-        afficher_banque(joueur, horloge2,horloge3, parent=self, b=False)
-        print(recommencer)
-        if not recommencer:
-            slot = kwargs.get("slot", 1)
-            etat = reprendre_joueur(player_name, mot_de_passe, slots=slot)
-            print(etat)
-            if etat:
-                joueur.stuff = reconstruire_stuff(etat)
-                joueur.stats = etat.get("stats", {})
-                joueur.config = etat.get("config", {})
-                joueur.x, joueur.y, joueur.z = etat.get(
-                    "position", {"x": 0, "y": 0, "z": 0}
-                )
-                joueur.grade = etat.get("grade", None)
-                print(joueur.grade)
-        joueur.save()
+        
+         
+                
+        
 
         self.current_widget = VispyWidget(self, joueur)
         self.layout_central.addWidget(self.current_widget)
 
         QTimer.singleShot(0, lambda: self.current_widget.canvas.native.setFocus())
-        admin_manager.demander_mot_de_passe(joueur, self)
-
-        admin_manager.installer_raccourci_admin(self.current_widget, joueur)
+        
 
     def load_game_from_slot(self, profil, slot):
         with open("save.txt", "a", encoding="utf-8") as fichier:
@@ -500,8 +471,7 @@ class MainFrame(qt.QMainWindow):
 def main():
 
     def on_exit():
-        print("Arrêt en cours....")
-        arreter_toutes_horloges()
+        pass
 
     # Enregistrer la fonction de nettoyage
     atexit.register(on_exit)
@@ -512,19 +482,5 @@ def main():
     sys.exit(app.exec())
 
 
-if __name__ == "__main__":
-    try:
-        main()
-    except KeyboardInterrupt:
-        print("Nettoyage avant l'arrêt du programme.")
-
-    except SystemExit:
-        print("Nettoyage avant l'arrêt du programme.")
-    except Exception as e:
-        print(f"il y a une erreur : {e}")
-    finally:
-        arreter_toutes_horloges()
-        print("Le jeu s'arrête....")
-
-        sys.exit(0)
+i
        
