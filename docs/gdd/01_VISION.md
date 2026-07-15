@@ -10,7 +10,7 @@
 
 ---
 
-# 📖 Table des matières
+## 📖 Table des matières
 
 1. Objectif
 2. Vision générale
@@ -22,7 +22,7 @@
 
 ---
 
-# 1. Objectif
+### 1. Objectif
 
 L'objectif de **The Last Signal Online** est de créer un MMORPG de survie post-apocalyptique immersif, dans lequel les joueurs évoluent dans un monde persistant marqué par les conséquences d'une catastrophe scientifique.
 
@@ -30,7 +30,7 @@ Le projet vise à offrir une aventure durable, évolutive et coopérative, où c
 
 ---
 
-# 2. Vision générale
+### 2. Vision générale
 
 The Last Signal Online est conçu comme un jeu vivant.
 
@@ -42,11 +42,11 @@ Le projet est pensé pour être développé pendant plusieurs années grâce à 
 
 ---
 
-# 3. Les piliers du jeu
+### 3. Les piliers du jeu
 
 Le développement repose sur six piliers fondamentaux.
 
-## 🌍 Exploration
+#### 🌍 Exploration
 
 Le joueur découvre un vaste monde ouvert composé de régions variées, de villes abandonnées, de laboratoires secrets, de bases militaires et de zones contaminées.
 
@@ -54,7 +54,7 @@ Chaque zone possède sa propre histoire, ses dangers et ses ressources.
 
 ---
 
-## 🤝 Coopération
+#### 🤝 Coopération
 
 La coopération est au cœur de l'expérience.
 
@@ -68,7 +68,7 @@ Les joueurs peuvent :
 
 ---
 
-## ⚔️ Combat
+#### ⚔️ Combat
 
 Le combat doit être stratégique.
 
@@ -76,7 +76,7 @@ Le joueur devra préparer son équipement, gérer ses ressources et adapter sa s
 
 ---
 
-## 📈 Progression
+#### 📈 Progression
 
 La progression repose sur plusieurs systèmes :
 
@@ -90,7 +90,7 @@ Chaque joueur pourra développer son personnage selon son propre style de jeu.
 
 ---
 
-## 🌍 Monde persistant
+#### 🌍 Monde persistant
 
 Le monde est partagé entre tous les joueurs.
 
@@ -98,7 +98,7 @@ Les actions réalisées par les joueurs peuvent influencer durablement certaines
 
 ---
 
-## 📖 Immersion
+#### 📖 Immersion
 
 L'histoire est racontée progressivement.
 
@@ -106,7 +106,7 @@ Les joueurs découvrent le scénario en explorant le monde, en accomplissant des
 
 ---
 
-# 4. Expérience recherchée
+### 4. Expérience recherchée
 
 Nous souhaitons que les joueurs ressentent :
 
@@ -118,7 +118,7 @@ Nous souhaitons que les joueurs ressentent :
 
 ---
 
-# 5. Valeurs du projet
+### 5. Valeurs du projet
 
 Le développement du jeu repose sur plusieurs principes.
 
@@ -132,7 +132,7 @@ Le développement du jeu repose sur plusieurs principes.
 
 ---
 
-# 6. Objectifs à long terme
+### 6. Objectifs à long terme
 
 À terme, The Last Signal Online devra proposer :
 
@@ -145,7 +145,7 @@ Le développement du jeu repose sur plusieurs principes.
 
 ---
 
-# 7. Public visé
+### 7. Public visé
 
 Le jeu est destiné aux joueurs appréciant :
 
@@ -162,7 +162,7 @@ Le jeu est destiné aux joueurs appréciant :
 
 ---
 
-# 📚 Documents liés
+## 📚 Documents liés
 
 - [🎮 Game Design Document](README.md)
 - [🌍 Univers](02_UNIVERS.md)
