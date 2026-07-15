@@ -7,40 +7,11 @@ from PIL import Image
 import generate_map as gemap
 import PySide6.QtWidgets as qt
 from PySide6.QtCore import Qt, QTimer
-import configuration as cr
-from horloge import HorlogeJeu, arreter_toutes_horloges
 import atexit
 import logging
-from admin_manager import IS_ADMIN
-from inventaire import (
-    Objet,
-    equipement,
-    Armes,
-    Potion,
-    safe_increment,
-    liste_armes,
-    Livres,
-    afficher_magasin,
-    liste_outils,
-    liste_muni,
-    liste_potion,
-    ajouter_enchant,
-    clefs
-
-)
 import sys
-import configparser
-import json
-import dill
-from inv import afficher_inventaire
-from banque import afficher_banque
-import re
-from collections import defaultdict
-configs = configparser.ConfigParser()
-configs.read("config.ini", encoding="utf-8")
 
-mot_de_passe = configs["save"]["password"]
-perso= {}
+
 
 
 
@@ -102,58 +73,6 @@ class Joueur(Perso):
             if self.config and self.config["mode"] == "Militaire":            
                 safe_increment(self.stuff, "C4", quant=2)
                 safe_increment(self.stuff, "grenade", quant=3)
-    
-    
-    
-
-            
-
-
-    def to_dict(self):
-        stuff_serializable = {}
-        for k, v in self.stuff.items():
-            if isinstance(v, Objet):
-                stuff_serializable[k] = {
-                    "nom": v.nom_base,
-                    "quantite": v.quantite,
-                    "durabilite": getattr(v, "durabilite", None),
-                    "niv": getattr(v, "niv", None),
-                    "effet":getattr(v,"effet",None),
-                    "category":getattr(v,"category",None),
-                    "enchantements":getattr(v,"enchantements",None),
-                                        
-                }
-            else:
-                stuff_serializable[k] = v
-        config_dict = {}
-        if hasattr(self.config, "sections"):
-            for section in self.config.sections():
-                config_dict[section] = {}
-                for key, value in self.config.items(section):
-                    config_dict[section][key] = value
-        elif isinstance(self.config, dict):
-            config_dict = self.config.copy()
-
-        return {
-            "image": self.image,
-            "position": self.position,
-            "stats": self.stats,
-            "stuff": stuff_serializable,
-            "grade": self.grade,
-            "config": config_dict,
-            "clefs" : clefs
-        }
-
-   
-
-
-
-
-
-
-    
-
-
 class Map3D:
     def __init__(self, image_path, scale_z=5.0):
         self.img = Image.open(image_path).convert("L")  # grayscale
@@ -289,38 +208,16 @@ class VispyWidget(qt.QWidget):
         elif key == Qt.Key_T:
             self.afficher_tresor(47)
         elif key == Qt.Key_E:
-            self.joueur.enchanter_arme(MAX_NIV=6, parent_widget=self)
+            pass
         elif key == Qt.Key_I:
-            print(self.joueur.stuff)
-            afficher_inventaire(self.joueur.stuff,self.joueur, parent=self)
+            pass
         elif key == Qt.Key_S:
-            afficher_magasin(
-                self.joueur.stuff, self.joueur.stuff["argent"].quantite, parent=self
-            )
+            pass
         elif key == Qt.Key_B:
-            horloge2 = HorlogeJeu(2, self.joueur.nom)
-            horloge3 = HorlogeJeu(3, self.joueur.nom)
-            with open("save.txt", "r", encoding="utf-8") as fichier:
-                lignes = fichier.readlines()
-                print(lignes)
-                for ligne in reversed(lignes):
-                    if ligne.strip()=="----Nouvelle partie----" or "init":
-                        horloge2.demarrer(recommencer=True)
-                        
-                        break
-                    elif ligne.strip()=="reprise du jeu":
-                        horloge2.demarrer()
-                        
-
-                        break
-                    else: 
-                        continue
-            afficher_banque(self.joueur, horloge2,horloge3, parent=self)
+            pass
 
         elif key == Qt.Key_A and ctrl:
-            if admin_manager.IS_ADMIN:
-                _console = admin_manager.ConsoleAdmin(self.joueur, self)
-                # Mettre à jour l'angle de la caméra en fonction des touches Left/Right (rotation)
+            pass
         if key == Qt.Key_Left:
             self.camera_angle -= 0.1  # Tourner à gauche
         elif key == Qt.Key_Right:
@@ -382,128 +279,6 @@ class VispyWidget(qt.QWidget):
         self.open_tresors.append(dlg)
 
   
-
-# -----------------------------
-# DIALOGUE TRESOR NON BLOQUANT
-# -----------------------------
-
-
-class TresorDialogQt(qt.QDialog):
-    def __init__(self, parent, tresor_data, joueur):
-        super().__init__(parent)
-
-        self.tresor = tresor_data
-        self.joueur = joueur
-        self.parent_widget = parent  # VispyWidget
-
-        self.setWindowTitle("🎁 Trésor découvert")
-        self.resize(400, 400)
-        self.setModal(False)
-        self.setAttribute(Qt.WA_DeleteOnClose)
-
-        # ==========================
-        # LAYOUT
-        # ==========================
-        layout = qt.QVBoxLayout(self)
-
-        titre = qt.QLabel("Vous avez trouvé :")
-        titre.setStyleSheet("font-size: 14pt; font-weight: bold;")
-        layout.addWidget(titre)
-
-        # Liste des objets
-        self.listbox = qt.QListWidget()
-        for nom, qte in self.tresor.items():
-            self.listbox.addItem(f"{nom} x{qte}")
-        layout.addWidget(self.listbox)
-
-        # Boutons
-        btn_layout = qt.QHBoxLayout()
-        btn_take = qt.QPushButton("Récupérer")
-        btn_close = qt.QPushButton("Fermer")
-        btn_layout.addWidget(btn_take)
-        btn_layout.addWidget(btn_close)
-        layout.addLayout(btn_layout)
-
-        btn_take.clicked.connect(self.on_take)
-        btn_close.clicked.connect(self.close)
-
-        self.show()
-
-    # ==========================
-    # ACTIONS
-    # ==========================
-    global TYPE_OBJETS
-    TYPE_OBJETS = {
-    **{nom: "armes" for nom in liste_armes},
-    **{nom: "équipement" for nom in liste_muni + liste_outils},
-    **{nom: "potion" for nom in liste_potion},
-}
-
-
-
-
-
-    def on_take(self):
-        for nom, qte in self.tresor.items():
-            
-
-            if "livre enchant" in nom:
-                print(qte)
-                try:
-                    niveau = int(nom.split()[-1])  # Récupère le dernier mot et le convertit en int
-                except ValueError:
-                    niveau=1
-                finally:
-                    for i in range(qte):
-                        if 1 <= niveau <= 6:
-                            enchantements, category = ajouter_enchant(niveau)
-                            print(enchantements)
-                            safe_increment(
-                        self.joueur.stuff,
-                        nom,"livre enchant",
-                        quant=1,
-                        type_objet="livres",
-                        category=category,
-                        enchantements=enchantements,
-                        niv=niveau
-                    )
-
-
-            else:
-                type_objet = TYPE_OBJETS.get(nom, "de base")
-                kwargs = {}
-
-                if type_objet == "armes":
-                    kwargs.update({"niv": 1, "durabilite": 100})
-                elif type_objet == "potion":
-                    kwargs.update({"effect": None})
-
-                safe_increment(
-            self.joueur.stuff,
-            nom,
-            quant=qte,
-            type_objet=type_objet,
-            **kwargs
-        )
-
-    # ⚡ Tri UNIQUEMENT à la fin
-        self.close()
-
-       
-
-    # ==========================
-    # FOCUS (LE POINT VITAL)
-    # ==========================
-    def closeEvent(self, event):
-        super().closeEvent(event)
-
-        # 🔑 RENDRE LE FOCUS AU CANVAS VISPY
-        if hasattr(self.parent_widget, "canvas"):
-            QTimer.singleShot(
-                0,
-                lambda: self.parent_widget.canvas.native.setFocus(),
-            )
-
 
 class MainMenuWidget(qt.QWidget):
     def __init__(self, on_new_game, on_load_game):
