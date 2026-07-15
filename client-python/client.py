@@ -1,18 +1,12 @@
 from __future__ import annotations
 import random
-import Secure_save
 import os
-import jet_de_des as de
-import tresor
 from vispy import scene
 import numpy as np
 from PIL import Image
 import generate_map as gemap
-import admin_manager
 import PySide6.QtWidgets as qt
 from PySide6.QtCore import Qt, QTimer
-import table_de_conversion as tc
-import grade_manager as gr
 import configuration as cr
 from horloge import HorlogeJeu, arreter_toutes_horloges
 import atexit
