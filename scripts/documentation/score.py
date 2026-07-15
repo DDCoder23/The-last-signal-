@@ -27,8 +27,12 @@ def generate_score():
         result = check()
         scores[name] = result["score"]
         details[name] = result
+        for problem in result["problems"]:
+            problem["module"] = name
 
-    all_problems.extend(result["problems"])
+        all_problems.extend(result["problems"])
+
+    
 
     total = sum(scores.values())
     generate_report(total,scores,details,all_problems)
