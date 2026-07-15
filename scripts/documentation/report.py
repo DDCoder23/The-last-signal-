@@ -34,12 +34,21 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
     md.append("\n## ProblÃ¨mes\n")
     if problems:
         for problem in problems:
+            markdown += (
+    f"## {problem['file']}\n"
+    f"- **Severity :** {problem['severity']}\n"
+    f"- **Message :** {problem['message']}\n"
+    )
 
-        markdown += (
-            f"## {problem['file']}\n"
-            f"- **Severity :** {problem['severity']}\n"
-            f"- **Message :** {problem['message']}\n\n"
-        )
+            for key, value in problem.items():
+
+                if key in ("file", "severity", "message"):
+                    continue
+
+                markdown += (
+        f"- **{key} :** {value}\n")
+
+            markdown += "\n"
 
 
     else:
