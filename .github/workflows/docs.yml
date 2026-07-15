@@ -11,23 +11,18 @@ on:
 
   workflow_dispatch:
 
-
 permissions:
   contents: write
 
-
 env:
   DOC_SCORE_MINIMUM: 80
-
 
 jobs:
 
   documentation-check:
 
-    name: 📚 Documentation Quality Check
+    name: 📚 Documentation Quality
     runs-on: ubuntu-latest
-
-
     steps:
 
       # =========================
@@ -37,22 +32,19 @@ jobs:
       - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
-
       # =========================
-      # Node tools
+      # Node.js
       # =========================
 
-      - name: 🟢 Setup Node
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-
-      - name: Install Markdown tools
+      - name: 📦 Install Node tools
         run: |
           npm install -g markdownlint-cli2
           npm install -g cspell
-
 
       # =========================
       # Python
@@ -63,78 +55,60 @@ jobs:
         with:
           python-version: "3.13"
 
-
-      - name: Install Python tools
+      - name: 📦 Install Python dependencies
         run: |
-          pip install interrogate
-          pip install markdown
-          pip install pyyaml
-
+          python -m pip install --upgrade pip
+          pip install interrogate markdown pyyaml
 
       # =========================
       # Rust
       # =========================
 
-         
       - name: 🦀 Setup Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
         continue-on-error: true
-
-
-      # =========================
+              # =========================
       # Markdown
       # =========================
 
-      - name: 📑 Check Markdown structure
+      - name: 📑 Check Markdown
         continue-on-error: true
         run: |
-
           markdownlint-cli2 "**/*.md"
 
-
-
       # =========================
-      # Spell checking
+      # Spelling
       # =========================
 
-      - name: ✍️ Check spelling FR + EN
+      - name: ✍️ Check spelling
         continue-on-error: true
         run: |
-
           cspell "**/*.md" \
-          --language-id markdown
-
-
+            --language-id markdown
 
       # =========================
       # Links
       # =========================
 
-      - name: 🔗 Check broken links
+      - name: 🔗 Check links
         continue-on-error: true
         uses: lycheeverse/lychee-action@v2
         with:
-
           args: |
-            "**/*.md"
-
-
+            **/*.md
 
       # =========================
       # Python documentation
       # =========================
 
-      - name: 📚 Python documentation coverage
+      - name: 🐍 Generate Python documentation report
         continue-on-error: true
         run: |
-
           mkdir -p reports/docs
 
           interrogate . \
-          -o markdown \
-          -f reports/docs/python-docs.md
-
-
+            -o markdown \
+            -f reports/docs/python-docs.md
 
       # =========================
       # Rust documentation
@@ -143,15 +117,11 @@ jobs:
       - name: 🦀 Generate Rust documentation
         continue-on-error: true
         run: |
-
           if [ -f Cargo.toml ]; then
-              cargo doc --no-deps
+            cargo doc --no-deps
           fi
-
-
-
-      # =========================
-      # Generate score
+                # =========================
+      # Documentation score
       # =========================
 
       - name: 📊 Calculate documentation score
@@ -161,119 +131,106 @@ jobs:
 
           python scripts/docs_score.py
 
-
-
       # =========================
-      # Check score
+      # Display score
       # =========================
 
-      - name: 🚨 Verify documentation score
-        id: score_check
+      - name: 📋 Show documentation score
+        run: |
+
+          echo "Documentation score :"
+
+          cat reports/docs/score.txt
+
+          echo ""
+
+          cat reports/docs/score.md
+
+      # =========================
+      # Verify score
+      # =========================
+
+      - name: 🚨 Verify documentation quality
         run: |
 
           SCORE=$(cat reports/docs/score.txt)
 
-          echo "Documentation score: $SCORE%"
-
+          echo "Documentation score : $SCORE/100"
 
           if [ "$SCORE" -lt "$DOC_SCORE_MINIMUM" ]; then
 
             echo ""
-            echo "======================================"
+            echo "========================================"
             echo "❌ DOCUMENTATION QUALITY FAILED"
-            echo "======================================"
+            echo "========================================"
             echo ""
-            echo "Score obtenu : $SCORE%"
-            echo "Score minimum requis : $DOC_SCORE_MINIMUM%"
+            echo "Obtained score : $SCORE/100"
+            echo "Minimum score : $DOC_SCORE_MINIMUM/100"
             echo ""
-            echo "Corrige les problèmes de documentation"
-            echo "avant de fusionner cette modification."
+            echo "See reports/docs/problems.md"
             echo ""
 
             exit 1
 
-          else
-
-            echo ""
-            echo "======================================"
-            echo "✅ DOCUMENTATION QUALITY PASSED"
-            echo "======================================"
-            echo ""
-            echo "Score : $SCORE%"
-
           fi
 
-
+          echo ""
+          echo "========================================"
+          echo "✅ DOCUMENTATION QUALITY PASSED"
+          echo "========================================"
+          echo ""
+          echo "Score : $SCORE/100"
 
       # =========================
-      # Dashboard
+      # GitHub Step Summary
       # =========================
-      - name: 📄 Generate final report
+
+      - name: 📝 Publish summary
         if: always()
         run: |
 
-          mkdir -p reports/docs
+          {
+            echo "# 📚 Documentation Quality"
+            echo ""
+            echo "Score : $(cat reports/docs/score.txt)/100"
+            echo ""
+            echo "## Details"
+            echo ""
+            cat reports/docs/score.md
+          } >> $GITHUB_STEP_SUMMARY
+                # =========================
+      # Dashboard
+      # =========================
 
-          pourcentagemin=${DOC_SCORE_MINIMUM}
-          commit=${GITHUB_SHA}
-          auteur=${GITHUB_ACTOR}
-
-          doc=$(cat reports/docs/score.txt 2>/dev/null || echo 0)
-
-          if [ "$doc" -ge "$pourcentagemin" ]; then
-              status="PASS ✅"
-          else
-              status="FAIL ❌"
-          fi
-
-
-          printf "# 📚 Documentation Quality Report\n\n" > docs/reports/report.md
-          printf "## Commit\n\n%s\n\n" "$commit" >> docs/reports/report.md
-          printf "## Author\n\n%s\n\n" "$auteur" >> docs/reports/report.md
-          printf "## Minimum score required\n\n%s%%\n\n" "$pourcentagemin" >> docs/reports/report.md
-          printf "## Obtained score\n\n%s%%\n\n" "$doc" >> docs/reports/report.md
-          printf "## Status\n\n%s\n\n" "$status" >> docs/reports/report.md
-          printf "Generated automatically by GitHub Actions.\n" >> docs/reports/report.md
       - name: 📈 Generate dashboard
-        if: success()
+        if: always()
         run: |
 
+          mkdir -p dashboard
+
           python scripts/generate_dashboard.py
-
-
-
-    
-      
-          
-
-
 
       # =========================
       # Upload reports
       # =========================
 
-      - name: Upload report
-
+      - name: 📦 Upload reports
+        if: always()
         uses: actions/upload-artifact@v4
-
         with:
-
-          name: documentation-report
-
+          name: documentation-report-${{ github.run_number }}
+          retention-days: 30
           path: |
-            
-             reports/**
-             dashboard/**
-             
-             
+            reports/**
+            dashboard/**
 
       # =========================
       # Commit reports
       # =========================
 
-      - name: Commit reports
+      - name: 💾 Commit reports
         if: always()
         uses: ./.github/actions/commit-reports
         with:
-           report-type: docs
-           commit-message: "Docs CI Report #${{ github.run_number }}"
+          report-type: docs
+          commit-message: "Documentation Report #${{ github.run_number }}"
