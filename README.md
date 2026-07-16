@@ -1,10 +1,9 @@
 # The Last Signal - CI Reports
 
-Dernière mise à jour : Thu Jul 16 03:28:13 UTC 2026
+Dernière mise à jour : Thu Jul 16 03:28:22 UTC 2026
 
 ## Types de rapports
 
 - build
 - docs
 - python
-- rust
