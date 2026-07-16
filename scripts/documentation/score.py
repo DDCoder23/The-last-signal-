@@ -27,7 +27,7 @@ def generate_score():
         try:
             result = check()
             assert (result is Dict)
-        except Exceptions as e:
+        except Exception as e:
             result={
             "score": 0,
             "max_score": 0,
