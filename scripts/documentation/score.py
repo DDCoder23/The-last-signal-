@@ -35,7 +35,7 @@ def generate_score():
                 "file": "",
                 "severity": "error",
                 "message": f"Erreur:{str(e)}"
-            }]
+            }]}
         finally:
             scores[name] = result["score"]
             details[name] = result
