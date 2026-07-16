@@ -28,7 +28,7 @@ def generate_score():
     for name, check in checks.items():
         try:
             result = check()
-            assert (type(result) is Dict)
+            assert (type(result) == Dict)
         except Exception as e:
             result={
             "score": 0,
