@@ -8,6 +8,7 @@ from .organization import check_organization
 from .navigation import check_navigation
 from .report import generate_report
 from typing import Dict
+import traceback
 def generate_score():
     checks = {
     "markdown": check_markdown,
@@ -27,7 +28,7 @@ def generate_score():
     for name, check in checks.items():
         try:
             result = check()
-            assert (result is Dict)
+            assert (type(result) is Dict)
         except Exception as e:
             result={
             "score": 0,
@@ -36,7 +37,7 @@ def generate_score():
             "problems": [{
                 "file": "",
                 "severity": "error",
-                "message": f"Erreur:{str(e)}"
+                "message": traceback.format_exc()}"
             }]}
         finally:
             scores[name] = result["score"]
