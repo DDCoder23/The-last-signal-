@@ -188,11 +188,4 @@ Chaque décision du joueur affecte :
 
 ---
 
-## Navigation
-
-⬅️ [Retour au GDD](README.md)
-
-➡️ [Univers](02_UNIVERS.md)
-
-
 > **The Last Signal** — *"Le mystère du Phare vous attend."* 🚀
