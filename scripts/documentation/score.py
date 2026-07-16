@@ -6,7 +6,7 @@ from .python_docs import check_python_docs
 from .rust_docs import check_rust_docs
 from .organization import check_organization
 from .navigation import check_navigation
-from .report.py import generate_report
+from .report import generate_report
 def generate_score():
     checks = {
     "markdown": check_markdown,
