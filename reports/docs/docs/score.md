@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-16 11:50:20
+**Date :** 2026-07-16 14:01:11
 
 # 0/100
 
@@ -21,41 +21,81 @@
 ## ProblÃ¨mes
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** markdown
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** titles
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** spelling
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** links
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** python
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** rust
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** organization
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+    assert (type(result) is Dict)
+            ^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
 - **module :** navigation
 
