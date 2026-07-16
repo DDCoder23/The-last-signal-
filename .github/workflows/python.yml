@@ -97,12 +97,15 @@ jobs:
 
           echo "| Fichier | Ligne | Colonne | Code | Message |" >> "$REPORT"
           echo "|---------|------:|--------:|------|---------|" >> "$REPORT"
-
-          flake8 . | awk -F: '{
-             printf("| %s | %s | %s | %s |",$1,$2,$3,$4)\
-             for(i=5;i<=NF;i++) printf("%s%s",$i,(i==NF?"":" :"))
-             printf(" |\n")
-             }' >> "$REPORT"
+          flake8 . > flake8.txt 2>&1 || true
+          
+          awk -F: '{
+             printf("| %s | %s | %s | %s |", $1, $2, $3, $4)
+             for (i = 5; i <= NF; i++) {
+             printf("%s%s", $i, (i == NF ? "" : ":"))
+             }
+            printf(" |\n")
+            } ' flake8.txt >> "$REPORT"
       - name: Quality analysis
         continue-on-error: true
         run: |
