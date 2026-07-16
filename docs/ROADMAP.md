@@ -2,30 +2,10 @@
 > *MMORPG de survie post-apocalyptique en monde persistant*
 > **Dernière mise à jour** : 16 juillet 2026
 > **Version** : 0.1.0 (Pré-Prototype)
-
 ---
 
-## ⚠️ **Contexte et Contraintes**
-- **1 dévelopeur principal** (vous) : GDD, TDD, lore, gameplay, **majorité du code client/serveur**.
-- **Équipe réduite** : 2 artistes (Axel, David), 1 illustratrice (Louanne), 1 directeur adjoint (Cyril).
-- **GDD** : **2/55 fichiers terminés** → **~53 fichiers restants**.
-- **Temps limité** : Développement en parallèle des autres tâches (documentation, design, gestion).
-- **Priorité** : **Qualité > Vitesse**. Mieux vaut un jeu stable et fun avec moins de contenu qu’un jeu buggé et incomplet.
 
----
----
-
-## 🎯 **Nouvelle Stratégie**
-1. **Phase 1 étendue** : Focus sur la **documentation complète** et un **prototype minimal viable** (MVP).
-2. **Découpage en sous-phases** pour éviter la surcharge.
-3. **Lancement repoussé** à **2028-2029** pour un jeu abouti.
-4. **Scope réduit** : Moins de biomes/classes à la sortie, mais mieux polies.
-
----
-
----
-
-## 📅 **Phases Révisées**
+## 📅 **Phases**
 
 ---
 
