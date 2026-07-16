@@ -75,7 +75,7 @@ runs:
     - shell: bash
       run: |
 
-        cat > README.md << EOF
+        cat > reports/README.md << EOF
         # The Last Signal - CI Reports
 
         Dernière mise à jour : $(date -u)
