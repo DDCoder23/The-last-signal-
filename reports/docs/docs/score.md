@@ -1,20 +1,61 @@
+# ðŸ“Š Documentation Quality Report
 
-# 📊 Documentation Score
+**Date :** 2026-07-16 11:44:28
 
+# 0/100
 
-## Score global
+**Statut :** ðŸ”´ Ã€ amÃ©liorer
 
-# 60/100
+## RÃ©sultats
+|Module|Score|
+|---|---:|
+|markdown|**0**|
+|titles|**0**|
+|spelling|**0**|
+|links|**0**|
+|python|**0**|
+|rust|**0**|
+|organization|**0**|
+|navigation|**0**|
 
+## ProblÃ¨mes
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** markdown
 
-## Détails
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** titles
 
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** spelling
 
-- markdown: 10
-- titles: 1
-- line_length: 9
-- spelling: 15
-- links: 15
-- python: 0
-- rust: 0
-- organization: 10
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** links
+
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** python
+
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** rust
+
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** organization
+
+## 
+- **Severity :** error
+- **Message :** Erreur:name 'Dict' is not defined
+- **module :** navigation
+
