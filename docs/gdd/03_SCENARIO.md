@@ -167,18 +167,32 @@ Chaque décision du joueur affecte :
  | **Quêtes Cachées** | La Vérité sur l’EMP | Lore supplémentaire. |
 
 ---
+## 📚 Documents liés
+
+- [🎮 Game Design Document](README.md)
+- [🌍 Univers](02_UNIVERS.md)
+- [📜 Scénario](03_SCENARIO.md)
+- [Chronologie](04_CHRONOLOGIE.md)
+- [Factions du jeu](05_FACTION.md)
+- [Mobs](18_MONSTRES.md)
+- [Boss](19_BOSS.md)
+- [Guildes](36_GUILDES.md)
 ---
-## 📌 **Prochaines Étapes pour Vous**
-1. **Copiez ce contenu** dans [`03_SCENARIO.md`](https://github.com/DDCoder23/The-last-signal-/edit/main/docs/gdd/03_SCENARIO.md).
-2. **Relisez-le** pour vérifier que :
-   - Le **scénario principal** vous convient.
-   - Les **fins alternatives** sont claires.
-3. **Ajustez si besoin** :
-   - Changez les **noms des personnages** (ex: Léo → un autre nom).
-   - Modifiez les **lieux** (ex: Base Alpha → Base Oméga).
-4. **Passez à un autre fichier** (ex: [`04_CHRONOLOGIE.md`](04_CHRONOLOGIE.md)) **quand vous êtes prêt**.
+
+## Navigation
+
+⬅️ [Retour au GDD](README.md)
+
+➡️ [Univers](04_CHRONOLOGIE.md)
+
 
 ---
----
+
+## Navigation
+
+⬅️ [Retour au GDD](README.md)
+
+➡️ [Univers](02_UNIVERS.md)
+
 
 > **The Last Signal** — *"Le mystère du Phare vous attend."* 🚀
