@@ -72,23 +72,7 @@ runs:
           cp -r /tmp/ci-backup/dashboard/. dashboard/${{ inputs.report-type }}/
         fi
 
-    - shell: bash
-      run: |
-
-        cat > reports/README.md << EOF
-        # The Last Signal - CI Reports
-
-        Dernière mise à jour : $(date -u)
-
-        ## Types de rapports
-
-        EOF
-
-        for d in reports/*; do
-          if [ -d "$d" ]; then
-            echo "- $(basename "$d")" >> README.md
-          fi
-        done
+    
 
     - shell: bash
       run: |
