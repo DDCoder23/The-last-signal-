@@ -13,13 +13,13 @@
 **Objectif** : Finaliser **toute la documentation** et préparer le développement sans précipitation.
    Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
  |-------|-------------|-------------|------|----------|-------------------|
- | **📚 Finaliser le GDD** | Terminer les 53 fichiers restants (mécaniques, lore, design des systèmes). | **Vous** | 🟡 En cours | **30/11/2026** | 100% du GDD validé et partagé avec l’équipe. |
- | **🏗 Finaliser le TDD** | Architecture technique, schémas réseau, base de données. | **Vous** | ⚪ Non commencé | **15/01/2027** | TDD approuvé par Cyril. |
- | **📖 Lore & Univers** | Histoire, factions, personnages, et événements du monde. | **Vous** + Louanne | ⚪ Non commencé | **28/02/2027** | Lore cohérent et intégré au GDD. |
- | **🎮 Design du Gameplay** | Système de survie, combat, craft, économie (spécifications détaillées). | **Vous** | ⚪ Non commencé | **15/03/2027** | Tous les systèmes décrits dans le GDD. |
- | **📂 Organisation du Projet** | Structure des dossiers, conventions de code, et outils (CI/CD). | **Vous** + Cyril | ⚪ Non commencé | **31/03/2027** | Repository prêt pour le développement. |
+ | **📚 Finaliser le GDD** | Terminer les 53 fichiers restants (mécaniques, lore, design des systèmes). | **Cyril/Morgan** | 🟡 En cours | **30/11/2026** | 100% du GDD validé par Morgan et partagé avec l’équipe. |
+ | **🏗 Finaliser le TDD** | Architecture technique, schémas réseau, base de données. | **Cyril/Morgan** | ⚪ Non commencé | **15/01/2027** | 100% du GDD validé par Morgan et partagé avec l’équipe. |
+ | **📖 Lore & Univers** | Histoire, factions, personnages, et événements du monde. | **Cyril/Morgan** + Louanne | ⚪ Non commencé | **28/02/2027** | Lore cohérent et intégré au GDD. |
+ | **🎮 Design du Gameplay** | Système de survie, combat, craft, économie (spécifications détaillées). | **Cyril** | ⚪ Non commencé | **15/03/2027** | Tous les systèmes décrits dans le GDD. |
+ | **📂 Organisation du Projet** | Structure des dossiers, conventions de code, et outils (CI/CD). | **Cyril/Morgan** | ⚪ Non commencé | **31/03/2027** | Repository prêt pour le développement. |
 
-➡️ **Durée** : **9 mois** (au lieu de 3) → **Priorité absolue à la documentation**.
+➡️ **Durée** : **9 mois** → **Priorité absolue à la documentation**.
 
 ---
 
@@ -27,11 +27,11 @@
 **Objectif** : Un **prototype jouable** avec les mécaniques de base, **sans pression**.
  | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
  |-------|-------------|-------------|------|----------|-------------------|
- | **🎮 Prototype Client (Python)** | Affichage 2D basique, déplacement, interactions (ramasser un objet). | **Vous** | ⚪ Non commencé | **30/06/2027** | Joueur peut se déplacer et interagir avec 3 objets. |
- | **🦀 Serveur Rust (MVP)** | Gestion de 10 connexions, synchronisation des positions. | **Vous** + Cyril | ⚪ Non commencé | **15/08/2027** | Serveur stable avec 10 joueurs simultanés. |
- | **🗄 Base de Données (PostgreSQL)** | Schéma pour joueurs, inventaire, et monde. | **Vous** | ⚪ Non commencé | **30/07/2027** | Base locale fonctionnelle. |
+ | **🎮 Prototype Client (Python)** | Affichage 2D basique, déplacement, interactions (ramasser un objet). | **Cyril/Morgan** | ⚪ Non commencé | **30/06/2027** | Joueur peut se déplacer et interagir avec 3 objets. |
+ | **🦀 Serveur Rust (MVP)** | Gestion de 10 connexions, synchronisation des positions. | **Cyril/Morgan** | ⚪ Non commencé | **15/08/2027** | Serveur stable avec 10 joueurs simultanés. |
+ | **🗄 Base de Données (PostgreSQL)** | Schéma pour joueurs, inventaire, et monde. | **Cyril/Morgan** | ⚪ Non commencé | **30/07/2027** | Base locale fonctionnelle. |
  | **🎨 Assets Minimaux** | 1 tilemap (biome "Ruines"), 1 sprite joueur, 3 sprites objets. | Axel, David | ⚪ Non commencé | **30/08/2027** | Assets intégrés et animés. |
- | **🔧 Outils de Build** | Scripts pour lancer le client/serveur en local. | **Vous** | ⚪ Non commencé | **30/09/2027** | 1 commande pour démarrer le jeu. |
+ | **🔧 Outils de Build** | Scripts pour lancer le client/serveur en local. | **Cyril/Morgan** | ⚪ Non commencé | **30/09/2027** | 1 commande pour démarrer le jeu. |
 
 ➡️ **Durée** : **6 mois** → **MVP jouable en local**.
 
@@ -41,11 +41,11 @@
 **Objectif** : **Version jouable en interne** avec les mécaniques de survie.
  | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
  |-------|-------------|-------------|------|----------|-------------------|
- | **🌐 Communication Client-Serveur** | Protocole réseau finalisé (WebSockets), sync des actions. | **Vous** + Cyril | ⚪ Non commencé | **31/10/2027** | 20 joueurs sans désynchronisation. |
- | **⚔️ Combat PvE (Basique)** | 1 type d’ennemi, attaques simples, gestion des dégâts. | **Vous** | ⚪ Non commencé | **30/11/2027** | Joueur peut tuer 3 ennemis différents. |
- | **🏺 Inventaire & Craft** | Ramassage, stock, et craft de 5 objets. | **Vous** | ⚪ Non commencé | **15/12/2027** | Joueur peut crafter une épée et une potion. |
- | **🌍 Monde Statique** | 1 biome ("Ruines") avec ressources et points d’intérêt. | **Vous** + Axel | ⚪ Non commencé | **31/12/2027** | Monde de 200x200 cases explorable. |
- | **👥 Système de Survie** | Faim et santé (2 besoins de base). | **Vous** | ⚪ Non commencé | **31/12/2027** | Joueur doit manger pour survivre. |
+ | **🌐 Communication Client-Serveur** | Protocole réseau finalisé (WebSockets), sync des actions. | **Cyril/Morgan**| ⚪ Non commencé | **31/10/2027** | 20 joueurs sans désynchronisation. |
+ | **⚔️ Combat PvE (Basique)** | 1 type d’ennemi, attaques simples, gestion des dégâts. | **Cyril/Morgan** | ⚪ Non commencé | **30/11/2027** | Joueur peut tuer 3 ennemis différents. |
+ | **🏺 Inventaire & Craft** | Ramassage, stock, et craft de 5 objets. | **Cyril/Morgan** | ⚪ Non commencé | **15/12/2027** | Joueur peut crafter une épée et une potion. |
+ | **🌍 Monde Statique** | 1 biome ("Ruines") avec ressources et points d’intérêt. | **Cyril/Morgan** + Axel | ⚪ Non commencé | **31/12/2027** | Monde de 200x200 cases explorable. |
+ | **👥 Système de Survie** | Faim et santé (2 besoins de base). | **Cyril/Morgan** | ⚪ Non commencé | **31/12/2027** | Joueur doit manger pour survivre. |
 
 ➡️ **Durée** : **3 mois** → **Jeu jouable en interne**.
 
@@ -55,11 +55,11 @@
 **Objectif** : **Tests avec des amis/contributeurs**.
  | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
  |-------|-------------|-------------|------|----------|-------------------|
- | **👥 Système de Guildes (Basique)** | Création et gestion des membres. | **Vous** | ⚪ Non commencé | **29/02/2028** | 3 guildes créées. |
- | **💰 Économie Minimale** | Échange d’objets entre joueurs. | **Vous** | ⚪ Non commencé | **31/03/2028** | 10 objets échangeables. |
+ | **👥 Système de Guildes (Basique)** | Création et gestion des membres. | **Cyril/Morgan** | ⚪ Non commencé | **29/02/2028** | 3 guildes créées. |
+ | **💰 Économie Minimale** | Échange d’objets entre joueurs. | **Cyril/Morgan** | ⚪ Non commencé | **31/03/2028** | 10 objets échangeables. |
  | **🌑 2ème Biome ("Forêt")** | Nouveaux ennemis et ressources. | Axel, David | ⚪ Non commencé | **30/04/2028** | Biome intégré et testé. |
- | **🔒 Sauvegarde & Connexion** | Comptes locaux, sauvegarde des progrès. | **Vous** | ⚪ Non commencé | **31/05/2028** | Joueur peut reprendre sa partie. |
- | **🐛 Corrections & Optimisations** | Fix des bugs majeurs, amélioration des performances. | **Vous** + Cyril | ⚪ Non commencé | **30/06/2028** | 60 FPS, 0 bugs critiques. |
+ | **🔒 Sauvegarde & Connexion** | Comptes locaux, sauvegarde des progrès. | **Cyril/Morgan** | ⚪ Non commencé | **31/05/2028** | Joueur peut reprendre sa partie. |
+ | **🐛 Corrections & Optimisations** | Fix des bugs majeurs, amélioration des performances. | **Cyril/Morgan** | ⚪ Non commencé | **30/06/2028** | 60 FPS, 0 bugs critiques. |
 
 ➡️ **Durée** : **6 mois** → **Version stable pour tests externes**.
 
@@ -69,11 +69,11 @@
 **Objectif** : **Ajout des fonctionnalités majeures**.
  | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
  |-------|-------------|-------------|------|----------|-------------------|
- | **⚔️ Combat PvP** | Duels et arènes. | **Vous** | ⚪ Non commencé | **31/08/2028** | 10 combats PvP sans bugs. |
+ | **⚔️ Combat PvP** | Duels et arènes. | **Cyril/Morgan** | ⚪ Non commencé | **31/08/2028** | 10 combats PvP sans bugs. |
  | **🌍 3ème Biome ("Désert")** | Boss, ressources rares. | Axel, David | ⚪ Non commencé | **30/09/2028** | Biome équilibré. |
- | **🛠 Craft Avancé** | 20 recettes, outils améliorés. | **Vous** | ⚪ Non commencé | **31/10/2028** | Joueur peut crafter 1 objet par catégorie. |
- | **🎭 2 Classes** | Survivant et Combattant (compétences uniques). | **Vous** | ⚪ Non commencé | **30/11/2028** | 2 classes jouables. |
- | **📖 Quêtes Principales** | 3 quêtes liées au lore. | Louanne + **Vous** | ⚪ Non commencé | **31/12/2028** | 1 quête terminée par testeur. |
+ | **🛠 Craft Avancé** | 20 recettes, outils améliorés. | **Cyril/Morgan** | ⚪ Non commencé | **31/10/2028** | Joueur peut crafter 1 objet par catégorie. |
+ | **🎭 2 Classes** | Survivant et Combattant (compétences uniques). | **Cyril/Morgan** | ⚪ Non commencé | **30/11/2028** | 2 classes jouables. |
+ | **📖 Quêtes Principales** | 3 quêtes liées au lore. | Louanne + **Cyril/Morgan** | ⚪ Non commencé | **31/12/2028** | 1 quête terminée par testeur. |
 
 ➡️ **Durée** : **6 mois** → **Contenu complet pour la bêta**.
 
@@ -85,8 +85,8 @@
  |-------|-------------|-------------|------|----------|-------------------|
  | **🌎 4ème Biome ("Montagnes")** | Boss final et lore complet. | Axel, David | ⚪ Non commencé | **28/02/2029** | Biome testé. |
  | **🎵 Musique & Sons** | Bande-son et effets sonores. | À recruter | ⚪ Non commencé | **31/03/2029** | 5 musiques + 20 effets sonores. |
- | **🌐 Serveurs Cloud** | Déploiement sur AWS/Azure. | **Vous** + Cyril | ⚪ Non commencé | **30/04/2029** | 100 joueurs simultanés stables. |
- | **📢 Marketing** | Site web, réseaux sociaux. | **Vous** | ⚪ Non commencé | **31/05/2029** | 1000 followers. |
+ | **🌐 Serveurs Cloud** | Déploiement sur AWS/Azure. | **Cyril/Morgan**| ⚪ Non commencé | **30/04/2029** | 100 joueurs simultanés stables. |
+ 
  | **🎮 Tests Massifs** | Feedback et corrections finales. | Équipe | ⚪ Non commencé | **30/06/2029** | 90% de satisfaction. |
 
 ➡️ **Durée** : **6 mois**.
@@ -98,8 +98,8 @@
  | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
  |-------|-------------|-------------|------|----------|-------------------|
  | **🚀 Lancement v1.0** | Déploiement final. | Équipe | ⚪ Non commencé | **01/07/2029** | 500 joueurs le jour J. |
- | **📦 Mises à Jour Automatiques** | Système de patchs. | **Vous** | ⚪ Non commencé | **15/07/2029** | Mises à jour sans downtime. |
- | **🎁 Événements de Lancement** | Tournois, cadeaux. | **Vous** | ⚪ Non commencé | **31/07/2029** | 2000 joueurs actifs la 1ère semaine. |
+ | **📦 Mises à Jour Automatiques** | Système de patchs. | **Cyril/Morgan** | ⚪ Non commencé | **15/07/2029** | Mises à jour sans downtime. |
+ | **🎁 Événements de Lancement** | Tournois, cadeaux. | **Cyril/Morgan** | ⚪ Non commencé | **31/07/2029** | 2000 joueurs actifs la 1ère semaine. |
 
 ---
 ---
