@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import re
 MAX_SCORE = 15
 
 SCORES = {
@@ -43,3 +43,150 @@ def check_titles():
         "results": results,
         "problems": problems
     }
+
+
+
+def check_single_h1(files, problems):
+    score = SCORES["single_h1"]
+
+    for file in files:
+        text = file.read_text(encoding="utf-8", errors="ignore")
+        h1 = len(re.findall(r"^#\s+", text, flags=re.MULTILINE))
+
+        if h1 != 1:
+            problems.append({
+                "severity": "error",
+                "message": f"{file}: contient {h1} titres H1 (1 attendu)."
+            })
+            score = 0
+
+    return score
+
+
+def check_heading_order(files, problems):
+    score = SCORES["heading_order"]
+
+    for file in files:
+        previous = 0
+
+        for line_no, line in enumerate(
+            file.read_text(encoding="utf-8", errors="ignore").splitlines(),
+            start=1
+        ):
+            if not line.startswith("#"):
+                continue
+
+            level = len(line) - len(line.lstrip("#"))
+
+            if previous and level > previous + 1:
+                problems.append({
+                    "severity": "warning",
+                    "message": f"{file}:{line_no} saut de niveau H{previous} → H{level}."
+                })
+                score = 0
+
+            previous = level
+
+    return score
+
+
+def check_heading_spacing(files, problems):
+    score = SCORES["heading_spacing"]
+
+    for file in files:
+        lines = file.read_text(
+            encoding="utf-8",
+            errors="ignore"
+        ).splitlines()
+
+        for i, line in enumerate(lines):
+
+            if line.startswith("#"):
+
+                if i > 0 and lines[i - 1].strip() != "":
+                    problems.append({
+                        "severity": "warning",
+                        "message": f"{file}:{i+1} titre sans ligne vide avant."
+                    })
+                    score = 0
+
+                if i < len(lines) - 1 and lines[i + 1].strip() == "":
+                    continue
+
+    return score
+
+
+def check_empty_titles(files, problems):
+    score = SCORES["empty_titles"]
+
+    for file in files:
+
+        for line_no, line in enumerate(
+            file.read_text(encoding="utf-8", errors="ignore").splitlines(),
+            start=1
+        ):
+
+            if re.match(r"^#+\s*$", line):
+                problems.append({
+                    "severity": "error",
+                    "message": f"{file}:{line_no} titre vide."
+                })
+                score = 0
+
+    return score
+
+
+def check_title_length(files, problems):
+    score = SCORES["title_length"]
+
+    for file in files:
+
+        for line_no, line in enumerate(
+            file.read_text(encoding="utf-8", errors="ignore").splitlines(),
+            start=1
+        ):
+
+            if line.startswith("#"):
+
+                title = re.sub(r"^#+\s*", "", line)
+
+                if len(title) > 80:
+                    problems.append({
+                        "severity": "warning",
+                        "message": f"{file}:{line_no} titre très long ({len(title)} caractères)."
+                    })
+                    score = 0
+
+    return score
+
+
+def check_duplicate_titles(files, problems):
+    score = SCORES["duplicate_titles"]
+
+    titles = {}
+
+    for file in files:
+
+        for line_no, line in enumerate(
+            file.read_text(encoding="utf-8", errors="ignore").splitlines(),
+            start=1
+        ):
+
+            if line.startswith("#"):
+
+                title = re.sub(r"^#+\s*", "", line).strip().lower()
+
+                if title in titles:
+                    problems.append({
+                        "severity": "warning",
+                        "message": (
+                            f"{file}:{line_no} titre dupliqué "
+                            f"(déjà présent dans {titles[title]})."
+                        )
+                    })
+                    score = 0
+
+                else:
+                    titles[title] = f"{file}:{line_no}"
+
+    return score
