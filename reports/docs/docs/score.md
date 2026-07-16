@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-16 11:44:28
+**Date :** 2026-07-16 11:50:20
 
 # 0/100
 
@@ -21,41 +21,41 @@
 ## ProblÃ¨mes
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** markdown
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** titles
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** spelling
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** links
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** python
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** rust
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** organization
 
 ## 
 - **Severity :** error
-- **Message :** Erreur:name 'Dict' is not defined
+- **Message :** Erreur:
 - **module :** navigation
 

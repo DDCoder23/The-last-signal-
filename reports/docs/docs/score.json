@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-16T11:44:28.401241",
+    "generated": "2026-07-16T11:50:20.064953",
     "score": 0,
     "status": "ðŸ”´ Ã€ amÃ©liorer",
     "scores": {
@@ -22,7 +22,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "markdown"
                 }
             ]
@@ -35,7 +35,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "titles"
                 }
             ]
@@ -48,7 +48,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "spelling"
                 }
             ]
@@ -61,7 +61,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "links"
                 }
             ]
@@ -74,7 +74,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "python"
                 }
             ]
@@ -87,7 +87,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "rust"
                 }
             ]
@@ -100,7 +100,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "organization"
                 }
             ]
@@ -113,7 +113,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Erreur:name 'Dict' is not defined",
+                    "message": "Erreur:",
                     "module": "navigation"
                 }
             ]
