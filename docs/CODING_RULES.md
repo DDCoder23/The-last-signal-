@@ -297,6 +297,7 @@ Avant chaque Pull Request :
 - [🏗 Technical Design Document](../docs/tdd/README.md)
 - [🛣 Roadmap](../docs/ROADMAP.md)
 - [📝 Changelog](CHANGELOG.md)
+- [Contribution](CONTRIBUTING.md)
 
 ---
 
