@@ -95,7 +95,14 @@ jobs:
 
           echo "## Flake8" >> "$REPORT"
 
-          flake8 . >> "$REPORT" 2>&1
+          echo "| Fichier | Ligne | Colonne | Code | Message |" >> "$REPORT"
+          echo "|---------|------:|--------:|------|---------|" >> "$REPORT"
+
+          flake8 . | awk -F: '{
+             printf("| %s | %s | %s | %s |",$1,$2,$3,$4)\
+             for(i=5;i<=NF;i++) printf("%s%s",$i,(i==NF?"":" :"))
+             printf(" |\n")
+             }' >> "$REPORT"
       - name: Quality analysis
         continue-on-error: true
         run: |
@@ -116,7 +123,6 @@ jobs:
 
           echo "### Coverage" >> "$REPORT"
           pytest --cov . >> "$REPORT"
-
 
 
       # Tests
