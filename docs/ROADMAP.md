@@ -1,4 +1,4 @@
-# 🗺️ **ROADMAP - The Last Signal** *(Version Réaliste - Solo Dev + Équipe Réduite)*
+# 🗺️ **ROADMAP - The Last Signal** 
 > *MMORPG de survie post-apocalyptique en monde persistant*
 > **Dernière mise à jour** : 16 juillet 2026
 > **Version** : 0.1.0 (Pré-Prototype)
