@@ -35,8 +35,10 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
     if problems:
         for problem in problems:
             md.append(
-    f"## {problem['file']}\n",
-    f"- **Severity :** {problem['severity']}\n",
+    f"## {problem['file']}\n")
+            md.append(
+    f"- **Severity :** {problem['severity']}\n")
+            md.append(
     f"- **Message :** {problem['message']}\n"
     )
 
