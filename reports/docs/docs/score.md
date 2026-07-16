@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-16 14:01:11
+**Date :** 2026-07-16 14:03:12
 
 # 0/100
 
@@ -23,7 +23,7 @@
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
@@ -33,7 +33,7 @@ AssertionError
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
@@ -43,7 +43,7 @@ AssertionError
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
@@ -53,7 +53,7 @@ AssertionError
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
@@ -63,7 +63,7 @@ AssertionError
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
@@ -73,7 +73,7 @@ AssertionError
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
@@ -83,7 +83,7 @@ AssertionError
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 
@@ -93,7 +93,7 @@ AssertionError
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
-    assert (type(result) is Dict)
+    assert (type(result) == Dict)
             ^^^^^^^^^^^^^^^^^^^^
 AssertionError
 

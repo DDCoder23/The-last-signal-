@@ -2,49 +2,49 @@
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "markdown"
     },
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "titles"
     },
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "spelling"
     },
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "links"
     },
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "python"
     },
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "rust"
     },
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "organization"
     },
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) is Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
         "module": "navigation"
     }
 ]
