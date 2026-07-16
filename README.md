@@ -13,3 +13,7 @@ Dernière mise à jour : Thu Jul 16 06:36:51 UTC 2026
 - python
 - rust
 - security
+- build
+- docs
+- python
+- security
