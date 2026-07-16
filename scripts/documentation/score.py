@@ -38,7 +38,7 @@ def generate_score():
                 "file": "",
                 "severity": "error",
                 "message": traceback.format_exc()
-            }]
+            }]}
         finally:
             scores[name] = result["score"]
             details[name] = result
