@@ -6,7 +6,6 @@
 ![Documentation](https://img.shields.io/badge/docs-active-blue)
 ![Python](https://img.shields.io/badge/client-Python-yellow)
 ![Rust](https://img.shields.io/badge/server-Rust-orange)
-
 ---
 
 ## 🌍 Présentation
