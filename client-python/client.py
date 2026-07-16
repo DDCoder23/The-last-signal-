@@ -203,7 +203,7 @@ class VispyWidget(qt.QWidget):
 
         self.refresh_joueur()
 
-   def refresh_joueur(self):
+    def refresh_joueur(self):
         pos = np.array([[self.joueur.x, self.joueur.y, self.joueur.z + 0.5]])
         self.joueur_marker.set_data(pos)
         cam_x = self.joueur.x + 0.5 * np.sin(self.camera_angle)
