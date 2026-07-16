@@ -1,3 +1,5 @@
+[🏠 Documentation](../README.md) > [🎮 GDD](README.md)
+
 # 🎭 **SCÉNARIOS & QUÊTES - The Last Signal**
 > *Game Design Document - Version 1.0*
 > **Dernière mise à jour** : 16/07/2026
