@@ -1,14 +1,122 @@
 {
-    "date": "2026-07-14T06:09:43.372029",
-    "score": 60,
-    "details": {
-        "markdown": 10,
-        "titles": 1,
-        "line_length": 9,
-        "spelling": 15,
-        "links": 15,
+    "generated": "2026-07-16T09:31:28.602119",
+    "score": 0,
+    "status": "ðŸ”´ Ã€ amÃ©liorer",
+    "scores": {
+        "markdown": 0,
+        "titles": 0,
+        "spelling": 0,
+        "links": 0,
         "python": 0,
         "rust": 0,
-        "organization": 10
+        "organization": 0,
+        "navigation": 0
+    },
+    "problem_count": 8,
+    "details": {
+        "markdown": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "markdown"
+                }
+            ]
+        },
+        "titles": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "titles"
+                }
+            ]
+        },
+        "spelling": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "spelling"
+                }
+            ]
+        },
+        "links": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "links"
+                }
+            ]
+        },
+        "python": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "python"
+                }
+            ]
+        },
+        "rust": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "rust"
+                }
+            ]
+        },
+        "organization": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "organization"
+                }
+            ]
+        },
+        "navigation": {
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "error",
+                    "message": "Erreur:name 'Dict' is not defined",
+                    "module": "navigation"
+                }
+            ]
+        }
     }
 }

@@ -1,0 +1,50 @@
+[
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "markdown"
+    },
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "titles"
+    },
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "spelling"
+    },
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "links"
+    },
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "python"
+    },
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "rust"
+    },
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "organization"
+    },
+    {
+        "file": "",
+        "severity": "error",
+        "message": "Erreur:name 'Dict' is not defined",
+        "module": "navigation"
+    }
+]
