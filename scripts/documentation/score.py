@@ -24,13 +24,25 @@ def generate_score():
     all_problems = []
 
     for name, check in checks.items():
-        result = check()
-        scores[name] = result["score"]
-        details[name] = result
-        for problem in result["problems"]:
-            problem["module"] = name
+        try:
+            result = check()
+        except Exceptions as e:
+            result={
+            "score": 0,
+            "max_score": 0,
+            "results": {},
+            "problems": [{
+                "file": "",
+                "severity": "error",
+                "message": f"Erreur:{str(e)}"
+            }]
+        finally:
+            scores[name] = result["score"]
+            details[name] = result
+            for problem in result["problems"]:
+                problem["module"] = name
 
-        all_problems.extend(result["problems"])
+            all_problems.extend(result["problems"])
 
     
 
