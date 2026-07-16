@@ -1,7 +1,7 @@
 # 🎭 **SCÉNARIOS & QUÊTES - The Last Signal**
 > *Game Design Document - Version 1.0*
 > **Dernière mise à jour** : 16/07/2026
-> **Auteur** : Morgan Piva
+> **Auteur** : Cyril
 > **Statut** : 🟡 **En développement (80% complet - Scénario principal terminé)**
 
 ---
