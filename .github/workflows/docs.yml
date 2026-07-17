@@ -90,7 +90,7 @@ jobs:
           --language-id markdown \
           --no-progress \
           --no-summary \
-          --reporter json \
+          --output-format json \
           > reports/docs/cspell.json 2>&1
 
       # =========================
