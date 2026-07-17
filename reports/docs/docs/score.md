@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-17 12:06:18
+**Date :** 2026-07-17 12:08:55
 
 # 52/100
 
@@ -4965,21 +4965,9 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 scripts/generate_problems_md.py
 
-## ⚠️ Warning
+## ❌ Error
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'generate_problems_md' ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'generate_problems_md' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : unterminated string literal (detected at line 69) (<unknown>, line 69)
 
 - **module :** python
 

@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-17T12:06:18.160421",
+    "generated": "2026-07-17T12:08:55.103217",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 794,
+    "problem_count": 792,
     "details": {
         "markdown": {
             "score": 17,
@@ -1820,7 +1820,7 @@
             "results": {
                 "modules": 37,
                 "classes": 43,
-                "functions": 252,
+                "functions": 251,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
@@ -4135,20 +4135,8 @@
                 },
                 {
                     "file": "scripts/generate_problems_md.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/generate_problems_md.py",
-                    "severity": "warning",
-                    "message": "La fonction 'generate_problems_md' ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/generate_problems_md.py",
-                    "severity": "warning",
-                    "message": "La fonction 'generate_problems_md' ne possède pas d'annotations de type.",
+                    "severity": "error",
+                    "message": "Impossible d'analyser le fichier : unterminated string literal (detected at line 69) (<unknown>, line 69)",
                     "module": "python"
                 },
                 {
