@@ -42,12 +42,12 @@ runs:
     - shell: bash
       run: |
 
-        git fetch origin
+        git fetch origin --prune
 
         if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
         then
           git checkout ${{ inputs.branch }}
-          git pull origin ${{ inputs.branch }}
+          git reset --hard origin/${{ inputs.branch }}
         else
           git checkout --orphan ${{ inputs.branch }}
           git rm -rf . || true
