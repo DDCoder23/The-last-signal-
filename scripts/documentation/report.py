@@ -32,6 +32,7 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
     md=["# ðŸ“Š Documentation Quality Report\n\n",f"**Date :** {datetime.now():%Y-%m-%d %H:%M:%S}\n\n",f"# {total}/100\n\n",f"**Statut :** {_status(total)}\n\n","## RÃ©sultats\n|Module|Score|\n|---|---:|\n"]
     for k,v in scores.items(): md.append(f"|{k}|**{v}**|\n")
     md.append("\n## ProblÃ¨mes\n")
+    print(problems)
     if problems:
         for problem in problems:
             md.append(
