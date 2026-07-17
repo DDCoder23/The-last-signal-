@@ -60,8 +60,10 @@ def generate_problems_md():
             md.append("\n")
 
         md.append("---\n\n")
+        
 
     (REPORT_DIR / "problems.md").write_text(
         "".join(md),
         encoding="utf-8",
     )
+    print("fichier md généré)
