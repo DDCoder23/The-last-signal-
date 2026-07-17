@@ -23,6 +23,7 @@ def generate_score():
     scores = {}
     details = {}
     all_problems = []
+    total={}
 
     for name, check in checks.items():
         try:
@@ -32,7 +33,7 @@ def generate_score():
         except Exception as e:
             result={
             "score": 0,
-            "max_score": 0,
+            "max_score": 1,
             "results": {},
             "problems": [{
                 "file": "",
@@ -42,14 +43,16 @@ def generate_score():
         finally:
             scores[name] = result["score"]
             details[name] = result
+            total[name]=result["max_score"]
             for problem in result["problems"]:
                 problem["module"] = name
 
             all_problems.extend(result["problems"])
 
     
-
-    total = sum(scores.values())
-    generate_report(total,scores,details,all_problems)
+    
+    total_obtenu = sum(scores.values())/sum(total.values()) if sum(total.values())!=0 else sum(scores.values())/1
+    total_obtenu*=100
+    generate_report(total_obtenu,scores,details,all_problems)
     
     return total
