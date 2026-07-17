@@ -1,23 +1,20 @@
 from __future__ import annotations
-import random
-import os
 from vispy import scene
 import numpy as np
 import PySide6.QtWidgets as qt
 from PySide6.QtCore import Qt, QTimer
 import atexit
-import logging
 import sys
 
 
-class Joueur(Perso):
+class Joueur():
     def __init__(
-        self, image, jeu: Jeu, 
+        self, image, jeu=None, 
         nom="Player 1", 
         recommencer=True, 
         grade=None, config=None,stats={}
     ):
-        super().__init__(image, jeu)
+        super().__init__(image,  jeu)
         self.nom = nom
         self.vivant = True
         self.stuff = {}
@@ -25,7 +22,6 @@ class Joueur(Perso):
         self.grade = grade
         self.config = config
         self._initialiser_stats(stats)
-        
 
     def _initialiser_stats(self,stats:dict):
         self.stats["MANA_max"] = 100
