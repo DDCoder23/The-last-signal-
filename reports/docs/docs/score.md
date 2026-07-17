@@ -1,17 +1,17 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-17 10:44:36
+**Date :** 2026-07-17 10:45:05
 
-# 45/100
+# 52/100
 
-**Statut :** Médiocre
+**Statut :** Assez bon
 
 ## RÃ©sultats
 |Module|Score|
 |---|---:|
 |markdown|**17**|
 |titles|**7**|
-|spelling|**0**|
+|spelling|**10**|
 |links|**9**|
 |python|**0**|
 |rust|**0**|
@@ -20,16 +20,6 @@
 
 ## Problèmes
 # 📄 
-
-## ❌ Error
-- **Module :** spelling
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
-    raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
-TypeError: result doit être un dict, reçu int
-
-
-- **module :** spelling
 
 ## ❌ Error
 - **Module :** rust
@@ -4810,12 +4800,6 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'check_spelling' ne possède pas de docstring.
 
 - **module :** python
 

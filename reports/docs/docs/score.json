@@ -1,18 +1,18 @@
 {
-    "generated": "2026-07-17T10:44:36.155509",
-    "score": 45,
-    "status": "Médiocre",
+    "generated": "2026-07-17T10:45:05.144976",
+    "score": 52,
+    "status": "Assez bon",
     "scores": {
         "markdown": 17,
         "titles": 7,
-        "spelling": 0,
+        "spelling": 10,
         "links": 9,
         "python": 0,
         "rust": 0,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 793,
+    "problem_count": 791,
     "details": {
         "markdown": {
             "score": 17,
@@ -1569,17 +1569,12 @@
             ]
         },
         "spelling": {
-            "score": 0,
-            "max_score": 1,
-            "results": {},
-            "problems": [
-                {
-                    "file": "",
-                    "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
-                    "module": "spelling"
-                }
-            ]
+            "score": 10,
+            "max_score": 10,
+            "results": {
+                "unknown_words": 0
+            },
+            "problems": []
         },
         "links": {
             "score": 9,
@@ -1828,7 +1823,7 @@
                 "functions": 251,
                 "documented_modules": 0,
                 "documented_classes": 2,
-                "documented_functions": 62,
+                "documented_functions": 63,
                 "typed_functions": 25,
                 "todo": 4,
                 "long_functions": 7
@@ -4610,12 +4605,6 @@
                     "file": "scripts/documentation/spelling.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/documentation/spelling.py",
-                    "severity": "warning",
-                    "message": "La fonction 'check_spelling' ne possède pas de docstring.",
                     "module": "python"
                 },
                 {

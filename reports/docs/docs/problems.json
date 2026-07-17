@@ -1524,12 +1524,6 @@
         "module": "titles"
     },
     {
-        "file": "",
-        "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
-        "module": "spelling"
-    },
-    {
         "file": "docs/gdd/03_SCENARIO.md",
         "line": 176,
         "severity": "error",
@@ -4529,12 +4523,6 @@
         "file": "scripts/documentation/spelling.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/spelling.py",
-        "severity": "warning",
-        "message": "La fonction 'check_spelling' ne possède pas de docstring.",
         "module": "python"
     },
     {
