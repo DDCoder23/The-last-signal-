@@ -15,6 +15,9 @@ on:
     - cron: "7 * * * *"
 permissions:
   contents: write
+concurrency:
+  group: ci-reports
+  cancel-in-progress: false
 jobs:
   rust-check:
     name: Rust Tests & Report
