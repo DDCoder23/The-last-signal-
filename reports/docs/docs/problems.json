@@ -954,9 +954,597 @@
         "module": "markdown"
     },
     {
-        "file": "",
+        "file": "commande Linux.md",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py\", line 35, in check_titles\n    results[\"single_h1\"] = check_single_h1(files, problems)\n                           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py\", line 59, in check_single_h1\n    add_problem (file,\"error\",f\"{file}: contient {h1} titres H1 (1 attendu).\")\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: add_problem() missing 1 required positional argument: 'message'\n",
+        "message": "commande Linux.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "server-rust/README.md",
+        "severity": "error",
+        "message": "server-rust/README.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ARCHITECTURE.md",
+        "severity": "error",
+        "message": "docs/ARCHITECTURE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/README.md",
+        "severity": "error",
+        "message": "docs/README.md: contient 6 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/TEAM.md",
+        "severity": "error",
+        "message": "docs/TEAM.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/NETWORK.md",
+        "severity": "error",
+        "message": "docs/NETWORK.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/DATABASE.md",
+        "severity": "error",
+        "message": "docs/DATABASE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CODING_RULES.md",
+        "severity": "error",
+        "message": "docs/CODING_RULES.md: contient 22 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/lore/READMEA.md",
+        "severity": "error",
+        "message": "docs/lore/READMEA.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gameplay/README.md",
+        "severity": "error",
+        "message": "docs/gameplay/README.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/10_CREATION_PERSONNAGE.md",
+        "severity": "error",
+        "message": "docs/gdd/10_CREATION_PERSONNAGE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/22_OBJETS.md",
+        "severity": "error",
+        "message": "docs/gdd/22_OBJETS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/12_STATISTIQUES.md",
+        "severity": "error",
+        "message": "docs/gdd/12_STATISTIQUES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/26_COMMERCE.md",
+        "severity": "error",
+        "message": "docs/gdd/26_COMMERCE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/17_IA.md",
+        "severity": "error",
+        "message": "docs/gdd/17_IA.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/45_MENUS.md",
+        "severity": "error",
+        "message": "docs/gdd/45_MENUS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/46_ACCESSIBILITE.md",
+        "severity": "error",
+        "message": "docs/gdd/46_ACCESSIBILITE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/20_INVENTAIRE.md",
+        "severity": "error",
+        "message": "docs/gdd/20_INVENTAIRE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/07_VILLES.md",
+        "severity": "error",
+        "message": "docs/gdd/07_VILLES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/16_COMBAT.md",
+        "severity": "error",
+        "message": "docs/gdd/16_COMBAT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "severity": "error",
+        "message": "docs/gdd/README.md: contient 5 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/38_CHAT.md",
+        "severity": "error",
+        "message": "docs/gdd/38_CHAT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "error",
+        "message": "docs/gdd/02_UNIVERS.md: contient 18 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/36_GUILDES.md",
+        "severity": "error",
+        "message": "docs/gdd/36_GUILDES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/40_PVP.md",
+        "severity": "error",
+        "message": "docs/gdd/40_PVP.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/05_FACTIONS.md",
+        "severity": "error",
+        "message": "docs/gdd/05_FACTIONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/24_COFFRES.md",
+        "severity": "error",
+        "message": "docs/gdd/24_COFFRES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/52_MODELES_3D.md",
+        "severity": "error",
+        "message": "docs/gdd/52_MODELES_3D.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/39_PVE.md",
+        "severity": "error",
+        "message": "docs/gdd/39_PVE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/33_BIOMES.md",
+        "severity": "error",
+        "message": "docs/gdd/33_BIOMES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/42_EVENEMENTS.md",
+        "severity": "error",
+        "message": "docs/gdd/42_EVENEMENTS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/30_CRAFT.md",
+        "severity": "error",
+        "message": "docs/gdd/30_CRAFT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/25_ECONOMIE.md",
+        "severity": "error",
+        "message": "docs/gdd/25_ECONOMIE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/08_DONJONS.md",
+        "severity": "error",
+        "message": "docs/gdd/08_DONJONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/48_AMBIANCES.md",
+        "severity": "error",
+        "message": "docs/gdd/48_AMBIANCES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/14_CLASSES.md",
+        "severity": "error",
+        "message": "docs/gdd/14_CLASSES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/21_EQUIPEMENT.md",
+        "severity": "error",
+        "message": "docs/gdd/21_EQUIPEMENT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/53_ANIMATIONS.md",
+        "severity": "error",
+        "message": "docs/gdd/53_ANIMATIONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/55_IDEES.md",
+        "severity": "error",
+        "message": "docs/gdd/55_IDEES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/37_GROUPES.md",
+        "severity": "error",
+        "message": "docs/gdd/37_GROUPES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/15_GAMEPLAY.md",
+        "severity": "error",
+        "message": "docs/gdd/15_GAMEPLAY.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/23_BANQUE.md",
+        "severity": "error",
+        "message": "docs/gdd/23_BANQUE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/11_PROGRESSION.md",
+        "severity": "error",
+        "message": "docs/gdd/11_PROGRESSION.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/28_MONNAIES.md",
+        "severity": "error",
+        "message": "docs/gdd/28_MONNAIES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "error",
+        "message": "docs/gdd/04_CHRONOLOGIE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/44_HUD.md",
+        "severity": "error",
+        "message": "docs/gdd/44_HUD.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/27_HOTEL_DES_VENTES.md",
+        "severity": "error",
+        "message": "docs/gdd/27_HOTEL_DES_VENTES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/29_METIERS.md",
+        "severity": "error",
+        "message": "docs/gdd/29_METIERS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/06_REGIONS.md",
+        "severity": "error",
+        "message": "docs/gdd/06_REGIONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/18_MONSTRES.md",
+        "severity": "error",
+        "message": "docs/gdd/18_MONSTRES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/34_METEO.md",
+        "severity": "error",
+        "message": "docs/gdd/34_METEO.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/49_EFFETS_SONORES.md",
+        "severity": "error",
+        "message": "docs/gdd/49_EFFETS_SONORES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/47_MUSIQUES.md",
+        "severity": "error",
+        "message": "docs/gdd/47_MUSIQUES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/32_CARTE.md",
+        "severity": "error",
+        "message": "docs/gdd/32_CARTE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/51_CONCEPT_ART.md",
+        "severity": "error",
+        "message": "docs/gdd/51_CONCEPT_ART.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/35_JOUR_NUIT.md",
+        "severity": "error",
+        "message": "docs/gdd/35_JOUR_NUIT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/50_DIRECTION_ARTISTIQUE.md",
+        "severity": "error",
+        "message": "docs/gdd/50_DIRECTION_ARTISTIQUE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/19_BOSS.md",
+        "severity": "error",
+        "message": "docs/gdd/19_BOSS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/09_PERSONNAGES.md",
+        "severity": "error",
+        "message": "docs/gdd/09_PERSONNAGES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/13_COMPETENCES.md",
+        "severity": "error",
+        "message": "docs/gdd/13_COMPETENCES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/54_EXTENSIONS.md",
+        "severity": "error",
+        "message": "docs/gdd/54_EXTENSIONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/43_SUCCES.md",
+        "severity": "error",
+        "message": "docs/gdd/43_SUCCES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/41_QUETES.md",
+        "severity": "error",
+        "message": "docs/gdd/41_QUETES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/31_RECOLTE.md",
+        "severity": "error",
+        "message": "docs/gdd/31_RECOLTE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/tdd/README.md",
+        "severity": "error",
+        "message": "docs/tdd/README.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "README.md:172 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CODING_RULES.md",
+        "severity": "warning",
+        "message": "docs/CODING_RULES.md:293 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ROADMAP.md",
+        "severity": "warning",
+        "message": "docs/ROADMAP.md:54 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ROADMAP.md",
+        "severity": "warning",
+        "message": "docs/ROADMAP.md:68 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ROADMAP.md",
+        "severity": "warning",
+        "message": "docs/ROADMAP.md:82 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ROADMAP.md",
+        "severity": "warning",
+        "message": "docs/ROADMAP.md:96 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ROADMAP.md",
+        "severity": "warning",
+        "message": "docs/ROADMAP.md:106 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ROADMAP.md",
+        "severity": "warning",
+        "message": "docs/ROADMAP.md:118 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/ROADMAP.md",
+        "severity": "warning",
+        "message": "docs/ROADMAP.md:129 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:23 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:40 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:43 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:90 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:100 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:111 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:128 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:150 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:170 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/README.md",
+        "severity": "warning",
+        "message": "docs/README.md:63 titre dupliqué (déjà présent dans README.md:118).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/README.md",
+        "severity": "warning",
+        "message": "docs/README.md:170 titre dupliqué (déjà présent dans README.md:161).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CODING_RULES.md",
+        "severity": "warning",
+        "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "severity": "warning",
+        "message": "docs/gdd/README.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "severity": "warning",
+        "message": "docs/gdd/README.md:31 titre dupliqué (déjà présent dans docs/README.md:36).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "severity": "warning",
+        "message": "docs/gdd/README.md:145 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "warning",
+        "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:36).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "warning",
+        "message": "docs/gdd/02_UNIVERS.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:21).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "warning",
+        "message": "docs/gdd/02_UNIVERS.md:312 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "warning",
+        "message": "docs/gdd/02_UNIVERS.md:320 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "docs/gdd/01_VISION.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:21).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "docs/gdd/01_VISION.md:25 titre dupliqué (déjà présent dans docs/CODING_RULES.md:43).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "docs/gdd/01_VISION.md:165 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "docs/gdd/01_VISION.md:173 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:170 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:182 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
         "module": "titles"
     },
     {
