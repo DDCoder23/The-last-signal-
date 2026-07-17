@@ -34,9 +34,18 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
     md.append("\n## ProblÃ¨mes\n")
     print(problems)
     if problems:
-        for problem in problems:
-            md.append(
-    f"## {problem['file']}\n")
+        for i, problem in enumerate(problems):
+            if not isinstance(problem, dict):
+                raise TypeError(f"Élément {i} n'est pas un dict : {problem!r}")
+
+            if "file" not in problem:
+                raise KeyError(
+            f"Élément {i} ne contient pas 'file'. "
+            f"Clés présentes : {list(problem.keys())}. "
+            f"Valeur : {problem!r}"
+        )
+
+            md.append(f"## {problem['file']}\n")
             md.append(
     f"- **Severity :** {problem['severity']}\n")
             md.append(
