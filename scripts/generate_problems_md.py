@@ -66,4 +66,4 @@ def generate_problems_md():
         "".join(md),
         encoding="utf-8",
     )
-    print("fichier md généré)
+    print("fichier md généré")
