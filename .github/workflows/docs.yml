@@ -197,7 +197,7 @@ jobs:
       - name: 📝 Publish summary
         if: always()
         run: |
-          mkdir reports/docs
+          mkdir -p reports/docs
           {
             echo "# 📚 Documentation Quality"
             echo ""
