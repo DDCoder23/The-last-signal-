@@ -69,12 +69,12 @@ jobs:
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+      - name: Install cargo-binstall
+        uses: cargo-bins/cargo-binstall@main
 
       - name: Install Rust tools
         run: |
-          cargo install cargo-audit || true
-          cargo install cargo-deny || true
-          cargo install cargo-outdated || true
+          cargo binstall cargo-audit cargo-deny cargo-outdated -y
 
       ##########################################################
       # Gitleaks
