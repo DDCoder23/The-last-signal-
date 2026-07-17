@@ -1,41 +1,1494 @@
 {
-    "generated": "2026-07-16T14:03:12.005264",
-    "score": 0,
+    "generated": "2026-07-17T01:05:08.292801",
+    "score": 33,
     "status": "ðŸ”´ Ã€ amÃ©liorer",
     "scores": {
-        "markdown": 0,
-        "titles": 0,
+        "markdown": 17,
+        "titles": 7,
         "spelling": 0,
-        "links": 0,
+        "links": 9,
         "python": 0,
         "rust": 0,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 8,
+    "problem_count": 299,
     "details": {
         "markdown": {
-            "score": 0,
-            "max_score": 0,
-            "results": {},
+            "score": 17,
+            "max_score": 20,
+            "results": {
+                "empty_files": 0,
+                "encoding": 2,
+                "line_length": 3,
+                "trailing_spaces": 2,
+                "code_blocks": 3,
+                "lists": 2,
+                "tables": 2,
+                "html": 3
+            },
             "problems": [
                 {
-                    "file": "",
+                    "file": "commande Linux.md",
+                    "severity": "warning",
+                    "message": "Contenu très faible.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "server-rust/README.md",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ARCHITECTURE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/TEAM.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/NETWORK.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/DATABASE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/lore/READMEA.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gameplay/README.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/10_CREATION_PERSONNAGE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/22_OBJETS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/12_STATISTIQUES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/26_COMMERCE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/17_IA.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/45_MENUS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/46_ACCESSIBILITE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/20_INVENTAIRE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/07_VILLES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/16_COMBAT.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/38_CHAT.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/36_GUILDES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/40_PVP.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/05_FACTIONS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/24_COFFRES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/52_MODELES_3D.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/39_PVE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/33_BIOMES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/42_EVENEMENTS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/30_CRAFT.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/25_ECONOMIE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/08_DONJONS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/48_AMBIANCES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/14_CLASSES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/21_EQUIPEMENT.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/53_ANIMATIONS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/55_IDEES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/37_GROUPES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/15_GAMEPLAY.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/23_BANQUE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/11_PROGRESSION.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/28_MONNAIES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/44_HUD.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/27_HOTEL_DES_VENTES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/29_METIERS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/06_REGIONS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/18_MONSTRES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/34_METEO.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/49_EFFETS_SONORES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/47_MUSIQUES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/32_CARTE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/51_CONCEPT_ART.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/35_JOUR_NUIT.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/50_DIRECTION_ARTISTIQUE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/19_BOSS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/09_PERSONNAGES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/13_COMPETENCES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/54_EXTENSIONS.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/43_SUCCES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/41_QUETES.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/31_RECOLTE.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/tdd/README.md",
+                    "severity": "error",
+                    "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "Ligne 13 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "Ligne 15 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 19 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 20 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 21 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 22 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 24 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/README.md",
+                    "severity": "warning",
+                    "message": "Ligne 7 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Ligne 151 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 16 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 17 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 18 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 19 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 20 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 30 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 31 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 32 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 33 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 34 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 44 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 45 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 46 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 47 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 48 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 58 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 59 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 60 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 61 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 62 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 72 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 73 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 74 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 75 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 76 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 86 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 87 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 88 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 90 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 101 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Ligne 102 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/README.md",
+                    "severity": "warning",
+                    "message": "Ligne 7 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "severity": "warning",
+                    "message": "Ligne 30 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "severity": "warning",
+                    "message": "Ligne 32 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "severity": "warning",
+                    "message": "Ligne 42 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Ligne 27 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Ligne 51 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Ligne 75 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Ligne 105 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 26 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 28 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 50 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 57 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 58 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 59 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 60 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 64 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 65 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 68 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 72 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 73 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 76 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 83 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 84 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 85 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 93 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 94 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 95 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 96 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 103 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 104 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 105 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 106 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 107 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 121 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 122 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 124 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 133 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 134 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 135 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 136 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 137 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 155 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 156 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 158 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "severity": "warning",
+                    "message": "Ligne 159 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (1).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (415).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (1).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (89).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (5).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (6).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (7).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (8).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (5).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (6).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (7).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (8).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/ROADMAP.md",
+                    "severity": "error",
+                    "message": "Bloc de code non fermé.",
                     "module": "markdown"
                 }
             ]
         },
         "titles": {
-            "score": 0,
-            "max_score": 0,
-            "results": {},
+            "score": 7,
+            "max_score": 15,
+            "results": {
+                "single_h1": 0,
+                "heading_order": 3,
+                "heading_spacing": 0,
+                "empty_titles": 2,
+                "title_length": 2,
+                "duplicate_titles": 0
+            },
             "problems": [
                 {
-                    "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "commande Linux.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "server-rust/README.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/ARCHITECTURE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/README.md: contient 6 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/TEAM.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/NETWORK.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/DATABASE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/CODING_RULES.md: contient 22 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/lore/READMEA.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gameplay/README.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/10_CREATION_PERSONNAGE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/22_OBJETS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/12_STATISTIQUES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/26_COMMERCE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/17_IA.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/45_MENUS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/46_ACCESSIBILITE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/20_INVENTAIRE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/07_VILLES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/16_COMBAT.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/README.md: contient 5 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/38_CHAT.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/02_UNIVERS.md: contient 18 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/36_GUILDES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/40_PVP.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/05_FACTIONS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/24_COFFRES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/52_MODELES_3D.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/39_PVE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/33_BIOMES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/42_EVENEMENTS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/30_CRAFT.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/25_ECONOMIE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/08_DONJONS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/48_AMBIANCES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/14_CLASSES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/21_EQUIPEMENT.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/53_ANIMATIONS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/55_IDEES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/37_GROUPES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/15_GAMEPLAY.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/23_BANQUE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/11_PROGRESSION.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/28_MONNAIES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/04_CHRONOLOGIE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/44_HUD.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/27_HOTEL_DES_VENTES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/29_METIERS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/06_REGIONS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/18_MONSTRES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/34_METEO.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/49_EFFETS_SONORES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/47_MUSIQUES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/32_CARTE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/51_CONCEPT_ART.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/35_JOUR_NUIT.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/50_DIRECTION_ARTISTIQUE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/19_BOSS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/09_PERSONNAGES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/13_COMPETENCES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/54_EXTENSIONS.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/43_SUCCES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/41_QUETES.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/gdd/31_RECOLTE.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "error",
+                    "message": "docs/tdd/README.md: contient 0 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "README.md:172 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/CODING_RULES.md:293 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/ROADMAP.md:54 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/ROADMAP.md:68 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/ROADMAP.md:82 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/ROADMAP.md:96 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/ROADMAP.md:106 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/ROADMAP.md:118 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/ROADMAP.md:129 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:23 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:40 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:43 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:90 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:100 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:111 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:128 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:150 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:170 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/README.md:63 titre dupliqué (déjà présent dans README.md:118).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/README.md:170 titre dupliqué (déjà présent dans README.md:161).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/README.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/README.md:31 titre dupliqué (déjà présent dans docs/README.md:36).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/README.md:145 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:36).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/02_UNIVERS.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:21).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/02_UNIVERS.md:312 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/02_UNIVERS.md:320 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/01_VISION.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:21).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/01_VISION.md:25 titre dupliqué (déjà présent dans docs/CODING_RULES.md:43).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/01_VISION.md:165 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/01_VISION.md:173 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:170 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+                    "module": "titles"
+                },
+                {
+                    "severity": "warning",
+                    "message": "docs/gdd/03_SCENARIO.md:182 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
                     "module": "titles"
                 }
             ]
@@ -48,20 +1501,273 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "spelling"
                 }
             ]
         },
         "links": {
-            "score": 0,
-            "max_score": 0,
-            "results": {},
+            "score": 9,
+            "max_score": 15,
+            "results": {
+                "empty_links": 3,
+                "local_links": 0,
+                "external_links": 2,
+                "anchors": 2,
+                "images": 2,
+                "duplicates": 0
+            },
             "problems": [
                 {
-                    "file": "",
+                    "file": "docs/README.md",
+                    "line": 19,
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "Fichier introuvable : ..gdd/README.md",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/README.md",
+                    "line": 29,
+                    "severity": "error",
+                    "message": "Fichier introuvable : ..tdd/README.md",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/README.md",
+                    "line": 40,
+                    "severity": "error",
+                    "message": "Fichier introuvable : ..lore/README.md",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/README.md",
+                    "line": 41,
+                    "severity": "error",
+                    "message": "Fichier introuvable : ..gameplay/README.md",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 176,
+                    "severity": "error",
+                    "message": "Fichier introuvable : 05_FACTION.md",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "line": 414,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/README.md:59",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "line": 421,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/README.md",
+                    "line": 147,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/README.md",
+                    "line": 152,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "line": 1,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "line": 1,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "line": 314,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:29",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "line": 315,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "line": 316,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:37",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "line": 322,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:29",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/02_UNIVERS.md",
+                    "line": 324,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "line": 1,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "line": 1,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "line": 167,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "line": 168,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "line": 169,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "line": 175,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/01_VISION.md",
+                    "line": 177,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 1,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 1,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 35,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 35,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:35",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 172,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 173,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 174,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 175,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:35",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 177,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:55",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 178,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:56",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 179,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:88",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 184,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/gdd/03_SCENARIO.md",
+                    "line": 186,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/gdd/README.md:35",
                     "module": "links"
                 }
             ]
@@ -74,7 +1780,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "python"
                 }
             ]
@@ -87,7 +1793,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "rust"
                 }
             ]
@@ -100,7 +1806,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "organization"
                 }
             ]
@@ -113,7 +1819,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    assert (type(result) == Dict)\n            ^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "navigation"
                 }
             ]
