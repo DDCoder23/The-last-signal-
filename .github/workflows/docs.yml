@@ -74,6 +74,7 @@ jobs:
       - name: 📑 Check Markdown
         continue-on-error: true
         run: |
+           mkdir -p reports/docs
            markdownlint-cli2 \
            "**/*.md" --json \
            > reports/docs/markdownlint.json
@@ -84,6 +85,7 @@ jobs:
       - name: ✍️ Check spelling
         continue-on-error: true
         run: |
+          mkdir -p reports/docs
           cspell "**/*.md" \
           --language-id markdown \
           --no-progress \
