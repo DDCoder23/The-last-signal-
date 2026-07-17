@@ -36,7 +36,7 @@
         "module": "markdown"
     },
     {
-        "file": "docs/lore/READMEA.md",
+        "file": "docs/lore/README.md",
         "severity": "error",
         "message": "Fichier vide.",
         "module": "markdown"
@@ -380,13 +380,7 @@
     {
         "file": "lychee/out.md",
         "severity": "warning",
-        "message": "Ligne 19 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "lychee/out.md",
-        "severity": "warning",
-        "message": "Ligne 21 > 120 caractères.",
+        "message": "Ligne 15 > 120 caractères.",
         "module": "markdown"
     },
     {
@@ -984,9 +978,9 @@
         "module": "titles"
     },
     {
-        "file": "docs/lore/READMEA.md",
+        "file": "docs/lore/README.md",
         "severity": "error",
-        "message": "docs/lore/READMEA.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/lore/README.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -1534,13 +1528,6 @@
         "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
         "module": "spelling"
-    },
-    {
-        "file": "docs/README.md",
-        "line": 40,
-        "severity": "error",
-        "message": "Fichier introuvable : lore/README.md",
-        "module": "links"
     },
     {
         "file": "docs/gdd/03_SCENARIO.md",

@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-17T03:03:37.397476",
+    "generated": "2026-07-17T03:04:02.439032",
     "score": 60.0,
     "status": "Bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 293,
+    "problem_count": 291,
     "details": {
         "markdown": {
             "score": 17,
@@ -65,7 +65,7 @@
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/lore/READMEA.md",
+                    "file": "docs/lore/README.md",
                     "severity": "error",
                     "message": "Fichier vide.",
                     "module": "markdown"
@@ -409,13 +409,7 @@
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
-                    "message": "Ligne 19 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "lychee/out.md",
-                    "severity": "warning",
-                    "message": "Ligne 21 > 120 caractères.",
+                    "message": "Ligne 15 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -1027,9 +1021,9 @@
                     "module": "titles"
                 },
                 {
-                    "file": "docs/lore/READMEA.md",
+                    "file": "docs/lore/README.md",
                     "severity": "error",
-                    "message": "docs/lore/READMEA.md: contient 0 titres H1 (1 attendu).",
+                    "message": "docs/lore/README.md: contient 0 titres H1 (1 attendu).",
                     "module": "titles"
                 },
                 {
@@ -1599,13 +1593,6 @@
                 "duplicates": 0
             },
             "problems": [
-                {
-                    "file": "docs/README.md",
-                    "line": 40,
-                    "severity": "error",
-                    "message": "Fichier introuvable : lore/README.md",
-                    "module": "links"
-                },
                 {
                     "file": "docs/gdd/03_SCENARIO.md",
                     "line": 176,

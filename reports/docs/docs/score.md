@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-17 03:03:37
+**Date :** 2026-07-17 03:04:02
 
 # 60.0/100
 
@@ -226,14 +226,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** docs/README.md:170 titre dupliqué (déjà présent dans README.md:161).
 
 - **module :** titles
-
-## ❌ Error
-- **Module :** links
-- **Message :** Fichier introuvable : lore/README.md
-
-- **line :** 40
-
-- **module :** links
 
 # 📄 docs/ROADMAP.md
 
@@ -1949,7 +1941,7 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** links
 
-# 📄 docs/lore/READMEA.md
+# 📄 docs/lore/README.md
 
 ## ❌ Error
 - **Module :** markdown
@@ -1959,7 +1951,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ❌ Error
 - **Module :** titles
-- **Message :** docs/lore/READMEA.md: contient 0 titres H1 (1 attendu).
+- **Message :** docs/lore/README.md: contient 0 titres H1 (1 attendu).
 
 - **module :** titles
 
@@ -1981,13 +1973,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 19 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
+- **Message :** Ligne 15 > 120 caractères.
 
 - **module :** markdown
 
