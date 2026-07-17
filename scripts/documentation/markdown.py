@@ -52,7 +52,7 @@ def get_markdown_files() -> list[Path]:
 
 def add_problem(problems: list[dict], file: Path | str, severity: str, message: str):
     problems.append({
-        "file": str(file),
+        "file": file.as_posix(),
         "severity": severity,
         "message": message
     })
