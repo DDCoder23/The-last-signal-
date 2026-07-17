@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-17 02:18:21
+**Date :** 2026-07-17 02:22:46
 
 # 63.41463414634146/100
 
@@ -18,7 +18,7 @@
 |organization|**0**|
 |navigation|**0**|
 
-## ProblÃ¨mes
+## Problèmes
 ## commande Linux.md
 - **Severity :** warning
 - **Message :** Contenu très faible.
