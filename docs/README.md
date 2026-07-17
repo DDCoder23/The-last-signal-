@@ -16,7 +16,7 @@ Cette documentation est organisée comme un **wiki** afin de faciliter la naviga
 
 | Document | Description |
 |-----------|-------------|
-| 📖 [Game Design Document (GDD)](..gdd/README.md) | Point d'entrée de toute la conception du jeu. |
+| 📖 [Game Design Document (GDD)](gdd/README.md) | Point d'entrée de toute la conception du jeu. |
 
 ---
 
@@ -26,7 +26,7 @@ Cette documentation est organisée comme un **wiki** afin de faciliter la naviga
 
 | Document | Description |
 |-----------|-------------|
-| 🏗 [Technical Design Document (TDD)](..tdd/README.md) | Architecture technique générale. |
+| 🏗 [Technical Design Document (TDD)](tdd/README.md) | Architecture technique générale. |
 | 🖥 [Architecture](ARCHITECTURE.md) | Organisation du code et des modules. |
 | 🗄 [Base de données](DATABASE.md) | Structure PostgreSQL. |
 | 🌐 [Réseau](NETWORK.md) | Communication Client ↔ Serveur. |
@@ -37,8 +37,8 @@ Cette documentation est organisée comme un **wiki** afin de faciliter la naviga
 
 | Document | Description |
 |-----------|-------------|
-| 📚 [Lore](..lore/README.md) | Univers, scénario et histoire. |
-| 🎮 [Gameplay](..gameplay/README.md) | Mécaniques de jeu. |
+| 📚 [Lore](lore/README.md) | Univers, scénario et histoire. |
+| 🎮 [Gameplay](gameplay/README.md) | Mécaniques de jeu. |
 
 ---
 
