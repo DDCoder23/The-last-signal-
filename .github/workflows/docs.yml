@@ -85,7 +85,11 @@ jobs:
         continue-on-error: true
         run: |
           cspell "**/*.md" \
-            --language-id markdown
+          --language-id markdown \
+          --no-progress \
+          --no-summary \
+          --reporter json \
+          > reports/docs/cspell.json
 
       # =========================
       # Links
