@@ -58,20 +58,20 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
         )
 
             
-            for problem in problems:
-                par_fichier[str(problem["file"])].append(problem)
-            for fichier, erreurs in sorted(par_fichier.items()):
-                md.append(f"# 📄 {fichier}\n\n")
-                for erreur in erreurs:
-                    icone = "❌" if erreur["severity"] == "error" else "⚠️"
-                    md.append(f"## {icone} {erreur['severity'].capitalize()}\n")
-                    md.append(f"- **Module :** {erreur['module']}\n")
-                    md.append(f"- **Message :** {erreur['message']}\n\n")
-                    for key, value in erreur.items():
-                        if key in ("file", "severity", "message"):
-                            continue
-                        md.append(f"- **{key} :** {value}\n")
-                        md.append("\n")
+        for problem in problems:
+            par_fichier[str(problem["file"])].append(problem)
+        for fichier, erreurs in sorted(par_fichier.items()):
+            md.append(f"# 📄 {fichier}\n\n")
+            for erreur in erreurs:
+                icone = "❌" if erreur["severity"] == "error" else "⚠️"
+                md.append(f"## {icone} {erreur['severity'].capitalize()}\n")
+                md.append(f"- **Module :** {erreur['module']}\n")
+                md.append(f"- **Message :** {erreur['message']}\n\n")
+                for key, value in erreur.items():
+                    if key in ("file", "severity", "message"):
+                        continue
+                    md.append(f"- **{key} :** {value}\n")
+                    md.append("\n")
 
 
     else:
