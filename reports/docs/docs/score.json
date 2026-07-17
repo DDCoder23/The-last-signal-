@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-17T09:55:32.826047",
+    "generated": "2026-07-17T10:19:54.514804",
     "score": 45,
     "status": "Médiocre",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 542,
+    "problem_count": 793,
     "details": {
         "markdown": {
             "score": 17,
@@ -1823,15 +1823,15 @@
             "score": 0,
             "max_score": 20,
             "results": {
-                "modules": 35,
-                "classes": 15,
-                "functions": 109,
+                "modules": 36,
+                "classes": 43,
+                "functions": 251,
                 "documented_modules": 0,
-                "documented_classes": 0,
-                "documented_functions": 16,
-                "typed_functions": 10,
+                "documented_classes": 2,
+                "documented_functions": 62,
+                "typed_functions": 25,
                 "todo": 4,
-                "long_functions": 6
+                "long_functions": 7
             },
             "problems": [
                 {
@@ -2094,32 +2094,746 @@
                 },
                 {
                     "file": "Ancien/main.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'lister_profils_sauvegardes' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'lister_profils_sauvegardes' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'SaveSelectWidget' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'reprendre_joueur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'reprendre_joueur' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'reconstruire_stuff' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'reconstruire_stuff' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'Jeu' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'Lutin' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'Perso' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'Joueur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'Adversaire' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'Combat' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'autosave_provider_factory' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'autosave_provider_factory' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'Map3D' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'VispyWidget' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'TresorDialogQt' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'MainMenuWidget' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'EmptyWidget' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La classe 'MainFrame' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_modifier' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_modifier' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generer_stats' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generer_stats' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'position' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'position' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'set_position' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'set_position' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'deplacer' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'deplacer' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'subir_degats' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'subir_degats' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'liste' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'liste' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'jet_attaque' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'calcul_degats' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'save' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'save' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'to_dict' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'to_dict' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'cara_sup' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'cara_sup' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'attaquer' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'provider' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'provider' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_height' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_height' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'on_key_vispy' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'on_key_vispy' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'refresh_joueur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'refresh_joueur' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_info' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_info' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'afficher_tresor' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'afficher_tresor' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'on_take' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'on_take' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'closeEvent' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'closeEvent' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'mettre_a_jour_horloge' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nouveau_jour' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nouvelle_semaine' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nouveau_mois' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nouvelle_annee' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'show_menu' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'show_menu' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'start_new_game' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'start_new_game' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'start_load_game' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'start_load_game' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'show_empty' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'clear_layout' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'start_game' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'start_game' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'load_game_from_slot' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'load_game_from_slot' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'show_save_select' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'show_save_select' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'layout' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'closeEvent' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'closeEvent' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'on_exit' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'on_exit' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
                     "file": "Ancien/heure_locale.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/heure_locale.py",
+                    "severity": "warning",
+                    "message": "La fonction 'trouver_fuseau' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/heure_locale.py",
+                    "severity": "warning",
+                    "message": "La fonction 'trouver_fuseau' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
                     "file": "Ancien/tresor.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/tresor.py",
+                    "severity": "warning",
+                    "message": "La classe 'tresor' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/tresor.py",
+                    "severity": "warning",
+                    "message": "La fonction 'create_tresor' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/tresor.py",
+                    "severity": "warning",
+                    "message": "La fonction 'create_tresor' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/tresor.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ouvrir_tresor' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/tresor.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ouvrir_tresor' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/tresor.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ouvrir_tresor_admin' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/tresor.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ouvrir_tresor_admin' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
                     "file": "Ancien/localisation.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/localisation.py",
+                    "severity": "warning",
+                    "message": "La fonction 'obtenir_localisation_par_ip' ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "Ancien/inv.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'qtes' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La classe 'FenetreInventaire' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'qtes' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La classe 'FenetreInventaire' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'afficher_inventaire' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'afficher_inventaire' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'on_search_text_changed' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'effectuer_recherche_optimisee' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'mettre_a_jour_inventaire_complet' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'mettre_a_jour_inventaire_rapide' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'demander_quantite_conversion' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'convertir_livre' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'vendre_objet' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'vendre_objet' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'vendre_tous_meme_nom' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'boire' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'charger_prix_objets' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'charger_prix_objets' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'effectuer_recherche' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'filtrer_inventaire' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inv.py",
+                    "severity": "warning",
+                    "message": "La fonction 'filtrer_inventaire' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
@@ -2148,14 +2862,170 @@
                 },
                 {
                     "file": "Ancien/grade_manager.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'gestionnaire_de_grade' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'gestionnaire_de_grade' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'gestionnaire_de_vehicule' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'gestionnaire_de_vehicule' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'gestionnaire_de_batiments' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'gestionnaire_de_batiments' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'manage' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'manage' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'decorateur' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/grade_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fonction_interne' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
                     "file": "Ancien/configuration.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/configuration.py",
+                    "severity": "warning",
+                    "message": "La classe 'ModeDeJeuDialog' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/configuration.py",
+                    "severity": "warning",
+                    "message": "La fonction 'demander_configuration_jeu' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
@@ -2472,14 +3342,206 @@
                 },
                 {
                     "file": "Ancien/table_de_conversion.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La classe 'StatsConversion' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'chercher_livre' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'chercher_livre' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'convertir_livres' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'convertir_livres' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l1_l2' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l1_l2' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l2_l3' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l2_l3' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l3_l4' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l3_l4' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l4_l5' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l4_l5' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l5_l6' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'l5_l6' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'niveau_to_romain' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_niveau' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/table_de_conversion.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_nom' ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "Ancien/horloge.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'arreter_toutes_horloges' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'chercher' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'chercher' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'réinitialiser' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'réinitialiser' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'demarrer' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'arreter' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'enregistrer_evenement' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'obtenir_heure' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'obtenir_heure_formatee' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'sauvegarder_dans_json' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'charger_depuis_json' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/horloge.py",
+                    "severity": "warning",
+                    "message": "La fonction 'charger_depuis_json' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
@@ -2604,8 +3666,164 @@
                 },
                 {
                     "file": "Ancien/admin_manager.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'calculer_distance_levenshtein' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'calculer_distance_levenshtein' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'trouver_commandes_similaires' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'trouver_commandes_similaires' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'admin_only' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'admin_only' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La classe 'ConsoleAdmin' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'activer_admin' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'activer_admin' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'installer_raccourci_admin' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'installer_raccourci_admin' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'demander_mot_de_passe' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'demander_mot_de_passe' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'admin_mode_decorator' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'wrapper' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'wrapper' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'log' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'log' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'executer' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'executer' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'executer_commande' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'executer_commande' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'keyPressEvent' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'keyPressEvent' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'wrapper' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/admin_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'wrapper' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
@@ -2628,8 +3846,296 @@
                 },
                 {
                     "file": "Ancien/inventaire.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid non-printable character U+FEFF (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'trouver_cles_par_liste_non_ordonnee' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'qtes' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'pregenerer_cache_enchantements' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'trier' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La classe 'Objet' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La classe 'equipement' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La classe 'Armes' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La classe 'Potion' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La classe 'Livres' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nettoyer_stuff_zero' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nettoyer_stuff_zero' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generer_cle_unique' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'safe_increment' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'safe_increment' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'safe_increment' dépasse 80 lignes.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La classe 'QuantiteDialog' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La classe 'FenetreMagasin' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'afficher_magasin' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'afficher_magasin' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'attribut_superieur_a_un' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'attribut_superieur_a_un' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nom_affiche' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nom_affiche' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nom' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'nom' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'image' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'image' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ajouter' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ajouter' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'retirer' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'retirer' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'enchanter' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'enchanter' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'taux_de_critique' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'taux_de_critique' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'enchanter' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'enchanter' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'appliquer_effet' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'appliquer_effet' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'diminuer_quantite' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'augmenter_quantite' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'mettre_a_jour_prix_total' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_quantite' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'charger_objets_dispo' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'mettre_a_jour_magasin' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "Ancien/inventaire.py",
+                    "severity": "warning",
+                    "message": "La fonction 'acheter_objet' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/transformateur.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
