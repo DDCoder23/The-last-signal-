@@ -27,7 +27,8 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
     summary={"generated":datetime.now().isoformat(),"score":total,"status":_status(total),"scores":scores,"problem_count":len(problems)}
     (REPORT_DIR/"score.txt").write_text(str(total),encoding="utf-8")
     (REPORT_DIR/"summary.json").write_text(json.dumps(summary,indent=4,ensure_ascii=False),encoding="utf-8")
-    (REPORT_DIR/"score.json").write_text(json.dumps({**summary,"details":details},indent=4,ensure_ascii=False),encoding="utf-8")
+    print(details)
+    (REPORT_DIR/"score.json").write_text(json.dumps({**summary,"details":details},indent=4,ensure_ascii=False,default=str),encoding="utf-8")
     (REPORT_DIR/"problems.json").write_text(json.dumps(problems,indent=4,ensure_ascii=False),encoding="utf-8")
     md=["# ðŸ“Š Documentation Quality Report\n\n",f"**Date :** {datetime.now():%Y-%m-%d %H:%M:%S}\n\n",f"# {total}/100\n\n",f"**Statut :** {_status(total)}\n\n","## RÃ©sultats\n|Module|Score|\n|---|---:|\n"]
     for k,v in scores.items(): md.append(f"|{k}|**{v}**|\n")
