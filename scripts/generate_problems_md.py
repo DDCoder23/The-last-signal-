@@ -67,3 +67,9 @@ def generate_problems_md():
         encoding="utf-8",
     )
     print("fichier md généré")
+    import traceback
+
+try:
+    generate_problems_md()
+except Exception:
+    traceback.print_exc()
