@@ -1,17 +1,13 @@
 name: Security Report
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
 
   workflow_dispatch:
 
   schedule:
     # Tous les jours à 03:00 UTC
-    - cron: "0 3 * * *"
+    - cron: "7 * * * 0"
+    - cron: "7 * * * 6"
 
 permissions:
   contents: write
