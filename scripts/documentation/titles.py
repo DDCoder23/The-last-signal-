@@ -1,5 +1,6 @@
 from pathlib import Path
 import re
+from .problem import add_problem
 MAX_SCORE = 15
 
 SCORES = {
@@ -55,11 +56,8 @@ def check_single_h1(files, problems):
         h1 = len(re.findall(r"^#\s+", text, flags=re.MULTILINE))
 
         if h1 != 1:
-            problems.append({
-                "file": file,
-                "severity": "error",
-                "message": f"{file}: contient {h1} titres H1 (1 attendu)."
-            })
+            add_problem (file,"error",f"{file}: contient {h1} titres H1 (1 attendu).")
+            
             score = 0
 
     return score
@@ -81,11 +79,7 @@ def check_heading_order(files, problems):
             level = len(line) - len(line.lstrip("#"))
 
             if previous and level > previous + 1:
-                problems.append({
-                    "file": file,
-                    "severity": "warning",
-                    "message": f"{file}:{line_no} saut de niveau H{previous} → H{level}."
-                })
+                add_problem (file,"warning",f"{file}:{line_no} saut de niveau H{previous} → H{level}.")
                 score = 0
 
             previous = level
@@ -107,11 +101,7 @@ def check_heading_spacing(files, problems):
             if line.startswith("#"):
 
                 if i > 0 and lines[i - 1].strip() != "":
-                    problems.append({
-                        "file": file,
-                        "severity": "warning",
-                        "message": f"{file}:{i+1} titre sans ligne vide avant."
-                    })
+                    add_problem (file,"warning",f"{file}:{i+1} titre sans ligne vide avant.")
                     score = 0
 
                 if i < len(lines) - 1 and lines[i + 1].strip() == "":
@@ -131,11 +121,8 @@ def check_empty_titles(files, problems):
         ):
 
             if re.match(r"^#+\s*$", line):
-                problems.append({
-                    "file": file,
-                    "severity": "error",
-                    "message": f"{file}:{line_no} titre vide."
-                })
+                add_problem (file,"error",f"{file}:{line_no} titre vide.")
+                
                 score = 0
 
     return score
@@ -156,11 +143,8 @@ def check_title_length(files, problems):
                 title = re.sub(r"^#+\s*", "", line)
 
                 if len(title) > 80:
-                    problems.append({
-                        "file": file,
-                        "severity": "warning",
-                        "message": f"{file}:{line_no} titre très long ({len(title)} caractères)."
-                    })
+                    add_problem (file,"warning",f"{file}:{line_no} titre très long ({len(title)} caractères).")
+                    
                     score = 0
 
     return score
@@ -183,14 +167,8 @@ def check_duplicate_titles(files, problems):
                 title = re.sub(r"^#+\s*", "", line).strip().lower()
 
                 if title in titles:
-                    problems.append({
-                        "file": file,
-                        "severity": "warning",
-                        "message": (
-                            f"{file}:{line_no} titre dupliqué "
-                            f"(déjà présent dans {titles[title]})."
-                        )
-                    })
+                    add_problem (file,"warning",f"{file}:{line_no} titre dupliqué (déjà présent dans {titles[title]}).")
+                    
                     score = 0
 
                 else:
