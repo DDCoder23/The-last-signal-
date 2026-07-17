@@ -22,6 +22,7 @@ def check_titles():
             "max_score": MAX_SCORE,
             "results": {},
             "problems": [{
+                "file": file,
                 "severity": "warning",
                 "message": "Aucun fichier Markdown trouvé."
             }]
@@ -55,6 +56,7 @@ def check_single_h1(files, problems):
 
         if h1 != 1:
             problems.append({
+                "file": file,
                 "severity": "error",
                 "message": f"{file}: contient {h1} titres H1 (1 attendu)."
             })
@@ -80,6 +82,7 @@ def check_heading_order(files, problems):
 
             if previous and level > previous + 1:
                 problems.append({
+                    "file": file,
                     "severity": "warning",
                     "message": f"{file}:{line_no} saut de niveau H{previous} → H{level}."
                 })
@@ -105,6 +108,7 @@ def check_heading_spacing(files, problems):
 
                 if i > 0 and lines[i - 1].strip() != "":
                     problems.append({
+                        "file": file,
                         "severity": "warning",
                         "message": f"{file}:{i+1} titre sans ligne vide avant."
                     })
@@ -128,6 +132,7 @@ def check_empty_titles(files, problems):
 
             if re.match(r"^#+\s*$", line):
                 problems.append({
+                    "file": file,
                     "severity": "error",
                     "message": f"{file}:{line_no} titre vide."
                 })
@@ -152,6 +157,7 @@ def check_title_length(files, problems):
 
                 if len(title) > 80:
                     problems.append({
+                        "file": file,
                         "severity": "warning",
                         "message": f"{file}:{line_no} titre très long ({len(title)} caractères)."
                     })
@@ -178,6 +184,7 @@ def check_duplicate_titles(files, problems):
 
                 if title in titles:
                     problems.append({
+                        "file": file,
                         "severity": "warning",
                         "message": (
                             f"{file}:{line_no} titre dupliqué "
