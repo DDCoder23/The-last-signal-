@@ -8,11 +8,18 @@ REPORT_DIR=Path("reports/docs")
 REPORT_DIR.mkdir(parents=True,exist_ok=True)
 
 def _status(score:int)->str:
-    if score>=90:return "ðŸŸ¢ Excellent"
-    if score>=80:return "ðŸŸ¢ TrÃ¨s bon"
-    if score>=70:return "ðŸŸ¡ Bon"
-    if score>=60:return "ðŸŸ  Moyen"
-    return "ðŸ”´ Ã€ amÃ©liorer"
+    if score>=90:return "Optimal"
+    if score>=80:return "Execlent "
+    if score>=70:return "Satisfaisant"
+    if score>=60:return "Bon"
+    if score>=50:return "Assez bon"
+    if score>=40:return "Médiocre"
+    if score>=30:return "Décevant"
+    if score>=20:return "Très Décevant"
+    if score>=10:return "Mauvais"
+    return "Très mauvais"
+
+
 
 def _flatten(details:dict[str,Any])->list[dict]:
     out=[]
@@ -81,7 +88,7 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
 
 
     else:
-        md.append("Aucun problÃ¨me dÃ©tectÃ©.\n")
+        md.append("Aucun problème détecté.\n")
     (REPORT_DIR/"score.md").write_text("".join(md),encoding="utf-8")
     
     
