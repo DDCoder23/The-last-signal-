@@ -13,7 +13,9 @@ permissions:
   contents: write
   security-events: write
   actions: read
-
+concurrency:
+  group: ci-reports
+  cancel-in-progress: false
 jobs:
   security:
 
