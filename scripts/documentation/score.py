@@ -28,7 +28,8 @@ def generate_score():
     for name, check in checks.items():
         try:
             result = check()
-            assert (type(result) == Dict)
+            if not isinstance(result, dict):
+                raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
         except Exception as e:
             result={
             "score": 0,
