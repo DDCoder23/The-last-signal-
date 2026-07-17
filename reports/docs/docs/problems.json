@@ -386,25 +386,7 @@
     {
         "file": "lychee/out.md",
         "severity": "warning",
-        "message": "Ligne 20 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "lychee/out.md",
-        "severity": "warning",
         "message": "Ligne 21 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "lychee/out.md",
-        "severity": "warning",
-        "message": "Ligne 22 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "lychee/out.md",
-        "severity": "warning",
-        "message": "Ligne 24 > 120 caractères.",
         "module": "markdown"
     },
     {
@@ -1555,30 +1537,9 @@
     },
     {
         "file": "docs/README.md",
-        "line": 19,
-        "severity": "error",
-        "message": "Fichier introuvable : ..gdd/README.md",
-        "module": "links"
-    },
-    {
-        "file": "docs/README.md",
-        "line": 29,
-        "severity": "error",
-        "message": "Fichier introuvable : ..tdd/README.md",
-        "module": "links"
-    },
-    {
-        "file": "docs/README.md",
         "line": 40,
         "severity": "error",
-        "message": "Fichier introuvable : ..lore/README.md",
-        "module": "links"
-    },
-    {
-        "file": "docs/README.md",
-        "line": 41,
-        "severity": "error",
-        "message": "Fichier introuvable : ..gameplay/README.md",
+        "message": "Fichier introuvable : lore/README.md",
         "module": "links"
     },
     {

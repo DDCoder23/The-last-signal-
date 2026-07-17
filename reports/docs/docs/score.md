@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-17 02:59:10
+**Date :** 2026-07-17 03:02:25
 
 # 60.0/100
 
@@ -229,33 +229,9 @@ TypeError: result doit être un dict, reçu int
 
 ## ❌ Error
 - **Module :** links
-- **Message :** Fichier introuvable : ..gdd/README.md
-
-- **line :** 19
-
-- **module :** links
-
-## ❌ Error
-- **Module :** links
-- **Message :** Fichier introuvable : ..tdd/README.md
-
-- **line :** 29
-
-- **module :** links
-
-## ❌ Error
-- **Module :** links
-- **Message :** Fichier introuvable : ..lore/README.md
+- **Message :** Fichier introuvable : lore/README.md
 
 - **line :** 40
-
-- **module :** links
-
-## ❌ Error
-- **Module :** links
-- **Message :** Fichier introuvable : ..gameplay/README.md
-
-- **line :** 41
 
 - **module :** links
 
@@ -2011,25 +1987,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
 - **Message :** Ligne 21 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 22 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 24 > 120 caractères.
 
 - **module :** markdown
 

@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-17T02:59:10.371239",
+    "generated": "2026-07-17T03:02:25.730980",
     "score": 60.0,
     "status": "Bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 299,
+    "problem_count": 293,
     "details": {
         "markdown": {
             "score": 17,
@@ -415,25 +415,7 @@
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
-                    "message": "Ligne 20 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "lychee/out.md",
-                    "severity": "warning",
                     "message": "Ligne 21 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "lychee/out.md",
-                    "severity": "warning",
-                    "message": "Ligne 22 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "lychee/out.md",
-                    "severity": "warning",
-                    "message": "Ligne 24 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -1619,30 +1601,9 @@
             "problems": [
                 {
                     "file": "docs/README.md",
-                    "line": 19,
-                    "severity": "error",
-                    "message": "Fichier introuvable : ..gdd/README.md",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/README.md",
-                    "line": 29,
-                    "severity": "error",
-                    "message": "Fichier introuvable : ..tdd/README.md",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/README.md",
                     "line": 40,
                     "severity": "error",
-                    "message": "Fichier introuvable : ..lore/README.md",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/README.md",
-                    "line": 41,
-                    "severity": "error",
-                    "message": "Fichier introuvable : ..gameplay/README.md",
+                    "message": "Fichier introuvable : lore/README.md",
                     "module": "links"
                 },
                 {
