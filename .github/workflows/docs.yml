@@ -86,13 +86,13 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p reports/docs
-          cspell lint --help
+          
           cspell "**/*.md" \
           --language-id markdown \
           --no-progress \
           --no-summary \
           --output-format json \
-          > reports/docs/cspell.json 2>&1
+          > reports/docs/cspell.txt 2>&1
 
       # =========================
       # Links
