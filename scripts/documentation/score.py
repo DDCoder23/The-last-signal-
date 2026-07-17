@@ -53,7 +53,7 @@ def generate_score():
     
     total_obtenu = sum(scores.values())/sum(total.values()) if sum(total.values())!=0 else sum(scores.values())/1
     total_obtenu*=100
-    total_obtenu= int(round(total))
+    total_obtenu= int(total)
     generate_report(total_obtenu,scores,details,all_problems)
     
     return total
