@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 from typing import Any
-
+from .problem import add_problem
 MAX_SCORE = 20
 
 SCORES = {
@@ -50,12 +50,7 @@ def get_markdown_files() -> list[Path]:
     return files
 
 
-def add_problem(problems: list[dict], file: Path | str, severity: str, message: str):
-    problems.append({
-        "file": file.as_posix(),
-        "severity": severity,
-        "message": message
-    })
+
 
 
 def check_markdown() -> dict[str, Any]:
