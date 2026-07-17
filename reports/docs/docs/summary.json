@@ -1,7 +1,7 @@
 {
-    "generated": "2026-07-17T03:04:02.439032",
-    "score": 60.0,
-    "status": "Bon",
+    "generated": "2026-07-17T03:09:45.962372",
+    "score": 44.5945945945946,
+    "status": "Médiocre",
     "scores": {
         "markdown": 17,
         "titles": 7,
@@ -12,5 +12,5 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 291
+    "problem_count": 542
 }
