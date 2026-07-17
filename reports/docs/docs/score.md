@@ -1,10 +1,10 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-17 02:02:11
+**Date :** 2026-07-17 02:07:51
 
-# 33/100
+# 60.0/100
 
-**Statut :** Décevant
+**Statut :** Bon
 
 ## RÃ©sultats
 |Module|Score|
@@ -1312,7 +1312,7 @@
 ## 
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
@@ -1537,7 +1537,7 @@ TypeError: result doit être un dict, reçu int
 ## 
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
@@ -1546,7 +1546,7 @@ TypeError: result doit être un dict, reçu int
 ## 
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
@@ -1555,7 +1555,7 @@ TypeError: result doit être un dict, reçu int
 ## 
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
@@ -1564,7 +1564,7 @@ TypeError: result doit être un dict, reçu int
 ## 
 - **Severity :** error
 - **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 31, in generate_score
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 

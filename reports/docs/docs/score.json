@@ -1,7 +1,7 @@
 {
-    "generated": "2026-07-17T02:02:11.733458",
-    "score": 33,
-    "status": "Décevant",
+    "generated": "2026-07-17T02:07:51.880584",
+    "score": 60.0,
+    "status": "Bon",
     "scores": {
         "markdown": 17,
         "titles": 7,
@@ -1594,13 +1594,13 @@
         },
         "spelling": {
             "score": 0,
-            "max_score": 0,
+            "max_score": 1,
             "results": {},
             "problems": [
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "spelling"
                 }
             ]
@@ -1873,52 +1873,52 @@
         },
         "python": {
             "score": 0,
-            "max_score": 0,
+            "max_score": 1,
             "results": {},
             "problems": [
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "python"
                 }
             ]
         },
         "rust": {
             "score": 0,
-            "max_score": 0,
+            "max_score": 1,
             "results": {},
             "problems": [
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "rust"
                 }
             ]
         },
         "organization": {
             "score": 0,
-            "max_score": 0,
+            "max_score": 1,
             "results": {},
             "problems": [
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "organization"
                 }
             ]
         },
         "navigation": {
             "score": 0,
-            "max_score": 0,
+            "max_score": 1,
             "results": {},
             "problems": [
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 31, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
                     "module": "navigation"
                 }
             ]
