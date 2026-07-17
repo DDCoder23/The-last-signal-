@@ -127,7 +127,14 @@ jobs:
 
       - name: 📊 Calculate documentation score
         run: |
-
+          
+          python -c "
+           import pathlib
+          for f in pathlib.Path('.').rglob('*.py'):
+           b=f.read_bytes()
+            if b.startswith(b'\xef\xbb\xbf'):
+             print('BOM :', f)
+              "
           mkdir -p reports/docs
 
           python scripts/docs_score.py
