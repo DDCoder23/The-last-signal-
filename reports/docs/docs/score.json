@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-17T10:48:28.754943",
+    "generated": "2026-07-17T10:58:40.774900",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 791,
+    "problem_count": 794,
     "details": {
         "markdown": {
             "score": 17,
@@ -1818,9 +1818,9 @@
             "score": 0,
             "max_score": 20,
             "results": {
-                "modules": 36,
+                "modules": 37,
                 "classes": 43,
-                "functions": 251,
+                "functions": 252,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
@@ -4131,6 +4131,24 @@
                     "file": "scripts/transformateur.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_problems_md.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_problems_md.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generate_problems_md' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_problems_md.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generate_problems_md' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {

@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-17 10:48:28
+**Date :** 2026-07-17 10:58:40
 
 # 52/100
 
@@ -4960,6 +4960,26 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La fonction 'generate_json' dépasse 80 lignes.
+
+- **module :** python
+
+# 📄 scripts/generate_problems_md.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_problems_md' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_problems_md' ne possède pas d'annotations de type.
 
 - **module :** python
 
