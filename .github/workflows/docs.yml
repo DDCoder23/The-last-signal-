@@ -89,7 +89,7 @@ jobs:
           --no-progress \
           --no-summary \
           --reporter json \
-          > reports/docs/cspell.json
+          > reports/docs/cspell.json 2>&1
 
       # =========================
       # Links
