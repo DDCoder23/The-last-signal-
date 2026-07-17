@@ -280,6 +280,7 @@ jobs:
         uses: github/codeql-action/init@v3
         with:
           languages: python,rust
+          build-mode: autobuild
 
       - name: CodeQL Autobuild
         uses: github/codeql-action/autobuild@v3
