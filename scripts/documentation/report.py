@@ -3,6 +3,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 from typing import Any
+from collections import defaultdict
 
 REPORT_DIR=Path("reports/docs")
 REPORT_DIR.mkdir(parents=True,exist_ok=True)
@@ -40,9 +41,12 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
     md=["# ðŸ“Š Documentation Quality Report\n\n",f"**Date :** {datetime.now():%Y-%m-%d %H:%M:%S}\n\n",f"# {total}/100\n\n",f"**Statut :** {_status(total)}\n\n","## RÃ©sultats\n|Module|Score|\n|---|---:|\n"]
     for k,v in scores.items(): md.append(f"|{k}|**{v}**|\n")
     md.append("\n## Problèmes\n")
+    par_fichier = defaultdict(list)
+
+
     
     if problems:
-        for i, problem in enumerate(problems):
+        for i,problem in enumerate(problems):
             if not isinstance(problem, dict):
                 raise TypeError(f"Élément {i} n'est pas un dict : {problem!r}")
 
@@ -53,22 +57,21 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
             f"Valeur : {problem!r}"
         )
 
-            md.append(f"## {problem['file']}\n")
-            md.append(
-    f"- **Severity :** {problem['severity']}\n")
-            md.append(
-    f"- **Message :** {problem['message']}\n"
-    )
-
-            for key, value in problem.items():
-
-                if key in ("file", "severity", "message"):
-                    continue
-
-                md.append(
-        f"- **{key} :** {value}\n")
-
-            md.append("\n")
+            
+            for problem in problems:
+                par_fichier[str(problem["file"])].append(problem)
+            for fichier, erreurs in sorted(par_fichier.items()):
+                md.append(f"# 📄 {fichier}\n\n")
+                for erreur in erreurs:
+                    icone = "❌" if erreur["severity"] == "error" else "⚠️"
+                    md.append(f"## {icone} {erreur['severity'].capitalize()}\n")
+                    md.append(f"- **Module :** {erreur['module']}\n")
+                    md.append(f"- **Message :** {erreur['message']}\n\n")
+                    for key, value in erreur.items():
+                        if key in ("file", "severity", "message"):
+                            continue
+                        md.append(f"- **{key} :** {value}\n")
+                        md.append("\n")
 
 
     else:
