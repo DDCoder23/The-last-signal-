@@ -56,7 +56,7 @@ def check_single_h1(files, problems):
         h1 = len(re.findall(r"^#\s+", text, flags=re.MULTILINE))
 
         if h1 != 1:
-            add_problem (file,"error",f"{file}: contient {h1} titres H1 (1 attendu).")
+            add_problem (problems,file,"error",f"{file}: contient {h1} titres H1 (1 attendu).")
             
             score = 0
 
@@ -79,7 +79,7 @@ def check_heading_order(files, problems):
             level = len(line) - len(line.lstrip("#"))
 
             if previous and level > previous + 1:
-                add_problem (file,"warning",f"{file}:{line_no} saut de niveau H{previous} → H{level}.")
+                add_problem (problems,file,"warning",f"{file}:{line_no} saut de niveau H{previous} → H{level}.")
                 score = 0
 
             previous = level
@@ -101,7 +101,7 @@ def check_heading_spacing(files, problems):
             if line.startswith("#"):
 
                 if i > 0 and lines[i - 1].strip() != "":
-                    add_problem (file,"warning",f"{file}:{i+1} titre sans ligne vide avant.")
+                    add_problem (problems,file,"warning",f"{file}:{i+1} titre sans ligne vide avant.")
                     score = 0
 
                 if i < len(lines) - 1 and lines[i + 1].strip() == "":
@@ -121,7 +121,7 @@ def check_empty_titles(files, problems):
         ):
 
             if re.match(r"^#+\s*$", line):
-                add_problem (file,"error",f"{file}:{line_no} titre vide.")
+                add_problem (problems,file,"error",f"{file}:{line_no} titre vide.")
                 
                 score = 0
 
@@ -143,7 +143,7 @@ def check_title_length(files, problems):
                 title = re.sub(r"^#+\s*", "", line)
 
                 if len(title) > 80:
-                    add_problem (file,"warning",f"{file}:{line_no} titre très long ({len(title)} caractères).")
+                    add_problem (problems,file,"warning",f"{file}:{line_no} titre très long ({len(title)} caractères).")
                     
                     score = 0
 
@@ -167,7 +167,7 @@ def check_duplicate_titles(files, problems):
                 title = re.sub(r"^#+\s*", "", line).strip().lower()
 
                 if title in titles:
-                    add_problem (file,"warning",f"{file}:{line_no} titre dupliqué (déjà présent dans {titles[title]}).")
+                    add_problem (problems,file,"warning",f"{file}:{line_no} titre dupliqué (déjà présent dans {titles[title]}).")
                     
                     score = 0
 
