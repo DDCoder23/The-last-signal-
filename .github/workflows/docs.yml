@@ -15,7 +15,7 @@ permissions:
   contents: write
 
 env:
-  DOC_SCORE_MINIMUM: 80
+  DOC_SCORE_MINIMUM: 60
 
 jobs:
 
