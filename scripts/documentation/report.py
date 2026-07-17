@@ -22,13 +22,6 @@ def _status(score:int)->str:
 
 
 
-def _flatten(details:dict[str,Any])->list[dict]:
-    out=[]
-    for module,result in details.items():
-        for p in result.get("problems",[]):
-            x=dict(p);x.setdefault("module",module);out.append(x)
-    return out
-
 def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problems:list)->None:
     REPORT_DIR.mkdir(parents=True,exist_ok=True)
     
