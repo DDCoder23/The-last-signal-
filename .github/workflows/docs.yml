@@ -128,7 +128,7 @@ jobs:
       - name: 📊 Calculate documentation score
         run: |
           
-          python script/transformateur.py
+          python scripts/transformateur.py
           mkdir -p reports/docs
 
           python scripts/docs_score.py
