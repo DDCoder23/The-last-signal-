@@ -72,4 +72,4 @@ def generate_problems_md():
 try:
     generate_problems_md()
 except Exception:
-    print(traceback.exc())
+    print(traceback.format_exc())
