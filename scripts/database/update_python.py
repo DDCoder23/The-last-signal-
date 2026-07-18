@@ -10,14 +10,8 @@ from ..database_manager import DatabaseManager
 
 
 
-
 def update_python_database():
-
     report = read_report("reports/python/python-report.md")
-
-    
-
-
     run_number = int(
         os.environ.get(
             "GITHUB_RUN_NUMBER",
