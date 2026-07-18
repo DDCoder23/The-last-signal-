@@ -4778,6 +4778,48 @@
         "module": "python"
     },
     {
+        "file": "scripts/database/utils.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/utils.py",
+        "severity": "warning",
+        "message": "La fonction 'read_report' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/utils.py",
+        "severity": "warning",
+        "message": "La fonction 'read_report' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/utils.py",
+        "severity": "warning",
+        "message": "La fonction 'extract_int' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/utils.py",
+        "severity": "warning",
+        "message": "La fonction 'extract_int' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/utils.py",
+        "severity": "warning",
+        "message": "La fonction 'extract_float' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/utils.py",
+        "severity": "warning",
+        "message": "La fonction 'extract_float' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "",
         "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",

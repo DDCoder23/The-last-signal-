@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 01:48:45
+Generated: 2026-07-18 01:55:05
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|629|
-|**Total**|**794**|
+|⚠️ Warnings|636|
+|**Total**|**801**|
 
 ---
 
@@ -3754,6 +3754,45 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** markdown
 - **Message :** Ligne 15 > 120 caractères.
+
+---
+
+# 📄 scripts/database/utils.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'read_report' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'read_report' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_int' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_int' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_float' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_float' ne possède pas d'annotations de type.
 
 ---
 

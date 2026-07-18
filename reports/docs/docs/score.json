@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-18T01:48:45.628477",
+    "generated": "2026-07-18T01:55:04.835240",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 794,
+    "problem_count": 801,
     "details": {
         "markdown": {
             "score": 17,
@@ -1818,9 +1818,9 @@
             "score": 0,
             "max_score": 20,
             "results": {
-                "modules": 37,
+                "modules": 38,
                 "classes": 43,
-                "functions": 252,
+                "functions": 255,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
@@ -4857,6 +4857,48 @@
                     "file": "scripts/documentation/rust_docs.py",
                     "severity": "warning",
                     "message": "La fonction 'check_rust_docs' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/utils.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/utils.py",
+                    "severity": "warning",
+                    "message": "La fonction 'read_report' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/utils.py",
+                    "severity": "warning",
+                    "message": "La fonction 'read_report' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/utils.py",
+                    "severity": "warning",
+                    "message": "La fonction 'extract_int' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/utils.py",
+                    "severity": "warning",
+                    "message": "La fonction 'extract_int' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/utils.py",
+                    "severity": "warning",
+                    "message": "La fonction 'extract_float' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/utils.py",
+                    "severity": "warning",
+                    "message": "La fonction 'extract_float' ne possède pas d'annotations de type.",
                     "module": "python"
                 }
             ]

@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-18 01:48:45
+**Date :** 2026-07-18 01:55:04
 
 # 52/100
 
@@ -4286,6 +4286,50 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Ligne 15 > 120 caractères.
 
 - **module :** markdown
+
+# 📄 scripts/database/utils.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'read_report' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'read_report' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'extract_int' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'extract_int' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'extract_float' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'extract_float' ne possède pas d'annotations de type.
+
+- **module :** python
 
 # 📄 scripts/database_manager.py
 
