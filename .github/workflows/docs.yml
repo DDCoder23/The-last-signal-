@@ -207,7 +207,7 @@ jobs:
             echo ""
             cat reports/docs/score.md
           } >> $GITHUB_STEP_SUMMARY
-          python -m scripts.generate_problems_md.py
+          python -m scripts.generate_problems_md
                 # =========================
       # Dashboard
       # =========================
@@ -218,7 +218,7 @@ jobs:
 
           mkdir -p dashboard
 
-          python scripts/generate_dashboard.py
+          python -m scripts.generate_dashboard
 
       # =========================
       # Upload reports
