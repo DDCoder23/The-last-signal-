@@ -3,7 +3,7 @@ import os
 import json
 from datetime import datetime
 from pathlib import Path
-from .update_database import update_database
+from update_database import update_database
 
 DB_PATH = Path("database/python_reports.db")
 DOC_SCORE_PATH = Path("reports/docs/score.json")
