@@ -60,7 +60,7 @@ def extract_int(
 
 
 
-def main():
+def update_database():
 
     report = read_report()
 
@@ -241,6 +241,3 @@ def main():
 
 
 
-if __name__ == "__main__":
-
-    main()
