@@ -12,6 +12,7 @@ def main():
     update_docs_database()
 
     update_security_database()
+    update_rust_database()
 
     
 
