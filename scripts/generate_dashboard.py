@@ -6,8 +6,8 @@ from pathlib import Path
 
 
 
-DB_PATH = Path("ci-reports/database/python_reports.db")
-DOC_SCORE_PATH = Path("ci-reports/reports/docs/score.json")
+DB_PATH = Path("database/python_reports.db")
+DOC_SCORE_PATH = Path("reports/docs/score.json")
 OUTPUT = "dashboard/data/dashboard.json"
 
 def get_documentation_score():
