@@ -5,7 +5,7 @@ from .database.update_rust import update_rust_database
 from .database.update_performance import update_performance_database
 
 
-def main():
+def update_database():
 
     update_python_database()
 
@@ -18,5 +18,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    update_database()
 
