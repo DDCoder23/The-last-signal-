@@ -14,7 +14,7 @@ REPORT_PATH = os.environ.get(
 
 def update_security_database():
 
-    report = read_report()
+    report = read_report(REPORT_PATH)
 
     run_number = int(os.environ.get("GITHUB_RUN_NUMBER", 0))
     branch = os.environ.get("GITHUB_REF", "unknown")
@@ -132,5 +132,4 @@ def update_security_database():
     print("Security database updated successfully")
 
 
-if __name__ == "__main__":
-    update_database()
+
