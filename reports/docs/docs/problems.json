@@ -4796,6 +4796,30 @@
         "module": "python"
     },
     {
+        "file": "scripts/database/update_rust.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_rust.py",
+        "severity": "warning",
+        "message": "La fonction 'update_rust_database' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_rust.py",
+        "severity": "warning",
+        "message": "La fonction 'update_rust_database' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_rust.py",
+        "severity": "warning",
+        "message": "La fonction 'update_rust_database' dépasse 80 lignes.",
+        "module": "python"
+    },
+    {
         "file": "scripts/database/update_python.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",

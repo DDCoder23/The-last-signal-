@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-18T02:50:33.414497",
+    "generated": "2026-07-18T02:58:33.322612",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 805,
+    "problem_count": 809,
     "details": {
         "markdown": {
             "score": 17,
@@ -1818,15 +1818,15 @@
             "score": 0,
             "max_score": 20,
             "results": {
-                "modules": 41,
+                "modules": 42,
                 "classes": 43,
-                "functions": 255,
+                "functions": 256,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
                 "typed_functions": 25,
                 "todo": 4,
-                "long_functions": 8
+                "long_functions": 9
             },
             "problems": [
                 {
@@ -4875,6 +4875,30 @@
                     "file": "scripts/database/update_docs.py",
                     "severity": "warning",
                     "message": "La fonction 'update_docs_database' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/update_rust.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/update_rust.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_rust_database' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/update_rust.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_rust_database' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/update_rust.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_rust_database' dépasse 80 lignes.",
                     "module": "python"
                 },
                 {

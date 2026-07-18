@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-18 02:50:33
+**Date :** 2026-07-18 02:58:33
 
 # 52/100
 
@@ -4330,6 +4330,32 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La fonction 'update_python_database' dépasse 80 lignes.
+
+- **module :** python
+
+# 📄 scripts/database/update_rust.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'update_rust_database' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'update_rust_database' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'update_rust_database' dépasse 80 lignes.
 
 - **module :** python
 
