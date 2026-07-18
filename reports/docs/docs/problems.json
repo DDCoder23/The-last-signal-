@@ -4137,62 +4137,8 @@
     },
     {
         "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'get_documentation_score' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'get_documentation_score' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'get_database_data' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'get_database_data' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'calculate_quality' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'calculate_quality' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_json' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_json' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_dashboard.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_json' dépasse 80 lignes.",
+        "severity": "error",
+        "message": "Impossible d'analyser le fichier : Expected one or more names after 'import' (<unknown>, line 6)",
         "module": "python"
     },
     {
