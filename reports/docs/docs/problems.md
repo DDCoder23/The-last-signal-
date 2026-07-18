@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 02:19:27
+Generated: 2026-07-18 02:22:39
 
 ## Summary
 
@@ -3771,7 +3771,7 @@ TypeError: result doit être un dict, reçu int
 ## ❌ Error
 
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)
+- **Message :** Impossible d'analyser le fichier : expected an indented block after function definition on line 200 (<unknown>, line 200)
 
 ---
 

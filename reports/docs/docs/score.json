@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-18T02:19:27.116919",
+    "generated": "2026-07-18T02:22:39.548557",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -4868,7 +4868,7 @@
                 {
                     "file": "scripts/database/update_python.py",
                     "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
+                    "message": "Impossible d'analyser le fichier : expected an indented block after function definition on line 200 (<unknown>, line 200)",
                     "module": "python"
                 },
                 {
