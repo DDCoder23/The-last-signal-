@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-18 02:47:40
+**Date :** 2026-07-18 02:49:09
 
 # 52/100
 
@@ -4311,7 +4311,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ❌ Error
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : expected an indented block after function definition on line 198 (<unknown>, line 198)
+- **Message :** Impossible d'analyser le fichier : expected an indented block after function definition on line 192 (<unknown>, line 192)
 
 - **module :** python
 

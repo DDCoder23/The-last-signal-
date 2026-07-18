@@ -4798,7 +4798,7 @@
     {
         "file": "scripts/database/update_python.py",
         "severity": "error",
-        "message": "Impossible d'analyser le fichier : expected an indented block after function definition on line 198 (<unknown>, line 198)",
+        "message": "Impossible d'analyser le fichier : expected an indented block after function definition on line 192 (<unknown>, line 192)",
         "module": "python"
     },
     {
