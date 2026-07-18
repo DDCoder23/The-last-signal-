@@ -156,7 +156,7 @@ jobs:
       - name: Generate dashboard
         run: |
           mkdir -p dashboard
-          python -m scripts.generate_dashboard.py
+          python -m scripts.generate_dashboard
       # Affichage GitHub
 
       - name: Display report
