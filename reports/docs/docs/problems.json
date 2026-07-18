@@ -4803,8 +4803,26 @@
     },
     {
         "file": "scripts/database/update_security.py",
-        "severity": "error",
-        "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 4)",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_security.py",
+        "severity": "warning",
+        "message": "La fonction 'update_security_database' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_security.py",
+        "severity": "warning",
+        "message": "La fonction 'update_security_database' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_security.py",
+        "severity": "warning",
+        "message": "La fonction 'update_security_database' dépasse 80 lignes.",
         "module": "python"
     },
     {

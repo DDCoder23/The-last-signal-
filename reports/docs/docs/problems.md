@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 02:23:21
+Generated: 2026-07-18 02:23:44
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|132|
-|⚠️ Warnings|632|
-|**Total**|**799**|
+|❌ Errors|131|
+|⚠️ Warnings|636|
+|**Total**|**802**|
 
 ---
 
@@ -3787,10 +3787,25 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 scripts/database/update_security.py
 
-## ❌ Error
+## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 4)
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_security_database' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_security_database' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_security_database' dépasse 80 lignes.
 
 ---
 
