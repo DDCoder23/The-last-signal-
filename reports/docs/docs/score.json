@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-18T02:49:09.710735",
+    "generated": "2026-07-18T02:50:33.414497",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 802,
+    "problem_count": 805,
     "details": {
         "markdown": {
             "score": 17,
@@ -1820,13 +1820,13 @@
             "results": {
                 "modules": 41,
                 "classes": 43,
-                "functions": 254,
+                "functions": 255,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
                 "typed_functions": 25,
                 "todo": 4,
-                "long_functions": 7
+                "long_functions": 8
             },
             "problems": [
                 {
@@ -4879,8 +4879,26 @@
                 },
                 {
                     "file": "scripts/database/update_python.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : expected an indented block after function definition on line 192 (<unknown>, line 192)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/update_python.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_python_database' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/update_python.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_python_database' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database/update_python.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_python_database' dépasse 80 lignes.",
                     "module": "python"
                 },
                 {

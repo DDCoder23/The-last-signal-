@@ -4797,8 +4797,26 @@
     },
     {
         "file": "scripts/database/update_python.py",
-        "severity": "error",
-        "message": "Impossible d'analyser le fichier : expected an indented block after function definition on line 192 (<unknown>, line 192)",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_python.py",
+        "severity": "warning",
+        "message": "La fonction 'update_python_database' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_python.py",
+        "severity": "warning",
+        "message": "La fonction 'update_python_database' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_python.py",
+        "severity": "warning",
+        "message": "La fonction 'update_python_database' dépasse 80 lignes.",
         "module": "python"
     },
     {
