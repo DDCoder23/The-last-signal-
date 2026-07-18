@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 01:46:16
+Generated: 2026-07-18 01:47:08
 
 ## Summary
 
@@ -4376,17 +4376,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main' ne possède pas de docstring.
+- **Message :** La fonction 'update_database' ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main' ne possède pas d'annotations de type.
+- **Message :** La fonction 'update_database' ne possède pas d'annotations de type.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main' dépasse 80 lignes.
+- **Message :** La fonction 'update_database' dépasse 80 lignes.
 
 ---
 

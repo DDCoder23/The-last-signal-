@@ -4114,19 +4114,19 @@
     {
         "file": "scripts/update_database.py",
         "severity": "warning",
-        "message": "La fonction 'main' ne possède pas de docstring.",
+        "message": "La fonction 'update_database' ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "scripts/update_database.py",
         "severity": "warning",
-        "message": "La fonction 'main' ne possède pas d'annotations de type.",
+        "message": "La fonction 'update_database' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
         "file": "scripts/update_database.py",
         "severity": "warning",
-        "message": "La fonction 'main' dépasse 80 lignes.",
+        "message": "La fonction 'update_database' dépasse 80 lignes.",
         "module": "python"
     },
     {
