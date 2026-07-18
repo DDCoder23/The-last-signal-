@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-18T01:47:08.122972",
+    "generated": "2026-07-18T01:48:45.628477",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 785,
+    "problem_count": 794,
     "details": {
         "markdown": {
             "score": 17,
@@ -1820,13 +1820,13 @@
             "results": {
                 "modules": 37,
                 "classes": 43,
-                "functions": 248,
+                "functions": 252,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
                 "typed_functions": 25,
                 "todo": 4,
-                "long_functions": 6
+                "long_functions": 7
             },
             "problems": [
                 {
@@ -4219,8 +4219,62 @@
                 },
                 {
                     "file": "scripts/generate_dashboard.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : Expected one or more names after 'import' (<unknown>, line 6)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_documentation_score' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_documentation_score' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_database_data' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_database_data' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'calculate_quality' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'calculate_quality' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generate_json' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generate_json' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/generate_dashboard.py",
+                    "severity": "warning",
+                    "message": "La fonction 'generate_json' dépasse 80 lignes.",
                     "module": "python"
                 },
                 {

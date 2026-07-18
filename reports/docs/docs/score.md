@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-18 01:47:08
+**Date :** 2026-07-18 01:48:45
 
 # 52/100
 
@@ -4903,9 +4903,63 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 scripts/generate_dashboard.py
 
-## ❌ Error
+## ⚠️ Warning
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : Expected one or more names after 'import' (<unknown>, line 6)
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'get_documentation_score' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'get_documentation_score' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'get_database_data' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'get_database_data' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'calculate_quality' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'calculate_quality' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_json' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_json' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_json' dépasse 80 lignes.
 
 - **module :** python
 
