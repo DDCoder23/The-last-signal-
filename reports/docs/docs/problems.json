@@ -4832,6 +4832,12 @@
         "module": "python"
     },
     {
+        "file": "scripts/database/update_security.py",
+        "severity": "error",
+        "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 4)",
+        "module": "python"
+    },
+    {
         "file": "",
         "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",

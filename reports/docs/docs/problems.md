@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 02:03:19
+Generated: 2026-07-18 02:10:45
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|132|
+|❌ Errors|133|
 |⚠️ Warnings|636|
-|**Total**|**803**|
+|**Total**|**804**|
 
 ---
 
@@ -3772,6 +3772,15 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)
+
+---
+
+# 📄 scripts/database/update_security.py
+
+## ❌ Error
+
+- **Module :** python
+- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 4)
 
 ---
 
