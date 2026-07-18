@@ -6,25 +6,7 @@
         "module": "markdown"
     },
     {
-        "file": "server-rust/README.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
         "file": "docs/ARCHITECTURE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/TEAM.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/NETWORK.md",
         "severity": "error",
         "message": "Fichier vide.",
         "module": "markdown"
@@ -36,289 +18,25 @@
         "module": "markdown"
     },
     {
+        "file": "docs/NETWORK.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/TEAM.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "server-rust/README.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
         "file": "docs/lore/README.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gameplay/README.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/10_CREATION_PERSONNAGE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/22_OBJETS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/12_STATISTIQUES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/26_COMMERCE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/17_IA.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/45_MENUS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/46_ACCESSIBILITE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/20_INVENTAIRE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/07_VILLES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/16_COMBAT.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/38_CHAT.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/36_GUILDES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/40_PVP.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/05_FACTIONS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/24_COFFRES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/52_MODELES_3D.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/39_PVE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/33_BIOMES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/42_EVENEMENTS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/30_CRAFT.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/25_ECONOMIE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/08_DONJONS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/48_AMBIANCES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/14_CLASSES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/21_EQUIPEMENT.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/53_ANIMATIONS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/55_IDEES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/37_GROUPES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/15_GAMEPLAY.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/23_BANQUE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/11_PROGRESSION.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/28_MONNAIES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/04_CHRONOLOGIE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/44_HUD.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/27_HOTEL_DES_VENTES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/29_METIERS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/06_REGIONS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/18_MONSTRES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/34_METEO.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/49_EFFETS_SONORES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/47_MUSIQUES.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/32_CARTE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/51_CONCEPT_ART.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/35_JOUR_NUIT.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/50_DIRECTION_ARTISTIQUE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/19_BOSS.md",
         "severity": "error",
         "message": "Fichier vide.",
         "module": "markdown"
@@ -330,7 +48,61 @@
         "module": "markdown"
     },
     {
-        "file": "docs/gdd/13_COMPETENCES.md",
+        "file": "docs/gdd/07_VILLES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/39_PVE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/20_INVENTAIRE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/17_IA.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/19_BOSS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/14_CLASSES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/42_EVENEMENTS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/12_STATISTIQUES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/53_ANIMATIONS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/40_PVP.md",
         "severity": "error",
         "message": "Fichier vide.",
         "module": "markdown"
@@ -342,7 +114,205 @@
         "module": "markdown"
     },
     {
+        "file": "docs/gdd/10_CREATION_PERSONNAGE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/33_BIOMES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/46_ACCESSIBILITE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
         "file": "docs/gdd/43_SUCCES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/28_MONNAIES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/48_AMBIANCES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/16_COMBAT.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/22_OBJETS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/23_BANQUE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/32_CARTE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/13_COMPETENCES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/15_GAMEPLAY.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/08_DONJONS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/34_METEO.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/29_METIERS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/27_HOTEL_DES_VENTES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/45_MENUS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/31_RECOLTE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/35_JOUR_NUIT.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/06_REGIONS.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/50_DIRECTION_ARTISTIQUE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/51_CONCEPT_ART.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/26_COMMERCE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/44_HUD.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/49_EFFETS_SONORES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/25_ECONOMIE.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/37_GROUPES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/36_GUILDES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/52_MODELES_3D.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/21_EQUIPEMENT.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/11_PROGRESSION.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/55_IDEES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/05_FACTIONS.md",
         "severity": "error",
         "message": "Fichier vide.",
         "module": "markdown"
@@ -354,7 +324,37 @@
         "module": "markdown"
     },
     {
-        "file": "docs/gdd/31_RECOLTE.md",
+        "file": "docs/gdd/38_CHAT.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/24_COFFRES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/47_MUSIQUES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/30_CRAFT.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/18_MONSTRES.md",
+        "severity": "error",
+        "message": "Fichier vide.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gameplay/README.md",
         "severity": "error",
         "message": "Fichier vide.",
         "module": "markdown"
@@ -373,12 +373,6 @@
     },
     {
         "file": "README.md",
-        "severity": "warning",
-        "message": "Ligne 15 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "lychee/out.md",
         "severity": "warning",
         "message": "Ligne 15 > 120 caractères.",
         "module": "markdown"
@@ -582,51 +576,9 @@
         "module": "markdown"
     },
     {
-        "file": "docs/gdd/README.md",
+        "file": "lychee/out.md",
         "severity": "warning",
-        "message": "Ligne 7 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/02_UNIVERS.md",
-        "severity": "warning",
-        "message": "Ligne 30 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/02_UNIVERS.md",
-        "severity": "warning",
-        "message": "Ligne 32 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/02_UNIVERS.md",
-        "severity": "warning",
-        "message": "Ligne 42 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "severity": "warning",
-        "message": "Ligne 27 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "severity": "warning",
-        "message": "Ligne 51 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "severity": "warning",
-        "message": "Ligne 75 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "severity": "warning",
-        "message": "Ligne 105 > 120 caractères.",
+        "message": "Ligne 15 > 120 caractères.",
         "module": "markdown"
     },
     {
@@ -852,6 +804,54 @@
         "module": "markdown"
     },
     {
+        "file": "docs/gdd/README.md",
+        "severity": "warning",
+        "message": "Ligne 7 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "warning",
+        "message": "Ligne 30 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "warning",
+        "message": "Ligne 32 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "warning",
+        "message": "Ligne 42 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "Ligne 27 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "Ligne 51 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "Ligne 75 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/01_VISION.md",
+        "severity": "warning",
+        "message": "Ligne 105 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
         "file": "README.md",
         "severity": "warning",
         "message": "Espace en fin de ligne (1).",
@@ -936,9 +936,9 @@
         "module": "titles"
     },
     {
-        "file": "server-rust/README.md",
+        "file": "docs/README.md",
         "severity": "error",
-        "message": "server-rust/README.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/README.md: contient 6 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -948,21 +948,9 @@
         "module": "titles"
     },
     {
-        "file": "docs/README.md",
+        "file": "docs/CODING_RULES.md",
         "severity": "error",
-        "message": "docs/README.md: contient 6 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/TEAM.md",
-        "severity": "error",
-        "message": "docs/TEAM.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/NETWORK.md",
-        "severity": "error",
-        "message": "docs/NETWORK.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/CODING_RULES.md: contient 22 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -972,9 +960,21 @@
         "module": "titles"
     },
     {
-        "file": "docs/CODING_RULES.md",
+        "file": "docs/NETWORK.md",
         "severity": "error",
-        "message": "docs/CODING_RULES.md: contient 22 titres H1 (1 attendu).",
+        "message": "docs/NETWORK.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/TEAM.md",
+        "severity": "error",
+        "message": "docs/TEAM.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "server-rust/README.md",
+        "severity": "error",
+        "message": "server-rust/README.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -984,57 +984,9 @@
         "module": "titles"
     },
     {
-        "file": "docs/gameplay/README.md",
+        "file": "docs/gdd/09_PERSONNAGES.md",
         "severity": "error",
-        "message": "docs/gameplay/README.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/10_CREATION_PERSONNAGE.md",
-        "severity": "error",
-        "message": "docs/gdd/10_CREATION_PERSONNAGE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/22_OBJETS.md",
-        "severity": "error",
-        "message": "docs/gdd/22_OBJETS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/12_STATISTIQUES.md",
-        "severity": "error",
-        "message": "docs/gdd/12_STATISTIQUES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/26_COMMERCE.md",
-        "severity": "error",
-        "message": "docs/gdd/26_COMMERCE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/17_IA.md",
-        "severity": "error",
-        "message": "docs/gdd/17_IA.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/45_MENUS.md",
-        "severity": "error",
-        "message": "docs/gdd/45_MENUS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/46_ACCESSIBILITE.md",
-        "severity": "error",
-        "message": "docs/gdd/46_ACCESSIBILITE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/20_INVENTAIRE.md",
-        "severity": "error",
-        "message": "docs/gdd/20_INVENTAIRE.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/gdd/09_PERSONNAGES.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -1044,231 +996,21 @@
         "module": "titles"
     },
     {
-        "file": "docs/gdd/16_COMBAT.md",
-        "severity": "error",
-        "message": "docs/gdd/16_COMBAT.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "severity": "error",
-        "message": "docs/gdd/README.md: contient 5 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/38_CHAT.md",
-        "severity": "error",
-        "message": "docs/gdd/38_CHAT.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/02_UNIVERS.md",
-        "severity": "error",
-        "message": "docs/gdd/02_UNIVERS.md: contient 18 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/36_GUILDES.md",
-        "severity": "error",
-        "message": "docs/gdd/36_GUILDES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/40_PVP.md",
-        "severity": "error",
-        "message": "docs/gdd/40_PVP.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/05_FACTIONS.md",
-        "severity": "error",
-        "message": "docs/gdd/05_FACTIONS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/24_COFFRES.md",
-        "severity": "error",
-        "message": "docs/gdd/24_COFFRES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/52_MODELES_3D.md",
-        "severity": "error",
-        "message": "docs/gdd/52_MODELES_3D.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
         "file": "docs/gdd/39_PVE.md",
         "severity": "error",
         "message": "docs/gdd/39_PVE.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
-        "file": "docs/gdd/33_BIOMES.md",
+        "file": "docs/gdd/20_INVENTAIRE.md",
         "severity": "error",
-        "message": "docs/gdd/33_BIOMES.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/gdd/20_INVENTAIRE.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
-        "file": "docs/gdd/42_EVENEMENTS.md",
+        "file": "docs/gdd/17_IA.md",
         "severity": "error",
-        "message": "docs/gdd/42_EVENEMENTS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/30_CRAFT.md",
-        "severity": "error",
-        "message": "docs/gdd/30_CRAFT.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/25_ECONOMIE.md",
-        "severity": "error",
-        "message": "docs/gdd/25_ECONOMIE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/08_DONJONS.md",
-        "severity": "error",
-        "message": "docs/gdd/08_DONJONS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/48_AMBIANCES.md",
-        "severity": "error",
-        "message": "docs/gdd/48_AMBIANCES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/14_CLASSES.md",
-        "severity": "error",
-        "message": "docs/gdd/14_CLASSES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/21_EQUIPEMENT.md",
-        "severity": "error",
-        "message": "docs/gdd/21_EQUIPEMENT.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/53_ANIMATIONS.md",
-        "severity": "error",
-        "message": "docs/gdd/53_ANIMATIONS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/55_IDEES.md",
-        "severity": "error",
-        "message": "docs/gdd/55_IDEES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/37_GROUPES.md",
-        "severity": "error",
-        "message": "docs/gdd/37_GROUPES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/15_GAMEPLAY.md",
-        "severity": "error",
-        "message": "docs/gdd/15_GAMEPLAY.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/23_BANQUE.md",
-        "severity": "error",
-        "message": "docs/gdd/23_BANQUE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/11_PROGRESSION.md",
-        "severity": "error",
-        "message": "docs/gdd/11_PROGRESSION.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/28_MONNAIES.md",
-        "severity": "error",
-        "message": "docs/gdd/28_MONNAIES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/04_CHRONOLOGIE.md",
-        "severity": "error",
-        "message": "docs/gdd/04_CHRONOLOGIE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/44_HUD.md",
-        "severity": "error",
-        "message": "docs/gdd/44_HUD.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/27_HOTEL_DES_VENTES.md",
-        "severity": "error",
-        "message": "docs/gdd/27_HOTEL_DES_VENTES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/29_METIERS.md",
-        "severity": "error",
-        "message": "docs/gdd/29_METIERS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/06_REGIONS.md",
-        "severity": "error",
-        "message": "docs/gdd/06_REGIONS.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/18_MONSTRES.md",
-        "severity": "error",
-        "message": "docs/gdd/18_MONSTRES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/34_METEO.md",
-        "severity": "error",
-        "message": "docs/gdd/34_METEO.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/49_EFFETS_SONORES.md",
-        "severity": "error",
-        "message": "docs/gdd/49_EFFETS_SONORES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/47_MUSIQUES.md",
-        "severity": "error",
-        "message": "docs/gdd/47_MUSIQUES.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/32_CARTE.md",
-        "severity": "error",
-        "message": "docs/gdd/32_CARTE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/51_CONCEPT_ART.md",
-        "severity": "error",
-        "message": "docs/gdd/51_CONCEPT_ART.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/35_JOUR_NUIT.md",
-        "severity": "error",
-        "message": "docs/gdd/35_JOUR_NUIT.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/50_DIRECTION_ARTISTIQUE.md",
-        "severity": "error",
-        "message": "docs/gdd/50_DIRECTION_ARTISTIQUE.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/gdd/17_IA.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -1278,15 +1020,39 @@
         "module": "titles"
     },
     {
-        "file": "docs/gdd/09_PERSONNAGES.md",
+        "file": "docs/gdd/README.md",
         "severity": "error",
-        "message": "docs/gdd/09_PERSONNAGES.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/gdd/README.md: contient 5 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
-        "file": "docs/gdd/13_COMPETENCES.md",
+        "file": "docs/gdd/14_CLASSES.md",
         "severity": "error",
-        "message": "docs/gdd/13_COMPETENCES.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/gdd/14_CLASSES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/42_EVENEMENTS.md",
+        "severity": "error",
+        "message": "docs/gdd/42_EVENEMENTS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/12_STATISTIQUES.md",
+        "severity": "error",
+        "message": "docs/gdd/12_STATISTIQUES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/53_ANIMATIONS.md",
+        "severity": "error",
+        "message": "docs/gdd/53_ANIMATIONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/40_PVP.md",
+        "severity": "error",
+        "message": "docs/gdd/40_PVP.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -1296,9 +1062,213 @@
         "module": "titles"
     },
     {
+        "file": "docs/gdd/10_CREATION_PERSONNAGE.md",
+        "severity": "error",
+        "message": "docs/gdd/10_CREATION_PERSONNAGE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/33_BIOMES.md",
+        "severity": "error",
+        "message": "docs/gdd/33_BIOMES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/46_ACCESSIBILITE.md",
+        "severity": "error",
+        "message": "docs/gdd/46_ACCESSIBILITE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
         "file": "docs/gdd/43_SUCCES.md",
         "severity": "error",
         "message": "docs/gdd/43_SUCCES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/28_MONNAIES.md",
+        "severity": "error",
+        "message": "docs/gdd/28_MONNAIES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/48_AMBIANCES.md",
+        "severity": "error",
+        "message": "docs/gdd/48_AMBIANCES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/16_COMBAT.md",
+        "severity": "error",
+        "message": "docs/gdd/16_COMBAT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/22_OBJETS.md",
+        "severity": "error",
+        "message": "docs/gdd/22_OBJETS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/23_BANQUE.md",
+        "severity": "error",
+        "message": "docs/gdd/23_BANQUE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/32_CARTE.md",
+        "severity": "error",
+        "message": "docs/gdd/32_CARTE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/13_COMPETENCES.md",
+        "severity": "error",
+        "message": "docs/gdd/13_COMPETENCES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/15_GAMEPLAY.md",
+        "severity": "error",
+        "message": "docs/gdd/15_GAMEPLAY.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/08_DONJONS.md",
+        "severity": "error",
+        "message": "docs/gdd/08_DONJONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/34_METEO.md",
+        "severity": "error",
+        "message": "docs/gdd/34_METEO.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/29_METIERS.md",
+        "severity": "error",
+        "message": "docs/gdd/29_METIERS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/27_HOTEL_DES_VENTES.md",
+        "severity": "error",
+        "message": "docs/gdd/27_HOTEL_DES_VENTES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/02_UNIVERS.md",
+        "severity": "error",
+        "message": "docs/gdd/02_UNIVERS.md: contient 18 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "error",
+        "message": "docs/gdd/04_CHRONOLOGIE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/45_MENUS.md",
+        "severity": "error",
+        "message": "docs/gdd/45_MENUS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/31_RECOLTE.md",
+        "severity": "error",
+        "message": "docs/gdd/31_RECOLTE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/35_JOUR_NUIT.md",
+        "severity": "error",
+        "message": "docs/gdd/35_JOUR_NUIT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/06_REGIONS.md",
+        "severity": "error",
+        "message": "docs/gdd/06_REGIONS.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/50_DIRECTION_ARTISTIQUE.md",
+        "severity": "error",
+        "message": "docs/gdd/50_DIRECTION_ARTISTIQUE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/51_CONCEPT_ART.md",
+        "severity": "error",
+        "message": "docs/gdd/51_CONCEPT_ART.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/26_COMMERCE.md",
+        "severity": "error",
+        "message": "docs/gdd/26_COMMERCE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/44_HUD.md",
+        "severity": "error",
+        "message": "docs/gdd/44_HUD.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/49_EFFETS_SONORES.md",
+        "severity": "error",
+        "message": "docs/gdd/49_EFFETS_SONORES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/25_ECONOMIE.md",
+        "severity": "error",
+        "message": "docs/gdd/25_ECONOMIE.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/37_GROUPES.md",
+        "severity": "error",
+        "message": "docs/gdd/37_GROUPES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/36_GUILDES.md",
+        "severity": "error",
+        "message": "docs/gdd/36_GUILDES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/52_MODELES_3D.md",
+        "severity": "error",
+        "message": "docs/gdd/52_MODELES_3D.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/21_EQUIPEMENT.md",
+        "severity": "error",
+        "message": "docs/gdd/21_EQUIPEMENT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/11_PROGRESSION.md",
+        "severity": "error",
+        "message": "docs/gdd/11_PROGRESSION.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/55_IDEES.md",
+        "severity": "error",
+        "message": "docs/gdd/55_IDEES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/05_FACTIONS.md",
+        "severity": "error",
+        "message": "docs/gdd/05_FACTIONS.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -1308,9 +1278,39 @@
         "module": "titles"
     },
     {
-        "file": "docs/gdd/31_RECOLTE.md",
+        "file": "docs/gdd/38_CHAT.md",
         "severity": "error",
-        "message": "docs/gdd/31_RECOLTE.md: contient 0 titres H1 (1 attendu).",
+        "message": "docs/gdd/38_CHAT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/24_COFFRES.md",
+        "severity": "error",
+        "message": "docs/gdd/24_COFFRES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/47_MUSIQUES.md",
+        "severity": "error",
+        "message": "docs/gdd/47_MUSIQUES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/30_CRAFT.md",
+        "severity": "error",
+        "message": "docs/gdd/30_CRAFT.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/18_MONSTRES.md",
+        "severity": "error",
+        "message": "docs/gdd/18_MONSTRES.md: contient 0 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gameplay/README.md",
+        "severity": "error",
+        "message": "docs/gameplay/README.md: contient 0 titres H1 (1 attendu).",
         "module": "titles"
     },
     {
@@ -1446,6 +1446,18 @@
         "module": "titles"
     },
     {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:170 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "severity": "warning",
+        "message": "docs/gdd/03_SCENARIO.md:182 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
+        "module": "titles"
+    },
+    {
         "file": "docs/gdd/README.md",
         "severity": "warning",
         "message": "docs/gdd/README.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).",
@@ -1513,18 +1525,6 @@
     },
     {
         "file": "docs/gdd/03_SCENARIO.md",
-        "severity": "warning",
-        "message": "docs/gdd/03_SCENARIO.md:170 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "severity": "warning",
-        "message": "docs/gdd/03_SCENARIO.md:182 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
-        "module": "titles"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
         "line": 176,
         "severity": "error",
         "message": "Fichier introuvable : 05_FACTION.md",
@@ -1545,24 +1545,115 @@
         "module": "links"
     },
     {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "line": 1,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "line": 172,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "line": 173,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "line": 175,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "line": 184,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/03_SCENARIO.md",
+        "line": 186,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "line": 1,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:1",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "line": 33,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "line": 34,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:174",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "line": 35,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "line": 55,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:177",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "line": 56,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:178",
+        "module": "links"
+    },
+    {
+        "file": "docs/gdd/README.md",
+        "line": 88,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:179",
+        "module": "links"
+    },
+    {
         "file": "docs/gdd/README.md",
         "line": 147,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:1",
         "module": "links"
     },
     {
         "file": "docs/gdd/README.md",
         "line": 152,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:1",
         "module": "links"
     },
     {
         "file": "docs/gdd/02_UNIVERS.md",
         "line": 1,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:1",
         "module": "links"
     },
     {
@@ -1583,7 +1674,7 @@
         "file": "docs/gdd/02_UNIVERS.md",
         "line": 315,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:174",
         "module": "links"
     },
     {
@@ -1604,14 +1695,14 @@
         "file": "docs/gdd/02_UNIVERS.md",
         "line": 324,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:174",
         "module": "links"
     },
     {
         "file": "docs/gdd/01_VISION.md",
         "line": 1,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:1",
         "module": "links"
     },
     {
@@ -1632,14 +1723,14 @@
         "file": "docs/gdd/01_VISION.md",
         "line": 168,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
         "module": "links"
     },
     {
         "file": "docs/gdd/01_VISION.md",
         "line": 169,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:174",
         "module": "links"
     },
     {
@@ -1653,99 +1744,14 @@
         "file": "docs/gdd/01_VISION.md",
         "line": 177,
         "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
+        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
         "module": "links"
     },
     {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 35,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 35,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 172,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 173,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:33",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 174,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:34",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 175,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 177,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:55",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 178,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:56",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 179,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:88",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 184,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 186,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/README.md:35",
-        "module": "links"
+        "file": "voir_database.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
     },
     {
         "file": "dashboard.py",
@@ -1766,225 +1772,657 @@
         "module": "python"
     },
     {
-        "file": "voir_database.py",
+        "file": "scripts/generate_problems_md.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_problems_md.py",
+        "severity": "warning",
+        "message": "La fonction 'generate_problems_md' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/generate_problems_md.py",
+        "severity": "warning",
+        "message": "La fonction 'generate_problems_md' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La classe 'Joueur' ne possède pas de docstring.",
+        "message": "La classe 'DatabaseManager' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La classe 'Map3D' ne possède pas de docstring.",
+        "message": "La fonction 'create_tables' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La classe 'VispyWidget' ne possède pas de docstring.",
+        "message": "La fonction 'create_tables' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La classe 'MainMenuWidget' ne possède pas de docstring.",
+        "message": "La fonction 'create_tables' dépasse 80 lignes.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La classe 'EmptyWidget' ne possède pas de docstring.",
+        "message": "La fonction 'add_run' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La classe 'MainFrame' ne possède pas de docstring.",
+        "message": "La fonction 'add_run' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_quality' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_quality' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_flake8_error' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_flake8_error' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_black_file' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_black_file' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_bandit_issue' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_bandit_issue' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_test' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_test' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'close' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'close' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/update_database.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/update_database.py",
         "severity": "warning",
         "message": "La fonction 'main' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/update_database.py",
         "severity": "warning",
         "message": "La fonction 'main' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/docs_score.py",
         "severity": "warning",
-        "message": "La fonction 'get_height' ne possède pas de docstring.",
+        "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'get_height' ne possède pas d'annotations de type.",
+        "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'on_key_vispy' ne possède pas de docstring.",
+        "message": "La fonction 'get_documentation_score' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'on_key_vispy' ne possède pas d'annotations de type.",
+        "message": "La fonction 'get_documentation_score' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'refresh_joueur' ne possède pas de docstring.",
+        "message": "La fonction 'get_database_data' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'refresh_joueur' ne possède pas d'annotations de type.",
+        "message": "La fonction 'get_database_data' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'update_info' ne possède pas de docstring.",
+        "message": "La fonction 'calculate_quality' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'update_info' ne possède pas d'annotations de type.",
+        "message": "La fonction 'calculate_quality' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'show_menu' ne possède pas de docstring.",
+        "message": "La fonction 'generate_json' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'show_menu' ne possède pas d'annotations de type.",
+        "message": "La fonction 'generate_json' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/generate_dashboard.py",
         "severity": "warning",
-        "message": "La fonction 'start_new_game' ne possède pas de docstring.",
+        "message": "La fonction 'generate_json' dépasse 80 lignes.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "scripts/transformateur.py",
         "severity": "warning",
-        "message": "La fonction 'start_new_game' ne possède pas d'annotations de type.",
+        "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'start_load_game' ne possède pas de docstring.",
+        "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'start_load_game' ne possède pas d'annotations de type.",
+        "message": "La fonction 'log_save_event' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'show_empty' ne possède pas d'annotations de type.",
+        "message": "La fonction 'normalize_password' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'clear_layout' ne possède pas d'annotations de type.",
+        "message": "La fonction 'derive_key' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'start_game' ne possède pas de docstring.",
+        "message": "La fonction 'derive_key' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'start_game' ne possède pas d'annotations de type.",
+        "message": "La fonction 'aesgcm_encrypt' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'load_game_from_slot' ne possède pas de docstring.",
+        "message": "La fonction 'aesgcm_decrypt' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'load_game_from_slot' ne possède pas d'annotations de type.",
+        "message": "La fonction 'ensure_profile_dir' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'show_save_select' ne possède pas de docstring.",
+        "message": "La fonction 'atomic_write_zip' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'show_save_select' ne possède pas d'annotations de type.",
+        "message": "La fonction 'atomic_write_zip' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'layout' ne possède pas d'annotations de type.",
+        "message": "La fonction 'save_to_slot' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'closeEvent' ne possède pas de docstring.",
+        "message": "La fonction 'save_to_slot' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'closeEvent' ne possède pas d'annotations de type.",
+        "message": "La fonction 'load_from_slot' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'on_exit' ne possède pas de docstring.",
+        "message": "La classe 'AutoSaver' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
+        "file": "Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "La fonction 'on_exit' ne possède pas d'annotations de type.",
+        "message": "La fonction 'write_zip' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/Secure_save.py",
+        "severity": "warning",
+        "message": "La fonction 'write_zip' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/Secure_save.py",
+        "severity": "warning",
+        "message": "La fonction 'start' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/Secure_save.py",
+        "severity": "warning",
+        "message": "La fonction 'start' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/Secure_save.py",
+        "severity": "warning",
+        "message": "La fonction 'stop' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/Secure_save.py",
+        "severity": "warning",
+        "message": "La fonction 'stop' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'calculer_distance_levenshtein' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'calculer_distance_levenshtein' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'trouver_commandes_similaires' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'trouver_commandes_similaires' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'admin_only' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'admin_only' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La classe 'ConsoleAdmin' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'activer_admin' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'activer_admin' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'installer_raccourci_admin' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'installer_raccourci_admin' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'demander_mot_de_passe' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'demander_mot_de_passe' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'admin_mode_decorator' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'wrapper' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'wrapper' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'log' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'log' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'executer' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'executer' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'executer_commande' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'executer_commande' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'keyPressEvent' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'keyPressEvent' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'wrapper' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/admin_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'wrapper' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La classe 'StatsConversion' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'chercher_livre' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'chercher_livre' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'convertir_livres' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'convertir_livres' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l1_l2' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l1_l2' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l2_l3' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l2_l3' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l3_l4' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l3_l4' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l4_l5' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l4_l5' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l5_l6' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'l5_l6' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'niveau_to_romain' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'get_niveau' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/table_de_conversion.py",
+        "severity": "warning",
+        "message": "La fonction 'get_nom' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/localisation.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/localisation.py",
+        "severity": "warning",
+        "message": "La fonction 'obtenir_localisation_par_ip' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/configuration.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/configuration.py",
+        "severity": "warning",
+        "message": "La classe 'ModeDeJeuDialog' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/configuration.py",
+        "severity": "warning",
+        "message": "La fonction 'demander_configuration_jeu' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -2003,6 +2441,588 @@
         "file": "Ancien/jet_de_des.py",
         "severity": "warning",
         "message": "La fonction 'jet_de_des' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'trouver_cles_par_liste_non_ordonnee' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'qtes' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'pregenerer_cache_enchantements' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'trier' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La classe 'Objet' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La classe 'equipement' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La classe 'Armes' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La classe 'Potion' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La classe 'Livres' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'nettoyer_stuff_zero' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'nettoyer_stuff_zero' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'generer_cle_unique' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'safe_increment' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'safe_increment' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'safe_increment' dépasse 80 lignes.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La classe 'QuantiteDialog' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La classe 'FenetreMagasin' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'afficher_magasin' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'afficher_magasin' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'attribut_superieur_a_un' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'attribut_superieur_a_un' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'nom_affiche' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'nom_affiche' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'nom' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'nom' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'image' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'image' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'ajouter' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'ajouter' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'retirer' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'retirer' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'enchanter' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'enchanter' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'taux_de_critique' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'taux_de_critique' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'enchanter' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'enchanter' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'appliquer_effet' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'appliquer_effet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'diminuer_quantite' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'augmenter_quantite' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'mettre_a_jour_prix_total' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'get_quantite' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'charger_objets_dispo' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'mettre_a_jour_magasin' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inventaire.py",
+        "severity": "warning",
+        "message": "La fonction 'acheter_objet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'qtes' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La classe 'FenetreInventaire' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'qtes' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La classe 'FenetreInventaire' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'afficher_inventaire' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'afficher_inventaire' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'on_search_text_changed' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'effectuer_recherche_optimisee' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'mettre_a_jour_inventaire_complet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'mettre_a_jour_inventaire_rapide' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'demander_quantite_conversion' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'convertir_livre' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'vendre_objet' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'vendre_objet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'vendre_tous_meme_nom' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'boire' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'charger_prix_objets' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'charger_prix_objets' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'effectuer_recherche' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'filtrer_inventaire' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/inv.py",
+        "severity": "warning",
+        "message": "La fonction 'filtrer_inventaire' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'arreter_toutes_horloges' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'chercher' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'chercher' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'réinitialiser' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'réinitialiser' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'demarrer' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'arreter' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'enregistrer_evenement' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'obtenir_heure' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'obtenir_heure_formatee' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'sauvegarder_dans_json' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'charger_depuis_json' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/horloge.py",
+        "severity": "warning",
+        "message": "La fonction 'charger_depuis_json' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/heure_locale.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/heure_locale.py",
+        "severity": "warning",
+        "message": "La fonction 'trouver_fuseau' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/heure_locale.py",
+        "severity": "warning",
+        "message": "La fonction 'trouver_fuseau' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "La classe 'tresor' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "La fonction 'create_tresor' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "La fonction 'create_tresor' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "La fonction 'ouvrir_tresor' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "La fonction 'ouvrir_tresor' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "La fonction 'ouvrir_tresor_admin' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/tresor.py",
+        "severity": "warning",
+        "message": "La fonction 'ouvrir_tresor_admin' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -2528,252 +3548,6 @@
         "module": "python"
     },
     {
-        "file": "Ancien/heure_locale.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/heure_locale.py",
-        "severity": "warning",
-        "message": "La fonction 'trouver_fuseau' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/heure_locale.py",
-        "severity": "warning",
-        "message": "La fonction 'trouver_fuseau' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "La classe 'tresor' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "La fonction 'create_tresor' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "La fonction 'create_tresor' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "La fonction 'ouvrir_tresor' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "La fonction 'ouvrir_tresor' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "La fonction 'ouvrir_tresor_admin' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/tresor.py",
-        "severity": "warning",
-        "message": "La fonction 'ouvrir_tresor_admin' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/localisation.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/localisation.py",
-        "severity": "warning",
-        "message": "La fonction 'obtenir_localisation_par_ip' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'qtes' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La classe 'FenetreInventaire' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'qtes' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La classe 'FenetreInventaire' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'afficher_inventaire' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'afficher_inventaire' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'on_search_text_changed' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'effectuer_recherche_optimisee' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'mettre_a_jour_inventaire_complet' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'mettre_a_jour_inventaire_rapide' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'demander_quantite_conversion' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'convertir_livre' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'vendre_objet' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'vendre_objet' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'vendre_tous_meme_nom' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'boire' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'charger_prix_objets' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'charger_prix_objets' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'effectuer_recherche' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'filtrer_inventaire' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inv.py",
-        "severity": "warning",
-        "message": "La fonction 'filtrer_inventaire' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/index_manager.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/index_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'initialiser_index' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/index_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'mettre_a_jour_index' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/index_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'supprimer_de_l_index' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
         "file": "Ancien/grade_manager.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -2921,24 +3695,6 @@
         "file": "Ancien/grade_manager.py",
         "severity": "warning",
         "message": "La fonction 'fonction_interne' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/configuration.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/configuration.py",
-        "severity": "warning",
-        "message": "La classe 'ModeDeJeuDialog' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/configuration.py",
-        "severity": "warning",
-        "message": "La fonction 'demander_configuration_jeu' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -3164,6 +3920,48 @@
         "module": "python"
     },
     {
+        "file": "Ancien/index_manager.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/index_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'initialiser_index' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/index_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'mettre_a_jour_index' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/index_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'supprimer_de_l_index' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/generate_map.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/generate_map.py",
+        "severity": "warning",
+        "message": "La fonction 'generate_map' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "Ancien/generate_map.py",
+        "severity": "warning",
+        "message": "La fonction 'generate_map' dépasse 80 lignes.",
+        "module": "python"
+    },
+    {
         "file": "Ancien/banque.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -3254,1017 +4052,219 @@
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
+        "file": "client-python/client.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La classe 'StatsConversion' ne possède pas de docstring.",
+        "message": "La classe 'Joueur' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
+        "message": "La classe 'Map3D' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'chercher_livre' ne possède pas de docstring.",
+        "message": "La classe 'VispyWidget' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'chercher_livre' ne possède pas d'annotations de type.",
+        "message": "La classe 'MainMenuWidget' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'convertir_livres' ne possède pas de docstring.",
+        "message": "La classe 'EmptyWidget' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'convertir_livres' ne possède pas d'annotations de type.",
+        "message": "La classe 'MainFrame' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l1_l2' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l1_l2' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l2_l3' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l2_l3' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l3_l4' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l3_l4' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l4_l5' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l4_l5' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l5_l6' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'l5_l6' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'niveau_to_romain' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'get_niveau' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/table_de_conversion.py",
-        "severity": "warning",
-        "message": "La fonction 'get_nom' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'arreter_toutes_horloges' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'chercher' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'chercher' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'réinitialiser' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'réinitialiser' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'demarrer' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'arreter' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'enregistrer_evenement' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'obtenir_heure' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'obtenir_heure_formatee' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'sauvegarder_dans_json' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'charger_depuis_json' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/horloge.py",
-        "severity": "warning",
-        "message": "La fonction 'charger_depuis_json' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'log_save_event' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'normalize_password' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'derive_key' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'derive_key' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'aesgcm_encrypt' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'aesgcm_decrypt' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'ensure_profile_dir' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'atomic_write_zip' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'atomic_write_zip' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'save_to_slot' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'save_to_slot' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'load_from_slot' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La classe 'AutoSaver' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'write_zip' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'write_zip' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'start' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'start' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'stop' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/Secure_save.py",
-        "severity": "warning",
-        "message": "La fonction 'stop' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'calculer_distance_levenshtein' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'calculer_distance_levenshtein' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'trouver_commandes_similaires' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'trouver_commandes_similaires' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'admin_only' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'admin_only' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La classe 'ConsoleAdmin' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'activer_admin' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'activer_admin' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'installer_raccourci_admin' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'installer_raccourci_admin' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'demander_mot_de_passe' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'demander_mot_de_passe' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'admin_mode_decorator' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'wrapper' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'wrapper' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'log' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'log' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'executer' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'executer' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'executer_commande' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'executer_commande' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'keyPressEvent' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'keyPressEvent' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'wrapper' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/admin_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'wrapper' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/generate_map.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/generate_map.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_map' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/generate_map.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_map' dépasse 80 lignes.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'trouver_cles_par_liste_non_ordonnee' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'qtes' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'qtes' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'pregenerer_cache_enchantements' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'trier' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La classe 'Objet' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La classe 'equipement' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La classe 'Armes' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La classe 'Potion' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La classe 'Livres' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'nettoyer_stuff_zero' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'nettoyer_stuff_zero' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'generer_cle_unique' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'safe_increment' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'safe_increment' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'safe_increment' dépasse 80 lignes.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La classe 'QuantiteDialog' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La classe 'FenetreMagasin' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'afficher_magasin' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'afficher_magasin' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'attribut_superieur_a_un' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'attribut_superieur_a_un' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'nom_affiche' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'nom_affiche' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'nom' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'nom' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'image' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'image' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'ajouter' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'ajouter' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'retirer' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'retirer' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'enchanter' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'enchanter' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'taux_de_critique' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'taux_de_critique' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'enchanter' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'enchanter' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'appliquer_effet' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'appliquer_effet' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'diminuer_quantite' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'augmenter_quantite' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'mettre_a_jour_prix_total' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'get_quantite' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'charger_objets_dispo' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'mettre_a_jour_magasin' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "Ancien/inventaire.py",
-        "severity": "warning",
-        "message": "La fonction 'acheter_objet' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/transformateur.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_problems_md.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_problems_md.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_problems_md' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/generate_problems_md.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_problems_md' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
+        "file": "client-python/client.py",
         "severity": "warning",
         "message": "La fonction 'main' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/update_database.py",
+        "file": "client-python/client.py",
         "severity": "warning",
         "message": "La fonction 'main' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/docs_score.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
+        "message": "La fonction 'get_height' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
+        "message": "La fonction 'get_height' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'get_documentation_score' ne possède pas de docstring.",
+        "message": "La fonction 'on_key_vispy' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'get_documentation_score' ne possède pas d'annotations de type.",
+        "message": "La fonction 'on_key_vispy' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'get_database_data' ne possède pas de docstring.",
+        "message": "La fonction 'refresh_joueur' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'get_database_data' ne possède pas d'annotations de type.",
+        "message": "La fonction 'refresh_joueur' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'calculate_quality' ne possède pas de docstring.",
+        "message": "La fonction 'update_info' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'calculate_quality' ne possède pas d'annotations de type.",
+        "message": "La fonction 'update_info' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'generate_json' ne possède pas de docstring.",
+        "message": "La fonction 'show_menu' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'generate_json' ne possède pas d'annotations de type.",
+        "message": "La fonction 'show_menu' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/generate_dashboard.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'generate_json' dépasse 80 lignes.",
+        "message": "La fonction 'start_new_game' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
+        "message": "La fonction 'start_new_game' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La classe 'DatabaseManager' ne possède pas de docstring.",
+        "message": "La fonction 'start_load_game' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'create_tables' ne possède pas de docstring.",
+        "message": "La fonction 'start_load_game' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'create_tables' ne possède pas d'annotations de type.",
+        "message": "La fonction 'show_empty' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'create_tables' dépasse 80 lignes.",
+        "message": "La fonction 'clear_layout' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_run' ne possède pas de docstring.",
+        "message": "La fonction 'start_game' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_run' ne possède pas d'annotations de type.",
+        "message": "La fonction 'start_game' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_quality' ne possède pas de docstring.",
+        "message": "La fonction 'load_game_from_slot' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_quality' ne possède pas d'annotations de type.",
+        "message": "La fonction 'load_game_from_slot' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_flake8_error' ne possède pas de docstring.",
+        "message": "La fonction 'show_save_select' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_flake8_error' ne possède pas d'annotations de type.",
+        "message": "La fonction 'show_save_select' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_black_file' ne possède pas de docstring.",
+        "message": "La fonction 'layout' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_black_file' ne possède pas d'annotations de type.",
+        "message": "La fonction 'closeEvent' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_bandit_issue' ne possède pas de docstring.",
+        "message": "La fonction 'closeEvent' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_bandit_issue' ne possède pas d'annotations de type.",
+        "message": "La fonction 'on_exit' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database_manager.py",
+        "file": "client-python/client.py",
         "severity": "warning",
-        "message": "La fonction 'add_test' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_test' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'close' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'close' ne possède pas d'annotations de type.",
+        "message": "La fonction 'on_exit' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -4304,6 +4304,108 @@
         "module": "python"
     },
     {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_links' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_links' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'extract_links' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'extract_links' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_empty_links' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_empty_links' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_local_links' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_local_links' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_external_links' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_external_links' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_anchors' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_anchors' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_images' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_images' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_duplicate_links' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/links.py",
+        "severity": "warning",
+        "message": "La fonction 'check_duplicate_links' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "scripts/documentation/navigation.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -4322,6 +4424,126 @@
         "module": "python"
     },
     {
+        "file": "scripts/documentation/spelling.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/spelling.py",
+        "severity": "warning",
+        "message": "La fonction 'check_spelling' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/organization.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/organization.py",
+        "severity": "warning",
+        "message": "La fonction 'check_organization' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/organization.py",
+        "severity": "warning",
+        "message": "La fonction 'check_organization' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_titles' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_titles' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_single_h1' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_single_h1' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_heading_order' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_heading_order' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_heading_spacing' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_heading_spacing' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_empty_titles' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_empty_titles' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_title_length' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_title_length' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_duplicate_titles' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/titles.py",
+        "severity": "warning",
+        "message": "La fonction 'check_duplicate_titles' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "scripts/documentation/report.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -4331,24 +4553,6 @@
         "file": "scripts/documentation/report.py",
         "severity": "warning",
         "message": "La fonction 'generate_report' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/score.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/score.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_score' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/score.py",
-        "severity": "warning",
-        "message": "La fonction 'generate_score' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -4478,243 +4682,21 @@
         "module": "python"
     },
     {
-        "file": "scripts/documentation/problem.py",
+        "file": "scripts/documentation/score.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/documentation/problem.py",
+        "file": "scripts/documentation/score.py",
         "severity": "warning",
-        "message": "La fonction 'add_problem' ne possède pas de docstring.",
+        "message": "La fonction 'generate_score' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/documentation/problem.py",
+        "file": "scripts/documentation/score.py",
         "severity": "warning",
-        "message": "La fonction 'add_problem' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/spelling.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/spelling.py",
-        "severity": "warning",
-        "message": "La fonction 'check_spelling' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_titles' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_titles' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_single_h1' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_single_h1' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_heading_order' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_heading_order' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_heading_spacing' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_heading_spacing' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_empty_titles' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_empty_titles' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_title_length' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_title_length' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_duplicate_titles' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/titles.py",
-        "severity": "warning",
-        "message": "La fonction 'check_duplicate_titles' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_links' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_links' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'extract_links' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'extract_links' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_empty_links' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_empty_links' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_local_links' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_local_links' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_external_links' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_external_links' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_anchors' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_anchors' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_images' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_images' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_duplicate_links' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/links.py",
-        "severity": "warning",
-        "message": "La fonction 'check_duplicate_links' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/organization.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/organization.py",
-        "severity": "warning",
-        "message": "La fonction 'check_organization' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/documentation/organization.py",
-        "severity": "warning",
-        "message": "La fonction 'check_organization' ne possède pas d'annotations de type.",
+        "message": "La fonction 'generate_score' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -4733,6 +4715,48 @@
         "file": "scripts/documentation/rust_docs.py",
         "severity": "warning",
         "message": "La fonction 'check_rust_docs' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/problem.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/problem.py",
+        "severity": "warning",
+        "message": "La fonction 'add_problem' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/problem.py",
+        "severity": "warning",
+        "message": "La fonction 'add_problem' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_security.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_security.py",
+        "severity": "warning",
+        "message": "La fonction 'update_security_database' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_security.py",
+        "severity": "warning",
+        "message": "La fonction 'update_security_database' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_security.py",
+        "severity": "warning",
+        "message": "La fonction 'update_security_database' dépasse 80 lignes.",
         "module": "python"
     },
     {
@@ -4778,21 +4802,27 @@
         "module": "python"
     },
     {
-        "file": "scripts/database/update_docs.py",
+        "file": "scripts/database/update_python.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database/update_docs.py",
+        "file": "scripts/database/update_python.py",
         "severity": "warning",
-        "message": "La fonction 'update_docs_database' ne possède pas de docstring.",
+        "message": "La fonction 'update_python_database' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database/update_docs.py",
+        "file": "scripts/database/update_python.py",
         "severity": "warning",
-        "message": "La fonction 'update_docs_database' ne possède pas d'annotations de type.",
+        "message": "La fonction 'update_python_database' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database/update_python.py",
+        "severity": "warning",
+        "message": "La fonction 'update_python_database' dépasse 80 lignes.",
         "module": "python"
     },
     {
@@ -4820,51 +4850,21 @@
         "module": "python"
     },
     {
-        "file": "scripts/database/update_python.py",
+        "file": "scripts/database/update_docs.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database/update_python.py",
+        "file": "scripts/database/update_docs.py",
         "severity": "warning",
-        "message": "La fonction 'update_python_database' ne possède pas de docstring.",
+        "message": "La fonction 'update_docs_database' ne possède pas de docstring.",
         "module": "python"
     },
     {
-        "file": "scripts/database/update_python.py",
+        "file": "scripts/database/update_docs.py",
         "severity": "warning",
-        "message": "La fonction 'update_python_database' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database/update_python.py",
-        "severity": "warning",
-        "message": "La fonction 'update_python_database' dépasse 80 lignes.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database/update_security.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database/update_security.py",
-        "severity": "warning",
-        "message": "La fonction 'update_security_database' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database/update_security.py",
-        "severity": "warning",
-        "message": "La fonction 'update_security_database' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database/update_security.py",
-        "severity": "warning",
-        "message": "La fonction 'update_security_database' dépasse 80 lignes.",
+        "message": "La fonction 'update_docs_database' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
