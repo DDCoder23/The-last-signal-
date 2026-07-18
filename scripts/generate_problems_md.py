@@ -2,8 +2,9 @@ import json
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime
+import traceback
 
-REPORT_DIR = "reports/docs"
+REPORT_DIR = Path("reports/docs")
 
 
 def generate_problems_md():
@@ -67,7 +68,7 @@ def generate_problems_md():
         encoding="utf-8",
     )
     print("fichier md généré")
-    import traceback
+    
 
 try:
     generate_problems_md()
