@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-18T02:17:15.301083",
+    "generated": "2026-07-18T02:19:27.116919",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 795,
+    "problem_count": 797,
     "details": {
         "markdown": {
             "score": 17,
@@ -1820,7 +1820,7 @@
             "results": {
                 "modules": 41,
                 "classes": 43,
-                "functions": 251,
+                "functions": 252,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
@@ -4153,8 +4153,20 @@
                 },
                 {
                     "file": "scripts/update_database.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/update_database.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/update_database.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
