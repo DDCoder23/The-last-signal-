@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 02:12:02
+Generated: 2026-07-18 02:15:09
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|133|
-|⚠️ Warnings|636|
-|**Total**|**804**|
+|⚠️ Warnings|629|
+|**Total**|**797**|
 
 ---
 
@@ -4457,47 +4457,12 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'read_report' ne possède pas de docstring.
+- **Message :** La fonction 'main' ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'read_report' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_float' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_float' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_int' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_int' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_database' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_database' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_database' dépasse 80 lignes.
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 ---
 

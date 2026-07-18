@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-18 02:12:02
+**Date :** 2026-07-18 02:15:09
 
 # 52/100
 
@@ -5069,55 +5069,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'read_report' ne possède pas de docstring.
+- **Message :** La fonction 'main' ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'read_report' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'extract_float' ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'extract_float' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'extract_int' ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'extract_int' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'update_database' ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'update_database' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'update_database' dépasse 80 lignes.
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 - **module :** python
 

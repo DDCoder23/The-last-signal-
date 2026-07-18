@@ -4078,55 +4078,13 @@
     {
         "file": "scripts/update_database.py",
         "severity": "warning",
-        "message": "La fonction 'read_report' ne possède pas de docstring.",
+        "message": "La fonction 'main' ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "scripts/update_database.py",
         "severity": "warning",
-        "message": "La fonction 'read_report' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'extract_float' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'extract_float' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'extract_int' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'extract_int' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'update_database' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'update_database' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'update_database' dépasse 80 lignes.",
+        "message": "La fonction 'main' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
