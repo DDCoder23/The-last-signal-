@@ -4071,20 +4071,8 @@
     },
     {
         "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'main' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/update_database.py",
-        "severity": "warning",
-        "message": "La fonction 'main' ne possède pas d'annotations de type.",
+        "severity": "error",
+        "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
         "module": "python"
     },
     {

@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 02:15:09
+Generated: 2026-07-18 02:17:15
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|133|
-|⚠️ Warnings|629|
-|**Total**|**797**|
+|❌ Errors|134|
+|⚠️ Warnings|626|
+|**Total**|**795**|
 
 ---
 
@@ -4449,20 +4449,10 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 scripts/update_database.py
 
-## ⚠️ Warning
+## ❌ Error
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)
 
 ---
 
