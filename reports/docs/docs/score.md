@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-18 02:22:39
+**Date :** 2026-07-18 02:23:21
 
 # 52/100
 
@@ -4289,9 +4289,21 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 scripts/database/update_docs.py
 
-## ❌ Error
+## ⚠️ Warning
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 5)
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'update_docs_database' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'update_docs_database' ne possède pas d'annotations de type.
 
 - **module :** python
 
