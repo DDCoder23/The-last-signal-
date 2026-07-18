@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-18 02:01:58
+Generated: 2026-07-18 02:03:19
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|131|
+|❌ Errors|132|
 |⚠️ Warnings|636|
-|**Total**|**802**|
+|**Total**|**803**|
 
 ---
 
@@ -3754,6 +3754,15 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** markdown
 - **Message :** Ligne 15 > 120 caractères.
+
+---
+
+# 📄 scripts/database/update_docs.py
+
+## ❌ Error
+
+- **Module :** python
+- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 5)
 
 ---
 

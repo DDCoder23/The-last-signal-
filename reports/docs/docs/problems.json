@@ -4820,6 +4820,12 @@
         "module": "python"
     },
     {
+        "file": "scripts/database/update_docs.py",
+        "severity": "error",
+        "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 5)",
+        "module": "python"
+    },
+    {
         "file": "scripts/database/update_python.py",
         "severity": "error",
         "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
