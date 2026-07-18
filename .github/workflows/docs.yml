@@ -210,7 +210,7 @@ jobs:
             echo ""
             cat reports/docs/score.md
           } >> $GITHUB_STEP_SUMMARY
-          python -m scripts/generate_problems_md.py
+          python scripts/generate_problems_md.py
                 # =========================
       # Dashboard
       # =========================
