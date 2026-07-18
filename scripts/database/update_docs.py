@@ -1,8 +1,10 @@
 import json
-
 from pathlib import Path
+import sys
 
-from ../database_manager import DatabaseManager
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+
+from database_manager import DatabaseManager
 
 
 def update_docs_database():
