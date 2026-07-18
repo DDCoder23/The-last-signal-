@@ -1,11 +1,8 @@
 import os
 import re
-from pathlib import Path
-import sys
 
-sys.path.append(str(Path(__file__).resolve().parent.parent))
 
-from database_manager import DatabaseManager
+from ..database_manager import DatabaseManager
 from .utils import read_report
 REPORT_PATH = os.environ.get(
     "REPORT",
