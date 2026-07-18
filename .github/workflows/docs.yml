@@ -13,9 +13,6 @@ on:
 
 permissions:
   contents: write
-concurrency:
-  group: ci-reports
-  cancel-in-progress: false
 
 env:
   DOC_SCORE_MINIMUM: 60
