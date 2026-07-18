@@ -3,8 +3,7 @@ import os
 import json
 from datetime import datetime
 from pathlib import Path
-from .update_database import
-
+from .update_database import update_database
 
 DB_PATH = Path("database/python_reports.db")
 DOC_SCORE_PATH = Path("reports/docs/score.json")
@@ -352,8 +351,8 @@ def generate_json(rows):
 
 
 if __name__ == "__main__":
-
-
+    update_database()
+    
     rows = get_database_data()
 
     generate_json(rows)
