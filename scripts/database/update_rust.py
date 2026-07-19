@@ -1,31 +1,42 @@
 import os
 import re
 
-from scripts.database_manager import DatabaseManager
-from .utils import (read_report,
-extract_int,extract_float)
+from .utils import (
+    read_report,
+    extract_int,
+    extract_float,
+)
+
+from ..database_manager import DatabaseManager
+
 
 REPORT_PATH = os.environ.get(
     "REPORT",
-    "reports/rust-report.md"
+    "reports/rust/rust-report.md"
 )
-
-
-
-
-
-
-
-
 
 
 def update_rust_database():
 
     report = read_report(REPORT_PATH)
 
-    run_number = int(os.getenv("GITHUB_RUN_NUMBER", 0))
-    branch = os.getenv("GITHUB_REF_NAME", "unknown")
-    commit = os.getenv("GITHUB_SHA", "unknown")
+    if not report:
+        print("Rust report not found.")
+        return
+
+    run_number = int(
+        os.getenv("GITHUB_RUN_NUMBER", 0)
+    )
+
+    branch = os.getenv(
+        "GITHUB_REF",
+        "unknown"
+    )
+
+    commit = os.getenv(
+        "GITHUB_SHA",
+        "unknown"
+    )
 
     db = DatabaseManager()
 
@@ -35,69 +46,107 @@ def update_rust_database():
         commit
     )
 
-    ##############################
-    # Extraction des métriques
-    ##############################
+    # ==========================================
+    # Résumé Rust
+    # ==========================================
 
-    clippy_warnings = extract_int(
+    clippy = extract_int(
         r"Clippy warnings:\s*(\d+)",
         report
     )
 
-    cargo_tests = extract_int(
+    fmt = extract_int(
+        r"Rustfmt errors:\s*(\d+)",
+        report
+    )
+
+    audit = extract_int(
+        r"Cargo audit:\s*(\d+)",
+        report
+    )
+
+    db.insert(
+        "rust_summary",
+        run_id=run_id,
+        clippy=clippy,
+        fmt=fmt,
+        audit=audit
+    )
+
+    # ==========================================
+    # Résumé des tests
+    # ==========================================
+
+    passed = extract_int(
         r"Passed tests:\s*(\d+)",
         report
     )
 
-    failed_tests = extract_int(
+    failed = extract_int(
         r"Failed tests:\s*(\d+)",
         report
     )
 
-    coverage = extract_float(
-        r"Coverage:\s*([0-9.]+)",
+    skipped = extract_int(
+        r"Skipped tests:\s*(\d+)",
         report
     )
 
-    ##############################
-    # Qualité
-    ##############################
-
-    db.add_quality(
-        run_id,
-        pylint=100 - clippy_warnings,
-        coverage=coverage,
-        complexity=0
+    duration = extract_float(
+        r"Finished in ([0-9.]+)s",
+        report
     )
 
-    ##############################
-    # Tests
-    ##############################
-
-    db.cursor.execute(
-        """
-        INSERT INTO tests
-        (
-            run_id,
-            total,
-            passed,
-            failed,
-            skipped,
-            duration
-        )
-        VALUES (?,?,?,?,?,?)
-        """,
-        (
-            run_id,
-            cargo_tests + failed_tests,
-            cargo_tests,
-            failed_tests,
-            0,
-            0
-        )
+    db.insert(
+        "test_summary",
+        run_id=run_id,
+        total=passed + failed + skipped,
+        passed=passed,
+        failed=failed,
+        skipped=skipped,
+        duration=duration
     )
 
-    db.connection.commit()
+    # ==========================================
+    # Détails Clippy
+    # ==========================================
+
+    clippy_pattern = re.compile(
+        r"--> (.*?):(\d+):\d+.*?\n.*?\n.*?warning: (.*)",
+        re.S
+    )
+
+    for file, line, message in clippy_pattern.findall(report):
+
+        db.insert(
+            "clippy_warnings",
+            run_id=run_id,
+            file=file,
+            line=int(line),
+            level="warning",
+            message=message.strip()
+        )
+
+    # ==========================================
+    # Détails Cargo Audit
+    # ==========================================
+
+    audit_pattern = re.compile(
+        r"Crate:\s*(.*?)\n.*?Version:\s*(.*?)\n.*?ID:\s*(.*?)\n",
+        re.S
+    )
+
+    for package, version, advisory in audit_pattern.findall(report):
+
+        db.insert(
+            "cargo_audit",
+            run_id=run_id,
+            advisory=advisory.strip(),
+            package=package.strip(),
+            severity="unknown",
+            version=version.strip()
+        )
+
     db.close()
 
-    print("Rust database updated")
+    print("Rust database updated successfully.")
