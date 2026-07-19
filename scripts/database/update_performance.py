@@ -1,2 +1,2 @@
-def  update_performance_database():
+def  update_performance_database(db):
   pass
