@@ -408,3 +408,58 @@ class DatabaseManager:
 
     def close(self):
         self.connection.close()
+    def add_security(self,run_id,high,medium,low,total,files):
+        self.cursor.execute(
+        """
+        INSERT INTO security
+        (
+            run_id,
+            high,
+            medium,
+            low,
+            total,
+            files
+        )
+        VALUES (?,?,?,?,?,?)
+        """,
+        (
+            run_id,
+            high,
+            medium,
+            low,
+            total,
+            files,
+        ),
+    )
+        self.connection.commit()
+    def add_security_issue(self,run_id,test,severity,confidence,cwe,info,file,line,column):
+        self.cursor.execute(
+        """
+        INSERT INTO security_issues
+        (
+            run_id,
+            test,
+            severity,
+            confidence,
+            cwe,
+            info,
+            file,
+            line,
+            column
+        )
+        VALUES (?,?,?,?,?,?,?,?,?)
+        """,
+        (
+            run_id,
+            test,
+            severity,
+            confidence,
+            cwe,
+            info,
+            file,
+            line,
+            column,
+        ),
+    )
+        self.connection.commit()
+    
