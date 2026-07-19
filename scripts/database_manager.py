@@ -1,51 +1,56 @@
-import sqlite3
 import os
+import sqlite3
 from datetime import datetime
 
 
-DB_PATH = "database/python_reports.db"
+DB_PATH = "database/ci_reports.db"
 
 
 class DatabaseManager:
 
     def __init__(self, db_path=DB_PATH):
 
-        os.makedirs(
-            "database",
-            exist_ok=True
-        )
+        os.makedirs("database", exist_ok=True)
 
-        self.connection = sqlite3.connect(
-            db_path
-        )
-
+        self.connection = sqlite3.connect(db_path)
+        self.connection.row_factory = sqlite3.Row
         self.cursor = self.connection.cursor()
 
         self.create_tables()
 
+    # =====================================================
+    # TABLES
+    # =====================================================
 
     def create_tables(self):
 
-        self.cursor.execute("""
+        self.cursor.executescript("""
+
+        ----------------------------------------------------
+        -- RUNS
+        ----------------------------------------------------
+
         CREATE TABLE IF NOT EXISTS runs (
 
             id INTEGER PRIMARY KEY AUTOINCREMENT,
 
             run_number INTEGER UNIQUE,
 
-            date TEXT,
+            workflow TEXT,
 
             branch TEXT,
 
             commit_hash TEXT,
 
+            date TEXT,
+
             status TEXT
+        );
 
-        )
-        """)
+        ----------------------------------------------------
+        -- QUALITY
+        ----------------------------------------------------
 
-
-        self.cursor.execute("""
         CREATE TABLE IF NOT EXISTS quality_metrics (
 
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -60,15 +65,14 @@ class DatabaseManager:
 
             documentation REAL,
 
-            FOREIGN KEY(run_id)
-            REFERENCES runs(id)
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
 
-        )
-        """)
+        ----------------------------------------------------
+        -- TEST SUMMARY
+        ----------------------------------------------------
 
-
-        self.cursor.execute("""
-        CREATE TABLE IF NOT EXISTS tests (
+        CREATE TABLE IF NOT EXISTS test_summary (
 
             id INTEGER PRIMARY KEY AUTOINCREMENT,
 
@@ -84,19 +88,20 @@ class DatabaseManager:
 
             duration REAL,
 
-            FOREIGN KEY(run_id)
-            REFERENCES runs(id)
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
 
-        )
-        """)
+        ----------------------------------------------------
+        -- SECURITY SUMMARY
+        ----------------------------------------------------
 
-
-        self.cursor.execute("""
-        CREATE TABLE IF NOT EXISTS security (
+        CREATE TABLE IF NOT EXISTS security_summary (
 
             id INTEGER PRIMARY KEY AUTOINCREMENT,
 
             run_id INTEGER,
+
+            total INTEGER,
 
             high INTEGER,
 
@@ -104,151 +109,237 @@ class DatabaseManager:
 
             low INTEGER,
 
-            FOREIGN KEY(run_id)
-            REFERENCES runs(id)
+            affected_files INTEGER,
 
-        )
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- DOCUMENTATION SUMMARY
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS documentation_summary (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            score REAL,
+
+            errors INTEGER,
+
+            warnings INTEGER,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- RUST SUMMARY
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS rust_summary (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            clippy INTEGER,
+
+            fmt INTEGER,
+
+            audit INTEGER,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- FLAKE8
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS flake8_errors (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            file TEXT,
+
+            line INTEGER,
+
+            column_number INTEGER,
+
+            code TEXT,
+
+            message TEXT,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- BLACK
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS black_files (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            file TEXT,
+
+            status TEXT,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- BANDIT
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS bandit_issues (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            test TEXT,
+
+            severity TEXT,
+
+            confidence TEXT,
+
+            cwe TEXT,
+
+            info TEXT,
+
+            file TEXT,
+
+            line INTEGER,
+
+            column_number INTEGER,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- PYTEST
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS pytest_results (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            test_name TEXT,
+
+            status TEXT,
+
+            duration REAL,
+
+            error TEXT,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- DOC PROBLEMS
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS doc_problems (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            file TEXT,
+
+            severity TEXT,
+
+            module TEXT,
+
+            message TEXT,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- CLIPPY
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS clippy_warnings (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            file TEXT,
+
+            line INTEGER,
+
+            level TEXT,
+
+            message TEXT,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- CARGO AUDIT
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS cargo_audit (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            advisory TEXT,
+
+            package TEXT,
+
+            severity TEXT,
+
+            version TEXT,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
+        ----------------------------------------------------
+        -- REPORTS
+        ----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS reports (
+
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+            run_id INTEGER,
+
+            report_type TEXT,
+
+            markdown TEXT,
+
+            FOREIGN KEY(run_id) REFERENCES runs(id)
+        );
+
         """)
-        self.cursor.execute("""
-CREATE TABLE IF NOT EXISTS flake8_errors (
 
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-    run_id INTEGER,
-
-    file TEXT,
-
-    line INTEGER,
-
-    column_number INTEGER,
-
-    code TEXT,
-
-    message TEXT,
-
-    FOREIGN KEY(run_id)
-    REFERENCES runs(id)
-
-)
-""")
-        self.cursor.execute("""
-CREATE TABLE IF NOT EXISTS black_files (
-
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-    run_id INTEGER,
-
-    file TEXT,
-
-    status TEXT,
-
-    FOREIGN KEY(run_id)
-    REFERENCES runs(id)
-
-)
-""")
-        self.cursor.execute("""
-CREATE TABLE IF NOT EXISTS bandit_issues (
-
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-    run_id INTEGER,
-
-    severity TEXT,
-
-    confidence TEXT,
-
-    file TEXT,
-
-    line INTEGER,
-
-    issue TEXT,
-
-    FOREIGN KEY(run_id)
-    REFERENCES runs(id)
-
-)
-""")
-        self.cursor.execute("""
-CREATE TABLE IF NOT EXISTS pytest_results (
-
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-    run_id INTEGER,
-
-    test_name TEXT,
-
-    status TEXT,
-
-    duration REAL,
-
-    error TEXT,
-
-    FOREIGN KEY(run_id)
-    REFERENCES runs(id)
-
-)
-""")
-        self.cursor.execute("""
-CREATE TABLE IF NOT EXISTS reports (
-
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-    run_id INTEGER,
-
-    markdown TEXT,
-
-    FOREIGN KEY(run_id)
-    REFERENCES runs(id)
-
-)
-""")
         self.connection.commit()
 
-
+    # =====================================================
+    # RUN
+    # =====================================================
 
     def add_run(
         self,
         run_number,
         branch,
         commit_hash,
+        workflow="CI",
         status="success"
     ):
 
-        try:
-            self.cursor.execute(
-        """
-        INSERT INTO runs
-        (
-            run_number,
-            date,
-            branch,
-            commit_hash,
-            status
-        )
-
-        VALUES (?,?,?,?,?)
-
-        """,
-
-        (
-
-            run_number,
-
-            str(datetime.now()),
-
-            branch,
-
-            commit_hash,
-
-            status
-
-        ))
-            self.connection.commit()
-            return self.cursor.lastrowid
-
-        except sqlite3.IntegrityError:
-            self.cursor.execute(
+        self.cursor.execute(
             """
             SELECT id
             FROM runs
@@ -256,142 +347,64 @@ CREATE TABLE IF NOT EXISTS reports (
             """,
             (run_number,)
         )
-            return self.cursor.fetchone()[0]
 
+        row = self.cursor.fetchone()
 
-
-    def add_quality(
-        self,
-        run_id,
-        pylint,
-        coverage,
-        complexity,
-        documentation=0
-    ):
-
+        if row:
+            return row["id"]
 
         self.cursor.execute(
-        """
-
-        INSERT INTO quality_metrics
-
-        (
-        run_id,
-        pylint,
-        coverage,
-        complexity,
-        documentation
+            """
+            INSERT INTO runs
+            (
+                run_number,
+                workflow,
+                branch,
+                commit_hash,
+                date,
+                status
+            )
+            VALUES (?,?,?,?,?,?)
+            """,
+            (
+                run_number,
+                workflow,
+                branch,
+                commit_hash,
+                datetime.utcnow().isoformat(),
+                status
+            )
         )
-
-        VALUES (?,?,?,?,?)
-
-        """,
-
-        (
-            run_id,
-            pylint,
-            coverage,
-            complexity,
-            documentation
-        ))
-
 
         self.connection.commit()
 
+        return self.cursor.lastrowid
 
-    def add_flake8_error(self,run_id,file,line,column,code,message):
+    # =====================================================
+    # INSERT GENERIQUE
+    # =====================================================
+
+    def insert(self, table, **values):
+
+        columns = ", ".join(values.keys())
+        placeholders = ", ".join("?" for _ in values)
 
         self.cursor.execute(
-        """
-        INSERT INTO flake8_errors
-        (
-            run_id,
-            file,
-            line,
-            column_number,
-            code,
-            message
+            f"""
+            INSERT INTO {table}
+            ({columns})
+            VALUES ({placeholders})
+            """,
+            tuple(values.values())
         )
-
-        VALUES (?,?,?,?,?,?)
-        """,
-        (
-            run_id,
-            file,
-            line,
-            column,
-            code,
-            message
-        )
-    )
 
         self.connection.commit()
 
-    def add_black_file(self,run_id,file,status):
+        return self.cursor.lastrowid
 
-        self.cursor.execute(
-        """
-        INSERT INTO black_file
-        (
-            run_id,
-            file,
-            status
-        )
+    # =====================================================
+    # CLOSE
+    # =====================================================
 
-        VALUES (?,?,?)
-        """,
-        (
-            run_id,
-            file,
-            status
-        )
-    )
-
-        self.connection.commit()
-
-
-    def add_bandit_issue(self,run_id,file,status):
-
-        self.cursor.execute(
-        """
-        INSERT INTO bandit_issue
-        (
-            run_id,
-            file,
-            status
-        )
-
-        VALUES (?,?,?)
-        """,
-        (
-            run_id,
-            file,
-            status
-        )
-    )
-
-        self.connection.commit()
-    def add_test(self,run_id,file,status):
-
-        self.cursor.execute(
-        """
-        INSERT INTO test
-        (
-            run_id,
-            file,
-            status
-        )
-
-        VALUES (?,?,?)
-        """,
-        (
-            run_id,
-            file,
-            status
-        )
-    )
-
-        self.connection.commit()
     def close(self):
-
         self.connection.close()
