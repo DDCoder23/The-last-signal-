@@ -6,10 +6,11 @@ from .database.update_performance import update_performance_database
 
 
 def update_database():
+    update_docs_database()
 
     update_python_database()
 
-    update_docs_database()
+    
 
     update_security_database()
     update_rust_database()
