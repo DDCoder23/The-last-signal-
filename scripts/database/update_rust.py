@@ -147,6 +147,6 @@ def update_rust_database(db):
             version=version.strip()
         )
 
-    db.close()
+    
 
     print("Rust database updated successfully.")
