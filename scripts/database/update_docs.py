@@ -81,6 +81,6 @@ def update_docs_database(db):
                 message=problem.get("message", "")
             )
 
-    db.close()
+    
 
     print("Documentation database updated successfully")
