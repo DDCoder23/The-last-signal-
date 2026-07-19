@@ -1,17 +1,26 @@
-
-from .utils import read_report, extract_float, extract_int
 import os
 import re
 
-
+from .utils import (
+    read_report,
+    extract_float,
+    extract_int,
+)
 
 from ..database_manager import DatabaseManager
 
 
+REPORT = "reports/python/python-report.md"
 
 
 def update_python_database():
-    report = read_report("reports/python/python-report.md")
+
+    report = read_report(REPORT)
+
+    if not report:
+        print("Python report not found.")
+        return
+
     run_number = int(
         os.environ.get(
             "GITHUB_RUN_NUMBER",
@@ -19,174 +28,143 @@ def update_python_database():
         )
     )
 
-
     branch = os.environ.get(
         "GITHUB_REF",
         "unknown"
     )
-
 
     commit = os.environ.get(
         "GITHUB_SHA",
         "unknown"
     )
 
+    db = DatabaseManager()
 
+    run_id = db.add_run(
+        run_number,
+        branch,
+        commit
+    )
 
-    # Extraction des métriques
+    # ==========================================
+    # Quality metrics
+    # ==========================================
 
     pylint = extract_float(
         r"Your code has been rated at ([0-9.]+)",
         report
     )
 
-
     coverage = extract_float(
         r"TOTAL.*?(\d+)%",
         report
     )
-
 
     complexity = extract_float(
         r"Average complexity.*?([0-9.]+)",
         report
     )
 
-
-    bandit_high = extract_int(
-        r"High severity issues:\s*(\d+)",
-        report
+    db.insert(
+        "quality_metrics",
+        run_id=run_id,
+        pylint=pylint,
+        coverage=coverage,
+        complexity=complexity,
+        documentation=0
     )
 
+    # ==========================================
+    # Test summary
+    # ==========================================
 
-    bandit_medium = extract_int(
-        r"Medium severity issues:\s*(\d+)",
-        report
-    )
-
-
-    bandit_low = extract_int(
-        r"Low severity issues:\s*(\d+)",
-        report
-    )
-
-
-    failed_tests = extract_int(
-        r"failed=(\d+)",
-        report
-    )
-
-
-    passed_tests = extract_int(
+    passed = extract_int(
         r"passed=(\d+)",
         report
     )
 
-
-
-    db = DatabaseManager()
-
-
-    run_id = db.add_run(
-
-        run_number,
-
-        branch,
-
-        commit
-
+    failed = extract_int(
+        r"failed=(\d+)",
+        report
     )
 
-
-    db.add_quality(
-
-        run_id,
-
-        pylint,
-
-        coverage,
-
-        complexity
-
+    skipped = extract_int(
+        r"skipped=(\d+)",
+        report
     )
 
-
-    db.cursor.execute(
-    """
-
-    INSERT INTO tests
-
-    (
-        run_id,
-        total,
-        passed,
-        failed,
-        skipped,
-        duration
+    duration = extract_float(
+        r"=+\s*([0-9.]+)\s*seconds\s*=+",
+        report
     )
 
-    VALUES (?,?,?,?,?,?)
-
-    """,
-
-    (
-
-        run_id,
-
-        passed_tests + failed_tests,
-
-        passed_tests,
-
-        failed_tests,
-
-        0,
-
-        0
-
-    ))
-
-
-
-    db.cursor.execute(
-    """
-
-    INSERT INTO security
-
-    (
-        run_id,
-        high,
-        medium,
-        low
+    db.insert(
+        "test_summary",
+        run_id=run_id,
+        total=passed + failed + skipped,
+        passed=passed,
+        failed=failed,
+        skipped=skipped,
+        duration=duration
     )
 
-    VALUES (?,?,?,?)
+    # ==========================================
+    # Flake8
+    # ==========================================
 
-    """,
+    flake_pattern = re.compile(
+        r"^(.*?):(\d+):(\d+): ([A-Z]\d+) (.+)$",
+        re.MULTILINE
+    )
 
-    (
+    for file, line, column, code, message in flake_pattern.findall(report):
 
-        run_id,
+        db.insert(
+            "flake8_errors",
+            run_id=run_id,
+            file=file,
+            line=int(line),
+            column_number=int(column),
+            code=code,
+            message=message
+        )
 
-        bandit_high,
+    # ==========================================
+    # Black
+    # ==========================================
 
-        bandit_medium,
+    black_pattern = re.compile(
+        r"(reformatted|would reformat|left unchanged)\s+(.+)"
+    )
 
-        bandit_low
+    for status, file in black_pattern.findall(report):
 
-    ))
+        db.insert(
+            "black_files",
+            run_id=run_id,
+            file=file,
+            status=status
+        )
 
+    # ==========================================
+    # Pytest details
+    # ==========================================
 
-    db.connection.commit()
+    pytest_pattern = re.compile(
+        r"([^\s]+)\s+(PASSED|FAILED|SKIPPED)"
+    )
 
+    for test_name, status in pytest_pattern.findall(report):
+
+        db.insert(
+            "pytest_results",
+            run_id=run_id,
+            test_name=test_name,
+            status=status,
+            duration=0,
+            error=""
+        )
 
     db.close()
 
-
-    print(
-        "Database updated successfully"
-    )
-
-
-
-
-
+    print("Python database updated successfully.")
