@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS reports (
             self.connection.commit()
             return self.cursor.lastrowid
 
-        except Exception:
+        except sqlite3.IntegrityError:
             self.cursor.execute(
             """
             SELECT id
