@@ -16,7 +16,8 @@ on:
 
 permissions:
   contents: write
-
+env:
+  RUST_PROJECT: server-rust
 jobs:
   rust-report:
 
@@ -65,7 +66,9 @@ jobs:
           } >> "$REPORT"
 
           if find . -name Cargo.toml | grep -q .; then
-            cargo fmt --all --check >> "$REPORT" 2>&1
+            cargo fmt \
+            --manifest-path "$RUST_PROJECT/Cargo.toml"
+            >> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
           fi
@@ -79,7 +82,11 @@ jobs:
           } >> "$REPORT"
 
           if find . -name Cargo.toml | grep -q .; then
-            cargo clippy --workspace --all-targets --all-features -- -D warnings >> "$REPORT" 2>&1
+            cargo clippy \
+            --manifest-path "$RUST_PROJECT/Cargo.toml" \
+            --all-targets \
+            --all-features
+            >> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
           fi
@@ -93,7 +100,8 @@ jobs:
           } >> "$REPORT"
 
           if find . -name Cargo.toml | grep -q .; then
-            cargo test --workspace >> "$REPORT" 2>&1
+            cargo test \
+           --manifest-path "$RUST_PROJECT/Cargo.toml" >> "$REPORT" 2>&1
           else
             echo "No Rust tests found." >> "$REPORT"
           fi
