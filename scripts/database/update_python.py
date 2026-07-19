@@ -7,7 +7,6 @@ from .utils import (
     extract_int,
 )
 
-from ..database_manager import DatabaseManager
 
 
 REPORT_PATH = os.environ.get(
