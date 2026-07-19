@@ -2,7 +2,6 @@ import json
 import os
 from pathlib import Path
 
-from ..database_manager import DatabaseManager
 
 
 def update_docs_database(db):
