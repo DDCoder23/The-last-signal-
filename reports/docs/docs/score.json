@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-19T23:56:14.332877",
+    "generated": "2026-07-19T23:58:20.374815",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 808,
+    "problem_count": 807,
     "details": {
         "markdown": {
             "score": 17,
@@ -972,12 +972,6 @@
                 "duplicate_titles": 0
             },
             "problems": [
-                {
-                    "file": "commande Linux.md",
-                    "severity": "error",
-                    "message": "commande Linux.md: contient 0 titres H1 (1 attendu).",
-                    "module": "titles"
-                },
                 {
                     "file": "server-rust/README.md",
                     "severity": "error",

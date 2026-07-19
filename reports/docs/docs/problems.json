@@ -930,12 +930,6 @@
         "module": "markdown"
     },
     {
-        "file": "commande Linux.md",
-        "severity": "error",
-        "message": "commande Linux.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
         "file": "server-rust/README.md",
         "severity": "error",
         "message": "server-rust/README.md: contient 0 titres H1 (1 attendu).",

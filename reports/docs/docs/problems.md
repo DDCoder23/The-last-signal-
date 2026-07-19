@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-19 23:56:14
+Generated: 2026-07-19 23:58:20
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|130|
+|❌ Errors|129|
 |⚠️ Warnings|643|
-|**Total**|**808**|
+|**Total**|**807**|
 
 ---
 
@@ -2040,11 +2040,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** markdown
 - **Message :** Contenu très faible.
-
-## ❌ Error
-
-- **Module :** titles
-- **Message :** commande Linux.md: contient 0 titres H1 (1 attendu).
 
 ---
 
