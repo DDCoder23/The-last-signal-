@@ -5,7 +5,7 @@ from pathlib import Path
 from ..database_manager import DatabaseManager
 
 
-def update_docs_database():
+def update_docs_database(db):
 
     score_file = Path("reports/docs/score.txt")
     problems_file = Path("reports/docs/problems.json")
@@ -53,7 +53,7 @@ def update_docs_database():
         "unknown"
     )
 
-    db = DatabaseManager()
+    
 
     run_id = db.add_run(
         run_number,
