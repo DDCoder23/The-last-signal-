@@ -37,52 +37,43 @@ def get_database_data():
 
 
     cursor.execute("""
-    SELECT
+SELECT
 
-        runs.id,
-        runs.run_number,
-        runs.date,
-        runs.branch,
-        runs.commit_hash,
-        runs.status,
+    runs.id,
+    runs.run_number,
+    runs.date,
+    runs.branch,
+    runs.commit_hash,
+    runs.status,
 
-        quality_metrics.pylint,
-        quality_metrics.coverage,
-        quality_metrics.complexity,
-        quality_metrics.documentation,
+    quality_metrics.pylint,
+    quality_metrics.coverage,
+    quality_metrics.complexity,
+    quality_metrics.documentation,
 
-        tests.total,
-        tests.passed,
-        tests.failed,
-        tests.skipped,
-        tests.duration,
+    test_summary.total,
+    test_summary.passed,
+    test_summary.failed,
+    test_summary.skipped,
+    test_summary.duration,
 
-        security.high,
-        security.medium,
-        security.low
+    security_summary.high,
+    security_summary.medium,
+    security_summary.low
 
+FROM runs
 
-    FROM runs
+LEFT JOIN quality_metrics
+ON runs.id = quality_metrics.run_id
 
+LEFT JOIN test_summary
+ON runs.id = test_summary.run_id
 
-    LEFT JOIN quality_metrics
+LEFT JOIN security_summary
+ON runs.id = security_summary.run_id
 
-    ON runs.id = quality_metrics.run_id
-
-
-    LEFT JOIN tests
-
-    ON runs.id = tests.run_id
-
-
-    LEFT JOIN security
-
-    ON runs.id = security.run_id
-
-
-    ORDER BY runs.id ASC
-
-    """)
+ORDER BY runs.id ASC
+""")
 
 
     data = cursor.fetchall()
