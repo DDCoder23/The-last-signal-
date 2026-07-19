@@ -39,9 +39,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-              fetch-depth: 0
-              token: ${{ secrets.GITHUB_TOKEN }}
-              persist-credentials: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -54,25 +54,31 @@ jobs:
       - name: Create report
         shell: bash
         run: |
-
           mkdir -p reports
 
           REPORT="reports/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
-          echo "# Build Report" > "$REPORT"
-          echo "" >> "$REPORT"
-          echo "OS : ${{ matrix.os }}" >> "$REPORT"
-          echo "Date : $(date)" >> "$REPORT"
+          {
+            echo "# Build Report"
+            echo ""
+            echo "Run : ${GITHUB_RUN_NUMBER}"
+            echo "OS : ${{ matrix.os }}"
+            echo "Branch : ${GITHUB_REF_NAME}"
+            echo "Commit : ${GITHUB_SHA}"
+            echo "Date : $(date)"
+            echo ""
+          } > "$REPORT"
 
-      - name: Python syntax
+      - name: Python build
         continue-on-error: true
         shell: bash
         run: |
-
-          echo "" >> "$REPORT"
-          echo "## Python" >> "$REPORT"
+          {
+            echo ""
+            echo "## Python"
+          } >> "$REPORT"
 
           python -m compileall . >> "$REPORT" 2>&1
 
@@ -80,32 +86,57 @@ jobs:
         continue-on-error: true
         shell: bash
         run: |
+          {
+            echo ""
+            echo "## Rust"
+          } >> "$REPORT"
 
-          echo "" >> "$REPORT"
-          echo "## Rust" >> "$REPORT"
-
-          if find . -name Cargo.toml | grep -q .
-          then
-            cargo build --release >> "$REPORT" 2>&1
+          if find . -name Cargo.toml | grep -q .; then
+            cargo build --workspace --release >> "$REPORT" 2>&1
           else
-            echo "Aucun projet Rust trouvé." >> "$REPORT"
+            echo "No Rust project found." >> "$REPORT"
           fi
 
       - name: Godot build
         continue-on-error: true
         shell: bash
         run: |
+          {
+            echo ""
+            echo "## Godot"
+          } >> "$REPORT"
 
-          echo "" >> "$REPORT"
-          echo "## Godot" >> "$REPORT"
+          if [ -f project.godot ]; then
+            echo "Godot export not configured yet." >> "$REPORT"
+          else
+            echo "No Godot project found." >> "$REPORT"
+          fi
 
-          echo "Compilation Godot à configurer." >> "$REPORT"
-
-      - name: Display report
+      - name: Build Summary
         shell: bash
         run: |
+          {
+            echo ""
+            echo "## Summary"
+            echo ""
+            echo "- Python build completed"
+            echo "- Rust build completed"
+            echo "- Godot build completed"
+          } >> "$REPORT"
 
+      - name: Publish Summary
+        shell: bash
+        run: |
           cat "$REPORT" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-report-${{ matrix.os }}
+          path: |
+            reports/**
+            database/**
+            dashboard/**
 
       - name: Commit reports
         uses: ./.github/actions/commit-reports
