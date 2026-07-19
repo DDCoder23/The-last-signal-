@@ -1,25 +1,22 @@
 import os
 import re
 
-
 from ..database_manager import DatabaseManager
 from .utils import read_report
+
 REPORT_PATH = os.environ.get(
     "REPORT",
-    "reports/security-report.md"
+    "reports/security/security-report.md"
 )
-
-
-
 
 
 def update_security_database():
 
     report = read_report(REPORT_PATH)
 
-    run_number = int(os.environ.get("GITHUB_RUN_NUMBER", 0))
-    branch = os.environ.get("GITHUB_REF", "unknown")
-    commit = os.environ.get("GITHUB_SHA", "unknown")
+    run_number = int(os.getenv("GITHUB_RUN_NUMBER", 0))
+    branch = os.getenv("GITHUB_REF_NAME", "unknown")
+    commit = os.getenv("GITHUB_SHA", "unknown")
 
     db = DatabaseManager()
 
@@ -29,9 +26,9 @@ def update_security_database():
         commit
     )
 
-    # ----------------------------
-    # Statistiques générales
-    # ----------------------------
+    ###########################################
+    # Résumé général
+    ###########################################
 
     high = len(re.findall(r"Severity:\s*High", report))
     medium = len(re.findall(r"Severity:\s*Medium", report))
@@ -48,32 +45,18 @@ def update_security_database():
         )
     )
 
-    db.cursor.execute(
-        """
-        INSERT INTO security
-        (
-            run_id,
-            high,
-            medium,
-            low,
-            total,
-            files
-        )
-        VALUES (?,?,?,?,?,?)
-        """,
-        (
-            run_id,
-            high,
-            medium,
-            low,
-            total,
-            files
-        )
+    db.add_security(
+        run_id,
+        high,
+        medium,
+        low,
+        total,
+        files
     )
 
-    # ----------------------------
+    ###########################################
     # Détails des vulnérabilités
-    # ----------------------------
+    ###########################################
 
     pattern = re.compile(
         r">> Issue: \[(.*?)\].*?"
@@ -98,39 +81,18 @@ def update_security_database():
         column
     ) in pattern.findall(report):
 
-        db.cursor.execute(
-            """
-            INSERT INTO security_issues
-            (
-                run_id,
-                test,
-                severity,
-                confidence,
-                cwe,
-                info,
-                file,
-                line,
-                column
-            )
-            VALUES (?,?,?,?,?,?,?,?,?)
-            """,
-            (
-                run_id,
-                test.strip(),
-                severity.strip(),
-                confidence.strip(),
-                cwe.strip(),
-                info.strip(),
-                file.strip(),
-                int(line),
-                int(column),
-            )
+        db.add_security_issue(
+            run_id=run_id,
+            test=test.strip(),
+            severity=severity.strip(),
+            confidence=confidence.strip(),
+            cwe=cwe.strip(),
+            info=info.strip(),
+            file=file.strip(),
+            line=int(line),
+            column=int(column),
         )
 
-    db.connection.commit()
     db.close()
 
     print("Security database updated successfully")
-
-
-
