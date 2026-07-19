@@ -16,6 +16,9 @@ def update_database():
 
     update_security_database(db)
     update_rust_database(db)
+    db.close()
+
+    print("Toutes les bases ont été mises à jour.")
 
     
 
