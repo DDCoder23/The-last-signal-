@@ -93,6 +93,6 @@ def update_security_database(db):
             column=int(column),
         )
 
-    db.close()
+    
 
     print("Security database updated successfully")
