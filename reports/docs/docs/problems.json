@@ -4198,61 +4198,13 @@
     {
         "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La fonction 'add_quality' ne possède pas de docstring.",
+        "message": "La fonction 'insert' ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "scripts/database_manager.py",
         "severity": "warning",
-        "message": "La fonction 'add_quality' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_flake8_error' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_flake8_error' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_black_file' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_black_file' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_bandit_issue' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_bandit_issue' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_test' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "scripts/database_manager.py",
-        "severity": "warning",
-        "message": "La fonction 'add_test' ne possède pas d'annotations de type.",
+        "message": "La fonction 'insert' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {

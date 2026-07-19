@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-19 00:44:55
+Generated: 2026-07-19 01:08:19
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|647|
-|**Total**|**812**|
+|⚠️ Warnings|639|
+|**Total**|**804**|
 
 ---
 
@@ -3946,52 +3946,12 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_quality' ne possède pas de docstring.
+- **Message :** La fonction 'insert' ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_quality' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_flake8_error' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_flake8_error' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_black_file' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_black_file' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_bandit_issue' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_bandit_issue' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_test' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_test' ne possède pas d'annotations de type.
+- **Message :** La fonction 'insert' ne possède pas d'annotations de type.
 
 ## ⚠️ Warning
 

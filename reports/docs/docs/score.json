@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-19T00:44:55.551622",
+    "generated": "2026-07-19T01:08:19.730802",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 812,
+    "problem_count": 804,
     "details": {
         "markdown": {
             "score": 17,
@@ -1820,7 +1820,7 @@
             "results": {
                 "modules": 43,
                 "classes": 43,
-                "functions": 257,
+                "functions": 253,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
@@ -4280,61 +4280,13 @@
                 {
                     "file": "scripts/database_manager.py",
                     "severity": "warning",
-                    "message": "La fonction 'add_quality' ne possède pas de docstring.",
+                    "message": "La fonction 'insert' ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "scripts/database_manager.py",
                     "severity": "warning",
-                    "message": "La fonction 'add_quality' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_flake8_error' ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_flake8_error' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_black_file' ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_black_file' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_bandit_issue' ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_bandit_issue' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_test' ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "scripts/database_manager.py",
-                    "severity": "warning",
-                    "message": "La fonction 'add_test' ne possède pas d'annotations de type.",
+                    "message": "La fonction 'insert' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
