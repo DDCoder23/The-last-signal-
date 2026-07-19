@@ -1,7 +1,7 @@
 import os
 import re
 
-from ..database_manager import DatabaseManager
+
 from .utils import read_report
 
 REPORT_PATH = os.environ.get(
@@ -10,7 +10,7 @@ REPORT_PATH = os.environ.get(
 )
 
 
-def update_security_database():
+def update_security_database(db):
 
     report = read_report(REPORT_PATH)
 
@@ -18,7 +18,7 @@ def update_security_database():
     branch = os.getenv("GITHUB_REF_NAME", "unknown")
     commit = os.getenv("GITHUB_SHA", "unknown")
 
-    db = DatabaseManager()
+    
 
     run_id = db.add_run(
         run_number,
