@@ -7,7 +7,7 @@ from .utils import (
     extract_float,
 )
 
-from ..database_manager import DatabaseManager
+
 
 
 REPORT_PATH = os.environ.get(
@@ -16,7 +16,7 @@ REPORT_PATH = os.environ.get(
 )
 
 
-def update_rust_database():
+def update_rust_database(db):
 
     report = read_report(REPORT_PATH)
 
@@ -38,7 +38,7 @@ def update_rust_database():
         "unknown"
     )
 
-    db = DatabaseManager()
+
 
     run_id = db.add_run(
         run_number,
