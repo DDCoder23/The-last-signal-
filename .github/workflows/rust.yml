@@ -18,160 +18,91 @@ permissions:
   contents: write
 
 jobs:
-  rust-check:
-    name: Rust Tests & Report
+  rust-report:
+
+    name: Rust Quality Report
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
           persist-credentials: true
 
-      - uses: dtolnay/rust-toolchain@stable
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
 
-      - uses: Swatinem/rust-cache@v2
+      - name: Cache Cargo
+        uses: Swatinem/rust-cache@v2
 
-      - name: Create report directory
+      - name: Create report
         run: |
-          mkdir -p reports/rust
+          mkdir -p reports
 
-      - name: Generate Rust report
-        shell: bash
+          REPORT="reports/rust-report-${GITHUB_RUN_NUMBER}.md"
+
+          echo "REPORT=$REPORT" >> $GITHUB_ENV
+
+          {
+            echo "# Rust Report"
+            echo ""
+            echo "Run : ${GITHUB_RUN_NUMBER}"
+            echo "Branch : ${GITHUB_REF_NAME}"
+            echo "Commit : ${GITHUB_SHA}"
+            echo "Date : $(date)"
+            echo ""
+          } > "$REPORT"
+
+      - name: Cargo fmt
+        continue-on-error: true
         run: |
+          {
+            echo ""
+            echo "## Cargo fmt"
+          } >> "$REPORT"
 
-          REPORT=reports/rust/rust-report.md
-
-          echo "# Rust CI Report" > $REPORT
-          echo "" >> $REPORT
-          echo "Date: $(date)" >> $REPORT
-          echo "Branch: $GITHUB_REF_NAME" >> $REPORT
-          echo "Commit: $GITHUB_SHA" >> $REPORT
-          echo "" >> $REPORT
-
-          if ! find . -name Cargo.toml | grep -q . ; then
-
-            echo "No Rust project found." >> $REPORT
-
-            echo "" >> $REPORT
-            echo "Clippy warnings: 0" >> $REPORT
-            echo "Passed tests: 0" >> $REPORT
-            echo "Failed tests: 0" >> $REPORT
-            echo "Coverage: 0" >> $REPORT
-            echo "Cargo fmt: 0" >> $REPORT
-            echo "Cargo audit: 0" >> $REPORT
-
-            exit 0
-
-          fi
-
-          ####################################
-          # Cargo fmt
-          ####################################
-
-          echo "## Cargo fmt" >> $REPORT
-
-          cargo fmt --all --check \
-            >> $REPORT 2>&1 || true
-
-          if cargo fmt --all --check >/dev/null 2>&1
-          then
-              echo "Cargo fmt: 0" >> $REPORT
+          if find . -name Cargo.toml | grep -q .; then
+            cargo fmt --all --check >> "$REPORT" 2>&1
           else
-              echo "Cargo fmt: 1" >> $REPORT
+            echo "No Rust project found." >> "$REPORT"
           fi
 
-          echo "" >> $REPORT
+      - name: Cargo clippy
+        continue-on-error: true
+        run: |
+          {
+            echo ""
+            echo "## Cargo clippy"
+          } >> "$REPORT"
 
-          ####################################
-          # Clippy
-          ####################################
+          if find . -name Cargo.toml | grep -q .; then
+            cargo clippy --workspace --all-targets --all-features -- -D warnings >> "$REPORT" 2>&1
+          else
+            echo "No Rust project found." >> "$REPORT"
+          fi
 
-          echo "## Cargo clippy" >> $REPORT
+      - name: Cargo test
+        continue-on-error: true
+        run: |
+          {
+            echo ""
+            echo "## Cargo test"
+          } >> "$REPORT"
 
-          cargo clippy \
-            --all-targets \
-            --all-features \
-            > clippy.log 2>&1 || true
+          if find . -name Cargo.toml | grep -q .; then
+            cargo test --workspace >> "$REPORT" 2>&1
+          else
+            echo "No Rust tests found." >> "$REPORT"
+          fi
 
-          cat clippy.log >> $REPORT
-
-          WARNINGS=$(grep -c "warning:" clippy.log || true)
-
-          echo "" >> $REPORT
-          echo "Clippy warnings: $WARNINGS" >> $REPORT
-
-          ####################################
-          # Tests
-          ####################################
-
-          echo "" >> $REPORT
-          echo "## Cargo test" >> $REPORT
-
-          cargo test \
-            > tests.log 2>&1 || true
-
-          cat tests.log >> $REPORT
-
-          PASSED=$(grep -c " ... ok" tests.log || true)
-          FAILED=$(grep -c " ... FAILED" tests.log || true)
-
-          echo "" >> $REPORT
-          echo "Passed tests: $PASSED" >> $REPORT
-          echo "Failed tests: $FAILED" >> $REPORT
-
-          ####################################
-          # Build
-          ####################################
-
-          echo "" >> $REPORT
-          echo "## Cargo build" >> $REPORT
-
-          cargo build --release \
-            >> $REPORT 2>&1 || true
-
-          ####################################
-          # Coverage
-          ####################################
-
-          echo "" >> $REPORT
-
-          echo "Coverage: 0" >> $REPORT
-
-          ####################################
-          # Cargo audit
-          ####################################
-
-          cargo install cargo-audit --locked >/dev/null 2>&1 || true
-
-          echo "" >> $REPORT
-          echo "## Cargo audit" >> $REPORT
-
-          cargo audit \
-            > audit.log 2>&1 || true
-
-          cat audit.log >> $REPORT
-
-          ADVISORIES=$(grep -c "Crate:" audit.log || true)
-
-          echo "" >> $REPORT
-          echo "Cargo audit: $ADVISORIES" >> $REPORT
-
-      - name: Publish summary
-        run: cat reports/rust/rust-report.md >> $GITHUB_STEP_SUMMARY
-
-      - name: Upload report
-        uses: actions/upload-artifact@v4
-        with:
-          name: rust-report
-          path: |
-            reports/**
-            database/**
-            dashboard/**
+      - name: Publish Summary
+        run: cat "$REPORT" >> $GITHUB_STEP_SUMMARY
 
       - name: Commit reports
         uses: ./.github/actions/commit-reports
         with:
           report-type: rust
-          commit-message: "Rust CI Report #${{ github.run_number }}"
+          commit-message: "Rust Report #${{ github.run_number }}"
