@@ -16,7 +16,8 @@ on:
 
 permissions:
   contents: write
-
+env:
+  RUST_PROJECT: server-rust
 jobs:
 
   build:
@@ -92,7 +93,8 @@ jobs:
           } >> "$REPORT"
 
           if find . -name Cargo.toml | grep -q .; then
-            cargo build --workspace --release >> "$REPORT" 2>&1
+            cargo build --manifest-path "$RUST_PROJECT/Cargo.toml" \
+            --release >> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
           fi
