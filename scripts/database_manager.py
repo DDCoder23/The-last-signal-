@@ -215,8 +215,8 @@ CREATE TABLE IF NOT EXISTS reports (
         status="success"
     ):
 
-
-        self.cursor.execute(
+        try:
+            self.cursor.execute(
         """
         INSERT INTO runs
         (
@@ -244,11 +244,11 @@ CREATE TABLE IF NOT EXISTS reports (
             status
 
         ))
+            self.connection.commit()
+            return self.cursor.lastrowid
 
-        self.connection.commit()
-
-
-        self.cursor.execute(
+        except Exception:
+            self.cursor.execute(
             """
             SELECT id
             FROM runs
@@ -256,9 +256,7 @@ CREATE TABLE IF NOT EXISTS reports (
             """,
             (run_number,)
         )
-
-
-        return self.cursor.fetchone()[0]
+            return self.cursor.fetchone()[0]
 
 
 
