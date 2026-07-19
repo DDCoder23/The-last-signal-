@@ -4220,6 +4220,30 @@
         "module": "python"
     },
     {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_security' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_security' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_security_issue' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/database_manager.py",
+        "severity": "warning",
+        "message": "La fonction 'add_security_issue' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "scripts/documentation/python_docs.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",

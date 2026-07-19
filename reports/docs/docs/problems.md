@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-19 02:15:26
+Generated: 2026-07-19 02:20:10
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|639|
-|**Total**|**804**|
+|⚠️ Warnings|643|
+|**Total**|**808**|
 
 ---
 
@@ -3962,6 +3962,26 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'close' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security_issue' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security_issue' ne possède pas d'annotations de type.
 
 ---
 

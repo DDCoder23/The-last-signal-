@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-19T02:15:26.739714",
+    "generated": "2026-07-19T02:20:10.839223",
     "score": 52,
     "status": "Assez bon",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 804,
+    "problem_count": 808,
     "details": {
         "markdown": {
             "score": 17,
@@ -1820,7 +1820,7 @@
             "results": {
                 "modules": 43,
                 "classes": 43,
-                "functions": 253,
+                "functions": 255,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
@@ -4299,6 +4299,30 @@
                     "file": "scripts/database_manager.py",
                     "severity": "warning",
                     "message": "La fonction 'close' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security_issue' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security_issue' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
