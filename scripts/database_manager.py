@@ -418,7 +418,7 @@ class DatabaseManager:
             medium,
             low,
             total,
-            files
+            affected_files
         )
         VALUES (?,?,?,?,?,?)
         """,
