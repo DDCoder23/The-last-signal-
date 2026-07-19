@@ -167,6 +167,6 @@ def update_python_database(db):
             error=""
         )
 
-    db.close()
+    
 
     print("Python database updated successfully.")
