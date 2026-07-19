@@ -10,12 +10,15 @@ from .utils import (
 from ..database_manager import DatabaseManager
 
 
-REPORT = "reports/python/python-report.md"
+REPORT_PATH = os.environ.get(
+    "REPORT",
+    "reports/python/python-report.md"
+)
 
 
 def update_python_database():
 
-    report = read_report(REPORT)
+    report = read_report(REPORT_PATH)
 
     if not report:
         print("Python report not found.")
