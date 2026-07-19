@@ -411,7 +411,7 @@ class DatabaseManager:
     def add_security(self,run_id,high,medium,low,total,files):
         self.cursor.execute(
         """
-        INSERT INTO security
+        INSERT INTO security_summary
         (
             run_id,
             high,
