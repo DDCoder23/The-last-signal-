@@ -3,6 +3,7 @@ from .database.update_docs import update_docs_database
 from .database.update_security import update_security_database
 from .database.update_rust import update_rust_database
 from .database.update_performance import update_performance_database
+from .database_manager import DatabaseManager
 
 
 def update_database():
