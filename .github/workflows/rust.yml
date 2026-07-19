@@ -13,6 +13,7 @@ on:
 
   schedule:
     - cron: "7 * * * *"
+
 permissions:
   contents: write
 
@@ -22,96 +23,155 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Récupération du dépôt
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-              fetch-depth: 0
-              token: ${{ secrets.GITHUB_TOKEN }}
-              persist-credentials: true
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
-      # Installation de Rust
-      - name: Install Rust
-        uses: dtolnay/rust-toolchain@stable
+      - uses: dtolnay/rust-toolchain@stable
 
-      # Cache Cargo
-      - name: Cache Cargo
-        uses: Swatinem/rust-cache@v2
+      - uses: Swatinem/rust-cache@v2
 
-      # Création du rapport
-      - name: Create report
+      - name: Create report directory
         run: |
-          echo "# Rapport Rust - The Last Signal" > rust-report.md
-          echo "" >> rust-report.md
-          echo "Date : $(date)" >> rust-report.md
-          echo "" >> rust-report.md
+          mkdir -p reports/rust
 
-      # Vérification du format
-      - name: Cargo fmt
-        continue-on-error: true
+      - name: Generate Rust report
+        shell: bash
         run: |
-          echo "## Cargo fmt" >> rust-report.md
 
-          if find . -name Cargo.toml | grep -q .; then
-            cargo fmt --all --check >> rust-report.md 2>&1
-          else
-            echo "Aucun projet Rust trouvé." >> rust-report.md
+          REPORT=reports/rust/rust-report.md
+
+          echo "# Rust CI Report" > $REPORT
+          echo "" >> $REPORT
+          echo "Date: $(date)" >> $REPORT
+          echo "Branch: $GITHUB_REF_NAME" >> $REPORT
+          echo "Commit: $GITHUB_SHA" >> $REPORT
+          echo "" >> $REPORT
+
+          if ! find . -name Cargo.toml | grep -q . ; then
+
+            echo "No Rust project found." >> $REPORT
+
+            echo "" >> $REPORT
+            echo "Clippy warnings: 0" >> $REPORT
+            echo "Passed tests: 0" >> $REPORT
+            echo "Failed tests: 0" >> $REPORT
+            echo "Coverage: 0" >> $REPORT
+            echo "Cargo fmt: 0" >> $REPORT
+            echo "Cargo audit: 0" >> $REPORT
+
+            exit 0
+
           fi
 
-      # Analyse Clippy
-      - name: Cargo clippy
-        continue-on-error: true
-        run: |
-          echo "" >> rust-report.md
-          echo "## Cargo clippy" >> rust-report.md
+          ####################################
+          # Cargo fmt
+          ####################################
 
-          if find . -name Cargo.toml | grep -q .; then
-            cargo clippy --all-targets --all-features -- -D warnings >> rust-report.md 2>&1
+          echo "## Cargo fmt" >> $REPORT
+
+          cargo fmt --all --check \
+            >> $REPORT 2>&1 || true
+
+          if cargo fmt --all --check >/dev/null 2>&1
+          then
+              echo "Cargo fmt: 0" >> $REPORT
           else
-            echo "Aucun projet Rust trouvé." >> rust-report.md
+              echo "Cargo fmt: 1" >> $REPORT
           fi
 
-      # Tests
-      - name: Cargo test
-        continue-on-error: true
-        run: |
-          echo "" >> rust-report.md
-          echo "## Cargo test" >> rust-report.md
+          echo "" >> $REPORT
 
-          if find . -name Cargo.toml | grep -q .; then
-            cargo test >> rust-report.md 2>&1
-          else
-            echo "Aucun test Rust trouvé." >> rust-report.md
-          fi
+          ####################################
+          # Clippy
+          ####################################
 
-      # Compilation
-      - name: Cargo build
-        continue-on-error: true
-        run: |
-          echo "" >> rust-report.md
-          echo "## Cargo build" >> rust-report.md
+          echo "## Cargo clippy" >> $REPORT
 
-          if find . -name Cargo.toml | grep -q .; then
-            cargo build --release >> rust-report.md 2>&1
-          else
-            echo "Aucune compilation Rust effectuée." >> rust-report.md
-          fi
+          cargo clippy \
+            --all-targets \
+            --all-features \
+            > clippy.log 2>&1 || true
 
-      # Résumé GitHub
+          cat clippy.log >> $REPORT
+
+          WARNINGS=$(grep -c "warning:" clippy.log || true)
+
+          echo "" >> $REPORT
+          echo "Clippy warnings: $WARNINGS" >> $REPORT
+
+          ####################################
+          # Tests
+          ####################################
+
+          echo "" >> $REPORT
+          echo "## Cargo test" >> $REPORT
+
+          cargo test \
+            > tests.log 2>&1 || true
+
+          cat tests.log >> $REPORT
+
+          PASSED=$(grep -c " ... ok" tests.log || true)
+          FAILED=$(grep -c " ... FAILED" tests.log || true)
+
+          echo "" >> $REPORT
+          echo "Passed tests: $PASSED" >> $REPORT
+          echo "Failed tests: $FAILED" >> $REPORT
+
+          ####################################
+          # Build
+          ####################################
+
+          echo "" >> $REPORT
+          echo "## Cargo build" >> $REPORT
+
+          cargo build --release \
+            >> $REPORT 2>&1 || true
+
+          ####################################
+          # Coverage
+          ####################################
+
+          echo "" >> $REPORT
+
+          echo "Coverage: 0" >> $REPORT
+
+          ####################################
+          # Cargo audit
+          ####################################
+
+          cargo install cargo-audit --locked >/dev/null 2>&1 || true
+
+          echo "" >> $REPORT
+          echo "## Cargo audit" >> $REPORT
+
+          cargo audit \
+            > audit.log 2>&1 || true
+
+          cat audit.log >> $REPORT
+
+          ADVISORIES=$(grep -c "Crate:" audit.log || true)
+
+          echo "" >> $REPORT
+          echo "Cargo audit: $ADVISORIES" >> $REPORT
+
       - name: Publish summary
-        run: cat rust-report.md >> $GITHUB_STEP_SUMMARY
+        run: cat reports/rust/rust-report.md >> $GITHUB_STEP_SUMMARY
 
-      # Sauvegarde du rapport
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
           name: rust-report
-          path: 
-             reports/**
-             database/**
-             dashboard/**
+          path: |
+            reports/**
+            database/**
+            dashboard/**
+
       - name: Commit reports
         uses: ./.github/actions/commit-reports
         with:
-           report-type: rust
-           commit-message: "Rust CI Report #${{ github.run_number }}"
+          report-type: rust
+          commit-message: "Rust CI Report #${{ github.run_number }}"
