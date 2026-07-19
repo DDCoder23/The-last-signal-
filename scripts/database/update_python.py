@@ -16,7 +16,7 @@ REPORT_PATH = os.environ.get(
 )
 
 
-def update_python_database():
+def update_python_database(db):
 
     report = read_report(REPORT_PATH)
 
@@ -41,7 +41,7 @@ def update_python_database():
         "unknown"
     )
 
-    db = DatabaseManager()
+    
 
     run_id = db.add_run(
         run_number,
