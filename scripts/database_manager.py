@@ -435,7 +435,7 @@ class DatabaseManager:
     def add_security_issue(self,run_id,test,severity,confidence,cwe,info,file,line,column):
         self.cursor.execute(
         """
-        INSERT INTO security_issues
+        INSERT INTO bandit_issues
         (
             run_id,
             test,
