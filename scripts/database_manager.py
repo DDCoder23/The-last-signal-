@@ -445,7 +445,7 @@ class DatabaseManager:
             info,
             file,
             line,
-            column
+            column_number
         )
         VALUES (?,?,?,?,?,?,?,?,?)
         """,
