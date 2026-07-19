@@ -1,26 +1,27 @@
 import json
+import os
 from pathlib import Path
-
-
 
 from ..database_manager import DatabaseManager
 
 
 def update_docs_database():
 
-    score = Path("reports/docs/score.txt")
+    score_file = Path("reports/docs/score.txt")
+    problems_file = Path("reports/docs/problems.json")
 
-    problems = Path("reports/docs/problems.json")
-
-    if not score.exists():
+    if not score_file.exists():
         return
 
-    score = int(score.read_text())
+    score = int(score_file.read_text().strip())
 
-    if problems.exists():
+    errors = 0
+    warnings = 0
+
+    if problems_file.exists():
 
         data = json.loads(
-            problems.read_text(
+            problems_file.read_text(
                 encoding="utf-8"
             )
         )
@@ -35,36 +36,52 @@ def update_docs_database():
             for p in data
         )
 
-    else:
-
-        errors = 0
-        warnings = 0
-
-    db = DatabaseManager()
-
-    run = db.add_run(...)
-
-    db.cursor.execute(
-        """
-        INSERT INTO documentation
-        (
-            run_id,
-            score,
-            errors,
-            warnings
-        )
-
-        VALUES (?,?,?,?)
-        """,
-
-        (
-            run,
-            score,
-            errors,
-            warnings
+    run_number = int(
+        os.environ.get(
+            "GITHUB_RUN_NUMBER",
+            0
         )
     )
 
-    db.connection.commit()
+    branch = os.environ.get(
+        "GITHUB_REF",
+        "unknown"
+    )
+
+    commit = os.environ.get(
+        "GITHUB_SHA",
+        "unknown"
+    )
+
+    db = DatabaseManager()
+
+    run_id = db.add_run(
+        run_number,
+        branch,
+        commit
+    )
+
+    db.insert(
+        "documentation_summary",
+        run_id=run_id,
+        score=score,
+        errors=errors,
+        warnings=warnings
+    )
+
+    if problems_file.exists():
+
+        for problem in data:
+
+            db.insert(
+                "doc_problems",
+                run_id=run_id,
+                file=problem.get("file", ""),
+                severity=problem.get("severity", ""),
+                module=problem.get("module", ""),
+                message=problem.get("message", "")
+            )
 
     db.close()
+
+    print("Documentation database updated successfully")
