@@ -272,11 +272,19 @@ jobs:
       - name: Run tests
         continue-on-error: true
         run: |
+              pytest -v --tb=short > pytest.txt 2>&1 || true
               echo "## 🧪 Pytest" >> "$REPORT"
+              echo "===== PYTEST OUTPUT ====="
+              cat pytest.txt
+              echo "========================="
+
+              echo "===== REPORT AFTER WRITE ====="
+              cat "$REPORT"
+              echo "=============================="
 
                
 
-               pytest -v --tb=short > pytest.txt 2>&1 || true
+               
                if grep -q "collected 0 items" pytest.txt; then
                   echo "⚠️ Aucun test trouvé." >> "$REPORT"
                else
