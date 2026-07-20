@@ -1,22 +1,22 @@
 {
-    "generated": "2026-07-20 07:28:15.760667",
+    "generated": "2026-07-20 07:35:41.275760",
     "summary": {
         "total_runs": 2,
-        "average_quality": 18.27,
+        "average_quality": 17.82,
         "average_coverage": 0.0,
-        "average_pylint": 6.09,
-        "security_errors": 88
+        "average_pylint": 5.94,
+        "security_errors": 78
     },
     "history": [
         {
-            "run": 593,
-            "date": "2026-07-20T07:28:15.641307",
+            "run": 595,
+            "date": "2026-07-20T07:35:41.157707",
             "branch": "refs/heads/main",
-            "commit": "398c699523250be65c0116d89fd9f624b75b1646",
+            "commit": "793ef09a87d72d36354b02e32e87476ed2d27a55",
             "status": "success",
-            "quality": 18.27,
+            "quality": 17.82,
             "coverage": 0,
-            "pylint": 6.09,
+            "pylint": 5.94,
             "complexity": 3.3866666666666667,
             "tests": {
                 "total": 0,
@@ -27,8 +27,8 @@
             },
             "security": {
                 "high": 0,
-                "medium": 6,
-                "low": 38
+                "medium": 2,
+                "low": 37
             },
             "documentation": {
                 "score": 0,
@@ -36,14 +36,14 @@
             }
         },
         {
-            "run": 593,
-            "date": "2026-07-20T07:28:15.641307",
+            "run": 595,
+            "date": "2026-07-20T07:35:41.157707",
             "branch": "refs/heads/main",
-            "commit": "398c699523250be65c0116d89fd9f624b75b1646",
+            "commit": "793ef09a87d72d36354b02e32e87476ed2d27a55",
             "status": "success",
-            "quality": 18.27,
+            "quality": 17.82,
             "coverage": 0,
-            "pylint": 6.09,
+            "pylint": 5.94,
             "complexity": 3.3866666666666667,
             "tests": {
                 "total": 0,
@@ -54,8 +54,8 @@
             },
             "security": {
                 "high": 0,
-                "medium": 6,
-                "low": 38
+                "medium": 2,
+                "low": 37
             },
             "documentation": {
                 "score": 0,
