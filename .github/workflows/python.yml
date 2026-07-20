@@ -180,6 +180,11 @@ jobs:
           | head -10 | awk '{
           printf("| %d | %s | %d |\n", NR, $2, $1)
           }' >> "$REPORT"
+          echo "> 💡 Vous ne connaissez pas une erreur Flake8 ?" >> "$REPORT"
+          echo ">" >> "$REPORT"
+          echo "> Consultez le guide complet :" >> "$REPORT"
+          echo "> https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/QRB-flake8_error.md" >> "$REPORT"
+          echo "" >> "$REPORT"
 
 
       - name: Quality analysis
