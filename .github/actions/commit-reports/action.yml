@@ -3,6 +3,7 @@ name: Commit Reports
 description: Commit generated reports to the ci-reports branch
 
 inputs:
+
   report-type:
     description: Type de rapport (python, rust, security...)
     required: true
@@ -33,6 +34,7 @@ runs:
         cp -r reports /tmp/ci-backup/ 2>/dev/null || true
         cp -r database /tmp/ci-backup/ 2>/dev/null || true
         cp -r dashboard /tmp/ci-backup/ 2>/dev/null || true
+        
 
     - shell: bash
       run: |
@@ -83,7 +85,7 @@ runs:
           exit 0
         fi
 
-        git commit -m "auto update du jeu"
+        git commit -m ${{ inputs.commit-message }}
         for i in 1 2 3
         do
           git pull --rebase origin ${{ inputs.branch }}
