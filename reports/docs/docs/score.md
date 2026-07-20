@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 05:13:05
+**Date :** 2026-07-20 05:21:13
 
 # 48/100
 
@@ -5501,7 +5501,7 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
-# 📄 server-rust/README.md
+# 📄 server_rust/README.md
 
 ## ❌ Error
 - **Module :** markdown
@@ -5511,7 +5511,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ❌ Error
 - **Module :** titles
-- **Message :** server-rust/README.md: contient 0 titres H1 (1 attendu).
+- **Message :** server_rust/README.md: contient 0 titres H1 (1 attendu).
 
 - **module :** titles
 

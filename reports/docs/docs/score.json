@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T05:13:05.140433",
+    "generated": "2026-07-20T05:21:12.998187",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -35,7 +35,7 @@
                     "module": "markdown"
                 },
                 {
-                    "file": "server-rust/README.md",
+                    "file": "server_rust/README.md",
                     "severity": "error",
                     "message": "Fichier vide.",
                     "module": "markdown"
@@ -1069,9 +1069,9 @@
             },
             "problems": [
                 {
-                    "file": "server-rust/README.md",
+                    "file": "server_rust/README.md",
                     "severity": "error",
-                    "message": "server-rust/README.md: contient 0 titres H1 (1 attendu).",
+                    "message": "server_rust/README.md: contient 0 titres H1 (1 attendu).",
                     "module": "titles"
                 },
                 {
