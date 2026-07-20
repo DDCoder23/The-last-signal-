@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 05:09:01
+Generated: 2026-07-20 05:12:45
 
 ## Summary
 
@@ -1850,7 +1850,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 client-python/client.py
+# 📄 client_python/client.py
 
 ## ⚠️ Warning
 

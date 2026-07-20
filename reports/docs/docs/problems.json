@@ -2094,222 +2094,6 @@
         "module": "python"
     },
     {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La classe 'Joueur' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La classe 'Map3D' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La classe 'VispyWidget' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La classe 'MainMenuWidget' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La classe 'EmptyWidget' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La classe 'MainFrame' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'main' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'main' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'get_height' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'get_height' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'on_key_vispy' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'on_key_vispy' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'refresh_joueur' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'refresh_joueur' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'update_info' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'update_info' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'show_menu' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'show_menu' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'start_new_game' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'start_new_game' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'start_load_game' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'start_load_game' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'show_empty' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'clear_layout' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'start_game' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'start_game' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'load_game_from_slot' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'load_game_from_slot' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'show_save_select' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'show_save_select' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'layout' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'closeEvent' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'closeEvent' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'on_exit' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "client-python/client.py",
-        "severity": "warning",
-        "message": "La fonction 'on_exit' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
         "file": "Ancien/jet_de_des.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -4365,6 +4149,222 @@
         "file": "Ancien/inventaire.py",
         "severity": "warning",
         "message": "La fonction 'acheter_objet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La classe 'Joueur' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La classe 'Map3D' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La classe 'VispyWidget' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La classe 'MainMenuWidget' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La classe 'EmptyWidget' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La classe 'MainFrame' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'main' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'main' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'get_height' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'get_height' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'on_key_vispy' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'on_key_vispy' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'refresh_joueur' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'refresh_joueur' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'update_info' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'update_info' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'show_menu' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'show_menu' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'start_new_game' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'start_new_game' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'start_load_game' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'start_load_game' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'show_empty' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'clear_layout' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'start_game' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'start_game' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'load_game_from_slot' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'load_game_from_slot' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'show_save_select' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'show_save_select' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'layout' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'closeEvent' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'closeEvent' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'on_exit' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'on_exit' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
