@@ -4590,6 +4590,12 @@
         "module": "python"
     },
     {
+        "file": "tests/__init__.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
         "file": "scripts/documentation/python_docs.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",

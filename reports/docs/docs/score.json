@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T05:39:31.532787",
+    "generated": "2026-07-20T05:39:42.810544",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 861,
+    "problem_count": 862,
     "details": {
         "markdown": {
             "score": 17,
@@ -2140,7 +2140,7 @@
             "score": 0,
             "max_score": 20,
             "results": {
-                "modules": 45,
+                "modules": 46,
                 "classes": 43,
                 "functions": 256,
                 "documented_modules": 0,
@@ -4669,6 +4669,12 @@
                     "file": "tests/test_client.py",
                     "severity": "warning",
                     "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "tests/__init__.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
                     "module": "python"
                 },
                 {

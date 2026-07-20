@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 05:39:31
+**Date :** 2026-07-20 05:39:42
 
 # 48/100
 
@@ -5522,6 +5522,14 @@ TypeError: result doit être un dict, reçu int
 - **Message :** server_rust/README.md: contient 0 titres H1 (1 attendu).
 
 - **module :** titles
+
+# 📄 tests/__init__.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
 
 # 📄 tests/test_client.py
 

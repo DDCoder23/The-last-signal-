@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20 05:39:32.511841",
+    "generated": "2026-07-20 05:39:43.876794",
     "summary": {
         "total_runs": 1,
         "average_quality": 19.6,
@@ -9,10 +9,10 @@
     },
     "history": [
         {
-            "run": 455,
-            "date": "2026-07-20T05:39:31.908038",
+            "run": 456,
+            "date": "2026-07-20T05:39:43.140483",
             "branch": "refs/heads/main",
-            "commit": "adeea71af21666b8ab0e1db246d950ab18bb742d",
+            "commit": "dd88088d619d66026ac4d758b5f5389a5dc61a2c",
             "status": "success",
             "quality": 19.6,
             "coverage": 0,
@@ -2159,7 +2159,7 @@
                         "score": 0,
                         "max_score": 20,
                         "results": {
-                            "modules": 45,
+                            "modules": 46,
                             "classes": 43,
                             "functions": 256,
                             "documented_modules": 0,
@@ -4688,6 +4688,12 @@
                                 "file": "tests/test_client.py",
                                 "severity": "warning",
                                 "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
+                                "module": "python"
+                            },
+                            {
+                                "file": "tests/__init__.py",
+                                "severity": "warning",
+                                "message": "Le module ne possède pas de docstring.",
                                 "module": "python"
                             },
                             {
