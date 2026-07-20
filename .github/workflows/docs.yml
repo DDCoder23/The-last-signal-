@@ -136,9 +136,7 @@ jobs:
         run: |
           
           python scripts/transformateur.py
-          git add .
-          git commit -m "Bom supprimé"
-          git push
+          mkdir -p reports/docs
 
           python scripts/docs_score.py
 
