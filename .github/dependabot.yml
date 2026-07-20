@@ -15,3 +15,12 @@ updates:
         - dependency-name: "numpy"
         - dependency-name: "PySide6"
         - dependency-name: "vispy"
+
+  # Workflows GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "actions/checkout"  # Ignore checkout
+        versions: [">=v4"]
