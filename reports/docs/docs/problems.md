@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 02:54:43
+Generated: 2026-07-20 03:32:31
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|129|
-|⚠️ Warnings|643|
-|**Total**|**807**|
+|❌ Errors|130|
+|⚠️ Warnings|664|
+|**Total**|**857**|
 
 ---
 
@@ -3715,6 +3715,288 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
+# 📄 docs/guide-complet-des-erreurs-flake8.md
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 899 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1147 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1241 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1338 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1425 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1505 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1555 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1615 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1686 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1811 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1841 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 1878 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (3).
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (339).
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (1491).
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (1804).
+
+## ❌ Error
+
+- **Module :** titles
+- **Message :** docs/guide-complet-des-erreurs-flake8.md: contient 3 titres H1 (1 attendu).
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/guide-complet-des-erreurs-flake8.md:942 saut de niveau H1 → H3.
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/guide-complet-des-erreurs-flake8.md:1370 saut de niveau H1 → H3.
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/guide-complet-des-erreurs-flake8.md:935 titre sans ligne vide avant.
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/guide-complet-des-erreurs-flake8.md:1363 titre sans ligne vide avant.
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/guide-complet-des-erreurs-flake8.md:1363 titre dupliqué (déjà présent dans docs/guide-complet-des-erreurs-flake8.md:935).
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 804
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 869
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 893
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1141
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1235
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1332
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1419
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1499
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1549
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1609
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1680
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
+- **line :** 1777
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505
+- **line :** 1855
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686
+- **line :** 1878
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:66
+- **line :** 1938
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:594
+- **line :** 1941
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:899
+- **line :** 1945
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1147
+- **line :** 1946
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1241
+- **line :** 1947
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1338
+- **line :** 1948
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1425
+- **line :** 1949
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1555
+- **line :** 1951
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1615
+- **line :** 1952
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686
+- **line :** 1953
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1785
+- **line :** 1957
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1811
+- **line :** 1958
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1841
+- **line :** 1959
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505
+- **line :** 1960
+
+---
+
 # 📄 docs/lore/README.md
 
 ## ❌ Error
@@ -3748,7 +4030,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
+- **Message :** Ligne 33 > 120 caractères.
 
 ---
 

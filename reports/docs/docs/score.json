@@ -1,10 +1,10 @@
 {
-    "generated": "2026-07-20T02:54:43.475531",
-    "score": 52,
-    "status": "Assez bon",
+    "generated": "2026-07-20T03:32:31.733270",
+    "score": 48,
+    "status": "Médiocre",
     "scores": {
         "markdown": 17,
-        "titles": 7,
+        "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 807,
+    "problem_count": 857,
     "details": {
         "markdown": {
             "score": 17,
@@ -409,7 +409,7 @@
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
-                    "message": "Ligne 15 > 120 caractères.",
+                    "message": "Ligne 33 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -608,6 +608,78 @@
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Ligne 102 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 899 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1147 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1241 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1338 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1425 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1505 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1555 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1615 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1686 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1811 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1841 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Ligne 1878 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -905,6 +977,30 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (3).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (339).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (1491).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (1804).",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/gdd/02_UNIVERS.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (5).",
@@ -961,11 +1057,11 @@
             ]
         },
         "titles": {
-            "score": 7,
+            "score": 4,
             "max_score": 15,
             "results": {
                 "single_h1": 0,
-                "heading_order": 3,
+                "heading_order": 0,
                 "heading_spacing": 0,
                 "empty_titles": 2,
                 "title_length": 2,
@@ -1012,6 +1108,12 @@
                     "file": "docs/CODING_RULES.md",
                     "severity": "error",
                     "message": "docs/CODING_RULES.md: contient 22 titres H1 (1 attendu).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "error",
+                    "message": "docs/guide-complet-des-erreurs-flake8.md: contient 3 titres H1 (1 attendu).",
                     "module": "titles"
                 },
                 {
@@ -1357,6 +1459,18 @@
                     "module": "titles"
                 },
                 {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "docs/guide-complet-des-erreurs-flake8.md:942 saut de niveau H1 → H3.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "docs/guide-complet-des-erreurs-flake8.md:1370 saut de niveau H1 → H3.",
+                    "module": "titles"
+                },
+                {
                     "file": "README.md",
                     "severity": "warning",
                     "message": "README.md:172 titre sans ligne vide avant.",
@@ -1408,6 +1522,18 @@
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "docs/ROADMAP.md:129 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "docs/guide-complet-des-erreurs-flake8.md:935 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "docs/guide-complet-des-erreurs-flake8.md:1363 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1480,6 +1606,12 @@
                     "file": "docs/CODING_RULES.md",
                     "severity": "warning",
                     "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "severity": "warning",
+                    "message": "docs/guide-complet-des-erreurs-flake8.md:1363 titre dupliqué (déjà présent dans docs/guide-complet-des-erreurs-flake8.md:935).",
                     "module": "titles"
                 },
                 {
@@ -1601,6 +1733,202 @@
                     "line": 421,
                     "severity": "info",
                     "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 804,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 869,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 893,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1141,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1235,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1332,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1419,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1499,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1549,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1609,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1680,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1777,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1855,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1878,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1938,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:66",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1941,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:594",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1945,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:899",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1946,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1147",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1947,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1241",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1948,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1338",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1949,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1425",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1951,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1555",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1952,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1615",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1953,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1957,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1785",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1958,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1811",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1959,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1841",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/guide-complet-des-erreurs-flake8.md",
+                    "line": 1960,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505",
                     "module": "links"
                 },
                 {
