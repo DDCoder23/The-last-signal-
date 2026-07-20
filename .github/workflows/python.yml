@@ -184,41 +184,149 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Quality Analysis" >> "$REPORT"
+              echo "## 🧠 Complexity (Radon)" >> "$REPORT"
+              radon cc . -a > radon.txt 2>&1 || true
 
-          echo "### Complexity" >> "$REPORT"
-          radon cc . -a >> "$REPORT"
+              AVG=$(grep "Average complexity" radon.txt | awk -F: '{print $2}')
 
+              echo "" >> "$REPORT"
+              echo "**Average complexity:** ${AVG:-Unknown}" >> "$REPORT"
+              echo "" >> "$REPORT"
 
-          echo "### Security" >> "$REPORT"
-          bandit -r . >> "$REPORT"
+              echo "<details>" >> "$REPORT"
+              echo "<summary>Show complexity report</summary>" >> "$REPORT"
+              echo "" >> "$REPORT"
 
+              cat radon.txt >> "$REPORT"
 
-          echo "### Pylint" >> "$REPORT"
-          pylint . >> "$REPORT"
+              echo "" >> "$REPORT"
+              echo "</details>" >> "$REPORT"
+              echo "" >> "$REPORT"
+              echo "## 🔒 Security (Bandit)" >> "$REPORT"
 
+              bandit -r . -f txt > bandit.txt 2>&1 || true
 
-          echo "### Coverage" >> "$REPORT"
-          pytest --cov . >> "$REPORT"
+              HIGH=$(grep -c "Severity: High" bandit.txt || true)
+              MEDIUM=$(grep -c "Severity: Medium" bandit.txt || true)
+              LOW=$(grep -c "Severity: Low" bandit.txt || true)
+
+              echo "" >> "$REPORT"
+              echo "| Severity | Count |" >> "$REPORT"
+              echo "|----------|------:|" >> "$REPORT"
+              echo "| High | $HIGH |" >> "$REPORT"
+              echo "| Medium | $MEDIUM |" >> "$REPORT"
+              echo "| Low | $LOW |" >> "$REPORT"
+
+              echo "" >> "$REPORT"
+
+              echo "<details>" >> "$REPORT"
+              echo "<summary>Show Bandit report</summary>" >> "$REPORT"
+              echo "" >> "$REPORT"
+
+              cat bandit.txt >> "$REPORT"
+
+              echo "" >> "$REPORT"
+              echo "</details>" >> "$REPORT"
+              echo "" >> "$REPORT"
+              echo "##  📏 Pylint" >> "$REPORT"
+
+              pylint . > pylint.txt 2>&1 || true
+
+              SCORE=$(grep "Your code has been rated at" pylint.txt | awk '{print $7}')
+
+              echo "" >> "$REPORT"
+              echo "**Global score:** ${SCORE:-Unknown}" >> "$REPORT"
+              echo "" >> "$REPORT"
+
+              echo "<details>" >> "$REPORT"
+              echo "<summary>Show Pylint report</summary>" >> "$REPORT"
+              echo "" >> "$REPORT"
+
+              cat pylint.txt >> "$REPORT"
+
+              echo "" >> "$REPORT"
+              echo "</details>"
+              echo "" >> "$REPORT"
+              echo "## 📈 Coverage" >> "$REPORT"
+
+              pytest --cov=. --cov-report=term > coverage.txt 2>&1 || true
+
+              COVERAGE=$(grep TOTAL coverage.txt | awk '{print $NF}')
+
+              echo "" >> "$REPORT"
+              echo "**Coverage:** ${COVERAGE:-0%}" >> "$REPORT"
+
+              echo "" >> "$REPORT"
+
+              echo "<details>" >> "$REPORT"
+              echo "<summary>Show coverage report</summary>" >> "$REPORT"
+              echo "" >> "$REPORT"
+
+              cat coverage.txt >> "$REPORT"
+
+              echo "" >> "$REPORT"
+              echo "</details>"
 
 
       # Tests
       - name: Run tests
         continue-on-error: true
         run: |
+               echo "## 🧪 Pytest" >> "$REPORT"
 
-          echo "## Tests Pytest" >> "$REPORT"
+               if [ -d tests ]; then
 
+               pytest -v --tb=short > pytest.txt 2>&1 || true
 
-          if [ -d tests ]; then
+               PASSED=$(grep -c " PASSED" pytest.txt || true)
+               FAILED=$(grep -c " FAILED" pytest.txt || true)
+               SKIPPED=$(grep -c " SKIPPED" pytest.txt || true)
+               ERRORS=$(grep -c " ERROR" pytest.txt || true)
 
-            pytest >> "$REPORT" 2>&1
+               TOTAL=$((PASSED + FAILED + SKIPPED + ERRORS))
 
-          else
+               echo "" >> "$REPORT"
+               echo "| Result | Count |" >> "$REPORT"
+               echo "|--------|------:|" >> "$REPORT"
+               echo "| ✅ Passed | $PASSED |" >> "$REPORT"
+               echo "| ❌ Failed | $FAILED |" >> "$REPORT"
+               echo "| ⚠️ Errors | $ERRORS |" >> "$REPORT"
+               echo "| ⏭️ Skipped | $SKIPPED |" >> "$REPORT"
+               echo "| **Total** | **$TOTAL** |" >> "$REPORT"
 
-            echo "Aucun dossier tests trouvé" >> "$REPORT"
+               echo "" >> "$REPORT"
 
-          fi
+               echo "### 📂 Failed tests" >> "$REPORT"
+               echo "" >> "$REPORT"
+
+               if [ "$FAILED" -gt 0 ]; then
+
+               grep " FAILED" pytest.txt \
+               | sed 's/^/ - /' \
+               >> "$REPORT"
+
+               else
+
+                 echo "✅ No failed tests." >> "$REPORT"
+
+               fi
+
+               echo "" >> "$REPORT"
+
+               echo "<details>" >> "$REPORT"
+               echo "<summary>Show full pytest output</summary>" >> "$REPORT"
+               echo "" >> "$REPORT"
+
+               cat pytest.txt >> "$REPORT"
+
+               echo "" >> "$REPORT"
+               echo "</details>" >> "$REPORT"
+
+               else
+
+                 echo "No tests directory found." >> "$REPORT"
+
+              fi
       
 
       
