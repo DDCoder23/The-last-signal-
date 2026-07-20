@@ -281,7 +281,9 @@ jobs:
         continue-on-error: true
         run: |
               export PYTHONPATH=$PYTHONPATH:$(pwd)
-              pytest -v --tb=short --import-mode=importlib> pytest.txt 2>&1
+              pip install -e .
+              pytest -v --tb=short > pytest.txt 2>&1
+              
               PYTEST_EXIT=$?
               echo "##   🧪 Pytest" >> "$REPORT"
               echo "" >> "$REPORT"
