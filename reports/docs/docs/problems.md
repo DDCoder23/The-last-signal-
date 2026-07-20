@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 05:37:10
+Generated: 2026-07-20 05:39:31
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|667|
-|**Total**|**860**|
+|⚠️ Warnings|668|
+|**Total**|**861**|
 
 ---
 
@@ -1847,6 +1847,15 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** titles
 - **Message :** README.md:172 titre sans ligne vide avant.
+
+---
+
+# 📄 client_python/__init__.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
 
 ---
 

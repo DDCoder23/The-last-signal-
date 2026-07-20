@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T05:37:10.408840",
+    "generated": "2026-07-20T05:39:31.532787",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 860,
+    "problem_count": 861,
     "details": {
         "markdown": {
             "score": 17,
@@ -2140,7 +2140,7 @@
             "score": 0,
             "max_score": 20,
             "results": {
-                "modules": 44,
+                "modules": 45,
                 "classes": 43,
                 "functions": 256,
                 "documented_modules": 0,
@@ -4447,6 +4447,12 @@
                     "file": "client_python/client.py",
                     "severity": "warning",
                     "message": "La fonction 'on_exit' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "client_python/__init__.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
                     "module": "python"
                 },
                 {

@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 05:37:10
+**Date :** 2026-07-20 05:39:31
 
 # 48/100
 
@@ -2168,6 +2168,14 @@ TypeError: result doit être un dict, reçu int
 - **Message :** README.md:172 titre sans ligne vide avant.
 
 - **module :** titles
+
+# 📄 client_python/__init__.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
 
 # 📄 client_python/client.py
 
