@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 08:06:58
+Generated: 2026-07-20 08:10:07
 
 ## Summary
 
@@ -2154,7 +2154,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 docs/QRB_flack8_error.md
+# 📄 docs/QRB_flake8_error.md
 
 ## ⚠️ Warning
 
@@ -2239,199 +2239,199 @@ TypeError: result doit être un dict, reçu int
 ## ❌ Error
 
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md: contient 3 titres H1 (1 attendu).
+- **Message :** docs/QRB_flake8_error.md: contient 3 titres H1 (1 attendu).
 
 ## ⚠️ Warning
 
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:942 saut de niveau H1 → H3.
+- **Message :** docs/QRB_flake8_error.md:942 saut de niveau H1 → H3.
 
 ## ⚠️ Warning
 
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:1370 saut de niveau H1 → H3.
+- **Message :** docs/QRB_flake8_error.md:1370 saut de niveau H1 → H3.
 
 ## ⚠️ Warning
 
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:935 titre sans ligne vide avant.
+- **Message :** docs/QRB_flake8_error.md:935 titre sans ligne vide avant.
 
 ## ⚠️ Warning
 
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:1363 titre sans ligne vide avant.
+- **Message :** docs/QRB_flake8_error.md:1363 titre sans ligne vide avant.
 
 ## ⚠️ Warning
 
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flack8_error.md:935).
+- **Message :** docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 804
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 869
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 893
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1141
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1235
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1332
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1419
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1499
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1549
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1609
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1680
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 - **line :** 1777
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1505
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1505
 - **line :** 1855
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1686
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1686
 - **line :** 1878
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:66
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:66
 - **line :** 1938
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:594
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:594
 - **line :** 1941
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:899
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:899
 - **line :** 1945
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1147
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1147
 - **line :** 1946
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1241
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1241
 - **line :** 1947
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1338
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1338
 - **line :** 1948
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1425
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1425
 - **line :** 1949
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1555
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1555
 - **line :** 1951
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1615
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1615
 - **line :** 1952
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1686
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1686
 - **line :** 1953
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1785
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1785
 - **line :** 1957
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1811
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1811
 - **line :** 1958
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1841
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1841
 - **line :** 1959
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1505
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1505
 - **line :** 1960
 
 ---

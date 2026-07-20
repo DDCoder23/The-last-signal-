@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 08:06:58
+**Date :** 2026-07-20 08:10:07
 
 # 48/100
 
@@ -2513,7 +2513,7 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-# 📄 docs/QRB_flack8_error.md
+# 📄 docs/QRB_flake8_error.md
 
 ## ⚠️ Warning
 - **Module :** markdown
@@ -2613,43 +2613,43 @@ TypeError: result doit être un dict, reçu int
 
 ## ❌ Error
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md: contient 3 titres H1 (1 attendu).
+- **Message :** docs/QRB_flake8_error.md: contient 3 titres H1 (1 attendu).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:942 saut de niveau H1 → H3.
+- **Message :** docs/QRB_flake8_error.md:942 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:1370 saut de niveau H1 → H3.
+- **Message :** docs/QRB_flake8_error.md:1370 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:935 titre sans ligne vide avant.
+- **Message :** docs/QRB_flake8_error.md:935 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:1363 titre sans ligne vide avant.
+- **Message :** docs/QRB_flake8_error.md:1363 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/QRB_flack8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flack8_error.md:935).
+- **Message :** docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).
 
 - **module :** titles
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 804
 
@@ -2657,7 +2657,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 869
 
@@ -2665,7 +2665,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 893
 
@@ -2673,7 +2673,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1141
 
@@ -2681,7 +2681,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1235
 
@@ -2689,7 +2689,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1332
 
@@ -2697,7 +2697,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1419
 
@@ -2705,7 +2705,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1499
 
@@ -2713,7 +2713,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1549
 
@@ -2721,7 +2721,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1609
 
@@ -2729,7 +2729,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1680
 
@@ -2737,7 +2737,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:588
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
 
 - **line :** 1777
 
@@ -2745,7 +2745,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1505
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1505
 
 - **line :** 1855
 
@@ -2753,7 +2753,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1686
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1686
 
 - **line :** 1878
 
@@ -2761,7 +2761,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:66
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:66
 
 - **line :** 1938
 
@@ -2769,7 +2769,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:594
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:594
 
 - **line :** 1941
 
@@ -2777,7 +2777,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:899
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:899
 
 - **line :** 1945
 
@@ -2785,7 +2785,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1147
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1147
 
 - **line :** 1946
 
@@ -2793,7 +2793,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1241
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1241
 
 - **line :** 1947
 
@@ -2801,7 +2801,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1338
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1338
 
 - **line :** 1948
 
@@ -2809,7 +2809,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1425
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1425
 
 - **line :** 1949
 
@@ -2817,7 +2817,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1555
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1555
 
 - **line :** 1951
 
@@ -2825,7 +2825,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1615
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1615
 
 - **line :** 1952
 
@@ -2833,7 +2833,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1686
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1686
 
 - **line :** 1953
 
@@ -2841,7 +2841,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1785
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1785
 
 - **line :** 1957
 
@@ -2849,7 +2849,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1811
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1811
 
 - **line :** 1958
 
@@ -2857,7 +2857,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1841
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1841
 
 - **line :** 1959
 
@@ -2865,7 +2865,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flack8_error.md:1505
+- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1505
 
 - **line :** 1960
 

@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T08:06:58.762700",
+    "generated": "2026-07-20T08:10:07.515749",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -419,81 +419,81 @@
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/CODING_RULES.md",
-                    "severity": "warning",
-                    "message": "Ligne 151 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 899 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1147 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1241 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1338 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1425 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1505 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1555 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1615 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1686 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1811 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1841 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Ligne 1878 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Ligne 151 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -959,33 +959,33 @@
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/CODING_RULES.md",
-                    "severity": "warning",
-                    "message": "Espace en fin de ligne (415).",
-                    "module": "markdown"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (3).",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (339).",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1491).",
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1804).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (415).",
                     "module": "markdown"
                 },
                 {
@@ -1105,15 +1105,15 @@
                     "module": "titles"
                 },
                 {
-                    "file": "docs/CODING_RULES.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "error",
-                    "message": "docs/CODING_RULES.md: contient 22 titres H1 (1 attendu).",
+                    "message": "docs/QRB_flake8_error.md: contient 3 titres H1 (1 attendu).",
                     "module": "titles"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/CODING_RULES.md",
                     "severity": "error",
-                    "message": "docs/QRB_flack8_error.md: contient 3 titres H1 (1 attendu).",
+                    "message": "docs/CODING_RULES.md: contient 22 titres H1 (1 attendu).",
                     "module": "titles"
                 },
                 {
@@ -1459,15 +1459,15 @@
                     "module": "titles"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
-                    "message": "docs/QRB_flack8_error.md:942 saut de niveau H1 → H3.",
+                    "message": "docs/QRB_flake8_error.md:942 saut de niveau H1 → H3.",
                     "module": "titles"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
-                    "message": "docs/QRB_flack8_error.md:1370 saut de niveau H1 → H3.",
+                    "message": "docs/QRB_flake8_error.md:1370 saut de niveau H1 → H3.",
                     "module": "titles"
                 },
                 {
@@ -1477,21 +1477,21 @@
                     "module": "titles"
                 },
                 {
+                    "file": "docs/QRB_flake8_error.md",
+                    "severity": "warning",
+                    "message": "docs/QRB_flake8_error.md:935 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "severity": "warning",
+                    "message": "docs/QRB_flake8_error.md:1363 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
                     "file": "docs/CODING_RULES.md",
                     "severity": "warning",
                     "message": "docs/CODING_RULES.md:293 titre sans ligne vide avant.",
-                    "module": "titles"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "severity": "warning",
-                    "message": "docs/QRB_flack8_error.md:935 titre sans ligne vide avant.",
-                    "module": "titles"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "severity": "warning",
-                    "message": "docs/QRB_flack8_error.md:1363 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1603,15 +1603,15 @@
                     "module": "titles"
                 },
                 {
-                    "file": "docs/CODING_RULES.md",
+                    "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
-                    "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).",
+                    "message": "docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).",
                     "module": "titles"
                 },
                 {
-                    "file": "docs/QRB_flack8_error.md",
+                    "file": "docs/CODING_RULES.md",
                     "severity": "warning",
-                    "message": "docs/QRB_flack8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flack8_error.md:935).",
+                    "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).",
                     "module": "titles"
                 },
                 {
@@ -1722,6 +1722,202 @@
                     "module": "links"
                 },
                 {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 804,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 869,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 893,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1141,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1235,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1332,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1419,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1499,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1549,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1609,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1680,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1777,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1855,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1505",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1878,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1686",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1938,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:66",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1941,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:594",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1945,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:899",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1946,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1147",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1947,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1241",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1948,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1338",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1949,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1425",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1951,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1555",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1952,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1615",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1953,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1686",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1957,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1785",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1958,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1811",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1959,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1841",
+                    "module": "links"
+                },
+                {
+                    "file": "docs/QRB_flake8_error.md",
+                    "line": 1960,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1505",
+                    "module": "links"
+                },
+                {
                     "file": "docs/CODING_RULES.md",
                     "line": 414,
                     "severity": "info",
@@ -1733,202 +1929,6 @@
                     "line": 421,
                     "severity": "info",
                     "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 804,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 869,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 893,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1141,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1235,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1332,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1419,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1499,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1549,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1609,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1680,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1777,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:588",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1855,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1505",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1878,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1686",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1938,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:66",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1941,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:594",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1945,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:899",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1946,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1147",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1947,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1241",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1948,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1338",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1949,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1425",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1951,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1555",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1952,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1615",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1953,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1686",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1957,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1785",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1958,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1811",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1959,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1841",
-                    "module": "links"
-                },
-                {
-                    "file": "docs/QRB_flack8_error.md",
-                    "line": 1960,
-                    "severity": "info",
-                    "message": "Lien déjà utilisé dans docs/QRB_flack8_error.md:1505",
                     "module": "links"
                 },
                 {
