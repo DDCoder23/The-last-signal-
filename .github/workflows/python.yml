@@ -187,7 +187,7 @@ jobs:
           echo "> 💡 Vous ne connaissez pas une erreur Flake8 ?" >> "$REPORT"
           echo ">" >> "$REPORT"
           echo "> Consultez le guide complet :" >> "$REPORT"
-          echo "> [📖 Guide Flake8](../docs/QRB_flake8_error.md)" >> "$REPORT"
+          echo "> [📘 Guide Flake8](https://github.com/${GITHUB_REPOSITORY}/blob/main/docs/QRB_flake8_error.md)" >> "$REPORT"
           echo "" >> "$REPORT"
 
 
