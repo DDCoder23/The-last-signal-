@@ -85,7 +85,7 @@ runs:
           exit 0
         fi
 
-        git commit -m ${{ inputs.commit-message }}
+        git commit -m "autoupdate"
         for i in 1 2 3
         do
           git pull --rebase origin ${{ inputs.branch }}
