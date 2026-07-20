@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 05:06:15
+**Date :** 2026-07-20 05:06:42
 
 # 48/100
 
@@ -5515,7 +5515,7 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-# 📄 test/test_client.py
+# 📄 tests/test_client.py
 
 ## ⚠️ Warning
 - **Module :** python

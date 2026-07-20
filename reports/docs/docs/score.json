@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T05:06:15.490085",
+    "generated": "2026-07-20T05:06:42.011337",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -4450,12 +4450,6 @@
                     "module": "python"
                 },
                 {
-                    "file": "test/test_client.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
                     "file": "scripts/transformateur.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
@@ -4651,6 +4645,12 @@
                     "file": "scripts/database_manager.py",
                     "severity": "warning",
                     "message": "La fonction 'add_security_issue' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "tests/test_client.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
