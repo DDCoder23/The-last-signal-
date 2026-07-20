@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T06:05:37.892490",
+    "generated": "2026-07-20T06:09:06.508894",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 862,
+    "problem_count": 863,
     "details": {
         "markdown": {
             "score": 17,
@@ -2140,7 +2140,7 @@
             "score": 0,
             "max_score": 20,
             "results": {
-                "modules": 46,
+                "modules": 47,
                 "classes": 43,
                 "functions": 256,
                 "documented_modules": 0,
@@ -2167,6 +2167,12 @@
                     "file": "dashboard.py",
                     "severity": "warning",
                     "message": "La fonction 'start_server' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "setup.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
                     "module": "python"
                 },
                 {

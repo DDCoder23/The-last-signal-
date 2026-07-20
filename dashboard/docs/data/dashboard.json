@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20 06:05:38.803233",
+    "generated": "2026-07-20 06:09:07.863120",
     "summary": {
         "total_runs": 1,
         "average_quality": 19.6,
@@ -9,10 +9,10 @@
     },
     "history": [
         {
-            "run": 464,
-            "date": "2026-07-20T06:05:38.221391",
+            "run": 465,
+            "date": "2026-07-20T06:09:06.849627",
             "branch": "refs/heads/main",
-            "commit": "fdf40d5d3bf77a44ada67775be0448472ff322c8",
+            "commit": "fd654ecd7907d206768dd4f9c3b4c485f18de42a",
             "status": "success",
             "quality": 19.6,
             "coverage": 0,
@@ -2159,7 +2159,7 @@
                         "score": 0,
                         "max_score": 20,
                         "results": {
-                            "modules": 46,
+                            "modules": 47,
                             "classes": 43,
                             "functions": 256,
                             "documented_modules": 0,
@@ -2186,6 +2186,12 @@
                                 "file": "dashboard.py",
                                 "severity": "warning",
                                 "message": "La fonction 'start_server' ne possède pas d'annotations de type.",
+                                "module": "python"
+                            },
+                            {
+                                "file": "setup.py",
+                                "severity": "warning",
+                                "message": "Le module ne possède pas de docstring.",
                                 "module": "python"
                             },
                             {
