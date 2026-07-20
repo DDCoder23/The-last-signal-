@@ -272,12 +272,14 @@ jobs:
       - name: Run tests
         continue-on-error: true
         run: |
-               echo "## 🧪 Pytest" >> "$REPORT"
+              echo "## 🧪 Pytest" >> "$REPORT"
 
-               if [ -d tests ]; then
+               
 
                pytest -v --tb=short > pytest.txt 2>&1 || true
-
+               if grep -q "collected 0 items" pytest.txt; then
+                  echo "⚠️ Aucun test trouvé." >> "$REPORT"
+               else
                PASSED=$(grep -c " PASSED" pytest.txt || true)
                FAILED=$(grep -c " FAILED" pytest.txt || true)
                SKIPPED=$(grep -c " SKIPPED" pytest.txt || true)
@@ -322,9 +324,7 @@ jobs:
                echo "" >> "$REPORT"
                echo "</details>" >> "$REPORT"
 
-               else
-
-                 echo "No tests directory found." >> "$REPORT"
+              
 
                fi
       
