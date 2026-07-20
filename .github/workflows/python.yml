@@ -121,6 +121,7 @@ jobs:
 
           echo "## Flake8" >> "$REPORT"
           echo "" >> "$REPORT"
+          flake8 . > flake8.txt 2>&1 || true
           echo "### 📊 Erreurs par code" >> "$REPORT"
           echo "" >> "$REPORT"
           echo "| Code | Nombre |" >> "$REPORT"
