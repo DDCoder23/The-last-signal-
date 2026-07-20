@@ -11,10 +11,6 @@ updates:
       prefix: "chore"
       include: "scope"
     
-      ignore:
-        - dependency-name: "numpy"
-        - dependency-name: "PySide6"
-        - dependency-name: "vispy"
 
   # Workflows GitHub Actions
   - package-ecosystem: "github-actions"
