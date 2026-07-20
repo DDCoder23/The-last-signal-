@@ -245,7 +245,7 @@ jobs:
               cat pylint.txt >> "$REPORT"
 
               echo "" >> "$REPORT"
-              echo "</details>"
+              echo "</details>" >> "$REPORT"
               echo "" >> "$REPORT"
               echo "## 📈 Coverage" >> "$REPORT"
 
@@ -265,7 +265,7 @@ jobs:
               cat coverage.txt >> "$REPORT"
 
               echo "" >> "$REPORT"
-              echo "</details>"
+              echo "</details>">> "$REPORT"
 
 
       # Tests
