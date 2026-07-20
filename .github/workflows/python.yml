@@ -119,7 +119,7 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "##  Flake8" >> "$REPORT"
+          echo "##   Flake8" >> "$REPORT"
           echo "" >> "$REPORT"
           flake8 . > flake8.txt 2>&1 || true
           echo "### 📊 Erreurs par code" >> "$REPORT"
@@ -168,7 +168,7 @@ jobs:
 
           echo "" >> "$REPORT"
           echo "</details>" >> "$REPORT"
-          echo "###  📂 Top 10 des fichiers avec le plus d'erreurs" >> "$REPORT"
+          echo "###   📂 Top 10 des fichiers avec le plus d'erreurs" >> "$REPORT"
           echo "" >> "$REPORT"
           echo "| Rang | Fichier | Erreurs |" >> "$REPORT"
           echo "|----:|---------|--------:|" >> "$REPORT"
@@ -247,7 +247,7 @@ jobs:
               echo "" >> "$REPORT"
               echo "</details>" >> "$REPORT"
               echo "" >> "$REPORT"
-              echo "## 📈 Coverage" >> "$REPORT"
+              echo "##  📈 Coverage" >> "$REPORT"
 
               pytest --cov=. --cov-report=term > coverage.txt 2>&1 || true
 
@@ -273,7 +273,7 @@ jobs:
         continue-on-error: true
         run: |
               pytest -v --tb=short > pytest.txt 2>&1 || true
-              echo "## 🧪 Pytest" >> "$REPORT"
+              echo "##   🧪 Pytest" >> "$REPORT"
               echo "" >> "$REPORT"
               echo "===== PYTEST OUTPUT ====="
               cat pytest.txt
