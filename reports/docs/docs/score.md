@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 03:32:31
+**Date :** 2026-07-20 03:33:31
 
 # 48/100
 
@@ -2505,6 +2505,364 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
+# 📄 docs/QRB-flack8_error.md
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 899 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1147 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1241 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1338 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1425 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1505 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1555 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1615 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1686 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1811 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1841 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 1878 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (3).
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (339).
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (1491).
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (1804).
+
+- **module :** markdown
+
+## ❌ Error
+- **Module :** titles
+- **Message :** docs/QRB-flack8_error.md: contient 3 titres H1 (1 attendu).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/QRB-flack8_error.md:942 saut de niveau H1 → H3.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/QRB-flack8_error.md:1370 saut de niveau H1 → H3.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/QRB-flack8_error.md:935 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/QRB-flack8_error.md:1363 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/QRB-flack8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB-flack8_error.md:935).
+
+- **module :** titles
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 804
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 869
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 893
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1141
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1235
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1332
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1419
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1499
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1549
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1609
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1680
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:588
+
+- **line :** 1777
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1505
+
+- **line :** 1855
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1686
+
+- **line :** 1878
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:66
+
+- **line :** 1938
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:594
+
+- **line :** 1941
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:899
+
+- **line :** 1945
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1147
+
+- **line :** 1946
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1241
+
+- **line :** 1947
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1338
+
+- **line :** 1948
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1425
+
+- **line :** 1949
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1555
+
+- **line :** 1951
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1615
+
+- **line :** 1952
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1686
+
+- **line :** 1953
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1785
+
+- **line :** 1957
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1811
+
+- **line :** 1958
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1841
+
+- **line :** 1959
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/QRB-flack8_error.md:1505
+
+- **line :** 1960
+
+- **module :** links
+
 # 📄 docs/README.md
 
 ## ⚠️ Warning
@@ -4242,364 +4600,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Lien déjà utilisé dans docs/gdd/README.md:1
 
 - **line :** 152
-
-- **module :** links
-
-# 📄 docs/guide-complet-des-erreurs-flake8.md
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 899 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1147 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1241 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1338 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1425 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1505 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1555 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1615 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1686 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1811 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1841 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 1878 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (3).
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (339).
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1491).
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1804).
-
-- **module :** markdown
-
-## ❌ Error
-- **Module :** titles
-- **Message :** docs/guide-complet-des-erreurs-flake8.md: contient 3 titres H1 (1 attendu).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** docs/guide-complet-des-erreurs-flake8.md:942 saut de niveau H1 → H3.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** docs/guide-complet-des-erreurs-flake8.md:1370 saut de niveau H1 → H3.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** docs/guide-complet-des-erreurs-flake8.md:935 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** docs/guide-complet-des-erreurs-flake8.md:1363 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** docs/guide-complet-des-erreurs-flake8.md:1363 titre dupliqué (déjà présent dans docs/guide-complet-des-erreurs-flake8.md:935).
-
-- **module :** titles
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 804
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 869
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 893
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1141
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1235
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1332
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1419
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1499
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1549
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1609
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1680
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588
-
-- **line :** 1777
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505
-
-- **line :** 1855
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686
-
-- **line :** 1878
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:66
-
-- **line :** 1938
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:594
-
-- **line :** 1941
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:899
-
-- **line :** 1945
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1147
-
-- **line :** 1946
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1241
-
-- **line :** 1947
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1338
-
-- **line :** 1948
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1425
-
-- **line :** 1949
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1555
-
-- **line :** 1951
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1615
-
-- **line :** 1952
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686
-
-- **line :** 1953
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1785
-
-- **line :** 1957
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1811
-
-- **line :** 1958
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1841
-
-- **line :** 1959
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505
-
-- **line :** 1960
 
 - **module :** links
 

@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20 03:32:32.791769",
+    "generated": "2026-07-20 03:33:32.799863",
     "summary": {
         "total_runs": 1,
         "average_quality": 19.6,
@@ -9,10 +9,10 @@
     },
     "history": [
         {
-            "run": 441,
-            "date": "2026-07-20T03:32:32.065521",
+            "run": 442,
+            "date": "2026-07-20T03:33:32.237145",
             "branch": "refs/heads/main",
-            "commit": "1aab8aeeebac64b07bb63804d8e0171ea7db4c9f",
+            "commit": "b24f22a50bf5d4df97997d4268cb25e97a1ef238",
             "status": "success",
             "quality": 19.6,
             "coverage": 0,
@@ -444,6 +444,78 @@
                                 "module": "markdown"
                             },
                             {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 899 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1147 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1241 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1338 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1425 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1505 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1555 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1615 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1686 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1811 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1841 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Ligne 1878 > 120 caractères.",
+                                "module": "markdown"
+                            },
+                            {
                                 "file": "docs/ROADMAP.md",
                                 "severity": "warning",
                                 "message": "Ligne 16 > 120 caractères.",
@@ -627,78 +699,6 @@
                                 "file": "docs/ROADMAP.md",
                                 "severity": "warning",
                                 "message": "Ligne 102 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 899 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1147 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1241 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1338 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1425 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1505 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1555 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1615 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1686 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1811 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1841 > 120 caractères.",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Ligne 1878 > 120 caractères.",
                                 "module": "markdown"
                             },
                             {
@@ -984,6 +984,30 @@
                                 "module": "markdown"
                             },
                             {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Espace en fin de ligne (3).",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Espace en fin de ligne (339).",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Espace en fin de ligne (1491).",
+                                "module": "markdown"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "Espace en fin de ligne (1804).",
+                                "module": "markdown"
+                            },
+                            {
                                 "file": "docs/ROADMAP.md",
                                 "severity": "warning",
                                 "message": "Espace en fin de ligne (1).",
@@ -993,30 +1017,6 @@
                                 "file": "docs/ROADMAP.md",
                                 "severity": "warning",
                                 "message": "Espace en fin de ligne (89).",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Espace en fin de ligne (3).",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Espace en fin de ligne (339).",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Espace en fin de ligne (1491).",
-                                "module": "markdown"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "Espace en fin de ligne (1804).",
                                 "module": "markdown"
                             },
                             {
@@ -1130,9 +1130,9 @@
                                 "module": "titles"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "severity": "error",
-                                "message": "docs/guide-complet-des-erreurs-flake8.md: contient 3 titres H1 (1 attendu).",
+                                "message": "docs/QRB-flack8_error.md: contient 3 titres H1 (1 attendu).",
                                 "module": "titles"
                             },
                             {
@@ -1478,15 +1478,15 @@
                                 "module": "titles"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "severity": "warning",
-                                "message": "docs/guide-complet-des-erreurs-flake8.md:942 saut de niveau H1 → H3.",
+                                "message": "docs/QRB-flack8_error.md:942 saut de niveau H1 → H3.",
                                 "module": "titles"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "severity": "warning",
-                                "message": "docs/guide-complet-des-erreurs-flake8.md:1370 saut de niveau H1 → H3.",
+                                "message": "docs/QRB-flack8_error.md:1370 saut de niveau H1 → H3.",
                                 "module": "titles"
                             },
                             {
@@ -1499,6 +1499,18 @@
                                 "file": "docs/CODING_RULES.md",
                                 "severity": "warning",
                                 "message": "docs/CODING_RULES.md:293 titre sans ligne vide avant.",
+                                "module": "titles"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "docs/QRB-flack8_error.md:935 titre sans ligne vide avant.",
+                                "module": "titles"
+                            },
+                            {
+                                "file": "docs/QRB-flack8_error.md",
+                                "severity": "warning",
+                                "message": "docs/QRB-flack8_error.md:1363 titre sans ligne vide avant.",
                                 "module": "titles"
                             },
                             {
@@ -1541,18 +1553,6 @@
                                 "file": "docs/ROADMAP.md",
                                 "severity": "warning",
                                 "message": "docs/ROADMAP.md:129 titre sans ligne vide avant.",
-                                "module": "titles"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "docs/guide-complet-des-erreurs-flake8.md:935 titre sans ligne vide avant.",
-                                "module": "titles"
-                            },
-                            {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
-                                "severity": "warning",
-                                "message": "docs/guide-complet-des-erreurs-flake8.md:1363 titre sans ligne vide avant.",
                                 "module": "titles"
                             },
                             {
@@ -1628,9 +1628,9 @@
                                 "module": "titles"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "severity": "warning",
-                                "message": "docs/guide-complet-des-erreurs-flake8.md:1363 titre dupliqué (déjà présent dans docs/guide-complet-des-erreurs-flake8.md:935).",
+                                "message": "docs/QRB-flack8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB-flack8_error.md:935).",
                                 "module": "titles"
                             },
                             {
@@ -1755,199 +1755,199 @@
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 804,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 869,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 893,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1141,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1235,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1332,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1419,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1499,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1549,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1609,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1680,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1777,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:588",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:588",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1855,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1505",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1878,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1686",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1938,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:66",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:66",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1941,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:594",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:594",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1945,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:899",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:899",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1946,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1147",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1147",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1947,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1241",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1241",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1948,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1338",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1338",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1949,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1425",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1425",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1951,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1555",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1555",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1952,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1615",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1615",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1953,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1686",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1686",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1957,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1785",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1785",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1958,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1811",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1811",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1959,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1841",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1841",
                                 "module": "links"
                             },
                             {
-                                "file": "docs/guide-complet-des-erreurs-flake8.md",
+                                "file": "docs/QRB-flack8_error.md",
                                 "line": 1960,
                                 "severity": "info",
-                                "message": "Lien déjà utilisé dans docs/guide-complet-des-erreurs-flake8.md:1505",
+                                "message": "Lien déjà utilisé dans docs/QRB-flack8_error.md:1505",
                                 "module": "links"
                             },
                             {
