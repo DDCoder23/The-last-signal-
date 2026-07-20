@@ -16,12 +16,13 @@ class Joueur():
     ):
         super().__init__(image,  jeu)
         self.nom = nom
+        self.stats=stats
         self.vivant = True
         self.stuff = {}
         self.index_arme_selectionnee = 0
         self.grade = grade
         self.config = config
-        self._initialiser_stats(stats)
+        self._initialiser_stats(self.stats)
 
     def _initialiser_stats(self,stats:dict):
         self.stats["MANA_max"] = 100
@@ -30,6 +31,7 @@ class Joueur():
         self.stats["niv"] = 1
         self.stats["bouff_max"] = self.stats["niv"] * 10
         self.stats["bouff"] = self.stats["bouff_max"]
+        
         
 class Map3D:
     def __init__(self, image_path, scale_z=5.0):
