@@ -274,6 +274,7 @@ jobs:
         run: |
               pytest -v --tb=short > pytest.txt 2>&1 || true
               echo "## 🧪 Pytest" >> "$REPORT"
+              echo "" >> "$REPORT"
               echo "===== PYTEST OUTPUT ====="
               cat pytest.txt
               echo "========================="
