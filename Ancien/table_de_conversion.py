@@ -1,6 +1,6 @@
 ﻿
 from index_manager import mettre_a_jour_index
-from inventaire import safe_increment, Objet, Livres, dict_enchant,nettoyer_stuff_zero,clefs
+from inventaire import safe_increment, Objet, Livres
 import random
 from dataclasses import dataclass, asdict
 lvs=[]
