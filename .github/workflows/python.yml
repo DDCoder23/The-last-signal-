@@ -279,7 +279,7 @@ jobs:
               echo "========================="
 
               echo "===== REPORT AFTER WRITE ====="
-              cat "$REPORT"
+              tail -n 20 "$REPORT"
               echo "=============================="
 
                
