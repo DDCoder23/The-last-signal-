@@ -280,7 +280,7 @@ jobs:
       - name: Run tests
         continue-on-error: true
         run: |
-              python -m pytest -v --tb=short > pytest.txt 2>&1
+              pytest -v --tb=short > pytest.txt 2>&1
               PYTEST_EXIT=$?
               echo "##   🧪 Pytest" >> "$REPORT"
               echo "" >> "$REPORT"
