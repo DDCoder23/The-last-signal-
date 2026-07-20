@@ -10,6 +10,8 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
-    # Optionnel : Ignorer les mises à jour de pytest si vous voulez gérer manuellement
-    # ignore:
-    #   - dependency-name: "pytest"
+    
+      ignore:
+        - dependency-name: "numpy"
+        - dependency-name: "PySide6"
+        - dependency-name: "vispy"
