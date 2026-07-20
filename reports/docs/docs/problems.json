@@ -4567,8 +4567,20 @@
     },
     {
         "file": "tests/test_client.py",
-        "severity": "error",
-        "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "tests/test_client.py",
+        "severity": "warning",
+        "message": "La fonction 'test_main' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "tests/test_client.py",
+        "severity": "warning",
+        "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
