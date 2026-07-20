@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 11:26:22
+**Date :** 2026-07-20 12:26:44
 
 # 48/100
 
@@ -5556,6 +5556,18 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_classJoueur' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_classJoueur' ne possède pas d'annotations de type.
 
 - **module :** python
 

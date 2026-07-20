@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 11:26:22
+Generated: 2026-07-20 12:26:44
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|670|
-|**Total**|**863**|
+|⚠️ Warnings|672|
+|**Total**|**865**|
 
 ---
 
@@ -4863,6 +4863,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_classJoueur' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_classJoueur' ne possède pas d'annotations de type.
 
 ---
 

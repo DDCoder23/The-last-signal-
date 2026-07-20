@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T11:26:22.174154",
+    "generated": "2026-07-20T12:26:44.034015",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 863,
+    "problem_count": 865,
     "details": {
         "markdown": {
             "score": 17,
@@ -2142,7 +2142,7 @@
             "results": {
                 "modules": 47,
                 "classes": 43,
-                "functions": 256,
+                "functions": 257,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
@@ -4675,6 +4675,18 @@
                     "file": "tests/test_client.py",
                     "severity": "warning",
                     "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "tests/test_client.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_classJoueur' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "tests/test_client.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_classJoueur' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
