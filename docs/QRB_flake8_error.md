@@ -87,9 +87,9 @@ Codes d'erreur format : `[FAMILLE][NUMERO]`
 | [E211](#e211) | Espaces opérateurs                   | Erreur        |
 | [E221](#e221) | Espaces multiples opérateurs         | Erreur        |
 | [E222](#e222) | Espace manquant opérateurs           | Erreur        |
-| [E223](#e223) | Espace avant unaire                  | Erreur        |
-| [E224](#e224) | Espace après unaire                  | Erreur        |
-| [E231](#e231) | Espace manquant avant :              | Erreur        |
+| [E223](#e223) | Tabulation avant un opérateur                 | Erreur        |
+| [E224](#e224) | Tabulation après un  opérateur              | Erreur        |
+| [E231](#e231) | Espace manquant après ":" "," ou ";"              | Erreur        |
 | [E241](#e241) | Espaces multiples après ,            | Erreur        |
 | [E242](#e242) | Espace manquant après ,              | Erreur        |
 | [E261](#e261) | Espace avant commentaire             | Avertissement |
