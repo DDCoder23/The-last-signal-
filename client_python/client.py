@@ -14,7 +14,7 @@ class Joueur():
         recommencer=True, 
         grade=None, config=None, stats={}
     ):
-        super().__init__(self)
+        
         self.nom = nom
         self.stats = stats
         self.vivant = True
