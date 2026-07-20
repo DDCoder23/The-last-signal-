@@ -287,6 +287,8 @@ jobs:
       - name: Run tests
         continue-on-error: true
         run: |
+              echo "##   🧪 Pytest" >> "$REPORT"
+              echo "" >> "$REPORT"
               export PYTHONPATH=$PYTHONPATH:$(pwd)
               pip install -e .
               Xvfb :99 -screen 0 1024x768x24 &  # Lance un serveur X virtuel
@@ -295,8 +297,7 @@ jobs:
               pytest -v --tb=short > pytest.txt 2>&1
               
               PYTEST_EXIT=$?
-              echo "##   🧪 Pytest" >> "$REPORT"
-              echo "" >> "$REPORT"
+              
               if [ "$PYTEST_EXIT" -eq 5 ]; then
               echo "⚠️ Aucun test trouvé." >> "$REPORT"
 
