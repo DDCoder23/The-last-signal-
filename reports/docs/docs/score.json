@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T05:06:42.011337",
+    "generated": "2026-07-20T05:09:00.988972",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -4649,8 +4649,8 @@
                 },
                 {
                     "file": "tests/test_client.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
+                    "severity": "error",
+                    "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
                     "module": "python"
                 },
                 {

@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20 05:06:43.058827",
+    "generated": "2026-07-20 05:09:02.463326",
     "summary": {
         "total_runs": 1,
         "average_quality": 19.6,
@@ -9,10 +9,10 @@
     },
     "history": [
         {
-            "run": 446,
-            "date": "2026-07-20T05:06:42.354849",
+            "run": 447,
+            "date": "2026-07-20T05:09:01.316705",
             "branch": "refs/heads/main",
-            "commit": "360edcf43d7203637beaf64fd8f187f6ba353012",
+            "commit": "8c5a98b0452c17d80edee09713b385be06453a8c",
             "status": "success",
             "quality": 19.6,
             "coverage": 0,
@@ -4668,8 +4668,8 @@
                             },
                             {
                                 "file": "tests/test_client.py",
-                                "severity": "warning",
-                                "message": "Le module ne possède pas de docstring.",
+                                "severity": "error",
+                                "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
                                 "module": "python"
                             },
                             {

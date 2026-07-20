@@ -4567,8 +4567,8 @@
     },
     {
         "file": "tests/test_client.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
+        "severity": "error",
+        "message": "Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)",
         "module": "python"
     },
     {

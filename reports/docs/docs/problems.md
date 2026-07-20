@@ -1,13 +1,13 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 05:06:42
+Generated: 2026-07-20 05:09:01
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|130|
-|⚠️ Warnings|665|
+|❌ Errors|131|
+|⚠️ Warnings|664|
 |**Total**|**858**|
 
 ---
@@ -4822,10 +4822,10 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 tests/test_client.py
 
-## ⚠️ Warning
+## ❌ Error
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)
 
 ---
 

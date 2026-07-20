@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 05:06:42
+**Date :** 2026-07-20 05:09:00
 
 # 48/100
 
@@ -5517,9 +5517,9 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 tests/test_client.py
 
-## ⚠️ Warning
+## ❌ Error
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 1)
 
 - **module :** python
 
