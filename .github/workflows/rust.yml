@@ -17,7 +17,7 @@ on:
 permissions:
   contents: write
 env:
-  RUST_PROJECT: server-rust
+  RUST_PROJECT: server_rust
 jobs:
   rust-report:
 
