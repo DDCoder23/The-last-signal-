@@ -73,10 +73,10 @@ Codes d'erreur format : `[FAMILLE][NUMERO]`
 | [E101](#e101) | Indentation mélangeant des tabulations et des espaces       | Erreur        |
 | [E111](#e111) | Indentation incorrecte ( il faut quatre espaces)              | Erreur        |
 | [E112](#e112) | block d'indentation inattendue                 | Erreur        |
-| [E113](#e113) | Indentation inattendue             | Erreur        |
-| [E114](#e114) | Indentation commentaire              | Erreur        |
-| [E115](#e115) | Indentation incorrecte commentaire   | Erreur        |
-| [E116](#e116) | Indentation non attendue commentaire | Erreur        |
+| [E113](#e113) | Indentation inattendue          | Erreur        |
+| [E114](#e114) | Indentation commentaire  incorecte cf. E111               | Erreur        |
+| [E115](#e115) | block d'indentation incorrecte commentaire  cf.E112 | Erreur        |
+| [E116](#e116) | Indentation inattendue pour les commentaires cf.E113         | Erreur        |
 | [E117](#e117) | Indentation excessive                | Erreur        |
 | [E121](#e121) | Alignement incorrect                 | Avertissement |
 | [E131](#e131) | Lignes vides commentaires            | Avertissement |
