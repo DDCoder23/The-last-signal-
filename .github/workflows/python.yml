@@ -66,15 +66,25 @@ jobs:
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
-          echo "# Rapport Python" > "$REPORT"
+          {
+            echo "# 🐍 Python CI Report"
+            echo ""
+            echo "Run : ${GITHUB_RUN_NUMBER}"
+            echo "Branch : ${GITHUB_REF_NAME}"
+            echo "Commit : ${GITHUB_SHA}"
+            echo "Date : $(date)"
+            echo ""
+            echo "---"
+            echo ""
+            echo "# 📊 Summary"
+            echo ""
+            } > "$REPORT"
 
           
 
-          echo "" >> "$REPORT"
+          
 
-          echo "Date : $(date)" >> "$REPORT"
-
-          echo "" >> "$REPORT"
+          
 
 
 
@@ -83,9 +93,24 @@ jobs:
         continue-on-error: true
         run: |
 
-          echo "## Black" >> "$REPORT"
+                 echo "## ⚫ Black" >> "$REPORT"
 
-          black --check . >> "$REPORT" 2>&1
+                 black --check . > black.txt 2>&1 || true
+
+                 COUNT=$(grep -c "would reformat" black.txt)
+
+                 echo "" >> "$REPORT"
+                 echo "**Files to reformat:** $COUNT" >> "$REPORT"
+                 echo "" >> "$REPORT"
+
+                 echo "<details>" >> "$REPORT"
+                 echo "<summary>Show files</summary>" >> "$REPORT"
+
+                 grep "would reformat" black.txt \
+                 | sed 's/would reformat //' \
+                 >> "$REPORT"
+
+                 echo "</details>" >> "$REPORT"
 
 
 
@@ -95,18 +120,65 @@ jobs:
         run: |
 
           echo "## Flake8" >> "$REPORT"
+          echo "" >> "$REPORT"
+          echo "### 📊 Erreurs par code" >> "$REPORT"
+          echo "" >> "$REPORT"
+          echo "| Code | Nombre |" >> "$REPORT"
+          echo "|------|-------:|" >> "$REPORT"
 
-          echo "| Fichier | Ligne | Colonne | Code | Message |" >> "$REPORT"
-          echo "|---------|------:|--------:|------|---------|" >> "$REPORT"
-          flake8 . > flake8.txt 2>&1 || true
-          
-          awk -F: '{
-             printf("| %s | %s | %s | %s |", $1, $2, $3, $4)
-             for (i = 5; i <= NF; i++) {
-             printf("%s%s", $i, (i == NF ? "" : ":"))
-             }
-            printf(" |\n")
-            } ' flake8.txt >> "$REPORT"
+          awk -F: '{gsub(/^ +/, "", $4); print $4}' flake8.txt \
+          | awk '{print $1}' \
+          | sort \
+          | uniq -c \
+          | sort -rn \
+          | while read count code
+          do
+             echo "| $code | $count |"
+          done >> "$REPORT"
+          echo "" >> "$REPORT"
+        
+          echo "" >> "$REPORT"
+          echo "<details>" >> "$REPORT"
+          echo "<summary>📋 Voir toutes les erreurs Flake8</summary>" >> "$REPORT"
+          echo "" >> "$REPORT"
+
+          echo "| Fichier | Ligne | Code | Message |" >> "$REPORT"
+          echo "|---------|------:|------|---------|" >> "$REPORT"
+
+          awk -F: '
+          {
+           file=$1
+           line=$2
+
+           gsub(/^ +/, "", $4)
+           split($4,a," ")
+
+           code=a[1]
+           msg=$4
+           sub(code" ","",msg)
+
+          printf("| %s | %s | %s | %s |\n",
+             file,
+             line,
+             code,
+             msg)
+           }
+           ' flake8.txt >> "$REPORT"
+
+          echo "" >> "$REPORT"
+          echo "</details>" >> "$REPORT"
+          echo "### 📂 Top 10 des fichiers avec le plus d'erreurs" >> "$REPORT"
+          echo "" >> "$REPORT"
+          echo "| Rang | Fichier | Erreurs |" >> "$REPORT"
+          echo "|----:|---------|--------:|" >> "$REPORT"
+
+          awk -F: '{print $1}' flake8.txt \
+          | sort | uniq -c | sort -rn \
+          | head -10 | awk '{
+          printf("| %d | %s | %d |\n", NR, $2, $1)
+          }' >> "$REPORT"
+
+
       - name: Quality analysis
         continue-on-error: true
         run: |
