@@ -70,10 +70,10 @@ Codes d'erreur format : `[FAMILLE][NUMERO]`
 
 | Code          | Description                          | Sévérité      |
 | ------------- | ------------------------------------ | ------------- |
-| [E101](#e101) | Indentation non cohérente            | Erreur        |
-| [E111](#e111) | Indentation incorrecte               | Erreur        |
-| [E112](#e112) | Indentation attendue                 | Erreur        |
-| [E113](#e113) | Indentation non attendue             | Erreur        |
+| [E101](#e101) | Indentation mélangeant des tabulations et des espaces       | Erreur        |
+| [E111](#e111) | Indentation incorrecte ( il faut quatre espaces)              | Erreur        |
+| [E112](#e112) | block d'indentation inattendue                 | Erreur        |
+| [E113](#e113) | Indentation inattendue             | Erreur        |
 | [E114](#e114) | Indentation commentaire              | Erreur        |
 | [E115](#e115) | Indentation incorrecte commentaire   | Erreur        |
 | [E116](#e116) | Indentation non attendue commentaire | Erreur        |
