@@ -123,6 +123,9 @@ jobs:
       - name: Code analysis
         continue-on-error: true
         run: |
+          pwd
+          ls -la docs
+          test -f docs/QRB_flake8_error.md && echo "FOUND" || echo "MISSING"
 
           echo "##   Flake8" >> "$REPORT"
           echo "" >> "$REPORT"
