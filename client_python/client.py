@@ -9,14 +9,14 @@ import sys
 
 class Joueur():
     def __init__(
-        self, image, jeu=None, 
+        self, image=None, jeu=None, 
         nom="Player 1", 
         recommencer=True, 
-        grade=None, config=None,stats={}
+        grade=None, config=None, stats={}
     ):
         super().__init__(image,  jeu)
         self.nom = nom
-        self.stats=stats
+        self.stats = stats
         self.vivant = True
         self.stuff = {}
         self.index_arme_selectionnee = 0
