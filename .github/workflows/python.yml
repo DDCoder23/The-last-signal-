@@ -111,6 +111,7 @@ jobs:
                  >> "$REPORT"
 
                  echo "</details>" >> "$REPORT"
+                 echo "" >> "$REPORT"
 
 
 
@@ -168,6 +169,7 @@ jobs:
 
           echo "" >> "$REPORT"
           echo "</details>" >> "$REPORT"
+          echo "" >> "$REPORT"
           echo "###   📂 Top 10 des fichiers avec le plus d'erreurs" >> "$REPORT"
           echo "" >> "$REPORT"
           echo "| Rang | Fichier | Erreurs |" >> "$REPORT"
@@ -266,6 +268,7 @@ jobs:
 
               echo "" >> "$REPORT"
               echo "</details>">> "$REPORT"
+              echo "" >> "$REPORT"
 
 
       # Tests
