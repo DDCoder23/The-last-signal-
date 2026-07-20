@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20 12:43:40.077125",
+    "generated": "2026-07-20 13:17:12.147222",
     "summary": {
         "total_runs": 1,
         "average_quality": 19.6,
@@ -9,10 +9,10 @@
     },
     "history": [
         {
-            "run": 507,
-            "date": "2026-07-20T12:43:39.351460",
+            "run": 508,
+            "date": "2026-07-20T13:17:11.233651",
             "branch": "refs/heads/main",
-            "commit": "393ed1db38255a6de65db65f93e33d82e3d0c0f4",
+            "commit": "d6b4c2a5f8c7d679e65e91cb6a9acab957fe49f6",
             "status": "success",
             "quality": 19.6,
             "coverage": 0,
@@ -47,12 +47,6 @@
                             "html": 3
                         },
                         "problems": [
-                            {
-                                "file": "commande Linux.md",
-                                "severity": "warning",
-                                "message": "Contenu très faible.",
-                                "module": "markdown"
-                            },
                             {
                                 "file": "server_rust/README.md",
                                 "severity": "error",

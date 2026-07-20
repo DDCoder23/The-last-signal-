@@ -1,6 +1,6 @@
 # ðŸ“Š Documentation Quality Report
 
-**Date :** 2026-07-20 12:43:39
+**Date :** 2026-07-20 13:17:10
 
 # 48/100
 
@@ -2394,14 +2394,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** La fonction 'on_exit' ne possède pas d'annotations de type.
 
 - **module :** python
-
-# 📄 commande Linux.md
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Contenu très faible.
-
-- **module :** markdown
 
 # 📄 dashboard.py
 

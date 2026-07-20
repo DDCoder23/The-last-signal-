@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 12:43:39
+Generated: 2026-07-20 13:17:11
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|672|
-|**Total**|**865**|
+|⚠️ Warnings|671|
+|**Total**|**864**|
 
 ---
 
@@ -2040,15 +2040,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'on_exit' ne possède pas d'annotations de type.
-
----
-
-# 📄 commande Linux.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Contenu très faible.
 
 ---
 

@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20T12:43:39.005719",
+    "generated": "2026-07-20T13:17:10.868806",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 865,
+    "problem_count": 864,
     "details": {
         "markdown": {
             "score": 17,
@@ -28,12 +28,6 @@
                 "html": 3
             },
             "problems": [
-                {
-                    "file": "commande Linux.md",
-                    "severity": "warning",
-                    "message": "Contenu très faible.",
-                    "module": "markdown"
-                },
                 {
                     "file": "server_rust/README.md",
                     "severity": "error",

@@ -1,11 +1,5 @@
 [
     {
-        "file": "commande Linux.md",
-        "severity": "warning",
-        "message": "Contenu très faible.",
-        "module": "markdown"
-    },
-    {
         "file": "server_rust/README.md",
         "severity": "error",
         "message": "Fichier vide.",
