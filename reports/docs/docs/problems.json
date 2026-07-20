@@ -4368,6 +4368,12 @@
         "module": "python"
     },
     {
+        "file": "test/test_client.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
         "file": "scripts/transformateur.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",

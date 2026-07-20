@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-20 03:40:32
+Generated: 2026-07-20 05:05:20
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|664|
-|**Total**|**857**|
+|⚠️ Warnings|665|
+|**Total**|**858**|
 
 ---
 
@@ -4817,6 +4817,15 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** titles
 - **Message :** server-rust/README.md: contient 0 titres H1 (1 attendu).
+
+---
+
+# 📄 test/test_client.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
 
 ---
 

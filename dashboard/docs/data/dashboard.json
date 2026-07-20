@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-20 03:40:33.089120",
+    "generated": "2026-07-20 05:05:21.220498",
     "summary": {
         "total_runs": 1,
         "average_quality": 19.6,
@@ -9,10 +9,10 @@
     },
     "history": [
         {
-            "run": 443,
-            "date": "2026-07-20T03:40:32.326659",
+            "run": 444,
+            "date": "2026-07-20T05:05:20.679435",
             "branch": "refs/heads/main",
-            "commit": "4fada8e28ff0cac7c362c0788b98516dff2201f9",
+            "commit": "13b9420effa8b6486a28ef182ad26a28c8021bbf",
             "status": "success",
             "quality": 19.6,
             "coverage": 0,
@@ -2159,7 +2159,7 @@
                         "score": 0,
                         "max_score": 20,
                         "results": {
-                            "modules": 43,
+                            "modules": 44,
                             "classes": 43,
                             "functions": 255,
                             "documented_modules": 0,
@@ -4466,6 +4466,12 @@
                                 "file": "Ancien/inventaire.py",
                                 "severity": "warning",
                                 "message": "La fonction 'acheter_objet' ne possède pas d'annotations de type.",
+                                "module": "python"
+                            },
+                            {
+                                "file": "test/test_client.py",
+                                "severity": "warning",
+                                "message": "Le module ne possède pas de docstring.",
                                 "module": "python"
                             },
                             {
