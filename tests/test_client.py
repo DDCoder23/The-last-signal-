@@ -1,4 +1,4 @@
-from client_python.client import main
+from client_python.client import main,Joueur
 import os
 import pytest
 
@@ -9,4 +9,6 @@ import pytest
 )
 def test_main():
     main()
-
+def test_classJoueur():
+    joueur=Joueur()
+    joueur._initialiser_stats()
