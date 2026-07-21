@@ -5076,6 +5076,24 @@
         "module": "python"
     },
     {
+        "file": "scripts/documentation/rust_docs.py",
+        "severity": "warning",
+        "message": "La fonction 'check_rust_docs' dépasse 80 lignes.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/rust_docs.py",
+        "severity": "warning",
+        "message": "La fonction 'ratio' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "scripts/documentation/rust_docs.py",
+        "severity": "warning",
+        "message": "La fonction 'ratio' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "scripts/database/utils.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -5224,12 +5242,6 @@
         "severity": "warning",
         "message": "La fonction 'update_security_database' dépasse 80 lignes.",
         "module": "python"
-    },
-    {
-        "file": "",
-        "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
-        "module": "rust"
     },
     {
         "file": "",

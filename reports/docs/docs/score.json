@@ -1,18 +1,18 @@
 {
-    "generated": "2026-07-20T13:48:52.810946",
-    "score": 48,
-    "status": "Médiocre",
+    "generated": "2026-07-21T13:02:00.603220",
+    "score": 66,
+    "status": "Bon",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 0,
+        "rust": 80,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 864,
+    "problem_count": 866,
     "details": {
         "markdown": {
             "score": 17,
@@ -2136,13 +2136,13 @@
             "results": {
                 "modules": 47,
                 "classes": 43,
-                "functions": 257,
+                "functions": 258,
                 "documented_modules": 0,
                 "documented_classes": 2,
                 "documented_functions": 63,
                 "typed_functions": 25,
                 "todo": 4,
-                "long_functions": 9
+                "long_functions": 10
             },
             "problems": [
                 {
@@ -5158,6 +5158,24 @@
                     "module": "python"
                 },
                 {
+                    "file": "scripts/documentation/rust_docs.py",
+                    "severity": "warning",
+                    "message": "La fonction 'check_rust_docs' dépasse 80 lignes.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/documentation/rust_docs.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ratio' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "scripts/documentation/rust_docs.py",
+                    "severity": "warning",
+                    "message": "La fonction 'ratio' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
                     "file": "scripts/database/utils.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
@@ -5310,17 +5328,18 @@
             ]
         },
         "rust": {
-            "score": 0,
-            "max_score": 1,
-            "results": {},
-            "problems": [
-                {
-                    "file": "",
-                    "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
-                    "module": "rust"
-                }
-            ]
+            "score": 80,
+            "max_score": 100,
+            "results": {
+                "files": 1,
+                "pub_functions": "0/0",
+                "pub_structs": "0/0",
+                "pub_enums": "0/0",
+                "pub_traits": "0/0",
+                "modules_documented": "0/1",
+                "examples": 0
+            },
+            "problems": []
         },
         "organization": {
             "score": 0,
