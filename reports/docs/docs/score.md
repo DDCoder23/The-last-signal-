@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-21 13:36:01
+**Date :** 2026-07-21 13:45:25
 
-# 77/100
+# 22/100
 
-**Statut :** Satisfaisant
+**Statut :** Très Décevant
 
 ## Résultats
 |Module|Score|
@@ -14,7 +14,7 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**100**|
+|rust|**0**|
 |organization|**0**|
 |navigation|**0**|
 
@@ -40,6 +40,28 @@ TypeError: result doit être un dict, reçu int
 
 
 - **module :** navigation
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function '{' sans documentation
+
+- **line :** 1
+
+- **suggestion :** Ajoutez un commentaire de documentation (/// ou /**) avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Main '{' sans documentation
+
+- **line :** 1
+
+- **suggestion :** Ajoutez un commentaire de documentation (/// ou /**) avant cette main
+
+- **module :** rust
 
 # 📄 Ancien/Secure_save.py
 
