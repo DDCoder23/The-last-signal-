@@ -1,14 +1,14 @@
 {
-    "generated": "2026-07-21T13:31:15.539485",
-    "score": 22,
-    "status": "Très Décevant",
+    "generated": "2026-07-21T13:36:01.077991",
+    "score": 77,
+    "status": "Satisfaisant",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 0,
+        "rust": 100,
         "organization": 0,
         "navigation": 0
     },
@@ -5304,10 +5304,12 @@
             ]
         },
         "rust": {
-            "score": 0,
+            "score": 100,
             "max_score": 100,
             "results": {
-                "files_checked": 0
+                "files_checked": 1,
+                "total_elements": 0,
+                "elements_without_docs": 0
             },
             "problems": []
         },

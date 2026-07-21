@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-21 13:31:16.505029",
+    "generated": "2026-07-21 13:36:02.204135",
     "summary": {
         "total_runs": 1,
-        "average_quality": 14.4,
+        "average_quality": 25.4,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 520,
-            "date": "2026-07-21T13:31:15.912755",
+            "run": 521,
+            "date": "2026-07-21T13:36:01.422947",
             "branch": "refs/heads/main",
-            "commit": "0dca2b3996b6b426b6d9b00651c500d79853bb87",
+            "commit": "ee70b0028664cf3738f288a2011f7fc531bdcf93",
             "status": "success",
-            "quality": 14.4,
+            "quality": 25.4,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 22,
+                "score": 77,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -5323,10 +5323,12 @@
                         ]
                     },
                     "rust": {
-                        "score": 0,
+                        "score": 100,
                         "max_score": 100,
                         "results": {
-                            "files_checked": 0
+                            "files_checked": 1,
+                            "total_elements": 0,
+                            "elements_without_docs": 0
                         },
                         "problems": []
                     },
