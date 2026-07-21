@@ -15,7 +15,7 @@ def check_rust_docs() -> Dict[str, Any]:
         - problems: Liste des problèmes trouvés
     """
     rust_files = []
-    base_dir = os.path.dirname(os.path.dirname(__file__))
+    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
 
     # Trouve tous les fichiers .rs (exclut le dossier target)
     for root, _, files in os.walk(base_dir):
