@@ -1,12 +1,12 @@
-# ðŸ“Š Documentation Quality Report
+Documentation Quality Report
 
-**Date :** 2026-07-21 13:11:00
+**Date :** 2026-07-21 13:19:44
 
 # 48/100
 
 **Statut :** Médiocre
 
-## RÃ©sultats
+## Résultats
 |Module|Score|
 |---|---:|
 |markdown|**17**|
