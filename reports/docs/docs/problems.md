@@ -1,27 +1,18 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-21 13:19:44
+Generated: 2026-07-21 13:20:13
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|130|
-|⚠️ Warnings|671|
-|**Total**|**864**|
+|❌ Errors|129|
+|⚠️ Warnings|670|
+|**Total**|**862**|
 
 ---
 
 # 📄 
-
-## ❌ Error
-
-- **Module :** rust
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
-    raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
-TypeError: result doit être un dict, reçu int
-
 
 ## ❌ Error
 
@@ -4584,12 +4575,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_rust_docs' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_rust_docs' ne possède pas d'annotations de type.
+- **Message :** La fonction 'check_rust_docs' dépasse 80 lignes.
 
 ---
 

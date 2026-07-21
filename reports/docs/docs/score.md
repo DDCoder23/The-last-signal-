@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-21 13:19:44
+**Date :** 2026-07-21 13:20:13
 
-# 48/100
+# 77/100
 
-**Statut :** Médiocre
+**Statut :** Satisfaisant
 
 ## Résultats
 |Module|Score|
@@ -14,22 +14,12 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**0**|
+|rust|**100**|
 |organization|**0**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
-
-## ❌ Error
-- **Module :** rust
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
-    raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
-TypeError: result doit être un dict, reçu int
-
-
-- **module :** rust
 
 ## ❌ Error
 - **Module :** organization
@@ -5255,13 +5245,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_rust_docs' ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'check_rust_docs' ne possède pas d'annotations de type.
+- **Message :** La fonction 'check_rust_docs' dépasse 80 lignes.
 
 - **module :** python
 

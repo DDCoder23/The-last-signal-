@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-21 13:19:50.642740",
+    "generated": "2026-07-21 13:20:14.832373",
     "summary": {
         "total_runs": 1,
-        "average_quality": 19.6,
+        "average_quality": 25.4,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 517,
-            "date": "2026-07-21T13:19:45.205556",
+            "run": 518,
+            "date": "2026-07-21T13:20:14.107391",
             "branch": "refs/heads/main",
-            "commit": "c110cda90b796e9330eed99295f156a42df47518",
+            "commit": "bddf10569a305ae2c504dfd74154790b929cd9bd",
             "status": "success",
-            "quality": 19.6,
+            "quality": 25.4,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 48,
+                "score": 77,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -2158,10 +2158,10 @@
                             "functions": 257,
                             "documented_modules": 0,
                             "documented_classes": 2,
-                            "documented_functions": 63,
-                            "typed_functions": 25,
+                            "documented_functions": 64,
+                            "typed_functions": 26,
                             "todo": 4,
-                            "long_functions": 9
+                            "long_functions": 10
                         },
                         "problems": [
                             {
@@ -5167,13 +5167,7 @@
                             {
                                 "file": "scripts/documentation/rust_docs.py",
                                 "severity": "warning",
-                                "message": "La fonction 'check_rust_docs' ne possède pas de docstring.",
-                                "module": "python"
-                            },
-                            {
-                                "file": "scripts/documentation/rust_docs.py",
-                                "severity": "warning",
-                                "message": "La fonction 'check_rust_docs' ne possède pas d'annotations de type.",
+                                "message": "La fonction 'check_rust_docs' dépasse 80 lignes.",
                                 "module": "python"
                             },
                             {
@@ -5329,17 +5323,12 @@
                         ]
                     },
                     "rust": {
-                        "score": 0,
-                        "max_score": 1,
-                        "results": {},
-                        "problems": [
-                            {
-                                "file": "",
-                                "severity": "error",
-                                "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
-                                "module": "rust"
-                            }
-                        ]
+                        "score": 100,
+                        "max_score": 100,
+                        "results": {
+                            "files_checked": 0
+                        },
+                        "problems": []
                     },
                     "organization": {
                         "score": 0,
