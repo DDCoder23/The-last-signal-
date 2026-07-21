@@ -36,57 +36,59 @@ def check_rust_docs() -> Dict[str, Any]:
     problems: List[Dict[str, Any]] = []
     total_issues = 0
     total_elements = 0  # Nombre total d'éléments vérifiés
-
-    for file_path in rust_files:
-        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
-            content = f.read()
-            lines = content.split('\n')
-
-        file_problems = []
-        file_elements = 0
-
-        # Patterns pour détecter les éléments Rust publics
-        patterns = {
+    patterns = {
     'function': r'^\s*(pub\s+)?fn\s+\w+\s*\([^)]*\)',
     'struct': r'^\s*(pub\s+)?struct\s+\w+',
     'enum': r'^\s*(pub\s+)?enum\s+\w+',
     'impl': r'^\s*impl\s+[\w<>=, ]+',
     'mod': r'^\s*(pub\s+)?mod\s+\w+',
-    'trait': r'^\s*(pub\s+)?trait\s+\w+',
-    'main': r'^\s*fn\s+main\s*\('
-        }
-
-        for i, line in enumerate(lines):
-            line = line.strip()
-
-            # Vérifie si la ligne est une déclaration publique
-            for element_type, pattern in patterns.items():
-                if re.match(pattern, line):
-                    file_elements += 1
+    'trait': r'^\s*(pub\s+)?trait\s+\w+'
+    }
+    for file_path in rust_files:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+            content = f.read()
+            lines = content.split('\n')
+            file_problems = []
+            file_elements = 0
+            # Patterns pour détecter les éléments Rust publics
+            for i, line in enumerate(lines):
+                line = line.strip()
+                for element_type, pattern in patterns.items():
+                    match = re.match(pattern, line)
+                    if match:
+                        # ✅ Extraction correcte du nom
+                        if element_type == 'function':
+                            # Pour les fonctions : extrait le nom entre 'fn' et '('
+                            name_match = re.match(r'^\s*(pub\s+)?fn\s+(\w+)', line)
+                            element_name = name_match.group(2) if name_match else "unknown"
+                        elif element_type == 'main':
+                            element_name = "main"
+                    else:
+                        # Pour struct/enum/mod/trait : dernier mot du pattern
+                        element_name = line.split()[-1].split('{')[0].strip()
                     total_elements += 1
-
-                    # Vérifie si la ligne précédente est un doc comment
                     has_doc = False
                     if i > 0:
                         prev_line = lines[i-1].strip()
-                        if (prev_line.startswith('///') or
+                        if (prev_line.startswith('///') or 
                             prev_line.startswith('/**') or
-                            prev_line.startswith('/*!') or
-                            (i > 1 and lines[i-2].strip().startswith('/**'))):
+                            prev_line.startswith('/*!')):
                             has_doc = True
+                        if not has_doc:
+                            total_issues += 1
+                            problems.append({
+                                    "file": file_path,
+                                    "line": i + 1,
+                                    "severity": "warning",
+                                    "message": f"{element_type.capitalize()} '{element_name}' sans documentation",
+                                    "suggestion": f"Ajoutez /// avant cette {element_type}"
+                            })
 
-                    if not has_doc:
-                        total_issues += 1
-                        file_problems.append({
-                            "file": file_path,
-                            "line": i + 1,
-                            "severity": "warning",
-                            "message": f"{element_type.capitalize()} '{line.split()[-1]}' sans documentation",
-                            "suggestion": f"Ajoutez un commentaire de documentation (/// ou /**) avant cette {element_type}"
-                        })
+        
 
-        if file_problems:
-            problems.extend(file_problems)
+
+            if file_problems:
+                problems.extend(file_problems)
 
     # Calcul du score en pourcentage (0-100)
     if total_elements > 0:
