@@ -1,14 +1,14 @@
 {
-    "generated": "2026-07-21T13:20:13.764750",
-    "score": 77,
-    "status": "Satisfaisant",
+    "generated": "2026-07-21T13:21:35.733411",
+    "score": 22,
+    "status": "Très Décevant",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 100,
+        "rust": 0,
         "organization": 0,
         "navigation": 0
     },
@@ -5304,7 +5304,7 @@
             ]
         },
         "rust": {
-            "score": 100,
+            "score": 0,
             "max_score": 100,
             "results": {
                 "files_checked": 0

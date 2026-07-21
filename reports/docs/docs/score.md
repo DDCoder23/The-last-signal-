@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-21 13:20:13
+**Date :** 2026-07-21 13:21:35
 
-# 77/100
+# 22/100
 
-**Statut :** Satisfaisant
+**Statut :** Très Décevant
 
 ## Résultats
 |Module|Score|
@@ -14,7 +14,7 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**100**|
+|rust|**0**|
 |organization|**0**|
 |navigation|**0**|
 
