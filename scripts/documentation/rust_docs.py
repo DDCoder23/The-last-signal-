@@ -47,12 +47,13 @@ def check_rust_docs() -> Dict[str, Any]:
 
         # Patterns pour détecter les éléments Rust publics
         patterns = {
-            'function': r'^\s*pub\s+fn\s+\w+',
-            'struct': r'^\s*pub\s+struct\s+\w+',
-            'enum': r'^\s*pub\s+enum\s+\w+',
-            'impl': r'^\s*impl\s+\w+',
-            'mod': r'^\s*pub\s+mod\s+\w+',
-            'trait': r'^\s*pub\s+trait\s+\w+'
+    'function': r'^\s*(pub\s+)?fn\s+\w+\s*\([^)]*\)',
+    'struct': r'^\s*(pub\s+)?struct\s+\w+',
+    'enum': r'^\s*(pub\s+)?enum\s+\w+',
+    'impl': r'^\s*impl\s+[\w<>=, ]+',
+    'mod': r'^\s*(pub\s+)?mod\s+\w+',
+    'trait': r'^\s*(pub\s+)?trait\s+\w+',
+    'main': r'^\s*fn\s+main\s*\('
         }
 
         for i, line in enumerate(lines):
