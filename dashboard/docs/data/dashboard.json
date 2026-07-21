@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-21 13:02:02.029010",
+    "generated": "2026-07-21 13:11:01.359032",
     "summary": {
         "total_runs": 1,
-        "average_quality": 23.2,
+        "average_quality": 19.6,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 515,
-            "date": "2026-07-21T13:02:00.936231",
+            "run": 516,
+            "date": "2026-07-21T13:11:00.624666",
             "branch": "refs/heads/main",
-            "commit": "de8a1d09ee038be40c82e9ca46b459debfeac214",
+            "commit": "4134f533c4c5448d05815205d36bc0779b7a78c6",
             "status": "success",
-            "quality": 23.2,
+            "quality": 19.6,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 66,
+                "score": 48,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -2155,13 +2155,13 @@
                         "results": {
                             "modules": 47,
                             "classes": 43,
-                            "functions": 258,
+                            "functions": 257,
                             "documented_modules": 0,
                             "documented_classes": 2,
                             "documented_functions": 63,
                             "typed_functions": 25,
                             "todo": 4,
-                            "long_functions": 10
+                            "long_functions": 9
                         },
                         "problems": [
                             {
@@ -5177,24 +5177,6 @@
                                 "module": "python"
                             },
                             {
-                                "file": "scripts/documentation/rust_docs.py",
-                                "severity": "warning",
-                                "message": "La fonction 'check_rust_docs' dépasse 80 lignes.",
-                                "module": "python"
-                            },
-                            {
-                                "file": "scripts/documentation/rust_docs.py",
-                                "severity": "warning",
-                                "message": "La fonction 'ratio' ne possède pas de docstring.",
-                                "module": "python"
-                            },
-                            {
-                                "file": "scripts/documentation/rust_docs.py",
-                                "severity": "warning",
-                                "message": "La fonction 'ratio' ne possède pas d'annotations de type.",
-                                "module": "python"
-                            },
-                            {
                                 "file": "scripts/database/utils.py",
                                 "severity": "warning",
                                 "message": "Le module ne possède pas de docstring.",
@@ -5347,18 +5329,17 @@
                         ]
                     },
                     "rust": {
-                        "score": 80,
-                        "max_score": 100,
-                        "results": {
-                            "files": 1,
-                            "pub_functions": "0/0",
-                            "pub_structs": "0/0",
-                            "pub_enums": "0/0",
-                            "pub_traits": "0/0",
-                            "modules_documented": "0/1",
-                            "examples": 0
-                        },
-                        "problems": []
+                        "score": 0,
+                        "max_score": 1,
+                        "results": {},
+                        "problems": [
+                            {
+                                "file": "",
+                                "severity": "error",
+                                "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+                                "module": "rust"
+                            }
+                        ]
                     },
                     "organization": {
                         "score": 0,
