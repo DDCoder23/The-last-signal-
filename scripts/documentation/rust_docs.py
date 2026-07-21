@@ -27,7 +27,7 @@ def check_rust_docs() -> Dict[str, Any]:
 
     if not rust_files:
         return {
-            "score": 100,  # Score parfait si aucun fichier Rust
+            "score": 0,  
             "max_score": 100,
             "results": {"files_checked": 0},
             "problems": []
