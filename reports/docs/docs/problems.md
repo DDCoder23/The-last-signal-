@@ -1,18 +1,30 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-21 13:45:26
+Generated: 2026-07-21 14:05:09
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|129|
-|⚠️ Warnings|672|
-|**Total**|**864**|
+|❌ Errors|130|
+|⚠️ Warnings|670|
+|**Total**|**863**|
 
 ---
 
 # 📄 
+
+## ❌ Error
+
+- **Module :** rust
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 68, in check_rust_docs
+    element_name = line.split()[-1].split('{')[0].strip()
+                   ~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+
 
 ## ❌ Error
 
@@ -31,24 +43,6 @@ TypeError: result doit être un dict, reçu int
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Function '{' sans documentation
-- **line :** 1
-- **suggestion :** Ajoutez un commentaire de documentation (/// ou /**) avant cette function
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Main '{' sans documentation
-- **line :** 1
-- **suggestion :** Ajoutez un commentaire de documentation (/// ou /**) avant cette main
 
 ---
 

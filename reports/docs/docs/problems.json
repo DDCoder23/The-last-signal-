@@ -5220,19 +5220,9 @@
         "module": "python"
     },
     {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-        "line": 1,
-        "severity": "warning",
-        "message": "Function '{' sans documentation",
-        "suggestion": "Ajoutez un commentaire de documentation (/// ou /**) avant cette function",
-        "module": "rust"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-        "line": 1,
-        "severity": "warning",
-        "message": "Main '{' sans documentation",
-        "suggestion": "Ajoutez un commentaire de documentation (/// ou /**) avant cette main",
+        "file": "",
+        "severity": "error",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 68, in check_rust_docs\n    element_name = line.split()[-1].split('{')[0].strip()\n                   ~~~~~~~~~~~~^^^^\nIndexError: list index out of range\n",
         "module": "rust"
     },
     {

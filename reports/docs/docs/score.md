@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-21 13:45:25
+**Date :** 2026-07-21 14:05:09
 
-# 22/100
+# 48/100
 
-**Statut :** Très Décevant
+**Statut :** Médiocre
 
 ## Résultats
 |Module|Score|
@@ -20,6 +20,19 @@ Documentation Quality Report
 
 ## Problèmes
 # 📄 
+
+## ❌ Error
+- **Module :** rust
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 68, in check_rust_docs
+    element_name = line.split()[-1].split('{')[0].strip()
+                   ~~~~~~~~~~~~^^^^
+IndexError: list index out of range
+
+
+- **module :** rust
 
 ## ❌ Error
 - **Module :** organization
@@ -40,28 +53,6 @@ TypeError: result doit être un dict, reçu int
 
 
 - **module :** navigation
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Function '{' sans documentation
-
-- **line :** 1
-
-- **suggestion :** Ajoutez un commentaire de documentation (/// ou /**) avant cette function
-
-- **module :** rust
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Main '{' sans documentation
-
-- **line :** 1
-
-- **suggestion :** Ajoutez un commentaire de documentation (/// ou /**) avant cette main
-
-- **module :** rust
 
 # 📄 Ancien/Secure_save.py
 

@@ -1,7 +1,7 @@
 {
-    "generated": "2026-07-21T13:45:25.915993",
-    "score": 22,
-    "status": "Très Décevant",
+    "generated": "2026-07-21T14:05:09.195794",
+    "score": 48,
+    "status": "Médiocre",
     "scores": {
         "markdown": 17,
         "titles": 4,
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 864,
+    "problem_count": 863,
     "details": {
         "markdown": {
             "score": 17,
@@ -5305,27 +5305,13 @@
         },
         "rust": {
             "score": 0,
-            "max_score": 100,
-            "results": {
-                "files_checked": 1,
-                "total_elements": 2,
-                "elements_without_docs": 2
-            },
+            "max_score": 1,
+            "results": {},
             "problems": [
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                    "line": 1,
-                    "severity": "warning",
-                    "message": "Function '{' sans documentation",
-                    "suggestion": "Ajoutez un commentaire de documentation (/// ou /**) avant cette function",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                    "line": 1,
-                    "severity": "warning",
-                    "message": "Main '{' sans documentation",
-                    "suggestion": "Ajoutez un commentaire de documentation (/// ou /**) avant cette main",
+                    "file": "",
+                    "severity": "error",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 68, in check_rust_docs\n    element_name = line.split()[-1].split('{')[0].strip()\n                   ~~~~~~~~~~~~^^^^\nIndexError: list index out of range\n",
                     "module": "rust"
                 }
             ]

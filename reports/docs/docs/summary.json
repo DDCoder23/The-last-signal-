@@ -1,7 +1,7 @@
 {
-    "generated": "2026-07-21T13:45:25.915993",
-    "score": 22,
-    "status": "Très Décevant",
+    "generated": "2026-07-21T14:05:09.195794",
+    "score": 48,
+    "status": "Médiocre",
     "scores": {
         "markdown": 17,
         "titles": 4,
@@ -12,5 +12,5 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 864
+    "problem_count": 863
 }
