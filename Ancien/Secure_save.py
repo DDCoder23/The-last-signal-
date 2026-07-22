@@ -76,6 +76,7 @@ def derive_key(password: str, salt: bytes):
 
 
 def aesgcm_encrypt(aes_key: bytes, plaintext: bytes) -> bytes:
+    # Encrypte le mot de passe 
     nonce = secrets.token_bytes(AES_GCM_NONCE_SIZE)
     aes = AESGCM(aes_key)
     ct = aes.encrypt(nonce, plaintext, None)
@@ -83,6 +84,7 @@ def aesgcm_encrypt(aes_key: bytes, plaintext: bytes) -> bytes:
 
 
 def aesgcm_decrypt(aes_key: bytes, blob: bytes) -> bytes:
+    # Décrypte le mot de passe
     if blob[0:1] != FORMAT_VERSION:
         raise ValueError("Format inconnu.")
     nonce = blob[1 : 1 + AES_GCM_NONCE_SIZE]
