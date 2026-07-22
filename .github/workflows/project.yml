@@ -77,7 +77,7 @@ jobs:
            mkdir -p reports/project
            markdownlint-cli2 \
            "**/*.md" --json \
-           > reports/docs/markdownlint.json
+           > reports/project/markdownlint.json
       # =========================
       # Spelling
       # =========================
