@@ -24,7 +24,7 @@ def check_rust_docs() -> Dict[str, Any]:
         for file in files:
             if file.endswith('.rs'):
                 rust_files.append(os.path.join(root, file))
-    print(rust_files)
+    print( "fichier:"+rust_files)
     if not rust_files:
         return {
             "score": 0,  
@@ -59,8 +59,10 @@ def check_rust_docs() -> Dict[str, Any]:
                 
                 for element_type, pattern in patterns.items():
                     match = re.match(pattern, line)
-                    
-                    if match:
+                    print(match)
+                    if not match:
+                        continue
+                    else:
                     
                         
                         # ✅ Extraction correcte du nom
@@ -90,7 +92,7 @@ def check_rust_docs() -> Dict[str, Any]:
                                     "message": f"{element_type.capitalize()} '{element_name}' sans documentation",
                                     "suggestion": f"Ajoutez /// avant cette {element_type}"
                             })
-                        break
+                    break
                     
 
         
