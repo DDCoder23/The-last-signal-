@@ -42,7 +42,7 @@ class Client:
         except Exception as e:
 
             logger.error(
-    f"Impossible de se connecter : {e}"
+    f"Impossible de se connecter : {traceback.format_exc()}"
 )
 
             self.connected = False
@@ -63,7 +63,7 @@ class Client:
         except Exception as e:
 
             logger.error(
-    f"Erreur d'envoi : {e}"
+    f"Erreur d'envoi : {traceback.format_exc()}"
 )
 
     def receive_packet(self, size=4096):
@@ -83,7 +83,7 @@ class Client:
         except Exception as e:
 
             logger.error(
-    f"Erreur de réception : {e}"
+    f"Erreur de réception : {traceback.format_exc()}"
 )
 
             return None
