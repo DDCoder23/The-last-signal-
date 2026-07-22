@@ -9,8 +9,8 @@ def check_rust_docs() -> Dict[str, Any]:
 
     Returns:
         Dict avec:
-        - score: Note globale (0-100) en INT
-        - max_score: Score maximum possible (100)
+        - score: Note globale (0-20) en INT
+        - max_score: Score maximum possible (20)
         - results: Détails par fichier
         - problems: Liste des problèmes trouvés
     """
@@ -29,7 +29,7 @@ def check_rust_docs() -> Dict[str, Any]:
     if not rust_files:
         return {
             "score": 0,  
-            "max_score": 100,
+            "max_score": 20,
             "results": {"files_checked": 0},
             "problems": []
         }
@@ -45,6 +45,7 @@ def check_rust_docs() -> Dict[str, Any]:
     'mod': r'^\s*(pub\s+)?mod\s+\w+',
     'trait': r'^\s*(pub\s+)?trait\s+\w+'
     }
+    score=20
     for file_path in rust_files:
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
@@ -77,6 +78,7 @@ def check_rust_docs() -> Dict[str, Any]:
                                 has_doc = True
                         if not has_doc:
                             total_issues += 1
+                            score-=1
                             problems.append({
                                     "file": file_path,
                                     "line": i + 1,
@@ -93,15 +95,12 @@ def check_rust_docs() -> Dict[str, Any]:
             if file_problems:
                 problems.extend(file_problems)
 
-    # Calcul du score en pourcentage (0-100)
-    if total_elements > 0:
-        score = max(0, 100 - (total_issues * 100 / total_elements))
-    else:
-        score = 100
+    # Calcul du score en pourcentage (0-20)
+
 
     return {
-        "score": int(score),  # ✅ Score en INT (0-100)
-        "max_score": 100,      # ✅ Max score en INT
+        "score": int(score),  # ✅ Score en INT (0-20)
+        "max_score": 20,      # ✅ Max score en INT
         "results": {
             "files_checked": len(rust_files),
             "total_elements": total_elements,
