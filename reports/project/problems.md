@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 12:31:43
+Generated: 2026-07-22 12:35:39
 
 ## Summary
 
@@ -44,7 +44,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'calculer_distance_levenshtein' ne possède pas de docstring.
+- **Message :** La fonction 'calculer_distance_levenshtein'ligne 27 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -54,7 +54,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'trouver_commandes_similaires' ne possède pas de docstring.
+- **Message :** La fonction 'trouver_commandes_similaires'ligne 43 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -64,7 +64,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'admin_only' ne possède pas de docstring.
+- **Message :** La fonction 'admin_only'ligne 55 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -79,7 +79,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'activer_admin' ne possède pas de docstring.
+- **Message :** La fonction 'activer_admin'ligne 443 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -89,7 +89,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'installer_raccourci_admin' ne possède pas de docstring.
+- **Message :** La fonction 'installer_raccourci_admin'ligne 463 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -99,7 +99,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'demander_mot_de_passe' ne possède pas de docstring.
+- **Message :** La fonction 'demander_mot_de_passe'ligne 486 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -114,7 +114,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'wrapper' ne possède pas de docstring.
+- **Message :** La fonction 'wrapper'ligne 56 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -124,7 +124,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'log' ne possède pas de docstring.
+- **Message :** La fonction 'log'ligne 99 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -134,7 +134,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'executer' ne possède pas de docstring.
+- **Message :** La fonction 'executer'ligne 102 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -144,7 +144,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'executer_commande' ne possède pas de docstring.
+- **Message :** La fonction 'executer_commande'ligne 126 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -154,7 +154,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'keyPressEvent' ne possède pas de docstring.
+- **Message :** La fonction 'keyPressEvent'ligne 464 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -164,7 +164,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'wrapper' ne possède pas de docstring.
+- **Message :** La fonction 'wrapper'ligne 511 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -188,7 +188,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'afficher_banque' ne possède pas de docstring.
+- **Message :** La fonction 'afficher_banque'ligne 294 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -208,7 +208,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'verifier_blocage_boutons' ne possède pas de docstring.
+- **Message :** La fonction 'verifier_blocage_boutons'ligne 91 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -238,7 +238,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'afficher_banque' ne possède pas de docstring.
+- **Message :** La fonction 'afficher_banque'ligne 245 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -281,7 +281,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'log_debug' ne possède pas de docstring.
+- **Message :** La fonction 'log_debug'ligne 33 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -291,7 +291,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'extract_imports_from_file' ne possède pas de docstring.
+- **Message :** La fonction 'extract_imports_from_file'ligne 45 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -301,7 +301,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'modules_in_text' ne possède pas de docstring.
+- **Message :** La fonction 'modules_in_text'ligne 60 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -341,7 +341,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'debug' ne possède pas de docstring.
+- **Message :** La fonction 'debug'ligne 211 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -351,7 +351,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'create_module' ne possède pas de docstring.
+- **Message :** La fonction 'create_module'ligne 113 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -361,7 +361,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'exec_module' ne possède pas de docstring.
+- **Message :** La fonction 'exec_module'ligne 117 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -371,7 +371,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'create_module' ne possède pas de docstring.
+- **Message :** La fonction 'create_module'ligne 120 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -381,7 +381,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'exec_module' ne possède pas de docstring.
+- **Message :** La fonction 'exec_module'ligne 124 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -391,7 +391,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'find_spec' ne possède pas de docstring.
+- **Message :** La fonction 'find_spec'ligne 130 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -401,7 +401,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'enable' ne possède pas de docstring.
+- **Message :** La fonction 'enable'ligne 157 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -411,7 +411,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'dependency_check' ne possède pas de docstring.
+- **Message :** La fonction 'dependency_check'ligne 169 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -421,7 +421,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'handle_error' ne possède pas de docstring.
+- **Message :** La fonction 'handle_error'ligne 181 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -431,7 +431,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'handle_warning' ne possède pas de docstring.
+- **Message :** La fonction 'handle_warning'ligne 187 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -441,7 +441,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'wrap' ne possède pas de docstring.
+- **Message :** La fonction 'wrap'ligne 190 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -451,7 +451,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'wrapped' ne possède pas de docstring.
+- **Message :** La fonction 'wrapped'ligne 191 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -489,7 +489,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'gestionnaire_de_grade' ne possède pas de docstring.
+- **Message :** La fonction 'gestionnaire_de_grade'ligne 1 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -499,7 +499,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'gestionnaire_de_vehicule' ne possède pas de docstring.
+- **Message :** La fonction 'gestionnaire_de_vehicule'ligne 10 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -509,7 +509,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'gestionnaire_de_batiments' ne possède pas de docstring.
+- **Message :** La fonction 'gestionnaire_de_batiments'ligne 20 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -519,7 +519,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'manage' ne possède pas de docstring.
+- **Message :** La fonction 'manage'ligne 29 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -529,7 +529,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'decorateur' ne possède pas de docstring.
+- **Message :** La fonction 'decorateur'ligne 2 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -539,7 +539,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'decorateur' ne possède pas de docstring.
+- **Message :** La fonction 'decorateur'ligne 12 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -549,7 +549,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'decorateur' ne possède pas de docstring.
+- **Message :** La fonction 'decorateur'ligne 22 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -559,7 +559,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'decorateur' ne possède pas de docstring.
+- **Message :** La fonction 'decorateur'ligne 30 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -569,7 +569,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'fonction_interne' ne possède pas de docstring.
+- **Message :** La fonction 'fonction_interne'ligne 3 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -579,7 +579,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'fonction_interne' ne possède pas de docstring.
+- **Message :** La fonction 'fonction_interne'ligne 13 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -589,7 +589,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'fonction_interne' ne possède pas de docstring.
+- **Message :** La fonction 'fonction_interne'ligne 23 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -599,7 +599,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'fonction_interne' ne possède pas de docstring.
+- **Message :** La fonction 'fonction_interne'ligne 31 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -618,7 +618,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'trouver_fuseau' ne possède pas de docstring.
+- **Message :** La fonction 'trouver_fuseau'ligne 97 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -642,7 +642,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'chercher' ne possède pas de docstring.
+- **Message :** La fonction 'chercher'ligne 216 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -652,7 +652,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'réinitialiser' ne possède pas de docstring.
+- **Message :** La fonction 'réinitialiser'ligne 221 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -692,7 +692,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'charger_depuis_json' ne possède pas de docstring.
+- **Message :** La fonction 'charger_depuis_json'ligne 171 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -735,7 +735,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'qtes' ne possède pas de docstring.
+- **Message :** La fonction 'qtes'ligne 19 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -750,7 +750,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'qtes' ne possède pas de docstring.
+- **Message :** La fonction 'qtes'ligne 59 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -765,7 +765,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'afficher_inventaire' ne possède pas de docstring.
+- **Message :** La fonction 'afficher_inventaire'ligne 516 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -805,7 +805,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'vendre_objet' ne possède pas de docstring.
+- **Message :** La fonction 'vendre_objet'ligne 359 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -825,7 +825,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'charger_prix_objets' ne possède pas de docstring.
+- **Message :** La fonction 'charger_prix_objets'ligne 477 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -840,7 +840,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'filtrer_inventaire' ne possède pas de docstring.
+- **Message :** La fonction 'filtrer_inventaire'ligne 502 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -864,7 +864,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'qtes' ne possède pas de docstring.
+- **Message :** La fonction 'qtes'ligne 33 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -909,7 +909,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'nettoyer_stuff_zero' ne possède pas de docstring.
+- **Message :** La fonction 'nettoyer_stuff_zero'ligne 325 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -924,7 +924,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'safe_increment' ne possède pas de docstring.
+- **Message :** La fonction 'safe_increment'ligne 357 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -949,7 +949,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'afficher_magasin' ne possède pas de docstring.
+- **Message :** La fonction 'afficher_magasin'ligne 746 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -959,7 +959,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'attribut_superieur_a_un' ne possède pas de docstring.
+- **Message :** La fonction 'attribut_superieur_a_un'ligne 211 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -969,7 +969,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'nom_affiche' ne possède pas de docstring.
+- **Message :** La fonction 'nom_affiche'ligne 214 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -979,7 +979,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'nom' ne possède pas de docstring.
+- **Message :** La fonction 'nom'ligne 221 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -989,7 +989,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'image' ne possède pas de docstring.
+- **Message :** La fonction 'image'ligne 224 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -999,7 +999,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'ajouter' ne possède pas de docstring.
+- **Message :** La fonction 'ajouter'ligne 227 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1009,7 +1009,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'retirer' ne possède pas de docstring.
+- **Message :** La fonction 'retirer'ligne 230 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1019,7 +1019,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'enchanter' ne possède pas de docstring.
+- **Message :** La fonction 'enchanter'ligne 254 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1029,7 +1029,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'taux_de_critique' ne possède pas de docstring.
+- **Message :** La fonction 'taux_de_critique'ligne 288 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1039,7 +1039,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'enchanter' ne possède pas de docstring.
+- **Message :** La fonction 'enchanter'ligne 292 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1049,7 +1049,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'appliquer_effet' ne possède pas de docstring.
+- **Message :** La fonction 'appliquer_effet'ligne 305 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1103,7 +1103,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'jet_de_des' ne possède pas de docstring.
+- **Message :** La fonction 'jet_de_des'ligne 2 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1122,7 +1122,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'obtenir_localisation_par_ip' ne possède pas de docstring.
+- **Message :** La fonction 'obtenir_localisation_par_ip'ligne 5 ne possède pas de docstring.
 
 ---
 
@@ -1136,7 +1136,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'lister_profils_sauvegardes' ne possède pas de docstring.
+- **Message :** La fonction 'lister_profils_sauvegardes'ligne 51 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1151,7 +1151,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'reprendre_joueur' ne possède pas de docstring.
+- **Message :** La fonction 'reprendre_joueur'ligne 137 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1161,7 +1161,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'reconstruire_stuff' ne possède pas de docstring.
+- **Message :** La fonction 'reconstruire_stuff'ligne 152 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1201,7 +1201,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'autosave_provider_factory' ne possède pas de docstring.
+- **Message :** La fonction 'autosave_provider_factory'ligne 426 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1241,7 +1241,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main' ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 1099 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1251,7 +1251,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_modifier' ne possède pas de docstring.
+- **Message :** La fonction 'get_modifier'ligne 227 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1261,7 +1261,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'generer_stats' ne possède pas de docstring.
+- **Message :** La fonction 'generer_stats'ligne 233 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1271,7 +1271,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'position' ne possède pas de docstring.
+- **Message :** La fonction 'position'ligne 257 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1281,7 +1281,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'set_position' ne possède pas de docstring.
+- **Message :** La fonction 'set_position'ligne 260 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1291,7 +1291,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'deplacer' ne possède pas de docstring.
+- **Message :** La fonction 'deplacer'ligne 274 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1301,7 +1301,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'subir_degats' ne possède pas de docstring.
+- **Message :** La fonction 'subir_degats'ligne 283 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1311,7 +1311,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'liste' ne possède pas de docstring.
+- **Message :** La fonction 'liste'ligne 288 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1321,17 +1321,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'jet_attaque' ne possède pas de docstring.
+- **Message :** La fonction 'jet_attaque'ligne 295 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'calcul_degats' ne possède pas de docstring.
+- **Message :** La fonction 'calcul_degats'ligne 300 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'save' ne possède pas de docstring.
+- **Message :** La fonction 'save'ligne 350 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1341,7 +1341,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'to_dict' ne possède pas de docstring.
+- **Message :** La fonction 'to_dict'ligne 360 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1351,7 +1351,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'cara_sup' ne possède pas de docstring.
+- **Message :** La fonction 'cara_sup'ligne 405 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1361,12 +1361,12 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'attaquer' ne possède pas de docstring.
+- **Message :** La fonction 'attaquer'ligne 415 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'provider' ne possède pas de docstring.
+- **Message :** La fonction 'provider'ligne 429 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1376,7 +1376,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_height' ne possède pas de docstring.
+- **Message :** La fonction 'get_height'ligne 449 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1386,7 +1386,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'on_key_vispy' ne possède pas de docstring.
+- **Message :** La fonction 'on_key_vispy'ligne 559 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1396,7 +1396,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'refresh_joueur' ne possède pas de docstring.
+- **Message :** La fonction 'refresh_joueur'ligne 632 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1406,7 +1406,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'update_info' ne possède pas de docstring.
+- **Message :** La fonction 'update_info'ligne 646 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1416,7 +1416,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'afficher_tresor' ne possède pas de docstring.
+- **Message :** La fonction 'afficher_tresor'ligne 664 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1426,7 +1426,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'on_take' ne possède pas de docstring.
+- **Message :** La fonction 'on_take'ligne 731 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1436,7 +1436,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'closeEvent' ne possède pas de docstring.
+- **Message :** La fonction 'closeEvent'ligne 782 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1471,7 +1471,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'show_menu' ne possède pas de docstring.
+- **Message :** La fonction 'show_menu'ligne 929 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1481,7 +1481,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'start_new_game' ne possède pas de docstring.
+- **Message :** La fonction 'start_new_game'ligne 939 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1491,7 +1491,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'start_load_game' ne possède pas de docstring.
+- **Message :** La fonction 'start_load_game'ligne 977 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1511,7 +1511,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'start_game' ne possède pas de docstring.
+- **Message :** La fonction 'start_game'ligne 1010 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1521,7 +1521,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'load_game_from_slot' ne possède pas de docstring.
+- **Message :** La fonction 'load_game_from_slot'ligne 1066 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1531,7 +1531,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'show_save_select' ne possède pas de docstring.
+- **Message :** La fonction 'show_save_select'ligne 1073 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1546,7 +1546,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'closeEvent' ne possède pas de docstring.
+- **Message :** La fonction 'closeEvent'ligne 1092 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1556,7 +1556,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'on_exit' ne possède pas de docstring.
+- **Message :** La fonction 'on_exit'ligne 1101 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1585,7 +1585,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'chercher_livre' ne possède pas de docstring.
+- **Message :** La fonction 'chercher_livre'ligne 26 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1595,7 +1595,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'convertir_livres' ne possède pas de docstring.
+- **Message :** La fonction 'convertir_livres'ligne 131 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1605,7 +1605,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l1_l2' ne possède pas de docstring.
+- **Message :** La fonction 'l1_l2'ligne 154 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1615,7 +1615,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l2_l3' ne possède pas de docstring.
+- **Message :** La fonction 'l2_l3'ligne 191 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1625,7 +1625,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l3_l4' ne possède pas de docstring.
+- **Message :** La fonction 'l3_l4'ligne 228 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1635,7 +1635,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l4_l5' ne possède pas de docstring.
+- **Message :** La fonction 'l4_l5'ligne 270 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1645,7 +1645,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l5_l6' ne possède pas de docstring.
+- **Message :** La fonction 'l5_l6'ligne 318 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1655,17 +1655,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'niveau_to_romain' ne possède pas de docstring.
+- **Message :** La fonction 'niveau_to_romain'ligne 53 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_niveau' ne possède pas de docstring.
+- **Message :** La fonction 'get_niveau'ligne 57 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_nom' ne possède pas de docstring.
+- **Message :** La fonction 'get_nom'ligne 66 ne possède pas de docstring.
 
 ---
 
@@ -1684,7 +1684,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'create_tresor' ne possède pas de docstring.
+- **Message :** La fonction 'create_tresor'ligne 992 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1694,7 +1694,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'ouvrir_tresor' ne possède pas de docstring.
+- **Message :** La fonction 'ouvrir_tresor'ligne 915 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1704,7 +1704,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'ouvrir_tresor_admin' ne possède pas de docstring.
+- **Message :** La fonction 'ouvrir_tresor_admin'ligne 973 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1780,7 +1780,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'emit' ne possède pas de docstring.
+- **Message :** La fonction 'emit'ligne 16 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1799,7 +1799,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main' ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 3 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1818,7 +1818,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'start_server' ne possède pas de docstring.
+- **Message :** La fonction 'start_server'ligne 10 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1837,7 +1837,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'update_docs_database' ne possède pas de docstring.
+- **Message :** La fonction 'update_docs_database'ligne 7 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1856,7 +1856,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'update_performance_database' ne possède pas de docstring.
+- **Message :** La fonction 'update_performance_database'ligne 1 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1875,7 +1875,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'update_python_database' ne possède pas de docstring.
+- **Message :** La fonction 'update_python_database'ligne 18 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1899,7 +1899,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'update_rust_database' ne possède pas de docstring.
+- **Message :** La fonction 'update_rust_database'ligne 19 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1923,7 +1923,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'update_security_database' ne possède pas de docstring.
+- **Message :** La fonction 'update_security_database'ligne 13 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1947,7 +1947,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'read_report' ne possède pas de docstring.
+- **Message :** La fonction 'read_report'ligne 5 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1957,7 +1957,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'extract_int' ne possède pas de docstring.
+- **Message :** La fonction 'extract_int'ligne 15 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1967,7 +1967,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'extract_float' ne possède pas de docstring.
+- **Message :** La fonction 'extract_float'ligne 25 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1991,7 +1991,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'create_tables' ne possède pas de docstring.
+- **Message :** La fonction 'create_tables'ligne 25 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2006,7 +2006,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_run' ne possède pas de docstring.
+- **Message :** La fonction 'add_run'ligne 360 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2016,7 +2016,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'insert' ne possède pas de docstring.
+- **Message :** La fonction 'insert'ligne 414 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2026,7 +2026,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'close' ne possède pas de docstring.
+- **Message :** La fonction 'close'ligne 436 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2036,7 +2036,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_security' ne possède pas de docstring.
+- **Message :** La fonction 'add_security'ligne 438 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2046,7 +2046,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_security_issue' ne possède pas de docstring.
+- **Message :** La fonction 'add_security_issue'ligne 462 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2056,7 +2056,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_performance' ne possède pas de docstring.
+- **Message :** La fonction 'add_performance'ligne 492 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2084,7 +2084,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_links' ne possède pas de docstring.
+- **Message :** La fonction 'check_links'ligne 16 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2094,7 +2094,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'extract_links' ne possède pas de docstring.
+- **Message :** La fonction 'extract_links'ligne 50 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2104,7 +2104,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_empty_links' ne possède pas de docstring.
+- **Message :** La fonction 'check_empty_links'ligne 67 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2114,7 +2114,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_local_links' ne possède pas de docstring.
+- **Message :** La fonction 'check_local_links'ligne 93 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2124,7 +2124,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_external_links' ne possède pas de docstring.
+- **Message :** La fonction 'check_external_links'ligne 123 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2134,7 +2134,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_anchors' ne possède pas de docstring.
+- **Message :** La fonction 'check_anchors'ligne 151 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2144,7 +2144,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_images' ne possède pas de docstring.
+- **Message :** La fonction 'check_images'ligne 173 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2154,7 +2154,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_duplicate_links' ne possède pas de docstring.
+- **Message :** La fonction 'check_duplicate_links'ligne 208 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2173,7 +2173,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'load_markdownlint_report' ne possède pas de docstring.
+- **Message :** La fonction 'load_markdownlint_report'ligne 32 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2183,17 +2183,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_markdown_files' ne possède pas de docstring.
+- **Message :** La fonction 'get_markdown_files'ligne 44 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_markdown' ne possède pas de docstring.
+- **Message :** La fonction 'check_markdown'ligne 56 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_empty_files' ne possède pas de docstring.
+- **Message :** La fonction 'check_empty_files'ligne 91 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2203,7 +2203,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_encoding' ne possède pas de docstring.
+- **Message :** La fonction 'check_encoding'ligne 117 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2213,7 +2213,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_line_length' ne possède pas de docstring.
+- **Message :** La fonction 'check_line_length'ligne 129 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2223,7 +2223,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_trailing_spaces' ne possède pas de docstring.
+- **Message :** La fonction 'check_trailing_spaces'ligne 146 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2233,7 +2233,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_code_blocks' ne possède pas de docstring.
+- **Message :** La fonction 'check_code_blocks'ligne 163 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2243,7 +2243,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_lists' ne possède pas de docstring.
+- **Message :** La fonction 'check_lists'ligne 177 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2253,7 +2253,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_tables' ne possède pas de docstring.
+- **Message :** La fonction 'check_tables'ligne 215 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2263,7 +2263,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_html' ne possède pas de docstring.
+- **Message :** La fonction 'check_html'ligne 248 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2282,7 +2282,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_navigation' ne possède pas de docstring.
+- **Message :** La fonction 'check_navigation'ligne 1 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2301,7 +2301,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_organization' ne possède pas de docstring.
+- **Message :** La fonction 'check_organization'ligne 4 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2320,7 +2320,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_problem' ne possède pas de docstring.
+- **Message :** La fonction 'add_problem'ligne 3 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2373,7 +2373,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'generate_report' ne possède pas de docstring.
+- **Message :** La fonction 'generate_report'ligne 25 ne possède pas de docstring.
 
 ---
 
@@ -2401,7 +2401,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'generate_score' ne possède pas de docstring.
+- **Message :** La fonction 'generate_score'ligne 11 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2434,7 +2434,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_titles' ne possède pas de docstring.
+- **Message :** La fonction 'check_titles'ligne 16 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2444,7 +2444,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_single_h1' ne possède pas de docstring.
+- **Message :** La fonction 'check_single_h1'ligne 51 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2454,7 +2454,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_heading_order' ne possède pas de docstring.
+- **Message :** La fonction 'check_heading_order'ligne 66 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2464,7 +2464,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_heading_spacing' ne possède pas de docstring.
+- **Message :** La fonction 'check_heading_spacing'ligne 90 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2474,7 +2474,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_empty_titles' ne possède pas de docstring.
+- **Message :** La fonction 'check_empty_titles'ligne 113 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2484,7 +2484,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_title_length' ne possède pas de docstring.
+- **Message :** La fonction 'check_title_length'ligne 131 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2494,7 +2494,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_duplicate_titles' ne possède pas de docstring.
+- **Message :** La fonction 'check_duplicate_titles'ligne 153 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2513,7 +2513,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_documentation_score' ne possède pas de docstring.
+- **Message :** La fonction 'get_documentation_score'ligne 12 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2523,7 +2523,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_database_data' ne possède pas de docstring.
+- **Message :** La fonction 'get_database_data'ligne 28 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2533,7 +2533,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'calculate_quality' ne possède pas de docstring.
+- **Message :** La fonction 'calculate_quality'ligne 88 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2543,7 +2543,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'generate_json' ne possède pas de docstring.
+- **Message :** La fonction 'generate_json'ligne 123 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2567,7 +2567,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'generate_problems_md' ne possède pas de docstring.
+- **Message :** La fonction 'generate_problems_md'ligne 10 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2595,7 +2595,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'update_database' ne possède pas de docstring.
+- **Message :** La fonction 'update_database'ligne 9 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -2643,7 +2643,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_main' ne possède pas de docstring.
+- **Message :** La fonction 'test_main'ligne 6 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
