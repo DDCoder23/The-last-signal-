@@ -5,7 +5,7 @@ from datetime import datetime
 from typing import Any
 from collections import defaultdict
 
-REPORT_DIR=Path("reports/docs")
+REPORT_DIR=Path("reports/project")
 REPORT_DIR.mkdir(parents=True,exist_ok=True)
 
 def _status(score:int)->str:
