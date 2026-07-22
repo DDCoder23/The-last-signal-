@@ -28,12 +28,13 @@ AES_KEY_SIZE = 32
 AES_GCM_NONCE_SIZE = 12
 FORMAT_VERSION = b"\x01"
 
-"""
+
+def log_save_event(profile: str, slot: int, status: str, message: str = "")-> None:
+    """
     Journalise un événement de sauvegarde.
 
     status : "OK" | "ERROR"
-"""
-def log_save_event(profile: str, slot: int, status: str, message: str = "")-> None:
+    """
     
     try:
         base_dir = os.path.join("saves", profile)
