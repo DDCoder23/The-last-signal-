@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T08:17:42.126370",
+    "generated": "2026-07-22T08:18:34.292008",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 835,
+    "problem_count": 838,
     "details": {
         "markdown": {
             "score": 42,
@@ -2134,12 +2134,12 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 49,
+                "modules": 50,
                 "classes": 39,
-                "functions": 246,
+                "functions": 248,
                 "documented_modules": 0,
                 "documented_classes": 4,
-                "documented_functions": 65,
+                "documented_functions": 67,
                 "typed_functions": 27,
                 "todo": 4,
                 "long_functions": 11
@@ -4297,6 +4297,24 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
                     "severity": "warning",
                     "message": "La fonction 'emit' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/database.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/database.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_connection' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/database.py",
+                    "severity": "warning",
+                    "message": "La fonction 'init_database' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
