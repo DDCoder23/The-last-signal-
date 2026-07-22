@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 06:48:29
+Generated: 2026-07-22 06:50:43
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|128|
-|⚠️ Warnings|670|
-|**Total**|**861**|
+|⚠️ Warnings|674|
+|**Total**|**865**|
 
 ---
 
@@ -2784,6 +2784,38 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'update_database' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.rs
+
+## ⚠️ Warning
+
+- **Module :** rust
+- **Message :** Struct 'pub ' sans documentation
+- **line :** 8
+- **suggestion :** Ajoutez /// avant cette struct
+
+## ⚠️ Warning
+
+- **Module :** rust
+- **Message :** Function 'pub ' sans documentation
+- **line :** 28
+- **suggestion :** Ajoutez /// avant cette function
+
+## ⚠️ Warning
+
+- **Module :** rust
+- **Message :** Function 'pub ' sans documentation
+- **line :** 40
+- **suggestion :** Ajoutez /// avant cette function
+
+## ⚠️ Warning
+
+- **Module :** rust
+- **Message :** Function 'None' sans documentation
+- **line :** 90
+- **suggestion :** Ajoutez /// avant cette function
 
 ---
 
