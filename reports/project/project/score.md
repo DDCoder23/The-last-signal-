@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 07:23:43
+**Date :** 2026-07-22 07:24:20
 
 # 77/100
 
@@ -2160,6 +2160,14 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
 
 - **module :** python
 
