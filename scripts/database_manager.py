@@ -322,9 +322,9 @@ class DatabaseManager:
             FOREIGN KEY(run_id) REFERENCES runs(id)
         );
 
-        """)
+        
 
-        self.connection.commit()
+        
     ----------------------------------------------------
 -- PERFORMANCE
 ----------------------------------------------------
