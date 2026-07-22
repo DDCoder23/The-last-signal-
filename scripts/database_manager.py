@@ -325,6 +325,33 @@ class DatabaseManager:
         """)
 
         self.connection.commit()
+    ----------------------------------------------------
+-- PERFORMANCE
+----------------------------------------------------
+
+        CREATE TABLE IF NOT EXISTS performance_metrics (
+
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+                run_id INTEGER,
+
+                language TEXT,
+
+                benchmark TEXT,
+
+                average REAL,
+
+                minimum REAL,
+
+                maximum REAL,
+
+                unit TEXT,
+
+                FOREIGN KEY(run_id) REFERENCES runs(id)
+            );
+            """)
+
+        self.connection.commit()
 
     # =====================================================
     # RUN
@@ -461,5 +488,42 @@ class DatabaseManager:
             column,
         ),
     )
+        self.connection.commit()
+    def add_performance(
+        self,
+        run_id,
+        language,
+        benchmark,
+        average,
+        minimum,
+        maximum,
+        unit,
+      ):
+
+        self.cursor.execute(
+        """
+        INSERT INTO performance_metrics
+        (
+            run_id,
+            language,
+            benchmark,
+            average,
+            minimum,
+            maximum,
+            unit
+        )
+        VALUES (?,?,?,?,?,?,?)
+        """,
+        (
+            run_id,
+            language,
+            benchmark,
+            average,
+            minimum,
+            maximum,
+            unit,
+        ),
+    )
+
         self.connection.commit()
     
