@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-22 01:57:00.074445",
+    "generated": "2026-07-22 02:09:53.305509",
     "summary": {
         "total_runs": 1,
-        "average_quality": 25.4,
+        "average_quality": 14.4,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 531,
-            "date": "2026-07-22T01:56:54.804502",
+            "run": 532,
+            "date": "2026-07-22T02:09:52.690225",
             "branch": "refs/heads/main",
-            "commit": "a300d95e8fa69f54cba581623f3f1e5a13843301",
+            "commit": "7a546f8f7fba9d6677ed63392c587aff6109c4ec",
             "status": "success",
-            "quality": 25.4,
+            "quality": 14.4,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 77,
+                "score": 22,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -5323,14 +5323,23 @@
                         ]
                     },
                     "rust": {
-                        "score": 100,
+                        "score": 0,
                         "max_score": 100,
                         "results": {
                             "files_checked": 1,
                             "total_elements": 1,
-                            "elements_without_docs": 0
+                            "elements_without_docs": 1
                         },
-                        "problems": []
+                        "problems": [
+                            {
+                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+                                "line": 1,
+                                "severity": "warning",
+                                "message": "Function 'None' sans documentation",
+                                "suggestion": "Ajoutez /// avant cette function",
+                                "module": "rust"
+                            }
+                        ]
                     },
                     "organization": {
                         "score": 0,
