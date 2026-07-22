@@ -25,7 +25,7 @@ def check_organization() -> Dict[str, Any]:
         "CONTRIBUTING.md",
         "ROADMAP.md",
         "CHANGELOG.md",
-        "CODE_OF_CONDUCT.md",
+        "CODING_RULES.md",
         "SECURITY.md",
     ]
 
