@@ -1,6 +1,6 @@
 {
-    "generated": "2026-07-22T07:17:41.838705",
-    "score": 76,
+    "generated": "2026-07-22T07:18:13.194707",
+    "score": 78,
     "status": "Satisfaisant",
     "scores": {
         "markdown": 42,
@@ -8,11 +8,11 @@
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 26,
+        "rust": 30,
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 830,
+    "problem_count": 826,
     "details": {
         "markdown": {
             "score": 42,
@@ -5094,47 +5094,14 @@
             ]
         },
         "rust": {
-            "score": 26,
+            "score": 30,
             "max_score": 30,
             "results": {
-                "files_checked": 2,
-                "total_elements": 5,
-                "elements_without_docs": 4
+                "files_checked": 1,
+                "total_elements": 1,
+                "elements_without_docs": 0
             },
-            "problems": [
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.rs",
-                    "line": 8,
-                    "severity": "warning",
-                    "message": "Struct 'pub ' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette struct",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.rs",
-                    "line": 28,
-                    "severity": "warning",
-                    "message": "Function 'pub ' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette function",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.rs",
-                    "line": 40,
-                    "severity": "warning",
-                    "message": "Function 'pub ' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette function",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.rs",
-                    "line": 90,
-                    "severity": "warning",
-                    "message": "Function 'None' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette function",
-                    "module": "rust"
-                }
-            ]
+            "problems": []
         },
         "organization": {
             "score": 100,
