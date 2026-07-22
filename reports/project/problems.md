@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 12:19:46
+Generated: 2026-07-22 12:29:38
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|154|
-|⚠️ Warnings|3197|
-|**Total**|**3437**|
+|❌ Errors|155|
+|⚠️ Warnings|3178|
+|**Total**|**3419**|
 
 ---
 
@@ -27,100 +27,10 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py
 
-## ⚠️ Warning
+## ❌ Error
 
 - **Module :** python
-- **Message :** La fonction 'log_save_event' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'normalize_password' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'derive_key' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'derive_key' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'aesgcm_encrypt' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'aesgcm_decrypt' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'ensure_profile_dir' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'atomic_write_zip' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'atomic_write_zip' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'save_to_slot' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'save_to_slot' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'load_from_slot' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La classe 'AutoSaver' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'write_zip' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'write_zip' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'start' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'start' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'stop' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'stop' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : unexpected indent (<unknown>, line 32)
 
 ---
 
