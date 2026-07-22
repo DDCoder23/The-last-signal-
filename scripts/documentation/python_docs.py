@@ -3,7 +3,7 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-ROOT = Path(".")
+ROOT = Path.cwd()
 
 
 def check_python_docs() -> dict:
