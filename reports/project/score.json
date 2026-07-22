@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T12:07:42.341977",
+    "generated": "2026-07-22T12:19:45.522156",
     "score": 76,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 3421,
+    "problem_count": 3437,
     "details": {
         "markdown": {
             "score": 42,
@@ -17746,14 +17746,14 @@
             "max_score": 30,
             "results": {
                 "modules": 50,
-                "classes": 38,
-                "functions": 242,
+                "classes": 39,
+                "functions": 249,
                 "documented_modules": 1,
                 "documented_classes": 4,
                 "documented_functions": 67,
                 "typed_functions": 27,
                 "todo": 4,
-                "long_functions": 10
+                "long_functions": 11
             },
             "problems": [
                 {
@@ -20038,8 +20038,104 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : unterminated triple-quoted string literal (detected at line 529) (<unknown>, line 516)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La classe 'DatabaseManager' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'create_tables' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'create_tables' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'create_tables' dépasse 80 lignes.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_run' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_run' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'insert' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'insert' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'close' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'close' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security_issue' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_security_issue' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_performance' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
+                    "severity": "warning",
+                    "message": "La fonction 'add_performance' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
