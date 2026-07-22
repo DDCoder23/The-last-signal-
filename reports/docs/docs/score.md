@@ -1,8 +1,8 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 01:00:53
+**Date :** 2026-07-22 01:06:48
 
-# 48/100
+# 40/100
 
 **Statut :** Médiocre
 
@@ -14,25 +14,12 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**0**|
+|rust|**33**|
 |organization|**0**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
-
-## ❌ Error
-- **Module :** rust
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
-    result = check()
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 73, in check_rust_docs
-    element_name = parts[1] if len(parts) > 1 else "unknown"
-                                   ^^^^^
-UnboundLocalError: cannot access local variable 'parts' where it is not associated with a value
-
-
-- **module :** rust
 
 ## ❌ Error
 - **Module :** organization
@@ -53,6 +40,128 @@ TypeError: result doit être un dict, reçu int
 
 
 - **module :** navigation
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'main' sans documentation
+
+- **line :** 2
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Struct 'main' sans documentation
+
+- **line :** 2
+
+- **suggestion :** Ajoutez /// avant cette struct
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Enum 'main' sans documentation
+
+- **line :** 2
+
+- **suggestion :** Ajoutez /// avant cette enum
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Impl 'main' sans documentation
+
+- **line :** 2
+
+- **suggestion :** Ajoutez /// avant cette impl
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Mod 'main' sans documentation
+
+- **line :** 2
+
+- **suggestion :** Ajoutez /// avant cette mod
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Trait 'main' sans documentation
+
+- **line :** 2
+
+- **suggestion :** Ajoutez /// avant cette trait
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'main' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Struct 'main' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette struct
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Enum 'main' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette enum
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Impl 'main' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette impl
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Mod 'main' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette mod
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Trait 'main' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette trait
+
+- **module :** rust
 
 # 📄 Ancien/Secure_save.py
 

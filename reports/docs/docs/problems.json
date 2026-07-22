@@ -5220,9 +5220,99 @@
         "module": "python"
     },
     {
-        "file": "",
-        "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 73, in check_rust_docs\n    element_name = parts[1] if len(parts) > 1 else \"unknown\"\n                                   ^^^^^\nUnboundLocalError: cannot access local variable 'parts' where it is not associated with a value\n",
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 2,
+        "severity": "warning",
+        "message": "Function 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 2,
+        "severity": "warning",
+        "message": "Struct 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette struct",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 2,
+        "severity": "warning",
+        "message": "Enum 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette enum",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 2,
+        "severity": "warning",
+        "message": "Impl 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette impl",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 2,
+        "severity": "warning",
+        "message": "Mod 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette mod",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 2,
+        "severity": "warning",
+        "message": "Trait 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette trait",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 3,
+        "severity": "warning",
+        "message": "Function 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 3,
+        "severity": "warning",
+        "message": "Struct 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette struct",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 3,
+        "severity": "warning",
+        "message": "Enum 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette enum",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 3,
+        "severity": "warning",
+        "message": "Impl 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette impl",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 3,
+        "severity": "warning",
+        "message": "Mod 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette mod",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 3,
+        "severity": "warning",
+        "message": "Trait 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette trait",
         "module": "rust"
     },
     {
