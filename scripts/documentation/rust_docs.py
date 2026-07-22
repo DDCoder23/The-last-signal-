@@ -64,26 +64,17 @@ def check_rust_docs() -> Dict[str, Any]:
                     if not match:
                         continue
                     else:
-                    
-                        
-                        # ✅ Extraction correcte du nom
-                        if element_type == 'function':
-                            # Pour les fonctions : extrait le nom entre 'fn' et '('
-                            name_match = re.match(r'^\s*(pub\s+)?fn\s+(\w+)', line)
-                            element_name = name_match.group(2) if name_match else "unknown"
-                        else:
-                            parts = line.split()
-                            element_name = parts[1] if len(parts) > 1 else "unknown"
-
-                    
-                    total_elements += 1
-                    has_doc = False
-                    if i > 0:
-                        prev_line = lines[i-1].strip()
-                        if (prev_line.startswith('///') or 
-                            prev_line.startswith('/**') or
-                            prev_line.startswith('/*!')):
-                            has_doc = True
+                        # Cherche et extrait le nom
+                        name_match = re.search(patterns[element_type], line)
+                        element_name = name_match.group(1) if name_match else "unknown"
+                        total_elements += 1
+                        has_doc = False
+                        if i > 0:
+                            prev_line = lines[i-1].strip()
+                            if (prev_line.startswith('///') or 
+                                prev_line.startswith('/**') or 
+                                prev_line.startswith('/*!')):
+                                has_doc = True
                         if not has_doc:
                             total_issues += 1
                             problems.append({
@@ -93,7 +84,7 @@ def check_rust_docs() -> Dict[str, Any]:
                                     "message": f"{element_type.capitalize()} '{element_name}' sans documentation",
                                     "suggestion": f"Ajoutez /// avant cette {element_type}"
                             })
-                    break
+                        break
                     
 
         
