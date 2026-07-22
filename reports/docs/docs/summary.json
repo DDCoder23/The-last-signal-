@@ -1,14 +1,14 @@
 {
-    "generated": "2026-07-22T02:12:59.554564",
-    "score": 77,
-    "status": "Satisfaisant",
+    "generated": "2026-07-22T02:15:57.329544",
+    "score": 59,
+    "status": "Assez bon",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 100,
+        "rust": 20,
         "organization": 0,
         "navigation": 0
     },
