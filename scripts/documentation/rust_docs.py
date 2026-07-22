@@ -24,7 +24,8 @@ def check_rust_docs() -> Dict[str, Any]:
         for file in files:
             if file.endswith('.rs'):
                 rust_files.append(os.path.join(root, file))
-    print( "fichier:"+rust_files)
+    print( "fichier:")
+    print(rust_files)
     if not rust_files:
         return {
             "score": 0,  
