@@ -1,6 +1,6 @@
 import socket
-
-
+from .logger import logger
+import tracebak
 class Client:
     """
     Client réseau de The Last Signal.
@@ -21,7 +21,7 @@ class Client:
         """
 
         if self.connected:
-            print("Déjà connecté.")
+            logger.warning("Déjà connecté.")
             return
 
         self.socket = socket.socket(
@@ -35,13 +35,15 @@ class Client:
 
             self.connected = True
 
-            print(f"Connexion au serveur {self.host}:{self.port}")
+            logger.info(
+    f"Connexion au serveur {self.host}:{self.port}"
+)
 
         except Exception as e:
 
-            print("Impossible de se connecter.")
-
-            print(e)
+            logger.error(
+    f"Impossible de se connecter : {e}"
+)
 
             self.connected = False
 
@@ -51,7 +53,7 @@ class Client:
         """
 
         if not self.connected:
-            print("Client non connecté.")
+            logger.warning("Client non connecté.")
             return
 
         try:
@@ -60,9 +62,9 @@ class Client:
 
         except Exception as e:
 
-            print("Erreur d'envoi")
-
-            print(e)
+            logger.error(
+    f"Erreur d'envoi : {e}"
+)
 
     def receive_packet(self, size=4096):
         """
@@ -80,9 +82,9 @@ class Client:
 
         except Exception as e:
 
-            print("Erreur de réception")
-
-            print(e)
+            logger.error(
+    f"Erreur de réception : {e}"
+)
 
             return None
 
@@ -97,4 +99,4 @@ class Client:
 
         self.connected = False
 
-        print("Déconnecté.")
+        logger.info("Déconnecté.")
