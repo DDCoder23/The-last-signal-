@@ -1,7 +1,7 @@
 from client import Client
-
-client = Client()
-
-client.connect()
-
-client.disconnect()
+import time
+def main():
+  client = Client()
+  client.connect()
+  time.sleep(1)
+  client.disconnect()
