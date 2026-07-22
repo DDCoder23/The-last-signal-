@@ -61,9 +61,19 @@ runs:
         mkdir -p reports
         mkdir -p database
         mkdir -p dashboard
-        cp -r /tmp/ci-backup/reports/. reports/ 2>/dev/null || true
-        cp -r /tmp/ci-backup/database/. database/ 2>/dev/null || true
-        cp -r /tmp/ci-backup/dashboard/. dashboard/ 2>/dev/null || true
+
+        # Reports
+        if [ -d "/tmp/ci-backup/reports/${{ inputs.report-type }}" ]; then
+        cp -r "/tmp/ci-backup/reports/${{ inputs.report-type }}" reports/
+        fi
+
+        if [ -d "/tmp/ci-backup/database/${{ inputs.report-type }}" ]; then
+        cp -r "/tmp/ci-backup/database/${{ inputs.report-type }}" database/
+        fi
+
+        if [ -d "/tmp/ci-backup/dashboard/${{ inputs.report-type }}" ]; then
+        cp -r "/tmp/ci-backup/dashboard/${{ inputs.report-type }}" dashboard/
+        fi
 
     
 
