@@ -5220,6 +5220,22 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 2,
+        "severity": "warning",
+        "message": "Function 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+        "line": 3,
+        "severity": "warning",
+        "message": "Function 'main' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
         "file": "",
         "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",

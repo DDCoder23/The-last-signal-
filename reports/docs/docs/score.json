@@ -1,18 +1,18 @@
 {
-    "generated": "2026-07-22T01:43:26.640323",
-    "score": 77,
-    "status": "Satisfaisant",
+    "generated": "2026-07-22T01:47:56.413901",
+    "score": 63,
+    "status": "Bon",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 100,
+        "rust": 75,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 862,
+    "problem_count": 864,
     "details": {
         "markdown": {
             "score": 17,
@@ -5304,14 +5304,31 @@
             ]
         },
         "rust": {
-            "score": 100,
+            "score": 75,
             "max_score": 100,
             "results": {
                 "files_checked": 1,
-                "total_elements": 1,
-                "elements_without_docs": 0
+                "total_elements": 8,
+                "elements_without_docs": 2
             },
-            "problems": []
+            "problems": [
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+                    "line": 2,
+                    "severity": "warning",
+                    "message": "Function 'main' sans documentation",
+                    "suggestion": "Ajoutez /// avant cette function",
+                    "module": "rust"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+                    "line": 3,
+                    "severity": "warning",
+                    "message": "Function 'main' sans documentation",
+                    "suggestion": "Ajoutez /// avant cette function",
+                    "module": "rust"
+                }
+            ]
         },
         "organization": {
             "score": 0,

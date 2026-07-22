@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-22 01:43:28.151944",
+    "generated": "2026-07-22 01:47:57.613398",
     "summary": {
         "total_runs": 1,
-        "average_quality": 25.4,
+        "average_quality": 22.6,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 528,
-            "date": "2026-07-22T01:43:26.956819",
+            "run": 529,
+            "date": "2026-07-22T01:47:56.837765",
             "branch": "refs/heads/main",
-            "commit": "e260d2fbc7ef2b9b529b4b9a02d573a1c8c5dff1",
+            "commit": "aa50ff81151ef1f1cd4589ff89e837250b2b20bb",
             "status": "success",
-            "quality": 25.4,
+            "quality": 22.6,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 77,
+                "score": 63,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -5323,14 +5323,31 @@
                         ]
                     },
                     "rust": {
-                        "score": 100,
+                        "score": 75,
                         "max_score": 100,
                         "results": {
                             "files_checked": 1,
-                            "total_elements": 1,
-                            "elements_without_docs": 0
+                            "total_elements": 8,
+                            "elements_without_docs": 2
                         },
-                        "problems": []
+                        "problems": [
+                            {
+                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+                                "line": 2,
+                                "severity": "warning",
+                                "message": "Function 'main' sans documentation",
+                                "suggestion": "Ajoutez /// avant cette function",
+                                "module": "rust"
+                            },
+                            {
+                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
+                                "line": 3,
+                                "severity": "warning",
+                                "message": "Function 'main' sans documentation",
+                                "suggestion": "Ajoutez /// avant cette function",
+                                "module": "rust"
+                            }
+                        ]
                     },
                     "organization": {
                         "score": 0,
