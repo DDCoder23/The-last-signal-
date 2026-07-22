@@ -92,7 +92,7 @@ jobs:
           --no-progress \
           --no-summary \
           --output-format json \
-          > reports/docs/cspell.txt 2>&1
+          > reports/project/cspell.txt 2>&1
 
       # =========================
       # Links
@@ -116,7 +116,7 @@ jobs:
 
           interrogate . \
             -o markdown \
-            -f reports/docs/python-docs.md
+            -f reports/project/python-docs.md
 
       # =========================
       # Rust documentation
@@ -149,11 +149,11 @@ jobs:
 
           echo "Documentation score :"
 
-          cat reports/docs/score.txt
+          cat reports/project/score.txt
 
           echo ""
 
-          cat reports/docs/score.md
+          cat reports/project/score.md
 
       # =========================
       # Verify score
@@ -162,7 +162,7 @@ jobs:
       - name: 🚨 Verify project quality
         run: |
 
-          SCORE=$(cat reports/docs/score.txt)
+          SCORE=$(cat reports/project/score.txt)
 
           echo "Quality score : $SCORE/100"
 
@@ -176,7 +176,7 @@ jobs:
             echo "Obtained score : $SCORE/100"
             echo "Minimum score : $DOC_SCORE_MINIMUM/100"
             echo ""
-            echo "See reports/docs/problems.md"
+            echo "See reports/project/problems.md"
             echo ""
 
             exit 1
@@ -201,11 +201,11 @@ jobs:
           {
             echo "# 📚 Project Quality"
             echo ""
-            echo "Score : $(cat reports/docs/score.txt)/100"
+            echo "Score : $(cat reports/project/score.txt)/100"
             echo ""
             echo "## Details"
             echo ""
-            cat reports/docs/score.md
+            cat reports/project/score.md
           } >> $GITHUB_STEP_SUMMARY
           python -m scripts.generate_problems_md
                 # =========================
