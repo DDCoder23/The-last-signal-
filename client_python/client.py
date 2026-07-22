@@ -1,6 +1,6 @@
 import socket
 from .logger import logger
-import tracebak
+import traceback
 class Client:
     """
     Client réseau de The Last Signal.
