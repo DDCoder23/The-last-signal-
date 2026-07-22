@@ -4,7 +4,7 @@ from collections import defaultdict
 from datetime import datetime
 import traceback
 
-REPORT_DIR = Path("reports/docs")
+REPORT_DIR = Path("reports/project")
 
 
 def generate_problems_md():
