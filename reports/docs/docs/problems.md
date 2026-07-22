@@ -1,27 +1,18 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 02:15:57
+Generated: 2026-07-22 02:24:18
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|129|
-|⚠️ Warnings|670|
-|**Total**|**862**|
+|❌ Errors|128|
+|⚠️ Warnings|675|
+|**Total**|**866**|
 
 ---
 
 # 📄 
-
-## ❌ Error
-
-- **Module :** organization
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
-    raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
-TypeError: result doit être un dict, reçu int
-
 
 ## ❌ Error
 
@@ -31,6 +22,26 @@ TypeError: result doit être un dict, reçu int
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
+
+---
+
+# 📄 .github
+
+## ⚠️ Warning
+
+- **Module :** organization
+- **Message :** Dossier '.github' absent
+- **suggestion :** Créer le dossier '.github'.
+
+---
+
+# 📄 .gitignore
+
+## ⚠️ Warning
+
+- **Module :** organization
+- **Message :** Fichier '.gitignore' absent
+- **suggestion :** Créer le fichier '.gitignore'.
 
 ---
 
@@ -1839,6 +1850,12 @@ TypeError: result doit être un dict, reçu int
 - **Module :** titles
 - **Message :** README.md:172 titre sans ligne vide avant.
 
+## ⚠️ Warning
+
+- **Module :** organization
+- **Message :** Fichier 'README.md' absent
+- **suggestion :** Créer le fichier 'README.md'.
+
 ---
 
 # 📄 client_python/__init__.py
@@ -2050,6 +2067,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'start_server' ne possède pas d'annotations de type.
+
+---
+
+# 📄 docs
+
+## ⚠️ Warning
+
+- **Module :** organization
+- **Message :** Dossier 'docs' absent
+- **suggestion :** Créer le dossier 'docs'.
 
 ---
 
@@ -4494,7 +4521,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_organization' ne possède pas d'annotations de type.
+- **Message :** La fonction 'check_organization' dépasse 80 lignes.
 
 ---
 
@@ -4812,6 +4839,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
+
+---
+
+# 📄 tests
+
+## ⚠️ Warning
+
+- **Module :** organization
+- **Message :** Dossier 'tests' absent
+- **suggestion :** Créer le dossier 'tests'.
 
 ---
 

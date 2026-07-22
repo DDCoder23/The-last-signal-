@@ -5054,7 +5054,7 @@
     {
         "file": "scripts/documentation/organization.py",
         "severity": "warning",
-        "message": "La fonction 'check_organization' ne possède pas d'annotations de type.",
+        "message": "La fonction 'check_organization' dépasse 80 lignes.",
         "module": "python"
     },
     {
@@ -5220,9 +5220,38 @@
         "module": "python"
     },
     {
-        "file": "",
-        "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+        "file": "docs",
+        "severity": "warning",
+        "message": "Dossier 'docs' absent",
+        "suggestion": "Créer le dossier 'docs'.",
+        "module": "organization"
+    },
+    {
+        "file": "tests",
+        "severity": "warning",
+        "message": "Dossier 'tests' absent",
+        "suggestion": "Créer le dossier 'tests'.",
+        "module": "organization"
+    },
+    {
+        "file": ".github",
+        "severity": "warning",
+        "message": "Dossier '.github' absent",
+        "suggestion": "Créer le dossier '.github'.",
+        "module": "organization"
+    },
+    {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "Fichier 'README.md' absent",
+        "suggestion": "Créer le fichier 'README.md'.",
+        "module": "organization"
+    },
+    {
+        "file": ".gitignore",
+        "severity": "warning",
+        "message": "Fichier '.gitignore' absent",
+        "suggestion": "Créer le fichier '.gitignore'.",
         "module": "organization"
     },
     {

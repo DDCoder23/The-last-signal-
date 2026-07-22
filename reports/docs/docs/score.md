@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 02:15:57
+**Date :** 2026-07-22 02:24:18
 
-# 59/100
+# 64/100
 
-**Statut :** Assez bon
+**Statut :** Bon
 
 ## Résultats
 |Module|Score|
@@ -15,21 +15,11 @@ Documentation Quality Report
 |links|**9**|
 |python|**0**|
 |rust|**20**|
-|organization|**0**|
+|organization|**69**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
-
-## ❌ Error
-- **Module :** organization
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 32, in generate_score
-    raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
-TypeError: result doit être un dict, reçu int
-
-
-- **module :** organization
 
 ## ❌ Error
 - **Module :** navigation
@@ -40,6 +30,26 @@ TypeError: result doit être un dict, reçu int
 
 
 - **module :** navigation
+
+# 📄 .github
+
+## ⚠️ Warning
+- **Module :** organization
+- **Message :** Dossier '.github' absent
+
+- **suggestion :** Créer le dossier '.github'.
+
+- **module :** organization
+
+# 📄 .gitignore
+
+## ⚠️ Warning
+- **Module :** organization
+- **Message :** Fichier '.gitignore' absent
+
+- **suggestion :** Créer le fichier '.gitignore'.
+
+- **module :** organization
 
 # 📄 Ancien/Secure_save.py
 
@@ -2159,6 +2169,14 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
+## ⚠️ Warning
+- **Module :** organization
+- **Message :** Fichier 'README.md' absent
+
+- **suggestion :** Créer le fichier 'README.md'.
+
+- **module :** organization
+
 # 📄 client_python/__init__.py
 
 ## ⚠️ Warning
@@ -2404,6 +2422,16 @@ TypeError: result doit être un dict, reçu int
 - **Message :** La fonction 'start_server' ne possède pas d'annotations de type.
 
 - **module :** python
+
+# 📄 docs
+
+## ⚠️ Warning
+- **Module :** organization
+- **Message :** Dossier 'docs' absent
+
+- **suggestion :** Créer le dossier 'docs'.
+
+- **module :** organization
 
 # 📄 docs/ARCHITECTURE.md
 
@@ -5159,7 +5187,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_organization' ne possède pas d'annotations de type.
+- **Message :** La fonction 'check_organization' dépasse 80 lignes.
 
 - **module :** python
 
@@ -5506,6 +5534,16 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Le module ne possède pas de docstring.
 
 - **module :** python
+
+# 📄 tests
+
+## ⚠️ Warning
+- **Module :** organization
+- **Message :** Dossier 'tests' absent
+
+- **suggestion :** Créer le dossier 'tests'.
+
+- **module :** organization
 
 # 📄 tests/__init__.py
 

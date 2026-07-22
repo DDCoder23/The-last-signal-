@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-22 02:15:58.418271",
+    "generated": "2026-07-22 02:24:19.308047",
     "summary": {
         "total_runs": 1,
-        "average_quality": 21.8,
+        "average_quality": 22.8,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 534,
-            "date": "2026-07-22T02:15:57.667075",
+            "run": 535,
+            "date": "2026-07-22T02:24:18.547664",
             "branch": "refs/heads/main",
-            "commit": "05b592a20a6e7c1b92ce9e55661557f0a2f958a7",
+            "commit": "2352dcd3ce4bc8eb965d2f1806213024175fad80",
             "status": "success",
-            "quality": 21.8,
+            "quality": 22.8,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 59,
+                "score": 64,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -2159,9 +2159,9 @@
                             "documented_modules": 0,
                             "documented_classes": 2,
                             "documented_functions": 64,
-                            "typed_functions": 26,
+                            "typed_functions": 27,
                             "todo": 4,
-                            "long_functions": 10
+                            "long_functions": 11
                         },
                         "problems": [
                             {
@@ -5155,7 +5155,7 @@
                             {
                                 "file": "scripts/documentation/organization.py",
                                 "severity": "warning",
-                                "message": "La fonction 'check_organization' ne possède pas d'annotations de type.",
+                                "message": "La fonction 'check_organization' dépasse 80 lignes.",
                                 "module": "python"
                             },
                             {
@@ -5333,14 +5333,46 @@
                         "problems": []
                     },
                     "organization": {
-                        "score": 0,
-                        "max_score": 1,
-                        "results": {},
+                        "score": 69,
+                        "max_score": 100,
+                        "results": {
+                            "bonus": 0,
+                            "problems": 5
+                        },
                         "problems": [
                             {
-                                "file": "",
-                                "severity": "error",
-                                "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
+                                "file": "docs",
+                                "severity": "warning",
+                                "message": "Dossier 'docs' absent",
+                                "suggestion": "Créer le dossier 'docs'.",
+                                "module": "organization"
+                            },
+                            {
+                                "file": "tests",
+                                "severity": "warning",
+                                "message": "Dossier 'tests' absent",
+                                "suggestion": "Créer le dossier 'tests'.",
+                                "module": "organization"
+                            },
+                            {
+                                "file": ".github",
+                                "severity": "warning",
+                                "message": "Dossier '.github' absent",
+                                "suggestion": "Créer le dossier '.github'.",
+                                "module": "organization"
+                            },
+                            {
+                                "file": "README.md",
+                                "severity": "warning",
+                                "message": "Fichier 'README.md' absent",
+                                "suggestion": "Créer le fichier 'README.md'.",
+                                "module": "organization"
+                            },
+                            {
+                                "file": ".gitignore",
+                                "severity": "warning",
+                                "message": "Fichier '.gitignore' absent",
+                                "suggestion": "Créer le fichier '.gitignore'.",
                                 "module": "organization"
                             }
                         ]

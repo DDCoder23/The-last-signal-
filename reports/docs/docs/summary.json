@@ -1,7 +1,7 @@
 {
-    "generated": "2026-07-22T02:15:57.329544",
-    "score": 59,
-    "status": "Assez bon",
+    "generated": "2026-07-22T02:24:18.211438",
+    "score": 64,
+    "status": "Bon",
     "scores": {
         "markdown": 17,
         "titles": 4,
@@ -9,8 +9,8 @@
         "links": 9,
         "python": 0,
         "rust": 20,
-        "organization": 0,
+        "organization": 69,
         "navigation": 0
     },
-    "problem_count": 862
+    "problem_count": 866
 }
