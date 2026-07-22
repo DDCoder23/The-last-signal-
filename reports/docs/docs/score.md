@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 01:54:39
+**Date :** 2026-07-22 01:56:54
 
-# 48/100
+# 77/100
 
-**Statut :** Médiocre
+**Statut :** Satisfaisant
 
 ## Résultats
 |Module|Score|
@@ -14,25 +14,12 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**0**|
+|rust|**100**|
 |organization|**0**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
-
-## ❌ Error
-- **Module :** rust
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
-    result = check()
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 27, in check_rust_docs
-    print( "fichier:"+rust_files)
-           ~~~~~~~~~~^~~~~~~~~~~
-TypeError: can only concatenate str (not "list") to str
-
-
-- **module :** rust
 
 ## ❌ Error
 - **Module :** organization

@@ -1,30 +1,18 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 01:54:40
+Generated: 2026-07-22 01:56:54
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|130|
+|❌ Errors|129|
 |⚠️ Warnings|670|
-|**Total**|**863**|
+|**Total**|**862**|
 
 ---
 
 # 📄 
-
-## ❌ Error
-
-- **Module :** rust
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
-    result = check()
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 27, in check_rust_docs
-    print( "fichier:"+rust_files)
-           ~~~~~~~~~~^~~~~~~~~~~
-TypeError: can only concatenate str (not "list") to str
-
 
 ## ❌ Error
 

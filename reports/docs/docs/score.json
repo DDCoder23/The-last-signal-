@@ -1,18 +1,18 @@
 {
-    "generated": "2026-07-22T01:54:39.862376",
-    "score": 48,
-    "status": "Médiocre",
+    "generated": "2026-07-22T01:56:54.414111",
+    "score": 77,
+    "status": "Satisfaisant",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 0,
+        "rust": 100,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 863,
+    "problem_count": 862,
     "details": {
         "markdown": {
             "score": 17,
@@ -5304,17 +5304,14 @@
             ]
         },
         "rust": {
-            "score": 0,
-            "max_score": 1,
-            "results": {},
-            "problems": [
-                {
-                    "file": "",
-                    "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 27, in check_rust_docs\n    print( \"fichier:\"+rust_files)\n           ~~~~~~~~~~^~~~~~~~~~~\nTypeError: can only concatenate str (not \"list\") to str\n",
-                    "module": "rust"
-                }
-            ]
+            "score": 100,
+            "max_score": 100,
+            "results": {
+                "files_checked": 1,
+                "total_elements": 1,
+                "elements_without_docs": 0
+            },
+            "problems": []
         },
         "organization": {
             "score": 0,

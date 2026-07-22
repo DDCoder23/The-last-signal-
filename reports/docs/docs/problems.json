@@ -5222,12 +5222,6 @@
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 27, in check_rust_docs\n    print( \"fichier:\"+rust_files)\n           ~~~~~~~~~~^~~~~~~~~~~\nTypeError: can only concatenate str (not \"list\") to str\n",
-        "module": "rust"
-    },
-    {
-        "file": "",
-        "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 32, in generate_score\n    raise TypeError(f\"result doit être un dict, reçu {type(result).__name__}\")\nTypeError: result doit être un dict, reçu int\n",
         "module": "organization"
     },

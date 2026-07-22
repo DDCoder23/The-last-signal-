@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-22 01:54:40.947936",
+    "generated": "2026-07-22 01:57:00.074445",
     "summary": {
         "total_runs": 1,
-        "average_quality": 19.6,
+        "average_quality": 25.4,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 530,
-            "date": "2026-07-22T01:54:40.217540",
+            "run": 531,
+            "date": "2026-07-22T01:56:54.804502",
             "branch": "refs/heads/main",
-            "commit": "f08a5ca4071a1a20f3683bfb1d5f05347376a72e",
+            "commit": "a300d95e8fa69f54cba581623f3f1e5a13843301",
             "status": "success",
-            "quality": 19.6,
+            "quality": 25.4,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 48,
+                "score": 77,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -5323,17 +5323,14 @@
                         ]
                     },
                     "rust": {
-                        "score": 0,
-                        "max_score": 1,
-                        "results": {},
-                        "problems": [
-                            {
-                                "file": "",
-                                "severity": "error",
-                                "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 27, in check_rust_docs\n    print( \"fichier:\"+rust_files)\n           ~~~~~~~~~~^~~~~~~~~~~\nTypeError: can only concatenate str (not \"list\") to str\n",
-                                "module": "rust"
-                            }
-                        ]
+                        "score": 100,
+                        "max_score": 100,
+                        "results": {
+                            "files_checked": 1,
+                            "total_elements": 1,
+                            "elements_without_docs": 0
+                        },
+                        "problems": []
                     },
                     "organization": {
                         "score": 0,
