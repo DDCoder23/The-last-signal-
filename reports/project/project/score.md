@@ -1,8 +1,8 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 07:18:13
+**Date :** 2026-07-22 07:20:06
 
-# 78/100
+# 77/100
 
 **Statut :** Satisfaisant
 
@@ -14,7 +14,7 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**30**|
+|rust|**29**|
 |organization|**100**|
 |navigation|**0**|
 
@@ -3014,6 +3014,18 @@ TypeError: result doit être un dict, reçu int
 - **Message :** La fonction 'update_database' ne possède pas d'annotations de type.
 
 - **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'None' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 
