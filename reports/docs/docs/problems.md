@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 01:06:48
+Generated: 2026-07-22 01:43:26
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|129|
-|⚠️ Warnings|682|
-|**Total**|**874**|
+|⚠️ Warnings|670|
+|**Total**|**862**|
 
 ---
 
@@ -31,94 +31,6 @@ TypeError: result doit être un dict, reçu int
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Function 'main' sans documentation
-- **line :** 2
-- **suggestion :** Ajoutez /// avant cette function
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Struct 'main' sans documentation
-- **line :** 2
-- **suggestion :** Ajoutez /// avant cette struct
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Enum 'main' sans documentation
-- **line :** 2
-- **suggestion :** Ajoutez /// avant cette enum
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Impl 'main' sans documentation
-- **line :** 2
-- **suggestion :** Ajoutez /// avant cette impl
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Mod 'main' sans documentation
-- **line :** 2
-- **suggestion :** Ajoutez /// avant cette mod
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Trait 'main' sans documentation
-- **line :** 2
-- **suggestion :** Ajoutez /// avant cette trait
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Function 'main' sans documentation
-- **line :** 3
-- **suggestion :** Ajoutez /// avant cette function
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Struct 'main' sans documentation
-- **line :** 3
-- **suggestion :** Ajoutez /// avant cette struct
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Enum 'main' sans documentation
-- **line :** 3
-- **suggestion :** Ajoutez /// avant cette enum
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Impl 'main' sans documentation
-- **line :** 3
-- **suggestion :** Ajoutez /// avant cette impl
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Mod 'main' sans documentation
-- **line :** 3
-- **suggestion :** Ajoutez /// avant cette mod
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Trait 'main' sans documentation
-- **line :** 3
-- **suggestion :** Ajoutez /// avant cette trait
 
 ---
 

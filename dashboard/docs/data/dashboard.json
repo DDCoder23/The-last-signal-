@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-22 01:06:49.012940",
+    "generated": "2026-07-22 01:43:28.151944",
     "summary": {
         "total_runs": 1,
-        "average_quality": 18.0,
+        "average_quality": 25.4,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 527,
-            "date": "2026-07-22T01:06:48.478507",
+            "run": 528,
+            "date": "2026-07-22T01:43:26.956819",
             "branch": "refs/heads/main",
-            "commit": "79d56ae50ac697192d215c2abc93617481c172d1",
+            "commit": "e260d2fbc7ef2b9b529b4b9a02d573a1c8c5dff1",
             "status": "success",
-            "quality": 18.0,
+            "quality": 25.4,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 40,
+                "score": 77,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -5323,111 +5323,14 @@
                         ]
                     },
                     "rust": {
-                        "score": 33,
+                        "score": 100,
                         "max_score": 100,
                         "results": {
                             "files_checked": 1,
-                            "total_elements": 18,
-                            "elements_without_docs": 12
+                            "total_elements": 1,
+                            "elements_without_docs": 0
                         },
-                        "problems": [
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 2,
-                                "severity": "warning",
-                                "message": "Function 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette function",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 2,
-                                "severity": "warning",
-                                "message": "Struct 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette struct",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 2,
-                                "severity": "warning",
-                                "message": "Enum 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette enum",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 2,
-                                "severity": "warning",
-                                "message": "Impl 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette impl",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 2,
-                                "severity": "warning",
-                                "message": "Mod 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette mod",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 2,
-                                "severity": "warning",
-                                "message": "Trait 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette trait",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 3,
-                                "severity": "warning",
-                                "message": "Function 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette function",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 3,
-                                "severity": "warning",
-                                "message": "Struct 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette struct",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 3,
-                                "severity": "warning",
-                                "message": "Enum 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette enum",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 3,
-                                "severity": "warning",
-                                "message": "Impl 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette impl",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 3,
-                                "severity": "warning",
-                                "message": "Mod 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette mod",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 3,
-                                "severity": "warning",
-                                "message": "Trait 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette trait",
-                                "module": "rust"
-                            }
-                        ]
+                        "problems": []
                     },
                     "organization": {
                         "score": 0,
