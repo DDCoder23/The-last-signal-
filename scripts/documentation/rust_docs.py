@@ -59,7 +59,11 @@ def check_rust_docs() -> Dict[str, Any]:
                 
                 for element_type, pattern in patterns.items():
                     match = re.match(pattern, line)
-                    if match:
+                    
+                    if not match:
+                        continue 
+                    else:
+                        
                         # ✅ Extraction correcte du nom
                         if element_type == 'function':
                             # Pour les fonctions : extrait le nom entre 'fn' et '('
@@ -87,6 +91,7 @@ def check_rust_docs() -> Dict[str, Any]:
                                     "message": f"{element_type.capitalize()} '{element_name}' sans documentation",
                                     "suggestion": f"Ajoutez /// avant cette {element_type}"
                             })
+                    
 
         
 
