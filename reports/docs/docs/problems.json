@@ -5222,7 +5222,7 @@
     {
         "file": "",
         "severity": "error",
-        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 23, in check_rust_docs\n    dirs[:] = [d for d in dirs if d not in exclude_dirs]\n                          ^^^^\nNameError: name 'dirs' is not defined. Did you mean: 'dir'?\n",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 73, in check_rust_docs\n    element_name = parts[1] if len(parts) > 1 else \"unknown\"\n                                   ^^^^^\nUnboundLocalError: cannot access local variable 'parts' where it is not associated with a value\n",
         "module": "rust"
     },
     {

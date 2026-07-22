@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 00:55:54
+**Date :** 2026-07-22 01:00:53
 
 # 48/100
 
@@ -26,10 +26,10 @@ Documentation Quality Report
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
     result = check()
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 23, in check_rust_docs
-    dirs[:] = [d for d in dirs if d not in exclude_dirs]
-                          ^^^^
-NameError: name 'dirs' is not defined. Did you mean: 'dir'?
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 73, in check_rust_docs
+    element_name = parts[1] if len(parts) > 1 else "unknown"
+                                   ^^^^^
+UnboundLocalError: cannot access local variable 'parts' where it is not associated with a value
 
 
 - **module :** rust
