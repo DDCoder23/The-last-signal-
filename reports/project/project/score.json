@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T11:42:13.158544",
+    "generated": "2026-07-22T11:45:17.801272",
     "score": 76,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 3422,
+    "problem_count": 3421,
     "details": {
         "markdown": {
             "score": 42,
@@ -17748,7 +17748,7 @@
                 "modules": 50,
                 "classes": 38,
                 "functions": 242,
-                "documented_modules": 0,
+                "documented_modules": 1,
                 "documented_classes": 4,
                 "documented_functions": 67,
                 "typed_functions": 27,
@@ -19254,12 +19254,6 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py",
                     "severity": "warning",
                     "message": "La fonction 'charger_depuis_json' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
                     "module": "python"
                 },
                 {

@@ -19177,12 +19177,6 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
         "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-        "severity": "warning",
         "message": "La fonction 'log_save_event' ne possède pas d'annotations de type.",
         "module": "python"
     },
