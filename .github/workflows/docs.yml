@@ -74,7 +74,7 @@ jobs:
       - name: 📑 Check Markdown
         continue-on-error: true
         run: |
-           mkdir -p reports/docs
+           mkdir -p reports/project
            markdownlint-cli2 \
            "**/*.md" --json \
            > reports/docs/markdownlint.json
@@ -85,7 +85,7 @@ jobs:
       - name: ✍️ Check spelling
         continue-on-error: true
         run: |
-          mkdir -p reports/docs
+          mkdir -p reports/project
           
           cspell "**/*.md" \
           --language-id markdown \
@@ -112,7 +112,7 @@ jobs:
       - name: 🐍 Generate Python documentation report
         continue-on-error: true
         run: |
-          mkdir -p reports/docs
+          mkdir -p reports/project
 
           interrogate . \
             -o markdown \
@@ -136,7 +136,7 @@ jobs:
         run: |
           
           python scripts/transformateur.py
-          mkdir -p reports/docs
+          mkdir -p reports/project
 
           python scripts/docs_score.py
 
@@ -197,7 +197,7 @@ jobs:
       - name: 📝 Publish summary
         if: always()
         run: |
-          mkdir -p reports/docs
+          mkdir -p reports/project
           {
             echo "# 📚 Project Quality"
             echo ""
