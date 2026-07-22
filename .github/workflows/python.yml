@@ -10,6 +10,7 @@ on:
       - "**"
 
   workflow_dispatch:
+  workflow_call:
 
   schedule:
     # Toutes les heures
