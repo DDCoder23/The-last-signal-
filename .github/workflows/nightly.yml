@@ -27,6 +27,8 @@ jobs:
 
   integration:
     uses: ./.github/workflows/integration.yml
+  build:
+    uses: ./.github/workflows/build.yml
 
   sync:
     needs:
@@ -35,5 +37,6 @@ jobs:
       - security
       - project
       - integration
+      - build
     uses: ./.github/workflows/sync-ci.yml
   
