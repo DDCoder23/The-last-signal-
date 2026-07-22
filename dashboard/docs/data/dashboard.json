@@ -1,20 +1,20 @@
 {
-    "generated": "2026-07-22 01:47:57.613398",
+    "generated": "2026-07-22 01:54:40.947936",
     "summary": {
         "total_runs": 1,
-        "average_quality": 22.6,
+        "average_quality": 19.6,
         "average_coverage": 0.0,
         "average_pylint": 0.0,
         "security_errors": 0
     },
     "history": [
         {
-            "run": 529,
-            "date": "2026-07-22T01:47:56.837765",
+            "run": 530,
+            "date": "2026-07-22T01:54:40.217540",
             "branch": "refs/heads/main",
-            "commit": "aa50ff81151ef1f1cd4589ff89e837250b2b20bb",
+            "commit": "f08a5ca4071a1a20f3683bfb1d5f05347376a72e",
             "status": "success",
-            "quality": 22.6,
+            "quality": 19.6,
             "coverage": 0,
             "pylint": 0,
             "complexity": 0,
@@ -31,7 +31,7 @@
                 "low": 0
             },
             "documentation": {
-                "score": 63,
+                "score": 48,
                 "details": {
                     "markdown": {
                         "score": 17,
@@ -5323,28 +5323,14 @@
                         ]
                     },
                     "rust": {
-                        "score": 75,
-                        "max_score": 100,
-                        "results": {
-                            "files_checked": 1,
-                            "total_elements": 8,
-                            "elements_without_docs": 2
-                        },
+                        "score": 0,
+                        "max_score": 1,
+                        "results": {},
                         "problems": [
                             {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 2,
-                                "severity": "warning",
-                                "message": "Function 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette function",
-                                "module": "rust"
-                            },
-                            {
-                                "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                                "line": 3,
-                                "severity": "warning",
-                                "message": "Function 'main' sans documentation",
-                                "suggestion": "Ajoutez /// avant cette function",
+                                "file": "",
+                                "severity": "error",
+                                "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 27, in check_rust_docs\n    print( \"fichier:\"+rust_files)\n           ~~~~~~~~~~^~~~~~~~~~~\nTypeError: can only concatenate str (not \"list\") to str\n",
                                 "module": "rust"
                             }
                         ]

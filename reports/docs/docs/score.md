@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 01:47:56
+**Date :** 2026-07-22 01:54:39
 
-# 63/100
+# 48/100
 
-**Statut :** Bon
+**Statut :** Médiocre
 
 ## Résultats
 |Module|Score|
@@ -14,12 +14,25 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**75**|
+|rust|**0**|
 |organization|**0**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
+
+## ❌ Error
+- **Module :** rust
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 27, in check_rust_docs
+    print( "fichier:"+rust_files)
+           ~~~~~~~~~~^~~~~~~~~~~
+TypeError: can only concatenate str (not "list") to str
+
+
+- **module :** rust
 
 ## ❌ Error
 - **Module :** organization
@@ -40,28 +53,6 @@ TypeError: result doit être un dict, reçu int
 
 
 - **module :** navigation
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Function 'main' sans documentation
-
-- **line :** 2
-
-- **suggestion :** Ajoutez /// avant cette function
-
-- **module :** rust
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Function 'main' sans documentation
-
-- **line :** 3
-
-- **suggestion :** Ajoutez /// avant cette function
-
-- **module :** rust
 
 # 📄 Ancien/Secure_save.py
 

@@ -1,18 +1,18 @@
 {
-    "generated": "2026-07-22T01:47:56.413901",
-    "score": 63,
-    "status": "Bon",
+    "generated": "2026-07-22T01:54:39.862376",
+    "score": 48,
+    "status": "Médiocre",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 75,
+        "rust": 0,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 864,
+    "problem_count": 863,
     "details": {
         "markdown": {
             "score": 17,
@@ -5304,28 +5304,14 @@
             ]
         },
         "rust": {
-            "score": 75,
-            "max_score": 100,
-            "results": {
-                "files_checked": 1,
-                "total_elements": 8,
-                "elements_without_docs": 2
-            },
+            "score": 0,
+            "max_score": 1,
+            "results": {},
             "problems": [
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                    "line": 2,
-                    "severity": "warning",
-                    "message": "Function 'main' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette function",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                    "line": 3,
-                    "severity": "warning",
-                    "message": "Function 'main' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette function",
+                    "file": "",
+                    "severity": "error",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 27, in check_rust_docs\n    print( \"fichier:\"+rust_files)\n           ~~~~~~~~~~^~~~~~~~~~~\nTypeError: can only concatenate str (not \"list\") to str\n",
                     "module": "rust"
                 }
             ]
