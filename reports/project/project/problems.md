@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 07:21:55
+Generated: 2026-07-22 07:23:43
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|128|
-|⚠️ Warnings|638|
-|**Total**|**829**|
+|⚠️ Warnings|640|
+|**Total**|**831**|
 
 ---
 
@@ -1827,12 +1827,22 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main' ne possède pas de docstring.
+- **Message :** La fonction 'connect' ne possède pas d'annotations de type.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main' ne possède pas d'annotations de type.
+- **Message :** La fonction 'send_packet' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'receive_packet' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
 
 ---
 

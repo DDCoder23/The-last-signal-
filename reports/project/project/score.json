@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T07:21:55.632197",
+    "generated": "2026-07-22T07:23:43.585515",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 829,
+    "problem_count": 831,
     "details": {
         "markdown": {
             "score": 42,
@@ -2135,11 +2135,11 @@
             "max_score": 30,
             "results": {
                 "modules": 47,
-                "classes": 37,
-                "functions": 242,
+                "classes": 38,
+                "functions": 245,
                 "documented_modules": 0,
-                "documented_classes": 2,
-                "documented_functions": 61,
+                "documented_classes": 3,
+                "documented_functions": 65,
                 "typed_functions": 27,
                 "todo": 4,
                 "long_functions": 11
@@ -4242,13 +4242,25 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
                     "severity": "warning",
-                    "message": "La fonction 'main' ne possède pas de docstring.",
+                    "message": "La fonction 'connect' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
                     "severity": "warning",
-                    "message": "La fonction 'main' ne possède pas d'annotations de type.",
+                    "message": "La fonction 'send_packet' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+                    "severity": "warning",
+                    "message": "La fonction 'receive_packet' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+                    "severity": "warning",
+                    "message": "La fonction 'disconnect' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {

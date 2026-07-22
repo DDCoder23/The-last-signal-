@@ -4160,13 +4160,25 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
         "severity": "warning",
-        "message": "La fonction 'main' ne possède pas de docstring.",
+        "message": "La fonction 'connect' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
         "severity": "warning",
-        "message": "La fonction 'main' ne possède pas d'annotations de type.",
+        "message": "La fonction 'send_packet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'receive_packet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'disconnect' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
