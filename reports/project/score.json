@@ -1,9 +1,9 @@
 {
-    "generated": "2026-07-22T04:30:24.329478",
+    "generated": "2026-07-22T04:37:13.440301",
     "score": 80,
     "status": "Execlent ",
     "scores": {
-        "markdown": 17,
+        "markdown": 42,
         "titles": 4,
         "spelling": 10,
         "links": 9,
@@ -15,17 +15,17 @@
     "problem_count": 861,
     "details": {
         "markdown": {
-            "score": 17,
-            "max_score": 20,
+            "score": 42,
+            "max_score": 50,
             "results": {
-                "empty_files": 0,
-                "encoding": 2,
-                "line_length": 3,
-                "trailing_spaces": 2,
-                "code_blocks": 3,
-                "lists": 2,
-                "tables": 2,
-                "html": 3
+                "empty_files": 2,
+                "encoding": 7,
+                "line_length": 7,
+                "trailing_spaces": 6,
+                "code_blocks": 5,
+                "lists": 5,
+                "tables": 5,
+                "html": 5
             },
             "problems": [
                 {
