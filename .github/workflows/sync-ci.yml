@@ -2,10 +2,9 @@ name: Sync CI Data to Main
 
 on:
   workflow_dispatch:
+  workflow_call:
 
-  schedule:
-    - cron: "30 * * * *"
-
+  
 permissions:
   contents: write
 
