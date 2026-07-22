@@ -57,6 +57,10 @@ def log_save_event(profile: str, slot: int, status: str, message: str = "")-> No
 
 
 def normalize_password(password: str) -> str:
+    '''
+    Cette fonction normalise 
+    le mot de passe de décryptage
+    '''
     return unicodedata.normalize("NFKC", password)
 
 
