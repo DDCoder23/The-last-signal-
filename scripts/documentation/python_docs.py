@@ -158,7 +158,7 @@ def check_python_docs() -> dict:
                         {
                             "file": str(file),
                             "severity": "warning",
-                            "message": f"La fonction '{node.name}' ne possède pas de docstring.",
+                            "message": f"La fonction '{node.name}'ligne {node.lineno} ne possède pas de docstring.",
                             "module": "python_docs",
                         }
                     )
