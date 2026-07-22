@@ -58,21 +58,20 @@ runs:
     - shell: bash
       run: |
 
-        mkdir -p reports
-        mkdir -p database
-        mkdir -p dashboard
+        mkdir -p reports/${{ inputs.report-type }}
+        mkdir -p database/${{ inputs.report-type }}
+        mkdir -p dashboard/${{ inputs.report-type }}
 
-        # Reports
-        if [ -d "/tmp/ci-backup/reports/${{ inputs.report-type }}" ]; then
-        cp -r "/tmp/ci-backup/reports/${{ inputs.report-type }}" reports/
+        if [ -d /tmp/ci-backup/reports ]; then
+          cp -r /tmp/ci-backup/reports/. reports/${{ inputs.report-type }}/
         fi
 
-        if [ -d "/tmp/ci-backup/database/${{ inputs.report-type }}" ]; then
-        cp -r "/tmp/ci-backup/database/${{ inputs.report-type }}" database/
+        if [ -d /tmp/ci-backup/database ]; then
+          cp -r /tmp/ci-backup/database/. database/${{ inputs.report-type }}/
         fi
 
-        if [ -d "/tmp/ci-backup/dashboard/${{ inputs.report-type }}" ]; then
-        cp -r "/tmp/ci-backup/dashboard/${{ inputs.report-type }}" dashboard/
+        if [ -d /tmp/ci-backup/dashboard ]; then
+          cp -r /tmp/ci-backup/dashboard/. dashboard/${{ inputs.report-type }}/
         fi
 
     
