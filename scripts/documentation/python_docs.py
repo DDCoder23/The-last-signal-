@@ -215,9 +215,9 @@ def check_python_docs() -> dict:
                     )
 
                     score -= 0.05
-
+    print(f"score python={score}")
     score = max(0, min(MAX_SCORE, round(score)))
-
+    
     return {
         "score": score,
         "max_score": MAX_SCORE,
