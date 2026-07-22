@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T12:52:11.915648",
+    "generated": "2026-07-22T12:56:03.709900",
     "score": 76,
     "status": "Satisfaisant",
     "scores": {
@@ -19277,19 +19277,19 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'aesgcm_decrypt'ligne 85 ne possède pas de docstring.",
+                    "message": "La fonction 'aesgcm_decrypt'ligne 86 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'ensure_profile_dir'ligne 94 ne possède pas de docstring.",
+                    "message": "La fonction 'ensure_profile_dir'ligne 96 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'atomic_write_zip'ligne 100 ne possède pas de docstring.",
+                    "message": "La fonction 'atomic_write_zip'ligne 102 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -19301,7 +19301,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'save_to_slot'ligne 113 ne possède pas de docstring.",
+                    "message": "La fonction 'save_to_slot'ligne 115 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -19313,7 +19313,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'load_from_slot'ligne 145 ne possède pas de docstring.",
+                    "message": "La fonction 'load_from_slot'ligne 147 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -19325,7 +19325,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'write_zip'ligne 128 ne possède pas de docstring.",
+                    "message": "La fonction 'write_zip'ligne 130 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -19337,7 +19337,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'start'ligne 199 ne possède pas de docstring.",
+                    "message": "La fonction 'start'ligne 201 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -19349,7 +19349,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'stop'ligne 206 ne possède pas de docstring.",
+                    "message": "La fonction 'stop'ligne 208 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {

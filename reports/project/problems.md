@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 12:52:12
+Generated: 2026-07-22 12:56:04
 
 ## Summary
 
@@ -45,17 +45,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'aesgcm_decrypt'ligne 85 ne possède pas de docstring.
+- **Message :** La fonction 'aesgcm_decrypt'ligne 86 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'ensure_profile_dir'ligne 94 ne possède pas de docstring.
+- **Message :** La fonction 'ensure_profile_dir'ligne 96 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'atomic_write_zip'ligne 100 ne possède pas de docstring.
+- **Message :** La fonction 'atomic_write_zip'ligne 102 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -65,7 +65,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'save_to_slot'ligne 113 ne possède pas de docstring.
+- **Message :** La fonction 'save_to_slot'ligne 115 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -75,7 +75,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'load_from_slot'ligne 145 ne possède pas de docstring.
+- **Message :** La fonction 'load_from_slot'ligne 147 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -85,7 +85,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'write_zip'ligne 128 ne possède pas de docstring.
+- **Message :** La fonction 'write_zip'ligne 130 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -95,7 +95,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'start'ligne 199 ne possède pas de docstring.
+- **Message :** La fonction 'start'ligne 201 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -105,7 +105,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'stop'ligne 206 ne possède pas de docstring.
+- **Message :** La fonction 'stop'ligne 208 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
