@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 04:56:34
+Generated: 2026-07-22 04:57:53
 
 ## Summary
 
@@ -25,7 +25,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/Secure_save.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py
 
 ## ⚠️ Warning
 
@@ -129,7 +129,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/admin_manager.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/admin_manager.py
 
 ## ⚠️ Warning
 
@@ -268,7 +268,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/banque.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 
 ## ⚠️ Warning
 
@@ -347,7 +347,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/configuration.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/configuration.py
 
 ## ⚠️ Warning
 
@@ -366,7 +366,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/debugger.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 
 ## ⚠️ Warning
 
@@ -555,7 +555,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/generate_map.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 
 ## ⚠️ Warning
 
@@ -574,7 +574,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/grade_manager.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/grade_manager.py
 
 ## ⚠️ Warning
 
@@ -703,7 +703,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/heure_locale.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/heure_locale.py
 
 ## ⚠️ Warning
 
@@ -722,7 +722,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/horloge.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
 
 ## ⚠️ Warning
 
@@ -796,7 +796,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/index_manager.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
 
 ## ⚠️ Warning
 
@@ -820,7 +820,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/inv.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 
 ## ⚠️ Warning
 
@@ -944,7 +944,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/inventaire.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 
 ## ⚠️ Warning
 
@@ -1188,7 +1188,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/jet_de_des.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/jet_de_des.py
 
 ## ⚠️ Warning
 
@@ -1207,7 +1207,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/localisation.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/localisation.py
 
 ## ⚠️ Warning
 
@@ -1221,7 +1221,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/main.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
 
 ## ⚠️ Warning
 
@@ -1660,7 +1660,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/table_de_conversion.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 
 ## ⚠️ Warning
 
@@ -1764,7 +1764,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 Ancien/tresor.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 
 ## ⚠️ Warning
 
@@ -1808,31 +1808,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** README.md:172 titre sans ligne vide avant.
-
----
-
-# 📄 client_python/__init__.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/__init__.py
 
 ## ⚠️ Warning
 
@@ -1841,7 +1817,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 client_python/client.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 
 ## ⚠️ Warning
 
@@ -2025,7 +2001,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 dashboard.py
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 
 ## ⚠️ Warning
 
@@ -2041,6 +2017,853 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'start_server' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_docs_database' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_docs_database' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_performance_database' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_performance_database' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_python_database' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_python_database' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_python_database' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_rust_database' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_rust_database' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_rust_database' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_security_database' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_security_database' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_security_database' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/utils.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'read_report' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'read_report' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_int' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_int' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_float' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_float' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La classe 'DatabaseManager' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'create_tables' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'create_tables' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'create_tables' dépasse 80 lignes.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_run' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_run' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'insert' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'insert' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'close' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'close' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security_issue' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_security_issue' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_links' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_links' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_links' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'extract_links' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_empty_links' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_empty_links' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_local_links' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_local_links' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_external_links' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_external_links' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_anchors' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_anchors' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_images' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_images' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_duplicate_links' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_duplicate_links' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'load_markdownlint_report' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'load_markdownlint_report' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_markdown_files' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_markdown' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_empty_files' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_empty_files' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_encoding' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_encoding' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_line_length' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_line_length' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_trailing_spaces' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_trailing_spaces' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_code_blocks' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_code_blocks' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_lists' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_lists' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_tables' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_tables' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_html' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_html' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/navigation.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_navigation' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_navigation' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_organization' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_organization' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_problem' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'add_problem' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Info
+
+- **Module :** python
+- **Message :** TODO présent dans le fichier.
+
+## ⚠️ Info
+
+- **Module :** python
+- **Message :** FIXME présent dans le fichier.
+
+## ⚠️ Info
+
+- **Module :** python
+- **Message :** XXX présent dans le fichier.
+
+## ⚠️ Info
+
+- **Module :** python
+- **Message :** HACK présent dans le fichier.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_python_docs' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_report' ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_rust_docs' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_score' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_score' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_spelling' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_titles' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_titles' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_single_h1' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_single_h1' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_heading_order' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_heading_order' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_heading_spacing' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_heading_spacing' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_empty_titles' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_empty_titles' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_title_length' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_title_length' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_duplicate_titles' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_duplicate_titles' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_documentation_score' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_documentation_score' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_database_data' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_database_data' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'calculate_quality' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'calculate_quality' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_json' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_json' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_json' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_problems_md' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_problems_md' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/transformateur.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_database' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_database' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/__init__.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_main' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_classJoueur' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_classJoueur' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/voir_database.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+---
+
+# 📄 README.md
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 13 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Ligne 15 > 120 caractères.
+
+## ⚠️ Warning
+
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (1).
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** README.md:172 titre sans ligne vide avant.
 
 ---
 
@@ -4016,773 +4839,6 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 scripts/database/update_docs.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_docs_database' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_docs_database' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/database/update_performance.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_performance_database' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_performance_database' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/database/update_python.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_python_database' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_python_database' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_python_database' dépasse 80 lignes.
-
----
-
-# 📄 scripts/database/update_rust.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_rust_database' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_rust_database' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_rust_database' dépasse 80 lignes.
-
----
-
-# 📄 scripts/database/update_security.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_security_database' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_security_database' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_security_database' dépasse 80 lignes.
-
----
-
-# 📄 scripts/database/utils.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'read_report' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'read_report' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_int' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_int' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_float' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_float' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/database_manager.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La classe 'DatabaseManager' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_tables' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_tables' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_tables' dépasse 80 lignes.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_run' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_run' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'insert' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'insert' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'close' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'close' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security_issue' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security_issue' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/docs_score.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
----
-
-# 📄 scripts/documentation/links.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_links' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_links' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_links' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'extract_links' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_empty_links' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_empty_links' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_local_links' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_local_links' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_external_links' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_external_links' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_anchors' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_anchors' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_images' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_images' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_duplicate_links' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_duplicate_links' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/documentation/markdown.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'load_markdownlint_report' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'load_markdownlint_report' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_markdown_files' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_markdown' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_empty_files' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_empty_files' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_encoding' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_encoding' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_line_length' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_line_length' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_trailing_spaces' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_trailing_spaces' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_code_blocks' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_code_blocks' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_lists' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_lists' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_tables' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_tables' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_html' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_html' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/documentation/navigation.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_navigation' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_navigation' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/documentation/organization.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_organization' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_organization' dépasse 80 lignes.
-
----
-
-# 📄 scripts/documentation/problem.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_problem' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_problem' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/documentation/python_docs.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Info
-
-- **Module :** python
-- **Message :** TODO présent dans le fichier.
-
-## ⚠️ Info
-
-- **Module :** python
-- **Message :** FIXME présent dans le fichier.
-
-## ⚠️ Info
-
-- **Module :** python
-- **Message :** XXX présent dans le fichier.
-
-## ⚠️ Info
-
-- **Module :** python
-- **Message :** HACK présent dans le fichier.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_python_docs' dépasse 80 lignes.
-
----
-
-# 📄 scripts/documentation/report.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_report' ne possède pas de docstring.
-
----
-
-# 📄 scripts/documentation/rust_docs.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_rust_docs' dépasse 80 lignes.
-
----
-
-# 📄 scripts/documentation/score.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_score' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_score' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/documentation/spelling.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_spelling' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/documentation/titles.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_titles' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_titles' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_single_h1' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_single_h1' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_heading_order' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_heading_order' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_heading_spacing' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_heading_spacing' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_empty_titles' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_empty_titles' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_title_length' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_title_length' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_duplicate_titles' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check_duplicate_titles' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/generate_dashboard.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_documentation_score' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_documentation_score' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_database_data' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_database_data' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'calculate_quality' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'calculate_quality' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_json' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_json' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_json' dépasse 80 lignes.
-
----
-
-# 📄 scripts/generate_problems_md.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_problems_md' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_problems_md' ne possède pas d'annotations de type.
-
----
-
-# 📄 scripts/transformateur.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
----
-
-# 📄 scripts/update_database.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_database' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'update_database' ne possède pas d'annotations de type.
-
----
-
 # 📄 server_rust/README.md
 
 ## ❌ Error
@@ -4794,62 +4850,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** titles
 - **Message :** server_rust/README.md: contient 0 titres H1 (1 attendu).
-
----
-
-# 📄 setup.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
----
-
-# 📄 tests/__init__.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
----
-
-# 📄 tests/test_client.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_main' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_classJoueur' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_classJoueur' ne possède pas d'annotations de type.
-
----
-
-# 📄 voir_database.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
 
 ---
 
