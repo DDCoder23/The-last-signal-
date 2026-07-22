@@ -1,0 +1,39 @@
+name: Nightly
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 21 * * *"
+
+permissions:
+  actions: write
+  contents: write
+
+jobs:
+
+  python:
+    uses: ./.github/workflows/python.yml
+
+  rust:
+    uses: ./.github/workflows/rust.yml
+
+  security:
+    uses: ./.github/workflows/security.yml
+
+  project:
+    uses: ./.github/workflows/project.yml
+
+
+  integration:
+    uses: ./.github/workflows/integration.yml
+
+  sync:
+    needs:
+      - python
+      - rust
+      - security
+      - project
+      - integration
+    uses: ./.github/workflows/sync-ci.yml
+  
