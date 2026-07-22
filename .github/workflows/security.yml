@@ -3,6 +3,7 @@ name: Security Report
 on:
 
   workflow_dispatch:
+  workflow_call:
 
   schedule:
     # Tous les jours à 03:00 UTC
