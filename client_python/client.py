@@ -5,6 +5,11 @@ import PySide6.QtWidgets as qt
 from PySide6.QtCore import Qt, QTimer
 import atexit
 import sys
+import perso_core
+
+
+
+
 
 
 class Joueur():
@@ -25,6 +30,7 @@ class Joueur():
         self._initialiser_stats(self.stats)
 
     def _initialiser_stats(self,stats:dict):
+        self.stats = perso_core.generer_stats()
         self.stats["MANA_max"] = 100
         self.stats["MANA"] = self.stats["MANA_max"]
         self.stats["XP"] = 0
