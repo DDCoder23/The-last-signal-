@@ -1,18 +1,30 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 04:24:28
+Generated: 2026-07-22 04:28:00
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|128|
-|⚠️ Warnings|675|
-|**Total**|**866**|
+|❌ Errors|129|
+|⚠️ Warnings|670|
+|**Total**|**862**|
 
 ---
 
 # 📄 
+
+## ❌ Error
+
+- **Module :** organization
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py", line 5, in check_organization
+    base_dir = Path.cwd()
+               ^^^^
+NameError: name 'Path' is not defined
+
 
 ## ❌ Error
 
@@ -22,26 +34,6 @@ Generated: 2026-07-22 04:24:28
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
-
----
-
-# 📄 .github
-
-## ⚠️ Warning
-
-- **Module :** organization
-- **Message :** Dossier '.github' absent
-- **suggestion :** Créer le dossier '.github'.
-
----
-
-# 📄 .gitignore
-
-## ⚠️ Warning
-
-- **Module :** organization
-- **Message :** Fichier '.gitignore' absent
-- **suggestion :** Créer le fichier '.gitignore'.
 
 ---
 
@@ -1850,12 +1842,6 @@ TypeError: result doit être un dict, reçu int
 - **Module :** titles
 - **Message :** README.md:172 titre sans ligne vide avant.
 
-## ⚠️ Warning
-
-- **Module :** organization
-- **Message :** Fichier 'README.md' absent
-- **suggestion :** Créer le fichier 'README.md'.
-
 ---
 
 # 📄 client_python/__init__.py
@@ -2067,16 +2053,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'start_server' ne possède pas d'annotations de type.
-
----
-
-# 📄 docs
-
-## ⚠️ Warning
-
-- **Module :** organization
-- **Message :** Dossier 'docs' absent
-- **suggestion :** Créer le dossier 'docs'.
 
 ---
 
@@ -4839,16 +4815,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
-
----
-
-# 📄 tests
-
-## ⚠️ Warning
-
-- **Module :** organization
-- **Message :** Dossier 'tests' absent
-- **suggestion :** Créer le dossier 'tests'.
 
 ---
 

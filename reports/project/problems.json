@@ -5220,38 +5220,9 @@
         "module": "python"
     },
     {
-        "file": "docs",
-        "severity": "warning",
-        "message": "Dossier 'docs' absent",
-        "suggestion": "Créer le dossier 'docs'.",
-        "module": "organization"
-    },
-    {
-        "file": "tests",
-        "severity": "warning",
-        "message": "Dossier 'tests' absent",
-        "suggestion": "Créer le dossier 'tests'.",
-        "module": "organization"
-    },
-    {
-        "file": ".github",
-        "severity": "warning",
-        "message": "Dossier '.github' absent",
-        "suggestion": "Créer le dossier '.github'.",
-        "module": "organization"
-    },
-    {
-        "file": "README.md",
-        "severity": "warning",
-        "message": "Fichier 'README.md' absent",
-        "suggestion": "Créer le fichier 'README.md'.",
-        "module": "organization"
-    },
-    {
-        "file": ".gitignore",
-        "severity": "warning",
-        "message": "Fichier '.gitignore' absent",
-        "suggestion": "Créer le fichier '.gitignore'.",
+        "file": "",
+        "severity": "error",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py\", line 5, in check_organization\n    base_dir = Path.cwd()\n               ^^^^\nNameError: name 'Path' is not defined\n",
         "module": "organization"
     },
     {

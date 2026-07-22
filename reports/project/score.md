@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 04:24:28
+**Date :** 2026-07-22 04:28:00
 
-# 64/100
+# 59/100
 
-**Statut :** Bon
+**Statut :** Assez bon
 
 ## Résultats
 |Module|Score|
@@ -15,11 +15,24 @@ Documentation Quality Report
 |links|**9**|
 |python|**0**|
 |rust|**20**|
-|organization|**69**|
+|organization|**0**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
+
+## ❌ Error
+- **Module :** organization
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py", line 5, in check_organization
+    base_dir = Path.cwd()
+               ^^^^
+NameError: name 'Path' is not defined
+
+
+- **module :** organization
 
 ## ❌ Error
 - **Module :** navigation
@@ -30,26 +43,6 @@ TypeError: result doit être un dict, reçu int
 
 
 - **module :** navigation
-
-# 📄 .github
-
-## ⚠️ Warning
-- **Module :** organization
-- **Message :** Dossier '.github' absent
-
-- **suggestion :** Créer le dossier '.github'.
-
-- **module :** organization
-
-# 📄 .gitignore
-
-## ⚠️ Warning
-- **Module :** organization
-- **Message :** Fichier '.gitignore' absent
-
-- **suggestion :** Créer le fichier '.gitignore'.
-
-- **module :** organization
 
 # 📄 Ancien/Secure_save.py
 
@@ -2169,14 +2162,6 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-## ⚠️ Warning
-- **Module :** organization
-- **Message :** Fichier 'README.md' absent
-
-- **suggestion :** Créer le fichier 'README.md'.
-
-- **module :** organization
-
 # 📄 client_python/__init__.py
 
 ## ⚠️ Warning
@@ -2422,16 +2407,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** La fonction 'start_server' ne possède pas d'annotations de type.
 
 - **module :** python
-
-# 📄 docs
-
-## ⚠️ Warning
-- **Module :** organization
-- **Message :** Dossier 'docs' absent
-
-- **suggestion :** Créer le dossier 'docs'.
-
-- **module :** organization
 
 # 📄 docs/ARCHITECTURE.md
 
@@ -5534,16 +5509,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Le module ne possède pas de docstring.
 
 - **module :** python
-
-# 📄 tests
-
-## ⚠️ Warning
-- **Module :** organization
-- **Message :** Dossier 'tests' absent
-
-- **suggestion :** Créer le dossier 'tests'.
-
-- **module :** organization
 
 # 📄 tests/__init__.py
 
