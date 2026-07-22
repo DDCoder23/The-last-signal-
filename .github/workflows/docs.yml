@@ -1,4 +1,4 @@
-name: Documentation Quality
+name: Project Quality
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
 
   documentation-check:
 
-    name: 📚 Documentation Quality
+    name: 📚 Project Quality
     runs-on: ubuntu-latest
     steps:
 
@@ -132,7 +132,7 @@ jobs:
       # Documentation score
       # =========================
 
-      - name: 📊 Calculate documentation score
+      - name: 📊 Calculate project score
         run: |
           
           python scripts/transformateur.py
@@ -144,7 +144,7 @@ jobs:
       # Display score
       # =========================
 
-      - name: 📋 Show documentation score
+      - name: 📋 Show  score
         run: |
 
           echo "Documentation score :"
@@ -159,18 +159,18 @@ jobs:
       # Verify score
       # =========================
 
-      - name: 🚨 Verify documentation quality
+      - name: 🚨 Verify project quality
         run: |
 
           SCORE=$(cat reports/docs/score.txt)
 
-          echo "Documentation score : $SCORE/100"
+          echo "Quality score : $SCORE/100"
 
           if [ "$SCORE" -lt "$DOC_SCORE_MINIMUM" ]; then
 
             echo ""
             echo "========================================"
-            echo "❌ DOCUMENTATION QUALITY FAILED"
+            echo "❌  QUALITY TEST FAILED"
             echo "========================================"
             echo ""
             echo "Obtained score : $SCORE/100"
@@ -185,7 +185,7 @@ jobs:
 
           echo ""
           echo "========================================"
-          echo "✅ DOCUMENTATION QUALITY PASSED"
+          echo "✅  QUALITY TEST PASSED"
           echo "========================================"
           echo ""
           echo "Score : $SCORE/100"
@@ -199,7 +199,7 @@ jobs:
         run: |
           mkdir -p reports/docs
           {
-            echo "# 📚 Documentation Quality"
+            echo "# 📚 Project Quality"
             echo ""
             echo "Score : $(cat reports/docs/score.txt)/100"
             echo ""
