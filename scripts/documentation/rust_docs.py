@@ -19,7 +19,7 @@ def check_rust_docs() -> Dict[str, Any]:
     exclude_dirs = {'target', '.git', '__pycache__', 'venv'}
     
     # Trouve tous les fichiers .rs 
-    for root, _, files in os.walk(base_dir):
+    for root, dirs, files in os.walk(base_dir):
         dirs[:] = [d for d in dirs if d not in exclude_dirs]
         for file in files:
             if file.endswith('.rs'):
