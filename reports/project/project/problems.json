@@ -4158,6 +4158,18 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
+        "severity": "warning",
+        "message": "La fonction 'main' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
+        "severity": "warning",
+        "message": "La fonction 'main' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",

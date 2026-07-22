@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T07:25:03.561638",
+    "generated": "2026-07-22T07:26:06.081284",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 830,
+    "problem_count": 832,
     "details": {
         "markdown": {
             "score": 42,
@@ -2136,7 +2136,7 @@
             "results": {
                 "modules": 48,
                 "classes": 38,
-                "functions": 244,
+                "functions": 245,
                 "documented_modules": 0,
                 "documented_classes": 3,
                 "documented_functions": 65,
@@ -4237,6 +4237,18 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {

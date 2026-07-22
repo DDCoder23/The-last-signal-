@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 07:25:03
+Generated: 2026-07-22 07:26:06
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|128|
-|⚠️ Warnings|639|
-|**Total**|**830**|
+|⚠️ Warnings|641|
+|**Total**|**832**|
 
 ---
 
@@ -1852,6 +1852,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 ---
 
