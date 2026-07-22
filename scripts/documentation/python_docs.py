@@ -19,7 +19,7 @@ def check_python_docs() -> dict:
         - longueur des fonctions
     """
 
-    MAX_SCORE = 20
+    MAX_SCORE = 30
 
     problems = []
 
