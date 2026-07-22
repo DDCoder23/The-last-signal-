@@ -1,0 +1,132 @@
+name: Integration Tests
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+
+  workflow_dispatch:
+
+  schedule:
+    - cron: "15 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+
+  integration:
+
+    name: Python ↔ Rust Integration
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 20
+
+    steps:
+
+    ##########################################################
+    # Checkout
+    ##########################################################
+
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    ##########################################################
+    # Python
+    ##########################################################
+
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
+
+    - name: Install Python dependencies
+      run: |
+
+        python -m pip install --upgrade pip
+
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
+
+        pip install pytest
+
+    ##########################################################
+    # Rust
+    ##########################################################
+
+    - name: Install Rust
+      uses: dtolnay/rust-toolchain@stable
+
+    ##########################################################
+    # Build server
+    ##########################################################
+
+    - name: Build Rust server
+      working-directory: server_rust
+      run: cargo build --release
+
+    ##########################################################
+    # Start server
+    ##########################################################
+
+    - name: Start Rust server
+      working-directory: server_rust
+      run: |
+
+        cargo run --release > server.log 2>&1 &
+
+        echo $! > server.pid
+
+        sleep 5
+
+    ##########################################################
+    # Vérifie que le serveur est lancé
+    ##########################################################
+
+    - name: Check server
+      run: |
+
+        if ps -p $(cat server_rust/server.pid) > /dev/null
+        then
+          echo "Server running"
+        else
+          echo "Server crashed"
+
+          cat server_rust/server.log
+
+          exit 1
+        fi
+
+    ##########################################################
+    # Tests Python
+    ##########################################################
+
+    - name: Run integration tests
+      run: |
+
+        pytest tests/integration -v
+
+    ##########################################################
+    # Stop server
+    ##########################################################
+
+    - name: Stop server
+      if: always()
+      run: |
+
+        kill $(cat server_rust/server.pid) || true
+
+    ##########################################################
+    # Upload log
+    ##########################################################
+
+    - name: Upload server log
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: server-log
+        path: server_rust/server.log
