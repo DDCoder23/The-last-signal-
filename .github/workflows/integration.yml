@@ -128,11 +128,39 @@ jobs:
              echo "=== DATABASE ==="
              ls -lah database
 
-             echo "=== REPORTS ==="
-             ls -lah reports
+             
     - name: Upload server log
       if: always()
       uses: actions/upload-artifact@v4
       with:
         name: server-log
         path: server_rust/server.log
+  # ==========================================================
+# Commit automatique des bases SQLite
+# ==========================================================
+
+    - name: Commit SQLite databases
+      if: always()
+      run: |
+              git config --global user.name "github-actions"
+              git config --global user.email "github-actions@github.com"
+              mkdir -p /tmp/db-backup
+              cp -r database /tmp/db-backup/ || true
+              git fetch origin
+              if git show-ref --verify --quiet refs/remotes/origin/ci-database then
+              git checkout ci-database
+              git pull origin ci-database
+              else
+              git checkout --orphan ci-database
+              git rm -rf .
+              fi
+
+              mkdir -p database
+
+              cp -r /tmp/db-backup/database/* database/ || true
+
+              git add database
+
+              git commit -m "SQLite Database #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
+
+              git push origin ci-database
