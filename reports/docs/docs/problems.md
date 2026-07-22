@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-21 14:05:09
+Generated: 2026-07-22 00:51:12
 
 ## Summary
 
@@ -20,10 +20,10 @@ Generated: 2026-07-21 14:05:09
 - **Message :** Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
     result = check()
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 68, in check_rust_docs
-    element_name = line.split()[-1].split('{')[0].strip()
-                   ~~~~~~~~~~~~^^^^
-IndexError: list index out of range
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 23, in check_rust_docs
+    dirs[:] = [d for d in dirs if d not in exclude_dirs]
+                          ^^^^
+NameError: name 'dirs' is not defined. Did you mean: 'dir'?
 
 
 ## ❌ Error

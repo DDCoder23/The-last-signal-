@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-21T14:05:09.195794",
+    "generated": "2026-07-22T00:51:12.248507",
     "score": 48,
     "status": "Médiocre",
     "scores": {
@@ -5311,7 +5311,7 @@
                 {
                     "file": "",
                     "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 68, in check_rust_docs\n    element_name = line.split()[-1].split('{')[0].strip()\n                   ~~~~~~~~~~~~^^^^\nIndexError: list index out of range\n",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 23, in check_rust_docs\n    dirs[:] = [d for d in dirs if d not in exclude_dirs]\n                          ^^^^\nNameError: name 'dirs' is not defined. Did you mean: 'dir'?\n",
                     "module": "rust"
                 }
             ]
