@@ -29,12 +29,13 @@ AES_GCM_NONCE_SIZE = 12
 FORMAT_VERSION = b"\x01"
 
 
-def log_save_event(profile: str, slot: int, status: str, message: str = ""):
     """
     Journalise un événement de sauvegarde.
 
     status : "OK" | "ERROR"
     """
+def log_save_event(profile: str, slot: int, status: str, message: str = "")-> None:
+    
     try:
         base_dir = os.path.join("saves", profile)
         os.makedirs(base_dir, exist_ok=True)
