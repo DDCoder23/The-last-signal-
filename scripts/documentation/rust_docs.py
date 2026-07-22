@@ -53,6 +53,10 @@ def check_rust_docs() -> Dict[str, Any]:
             # Patterns pour détecter les éléments Rust publics
             for i, line in enumerate(lines):
                 line = line.strip()
+                if not line:  
+                    # ✅ Ignore les lignes vides
+                    continue
+                
                 for element_type, pattern in patterns.items():
                     match = re.match(pattern, line)
                     if match:
@@ -61,11 +65,14 @@ def check_rust_docs() -> Dict[str, Any]:
                             # Pour les fonctions : extrait le nom entre 'fn' et '('
                             name_match = re.match(r'^\s*(pub\s+)?fn\s+(\w+)', line)
                             element_name = name_match.group(2) if name_match else "unknown"
-                        elif element_type == 'main':
-                            element_name = "main"
+                        else:
+                            parts = line.split()
+                            
                     else:
                         # Pour struct/enum/mod/trait : dernier mot du pattern
-                        element_name = line.split()[-1].split('{')[0].strip()
+                        element_name = parts[1] if len(parts) > 1 else "unknown"
+
+                    
                     total_elements += 1
                     has_doc = False
                     if i > 0:
