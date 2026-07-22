@@ -147,7 +147,7 @@ jobs:
               mkdir -p /tmp/db-backup
               cp -r database /tmp/db-backup/ || true
               git fetch origin
-              if git show-ref --verify --quiet refs/remotes/origin/ci-database then
+              if git show-ref --verify --quiet refs/remotes/origin/ci-database; then
               git checkout ci-database
               git pull origin ci-database
               else
