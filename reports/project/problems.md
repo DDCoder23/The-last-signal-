@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 12:38:05
+Generated: 2026-07-22 12:45:52
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|154|
-|⚠️ Warnings|3197|
-|**Total**|**3437**|
+|⚠️ Warnings|3196|
+|**Total**|**3436**|
 
 ---
 
@@ -30,17 +30,12 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'log_save_event'ligne 36 ne possède pas de docstring.
+- **Message :** La fonction 'normalize_password'ligne 59 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'normalize_password'ligne 58 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'derive_key'ligne 62 ne possède pas de docstring.
+- **Message :** La fonction 'derive_key'ligne 63 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -50,22 +45,22 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'aesgcm_encrypt'ligne 73 ne possède pas de docstring.
+- **Message :** La fonction 'aesgcm_encrypt'ligne 74 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'aesgcm_decrypt'ligne 80 ne possède pas de docstring.
+- **Message :** La fonction 'aesgcm_decrypt'ligne 81 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'ensure_profile_dir'ligne 89 ne possède pas de docstring.
+- **Message :** La fonction 'ensure_profile_dir'ligne 90 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'atomic_write_zip'ligne 95 ne possède pas de docstring.
+- **Message :** La fonction 'atomic_write_zip'ligne 96 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -75,7 +70,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'save_to_slot'ligne 108 ne possède pas de docstring.
+- **Message :** La fonction 'save_to_slot'ligne 109 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -85,7 +80,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'load_from_slot'ligne 140 ne possède pas de docstring.
+- **Message :** La fonction 'load_from_slot'ligne 141 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -95,7 +90,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'write_zip'ligne 123 ne possède pas de docstring.
+- **Message :** La fonction 'write_zip'ligne 124 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -105,7 +100,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'start'ligne 194 ne possède pas de docstring.
+- **Message :** La fonction 'start'ligne 195 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -115,7 +110,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'stop'ligne 201 ne possède pas de docstring.
+- **Message :** La fonction 'stop'ligne 202 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
