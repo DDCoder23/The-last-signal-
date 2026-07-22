@@ -1,10 +1,10 @@
 {
-    "generated": "2026-07-22T09:09:15.350607",
-    "score": 77,
+    "generated": "2026-07-22T09:20:48.468633",
+    "score": 76,
     "status": "Satisfaisant",
     "scores": {
         "markdown": 42,
-        "titles": 4,
+        "titles": 2,
         "spelling": 10,
         "links": 9,
         "python": 0,
@@ -12,5 +12,5 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 838
+    "problem_count": 3436
 }
