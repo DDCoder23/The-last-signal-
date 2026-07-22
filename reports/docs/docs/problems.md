@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 02:09:52
+Generated: 2026-07-22 02:12:59
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|129|
-|⚠️ Warnings|671|
-|**Total**|**863**|
+|⚠️ Warnings|670|
+|**Total**|**862**|
 
 ---
 
@@ -31,17 +31,6 @@ TypeError: result doit être un dict, reçu int
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Function 'None' sans documentation
-- **line :** 1
-- **suggestion :** Ajoutez /// avant cette function
 
 ---
 

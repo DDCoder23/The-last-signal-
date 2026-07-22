@@ -1,18 +1,18 @@
 {
-    "generated": "2026-07-22T02:09:52.351328",
-    "score": 22,
-    "status": "Très Décevant",
+    "generated": "2026-07-22T02:12:59.554564",
+    "score": 77,
+    "status": "Satisfaisant",
     "scores": {
         "markdown": 17,
         "titles": 4,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 0,
+        "rust": 100,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 863,
+    "problem_count": 862,
     "details": {
         "markdown": {
             "score": 17,
@@ -5304,23 +5304,14 @@
             ]
         },
         "rust": {
-            "score": 0,
+            "score": 100,
             "max_score": 100,
             "results": {
                 "files_checked": 1,
                 "total_elements": 1,
-                "elements_without_docs": 1
+                "elements_without_docs": 0
             },
-            "problems": [
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                    "line": 1,
-                    "severity": "warning",
-                    "message": "Function 'None' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette function",
-                    "module": "rust"
-                }
-            ]
+            "problems": []
         },
         "organization": {
             "score": 0,
