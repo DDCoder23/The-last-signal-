@@ -166,10 +166,16 @@ def check_python_docs() -> dict:
                     score -= 0.10
 
                 # Type hints
+                args = (
+        node.args.args
+        + node.args.posonlyargs
+        + node.args.kwonlyargs
+    )
 
+    
                 has_types = (
                     node.returns is not None
-                    and all(arg.annotation is not None for arg in node.args.args)
+                    and all(arg.annotation is not None for arg in args)
                 )
 
                 if has_types:
