@@ -1,4 +1,4 @@
-from client import Client
+from .client import Client
 import time
 def main():
   client = Client()
