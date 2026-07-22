@@ -1,21 +1,21 @@
 import os
 import re
 from typing import Dict, List, Any
-
+from pathlib import Path
+max_score=30
 def check_rust_docs() -> Dict[str, Any]:
     """
     Vérifie la qualité de la documentation dans les fichiers Rust.
-    Retourne un score en entier (0-100).
 
     Returns:
         Dict avec:
-        - score: Note globale (0-20) en INT
-        - max_score: Score maximum possible (20)
+        - score: Note globale 
+        - max_score: Score maximum possible 
         - results: Détails par fichier
         - problems: Liste des problèmes trouvés
     """
     rust_files = []
-    base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
+    base_dir = Path.cwd()
     exclude_dirs = {'target', '.git', '__pycache__', 'venv'}
     
     # Trouve tous les fichiers .rs 
@@ -29,7 +29,7 @@ def check_rust_docs() -> Dict[str, Any]:
     if not rust_files:
         return {
             "score": 0,  
-            "max_score": 20,
+            "max_score": max_score,
             "results": {"files_checked": 0},
             "problems": []
         }
@@ -45,7 +45,7 @@ def check_rust_docs() -> Dict[str, Any]:
     'mod': r'^\s*(pub\s+)?mod\s+\w+',
     'trait': r'^\s*(pub\s+)?trait\s+\w+'
     }
-    score=20
+    score=max_score
     for file_path in rust_files:
         with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
@@ -99,8 +99,8 @@ def check_rust_docs() -> Dict[str, Any]:
 
 
     return {
-        "score": int(score),  # ✅ Score en INT (0-20)
-        "max_score": 20,      # ✅ Max score en INT
+        "score": int(score),
+        "max_score": max_score,      
         "results": {
             "files_checked": len(rust_files),
             "total_elements": total_elements,
