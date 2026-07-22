@@ -67,10 +67,7 @@ def check_rust_docs() -> Dict[str, Any]:
                             element_name = name_match.group(2) if name_match else "unknown"
                         else:
                             parts = line.split()
-                            
-                    else:
-                        # Pour struct/enum/mod/trait : dernier mot du pattern
-                        element_name = parts[1] if len(parts) > 1 else "unknown"
+                            element_name = parts[1] if len(parts) > 1 else "unknown"
 
                     
                     total_elements += 1
