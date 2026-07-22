@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 09:31:15
+Generated: 2026-07-22 09:45:27
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|154|
-|⚠️ Warnings|3196|
-|**Total**|**3436**|
+|❌ Errors|155|
+|⚠️ Warnings|3181|
+|**Total**|**3422**|
 
 ---
 
@@ -2073,80 +2073,10 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 
-## ⚠️ Warning
+## ❌ Error
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La classe 'DatabaseManager' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_tables' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_tables' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_tables' dépasse 80 lignes.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_run' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_run' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'insert' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'insert' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'close' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'close' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security_issue' ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'add_security_issue' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : unterminated triple-quoted string literal (detected at line 529) (<unknown>, line 516)
 
 ---
 
