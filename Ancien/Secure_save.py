@@ -12,12 +12,11 @@ import base64
 import secrets
 import unicodedata
 import tempfile
-
-
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
 from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 from cryptography.exceptions import InvalidTag
+from typing import Callable
 
 
 BASE_SAVE_DIR = "saves"
@@ -57,10 +56,10 @@ def log_save_event(profile: str, slot: int, status: str, message: str = "")-> No
 
 
 def normalize_password(password: str) -> str:
-    '''
+    """
     Cette fonction normalise 
-    le mot de passe de décryptage
-    '''
+    le mot de passe de sauvegarde 
+    """
     return unicodedata.normalize("NFKC", password)
 
 
@@ -76,7 +75,9 @@ def derive_key(password: str, salt: bytes):
 
 
 def aesgcm_encrypt(aes_key: bytes, plaintext: bytes) -> bytes:
-    # Encrypte le mot de passe 
+    """
+    Encrypte le mot de passe
+    """
     nonce = secrets.token_bytes(AES_GCM_NONCE_SIZE)
     aes = AESGCM(aes_key)
     ct = aes.encrypt(nonce, plaintext, None)
@@ -84,7 +85,9 @@ def aesgcm_encrypt(aes_key: bytes, plaintext: bytes) -> bytes:
 
 
 def aesgcm_decrypt(aes_key: bytes, blob: bytes) -> bytes:
-    # Décrypte le mot de passe
+    """
+    Décrypte le mot de passe
+    """
     if blob[0:1] != FORMAT_VERSION:
         raise ValueError("Format inconnu.")
     nonce = blob[1 : 1 + AES_GCM_NONCE_SIZE]
@@ -99,7 +102,10 @@ def ensure_profile_dir(profile: str) -> str:
     return path
 
 
-def atomic_write_zip(final_path: str, write_fn):
+def atomic_write_zip(
+    final_path: str,
+    write_fn: Callable[[str], None]
+) -> None:
     directory = os.path.dirname(final_path)
     fd, tmp_path = tempfile.mkstemp(prefix=".tmp_", dir=directory)
     os.close(fd)
@@ -112,7 +118,7 @@ def atomic_write_zip(final_path: str, write_fn):
         raise
 
 
-def save_to_slot(profile: str, slot: int, data: dict, password: str):
+def save_to_slot(profile: str, slot: int, data: dict, password: str)-> "Zip":
     if slot not in SLOTS:
         raise ValueError("Slot doit être 1, 2 ou 3.")
 
