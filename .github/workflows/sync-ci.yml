@@ -1,0 +1,77 @@
+name: Sync CI Data to Main
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "30 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+      #######################################################
+      # Reports
+      #######################################################
+
+      - name: Download ci-reports
+        run: |
+
+          git fetch origin ci-reports
+
+          mkdir ci-reports-temp
+
+          git --work-tree=ci-reports-temp checkout origin/ci-reports -- .
+
+          mkdir -p reports dashboard
+
+          cp -r ci-reports-temp/reports/* reports/ 2>/dev/null || true
+          cp -r ci-reports-temp/dashboard/* dashboard/ 2>/dev/null || true
+
+      #######################################################
+      # Databases
+      #######################################################
+
+      - name: Download ci-database
+        run: |
+
+          git fetch origin ci-database
+
+          mkdir ci-database-temp
+
+          git --work-tree=ci-database-temp checkout origin/ci-database -- .
+
+          mkdir -p database
+
+          cp -r ci-database-temp/database/* database/ 2>/dev/null || true
+
+      #######################################################
+      # Commit
+      #######################################################
+
+      - name: Commit changes
+        run: |
+
+          git add reports dashboard database
+
+          git commit -m "Synchronize CI data #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
+
+          git push origin main
