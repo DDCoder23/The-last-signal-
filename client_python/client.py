@@ -58,7 +58,8 @@ class Client:
 
         try:
 
-            self.socket.sendall(packet)
+            size = struct.pack("!I", len(packet))
+            self.socket.sendall(size + packet)
 
         except Exception as e:
 
