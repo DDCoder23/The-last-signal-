@@ -16,11 +16,11 @@ def check_rust_docs() -> Dict[str, Any]:
     """
     rust_files = []
     base_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../../'))
-
-    # Trouve tous les fichiers .rs (exclut le dossier target)
+    exclude_dirs = {'target', '.git', '__pycache__', 'venv'}
+    
+    # Trouve tous les fichiers .rs 
     for root, _, files in os.walk(base_dir):
-        if 'target' in root:
-            continue
+        dirs[:] = [d for d in dirs if d not in exclude_dirs]
         for file in files:
             if file.endswith('.rs'):
                 rust_files.append(os.path.join(root, file))
