@@ -1,30 +1,18 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 04:28:00
+Generated: 2026-07-22 04:30:24
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|129|
+|❌ Errors|128|
 |⚠️ Warnings|670|
-|**Total**|**862**|
+|**Total**|**861**|
 
 ---
 
 # 📄 
-
-## ❌ Error
-
-- **Module :** organization
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
-    result = check()
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py", line 5, in check_organization
-    base_dir = Path.cwd()
-               ^^^^
-NameError: name 'Path' is not defined
-
 
 ## ❌ Error
 

@@ -1,7 +1,7 @@
 {
-    "generated": "2026-07-22T04:27:59.999007",
-    "score": 59,
-    "status": "Assez bon",
+    "generated": "2026-07-22T04:30:24.329478",
+    "score": 80,
+    "status": "Execlent ",
     "scores": {
         "markdown": 17,
         "titles": 4,
@@ -9,10 +9,10 @@
         "links": 9,
         "python": 0,
         "rust": 20,
-        "organization": 0,
+        "organization": 100,
         "navigation": 0
     },
-    "problem_count": 862,
+    "problem_count": 861,
     "details": {
         "markdown": {
             "score": 17,
@@ -5314,17 +5314,13 @@
             "problems": []
         },
         "organization": {
-            "score": 0,
-            "max_score": 1,
-            "results": {},
-            "problems": [
-                {
-                    "file": "",
-                    "severity": "error",
-                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py\", line 5, in check_organization\n    base_dir = Path.cwd()\n               ^^^^\nNameError: name 'Path' is not defined\n",
-                    "module": "organization"
-                }
-            ]
+            "score": 100,
+            "max_score": 100,
+            "results": {
+                "bonus": 1,
+                "problems": 0
+            },
+            "problems": []
         },
         "navigation": {
             "score": 0,

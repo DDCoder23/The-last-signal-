@@ -1,10 +1,10 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 04:28:00
+**Date :** 2026-07-22 04:30:24
 
-# 59/100
+# 80/100
 
-**Statut :** Assez bon
+**Statut :** Execlent 
 
 ## Résultats
 |Module|Score|
@@ -15,24 +15,11 @@ Documentation Quality Report
 |links|**9**|
 |python|**0**|
 |rust|**20**|
-|organization|**0**|
+|organization|**100**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
-
-## ❌ Error
-- **Module :** organization
-- **Message :** Traceback (most recent call last):
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
-    result = check()
-  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py", line 5, in check_organization
-    base_dir = Path.cwd()
-               ^^^^
-NameError: name 'Path' is not defined
-
-
-- **module :** organization
 
 ## ❌ Error
 - **Module :** navigation
