@@ -5,6 +5,9 @@ def check_organization() -> Dict[str, Any]:
     base_dir = os.path.abspath(
         os.path.join(os.path.dirname(__file__), "../../../")
     )
+    print("Base dir :", base_dir)
+    print("Existe .github :", os.path.isdir(os.path.join(base_dir, ".github")))
+    print("Existe .gitignore :", os.path.isfile(os.path.join(base_dir, ".gitignore")))
 
     score = 100
     problems = []
