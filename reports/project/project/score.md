@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-22 07:20:47
+**Date :** 2026-07-22 07:21:55
 
 # 77/100
 
@@ -2136,6 +2136,18 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 - **module :** python
 
