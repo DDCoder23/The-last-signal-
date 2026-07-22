@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T07:24:20.125189",
+    "generated": "2026-07-22T07:25:03.561638",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 832,
+    "problem_count": 830,
     "details": {
         "markdown": {
             "score": 42,
@@ -2136,7 +2136,7 @@
             "results": {
                 "modules": 48,
                 "classes": 38,
-                "functions": 245,
+                "functions": 244,
                 "documented_modules": 0,
                 "documented_classes": 3,
                 "documented_functions": 65,
@@ -4489,18 +4489,6 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
                     "severity": "warning",
                     "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_classJoueur' ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_classJoueur' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {

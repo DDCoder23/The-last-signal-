@@ -4410,18 +4410,6 @@
         "module": "python"
     },
     {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-        "severity": "warning",
-        "message": "La fonction 'test_classJoueur' ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-        "severity": "warning",
-        "message": "La fonction 'test_classJoueur' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/__init__.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
