@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-22T07:56:17.430623",
+    "generated": "2026-07-22T08:17:42.126370",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 832,
+    "problem_count": 835,
     "details": {
         "markdown": {
             "score": 42,
@@ -2134,11 +2134,11 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 48,
-                "classes": 38,
-                "functions": 245,
+                "modules": 49,
+                "classes": 39,
+                "functions": 246,
                 "documented_modules": 0,
-                "documented_classes": 3,
+                "documented_classes": 4,
                 "documented_functions": 65,
                 "typed_functions": 27,
                 "todo": 4,
@@ -4279,6 +4279,24 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
                     "severity": "warning",
                     "message": "La fonction 'disconnect' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
+                    "severity": "warning",
+                    "message": "La fonction 'emit' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
+                    "severity": "warning",
+                    "message": "La fonction 'emit' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {

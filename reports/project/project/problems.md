@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-22 07:56:17
+Generated: 2026-07-22 08:17:42
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|128|
-|⚠️ Warnings|641|
-|**Total**|**832**|
+|⚠️ Warnings|644|
+|**Total**|**835**|
 
 ---
 
@@ -1843,6 +1843,25 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'emit' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'emit' ne possède pas d'annotations de type.
 
 ---
 

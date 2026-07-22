@@ -4200,6 +4200,24 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
+        "severity": "warning",
+        "message": "La fonction 'emit' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
+        "severity": "warning",
+        "message": "La fonction 'emit' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/__init__.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
