@@ -2,17 +2,17 @@ from pathlib import Path
 import re
 from typing import Any
 from .problem import add_problem
-MAX_SCORE = 20
+MAX_SCORE = 50
 
 SCORES = {
-    "empty_files": 3,
-    "encoding": 2,
-    "line_length": 3,
-    "trailing_spaces": 2,
-    "code_blocks": 3,
-    "lists": 2,
-    "tables": 2,
-    "html": 3,
+    "empty_files": 10,
+    "encoding": 7,
+    "line_length": 7,
+    "trailing_spaces": 6,
+    "code_blocks": 5,
+    "lists": 5,
+    "tables": 5,
+    "html": 5,
 }
 
 HTML_TAGS = ("font", "center", "marquee")
@@ -26,7 +26,7 @@ IGNORED_DIRS = {
 
 import json
 
-MARKDOWNLINT_REPORT = Path("reports/docs/markdownlint.json")
+MARKDOWNLINT_REPORT = Path("reports/project/markdownlint.json")
 
 
 def load_markdownlint_report():
