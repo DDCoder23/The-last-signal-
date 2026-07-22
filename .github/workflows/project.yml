@@ -242,5 +242,5 @@ jobs:
         if: always()
         uses: ./.github/actions/commit-reports
         with:
-          report-type: docs
+          report-type: project
           commit-message: "Documentation Report #${{ github.run_number }}"
