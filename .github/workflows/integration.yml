@@ -147,6 +147,8 @@ jobs:
               git config --global user.email "github-actions@github.com"
               mkdir -p /tmp/db-backup
               cp -r database /tmp/db-backup/ || true
+              git reset --hard
+              git clean -fd
               git fetch origin
               if git show-ref --verify --quiet refs/remotes/origin/ci-database; then
               git checkout ci-database
