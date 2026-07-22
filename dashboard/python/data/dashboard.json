@@ -1,0 +1,66 @@
+{
+    "generated": "2026-07-22 07:01:37.920283",
+    "summary": {
+        "total_runs": 2,
+        "average_quality": 18.72,
+        "average_coverage": 0.0,
+        "average_pylint": 6.24,
+        "security_errors": 88
+    },
+    "history": [
+        {
+            "run": 686,
+            "date": "2026-07-22T07:01:37.783371",
+            "branch": "refs/heads/main",
+            "commit": "06fa428fe4709583ad1f6987f72a69546c1bada6",
+            "status": "success",
+            "quality": 18.72,
+            "coverage": 0,
+            "pylint": 6.24,
+            "complexity": 3.615894039735099,
+            "tests": {
+                "total": 0,
+                "passed": 0,
+                "failed": 0,
+                "skipped": 0,
+                "duration": 0
+            },
+            "security": {
+                "high": 0,
+                "medium": 6,
+                "low": 38
+            },
+            "documentation": {
+                "score": 0,
+                "details": {}
+            }
+        },
+        {
+            "run": 686,
+            "date": "2026-07-22T07:01:37.783371",
+            "branch": "refs/heads/main",
+            "commit": "06fa428fe4709583ad1f6987f72a69546c1bada6",
+            "status": "success",
+            "quality": 18.72,
+            "coverage": 0,
+            "pylint": 6.24,
+            "complexity": 3.615894039735099,
+            "tests": {
+                "total": 0,
+                "passed": 0,
+                "failed": 0,
+                "skipped": 0,
+                "duration": 0
+            },
+            "security": {
+                "high": 0,
+                "medium": 6,
+                "low": 38
+            },
+            "documentation": {
+                "score": 0,
+                "details": {}
+            }
+        }
+    ]
+}
