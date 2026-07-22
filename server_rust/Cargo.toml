@@ -1,6 +1,18 @@
 [package]
 name = "the-last-signal-server"
 version = "0.1.0"
-edition = "2024"
+edition = "2026"
+[package]
+name = "perso_core"
+version = "0.1.0"
+edition = "2026"
+
+[lib]
+name = "perso_core"
+crate-type = ["cdylib"]  # Nécessaire pour PyO3
 
 [dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }
+rand = "0.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
