@@ -2088,24 +2088,6 @@
         "module": "python"
     },
     {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/voir_database.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/voir_database.py",
-        "severity": "warning",
-        "message": "La fonction 'voir_database'ligne 4 ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/voir_database.py",
-        "severity": "warning",
-        "message": "La fonction 'voir_database' ne possède pas d'annotations de type.",
-        "module": "python"
-    },
-    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/jet_de_des.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -4419,6 +4401,24 @@
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py",
         "severity": "warning",
         "message": "La fonction 'add_performance' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py",
+        "severity": "warning",
+        "message": "La fonction 'voir_database'ligne 4 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py",
+        "severity": "warning",
+        "message": "La fonction 'voir_database' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {

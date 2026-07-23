@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 01:28:44
+Generated: 2026-07-23 01:28:58
 
 ## Summary
 
@@ -2664,6 +2664,25 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'voir_database'ligne 4 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'voir_database' ne possède pas d'annotations de type.
+
+---
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
 
 ## ⚠️ Warning
@@ -2709,25 +2728,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/voir_database.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'voir_database'ligne 4 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'voir_database' ne possède pas d'annotations de type.
 
 ---
 
