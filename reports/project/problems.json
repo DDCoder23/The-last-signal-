@@ -4232,13 +4232,25 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
         "severity": "warning",
+        "message": "La classe 'Packet' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
+        "severity": "warning",
+        "message": "La fonction 'encode'ligne 25 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
+        "severity": "warning",
         "message": "La fonction 'encode' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
         "severity": "warning",
-        "message": "La fonction 'decode'ligne 45 ne possède pas de docstring.",
+        "message": "La fonction 'decode'ligne 47 ne possède pas de docstring.",
         "module": "python"
     },
     {

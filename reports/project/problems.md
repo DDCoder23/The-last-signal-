@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 08:51:56
+Generated: 2026-07-23 08:54:37
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|129|
-|⚠️ Warnings|665|
-|**Total**|**857**|
+|⚠️ Warnings|667|
+|**Total**|**859**|
 
 ---
 
@@ -1905,12 +1905,22 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
+- **Message :** La classe 'Packet' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'encode'ligne 25 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
 - **Message :** La fonction 'encode' ne possède pas d'annotations de type.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'decode'ligne 45 ne possède pas de docstring.
+- **Message :** La fonction 'decode'ligne 47 ne possède pas de docstring.
 
 ## ⚠️ Warning
 

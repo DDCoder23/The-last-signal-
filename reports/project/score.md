@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 08:51:56
+**Date :** 2026-07-23 08:54:37
 
 # 74/100
 
@@ -2222,13 +2222,25 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
+- **Message :** La classe 'Packet' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'encode'ligne 25 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
 - **Message :** La fonction 'encode' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'decode'ligne 45 ne possède pas de docstring.
+- **Message :** La fonction 'decode'ligne 47 ne possède pas de docstring.
 
 - **module :** python
 
