@@ -51,7 +51,8 @@ class SQLiteHandler(logging.Handler):
 logger = logging.getLogger("TheLastSignal")
 logger.setLevel(logging.DEBUG)
 logger.propagate = False
-
+print("CWD:", Path.cwd())
+print("LOGGER HANDLERS:", logger.handlers)
 # Évite les doublons si le module est importé plusieurs fois
 if not logger.handlers:
 
