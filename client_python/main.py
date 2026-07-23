@@ -8,7 +8,7 @@ def main():
   client.send_packet(
     Packet(
         PacketType.LOGIN,
-        b"Alice"
+        b"Momo"
     )
   )
   client.disconnect()
