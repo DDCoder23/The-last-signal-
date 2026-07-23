@@ -198,7 +198,7 @@ jobs:
              fi
 
              # Synchronisation complète du dossier logs
-             rm -rf logs
+             
              mkdir -p logs
 
              cp -a /tmp/logs-backup/. logs/ 2>/dev/null || true
