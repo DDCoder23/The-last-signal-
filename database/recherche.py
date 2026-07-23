@@ -3,6 +3,9 @@ import csv
 import json
 import sqlite3
 from pathlib import Path
+import os
+
+print("Database utilisée :", os.path.abspath("database/client_logs.db"))
 
 DEFAULT_DATABASE = "database/client_logs.db"
 DEFAULT_TABLE = None
