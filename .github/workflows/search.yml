@@ -77,7 +77,90 @@ jobs:
           echo "$CMD"
 
           eval "$CMD"
+      - name: SQLite Search
 
+on:
+  workflow_dispatch:
+    inputs:
+      database:
+        description: "Chemin de la base SQLite"
+        required: true
+        default: "database/client_logs.db"
+
+      table:
+        description: "Table (laisser vide = toutes)"
+        required: false
+        default: ""
+
+      search:
+        description: "Texte à rechercher"
+        required: true
+
+      output:
+        description: "Nom du fichier de sortie (sans extension)"
+        required: false
+        default: "search_report"
+
+      format:
+        description: "Format du rapport"
+        required: true
+        type: choice
+        options:
+          - txt
+          - md
+          - json
+          - csv
+          
+        default: txt
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    name: Search SQLite
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Get database from ci-database
+        run: |
+               git fetch origin ci-database
+               git checkout origin/ci-database -- database/
+  
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Lancer la recherche
+        shell: bash
+        run: |
+          CMD="python database/recherche.py"
+
+          CMD="$CMD --database '${{ inputs.database }}'"
+          CMD="$CMD --search '${{ inputs.search }}'"
+
+          if [ -n "${{ inputs.table }}" ]; then
+            CMD="$CMD --table '${{ inputs.table }}'"
+          fi
+
+          if [ -n "${{ inputs.output }}" ]; then
+            CMD="$CMD --output '${{ inputs.output }}.${{ inputs.format }}'"
+            CMD="$CMD --format '${{ inputs.format }}'"
+          fi
+
+          echo "Commande exécutée :"
+          echo "$CMD"
+
+          eval "$CMD"
+
+      - name: Check database
+        run: |
+              sqlite3 database/client_logs.db \
+              "SELECT level, COUNT(*) FROM logs GROUP BY level;"
       - name: Upload du rapport
         if: inputs.output != ''
         uses: actions/upload-artifact@v4
