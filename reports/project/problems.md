@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 03:04:54
+Generated: 2026-07-23 03:05:28
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|129|
-|⚠️ Warnings|645|
-|**Total**|**837**|
+|⚠️ Warnings|648|
+|**Total**|**840**|
 
 ---
 
@@ -2705,6 +2705,31 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Function 'None' sans documentation
 - **line :** 67
 - **suggestion :** Ajoutez /// avant cette function
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs
+
+## ⚠️ Warning
+
+- **Module :** rust
+- **Message :** Mod 'pub ' sans documentation
+- **line :** 1
+- **suggestion :** Ajoutez /// avant cette mod
+
+## ⚠️ Warning
+
+- **Module :** rust
+- **Message :** Mod 'pub ' sans documentation
+- **line :** 2
+- **suggestion :** Ajoutez /// avant cette mod
+
+## ⚠️ Warning
+
+- **Module :** rust
+- **Message :** Mod 'pub ' sans documentation
+- **line :** 3
+- **suggestion :** Ajoutez /// avant cette mod
 
 ---
 

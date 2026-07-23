@@ -1,6 +1,6 @@
 {
-    "generated": "2026-07-23T03:04:53.892740",
-    "score": 77,
+    "generated": "2026-07-23T03:05:27.935582",
+    "score": 76,
     "status": "Satisfaisant",
     "scores": {
         "markdown": 42,
@@ -8,11 +8,11 @@
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 29,
+        "rust": 26,
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 837,
+    "problem_count": 840,
     "details": {
         "markdown": {
             "score": 42,
@@ -5154,12 +5154,12 @@
             ]
         },
         "rust": {
-            "score": 29,
+            "score": 26,
             "max_score": 30,
             "results": {
-                "files_checked": 1,
-                "total_elements": 4,
-                "elements_without_docs": 1
+                "files_checked": 2,
+                "total_elements": 7,
+                "elements_without_docs": 4
             },
             "problems": [
                 {
@@ -5168,6 +5168,30 @@
                     "severity": "warning",
                     "message": "Function 'None' sans documentation",
                     "suggestion": "Ajoutez /// avant cette function",
+                    "module": "rust"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
+                    "line": 1,
+                    "severity": "warning",
+                    "message": "Mod 'pub ' sans documentation",
+                    "suggestion": "Ajoutez /// avant cette mod",
+                    "module": "rust"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
+                    "line": 2,
+                    "severity": "warning",
+                    "message": "Mod 'pub ' sans documentation",
+                    "suggestion": "Ajoutez /// avant cette mod",
+                    "module": "rust"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
+                    "line": 3,
+                    "severity": "warning",
+                    "message": "Mod 'pub ' sans documentation",
+                    "suggestion": "Ajoutez /// avant cette mod",
                     "module": "rust"
                 }
             ]

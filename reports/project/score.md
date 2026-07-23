@@ -1,8 +1,8 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 03:04:53
+**Date :** 2026-07-23 03:05:27
 
-# 77/100
+# 76/100
 
 **Statut :** Satisfaisant
 
@@ -14,7 +14,7 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**29**|
+|rust|**26**|
 |organization|**100**|
 |navigation|**0**|
 
@@ -3112,6 +3112,38 @@ TypeError: result doit être un dict, reçu int
 - **line :** 67
 
 - **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Mod 'pub ' sans documentation
+
+- **line :** 1
+
+- **suggestion :** Ajoutez /// avant cette mod
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Mod 'pub ' sans documentation
+
+- **line :** 2
+
+- **suggestion :** Ajoutez /// avant cette mod
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Mod 'pub ' sans documentation
+
+- **line :** 3
+
+- **suggestion :** Ajoutez /// avant cette mod
 
 - **module :** rust
 

@@ -1,6 +1,6 @@
 {
-    "generated": "2026-07-23T03:04:53.892740",
-    "score": 77,
+    "generated": "2026-07-23T03:05:27.935582",
+    "score": 76,
     "status": "Satisfaisant",
     "scores": {
         "markdown": 42,
@@ -8,9 +8,9 @@
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 29,
+        "rust": 26,
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 837
+    "problem_count": 840
 }
