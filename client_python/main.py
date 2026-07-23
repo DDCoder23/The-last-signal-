@@ -13,5 +13,8 @@ def main():
   )
     response = client.receive_packet()
 
-    print(response)
+    try:
+        print(response.payload.decode("utf-8"))
+    except UnicodeDecodeError:
+        print(response.payload)
     client.disconnect()
