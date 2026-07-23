@@ -117,8 +117,8 @@ if not logger.handlers:
 
     file_handler = RotatingFileHandler(
         filename=LOG_DIR / "the_last_signal.log",
-        maxBytes=5 * 1024 * 1024,  # 5 Mo
-        backupCount=5,
+        maxBytes= 10 * 1024 * 1024,  # 5 Mo
+        backupCount=10000000000,
         mode="a",
         encoding="utf-8",
         delay=False,
