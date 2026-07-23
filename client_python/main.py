@@ -12,13 +12,13 @@ def main():
     )
   )
     response = client.receive_packet()
-    print(response.username)
+    print(response)
     client.send_packet(
     Packet(
         PacketType.CHAT,
-        b"Momo"
+        b"Momo dirige le jeu"
     )
   )
     response = client.receive_packet()
-    print(response.username)
+    print(response)
     client.disconnect()
