@@ -1,23 +1,23 @@
 {
-    "generated": "2026-07-23 11:56:06.697918",
+    "generated": "2026-07-22 09:09:59.922218",
     "summary": {
         "total_runs": 2,
-        "average_quality": 42.94,
-        "average_coverage": 58.0,
-        "average_pylint": 6.58,
-        "security_errors": 90
+        "average_quality": 39.38,
+        "average_coverage": 50.0,
+        "average_pylint": 6.46,
+        "security_errors": 88
     },
     "history": [
         {
-            "run": 869,
-            "date": "2026-07-23T11:56:06.556044",
+            "run": 709,
+            "date": "2026-07-22T09:09:59.790246",
             "branch": "refs/heads/main",
-            "commit": "29bc3566dd57cbd21bd95bc9c4d0c96c7ff7c4e1",
+            "commit": "e43b0469313a5e4ba644de9008a777b4808864c9",
             "status": "success",
-            "quality": 42.94,
-            "coverage": 58.0,
-            "pylint": 6.58,
-            "complexity": 3.6666666666666665,
+            "quality": 39.38,
+            "coverage": 50.0,
+            "pylint": 6.46,
+            "complexity": 3.7480916030534353,
             "tests": {
                 "total": 0,
                 "passed": 0,
@@ -27,7 +27,7 @@
             },
             "security": {
                 "high": 0,
-                "medium": 7,
+                "medium": 6,
                 "low": 38
             },
             "documentation": {
@@ -36,15 +36,15 @@
             }
         },
         {
-            "run": 869,
-            "date": "2026-07-23T11:56:06.556044",
+            "run": 709,
+            "date": "2026-07-22T09:09:59.790246",
             "branch": "refs/heads/main",
-            "commit": "29bc3566dd57cbd21bd95bc9c4d0c96c7ff7c4e1",
+            "commit": "e43b0469313a5e4ba644de9008a777b4808864c9",
             "status": "success",
-            "quality": 42.94,
-            "coverage": 58.0,
-            "pylint": 6.58,
-            "complexity": 3.6666666666666665,
+            "quality": 39.38,
+            "coverage": 50.0,
+            "pylint": 6.46,
+            "complexity": 3.7480916030534353,
             "tests": {
                 "total": 0,
                 "passed": 0,
@@ -54,7 +54,7 @@
             },
             "security": {
                 "high": 0,
-                "medium": 7,
+                "medium": 6,
                 "low": 38
             },
             "documentation": {
