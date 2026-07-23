@@ -18,7 +18,7 @@ class Packet:
 
         self.packet_type = PacketType(packet_type)
         self.payload = payload
-
+    @classmethod
     def encode(self):
         """
         Encode le paquet.
