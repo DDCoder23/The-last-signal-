@@ -194,7 +194,7 @@ jobs:
 
              echo "=== Detect changes ==="
 
-             git add -A database logs
+             git add database/*.db logs
 
              git diff --cached --name-status
 
