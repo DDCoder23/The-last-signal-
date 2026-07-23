@@ -1,0 +1,39 @@
+{
+    "generated": "2026-07-23 11:56:43.571306",
+    "summary": {
+        "total_runs": 1,
+        "average_quality": 10.0,
+        "average_coverage": 0.0,
+        "average_pylint": 0.0,
+        "security_errors": 0
+    },
+    "history": [
+        {
+            "run": 190,
+            "date": "2026-07-23T11:56:43.567666",
+            "branch": "main",
+            "commit": "4ed44b006d4d52ca65f648a33a1a13a1a642d09a",
+            "status": "success",
+            "quality": 10.0,
+            "coverage": 0,
+            "pylint": 0,
+            "complexity": 0,
+            "tests": {
+                "total": 0,
+                "passed": 0,
+                "failed": 0,
+                "skipped": 0,
+                "duration": 0
+            },
+            "security": {
+                "high": 0,
+                "medium": 0,
+                "low": 0
+            },
+            "documentation": {
+                "score": 0,
+                "details": {}
+            }
+        }
+    ]
+}
