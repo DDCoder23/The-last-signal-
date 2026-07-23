@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-23T07:16:33.168216",
+    "generated": "2026-07-23T07:17:32.434015",
     "score": 74,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 857,
+    "problem_count": 858,
     "details": {
         "markdown": {
             "score": 42,
@@ -2134,7 +2134,7 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 57,
+                "modules": 58,
                 "classes": 45,
                 "functions": 255,
                 "documented_modules": 1,
@@ -2191,6 +2191,12 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
                     "severity": "warning",
                     "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/test_de_python/Tests.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
