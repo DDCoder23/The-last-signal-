@@ -1,5 +1,6 @@
 from .client import Client
 import time
+from .packet import Packet
 def main():
   client = Client()
   client.connect()
