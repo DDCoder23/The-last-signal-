@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 03:35:21
+Generated: 2026-07-23 03:36:35
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|649|
-|**Total**|**842**|
+|⚠️ Warnings|651|
+|**Total**|**844**|
 
 ---
 
@@ -1886,6 +1886,20 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'decode' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La classe 'PingPacket' ne possède pas de docstring.
 
 ---
 

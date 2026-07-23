@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-23T03:35:20.885528",
+    "generated": "2026-07-23T03:36:35.331349",
     "score": 74,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 842,
+    "problem_count": 844,
     "details": {
         "markdown": {
             "score": 42,
@@ -2134,8 +2134,8 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 52,
-                "classes": 40,
+                "modules": 53,
+                "classes": 41,
                 "functions": 251,
                 "documented_modules": 1,
                 "documented_classes": 4,
@@ -5179,6 +5179,18 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py",
                     "severity": "warning",
                     "message": "La fonction 'update_security_database' dépasse 80 lignes.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py",
+                    "severity": "warning",
+                    "message": "La classe 'PingPacket' ne possède pas de docstring.",
                     "module": "python"
                 }
             ]
