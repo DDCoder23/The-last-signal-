@@ -173,54 +173,61 @@ jobs:
               git commit -m "SQLite Database #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
 
               git push origin ci-database
-            
-
-    - name: Synchronize log files
+  
+    - name: Synchronize logs
       if: always()
       run: |
              git config --global user.name "github-actions"
              git config --global user.email "github-actions@github.com"
 
-             # Sauvegarde des logs générés pendant le workflow
+             echo "=== Backup generated logs ==="
+
              mkdir -p /tmp/logs-backup
              cp -a logs/. /tmp/logs-backup/ 2>/dev/null || true
-             git reset --hard
-             git clean -fd
+
+
+             echo "=== Checkout log branch ==="
 
              git fetch origin
 
              if git show-ref --verify --quiet refs/remotes/origin/ci-database; then
-               git checkout ci-database
-               git pull --ff-only origin ci-database
+             git checkout ci-database
+             git pull --ff-only origin ci-database
              else
                git checkout --orphan ci-database
                git rm -rf . || true
              fi
 
-             # Synchronisation complète du dossier logs
-             
+
+             echo "=== Synchronize logs directory ==="
+
+    
+             rm -rf logs
              mkdir -p logs
 
              cp -a /tmp/logs-backup/. logs/ 2>/dev/null || true
 
-             # Ajout des nouveaux fichiers et suppression des anciens
-             echo "=== FORCE TEST ==="
-             echo "$(date)" >> logs/test_timestamp.log
+
+             echo "=== Detect changes ==="
 
              git add -A logs
 
-             git status --short logs
-             
-             echo "=== HASH LOG ==="
-              sha256sum logs/the_last_signal.log
+             git diff --cached --name-status
 
-             echo "=== HASH REMOTE ==="
-             git show origin/ci-database:logs/the_last_signal.log | sha256sum || true
+
+             echo "=== Commit if needed ==="
 
              if ! git diff --cached --quiet; then
-             git commit -m "Update logs #${GITHUB_RUN_NUMBER}"
+
+             git commit \
+              -m "Update logs #${GITHUB_RUN_NUMBER}"
+
              git push origin ci-database
+
              else
-             echo "Logs are already up to date."
+
+             echo "No log changes detected."
+
              fi
+
     
