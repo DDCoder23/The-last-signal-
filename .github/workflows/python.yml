@@ -295,7 +295,7 @@ jobs:
               Xvfb :99 -screen 0 1024x768x24 &  # Lance un serveur X virtuel
               export DISPLAY=:99
               export QT_QPA_PLATFORM=offscreen
-              pytest -v --tb=short > pytest.txt 2>&1
+              pytest -v -s --tb=short > pytest.txt 2>&1
               
               PYTEST_EXIT=$?
               
