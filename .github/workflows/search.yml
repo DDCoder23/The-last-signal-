@@ -31,8 +31,8 @@ on:
           - md
           - json
           - csv
-          - 
-        default: md
+          
+        default: txt
 
 permissions:
   contents: read
