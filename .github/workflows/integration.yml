@@ -34,6 +34,10 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
+    - name: Get logs branch
+      run: |
+             git fetch origin ci-database
+             git checkout origin/ci-database -- logs/
     - name: Check repository
       run: |
              ls -la
