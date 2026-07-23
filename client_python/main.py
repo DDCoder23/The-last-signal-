@@ -12,9 +12,13 @@ def main():
     )
   )
     response = client.receive_packet()
-
-    try:
-        print(response.payload.decode("utf-8"))
-    except UnicodeDecodeError:
-        print(response.payload)
+    print(response.username)
+    client.send_packet(
+    Packet(
+        PacketType.CHAT,
+        b"Momo"
+    )
+  )
+    response = client.receive_packet()
+    print(response.username)
     client.disconnect()
