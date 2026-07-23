@@ -4272,6 +4272,12 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/test_de_python/Tests.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/transformateur.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
