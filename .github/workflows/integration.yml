@@ -164,7 +164,12 @@ jobs:
               mkdir -p logs
 
               cp -r /tmp/db-backup/database/* database/ || true
-              cp -r /tmp/db-backup/logs/* logs/ || true
+              if [ -f logs/the_last_signal.log ] && [ -f /tmp/db-backup/logs/the_last_signal.log ]; then
+              cat /tmp/db-backup/logs/the_last_signal.log >> logs/the_last_signal.log
+              elif [ -f /tmp/db-backup/logs/the_last_signal.log ]; then
+              cp /tmp/db-backup/logs/the_last_signal.log logs/
+              fi
+
 
               git add database logs
 
