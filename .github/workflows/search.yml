@@ -45,8 +45,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Database 
-        uses: ./.github/workflows/sync-ci.yml
+      - name: Get database from ci-database
+        run: |
+               git fetch origin ci-database
+               git checkout origin/ci-database -- database/
   
 
       - name: Setup Python
