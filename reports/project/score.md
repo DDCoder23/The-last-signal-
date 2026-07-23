@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 01:29:36
+**Date :** 2026-07-23 02:10:33
 
 # 77/100
 
@@ -2201,6 +2201,14 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/database/recherche.py
+
+## ❌ Error
+- **Module :** python
+- **Message :** Impossible d'analyser le fichier : expected 'else' after 'if' expression (<unknown>, line 80)
+
+- **module :** python
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 
 ## ⚠️ Warning
@@ -3989,7 +3997,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:1
 
 - **line :** 1
 
@@ -4013,7 +4021,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:33
 
 - **line :** 168
 
@@ -4021,7 +4029,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:34
 
 - **line :** 169
 
@@ -4037,7 +4045,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:33
 
 - **line :** 177
 
@@ -4119,6 +4127,14 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:1
+
+- **line :** 1
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
 - **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
 
 - **line :** 1
@@ -4127,7 +4143,31 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:314
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:29
+
+- **line :** 314
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:34
+
+- **line :** 315
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:37
+
+- **line :** 316
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:29
 
 - **line :** 322
 
@@ -4135,7 +4175,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:34
 
 - **line :** 324
 
@@ -4441,7 +4481,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:1
 
 - **line :** 1
 
@@ -4452,6 +4492,22 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
 
 - **line :** 1
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:33
+
+- **line :** 35
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:35
+
+- **line :** 35
 
 - **module :** links
 
@@ -4465,7 +4521,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:33
 
 - **line :** 173
 
@@ -4473,7 +4529,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:34
 
 - **line :** 174
 
@@ -4481,9 +4537,33 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:35
 
 - **line :** 175
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:55
+
+- **line :** 177
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:56
+
+- **line :** 178
+
+- **module :** links
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:88
+
+- **line :** 179
 
 - **module :** links
 
@@ -4497,7 +4577,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:35
 
 - **line :** 186
 
@@ -5265,79 +5345,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
-
-- **line :** 1
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:314
-
-- **line :** 29
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 33
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
-
-- **line :** 34
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 35
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:316
-
-- **line :** 37
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:177
-
-- **line :** 55
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:178
-
-- **line :** 56
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:179
-
-- **line :** 88
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:1
 
 - **line :** 147
 
@@ -5345,7 +5353,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Info
 - **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
+- **Message :** Lien déjà utilisé dans docs/gdd/README.md:1
 
 - **line :** 152
 
