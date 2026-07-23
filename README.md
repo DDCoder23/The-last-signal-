@@ -162,7 +162,7 @@ Chaque fonctionnalité importante doit être documentée avant son implémentati
 
 | Nom | Fonction |
 |------|----------|
-| Morgan Piva | Directeur & Fondateur |
+| Morgan Piva | Directeur |
 | Cyril Capiez | Directeur adjoint & Développeur principal |
 | Axel | Modélisateur 3D |
 | David | Dessinateur & Modélisateur 3D d'armes |
