@@ -51,3 +51,9 @@
            ^^^^^^^^^^^^^^^^^^^^^^^^
 AttributeError: type object 'LoginPacket' has no attribute 'from_payload'
 
+[2026-07-23 08:56:00] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-23 08:56:01] INFO     | TheLastSignal | Paquet envoyé avec succès
+[2026-07-23 08:56:01] INFO     | TheLastSignal | Déconnecté.
+[2026-07-23 08:56:01] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-23 08:56:02] INFO     | TheLastSignal | Paquet envoyé avec succès
+[2026-07-23 08:56:02] INFO     | TheLastSignal | Déconnecté.
