@@ -34,6 +34,11 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
+    - name: Check repository
+      run: |
+             ls -la
+             ls -la logs || true
+             git ls-files logs/
       
     - name: Restore previous logs
       uses: actions/download-artifact@v4
