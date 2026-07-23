@@ -5,6 +5,9 @@ def main():
   client.connect()
   time.sleep(1)
   client.send_packet(
-        "Bonjour serveur".encode("utf-8")
+    Packet(
+        PacketType.LOGIN,
+        b"Alice"
+    )
   )
   client.disconnect()
