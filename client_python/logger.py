@@ -60,7 +60,11 @@ class SQLiteHandler(logging.Handler):
 
     def emit(self, record):
         conn = get_connection()
-
+        print(
+            "SQLite reçoit :",
+            record.getMessage()
+        )
+        
         try:
             cursor = conn.cursor()
 
@@ -91,15 +95,10 @@ class SQLiteHandler(logging.Handler):
 logger = logging.getLogger("TheLastSignal")
 logger.setLevel(logging.DEBUG)
 logger.propagate = False
+logger.handlers.clear()
 print("CWD:", Path.cwd())
 print("LOGGER HANDLERS:", logger.handlers)
-# Évite les doublons si le module est importé plusieurs fois
-if not logger.handlers:
 
-    formatter = logging.Formatter(
-        "[%(asctime)s] %(levelname)-8s | %(name)s | %(message)s",
-        "%Y-%m-%d %H:%M:%S",
-    )
 
     #####################################
     # Console
