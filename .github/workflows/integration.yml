@@ -148,6 +148,7 @@ jobs:
               git config --global user.email "github-actions@github.com"
               mkdir -p /tmp/db-backup
               cp -r database /tmp/db-backup/ || true
+              cp -r logs /tmp/db-backup/ || true
               git reset --hard
               git clean -fd
               git fetch origin
@@ -160,10 +161,12 @@ jobs:
               fi
 
               mkdir -p database
+              mkdir -p logs
 
               cp -r /tmp/db-backup/database/* database/ || true
+              cp -r /tmp/db-backup/logs/* logs/ || true
 
-              git add database
+              git add database logs
 
               git commit -m "SQLite Database #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
 
