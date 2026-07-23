@@ -4,7 +4,7 @@ import json
 import sqlite3
 from pathlib import Path
 
-DEFAULT_DATABASE = "database.db"
+DEFAULT_DATABASE = "client_logs.db"
 DEFAULT_TABLE = None
 DEFAULT_SEARCH = ""
 
