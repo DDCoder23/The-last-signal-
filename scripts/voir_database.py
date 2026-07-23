@@ -1,6 +1,6 @@
 import sqlite3
 
-DB = "database/python_reports.db"
+
 def voir_database(DB):
     conn = sqlite3.connect(DB)
     cursor = conn.cursor()
