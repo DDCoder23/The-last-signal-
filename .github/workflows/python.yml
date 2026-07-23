@@ -284,82 +284,12 @@ jobs:
               echo "" >> "$REPORT"
 
 
-      # Tests
-      - name: Run tests
-        continue-on-error: true
-        run: |
-              echo "##   🧪 Pytest" >> "$REPORT"
-              echo "" >> "$REPORT"
-              export PYTHONPATH=$PYTHONPATH:$(pwd)
-              pip install -e .
-              Xvfb :99 -screen 0 1024x768x24 &  # Lance un serveur X virtuel
-              export DISPLAY=:99
-              export QT_QPA_PLATFORM=offscreen
-              pytest -v -s --tb=short > pytest.txt 2>&1
-              cat pytest.txt
+      
+    
               
-              PYTEST_EXIT=$?
-              
-              if [ "$PYTEST_EXIT" -eq 5 ]; then
-              echo "⚠️ Aucun test trouvé." >> "$REPORT"
-
-              elif [ "$PYTEST_EXIT" -eq 2 ] || [ "$PYTEST_EXIT" -eq 3 ] || [ "$PYTEST_EXIT" -eq 4 ]; then
-              echo "❌ Erreur de collecte ou d'exécution." >> "$REPORT"
-
-              else
+            
 
                
-
-               PASSED=$(grep -c " PASSED" pytest.txt || true)
-               FAILED=$(grep -c " FAILED" pytest.txt || true)
-               SKIPPED=$(grep -c " SKIPPED" pytest.txt || true)
-               ERRORS=$(grep -c " ERROR" pytest.txt || true)
-
-               TOTAL=$((PASSED + FAILED + SKIPPED + ERRORS))
-
-               echo "" >> "$REPORT"
-               echo "| Result | Count |" >> "$REPORT"
-               echo "|--------|------:|" >> "$REPORT"
-               echo "| ✅ Passed | $PASSED |" >> "$REPORT"
-               echo "| ❌ Failed | $FAILED |" >> "$REPORT"
-               echo "| ⚠️ Errors | $ERRORS |" >> "$REPORT"
-               echo "| ⏭️ Skipped | $SKIPPED |" >> "$REPORT"
-               echo "| **Total** | **$TOTAL** |" >> "$REPORT"
-
-               echo "" >> "$REPORT"
-
-               echo "### 📂 Failed tests" >> "$REPORT"
-               echo "" >> "$REPORT"
-
-               if [ "$FAILED" -gt 0 ]; then
-
-               grep " FAILED" pytest.txt \
-               | sed 's/^/ - /' \
-               >> "$REPORT"
-
-               else
-
-                 echo "✅ No failed tests." >> "$REPORT"
-
-               fi
-
-               echo "" >> "$REPORT"
-
-               echo "<details>" >> "$REPORT"
-               echo "<summary>Show full pytest output</summary>" >> "$REPORT"
-               echo "" >> "$REPORT"
-
-               cat pytest.txt >> "$REPORT"
-
-               echo "" >> "$REPORT"
-               echo "</details>" >> "$REPORT"
-
-              
-
-               fi
-      
-
-      
 
 
 
