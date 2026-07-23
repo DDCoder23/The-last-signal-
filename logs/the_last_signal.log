@@ -40,3 +40,14 @@
 [2026-07-23 08:52:06] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
 [2026-07-23 08:52:07] INFO     | TheLastSignal | Paquet envoyé avec succès
 [2026-07-23 08:52:07] INFO     | TheLastSignal | Déconnecté.
+[2026-07-23 08:54:37] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-23 08:54:38] INFO     | TheLastSignal | Paquet envoyé avec succès
+[2026-07-23 08:54:38] ERROR    | TheLastSignal | Erreur de réception : Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", line 104, in receive_packet
+    return Packet.decode(data)
+           ~~~~~~~~~~~~~^^^^^^
+  File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py", line 61, in decode
+    return LoginPacket.from_payload(payload)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'LoginPacket' has no attribute 'from_payload'
+
