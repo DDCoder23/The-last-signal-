@@ -84,10 +84,7 @@ jobs:
           eval "$CMD"
       
 
-      - name: Check database
-        run: |
-              sqlite3 database/client_logs.db \
-              "SELECT level, COUNT(*) FROM logs GROUP BY level;"
+      
       - name: Upload du rapport
         if: inputs.output != ''
         uses: actions/upload-artifact@v4
