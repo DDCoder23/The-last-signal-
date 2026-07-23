@@ -158,7 +158,7 @@ def main():
     parser.add_argument(
         "-f",
         "--format",
-        choices=["txt", "md", "json", "csv"],
+        choices=["txt", "md", "json", "csv", ""],
         default="txt",
     )
 
@@ -172,6 +172,8 @@ def main():
         recherche = args.search
         output = args.output
         fmt = args.format
+        if output == "":
+            output=None
 
     # Mode interactif
     else:
