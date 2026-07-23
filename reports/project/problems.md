@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 03:37:20
+Generated: 2026-07-23 03:37:42
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|653|
-|**Total**|**846**|
+|⚠️ Warnings|655|
+|**Total**|**848**|
 
 ---
 
@@ -1886,6 +1886,20 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'decode' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La classe 'ChatPacket' ne possède pas de docstring.
 
 ---
 
