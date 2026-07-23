@@ -15,3 +15,16 @@ class MovePacket(Packet):
             PacketType.MOVE,
             struct.pack("!ff", x, y, z)
         )
+    @classmethod
+    def from_payload(cls, payload):
+
+        x, y, z = struct.unpack(
+            "!ff",
+            payload
+        )
+
+        return cls(
+            x,
+            y,
+            z
+        )
