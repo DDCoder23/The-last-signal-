@@ -11,3 +11,11 @@ class LoginPacket(Packet):
             PacketType.LOGIN,
             username.encode("utf-8")
         )
+    @classmethod
+    def from_payload(cls, payload):
+
+        username = payload.decode(
+            "utf-8"
+        )
+
+        return cls(username)
