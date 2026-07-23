@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 02:10:33
+**Date :** 2026-07-23 02:19:13
 
 # 77/100
 
@@ -2203,9 +2203,39 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/database/recherche.py
 
-## ❌ Error
+## ⚠️ Warning
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : expected 'else' after 'if' expression (<unknown>, line 80)
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'rechercher' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ecrire_fichier'ligne 72 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ecrire_fichier' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 150 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 - **module :** python
 
