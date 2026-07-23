@@ -98,23 +98,11 @@ logger.propagate = False
 logger.handlers.clear()
 print("CWD:", Path.cwd())
 print("LOGGER HANDLERS:", logger.handlers)
-
-
-    #####################################
-    # Console
-    #####################################
-
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.DEBUG)
-    console_handler.setFormatter(formatter)
-
-    logger.addHandler(console_handler)
-
-    #####################################
-    # Fichier avec rotation
-    #####################################
-
-    file_handler = RotatingFileHandler(
+console_handler = logging.StreamHandler()
+console_handler.setLevel(logging.DEBUG)
+console_handler.setFormatter(formatter)
+logger.addHandler(console_handler)
+file_handler = RotatingFileHandler(
         filename=LOG_DIR / "the_last_signal.log",
         maxBytes= 10 * 1024 * 1024,  # 5 Mo
         backupCount=10000000000,
@@ -122,19 +110,12 @@ print("LOGGER HANDLERS:", logger.handlers)
         encoding="utf-8",
         delay=False,
     )
-    print("LOG FILE:", file_handler.baseFilename)
-    print("LOG MODE:", file_handler.mode)
-    print("LOG SIZE:", Path(file_handler.baseFilename).stat().st_size if Path(file_handler.baseFilename).exists() else 0)
-    file_handler.setLevel(logging.DEBUG)
-    file_handler.setFormatter(formatter)
-
-    logger.addHandler(file_handler)
-
-    #####################################
-    # SQLite
-    #####################################
-
-    sqlite_handler = SQLiteHandler()
-    sqlite_handler.setLevel(logging.DEBUG)
-
-    logger.addHandler(sqlite_handler)
+print("LOG FILE:", file_handler.baseFilename)
+print("LOG MODE:", file_handler.mode)
+print("LOG SIZE:", Path(file_handler.baseFilename).stat().st_size if Path(file_handler.baseFilename).exists() else 0)
+file_handler.setLevel(logging.DEBUG)
+file_handler.setFormatter(formatter)
+logger.addHandler(file_handler)
+sqlite_handler = SQLiteHandler()
+sqlite_handler.setLevel(logging.DEBUG)
+logger.addHandler(sqlite_handler)
