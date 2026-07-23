@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 07:08:27
+**Date :** 2026-07-23 07:09:49
 
 # 74/100
 
@@ -3266,21 +3266,9 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 
-## ⚠️ Warning
+## ❌ Error
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'test_main'ligne 10 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : unterminated string literal (detected at line 7) (<unknown>, line 7)
 
 - **module :** python
 

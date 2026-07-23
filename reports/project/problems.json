@@ -4501,20 +4501,8 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-        "severity": "warning",
-        "message": "Le module ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-        "severity": "warning",
-        "message": "La fonction 'test_main'ligne 10 ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-        "severity": "warning",
-        "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
+        "severity": "error",
+        "message": "Impossible d'analyser le fichier : unterminated string literal (detected at line 7) (<unknown>, line 7)",
         "module": "python"
     },
     {
