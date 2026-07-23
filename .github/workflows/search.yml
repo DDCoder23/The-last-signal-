@@ -6,7 +6,7 @@ on:
       database:
         description: "Chemin de la base SQLite"
         required: true
-        default: "database/client_logs.db"
+        default: "client_logs.db"
 
       table:
         description: "Table (laisser vide = toutes)"
