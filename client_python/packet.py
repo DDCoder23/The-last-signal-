@@ -3,6 +3,7 @@ import struct
 
 
 class PacketType(IntEnum):
+
     PING = 1
     LOGIN = 2
     CHAT = 3
@@ -10,39 +11,40 @@ class PacketType(IntEnum):
 
 
 class Packet:
-    """
-    Classe de base de tous les paquets.
-    """
 
-    def __init__(self, packet_type, payload=b""):
+    def __init__(
+        self,
+        packet_type,
+        payload=b""
+    ):
 
         self.packet_type = PacketType(packet_type)
         self.payload = payload
-    
-    def encode(self):
-        """
-        Encode le paquet.
 
-        Format :
-            [4 octets : taille]
-            [2 octets : type]
-            [payload]
-        """
+
+    def encode(self):
 
         body = (
-            struct.pack("!H", self.packet_type)
-            + self.payload
+            struct.pack(
+                "!H",
+                self.packet_type
+            )
+            +
+            self.payload
         )
 
-        header = struct.pack(
-            "!I",
-            len(body)
+        return (
+            struct.pack(
+                "!I",
+                len(body)
+            )
+            +
+            body
         )
 
-        return header + body
 
-    @classmethod
-    def decode(cls, data):
+    @staticmethod
+    def decode(data):
 
         packet_type = PacketType(
             struct.unpack(
@@ -53,15 +55,28 @@ class Packet:
 
         payload = data[2:]
 
-        return cls(
+
+        if packet_type == PacketType.LOGIN:
+            from .packets.login import LoginPacket
+            return LoginPacket.from_payload(payload)
+
+
+        if packet_type == PacketType.CHAT:
+            from .packets.chat import ChatPacket
+            return ChatPacket.from_payload(payload)
+
+
+        if packet_type == PacketType.MOVE:
+            from .packets.move import MovePacket
+            return MovePacket.from_payload(payload)
+
+
+        if packet_type == PacketType.PING:
+            from .packets.ping import PingPacket
+            return PingPacket()
+
+
+        return Packet(
             packet_type,
             payload
-        )
-
-    def __repr__(self):
-
-        return (
-            f"{self.__class__.__name__}"
-            f"(type={self.packet_type.name}, "
-            f"payload={self.payload!r})"
         )
