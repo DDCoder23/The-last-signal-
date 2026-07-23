@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 03:37:42
+Generated: 2026-07-23 03:39:07
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|130|
-|⚠️ Warnings|655|
-|**Total**|**848**|
+|⚠️ Warnings|657|
+|**Total**|**850**|
 
 ---
 
@@ -1914,6 +1914,20 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La classe 'LoginPacket' ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La classe 'MovePacket' ne possède pas de docstring.
 
 ---
 

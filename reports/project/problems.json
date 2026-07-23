@@ -5112,6 +5112,18 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py",
+        "severity": "warning",
+        "message": "La classe 'MovePacket' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
