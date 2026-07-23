@@ -296,6 +296,7 @@ jobs:
               export DISPLAY=:99
               export QT_QPA_PLATFORM=offscreen
               pytest -v -s --tb=short > pytest.txt 2>&1
+              cat pytest.txt
               
               PYTEST_EXIT=$?
               
