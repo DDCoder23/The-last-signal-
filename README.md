@@ -121,9 +121,9 @@ Elle contient :
 |--------|:----:|
 | 📚 Documentation | 🟡 En développement |
 | 🎮 Client Python | 🟡 En développement |
-| 🦀 Serveur Rust | ⚪ Non commencé |
+| 🦀 Serveur Rust |  🟡 En développement  |
 | 🌐 Réseau | ⚪ Non commencé |
-| 🗄 Base de données | ⚪ Non commencée |
+| 🗄 Base de données |  🟡 En développement |
 | 🎨 Assets | 🟡 Préparation |
 | 🎮 Gameplay | 🟢 Prototype |
 | 🌍 Univers | 🟢 Prototype |
