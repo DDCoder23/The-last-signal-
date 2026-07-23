@@ -83,7 +83,9 @@ if not logger.handlers:
         encoding="utf-8",
         delay=False,
     )
-
+    print("LOG FILE:", file_handler.baseFilename)
+    print("LOG MODE:", file_handler.mode)
+    print("LOG SIZE:", Path(file_handler.baseFilename).stat().st_size if Path(file_handler.baseFilename).exists() else 0)
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(formatter)
 
