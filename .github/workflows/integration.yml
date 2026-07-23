@@ -143,74 +143,50 @@ jobs:
         path: server_rust/server.log
   # ==========================================================
 # Commit automatique des bases SQLite
-# ==========================================================
-
-    - name: Commit SQLite databases
-      if: always()
-      run: |
-              git config --global user.name "github-actions"
-              git config --global user.email "github-actions@github.com"
-              mkdir -p /tmp/db-backup
-              cp -r database /tmp/db-backup/ || true
-      
-              git reset --hard
-              git clean -fd
-              git fetch origin
-              if git show-ref --verify --quiet refs/remotes/origin/ci-database; then
-              git checkout ci-database
-              git pull origin ci-database
-              else
-              git checkout --orphan ci-database
-              git rm -rf .
-              fi
-
-              mkdir -p database
-              
-
-
-              git add database
-
-              git commit -m "SQLite Database #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
-
-              git push origin ci-database
-  
-    - name: Synchronize logs
+# ========================================================
+    - name: Commit databases and logs
       if: always()
       run: |
              git config --global user.name "github-actions"
              git config --global user.email "github-actions@github.com"
 
-             echo "=== Backup generated logs ==="
+             echo "=== Backup generated files ==="
 
-             mkdir -p /tmp/logs-backup
-             cp -a logs/. /tmp/logs-backup/ 2>/dev/null || true
+             mkdir -p /tmp/artifacts-backup
+
+             cp -a database/. /tmp/artifacts-backup/database/ 2>/dev/null || true
+             cp -a logs/. /tmp/artifacts-backup/logs/ 2>/dev/null || true
 
 
-             echo "=== Checkout log branch ==="
+             echo "=== Checkout ci-database branch ==="
 
              git fetch origin
 
              if git show-ref --verify --quiet refs/remotes/origin/ci-database; then
+
              git checkout ci-database
              git pull --ff-only origin ci-database
+
              else
-               git checkout --orphan ci-database
-               git rm -rf . || true
+
+             git checkout --orphan ci-database
+             git rm -rf . || true
+
              fi
 
 
-             echo "=== Synchronize logs directory ==="
+             echo "=== Restore generated files ==="
 
-    
-             rm -rf logs
+             mkdir -p database
              mkdir -p logs
 
-             cp -a /tmp/logs-backup/. logs/ 2>/dev/null || true
+             cp -a /tmp/artifacts-backup/database/. database/ 2>/dev/null || true
+             cp -a /tmp/artifacts-backup/logs/. logs/ 2>/dev/null || true
 
 
              echo "=== Detect changes ==="
 
-             git add -A logs
+             git add -A database logs
 
              git diff --cached --name-status
 
@@ -220,14 +196,12 @@ jobs:
              if ! git diff --cached --quiet; then
 
              git commit \
-              -m "Update logs #${GITHUB_RUN_NUMBER}"
+             -m "Update CI artifacts #${GITHUB_RUN_NUMBER}"
 
              git push origin ci-database
 
              else
 
-             echo "No log changes detected."
+             echo "No database or log changes detected."
 
              fi
-
-    
