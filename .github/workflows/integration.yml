@@ -110,7 +110,7 @@ jobs:
     - name: Run integration tests
       run: |
 
-        pytest tests/ -v
+        pytest tests/ -v-s
 
     ##########################################################
     # Stop server
