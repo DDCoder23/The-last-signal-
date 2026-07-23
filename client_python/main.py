@@ -12,7 +12,7 @@ def main():
     )
   )
     response = client.receive_packet()
-    print(response)
+    print(response.username)
     client.send_packet(
     Packet(
         PacketType.CHAT,
@@ -20,5 +20,5 @@ def main():
     )
   )
     response = client.receive_packet()
-    print(response)
+    print(response.message)
     client.disconnect()
