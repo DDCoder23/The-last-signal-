@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 02:41:21
+Generated: 2026-07-23 02:56:58
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|128|
-|⚠️ Warnings|650|
-|**Total**|**841**|
+|❌ Errors|129|
+|⚠️ Warnings|645|
+|**Total**|**837**|
 
 ---
 
@@ -1784,30 +1784,10 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 
-## ⚠️ Warning
+## ❌ Error
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'connect' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'send_packet' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'receive_packet' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : expected 'except' or 'finally' block (<unknown>, line 86)
 
 ---
 

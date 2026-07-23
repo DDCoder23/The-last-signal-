@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 02:41:21
+**Date :** 2026-07-23 02:56:58
 
 # 77/100
 
@@ -2091,33 +2091,9 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 
-## ⚠️ Warning
+## ❌ Error
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'connect' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'send_packet' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'receive_packet' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : expected 'except' or 'finally' block (<unknown>, line 86)
 
 - **module :** python
 
