@@ -4208,7 +4208,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py",
         "severity": "warning",
-        "message": "La fonction 'emit'ligne 16 ne possède pas de docstring.",
+        "message": "La fonction 'emit'ligne 21 ne possède pas de docstring.",
         "module": "python"
     },
     {
