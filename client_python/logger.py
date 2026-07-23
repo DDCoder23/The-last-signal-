@@ -78,6 +78,7 @@ if not logger.handlers:
         filename=LOG_DIR / "the_last_signal.log",
         maxBytes=5 * 1024 * 1024,  # 5 Mo
         backupCount=5,
+        mode="a",
         encoding="utf-8",
         delay=True,
     )
