@@ -80,7 +80,7 @@ if not logger.handlers:
         backupCount=5,
         mode="a",
         encoding="utf-8",
-        delay=True,
+        delay=False,
     )
 
     file_handler.setLevel(logging.DEBUG)
