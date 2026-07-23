@@ -68,6 +68,7 @@ class Client:
             self.socket.sendall(
                 Packet.encode()
             )
+            logger.info("Paquet envoyé avec succès") 
 
         except Exception:
 
