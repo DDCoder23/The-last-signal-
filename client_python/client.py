@@ -66,7 +66,7 @@ class Client:
         try:
 
             self.socket.sendall(
-                Packet.encode()
+                packet.encode()
             )
             logger.info("Paquet envoyé avec succès") 
 
