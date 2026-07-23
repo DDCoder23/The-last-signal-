@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-23T07:09:49.848929",
+    "generated": "2026-07-23T07:12:35.613602",
     "score": 74,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 855,
+    "problem_count": 857,
     "details": {
         "markdown": {
             "score": 42,
@@ -2136,7 +2136,7 @@
             "results": {
                 "modules": 57,
                 "classes": 45,
-                "functions": 254,
+                "functions": 255,
                 "documented_modules": 1,
                 "documented_classes": 5,
                 "documented_functions": 70,
@@ -4583,8 +4583,20 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
-                    "severity": "error",
-                    "message": "Impossible d'analyser le fichier : unterminated string literal (detected at line 7) (<unknown>, line 7)",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_main'ligne 10 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
