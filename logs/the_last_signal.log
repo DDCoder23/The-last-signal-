@@ -1,8 +1,11 @@
-[2026-07-23 04:26:39] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
-[2026-07-23 04:26:40] ERROR    | TheLastSignal | Erreur d'envoi : Traceback (most recent call last):
+[2026-07-23 04:29:49] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-23 04:29:50] ERROR    | TheLastSignal | Erreur d'envoi : Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", line 69, in send_packet
     Packet.encode()
     ~~~~~~~~~~~~~^^
-TypeError: Packet.encode() missing 1 required positional argument: 'self'
+  File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py", line 33, in encode
+    struct.pack("!H", self.packet_type)
+                      ^^^^^^^^^^^^^^^^
+AttributeError: type object 'Packet' has no attribute 'packet_type'
 
-[2026-07-23 04:26:40] INFO     | TheLastSignal | Déconnecté.
+[2026-07-23 04:29:50] INFO     | TheLastSignal | Déconnecté.
