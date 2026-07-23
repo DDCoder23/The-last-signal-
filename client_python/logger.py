@@ -96,6 +96,11 @@ logger = logging.getLogger("TheLastSignal")
 logger.setLevel(logging.DEBUG)
 logger.propagate = False
 logger.handlers.clear()
+formatter = logging.Formatter(
+        "[%(asctime)s] %(levelname)-8s | %(name)s | %(message)s",
+        "%Y-%m-%d %H:%M:%S",
+)
+
 print("CWD:", Path.cwd())
 print("LOGGER HANDLERS:", logger.handlers)
 console_handler = logging.StreamHandler()
