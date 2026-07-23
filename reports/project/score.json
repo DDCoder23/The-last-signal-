@@ -1,6 +1,6 @@
 {
-    "generated": "2026-07-23T03:06:20.500870",
-    "score": 76,
+    "generated": "2026-07-23T03:06:57.363898",
+    "score": 74,
     "status": "Satisfaisant",
     "scores": {
         "markdown": 42,
@@ -8,11 +8,11 @@
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": 26,
+        "rust": 0,
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 840,
+    "problem_count": 837,
     "details": {
         "markdown": {
             "score": 42,
@@ -5154,44 +5154,14 @@
             ]
         },
         "rust": {
-            "score": 26,
-            "max_score": 30,
-            "results": {
-                "files_checked": 3,
-                "total_elements": 7,
-                "elements_without_docs": 4
-            },
+            "score": 0,
+            "max_score": 1,
+            "results": {},
             "problems": [
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                    "line": 67,
-                    "severity": "warning",
-                    "message": "Function 'None' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette function",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
-                    "line": 1,
-                    "severity": "warning",
-                    "message": "Mod 'pub ' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette mod",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
-                    "line": 2,
-                    "severity": "warning",
-                    "message": "Mod 'pub ' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette mod",
-                    "module": "rust"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
-                    "line": 3,
-                    "severity": "warning",
-                    "message": "Mod 'pub ' sans documentation",
-                    "suggestion": "Ajoutez /// avant cette mod",
+                    "file": "",
+                    "severity": "error",
+                    "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 70, in check_rust_docs\n    element_name = name_match.group(1) if name_match else \"unknown\"\n                   ~~~~~~~~~~~~~~~~^^^\nIndexError: no such group\n",
                     "module": "rust"
                 }
             ]

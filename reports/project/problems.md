@@ -1,18 +1,30 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 03:06:20
+Generated: 2026-07-23 03:06:57
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|129|
-|⚠️ Warnings|648|
-|**Total**|**840**|
+|❌ Errors|130|
+|⚠️ Warnings|644|
+|**Total**|**837**|
 
 ---
 
 # 📄 
+
+## ❌ Error
+
+- **Module :** rust
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 70, in check_rust_docs
+    element_name = name_match.group(1) if name_match else "unknown"
+                   ~~~~~~~~~~~~~~~~^^^
+IndexError: no such group
+
 
 ## ❌ Error
 
@@ -2694,42 +2706,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'voir_database' ne possède pas d'annotations de type.
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Function 'None' sans documentation
-- **line :** 67
-- **suggestion :** Ajoutez /// avant cette function
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Mod 'pub ' sans documentation
-- **line :** 1
-- **suggestion :** Ajoutez /// avant cette mod
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Mod 'pub ' sans documentation
-- **line :** 2
-- **suggestion :** Ajoutez /// avant cette mod
-
-## ⚠️ Warning
-
-- **Module :** rust
-- **Message :** Mod 'pub ' sans documentation
-- **line :** 3
-- **suggestion :** Ajoutez /// avant cette mod
 
 ---
 

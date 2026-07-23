@@ -5070,35 +5070,9 @@
         "module": "python"
     },
     {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-        "line": 67,
-        "severity": "warning",
-        "message": "Function 'None' sans documentation",
-        "suggestion": "Ajoutez /// avant cette function",
-        "module": "rust"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
-        "line": 1,
-        "severity": "warning",
-        "message": "Mod 'pub ' sans documentation",
-        "suggestion": "Ajoutez /// avant cette mod",
-        "module": "rust"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
-        "line": 2,
-        "severity": "warning",
-        "message": "Mod 'pub ' sans documentation",
-        "suggestion": "Ajoutez /// avant cette mod",
-        "module": "rust"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs",
-        "line": 3,
-        "severity": "warning",
-        "message": "Mod 'pub ' sans documentation",
-        "suggestion": "Ajoutez /// avant cette mod",
+        "file": "",
+        "severity": "error",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 70, in check_rust_docs\n    element_name = name_match.group(1) if name_match else \"unknown\"\n                   ~~~~~~~~~~~~~~~~^^^\nIndexError: no such group\n",
         "module": "rust"
     },
     {

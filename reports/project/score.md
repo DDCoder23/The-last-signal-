@@ -1,8 +1,8 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 03:06:20
+**Date :** 2026-07-23 03:06:57
 
-# 76/100
+# 74/100
 
 **Statut :** Satisfaisant
 
@@ -14,12 +14,25 @@ Documentation Quality Report
 |spelling|**10**|
 |links|**9**|
 |python|**0**|
-|rust|**26**|
+|rust|**0**|
 |organization|**100**|
 |navigation|**0**|
 
 ## Problèmes
 # 📄 
+
+## ❌ Error
+- **Module :** rust
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py", line 70, in check_rust_docs
+    element_name = name_match.group(1) if name_match else "unknown"
+                   ~~~~~~~~~~~~~~~~^^^
+IndexError: no such group
+
+
+- **module :** rust
 
 ## ❌ Error
 - **Module :** navigation
@@ -3102,50 +3115,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** La fonction 'voir_database' ne possède pas d'annotations de type.
 
 - **module :** python
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Function 'None' sans documentation
-
-- **line :** 67
-
-- **suggestion :** Ajoutez /// avant cette function
-
-- **module :** rust
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/mod.rs
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Mod 'pub ' sans documentation
-
-- **line :** 1
-
-- **suggestion :** Ajoutez /// avant cette mod
-
-- **module :** rust
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Mod 'pub ' sans documentation
-
-- **line :** 2
-
-- **suggestion :** Ajoutez /// avant cette mod
-
-- **module :** rust
-
-## ⚠️ Warning
-- **Module :** rust
-- **Message :** Mod 'pub ' sans documentation
-
-- **line :** 3
-
-- **suggestion :** Ajoutez /// avant cette mod
-
-- **module :** rust
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 
