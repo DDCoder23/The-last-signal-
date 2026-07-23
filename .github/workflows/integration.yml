@@ -204,7 +204,13 @@ jobs:
              cp -a /tmp/logs-backup/. logs/ 2>/dev/null || true
 
              # Ajout des nouveaux fichiers et suppression des anciens
+             echo "=== FORCE TEST ==="
+             echo "$(date)" >> logs/test_timestamp.log
+
              git add -A logs
+
+             git status --short logs
+             
              echo "=== HASH LOG ==="
               sha256sum logs/the_last_signal.log
 
