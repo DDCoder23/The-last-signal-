@@ -7,11 +7,51 @@ from .database import get_connection, init_database
 
 # Création de la base si elle n'existe pas
 init_database()
-
 # Création du dossier des logs
 LOG_DIR = Path("logs")
 LOG_DIR.mkdir(parents=True, exist_ok=True)
 
+
+print("=== AVANT CREATION DU LOGGER FICHIER ===")
+print("LOG DIR:", LOG_DIR.resolve())
+
+if LOG_DIR.exists():
+    files = list(LOG_DIR.iterdir())
+
+    if files:
+        for file in files:
+            print(
+                f"{file.name} - {file.stat().st_size} bytes"
+            )
+    else:
+        print("Dossier logs vide.")
+else:
+    print("Dossier logs inexistant.")
+
+
+#####################################
+# Fichier avec rotation
+#####################################
+
+file_handler = RotatingFileHandler(
+    filename=LOG_DIR / "the_last_signal.log",
+    maxBytes=5 * 1024 * 1024,
+    backupCount=5,
+    mode="a",
+    encoding="utf-8",
+    delay=False,
+)
+
+
+print("=== APRES CREATION DU LOGGER FICHIER ===")
+print("LOG FILE:", file_handler.baseFilename)
+
+print(
+    "LOG SIZE:",
+    Path(file_handler.baseFilename).stat().st_size
+    if Path(file_handler.baseFilename).exists()
+    else 0
+)
 
 class SQLiteHandler(logging.Handler):
     """
