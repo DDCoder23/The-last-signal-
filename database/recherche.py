@@ -167,8 +167,8 @@ def main():
     # Mode ligne de commande
     if args.database or args.search or args.table:
 
-        database = args.database
-        table = args.table
+        database = args.database or DEFAULT_DATABASE
+        table = args.table or DEFAULT_TABLE
         recherche = args.search
         output = args.output
         fmt = args.format
