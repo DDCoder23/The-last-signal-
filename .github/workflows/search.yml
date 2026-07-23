@@ -53,7 +53,7 @@ jobs:
       - name: Lancer la recherche
         shell: bash
         run: |
-          CMD="python scripts/search.py"
+          CMD="python database/search.py"
 
           CMD="$CMD --database '${{ inputs.database }}'"
           CMD="$CMD --search '${{ inputs.search }}'"
