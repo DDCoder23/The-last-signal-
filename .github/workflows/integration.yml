@@ -205,6 +205,11 @@ jobs:
 
              # Ajout des nouveaux fichiers et suppression des anciens
              git add -A logs
+             echo "=== HASH LOG ==="
+              sha256sum logs/the_last_signal.log
+
+             echo "=== HASH REMOTE ==="
+             git show origin/ci-database:logs/the_last_signal.log | sha256sum || true
 
              if ! git diff --cached --quiet; then
              git commit -m "Update logs #${GITHUB_RUN_NUMBER}"
