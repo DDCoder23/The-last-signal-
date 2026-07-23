@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-23T03:05:33.395417",
+    "generated": "2026-07-23T03:06:20.500870",
     "score": 76,
     "status": "Satisfaisant",
     "scores": {
@@ -5157,7 +5157,7 @@
             "score": 26,
             "max_score": 30,
             "results": {
-                "files_checked": 2,
+                "files_checked": 3,
                 "total_elements": 7,
                 "elements_without_docs": 4
             },
