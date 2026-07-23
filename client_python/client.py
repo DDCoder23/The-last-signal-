@@ -68,28 +68,59 @@ class Client:
     f"Erreur d'envoi : {traceback.format_exc()}"
 )
 
-    def receive_packet(self, size=4096):
+    def receive_packet(self):
         """
         Attend un paquet du serveur.
+        Retourne les données du paquet ou None si une erreur survient.
         """
-
         if not self.connected:
             return None
-
         try:
+            header = self._recv_exact(4)
+            if header is None:
+                return None
+            size = struct.unpack("!I", header)[0]
+            packet = self._recv_exact(size)
+            return packet
 
-            data = self.socket.recv(size)
+    except Exception:
 
-            return data
+        logger.error(
+            f"Erreur de réception : {traceback.format_exc()}"
+        )
 
-        except Exception as e:
-
-            logger.error(
-    f"Erreur de réception : {traceback.format_exc()}"
-)
-
+        return None
+    def _recv_exact(self, size):
+        """
+        Reçoit exactement 'size' octets.
+        Retourne :
+        bytes : les données reçues.
+        None  : si la connexion est fermée ou en cas d'erreur.
+        """
+        if not self.connected or self.socket is None:
+            logger.warning("Client non connecté.")
             return None
-
+        if not isinstance(size, int):
+            raise TypeError("size doit être un entier.")
+        if size < 0:
+            raise ValueError("size doit être positif.")
+        data = bytearray()
+        try:
+            while len(data) < size:
+                chunk = self.socket.recv(size - len(data))
+                if not chunk:
+                    logger.warning("Connexion fermée par le serveur.")
+                    self.connected = False
+                    return None
+                data.extend(chunk)
+            return bytes(data)
+        except Exception:
+            logger.error(
+                         f"Erreur de réception : 
+                        {traceback.format_exc()}"
+                        )
+            self.connected = False
+            return None
     def disconnect(self):
         """
         Ferme la connexion.
