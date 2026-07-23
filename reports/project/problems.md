@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 08:54:37
+Generated: 2026-07-23 08:55:55
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|129|
-|⚠️ Warnings|667|
-|**Total**|**859**|
+|⚠️ Warnings|669|
+|**Total**|**861**|
 
 ---
 
@@ -1963,6 +1963,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La classe 'LoginPacket' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'from_payload'ligne 15 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'from_payload' ne possède pas d'annotations de type.
 
 ---
 

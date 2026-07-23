@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 08:54:37
+**Date :** 2026-07-23 08:55:55
 
 # 74/100
 
@@ -2283,6 +2283,18 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La classe 'LoginPacket' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload'ligne 15 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload' ne possède pas d'annotations de type.
 
 - **module :** python
 

@@ -5160,6 +5160,18 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py",
+        "severity": "warning",
+        "message": "La fonction 'from_payload'ligne 15 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py",
+        "severity": "warning",
+        "message": "La fonction 'from_payload' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
