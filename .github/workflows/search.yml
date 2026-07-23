@@ -35,7 +35,7 @@ on:
         default: txt
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
     sync:
