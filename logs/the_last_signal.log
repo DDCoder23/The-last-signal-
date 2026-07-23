@@ -1,5 +1,5 @@
-[2026-07-23 06:44:13] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
-[2026-07-23 06:44:14] ERROR    | TheLastSignal | Erreur d'envoi : Traceback (most recent call last):
+[2026-07-23 06:49:57] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-23 06:49:58] ERROR    | TheLastSignal | Erreur d'envoi : Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", line 69, in send_packet
     Packet.encode()
     ~~~~~~~~~~~~~^^
@@ -8,4 +8,4 @@
                       ^^^^^^^^^^^^^^^^
 AttributeError: type object 'Packet' has no attribute 'Packet_type'
 
-[2026-07-23 06:44:14] INFO     | TheLastSignal | Déconnecté.
+[2026-07-23 06:49:58] INFO     | TheLastSignal | Déconnecté.
