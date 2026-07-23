@@ -34,6 +34,11 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
+    - name: Restore previous logs
+      uses: actions/download-artifact@v4
+      with:
+         name: logs
+      continue-on-error: true
 
     ##########################################################
     # Python
@@ -140,8 +145,8 @@ jobs:
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: server-log
-        path: server_rust/server.log
+        name: logs
+        path: logs/
   # ==========================================================
 # Commit automatique des bases SQLite
 # ========================================================
