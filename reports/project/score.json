@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-23T02:56:58.820285",
+    "generated": "2026-07-23T03:04:53.892740",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -5158,13 +5158,13 @@
             "max_score": 30,
             "results": {
                 "files_checked": 1,
-                "total_elements": 1,
+                "total_elements": 4,
                 "elements_without_docs": 1
             },
             "problems": [
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-                    "line": 3,
+                    "line": 67,
                     "severity": "warning",
                     "message": "Function 'None' sans documentation",
                     "suggestion": "Ajoutez /// avant cette function",

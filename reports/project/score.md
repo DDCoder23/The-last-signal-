@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 02:56:58
+**Date :** 2026-07-23 03:04:53
 
 # 77/100
 
@@ -3109,7 +3109,7 @@ TypeError: result doit être un dict, reçu int
 - **Module :** rust
 - **Message :** Function 'None' sans documentation
 
-- **line :** 3
+- **line :** 67
 
 - **suggestion :** Ajoutez /// avant cette function
 

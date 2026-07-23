@@ -5071,7 +5071,7 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs",
-        "line": 3,
+        "line": 67,
         "severity": "warning",
         "message": "Function 'None' sans documentation",
         "suggestion": "Ajoutez /// avant cette function",
