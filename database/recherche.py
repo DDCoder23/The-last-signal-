@@ -7,7 +7,7 @@ import os
 
 print("Database utilisée :", os.path.abspath("database/client_logs.db"))
 
-DEFAULT_DATABASE = "database/client_logs.db"
+DEFAULT_DATABASE = "client_logs.db"
 DEFAULT_TABLE = None
 DEFAULT_SEARCH = ""
 
