@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 10:10:15
+**Date :** 2026-07-23 10:13:58
 
 # 74/100
 
@@ -2168,9 +2168,21 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py
 
-## ❌ Error
+## ⚠️ Warning
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : unexpected indent (<unknown>, line 107)
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'emit'ligne 61 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'emit' ne possède pas d'annotations de type.
 
 - **module :** python
 
