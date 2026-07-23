@@ -8,7 +8,6 @@ use crate::network::handler::PacketHandler;
 pub struct Client {
     stream: TcpStream,
 }
-
 impl Client {
     pub fn new(stream: TcpStream) -> Self {
         Self {
