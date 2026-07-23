@@ -1,11 +1,11 @@
-[2026-07-23 07:26:06] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
-[2026-07-23 07:26:07] ERROR    | TheLastSignal | Erreur d'envoi : Traceback (most recent call last):
+[2026-07-23 07:28:11] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-23 07:28:12] ERROR    | TheLastSignal | Erreur d'envoi : Traceback (most recent call last):
   File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", line 69, in send_packet
     Packet.encode()
     ~~~~~~~~~~~~~^^
   File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py", line 33, in encode
-    struct.pack("!H", self.Packet_type)
+    struct.pack("!H", self.packet_type)
                       ^^^^^^^^^^^^^^^^
-AttributeError: type object 'Packet' has no attribute 'Packet_type'
+AttributeError: type object 'Packet' has no attribute 'packet_type'
 
-[2026-07-23 07:26:08] INFO     | TheLastSignal | Déconnecté.
+[2026-07-23 07:28:12] INFO     | TheLastSignal | Déconnecté.
