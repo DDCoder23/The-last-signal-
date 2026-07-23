@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 01:19:56
+**Date :** 2026-07-23 01:28:44
 
 # 77/100
 
@@ -3122,6 +3122,18 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'voir_database'ligne 4 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'voir_database' ne possède pas d'annotations de type.
 
 - **module :** python
 

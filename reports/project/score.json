@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-23T01:19:56.182784",
+    "generated": "2026-07-23T01:28:44.454894",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 833,
+    "problem_count": 835,
     "details": {
         "markdown": {
             "score": 42,
@@ -2136,7 +2136,7 @@
             "results": {
                 "modules": 50,
                 "classes": 39,
-                "functions": 249,
+                "functions": 250,
                 "documented_modules": 1,
                 "documented_classes": 4,
                 "documented_functions": 70,
@@ -2173,6 +2173,18 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/voir_database.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/voir_database.py",
+                    "severity": "warning",
+                    "message": "La fonction 'voir_database'ligne 4 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/voir_database.py",
+                    "severity": "warning",
+                    "message": "La fonction 'voir_database' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {

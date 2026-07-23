@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 01:19:56
+Generated: 2026-07-23 01:28:44
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|128|
-|⚠️ Warnings|642|
-|**Total**|**833**|
+|⚠️ Warnings|644|
+|**Total**|**835**|
 
 ---
 
@@ -2718,6 +2718,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'voir_database'ligne 4 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'voir_database' ne possède pas d'annotations de type.
 
 ---
 
