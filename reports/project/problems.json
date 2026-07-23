@@ -4148,7 +4148,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
         "severity": "warning",
-        "message": "La fonction 'main'ligne 3 ne possède pas de docstring.",
+        "message": "La fonction 'main'ligne 4 ne possède pas de docstring.",
         "module": "python"
     },
     {
