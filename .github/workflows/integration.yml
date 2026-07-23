@@ -157,7 +157,8 @@ jobs:
              cp -a database/. /tmp/artifacts-backup/database/ 2>/dev/null || true
              cp -a logs/. /tmp/artifacts-backup/logs/ 2>/dev/null || true
 
-
+             git reset --hard
+             git clean -fd
              echo "=== Checkout ci-database branch ==="
 
              git fetch origin
