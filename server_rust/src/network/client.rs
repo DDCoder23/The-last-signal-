@@ -46,7 +46,7 @@ impl Client {
 
                     if let Err(e) = send_packet(
                         &mut self.stream,
-                        &reponse,
+                        &response,
                     ) {
 
                         println!("Erreur : {}", e);
