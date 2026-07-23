@@ -1,92 +1,225 @@
 import argparse
+import csv
+import json
 import sqlite3
+from pathlib import Path
 
 DEFAULT_DATABASE = "database.db"
-DEFAULT_TABLE = "logs"
-DEFAULT_RECHERCHE = ""
+DEFAULT_TABLE = None
+DEFAULT_SEARCH = ""
 
-def rechercher(database, table, recherche):
-    """Recherche dans toutes les colonnes de la table."""
+
+def rechercher(database, recherche, table=None):
+    """Recherche un texte dans une ou plusieurs tables."""
 
     conn = sqlite3.connect(database)
     cursor = conn.cursor()
 
-    cursor.execute(f"PRAGMA table_info({table})")
-    colonnes = [col[1] for col in cursor.fetchall()]
+    # Si aucune table n'est précisée, on les récupère toutes
+    if table is None:
+        cursor.execute(
+            "SELECT name FROM sqlite_master "
+            "WHERE type='table' AND name NOT LIKE 'sqlite_%';"
+        )
+        tables = [t[0] for t in cursor.fetchall()]
+    else:
+        tables = [table]
 
     resultats = []
 
-    for colonne in colonnes:
-        try:
-            cursor.execute(
-                f"SELECT rowid, * FROM {table} "
-                f"WHERE CAST({colonne} AS TEXT) LIKE ?",
-                (f"%{recherche}%",)
-            )
+    for table in tables:
 
-            for ligne in cursor.fetchall():
-                texte = f"[{colonne}] {ligne}"
-                print(texte)
-                resultats.append(texte)
+        cursor.execute(f"PRAGMA table_info({table})")
+        colonnes = [c[1] for c in cursor.fetchall()]
 
-        except sqlite3.Error:
-            continue
+        for colonne in colonnes:
+
+            try:
+                cursor.execute(
+                    f"""
+                    SELECT rowid, *
+                    FROM {table}
+                    WHERE CAST({colonne} AS TEXT) LIKE ?
+                    """,
+                    (f"%{recherche}%",)
+                )
+
+                lignes = cursor.fetchall()
+
+                for ligne in lignes:
+                    resultat = {
+                        "table": table,
+                        "column": colonne,
+                        "row": ligne,
+                    }
+
+                    resultats.append(resultat)
+
+                    print(
+                        f"[{table}] "
+                        f"[{colonne}] "
+                        f"{ligne}"
+                    )
+
+            except sqlite3.Error:
+                pass
 
     conn.close()
+
     return resultats
 
 
-def ecrire_fichier(resultats, fichier):
-    """Écrit les résultats dans un fichier texte."""
+def ecrire_fichier(resultats, fichier, fmt):
 
-    with open(fichier, "w", encoding="utf-8") as f:
-        if resultats:
-            f.write("\n".join(resultats))
-        else:
-            f.write("Aucun résultat trouvé.\n")
+    fichier = Path(fichier)
 
-    print(f"\nRésultats enregistrés dans : {fichier}")
+    if fmt == "txt":
+
+        with fichier.open("w", encoding="utf-8") as f:
+
+            if not resultats:
+                f.write("Aucun résultat trouvé.\n")
+
+            for r in resultats:
+                f.write(
+                    f"[{r['table']}] "
+                    f"[{r['column']}] "
+                    f"{r['row']}\n"
+                )
+
+    elif fmt == "md":
+
+        with fichier.open("w", encoding="utf-8") as f:
+
+            f.write("# Rapport de recherche\n\n")
+
+            if not resultats:
+                f.write("Aucun résultat trouvé.\n")
+
+            for r in resultats:
+
+                f.write(
+                    f"## {r['table']}\n\n"
+                    f"- **Colonne :** {r['column']}\n"
+                    f"- **Valeur :** `{r['row']}`\n\n"
+                )
+
+    elif fmt == "json":
+
+        with fichier.open("w", encoding="utf-8") as f:
+
+            json.dump(
+                resultats,
+                f,
+                indent=4,
+                ensure_ascii=False,
+                default=str
+            )
+
+    elif fmt == "csv":
+
+        with fichier.open(
+            "w",
+            newline="",
+            encoding="utf-8"
+        ) as f:
+
+            writer = csv.writer(f)
+
+            writer.writerow(
+                [
+                    "table",
+                    "column",
+                    "row"
+                ]
+            )
+
+            for r in resultats:
+
+                writer.writerow(
+                    [
+                        r["table"],
+                        r["column"],
+                        r["row"]
+                    ]
+                )
+
+    print(f"\nRapport enregistré dans : {fichier}")
 
 
 def main():
+
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("database", nargs="?")
-    parser.add_argument("table", nargs="?")
-    parser.add_argument("recherche", nargs="?")
+    parser.add_argument("-d", "--database")
+    parser.add_argument("-t", "--table")
+    parser.add_argument("-s", "--search")
+    parser.add_argument("-o", "--output")
     parser.add_argument(
-        "-o",
-        "--output",
-        help="Fichier dans lequel enregistrer les résultats."
+        "-f",
+        "--format",
+        choices=["txt", "md", "json", "csv"],
+        default="txt",
     )
+
     args = parser.parse_args()
-  
-    if args.database and args.table and args.recherche:
+
+    # Mode ligne de commande
+    if args.database or args.search or args.table:
+
         database = args.database
         table = args.table
-        recherche = args.recherche
+        recherche = args.search
         output = args.output
+        fmt = args.format
+
+    # Mode interactif
     else:
-        database = input("Database : ")
-        table = input("Table : ")
-        recherche = input("Recherche : ")
-        output = input("Fichier de sortie (laisser vide pour aucun) : ").strip()
+
+        database = (
+            input(f"Database [{DEFAULT_DATABASE}] : ")
+            or DEFAULT_DATABASE
+        )
+
+        table = (
+            input("Table (Entrée = toutes) : ")
+            or DEFAULT_TABLE
+        )
+
+        recherche = (
+            input("Recherche : ")
+            or DEFAULT_SEARCH
+        )
+
+        output = input(
+            "Fichier de sortie (Entrée = aucun) : "
+        ).strip()
 
         if output == "":
             output = None
-
-  
-        if not (database and table and recherche):
-            database=DEFAULT_DATABASE if not database
-            table=DEFAULT_TABLE  if not table
-            recherche=DEFAULT_RECHERCHE if not recherche
-
-        resultats = rechercher(database, table, recherche)
-        if output:
-            ecrire_fichier(resultats, output)
+            fmt = "txt"
         else:
-            print(resultat)
-        
+            fmt = (
+                input(
+                    "Format (txt/md/json/csv) [txt] : "
+                ).strip().lower()
+                or "txt"
+            )
+
+    resultats = rechercher(
+        database,
+        recherche,
+        table
+    )
+
+    if output:
+        ecrire_fichier(
+            resultats,
+            output,
+            fmt
+        )
+    else:
+        print(resultats)
 
 
 if __name__ == "__main__":
