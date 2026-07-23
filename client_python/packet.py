@@ -30,7 +30,7 @@ class Packet:
         """
 
         body = (
-            struct.pack("!H", self.packet_type)
+            struct.pack("!H", self.Packet_type)
             + self.payload
         )
 
