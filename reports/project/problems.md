@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 07:23:16
+Generated: 2026-07-23 07:23:38
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|129|
-|⚠️ Warnings|666|
-|**Total**|**858**|
+|⚠️ Warnings|665|
+|**Total**|**857**|
 
 ---
 
@@ -2842,15 +2842,6 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/test_de_python/Tests.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
----
-
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/__init__.py
 
 ## ⚠️ Warning
@@ -2870,7 +2861,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_main'ligne 10 ne possède pas de docstring.
+- **Message :** La fonction 'test_main'ligne 3 ne possède pas de docstring.
 
 ## ⚠️ Warning
 

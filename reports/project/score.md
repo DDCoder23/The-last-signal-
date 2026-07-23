@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 07:23:16
+**Date :** 2026-07-23 07:23:38
 
 # 74/100
 
@@ -3256,14 +3256,6 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/test_de_python/Tests.py
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/__init__.py
 
 ## ⚠️ Warning
@@ -3282,7 +3274,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'test_main'ligne 10 ne possède pas de docstring.
+- **Message :** La fonction 'test_main'ligne 3 ne possède pas de docstring.
 
 - **module :** python
 
