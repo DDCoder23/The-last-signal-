@@ -1,4 +1,4 @@
 markdownlint-cli2 v0.23.1 (markdownlint v0.41.1)
 Finding: **/*.md --json
-Linting: 71 files
-Summary: 732 issues in 19 files
+Linting: 195 files
+Summary: 38877 issues in 143 files
