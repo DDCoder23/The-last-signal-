@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 01:16:16
+Generated: 2026-07-23 01:19:56
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|129|
-|⚠️ Warnings|639|
-|**Total**|**831**|
+|❌ Errors|128|
+|⚠️ Warnings|642|
+|**Total**|**833**|
 
 ---
 
@@ -1851,10 +1851,20 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 
-## ❌ Error
+## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 7)
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 3 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 ---
 

@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-23 01:16:16
+**Date :** 2026-07-23 01:19:56
 
 # 77/100
 
@@ -2163,9 +2163,21 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 
-## ❌ Error
+## ⚠️ Warning
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : invalid syntax (<unknown>, line 7)
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 3 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 - **module :** python
 
