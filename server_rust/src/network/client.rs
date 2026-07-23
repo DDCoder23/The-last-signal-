@@ -4,7 +4,7 @@ use crate::network::packet::{
     receive_packet,
     send_packet,
 };
-
+use crate::network::handler::PacketHandler;
 pub struct Client {
     stream: TcpStream,
 }
@@ -34,15 +34,19 @@ impl Client {
                     );
 
                     println!(
-                        "Payload : {}",
-                        String::from_utf8_lossy(
-                            &packet.payload
-                        )
-                    );
+                      "Payload : {}",
+                      String::from_utf8_lossy(
+                      &packet.payload
+                      )
+                      );
+
+
+                       let response =
+                              PacketHandler::handle(packet);
 
                     if let Err(e) = send_packet(
                         &mut self.stream,
-                        &packet,
+                        &reponse,
                     ) {
 
                         println!("Erreur : {}", e);
