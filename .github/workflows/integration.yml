@@ -129,6 +129,10 @@ jobs:
       run: |
              echo "=== DATABASE ==="
              ls -lah database
+             echo "=== LOG FILE ==="
+             ls -lah logs
+             stat logs/the_last_signal.log
+             tail -20 logs/the_last_signal.log
 
              
     - name: Upload server log
