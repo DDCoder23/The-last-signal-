@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-23T08:55:55.461941",
+    "generated": "2026-07-23T08:56:25.758195",
     "score": 74,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 861,
+    "problem_count": 863,
     "details": {
         "markdown": {
             "score": 42,
@@ -2136,7 +2136,7 @@
             "results": {
                 "modules": 57,
                 "classes": 45,
-                "functions": 256,
+                "functions": 257,
                 "documented_modules": 1,
                 "documented_classes": 4,
                 "documented_functions": 69,
@@ -5287,6 +5287,18 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py",
                     "severity": "warning",
                     "message": "La classe 'ChatPacket' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py",
+                    "severity": "warning",
+                    "message": "La fonction 'from_payload'ligne 15 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py",
+                    "severity": "warning",
+                    "message": "La fonction 'from_payload' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {

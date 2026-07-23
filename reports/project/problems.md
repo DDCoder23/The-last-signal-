@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-23 08:55:55
+Generated: 2026-07-23 08:56:25
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|129|
-|⚠️ Warnings|669|
-|**Total**|**861**|
+|⚠️ Warnings|671|
+|**Total**|**863**|
 
 ---
 
@@ -1949,6 +1949,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La classe 'ChatPacket' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'from_payload'ligne 15 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'from_payload' ne possède pas d'annotations de type.
 
 ---
 
