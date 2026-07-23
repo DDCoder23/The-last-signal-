@@ -153,9 +153,14 @@ jobs:
              echo "=== Backup generated files ==="
 
              mkdir -p /tmp/artifacts-backup
+             mkdir -p /tmp/artifacts-backup/database
+             mkdir -p /tmp/artifacts-backup/logs
 
              cp -a database/. /tmp/artifacts-backup/database/ 2>/dev/null || true
              cp -a logs/. /tmp/artifacts-backup/logs/ 2>/dev/null || true
+             echo "=== Backup content ==="
+             find /tmp/artifacts-backup -type f
+
 
              git reset --hard
              git clean -fd
@@ -183,7 +188,9 @@ jobs:
 
              cp -a /tmp/artifacts-backup/database/. database/ 2>/dev/null || true
              cp -a /tmp/artifacts-backup/logs/. logs/ 2>/dev/null || true
+             echo "=== Current artifacts ==="
 
+             find database logs -type f
 
              echo "=== Detect changes ==="
 
