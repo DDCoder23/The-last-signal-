@@ -34,6 +34,7 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
+      
     - name: Restore previous logs
       uses: actions/download-artifact@v4
       with:
