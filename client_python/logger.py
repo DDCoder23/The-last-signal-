@@ -4,7 +4,7 @@ from pathlib import Path
 from datetime import datetime
 
 from .database import get_connection, init_database
-
+init_database()
 
 # Création du dossier des logs
 LOG_DIR = Path("logs")
