@@ -5,8 +5,7 @@ from datetime import datetime
 
 from .database import get_connection, init_database
 
-# Création de la base si elle n'existe pas
-init_database()
+
 # Création du dossier des logs
 LOG_DIR = Path("logs")
 LOG_DIR.mkdir(parents=True, exist_ok=True)
