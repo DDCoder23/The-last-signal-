@@ -177,7 +177,7 @@ jobs:
                  cursor.execute(f'PRAGMA table_info("{table_name}")')
                  print(cursor.fetchall())
                  cursor.execute(f'SELECT * FROM "{table_name}"')
-                print(cursor.fetchall())
+                 print(cursor.fetchall())
              conn.close()
              EOF
   # ==========================================================
