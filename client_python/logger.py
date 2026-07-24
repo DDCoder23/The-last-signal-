@@ -88,7 +88,8 @@ class SQLiteHandler(logging.Handler):
 
             conn.commit()
         except Exceptions: 
-            print(taceback.
+            print(traceback.format_exc)
+            
 
         finally:
             conn.close()
