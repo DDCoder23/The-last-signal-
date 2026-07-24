@@ -236,7 +236,7 @@ jobs:
              echo "=== Detect changes ==="
              git status
 
-             git add -u database logs
+             git add -A database logs
 
              git diff --cached --name-status
 
