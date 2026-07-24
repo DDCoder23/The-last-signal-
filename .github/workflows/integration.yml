@@ -229,7 +229,7 @@ jobs:
              cp -a /tmp/artifacts-backup/database/. database/ 2>/dev/null || true
              cp -a /tmp/artifacts-backup/logs/. logs/ 2>/dev/null || true
              echo "=== Current artifacts ==="
-             cat database/client_logs.db
+             file database/client_logs.db
 
              find database logs -type f
 
