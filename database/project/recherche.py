@@ -7,7 +7,7 @@ import os
 
 print("Database utilisée :", os.path.abspath("database/client_logs.db"))
 
-DEFAULT_DATABASE = Path("database/client_logs.db")
+DEFAULT_DATABASE = "database/client_logs.db"
 DEFAULT_TABLE = None
 DEFAULT_SEARCH = ""
 
@@ -170,7 +170,7 @@ def main():
     # Mode ligne de commande
     if args.database or args.search or args.table:
 
-        database = Path(args.database) or DEFAULT_DATABASE
+        database = args.database or DEFAULT_DATABASE
         table = args.table or DEFAULT_TABLE
         recherche = args.search
         output = args.output
