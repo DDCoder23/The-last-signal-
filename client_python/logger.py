@@ -2,6 +2,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from datetime import datetime
+import traceback
 
 from .database import get_connection, init_database
 init_database()
@@ -86,6 +87,8 @@ class SQLiteHandler(logging.Handler):
             )
 
             conn.commit()
+        except Exceptions: 
+            print(taceback.
 
         finally:
             conn.close()
