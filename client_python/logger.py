@@ -3,17 +3,6 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from datetime import datetime
 import traceback
-from pathlib import Path
-
-nom_fichier = "client_logs.db"
-racine = Path.cwd()
-
-for fichier in racine.rglob(nom_fichier):
-    try:
-        print(f"Suppression : {fichier.resolve()}")
-        fichier.unlink()
-    except Exception as e:
-        print(f"Impossible de supprimer {fichier} : {e}")
 from .database import get_connection, init_database
 init_database()
 
