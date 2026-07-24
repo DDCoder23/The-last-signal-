@@ -136,7 +136,9 @@ jobs:
       if: always()
       run: |
 
-        kill $(cat server_rust/server.pid) || true
+        kill -SIGTERM $(cat server_rust/server.pid)||true
+
+        sleep 3
 
     ##########################################################
     # Upload log
@@ -209,6 +211,7 @@ jobs:
              find database logs -type f
 
              echo "=== Detect changes ==="
+             git status
 
              git add database logs
 
