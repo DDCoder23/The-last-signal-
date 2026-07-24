@@ -211,7 +211,7 @@ jobs:
              if git show-ref --verify --quiet refs/remotes/origin/ci-database; then
 
              git checkout ci-database
-             git pull --ff-only origin ci-database
+             git pull origin ci-database
 
              else
 
@@ -236,7 +236,7 @@ jobs:
              echo "=== Detect changes ==="
              git status
 
-             git add database logs
+             git add -u database logs
 
              git diff --cached --name-status
 
