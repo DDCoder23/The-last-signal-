@@ -178,3 +178,7 @@
 [2026-07-24 23:15:50] INFO     | TheLastSignal | Paquet envoyé avec succès
 [2026-07-24 23:15:50] INFO     | TheLastSignal | Paquet envoyé avec succès
 [2026-07-24 23:15:50] INFO     | TheLastSignal | Déconnecté.
+[2026-07-24 23:23:35] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-24 23:23:36] INFO     | TheLastSignal | Paquet envoyé avec succès
+[2026-07-24 23:23:36] INFO     | TheLastSignal | Paquet envoyé avec succès
+[2026-07-24 23:23:36] INFO     | TheLastSignal | Déconnecté.
