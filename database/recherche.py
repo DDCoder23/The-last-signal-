@@ -5,6 +5,24 @@ import sqlite3
 from pathlib import Path
 import os
 
+
+conn = sqlite3.connect("database/client_logs.db")
+cursor = conn.cursor()
+
+cursor.execute("SELECT COUNT(*) FROM logs")
+print("Nombre de lignes :", cursor.fetchone()[0])
+
+cursor.execute("""
+SELECT id, timestamp, level, message
+FROM logs
+ORDER BY id DESC
+LIMIT 10
+""")
+
+for row in cursor.fetchall():
+    print(row)
+
+conn.close()
 print("Database utilisée :", os.path.abspath("database/client_logs.db"))
 
 DEFAULT_DATABASE = "database/client_logs.db"
