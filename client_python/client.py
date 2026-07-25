@@ -1,6 +1,6 @@
 import socket
 import traceback
-
+import logging
 from .logger import logger
 from .packet import Packet
 
@@ -159,3 +159,4 @@ class Client:
         self.connected = False
 
         logger.info("Déconnecté.")
+        logging.shutdown()
