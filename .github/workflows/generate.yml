@@ -9,13 +9,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+        - name: Setup Python
+          uses: actions/setup-python@v5
+          with:
+             python-version: "3.14"
+             cache: "pip"
+        - name: Install dependencies
+          run: |
 
-      - name: Generate key
-        run: |
-          python3 - <<EOF
-          from cryptography.fernet import Fernet
+                  python -m pip install --upgrade pip setuptools wheel
+                  if [ -f requirements.txt ]; then
+                  pip install -r requirements.txt
+                  fi
+          
 
-          key = Fernet.generate_key()
+        - name: Generate key
+          run: |
+                 python3 - <<EOF
+                 from cryptography.fernet import Fernet
 
-          print(key.decode())
-          EOF
+                 key = Fernet.generate_key()
+
+                 print(key.decode())
+                 EOF
