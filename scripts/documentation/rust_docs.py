@@ -61,7 +61,7 @@ def check_rust_docs() -> Dict[str, Any]:
                 
                 for element_type, pattern in patterns.items():
                     match = re.match(pattern, line)
-                    print(match)
+                    
                     if not match:
                         continue
                     else:
