@@ -61,6 +61,31 @@ jobs:
       with:
         python-version: ${{ steps.current.outputs.version }}
         cache: "pip"
+        check-latest: ${{ github.workflow == 'Nightly' }}
+    - name: Get Python version
+      id: python-version
+      run: |
+               python --version
+    - name: Update Python version
+      if: github.workflow == 'Nightly'
+      run: |
+             VERSION=$(python --version | awk '{print $2}')
+             echo "$VERSION" > .python-version
+             if [ "$(cat .python-version)" != "$VERSION" ]; then
+             echo "$VERSION" > .python-version
+             echo "Updated Python version to $VERSION"
+             else
+             echo "No update needed"
+             fi
+             git config user.name github-actions
+             git config user.email github-actions@github.com
+             
+
+             git add .python-version
+
+             git diff --cached --quiet || git commit -m "chore: update Python version"
+
+             git push
         
 
     - name: Install Python dependencies
