@@ -13,7 +13,13 @@ def get_connection():
     Retourne une connexion SQLite.
     """
     conn = sqlite3.connect(DB_PATH)
+    DB_PATH = Path("database/client_logs.db")
+    print(DB_PATH.resolve())
+    print(DB_PATH.exists())
+    print(DB_PATH.stat().st_size)
     cursor = conn.cursor()
+    cursor.execute("SELECT COUNT(*) FROM logs")
+    print(cursor.fetchone())
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
     tables = cursor.fetchall()
     print(f"Nombre de tables : {len(tables)}")
