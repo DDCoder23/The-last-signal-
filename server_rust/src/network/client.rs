@@ -1,4 +1,6 @@
 use std::net::TcpStream;
+use uuid::Uuid;
+
 
 use crate::network::packet::{
     receive_packet,
@@ -7,18 +9,21 @@ use crate::network::packet::{
 use crate::network::handler::PacketHandler;
 pub struct Client {
     stream: TcpStream,
+    session_id: String,
 }
 impl Client {
     pub fn new(stream: TcpStream) -> Self {
         Self {
             stream,
+            session_id: Uuid::new_v4().to_string(),
         }
     }
 
     pub fn run(&mut self) {
         println!(
-            "Client connecté : {}",
+            "Client connecté : {} | Session : {}",
             self.stream.peer_addr().unwrap()
+            self.session_id
         );
 
         loop {
@@ -58,10 +63,11 @@ impl Client {
 
                 Err(e) => {
 
-                    println!(
-                        "Déconnexion : {}",
-                        e
-                    );
+                            println!(
+    "Déconnexion [{}] : {}",
+    self.session_id,
+    e
+);
 
                     break;
 
