@@ -34,21 +34,19 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
-    - name: Get logs branch
+    - name: Restore previous database and logs
       run: |
              git fetch origin ci-database
-             git checkout origin/ci-database -- logs/
-    - name: Check repository
-      run: |
-             ls -la
-             ls -la logs || true
-             git ls-files logs/
+             git checkout origin/ci-database -- database/ || true
+             git checkout origin/ci-database -- logs/ || true
+             echo "=== Restored ==="
+             ls -lah database || true
+             ls -lah logs || true
+    
+    
       
-    - name: Restore previous logs
-      uses: actions/download-artifact@v4
-      with:
-         name: logs
-      continue-on-error: true
+    
+    
 
     ##########################################################
     # Python
