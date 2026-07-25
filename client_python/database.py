@@ -2,22 +2,22 @@ import sqlite3
 from pathlib import Path
 import os
 
-# Dossier database à la racine du projet
-DB_PATH = Path("database/client_logs.db")
 
-def first_connection():
-    os.makedirs("database", exist_ok=True)
-    print(DB_PATH.resolve())
-    print(DB_PATH.exists())
+ROOT = Path.cwd()
+DB_PATH = ROOT / "database" / "client_logs.db"
+# Dossier database à la racine du projet
+
+
+def get_connection():
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     return sqlite3.connect(DB_PATH)
+    
 def get_connection():
     """
     Retourne une connexion SQLite.
     """
     
-    os.makedirs("database", exist_ok=True)
-    print(DB_PATH.resolve())
-    print(DB_PATH.exists())
+    
     
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
@@ -58,16 +58,13 @@ def init_database():
     """
     Initialise la base de données.
     """
-
-    conn = first_connection()
-
-    cursor = conn.cursor()
-
-    cursor.execute("""
+    with sqlite3.connect(DB_PATH) as conn:
+        cursor = conn.cursor()
+        cursor.execute("""
         CREATE TABLE IF NOT EXISTS logs (
 
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-
+            session_id TEXT NOT NULL,
             timestamp TEXT NOT NULL,
 
             level TEXT NOT NULL,
