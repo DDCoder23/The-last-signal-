@@ -9,11 +9,12 @@ def get_connection():
     """
     Retourne une connexion SQLite.
     """
-    conn = sqlite3.connect(DB_PATH)
+    
     
     print(DB_PATH.resolve())
     print(DB_PATH.exists())
     print(DB_PATH.stat().st_size)
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("SELECT COUNT(*) FROM logs")
     print(cursor.fetchone())
