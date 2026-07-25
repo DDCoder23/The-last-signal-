@@ -4,4 +4,3 @@ save.txt
 *.iml
 # Secrets
 security/master.key
-security/vault.enc
