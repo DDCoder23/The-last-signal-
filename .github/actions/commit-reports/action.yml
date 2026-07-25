@@ -68,11 +68,11 @@ runs:
         fi
 
         if [ -d /tmp/ci-backup/database ]; then
-          cp -r /tmp/ci-backup/database/. database/${{ inputs.report-type }}/
+          cp -r /tmp/ci-backup/database/${{ inputs.report-type }}/. database/${{ inputs.report-type }}/
         fi
 
         if [ -d /tmp/ci-backup/dashboard ]; then
-          cp -r /tmp/ci-backup/dashboard/. dashboard/${{ inputs.report-type }}/
+          cp -r /tmp/ci-backup/dashboard/${{ inputs.report-type }}/. dashboard/${{ inputs.report-type }}/
         fi
 
     
