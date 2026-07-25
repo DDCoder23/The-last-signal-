@@ -6,7 +6,7 @@ on:
       database:
         description: "Chemin de la base SQLite"
         required: true
-        default: "client_logs.db"
+        default: "database/client_logs.db"
 
       table:
         description: "Table (laisser vide = toutes)"
@@ -64,7 +64,7 @@ jobs:
       - name: Lancer la recherche
         shell: bash
         run: |
-          CMD="python database/recherche.py"
+          CMD="python scripts/recherche.py"
 
           CMD="$CMD --database '${{ inputs.database }}'"
           CMD="$CMD --search '${{ inputs.search }}'"
