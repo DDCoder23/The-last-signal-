@@ -87,7 +87,7 @@ runs:
           exit 0
         fi
 
-        git commit -m ${{ inputs.message }}
+        git commit  ${{ inputs.message }}
         for i in 1 2 3
         do
           git pull --rebase origin ${{ inputs.branch }}
