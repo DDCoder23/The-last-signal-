@@ -10,6 +10,9 @@ use crate::network::handler::PacketHandler;
 pub struct Client {
     stream: TcpStream,
     session_id: String,
+    client_id: Option<i64>,
+
+    account_id: Option<i64>,
 }
 impl Client {
     pub fn new(stream: TcpStream) -> Self {
