@@ -2,7 +2,7 @@ import http.server
 import socketserver
 import webbrowser
 import os
-
+from scripts.generate_dashboard import generate_dashboard
 
 PORT = 8000
 
@@ -44,4 +44,5 @@ def start_server():
 
 
 if __name__ == "__main__":
+    generate_dashboard()
     start_server()
