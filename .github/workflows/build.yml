@@ -139,7 +139,7 @@ jobs:
           path: |
             reports/**
             database/**
-            dashboard/**
+            
 
       - name: Commit reports
         uses: ./.github/actions/commit-reports
