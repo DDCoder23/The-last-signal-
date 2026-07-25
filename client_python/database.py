@@ -14,7 +14,8 @@ def get_connection():
     os.makedirs("database", exist_ok=True)
     print(DB_PATH.resolve())
     print(DB_PATH.exists())
-    print(DB_PATH.stat().st_size)
+    if DB_PATH.exists():
+        print(DB_PATH.stat().st_size)
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
     cursor.execute("SELECT COUNT(*) FROM logs")
