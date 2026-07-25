@@ -51,13 +51,17 @@ jobs:
     ##########################################################
     # Python
     ##########################################################
-
+    - name: Read current Python version
+      id: current
+      run: |
+        echo "version=$(cat .python-version)" >> $GITHUB_OUTPUT
+        
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
-        python-version: "3.14"
+        python-version: ${{ steps.current.outputs.version }}
         cache: "pip"
-        check-latest: true
+        
 
     - name: Install Python dependencies
       run: |
