@@ -2,116 +2,76 @@ import os
 import json
 import base64
 
-from argon2.low_level import hash_secret_raw, Type
-from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.fernet import Fernet
 
 
-VAULT_FILE = "vault.enc"
+KEY_FILE = "security/master.key"
+VAULT_FILE = "security/vault.enc"
 
 
-def generate_key(password: str, salt: bytes):
+def create_key():
     """
-    Transforme le mot de passe maître en clé AES.
+    Crée une clé maître si elle n'existe pas.
     """
 
-    return hash_secret_raw(
-        password.encode(),
-        salt,
-        time_cost=3,
-        memory_cost=65536,
-        parallelism=4,
-        hash_len=32,
-        type=Type.ID
+    if not os.path.exists(KEY_FILE):
+
+        key = Fernet.generate_key()
+
+        with open(KEY_FILE, "wb") as f:
+            f.write(key)
+
+        print("Nouvelle clé créée.")
+
+
+def load_key():
+
+    with open(KEY_FILE, "rb") as f:
+        return f.read()
+
+
+def encrypt_vault(data):
+
+    key = load_key()
+
+    cipher = Fernet(key)
+
+    encrypted = cipher.encrypt(
+        json.dumps(data).encode()
     )
 
-
-def encrypt_vault(data, password):
-    
-    salt = os.urandom(16)
-    key = generate_key(password, salt)
-
-    aes = AESGCM(key)
-
-    nonce = os.urandom(12)
-
-    encrypted = aes.encrypt(
-        nonce,
-        json.dumps(data).encode(),
-        None
-    )
-
-    vault = {
-        "salt": base64.b64encode(salt).decode(),
-        "nonce": base64.b64encode(nonce).decode(),
-        "data": base64.b64encode(encrypted).decode()
-    }
-
-    with open(VAULT_FILE, "w") as f:
-        json.dump(vault, f, indent=4)
+    with open(VAULT_FILE, "wb") as f:
+        f.write(encrypted)
 
 
-def decrypt_vault(password):
+def decrypt_vault():
 
-    with open(VAULT_FILE) as f:
-        vault = json.load(f)
+    key = load_key()
 
-    salt = base64.b64decode(vault["salt"])
-    nonce = base64.b64decode(vault["nonce"])
-    encrypted = base64.b64decode(vault["data"])
+    cipher = Fernet(key)
 
-    key = generate_key(password, salt)
+    with open(VAULT_FILE, "rb") as f:
+        encrypted = f.read()
 
-    aes = AESGCM(key)
-
-    decrypted = aes.decrypt(
-        nonce,
-        encrypted,
-        None
-    )
+    decrypted = cipher.decrypt(encrypted)
 
     return json.loads(decrypted)
 
 
-def add_secret():
-
-    password = input("Mot de passe maître : ")
+def add_secret(name, value):
 
     if os.path.exists(VAULT_FILE):
-        secrets = decrypt_vault(password)
+        secrets = decrypt_vault()
     else:
         secrets = {}
 
-    name = input("Nom du secret : ")
-    value = input("Valeur : ")
-
     secrets[name] = value
 
-    encrypt_vault(secrets, password)
-
-    print("Secret ajouté.")
-
-
-def show_secrets():
-
-    password = input("Mot de passe maître : ")
-
-    secrets = decrypt_vault(password)
-
-    for name, value in secrets.items():
-        print(f"{name} = {value}")
+    encrypt_vault(secrets)
 
 
 if __name__ == "__main__":
 
-    print("""
-1 - Ajouter un secret
-2 - Voir les secrets
-""")
+    create_key()
 
-    choix = input("> ")
-
-    if choix == "1":
-        add_secret()
-
-    elif choix == "2":
-        show_secrets()
+    
