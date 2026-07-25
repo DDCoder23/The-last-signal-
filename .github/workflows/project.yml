@@ -95,29 +95,11 @@ jobs:
           --output-format json \
           > reports/project/cspell.txt 2>&1
 
-      # =========================
-      # Links
-      # =========================
+      
 
-      - name: 🔗 Check links
-        continue-on-error: true
-        uses: lycheeverse/lychee-action@v2
-        with:
-          args: |
-            **/*.md
+      
 
-      # =========================
-      # Python documentation
-      # =========================
-
-      - name: 🐍 Generate Python documentation report
-        continue-on-error: true
-        run: |
-          mkdir -p reports/project
-
-          interrogate . \
-            -o markdown \
-            -f reports/project/python-docs.md
+      
 
       # =========================
       # Rust documentation
