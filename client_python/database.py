@@ -2,10 +2,7 @@ import sqlite3
 from pathlib import Path
 
 # Dossier database à la racine du projet
-DATABASE_DIR = Path("database")
-DATABASE_DIR.mkdir(exist_ok=True)
-
-DB_PATH = DATABASE_DIR / "client_logs.db"
+DB_PATH = Path("database/client_logs.db")
 
 
 def get_connection():
@@ -13,7 +10,7 @@ def get_connection():
     Retourne une connexion SQLite.
     """
     conn = sqlite3.connect(DB_PATH)
-    DB_PATH = Path("database/client_logs.db")
+    
     print(DB_PATH.resolve())
     print(DB_PATH.exists())
     print(DB_PATH.stat().st_size)
