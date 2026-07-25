@@ -3,6 +3,7 @@ from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from datetime import datetime
 import traceback
+from .session import SessionContext
 from .database import get_connection, init_database
 init_database()
 
