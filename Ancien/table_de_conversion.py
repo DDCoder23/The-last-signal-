@@ -365,20 +365,3 @@ def l5_l6(joueur,nb,stats):
             
         else:
             print(f"Catégories différentes ou pas d'enchantements pour {clef1} et {clef2} et {clef3} et {clef4} et {clef5} et {clef6} ")
-
-
-
-
-          
-  
-
-
-
-
-
-
-
-
-            
-            
-
