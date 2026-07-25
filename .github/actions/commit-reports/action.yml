@@ -6,7 +6,8 @@ inputs:
 
   report-type:
     description: Type de rapport (python, rust, security...)
-    required: true
+    required: false
+    
 
   commit-message:
     description: Message du commit
@@ -60,7 +61,7 @@ runs:
 
         mkdir -p reports/${{ inputs.report-type }}
         mkdir -p database/${{ inputs.report-type }}
-        mkdir -p dashboard/${{ inputs.report-type }}
+        mkdir -p dashboard
 
       
         if [ -d /tmp/ci-backup/reports/${{ inputs.report-type }} ]; then
@@ -68,7 +69,7 @@ runs:
         fi
 
         if [ -d /tmp/ci-backup/database ]; then
-          cp -r /tmp/ci-backup/database/${{ inputs.report-type }}/. database/${{ inputs.report-type }}/
+          cp -r /tmp/ci-backup/database/. database/
         fi
 
         if [ -d /tmp/ci-backup/dashboard ]; then
@@ -86,7 +87,7 @@ runs:
           exit 0
         fi
 
-        git commit -m "autoupdate"
+        git commit -m ${{ inputs.message }}
         for i in 1 2 3
         do
           git pull --rebase origin ${{ inputs.branch }}
