@@ -1,5 +1,7 @@
 use serde::{Serialize, Deserialize};
+mod gameplay;
 use crate::dice::{jet_de_des};
+
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Stats {
