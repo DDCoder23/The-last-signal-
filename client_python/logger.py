@@ -54,8 +54,8 @@ class SQLiteHandler(logging.Handler):
 ))
 
             conn.commit()
-        except Exceptions: 
-            print(traceback.format_exc)
+        except Exception: 
+            print(traceback.format_exc())
             
 
         finally:
