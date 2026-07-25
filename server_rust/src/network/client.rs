@@ -25,6 +25,12 @@ impl Client {
             self.stream.peer_addr().unwrap()
             self.session_id
         );
+        let packet = Packet::session(&self.session_id);
+
+       if let Err(e) = send_packet(&mut self.stream, &packet) {
+       println!("Impossible d'envoyer le session_id : {}", e);
+       return;
+}
 
         loop {
 
