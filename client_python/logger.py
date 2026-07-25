@@ -35,23 +35,22 @@ class SQLiteHandler(logging.Handler):
         try:
             cursor = conn.cursor()
 
-            cursor.execute(
-                """
-                INSERT INTO logs (
-                    timestamp,
-                    level,
-                    module,
-                    message
-                )
-                VALUES (?, ?, ?, ?)
-                """,
-                (
-                    datetime.now().isoformat(timespec="seconds"),
-                    record.levelname,
-                    record.name,
-                    record.getMessage(),
-                ),
-            )
+            cursor.execute("""
+             INSERT INTO logs (
+             session_id,
+             timestamp,
+             level,
+             module,
+            message
+              )
+           VALUES (?, ?, ?, ?, ?)
+           """, (
+    SessionContext.session_id,
+    datetime.now().isoformat(timespec="seconds"),
+    record.levelname,
+    record.name,
+    record.getMessage(),
+))
 
             conn.commit()
         except Exceptions: 
