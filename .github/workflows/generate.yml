@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+        - name: Checkout repository
+          uses: actions/checkout@
         - name: Setup Python
           uses: actions/setup-python@v5
           with:
