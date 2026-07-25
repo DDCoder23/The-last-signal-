@@ -11,7 +11,7 @@ pub enum PacketType {
     Login = 2,
     Chat = 3,
     Move = 4,
-    Session = 5,
+    
 }
 
 impl PacketType {
@@ -21,7 +21,6 @@ impl PacketType {
             2 => Some(PacketType::Login),
             3 => Some(PacketType::Chat),
             4 => Some(PacketType::Move),
-            5 => Some(PacketType::Session),
             _ => None,
         }
     }
@@ -35,12 +34,7 @@ pub struct Packet {
 }
 
 impl Packet {
-    pub fn session(session_id: &str) -> Self {
-        Self {
-            packet_type: PacketType::Session,
-            payload: session_id.as_bytes().to_vec(),
-        }
-    }
+    
     pub fn new(
         packet_type: PacketType,
         payload: Vec<u8>,
