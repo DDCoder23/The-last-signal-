@@ -5,7 +5,11 @@ import os
 # Dossier database à la racine du projet
 DB_PATH = Path("database/client_logs.db")
 
-
+def first_connection():
+    os.makedirs("database", exist_ok=True)
+    print(DB_PATH.resolve())
+    print(DB_PATH.exists())
+    return sqlite3.connect(DB_PATH)
 def get_connection():
     """
     Retourne une connexion SQLite.
@@ -55,7 +59,7 @@ def init_database():
     Initialise la base de données.
     """
 
-    conn = get_connection()
+    conn = first_connection()
 
     cursor = conn.cursor()
 
