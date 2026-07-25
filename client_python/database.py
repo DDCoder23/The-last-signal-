@@ -17,6 +17,13 @@ def get_connection():
     cursor = conn.cursor()
     cursor.execute("SELECT COUNT(*) FROM logs")
     print(cursor.fetchone())
+    cursor.execute("""
+          SELECT timestamp, level, message
+           FROM logs
+           ORDER BY id DESC
+           LIMIT 10""")
+    for row in cursor.fetchall():
+        print(row)
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
     tables = cursor.fetchall()
     print(f"Nombre de tables : {len(tables)}")
