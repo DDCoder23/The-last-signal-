@@ -25,6 +25,10 @@ def create_key():
 
 
 def load_key():
+    if os.getenv("VAULT_KEY"):
+
+        return os.getenv("VAULT_KEY").encode()
+        
 
     with open(KEY_FILE, "rb") as f:
         return f.read()
