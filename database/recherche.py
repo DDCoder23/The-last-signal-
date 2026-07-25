@@ -23,6 +23,7 @@ for row in cursor.fetchall():
     print(row)
 
 conn.close()
+
 print("Database utilisée :", os.path.abspath("database/client_logs.db"))
 
 DEFAULT_DATABASE = "database/client_logs.db"

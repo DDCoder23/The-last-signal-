@@ -1,21 +1,21 @@
 {
-    "generated": "2026-07-24 22:58:04.990660",
+    "generated": "2026-07-25 01:42:18.845819",
     "summary": {
         "total_runs": 2,
-        "average_quality": 44.14,
-        "average_coverage": 61.0,
+        "average_quality": 19.74,
+        "average_coverage": 0.0,
         "average_pylint": 6.58,
         "security_errors": 92
     },
     "history": [
         {
-            "run": 580,
-            "date": "2026-07-24T22:58:04.849190",
+            "run": 913,
+            "date": "2026-07-25T01:42:18.719758",
             "branch": "refs/heads/main",
-            "commit": "0f71d251e032d7e130cf247a2c1f89c030d542cf",
+            "commit": "74f19f01e24720336989e6bfe2522df21c037993",
             "status": "success",
-            "quality": 44.14,
-            "coverage": 61.0,
+            "quality": 19.74,
+            "coverage": 0,
             "pylint": 6.58,
             "complexity": 3.6993464052287583,
             "tests": {
@@ -36,13 +36,13 @@
             }
         },
         {
-            "run": 580,
-            "date": "2026-07-24T22:58:04.849190",
+            "run": 913,
+            "date": "2026-07-25T01:42:18.719758",
             "branch": "refs/heads/main",
-            "commit": "0f71d251e032d7e130cf247a2c1f89c030d542cf",
+            "commit": "74f19f01e24720336989e6bfe2522df21c037993",
             "status": "success",
-            "quality": 44.14,
-            "coverage": 61.0,
+            "quality": 19.74,
+            "coverage": 0,
             "pylint": 6.58,
             "complexity": 3.6993464052287583,
             "tests": {
