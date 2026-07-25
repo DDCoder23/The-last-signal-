@@ -85,3 +85,40 @@
 [2026-07-25 05:32:00] INFO     | TheLastSignal | Paquet envoyé avec succès
 [2026-07-25 05:32:00] INFO     | TheLastSignal | Paquet envoyé avec succès
 [2026-07-25 05:32:00] INFO     | TheLastSignal | Déconnecté.
+[2026-07-25 05:36:01] INFO     | TheLastSignal | Connexion au serveur 127.0.0.1:5000
+[2026-07-25 05:36:01] ERROR    | TheLastSignal | Impossible de se connecter : Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py", line 48, in emit
+    SessionContext.session_id,
+    ^^^^^^^^^^^^^^
+NameError: name 'SessionContext' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", line 44, in connect
+    logger.info(
+    ~~~~~~~~~~~^
+        f"Connexion au serveur {self.host}:{self.port}"
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/opt/hostedtoolcache/Python/3.14.6/x64/lib/python3.14/logging/__init__.py", line 1520, in info
+    self._log(INFO, msg, args, **kwargs)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.6/x64/lib/python3.14/logging/__init__.py", line 1665, in _log
+    self.handle(record)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.6/x64/lib/python3.14/logging/__init__.py", line 1681, in handle
+    self.callHandlers(record)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.6/x64/lib/python3.14/logging/__init__.py", line 1737, in callHandlers
+    hdlr.handle(record)
+    ~~~~~~~~~~~^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.14.6/x64/lib/python3.14/logging/__init__.py", line 1027, in handle
+    self.emit(record)
+    ~~~~~~~~~^^^^^^^^
+  File "/home/runner/work/The-last-signal-/The-last-signal-/client_python/logger.py", line 56, in emit
+    except Exceptions:
+           ^^^^^^^^^^
+NameError: name 'Exceptions' is not defined. Did you mean: 'Exception'?
+
