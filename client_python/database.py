@@ -14,19 +14,20 @@ def get_connection():
     os.makedirs("database", exist_ok=True)
     print(DB_PATH.resolve())
     print(DB_PATH.exists())
-    if DB_PATH.exists():
-        print(DB_PATH.stat().st_size)
+    
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-    cursor.execute("SELECT COUNT(*) FROM logs")
-    print(cursor.fetchone())
-    cursor.execute("""
+    if DB_PATH.exists():
+        print(DB_PATH.stat().st_size)
+        cursor.execute("SELECT COUNT(*) FROM logs")
+        print(cursor.fetchone())
+        cursor.execute("""
           SELECT timestamp, level, message
            FROM logs
            ORDER BY id DESC
            LIMIT 10""")
-    for row in cursor.fetchall():
-        print(row)
+        for row in cursor.fetchall():
+            print(row)
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
     tables = cursor.fetchall()
     print(f"Nombre de tables : {len(tables)}")
