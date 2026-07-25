@@ -1,0 +1,21 @@
+name: Generate Vault Key
+
+on:
+  workflow_dispatch:
+
+jobs:
+  generate:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Generate key
+        run: |
+          python3 - <<EOF
+          from cryptography.fernet import Fernet
+
+          key = Fernet.generate_key()
+
+          print(key.decode())
+          EOF
