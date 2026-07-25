@@ -37,6 +37,28 @@ def init_database():
 
         )
     """)
+        cursor.execute("""
+    CREATE TABLE IF NOT EXISTS accounts (
+        account_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE,
+        password_hash TEXT
+    )
+    """)
+        cursor.execute("""
+    CREATE TABLE IF NOT EXISTS clients (
+        client_id INTEGER PRIMARY KEY AUTOINCREMENT,
+        account_id INTEGER,
+        current_session TEXT
+    )
+    """)
+        cursor.execute("""
+    CREATE TABLE IF NOT EXISTS sessions (
+        session_id TEXT PRIMARY KEY,
+        client_id INTEGER,
+        started_at TEXT,
+        ended_at TEXT
+    )
+    """)
 
     conn.commit()
 
