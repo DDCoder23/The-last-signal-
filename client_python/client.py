@@ -1,6 +1,5 @@
 import socket
 import traceback
-from .logger import logger
 from .packet import Packet
 
 
@@ -41,15 +40,7 @@ class Client:
             )
 
             self.connected = True
-            packet = self.receive_packet()
-
-            if packet is None:
-                raise RuntimeError("Impossible de recevoir le packet de session.")
-            if packet.packet_type.name != "SESSION":
-                raise RuntimeError("Premier paquet invalide.")
-            self.session_id = packet.payload.decode("utf-8")
-
-            logger.info(f"Session : {self.session_id}")
+        
 
             logger.info(
                 f"Connexion au serveur {self.host}:{self.port}"
