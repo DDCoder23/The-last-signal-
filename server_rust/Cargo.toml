@@ -8,3 +8,25 @@ uuid = { version = "1", features = ["v4"] }
 serde = { version = "1.0", features = ["derive"] }
 rand = "0.8" 
 serde_json = "1.0"
+aes-gcm = "0.10.1"
+pbkdf2 = { version = "0.12", features = ["simple"] }
+sha2 = "0.10"
+
+# Pour l'encodage/décodage Base64
+base64 = "0.21"
+
+# Pour la sérialisation/désérialisation JSON
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Pour la gestion des fichiers ZIP
+zip = "0.6"
+
+# Pour la gestion des dates (équivalent à `datetime` en Python)
+chrono = "0.4"
+
+# Pour la normalisation des chaînes (équivalent à `unicodedata.normalize`)
+unicode-normalization = "0.1"
+
+# Pour la création de fichiers temporaires
+tempfile = "3.3"
