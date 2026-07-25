@@ -327,7 +327,7 @@ jobs:
         shell: bash
         run: |
 
-          mkdir -p dashboard/security
+          mkdir -p dashboard
 
           HISTORY="dashboard/security/history.csv"
 
@@ -369,20 +369,7 @@ jobs:
 
           cat dashboard/security/history.csv >> "$DASH"
 
-      ##########################################################
-      # SQLite Database
-      ##########################################################
-
-      - name: Update security database
-        continue-on-error: true
-        shell: bash
-        run: |
-
-          if [ -f scripts/update_security_database.py ]; then
-            python scripts/update_security_database.py
-          else
-            echo "No security database script found." >> "$REPORT"
-          fi
+      
 
       ##########################################################
       # GitHub Summary
@@ -420,7 +407,6 @@ jobs:
           name: security-report
           path: |
             reports/**
-            dashboard/**
             database/**
 
       ##########################################################
