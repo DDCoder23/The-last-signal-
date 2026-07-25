@@ -2,4 +2,6 @@ saves/*
 save.txt
 .idea/**
 *.iml
-
+# Secrets
+security/master.key
+security/vault.enc
