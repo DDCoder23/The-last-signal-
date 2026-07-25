@@ -129,16 +129,38 @@ jobs:
         
 
     ##########################################################
-    # Stop server
-    ##########################################################
+# Stop server
+##########################################################
 
+    
     - name: Stop server
       if: always()
       run: |
+              if [ -f server_rust/server.pid ]; then
+              PID=$(cat server_rust/server.pid)
+              if ps -p "$PID" > /dev/null; then
+              echo "Stopping server (PID=$PID)..."
 
-        kill -SIGTERM $(cat server_rust/server.pid)||true
+              kill -SIGTERM "$PID"
 
-        sleep 3
+              # Attendre jusqu'à 15 secondes
+              for i in $(seq 1 15); do
+              if ! ps -p "$PID" > /dev/null; then
+              echo "Server stopped."
+              break
+              fi
+              sleep 1
+              done
+
+              # Toujours vivant ? On force.
+              if ps -p "$PID" > /dev/null; then
+              echo "Server did not stop gracefully, forcing shutdown..."
+              kill -SIGKILL "$PID"
+              sleep 2
+              fi
+              fi
+              fi
+              rm -f server_rust/server.pid
 
     ##########################################################
     # Upload log
@@ -185,73 +207,34 @@ jobs:
 # ========================================================
     - name: Commit databases and logs
       if: always()
-      run: |
+      run: | 
+             set -e
              git config --global user.name "github-actions"
              git config --global user.email "github-actions@github.com"
              git status
-
-             echo "=== Backup generated files ==="
-
-             mkdir -p /tmp/artifacts-backup
-             mkdir -p /tmp/artifacts-backup/database
-             mkdir -p /tmp/artifacts-backup/logs
-
-             cp -a database/. /tmp/artifacts-backup/database/ 2>/dev/null || true
-             cp -a logs/. /tmp/artifacts-backup/logs/ 2>/dev/null || true
-             echo "=== Backup content ==="
-             find /tmp/artifacts-backup -type f
-
-
-             git reset --hard
-             git clean -fd
-             echo "=== Checkout ci-database branch ==="
-
              git fetch origin
-
-             if git show-ref --verify --quiet refs/remotes/origin/ci-database; then
-
-             git checkout ci-database
-             git pull origin ci-database
-
+             rm -rf ../ci-database
+             if git ls-remote --exit-code --heads origin ci-database >/dev/null; then
+             git worktree add ../ci-database ci-database
              else
-
+             git worktree add --detach ../ci-database
+             cd ../ci-database
              git checkout --orphan ci-database
-             git rm -rf . || true
-
+             cd -
              fi
-
-
-             echo "=== Restore generated files ==="
-
-             mkdir -p database
-             mkdir -p logs
-
-             cp -a /tmp/artifacts-backup/database/. database/ 2>/dev/null || true
-             cp -a /tmp/artifacts-backup/logs/. logs/ 2>/dev/null || true
-             echo "=== Current artifacts ==="
-             file database/client_logs.db
-
-             find database logs -type f
-
-             echo "=== Detect changes ==="
-             git status
-
+             mkdir -p ../ci-database/database
+             mkdir -p ../ci-database/logs
+             cp -R database/. ../ci-database/database/ 2>/dev/null || true
+             cp -R logs/. ../ci-database/logs/ 2>/dev/null || true
+             cd ../ci-database
              git add -A database logs
-
-             git diff --cached --name-status
-
-
-             echo "=== Commit if needed ==="
-
-             if ! git diff --cached --quiet; then
-
-             git commit \
-             -m "Update CI artifacts #${GITHUB_RUN_NUMBER}"
-
-             git push origin ci-database
-
+             if git diff --cached --quiet; then
+             echo "No changes."
              else
-
-             echo "No database or log changes detected."
-
+             git commit -m "Update CI artifacts #${GITHUB_RUN_NUMBER}"
+             git push origin ci-database
              fi
+             cd -
+             git worktree remove ../ci-database --force
+
+             
