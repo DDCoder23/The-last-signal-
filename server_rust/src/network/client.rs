@@ -33,7 +33,7 @@ impl Client {
 
             pool,
 
-            session_id: Uuid::new_v4().to_string(),
+            session_id: Uuid::new_v4(),
 
             client_id: None,
 
