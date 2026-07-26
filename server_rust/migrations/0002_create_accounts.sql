@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 
     user_id UUID NOT NULL,
 
-    username TEXT NOT NULL UNIQUE,
+    account_name TEXT NOT NULL UNIQUE,
 
     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 
