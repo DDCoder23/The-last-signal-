@@ -1,5 +1,10 @@
-use std::io::{self, Read, Write};
-use std::net::TcpStream;
+use std::io;
+
+use tokio::io::{
+    AsyncReadExt,
+    AsyncWriteExt,
+};
+use tokio::net::TcpStream;
 
 pub const MAX_PACKET_SIZE: usize = 10 * 1024 * 1024;
 
@@ -11,7 +16,6 @@ pub enum PacketType {
     Login = 2,
     Chat = 3,
     Move = 4,
-    
 }
 
 impl PacketType {
@@ -34,7 +38,6 @@ pub struct Packet {
 }
 
 impl Packet {
-    
     pub fn new(
         packet_type: PacketType,
         payload: Vec<u8>,
@@ -47,7 +50,7 @@ impl Packet {
 }
 
 /// Envoie un paquet.
-pub fn send_packet(
+pub async fn send_packet(
     stream: &mut TcpStream,
     packet: &Packet,
 ) -> io::Result<()> {
@@ -63,38 +66,38 @@ pub fn send_packet(
 
     let size = (payload_size as u32).to_be_bytes();
 
-    stream.write_all(&size)?;
+    stream.write_all(&size).await?;
 
     let packet_type =
         (packet.packet_type as u16).to_be_bytes();
 
-    stream.write_all(&packet_type)?;
+    stream.write_all(&packet_type).await?;
 
-    stream.write_all(&packet.payload)?;
+    stream.write_all(&packet.payload).await?;
 
     Ok(())
 }
 
 /// Reçoit exactement `size` octets.
-fn recv_exact(
+async fn recv_exact(
     stream: &mut TcpStream,
     size: usize,
 ) -> io::Result<Vec<u8>> {
 
     let mut buffer = vec![0u8; size];
 
-    stream.read_exact(&mut buffer)?;
+    stream.read_exact(&mut buffer).await?;
 
     Ok(buffer)
 }
 
 /// Reçoit un paquet.
-pub fn receive_packet(
+pub async fn receive_packet(
     stream: &mut TcpStream,
 ) -> io::Result<Packet> {
 
     // Taille
-    let header = recv_exact(stream, 4)?;
+    let header = recv_exact(stream, 4).await?;
 
     let size = u32::from_be_bytes([
         header[0],
@@ -118,7 +121,7 @@ pub fn receive_packet(
     }
 
     // Corps du paquet
-    let data = recv_exact(stream, size)?;
+    let data = recv_exact(stream, size).await?;
 
     // Type
     let packet_type =
