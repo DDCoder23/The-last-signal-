@@ -28,6 +28,7 @@ impl Client {
         println!(
             "Client connecté : {} | Session : {}",
             self.stream.peer_addr().unwrap()
+            self.session_id
             
         );
         
