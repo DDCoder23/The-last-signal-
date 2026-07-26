@@ -27,7 +27,7 @@ impl Client {
     pub fn run(&mut self) {
         println!(
             "Client connecté : {} | Session : {}",
-            self.stream.peer_addr().unwrap()
+            self.stream.peer_addr().unwrap(),
             self.session_id
             
         );
