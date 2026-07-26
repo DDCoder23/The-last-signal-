@@ -1,7 +1,7 @@
 import os
 import json
 import base64
-
+import argparse
 from cryptography.fernet import Fernet
 
 
@@ -13,7 +13,10 @@ def create_key():
     """
     Crée une clé maître si elle n'existe pas.
     """
-
+    if os.getenv("VAULT_KEY"):
+        with open(KEY_FILE, "wb") as f:
+            f.write(os.getenv("VAULT_KEY").encode())
+        
     if not os.path.exists(KEY_FILE):
 
         key = Fernet.generate_key()
@@ -74,8 +77,35 @@ def add_secret(name, value):
     encrypt_vault(secrets)
 
 
+
 if __name__ == "__main__":
 
+    
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument(
+        "--name",
+        required=True,
+        help="Nom du secret"
+    )
+
+    parser.add_argument(
+        "--value",
+        required=True,
+        help="Valeur du secret"
+    )
+
+    args = parser.parse_args()
+
+    os.makedirs("security", exist_ok=True)
+
     create_key()
+
+    add_secret(
+        args.name,
+        args.value
+    )
+
+    print(f"Secret ajouté : {args.name}")
 
     
