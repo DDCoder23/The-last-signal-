@@ -13,11 +13,11 @@ pub struct Client {
 
     pool: PgPool,
 
-    session_id: String,
+    session_id: Uuid,
 
     client_id: Option<i64>,
 
-    account_id: Option<i64>,
+    account_id: Option<Uuid>,
 }
 
 impl Client {
@@ -70,8 +70,8 @@ impl Client {
                     );
 
                     let response =
-                        PacketHandler::handle(packet);
-
+                     PacketHandler::handle(self, packet)
+                     .await;
                     if let Err(e) =
                         send_packet(
                             &mut self.stream,
