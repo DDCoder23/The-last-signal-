@@ -44,7 +44,7 @@ impl Server {
 
                     println!("Client connecté : {}", address);
 
-                    let pool = self.database.pool.clone();
+                    let pool = self.database.pool().clone();
 
                     task::spawn(async move {
 
