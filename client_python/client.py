@@ -25,7 +25,6 @@ class Client:
     def connect(self):
 
         if self.connected:
-            logger.warning("Déjà connecté.")
             return
 
         self.socket = socket.socket(
@@ -40,15 +39,10 @@ class Client:
             )
 
             self.connected = True
-        
-
-            logger.info(
-                f"Connexion au serveur {self.host}:{self.port}"
-            )
 
         except Exception:
 
-            logger.error(
+            print(
                 f"Impossible de se connecter : {traceback.format_exc()}"
             )
 
@@ -60,19 +54,17 @@ class Client:
         """
 
         if not self.connected:
-            logger.warning("Client non connecté.")
             return
 
         try:
 
             self.socket.sendall(
                 packet.encode()
-            )
-            logger.info("Paquet envoyé avec succès") 
+            ) 
 
         except Exception:
 
-            logger.error(
+            print(
                 f"Erreur d'envoi : {traceback.format_exc()}"
             )
 
@@ -105,7 +97,7 @@ class Client:
 
         except Exception:
 
-            logger.error(
+            print(
                 f"Erreur de réception : {traceback.format_exc()}"
             )
 
@@ -128,9 +120,7 @@ class Client:
 
                 if not chunk:
 
-                    logger.warning(
-                        "Connexion fermée."
-                    )
+                    
 
                     self.connected = False
 
@@ -142,7 +132,7 @@ class Client:
 
         except Exception:
 
-            logger.error(
+            print(
                 f"Erreur : {traceback.format_exc()}"
             )
 
@@ -158,5 +148,4 @@ class Client:
 
         self.connected = False
 
-        logger.info("Déconnecté.")
         
