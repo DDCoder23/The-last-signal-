@@ -10,35 +10,26 @@ use network::server::Server;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
-    println!("==============================");
-    println!("The Last Signal Server");
-    println!("==============================");
-
-    // URL PostgreSQL
     let database_url =
-        std::env::var("DATABASE_URL")
-            .expect("DATABASE_URL non définie.");
+        std::env::var("DATABASE_URL")?;
 
-    // Connexion
     let database =
         DatabaseManager::new(&database_url)
             .await?;
 
-    // Vérifie la connexion
     database.ping().await?;
 
-    println!("Connexion PostgreSQL établie.");
+    migrations::run(&database.pool)
+        .await?;
 
-    // Applique les migrations
-    migrations::run(&database.pool).await?;
+    println!("Base PostgreSQL prête.");
 
-    println!("Base de données prête.");
-
-    // Démarrage du serveur
-    let server = Server::new(
-        "127.0.0.1:5000",
-        database,
-    );
+    let server =
+        Server::new(
+            "127.0.0.1:5000",
+            database,
+        )
+        .await;
 
     server.start().await;
 
