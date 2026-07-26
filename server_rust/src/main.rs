@@ -19,7 +19,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     database.ping().await?;
 
-    migrations::run(&database.pool)
+    migrations::run(&database.pool())
         .await?;
 
     println!("Base PostgreSQL prête.");
