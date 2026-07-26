@@ -10,7 +10,7 @@ pub struct PacketHandler;
 impl PacketHandler {
 
     pub async fn handle(
-        client: &mut Client,
+        _client: &mut Client,
         packet: Packet,
     ) -> Packet {
 
