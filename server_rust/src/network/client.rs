@@ -1,43 +1,59 @@
-use std::net::TcpStream;
+use tokio::net::TcpStream;
+use sqlx::PgPool;
 use uuid::Uuid;
 
-
+use crate::network::handler::PacketHandler;
 use crate::network::packet::{
     receive_packet,
     send_packet,
 };
-use crate::network::handler::PacketHandler;
+
 pub struct Client {
     stream: TcpStream,
+
+    pool: PgPool,
+
     session_id: String,
+
     client_id: Option<i64>,
 
     account_id: Option<i64>,
 }
+
 impl Client {
-    pub fn new(stream: TcpStream) -> Self {
+
+    pub fn new(
+        stream: TcpStream,
+        pool: PgPool,
+    ) -> Self {
+
         Self {
+
             stream,
+
+            pool,
+
             session_id: Uuid::new_v4().to_string(),
+
             client_id: None,
-            account_id: None
+
+            account_id: None,
+
         }
+
     }
 
-    pub fn run(&mut self) {
+    pub async fn run(&mut self) {
+
         println!(
             "Client connecté : {} | Session : {}",
             self.stream.peer_addr().unwrap(),
-            self.session_id
-            
+            self.session_id,
         );
-        
-
-       
 
         loop {
 
-            match receive_packet(&mut self.stream) {
+            match receive_packet(&mut self.stream).await {
 
                 Ok(packet) => {
 
@@ -47,20 +63,22 @@ impl Client {
                     );
 
                     println!(
-                      "Payload : {}",
-                      String::from_utf8_lossy(
-                      &packet.payload
-                      )
-                      );
+                        "Payload : {}",
+                        String::from_utf8_lossy(
+                            &packet.payload
+                        )
+                    );
 
+                    let response =
+                        PacketHandler::handle(packet);
 
-                       let response =
-                              PacketHandler::handle(packet);
-
-                    if let Err(e) = send_packet(
-                        &mut self.stream,
-                        &response,
-                    ) {
+                    if let Err(e) =
+                        send_packet(
+                            &mut self.stream,
+                            &response,
+                        )
+                        .await
+                    {
 
                         println!("Erreur : {}", e);
 
@@ -72,11 +90,11 @@ impl Client {
 
                 Err(e) => {
 
-                            println!(
-    "Déconnexion [{}] : {}",
-    self.session_id,
-    e
-);
+                    println!(
+                        "Déconnexion [{}] : {}",
+                        self.session_id,
+                        e
+                    );
 
                     break;
 
