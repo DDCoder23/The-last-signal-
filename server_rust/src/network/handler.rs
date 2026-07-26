@@ -2,14 +2,17 @@ use crate::network::packet::{
     Packet,
     PacketType,
 };
-
+use crate::network::client::Client;
 
 pub struct PacketHandler;
 
 
 impl PacketHandler {
 
-    pub fn handle(packet: Packet) -> Packet {
+    pub async fn handle(
+        client: &mut Client,
+        packet: Packet,
+    ) -> Packet {
 
         match packet.packet_type {
 
@@ -24,7 +27,6 @@ impl PacketHandler {
 
             }
 
-
             PacketType::Login => {
 
                 let username =
@@ -37,6 +39,11 @@ impl PacketHandler {
                     username
                 );
 
+                // Ici, plus tard :
+                // - rechercher le client
+                // - rechercher le compte
+                // - créer une session
+                // - logger la connexion
 
                 Packet::new(
                     PacketType::Login,
@@ -49,20 +56,14 @@ impl PacketHandler {
 
             }
 
-
             PacketType::Chat => {
-
-                let message =
-                    String::from_utf8_lossy(
-                        &packet.payload
-                    );
-
 
                 println!(
                     "Message : {}",
-                    message
+                    String::from_utf8_lossy(
+                        &packet.payload
+                    )
                 );
-
 
                 Packet::new(
                     PacketType::Chat,
@@ -71,11 +72,9 @@ impl PacketHandler {
 
             }
 
-
             PacketType::Move => {
 
                 println!("Déplacement reçu");
-
 
                 Packet::new(
                     PacketType::Move,
@@ -89,3 +88,6 @@ impl PacketHandler {
     }
 
 }
+
+
+        
