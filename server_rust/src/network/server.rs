@@ -1,51 +1,57 @@
-use std::net::TcpListener;
-use std::thread;
+use tokio::net::TcpListener;
+use tokio::task;
 
+use crate::database::database_manager::DatabaseManager;
 use crate::network::client::Client;
 
 pub struct Server {
-
     listener: TcpListener,
-
+    database: DatabaseManager,
 }
 
 impl Server {
+    pub async fn new(
+        address: &str,
+        database: DatabaseManager,
+    ) -> Self {
 
-    pub fn new(address: &str) -> Self {
-
-        let listener =
-            TcpListener::bind(address)
-                .expect("Impossible de démarrer le serveur.");
+        let listener = TcpListener::bind(address)
+            .await
+            .expect("Impossible de démarrer le serveur.");
 
         Self {
-
             listener,
-
+            database,
         }
-
     }
 
-    pub fn start(&self) {
+    pub async fn start(&self) {
 
+        println!("==================================");
         println!("The Last Signal Server");
+        println!("==================================");
 
         println!(
             "Listening on {}",
             self.listener.local_addr().unwrap()
         );
 
-        for stream in self.listener.incoming() {
+        loop {
 
-            match stream {
+            match self.listener.accept().await {
 
-                Ok(stream) => {
+                Ok((stream, address)) => {
 
-                    thread::spawn(move || {
+                    println!("Client connecté : {}", address);
+
+                    let pool = self.database.pool.clone();
+
+                    task::spawn(async move {
 
                         let mut client =
-                            Client::new(stream);
+                            Client::new(stream, pool);
 
-                        client.run();
+                        client.run().await;
 
                     });
 
@@ -53,7 +59,10 @@ impl Server {
 
                 Err(e) => {
 
-                    println!("{}", e);
+                    eprintln!(
+                        "Erreur d'acceptation : {}",
+                        e
+                    );
 
                 }
 
@@ -62,5 +71,4 @@ impl Server {
         }
 
     }
-
 }
