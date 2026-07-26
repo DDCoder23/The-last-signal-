@@ -1,12 +1,10 @@
-CREATE TABLE accounts (
+CREATE TABLE IF NOT EXISTS accounts (
 
     account_id BIGSERIAL PRIMARY KEY,
 
     user_id UUID NOT NULL,
 
     username TEXT NOT NULL UNIQUE,
-
-    password_hash TEXT NOT NULL,
 
     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
 
