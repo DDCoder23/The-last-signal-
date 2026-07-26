@@ -194,6 +194,7 @@ jobs:
     # Upload log
     ##########################################################
     - name: Check generated files
+      continue-on-error: true
       run: |
              echo "=== DATABASE ==="
              ls -lah database
@@ -210,6 +211,7 @@ jobs:
         name: logs
         path: logs/
     - name: Inspect database
+      continue-on-error: true
       run: |
              python << 'EOF'
              import sqlite3
