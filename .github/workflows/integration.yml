@@ -120,6 +120,8 @@ jobs:
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
     - name: Check PostgreSQL
+      env:
+          PGPASSWORD: postgres
       run: |
              sudo apt-get update
              sudo apt-get install -y postgresql-client
@@ -127,8 +129,7 @@ jobs:
              -h localhost \
              -p 5432 \
              -U postgres
-             env:
-                PGPASSWORD: postgres
+             
 
     ##########################################################
     # Build server
