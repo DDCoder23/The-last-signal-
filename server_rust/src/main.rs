@@ -7,7 +7,7 @@ use database::{
 };
 use network::server::Server;
 use utils::logger::logger::Logger;
-Logger::init();
+let _guard = Logger::init();
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
