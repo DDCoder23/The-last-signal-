@@ -2,6 +2,8 @@ use flate2::{
     write::GzEncoder,
     Compression,
 };
+use log::info;
+
 
 use std::{
     fs::{self, File},
@@ -45,7 +47,7 @@ impl LogCompressor {
                 continue;
             }
 
-            println!(
+            info!(
                 "[LOGGER] Compression : {}",
                 file.display()
             );
@@ -105,7 +107,7 @@ impl LogCompressor {
         let mut encoder =
             GzEncoder::new(
                 output_file,
-                Compression::best(),
+                Compression::default(),
             );
 
         let mut reader =
