@@ -16,6 +16,9 @@ base64 = "0.21"
 
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = ["fmt"] }
+tracing-appender = "0.2"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
 
 
 # Pour la gestion des fichiers ZIP
