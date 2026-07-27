@@ -37,7 +37,9 @@ jobs:
                        --health-interval=10s
                        --health-timeout=5s
                        --health-retries=5
-
+    env:
+      DATABASE_URL: postgres://postgres:postgres@localhost:5432/the_last_signal
+      
     timeout-minutes: 20
 
     steps:
