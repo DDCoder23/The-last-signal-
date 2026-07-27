@@ -51,7 +51,7 @@ impl Encryption {
     pub fn derive_key(
         password: &str,
         salt: &SaltString,
-    ) -> SaveResult<[u8; KEY_SIZE]> {
+    ) -> SaveResult<[u8; AES_KEY_SIZE]> {
 
         let mut key = [0u8; AES_KEY_SIZE];
 
