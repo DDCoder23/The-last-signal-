@@ -15,9 +15,11 @@ sha2 = "0.10"
 base64 = "0.21"
 
 tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = ["fmt"] }
-tracing-appender = "0.2"
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+tracing-subscriber = { version = "0.3", features = [
+    "fmt",
+    "env-filter"
+] }
+
 log = "0.4"
 flexi_logger = "0.29"
 flate2 = "1"
