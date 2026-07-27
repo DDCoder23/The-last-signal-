@@ -31,7 +31,7 @@ use crate::utils::save::errors::{
     SaveError,
     SaveResult,
 };
-use crate::utils::save::errors::{
+use crate::utils::save::config::{
     AES_KEY_SIZE,
     PBKDF2_ITERATIONS,
 };
