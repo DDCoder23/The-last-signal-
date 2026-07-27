@@ -31,9 +31,11 @@ use crate::utils::save::errors::{
     SaveError,
     SaveResult,
 };
+use crate::utils::save::errors::{
+    AES_KEY_SIZE,
+    PBKDF2_ITERATIONS,
+};
 
-const KEY_SIZE: usize = 32;
-const PBKDF2_ITERATIONS: u32 = 310_000;
 
 pub struct Encryption;
 
@@ -51,7 +53,7 @@ impl Encryption {
         salt: &SaltString,
     ) -> SaveResult<[u8; KEY_SIZE]> {
 
-        let mut key = [0u8; KEY_SIZE];
+        let mut key = [0u8; AES_KEY_SIZE];
 
         pbkdf2::pbkdf2_hmac::<Sha256>(
             password.as_bytes(),
@@ -65,7 +67,7 @@ impl Encryption {
 
     /// Chiffre des données.
     pub fn encrypt(
-        key: &[u8; KEY_SIZE],
+        key: &[u8; AES_KEY_SIZE],
         data: &[u8],
     ) -> SaveResult<(Vec<u8>, [u8; 12])> {
 
@@ -89,7 +91,7 @@ impl Encryption {
 
     /// Déchiffre des données.
     pub fn decrypt(
-        key: &[u8; KEY_SIZE],
+        key: &[u8; AES_KEY_SIZE],
         nonce: &[u8; 12],
         data: &[u8],
     ) -> SaveResult<Vec<u8>> {
