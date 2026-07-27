@@ -19,7 +19,7 @@ tracing-subscriber = { version = "0.3", features = [
     "fmt",
     "env-filter"
 ] }
-
+hex = "0.4"
 log = "0.4"
 flexi_logger = "0.29"
 flate2 = "1"
