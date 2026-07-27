@@ -4,6 +4,8 @@ use tracing_subscriber::{
     util::SubscriberInitExt,
     EnvFilter,
 };
+use crate::logger::compressor::LogCompressor;
+
 
 use crate::logger::file::create_file_appender;
 
