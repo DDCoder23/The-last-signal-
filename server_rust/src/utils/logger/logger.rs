@@ -1,17 +1,42 @@
-use tracing_subscriber::{fmt, EnvFilter};
+use tracing_subscriber::{
+    fmt,
+    layer::SubscriberExt,
+    util::SubscriberInitExt,
+    EnvFilter,
+};
+
+use crate::logger::file::create_file_appender;
 
 pub struct Logger;
 
 impl Logger {
-    pub fn init() {
-        fmt()
-            .with_env_filter(
+    pub fn init() -> tracing_appender::non_blocking::WorkerGuard {
+
+        let (file_writer, guard) =
+            create_file_appender();
+
+        tracing_subscriber::registry()
+
+            .with(
                 EnvFilter::from_default_env()
+                    .add_directive(
+                        tracing::Level::INFO.into()
+                    ),
             )
-            .with_target(true)
-            .with_thread_ids(true)
-            .with_file(true)
-            .with_line_number(true)
+
+            .with(
+                fmt::layer()
+                    .with_writer(std::io::stdout),
+            )
+
+            .with(
+                fmt::layer()
+                    .with_writer(file_writer)
+                    .with_ansi(false),
+            )
+
             .init();
+
+        guard
     }
 }
