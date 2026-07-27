@@ -5,12 +5,18 @@ use database::{
     database_manager::DatabaseManager,
     migrations,
 };
+use log::{
+    info,
+    warn,
+    error,
+    debug,
+};
 use network::server::Server;
 use utils::logger::logger::Logger;
-let _guard = Logger::init();
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    
+    let _guard = Logger::init();
     let database_url =
         std::env::var("DATABASE_URL")?;
 
@@ -23,7 +29,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     migrations::run(&database.pool())
         .await?;
 
-    println!("Base PostgreSQL prête.");
+    info!("Base PostgreSQL prête.");
 
     let server =
         Server::new(
