@@ -20,7 +20,8 @@ tracing-appender = "0.2"
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 log = "0.4"
 flexi_logger = "0.29"
-
+flate2 = "1"
+walkdir = "2"
 
 # Pour la gestion des fichiers ZIP
 zip = "0.6"
