@@ -12,11 +12,11 @@ use log::{
     debug,
 };
 use network::server::Server;
-use utils::logger::logger::Logger;
+use utils::logger::logger::ServerLogger;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let _guard = Logger::init();
+    let _guard = ServerLogger::init();
     let database_url =
         std::env::var("DATABASE_URL")?;
 
