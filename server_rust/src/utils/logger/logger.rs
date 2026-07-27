@@ -7,7 +7,7 @@ use flexi_logger::{
     Naming,
 };
 
-use crate::logger::compressor::LogCompressor;
+use crate::utils::logger::compressor::LogCompressor;
 
 pub struct ServerLogger;
 
