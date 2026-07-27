@@ -1,44 +1,54 @@
-use tracing_subscriber::{
-    fmt,
-    layer::SubscriberExt,
-    util::SubscriberInitExt,
-    EnvFilter,
+use flexi_logger::{
+    Cleanup,
+    Criterion,
+    Duplicate,
+    FileSpec,
+    Logger,
+    Naming,
 };
+
 use crate::logger::compressor::LogCompressor;
 
+pub struct ServerLogger;
 
-use crate::logger::file::create_file_appender;
+impl ServerLogger {
+    pub fn init() {
 
-pub struct Logger;
+        Logger::try_with_str("info")
+            .unwrap()
 
-impl Logger {
-    pub fn init() -> tracing_appender::non_blocking::WorkerGuard {
+            .duplicate_to_stdout(Duplicate::All)
 
-        let (file_writer, guard) =
-            create_file_appender();
-
-        tracing_subscriber::registry()
-
-            .with(
-                EnvFilter::from_default_env()
-                    .add_directive(
-                        tracing::Level::INFO.into()
-                    ),
+            .log_to_file(
+                FileSpec::default()
+                    .directory("logs")
+                    .basename("the_last_signal"),
             )
 
-            .with(
-                fmt::layer()
-                    .with_writer(std::io::stdout),
+            .rotate(
+                Criterion::Size(10_000_000),
+                Naming::Numbers,
+                Cleanup::KeepLogFiles(11),
             )
 
-            .with(
-                fmt::layer()
-                    .with_writer(file_writer)
-                    .with_ansi(false),
+            .start()
+            .unwrap();
+
+        // Premier nettoyage au démarrage
+        Self::compress();
+    }
+
+    pub fn compress() {
+        if let Err(e) =
+            LogCompressor::compress_old_logs(
+                "logs",
+                10,
             )
-
-            .init();
-
-        guard
+        {
+            eprintln!(
+                "Compression impossible : {}",
+                e
+            );
+        }
     }
 }
