@@ -95,11 +95,29 @@ jobs:
           --output-format json \
           > reports/project/cspell.txt 2>&1
 
-      
+      # =========================
+      # Links
+      # =========================
 
-      
+      - name: 🔗 Check links
+        continue-on-error: true
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: |
+            **/*.md
 
-      
+      # =========================
+      # Python documentation
+      # =========================
+
+      - name: 🐍 Generate Python documentation report
+        continue-on-error: true
+        run: |
+          mkdir -p reports/project
+
+          interrogate . \
+            -o markdown \
+            -f reports/project/python-docs.md
 
       # =========================
       # Rust documentation
@@ -191,7 +209,17 @@ jobs:
             cat reports/project/score.md
           } >> $GITHUB_STEP_SUMMARY
           python -m scripts.generate_problems_md
-              
+                # =========================
+      # Dashboard
+      # =========================
+
+      - name: 📈 Generate dashboard
+        if: always()
+        run: |
+
+          mkdir -p dashboard
+
+          python -m scripts.generate_dashboard
 
       # =========================
       # Upload reports
@@ -205,7 +233,7 @@ jobs:
           retention-days: 30
           path: |
             reports/**
-            
+            dashboard/**
 
       # =========================
       # Commit reports
