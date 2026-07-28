@@ -5,12 +5,8 @@ use database::{
     database_manager::DatabaseManager,
     migrations,
 };
-use log::{
-    info,
-    warn,
-    error,
-    debug,
-};
+use log::info;
+
 use network::server::Server;
 use utils::logger::logger::ServerLogger;
 
