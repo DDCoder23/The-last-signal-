@@ -32,7 +32,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "127.0.0.1:5000",
             database,
         )
-        .await;
+        .await?;
+
 
     server.start().await;
 
