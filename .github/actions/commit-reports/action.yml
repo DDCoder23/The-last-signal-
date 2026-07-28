@@ -66,8 +66,6 @@ runs:
             echo "Nouvelle tentative..."
             sleep 2
             done
-
-    cd -
-    git worktree remove /tmp/ci-worktree --force
-
-    exit 1
+            cd -
+            git worktree remove /tmp/ci-worktree --force
+            exit 1
