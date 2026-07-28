@@ -15,6 +15,17 @@ impl PacketHandler {
     ) -> Packet {
 
         match packet.packet_type {
+            PacketType::Log => {
+        let log: ClientLog = serde_json::from_slice(&packet.payload)?;
+
+        match log.level.as_str() {
+            "ERROR" => error!("[CLIENT] [{}] {}", log.module, log.message),
+            "WARN"  => warn!("[CLIENT] [{}] {}", log.module, log.message),
+            "INFO"  => info!("[CLIENT] [{}] {}", log.module, log.message),
+            "DEBUG" => debug!("[CLIENT] [{}] {}", log.module, log.message),
+            _ => info!("[CLIENT] [{}] {}", log.module, log.message),
+        }
+            }
 
             PacketType::Ping => {
 
