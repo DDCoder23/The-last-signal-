@@ -1,7 +1,7 @@
 import socket
 import traceback
 from .packet import Packet
-
+from .packets.log import LogPacket
 
 class Client:
     """
