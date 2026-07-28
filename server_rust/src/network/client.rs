@@ -3,6 +3,7 @@ use sqlx::PgPool;
 use uuid::Uuid;
 use log::{
     info,
+    debug,
     error,};
 use crate::network::handler::PacketHandler;
 use crate::network::packet::{
@@ -59,12 +60,12 @@ impl Client {
 
                 Ok(packet) => {
 
-                    info!(
+                    debug!(
                         "Type : {:?}",
                         packet.packet_type
                     );
 
-                    info!(
+                    debug!(
                         "Payload : {}",
                         String::from_utf8_lossy(
                             &packet.payload
