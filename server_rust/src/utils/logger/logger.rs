@@ -25,7 +25,7 @@ impl ServerLogger {
 
             .log_to_file(
                 FileSpec::default()
-                    .directory("log_dir")
+                    .directory(log_dir)
                     .basename("the_last_signal"),
             )
 
