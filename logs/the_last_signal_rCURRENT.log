@@ -8,3 +8,10 @@
 [2026-07-28 11:48:21] [INFO] Payload : Momo dirige le jeu
 [2026-07-28 11:48:21] [ERROR] Déconnexion [c8457271-3658-42b4-b25d-da8ad66325ac] : early eof
 [2026-07-28 11:48:21] [ERROR] Déconnexion [c0f849f6-9ec4-4e86-a8a1-6feb3d043b47] : early eof
+[2026-07-28 13:37:18] [INFO] Base PostgreSQL prête.
+[2026-07-28 13:37:23] [INFO] Client connecté : 127.0.0.1:57610
+[2026-07-28 13:37:23] [INFO] Client connecté : 127.0.0.1:57610 | Session : 5839ea6c-81be-4a19-bb6d-bb8d48430e6b
+[2026-07-28 13:37:24] [INFO] Client connecté : 127.0.0.1:57616
+[2026-07-28 13:37:24] [INFO] Client connecté : 127.0.0.1:57616 | Session : 9e36fd61-3295-4886-87e0-cf64f94af48c
+[2026-07-28 13:37:24] [ERROR] Déconnexion [5839ea6c-81be-4a19-bb6d-bb8d48430e6b] : early eof
+[2026-07-28 13:37:24] [ERROR] Déconnexion [9e36fd61-3295-4886-87e0-cf64f94af48c] : early eof
