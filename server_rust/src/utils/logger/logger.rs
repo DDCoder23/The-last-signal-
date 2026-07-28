@@ -21,9 +21,11 @@ fn log_format(
 ) -> std::io::Result<()> {
     write!(
         w,
-        "[{}] [{}] {}",
+        "[{}] [{}] [{}:{}] {}",
         now.format("%Y-%m-%d %H:%M:%S"),
         record.level(),
+        record.file().unwrap_or("unknown"),
+        record.line().unwrap_or(0),
         record.args()
     )
 }
@@ -35,7 +37,7 @@ impl ServerLogger {
 
         let log_dir = PathBuf::from("../logs");
 
-        Logger::try_with_str("info")
+        Logger::try_with_str("trace")
             .unwrap()
 
             .duplicate_to_stdout(Duplicate::All)
