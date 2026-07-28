@@ -1,7 +1,9 @@
 use tokio::net::TcpStream;
 use sqlx::PgPool;
 use uuid::Uuid;
-
+use log::{
+    info,
+    error,};
 use crate::network::handler::PacketHandler;
 use crate::network::packet::{
     receive_packet,
@@ -45,7 +47,7 @@ impl Client {
 
     pub async fn run(&mut self) {
 
-        println!(
+        info!(
             "Client connecté : {} | Session : {}",
             self.stream.peer_addr().unwrap(),
             self.session_id,
@@ -57,12 +59,12 @@ impl Client {
 
                 Ok(packet) => {
 
-                    println!(
+                    info!(
                         "Type : {:?}",
                         packet.packet_type
                     );
 
-                    println!(
+                    info!(
                         "Payload : {}",
                         String::from_utf8_lossy(
                             &packet.payload
@@ -80,7 +82,7 @@ impl Client {
                         .await
                     {
 
-                        println!("Erreur : {}", e);
+                        error!("Erreur : {}", e);
 
                         break;
 
@@ -90,7 +92,7 @@ impl Client {
 
                 Err(e) => {
 
-                    println!(
+                    error!(
                         "Déconnexion [{}] : {}",
                         self.session_id,
                         e
