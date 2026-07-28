@@ -6,6 +6,8 @@ use tokio::io::{
     AsyncWriteExt,
 };
 use tokio::net::TcpStream;
+use serde::{Deserialize, Serialize};
+
 
 pub const MAX_PACKET_SIZE: usize = 10 * 1024 * 1024;
 
@@ -20,6 +22,25 @@ pub enum PacketType {
     Log = 5,
 }
 
+
+#[derive(Debug, Serialize, Deserialize)]
+pub enum LogLevel {
+    Trace,
+    Debug,
+    Info,
+    Warn,
+    Error,
+}
+
+
+#[derive(Debug, Serialize, Deserialize)]
+pub struct ClientLog {
+    pub level: LogLevel,
+    pub module: String,
+    pub file: String,
+    pub line: u32,
+    pub message: String,
+}
 impl PacketType {
     pub fn from_u16(value: u16) -> Option<Self> {
         match value {
