@@ -27,6 +27,7 @@ runs:
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
+        git status
 
     - shell: bash
       run: |
@@ -61,18 +62,18 @@ runs:
 
         mkdir -p reports/${{ inputs.report-type }}
         mkdir -p database/${{ inputs.report-type }}
-        mkdir -p dashboard
+        mkdir -p dashboard/${{ inputs.report-type }}
 
       
         if [ -d /tmp/ci-backup/reports/${{ inputs.report-type }} ]; then
           cp -r /tmp/ci-backup/reports/${{ inputs.report-type }}/. reports/${{ inputs.report-type }}/
         fi
 
-        if [ -d /tmp/ci-backup/database ]; then
-          cp -r /tmp/ci-backup/database/. database/
+        if [ -d /tmp/ci-backup/database/${{ inputs.report-type }} ]; then
+          cp -r /tmp/ci-backup/database/${{ inputs.report-type }}/. database/${{ inputs.report-type }}/
         fi
 
-        if [ -d /tmp/ci-backup/dashboard ]; then
+        if [ -d /tmp/ci-backup/dashboard${{ inputs.report-type }} ]; then
           cp -r /tmp/ci-backup/dashboard/${{ inputs.report-type }}/. dashboard/${{ inputs.report-type }}/
         fi
 
