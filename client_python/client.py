@@ -2,7 +2,7 @@ import socket
 import traceback
 from .packet import Packet
 from .packets.log import LogPacket
-
+from logs import log
 class Client:
     """
     Client réseau de The Last Signal.
@@ -42,7 +42,7 @@ class Client:
 
         except Exception:
 
-            print(
+            log(self,"ERROR",
                 f"Impossible de se connecter : {traceback.format_exc()}"
             )
 
