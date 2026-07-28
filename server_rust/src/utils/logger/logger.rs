@@ -1,15 +1,32 @@
+
 use flexi_logger::{
     Cleanup,
     Criterion,
+    DeferredNow,
     Duplicate,
     FileSpec,
     Logger,
     Naming,
+    Record,
 };
+use std::io::Write;
+
 
 use std::path::PathBuf;
 use crate::utils::logger::compressor::LogCompressor;
-
+fn log_format(
+    w: &mut dyn Write,
+    now: &mut DeferredNow,
+    record: &Record,
+) -> std::io::Result<()> {
+    write!(
+        w,
+        "[{}] [{}] {}",
+        now.format("%Y-%m-%d %H:%M:%S"),
+        record.level(),
+        record.args()
+    )
+}
 pub struct ServerLogger;
 
 impl ServerLogger {
@@ -28,11 +45,12 @@ impl ServerLogger {
                     .directory(log_dir)
                     .basename("the_last_signal"),
             )
+            .format(log_format)
 
             .rotate(
                 Criterion::Size(10_000_000),
                 Naming::Numbers,
-                Cleanup::KeepLogFiles(11),
+                Cleanup::KeepLogFiles(10000000000),
             )
             .append()
 
