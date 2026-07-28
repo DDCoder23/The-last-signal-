@@ -1,6 +1,6 @@
 use crate::network::packet::{
     Packet,
-    PacketType,
+    PacketType,LogLevel,ClientLog,
 };
 use crate::network::client::Client;
 use log::debug;
@@ -16,15 +16,52 @@ impl PacketHandler {
 
         match packet.packet_type {
             PacketType::Log => {
-        let log: ClientLog = serde_json::from_slice(&packet.payload)?;
 
-        match log.level.as_str() {
-            "ERROR" => error!("[CLIENT] [{}] {}", log.module, log.message),
-            "WARN"  => warn!("[CLIENT] [{}] {}", log.module, log.message),
-            "INFO"  => info!("[CLIENT] [{}] {}", log.module, log.message),
-            "DEBUG" => debug!("[CLIENT] [{}] {}", log.module, log.message),
-            _ => info!("[CLIENT] [{}] {}", log.module, log.message),
-        }
+    let log: ClientLog =
+        serde_json::from_slice(&packet.payload)?;
+
+    match log.level {
+
+        LogLevel::Trace =>
+            trace!(
+                "[CLIENT] [{}:{}] {}",
+                log.file,
+                log.line,
+                log.message
+            ),
+
+        LogLevel::Debug =>
+            debug!(
+                "[CLIENT] [{}:{}] {}",
+                log.file,
+                log.line,
+                log.message
+            ),
+
+        LogLevel::Info =>
+            info!(
+                "[CLIENT] [{}:{}] {}",
+                log.file,
+                log.line,
+                log.message
+            ),
+
+        LogLevel::Warn =>
+            warn!(
+                "[CLIENT] [{}:{}] {}",
+                log.file,
+                log.line,
+                log.message
+            ),
+
+        LogLevel::Error =>
+            error!(
+                "[CLIENT] [{}:{}] {}",
+                log.file,
+                log.line,
+                log.message
+            ),
+    }
             }
 
             PacketType::Ping => {
