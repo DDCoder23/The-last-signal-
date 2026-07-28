@@ -7,8 +7,11 @@ use flexi_logger::{
     Naming,
 };
 
-use crate::utils::logger::compressor::LogCompressor;
 
+use crate::utils::logger::compressor::LogCompressor;
+use std::path::PathBuf;
+
+let log_dir = PathBuf::from("../logs");
 pub struct ServerLogger;
 
 impl ServerLogger {
@@ -21,7 +24,7 @@ impl ServerLogger {
 
             .log_to_file(
                 FileSpec::default()
-                    .directory("logs")
+                    .directory("log_dir")
                     .basename("the_last_signal"),
             )
 
