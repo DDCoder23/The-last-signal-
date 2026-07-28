@@ -17,16 +17,16 @@ impl Server {
     pub async fn new(
         address: &str,
         database: DatabaseManager,
-    ) -> Self {
+    ) -> std::io::Result<Self>  {
 
         let listener = TcpListener::bind(address)
     .await
     .inspect_err(|e| error!("Impossible de démarrer le serveur : {}", e))?;
 
-        Self {
-            listener,
-            database,
-        }
+        Ok(Self {
+        listener,
+        database,
+    })
     }
 
     pub async fn start(&self) {
