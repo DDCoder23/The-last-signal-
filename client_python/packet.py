@@ -8,6 +8,7 @@ class PacketType(IntEnum):
     LOGIN = 2
     CHAT = 3
     MOVE = 4
+    LOG = 5
 
 
 class Packet:
