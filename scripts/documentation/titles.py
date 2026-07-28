@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 from .problem import add_problem
-from scripts.utils.file_chercheur import iter_files
+from utils.file_chercheur import iter_files
 MAX_SCORE = 15
 
 SCORES = {
