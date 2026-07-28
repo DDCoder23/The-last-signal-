@@ -1,6 +1,7 @@
 from pathlib import Path
 import re
 from .problem import add_problem
+from ..utils.file_chercheur import iter_files
 MAX_SCORE = 15
 
 SCORES = {
@@ -15,7 +16,7 @@ SCORES = {
 
 def check_titles():
 
-    files = list(Path(".").rglob("*.md"))
+    files = list(iter_files("*.md"))
 
     if not files:
         return {
