@@ -38,12 +38,12 @@ runs:
             else
             git worktree add -b ${{ inputs.branch }} /tmp/ci-worktree
             fi
-            mkdir -p /tmp/ci-worktree/reports
-            mkdir -p /tmp/ci-worktree/database
-            mkdir -p /tmp/ci-worktree/dashboard
-            cp -r reports/. /tmp/ci-worktree/reports/ 2>/dev/null || true
-            cp -r database/. /tmp/ci-worktree/database/ 2>/dev/null || true
-            cp -r dashboard/. /tmp/ci-worktree/dashboard/ 2>/dev/null || true
+            mkdir -p "/tmp/ci-worktree/reports/${{ inputs.report-type }}"
+            mkdir -p "/tmp/ci-worktree/database"
+            mkdir -p "/tmp/ci-worktree/dashboard/${{ inputs.report-type }}"
+            cp -r reports/. "/tmp/ci-worktree/reports/${{ inputs.report-type }}/" 2>/dev/null || true
+            cp -r database/. "/tmp/ci-worktree/database/" 2>/dev/null || true
+            cp -r dashboard/. "/tmp/ci-worktree/dashboard/${{ inputs.report-type }}/" 2>/dev/null || true
             cd /tmp/ci-worktree
             git add .
             if git diff --cached --quiet; then
