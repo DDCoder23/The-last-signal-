@@ -3,7 +3,7 @@ use crate::network::packet::{
     PacketType,
 };
 use crate::network::client::Client;
-
+use log::debug;
 pub struct PacketHandler;
 
 
@@ -18,7 +18,7 @@ impl PacketHandler {
 
             PacketType::Ping => {
 
-                println!("Ping reçu");
+                debug!("Ping reçu");
 
                 Packet::new(
                     PacketType::Ping,
@@ -34,7 +34,7 @@ impl PacketHandler {
                         &packet.payload
                     );
 
-                println!(
+                debug!(
                     "Connexion joueur : {}",
                     username
                 );
@@ -58,7 +58,7 @@ impl PacketHandler {
 
             PacketType::Chat => {
 
-                println!(
+                debug!(
                     "Message : {}",
                     String::from_utf8_lossy(
                         &packet.payload
@@ -74,7 +74,7 @@ impl PacketHandler {
 
             PacketType::Move => {
 
-                println!("Déplacement reçu");
+                debug!("Déplacement reçu");
 
                 Packet::new(
                     PacketType::Move,
