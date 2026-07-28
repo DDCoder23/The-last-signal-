@@ -7,15 +7,16 @@ use flexi_logger::{
     Naming,
 };
 
-
-use crate::utils::logger::compressor::LogCompressor;
 use std::path::PathBuf;
+use crate::utils::logger::compressor::LogCompressor;
 
-const log_dir = PathBuf::from("../logs");
 pub struct ServerLogger;
 
 impl ServerLogger {
     pub fn init() {
+        
+
+        let log_dir = PathBuf::from("../logs");
 
         Logger::try_with_str("info")
             .unwrap()
