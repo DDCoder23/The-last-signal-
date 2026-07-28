@@ -1,6 +1,10 @@
 use tokio::net::TcpListener;
 use tokio::task;
-
+use log::{
+    info,
+    error,
+    debug,
+};
 use crate::database::database_manager::DatabaseManager;
 use crate::network::client::Client;
 
@@ -17,7 +21,8 @@ impl Server {
 
         let listener = TcpListener::bind(address)
             .await
-            .expect("Impossible de démarrer le serveur.");
+            .expect(error!(Impossible de démarrer le serveur.));
+             
 
         Self {
             listener,
@@ -27,11 +32,11 @@ impl Server {
 
     pub async fn start(&self) {
 
-        println!("==================================");
-        println!("The Last Signal Server");
-        println!("==================================");
+        debug!("==================================");
+        debug!("The Last Signal Server");
+        debug!("==================================");
 
-        println!(
+        debug!(
             "Listening on {}",
             self.listener.local_addr().unwrap()
         );
@@ -42,7 +47,7 @@ impl Server {
 
                 Ok((stream, address)) => {
 
-                    println!("Client connecté : {}", address);
+                    info!("Client connecté : {}", address);
 
                     let pool = self.database.pool().clone();
 
@@ -59,7 +64,7 @@ impl Server {
 
                 Err(e) => {
 
-                    eprintln!(
+                error!(
                         "Erreur d'acceptation : {}",
                         e
                     );
