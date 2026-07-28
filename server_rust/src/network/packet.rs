@@ -1,3 +1,4 @@
+use log::error;
 use std::io;
 
 use tokio::io::{
@@ -58,6 +59,7 @@ pub async fn send_packet(
     let payload_size = 2 + packet.payload.len();
 
     if payload_size > MAX_PACKET_SIZE {
+        error!(paquet trop volumineux);
         return Err(io::Error::new(
             io::ErrorKind::InvalidData,
             "Paquet trop volumineux.",
@@ -107,6 +109,7 @@ pub async fn receive_packet(
     ]) as usize;
 
     if size < 2 {
+        error!(paquet invalide);
         return Err(io::Error::new(
             io::ErrorKind::InvalidData,
             "Paquet invalide.",
@@ -114,6 +117,7 @@ pub async fn receive_packet(
     }
 
     if size > MAX_PACKET_SIZE {
+        error!(paquet trop volumineux);
         return Err(io::Error::new(
             io::ErrorKind::InvalidData,
             "Paquet trop volumineux.",
@@ -130,6 +134,7 @@ pub async fn receive_packet(
     let packet_type =
         PacketType::from_u16(packet_type)
             .ok_or_else(|| {
+                error!(Type de paquet inconnu)
                 io::Error::new(
                     io::ErrorKind::InvalidData,
                     "Type de paquet inconnu.",
