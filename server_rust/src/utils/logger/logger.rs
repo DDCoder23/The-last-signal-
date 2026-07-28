@@ -12,19 +12,27 @@ use flexi_logger::{
 use std::io::Write;
 
 
-use std::path::PathBuf;
+use std::path::{PathBuf,Path};
 use crate::utils::logger::compressor::LogCompressor;
+
+
 fn log_format(
     w: &mut dyn Write,
     now: &mut DeferredNow,
     record: &Record,
 ) -> std::io::Result<()> {
+    let file = record
+        .file()
+        .and_then(|f| Path::new(f).file_name())
+        .and_then(|f| f.to_str())
+        .unwrap_or("unknown");
+
     write!(
         w,
         "[{}] [{}] [{}:{}] {}",
         now.format("%Y-%m-%d %H:%M:%S"),
         record.level(),
-        record.file().unwrap_or("unknown"),
+        file,
         record.line().unwrap_or(0),
         record.args()
     )
