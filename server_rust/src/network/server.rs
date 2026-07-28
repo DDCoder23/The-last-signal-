@@ -19,10 +19,9 @@ impl Server {
         database: DatabaseManager,
     ) -> Self {
 
-        let listener = TcpListener::bind(address)
-            .await
-            .expect(error!(Impossible de démarrer le serveur.));
-             
+        let listener = TcpListener::bind(addr)
+    .await
+    .inspect_err(|e| error!("Impossible de démarrer le serveur : {}", e))?;
 
         Self {
             listener,
