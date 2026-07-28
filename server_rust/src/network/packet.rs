@@ -17,6 +17,7 @@ pub enum PacketType {
     Login = 2,
     Chat = 3,
     Move = 4,
+    Log = 5,
 }
 
 impl PacketType {
@@ -26,6 +27,7 @@ impl PacketType {
             2 => Some(PacketType::Login),
             3 => Some(PacketType::Chat),
             4 => Some(PacketType::Move),
+            5 => Some(PacketType::Log),
             _ => None,
         }
     }
