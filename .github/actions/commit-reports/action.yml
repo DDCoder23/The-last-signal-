@@ -31,78 +31,43 @@ runs:
 
     - shell: bash
       run: |
-        mkdir -p /tmp/ci-backup
+            git fetch origin
+            if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
+            then
+            git worktree add /tmp/ci-worktree origin/${{ inputs.branch }}
+            else
+            git worktree add -b ${{ inputs.branch }} /tmp/ci-worktree
+            fi
+            mkdir -p /tmp/ci-worktree/reports
+            mkdir -p /tmp/ci-worktree/database
+            mkdir -p /tmp/ci-worktree/dashboard
+            cp -r reports/. /tmp/ci-worktree/reports/ 2>/dev/null || true
+            cp -r database/. /tmp/ci-worktree/database/ 2>/dev/null || true
+            cp -r dashboard/. /tmp/ci-worktree/dashboard/ 2>/dev/null || true
+            cd /tmp/ci-worktree
+            git add .
+            if git diff --cached --quiet; then
+            echo "No changes to commit."
+            cd -
+            git worktree remove /tmp/ci-worktree --force
+            exit 0
+            fi
+            git commit -m "${{ inputs.commit-message }}"
+            for i in 1 2 3
+            do
+            git pull --rebase origin ${{ inputs.branch }} || true
+            if git push origin HEAD:${{ inputs.branch }}
+            then
+            echo "Push réussi"
+            cd -
+            git worktree remove /tmp/ci-worktree --force
+            exit 0
+            fi
+            echo "Nouvelle tentative..."
+            sleep 2
+            done
 
-        cp -r reports /tmp/ci-backup/ 2>/dev/null || true
-        cp -r database /tmp/ci-backup/ 2>/dev/null || true
-        cp -r dashboard /tmp/ci-backup/ 2>/dev/null || true
-        
+    cd -
+    git worktree remove /tmp/ci-worktree --force
 
-    - shell: bash
-      run: |
-        git reset --hard
-        git clean -fd
-
-    - shell: bash
-      run: |
-
-        git fetch origin
-
-        if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
-        then
-          git checkout ${{ inputs.branch }}
-          git pull origin ${{ inputs.branch }}
-        else
-          git checkout --orphan ${{ inputs.branch }}
-          git rm -rf . || true
-        fi
-
-    - shell: bash
-      run: |
-
-        mkdir -p reports/${{ inputs.report-type }}
-        mkdir -p database/${{ inputs.report-type }}
-        mkdir -p dashboard/${{ inputs.report-type }}
-
-      
-        if [ -d /tmp/ci-backup/reports/${{ inputs.report-type }} ]; then
-          cp -r /tmp/ci-backup/reports/${{ inputs.report-type }}/. reports/${{ inputs.report-type }}/
-        fi
-
-        if [ -d /tmp/ci-backup/database/${{ inputs.report-type }} ]; then
-          cp -r /tmp/ci-backup/database/${{ inputs.report-type }}/. database/${{ inputs.report-type }}/
-        fi
-
-        if [ -d /tmp/ci-backup/dashboard${{ inputs.report-type }} ]; then
-          cp -r /tmp/ci-backup/dashboard/${{ inputs.report-type }}/. dashboard/${{ inputs.report-type }}/
-        fi
-
-    
-
-    - shell: bash
-      run: |
-
-        git add reports database dashboard 
-        if git diff --cached --quiet; then
-          echo "No changes to commit."
-          exit 0
-        fi
-
-        git commit -m \
-        "${{ inputs.commit-message ||'Update generated files' }}"
-        for i in 1 2 3
-        do
-          git pull --rebase origin ${{ inputs.branch }}
-
-          if git push origin ${{ inputs.branch }}
-          then
-             echo "Push réussi"
-             exit 0
-          fi
-
-          echo "Nouvelle tentative..."
-          sleep 2
-        done
-        exit 1
-
-        
+    exit 1
