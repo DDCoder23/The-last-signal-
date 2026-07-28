@@ -76,7 +76,6 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ steps.current.outputs.version }}
-        cache: "pip"
         check-latest: ${{ github.workflow == 'Nightly' }}
     - name: Get Python version
       id: python-version
