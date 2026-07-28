@@ -34,6 +34,7 @@ impl ServerLogger {
                 Naming::Numbers,
                 Cleanup::KeepLogFiles(11),
             )
+            .append()
 
             .start()
             .unwrap();
