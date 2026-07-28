@@ -11,7 +11,7 @@ use flexi_logger::{
 use crate::utils::logger::compressor::LogCompressor;
 use std::path::PathBuf;
 
-let log_dir = PathBuf::from("../logs");
+const log_dir = PathBuf::from("../logs");
 pub struct ServerLogger;
 
 impl ServerLogger {
