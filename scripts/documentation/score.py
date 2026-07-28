@@ -48,9 +48,11 @@ def generate_score():
                 problem["module"] = name
 
             all_problems.extend(result["problems"])
-
-    
-    
+            import json
+            for name, result in details.items():
+                size = len(json.dumps(result, default=str))
+                print(f"{name}: {size / 1024:.1f} KiB")
+            print(f"Nombre total de problèmes : {len(all_problems)}")
     total_obtenu = sum(scores.values())/sum(total.values()) if sum(total.values())!=0 else sum(scores.values())/1
     total_obtenu*=100
     total_obtenu= int(round(total_obtenu))
