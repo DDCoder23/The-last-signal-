@@ -52,6 +52,17 @@ jobs:
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+      - name: Cache Rust
+        uses: actions/cache@v4
+        with:
+          path: |
+                ~/.cargo/bin
+                ~/.cargo/registry
+                ~/.cargo/git
+                target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+              ${{ runner.os }}-cargo-
 
       - name: Create report
         shell: bash
@@ -95,7 +106,7 @@ jobs:
 
           if find . -name Cargo.toml | grep -q .; then
             cargo build --manifest-path "$RUST_PROJECT/Cargo.toml" \
-            --release >> "$REPORT" 2>&1
+             >> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
           fi
