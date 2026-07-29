@@ -30,6 +30,7 @@ pub struct SaveMetadata {
 
     /// Salt utilisé pour PBKDF2 (Base64).
     pub salt: String,
+    pub nonce: String,
 
     /// Taille des données chiffrées.
     pub payload_size: u64,
@@ -44,6 +45,7 @@ impl SaveMetadata {
         profile: String,
         slot: u8,
         salt: String,
+        nonce: String,
         payload_size: u64,
         checksum: String,
     ) -> Self {
@@ -54,6 +56,7 @@ impl SaveMetadata {
             slot,
             created_at: Utc::now(),
             salt,
+            nonce,
             payload_size,
             checksum,
         }
