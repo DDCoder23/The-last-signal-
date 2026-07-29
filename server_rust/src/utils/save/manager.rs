@@ -27,14 +27,43 @@ impl SaveManager {
 
     /// Sauvegarde des données.
     pub fn save(
-        &self,
-        profile: &str,
-        slot: u8,
-        data: &Map<String, Value>,
-        password: &str,
-    ) -> SaveResult<()> {
-        todo!()
-    }
+    &self,
+    profile: &str,
+    slot: u8,
+    data: &Map<String, Value>,
+    password: &str,
+) -> SaveResult<()> {
+
+    // Vérifie le slot.
+    self.validate_slot(slot)?;
+
+    // Crée le dossier du profil.
+    self.create_profile_directory(profile)?;
+
+    // Sérialise les données.
+    let json =
+        serde_json::to_vec(data)?;
+
+    // Génère le salt.
+    let salt =
+        Encryption::generate_salt();
+
+    // Dérive la clé AES.
+    let key =
+        Encryption::derive_key(
+            password,
+            &salt,
+        )?;
+
+    // Chiffrement.
+    let (
+        encrypted_payload,
+        nonce,
+    ) =
+        Encryption::encrypt(
+            &key,
+            &json,
+        )?;
 
     /// Charge une sauvegarde.
     pub fn load(
