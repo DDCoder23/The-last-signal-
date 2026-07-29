@@ -3,7 +3,7 @@ use crate::network::packet::{
     PacketType,LogLevel,ClientLog,
 };
 use crate::network::client::Client;
-use log::debug;
+use log::{trace, debug, info, warn, error};
 pub struct PacketHandler;
 
 
