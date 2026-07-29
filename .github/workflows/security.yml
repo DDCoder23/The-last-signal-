@@ -89,7 +89,6 @@ jobs:
         run: |
 
           mkdir -p reports
-          mkdir -p dashboard/security
           mkdir -p database
 
           REPORT="reports/security-report-${GITHUB_RUN_NUMBER}.md"
