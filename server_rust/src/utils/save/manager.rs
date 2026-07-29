@@ -1,0 +1,149 @@
+use std::{
+    fs,
+    path::{Path, PathBuf},
+};
+
+use serde_json::{Map, Value};
+
+use crate::utils::save::{
+    config::*,
+    encryption::Encryption,
+    errors::{
+        SaveError,
+        SaveResult,
+    },
+    metadata::SaveMetadata,
+};
+
+/// Gestionnaire principal des sauvegardes.
+pub struct SaveManager;
+
+impl SaveManager {
+
+    /// Crée un nouveau gestionnaire.
+    pub fn new() -> Self {
+        Self
+    }
+
+    /// Sauvegarde des données.
+    pub fn save(
+        &self,
+        profile: &str,
+        slot: u8,
+        data: &Map<String, Value>,
+        password: &str,
+    ) -> SaveResult<()> {
+        todo!()
+    }
+
+    /// Charge une sauvegarde.
+    pub fn load(
+        &self,
+        profile: &str,
+        slot: u8,
+        password: &str,
+    ) -> SaveResult<Map<String, Value>> {
+        todo!()
+    }
+
+    /// Vérifie l'intégrité d'une sauvegarde.
+    pub fn verify(
+        &self,
+        profile: &str,
+        slot: u8,
+    ) -> SaveResult<()> {
+        todo!()
+    }
+
+    /// Supprime une sauvegarde.
+    pub fn delete(
+        &self,
+        profile: &str,
+        slot: u8,
+    ) -> SaveResult<()> {
+        todo!()
+    }
+
+    /// Liste les slots disponibles.
+    pub fn list_slots(
+        &self,
+        profile: &str,
+    ) -> SaveResult<Vec<SaveMetadata>> {
+        todo!()
+    }
+
+    /// Exporte une sauvegarde.
+    pub fn export(
+        &self,
+        profile: &str,
+        slot: u8,
+        destination: impl AsRef<Path>,
+    ) -> SaveResult<()> {
+        todo!()
+    }
+
+    /// Importe une sauvegarde.
+    pub fn import(
+        &self,
+        source: impl AsRef<Path>,
+        profile: &str,
+        slot: u8,
+    ) -> SaveResult<()> {
+        todo!()
+    }
+
+    // ===================================================
+    // Helpers privés
+    // ===================================================
+
+    /// Vérifie qu'un slot est valide.
+    fn validate_slot(
+        &self,
+        slot: u8,
+    ) -> SaveResult<()> {
+
+        if slot == 0 || slot > SAVE_SLOT_COUNT {
+            return Err(SaveError::InvalidSlot);
+        }
+
+        Ok(())
+    }
+
+    /// Dossier du profil.
+    fn profile_directory(
+        &self,
+        profile: &str,
+    ) -> PathBuf {
+
+        Path::new(SAVE_DIRECTORY)
+            .join(profile)
+    }
+
+    /// Fichier de sauvegarde.
+    fn save_file(
+        &self,
+        profile: &str,
+        slot: u8,
+    ) -> PathBuf {
+
+        self.profile_directory(profile)
+            .join(format!(
+                "slot{}.{}",
+                slot,
+                SAVE_EXTENSION
+            ))
+    }
+
+    /// Crée le dossier du profil s'il n'existe pas.
+    fn create_profile_directory(
+        &self,
+        profile: &str,
+    ) -> SaveResult<()> {
+
+        fs::create_dir_all(
+            self.profile_directory(profile),
+        )?;
+
+        Ok(())
+    }
+}
