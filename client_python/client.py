@@ -2,7 +2,7 @@ import socket
 import traceback
 from .packet import Packet
 from .packets.log import LogPacket
-from logs import log
+from .logs import log
 class Client:
     """
     Client réseau de The Last Signal.
