@@ -209,18 +209,8 @@ jobs:
             cat reports/project/score.md
           } >> $GITHUB_STEP_SUMMARY
           python -m scripts.generate_problems_md
-                # =========================
-      # Dashboard
-      # =========================
-
-      - name: 📈 Generate dashboard
-        if: always()
-        run: |
-
-          mkdir -p dashboard
-
-          python -m scripts.generate_dashboard
-
+                
+        
       # =========================
       # Upload reports
       # =========================
