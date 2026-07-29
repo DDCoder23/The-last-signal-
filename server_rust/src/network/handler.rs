@@ -17,53 +17,70 @@ impl PacketHandler {
         match packet.packet_type {
             PacketType::Log => {
 
-    let log: ClientLog =
-        serde_json::from_slice(&packet.payload)?;
+    let log = match serde_json::from_slice::<ClientLog>(&packet.payload) {
+        Ok(log) => log,
+        Err(e) => {
+            error!("Impossible de décoder le paquet LOG : {}", e);
+
+            return Packet::new(
+                PacketType::Log,
+                b"INVALID_LOG".to_vec(),
+            );
+        }
+    };
 
     match log.level {
-
-        LogLevel::Trace =>
+        LogLevel::Trace => {
             trace!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
                 log.line,
                 log.message
-            ),
+            );
+        }
 
-        LogLevel::Debug =>
+        LogLevel::Debug => {
             debug!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
                 log.line,
                 log.message
-            ),
+            );
+        }
 
-        LogLevel::Info =>
+        LogLevel::Info => {
             info!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
                 log.line,
                 log.message
-            ),
+            );
+        }
 
-        LogLevel::Warn =>
+        LogLevel::Warn => {
             warn!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
                 log.line,
                 log.message
-            ),
+            );
+        }
 
-        LogLevel::Error =>
+        LogLevel::Error => {
             error!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
                 log.line,
                 log.message
-            ),
+            );
+        }
     }
-            }
 
+    Packet::new(
+        PacketType::Log,
+        b"OK".to_vec(),
+    )
+            }
             PacketType::Ping => {
 
                 debug!("Ping reçu");
