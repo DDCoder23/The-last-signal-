@@ -147,7 +147,7 @@ jobs:
             uses: ./.github/actions/commit-reports
             with:
                   report-type: buil
-          commit-message: "Build Report #${{ github.run_number }}"
+                  commit-message: "Build Report #${{ github.run_number }}"
   
             
 
