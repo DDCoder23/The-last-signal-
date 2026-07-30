@@ -1,19 +1,9 @@
 name: Build CI Report
-
 on:
-  push:
-    branches:
-      - main
 
-  pull_request:
-    branches:
-      - "**"
-
-  workflow_dispatch:
   workflow_call:
 
-  schedule:
-    - cron: "7 * * * *"
+  
 
 permissions:
   contents: write
