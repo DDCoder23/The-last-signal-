@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-30 10:29:09
+Generated: 2026-07-30 12:14:13
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated: 2026-07-30 10:29:09
 |---|---:|
 |❌ Errors|129|
 |⚠️ Warnings|682|
-|**Total**|**897**|
+|**Total**|**898**|
 
 ---
 
@@ -4952,6 +4952,16 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** markdown
 - **Message :** Ligne 33 > 120 caractères.
+
+---
+
+# 📄 reports/python/python-report-6.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **line :** 1488
 
 ---
 
