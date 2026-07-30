@@ -320,8 +320,31 @@ jobs:
              reports/**
              database/**
              
-      - name: Commit reports
+      
+           
+
+      
+
+
+  reset:
+    needs: python-check
+    uses: ./.github/workflows/Reset.yml
+  commit:
+    name: commit
+    needs: reset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+           persist-credentials: true
+           fetch-depth: 0
+      - name: 💾 Commit reports
         uses: ./.github/actions/commit-reports
         with:
-           report-type: python
-           commit-message: "Python CI Report #${{ github.run_number }}"
+          report-type: python
+          commit-message: "Python CI Report #${{ github.run_number }}"
+           
+
+
+      
