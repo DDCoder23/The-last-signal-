@@ -35,7 +35,7 @@ runs:
             if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
             then
             git ls-tree -r --name-only origin/${{ inputs.branch }} | wc -l
-            
+            git log origin/ci-reports --oneline --all
             git worktree add /tmp/ci-worktree origin/${{ inputs.branch }}
             else
             git worktree add -b ${{ inputs.branch }} /tmp/ci-worktree
