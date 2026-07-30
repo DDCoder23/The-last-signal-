@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-30 15:29:50
+Generated: 2026-07-30 17:57:02
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated: 2026-07-30 15:29:50
 |---|---:|
 |❌ Errors|129|
 |⚠️ Warnings|682|
-|**Total**|**900**|
+|**Total**|**901**|
 
 ---
 
@@ -4956,6 +4956,16 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 reports/python/python-report-11.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1488
+
+---
+
+# 📄 reports/python/python-report-12.md
 
 ## ⚠️ Info
 
