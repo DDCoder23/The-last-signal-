@@ -88,10 +88,10 @@ jobs:
       - name: Create report
         run: |
 
-          mkdir -p reports
-          mkdir -p database
+          mkdir -p reports/security
+        
 
-          REPORT="reports/security-report-${GITHUB_RUN_NUMBER}.md"
+          REPORT="reports/security/security-report-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
@@ -326,7 +326,7 @@ jobs:
         shell: bash
         run: |
 
-          mkdir -p dashboard
+          mkdir -p dashboard/security
 
           HISTORY="dashboard/security/history.csv"
 
