@@ -138,7 +138,14 @@ jobs:
             database/**
 
   reset:
-    uses:
+    uses: ./.github/workflows/Reset.yml
+  commit:
+    name: commit
+    runs-on: ubuntu-latest
+    steps:
+          - name: commit
+            run: 
+  
             
 
       
