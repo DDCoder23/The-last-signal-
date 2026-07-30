@@ -68,6 +68,7 @@ runs:
             if git push origin HEAD:${{ inputs.branch }}
             then
             echo "Push réussi"
+            cd "$GITHUB_WORKSPACE"
             git worktree remove /tmp/ci-worktree --force
             exit 0
             fi
