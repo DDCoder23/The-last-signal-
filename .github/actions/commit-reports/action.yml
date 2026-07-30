@@ -47,7 +47,7 @@ runs:
             cd /tmp/ci-worktree
             echo "ajout"
             ls
-            git add -n.
+            git add -n .
             git add .
             git status
             if git diff --cached --quiet; then
