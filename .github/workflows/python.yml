@@ -54,8 +54,8 @@ jobs:
       # Création du fichier rapport
       - name: Create report
         run: |
-          mkdir -p reports
-          REPORT="reports/python-report-${GITHUB_RUN_NUMBER}.md"
+          mkdir -p reports/python
+          REPORT="reports/python/python-report-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
