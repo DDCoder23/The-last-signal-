@@ -225,13 +225,27 @@ jobs:
             reports/**
             dashboard/**
 
-      # =========================
-      # Commit reports
-      # =========================
+      
 
+
+  reset:
+    needs: documentation-check
+    uses: ./.github/workflows/Reset.yml
+  commit:
+    name: commit
+    needs: reset
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+           persist-credentials: true
+           fetch-depth: 0
       - name: 💾 Commit reports
-        if: always()
         uses: ./.github/actions/commit-reports
         with:
           report-type: project
           commit-message: "Documentation Report #${{ github.run_number }}"
+
+
+      
