@@ -136,9 +136,7 @@ jobs:
           path: |
             reports/**
             database/**
-  reset:
-    needs: build
-    uses: ./.github/workflows/Reset.yml
+  
 
   commit:
     name: commit
