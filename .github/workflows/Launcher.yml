@@ -38,7 +38,7 @@ jobs:
     uses: ./.github/workflows/build.yml
  
 
-  commit:
+  sync:
     needs: build
     uses: ./.github/workflows/sync-ci.yml
   
