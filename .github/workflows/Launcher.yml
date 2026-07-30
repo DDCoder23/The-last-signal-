@@ -1,0 +1,44 @@
+name: launcher
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 22 * * *"
+
+permissions:
+  actions: write
+  contents: write
+  security-events: write
+
+jobs:
+
+  python:
+    uses: ./.github/workflows/python.yml
+
+  rust:
+    uses: ./.github/workflows/rust.yml
+
+  security:
+    uses: ./.github/workflows/security.yml
+
+  project:
+    uses: ./.github/workflows/project.yml
+
+
+  integration:
+    uses: ./.github/workflows/integration.yml
+  build:
+    uses: ./.github/workflows/build.yml
+ 
+
+  sync:
+    needs:
+      - python
+      - rust
+      - security
+      - project
+      - integration
+      - build
+    uses: ./.github/workflows/sync-ci.yml
+  
