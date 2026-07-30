@@ -18,6 +18,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Reset ci-reports branch
+        continue-on-error: true
         shell: bash
         run: |
           git config --global user.name "github-actions"
