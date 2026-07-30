@@ -16,38 +16,18 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Reset ci-reports branch
-        continue-on-error: true
+      - name: reset
         shell: bash
         run: |
-          git config --global user.name "github-actions"
-          git config --global user.email "github-actions@github.com"
+               git config --global user.name "github-actions"
+               git config --global user.email "github-actions@github.com"
+               git fetch origin
+               git switch --orphan ci-reports-temp
 
-          git fetch origin
-
-        
-          # Créer une branche vide
-          git checkout --orphan ci-reports-new
-
-          # Vider complètement l'index
-          git rm -rf --cached . || true
-
-          # Supprimer les fichiers physiques venant de main
-          rm -rf ./* ./.??* || true
-
-          # Supprime tous les fichiers de l'index et du disque
-          git rm -rf . || true
-          
-
-          
-
-          touch .gitkeep
-          
-
-          git add .
-          git commit -m "Reset ci-reports"
-
-          # Remplace complètement la branche distante
-          git branch -M ci-reports
-          git push --force origin ci-reports
+               git rm -rf . || true
+               find . -maxdepth 1 ! -name ".git" ! -name "." -exec rm -rf {} +
+               echo "Reports branch" > .gitkeep
+               git add .gitkeep
+               git commit -m "Initialize empty ci-reports branch"
+               git branch -M ci-reports
+               git push --force origin ci-reports
