@@ -32,7 +32,7 @@ jobs:
     uses: ./.github/workflows/build.yml
  
 
-  sync:
+  reset:
     needs:
       - python
       - rust
@@ -40,5 +40,9 @@ jobs:
       - project
       - integration
       - build
-    uses: ./.github/workflows/sync-ci.yml
+    uses: ./.github/workflows/Reset.yml
+  commit:
+    needs:
+      - reset
+    uses:
   
