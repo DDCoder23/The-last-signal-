@@ -56,6 +56,9 @@ runs:
             git commit -m "${{ inputs.commit-message }}"
             for i in 1 2 3
             do
+            git branch --show-current
+            git log --oneline --decorate --graph -5
+            git status
             git fetch origin ci-reports
             git rebase origin/ci-reports
             if git push origin HEAD:${{ inputs.branch }}
