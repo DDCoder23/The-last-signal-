@@ -27,21 +27,21 @@ runs:
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
-        git status
+        
 
     - shell: bash
       run: |
             git fetch origin
             if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
             then
-            git ls-tree -r --name-only origin/${{ inputs.branch }} | wc -l
-            git log origin/ci-reports --oneline --all
+            
+            
             git worktree add /tmp/ci-worktree origin/${{ inputs.branch }}
             else
             git worktree add -b ${{ inputs.branch }} /tmp/ci-worktree
             fi
             mkdir -p "/tmp/ci-worktree/reports/${{ inputs.report-type }}"
-            mkdir -p "/tmp/ci-worktree/database/
+            mkdir -p "/tmp/ci-worktree/database/"
             cp -r reports/. "/tmp/ci-worktree/reports/${{ inputs.report-type }}/" 2>/dev/null || true
             cp -r database/. "/tmp/ci-worktree/database/" 2>/dev/null || true
             cd /tmp/ci-worktree
