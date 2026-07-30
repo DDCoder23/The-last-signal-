@@ -136,10 +136,9 @@ jobs:
           path: |
             reports/**
             database/**
+
+  reset:
+    uses:
             
 
-      - name: Commit reports
-        uses: ./.github/actions/commit-reports
-        with:
-          report-type: build
-          commit-message: "Build Report #${{ github.run_number }}"
+      
