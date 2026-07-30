@@ -29,8 +29,8 @@ jobs:
           git rm -rf --cached . || true
 
           # Supprime les fichiers physiques
-          rm -rf ./* ./.??* || true
-          git init
+          git rm -rf . || true
+          find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
 
           # Crée seulement les dossiers rapports
           mkdir -p reports database dashboard
