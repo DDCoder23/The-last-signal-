@@ -43,9 +43,9 @@ jobs:
       - name: Create report
         shell: bash
         run: |
-          mkdir -p reports
+          mkdir -p reports/build
 
-          REPORT="reports/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
+          REPORT="reports/build/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
@@ -82,7 +82,7 @@ jobs:
 
           if find . -name Cargo.toml | grep -q .; then
             cargo build --manifest-path "$RUST_PROJECT/Cargo.toml" \
-             >> "$REPORT" 2>&1
+             --release>> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
           fi
