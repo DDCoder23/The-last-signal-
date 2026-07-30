@@ -1,20 +1,9 @@
 name: Python CI Report
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-    branches:
-      - "**"
-
-  workflow_dispatch:
   workflow_call:
 
-  schedule:
-    # Toutes les heures
-    - cron: "7 * * * *"
+
 
 permissions:
   contents: write
