@@ -66,6 +66,7 @@ runs:
             echo "Nouvelle tentative..."
             sleep 2
             done
-            cd -
+            cd "$GITHUB_WORKSPACE"
             git worktree remove /tmp/ci-worktree --force
             exit 1
+           
