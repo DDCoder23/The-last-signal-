@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-30T12:14:13.358299",
+    "generated": "2026-07-30T15:29:50.352149",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 898,
+    "problem_count": 900,
     "details": {
         "markdown": {
             "score": 49,
@@ -2129,171 +2129,185 @@
                     "module": "links"
                 },
                 {
+                    "file": "reports/python/python-report-693.md",
+                    "line": 1425,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
+                    "module": "links"
+                },
+                {
                     "file": "reports/python/python-report-704.md",
                     "line": 1447,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-696.md",
                     "line": 1429,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-686.md",
                     "line": 1487,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-698.md",
                     "line": 1430,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-692.md",
                     "line": 1425,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-690.md",
                     "line": 1425,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-706.md",
                     "line": 1443,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-6.md",
                     "line": 1488,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-707.md",
                     "line": 1443,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-695.md",
                     "line": 1429,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-687.md",
                     "line": 1425,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-703.md",
                     "line": 1441,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-689.md",
                     "line": 1425,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-694.md",
                     "line": 1423,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-691.md",
                     "line": 1430,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-688.md",
                     "line": 1425,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-700.md",
                     "line": 1430,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-702.md",
                     "line": 1431,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-709.md",
                     "line": 1443,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-705.md",
                     "line": 1443,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-708.md",
                     "line": 1443,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-699.md",
                     "line": 1430,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-697.md",
                     "line": 1430,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
+                    "module": "links"
+                },
+                {
+                    "file": "reports/python/python-report-11.md",
+                    "line": 1488,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 },
                 {
                     "file": "reports/python/python-report-701.md",
                     "line": 1431,
                     "severity": "info",
-                    "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
                 }
             ]
