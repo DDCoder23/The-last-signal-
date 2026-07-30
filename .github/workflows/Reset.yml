@@ -30,6 +30,7 @@ jobs:
 
           # Supprime les fichiers physiques
           rm -rf ./* ./.??* || true
+          git init
 
           # Crée seulement les dossiers rapports
           mkdir -p reports database dashboard
