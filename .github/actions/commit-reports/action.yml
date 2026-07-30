@@ -46,6 +46,7 @@ runs:
             cp -r database/. "/tmp/ci-worktree/database/" 2>/dev/null || true
             cd /tmp/ci-worktree
             git add .
+            git status
             if git diff --cached --quiet; then
             echo "No changes to commit."
             cd -
