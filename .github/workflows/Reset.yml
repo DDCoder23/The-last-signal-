@@ -25,8 +25,15 @@ jobs:
 
           git fetch origin
 
-          # Crée une branche orpheline
-          git checkout --orphan ci-reports-reset
+        
+          # Créer une branche vide
+          git checkout --orphan ci-reports-new
+
+          # Vider complètement l'index
+          git rm -rf --cached . || true
+
+          # Supprimer les fichiers physiques venant de main
+          rm -rf ./* ./.??* || true
 
           # Supprime tous les fichiers de l'index et du disque
           git rm -rf . || true
