@@ -143,8 +143,11 @@ jobs:
     name: commit
     runs-on: ubuntu-latest
     steps:
-          - name: commit
-            run: 
+          - name: 💾 Commit reports
+            uses: ./.github/actions/commit-reports
+            with:
+                  report-type: buil
+          commit-message: "Build Report #${{ github.run_number }}"
   
             
 
