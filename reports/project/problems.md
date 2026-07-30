@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-30 12:14:13
+Generated: 2026-07-30 15:29:50
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated: 2026-07-30 12:14:13
 |---|---:|
 |❌ Errors|129|
 |⚠️ Warnings|682|
-|**Total**|**898**|
+|**Total**|**900**|
 
 ---
 
@@ -4955,12 +4955,22 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
+# 📄 reports/python/python-report-11.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1488
+
+---
+
 # 📄 reports/python/python-report-6.md
 
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1488
 
 ---
@@ -4970,7 +4980,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1487
 
 ---
@@ -4980,7 +4990,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1425
 
 ---
@@ -4990,7 +5000,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1425
 
 ---
@@ -5000,7 +5010,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1425
 
 ---
@@ -5010,7 +5020,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1425
 
 ---
@@ -5020,7 +5030,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1430
 
 ---
@@ -5030,7 +5040,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1425
+
+---
+
+# 📄 reports/python/python-report-693.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1425
 
 ---
@@ -5040,7 +5060,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1423
 
 ---
@@ -5050,7 +5070,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1429
 
 ---
@@ -5060,7 +5080,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1429
 
 ---
@@ -5070,7 +5090,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1430
 
 ---
@@ -5080,7 +5100,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1430
 
 ---
@@ -5090,7 +5110,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1430
 
 ---
@@ -5100,7 +5120,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1430
 
 ---
@@ -5110,7 +5130,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1431
 
 ---
@@ -5120,7 +5140,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1431
 
 ---
@@ -5130,7 +5150,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1441
 
 ---
@@ -5140,7 +5160,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1447
 
 ---
@@ -5150,7 +5170,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1443
 
 ---
@@ -5160,7 +5180,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1443
 
 ---
@@ -5170,7 +5190,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1443
 
 ---
@@ -5180,7 +5200,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1443
 
 ---
@@ -5190,7 +5210,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Info
 
 - **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-693.md:1425
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1443
 
 ---
