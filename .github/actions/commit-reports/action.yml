@@ -55,7 +55,8 @@ runs:
             fi
             git commit -m "${{ inputs.commit-message }}"
             for i in 1 2 3
-            do
+            do 
+            echo "branche actuelle:"
             git branch --show-current
             git log --oneline --decorate --graph -5
             git status
