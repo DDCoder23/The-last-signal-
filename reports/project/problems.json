@@ -2113,6 +2113,13 @@
         "module": "links"
     },
     {
+        "file": "reports/python/python-report-6.md",
+        "line": 1488,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans reports/python/python-report-693.md:1425",
+        "module": "links"
+    },
+    {
         "file": "reports/python/python-report-707.md",
         "line": 1443,
         "severity": "info",
