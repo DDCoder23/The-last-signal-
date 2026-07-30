@@ -4,3 +4,7 @@ save.txt
 *.iml
 # Secrets
 security/master.key
+target/*
+node_modules/*
+.venv/*
+__pycache__/*
