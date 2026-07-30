@@ -1,4 +1,4 @@
-name: Reset ci-reports
+name: Destroy ci-reports history
 
 on:
   workflow_dispatch:
@@ -11,24 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - name: reset
+
+      - name: Recreate branch
         shell: bash
         run: |
-               git config --global user.name "github-actions"
-               git config --global user.email "github-actions@github.com"
-               git fetch origin
-               git switch --orphan ci-reports-temp
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
-               git rm -rf . || true
-               find . -maxdepth 1 ! -name ".git" ! -name "." -exec rm -rf {} +
-               echo "Reports branch" > .gitkeep
-               git add .gitkeep
-               git commit -m "Initialize empty ci-reports branch"
-               git branch -M ci-reports
-               git push origin --force HEAD:ci-reports
-      
+          # Crée une branche totalement vide
+          git checkout --orphan empty-ci-reports
+
+          # Vide complètement l'index
+          git rm -rf --cached . || true
+
+          # Supprime les fichiers physiques
+          rm -rf ./* ./.??* || true
+
+          # Crée seulement les dossiers rapports
+          mkdir -p reports database dashboard
+
+          touch reports/.gitkeep
+          touch database/.gitkeep
+          touch dashboard/.gitkeep
+
+          git add .
+          git commit -m "Empty ci-reports branch"
+
+          git push --force origin HEAD:ci-reports
