@@ -1,15 +1,6 @@
 name: Project Quality
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-    branches:
-      - "**"
-
-  workflow_dispatch:
   workflow_call:
 
 permissions:
