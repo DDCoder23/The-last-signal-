@@ -31,9 +31,4 @@ jobs:
                git commit -m "Initialize empty ci-reports branch"
                git branch -M ci-reports
                git push origin --force HEAD:ci-reports
-      - name: reset base
-        uses: ./.github/actions/commit-reports
-        with:
-          report-type: build
-          commit-message: "Reset initial"
       
