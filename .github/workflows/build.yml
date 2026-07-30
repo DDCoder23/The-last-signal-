@@ -136,19 +136,19 @@ jobs:
           path: |
             reports/**
             database/**
-
   reset:
+    needs: build
     uses: ./.github/workflows/Reset.yml
+
   commit:
     name: commit
+    needs: reset
     runs-on: ubuntu-latest
     steps:
-          - name: 💾 Commit reports
-            uses: ./.github/actions/commit-reports
-            with:
-                  report-type: buil
-                  commit-message: "Build Report #${{ github.run_number }}"
-  
-            
+      - name: 💾 Commit reports
+        uses: ./.github/actions/commit-reports
+        with:
+          report-type: build
+          commit-message: "Build Report #${{ github.run_number }}"
 
-      
+  
