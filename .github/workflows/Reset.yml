@@ -37,9 +37,7 @@ jobs:
 
           # Supprime tous les fichiers de l'index et du disque
           git rm -rf . || true
-          find . -mindepth 1 -maxdepth 1 \
-            ! -name ".git" \
-            -exec rm -rf {} +
+          
 
           
 
