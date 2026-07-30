@@ -1,0 +1,47 @@
+name: Reset ci-reports
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Reset ci-reports branch
+        shell: bash
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git fetch origin
+
+          # Crée une branche orpheline
+          git checkout --orphan ci-reports-reset
+
+          # Supprime tous les fichiers de l'index et du disque
+          git rm -rf . || true
+          find . -mindepth 1 -maxdepth 1 \
+            ! -name ".git" \
+            -exec rm -rf {} +
+
+          
+
+          touch .gitkeep
+          
+
+          git add .
+          git commit -m "Reset ci-reports"
+
+          # Remplace complètement la branche distante
+          git branch -M ci-reports
+          git push --force origin ci-reports
