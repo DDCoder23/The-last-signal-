@@ -56,7 +56,7 @@ runs:
             git commit -m "${{ inputs.commit-message }}"
             for i in 1 2 3
             do
-            git fetch origin ${{ inputs.branch }} || true
+            git pull --rebase origin ${{ inputs.branch }} || true
             if git push origin HEAD:${{ inputs.branch }}
             then
             echo "Push réussi"
