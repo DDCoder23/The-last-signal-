@@ -1,17 +1,10 @@
 name: Integration Tests
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-
-  workflow_dispatch:
+  
   workflow_call:
 
-  schedule:
-    - cron: "15 * * * *"
+  
 
 permissions:
   contents: write
