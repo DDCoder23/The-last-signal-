@@ -223,24 +223,7 @@ jobs:
           retention-days: 30
           path: |
             reports/**
-            dashboard/**
-
-      
-
-
-  reset:
-    needs: documentation-check
-    uses: ./.github/workflows/Reset.yml
-  commit:
-    name: commit
-    needs: reset
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-           persist-credentials: true
-           fetch-depth: 0
+            database/**
       - name: 💾 Commit reports
         uses: ./.github/actions/commit-reports
         with:
