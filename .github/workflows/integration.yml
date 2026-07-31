@@ -92,8 +92,9 @@ jobs:
              git add .python-version
 
              git diff --cached --quiet || git commit -m "chore: update Python version"
-
-             git push
+             git pull --rebase origin main
+             
+             git push origin main
         
 
     - name: Install Python dependencies
