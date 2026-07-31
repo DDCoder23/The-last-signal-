@@ -1,0 +1,82 @@
+name: Archive CI Reports
+
+on:
+  workflow_call:
+  workflow_dispatch: 
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ci-reports
+        uses: actions/checkout@v4
+        with:
+          ref: ci-reports
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Install zip
+        run: sudo apt-get update && sudo apt-get install -y zip unzip
+
+      - name: Archive reports
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+
+          REPORTS_DIR="reports"
+          ARCHIVE_DIR="archive"
+
+          mkdir -p "$ARCHIVE_DIR"
+
+          shopt -s nullglob
+
+          for DIR in "$REPORTS_DIR"/*; do
+            [ -d "$DIR" ] || continue
+
+            NAME=$(basename "$DIR")
+            ZIP_FILE="$ARCHIVE_DIR/${NAME}.zip"
+
+            FILES=("$DIR"/*.md)
+
+            if [ ${#FILES[@]} -eq 0 ]; then
+              echo "::notice::Aucun rapport à archiver dans $NAME"
+              continue
+            fi
+
+            echo "Archivage de $NAME"
+
+            (
+              cd "$DIR"
+
+              if [ -f "$GITHUB_WORKSPACE/$ZIP_FILE" ]; then
+                zip -q -u "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+              else
+                zip -q -9 "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+              fi
+            )
+
+            rm -f "$DIR"/*.md
+          done
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git add archive reports
+
+          if git diff --cached --quiet; then
+            echo "Aucune modification."
+            exit 0
+          fi
+
+          git commit -m "Archive CI reports"
+          git pull --rebase origin ci-reports 
+
+          git push origin ci-reports
