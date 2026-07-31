@@ -2,7 +2,7 @@ name: Archive CI Reports
 
 on:
   workflow_call:
-  workflow_dispatch: 
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -10,6 +10,11 @@ permissions:
 jobs:
   archive:
     runs-on: ubuntu-latest
+
+    env:
+      REPORTS_DIR: reports
+      ARCHIVE_DIR: archive
+      KEEP_REPORTS: 3
 
     steps:
       - name: Checkout ci-reports
@@ -24,15 +29,12 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Install zip
-        run: sudo apt-get update && sudo apt-get install -y zip unzip
+        run: sudo apt-get update && sudo apt-get install -y zip
 
-      - name: Archive reports
+      - name: Archive old reports
         shell: bash
         run: |
           set -Eeuo pipefail
-
-          REPORTS_DIR="reports"
-          ARCHIVE_DIR="archive"
 
           mkdir -p "$ARCHIVE_DIR"
 
@@ -44,17 +46,30 @@ jobs:
             NAME=$(basename "$DIR")
             ZIP_FILE="$ARCHIVE_DIR/${NAME}.zip"
 
-            FILES=("$DIR"/*.md)
+            mapfile -t FILES < <(
+              find "$DIR" -maxdepth 1 -type f -name "*.md" \
+                -printf "%T@ %p\n" |
+              sort -nr |
+              cut -d' ' -f2-
+            )
 
-            if [ ${#FILES[@]} -eq 0 ]; then
-              echo "::notice::Aucun rapport à archiver dans $NAME"
+            COUNT=${#FILES[@]}
+
+            if (( COUNT <= KEEP_REPORTS )); then
+              echo "::notice::$NAME : rien à archiver ($COUNT rapport(s))"
               continue
             fi
 
-            echo "Archivage de $NAME"
+            echo "Archivage des anciens rapports de $NAME"
+
+            TMP_DIR=$(mktemp -d)
+
+            for FILE in "${FILES[@]:KEEP_REPORTS}"; do
+              cp "$FILE" "$TMP_DIR/"
+            done
 
             (
-              cd "$DIR"
+              cd "$TMP_DIR"
 
               if [ -f "$GITHUB_WORKSPACE/$ZIP_FILE" ]; then
                 zip -q -u "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
@@ -63,7 +78,11 @@ jobs:
               fi
             )
 
-            rm -f "$DIR"/*.md
+            for FILE in "${FILES[@]:KEEP_REPORTS}"; do
+              rm -f "$FILE"
+            done
+
+            rm -rf "$TMP_DIR"
           done
 
       - name: Commit changes
@@ -76,7 +95,8 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Archive CI reports"
-          git pull --rebase origin ci-reports 
+          git commit -m "Archive old CI reports"
+
+          git pull --rebase origin ci-reports
 
           git push origin ci-reports
