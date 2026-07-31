@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-07-31 12:23:38
+Generated: 2026-07-31 13:31:05
 
 ## Summary
 
@@ -1638,7 +1638,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'chercher_livre'ligne 26 ne possède pas de docstring.
+- **Message :** La fonction 'chercher_livre'ligne 25 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1648,7 +1648,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'convertir_livres'ligne 131 ne possède pas de docstring.
+- **Message :** La fonction 'convertir_livres'ligne 130 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1658,7 +1658,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l1_l2'ligne 154 ne possède pas de docstring.
+- **Message :** La fonction 'l1_l2'ligne 153 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1668,7 +1668,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l2_l3'ligne 191 ne possède pas de docstring.
+- **Message :** La fonction 'l2_l3'ligne 190 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1678,7 +1678,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l3_l4'ligne 228 ne possède pas de docstring.
+- **Message :** La fonction 'l3_l4'ligne 227 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1688,7 +1688,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l4_l5'ligne 270 ne possède pas de docstring.
+- **Message :** La fonction 'l4_l5'ligne 269 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1698,7 +1698,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'l5_l6'ligne 318 ne possède pas de docstring.
+- **Message :** La fonction 'l5_l6'ligne 317 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -1708,17 +1708,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'niveau_to_romain'ligne 53 ne possède pas de docstring.
+- **Message :** La fonction 'niveau_to_romain'ligne 52 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_niveau'ligne 57 ne possède pas de docstring.
+- **Message :** La fonction 'get_niveau'ligne 56 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'get_nom'ligne 66 ne possède pas de docstring.
+- **Message :** La fonction 'get_nom'ligne 65 ne possède pas de docstring.
 
 ---
 
