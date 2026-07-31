@@ -1,0 +1,9 @@
+{
+  "globs": [
+    "**/*.md",
+    "!reports/**/*.md",
+    "!archive/**/*.md",
+    "!node_modules/**/*.md",
+    "!.git/**/*.md"
+  ]
+}
