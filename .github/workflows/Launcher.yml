@@ -45,9 +45,12 @@ jobs:
   build:
     needs: integration
     uses: ./.github/workflows/build.yml
+  archive:
+    needs: build
+    uses: ./.github/workflows/Archive.yml
  
 
   sync:
-    needs: build
+    needs: archive
     uses: ./.github/workflows/sync-ci.yml
   
