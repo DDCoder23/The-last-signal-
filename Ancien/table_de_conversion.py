@@ -23,7 +23,7 @@ def qtes(nom: str, joueur: 'joueur') :
     print(f"Type inattendu pour {nom}: {type(obj)}")
     return 0, None
 def chercher_livre(nb, dict_livre,lv1,clef1,joueur):
-    lvs=[]
+    lvs = []
     for i in range(1,nb+1):
         for cle in dict_livre[1:]:
             lv_temp = joueur.stuff[cle]
