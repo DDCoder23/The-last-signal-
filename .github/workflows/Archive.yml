@@ -35,66 +35,104 @@ jobs:
         shell: bash
         run: |
           set -Eeuo pipefail
-
           mkdir -p "$ARCHIVE_DIR"
 
           shopt -s nullglob
 
-          for DIR in "$REPORTS_DIR"/*; do
-            [ -d "$DIR" ] || continue
+          KEEP_BUILD_REPORTS=3
 
-            NAME=$(basename "$DIR")
-            ZIP_FILE="$ARCHIVE_DIR/${NAME}.zip"
+          for DIR in "$REPORTS_DIR"/*; do
+           [ -d "$DIR" ] || continue
+
+           NAME=$(basename "$DIR")
+           ZIP_FILE="$ARCHIVE_DIR/${NAME}.zip"
+           echo "Traitement de : $NAME"
+           if [ "$NAME" = "build" ]; then
+
+          mapfile -t TYPES < <(
+          find "$DIR" -maxdepth 1 -type f -name "*.md" \
+          -printf "%f\n" |
+           sed -E 's/-[0-9]+\.md$//' |
+           sort -u
+          )
+
+          for TYPE in "${TYPES[@]}"; do
+
+           mapfile -t FILES < <(
+           find "$DIR" -maxdepth 1 \
+          -type f \
+          -name "${TYPE}-*.md" \
+          -printf "%T@ %p\n" |
+           sort -nr |
+           cut -d' ' -f2-
+           )
+
+          COUNT=${#FILES[@]}
+
+          if (( COUNT <= KEEP_BUILD_REPORTS )); then
+          echo "::notice::$TYPE : rien à archiver ($COUNT fichier(s))"
+          continue
+          fi
+          echo "Archivage $TYPE : $((COUNT-KEEP_BUILD_REPORTS)) fichier(s)"
+          TMP_DIR=$(mktemp -d)
+
+          for FILE in "${FILES[@]:KEEP_BUILD_REPORTS}"; do
+          cp "$FILE" "$TMP_DIR/"
+          done
+          (
+            cd "$TMP_DIR"
+            if [ -f "$GITHUB_WORKSPACE/$ZIP_FILE" ]; then
+            zip -q -u "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+            else
+            zip -q -9 "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+            fi
+            )
+
+            for FILE in "${FILES[@]:KEEP_BUILD_REPORTS}"; do
+            rm -f "$FILE"
+            done
+            rm -rf "$TMP_DIR"
+            done
+            else
 
             mapfile -t FILES < <(
-            for FILE in "$DIR"/*.md; do
-            [ -f "$FILE" ] || continue
-            DATE=$(head -n 10 "$FILE" | grep -m1 "^Date")
-            if [ -n "$DATE" ]; then
-            TIMESTAMP=$(echo "$DATE" | sed 's/^Date *: *//' | xargs -0 -I{} date -d "{}" +%s)
-            echo "$TIMESTAMP $FILE"
-            else
-            echo "0 $FILE"
-            fi
-            done |
+             find "$DIR" -maxdepth 1 -type f -name "*.md" \
+            -printf "%T@ %p\n" |
             sort -nr |
             cut -d' ' -f2-
-            )
-            echo "Ordre des fichiers :"
-            for F in "${FILES[@]}"; do
-            stat -c "%y %n" "$F"
-            done
+           )
+           COUNT=${#FILES[@]}
 
-            COUNT=${#FILES[@]}
+           if (( COUNT <= KEEP_REPORTS )); then
+           echo "::notice::$NAME : rien à archiver ($COUNT rapport(s))"
+           continue
+           fi
 
-            if (( COUNT <= KEEP_REPORTS )); then
-              echo "::notice::$NAME : rien à archiver ($COUNT rapport(s))"
-              continue
-            fi
+           echo "Archivage des anciens rapports de $NAME"
 
-            echo "Archivage des anciens rapports de $NAME"
+          TMP_DIR=$(mktemp -d)
 
-            TMP_DIR=$(mktemp -d)
+          for FILE in "${FILES[@]:KEEP_REPORTS}"; do
+          cp "$FILE" "$TMP_DIR/"
+          done
 
-            for FILE in "${FILES[@]:KEEP_REPORTS}"; do
-              cp "$FILE" "$TMP_DIR/"
-            done
+          (
+            cd "$TMP_DIR"
+            if [ -f "$GITHUB_WORKSPACE/$ZIP_FILE" ]; then
+            zip -q -u "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+            else
+           zip -q -9 "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+           fi
+           )
 
-            (
-              cd "$TMP_DIR"
+          for FILE in "${FILES[@]:KEEP_REPORTS}"; do
+          rm -f "$FILE"
+          done
+      
+          rm -rf "$TMP_DIR"
 
-              if [ -f "$GITHUB_WORKSPACE/$ZIP_FILE" ]; then
-                zip -q -u "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
-              else
-                zip -q -9 "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
-              fi
-            )
+          fi
 
-            for FILE in "${FILES[@]:KEEP_REPORTS}"; do
-              rm -f "$FILE"
-            done
-
-            rm -rf "$TMP_DIR"
           done
 
       - name: Commit changes
