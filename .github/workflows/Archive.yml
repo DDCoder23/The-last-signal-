@@ -47,10 +47,18 @@ jobs:
             ZIP_FILE="$ARCHIVE_DIR/${NAME}.zip"
 
             mapfile -t FILES < <(
-              find "$DIR" -maxdepth 1 -type f -name "*.md" \
-                -printf "%T@ %p\n" |
-              sort -nr |
-              cut -d' ' -f2-
+            for FILE in "$DIR"/*.md; do
+            [ -f "$FILE" ] || continue
+            DATE=$(head -n 10 "$FILE" | grep -m1 "^Date")
+            if [ -n "$DATE" ]; then
+            TIMESTAMP=$(echo "$DATE" | sed 's/^Date *: *//' | xargs -0 -I{} date -d "{}" +%s)
+            echo "$TIMESTAMP $FILE"
+            else
+            echo "0 $FILE"
+            fi
+            done |
+            sort -nr |
+            cut -d' ' -f2-
             )
             echo "Ordre des fichiers :"
             for F in "${FILES[@]}"; do
