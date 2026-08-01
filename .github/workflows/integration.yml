@@ -235,17 +235,13 @@ jobs:
     - name: Dump PostgreSQL database
       if: always()
       run: |
-            sudo apt-get update
-            sudo apt-get install -y postgresql-client-17
-            mkdir -p database
-
-            pg_dump \
-             --dbname="$DATABASE_URL" \
-             --clean \
-             --if-exists \
-             --no-owner \
-             --no-privileges \
-             > database/database.sql
+             mkdir-p database
+             docker exec ${{ job.services.postgres.id }} \
+              pg_dump \
+              -U postgres \
+              -d postgres \
+              > database/the_last_signal.sql
+  
     
   # ==========================================================
 # Commit automatique des bases SQLite
