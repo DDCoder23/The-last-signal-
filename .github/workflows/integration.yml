@@ -232,6 +232,18 @@ jobs:
       with:
         name: logs
         path: logs/
+    - name: Dump PostgreSQL database
+      if: always()
+      run: |
+        mkdir -p database
+
+        pg_dump \
+          --dbname="$DATABASE_URL" \
+          --clean \
+          --if-exists \
+          --no-owner \
+          --no-privileges \
+          > database/database.sql
     
   # ==========================================================
 # Commit automatique des bases SQLite
