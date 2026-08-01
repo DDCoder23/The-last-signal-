@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict A3tsp6RCmiN17wmdZHeFVwuL2i8YxlyJ4kjRFweGg0sRt9C5OlcKrq82NdhDnS4
+\restrict 947GAKWOPbV7XA6ajUouO8Yfg1pJWrHE1FhoTVZrYF44gQxdhNahjiNmPkwdgst
 
 -- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
 -- Dumped by pg_dump version 17.10 (Debian 17.10-1.pgdg13+1)
@@ -73,6 +73,21 @@ ALTER SEQUENCE public.accounts_account_id_seq OWNER TO postgres;
 
 ALTER SEQUENCE public.accounts_account_id_seq OWNED BY public.accounts.account_id;
 
+
+--
+-- Name: bansperm; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.bansperm (
+    client_id integer,
+    user_id uuid NOT NULL,
+    auteur text NOT NULL,
+    raison text NOT NULL,
+    date_ban timestamp without time zone DEFAULT now() NOT NULL
+);
+
+
+ALTER TABLE public.bansperm OWNER TO postgres;
 
 --
 -- Name: clients; Type: TABLE; Schema: public; Owner: postgres
@@ -207,11 +222,12 @@ ALTER TABLE ONLY public.logs ALTER COLUMN log_id SET DEFAULT nextval('public.log
 --
 
 COPY public._sqlx_migrations (version, description, installed_on, success, checksum, execution_time) FROM stdin;
-1	create users	2026-08-01 11:47:46.750206+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2024418
-2	create accounts	2026-08-01 11:47:46.752818+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	2254556
-3	create sessions	2026-08-01 11:47:46.761276+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1472326
-4	create logs	2026-08-01 11:47:46.763181+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	1741656
-5	create clients	2026-08-01 11:47:46.765273+00	t	\\x28e590a7c2add544dd7d6856266d907d98e0ad38a5a63aef88ea4893956c175896964c18965a0765175131023f274b83	1851330
+1	create users	2026-08-01 13:19:58.296191+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2118205
+2	create accounts	2026-08-01 13:19:58.298943+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	2290329
+3	create sessions	2026-08-01 13:19:58.301631+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1592293
+4	create logs	2026-08-01 13:19:58.303593+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	1864036
+5	create clients	2026-08-01 13:19:58.305878+00	t	\\x28e590a7c2add544dd7d6856266d907d98e0ad38a5a63aef88ea4893956c175896964c18965a0765175131023f274b83	1872351
+6	create bans perm	2026-08-01 13:19:58.308142+00	t	\\xd0399f631a759cba123363700b5f7d2e9bfe2e599d6350f547e00dd1dbef94dc47541f3752ba49f9cfc6c0be6d35d3e5	1704229
 \.
 
 
@@ -220,6 +236,14 @@ COPY public._sqlx_migrations (version, description, installed_on, success, check
 --
 
 COPY public.accounts (account_id, user_id, account_name, created_at) FROM stdin;
+\.
+
+
+--
+-- Data for Name: bansperm; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.bansperm (client_id, user_id, auteur, raison, date_ban) FROM stdin;
 \.
 
 
@@ -301,6 +325,14 @@ ALTER TABLE ONLY public.accounts
 
 
 --
+-- Name: bansperm bansperm_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.bansperm
+    ADD CONSTRAINT bansperm_pkey PRIMARY KEY (user_id);
+
+
+--
 -- Name: clients clients_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -349,6 +381,14 @@ ALTER TABLE ONLY public.accounts
 
 
 --
+-- Name: bansperm bansperm_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.bansperm
+    ADD CONSTRAINT bansperm_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(user_id);
+
+
+--
 -- Name: clients clients_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -376,5 +416,5 @@ ALTER TABLE ONLY public.sessions
 -- PostgreSQL database dump complete
 --
 
-\unrestrict A3tsp6RCmiN17wmdZHeFVwuL2i8YxlyJ4kjRFweGg0sRt9C5OlcKrq82NdhDnS4
+\unrestrict 947GAKWOPbV7XA6ajUouO8Yfg1pJWrHE1FhoTVZrYF44gQxdhNahjiNmPkwdgst
 
