@@ -235,7 +235,7 @@ jobs:
     - name: Dump PostgreSQL database
       if: always()
       run: |
-             mkdir-p database
+             mkdir -p database
              docker exec ${{ job.services.postgres.id }} \
               pg_dump \
               -U postgres \
