@@ -235,15 +235,17 @@ jobs:
     - name: Dump PostgreSQL database
       if: always()
       run: |
-        mkdir -p database
+            sudo apt-get update
+            sudo apt-get install -y postgresql-client-17
+            mkdir -p database
 
-        pg_dump \
-          --dbname="$DATABASE_URL" \
-          --clean \
-          --if-exists \
-          --no-owner \
-          --no-privileges \
-          > database/database.sql
+            pg_dump \
+             --dbname="$DATABASE_URL" \
+             --clean \
+             --if-exists \
+             --no-owner \
+             --no-privileges \
+             > database/database.sql
     
   # ==========================================================
 # Commit automatique des bases SQLite
