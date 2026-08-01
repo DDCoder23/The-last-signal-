@@ -28,7 +28,10 @@ AES_GCM_NONCE_SIZE = 12
 FORMAT_VERSION = b"\x01"
 
 
-def log_save_event(profile: str, slot: int, status: str, message: str = "")-> None:
+def log_save_event(profile: str, 
+                   slot: int, 
+                   status: str, 
+                   message: str = "") -> None:
     """
     Journalise un événement de sauvegarde.
 
