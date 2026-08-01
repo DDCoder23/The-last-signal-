@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict Stma5Qnidug6GHe4Kw7y77ISY9wsHDgumITpjLDzIPjL0mlYwd8pw3hWNNEoUgE
+\restrict Pv8iXo8MP6PvcFhwnF2jbEleffzHaWWVuc6mdjFzJuuflMc9tsdNnJFzwR7Wqdb
 
 -- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
 -- Dumped by pg_dump version 17.10 (Debian 17.10-1.pgdg13+1)
@@ -222,12 +222,12 @@ ALTER TABLE ONLY public.logs ALTER COLUMN log_id SET DEFAULT nextval('public.log
 --
 
 COPY public._sqlx_migrations (version, description, installed_on, success, checksum, execution_time) FROM stdin;
-1	create users	2026-08-01 22:23:57.949847+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2479397
-2	create accounts	2026-08-01 22:23:57.952944+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	2873562
-3	create sessions	2026-08-01 22:23:57.956286+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1801351
-4	create logs	2026-08-01 22:23:57.958552+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	2252878
-5	create clients	2026-08-01 22:23:57.961155+00	t	\\x28e590a7c2add544dd7d6856266d907d98e0ad38a5a63aef88ea4893956c175896964c18965a0765175131023f274b83	2241649
-6	create bans perm	2026-08-01 22:23:57.963736+00	t	\\xd0399f631a759cba123363700b5f7d2e9bfe2e599d6350f547e00dd1dbef94dc47541f3752ba49f9cfc6c0be6d35d3e5	1859400
+1	create users	2026-08-01 23:04:43.308539+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2548635
+2	create accounts	2026-08-01 23:04:43.311718+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	2918848
+3	create sessions	2026-08-01 23:04:43.314977+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1887877
+4	create logs	2026-08-01 23:04:43.317213+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	2200733
+5	create clients	2026-08-01 23:04:43.319805+00	t	\\x28e590a7c2add544dd7d6856266d907d98e0ad38a5a63aef88ea4893956c175896964c18965a0765175131023f274b83	2352798
+6	create bans perm	2026-08-01 23:04:43.322572+00	t	\\xd0399f631a759cba123363700b5f7d2e9bfe2e599d6350f547e00dd1dbef94dc47541f3752ba49f9cfc6c0be6d35d3e5	1953350
 \.
 
 
@@ -416,5 +416,5 @@ ALTER TABLE ONLY public.sessions
 -- PostgreSQL database dump complete
 --
 
-\unrestrict Stma5Qnidug6GHe4Kw7y77ISY9wsHDgumITpjLDzIPjL0mlYwd8pw3hWNNEoUgE
+\unrestrict Pv8iXo8MP6PvcFhwnF2jbEleffzHaWWVuc6mdjFzJuuflMc9tsdNnJFzwR7Wqdb
 
