@@ -1,5 +1,5 @@
 {
-    "generated": "2026-07-31T23:26:34.887620",
+    "generated": "2026-08-01T00:08:35.142419",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 903,
+    "problem_count": 904,
     "details": {
         "markdown": {
             "score": 49,
@@ -2166,6 +2166,13 @@
                 {
                     "file": "reports/python/python-report-692.md",
                     "line": 1425,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
+                    "module": "links"
+                },
+                {
+                    "file": "reports/python/python-report-34.md",
+                    "line": 1484,
                     "severity": "info",
                     "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
                     "module": "links"
