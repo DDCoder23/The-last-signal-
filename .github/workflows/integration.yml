@@ -168,6 +168,19 @@ jobs:
 
           exit 1
         fi
+    - name: Check tables
+      run: |
+             docker exec ${{ job.services.postgres.id }} \
+             psql \
+             -U postgres \
+              -d the_last_signal \
+              -c "\dt+"
+
+             docker exec ${{ job.services.postgres.id }} \
+             psql \
+             -U postgres \
+             -d the_last_signal \
+             -c "SELECT * FROM _sqlx_migrations;"
 
     ##########################################################
     # Tests Python
