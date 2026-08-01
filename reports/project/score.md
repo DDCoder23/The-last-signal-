@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-08-01 05:07:26
+**Date :** 2026-08-01 06:35:41
 
 # 77/100
 
@@ -48,7 +48,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'derive_key'ligne 66 ne possède pas de docstring.
+- **Message :** La fonction 'derive_key'ligne 69 ne possède pas de docstring.
 
 - **module :** python
 
@@ -60,25 +60,25 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'ensure_profile_dir'ligne 99 ne possède pas de docstring.
+- **Message :** La fonction 'ensure_profile_dir'ligne 102 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'atomic_write_zip'ligne 105 ne possède pas de docstring.
+- **Message :** La fonction 'atomic_write_zip'ligne 108 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'save_to_slot'ligne 121 ne possède pas de docstring.
+- **Message :** La fonction 'save_to_slot'ligne 124 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'load_from_slot'ligne 153 ne possède pas de docstring.
+- **Message :** La fonction 'load_from_slot'ligne 156 ne possède pas de docstring.
 
 - **module :** python
 
@@ -90,7 +90,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'write_zip'ligne 136 ne possède pas de docstring.
+- **Message :** La fonction 'write_zip'ligne 139 ne possède pas de docstring.
 
 - **module :** python
 
@@ -102,7 +102,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'start'ligne 207 ne possède pas de docstring.
+- **Message :** La fonction 'start'ligne 210 ne possède pas de docstring.
 
 - **module :** python
 
@@ -114,7 +114,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'stop'ligne 214 ne possède pas de docstring.
+- **Message :** La fonction 'stop'ligne 217 ne possède pas de docstring.
 
 - **module :** python
 
