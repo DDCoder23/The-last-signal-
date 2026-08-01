@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict aXJLJJtP0CExJLMsd4BSRl8iOVa9bMMvPuoZfRCHzjutRYgoqbTG5bymNYS5jrW
+\restrict 7ZJGXnIKPbJDthZHluDsDkoN8BIthvZUABaf7VQeIxboGAaIfbqgAiDxUWaHjl5
 
 -- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
 -- Dumped by pg_dump version 17.10 (Debian 17.10-1.pgdg13+1)
@@ -207,11 +207,11 @@ ALTER TABLE ONLY public.logs ALTER COLUMN log_id SET DEFAULT nextval('public.log
 --
 
 COPY public._sqlx_migrations (version, description, installed_on, success, checksum, execution_time) FROM stdin;
-1	create users	2026-08-01 08:38:27.333501+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2477437
-2	create accounts	2026-08-01 08:38:27.336594+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	2912712
-3	create sessions	2026-08-01 08:38:27.339891+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1841717
-4	create logs	2026-08-01 08:38:27.34211+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	2143913
-5	create clients	2026-08-01 08:38:27.344586+00	t	\\x28e590a7c2add544dd7d6856266d907d98e0ad38a5a63aef88ea4893956c175896964c18965a0765175131023f274b83	2178387
+1	create users	2026-08-01 08:44:56.063805+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	12143953
+2	create accounts	2026-08-01 08:44:56.076728+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	3029951
+3	create sessions	2026-08-01 08:44:56.080109+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1878467
+4	create logs	2026-08-01 08:44:56.082359+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	2168379
+5	create clients	2026-08-01 08:44:56.084924+00	t	\\x28e590a7c2add544dd7d6856266d907d98e0ad38a5a63aef88ea4893956c175896964c18965a0765175131023f274b83	2224214
 \.
 
 
@@ -376,5 +376,5 @@ ALTER TABLE ONLY public.sessions
 -- PostgreSQL database dump complete
 --
 
-\unrestrict aXJLJJtP0CExJLMsd4BSRl8iOVa9bMMvPuoZfRCHzjutRYgoqbTG5bymNYS5jrW
+\unrestrict 7ZJGXnIKPbJDthZHluDsDkoN8BIthvZUABaf7VQeIxboGAaIfbqgAiDxUWaHjl5
 
