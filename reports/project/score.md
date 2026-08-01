@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-07-31 23:26:34
+**Date :** 2026-08-01 00:08:35
 
 # 77/100
 
@@ -5675,6 +5675,16 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 
 - **line :** 1488
+
+- **module :** links
+
+# 📄 reports/python/python-report-34.md
+
+## ⚠️ Info
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+
+- **line :** 1484
 
 - **module :** links
 
