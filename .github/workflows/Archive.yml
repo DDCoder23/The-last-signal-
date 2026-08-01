@@ -52,6 +52,10 @@ jobs:
               sort -nr |
               cut -d' ' -f2-
             )
+            echo "Ordre des fichiers :"
+            for F in "${FILES[@]}"; do
+            stat -c "%y %n" "$F"
+            done
 
             COUNT=${#FILES[@]}
 
