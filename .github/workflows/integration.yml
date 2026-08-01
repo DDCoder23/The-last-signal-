@@ -239,7 +239,7 @@ jobs:
              docker exec ${{ job.services.postgres.id }} \
               pg_dump \
               -U postgres \
-              -d postgres \
+              -d the_last_signal\
               > database/the_last_signal.sql
   
     
