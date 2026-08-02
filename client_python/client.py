@@ -2,7 +2,7 @@ import socket
 import traceback
 from .packet import Packet
 from .packets.log import LogPacket
-from logs import log
+from .logs import log
 class Client:
     """
     Client réseau de The Last Signal.
@@ -54,6 +54,7 @@ class Client:
         """
 
         if not self.connected:
+            log(self,"WARNING","client non connecté")
             return
 
         try:
@@ -64,7 +65,7 @@ class Client:
 
         except Exception:
 
-            print(
+            log(self,"ERROR",
                 f"Erreur d'envoi : {traceback.format_exc()}"
             )
 
@@ -74,6 +75,7 @@ class Client:
         """
 
         if not self.connected:
+            log(self,"WARNING","client non connecté")
             return None
 
         try:
@@ -97,7 +99,7 @@ class Client:
 
         except Exception:
 
-            print(
+            log(self,"ERROR",
                 f"Erreur de réception : {traceback.format_exc()}"
             )
 
@@ -132,7 +134,7 @@ class Client:
 
         except Exception:
 
-            print(
+            log(self,"ERROR",
                 f"Erreur : {traceback.format_exc()}"
             )
 

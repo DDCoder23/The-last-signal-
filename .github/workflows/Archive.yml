@@ -1,0 +1,119 @@
+name: Archive CI Reports
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+
+    env:
+      REPORTS_DIR: reports
+      ARCHIVE_DIR: archive
+      KEEP_REPORTS: 3
+
+    steps:
+      - name: Checkout ci-reports
+        uses: actions/checkout@v4
+        with:
+          ref: ci-reports
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Install zip
+        run: sudo apt-get update && sudo apt-get install -y zip
+
+      - name: Archive old reports
+        shell: bash
+        run: |
+               set -Eeuo pipefail
+
+               mkdir -p "$ARCHIVE_DIR"
+
+               shopt -s nullglob
+
+               CURRENT_RUN=$GITHUB_RUN_NUMBER
+               PREVIOUS_RUN=$((CURRENT_RUN - 1))
+               OLDER_RUN=$((CURRENT_RUN - 2))
+
+               for DIR in "$REPORTS_DIR"/*; do
+               [ -d "$DIR" ] || continue
+
+               NAME=$(basename "$DIR")
+               ZIP_FILE="$ARCHIVE_DIR/${NAME}.zip"
+
+               echo "Traitement de $NAME"
+
+               FILES_TO_ARCHIVE=()
+
+               for FILE in "$DIR"/*.md; do
+               [ -f "$FILE" ] || continue
+
+               RUN_NUMBER=$(basename "$FILE" .md | grep -oE '[0-9]+$' || true)
+
+               if [[ "$RUN_NUMBER" == "$CURRENT_RUN" ||
+                     "$RUN_NUMBER" == "$PREVIOUS_RUN" ||
+                     "$RUN_NUMBER" == "$OLDER_RUN" ]]; then
+
+               echo "Conservation : $(basename "$FILE")"
+
+               else
+
+               echo "Archivage : $(basename "$FILE")"
+               FILES_TO_ARCHIVE+=("$FILE")
+
+               fi
+               done
+
+               COUNT=${#FILES_TO_ARCHIVE[@]}
+
+               if (( COUNT == 0 )); then
+               echo "::notice::$NAME : rien à archiver"
+               continue
+               fi
+
+
+               TMP_DIR=$(mktemp -d)
+
+               for FILE in "${FILES_TO_ARCHIVE[@]}"; do
+               cp "$FILE" "$TMP_DIR/"
+               done
+               (
+                 cd "$TMP_DIR"
+                 if [ -f "$GITHUB_WORKSPACE/$ZIP_FILE" ]; then
+                 zip -q -u "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+                 else
+                 zip -q -9 "$GITHUB_WORKSPACE/$ZIP_FILE" *.md
+                 fi
+                  )
+
+
+                  for FILE in "${FILES_TO_ARCHIVE[@]}"; do
+                  rm -f "$FILE"
+                  done
+                  rm -rf "$TMP_DIR"
+                  done
+
+      - name: Commit changes
+        shell: bash
+        run: |
+          git add archive reports
+
+          if git diff --cached --quiet; then
+            echo "Aucune modification."
+            exit 0
+          fi
+
+          git commit -m "Archive old CI reports"
+
+          git pull --rebase origin ci-reports
+
+          git push origin ci-reports

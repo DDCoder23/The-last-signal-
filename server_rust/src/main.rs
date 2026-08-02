@@ -1,14 +1,12 @@
-mod database;
-mod network;
-mod utils;
-use database::{
+use packet::PacketType;
+use the_last_signal_server::database::{
     database_manager::DatabaseManager,
     migrations,
 };
-use log::info;
+use the_last_signal_server::log::info;
 
-use network::server::Server;
-use utils::logger::logger::ServerLogger;
+use the_last_signal_server::network::server::Server;
+use the_last_signal_server::utils::logger::logger::ServerLogger;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {

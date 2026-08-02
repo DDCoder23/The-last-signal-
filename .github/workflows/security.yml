@@ -6,7 +6,7 @@ on:
   workflow_call:
 
   schedule:
-    # Tous les jours à 03:00 UTC
+    
     - cron: "7 * * * 0"
     - cron: "7 * * * 6"
 
@@ -43,7 +43,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.14"
-          cache: "pip"
+          
 
       - name: Install Python dependencies
         run: |
@@ -87,12 +87,12 @@ jobs:
 
       - name: Create report
         run: |
+          
 
-          mkdir -p reports
-          mkdir -p dashboard/security
-          mkdir -p database
+          mkdir -p reports/security
+        
 
-          REPORT="reports/security-report-${GITHUB_RUN_NUMBER}.md"
+          REPORT="reports/security/security-report-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
@@ -326,8 +326,9 @@ jobs:
       - name: Update dashboard
         shell: bash
         run: |
+          rm -rf dashboard
 
-          mkdir -p dashboard
+          mkdir -p dashboard/security
 
           HISTORY="dashboard/security/history.csv"
 

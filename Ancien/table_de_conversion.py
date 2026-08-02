@@ -1,15 +1,14 @@
-﻿
 from index_manager import mettre_a_jour_index
 from inventaire import safe_increment, Objet, Livres
 import random
 from dataclasses import dataclass, asdict
-lvs=[]
+lvs = []
+
 
 @dataclass
 class StatsConversion:
-    
     livres_utilises = 0
-    livres_crees=0
+    livres_crees = 0
 def qtes(nom: str, joueur: 'joueur') :
     """Retourne la quantité et la catégorie d'un objet dans l'inventaire du joueur."""
     if nom not in joueur.stuff:
@@ -24,7 +23,7 @@ def qtes(nom: str, joueur: 'joueur') :
     print(f"Type inattendu pour {nom}: {type(obj)}")
     return 0, None
 def chercher_livre(nb, dict_livre,lv1,clef1,joueur):
-    lvs=[]
+    lvs = []
     for i in range(1,nb+1):
         for cle in dict_livre[1:]:
             lv_temp = joueur.stuff[cle]

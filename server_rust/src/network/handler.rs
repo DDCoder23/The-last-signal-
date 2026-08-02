@@ -81,7 +81,6 @@ impl PacketHandler {
         b"OK".to_vec(),
     )
             }
-
             PacketType::Ping => {
 
                 debug!("Ping reçu");

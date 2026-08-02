@@ -1,19 +1,8 @@
 name: Rust CI Report
 
 on:
-  push:
-    branches:
-      - "**"
-
-  pull_request:
-    branches:
-      - "**"
-
-  workflow_dispatch:
   workflow_call:
 
-  schedule:
-    - cron: "7 * * * *"
 
 permissions:
   contents: write
@@ -42,9 +31,9 @@ jobs:
 
       - name: Create report
         run: |
-          mkdir -p reports
+          mkdir -p reports/rust
 
-          REPORT="reports/rust-report-${GITHUB_RUN_NUMBER}.md"
+          REPORT="reports/rust/rust-report-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
@@ -68,7 +57,7 @@ jobs:
 
           if find . -name Cargo.toml | grep -q .; then
             cargo fmt \
-            --manifest-path "$RUST_PROJECT/Cargo.toml"
+            --manifest-path "$RUST_PROJECT/Cargo.toml"--release
             >> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
