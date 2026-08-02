@@ -84,7 +84,7 @@ impl SaveManager {
         slot,
         Encryption::encode_salt(
     &salt),
-        Encryption::encode_base64(&nonce),
+        Encryption::encode_nonce(&nonce),
         encrypted_payload.len() as u64,
         checksum,
     );
@@ -131,31 +131,279 @@ zip.finish()?;
 Ok(())
 
     /// Charge une sauvegarde.
-    pub fn load(
-        &self,
-        profile: &str,
-        slot: u8,
-        password: &str,
-    ) -> SaveResult<Map<String, Value>> {
-        todo!()
+pub fn load(
+    &self,
+    profile: &str,
+    slot: u8,
+    password: &str,
+) -> SaveResult<Map<String, Value>> {
+
+    // Vérification du slot.
+    self.validate_slot(slot)?;
+
+    // Chemin de la sauvegarde.
+    let save_path =
+        self.save_file(profile, slot);
+
+    if !save_path.exists() {
+        return Err(
+            SaveError::SaveNotFound,
+        );
     }
+
+    // Ouverture du fichier.
+    let file =
+        File::open(save_path)?;
+
+    let mut archive =
+        ZipArchive::new(file)?;
+
+    // ============================
+    // Lecture des métadonnées
+    // ============================
+
+    let metadata: SaveMetadata = {
+
+        let mut file =
+            archive.by_name(
+                METADATA_FILE,
+            )?;
+
+        let mut json =
+            String::new();
+
+        file.read_to_string(
+            &mut json,
+        )?;
+
+        serde_json::from_str(&json)?
+    };
+
+    // Vérification de la version.
+    if !metadata.is_compatible() {
+
+        return Err(
+            SaveError::InvalidFormat,
+        );
+
+    }
+
+    // ============================
+    // Lecture du payload
+    // ============================
+
+    let encrypted_payload = {
+
+        let mut file =
+            archive.by_name(
+                PAYLOAD_FILE,
+            )?;
+
+        let mut payload =
+            Vec::new();
+
+        file.read_to_end(
+            &mut payload,
+        )?;
+
+        payload
+    };
+
+    // Vérification de la taille.
+    if encrypted_payload.len() as u64
+        != metadata.payload_size
+    {
+
+        return Err(
+            SaveError::CorruptedSave,
+        );
+
+    }
+
+    // Vérification du checksum.
+    let checksum =
+        Encryption::sha256(
+            &encrypted_payload,
+        );
+
+    if checksum != metadata.checksum {
+
+        return Err(
+            SaveError::CorruptedSave,
+        );
+
+    }
+
+    // Reconstruction du salt.
+    let salt =
+        Encryption::decode_salt(
+            &metadata.salt,
+        )?;
+
+    // Reconstruction du nonce.
+    let nonce_bytes =
+    Encryption::decode_nonce(
+        &metadata.nonce,
+    )?;
+
+    if nonce_bytes.len()
+        != AES_NONCE_SIZE
+    {
+
+        return Err(
+            SaveError::CorruptedSave,
+        );
+
+    }
+
+    let mut nonce =
+        [0u8; AES_NONCE_SIZE];
+
+    nonce.copy_from_slice(
+        &nonce_bytes,
+    );
+
+    // Dérivation de la clé.
+    let key =
+        Encryption::derive_key(
+            password,
+            &salt,
+        )?;
+
+    // Déchiffrement.
+    let plaintext =
+        Encryption::decrypt(
+            &key,
+            &nonce,
+            &encrypted_payload,
+        )?;
+
+    // Désérialisation.
+    let data =
+        serde_json::from_slice::<
+            Map<String, Value>,
+        >(
+            &plaintext,
+        )?;
+
+    Ok(data)
+}
 
     /// Vérifie l'intégrité d'une sauvegarde.
     pub fn verify(
-        &self,
-        profile: &str,
-        slot: u8,
-    ) -> SaveResult<()> {
-        todo!()
+    &self,
+    profile: &str,
+    slot: u8,
+) -> SaveResult<()> {
+
+    self.validate_slot(slot)?;
+
+    let save_path =
+        self.save_file(profile, slot);
+
+    if !save_path.exists() {
+        return Err(
+            SaveError::SaveNotFound,
+        );
+    }
+
+    let file =
+        File::open(save_path)?;
+
+    let mut archive =
+        ZipArchive::new(file)?;
+
+    // Lecture des métadonnées
+    let metadata: SaveMetadata = {
+
+        let mut file =
+            archive.by_name(
+                METADATA_FILE,
+            )?;
+
+        let mut json =
+            String::new();
+
+        file.read_to_string(
+            &mut json,
+        )?;
+
+        serde_json::from_str(&json)?
+    };
+
+    if !metadata.is_compatible() {
+
+        return Err(
+            SaveError::InvalidFormat,
+        );
+
+    }
+
+    // Lecture du payload
+    let payload = {
+
+        let mut file =
+            archive.by_name(
+                PAYLOAD_FILE,
+            )?;
+
+        let mut payload =
+            Vec::new();
+
+        file.read_to_end(
+            &mut payload,
+        )?;
+
+        payload
+    };
+
+    if payload.len() as u64
+        != metadata.payload_size
+    {
+
+        return Err(
+            SaveError::CorruptedSave,
+        );
+
+    }
+
+    let checksum =
+        Encryption::sha256(
+            &payload,
+        );
+
+    if checksum != metadata.checksum {
+
+        return Err(
+            SaveError::CorruptedSave,
+        );
+
+    }
+
+    Ok(())
     }
 
     /// Supprime une sauvegarde.
     pub fn delete(
-        &self,
-        profile: &str,
-        slot: u8,
-    ) -> SaveResult<()> {
-        todo!()
+    &self,
+    profile: &str,
+    slot: u8,
+) -> SaveResult<()> {
+
+    self.validate_slot(slot)?;
+
+    let save =
+        self.save_file(profile, slot);
+
+    if !save.exists() {
+        return Err(
+            SaveError::SaveNotFound,
+        );
+    }
+
+    std::fs::remove_file(save)?;
+
+    Ok(())
     }
 
     /// Liste les slots disponibles.
