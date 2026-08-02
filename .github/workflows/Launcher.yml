@@ -1,0 +1,56 @@
+name: launcher
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - "**"
+
+  workflow_dispatch:
+  workflow_call:
+
+  schedule:
+    - cron: "15 * * * *"
+
+permissions:
+  actions: write
+  contents: write
+  security-events: write
+
+jobs:
+  reset:
+    uses: ./.github/workflows/Reset.yml
+    
+  python:
+    needs: reset
+    uses: ./.github/workflows/python.yml
+
+  rust:
+    needs: python
+    uses: ./.github/workflows/rust.yml
+
+  
+
+  project:
+    needs: rust
+    uses: ./.github/workflows/project.yml
+
+
+  integration:
+    needs: project
+    uses: ./.github/workflows/integration.yml
+  build:
+    needs: integration
+    uses: ./.github/workflows/build.yml
+  archive:
+    needs: build
+    uses: ./.github/workflows/Archive.yml
+ 
+
+  sync:
+    needs: archive
+    uses: ./.github/workflows/sync-ci.yml
+  

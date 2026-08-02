@@ -1,15 +1,6 @@
 name: Project Quality
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-    branches:
-      - "**"
-
-  workflow_dispatch:
   workflow_call:
 
 permissions:
@@ -209,18 +200,8 @@ jobs:
             cat reports/project/score.md
           } >> $GITHUB_STEP_SUMMARY
           python -m scripts.generate_problems_md
-                # =========================
-      # Dashboard
-      # =========================
-
-      - name: 📈 Generate dashboard
-        if: always()
-        run: |
-
-          mkdir -p dashboard
-
-          python -m scripts.generate_dashboard
-
+                
+        
       # =========================
       # Upload reports
       # =========================
@@ -233,15 +214,12 @@ jobs:
           retention-days: 30
           path: |
             reports/**
-            dashboard/**
-
-      # =========================
-      # Commit reports
-      # =========================
-
+            database/**
       - name: 💾 Commit reports
-        if: always()
         uses: ./.github/actions/commit-reports
         with:
           report-type: project
           commit-message: "Documentation Report #${{ github.run_number }}"
+
+
+      
