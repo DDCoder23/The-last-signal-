@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict qMv2RXWBHTBlvcnM4GQn4j8ARiOWufhCaftQJw1ixVpbqcH9qWSLPobOrHixfUK
+\restrict UAq6vXkYMk0rXwlqEh681Fe96bCeAtMtosUZQC6p00eo3wPMIfrs7WXsjEm7qTv
 
 -- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
 -- Dumped by pg_dump version 17.10 (Debian 17.10-1.pgdg13+1)
@@ -196,6 +196,41 @@ ALTER SEQUENCE public.logs_log_id_seq OWNED BY public.logs.log_id;
 
 
 --
+-- Name: perms; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.perms (
+    id integer NOT NULL,
+    name text NOT NULL,
+    perm text NOT NULL
+);
+
+
+ALTER TABLE public.perms OWNER TO postgres;
+
+--
+-- Name: perms_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+CREATE SEQUENCE public.perms_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.perms_id_seq OWNER TO postgres;
+
+--
+-- Name: perms_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+--
+
+ALTER SEQUENCE public.perms_id_seq OWNED BY public.perms.id;
+
+
+--
 -- Name: sessions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -247,18 +282,26 @@ ALTER TABLE ONLY public.logs ALTER COLUMN log_id SET DEFAULT nextval('public.log
 
 
 --
+-- Name: perms id; Type: DEFAULT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.perms ALTER COLUMN id SET DEFAULT nextval('public.perms_id_seq'::regclass);
+
+
+--
 -- Data for Name: _sqlx_migrations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public._sqlx_migrations (version, description, installed_on, success, checksum, execution_time) FROM stdin;
-1	create users	2026-08-02 09:47:00.106967+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2180277
-2	create accounts	2026-08-02 09:47:00.10975+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	1949316
-3	create sessions	2026-08-02 09:47:00.112106+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1435177
-4	create logs	2026-08-02 09:47:00.113982+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	1917418
-5	create clients	2026-08-02 09:47:00.116795+00	t	\\x17b5337a6a1864092ad58992a19977b82e5171b44fb244189c77980f8310d4e6c074f252cb55e5435d027bd273612c7e	1590974
-6	create bans perm	2026-08-02 09:47:00.118842+00	t	\\x24564135ab44c0e141d9ff33890d7aaa66c9ffe49301b39eb107f3caaf3e2cc6de74691f1d3dc31bba5777f51ce81beb	1414720
-7	create ban ferme	2026-08-02 09:47:00.120696+00	t	\\xf62a4c961dc9e3d7ddd53432e757f8fefeba491dbc105ee03f131dc185bdac0084e6013c62edf1c970deafcc9b51f050	1434309
-8	create ban sursis	2026-08-02 09:47:00.122857+00	t	\\x37b78821ce7dfb4dbb231b41c8ef7dcc8bc0e9892577cdc8697f14b49959a0d81304e3b93c832d117aa8fd8ecd02dbca	1562612
+1	create users	2026-08-02 10:06:14.907005+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	1988952
+2	create accounts	2026-08-02 10:06:14.90957+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	2219621
+3	create sessions	2026-08-02 10:06:14.912165+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1416799
+4	create logs	2026-08-02 10:06:14.913913+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	1683988
+5	create clients	2026-08-02 10:06:14.915933+00	t	\\x17b5337a6a1864092ad58992a19977b82e5171b44fb244189c77980f8310d4e6c074f252cb55e5435d027bd273612c7e	1663302
+6	create bans perm	2026-08-02 10:06:14.917917+00	t	\\x24564135ab44c0e141d9ff33890d7aaa66c9ffe49301b39eb107f3caaf3e2cc6de74691f1d3dc31bba5777f51ce81beb	1357030
+7	create ban ferme	2026-08-02 10:06:14.919602+00	t	\\xf62a4c961dc9e3d7ddd53432e757f8fefeba491dbc105ee03f131dc185bdac0084e6013c62edf1c970deafcc9b51f050	1387375
+8	create ban sursis	2026-08-02 10:06:14.921279+00	t	\\x37b78821ce7dfb4dbb231b41c8ef7dcc8bc0e9892577cdc8697f14b49959a0d81304e3b93c832d117aa8fd8ecd02dbca	1349198
+9	create perms	2026-08-02 10:06:14.922909+00	t	\\x1ed7840eea70d58da460e0b5677fa8439dec9f712f0bf2f39c527c07393f999aa90266576675b90fc486fb27412d0ea6	1543084
 \.
 
 
@@ -311,6 +354,16 @@ COPY public.logs (log_id, session_id, "timestamp", level, module, message) FROM 
 
 
 --
+-- Data for Name: perms; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.perms (id, name, perm) FROM stdin;
+1	Cyril	admin
+2	Morgan	Super admin
+\.
+
+
+--
 -- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -345,6 +398,13 @@ SELECT pg_catalog.setval('public.clients_client_id_seq', 1, false);
 --
 
 SELECT pg_catalog.setval('public.logs_log_id_seq', 1, false);
+
+
+--
+-- Name: perms_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.perms_id_seq', 2, true);
 
 
 --
@@ -409,6 +469,14 @@ ALTER TABLE ONLY public.clients
 
 ALTER TABLE ONLY public.logs
     ADD CONSTRAINT logs_pkey PRIMARY KEY (log_id);
+
+
+--
+-- Name: perms perms_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.perms
+    ADD CONSTRAINT perms_pkey PRIMARY KEY (id);
 
 
 --
@@ -495,5 +563,5 @@ ALTER TABLE ONLY public.sessions
 -- PostgreSQL database dump complete
 --
 
-\unrestrict qMv2RXWBHTBlvcnM4GQn4j8ARiOWufhCaftQJw1ixVpbqcH9qWSLPobOrHixfUK
+\unrestrict UAq6vXkYMk0rXwlqEh681Fe96bCeAtMtosUZQC6p00eo3wPMIfrs7WXsjEm7qTv
 
