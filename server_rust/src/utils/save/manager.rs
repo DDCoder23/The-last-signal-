@@ -82,9 +82,8 @@ impl SaveManager {
     SaveMetadata::new(
         profile.to_string(),
         slot,
-        Encryption::encode_base64(
-            salt.as_str().as_bytes(),
-        ),
+        Encryption::encode_salt(
+    &salt),
         Encryption::encode_base64(&nonce),
         encrypted_payload.len() as u64,
         checksum,
