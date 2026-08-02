@@ -139,4 +139,31 @@ impl Encryption {
             .decode(text)
             .map_err(|e| SaveError::Crypto(e.to_string()))
     }
+    /// Encode un SaltString en Base64.
+pub fn encode_salt(
+    salt: &SaltString,
+) -> String {
+
+    general_purpose::STANDARD.encode(
+        salt.as_str().as_bytes(),
+    )
+}
+
+/// Décode un SaltString depuis du Base64.
+pub fn decode_salt(
+    text: &str,
+) -> SaveResult<SaltString> {
+
+    let bytes =
+        general_purpose::STANDARD
+            .decode(text)
+            .map_err(|e| SaveError::Crypto(e.to_string()))?;
+
+    let text =
+        String::from_utf8(bytes)
+            .map_err(|e| SaveError::Crypto(e.to_string()))?;
+
+    SaltString::from_b64(&text)
+        .map_err(|e| SaveError::Crypto(e.to_string()))
+}
 }
