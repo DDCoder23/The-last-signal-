@@ -1,3 +1,11 @@
+use std::fs::File;
+use std::io::Write;
+
+use zip::{
+    ZipWriter,
+    write::SimpleFileOptions,
+    CompressionMethod,
+};
 use std::{
     fs,
     path::{Path, PathBuf},
@@ -64,6 +72,63 @@ impl SaveManager {
             &key,
             &json,
         )?;
+    // Calcul du checksum.
+    let checksum =
+    Encryption::sha256(&encrypted_payload);
+
+    // Création des métadonnées.
+    let metadata =
+    SaveMetadata::new(
+        profile.to_string(),
+        slot,
+        Encryption::encode_base64(
+            salt.as_str().as_bytes(),
+        ),
+        Encryption::encode_base64(&nonce),
+        encrypted_payload.len() as u64,
+        checksum,
+    );
+
+    // Sérialisation des métadonnées.
+    let metadata_json =
+    serde_json::to_vec_pretty(&metadata)?;
+
+    // Création du fichier .tls.
+    let save_file =
+    self.save_file(profile, slot);
+
+    let file =
+    File::create(&save_file)?;
+
+    let mut zip =
+    ZipWriter::new(file);
+
+    let options =
+    SimpleFileOptions::default()
+        .compression_method(
+            CompressionMethod::Deflated,
+        );
+
+     // metadata.json
+    zip.start_file(
+    METADATA_FILE,
+    options,
+)?;
+
+zip.write_all(&metadata_json)?;
+
+// payload.bin
+zip.start_file(
+    PAYLOAD_FILE,
+    options,
+)?;
+
+zip.write_all(&encrypted_payload)?;
+
+// Finalisation de l'archive.
+zip.finish()?;
+
+Ok(())
 
     /// Charge une sauvegarde.
     pub fn load(
