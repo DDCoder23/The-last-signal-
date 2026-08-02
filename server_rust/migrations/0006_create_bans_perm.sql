@@ -1,5 +1,4 @@
 CREATE TABLE IF NOT EXISTS bansperm (
-    client_id INTEGER,
     user_id UUID NOT NULL,
     auteur TEXT NOT NULL,
     raison TEXT NOT NULL,
