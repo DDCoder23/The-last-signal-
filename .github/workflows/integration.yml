@@ -1,17 +1,10 @@
 name: Integration Tests
 
 on:
-  push:
-    branches:
-      - main
-
-  pull_request:
-
-  workflow_dispatch:
+  
   workflow_call:
 
-  schedule:
-    - cron: "15 * * * *"
+  
 
 permissions:
   contents: write
@@ -99,8 +92,9 @@ jobs:
              git add .python-version
 
              git diff --cached --quiet || git commit -m "chore: update Python version"
-
-             git push
+             git pull --rebase origin main
+             
+             git push origin main
         
 
     - name: Install Python dependencies
@@ -174,6 +168,19 @@ jobs:
 
           exit 1
         fi
+    - name: Check tables
+      run: |
+             docker exec ${{ job.services.postgres.id }} \
+             psql \
+             -U postgres \
+              -d the_last_signal \
+              -c "\dt+"
+
+             docker exec ${{ job.services.postgres.id }} \
+             psql \
+             -U postgres \
+             -d the_last_signal \
+             -c "SELECT * FROM _sqlx_migrations;"
 
     ##########################################################
     # Tests Python
@@ -225,8 +232,7 @@ jobs:
     - name: Check generated files
       continue-on-error: true
       run: |
-             echo "=== DATABASE ==="
-             ls -lah database
+             
              echo "=== LOG FILE ==="
              ls -lah logs
              stat logs/the_last_signal.log
@@ -239,28 +245,17 @@ jobs:
       with:
         name: logs
         path: logs/
-    - name: Inspect database
-      continue-on-error: true
+    - name: Dump PostgreSQL database
+      if: always()
       run: |
-             python << 'EOF'
-             import sqlite3
-
-             DB_PATH = "database/client_logs"
-             conn = sqlite3.connect(DB_PATH)
-             cursor = conn.cursor()
-
-             cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
-             tables = cursor.fetchall()
-             print(f"Nombre de tables : {len(tables)}")
-             for (table_name,) in tables:
-                 print("=" * 60)
-                 print(table_name)
-                 cursor.execute(f'PRAGMA table_info("{table_name}")')
-                 print(cursor.fetchall())
-                 cursor.execute(f'SELECT * FROM "{table_name}"')
-                 print(cursor.fetchall())
-             conn.close()
-             EOF
+             mkdir -p database
+             docker exec ${{ job.services.postgres.id }} \
+              pg_dump \
+              -U postgres \
+              -d the_last_signal\
+              > database/the_last_signal.sql
+  
+    
   # ==========================================================
 # Commit automatique des bases SQLite
 # ========================================================

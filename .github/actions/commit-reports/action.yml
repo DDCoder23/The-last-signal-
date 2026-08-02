@@ -27,25 +27,29 @@ runs:
       run: |
         git config --global user.name "github-actions"
         git config --global user.email "github-actions@github.com"
-        git status
+        
 
     - shell: bash
       run: |
             git fetch origin
             if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
             then
+            
+            
             git worktree add /tmp/ci-worktree origin/${{ inputs.branch }}
             else
             git worktree add -b ${{ inputs.branch }} /tmp/ci-worktree
             fi
             mkdir -p "/tmp/ci-worktree/reports/${{ inputs.report-type }}"
-            mkdir -p "/tmp/ci-worktree/database"
-            mkdir -p "/tmp/ci-worktree/dashboard/${{ inputs.report-type }}"
-            cp -r reports/. "/tmp/ci-worktree/reports/${{ inputs.report-type }}/" 2>/dev/null || true
+            mkdir -p "/tmp/ci-worktree/database/"
+            cp -r reports/${{inputs.report-type}}/. "/tmp/ci-worktree/reports/${{ inputs.report-type }}/" 2>/dev/null || true
             cp -r database/. "/tmp/ci-worktree/database/" 2>/dev/null || true
-            cp -r dashboard/. "/tmp/ci-worktree/dashboard/${{ inputs.report-type }}/" 2>/dev/null || true
             cd /tmp/ci-worktree
+            echo "ajout"
+            ls
+            git add -n .
             git add .
+            git status
             if git diff --cached --quiet; then
             echo "No changes to commit."
             cd -
@@ -54,18 +58,24 @@ runs:
             fi
             git commit -m "${{ inputs.commit-message }}"
             for i in 1 2 3
-            do
-            git pull --rebase origin ${{ inputs.branch }} || true
+            do 
+            echo "branche actuelle:"
+            git branch --show-current
+            git log --oneline --decorate --graph -5
+            git status
+            git fetch origin ci-reports
+            git rebase origin/ci-reports
             if git push origin HEAD:${{ inputs.branch }}
             then
             echo "Push réussi"
-            cd -
+            cd "$GITHUB_WORKSPACE"
             git worktree remove /tmp/ci-worktree --force
             exit 0
             fi
             echo "Nouvelle tentative..."
             sleep 2
             done
-            cd -
+            cd "$GITHUB_WORKSPACE"
             git worktree remove /tmp/ci-worktree --force
             exit 1
+           
