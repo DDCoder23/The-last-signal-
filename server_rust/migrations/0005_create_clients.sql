@@ -1,8 +1,8 @@
 CREATE TABLE IF NOT EXISTS clients (
 
-    client_id BIGSERIAL PRIMARY KEY,
+    client_id BIGSERIAL,
 
-    user_id UUID UNIQUE,
+    user_id UUID PRIMARY KEY,
 
     platform TEXT,
 
