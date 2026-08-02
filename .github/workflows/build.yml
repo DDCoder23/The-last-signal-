@@ -1,19 +1,9 @@
 name: Build CI Report
-
 on:
-  push:
-    branches:
-      - main
 
-  pull_request:
-    branches:
-      - "**"
-
-  workflow_dispatch:
   workflow_call:
 
-  schedule:
-    - cron: "7 * * * *"
+  
 
 permissions:
   contents: write
@@ -40,10 +30,6 @@ jobs:
 
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
-          persist-credentials: true
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -52,13 +38,14 @@ jobs:
 
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
+      
 
       - name: Create report
         shell: bash
         run: |
-          mkdir -p reports
+          mkdir -p reports/build
 
-          REPORT="reports/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
+          REPORT="reports/build/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
@@ -95,7 +82,7 @@ jobs:
 
           if find . -name Cargo.toml | grep -q .; then
             cargo build --manifest-path "$RUST_PROJECT/Cargo.toml" \
-            --release >> "$REPORT" 2>&1
+             --release>> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
           fi
@@ -139,10 +126,10 @@ jobs:
           path: |
             reports/**
             database/**
-            
-
-      - name: Commit reports
+      - name: 💾 Commit reports
         uses: ./.github/actions/commit-reports
         with:
           report-type: build
           commit-message: "Build Report #${{ github.run_number }}"
+
+  
