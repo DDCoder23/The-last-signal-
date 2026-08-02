@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS banssursis (
 
-    client_id INTERGER,
+    client_id INTEGER,
 
     user_id UUID,
 
@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS banssursis (
     raison TEXT,
 
     date_ban TIMESTAMP NOT NULL DEFAULT NOW(),
-    sursis TIMESTAMP NOT NULL
+    sursis TIMESTAMP NOT NULL,
     PRIMARY KEY (user_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
