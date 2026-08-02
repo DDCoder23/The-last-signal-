@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict PoOjepUPfkgH8CBiEaddRPX6UkmIuvUgzVb1qHqn0gpjOQfg8j4SKrj0VDwS5FO
+\restrict qMv2RXWBHTBlvcnM4GQn4j8ARiOWufhCaftQJw1ixVpbqcH9qWSLPobOrHixfUK
 
 -- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
 -- Dumped by pg_dump version 17.10 (Debian 17.10-1.pgdg13+1)
@@ -75,11 +75,25 @@ ALTER SEQUENCE public.accounts_account_id_seq OWNED BY public.accounts.account_i
 
 
 --
+-- Name: bansferme; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.bansferme (
+    user_id uuid NOT NULL,
+    auteur text,
+    raison text,
+    date_ban timestamp without time zone DEFAULT now() NOT NULL,
+    date_deban timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.bansferme OWNER TO postgres;
+
+--
 -- Name: bansperm; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.bansperm (
-    client_id integer,
     user_id uuid NOT NULL,
     auteur text NOT NULL,
     raison text NOT NULL,
@@ -90,12 +104,27 @@ CREATE TABLE public.bansperm (
 ALTER TABLE public.bansperm OWNER TO postgres;
 
 --
+-- Name: banssursis; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.banssursis (
+    user_id uuid NOT NULL,
+    auteur text,
+    raison text,
+    date_ban timestamp without time zone DEFAULT now() NOT NULL,
+    sursis timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.banssursis OWNER TO postgres;
+
+--
 -- Name: clients; Type: TABLE; Schema: public; Owner: postgres
 --
 
 CREATE TABLE public.clients (
     client_id bigint NOT NULL,
-    user_id uuid,
+    user_id uuid NOT NULL,
     platform text,
     game_version text,
     os text,
@@ -222,12 +251,14 @@ ALTER TABLE ONLY public.logs ALTER COLUMN log_id SET DEFAULT nextval('public.log
 --
 
 COPY public._sqlx_migrations (version, description, installed_on, success, checksum, execution_time) FROM stdin;
-1	create users	2026-08-02 09:34:56.294323+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2487672
-2	create accounts	2026-08-02 09:34:56.297461+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	2896878
-3	create sessions	2026-08-02 09:34:56.300745+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1830571
-4	create logs	2026-08-02 09:34:56.302914+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	2200323
-5	create clients	2026-08-02 09:34:56.305519+00	t	\\x28e590a7c2add544dd7d6856266d907d98e0ad38a5a63aef88ea4893956c175896964c18965a0765175131023f274b83	2220512
-6	create bans perm	2026-08-02 09:34:56.308168+00	t	\\xd0399f631a759cba123363700b5f7d2e9bfe2e599d6350f547e00dd1dbef94dc47541f3752ba49f9cfc6c0be6d35d3e5	1841982
+1	create users	2026-08-02 09:47:00.106967+00	t	\\x2c7ab8d5924ec60b7cb247a01b374f45699c9fb8db026b45d94cce7eff5577f766ea4ae5659dc6f520e04b885e2ce101	2180277
+2	create accounts	2026-08-02 09:47:00.10975+00	t	\\x84731522b8eaf5a9e4ccea6c0142340057f9fa4198dc7b2f32df27670b991c124dc00dad279a64363566a36b2ee061ac	1949316
+3	create sessions	2026-08-02 09:47:00.112106+00	t	\\x804d661db30dfad76831084f778ddb004c0416b29392e600fbf9d4d8112fa7c9696c425680f2c8be5e0368edd6f54ce7	1435177
+4	create logs	2026-08-02 09:47:00.113982+00	t	\\x06fcc11355d3758399a8f8e705b1c60f74efc99177d7b4400c37726fb25df01762eb4a561328ca42d446cd4d642178be	1917418
+5	create clients	2026-08-02 09:47:00.116795+00	t	\\x17b5337a6a1864092ad58992a19977b82e5171b44fb244189c77980f8310d4e6c074f252cb55e5435d027bd273612c7e	1590974
+6	create bans perm	2026-08-02 09:47:00.118842+00	t	\\x24564135ab44c0e141d9ff33890d7aaa66c9ffe49301b39eb107f3caaf3e2cc6de74691f1d3dc31bba5777f51ce81beb	1414720
+7	create ban ferme	2026-08-02 09:47:00.120696+00	t	\\xf62a4c961dc9e3d7ddd53432e757f8fefeba491dbc105ee03f131dc185bdac0084e6013c62edf1c970deafcc9b51f050	1434309
+8	create ban sursis	2026-08-02 09:47:00.122857+00	t	\\x37b78821ce7dfb4dbb231b41c8ef7dcc8bc0e9892577cdc8697f14b49959a0d81304e3b93c832d117aa8fd8ecd02dbca	1562612
 \.
 
 
@@ -240,10 +271,26 @@ COPY public.accounts (account_id, user_id, account_name, created_at) FROM stdin;
 
 
 --
+-- Data for Name: bansferme; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.bansferme (user_id, auteur, raison, date_ban, date_deban) FROM stdin;
+\.
+
+
+--
 -- Data for Name: bansperm; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.bansperm (client_id, user_id, auteur, raison, date_ban) FROM stdin;
+COPY public.bansperm (user_id, auteur, raison, date_ban) FROM stdin;
+\.
+
+
+--
+-- Data for Name: banssursis; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.banssursis (user_id, auteur, raison, date_ban, sursis) FROM stdin;
 \.
 
 
@@ -325,6 +372,14 @@ ALTER TABLE ONLY public.accounts
 
 
 --
+-- Name: bansferme bansferme_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.bansferme
+    ADD CONSTRAINT bansferme_pkey PRIMARY KEY (user_id);
+
+
+--
 -- Name: bansperm bansperm_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -333,11 +388,19 @@ ALTER TABLE ONLY public.bansperm
 
 
 --
+-- Name: banssursis banssursis_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.banssursis
+    ADD CONSTRAINT banssursis_pkey PRIMARY KEY (user_id);
+
+
+--
 -- Name: clients clients_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.clients
-    ADD CONSTRAINT clients_pkey PRIMARY KEY (client_id);
+    ADD CONSTRAINT clients_pkey PRIMARY KEY (user_id);
 
 
 --
@@ -381,11 +444,27 @@ ALTER TABLE ONLY public.accounts
 
 
 --
+-- Name: bansferme bansferme_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.bansferme
+    ADD CONSTRAINT bansferme_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(user_id);
+
+
+--
 -- Name: bansperm bansperm_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.bansperm
     ADD CONSTRAINT bansperm_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(user_id);
+
+
+--
+-- Name: banssursis banssursis_user_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.banssursis
+    ADD CONSTRAINT banssursis_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.users(user_id);
 
 
 --
@@ -416,5 +495,5 @@ ALTER TABLE ONLY public.sessions
 -- PostgreSQL database dump complete
 --
 
-\unrestrict PoOjepUPfkgH8CBiEaddRPX6UkmIuvUgzVb1qHqn0gpjOQfg8j4SKrj0VDwS5FO
+\unrestrict qMv2RXWBHTBlvcnM4GQn4j8ARiOWufhCaftQJw1ixVpbqcH9qWSLPobOrHixfUK
 
