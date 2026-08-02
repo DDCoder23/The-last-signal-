@@ -166,4 +166,11 @@ pub fn decode_salt(
     SaltString::from_b64(&text)
         .map_err(|e| SaveError::Crypto(e.to_string()))
 }
+    pub fn encode_nonce(
+    nonce: &[u8; AES_NONCE_SIZE],
+) -> String;
+
+pub fn decode_nonce(
+    text: &str,
+) -> SaveResult<[u8; AES_NONCE_SIZE]>;
 }
