@@ -26,8 +26,6 @@ KDF_ITERATIONS = 310_000
 AES_KEY_SIZE = 32
 AES_GCM_NONCE_SIZE = 12
 FORMAT_VERSION = b"\x01"
-
-
 def log_save_event(profile: str, 
                    slot: int, 
                    status: str, 
