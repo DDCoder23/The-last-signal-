@@ -1,8 +1,9 @@
 use std::fs::File;
-use std::io::Write;
+use std::io::{Write,Read};
 
 use zip::{
     ZipWriter,
+    ZipArchive,
     write::SimpleFileOptions,
     CompressionMethod,
 };
