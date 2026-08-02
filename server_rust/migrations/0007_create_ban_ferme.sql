@@ -1,6 +1,5 @@
 CREATE TABLE IF NOT EXISTS bansferme (
 
-    client_id INTEGER,
 
     user_id UUID PRIMARY KEY,
 
