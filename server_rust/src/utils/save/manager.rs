@@ -1,6 +1,6 @@
 use std::fs::File;
 use std::io::{Write,Read};
-
+use log::error;
 use zip::{
     ZipWriter,
     ZipArchive,
