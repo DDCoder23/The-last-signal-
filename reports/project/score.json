@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-02T12:27:28.013168",
+    "generated": "2026-08-02T13:11:22.832594",
     "score": 77,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 910,
+    "problem_count": 911,
     "details": {
         "markdown": {
             "score": 49,
@@ -2248,6 +2248,13 @@
                     "module": "links"
                 },
                 {
+                    "file": "reports/python/python-report-90.md",
+                    "line": 1485,
+                    "severity": "info",
+                    "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
+                    "module": "links"
+                },
+                {
                     "file": "reports/python/python-report-17.md",
                     "line": 1488,
                     "severity": "info",
@@ -4386,7 +4393,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'derive_key'ligne 67 ne possède pas de docstring.",
+                    "message": "La fonction 'derive_key'ligne 69 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -4398,25 +4405,25 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'ensure_profile_dir'ligne 100 ne possède pas de docstring.",
+                    "message": "La fonction 'ensure_profile_dir'ligne 102 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'atomic_write_zip'ligne 106 ne possède pas de docstring.",
+                    "message": "La fonction 'atomic_write_zip'ligne 108 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'save_to_slot'ligne 122 ne possède pas de docstring.",
+                    "message": "La fonction 'save_to_slot'ligne 124 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'load_from_slot'ligne 154 ne possède pas de docstring.",
+                    "message": "La fonction 'load_from_slot'ligne 156 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -4428,7 +4435,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'write_zip'ligne 137 ne possède pas de docstring.",
+                    "message": "La fonction 'write_zip'ligne 139 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -4440,7 +4447,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'start'ligne 208 ne possède pas de docstring.",
+                    "message": "La fonction 'start'ligne 210 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -4452,7 +4459,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
                     "severity": "warning",
-                    "message": "La fonction 'stop'ligne 215 ne possède pas de docstring.",
+                    "message": "La fonction 'stop'ligne 217 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
