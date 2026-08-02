@@ -1,8 +1,7 @@
 CREATE TABLE IF NOT EXISTS banssursis (
 
-    client_id INTEGER,
 
-    user_id UUID,
+    user_id UUID NOT NULL,
 
     auteur TEXT,
 
