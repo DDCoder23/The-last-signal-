@@ -50,7 +50,7 @@ impl fmt::Display for SaveError {
     ) -> fmt::Result {
 
         match self { 
-            SaveError::InvalidNonce => write!(f,"Nonce invalide")
+            SaveError::InvalidNonce => write!(f,"Nonce invalide"),
 
             SaveError::InvalidSlot =>
                 write!(f, "Le slot est invalide."),
