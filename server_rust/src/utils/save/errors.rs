@@ -49,7 +49,8 @@ impl fmt::Display for SaveError {
         f: &mut fmt::Formatter<'_>,
     ) -> fmt::Result {
 
-        match self {
+        match self { 
+            SaveError::InvalidNonce => write!(f,"Nonce invalide")
 
             SaveError::InvalidSlot =>
                 write!(f, "Le slot est invalide."),
