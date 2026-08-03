@@ -169,9 +169,23 @@ pub fn decode_salt(
 }
     pub fn encode_nonce(
     nonce: &[u8; AES_NONCE_SIZE],
-) -> String;
+) -> String {
+    general_purpose::STANDARD.encode(nonce)
+}
 
 pub fn decode_nonce(
     text: &str,
-) -> SaveResult<[u8; AES_NONCE_SIZE]>;
+) -> SaveResult<[u8; AES_NONCE_SIZE]> {
+    let bytes = general_purpose::STANDARD
+        .decode(text)
+        .map_err(|_| SaveError::InvalidNonce)?;
+
+    if bytes.len() != AES_NONCE_SIZE {
+        return Err(SaveError::InvalidNonce);
+    }
+
+    let mut nonce = [0u8; AES_NONCE_SIZE];
+    nonce.copy_from_slice(&bytes);
+
+    Ok(nonce)
 }
