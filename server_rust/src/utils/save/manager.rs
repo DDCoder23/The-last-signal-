@@ -25,13 +25,17 @@ use crate::utils::save::{
 };
 
 /// Gestionnaire principal des sauvegardes.
-pub struct SaveManager;
+pub struct SaveManager {
+    profile_manager: ProfileManager,
+}
 
 impl SaveManager {
 
     /// Crée un nouveau gestionnaire.
     pub fn new() -> Self {
-        Self
+    Self {
+        profile_manager: ProfileManager::new(),
+    }
     }
 
     /// Sauvegarde des données.
