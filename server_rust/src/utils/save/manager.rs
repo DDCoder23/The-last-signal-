@@ -129,6 +129,7 @@ zip.write_all(&encrypted_payload)?;
 zip.finish()?;
 
 Ok(())
+    }
 
     /// Charge une sauvegarde.
 pub fn load(
