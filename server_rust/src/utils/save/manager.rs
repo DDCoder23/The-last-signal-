@@ -516,7 +516,7 @@ pub fn load(
 
     }
 
-    self.create_profile_directory(
+    self.profile_manager.create_profile_directory(
         profile,
     )?;
 
@@ -549,15 +549,7 @@ pub fn load(
     }
 
     /// Dossier du profil.
-    fn profile_directory(
-        &self,
-        profile: &str,
-    ) -> PathBuf {
-
-        Path::new(SAVE_DIRECTORY)
-            .join(profile)
-    }
-
+    
     /// Fichier de sauvegarde.
     fn save_file(
         &self,
@@ -565,7 +557,8 @@ pub fn load(
         slot: u8,
     ) -> PathBuf {
 
-        self.profile_directory(profile)
+        self.profile_manager
+    .profile_directory(profile)
             .join(format!(
                 "slot{}.{}",
                 slot,
@@ -573,16 +566,6 @@ pub fn load(
             ))
     }
 
-    /// Crée le dossier du profil s'il n'existe pas.
-    fn create_profile_directory(
-        &self,
-        profile: &str,
-    ) -> SaveResult<()> {
-
-        fs::create_dir_all(
-            self.profile_directory(profile),
-        )?;
-
-        Ok(())
-    }
+    
+    
 }
