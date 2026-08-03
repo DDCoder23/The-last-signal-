@@ -189,3 +189,4 @@ pub fn decode_nonce(
 
     Ok(nonce)
 }
+}
