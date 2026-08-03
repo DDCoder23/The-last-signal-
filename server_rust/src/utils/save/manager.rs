@@ -416,30 +416,119 @@ pub fn load(
 
     /// Liste les slots disponibles.
     pub fn list_slots(
-        &self,
-        profile: &str,
-    ) -> SaveResult<Vec<SaveMetadata>> {
-        todo!()
+    &self,
+    profile: &str,
+) -> SaveResult<Vec<SaveMetadata>> {
+
+    let mut saves = Vec::new();
+
+    for slot in 1..=SAVE_SLOT_COUNT {
+
+        let save =
+            self.save_file(
+                profile,
+                slot,
+            );
+
+        if !save.exists() {
+            continue;
+        }
+
+        let file =
+            File::open(save)?;
+
+        let mut archive =
+            ZipArchive::new(file)?;
+
+        let mut metadata_file =
+            archive.by_name(
+                METADATA_FILE,
+            )?;
+
+        let mut json =
+            String::new();
+
+        metadata_file
+            .read_to_string(
+                &mut json,
+            )?;
+
+        let metadata: SaveMetadata =
+            serde_json::from_str(
+                &json,
+            )?;
+
+        saves.push(metadata);
     }
 
+    Ok(saves)
+    }
     /// Exporte une sauvegarde.
     pub fn export(
-        &self,
-        profile: &str,
-        slot: u8,
-        destination: impl AsRef<Path>,
-    ) -> SaveResult<()> {
-        todo!()
+    &self,
+    profile: &str,
+    slot: u8,
+    destination: impl AsRef<Path>,
+) -> SaveResult<()> {
+
+    self.validate_slot(slot)?;
+
+    let source =
+        self.save_file(
+            profile,
+            slot,
+        );
+
+    if !source.exists() {
+
+        return Err(
+            SaveError::SaveNotFound,
+        );
+
+    }
+
+    fs::copy(
+        source,
+        destination,
+    )?;
+
+    Ok(())
     }
 
     /// Importe une sauvegarde.
     pub fn import(
-        &self,
-        source: impl AsRef<Path>,
-        profile: &str,
-        slot: u8,
-    ) -> SaveResult<()> {
-        todo!()
+    &self,
+    source: impl AsRef<Path>,
+    profile: &str,
+    slot: u8,
+) -> SaveResult<()> {
+
+    self.validate_slot(slot)?;
+
+    let source =
+        source.as_ref();
+
+    if !source.exists() {
+
+        return Err(
+            SaveError::SaveNotFound,
+        );
+
+    }
+
+    self.create_profile_directory(
+        profile,
+    )?;
+
+    fs::copy(
+        source,
+        self.save_file(
+            profile,
+            slot,
+        ),
+    )?;
+
+    Ok(())
     }
 
     // ===================================================
