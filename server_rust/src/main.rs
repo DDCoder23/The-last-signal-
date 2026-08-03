@@ -1,4 +1,4 @@
-use the_last_signal_server::packet::PacketType;
+use the_last_signal_server::network::packet::PacketType;
 use the_last_signal_server::database::{
     database_manager::DatabaseManager,
     migrations,
