@@ -57,7 +57,7 @@ jobs:
 
           if find . -name Cargo.toml | grep -q .; then
             cargo fmt \
-            --manifest-path "$RUST_PROJECT/Cargo.toml"--release
+             "$RUST_PROJECT/Cargo.toml"--release
             >> "$REPORT" 2>&1
           else
             echo "No Rust project found." >> "$REPORT"
