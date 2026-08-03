@@ -37,6 +37,7 @@ pub enum SaveError {
 
     /// Erreur ZIP.
     Zip(ZipError),
+    InvalidNonce,
 
     /// Toute autre erreur.
     Other(String),
