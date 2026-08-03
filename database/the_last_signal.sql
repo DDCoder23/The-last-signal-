@@ -2,7 +2,7 @@
 -- PostgreSQL database dump
 --
 
-\restrict ZEajdMs1wttwFBhuqrl5AMoPteo0Mdt9sixtylFgWyoLoOIPw09mCLCoRFChXnn
+\restrict uaEHPKOoMNwbRPmNi2zCWJqtUihhicfnH4sBmt7Bk7APbuw4GGwayyHUt4cHbie
 
 -- Dumped from database version 17.10 (Debian 17.10-1.pgdg13+1)
 -- Dumped by pg_dump version 17.10 (Debian 17.10-1.pgdg13+1)
@@ -23,5 +23,5 @@ SET row_security = off;
 -- PostgreSQL database dump complete
 --
 
-\unrestrict ZEajdMs1wttwFBhuqrl5AMoPteo0Mdt9sixtylFgWyoLoOIPw09mCLCoRFChXnn
+\unrestrict uaEHPKOoMNwbRPmNi2zCWJqtUihhicfnH4sBmt7Bk7APbuw4GGwayyHUt4cHbie
 
