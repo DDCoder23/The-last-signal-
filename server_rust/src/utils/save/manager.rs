@@ -146,6 +146,7 @@ pub fn load(
         self.save_file(profile, slot);
 
     if !save_path.exists() {
+        error!("Sauvegarde abscbente");
         return Err(
             SaveError::SaveNotFound,
         );
@@ -181,6 +182,7 @@ pub fn load(
 
     // Vérification de la version.
     if !metadata.is_compatible() {
+        error!("format incompatible");
 
         return Err(
             SaveError::InvalidFormat,
@@ -212,7 +214,7 @@ pub fn load(
     // Vérification de la taille.
     if encrypted_payload.len() as u64
         != metadata.payload_size
-    {
+    {   error!("sauvegarde corrompue");
 
         return Err(
             SaveError::CorruptedSave,
@@ -227,6 +229,7 @@ pub fn load(
         );
 
     if checksum != metadata.checksum {
+        error!("sauvegarde corompue");
 
         return Err(
             SaveError::CorruptedSave,
@@ -249,7 +252,7 @@ pub fn load(
     if nonce_bytes.len()
         != AES_NONCE_SIZE
     {
-
+        error!("sauvegarde corompue");
         return Err(
             SaveError::CorruptedSave,
         );
@@ -302,6 +305,7 @@ pub fn load(
         self.save_file(profile, slot);
 
     if !save_path.exists() {
+        error!("sauvegarde abscente");
         return Err(
             SaveError::SaveNotFound,
         );
@@ -332,6 +336,7 @@ pub fn load(
     };
 
     if !metadata.is_compatible() {
+        error!("sauvegarde invalide");
 
         return Err(
             SaveError::InvalidFormat,
@@ -359,7 +364,7 @@ pub fn load(
 
     if payload.len() as u64
         != metadata.payload_size
-    {
+    {    error!("sauvegarde corompue");
 
         return Err(
             SaveError::CorruptedSave,
@@ -373,6 +378,7 @@ pub fn load(
         );
 
     if checksum != metadata.checksum {
+        error!("sauvegarde corompue");
 
         return Err(
             SaveError::CorruptedSave,
@@ -396,6 +402,7 @@ pub fn load(
         self.save_file(profile, slot);
 
     if !save.exists() {
+        error!("sauvegarde abscente");
         return Err(
             SaveError::SaveNotFound,
         );
