@@ -1,7 +1,7 @@
 use sqlx::SqlitePool;
 
 pub struct DatabaseManager {
-    pool: PgPool,
+    pool: Pool,
 }
 
 impl DatabaseManager {
