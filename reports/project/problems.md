@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-01 08:35:05
+Generated: 2026-08-04 08:01:20
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated: 2026-08-01 08:35:05
 |---|---:|
 |❌ Errors|129|
 |⚠️ Warnings|682|
-|**Total**|**906**|
+|**Total**|**915**|
 
 ---
 
@@ -4985,6 +4985,46 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
+# 📄 reports/python/python-report-140.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1483
+
+---
+
+# 📄 reports/python/python-report-141.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1483
+
+---
+
+# 📄 reports/python/python-report-142.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1483
+
+---
+
+# 📄 reports/python/python-report-143.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1483
+
+---
+
 # 📄 reports/python/python-report-17.md
 
 ## ⚠️ Info
@@ -5016,6 +5056,26 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 reports/python/python-report-51.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1484
+
+---
+
+# 📄 reports/python/python-report-57.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1484
+
+---
+
+# 📄 reports/python/python-report-58.md
 
 ## ⚠️ Info
 
@@ -5272,6 +5332,36 @@ TypeError: result doit être un dict, reçu int
 - **Module :** links
 - **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1443
+
+---
+
+# 📄 reports/python/python-report-88.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1484
+
+---
+
+# 📄 reports/python/python-report-89.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1484
+
+---
+
+# 📄 reports/python/python-report-90.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1485
 
 ---
 
