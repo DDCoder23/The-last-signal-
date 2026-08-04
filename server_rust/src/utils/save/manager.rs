@@ -16,7 +16,7 @@ use serde_json::{Map, Value};
 
 use crate::utils::save::{
     config::*,
-    encryption::Encryption,
+    encryptions::Encryption,
     errors::{
         SaveError,
         SaveResult,
