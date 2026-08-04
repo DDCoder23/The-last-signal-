@@ -1,5 +1,5 @@
 use tokio::net::TcpStream;
-use sqlx::PgPool;
+use sqlx::Pool;
 use uuid::Uuid;
 use log::{
     info,
@@ -14,7 +14,7 @@ use crate::network::packet::{
 pub struct Client {
     stream: TcpStream,
 
-    pool: PgPool,
+    pool: Pool,
 
     session_id: Uuid,
 
