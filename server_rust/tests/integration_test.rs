@@ -1,4 +1,4 @@
-use the_last_signal_server::packet::PacketType;
+use the_last_signal_server::network::packet::PacketType;
 
 #[test]
 fn test_packet_login() {
