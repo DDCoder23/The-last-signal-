@@ -16,22 +16,9 @@ jobs:
     name: Python ↔ Rust Integration
 
     runs-on: ubuntu-latest
-    services:
-       postgres:
-              image: postgres:17
-              env:
-                    POSTGRES_USER: postgres
-                    POSTGRES_PASSWORD: postgres
-                    POSTGRES_DB: the_last_signal
-              ports:
-                     - 5432:5432
-              options: >-
-                       --health-cmd="pg_isready -U postgres"
-                       --health-interval=10s
-                       --health-timeout=5s
-                       --health-retries=5
+    
     env:
-      DATABASE_URL: postgres://postgres:postgres@localhost:5432/the_last_signal
+      DATABASE_URL: sqlite:/database/the_last_signal.db
       
     timeout-minutes: 20
 
@@ -114,16 +101,7 @@ jobs:
 
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
-    - name: Check PostgreSQL
-      env:
-          PGPASSWORD: postgres
-      run: |
-             sudo apt-get update
-             sudo apt-get install -y postgresql-client
-             pg_isready \
-             -h localhost \
-             -p 5432 \
-             -U postgres
+    
     - name: Debug environment
       run: |
         echo "DATABASE_URL=$DATABASE_URL"
@@ -168,19 +146,7 @@ jobs:
 
           exit 1
         fi
-    - name: Check tables
-      run: |
-             docker exec ${{ job.services.postgres.id }} \
-             psql \
-             -U postgres \
-              -d the_last_signal \
-              -c "\dt+"
-
-             docker exec ${{ job.services.postgres.id }} \
-             psql \
-             -U postgres \
-             -d the_last_signal \
-             -c "SELECT * FROM _sqlx_migrations;"
+    
 
     ##########################################################
     # Tests Python
@@ -245,15 +211,7 @@ jobs:
       with:
         name: logs
         path: logs/
-    - name: Dump PostgreSQL database
-      if: always()
-      run: |
-             mkdir -p database
-             docker exec ${{ job.services.postgres.id }} \
-              pg_dump \
-              -U postgres \
-              -d the_last_signal\
-              > database/the_last_signal.sql
+    
   
     
   # ==========================================================
