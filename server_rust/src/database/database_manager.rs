@@ -1,7 +1,4 @@
-use sqlx::{
-    postgres::PgPoolOptions,
-    PgPool,
-};
+use sqlx::SqlitePool;
 
 pub struct DatabaseManager {
     pool: PgPool,
@@ -13,10 +10,7 @@ impl DatabaseManager {
         database_url: &str,
     ) -> Result<Self, sqlx::Error> {
 
-        let pool = PgPoolOptions::new()
-            .max_connections(10)
-            .connect(database_url)
-            .await?;
+        let pool = SqlitePool::connect(&database_url).await?;
 
         Ok(Self {
             pool,
@@ -24,7 +18,7 @@ impl DatabaseManager {
     }
 
     /// Retourne le pool PostgreSQL.
-    pub fn pool(&self) -> &PgPool {
+    pub fn pool(&self) -> &SqlitePool {
         &self.pool
     }
 
