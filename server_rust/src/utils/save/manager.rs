@@ -11,7 +11,7 @@ use std::{
     fs,
     path::{Path, PathBuf},
 };
-
+use crate::utils::save::profilemanager::ProfileManager;
 use serde_json::{Map, Value};
 
 use crate::utils::save::{
@@ -22,7 +22,9 @@ use crate::utils::save::{
         SaveResult,
     },
     metadata::SaveMetadata,
+    profilemanager::ProfileManager
 };
+
 
 /// Gestionnaire principal des sauvegardes.
 pub struct SaveManager {
@@ -51,7 +53,7 @@ impl SaveManager {
     self.validate_slot(slot)?;
 
     // Crée le dossier du profil.
-    self.create_profile_directory(profile)?;
+    self.profile_manager.create_profile_directory(profile)?;
 
     // Sérialise les données.
     let json =
@@ -108,7 +110,7 @@ impl SaveManager {
     ZipWriter::new(file);
 
     let options =
-    SimpleFileOptions::default()
+    FileOptions::default()
         .compression_method(
             CompressionMethod::Deflated,
         );
