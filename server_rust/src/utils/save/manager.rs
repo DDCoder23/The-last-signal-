@@ -4,7 +4,7 @@ use log::error;
 use zip::{
     ZipWriter,
     ZipArchive,
-    write::SimpleFileOptions,
+    write::FileOptions,
     CompressionMethod,
 };
 use std::{
