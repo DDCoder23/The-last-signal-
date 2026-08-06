@@ -1,4 +1,10 @@
-use sqlx::SqlitePool;
+use std::str::FromStr;
+
+use sqlx::{
+    sqlite::SqliteConnectOptions,
+    SqlitePool,
+};
+
 
 pub struct DatabaseManager {
     pool: SqlitePool,
@@ -10,7 +16,11 @@ impl DatabaseManager {
         database_url: &str,
     ) -> Result<Self, sqlx::Error> {
 
-        let pool = SqlitePool::connect(&database_url).await?;
+        let options = SqliteConnectOptions::from_str(database_url)?
+            .create_if_missing(true);
+
+        let pool = SqlitePool::connect_with(options).await?;
+        
 
         Ok(Self {
             pool,
