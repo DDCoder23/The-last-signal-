@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     
     env:
-      DATABASE_URL: sqlite:/database/the_last_signal.db
+      DATABASE_URL: sqlite://database/the_last_signal.db
       
     timeout-minutes: 20
 
@@ -104,6 +104,7 @@ jobs:
     
     - name: Debug environment
       run: |
+        mkdir -p database
         echo "DATABASE_URL=$DATABASE_URL"
              
 
