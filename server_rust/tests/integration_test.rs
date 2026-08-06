@@ -7,7 +7,7 @@ fn test_packet_login() {
 use serde_json::{Map, Value};
 
 use the_last_signal_server::utils::save::{
-    SaveManager,
+    manager::SaveManager,
     errors::SaveError,
 };
 
