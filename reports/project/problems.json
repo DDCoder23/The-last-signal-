@@ -2197,6 +2197,13 @@
         "module": "links"
     },
     {
+        "file": "reports/python/python-report-221.md",
+        "line": 1483,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
+        "module": "links"
+    },
+    {
         "file": "reports/python/python-report-17.md",
         "line": 1488,
         "severity": "info",
