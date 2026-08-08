@@ -13,12 +13,12 @@ pub struct DatabaseManager {
 impl DatabaseManager {
     /// Crée un pool de connexions PostgreSQL.
     pub async fn new(
-        database_url: &str,
+        database_path: &str,
     ) -> Result<Self, sqlx::Error> {
         // Récupère le chemin du fichier SQLite.
-        let path = database_url
+        let path = database_path
             .strip_prefix("sqlite:")
-            .unwrap_or(database_url);
+            .unwrap_or(database_path);
 
         // Crée le dossier parent s'il n'existe pas.
         if let Some(parent) = Path::new(path).parent() {
