@@ -33,6 +33,9 @@ impl DatabaseManager {
             .create_if_missing(true);
 
         let pool = SqlitePool::connect_with(options).await?;
+        sqlx::query("PRAGMA foreign_keys = ON")
+        .execute(&pool)
+        .await?;
         
 
         Ok(Self {
