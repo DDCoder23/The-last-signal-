@@ -2071,6 +2071,13 @@
         "module": "links"
     },
     {
+        "file": "reports/python/python-report-232.md",
+        "line": 1484,
+        "severity": "info",
+        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
+        "module": "links"
+    },
+    {
         "file": "reports/python/python-report-43.md",
         "line": 1483,
         "severity": "info",
@@ -2710,13 +2717,13 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py",
         "severity": "warning",
-        "message": "La fonction 'voir_database'ligne 4 ne possède pas de docstring.",
+        "message": "La fonction 'afficher_database'ligne 14 ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py",
         "severity": "warning",
-        "message": "La fonction 'voir_database' ne possède pas d'annotations de type.",
+        "message": "La fonction 'afficher_database' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
