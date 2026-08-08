@@ -127,7 +127,7 @@ impl Tresor {
         if jet_de_des(20, 1) >= 4 {
             niveau_1.insert(
                 "pain".to_string(),
-                rng.random_range(3..=5),
+                rng.gen_range(3..=5),
             );
         }
 
