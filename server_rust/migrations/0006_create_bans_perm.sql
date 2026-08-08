@@ -1,9 +1,9 @@
 CREATE TABLE IF NOT EXISTS bansperm (
-    user_id UUID NOT NULL,
+    user_id TEXT NOT NULL PRIMARY KEY,
     auteur TEXT NOT NULL,
     raison TEXT NOT NULL,
-    date_ban TIMESTAMP NOT NULL DEFAULT NOW(),
+    date_ban TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (user_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+    FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
 );
