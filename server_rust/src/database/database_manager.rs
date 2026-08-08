@@ -14,6 +14,7 @@ impl DatabaseManager {
     /// Crée un pool de connexions PostgreSQL.
     pub async fn new(
         database_path: &str,
+        database_url: &str,
     ) -> Result<Self, sqlx::Error> {
         // Récupère le chemin du fichier SQLite.
         let path = database_path
