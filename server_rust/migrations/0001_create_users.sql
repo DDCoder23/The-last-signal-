@@ -1,13 +1,7 @@
 CREATE TABLE IF NOT EXISTS users (
-
-    user_id UUID PRIMARY KEY,
-
+    user_id TEXT PRIMARY KEY,
     email TEXT UNIQUE NOT NULL,
-
     password_hash TEXT NOT NULL,
-
-    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
-
-    last_login TIMESTAMP
-
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    last_login TEXT
 );
