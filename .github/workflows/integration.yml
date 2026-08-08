@@ -212,6 +212,9 @@ jobs:
       with:
         name: logs
         path: logs/
+    - name: Inspect SQLite database
+      run: |
+            python scripts/voir_database.py database/the_last_signal.db
     
   
     
