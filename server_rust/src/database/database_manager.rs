@@ -1,5 +1,5 @@
 use std::str::FromStr;
-
+use std::path::Path;
 use sqlx::{
     sqlite::SqliteConnectOptions,
     SqlitePool,
@@ -15,6 +15,19 @@ impl DatabaseManager {
     pub async fn new(
         database_url: &str,
     ) -> Result<Self, sqlx::Error> {
+        // Récupère le chemin du fichier SQLite.
+        let path = database_url
+            .strip_prefix("sqlite:")
+            .unwrap_or(database_url);
+
+        // Crée le dossier parent s'il n'existe pas.
+        if let Some(parent) = Path::new(path).parent() {
+            if !parent.as_os_str().is_empty() {
+                std::fs::create_dir_all(parent)
+                    .map_err(sqlx::Error::Io)?;
+            }
+        }
+        
 
         let options = SqliteConnectOptions::from_str(database_url)?
             .create_if_missing(true);
