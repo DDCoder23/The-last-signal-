@@ -1,19 +1,10 @@
 CREATE TABLE IF NOT EXISTS banssursis (
-
-
-    user_id UUID NOT NULL,
-
+    user_id TEXT NOT NULL PRIMARY KEY,
     auteur TEXT,
-
     raison TEXT,
+    date_ban TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    sursis TEXT NOT NULL,
 
-    date_ban TIMESTAMP NOT NULL DEFAULT NOW(),
-    sursis TIMESTAMP NOT NULL,
-    PRIMARY KEY (user_id),
-    FOREIGN KEY (user_id) REFERENCES users(user_id)
+    FOREIGN KEY (user_id)
+        REFERENCES users(user_id)
 );
-
-    
-
-
-    
