@@ -245,7 +245,7 @@ jobs:
              cp -R database/. ../ci-database/database/ 2>/dev/null || true
              cp -R logs/. ../ci-database/logs/ 2>/dev/null || true
              cd ../ci-database
-             git add -A database logs
+             git add  database logs
              if git diff --cached --quiet; then
              echo "No changes."
              else
