@@ -27,7 +27,7 @@ pub struct Tresor {
 
 impl Tresor {
     pub fn new() -> Self {
-        let mut rng = rand::rng();
+        let mut rng = rand::thread_rng();
 
         // -------------------------------------------------
         // LOOT PAR NIVEAU
@@ -223,7 +223,7 @@ impl Tresor {
         ] {
             quantite_objets.insert(
                 objet.to_string(),
-                rng.random_range(2..=9),
+                rng.gen_range(2..=9),
             );
         }
 
