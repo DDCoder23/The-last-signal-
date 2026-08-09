@@ -251,9 +251,70 @@ jobs:
              echo "No changes."
              else
              git commit -m "Update CI artifacts #${GITHUB_RUN_NUMBER}"
-             git push origin ci-database
-             fi
-             cd -
-             git worktree remove ../ci-database --force
+             git commit -m "${{ inputs.commit-message }}"
+             for i in 1 2 3
+             do
+             echo "Tentative $i/3"
+             git fetch origin "${{ inputs.branch }}"
 
-             
+             if ! git rebase "origin/${{ inputs.branch }}"
+             then
+             echo "Rebase impossible."
+             git rebase --abort || true
+             break
+             fi
+
+             echo "Branche actuelle :"
+             git branch --show-current
+
+             git status
+
+             if git push origin HEAD:${{ inputs.branch }}
+             then
+             echo "Push réussi"
+
+             cd "$GITHUB_WORKSPACE"
+             git worktree remove /tmp/ci-worktree --force
+             exit 0
+             fi
+
+             echo "Push échoué."
+             sleep 2
+             done
+
+             echo "======================================"
+             echo "Push direct impossible"
+             echo "Création de la branche de secours"
+             echo "======================================"
+
+             FALLBACK_BRANCH="${{ inputs.branch }}-update"
+
+             echo "Branche de secours : $FALLBACK_BRANCH"
+
+            # Crée ou met à jour la branche de secours
+            git push --force origin HEAD:"$FALLBACK_BRANCH"
+
+            echo "Branche de secours poussée."
+
+            # Vérifie si une PR existe déjà
+            PR_URL=$(gh pr list \
+             --base "${{ inputs.branch }}" \
+             --head "$FALLBACK_BRANCH" \
+             --state open \
+             --json url \
+             --jq '.[0].url')
+
+             if [ -n "$PR_URL" ]; then
+             echo "Une Pull Request existe déjà : $PR_URL"
+             else
+             echo "Création de la Pull Request..."
+
+            gh pr create \
+              --base "${{ inputs.branch }}" \
+              --head "$FALLBACK_BRANCH" \
+              --title "${{ inputs.commit-message }}" \
+              --body "Le push direct vers \`${{ inputs.branch }}\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request."
+             fi
+
+            cd "$GITHUB_WORKSPACE"
+            git worktree remove /tmp/ci-worktree --force
