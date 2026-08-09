@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+    
+      GH_TOKEN: ${{ github.token }}
       REPORTS_DIR: reports
       ARCHIVE_DIR: archive
       KEEP_REPORTS: 3
