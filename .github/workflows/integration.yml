@@ -330,3 +330,4 @@ jobs:
 
              cd "$GITHUB_WORKSPACE"
              git worktree remove /tmp/ci-worktree --force
+             fi
