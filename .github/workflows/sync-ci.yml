@@ -71,6 +71,8 @@ jobs:
         run: |
 
           git add reports dashboard database
+          git status --short
+          git diff --cached --stat
 
           git commit -m "Synchronize CI data #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
           
