@@ -3,11 +3,23 @@ name: Integration Tests
 on:
   
   workflow_call:
+    inputs:
+       commit-message:
+          description: Message du commit
+          required: false
+          type: string
+          default: "Update CI artifacts #${GITHUB_RUN_NUMBER}"
+       branch:
+         description: Branche de destination
+         required: false
+         type: string
+         default: ci-database 
 
   
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
 
@@ -251,7 +263,7 @@ jobs:
              echo "No changes."
              else
              git commit -m "Update CI artifacts #${GITHUB_RUN_NUMBER}"
-             git commit -m "${{ inputs.commit-message }}"
+
              for i in 1 2 3
              do
              echo "Tentative $i/3"
@@ -291,13 +303,13 @@ jobs:
 
              echo "Branche de secours : $FALLBACK_BRANCH"
 
-            # Crée ou met à jour la branche de secours
-            git push --force origin HEAD:"$FALLBACK_BRANCH"
+             # Crée ou met à jour la branche de secours
+             git push --force origin HEAD:"$FALLBACK_BRANCH"
 
-            echo "Branche de secours poussée."
+             echo "Branche de secours poussée."
 
-            # Vérifie si une PR existe déjà
-            PR_URL=$(gh pr list \
+             # Vérifie si une PR existe déjà
+             PR_URL=$(gh pr list \
              --base "${{ inputs.branch }}" \
              --head "$FALLBACK_BRANCH" \
              --state open \
@@ -309,12 +321,12 @@ jobs:
              else
              echo "Création de la Pull Request..."
 
-            gh pr create \
+             gh pr create \
               --base "${{ inputs.branch }}" \
               --head "$FALLBACK_BRANCH" \
               --title "${{ inputs.commit-message }}" \
               --body "Le push direct vers \`${{ inputs.branch }}\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request."
              fi
 
-            cd "$GITHUB_WORKSPACE"
-            git worktree remove /tmp/ci-worktree --force
+             cd "$GITHUB_WORKSPACE"
+             git worktree remove /tmp/ci-worktree --force
