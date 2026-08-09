@@ -1,5 +1,5 @@
 use the_last_signal_server::network::packet::PacketType;
-
+use the_last_signal_server::gameplay::tresor::Tresor;
 #[test]
 fn test_packet_login() {
     assert_eq!(PacketType::Login as u8, 2);
