@@ -265,7 +265,7 @@ impl Tresor {
         ("herbes et racines".to_string(), 10.0),
     ]),
 );
-        let seuil_artefact_commun = HashMap::from([
+        let seuil_artefact_commun: HashMap<u8, u8> = HashMap::from([
     (2, 20),
     (3, 19),
     (4, 17),
