@@ -7,5 +7,5 @@ CREATE TABLE IF NOT EXISTS perms (
 
 INSERT OR IGNORE INTO perms (name, perm)
 VALUES
-    ('Cyril', 'admin'),
-    ('Morgan', 'Super admin');
+    ('Cyril', 'dev'),
+    ('Morgan', 'Super dev');
