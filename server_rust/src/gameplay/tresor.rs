@@ -31,6 +31,10 @@ pub struct Tresor {
 
     pub sous_loot: HashMap<String, HashMap<String, f64>>,
     
+    pub sous_loot_livre_normal: HashMap<String, f64>,
+    pub sous_loot_livre_admin: HashMap<String, f64>,
+
+    
 }
 
 impl Tresor {
@@ -311,6 +315,23 @@ impl Tresor {
     (3, 19),
     (4, 17),
 ]);
+        let sous_loot_livre_normal = HashMap::from([
+    ("livre enchant niv 1".to_string(), 70.0),
+    ("livre enchant niv 2".to_string(), 20.0),
+    ("livre enchant niv 3".to_string(), 5.0),
+    ("livre enchant niv 4".to_string(), 3.0),
+    ("livre enchant niv 5".to_string(), 1.5),
+    ("livre enchant niv 6".to_string(), 0.5),
+]);
+
+let sous_loot_livre_admin = HashMap::from([
+    ("livre enchant niv 1".to_string(), 45.0),
+    ("livre enchant niv 2".to_string(), 15.0),
+    ("livre enchant niv 3".to_string(), 13.0),
+    ("livre enchant niv 4".to_string(), 12.0),
+    ("livre enchant niv 5".to_string(), 8.0),
+    ("livre enchant niv 6".to_string(), 7.0),
+]);
 
         Self {
             loot_par_niveau,
@@ -318,6 +339,8 @@ impl Tresor {
             quantite_objets,
             sous_loot,
             seuil_artefact_commun,
+            sous_loot_livre_normal,
+            sous_loot_livre_admin, 
         }
     }
     pub fn ouvrir(
@@ -409,11 +432,19 @@ impl Tresor {
     &self,
     categorie: &str,
     rng: &mut impl Rng,
+    is_admin: bool,
 ) -> String {
-    let table = self
-        .sous_loot
-        .get(categorie)
-        .unwrap_or_else(|| {
+    let table = if categorie == "livre enchant" {
+        if is_admin {
+            &self.sous_loot_livre_admin
+        } else {
+            &self.sous_loot_livre_normal
+        }
+    } else {
+        self
+            .sous_loot
+            .get(categorie)
+            .unwrap_or_else(|| {
         panic!("Catégorie de loot inconnue : {:?}", categorie);
     });
 
