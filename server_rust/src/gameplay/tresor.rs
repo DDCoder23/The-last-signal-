@@ -376,7 +376,9 @@ impl Tresor {
     let table = self
         .sous_loot
         .get(categorie)
-        .expect("Catégorie de loot inconnue");
+        .unwrap_or_else(|| {
+        panic!("Catégorie de loot inconnue : {:?}", categorie);
+    });
 
     let resultat = Self::tirer_pondere(
         table,
