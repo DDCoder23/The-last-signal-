@@ -7,6 +7,7 @@ on:
   
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
 
@@ -72,5 +73,68 @@ jobs:
           git add reports dashboard database
 
           git commit -m "Synchronize CI data #${GITHUB_RUN_NUMBER}" || echo "Nothing to commit"
+          
+            for i in 1 2 3
+            do
+            echo "Tentative $i/3"
+            git fetch origin main
 
-          git push origin main
+            if ! git rebase "origin/main"
+            then
+            echo "Rebase impossible."
+            git rebase --abort || true
+            break
+            fi
+
+            echo "Branche actuelle :"
+            git branch --show-current
+
+            git status
+
+            if git push origin HEAD:main
+            then
+            echo "Push réussi"
+
+
+            exit 0
+            fi
+
+            echo "Push échoué."
+            sleep 2
+            done
+
+            echo "======================================"
+            echo "Push direct impossible"
+            echo "Création de la branche de secours"
+            echo "======================================"
+
+            FALLBACK_BRANCH="main-update"
+
+            echo "Branche de secours : $FALLBACK_BRANCH"
+
+            # Crée ou met à jour la branche de secours
+            git push --force origin HEAD:"$FALLBACK_BRANCH"
+
+            echo "Branche de secours poussée."
+
+            # Vérifie si une PR existe déjà
+            PR_URL=$(gh pr list \
+             --base main \
+             --head "$FALLBACK_BRANCH" \
+             --state open \
+             --json url \
+             --jq '.[0].url')
+
+             if [ -n "$PR_URL" ]; then
+             echo "Une Pull Request existe déjà : $PR_URL"
+             else
+             echo "Création de la Pull Request..."
+
+            gh pr create \
+              --base main \
+              --head "$FALLBACK_BRANCH" \
+              --title git "Synchronize CI data #${GITHUB_RUN_NUMBER}" \
+              --body "Le push direct vers main a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request."
+             fi
+
+            
