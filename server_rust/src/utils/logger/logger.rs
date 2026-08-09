@@ -45,7 +45,7 @@ impl ServerLogger {
 
         let log_dir = PathBuf::from("../logs");
 
-        Logger::try_with_str("trace")
+        Logger::try_with_str("trace,sqlx=warn")
             .unwrap()
 
             .duplicate_to_stdout(Duplicate::All)
