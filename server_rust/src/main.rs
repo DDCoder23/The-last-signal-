@@ -13,7 +13,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let tresor = Tresor::new();
     let message = tresor.ouvrir(1, true);
     
-    debug!(message)
+    debug!(message);
     
     let database_url = 
         std::env::var("DATABASE_URL")?;
