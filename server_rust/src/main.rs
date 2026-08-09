@@ -6,10 +6,14 @@ use the_last_signal_server::database::{
 use log::{debug,info};
 use the_last_signal_server::network::server::Server;
 use the_last_signal_server::utils::logger::logger::ServerLogger;
-
+use the_last_signal_server::gameplay::tresor::Tresor;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
+    let tresor = Tresor::new();
+    let message = tresor.ouvrir(1, true);
+    
+    debug!(message)
     
     let database_url = 
         std::env::var("DATABASE_URL")?;
