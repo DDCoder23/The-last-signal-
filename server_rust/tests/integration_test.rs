@@ -149,6 +149,8 @@ fn save_not_found() {
 #[test]
 fn test_tresor(){
     let _guard = ServerLogger::init();
-    let message = Tresor::ouvrir(1,true);
+    let tresor = Tresor::new();
+    let message = tresor.ouvrir(1, true);
+    
     debug!(message)
 }
