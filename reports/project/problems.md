@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-04 08:01:20
+Generated: 2026-08-09 04:09:52
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated: 2026-08-04 08:01:20
 |---|---:|
 |❌ Errors|129|
 |⚠️ Warnings|682|
-|**Total**|**915**|
+|**Total**|**919**|
 
 ---
 
@@ -2859,12 +2859,12 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'voir_database'ligne 4 ne possède pas de docstring.
+- **Message :** La fonction 'afficher_database'ligne 14 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'voir_database' ne possède pas d'annotations de type.
+- **Message :** La fonction 'afficher_database' ne possède pas d'annotations de type.
 
 ---
 
@@ -5032,6 +5032,46 @@ TypeError: result doit être un dict, reçu int
 - **Module :** links
 - **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
 - **line :** 1488
+
+---
+
+# 📄 reports/python/python-report-221.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1483
+
+---
+
+# 📄 reports/python/python-report-223.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1483
+
+---
+
+# 📄 reports/python/python-report-224.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1483
+
+---
+
+# 📄 reports/python/python-report-232.md
+
+## ⚠️ Info
+
+- **Module :** links
+- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
+- **line :** 1484
 
 ---
 
