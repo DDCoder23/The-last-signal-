@@ -286,7 +286,7 @@ jobs:
              echo "Push réussi"
 
              cd "$GITHUB_WORKSPACE"
-             git worktree remove /tmp/ci-worktree --force
+             git worktree remove ../ci-database --force
              exit 0
              fi
 
@@ -329,5 +329,5 @@ jobs:
              fi
 
              cd "$GITHUB_WORKSPACE"
-             git worktree remove /tmp/ci-worktree --force
+             git worktree remove ../ci-database --force
              fi
