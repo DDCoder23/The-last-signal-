@@ -14,8 +14,26 @@ SCORES = {
 
 
 def check_links():
+    files = [
+        f
+        for f in ROOT.rglob("*.md")
+        if not any(
+            p in {
+                ".git",
+                "__pycache__",
+                ".venv",
+                "venv",
+                ".mypy_cache",
+                ".pytest_cache",
+                "reports",
+                "database",
+                "dashboard",
+            }
+            for p in f.parts
+        )
+    ]
 
-    files = list(Path(".").rglob("*.md"))
+    
 
     if not files:
         return {
