@@ -233,4 +233,21 @@ impl Tresor {
             quantite_objets,
         }
     }
+    pub fn ouvrir(
+        &self,
+        niveau: u8,
+        is_admin: bool,
+    ) -> Loot {
+        let mut loot = self
+            .loot_par_niveau
+            .get(&niveau)
+            .cloned()
+            .expect("Niveau de coffre invalide");
+
+        if !is_admin {
+            loot.admin = 0;
+        }
+
+        loot
+    }
       }
