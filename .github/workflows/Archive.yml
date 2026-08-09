@@ -114,6 +114,5 @@ jobs:
 
           git commit -m "Archive old CI reports"
 
-          git pull --rebase origin ci-reports
 
-          git push origin ci-reports
+          git push --force-with-lease origin ci-reports
