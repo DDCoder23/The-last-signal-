@@ -27,7 +27,6 @@ pub struct Tresor {
     pub sous_loot: HashMap<String, HashMap<String, f64>>,
     pub seuil_artefact_commun,
 }
-}
 
 impl Tresor {
     pub fn new() -> Self {
