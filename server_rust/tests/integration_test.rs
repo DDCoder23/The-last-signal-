@@ -144,3 +144,8 @@ fn save_not_found() {
         Err(SaveError::SaveNotFound)
     ));
 }
+#[test]
+fn test_tresor(){
+    let message = Tresor::ouvrir(1,true);
+    debug!(message.to_string)
+}
