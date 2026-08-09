@@ -31,6 +31,7 @@ runs:
 
     - shell: bash
       run: |
+            export GH_TOKEN="${{ github.token }}"
             git fetch origin
             if git show-ref --verify --quiet refs/remotes/origin/${{ inputs.branch }}
             then
