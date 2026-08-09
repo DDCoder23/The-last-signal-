@@ -20,9 +20,13 @@ pub struct Loot {
 
 #[derive(Debug, Clone)]
 pub struct Tresor {
-    pub loot_par_niveau: HashMap<u32, Loot>,
-    pub objets_garantis: HashMap<u32, HashMap<String, u32>>,
-    pub quantite_objets: HashMap<String, u32>,
+    pub loot_par_niveau: HashMap<u8, Loot>,
+    pub objets_garantis: HashMap<u8, Vec<String>>,
+    pub quantite_objets: HashMap<u8, u32>,
+
+    pub sous_loot: HashMap<String, HashMap<String, f64>>,
+    pub seuil_artefact_commun,
+}
 }
 
 impl Tresor {
@@ -226,28 +230,162 @@ impl Tresor {
                 rng.gen_range(2..=9),
             );
         }
+        let mut sous_loot: HashMap<String, HashMap<String, f64>> =
+    HashMap::new();
+        sous_loot.insert(
+    "Artefact commun".to_string(),
+    HashMap::from([
+        ("food".to_string(), 80.0),
+        ("minerais".to_string(), 19.0),
+        ("équi".to_string(), 1.0),
+    ]),
+);
+        sous_loot.insert(
+    "Artefact peu commun".to_string(),
+    HashMap::from([
+        ("food".to_string(), 50.0),
+        ("minerais".to_string(), 40.0),
+        ("équi".to_string(), 10.0),
+    ]),
+);
+        sous_loot.insert(
+    "Artefact rare".to_string(),
+    HashMap::from([
+        ("minerais".to_string(), 50.0),
+        ("équi".to_string(), 25.0),
+        ("potion".to_string(), 25.0),
+    ]),
+);
+        sous_loot.insert(
+    "food".to_string(),
+    HashMap::from([
+        ("viande".to_string(), 10.0),
+        ("pain".to_string(), 70.0),
+        ("fruit et légumes".to_string(), 10.0),
+        ("herbes et racines".to_string(), 10.0),
+    ]),
+);
+        let seuil_artefact_commun = HashMap::from([
+    (2, 20),
+    (3, 19),
+    (4, 17),
+]);
 
         Self {
             loot_par_niveau,
             objets_garantis,
             quantite_objets,
+            sous_loot,
+            seuil_artefact_commun,
         }
     }
     pub fn ouvrir(
-        &self,
-        niveau: u8,
-        is_admin: bool,
-    ) -> Loot {
-        let mut loot = self
-            .loot_par_niveau
+    &self,
+    niveau: u8,
+    is_admin: bool,
+) -> HashMap<String, u32> {
+    let mut rng = rand::thread_rng();
+
+    let loot = self
+        .loot_par_niveau
+        .get(&niveau)
+        .expect("Niveau de coffre invalide");
+
+    let mut objets = HashMap::new();
+
+    // Objets communs
+    for _ in 0..loot.commun {
+        let seuil = self
+            .seuil_artefact_commun
             .get(&niveau)
-            .cloned()
-            .expect("Niveau de coffre invalide");
+            .copied()
+            .unwrap_or(20);
 
-        if !is_admin {
-            loot.admin = 0;
+        let jet = rng.gen_range(1..=20);
+
+        if jet >= seuil {
+            let objet = self.tirer_objet(
+                "Artefact commun",
+                &mut rng,
+            );
+
+            let quantite = self
+                .quantite_objets
+                .get(&objet)
+                .copied()
+                .unwrap_or(1);
+
+            *objets.entry(objet).or_insert(0) += quantite;
         }
+    }
 
-        loot
+    // Loot admin
+    if is_admin {
+        for _ in 0..loot.admin {
+            let objet = self.tirer_objet(
+                "Artefact admin",
+                &mut rng,
+            );
+
+            let quantite = self
+                .quantite_objets
+                .get(&objet)
+                .copied()
+                .unwrap_or(1);
+
+            *objets.entry(objet).or_insert(0) += quantite;
+        }
+    }
+
+    objets
+    }
+
+    pub fn tirer_pondere(
+    table: &HashMap<String, f64>,
+    rng: &mut impl Rng,
+) -> String {
+    let total: f64 = table.values().sum();
+
+    if total <= 0.0 {
+        panic!("Table de loot vide");
+    }
+
+    let tirage = rng.gen_range(0.0..total);
+
+    let mut cumul = 0.0;
+
+    for (objet, poids) in table {
+        cumul += poids;
+
+        if tirage < cumul {
+            return objet.clone();
+        }
+    }
+
+    unreachable!("Le tirage n'a trouvé aucun résultat")
+    }
+    pub fn tirer_objet(
+    &self,
+    categorie: &str,
+    rng: &mut impl Rng,
+) -> String {
+    let table = self
+        .sous_loot
+        .get(categorie)
+        .expect("Catégorie de loot inconnue");
+
+    let resultat = Self::tirer_pondere(
+        table,
+        rng,
+    );
+
+    if self.sous_loot.contains_key(&resultat) {
+        return self.tirer_objet(
+            &resultat,
+            rng,
+        );
+    }
+
+    resultat
     }
       }
