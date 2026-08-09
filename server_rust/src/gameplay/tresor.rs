@@ -20,12 +20,17 @@ pub struct Loot {
 
 #[derive(Debug, Clone)]
 pub struct Tresor {
-    pub loot_par_niveau: HashMap<u8, Loot>,
-    pub objets_garantis: HashMap<u8, Vec<String>>,
-    pub quantite_objets: HashMap<u8, u32>,
+    
+    pub loot_par_niveau: HashMap<u32, Loot>,
+
+    pub objets_garantis: HashMap<u32, HashMap<String, u32>>,
+
+    pub quantite_objets: HashMap<String, u32>,
+
+    pub seuil_artefact_commun: HashMap<u32, u32>,
 
     pub sous_loot: HashMap<String, HashMap<String, f64>>,
-    pub seuil_artefact_commun,
+    
 }
 
 impl Tresor {
@@ -264,7 +269,7 @@ impl Tresor {
         ("herbes et racines".to_string(), 10.0),
     ]),
 );
-        let seuil_artefact_commun: HashMap<u8, u8> = HashMap::from([
+        let seuil_artefact_commun: HashMap<u32, u32> = HashMap::from([
     (2, 20),
     (3, 19),
     (4, 17),
@@ -280,7 +285,7 @@ impl Tresor {
     }
     pub fn ouvrir(
     &self,
-    niveau: u8,
+    niveau: u32,
     is_admin: bool,
 ) -> HashMap<String, u32> {
     let mut rng = rand::thread_rng();
