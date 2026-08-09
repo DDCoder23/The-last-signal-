@@ -3,14 +3,16 @@ use the_last_signal_server::database::{
     database_manager::DatabaseManager,
     migrations,
 };
-use log::info;
-
+use log::debug;
+use the_last_signal_server::gameplay::tresor::Tresor;
 use the_last_signal_server::network::server::Server;
 use the_last_signal_server::utils::logger::logger::ServerLogger;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
+    let message = Tresor::ouvrir(1,true);
+    debug!(message)
     let database_url = 
         std::env::var("DATABASE_URL")?;
     let database_path =
