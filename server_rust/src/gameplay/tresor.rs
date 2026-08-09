@@ -458,11 +458,13 @@ let sous_loot_livre_admin = HashMap::from([
             .get(categorie)
             .unwrap_or_else(|| {
         panic!("Catégorie de loot inconnue : {:?}", categorie);
-    });
+    })
+    };
 
     let resultat = Self::tirer_pondere(
         table,
         rng,
+        is_admin
     );
 
     if self.sous_loot.contains_key(&resultat) {
