@@ -356,6 +356,18 @@ let sous_loot_livre_admin = HashMap::from([
         .expect("Niveau de coffre invalide");
 
     let mut objets = HashMap::new();
+    
+
+    // ==========================================
+    // OBJETS GARANTIS
+    // ==========================================
+
+    if let Some(garantis) = self.objets_garantis.get(&niveau) {
+        for (objet, quantite) in garantis {
+            *objets.entry(objet.clone()).or_insert(0) += *quantite;
+        }
+    }
+        
 
     // Objets communs
     for _ in 0..loot.commun {
