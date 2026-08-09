@@ -1,7 +1,7 @@
 use the_last_signal_server::network::packet::PacketType;
 use the_last_signal_server::gameplay::tresor::Tresor;
 use the_last_signal_server::utils::logger::logger::ServerLogger;
-
+use log::debug;
 #[test]
 fn test_packet_login() {
     assert_eq!(PacketType::Login as u8, 2);
@@ -148,6 +148,7 @@ fn save_not_found() {
 }
 #[test]
 fn test_tresor(){
+    let _guard = ServerLogger::init();
     let message = Tresor::ouvrir(1,true);
-    debug!(message.to_string)
+    debug!(message)
 }
