@@ -134,11 +134,12 @@ jobs:
              echo "Une Pull Request existe déjà : $PR_URL"
              else
              echo "Création de la Pull Request..."
+             
 
             gh pr create \
               --base main \
               --head "$FALLBACK_BRANCH" \
-              --title git "Synchronize CI data #${GITHUB_RUN_NUMBER}" \
+              --title "Synchronize CI data #${GITHUB_RUN_NUMBER}" \
               --body "Le push direct vers main a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request."
              fi
 
