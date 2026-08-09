@@ -152,5 +152,5 @@ fn test_tresor(){
     let tresor = Tresor::new();
     let message = tresor.ouvrir(1, true);
     
-    debug!(message)
+    debug!(message);
 }
