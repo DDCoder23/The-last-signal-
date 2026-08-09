@@ -306,7 +306,8 @@ jobs:
              echo "Branche de secours : $FALLBACK_BRANCH"
 
              # Crée ou met à jour la branche de secours
-             git push --force origin HEAD:"$FALLBACK_BRANCH"
+             git push --force origin HEAD:"refs/heads/$FALLBACK_BRANCH"
+             
 
              echo "Branche de secours poussée."
 
