@@ -27,31 +27,88 @@ jobs:
     
   python:
     needs: reset
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.reset.result == 'success' ||
+        needs.reset.result == 'failure'
+      )
+     }}
     uses: ./.github/workflows/python.yml
 
   rust:
     needs: python
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.python.result == 'success' ||
+        needs.python.result == 'failure'
+      )
+     }}
     uses: ./.github/workflows/rust.yml
 
   
 
-  project:
-    needs: rust
-    uses: ./.github/workflows/project.yml
+  
 
 
   integration:
-    needs: project
+    needs: rust
+    if: >-
+      ${{
+      always() &&
+      (
+        needs.rust.result == 'success' ||
+        needs.rust.result == 'failure'
+      )
+      }}
     uses: ./.github/workflows/integration.yml
-  build:
+  project:
     needs: integration
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.integration.result == 'success' ||
+        needs.integration.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/project.yml
+  build:
+    needs: project
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.project.result == 'success' ||
+        needs.project.result == 'failure'
+      )
+     }}
     uses: ./.github/workflows/build.yml
   archive:
     needs: build
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.build.result == 'success' ||
+        needs.build.result == 'failure'
+      )
+     }}
     uses: ./.github/workflows/Archive.yml
  
 
   sync:
     needs: archive
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.archive.result == 'success' ||
+        needs.archive.result == 'failure'
+      )
+     }}
     uses: ./.github/workflows/sync-ci.yml
   
