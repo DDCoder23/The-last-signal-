@@ -269,6 +269,43 @@ impl Tresor {
         ("herbes et racines".to_string(), 10.0),
     ]),
 );
+        sous_loot.insert(
+    "Artefact super rare".to_string(),
+    HashMap::from([
+        ("potion".to_string(), 50.0),
+        ("équi".to_string(), 40.0),
+        ("minerais".to_string(), 9.9),
+        ("livre enchant".to_string(), 0.1),
+    ]),
+);
+        sous_loot.insert(
+    "Artefact epique".to_string(),
+    HashMap::from([
+        ("potion".to_string(), 15.0),
+        ("équi".to_string(), 75.0),
+        ("livre enchant".to_string(), 10.0),
+        
+    ]),
+);
+        sous_loot.insert(
+    "Artefact legendaire".to_string(),
+    HashMap::from([
+        ("potion".to_string(), 5.0),
+        ("équi".to_string(), 75.0),
+        ("livre enchant".to_string(), 20.0),
+        
+    ]),
+);
+        sous_loot.insert(
+    "Artefact admin".to_string(),
+    HashMap::from([
+        ("livre enchant".to_string(), 100.0),
+        
+    ]),
+);
+            
+
+            
         let seuil_artefact_commun: HashMap<u32, u32> = HashMap::from([
     (2, 20),
     (3, 19),
