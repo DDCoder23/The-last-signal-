@@ -442,26 +442,37 @@ let sous_loot_livre_admin = HashMap::from([
 
     unreachable!("Le tirage n'a trouvé aucun résultat")
     }
+    pub fn tirer_livre(
+    &self,
+    rng: &mut impl Rng,
+    is_admin: bool,
+) -> String {
+    let table = if is_admin {
+        &self.sous_loot_livre_admin
+    } else {
+        &self.sous_loot_livre_normal
+    };
+
+    Self::tirer_pondere(table, rng)
+    }
     pub fn tirer_objet(
     &self,
     categorie: &str,
     rng: &mut impl Rng,
     is_admin: bool,
 ) -> String {
-    let table = if categorie == "livre enchant" {
-        if is_admin {
-            &self.sous_loot_livre_admin
-        } else {
-            &self.sous_loot_livre_normal
-        }
-    } else {
+        if categorie == "livre enchant" {
+        return self.tirer_livre(
+            rng,
+            is_admin,
+        )};
+    let table =
         self
             .sous_loot
             .get(categorie)
             .unwrap_or_else(|| {
         panic!("Catégorie de loot inconnue : {:?}", categorie);
-    })
-    };
+    });
 
     let resultat = Self::tirer_pondere(
         table,
