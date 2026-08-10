@@ -37,22 +37,22 @@
 [2026-08-10 01:00:33] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
 [2026-08-10 01:00:33] [ERROR] [client.rs:96] Déconnexion [345ca287-98e8-4e15-a769-6f95eea4775c] : early eof
 [2026-08-10 01:00:33] [ERROR] [client.rs:96] Déconnexion [b1ec264c-2e3a-4dcf-8dc8-4cc8382ddfb1] : early eof
-[2026-08-10 01:19:39] [DEBUG] [main.rs:16] {"livre enchant": 1, "argent": 7, "gemmes": 1, "pain": 3, "sac": 3, "épée de bois": 3, "torche": 2}
-[2026-08-10 01:19:39] [DEBUG] [migrations.rs:26] Migrations SQLite appliquées.
-[2026-08-10 01:19:39] [INFO] [main.rs:32] Base PostgreSQL prête.
-[2026-08-10 01:19:39] [DEBUG] [server.rs:34] ==================================
-[2026-08-10 01:19:39] [DEBUG] [server.rs:35] The Last Signal Server
-[2026-08-10 01:19:39] [DEBUG] [server.rs:36] ==================================
-[2026-08-10 01:19:39] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
-[2026-08-10 01:19:45] [INFO] [server.rs:49] Client connecté : 127.0.0.1:41584
-[2026-08-10 01:19:45] [INFO] [client.rs:51] Client connecté : 127.0.0.1:41584 | Session : 6aaa1608-d8fc-4ad8-842c-1368b5264179
-[2026-08-10 01:19:46] [INFO] [server.rs:49] Client connecté : 127.0.0.1:41596
-[2026-08-10 01:19:46] [DEBUG] [client.rs:63] Type : Login
-[2026-08-10 01:19:46] [DEBUG] [client.rs:68] Payload : Momo
-[2026-08-10 01:19:46] [INFO] [client.rs:51] Client connecté : 127.0.0.1:41596 | Session : 8d3f0507-16ec-4423-8252-6fe1d4e8d00d
-[2026-08-10 01:19:46] [DEBUG] [handler.rs:102] Connexion joueur : Momo
-[2026-08-10 01:19:46] [DEBUG] [client.rs:63] Type : Chat
-[2026-08-10 01:19:46] [DEBUG] [client.rs:68] Payload : Momo dirige le jeu
-[2026-08-10 01:19:46] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
-[2026-08-10 01:19:46] [ERROR] [client.rs:96] Déconnexion [6aaa1608-d8fc-4ad8-842c-1368b5264179] : early eof
-[2026-08-10 01:19:46] [ERROR] [client.rs:96] Déconnexion [8d3f0507-16ec-4423-8252-6fe1d4e8d00d] : early eof
+[2026-08-10 01:20:28] [DEBUG] [main.rs:16] {"argent": 8, "sac": 3, "pain": 4, "livre enchant": 1, "torche": 2, "épée de bois": 3}
+[2026-08-10 01:20:28] [DEBUG] [migrations.rs:26] Migrations SQLite appliquées.
+[2026-08-10 01:20:28] [INFO] [main.rs:32] Base PostgreSQL prête.
+[2026-08-10 01:20:28] [DEBUG] [server.rs:34] ==================================
+[2026-08-10 01:20:28] [DEBUG] [server.rs:35] The Last Signal Server
+[2026-08-10 01:20:28] [DEBUG] [server.rs:36] ==================================
+[2026-08-10 01:20:28] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
+[2026-08-10 01:20:33] [INFO] [server.rs:49] Client connecté : 127.0.0.1:54718
+[2026-08-10 01:20:33] [INFO] [client.rs:51] Client connecté : 127.0.0.1:54718 | Session : f11c1968-03c2-4098-87a1-61fc39956007
+[2026-08-10 01:20:34] [INFO] [server.rs:49] Client connecté : 127.0.0.1:54734
+[2026-08-10 01:20:34] [DEBUG] [client.rs:63] Type : Login
+[2026-08-10 01:20:34] [DEBUG] [client.rs:68] Payload : Momo
+[2026-08-10 01:20:34] [DEBUG] [handler.rs:102] Connexion joueur : Momo
+[2026-08-10 01:20:34] [INFO] [client.rs:51] Client connecté : 127.0.0.1:54734 | Session : bc6a466f-b046-4255-9b43-0cf051f25652
+[2026-08-10 01:20:34] [DEBUG] [client.rs:63] Type : Chat
+[2026-08-10 01:20:34] [DEBUG] [client.rs:68] Payload : Momo dirige le jeu
+[2026-08-10 01:20:34] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
+[2026-08-10 01:20:34] [ERROR] [client.rs:96] Déconnexion [f11c1968-03c2-4098-87a1-61fc39956007] : early eof
+[2026-08-10 01:20:34] [ERROR] [client.rs:96] Déconnexion [bc6a466f-b046-4255-9b43-0cf051f25652] : early eof
