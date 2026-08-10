@@ -33,6 +33,7 @@ pub struct Tresor {
     
     pub sous_loot_livre_normal: HashMap<String, f64>,
     pub sous_loot_livre_admin: HashMap<String, f64>,
+    pub echecs_loot: HashMap<(String, String), u32>,
 
     
 }
@@ -332,6 +333,7 @@ let sous_loot_livre_admin = HashMap::from([
     ("livre enchant niv 5".to_string(), 8.0),
     ("livre enchant niv 6".to_string(), 7.0),
 ]);
+        let echecs_loot: HashMap::new();
 
         Self {
             loot_par_niveau,
@@ -344,7 +346,7 @@ let sous_loot_livre_admin = HashMap::from([
         }
     }
     pub fn ouvrir(
-    &self,
+    &mut self,
     niveau: u32,
     is_admin: bool,
 ) -> HashMap<String, u32> {
@@ -414,11 +416,7 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet).or_insert(0) += quantite;
         }
     }
-
-    objets
-    }
-
-    pub fn tirer_pondere(
+        pub fn tirer_pondere(
     table: &HashMap<String, f64>,
     rng: &mut impl Rng,
 ) -> String {
@@ -441,59 +439,197 @@ let sous_loot_livre_admin = HashMap::from([
     }
 
     unreachable!("Le tirage n'a trouvé aucun résultat")
-    }
-    pub fn tirer_livre(
-    &self,
+}
+
+pub fn tirer_livre(
+    &mut self,
     rng: &mut impl Rng,
     is_admin: bool,
 ) -> String {
-    let table = if is_admin {
-        &self.sous_loot_livre_admin
+    let nom_table = if is_admin {
+        "livre enchant admin"
     } else {
-        &self.sous_loot_livre_normal
+        "livre enchant normal"
     };
 
-    let resultat = Self::tirer_pondere(
-        table,
-        rng,
-        
-    );
-        resultat
+    let table_originale = if is_admin {
+        self.sous_loot_livre_admin.clone()
+    } else {
+        self.sous_loot_livre_normal.clone()
+    };
+
+    let total: f64 = table_originale.values().sum();
+
+    if total <= 0.0 {
+        panic!("Table de loot des livres vide");
     }
-    pub fn tirer_objet(
-    &self,
+
+    // ------------------------------------------
+    // CALCUL DES POIDS AVEC LE PITY SYSTEM
+    // ------------------------------------------
+
+    let mut table_ajustee = HashMap::new();
+
+    for (objet, poids) in &table_originale {
+        let probabilite = poids / total;
+
+        let echecs = *self
+            .echecs_loot
+            .get(&(nom_table.to_string(), objet.clone()))
+            .unwrap_or(&0);
+
+        let poids_ajuste = if probabilite < 0.01 {
+            poids * (1.0 + 0.03 * echecs as f64)
+        } else {
+            *poids
+        };
+
+        table_ajustee.insert(objet.clone(), poids_ajuste);
+    }
+
+    // ------------------------------------------
+    // TIRAGE
+    // ------------------------------------------
+
+    let resultat = Self::tirer_pondere(
+        &table_ajustee,
+        rng,
+    );
+
+    // ------------------------------------------
+    // MISE À JOUR DES ÉCHECS
+    // ------------------------------------------
+
+    for (objet, poids) in &table_originale {
+        let probabilite = poids / total;
+
+        if probabilite < 0.01 {
+            let cle = (
+                nom_table.to_string(),
+                objet.clone(),
+            );
+
+            if objet == &resultat {
+                // Objet obtenu : reset
+                self.echecs_loot.insert(cle, 0);
+            } else {
+                // Objet non obtenu : +1 échec
+                *self.echecs_loot.entry(cle).or_insert(0) += 1;
+            }
+        }
+    }
+
+    resultat
+}
+
+pub fn tirer_objet(
+    &mut self,
     categorie: &str,
     rng: &mut impl Rng,
     is_admin: bool,
 ) -> String {
-        
-    let table =
-        self
-            .sous_loot
-            .get(categorie)
-            .unwrap_or_else(|| {
-        panic!("Catégorie de loot inconnue : {:?}", categorie);
-    });
+    let table_originale = self
+        .sous_loot
+        .get(categorie)
+        .unwrap_or_else(|| {
+            panic!(
+                "Catégorie de loot inconnue : {:?}",
+                categorie
+            );
+        })
+        .clone();
+
+    let total: f64 = table_originale.values().sum();
+
+    if total <= 0.0 {
+        panic!("Table de loot vide");
+    }
+
+    // ------------------------------------------
+    // CALCUL DES POIDS AVEC LE PITY SYSTEM
+    // ------------------------------------------
+
+    let mut table_ajustee = HashMap::new();
+
+    for (objet, poids) in &table_originale {
+        let probabilite = poids / total;
+
+        let echecs = *self
+            .echecs_loot
+            .get(&(categorie.to_string(), objet.clone()))
+            .unwrap_or(&0);
+
+        let poids_ajuste = if probabilite < 0.01 {
+            poids * (1.0 + 0.03 * echecs as f64)
+        } else {
+            *poids
+        };
+
+        table_ajustee.insert(
+            objet.clone(),
+            poids_ajuste,
+        );
+    }
+
+    // ------------------------------------------
+    // TIRAGE
+    // ------------------------------------------
 
     let resultat = Self::tirer_pondere(
-        table,
+        &table_ajustee,
         rng,
-        
     );
-        if resultat == "livre enchant" {
+
+    // ------------------------------------------
+    // MISE À JOUR DES ÉCHECS
+    // ------------------------------------------
+
+    for (objet, poids) in &table_originale {
+        let probabilite = poids / total;
+
+        if probabilite < 0.01 {
+            let cle = (
+                categorie.to_string(),
+                objet.clone(),
+            );
+
+            if objet == &resultat {
+                // Objet obtenu : reset
+                self.echecs_loot.insert(cle, 0);
+            } else {
+                // Objet non obtenu : +1 échec
+                *self.echecs_loot.entry(cle).or_insert(0) += 1;
+            }
+        }
+    }
+
+    // ------------------------------------------
+    // LIVRE ENCHANTÉ
+    // ------------------------------------------
+
+    if resultat == "livre enchant" {
         return self.tirer_livre(
             rng,
             is_admin,
-        )};
+        );
+    }
+
+    // ------------------------------------------
+    // SOUS-CATÉGORIE
+    // ------------------------------------------
 
     if self.sous_loot.contains_key(&resultat) {
         return self.tirer_objet(
             &resultat,
             rng,
-            is_admin
+            is_admin,
         );
     }
 
     resultat
-    }
+}
+
+    
+        
+    
       }
