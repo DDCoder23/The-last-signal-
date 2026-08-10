@@ -383,6 +383,7 @@ let sous_loot_livre_admin = HashMap::from([
             let objet = self.tirer_objet(
                 "Artefact commun",
                 &mut rng,
+                is_admin
             );
 
             let quantite = self
@@ -401,6 +402,7 @@ let sous_loot_livre_admin = HashMap::from([
             let objet = self.tirer_objet(
                 "Artefact admin",
                 &mut rng,
+                is_admin
             );
 
             let quantite = self
@@ -464,7 +466,7 @@ let sous_loot_livre_admin = HashMap::from([
     let resultat = Self::tirer_pondere(
         table,
         rng,
-        is_admin
+        
     );
 
     if self.sous_loot.contains_key(&resultat) {
