@@ -33,7 +33,7 @@ pub struct Tresor {
     
     pub sous_loot_livre_normal: HashMap<String, f64>,
     pub sous_loot_livre_admin: HashMap<String, f64>,
-    pub echecs_loot: HashMap<(String, String), u32>,
+    pub echecs_loot: HashMap<String, u32>,
 
     
 }
@@ -333,7 +333,12 @@ let sous_loot_livre_admin = HashMap::from([
     ("livre enchant niv 5".to_string(), 8.0),
     ("livre enchant niv 6".to_string(), 7.0),
 ]);
-        let echecs_loot: HashMap::new();
+        let echecs_loot = match std::fs::read_to_string("echecs_loot.json") {
+    Ok(contenu) => serde_json::from_str(&contenu)
+        .unwrap_or_else(|_| HashMap::new()),
+
+    Err(_) => HashMap::new(),
+};
 
         Self {
             loot_par_niveau,
@@ -343,6 +348,7 @@ let sous_loot_livre_admin = HashMap::from([
             seuil_artefact_commun,
             sous_loot_livre_normal,
             sous_loot_livre_admin, 
+            echec_loot
         }
     }
     pub fn ouvrir(
@@ -625,10 +631,16 @@ pub fn tirer_objet(
             is_admin,
         );
     }
-
+    self.sauvegarder_echecs();
     resultat
 }
+    fn sauvegarder_echecs(&self) {
+    let contenu = serde_json::to_string_pretty(&self.echecs_loot)
+        .expect("Impossible de sérialiser les échecs de loot");
 
+    std::fs::write("echecs_loot.json", contenu)
+        .expect("Impossible de sauvegarder les échecs de loot");
+    }
     
         
     
