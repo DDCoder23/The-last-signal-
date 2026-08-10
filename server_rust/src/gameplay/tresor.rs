@@ -422,6 +422,7 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet).or_insert(0) += quantite;
         }
     }
+    }
         pub fn tirer_pondere(
     table: &HashMap<String, f64>,
     rng: &mut impl Rng,
