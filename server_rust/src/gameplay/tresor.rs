@@ -453,7 +453,12 @@ let sous_loot_livre_admin = HashMap::from([
         &self.sous_loot_livre_normal
     };
 
-    Self::tirer_pondere(table, rng)
+    let resultat = Self::tirer_pondere(
+        table,
+        rng,
+        
+    );
+        resultat
     }
     pub fn tirer_objet(
     &self,
