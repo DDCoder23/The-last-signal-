@@ -466,11 +466,7 @@ let sous_loot_livre_admin = HashMap::from([
     rng: &mut impl Rng,
     is_admin: bool,
 ) -> String {
-        if categorie == "livre enchant" {
-        return self.tirer_livre(
-            rng,
-            is_admin,
-        )};
+        
     let table =
         self
             .sous_loot
@@ -484,6 +480,11 @@ let sous_loot_livre_admin = HashMap::from([
         rng,
         
     );
+        if resultat == "livre enchant" {
+        return self.tirer_livre(
+            rng,
+            is_admin,
+        )};
 
     if self.sous_loot.contains_key(&resultat) {
         return self.tirer_objet(
