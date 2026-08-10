@@ -10,7 +10,7 @@ use the_last_signal_server::gameplay::tresor::Tresor;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
-    let tresor = Tresor::new();
+    let mut tresor = Tresor::new();
     let message = tresor.ouvrir(1, true);
     
     debug!("{:?}", message);
