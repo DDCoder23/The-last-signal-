@@ -348,7 +348,7 @@ let sous_loot_livre_admin = HashMap::from([
             seuil_artefact_commun,
             sous_loot_livre_normal,
             sous_loot_livre_admin, 
-            echec_loot
+            echecs_loot
         }
     }
     pub fn ouvrir(
