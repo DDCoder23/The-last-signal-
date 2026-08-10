@@ -11,9 +11,13 @@ use the_last_signal_server::gameplay::tresor::Tresor;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
     let mut tresor = Tresor::new();
-    let message = tresor.ouvrir(1, true);
-    
-    debug!("{:?}", message);
+    for i in 1..=5 {
+    let message_normal = tresor.ouvrir(1, false);
+    debug!("Trésor {} normal : {:?}", i, message_normal);
+
+    let message_admin = tresor.ouvrir(1, true);
+    debug!("Trésor {} admin : {:?}", i, message_admin);
+    }
     
     let database_url = 
         std::env::var("DATABASE_URL")?;
