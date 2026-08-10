@@ -1,8 +1,8 @@
 Documentation Quality Report
 
-**Date :** 2026-08-09 04:09:51
+**Date :** 2026-08-10 02:20:12
 
-# 77/100
+# 78/100
 
 **Statut :** Satisfaisant
 
@@ -12,7 +12,7 @@ Documentation Quality Report
 |markdown|**49**|
 |titles|**4**|
 |spelling|**10**|
-|links|**9**|
+|links|**0**|
 |python|**0**|
 |rust|**0**|
 |organization|**100**|
@@ -20,6 +20,19 @@ Documentation Quality Report
 
 ## Problèmes
 # 📄 
+
+## ❌ Error
+- **Module :** links
+- **Message :** Traceback (most recent call last):
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py", line 30, in generate_score
+    result = check()
+  File "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py", line 19, in check_links
+    for f in ROOT.rglob("*.md")
+             ^^^^
+NameError: name 'ROOT' is not defined
+
+
+- **module :** links
 
 ## ❌ Error
 - **Module :** rust
@@ -2640,7 +2653,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'extract_links'ligne 50 ne possède pas de docstring.
+- **Message :** La fonction 'extract_links'ligne 68 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2652,7 +2665,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_empty_links'ligne 67 ne possède pas de docstring.
+- **Message :** La fonction 'check_empty_links'ligne 85 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2664,7 +2677,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_local_links'ligne 93 ne possède pas de docstring.
+- **Message :** La fonction 'check_local_links'ligne 111 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2676,7 +2689,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_external_links'ligne 123 ne possède pas de docstring.
+- **Message :** La fonction 'check_external_links'ligne 141 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2688,7 +2701,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_anchors'ligne 151 ne possède pas de docstring.
+- **Message :** La fonction 'check_anchors'ligne 169 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2700,7 +2713,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_images'ligne 173 ne possède pas de docstring.
+- **Message :** La fonction 'check_images'ligne 191 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2712,7 +2725,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_duplicate_links'ligne 208 ne possède pas de docstring.
+- **Message :** La fonction 'check_duplicate_links'ligne 226 ne possède pas de docstring.
 
 - **module :** python
 
@@ -3250,6 +3263,44 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'log_erreur_async' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'creer_fichier_vide_async' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'calculer_taille_dossier_async'ligne 33 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'calculer_taille_dossier_async' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'mettre_a_jour_excel_fichiers_et_dossiers' ne possède pas d'annotations de type.
+
+- **module :** python
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 
 ## ⚠️ Warning
@@ -3267,6 +3318,58 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La fonction 'iter_files' ne possède pas d'annotations de type.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 6 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ecrire'ligne 74 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ecrire' ne possède pas d'annotations de type.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'trouver_chemins_par_type'ligne 7 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'trouver_chemins_par_type' ne possède pas d'annotations de type.
 
 - **module :** python
 
@@ -3460,22 +3563,6 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/README.md:59
-
-- **line :** 414
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 421
-
-- **module :** links
-
 # 📄 docs/DATABASE.md
 
 ## ❌ Error
@@ -3637,230 +3724,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).
 
 - **module :** titles
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 804
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 869
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 893
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1141
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1235
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1332
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1419
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1499
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1549
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1609
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1680
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:588
-
-- **line :** 1777
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1505
-
-- **line :** 1855
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1686
-
-- **line :** 1878
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:66
-
-- **line :** 1938
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:594
-
-- **line :** 1941
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:899
-
-- **line :** 1945
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1147
-
-- **line :** 1946
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1241
-
-- **line :** 1947
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1338
-
-- **line :** 1948
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1425
-
-- **line :** 1949
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1555
-
-- **line :** 1951
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1615
-
-- **line :** 1952
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1686
-
-- **line :** 1953
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1785
-
-- **line :** 1957
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1811
-
-- **line :** 1958
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1841
-
-- **line :** 1959
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/QRB_flake8_error.md:1505
-
-- **line :** 1960
-
-- **module :** links
 
 # 📄 docs/README.md
 
@@ -4238,62 +4101,6 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
-
-- **line :** 1
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 1
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 167
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 168
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
-
-- **line :** 169
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 175
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 177
-
-- **module :** links
-
 # 📄 docs/gdd/02_UNIVERS.md
 
 ## ⚠️ Warning
@@ -4367,30 +4174,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** docs/gdd/02_UNIVERS.md:320 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).
 
 - **module :** titles
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 1
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:314
-
-- **line :** 322
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
-
-- **line :** 324
-
-- **module :** links
 
 # 📄 docs/gdd/03_SCENARIO.md
 
@@ -4681,78 +4464,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** docs/gdd/03_SCENARIO.md:182 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).
 
 - **module :** titles
-
-## ❌ Error
-- **Module :** links
-- **Message :** Fichier introuvable : 05_FACTION.md
-
-- **line :** 176
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
-
-- **line :** 1
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 1
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 172
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 173
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
-
-- **line :** 174
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 175
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/CODING_RULES.md:1
-
-- **line :** 184
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 186
-
-- **module :** links
 
 # 📄 docs/gdd/04_CHRONOLOGIE.md
 
@@ -5514,94 +5225,6 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
-
-- **line :** 1
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:314
-
-- **line :** 29
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 33
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315
-
-- **line :** 34
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35
-
-- **line :** 35
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:316
-
-- **line :** 37
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:177
-
-- **line :** 55
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:178
-
-- **line :** 56
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:179
-
-- **line :** 88
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
-
-- **line :** 147
-
-- **module :** links
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1
-
-- **line :** 152
-
-- **module :** links
-
 # 📄 docs/lore/README.md
 
 ## ❌ Error
@@ -5637,456 +5260,6 @@ TypeError: result doit être un dict, reçu int
 - **Message :** Ligne 33 > 120 caractères.
 
 - **module :** markdown
-
-# 📄 reports/python/python-report-11.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1488
-
-- **module :** links
-
-# 📄 reports/python/python-report-12.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1488
-
-- **module :** links
-
-# 📄 reports/python/python-report-13.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1488
-
-- **module :** links
-
-# 📄 reports/python/python-report-140.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-141.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-142.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-143.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-17.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1488
-
-- **module :** links
-
-# 📄 reports/python/python-report-221.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-223.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-224.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-232.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1484
-
-- **module :** links
-
-# 📄 reports/python/python-report-34.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1484
-
-- **module :** links
-
-# 📄 reports/python/python-report-43.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1483
-
-- **module :** links
-
-# 📄 reports/python/python-report-51.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1484
-
-- **module :** links
-
-# 📄 reports/python/python-report-57.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1484
-
-- **module :** links
-
-# 📄 reports/python/python-report-58.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1484
-
-- **module :** links
-
-# 📄 reports/python/python-report-6.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1488
-
-- **module :** links
-
-# 📄 reports/python/python-report-686.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1487
-
-- **module :** links
-
-# 📄 reports/python/python-report-687.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1425
-
-- **module :** links
-
-# 📄 reports/python/python-report-688.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1425
-
-- **module :** links
-
-# 📄 reports/python/python-report-689.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1425
-
-- **module :** links
-
-# 📄 reports/python/python-report-690.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1425
-
-- **module :** links
-
-# 📄 reports/python/python-report-691.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1430
-
-- **module :** links
-
-# 📄 reports/python/python-report-692.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1425
-
-- **module :** links
-
-# 📄 reports/python/python-report-693.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1425
-
-- **module :** links
-
-# 📄 reports/python/python-report-694.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1423
-
-- **module :** links
-
-# 📄 reports/python/python-report-695.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1429
-
-- **module :** links
-
-# 📄 reports/python/python-report-696.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1429
-
-- **module :** links
-
-# 📄 reports/python/python-report-697.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1430
-
-- **module :** links
-
-# 📄 reports/python/python-report-698.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1430
-
-- **module :** links
-
-# 📄 reports/python/python-report-699.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1430
-
-- **module :** links
-
-# 📄 reports/python/python-report-700.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1430
-
-- **module :** links
-
-# 📄 reports/python/python-report-701.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1431
-
-- **module :** links
-
-# 📄 reports/python/python-report-702.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1431
-
-- **module :** links
-
-# 📄 reports/python/python-report-703.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1441
-
-- **module :** links
-
-# 📄 reports/python/python-report-704.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1447
-
-- **module :** links
-
-# 📄 reports/python/python-report-705.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1443
-
-- **module :** links
-
-# 📄 reports/python/python-report-706.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1443
-
-- **module :** links
-
-# 📄 reports/python/python-report-707.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1443
-
-- **module :** links
-
-# 📄 reports/python/python-report-708.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1443
-
-- **module :** links
-
-# 📄 reports/python/python-report-709.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1443
-
-- **module :** links
-
-# 📄 reports/python/python-report-88.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1484
-
-- **module :** links
-
-# 📄 reports/python/python-report-89.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1484
-
-- **module :** links
-
-# 📄 reports/python/python-report-90.md
-
-## ⚠️ Info
-- **Module :** links
-- **Message :** Lien déjà utilisé dans reports/python/python-report-10.md:1488
-
-- **line :** 1485
-
-- **module :** links
 
 # 📄 server_rust/README.md
 
