@@ -473,6 +473,7 @@ let sous_loot_livre_admin = HashMap::from([
         return self.tirer_objet(
             &resultat,
             rng,
+            is_admin
         );
     }
 
