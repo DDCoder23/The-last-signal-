@@ -1644,745 +1644,9 @@
         "module": "titles"
     },
     {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 176,
+        "file": "",
         "severity": "error",
-        "message": "Fichier introuvable : 05_FACTION.md",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 804,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 869,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 893,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1141,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1235,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1332,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1419,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1499,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1549,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1609,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1680,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1777,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:588",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1855,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1505",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1878,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1686",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1938,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:66",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1941,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:594",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1945,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:899",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1946,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1147",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1947,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1241",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1948,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1338",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1949,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1425",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1951,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1555",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1952,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1615",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1953,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1686",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1957,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1785",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1958,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1811",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1959,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1841",
-        "module": "links"
-    },
-    {
-        "file": "docs/QRB_flake8_error.md",
-        "line": 1960,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/QRB_flake8_error.md:1505",
-        "module": "links"
-    },
-    {
-        "file": "docs/CODING_RULES.md",
-        "line": 414,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/README.md:59",
-        "module": "links"
-    },
-    {
-        "file": "docs/CODING_RULES.md",
-        "line": 421,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/02_UNIVERS.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/02_UNIVERS.md",
-        "line": 322,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:314",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/02_UNIVERS.md",
-        "line": 324,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 172,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 173,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 174,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 175,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 184,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/03_SCENARIO.md",
-        "line": 186,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "line": 167,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "line": 168,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "line": 169,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "line": 175,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/CODING_RULES.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/01_VISION.md",
-        "line": 177,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 1,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 29,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:314",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 33,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 34,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:315",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 35,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:35",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 37,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:316",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 55,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:177",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 56,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:178",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 88,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/03_SCENARIO.md:179",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 147,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1",
-        "module": "links"
-    },
-    {
-        "file": "docs/gdd/README.md",
-        "line": 152,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans docs/gdd/02_UNIVERS.md:1",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-693.md",
-        "line": 1425,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-232.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-43.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-89.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-704.md",
-        "line": 1447,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-696.md",
-        "line": 1429,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-141.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-686.md",
-        "line": 1487,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-698.md",
-        "line": 1430,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-692.md",
-        "line": 1425,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-34.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-58.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-57.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-690.md",
-        "line": 1425,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-706.md",
-        "line": 1443,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-6.md",
-        "line": 1488,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-707.md",
-        "line": 1443,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-695.md",
-        "line": 1429,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-687.md",
-        "line": 1425,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-90.md",
-        "line": 1485,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-221.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-17.md",
-        "line": 1488,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-703.md",
-        "line": 1441,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-689.md",
-        "line": 1425,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-223.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-694.md",
-        "line": 1423,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-691.md",
-        "line": 1430,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-13.md",
-        "line": 1488,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-140.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-278.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-688.md",
-        "line": 1425,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-51.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-88.md",
-        "line": 1484,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-700.md",
-        "line": 1430,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-702.md",
-        "line": 1431,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-709.md",
-        "line": 1443,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-705.md",
-        "line": 1443,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-708.md",
-        "line": 1443,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-12.md",
-        "line": 1488,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-699.md",
-        "line": 1430,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-697.md",
-        "line": 1430,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-224.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-11.md",
-        "line": 1488,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-142.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-143.md",
-        "line": 1483,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
-        "module": "links"
-    },
-    {
-        "file": "reports/python/python-report-701.md",
-        "line": 1431,
-        "severity": "info",
-        "message": "Lien déjà utilisé dans reports/python/python-report-10.md:1488",
+        "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py\", line 19, in check_links\n    for f in ROOT.rglob(\"*.md\")\n             ^^^^\nNameError: name 'ROOT' is not defined\n",
         "module": "links"
     },
     {
@@ -4984,6 +4248,42 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py",
+        "severity": "warning",
+        "message": "La fonction 'log_erreur_async' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py",
+        "severity": "warning",
+        "message": "La fonction 'creer_fichier_vide_async' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py",
+        "severity": "warning",
+        "message": "La fonction 'calculer_taille_dossier_async'ligne 33 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py",
+        "severity": "warning",
+        "message": "La fonction 'calculer_taille_dossier_async' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py",
+        "severity": "warning",
+        "message": "La fonction 'mettre_a_jour_excel_fichiers_et_dossiers' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -4999,6 +4299,54 @@
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py",
         "severity": "warning",
         "message": "La fonction 'iter_files' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py",
+        "severity": "warning",
+        "message": "La fonction 'trouver_chemins_par_type'ligne 7 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py",
+        "severity": "warning",
+        "message": "La fonction 'trouver_chemins_par_type' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py",
+        "severity": "warning",
+        "message": "La fonction 'main'ligne 6 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py",
+        "severity": "warning",
+        "message": "La fonction 'main' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py",
+        "severity": "warning",
+        "message": "La fonction 'ecrire'ligne 74 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py",
+        "severity": "warning",
+        "message": "La fonction 'ecrire' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -5256,7 +4604,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py",
         "severity": "warning",
-        "message": "La fonction 'extract_links'ligne 50 ne possède pas de docstring.",
+        "message": "La fonction 'extract_links'ligne 68 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5268,7 +4616,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py",
         "severity": "warning",
-        "message": "La fonction 'check_empty_links'ligne 67 ne possède pas de docstring.",
+        "message": "La fonction 'check_empty_links'ligne 85 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5280,7 +4628,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py",
         "severity": "warning",
-        "message": "La fonction 'check_local_links'ligne 93 ne possède pas de docstring.",
+        "message": "La fonction 'check_local_links'ligne 111 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5292,7 +4640,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py",
         "severity": "warning",
-        "message": "La fonction 'check_external_links'ligne 123 ne possède pas de docstring.",
+        "message": "La fonction 'check_external_links'ligne 141 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5304,7 +4652,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py",
         "severity": "warning",
-        "message": "La fonction 'check_anchors'ligne 151 ne possède pas de docstring.",
+        "message": "La fonction 'check_anchors'ligne 169 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5316,7 +4664,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py",
         "severity": "warning",
-        "message": "La fonction 'check_images'ligne 173 ne possède pas de docstring.",
+        "message": "La fonction 'check_images'ligne 191 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5328,7 +4676,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py",
         "severity": "warning",
-        "message": "La fonction 'check_duplicate_links'ligne 208 ne possède pas de docstring.",
+        "message": "La fonction 'check_duplicate_links'ligne 226 ne possède pas de docstring.",
         "module": "python"
     },
     {
