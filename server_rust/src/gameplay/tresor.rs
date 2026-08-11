@@ -548,6 +548,7 @@ pub fn tirer_objet(
     let table_originale = self
         .sous_loot
         .get(categorie)
+        .cloned()
         .unwrap_or_else(|| {
             panic!(
                 "Catégorie de loot inconnue : {:?}",
@@ -571,7 +572,7 @@ pub fn tirer_objet(
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
          let cle = Self::cle_echec(
-            nom_table,
+            categorie,
             objet,
         );
 
