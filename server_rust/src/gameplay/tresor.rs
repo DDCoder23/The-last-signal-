@@ -1,6 +1,6 @@
 use rand::Rng;
 use std::collections::HashMap;
-
+use log::debug
 use crate::gameplay::dice::jet_de_des;
 
 const PA: u32 = 1;
@@ -576,6 +576,7 @@ pub fn tirer_objet(
             categorie,
             objet,
         );
+        debug!("AVANT TIRAGE : {:?}", self.echecs_loot);
 
         let echecs = *self
             .echecs_loot
@@ -625,7 +626,8 @@ pub fn tirer_objet(
             }
         }
     }
-
+    debug!("APRÈS MISE À JOUR : {:?}", self.echecs_loot);
+    self.sauvegarder_echecs();
     // ------------------------------------------
     // LIVRE ENCHANTÉ
     // ------------------------------------------
@@ -648,7 +650,8 @@ pub fn tirer_objet(
             is_admin,
         );
     }
-    self.sauvegarder_echecs();
+    
+    
     resultat
 }
     fn sauvegarder_echecs(&self) {
