@@ -346,3 +346,31 @@
 [2026-08-11 07:36:59] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
 [2026-08-11 07:36:59] [ERROR] [client.rs:96] Déconnexion [87318741-37e0-4f5f-b739-dd211a98446b] : early eof
 [2026-08-11 07:36:59] [ERROR] [client.rs:96] Déconnexion [3ed90d2d-c2e6-4ea8-8ab7-d229fa6a060f] : early eof
+[2026-08-11 09:16:05] [DEBUG] [main.rs:16] Trésor 1 normal : {"argent": 5, "torche": 2, "sac": 3, "pain": 4, "épée de bois": 3}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:19] Trésor 1 admin : {"torche": 2, "épée de bois": 3, "sac": 3, "pain": 4, "argent": 5, "livre enchant niv 1": 1}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:16] Trésor 2 normal : {"torche": 2, "argent": 5, "épée de bois": 3, "pain": 4, "sac": 3}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:19] Trésor 2 admin : {"sac": 3, "torche": 2, "argent": 5, "pain": 4, "livre enchant niv 2": 1, "épée de bois": 3}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:16] Trésor 3 normal : {"torche": 2, "épée de bois": 3, "pain": 4, "argent": 5, "sac": 3}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:19] Trésor 3 admin : {"livre enchant niv 1": 1, "argent": 5, "sac": 3, "pain": 4, "torche": 2, "épée de bois": 3}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:16] Trésor 4 normal : {"torche": 2, "épée de bois": 3, "pain": 4, "argent": 5, "sac": 3}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:19] Trésor 4 admin : {"argent": 5, "épée de bois": 3, "torche": 2, "pain": 4, "sac": 3, "livre enchant niv 1": 1}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:16] Trésor 5 normal : {"pain": 4, "épée de bois": 3, "torche": 2, "sac": 3, "argent": 5}
+[2026-08-11 09:16:05] [DEBUG] [main.rs:19] Trésor 5 admin : {"pain": 4, "torche": 2, "épée de bois": 3, "sac": 3, "livre enchant niv 1": 1, "argent": 5}
+[2026-08-11 09:16:05] [DEBUG] [migrations.rs:26] Migrations SQLite appliquées.
+[2026-08-11 09:16:05] [INFO] [main.rs:36] Base PostgreSQL prête.
+[2026-08-11 09:16:05] [DEBUG] [server.rs:34] ==================================
+[2026-08-11 09:16:05] [DEBUG] [server.rs:35] The Last Signal Server
+[2026-08-11 09:16:05] [DEBUG] [server.rs:36] ==================================
+[2026-08-11 09:16:05] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
+[2026-08-11 09:16:11] [INFO] [server.rs:49] Client connecté : 127.0.0.1:50224
+[2026-08-11 09:16:11] [INFO] [client.rs:51] Client connecté : 127.0.0.1:50224 | Session : 679d20a2-f3d0-46f6-bd57-e9d07dfe6ce3
+[2026-08-11 09:16:12] [INFO] [server.rs:49] Client connecté : 127.0.0.1:50232
+[2026-08-11 09:16:12] [DEBUG] [client.rs:63] Type : Login
+[2026-08-11 09:16:12] [DEBUG] [client.rs:68] Payload : Momo
+[2026-08-11 09:16:12] [DEBUG] [handler.rs:102] Connexion joueur : Momo
+[2026-08-11 09:16:12] [INFO] [client.rs:51] Client connecté : 127.0.0.1:50232 | Session : 05c82f81-c067-4ae7-878a-6f0ec7872abc
+[2026-08-11 09:16:12] [DEBUG] [client.rs:63] Type : Chat
+[2026-08-11 09:16:12] [DEBUG] [client.rs:68] Payload : Momo dirige le jeu
+[2026-08-11 09:16:12] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
+[2026-08-11 09:16:12] [ERROR] [client.rs:96] Déconnexion [679d20a2-f3d0-46f6-bd57-e9d07dfe6ce3] : early eof
+[2026-08-11 09:16:12] [ERROR] [client.rs:96] Déconnexion [05c82f81-c067-4ae7-878a-6f0ec7872abc] : early eof
