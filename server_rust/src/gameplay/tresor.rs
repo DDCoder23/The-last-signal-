@@ -1,6 +1,6 @@
 use rand::Rng;
 use std::collections::HashMap;
-use log::debug
+use log::debug;
 use crate::gameplay::dice::jet_de_des;
 
 const PA: u32 = 1;
