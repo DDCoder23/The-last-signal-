@@ -361,6 +361,7 @@ let sous_loot_livre_admin = HashMap::from([
     let loot = self
         .loot_par_niveau
         .get(&niveau)
+        .cloned()
         .expect("Niveau de coffre invalide");
 
     let mut objets = HashMap::new();
