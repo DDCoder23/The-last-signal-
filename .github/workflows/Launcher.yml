@@ -24,15 +24,26 @@ permissions:
 jobs:
   reset:
     uses: ./.github/workflows/Reset.yml
-    
-  python:
+  integration:
     needs: reset
     if: >-
-     ${{
+      ${{
       always() &&
       (
         needs.reset.result == 'success' ||
         needs.reset.result == 'failure'
+      )
+      }}
+    uses: ./.github/workflows/integration.yml
+    
+  python:
+    needs: integration
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.integration.result == 'success' ||
+        needs.integration.result == 'failure'
       )
      }}
     uses: ./.github/workflows/python.yml
@@ -54,25 +65,15 @@ jobs:
   
 
 
-  integration:
-    needs: rust
-    if: >-
-      ${{
-      always() &&
-      (
-        needs.rust.result == 'success' ||
-        needs.rust.result == 'failure'
-      )
-      }}
-    uses: ./.github/workflows/integration.yml
+  
   project:
-    needs: integration
+    needs: rust
     if: >-
      ${{
       always() &&
       (
-        needs.integration.result == 'success' ||
-        needs.integration.result == 'failure'
+        needs.rust.result == 'success' ||
+        needs.rust.result == 'failure'
       )
      }}
     uses: ./.github/workflows/project.yml
