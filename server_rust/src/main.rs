@@ -12,10 +12,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
     let mut tresor = Tresor::new();
     for i in 1..=5 {
-    let message_normal = tresor.ouvrir(1, false);
+    let message_normal = tresor.ouvrir(i, false);
     debug!("Trésor {} normal : {:?}", i, message_normal);
 
-    let message_admin = tresor.ouvrir(1, true);
+    let message_admin = tresor.ouvrir(i, true);
     debug!("Trésor {} admin : {:?} | echec : {:?}", i, message_admin,tresor.echecs_loot);
     }
     
