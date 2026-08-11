@@ -231,6 +231,7 @@ jobs:
       run: |
             echo "PWD=$(pwd)"
             find . -name "*.db" -type f -ls
+            find . -name "echecs_loot.json" -print
             python scripts/voir_database.py database/the_last_signal.db
     
   
