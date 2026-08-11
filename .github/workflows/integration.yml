@@ -232,6 +232,10 @@ jobs:
             echo "PWD=$(pwd)"
             find . -name "*.db" -type f -ls
             find . -name "echecs_loot.json"
+            echo "-----"
+            cat ./server_rust/echecs_loot.json
+            echo "----"
+            cat ./echecs_loot.json
             python scripts/voir_database.py database/the_last_signal.db
     
   
