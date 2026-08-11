@@ -521,10 +521,10 @@ pub fn tirer_livre(
         let probabilite = poids / total;
 
         if probabilite < 0.01 {
-            let cle = (
-                nom_table.to_string(),
-                objet.clone(),
-            );
+            let cle = Self::cle_echec(
+            nom_table,
+            objet,
+        );
 
             if objet == &resultat {
                 // Objet obtenu : reset
@@ -610,10 +610,10 @@ pub fn tirer_objet(
         let probabilite = poids / total;
 
         if probabilite < 0.01 {
-            let cle = (
-                categorie.to_string(),
-                objet.clone(),
-            );
+            let cle = Self::cle_echec(
+            categorie,
+            objet,
+        );
 
             if objet == &resultat {
                 // Objet obtenu : reset
