@@ -448,6 +448,9 @@ let sous_loot_livre_admin = HashMap::from([
 
     unreachable!("Le tirage n'a trouvé aucun résultat")
 }
+pub fn cle_echec(categorie: &str, objet: &str) -> String {
+    format!("{}::{}", categorie, objet)
+}
 
 pub fn tirer_livre(
     &mut self,
@@ -480,14 +483,20 @@ pub fn tirer_livre(
 
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
+        let cle = Self::cle_echec(
+            nom_table,
+            objet,
+        );
 
         let echecs = *self
             .echecs_loot
-            .get(&(nom_table.to_string(), objet.clone()))
+            .get(&cle)
             .unwrap_or(&0);
 
+        
+
         let poids_ajuste = if probabilite < 0.01 {
-            poids * (1.0 + 0.03 * echecs as f64)
+            poids * (1.0075 * echecs as f64)
         } else {
             *poids
         };
@@ -561,14 +570,18 @@ pub fn tirer_objet(
 
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
+         let cle = Self::cle_echec(
+            nom_table,
+            objet,
+        );
 
         let echecs = *self
             .echecs_loot
-            .get(&(categorie.to_string(), objet.clone()))
+            .get(&cle)
             .unwrap_or(&0);
 
         let poids_ajuste = if probabilite < 0.01 {
-            poids * (1.0 + 0.03 * echecs as f64)
+            poids * (1.075 * echecs as f64)
         } else {
             *poids
         };
