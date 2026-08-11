@@ -16,7 +16,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     debug!("Trésor {} normal : {:?}", i, message_normal);
 
     let message_admin = tresor.ouvrir(1, true);
-    debug!("Trésor {} admin : {:?}", i, message_admin);
+    debug!("Trésor {} admin : {:?} | echec : {:?}", i, message_admin,tresor.echecs_loot);
     }
     
     let database_url = 
