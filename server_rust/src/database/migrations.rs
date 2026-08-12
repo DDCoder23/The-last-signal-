@@ -42,14 +42,14 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     debug!("Migrations SQLite appliquées.");
     create_user(
     pool,
-    "user1@example.com",
+    "Admin@gmail.com",
     &password1_hash,
 )
 .await?;
 
 create_user(
     pool,
-    "user2@example.com",
+    "Superadmin@gmail.com",
     &password2_hash,
 )
 .await?;
