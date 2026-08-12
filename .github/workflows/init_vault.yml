@@ -87,6 +87,19 @@ jobs:
           with open("encrypted_key", "w") as f:
               f.write(base64.b64encode(encrypted).decode())
           PY
+      - name: Test repository access
+  
+        run: |
+               set -e
+
+               echo "Compte authentifié :"
+
+               curl -fsSL \
+               -H "Accept: application/vnd.github+json" \
+                -H "Authorization: Bearer $GH_TOKEN" \
+                -H "X-GitHub-Api-Version: 2022-11-28" \
+                "https://api.github.com/repos/DDCoder23/The-last-signal-" \
+                 | jq '{full_name, private, permissions}'
 
       - name: Write VAULT_KEY
         env:
