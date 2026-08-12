@@ -71,10 +71,12 @@ async fn create_account(
     perm: &str,
 ) -> Result<(), sqlx::Error> {
     let user_id = Uuid::new_v4().to_string();
+    let mut tx = pool.begin().await?;
+    
 
     sqlx::query(
         r#"
-        INSERT OR IGNORE INTO users (
+        INSERT INTO users (
             user_id,
             email,
             password_hash
@@ -85,11 +87,11 @@ async fn create_account(
     .bind(&user_id)
     .bind(email)
     .bind(password_hash)
-    .execute(pool)
+    .execute(&mut *tx)
     .await?;
     sqlx::query(
         r#"
-        INSERT OR IGNORE INTO accounts (
+        INSERT INTO accounts (
             user_id,
             account_name
         )
@@ -97,8 +99,8 @@ async fn create_account(
         "#,
     )
     .bind(&user_id)
-    .bind(account_name)
-    .execute(pool)
+    .bind(&account_name)
+    .execute(&mut *tx)
     .await?;
     sqlx::query(
         r#"
@@ -110,9 +112,9 @@ async fn create_account(
         VALUES (?, ?)
         "#,
     )
-    .bind(&user_id)
+    .bind(&account_name)
     .bind(perm)
-    .execute(pool)
+    .execute(&mut *tx)
     .await?;
 
     Ok(())
