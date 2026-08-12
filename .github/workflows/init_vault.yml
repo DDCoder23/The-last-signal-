@@ -55,9 +55,7 @@ jobs:
                 jq '{login, id}' /tmp/user.json
 
       - name: Get GitHub public key
-        id: github-key
-        env:
-          GH_TOKEN: ${{ secrets.SECRET_MANAGER_TOKEN }}
+        
         run: |
           response=$(curl -fsSL \
             -H "Accept: application/vnd.github+json" \
