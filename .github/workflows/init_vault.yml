@@ -9,6 +9,9 @@ permissions:
 jobs:
   initialize-vault:
     runs-on: ubuntu-latest
+    env:
+          GH_TOKEN: ${{ secrets.SECRET_MANAGER_TOKEN }}
+        
 
     steps:
       - name: Setup Python
@@ -34,9 +37,7 @@ jobs:
           PY
           
       - name: Test GitHub token
-        id: github-key
-        env:
-          GH_TOKEN: ${{ secrets.SECRET_MANAGER_TOKEN }}
+        
         run: |
       
                set -e
