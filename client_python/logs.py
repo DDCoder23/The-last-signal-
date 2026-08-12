@@ -1,6 +1,6 @@
 import inspect
 import json
-
+from .packet import Packet, PacketType
 def log(client, level, message):
     frame = inspect.currentframe().f_back
 
