@@ -1,0 +1,96 @@
+name: Initialize Vault
+
+on:
+  workflow_call:
+
+jobs:
+  initialize-vault:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install cryptography pynacl
+
+      - name: Generate Fernet key
+        run: |
+          python - <<'PY'
+          from cryptography.fernet import Fernet
+
+          key = Fernet.generate_key()
+
+          with open("master.key", "wb") as f:
+              f.write(key)
+
+          print("Clé Fernet générée.")
+          PY
+
+      - name: Get GitHub public key
+        id: github-key
+        env:
+          GH_TOKEN: ${{ secrets.SECRET_MANAGER_TOKEN }}
+        run: |
+          response=$(curl -fsSL \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/secrets/public-key")
+
+          echo "key_id=$(echo "$response" | jq -r '.key_id')" >> "$GITHUB_OUTPUT"
+          echo "public_key=$(echo "$response" | jq -r '.key')" >> "$GITHUB_OUTPUT"
+
+      - name: Encrypt Fernet key
+        env:
+          PUBLIC_KEY: ${{ steps.github-key.outputs.public_key }}
+        run: |
+          python - <<'PY'
+          import base64
+          import os
+          from nacl.public import PublicKey, SealedBox
+
+          public_key = os.environ["PUBLIC_KEY"]
+
+          with open("master.key", "rb") as f:
+              secret = f.read()
+
+          encrypted = SealedBox(
+              PublicKey(base64.b64decode(public_key))
+          ).encrypt(secret)
+
+          with open("encrypted_key", "w") as f:
+              f.write(base64.b64encode(encrypted).decode())
+          PY
+
+      - name: Write VAULT_KEY
+        env:
+          GH_TOKEN: ${{ secrets.SECRET_MANAGER_TOKEN }}
+          KEY_ID: ${{ steps.github-key.outputs.key_id }}
+        run: |
+          encrypted_value=$(cat encrypted_key)
+
+          curl -fsSL \
+            -X PUT \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/secrets/VAULT_KEY" \
+            -d "$(jq -n \
+              --arg encrypted_value "$encrypted_value" \
+              --arg key_id "$KEY_ID" \
+              '{
+                encrypted_value: $encrypted_value,
+                key_id: $key_id
+              }')"
+
+          echo "VAULT_KEY créé avec succès."
+
+      - name: Cleanup
+        if: always()
+        run: |
+          rm -f master.key
+          rm -f encrypted_key
