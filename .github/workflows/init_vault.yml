@@ -1,7 +1,7 @@
 name: Initialize Vault
 
 on:
-  workflow_call:
+  workflow_dispatch:
 
 jobs:
   initialize-vault:
