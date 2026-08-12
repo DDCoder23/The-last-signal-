@@ -1,6 +1,6 @@
 use log::debug;
 use sqlx::SqlitePool;
-
+use crate::utils::vault::decrypt_vault;
 /// Exécute toutes les migrations SQL non encore appliquées.
 pub async fn run(pool: &SqlitePool) -> Result<(), sqlx::Error> {
     sqlx::query(
