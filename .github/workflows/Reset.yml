@@ -25,6 +25,8 @@ jobs:
 
           # Crée une branche totalement vide
           git checkout --orphan ci-reports-clean
+          git fetch origin
+          git switch --orphan ci-reports-clean
 
           # Vide complètement l'index
           git rm -rf --cached . || true
@@ -34,6 +36,7 @@ jobs:
           
           find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
           git clean -fd
+          
           # Crée seulement les dossiers rapports
           mkdir -p reports database dashboard
 
