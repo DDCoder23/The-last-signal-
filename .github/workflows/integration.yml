@@ -32,6 +32,7 @@ jobs:
     env:
       
       GH_TOKEN: ${{ github.token }}
+      VAULT_KEY: ${{ secrets.VAULT_KEY }}
       DATABASE_PATH: ${{ github.workspace }}/database
       DATABASE_URL: sqlite:${{ github.workspace }}/database/the_last_signal.db
   
