@@ -28,7 +28,7 @@ pub struct Tresor {
     pub quantite_objets: HashMap<String, u32>,
 
     pub seuil_artefact_commun: HashMap<u32, u32>,
-
+    pub seuil_artefact_peu_commun: HashMap<u32, u32>,
     pub sous_loot: HashMap<String, HashMap<String, f64>>,
     
     pub sous_loot_livre_normal: HashMap<String, f64>,
@@ -402,6 +402,7 @@ let sous_loot_livre_admin = HashMap::from([
             quantite_objets,
             sous_loot,
             seuil_artefact_commun,
+            seuil_artefact_peu_commun,
             sous_loot_livre_normal,
             sous_loot_livre_admin, 
             echecs_loot
