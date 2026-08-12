@@ -10,14 +10,7 @@ use the_last_signal_server::gameplay::tresor::Tresor;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
-    let mut tresor = Tresor::new();
-    for i in 1..=5 {
-    let message_normal = tresor.ouvrir(i, false);
-    debug!("Trésor {} normal : {:?}", i, message_normal);
-
-    let message_admin = tresor.ouvrir(i, true);
-    debug!("Trésor {} admin : {:?} | echec : {:?}", i, message_admin,tresor.echecs_loot);
-    }
+    
     
     let database_url = 
         std::env::var("DATABASE_URL")?;
@@ -34,6 +27,16 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     info!("Base PostgreSQL prête.");
+    let mut tresor = Tresor::new();
+    for i in 1..=10000{
+    for i in 1..=5 {
+    let message_normal = tresor.ouvrir(i, false);
+    debug!("Trésor {} normal : {:?}", i, message_normal);
+
+    let message_admin = tresor.ouvrir(i, true);
+    debug!("Trésor {} admin : {:?} | echec : {:?}", i, message_admin,tresor.echecs_loot);
+    }
+    }
 
     let server =
         Server::new(
