@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS perms (
         ON UPDATE CASCADE
 );
 
-INSERT OR IGNORE INTO perms (name, perm)
+INSERT OR IGNORE INTO perms (account_name, perm)
 VALUES
     ('Cyril', 'dev'),
     ('Morgan', 'Super dev');
