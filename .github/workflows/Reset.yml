@@ -24,7 +24,7 @@ jobs:
           git config user.email "github-actions@github.com"
 
           # Crée une branche totalement vide
-          git checkout --orphan empty-ci-reports
+          git checkout --orphan ci-reports-clean
 
           # Vide complètement l'index
           git rm -rf --cached . || true
