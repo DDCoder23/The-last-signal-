@@ -6,16 +6,19 @@ pub fn decrypt_vault() -> Result<Value, Box<dyn std::error::Error>> {
     const KEY_FILE: &str = "security/master.key";
     const VAULT_FILE: &str = "security/vault.enc";
 
+    // Lire la clé Fernet
     let key = fs::read_to_string(KEY_FILE)?;
+
     let cipher = Fernet::new(key.trim())
         .ok_or("Clé Fernet invalide")?;
 
-    let encrypted = fs::read(VAULT_FILE)?;
+    // vault.enc est un token Fernet texte
+    let encrypted = fs::read_to_string(VAULT_FILE)?;
 
-    let decrypted = cipher
-        .decrypt(&encrypted)
-        .ok_or("Impossible de déchiffrer vault.enc")?;
+    // fernet 0.2.2 retourne directement un Result
+    let decrypted = cipher.decrypt(encrypted.trim())?;
 
+    // JSON déchiffré
     let vault: Value = serde_json::from_slice(&decrypted)?;
 
     Ok(vault)
