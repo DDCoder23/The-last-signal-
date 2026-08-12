@@ -122,6 +122,11 @@ jobs:
       run: |
         mkdir -p database
         echo "DATABASE_URL=$DATABASE_URL"
+    - name: Check VAULT_KEY
+      run: |
+             echo "VAULT_KEY présente : ${VAULT_KEY:+oui}"
+             echo "Longueur : ${#VAULT_KEY}"
+             printf '%s' "$VAULT_KEY" | base64 -d > /dev/null && echo "Base64 valide" || echo "Base64 invalide"
     
               
 
