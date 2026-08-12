@@ -410,6 +410,15 @@ let sous_loot_livre_admin = HashMap::from([
 
     // Objets communs
     for _ in 0..loot.commun {
+        debug!(
+    "NIVEAU={} | commun={} | seuil={}",
+    niveau,
+    loot.commun,
+    self.seuil_artefact_commun
+        .get(&niveau)
+        .copied()
+        .unwrap_or(20)
+);
         let seuil = self
             .seuil_artefact_commun
             .get(&niveau)
@@ -417,6 +426,12 @@ let sous_loot_livre_admin = HashMap::from([
             .unwrap_or(20);
 
         let jet = rng.gen_range(1..=20);
+        debug!(
+    "TIRAGE COMMUN | niveau={} | jet={} | seuil={}",
+    niveau,
+    jet,
+    seuil
+);
 
         if jet >= seuil {
             let objet = self.tirer_objet(
@@ -424,6 +439,8 @@ let sous_loot_livre_admin = HashMap::from([
                 &mut rng,
                 is_admin
             );
+            debug!("✅ TIRAGE COMMUN RÉUSSI");
+            debug!("🎁 OBJET TIRÉ : {}", objet);
 
             let quantite = self
                 .quantite_objets
@@ -432,6 +449,9 @@ let sous_loot_livre_admin = HashMap::from([
                 .unwrap_or(1);
 
             *objets.entry(objet).or_insert(0) += quantite;
+        }
+        else {
+    debug!("❌ TIRAGE COMMUN ÉCHOUÉ");
         }
     }
 
@@ -527,7 +547,7 @@ pub fn tirer_livre(
         
 
         let poids_ajuste = if probabilite < 0.01 {
-            poids * (1.0075 * echecs as f64)
+            poids * (1+0.0075 * echecs as f64)
         } else {
             *poids
         };
@@ -614,7 +634,7 @@ pub fn tirer_objet(
             .unwrap_or(&0);
 
         let poids_ajuste = if probabilite < 0.01 {
-            poids * (1.075 * echecs as f64)
+            poids * (1+0.075 * echecs as f64)
         } else {
             *poids
         };
