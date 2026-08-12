@@ -122,22 +122,8 @@ jobs:
       run: |
         mkdir -p database
         echo "DATABASE_URL=$DATABASE_URL"
-    - name: Debug vault files
-      run: |
-              echo "Répertoire courant :"
-              pwd
-
-              echo "Contenu du projet :"
-              find . -maxdepth 3 -type f | sort
-
-              echo "Recherche du vault :"
-              find . -name "vault.enc" -o -name "master.key"
-              pwd
-              ls -la
-              ls -la security
-              test -f ./security/vault.enc
-              test -f ./security/master.key
-             
+    
+              
 
     ##########################################################
     # Build server
