@@ -16,7 +16,7 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       REPORTS_DIR: reports
       ARCHIVE_DIR: archive
-      KEEP_REPORTS: 3
+      KEEP_REPORTS: 5
 
     steps:
       - name: Checkout ci-reports
@@ -46,6 +46,9 @@ jobs:
                CURRENT_RUN=$GITHUB_RUN_NUMBER
                PREVIOUS_RUN=$((CURRENT_RUN - 1))
                OLDER_RUN=$((CURRENT_RUN - 2))
+               Run-3=$((CURRENT_RUN-3))
+               Run-4=$((CURRENT_RUN-4))
+               Run-5=$((CURRENT_RUN-5))
 
                for DIR in "$REPORTS_DIR"/*; do
                [ -d "$DIR" ] || continue
@@ -64,7 +67,10 @@ jobs:
 
                if [[ "$RUN_NUMBER" == "$CURRENT_RUN" ||
                      "$RUN_NUMBER" == "$PREVIOUS_RUN" ||
-                     "$RUN_NUMBER" == "$OLDER_RUN" ]]; then
+                     "$RUN_NUMBER" == "$OLDER_RUN" ||
+                     "$RUN_NUMBER" == "$Run-3" ||
+                     "$RUN_NUMBER" == "$Run-4 || 
+                     "$RUN_NUMBER" == "$Run-5]]; then
 
                echo "Conservation : $(basename "$FILE")"
 
