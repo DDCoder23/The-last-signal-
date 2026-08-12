@@ -131,6 +131,11 @@ jobs:
 
               echo "Recherche du vault :"
               find . -name "vault.enc" -o -name "master.key"
+              pwd
+              ls -la
+              ls -la security
+              test -f ./security/vault.enc
+              test -f ./security/master.key
              
 
     ##########################################################
