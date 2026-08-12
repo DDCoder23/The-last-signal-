@@ -68,7 +68,7 @@ async fn create_user(
 
     sqlx::query(
         r#"
-        INSERT INTO users (
+        INSERT OR IGNORE INTO users (
             user_id,
             email,
             password_hash
