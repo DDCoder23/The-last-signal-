@@ -26,7 +26,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     migrations::run(&database.pool())
         .await?;
 
-    info!("Base PostgreSQL prête.");
+    info!("Base SQLite prête.");
+    ServerLogger::set_database(database.pool().clone());
     let mut tresor = Tresor::new();
     for i in 1..=10000{
     for i in 1..=6 {
