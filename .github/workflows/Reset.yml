@@ -31,8 +31,9 @@ jobs:
 
           # Supprime les fichiers physiques
           git rm -rf . || true
+          
           find . -mindepth 1 -maxdepth 1 ! -name ".git" -exec rm -rf {} +
-
+          git clean -fd
           # Crée seulement les dossiers rapports
           mkdir -p reports database dashboard
 
