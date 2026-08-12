@@ -480,6 +480,51 @@ let sous_loot_livre_admin = HashMap::from([
     debug!("TIRAGE COMMUN ÉCHOUÉ");
         }
     }
+        for _ in 0..loot.peu_commun {
+        debug!(
+    "NIVEAU={} | peu_commun={} | seuil={}",
+    niveau,
+    loot.commun,
+    self.seuil_artefact_peu_commun
+        .get(&niveau)
+        .copied()
+        .unwrap_or(20)
+);
+        let seuil = self
+            .seuil_artefact_peu_commun
+            .get(&niveau)
+            .copied()
+            .unwrap_or(20);
+
+        let jet = rng.gen_range(1..=20);
+        debug!(
+    "TIRAGE Peu Commun | niveau={} | jet={} | seuil={}",
+    niveau,
+    jet,
+    seuil
+);
+
+        if jet >= seuil {
+            let objet = self.tirer_objet(
+                "Artefact peu commun",
+                &mut rng,
+                is_admin
+            );
+            debug!("TIRAGE PEU COMMUN RÉUSSI");
+            debug!("OBJET TIRÉ : {}", objet);
+
+            let quantite = self
+                .quantite_objets
+                .get(&objet)
+                .copied()
+                .unwrap_or(1);
+
+            *objets.entry(objet).or_insert(0) += quantite;
+        }
+        else {
+    debug!("TIRAGE PEU COMMUN ÉCHOUÉ");
+        }
+        }
 
     // Loot admin
     if is_admin {
@@ -572,7 +617,7 @@ pub fn tirer_livre(
 
         
 
-        let poids_ajuste = if probabilite < 0.01 {
+        let poids_ajuste = if probabilite < 0.03 {
             poids * (1.0+0.0075 * echecs as f64)
         } else {
             *poids
@@ -597,7 +642,7 @@ pub fn tirer_livre(
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
 
-        if probabilite < 0.01 {
+        if probabilite < 0.03 {
             let cle = Self::cle_echec(
             nom_table,
             objet,
@@ -659,7 +704,7 @@ pub fn tirer_objet(
             .get(&cle)
             .unwrap_or(&0);
 
-        let poids_ajuste = if probabilite < 0.01 {
+        let poids_ajuste = if probabilite < 0.03 {
             poids * (1.0+0.075 * echecs as f64)
         } else {
             *poids
@@ -687,7 +732,7 @@ pub fn tirer_objet(
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
 
-        if probabilite < 0.01 {
+        if probabilite < 0.03 {
             let cle = Self::cle_echec(
             categorie,
             objet,
