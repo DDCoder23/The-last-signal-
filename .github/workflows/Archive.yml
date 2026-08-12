@@ -37,7 +37,7 @@ jobs:
         shell: bash
         run: |
                set -Eeuo pipefail
-               git rm -rf build
+               git rm -rf --ignore-unmatch build
 
                mkdir -p "$ARCHIVE_DIR"
 
