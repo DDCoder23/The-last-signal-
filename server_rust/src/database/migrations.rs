@@ -63,32 +63,54 @@ create_account(
 
 
 
-async fn create_account(
+    async fn create_account(
     pool: &SqlitePool,
     email: &str,
     password_hash: &str,
     account_name: &str,
     perm: &str,
 ) -> Result<(), sqlx::Error> {
-    let user_id = Uuid::new_v4().to_string();
     let mut tx = pool.begin().await?;
-    
 
-    sqlx::query(
+    // Chercher l'utilisateur existant
+    let user_id: String = match sqlx::query_scalar(
         r#"
-        INSERT INTO users (
-            user_id,
-            email,
-            password_hash
-        )
-        VALUES (?, ?, ?)
+        SELECT user_id
+        FROM users
+        WHERE email = ?
         "#,
     )
-    .bind(&user_id)
     .bind(email)
-    .bind(password_hash)
-    .execute(&mut *tx)
-    .await?;
+    .fetch_optional(&mut *tx)
+    .await?
+    {
+        Some(user_id) => user_id,
+
+        // L'utilisateur n'existe pas : le créer
+        None => {
+            let user_id = Uuid::new_v4().to_string();
+
+            sqlx::query(
+                r#"
+                INSERT INTO users (
+                    user_id,
+                    email,
+                    password_hash
+                )
+                VALUES (?, ?, ?)
+                "#,
+            )
+            .bind(&user_id)
+            .bind(email)
+            .bind(password_hash)
+            .execute(&mut *tx)
+            .await?;
+
+            user_id
+        }
+    };
+
+    // Créer le compte
     sqlx::query(
         r#"
         INSERT INTO accounts (
@@ -102,10 +124,11 @@ async fn create_account(
     .bind(&account_name)
     .execute(&mut *tx)
     .await?;
+
+    // Créer la permission
     sqlx::query(
         r#"
-        INSERT OR IGNORE INTO perms (
-            
+        INSERT INTO perms (
             account_name,
             perm
         )
@@ -117,5 +140,7 @@ async fn create_account(
     .execute(&mut *tx)
     .await?;
 
+    tx.commit().await?;
+
     Ok(())
-}
+    }
