@@ -44,6 +44,7 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     pool,
     "Admin@gmail.com",
     &password1_hash,
+        "Cyril",
 )
 .await?;
 
@@ -51,6 +52,7 @@ create_user(
     pool,
     "Superadmin@gmail.com",
     &password2_hash,
+    "Morgan",
 )
 .await?;
 
@@ -59,10 +61,11 @@ create_user(
 
 
 
-async fn create_user(
+async fn create_account(
     pool: &SqlitePool,
     email: &str,
     password_hash: &str,
+    account_name: &str,
 ) -> Result<(), sqlx::Error> {
     let user_id = Uuid::new_v4().to_string();
 
@@ -79,6 +82,19 @@ async fn create_user(
     .bind(user_id)
     .bind(email)
     .bind(password_hash)
+    .execute(pool)
+    .await?;
+    sqlx::query(
+        r#"
+        INSERT OR IGNORE INTO accounts (
+            user_id,
+            account_name
+        )
+        VALUES (?, ?)
+        "#,
+    )
+    .bind(user_id)
+    .bind(account_name)
     .execute(pool)
     .await?;
 
