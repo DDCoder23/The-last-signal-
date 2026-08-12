@@ -25,13 +25,13 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     let password1 = vault["user1_password"]
     .as_str()
     .ok_or("Mot de passe user1 absent")?;
-    let password1_hash = hash_password(password)
+    let password1_hash = hash_password(password1)
     .map_err(|e| sqlx::Error::Protocol(e))?;
 
     let password2 = vault["user2_password"]
     .as_str()
     .ok_or("Mot de passe user2 absent")?;
-    let password2_hash = hash_password(password)
+    let password2_hash = hash_password(password2)
     .map_err(|e| sqlx::Error::Protocol(e))?;
     
     
