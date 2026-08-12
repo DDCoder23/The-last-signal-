@@ -547,7 +547,7 @@ pub fn tirer_livre(
         
 
         let poids_ajuste = if probabilite < 0.01 {
-            poids * (1+0.0075 * echecs as f64)
+            poids * (1.0+0.0075 * echecs as f64)
         } else {
             *poids
         };
@@ -634,7 +634,7 @@ pub fn tirer_objet(
             .unwrap_or(&0);
 
         let poids_ajuste = if probabilite < 0.01 {
-            poids * (1+0.075 * echecs as f64)
+            poids * (1.0+0.075 * echecs as f64)
         } else {
             *poids
         };
