@@ -29,6 +29,30 @@ jobs:
 
           print("Clé Fernet générée.")
           PY
+      - name: Test GitHub token
+        id: github-key
+        env:
+          GH_TOKEN: ${{ secrets.SECRET_MANAGER_TOKEN }}
+        run: |
+      
+               set -e
+
+               if [ -z "$GH_TOKEN" ]; then
+               echo "❌ SECRET_MANAGER_TOKEN est vide"
+               exit 1
+               fi
+
+               echo "Token présent."
+
+               curl -fsSL \
+                -H "Accept: application/vnd.github+json" \
+                 -H "Authorization: Bearer $GH_TOKEN" \
+                 -H "X-GitHub-Api-Version: 2022-11-28" \
+                 https://api.github.com/user \
+                 > /tmp/user.json
+
+                echo "Authentification GitHub réussie."
+                jq '{login, id}' /tmp/user.json
 
       - name: Get GitHub public key
         id: github-key
