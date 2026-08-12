@@ -37,6 +37,8 @@ jobs:
       )
       }}
     uses: ./.github/workflows/integration.yml
+    secrets:
+        VAULT_KEY: ${{ secrets.VAULT_KEY }}
     
   python:
     needs: integration
