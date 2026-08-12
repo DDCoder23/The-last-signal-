@@ -27,17 +27,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     info!("Base PostgreSQL prête.");
-    
-
-    let server =
-        Server::new(
-            "127.0.0.1:5000",
-            database,
-        )
-        .await?;
-
-
-    server.start().await;
     let mut tresor = Tresor::new();
     for i in 1..=10000{
     for i in 1..=6 {
@@ -48,6 +37,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     debug!("Trésor {} admin : {:?} | echec : {:?}", i, message_admin,tresor.echecs_loot);
     }
     }
+
+    let server =
+        Server::new(
+            "127.0.0.1:5000",
+            database,
+        )
+        .await?;
+
+
+    server.start().await;
+    
 
     Ok(())
 }
