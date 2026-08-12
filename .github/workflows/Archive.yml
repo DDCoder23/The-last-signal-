@@ -37,6 +37,7 @@ jobs:
         shell: bash
         run: |
                set -Eeuo pipefail
+               git rm -rf build
 
                mkdir -p "$ARCHIVE_DIR"
 
