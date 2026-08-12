@@ -3,6 +3,9 @@ name: Integration Tests
 on:
   
   workflow_call:
+    secrets:
+      VAULT_KEY:
+        required: true
     inputs:
        commit-message:
           description: Message du commit
