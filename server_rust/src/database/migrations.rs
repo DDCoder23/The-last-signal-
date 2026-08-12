@@ -2,6 +2,7 @@ use log::debug;
 use uuid::Uuid;
 use sqlx::SqlitePool;
 use crate::utils::vault::decrypt_vault;
+use crate::utils::password::hash_password;
 /// Exécute toutes les migrations SQL non encore appliquées.
 pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     sqlx::query(
@@ -24,10 +25,14 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     let password1 = vault["user1_password"]
     .as_str()
     .ok_or("Mot de passe user1 absent")?;
+    let password1_hash = hash_password(password)
+    .map_err(|e| sqlx::Error::Protocol(e))?;
 
     let password2 = vault["user2_password"]
     .as_str()
     .ok_or("Mot de passe user2 absent")?;
+    let password2_hash = hash_password(password)
+    .map_err(|e| sqlx::Error::Protocol(e))?;
     
     
     sqlx::migrate!("./migrations")
@@ -38,14 +43,14 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     create_user(
     pool,
     "user1@example.com",
-    password1,
+    password1_hash,
 )
 .await?;
 
 create_user(
     pool,
     "user2@example.com",
-    password2,
+    password2_hash,
 )
 .await?;
 
