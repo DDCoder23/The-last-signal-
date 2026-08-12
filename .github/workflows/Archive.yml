@@ -70,7 +70,7 @@ jobs:
                      "$RUN_NUMBER" == "$OLDER_RUN" ||
                      "$RUN_NUMBER" == "$Run_3" ||
                      "$RUN_NUMBER" == "$Run_4" || 
-                     "$RUN_NUMBER" == "$Run_5"]]; then
+                     "$RUN_NUMBER" == "$Run_5" ]]; then
 
                echo "Conservation : $(basename "$FILE")"
 
