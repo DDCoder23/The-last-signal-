@@ -465,8 +465,8 @@ let sous_loot_livre_admin = HashMap::from([
                 &mut rng,
                 is_admin
             );
-            debug!("✅ TIRAGE COMMUN RÉUSSI");
-            debug!("🎁 OBJET TIRÉ : {}", objet);
+            debug!("TIRAGE COMMUN RÉUSSI");
+            debug!("OBJET TIRÉ : {}", objet);
 
             let quantite = self
                 .quantite_objets
@@ -477,7 +477,7 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet).or_insert(0) += quantite;
         }
         else {
-    debug!("❌ TIRAGE COMMUN ÉCHOUÉ");
+    debug!("TIRAGE COMMUN ÉCHOUÉ");
         }
     }
 
