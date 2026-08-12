@@ -16,6 +16,17 @@ jobs:
 
   launch:
     uses: ./.github/workflows/Launcher.yml
+  build:
+    needs: launch
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.launch.result == 'success' ||
+        needs.launch.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/build.yml
 
   
 
