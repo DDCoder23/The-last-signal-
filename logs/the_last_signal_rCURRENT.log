@@ -1572,3 +1572,41 @@
 [2026-08-12 07:34:45] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
 [2026-08-12 07:34:45] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
 [2026-08-12 07:34:45] [DEBUG] [main.rs:19] Trésor 5 admin : {"argent": 100, "livre enchant niv 4": 1} | echec : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:16] Trésor 1 normal : {"torche": 2, "argent": 4, "pain": 5, "sac": 3, "épée de bois": 3}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:19] Trésor 1 admin : {"argent": 4, "sac": 3, "torche": 2, "pain": 5, "livre enchant niv 4": 1, "épée de bois": 3} | echec : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:16] Trésor 2 normal : {"pain": 1, "épée de pierre": 1, "torche": 1, "sac": 2, "argent": 17, "gemmes": 1}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:19] Trésor 2 admin : {"sac": 2, "torche": 1, "gemmes": 1, "épée de pierre": 1, "argent": 17, "livre enchant niv 2": 1} | echec : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:16] Trésor 3 normal : {"sac": 1, "gemmes": 1, "torche": 2, "argent": 40, "épée de pierre": 1}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:19] Trésor 3 admin : {"livre enchant niv 5": 1, "argent": 40, "épée de pierre": 1, "gemmes": 1, "torche": 2, "sac": 1} | echec : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:16] Trésor 4 normal : {"gemmes": 1, "argent": 60}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:19] Trésor 4 admin : {"pain": 1, "livre enchant niv 6": 1, "argent": 60, "gemmes": 1} | echec : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:16] Trésor 5 normal : {"argent": 150}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 07:40:29] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 07:40:29] [DEBUG] [main.rs:19] Trésor 5 admin : {"livre enchant niv 6": 1, "argent": 150} | echec : {}
