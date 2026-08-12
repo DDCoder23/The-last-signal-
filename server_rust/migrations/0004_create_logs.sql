@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS logs (
     log_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    session_id TEXT NOT NULL,
+    session_id TEXT,
     timestamp TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
     level TEXT NOT NULL,
     module TEXT NOT NULL,
@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS logs (
 
     FOREIGN KEY (session_id)
         REFERENCES sessions(session_id)
-        ON DELETE CASCADE
+        ON DELETE SET NULL
 );
