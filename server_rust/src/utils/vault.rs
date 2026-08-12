@@ -3,7 +3,7 @@ use serde_json::Value;
 use std::fs;
 
 pub fn decrypt_vault() -> Result<Value, Box<dyn std::error::Error>> {
-    const KEY_FILE: &str = "../security/master.key";
+    const KEY_FILE: &str = "./security/master.key";
     const VAULT_FILE: &str = "../security/vault.enc";
 
     // Lire la clé Fernet
