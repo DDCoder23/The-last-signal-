@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS perms (
     perm TEXT NOT NULL,
     UNIQUE (account_name, perm)
     FOREIGN KEY (account_name)
-        REFERENCES accounts(account)
+        REFERENCES accounts(account_name)
         ON DELETE CASCADE
         ON UPDATE CASCADE
 );
