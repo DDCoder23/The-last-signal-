@@ -17,5 +17,17 @@ def main():
         ChatPacket("Momo dirige le jeu")
   )
     response = client.receive_packet()
+    client.send_packet(
+        ChatPacket("Le serveur est en rust")
+  )
+    response = client.receive_packet()
     print(response.message)
+    client.send_packet(
+        ChatPacket("Le client est en python")
+  )
+    response = client.receive_packet()
+    client.send_packet(
+        ChatPacket("Tests des trésors en cours...")
+  )
+    response = client.receive_packet()
     client.disconnect()
