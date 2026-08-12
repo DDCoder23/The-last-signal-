@@ -43,9 +43,9 @@ jobs:
       - name: Create report
         shell: bash
         run: |
-          mkdir -p reports/build
+          mkdir -p reports/build-${{ matrix.os }}
 
-          REPORT="reports/build/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
+          REPORT="reports/build-${{ matrix.os }}/build-${{ matrix.os }}-${GITHUB_RUN_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> $GITHUB_ENV
 
