@@ -1,8 +1,12 @@
 CREATE TABLE IF NOT EXISTS perms (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT NOT NULL,
+    account_name TEXT NOT NULL,
     perm TEXT NOT NULL,
-    UNIQUE (name, perm)
+    UNIQUE (account_name, perm)
+    FOREIGN KEY (account_name)
+        REFERENCES accounts(account)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 INSERT OR IGNORE INTO perms (name, perm)
