@@ -1116,50 +1116,50 @@
 [2026-08-12 00:22:17] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
 [2026-08-12 00:22:17] [ERROR] [client.rs:96] Déconnexion [172e554b-0834-4047-bc68-af9cce50fe8d] : early eof
 [2026-08-12 00:22:17] [ERROR] [client.rs:96] Déconnexion [82580714-23eb-47c9-86ff-c917b5ae55da] : early eof
-[2026-08-12 00:48:24] [DEBUG] [main.rs:16] Trésor 1 normal : {"épée de bois": 3, "torche": 2, "sac": 3, "argent": 6, "pain": 4}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:19] Trésor 1 admin : {"épée de bois": 3, "torche": 2, "argent": 6, "sac": 3, "pain": 4, "livre enchant niv 2": 1} | echec : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:16] Trésor 2 normal : {"argent": 14, "épée de pierre": 1, "sac": 2, "torche": 1}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:19] Trésor 2 admin : {"sac": 2, "épée de pierre": 1, "argent": 14, "torche": 1, "livre enchant niv 3": 1} | echec : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:16] Trésor 3 normal : {"torche": 2, "épée de pierre": 1, "gemmes": 1, "argent": 10, "sac": 1}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:19] Trésor 3 admin : {"pain": 1, "argent": 10, "livre enchant niv 3": 1, "épée de pierre": 1, "sac": 1, "gemmes": 1, "torche": 2} | echec : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:16] Trésor 4 normal : {"argent": 60, "gemmes": 1}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:19] Trésor 4 admin : {"argent": 60, "gemmes": 1, "livre enchant niv 4": 1} | echec : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:16] Trésor 5 normal : {"argent": 100, "gemmes": 1}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
-[2026-08-12 00:48:24] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
-[2026-08-12 00:48:24] [DEBUG] [main.rs:19] Trésor 5 admin : {"argent": 100, "gemmes": 1, "livre enchant niv 1": 1} | echec : {}
-[2026-08-12 00:48:24] [DEBUG] [migrations.rs:26] Migrations SQLite appliquées.
-[2026-08-12 00:48:24] [INFO] [main.rs:36] Base PostgreSQL prête.
-[2026-08-12 00:48:24] [DEBUG] [server.rs:34] ==================================
-[2026-08-12 00:48:24] [DEBUG] [server.rs:35] The Last Signal Server
-[2026-08-12 00:48:24] [DEBUG] [server.rs:36] ==================================
-[2026-08-12 00:48:24] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
-[2026-08-12 00:48:30] [INFO] [server.rs:49] Client connecté : 127.0.0.1:46204
-[2026-08-12 00:48:30] [INFO] [client.rs:51] Client connecté : 127.0.0.1:46204 | Session : 18d9bbb7-5542-4453-b945-86e71ea499bc
-[2026-08-12 00:48:31] [DEBUG] [client.rs:63] Type : Login
-[2026-08-12 00:48:31] [DEBUG] [client.rs:68] Payload : Momo
-[2026-08-12 00:48:31] [DEBUG] [handler.rs:102] Connexion joueur : Momo
-[2026-08-12 00:48:31] [INFO] [server.rs:49] Client connecté : 127.0.0.1:46212
-[2026-08-12 00:48:31] [INFO] [client.rs:51] Client connecté : 127.0.0.1:46212 | Session : d88bc7ed-2737-4fe5-9c0c-bd9ec86efd8d
-[2026-08-12 00:48:31] [DEBUG] [client.rs:63] Type : Chat
-[2026-08-12 00:48:31] [DEBUG] [client.rs:68] Payload : Momo dirige le jeu
-[2026-08-12 00:48:31] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
-[2026-08-12 00:48:31] [ERROR] [client.rs:96] Déconnexion [18d9bbb7-5542-4453-b945-86e71ea499bc] : early eof
-[2026-08-12 00:48:31] [ERROR] [client.rs:96] Déconnexion [d88bc7ed-2737-4fe5-9c0c-bd9ec86efd8d] : early eof
+[2026-08-12 00:46:02] [DEBUG] [main.rs:16] Trésor 1 normal : {"argent": 10, "sac": 3, "pain": 5, "épée de bois": 3, "torche": 2}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:19] Trésor 1 admin : {"épée de bois": 3, "pain": 5, "sac": 3, "livre enchant niv 1": 1, "torche": 2, "argent": 10} | echec : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:16] Trésor 2 normal : {"épée de pierre": 1, "torche": 1, "argent": 16, "sac": 2}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:19] Trésor 2 admin : {"torche": 1, "sac": 2, "argent": 16, "épée de pierre": 1, "livre enchant niv 1": 1} | echec : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:16] Trésor 3 normal : {"épée de pierre": 1, "argent": 40, "torche": 2, "gemmes": 1, "sac": 1}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:19] Trésor 3 admin : {"torche": 2, "pain": 1, "sac": 1, "épée de pierre": 1, "livre enchant niv 1": 1, "argent": 40, "gemmes": 1} | echec : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:16] Trésor 4 normal : {"gemmes": 1, "argent": 70}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:19] Trésor 4 admin : {"gemmes": 1, "argent": 70, "livre enchant niv 1": 1} | echec : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:16] Trésor 5 normal : {"gemmes": 1, "argent": 100}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:579] AVANT TIRAGE : {}
+[2026-08-12 00:46:02] [DEBUG] [tresor.rs:629] APRÈS MISE À JOUR : {}
+[2026-08-12 00:46:02] [DEBUG] [main.rs:19] Trésor 5 admin : {"gemmes": 1, "argent": 100, "livre enchant niv 4": 1} | echec : {}
+[2026-08-12 00:46:02] [DEBUG] [migrations.rs:26] Migrations SQLite appliquées.
+[2026-08-12 00:46:02] [INFO] [main.rs:36] Base PostgreSQL prête.
+[2026-08-12 00:46:02] [DEBUG] [server.rs:34] ==================================
+[2026-08-12 00:46:02] [DEBUG] [server.rs:35] The Last Signal Server
+[2026-08-12 00:46:02] [DEBUG] [server.rs:36] ==================================
+[2026-08-12 00:46:02] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
+[2026-08-12 00:46:07] [INFO] [server.rs:49] Client connecté : 127.0.0.1:43732
+[2026-08-12 00:46:07] [INFO] [client.rs:51] Client connecté : 127.0.0.1:43732 | Session : 761bcded-3065-449c-9225-f26313f7bd65
+[2026-08-12 00:46:08] [INFO] [server.rs:49] Client connecté : 127.0.0.1:43746
+[2026-08-12 00:46:08] [DEBUG] [client.rs:63] Type : Login
+[2026-08-12 00:46:08] [DEBUG] [client.rs:68] Payload : Momo
+[2026-08-12 00:46:08] [DEBUG] [handler.rs:102] Connexion joueur : Momo
+[2026-08-12 00:46:08] [INFO] [client.rs:51] Client connecté : 127.0.0.1:43746 | Session : 18cd20b2-486d-48fc-b574-3626c74bc9c5
+[2026-08-12 00:46:08] [DEBUG] [client.rs:63] Type : Chat
+[2026-08-12 00:46:08] [DEBUG] [client.rs:68] Payload : Momo dirige le jeu
+[2026-08-12 00:46:08] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
+[2026-08-12 00:46:08] [ERROR] [client.rs:96] Déconnexion [761bcded-3065-449c-9225-f26313f7bd65] : early eof
+[2026-08-12 00:46:08] [ERROR] [client.rs:96] Déconnexion [18cd20b2-486d-48fc-b574-3626c74bc9c5] : early eof
