@@ -43,14 +43,14 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     create_user(
     pool,
     "user1@example.com",
-    password1_hash,
+    &password1_hash,
 )
 .await?;
 
 create_user(
     pool,
     "user2@example.com",
-    password2_hash,
+    &password2_hash,
 )
 .await?;
 
