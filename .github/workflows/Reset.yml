@@ -44,4 +44,4 @@ jobs:
           git add .
           git commit -m "Empty ci-reports branch"
 
-          git push --force origin HEAD:ci-reports
+          git push --force origin ci-reports-clean:ci-reports
