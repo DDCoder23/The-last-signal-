@@ -40,7 +40,7 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
         .await?;
 
     debug!("Migrations SQLite appliquées.");
-    create_user(
+    create_account(
     pool,
     "Admin@gmail.com",
     &password1_hash,
@@ -48,7 +48,7 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
 )
 .await?;
 
-create_user(
+create_account(
     pool,
     "Superadmin@gmail.com",
     &password2_hash,
@@ -79,7 +79,7 @@ async fn create_account(
         VALUES (?, ?, ?)
         "#,
     )
-    .bind(user_id)
+    .bind(&user_id)
     .bind(email)
     .bind(password_hash)
     .execute(pool)
@@ -93,7 +93,7 @@ async fn create_account(
         VALUES (?, ?)
         "#,
     )
-    .bind(user_id)
+    .bind(&user_id)
     .bind(account_name)
     .execute(pool)
     .await?;
