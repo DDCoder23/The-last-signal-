@@ -32,6 +32,7 @@ jobs:
 
           print("Clé Fernet générée.")
           PY
+          
       - name: Test GitHub token
         id: github-key
         env:
@@ -56,30 +57,22 @@ jobs:
 
                 echo "Authentification GitHub réussie."
                 jq '{login, id}' /tmp/user.json
-      - name: Test repository access
-  
-        run: |
+                
           
-              set +e
+    
+      - name: Get GitHub key
+        id: github-token
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+               response=$(curl -fsSL \
+               -H "Accept: application/vnd.github+json" \
+               -H "Authorization: Bearer $GH_TOKEN" \
+               -H "X-GitHub-Api-Version: 2022-11-28" \
+               "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/secrets/public-key")
 
-              echo "=== /user ==="
-
-              curl -sS \
-              -w "\nHTTP: %{http_code}\n" \
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer $GH_TOKEN" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              https://api.github.com/user
-
-              echo ""
-              echo "=== repository ==="
-
-              curl -sS \
-              -w "\nHTTP: %{http_code}\n" \
-              -H "Accept: application/vnd.github+json" \
-              -H "Authorization: Bearer $GH_TOKEN" \
-              -H "X-GitHub-Api-Version: 2022-11-28" \
-              https://api.github.com/repos/DDCoder23/The-last-signal-
+               echo "key_id=$(echo "$response" | jq -r '.key_id')" >> "$GITHUB_OUTPUT"
+               echo "public_key=$(echo "$response" | jq -r '.key')" >> "$GITHUB_OUTPUT"
 
                
   
