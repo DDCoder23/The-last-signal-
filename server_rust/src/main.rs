@@ -29,7 +29,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     info!("Base PostgreSQL prête.");
     let mut tresor = Tresor::new();
     for i in 1..=10000{
-    for i in 1..=5 {
+    for i in 1..=6 {
     let message_normal = tresor.ouvrir(i, false);
     debug!("Trésor {} normal : {:?}", i, message_normal);
 
