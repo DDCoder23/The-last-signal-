@@ -15,7 +15,7 @@ def main():
     print(type(response))
     print(response)
     print(response.packet_type)
-    print(response.username)
+    
     client.send_packet(
         ChatPacket("Momo dirige le jeu")
   )
