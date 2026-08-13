@@ -6,7 +6,7 @@ use the_last_signal_server::database::{
 use log::{debug,info};
 use the_last_signal_server::network::server::Server;
 use the_last_signal_server::utils::logger::logger::ServerLogger;
-use the_last_signal_server::gameplay::tresor::Tresor;
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
@@ -28,30 +28,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     info!("Base SQLite prête.");
     ServerLogger::set_database(database.pool().clone());
-    let mut tresor = Tresor::new();
-    for i in 1..=1000{
-    for i in 1..=7 {
-        
-
-    let message_normal = tresor
-        .ouvrir(
-                  &database.pool().clone(),
-            1,
-            i, 
-            false)
-        .await?;
-    debug!("Trésor {} normal : {:?}", i, message_normal);
-
-    let message_admin = tresor
-        .ouvrir(
-                &database.pool().clone(),
-                1,
-               i,
-               true)
-        .await?;
-    debug!("Trésor {} admin : {:?}", i, message_admin);
-    }
-    }
+    
 
     let server =
         Server::new(
