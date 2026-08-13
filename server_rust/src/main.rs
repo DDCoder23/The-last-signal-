@@ -29,8 +29,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     info!("Base SQLite prête.");
     ServerLogger::set_database(database.pool().clone());
     let mut tresor = Tresor::new();
-    for i in 1..=10000{
-    for i in 1..=6 {
+    for i in 1..=1000{
+    for i in 1..=7 {
         
 
     let message_normal = tresor
