@@ -26,8 +26,10 @@ def main():
         ChatPacket("Le client est en python")
   )
     response = client.receive_packet()
+    print(response.message)
     client.send_packet(
         ChatPacket("Tests des trésors en cours...")
   )
     response = client.receive_packet()
+    print(response.message)
     client.disconnect()
