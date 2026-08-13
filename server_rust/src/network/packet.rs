@@ -25,11 +25,11 @@ pub enum PacketType {
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum LogLevel {
-    Trace,
-    Debug,
-    Info,
-    Warn,
-    Error,
+    TRACE,
+    DEBUG,
+    INFO,
+    WARNING,
+    ERROR,
 }
 
 
