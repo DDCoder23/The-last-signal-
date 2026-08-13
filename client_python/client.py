@@ -82,7 +82,7 @@ class Client:
                 f"Erreur d'envoi : {traceback.format_exc()}"
             )
 
-    def receive_packet(self,type=None):
+    def receive_packet(self,type):
         """
         Attend un Packet.
         """
@@ -109,8 +109,7 @@ class Client:
                 return None
             packet = Packet.decode(data)
             
-            if type is None:
-                return packet
+            
 
             # Paquet attendu
             if packet.packet_type == type:
