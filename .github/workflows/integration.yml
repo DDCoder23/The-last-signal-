@@ -124,7 +124,7 @@ jobs:
     - name: Check unused dependencies
       if: github.workflow == 'Nightly'
       working-directory: server_rust
-      run: cargo +nightly udeps -v
+      run: cargo +nightly udeps --all-targets -v
     
     - name: Debug environment
       run: |
