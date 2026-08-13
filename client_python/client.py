@@ -50,7 +50,7 @@ class Client:
                       "INFO",
                       "Connexion au serveur réussie."
                     )
-                return
+                
             except (ConnectionRefusedError, socket.timeout):
                 self.socket.close()
                 self.socket = None
