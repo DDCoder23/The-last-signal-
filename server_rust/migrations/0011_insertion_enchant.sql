@@ -1,3 +1,18 @@
+INSERT INTO enchantments (enchantment_name) VALUES
+    ('Aura de feu'),
+    ('Poison'),
+    ('Durability'),
+    ('Putréfaction'),
+    ('Foudre'),
+    ('Critique'),
+    ('Cryogenisation'),
+    ('Précision'),
+    ('Rapidity'),
+    ('Respiration'),
+    ('Vitality'),
+    ('Protection'),
+    ('Renvoie'),
+    ('luck');
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'épée'
 FROM enchantments
@@ -25,6 +40,13 @@ INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'shield'
 FROM enchantments
 WHERE enchantment_name = 'Protection';
+INSERT INTO enchantment_types (enchantment_id, equipment_type)
+SELECT enchantment_id, 'armes à feu'
+FROM enchantments
+WHERE enchantment_name IN (
+    'Rapidity',
+    'Critique'
+);
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'pioche'
 FROM enchantments
