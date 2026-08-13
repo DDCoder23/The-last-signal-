@@ -1,4 +1,5 @@
 import socket
+import time
 import traceback
 from .packet import Packet
 from .packets.log import LogPacket
@@ -23,30 +24,42 @@ class Client:
         self.connected = False
 
     def connect(self):
-
         if self.connected:
             return
-
-        self.socket = socket.socket(
+        timeout = 30
+        interval = 0.5
+        start_time = time.monotonic()
+        while True:
+            elapsed = time.monotonic() - start_time
+            if elapsed >= timeout:
+                self.connected = False
+                raise SystemExit(1)
+            self.socket = socket.socket(
             socket.AF_INET,
             socket.SOCK_STREAM
         )
-
-        try:
-
-            self.socket.connect(
-                (self.host, self.port)
+            self.socket.settimeout(1)
+            try:
+                self.socket.connect(
+                     (self.host, self.port)
             )
+                self.connected = True
 
-            self.connected = True
-
-        except Exception:
-
-            log(self,"ERROR",
-                f"Impossible de se connecter : {traceback.format_exc()}"
-            )
-
-            self.connected = False
+                log(
+                      self,
+                      "INFO",
+                      "Connexion au serveur réussie."
+                    )
+                return
+            except (ConnectionRefusedError, socket.timeout):
+                self.socket.close()
+                self.socket = None
+                time.sleep(interval)
+            except Exception:
+                self.socket.close()
+                self.socket = None
+                self.connected = False
+                raise
 
     def send_packet(self, packet):
         """
