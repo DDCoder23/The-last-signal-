@@ -12,6 +12,9 @@ def main():
     client2.connect()
     client.send_packet(LoginPacket("Momo"))
     response = client.receive_packet()
+    print(type(response))
+    print(response)
+    print(response.packet_type)
     print(response.username)
     client.send_packet(
         ChatPacket("Momo dirige le jeu")
