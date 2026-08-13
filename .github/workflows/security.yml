@@ -73,6 +73,8 @@ jobs:
       - name: Install Rust tools
         run: |
           cargo binstall cargo-audit cargo-deny cargo-outdated -y
+      
+          
 
       ##########################################################
       # Gitleaks
@@ -103,6 +105,182 @@ jobs:
           echo "Date : $(date)" >> "$REPORT"
 
           echo "" >> "$REPORT"
+      - name: Build Rust server
+        working-directory: server_rust
+        run: |
+          cargo build
+      - name: Start Rust server
+        working-directory: server_rust
+        env:
+          DATABASE_PATH: ./data/security.db
+        run: |
+          cargo run > server.log 2>&1 &
+
+          echo $! > server.pid
+      - name: Wait for server
+        run: |
+          echo "Attente du démarrage du serveur..."
+
+          for i in {1..30}; do
+
+            if nc -z 127.0.0.1 5000; then
+              echo "Serveur prêt."
+              exit 0
+            fi
+
+            sleep 1
+
+          done
+
+          echo "❌ Le serveur n'a pas démarré."
+
+          if [ -f server_rust/server.log ]; then
+            cat server_rust/server.log
+          fi
+
+          exit 1
+      - name: SQL injection tests
+        id: sql_injection
+        continue-on-error: true
+        run: |
+          echo "Injections SQL" >> "$REPORT"
+
+          echo "" >> "$REPORT"
+          python tests/security/test_sql_injection.py \
+            >>"$REPORT"
+          echo "" >> "$REPORT"
+      - name: Packet fuzzing
+        id: fuzzing
+        continue-on-error: true
+        run: |
+          echo "Fuzzing" >> "$REPORT"
+
+          echo "" >> "$REPORT"
+          python tests/security/test_fuzzing.py \
+            >> "$REPORT"
+          echo "" >> "$REPORT"
+
+      
+      - name: Adaptive stress test
+        id: stress
+        continue-on-error: true
+        run: |
+          echo "Simulation DDos" >> "$REPORT"
+
+          echo "" >> "$REPORT"
+          python tests/security/test_load.py \
+            >> "$REPORT"
+          echo "" >> "$REPORT"
+      
+          
+            
+      
+      
+      - name: Save server logs
+        if: always()
+        run: |
+           echo "" >> "$REPORT"
+           {
+            echo "# Server logs"
+            echo
+            echo '```text'
+
+            if [ -f server_rust/server.log ]; then
+              cat server_rust/server.log
+            else
+              echo "Aucun log disponible."
+            fi
+
+            echo '```'
+
+           } >> "$REPORT"
+           echo "" >> "$REPORT"
+
+      # --------------------------------------------------
+      # SECURITY SUMMARY
+      # --------------------------------------------------
+
+      - name: Generate security summary
+        if: always()
+        run: |
+          echo "" >> "$REPORT"
+
+          {
+            echo "# Security report"
+            echo
+            echo "**Run:** ${GITHUB_RUN_NUMBER}"
+            echo
+            echo "## Tests"
+            echo
+            echo "| Test | Résultat |"
+            echo "|---|---|"
+
+            if [ "${{ steps.sql_injection.outcome }}" = "success" ]; then
+              echo "| SQL injection | ✅ PASS |"
+            else
+              echo "| SQL injection | ❌ FAIL |"
+            fi
+
+            if [ "${{ steps.fuzzing.outcome }}" = "success" ]; then
+              echo "| Packet fuzzing | ✅ PASS |"
+            else
+              echo "| Packet fuzzing | ❌ FAIL |"
+            fi
+
+            if [ "${{ steps.stress.outcome }}" = "success" ]; then
+              echo "| Stress test | ✅ PASS |"
+            else
+              echo "| Stress test | ❌ FAIL |"
+            fi
+
+          } >> "$REPORT"
+          echo "" >> "$REPORT"
+
+      # --------------------------------------------------
+      # STOP SERVER
+      # --------------------------------------------------
+
+      - name: Stop server
+        if: always()
+        run: |
+              if [ -f server_rust/server.pid ]; then
+              PID=$(cat server_rust/server.pid)
+              if ps -p "$PID" > /dev/null; then
+              echo "Stopping server (PID=$PID)..."
+
+              kill -SIGTERM "$PID"
+
+              # Attendre jusqu'à 15 secondes
+              for i in $(seq 1 15); do
+              if ! ps -p "$PID" > /dev/null; then
+              echo "Server stopped."
+              break
+              fi
+              sleep 1
+              done
+
+              # Toujours vivant ? On force.
+              if ps -p "$PID" > /dev/null; then
+              echo "Server did not stop gracefully, forcing shutdown..."
+              kill -SIGKILL "$PID"
+              sleep 2
+              fi
+              fi
+              fi
+              rm -f server_rust/server.pid
+
+      
+      
+
+          
+
+            
+      
+            
+              
+            
+
+      
 
       ##########################################################
       # Bandit
