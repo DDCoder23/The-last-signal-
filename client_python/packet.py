@@ -75,6 +75,9 @@ class Packet:
         if packet_type == PacketType.PING:
             from .packets.ping import PingPacket
             return PingPacket()
+        if packet_type == PacketType.LOG:
+            from .packets.log import LogPacket
+            return LogPacket()
 
 
         return Packet(
