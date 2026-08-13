@@ -49,14 +49,7 @@ jobs:
 
     - name: Checkout repository
       uses: actions/checkout@v4
-    - name: Restore previous database and logs
-      run: |
-             git fetch origin ci-database
-             git checkout origin/ci-database -- database/ || true
-             git checkout origin/ci-database -- logs/ || true
-             echo "=== Restored ==="
-             ls -lah database || true
-             ls -lah logs || true
+    
     
     
       
@@ -120,6 +113,18 @@ jobs:
 
     - name: Install Rust
       uses: dtolnay/rust-toolchain@stable
+    - name: Install Rust nightly
+      if: github.workflow == 'Nightly'
+      uses: dtolnay/rust-toolchain@nightly
+
+    - name: Install cargo-udeps
+      if: github.workflow == 'Nightly'
+      run: cargo +nightly install cargo-udeps --locked
+
+    - name: Check unused dependencies
+      if: github.workflow == 'Nightly'
+      working-directory: server_rust
+      run: cargo +nightly udeps
     
     - name: Debug environment
       run: |
