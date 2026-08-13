@@ -13,7 +13,7 @@ def main():
     client2.connect()
     client.send_packet(LoginPacket("Momo"))
     response = client.receive_packet(
-    PacketType.LOGIN
+    type=PacketType.LOGIN
     )
     
     print(response.username)
@@ -22,20 +22,20 @@ def main():
     client.send_packet(
         ChatPacket("Momo dirige le jeu")
   )
-    response = client.receive_packet(PacketType.CHAT)
+    response = client.receive_packet(type=PacketType.CHAT)
     client.send_packet(
         ChatPacket("Le serveur est en rust")
   )
-    response = client.receive_packet(PacketType.CHAT)
+    response = client.receive_packet(type=PacketType.CHAT)
     print(response.message)
     client.send_packet(
         ChatPacket("Le client est en python")
   )
-    response = client.receive_packet(PacketType.CHAT)
+    response = client.receive_packet(type=PacketType.CHAT)
     print(response.message)
     client.send_packet(
         ChatPacket("Tests des trésors en cours...")
   )
-    response = client.receive_packet(PacketType.CHAT)
+    response = client.receive_packet(type=PacketType.CHAT)
     print(response.message)
     client.disconnect()
