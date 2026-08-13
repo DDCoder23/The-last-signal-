@@ -117,7 +117,7 @@ impl Equipement {
         bonus: i32,
         enchantements: Vec<String>,
     ) -> Self {
-        let mut objet = Objet::new(nom, image, quantite, TypeObjet::Equipement);
+        let  objet = Objet::new(nom, image, quantite, TypeObjet::Equipement);
         let parts: Vec<&str> = nom.split_whitespace().collect();
         let category = parts.get(0).unwrap_or(&"").to_string();
 
@@ -242,7 +242,7 @@ impl Potion {
         quantite: u32,
         effet: Option<&str>,
     ) -> Self {
-        let mut objet = Objet::new(nom, image, quantite, TypeObjet::Potion);
+        let objet = Objet::new(nom, image, quantite, TypeObjet::Potion);
         Self {
             objet,
             effet: effet.map(|s| s.to_string()),
@@ -289,7 +289,7 @@ impl Livre {
         enchantements: Option<Vec<String>>,
         niv: u32,
     ) -> Self {
-        let mut objet = Objet::new(nom, image, quantite, TypeObjet::Livre);
+        let objet = Objet::new(nom, image, quantite, TypeObjet::Livre);
         Self {
             objet,
             category: category.map(|s| s.to_string()),
