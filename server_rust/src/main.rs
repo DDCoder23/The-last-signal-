@@ -31,10 +31,24 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let mut tresor = Tresor::new();
     for i in 1..=10000{
     for i in 1..=6 {
-    let message_normal = tresor.ouvrir(i, false);
+        
+    .await?;
+    let message_normal = tresor
+        .ouvrir(
+                  database.pool().clone(),
+            1,
+            i, 
+            false)
+        .await?;
     debug!("Trésor {} normal : {:?}", i, message_normal);
 
-    let message_admin = tresor.ouvrir(i, true);
+    let message_admin = tresor
+        .ouvrir(
+                database.pool().clone(),
+                1,
+               i,
+               true)
+        .await?
     debug!("Trésor {} admin : {:?} | echec : {:?}", i, message_admin,tresor.echecs_loot);
     }
     }
