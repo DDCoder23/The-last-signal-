@@ -16,7 +16,7 @@ def main():
     type=PacketType.LOGIN
     )
     
-    print(response.username)
+    print(response.username if response != None else "Vide")
     
     
     client.send_packet(
