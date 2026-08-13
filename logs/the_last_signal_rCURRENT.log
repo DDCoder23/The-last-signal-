@@ -42088,27 +42088,27 @@
 [2026-08-12 22:04:14] [DEBUG] [tresor.rs:481] TIRAGE COMMUN ÉCHOUÉ
 [2026-08-12 22:04:14] [DEBUG] [tresor.rs:701] AVANT TIRAGE : {"Artefact commun::équi": 28}
 [2026-08-12 22:04:14] [DEBUG] [tresor.rs:751] APRÈS MISE À JOUR : {"Artefact commun::équi": 28}
-[2026-08-13 11:33:49] [DEBUG] [migrations.rs:42] Migrations SQLite appliquées.
-[2026-08-13 11:33:49] [INFO] [main.rs:29] Base SQLite prête.
-[2026-08-13 11:33:49] [DEBUG] [server.rs:34] ==================================
-[2026-08-13 11:33:49] [DEBUG] [server.rs:35] The Last Signal Server
-[2026-08-13 11:33:49] [DEBUG] [server.rs:36] ==================================
-[2026-08-13 11:33:49] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
-[2026-08-13 11:34:35] [INFO] [server.rs:49] Client connecté : 127.0.0.1:52900
-[2026-08-13 11:34:35] [INFO] [client.rs:51] Client connecté : 127.0.0.1:52900 | Session : 912a3a32-465d-4f17-9eae-ad707bc844f0
-[2026-08-13 11:34:35] [DEBUG] [client.rs:63] Type : Log
-[2026-08-13 11:34:35] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
-[2026-08-13 11:34:35] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
-[2026-08-13 11:34:36] [INFO] [server.rs:49] Client connecté : 127.0.0.1:52908
-[2026-08-13 11:34:36] [DEBUG] [client.rs:63] Type : Login
-[2026-08-13 11:34:36] [DEBUG] [client.rs:68] Payload : Momo
-[2026-08-13 11:34:36] [DEBUG] [handler.rs:102] Connexion joueur : Momo
-[2026-08-13 11:34:36] [DEBUG] [client.rs:63] Type : Log
-[2026-08-13 11:34:36] [INFO] [client.rs:51] Client connecté : 127.0.0.1:52908 | Session : 4186230e-00d7-4762-87dc-995ece606d4c
-[2026-08-13 11:34:36] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 117, "message": "Paquet ignor\u00e9 : 5"}
-[2026-08-13 11:34:36] [DEBUG] [client.rs:63] Type : Log
-[2026-08-13 11:34:36] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:117] Paquet ignoré : 5
-[2026-08-13 11:34:36] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
-[2026-08-13 11:34:36] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
-[2026-08-13 11:34:36] [ERROR] [client.rs:96] Déconnexion [912a3a32-465d-4f17-9eae-ad707bc844f0] : Connection reset by peer (os error 104)
-[2026-08-13 11:34:36] [ERROR] [client.rs:96] Déconnexion [4186230e-00d7-4762-87dc-995ece606d4c] : Connection reset by peer (os error 104)
+[2026-08-13 11:40:51] [DEBUG] [migrations.rs:42] Migrations SQLite appliquées.
+[2026-08-13 11:40:51] [INFO] [main.rs:29] Base SQLite prête.
+[2026-08-13 11:40:51] [DEBUG] [server.rs:34] ==================================
+[2026-08-13 11:40:51] [DEBUG] [server.rs:35] The Last Signal Server
+[2026-08-13 11:40:51] [DEBUG] [server.rs:36] ==================================
+[2026-08-13 11:40:51] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
+[2026-08-13 11:41:37] [INFO] [server.rs:49] Client connecté : 127.0.0.1:35638
+[2026-08-13 11:41:37] [INFO] [client.rs:51] Client connecté : 127.0.0.1:35638 | Session : 791ede1e-39bf-40fc-8b86-4abf0b8af989
+[2026-08-13 11:41:37] [DEBUG] [client.rs:63] Type : Log
+[2026-08-13 11:41:37] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
+[2026-08-13 11:41:37] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
+[2026-08-13 11:41:38] [INFO] [server.rs:49] Client connecté : 127.0.0.1:35648
+[2026-08-13 11:41:38] [DEBUG] [client.rs:63] Type : Login
+[2026-08-13 11:41:38] [INFO] [client.rs:51] Client connecté : 127.0.0.1:35648 | Session : 1fe3b1c7-3f7f-4cb1-ba0a-fdec2ac29761
+[2026-08-13 11:41:38] [DEBUG] [client.rs:68] Payload : Momo
+[2026-08-13 11:41:38] [DEBUG] [client.rs:63] Type : Log
+[2026-08-13 11:41:38] [DEBUG] [handler.rs:102] Connexion joueur : Momo
+[2026-08-13 11:41:38] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
+[2026-08-13 11:41:38] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
+[2026-08-13 11:41:38] [DEBUG] [client.rs:63] Type : Log
+[2026-08-13 11:41:38] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 117, "message": "Paquet ignor\u00e9 : 5"}
+[2026-08-13 11:41:38] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:117] Paquet ignoré : 5
+[2026-08-13 11:41:38] [ERROR] [client.rs:96] Déconnexion [791ede1e-39bf-40fc-8b86-4abf0b8af989] : Connection reset by peer (os error 104)
+[2026-08-13 11:41:38] [ERROR] [client.rs:96] Déconnexion [1fe3b1c7-3f7f-4cb1-ba0a-fdec2ac29761] : Connection reset by peer (os error 104)
