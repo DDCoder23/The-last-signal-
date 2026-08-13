@@ -30,7 +30,7 @@ impl PacketHandler {
     };
 
     match log.level {
-        LogLevel::Trace => {
+        LogLevel::TRACE => {
             trace!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
@@ -39,7 +39,7 @@ impl PacketHandler {
             );
         }
 
-        LogLevel::Debug => {
+        LogLevel::DEBUG => {
             debug!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
@@ -48,7 +48,7 @@ impl PacketHandler {
             );
         }
 
-        LogLevel::Info => {
+        LogLevel::INFO => {
             info!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
@@ -57,7 +57,7 @@ impl PacketHandler {
             );
         }
 
-        LogLevel::Warn => {
+        LogLevel::WARNING => {
             warn!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
@@ -66,7 +66,7 @@ impl PacketHandler {
             );
         }
 
-        LogLevel::Error => {
+        LogLevel::ERROR => {
             error!(
                 "[CLIENT] [{}:{}] {}",
                 log.file,
