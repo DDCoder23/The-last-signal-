@@ -27,15 +27,15 @@ def main():
         ChatPacket("Le serveur est en rust")
   )
     response = client.receive_packet(type=PacketType.CHAT)
-    print(response.message)
+    print(response.message if response != None else "Vide")
     client.send_packet(
         ChatPacket("Le client est en python")
   )
     response = client.receive_packet(type=PacketType.CHAT)
-    print(response.message)
+    print(response.message if response != None else "Vide")
     client.send_packet(
         ChatPacket("Tests des trésors en cours...")
   )
     response = client.receive_packet(type=PacketType.CHAT)
-    print(response.message)
+    print(response.message if response != None else "Vide")
     client.disconnect()
