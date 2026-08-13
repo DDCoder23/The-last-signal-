@@ -114,11 +114,12 @@ class Client:
             # Paquet attendu
             if packet.packet_type == type:
                 return packet
-            log(
-                self,
-                "DEBUG",
-                f"Paquet ignoré : {packet.packet_type}"
-            )
+            else:
+              log(
+                 self,
+                 "DEBUG",
+                 f"Paquet ignoré : {packet.packet_type}"
+                )
                 
 
         
@@ -129,6 +130,8 @@ class Client:
                 f"Erreur de réception : {traceback.format_exc()}"
             )
 
+            print(f"Erreur de réception : {traceback.format_exc()}"
+                 )
             return None
 
     def _recv_exact(self, size):
