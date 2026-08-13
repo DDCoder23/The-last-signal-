@@ -1,4 +1,5 @@
 use rand::Rng;
+use sqlx::SqlitePool;
 use std::collections::HashMap;
 use log::debug;
 use crate::gameplay::dice::jet_de_des;
@@ -33,7 +34,7 @@ pub struct Tresor {
     
     pub sous_loot_livre_normal: HashMap<String, f64>,
     pub sous_loot_livre_admin: HashMap<String, f64>,
-    pub echecs_loot: HashMap<String, u32>,
+    
 
     
 }
@@ -389,12 +390,7 @@ let sous_loot_livre_admin = HashMap::from([
     ("livre enchant niv 5".to_string(), 8.0),
     ("livre enchant niv 6".to_string(), 7.0),
 ]);
-        let echecs_loot = match std::fs::read_to_string("echecs_loot.json") {
-    Ok(contenu) => serde_json::from_str(&contenu)
-        .unwrap_or_else(|_| HashMap::new()),
-
-    Err(_) => HashMap::new(),
-};
+        
 
         Self {
             loot_par_niveau,
@@ -405,14 +401,17 @@ let sous_loot_livre_admin = HashMap::from([
             seuil_artefact_peu_commun,
             sous_loot_livre_normal,
             sous_loot_livre_admin, 
-            echecs_loot
+        
         }
     }
-    pub fn ouvrir(
+    
+      pub async fn ouvrir(
     &mut self,
+    pool: &SqlitePool,
+    account_id: i64,
     niveau: u32,
     is_admin: bool,
-) -> HashMap<String, u32> {
+) -> Result<HashMap<String, u32>, sqlx::Error> {
     let mut rng = rand::thread_rng();
 
     let loot = self
@@ -422,7 +421,6 @@ let sous_loot_livre_admin = HashMap::from([
         .expect("Niveau de coffre invalide");
 
     let mut objets = HashMap::new();
-    
 
     // ==========================================
     // OBJETS GARANTIS
@@ -433,19 +431,12 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet.clone()).or_insert(0) += *quantite;
         }
     }
-        
 
-    // Objets communs
+    // ==========================================
+    // OBJETS COMMUNS
+    // ==========================================
+
     for _ in 0..loot.commun {
-        debug!(
-    "NIVEAU={} | commun={} | seuil={}",
-    niveau,
-    loot.commun,
-    self.seuil_artefact_commun
-        .get(&niveau)
-        .copied()
-        .unwrap_or(20)
-);
         let seuil = self
             .seuil_artefact_commun
             .get(&niveau)
@@ -453,21 +444,17 @@ let sous_loot_livre_admin = HashMap::from([
             .unwrap_or(20);
 
         let jet = rng.gen_range(1..=20);
-        debug!(
-    "TIRAGE COMMUN | niveau={} | jet={} | seuil={}",
-    niveau,
-    jet,
-    seuil
-);
 
         if jet >= seuil {
-            let objet = self.tirer_objet(
-                "Artefact commun",
-                &mut rng,
-                is_admin
-            );
-            debug!("TIRAGE COMMUN RÉUSSI");
-            debug!("OBJET TIRÉ : {}", objet);
+            let objet = self
+                .tirer_objet(
+                    pool,
+                    account_id,
+                    "Artefact commun",
+                    &mut rng,
+                    is_admin,
+                )
+                .await?;
 
             let quantite = self
                 .quantite_objets
@@ -476,65 +463,24 @@ let sous_loot_livre_admin = HashMap::from([
                 .unwrap_or(1);
 
             *objets.entry(objet).or_insert(0) += quantite;
-        }
-        else {
-    debug!("TIRAGE COMMUN ÉCHOUÉ");
         }
     }
-        for _ in 0..loot.peu_commun {
-        debug!(
-    "NIVEAU={} | peu_commun={} | seuil={}",
-    niveau,
-    loot.commun,
-    self.seuil_artefact_peu_commun
-        .get(&niveau)
-        .copied()
-        .unwrap_or(20)
-);
-        let seuil = self
-            .seuil_artefact_peu_commun
-            .get(&niveau)
-            .copied()
-            .unwrap_or(20);
 
-        let jet = rng.gen_range(1..=20);
-        debug!(
-    "TIRAGE Peu Commun | niveau={} | jet={} | seuil={}",
-    niveau,
-    jet,
-    seuil
-);
+    // ==========================================
+    // LOOT ADMIN
+    // ==========================================
 
-        if jet >= seuil {
-            let objet = self.tirer_objet(
-                "Artefact peu commun",
-                &mut rng,
-                is_admin
-            );
-            debug!("TIRAGE PEU COMMUN RÉUSSI");
-            debug!("OBJET TIRÉ : {}", objet);
-
-            let quantite = self
-                .quantite_objets
-                .get(&objet)
-                .copied()
-                .unwrap_or(1);
-
-            *objets.entry(objet).or_insert(0) += quantite;
-        }
-        else {
-    debug!("TIRAGE PEU COMMUN ÉCHOUÉ");
-        }
-        }
-
-    // Loot admin
     if is_admin {
         for _ in 0..loot.admin {
-            let objet = self.tirer_objet(
-                "Artefact admin",
-                &mut rng,
-                is_admin
-            );
+            let objet = self
+                .tirer_objet(
+                    pool,
+                    account_id,
+                    "Artefact admin",
+                    &mut rng,
+                    is_admin,
+                )
+                .await?;
 
             let quantite = self
                 .quantite_objets
@@ -545,8 +491,19 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet).or_insert(0) += quantite;
         }
     }
-        objets
-    }
+
+    Ok(objets)
+                }  
+            
+        
+            
+
+        
+
+            
+    
+
+            
         pub fn tirer_pondere(
     table: &HashMap<String, f64>,
     rng: &mut impl Rng,
@@ -574,13 +531,208 @@ let sous_loot_livre_admin = HashMap::from([
 pub fn cle_echec(categorie: &str, objet: &str) -> String {
     format!("{}::{}", categorie, objet)
 }
-
-pub fn tirer_livre(
+    pub async fn tirer_objet(
     &mut self,
+    pool: &SqlitePool,
+    account_id: i64,
+    categorie: &str,
     rng: &mut impl Rng,
     is_admin: bool,
-) -> String {
-    let nom_table = if is_admin {
+) -> Result<String, sqlx::Error> {
+
+    let mut categorie_actuelle = categorie.to_string();
+
+    loop {
+        // ==========================================
+        // RÉCUPÉRATION DE LA TABLE
+        // ==========================================
+
+        let table_originale = self
+            .sous_loot
+            .get(&categorie_actuelle)
+            .cloned()
+            .unwrap_or_else(|| {
+                panic!(
+                    "Catégorie de loot inconnue : {:?}",
+                    categorie_actuelle
+                );
+            });
+
+        let total: f64 = table_originale.values().sum();
+
+        if total <= 0.0 {
+            panic!("Table de loot vide");
+        }
+
+        // ==========================================
+        // CALCUL DES POIDS AVEC LE PITY SYSTEM
+        // ==========================================
+
+        let mut table_ajustee = HashMap::new();
+
+        for (objet, poids) in &table_originale {
+            let probabilite = poids / total;
+
+            let echecs: i64 = sqlx::query_scalar(
+                r#"
+                SELECT nombre
+                FROM echecs
+                WHERE account_id = ?
+                  AND categorie = ?
+                  AND objet = ?
+                "#,
+            )
+            .bind(account_id)
+            .bind(&categorie_actuelle)
+            .bind(objet)
+            .fetch_optional(pool)
+            .await?
+            .unwrap_or(0);
+
+            /*
+             * PITY :
+             *
+             * Un objet dont la probabilité originale
+             * est strictement inférieure à 3 % bénéficie
+             * du bonus.
+             *
+             * +7,5 % du poids original par échec.
+             */
+            let poids_ajuste = if probabilite < 0.03 {
+                *poids * (1.0 + 0.075 * echecs as f64)
+            } else {
+                *poids
+            };
+
+            table_ajustee.insert(
+                objet.clone(),
+                poids_ajuste,
+            );
+        }
+
+        // ==========================================
+        // TIRAGE
+        // ==========================================
+
+        let resultat = Self::tirer_pondere(
+            &table_ajustee,
+            rng,
+        );
+
+        // ==========================================
+        // MISE À JOUR DES ÉCHECS
+        // ==========================================
+
+        for (objet, poids) in &table_originale {
+            let probabilite = poids / total;
+
+            // Le pity ne concerne que les objets < 3 %
+            if probabilite >= 0.03 {
+                continue;
+            }
+
+            if objet == &resultat {
+                // ----------------------------------
+                // OBJET OBTENU → RESET
+                // ----------------------------------
+
+                sqlx::query(
+                    r#"
+                    INSERT INTO echecs (
+                        account_id,
+                        categorie,
+                        objet,
+                        nombre
+                    )
+                    VALUES (?, ?, ?, 0)
+
+                    ON CONFLICT (
+                        account_id,
+                        categorie,
+                        objet
+                    )
+                    DO UPDATE SET
+                        nombre = 0
+                    "#,
+                )
+                .bind(account_id)
+                .bind(&categorie_actuelle)
+                .bind(objet)
+                .execute(pool)
+                .await?;
+
+            } else {
+                // ----------------------------------
+                // OBJET NON OBTENU → +1 ÉCHEC
+                // ----------------------------------
+
+                sqlx::query(
+                    r#"
+                    INSERT INTO echecs (
+                        account_id,
+                        categorie,
+                        objet,
+                        nombre
+                    )
+                    VALUES (?, ?, ?, 1)
+
+                    ON CONFLICT (
+                        account_id,
+                        categorie,
+                        objet
+                    )
+                    DO UPDATE SET
+                        nombre = nombre + 1
+                    "#,
+                )
+                .bind(account_id)
+                .bind(&categorie_actuelle)
+                .bind(objet)
+                .execute(pool)
+                .await?;
+            }
+        }
+
+        // ==========================================
+        // LIVRE ENCHANTÉ
+        // ==========================================
+
+        if resultat == "livre enchant" {
+            return self
+                .tirer_livre(
+                    pool,
+                    account_id,
+                    rng,
+                    is_admin,
+                )
+                .await;
+        }
+
+        // ==========================================
+        // SOUS-CATÉGORIE
+        // ==========================================
+
+        if self.sous_loot.contains_key(&resultat) {
+            categorie_actuelle = resultat;
+            continue;
+        }
+
+        // ==========================================
+        // OBJET FINAL
+        // ==========================================
+
+        return Ok(resultat);
+    }
+    }
+    pub async fn tirer_livre(
+    &mut self,
+    pool: &SqlitePool,
+    account_id: i64,
+    rng: &mut impl Rng,
+    is_admin: bool,
+) -> Result<String, sqlx::Error> {
+
+    let categorie = if is_admin {
         "livre enchant admin"
     } else {
         "livre enchant normal"
@@ -598,115 +750,39 @@ pub fn tirer_livre(
         panic!("Table de loot des livres vide");
     }
 
-    // ------------------------------------------
-    // CALCUL DES POIDS AVEC LE PITY SYSTEM
-    // ------------------------------------------
+    // ==========================================
+    // CALCUL DES POIDS AVEC PITY
+    // ==========================================
 
     let mut table_ajustee = HashMap::new();
 
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
-        let cle = Self::cle_echec(
-            nom_table,
-            objet,
-        );
 
-        let echecs = *self
-            .echecs_loot
-            .get(&cle)
-            .unwrap_or(&0);
+        let echecs: i64 = sqlx::query_scalar(
+            r#"
+            SELECT nombre
+            FROM echecs
+            WHERE account_id = ?
+              AND categorie = ?
+              AND objet = ?
+            "#,
+        )
+        .bind(account_id)
+        .bind(categorie)
+        .bind(objet)
+        .fetch_optional(pool)
+        .await?
+        .unwrap_or(0);
 
-        
-
-        let poids_ajuste = if probabilite < 0.03 {
-            poids * (1.0+0.0075 * echecs as f64)
-        } else {
-            *poids
-        };
-
-        table_ajustee.insert(objet.clone(), poids_ajuste);
-    }
-
-    // ------------------------------------------
-    // TIRAGE
-    // ------------------------------------------
-
-    let resultat = Self::tirer_pondere(
-        &table_ajustee,
-        rng,
-    );
-
-    // ------------------------------------------
-    // MISE À JOUR DES ÉCHECS
-    // ------------------------------------------
-
-    for (objet, poids) in &table_originale {
-        let probabilite = poids / total;
-
-        if probabilite < 0.03 {
-            let cle = Self::cle_echec(
-            nom_table,
-            objet,
-        );
-
-            if objet == &resultat {
-                // Objet obtenu : reset
-                self.echecs_loot.insert(cle, 0);
-            } else {
-                // Objet non obtenu : +1 échec
-                *self.echecs_loot.entry(cle).or_insert(0) += 1;
-            }
-        }
-    }
-
-    resultat
-}
-
-pub fn tirer_objet(
-    &mut self,
-    categorie: &str,
-    rng: &mut impl Rng,
-    is_admin: bool,
-) -> String {
-    let table_originale = self
-        .sous_loot
-        .get(categorie)
-        .cloned()
-        .unwrap_or_else(|| {
-            panic!(
-                "Catégorie de loot inconnue : {:?}",
-                categorie
-            );
-        })
-        .clone();
-
-    let total: f64 = table_originale.values().sum();
-
-    if total <= 0.0 {
-        panic!("Table de loot vide");
-    }
-
-    // ------------------------------------------
-    // CALCUL DES POIDS AVEC LE PITY SYSTEM
-    // ------------------------------------------
-
-    let mut table_ajustee = HashMap::new();
-
-    for (objet, poids) in &table_originale {
-        let probabilite = poids / total;
-         let cle = Self::cle_echec(
-            categorie,
-            objet,
-        );
-        debug!("AVANT TIRAGE : {:?}", self.echecs_loot);
-
-        let echecs = *self
-            .echecs_loot
-            .get(&cle)
-            .unwrap_or(&0);
+        /*
+         * Seuls les livres ayant une probabilité
+         * originale < 3 % bénéficient du pity.
+         
+         */
 
         let poids_ajuste = if probabilite < 0.03 {
-            poids * (1.0+0.075 * echecs as f64)
+            *poids * (1.0 + 0.075 * echecs as f64)
         } else {
             *poids
         };
@@ -717,72 +793,97 @@ pub fn tirer_objet(
         );
     }
 
-    // ------------------------------------------
+    // ==========================================
     // TIRAGE
-    // ------------------------------------------
+    // ==========================================
 
     let resultat = Self::tirer_pondere(
         &table_ajustee,
         rng,
     );
 
-    // ------------------------------------------
+    // ==========================================
     // MISE À JOUR DES ÉCHECS
-    // ------------------------------------------
+    // ==========================================
 
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
 
-        if probabilite < 0.03 {
-            let cle = Self::cle_echec(
-            categorie,
-            objet,
-        );
+        // Pas de pity pour les objets >= 1 %
+        if probabilite >= 0.03 {
+            continue;
+        }
 
-            if objet == &resultat {
-                // Objet obtenu : reset
-                self.echecs_loot.insert(cle, 0);
-            } else {
-                // Objet non obtenu : +1 échec
-                *self.echecs_loot.entry(cle).or_insert(0) += 1;
-            }
+        if objet == &resultat {
+            // ----------------------------------
+            // OBTENU → RESET
+            // ----------------------------------
+
+            sqlx::query(
+                r#"
+                INSERT INTO echecs (
+                    account_id,
+                    categorie,
+                    objet,
+                    nombre
+                )
+                VALUES (?, ?, ?, 0)
+
+                ON CONFLICT (
+                    account_id,
+                    categorie,
+                    objet
+                )
+                DO UPDATE SET
+                    nombre = 0
+                "#,
+            )
+            .bind(account_id)
+            .bind(categorie)
+            .bind(objet)
+            .execute(pool)
+            .await?;
+
+        } else {
+            // ----------------------------------
+            // PAS OBTENU → +1
+            // ----------------------------------
+
+            sqlx::query(
+                r#"
+                INSERT INTO echecs (
+                    account_id,
+                    categorie,
+                    objet,
+                    nombre
+                )
+                VALUES (?, ?, ?, 1)
+
+                ON CONFLICT (
+                    account_id,
+                    categorie,
+                    objet
+                )
+                DO UPDATE SET
+                    nombre = nombre + 1
+                "#,
+            )
+            .bind(account_id)
+            .bind(categorie)
+            .bind(objet)
+            .execute(pool)
+            .await?;
         }
     }
-    debug!("APRÈS MISE À JOUR : {:?}", self.echecs_loot);
-    self.sauvegarder_echecs();
-    // ------------------------------------------
-    // LIVRE ENCHANTÉ
-    // ------------------------------------------
 
-    if resultat == "livre enchant" {
-        return self.tirer_livre(
-            rng,
-            is_admin,
-        );
+    Ok(resultat)
     }
 
-    // ------------------------------------------
-    // SOUS-CATÉGORIE
-    // ------------------------------------------
-
-    if self.sous_loot.contains_key(&resultat) {
-        return self.tirer_objet(
-            &resultat,
-            rng,
-            is_admin,
-        );
-    }
     
-    
-    resultat
-}
-    fn sauvegarder_echecs(&self) {
-    let contenu = serde_json::to_string_pretty(&self.echecs_loot)
-        .expect("Impossible de sérialiser les échecs de loot");
 
-    std::fs::write("echecs_loot.json", contenu)
-        .expect("Impossible de sauvegarder les échecs de loot");
-    }
+        
+
+    
     
         
     
