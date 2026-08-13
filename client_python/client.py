@@ -26,7 +26,7 @@ class Client:
     def connect(self):
         if self.connected:
             return
-        timeout = 30
+        timeout = 90
         interval = 0.5
         start_time = time.monotonic()
         while True:
