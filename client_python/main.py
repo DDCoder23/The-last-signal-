@@ -16,7 +16,7 @@ def main():
     PacketType.LOGIN
     )
     
-    print(reponse.username)
+    print(response.username)
     
     
     client.send_packet(
