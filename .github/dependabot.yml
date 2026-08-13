@@ -1,22 +1,43 @@
 version: 2
+
 updates:
+
+  # Dépendances Python
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
-      interval: "weekly"
+     interval: "daily"
+     time: "02:00"
+     timezone: "Asia/Tokyo" #"Europe/Paris"
     open-pull-requests-limit: 5
     labels:
       - "dependencies"
     commit-message:
       prefix: "chore"
       include: "scope"
-    
+
+  # Dépendances Rust
+  - package-ecosystem: "cargo"
+    directory: "/server_rust"
+    schedule:
+     interval: "daily"
+     time: "02:00"
+     timezone: "Asia/Tokyo" #"Europe/Paris"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
 
   # Workflows GitHub Actions
   - package-ecosystem: "github-actions"
     directory: "/.github/workflows"
     schedule:
-      interval: "weekly"
+     interval: "daily"
+     time: "02:00"
+     timezone: "Asia/Tokyo" #"Europe/Paris"
+    open-pull-requests-limit: 5
     ignore:
-      - dependency-name: "actions/checkout"  # Ignore checkout
+      - dependency-name: "actions/checkout"
         versions: [">=v4"]
