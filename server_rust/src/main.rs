@@ -35,7 +35,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let message_normal = tresor
         .ouvrir(
-                  database.pool().clone(),
+                  &database.pool().clone(),
             1,
             i, 
             false)
@@ -44,12 +44,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let message_admin = tresor
         .ouvrir(
-                database.pool().clone(),
+                &database.pool().clone(),
                 1,
                i,
                true)
-        .await?
-    debug!("Trésor {} admin : {:?} | echec : {:?}", i, message_admin,tresor.echecs_loot);
+        .await?;
+    debug!("Trésor {} admin : {:?}", i, message_admin);
     }
     }
 
