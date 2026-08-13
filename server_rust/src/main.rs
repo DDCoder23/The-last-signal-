@@ -32,7 +32,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     for i in 1..=10000{
     for i in 1..=6 {
         
-    .await?;
+
     let message_normal = tresor
         .ouvrir(
                   database.pool().clone(),
