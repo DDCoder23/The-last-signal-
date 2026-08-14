@@ -2,12 +2,15 @@ import socket
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor
-
+import pytest
 
 HOST = "127.0.0.1"
 PORT = 5000
 
 
+
+
+@pytest.mark.security
 def ping():
 
     start = time.perf_counter()
