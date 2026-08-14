@@ -126,6 +126,11 @@ jobs:
       if: github.workflow == 'Nightly'
       working-directory: server_rust
       run: cargo +nightly udeps --all-targets
+    - name: Check outdated Rust dependencies
+      working-directory: server_rust
+      run: |
+             cargo install cargo-outdated --locked
+             cargo outdated
     
     - name: Debug environment
       run: |
