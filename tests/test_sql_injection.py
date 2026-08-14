@@ -1,7 +1,7 @@
 import socket
 import struct
 import sys
-
+import pytest
 
 HOST = "127.0.0.1"
 PORT = 5000
@@ -18,11 +18,17 @@ PAYLOADS = [
     "'; DROP TABLE accounts; --",
     "admin'--",
     "admin' OR '1'='1",
+    "Dev'--",
+    "Dev' OR '1'='1",
+    "SuperDev'--",
+    "SuperDev' OR '1'='1",
     "' UNION SELECT NULL --",
     "' UNION SELECT * FROM users --",
 ]
 
 
+
+@pytest.mark.security
 def create_login_packet(username: str) -> bytes:
 
     payload = username.encode("utf-8")
