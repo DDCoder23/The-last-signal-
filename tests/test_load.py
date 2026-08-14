@@ -46,7 +46,7 @@ def ping():
 
         return False, None, None
 
-
+@pytest.mark.security
 def run_test(connections):
 
     with ThreadPoolExecutor(
@@ -81,7 +81,7 @@ def run_test(connections):
 
     return successful, failed, average
 
-
+@pytest.mark.security
 def main():
 
     print("# Server Load Test")
