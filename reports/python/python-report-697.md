@@ -2,8 +2,8 @@
 
 Run : 697
 Branch : main
-Commit : 87439b5d2e00ae4811db82b6460a244b611564a1
-Date : Wed Jul 22 07:32:06 UTC 2026
+Commit : ce4aac9152caa3fcb9c136b389c45c533e47e672
+Date : Fri Aug 14 11:52:57 UTC 2026
 
 ---
 
@@ -11,50 +11,65 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 40
+**Files to reformat:** 55
 
 <details>
 <summary>Show files</summary>
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/grade_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/grade_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/admin_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/jet_de_des.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
+/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/navigation.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
-/home/runner/work/The-last-signal-/The-last-signal-/voir_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
+/home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py
 </details>
 
 ##   Flake8
@@ -63,41 +78,42 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 
 | Code | Nombre |
 |------|-------:|
-| E231 | 331 |
-| E501 | 243 |
-| E225 | 154 |
-| W293 | 112 |
-| E122 | 101 |
-| E303 | 97 |
-| E302 | 62 |
-| E111 | 25 |
-| W291 | 21 |
-| F811 | 16 |
-| E301 | 16 |
-| F401 | 14 |
+| E231 | 334 |
+| E501 | 253 |
+| E225 | 155 |
+| W293 | 131 |
+| E303 | 118 |
+| E122 | 116 |
+| E302 | 77 |
+| W291 | 28 |
+| F401 | 26 |
+| E301 | 22 |
+| E111 | 22 |
+| F811 | 14 |
 | E203 | 14 |
-| E402 | 13 |
 | E701 | 12 |
-| F841 | 8 |
-| W391 | 7 |
+| F841 | 11 |
+| E402 | 11 |
+| W391 | 8 |
 | E211 | 7 |
-| W292 | 6 |
+| E711 | 6 |
 | E129 | 6 |
+| F821 | 5 |
 | E305 | 5 |
 | E128 | 5 |
 | F824 | 4 |
+| E131 | 4 |
+| W292 | 3 |
 | E712 | 3 |
-| E131 | 3 |
-| F821 | 2 |
+| E124 | 3 |
 | E722 | 2 |
-| E711 | 2 |
 | E306 | 2 |
 | E265 | 2 |
 | F634 | 1 |
 | E741 | 1 |
 | E271 | 1 |
 | E201 | 1 |
-| E124 | 1 |
+| E117 | 1 |
 | E115 | 1 |
 
 
@@ -106,14 +122,17 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 
 | Fichier | Ligne | Code | Message |
 |---------|------:|------|---------|
-| ./Ancien/Secure_save.py | 27 | F811 | redefinition of unused 'os' from line 1 |
-| ./Ancien/Secure_save.py | 27 | E402 | module level import not at top of file |
-| ./Ancien/Secure_save.py | 28 | F811 | redefinition of unused 'datetime' from line 6 |
-| ./Ancien/Secure_save.py | 28 | E402 | module level import not at top of file |
-| ./Ancien/Secure_save.py | 82 | E203 | whitespace before ' |
-| ./Ancien/Secure_save.py | 83 | E203 | whitespace before ' |
-| ./Ancien/Secure_save.py | 178 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/Secure_save.py | 185 | E501 | line too long (88 > 79 characters) |
+| ./Ancien/Secure_save.py | 32 | W291 | trailing whitespace |
+| ./Ancien/Secure_save.py | 33 | W291 | trailing whitespace |
+| ./Ancien/Secure_save.py | 40 | W293 | blank line contains whitespace |
+| ./Ancien/Secure_save.py | 63 | W291 | trailing whitespace |
+| ./Ancien/Secure_save.py | 64 | W291 | trailing whitespace |
+| ./Ancien/Secure_save.py | 96 | E203 | whitespace before ' |
+| ./Ancien/Secure_save.py | 97 | E203 | whitespace before ' |
+| ./Ancien/Secure_save.py | 124 | E225 | missing whitespace around operator |
+| ./Ancien/Secure_save.py | 124 | F821 | undefined name 'Zip' |
+| ./Ancien/Secure_save.py | 195 | E501 | line too long (81 > 79 characters) |
+| ./Ancien/Secure_save.py | 202 | E501 | line too long (88 > 79 characters) |
 | ./Ancien/admin_manager.py | 4 | F401 | 'PySide6.QtCore.QTimer' imported but unused |
 | ./Ancien/admin_manager.py | 8 | F401 | 'inventaire.Objet' imported but unused |
 | ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
@@ -642,9 +661,6 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./Ancien/inventaire.py | 742 | E501 | line too long (144 > 79 characters) |
 | ./Ancien/inventaire.py | 749 | E305 | expected 2 blank lines after class or function definition, found 0 |
 | ./Ancien/inventaire.py | 749 | E225 | missing whitespace around operator |
-| ./Ancien/jet_de_des.py | 2 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/jet_de_des.py | 2 | E231 | missing whitespace after ',' |
-| ./Ancien/jet_de_des.py | 3 | W292 | no newline at end of file |
 | ./Ancien/localisation.py | 29 | E501 | line too long (85 > 79 characters) |
 | ./Ancien/main.py | 2 | F401 | 'random' imported but unused |
 | ./Ancien/main.py | 14 | F401 | 'table_de_conversion as tc' imported but unused |
@@ -760,274 +776,264 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./Ancien/main.py | 1041 | E231 | missing whitespace after ',' |
 | ./Ancien/main.py | 1061 | E501 | line too long (82 > 79 characters) |
 | ./Ancien/main.py | 1078 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 6 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 8 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/table_de_conversion.py | 10 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 12 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 13 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 13 | F821 | undefined name 'joueur' |
-| ./Ancien/table_de_conversion.py | 13 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 14 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 26 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 26 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 26 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 26 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 27 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 28 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 33 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 37 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 38 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 46 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 50 | F841 | local variable 'niveaux_romains' is assigned to but never used |
-| ./Ancien/table_de_conversion.py | 53 | E306 | expected 1 blank line before a nested definition, found 0 |
-| ./Ancien/table_de_conversion.py | 57 | E306 | expected 1 blank line before a nested definition, found 0 |
-| ./Ancien/table_de_conversion.py | 65 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 76 | E501 | line too long (94 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 81 | E501 | line too long (104 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 86 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 94 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 102 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 122 | E501 | line too long (95 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 127 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 130 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 131 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 12 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 12 | F821 | undefined name 'joueur' |
+| ./Ancien/table_de_conversion.py | 12 | E203 | whitespace before ' |
+| ./Ancien/table_de_conversion.py | 13 | E501 | line too long (86 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 25 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 25 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 25 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 25 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 27 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 32 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 36 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 37 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 45 | E501 | line too long (85 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 49 | F841 | local variable 'niveaux_romains' is assigned to but never used |
+| ./Ancien/table_de_conversion.py | 52 | E306 | expected 1 blank line before a nested definition, found 0 |
+| ./Ancien/table_de_conversion.py | 56 | E306 | expected 1 blank line before a nested definition, found 0 |
+| ./Ancien/table_de_conversion.py | 64 | E501 | line too long (83 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 75 | E501 | line too long (94 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 80 | E501 | line too long (104 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 85 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 93 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 101 | E501 | line too long (81 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 121 | E501 | line too long (95 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 126 | E501 | line too long (81 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 129 | E501 | line too long (86 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 130 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 132 | W293 | blank line contains whitespace |
 | ./Ancien/table_de_conversion.py | 133 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 134 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 136 | E303 | too many blank lines (3) |
-| ./Ancien/table_de_conversion.py | 136 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 138 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 138 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 140 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 140 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 142 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 143 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 143 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 146 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 146 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 149 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 149 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 151 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 151 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 151 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 151 | E501 | line too long (90 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 153 | W291 | trailing whitespace |
-| ./Ancien/table_de_conversion.py | 154 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 154 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 154 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 135 | E303 | too many blank lines (3) |
+| ./Ancien/table_de_conversion.py | 135 | E203 | whitespace before ' |
+| ./Ancien/table_de_conversion.py | 137 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 137 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 139 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 139 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 141 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 142 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 142 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 145 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 145 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 148 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 148 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 150 | E203 | whitespace before ' |
+| ./Ancien/table_de_conversion.py | 150 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 150 | E203 | whitespace before ' |
+| ./Ancien/table_de_conversion.py | 150 | E501 | line too long (90 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 152 | W291 | trailing whitespace |
+| ./Ancien/table_de_conversion.py | 153 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 153 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 153 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 156 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 157 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 158 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 159 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 161 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 162 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 163 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 166 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 167 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 160 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 161 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 162 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 165 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 166 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 168 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 169 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 170 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 170 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 170 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 170 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 171 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 173 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 175 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 176 | E303 | too many blank lines (5) |
-| ./Ancien/table_de_conversion.py | 179 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 180 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 180 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 180 | E501 | line too long (89 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 182 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 169 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 169 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 169 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 170 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 172 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 174 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 175 | E303 | too many blank lines (5) |
+| ./Ancien/table_de_conversion.py | 178 | E129 | visually indented line with same indent as next logical line |
+| ./Ancien/table_de_conversion.py | 179 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 179 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 179 | E501 | line too long (89 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 181 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 182 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 183 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 184 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 185 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 185 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 185 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 187 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 188 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 190 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 191 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 191 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 191 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 184 | E501 | line too long (139 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 184 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 184 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 186 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 187 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 189 | E501 | line too long (91 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 190 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 190 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 190 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 193 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 194 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 195 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 196 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 198 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 199 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 200 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 203 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 204 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 197 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 198 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 199 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 202 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 203 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 205 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 206 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 207 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 207 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 207 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 207 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 208 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 208 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 208 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 208 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 209 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 210 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 214 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 215 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 216 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 216 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 216 | E501 | line too long (108 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 218 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 213 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 214 | E129 | visually indented line with same indent as next logical line |
+| ./Ancien/table_de_conversion.py | 215 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 215 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 215 | E501 | line too long (108 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 217 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 218 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 219 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 220 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 221 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 222 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 222 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 222 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 224 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 225 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 227 | E501 | line too long (102 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 228 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 228 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 228 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 221 | E501 | line too long (139 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 221 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 221 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 223 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 224 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 226 | E501 | line too long (102 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 227 | E302 | expected 2 blank lines, found 0 |
+| ./Ancien/table_de_conversion.py | 227 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 227 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 230 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 231 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 232 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 233 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 235 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 236 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 237 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 240 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 241 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 234 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 235 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 236 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 239 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 240 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 242 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 243 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 244 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 245 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 245 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 245 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 245 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 246 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 246 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 246 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 246 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 247 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 248 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 249 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 254 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 254 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 255 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 255 | E501 | line too long (97 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 256 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 256 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 256 | E501 | line too long (126 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 256 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 258 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 253 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 253 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 254 | E129 | visually indented line with same indent as next logical line |
+| ./Ancien/table_de_conversion.py | 254 | E501 | line too long (97 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 255 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 255 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 255 | E501 | line too long (126 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 255 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 257 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 258 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 259 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 260 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 261 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 262 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 263 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 263 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 263 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 265 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 266 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 268 | E501 | line too long (113 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 269 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 270 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/table_de_conversion.py | 270 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 270 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 262 | E501 | line too long (139 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 262 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 262 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 264 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 265 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 267 | E501 | line too long (113 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 268 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 269 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/table_de_conversion.py | 269 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 269 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 272 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 273 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 274 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 275 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 277 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 278 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 279 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 282 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 283 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 276 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 277 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 278 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 281 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 282 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 284 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 285 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 286 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 287 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 288 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 288 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 288 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 288 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 289 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 289 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 289 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 289 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 290 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 291 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 292 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 293 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 297 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 300 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 300 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 300 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 300 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 300 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 301 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 301 | E501 | line too long (119 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 303 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 303 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 303 | E501 | line too long (144 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 303 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 303 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 305 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 296 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 299 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 299 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 299 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 299 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 299 | E501 | line too long (86 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 300 | E129 | visually indented line with same indent as next logical line |
+| ./Ancien/table_de_conversion.py | 300 | E501 | line too long (119 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 302 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 302 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 302 | E501 | line too long (144 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 302 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 302 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 304 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 305 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 306 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 307 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 308 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 309 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 310 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 311 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 311 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 311 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 313 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 314 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 316 | E501 | line too long (124 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 318 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/table_de_conversion.py | 318 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 318 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 310 | E501 | line too long (139 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 310 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 310 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 312 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 313 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 315 | E501 | line too long (124 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 317 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/table_de_conversion.py | 317 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 317 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 320 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 321 | E122 | continuation line missing indentation or outdented |
 | ./Ancien/table_de_conversion.py | 322 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 323 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 325 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 326 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 327 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 330 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 331 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 324 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 325 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 326 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 329 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 330 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 332 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 333 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 334 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 335 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 336 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 337 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 337 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 337 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 337 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 338 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 338 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 338 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 338 | E231 | missing whitespace after ',' |
 | ./Ancien/table_de_conversion.py | 339 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 340 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 341 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 342 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 343 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 346 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 347 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 348 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 351 | F634 | 'if tuple literal' is always true, perhaps remove accidental comma? |
-| ./Ancien/table_de_conversion.py | 351 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 351 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 351 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 351 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 351 | E501 | line too long (101 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 351 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 352 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 352 | E501 | line too long (137 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 350 | F634 | 'if tuple literal' is always true, perhaps remove accidental comma? |
+| ./Ancien/table_de_conversion.py | 350 | E303 | too many blank lines (2) |
+| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 350 | E501 | line too long (101 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 351 | E129 | visually indented line with same indent as next logical line |
+| ./Ancien/table_de_conversion.py | 351 | E501 | line too long (137 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 351 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 352 | E225 | missing whitespace around operator |
 | ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 353 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 353 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 353 | E501 | line too long (162 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 353 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 353 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 353 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 355 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 352 | E501 | line too long (162 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 354 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 355 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 356 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 357 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 358 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 359 | E501 | line too long (91 > 79 characters) |
 | ./Ancien/table_de_conversion.py | 360 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 361 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 362 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 362 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 362 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 364 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 365 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 367 | E501 | line too long (136 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 372 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 373 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 382 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 383 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 384 | W391 | blank line at end of file |
+| ./Ancien/table_de_conversion.py | 361 | E501 | line too long (139 > 79 characters) |
+| ./Ancien/table_de_conversion.py | 361 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 361 | E231 | missing whitespace after ',' |
+| ./Ancien/table_de_conversion.py | 363 | E225 | missing whitespace around operator |
+| ./Ancien/table_de_conversion.py | 364 | W293 | blank line contains whitespace |
+| ./Ancien/table_de_conversion.py | 366 | E501 | line too long (136 > 79 characters) |
 | ./Ancien/tresor.py | 13 | E303 | too many blank lines (3) |
 | ./Ancien/tresor.py | 21 | E501 | line too long (85 > 79 characters) |
 | ./Ancien/tresor.py | 22 | E501 | line too long (85 > 79 characters) |
@@ -1061,12 +1067,58 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./Ancien/tresor.py | 962 | E501 | line too long (81 > 79 characters) |
 | ./Ancien/tresor.py | 964 | E501 | line too long (82 > 79 characters) |
 | ./client_python/__init__.py | 1 | W391 | blank line at end of file |
-| ./client_python/main.py | 3 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 4 | E111 | indentation is not a multiple of 4 |
-| ./client_python/main.py | 5 | E111 | indentation is not a multiple of 4 |
-| ./client_python/main.py | 6 | E111 | indentation is not a multiple of 4 |
-| ./client_python/main.py | 7 | E111 | indentation is not a multiple of 4 |
-| ./dashboard.py | 47 | W292 | no newline at end of file |
+| ./client_python/client.py | 5 | F401 | '.packets.log.LogPacket' imported but unused |
+| ./client_python/client.py | 7 | E302 | expected 2 blank lines, found 0 |
+| ./client_python/client.py | 38 | E122 | continuation line missing indentation or outdented |
+| ./client_python/client.py | 39 | E122 | continuation line missing indentation or outdented |
+| ./client_python/client.py | 40 | E122 | continuation line missing indentation or outdented |
+| ./client_python/client.py | 45 | E122 | continuation line missing indentation or outdented |
+| ./client_python/client.py | 54 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 71 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 78 | W291 | trailing whitespace |
+| ./client_python/client.py | 82 | E231 | missing whitespace after ',' |
+| ./client_python/client.py | 84 | E124 | closing bracket does not match visual indentation |
+| ./client_python/client.py | 85 | E301 | expected 1 blank line, found 0 |
+| ./client_python/client.py | 87 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 113 | E131 | continuation line unaligned for hanging indent |
+| ./client_python/client.py | 118 | E301 | expected 1 blank line, found 0 |
+| ./client_python/client.py | 135 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 137 | E303 | too many blank lines (3) |
+| ./client_python/client.py | 147 | E231 | missing whitespace after ',' |
+| ./client_python/client.py | 149 | E124 | closing bracket does not match visual indentation |
+| ./client_python/client.py | 163 | W293 | blank line contains whitespace |
+| ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
+| ./client_python/main.py | 3 | F401 | '.packet.Packet' imported but unused |
+| ./client_python/main.py | 6 | F401 | '.packets.ping.PingPacket' imported but unused |
+| ./client_python/main.py | 7 | F401 | '.packets.move.MovePacket' imported but unused |
+| ./client_python/main.py | 8 | E302 | expected 2 blank lines, found 0 |
+| ./client_python/main.py | 16 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 17 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 18 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 19 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 20 | E303 | too many blank lines (2) |
+| ./client_python/main.py | 22 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 26 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 28 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 31 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 33 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 36 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 38 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/packet.py | 26 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 47 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 60 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 65 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 70 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 75 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 83 | E303 | too many blank lines (2) |
+| ./client_python/packets/__init__.py | 1 | F401 | '.ping.PingPacket' imported but unused |
+| ./client_python/packets/__init__.py | 2 | F401 | '.login.LoginPacket' imported but unused |
+| ./client_python/packets/__init__.py | 3 | F401 | '.chat.ChatPacket' imported but unused |
+| ./client_python/packets/__init__.py | 4 | F401 | '.move.MovePacket' imported but unused |
+| ./client_python/packets/chat.py | 14 | E301 | expected 1 blank line, found 0 |
+| ./client_python/packets/login.py | 14 | E301 | expected 1 blank line, found 0 |
+| ./client_python/packets/move.py | 8 | E231 | missing whitespace after ',' |
+| ./client_python/packets/move.py | 18 | E301 | expected 1 blank line, found 0 |
 | ./scripts/database/update_docs.py | 7 | E303 | too many blank lines (3) |
 | ./scripts/database/update_docs.py | 55 | W293 | blank line contains whitespace |
 | ./scripts/database/update_docs.py | 57 | E303 | too many blank lines (3) |
@@ -1087,32 +1139,42 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./scripts/database/update_security.py | 23 | E303 | too many blank lines (3) |
 | ./scripts/database/update_security.py | 96 | W293 | blank line contains whitespace |
 | ./scripts/database/update_security.py | 98 | E303 | too many blank lines (3) |
-| ./scripts/database_manager.py | 411 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 411 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 411 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 411 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 411 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 411 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 411 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 413 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 425 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 433 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 435 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 435 | E501 | line too long (91 > 79 characters) |
-| ./scripts/database_manager.py | 435 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 437 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 325 | W293 | blank line contains whitespace |
+| ./scripts/database_manager.py | 327 | W293 | blank line contains whitespace |
+| ./scripts/database_manager.py | 438 | E301 | expected 1 blank line, found 0 |
+| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 440 | E122 | continuation line missing indentation or outdented |
 | ./scripts/database_manager.py | 452 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 463 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 465 | W293 | blank line contains whitespace |
-| ./scripts/documentation/links.py | 54 | F841 | local variable 'pattern' is assigned to but never used |
+| ./scripts/database_manager.py | 460 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 462 | E301 | expected 1 blank line, found 0 |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 462 | E501 | line too long (91 > 79 characters) |
+| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
+| ./scripts/database_manager.py | 464 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 479 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 490 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 492 | E301 | expected 1 blank line, found 0 |
+| ./scripts/database_manager.py | 504 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 517 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 526 | E122 | continuation line missing indentation or outdented |
+| ./scripts/database_manager.py | 529 | W293 | blank line contains whitespace |
+| ./scripts/documentation/links.py | 1 | F401 | 'pathlib.Path' imported but unused |
+| ./scripts/documentation/links.py | 19 | F821 | undefined name 'ROOT' |
+| ./scripts/documentation/links.py | 36 | W293 | blank line contains whitespace |
+| ./scripts/documentation/links.py | 38 | E303 | too many blank lines (3) |
+| ./scripts/documentation/links.py | 72 | F841 | local variable 'pattern' is assigned to but never used |
 | ./scripts/documentation/markdown.py | 27 | E402 | module level import not at top of file |
 | ./scripts/documentation/markdown.py | 44 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/markdown.py | 56 | E303 | too many blank lines (5) |
@@ -1156,10 +1218,16 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./scripts/documentation/problem.py | 3 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/problem.py | 3 | E501 | line too long (85 > 79 characters) |
 | ./scripts/documentation/python_docs.py | 133 | E501 | line too long (95 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 161 | E501 | line too long (97 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 172 | E501 | line too long (81 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 185 | E501 | line too long (106 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 206 | E501 | line too long (87 > 79 characters) |
+| ./scripts/documentation/python_docs.py | 161 | E501 | line too long (116 > 79 characters) |
+| ./scripts/documentation/python_docs.py | 170 | E122 | continuation line missing indentation or outdented |
+| ./scripts/documentation/python_docs.py | 171 | E122 | continuation line missing indentation or outdented |
+| ./scripts/documentation/python_docs.py | 172 | E122 | continuation line missing indentation or outdented |
+| ./scripts/documentation/python_docs.py | 173 | E122 | continuation line missing indentation or outdented |
+| ./scripts/documentation/python_docs.py | 175 | W293 | blank line contains whitespace |
+| ./scripts/documentation/python_docs.py | 176 | E303 | too many blank lines (2) |
+| ./scripts/documentation/python_docs.py | 191 | E501 | line too long (106 > 79 characters) |
+| ./scripts/documentation/python_docs.py | 212 | E501 | line too long (87 > 79 characters) |
+| ./scripts/documentation/python_docs.py | 220 | W293 | blank line contains whitespace |
 | ./scripts/documentation/report.py | 8 | E225 | missing whitespace around operator |
 | ./scripts/documentation/report.py | 9 | E231 | missing whitespace after ',' |
 | ./scripts/documentation/report.py | 11 | E302 | expected 2 blank lines, found 1 |
@@ -1274,6 +1342,7 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./scripts/documentation/rust_docs.py | 54 | F841 | local variable 'file_elements' is assigned to but never used |
 | ./scripts/documentation/rust_docs.py | 58 | W291 | trailing whitespace |
 | ./scripts/documentation/rust_docs.py | 61 | W293 | blank line contains whitespace |
+| ./scripts/documentation/rust_docs.py | 64 | W293 | blank line contains whitespace |
 | ./scripts/documentation/rust_docs.py | 70 | E501 | line too long (87 > 79 characters) |
 | ./scripts/documentation/rust_docs.py | 75 | W291 | trailing whitespace |
 | ./scripts/documentation/rust_docs.py | 76 | W291 | trailing whitespace |
@@ -1305,54 +1374,52 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./scripts/documentation/score.py | 37 | E122 | continuation line missing indentation or outdented |
 | ./scripts/documentation/score.py | 38 | E122 | continuation line missing indentation or outdented |
 | ./scripts/documentation/score.py | 46 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 52 | W293 | blank line contains whitespace |
-| ./scripts/documentation/score.py | 53 | W293 | blank line contains whitespace |
-| ./scripts/documentation/score.py | 54 | E303 | too many blank lines (3) |
-| ./scripts/documentation/score.py | 54 | E501 | line too long (113 > 79 characters) |
-| ./scripts/documentation/score.py | 54 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 55 | E225 | missing whitespace around operator |
+| ./scripts/documentation/score.py | 56 | E501 | line too long (113 > 79 characters) |
 | ./scripts/documentation/score.py | 56 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 57 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/score.py | 57 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/score.py | 57 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/score.py | 58 | W293 | blank line contains whitespace |
+| ./scripts/documentation/score.py | 57 | E225 | missing whitespace around operator |
+| ./scripts/documentation/score.py | 58 | E225 | missing whitespace around operator |
+| ./scripts/documentation/score.py | 59 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/score.py | 59 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/score.py | 59 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/score.py | 60 | W293 | blank line contains whitespace |
 | ./scripts/documentation/spelling.py | 4 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/documentation/titles.py | 26 | F821 | undefined name 'file' |
-| ./scripts/documentation/titles.py | 51 | E303 | too many blank lines (3) |
-| ./scripts/documentation/titles.py | 59 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 59 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 59 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 59 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 59 | E501 | line too long (95 > 79 characters) |
-| ./scripts/documentation/titles.py | 60 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 82 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 82 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 82 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 82 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 82 | E501 | line too long (112 > 79 characters) |
-| ./scripts/documentation/titles.py | 104 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 104 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 104 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 104 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 104 | E501 | line too long (102 > 79 characters) |
-| ./scripts/documentation/titles.py | 124 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 124 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 124 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 124 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 124 | E501 | line too long (83 > 79 characters) |
-| ./scripts/documentation/titles.py | 125 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 146 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 146 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 146 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 146 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 146 | E501 | line too long (120 > 79 characters) |
-| ./scripts/documentation/titles.py | 147 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 170 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 170 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 170 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 170 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 170 | E501 | line too long (129 > 79 characters) |
-| ./scripts/documentation/titles.py | 171 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 1 | F401 | 'pathlib.Path' imported but unused |
+| ./scripts/documentation/titles.py | 27 | F821 | undefined name 'file' |
+| ./scripts/documentation/titles.py | 52 | E303 | too many blank lines (3) |
+| ./scripts/documentation/titles.py | 60 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 60 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 60 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 60 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 60 | E501 | line too long (95 > 79 characters) |
+| ./scripts/documentation/titles.py | 61 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 83 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 83 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 83 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 83 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 83 | E501 | line too long (112 > 79 characters) |
+| ./scripts/documentation/titles.py | 105 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 105 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 105 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 105 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 105 | E501 | line too long (102 > 79 characters) |
+| ./scripts/documentation/titles.py | 125 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 125 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 125 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 125 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 125 | E501 | line too long (83 > 79 characters) |
+| ./scripts/documentation/titles.py | 126 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 147 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 147 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 147 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 147 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 147 | E501 | line too long (120 > 79 characters) |
+| ./scripts/documentation/titles.py | 148 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 171 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 171 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 171 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 171 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 171 | E501 | line too long (129 > 79 characters) |
+| ./scripts/documentation/titles.py | 172 | W293 | blank line contains whitespace |
 | ./scripts/generate_dashboard.py | 12 | E302 | expected 2 blank lines, found 1 |
 | ./scripts/generate_dashboard.py | 21 | E303 | too many blank lines (2) |
 | ./scripts/generate_dashboard.py | 28 | E302 | expected 2 blank lines, found 0 |
@@ -1397,16 +1464,79 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | ./scripts/generate_problems_md.py | 64 | W293 | blank line contains whitespace |
 | ./scripts/generate_problems_md.py | 66 | E303 | too many blank lines (2) |
 | ./scripts/generate_problems_md.py | 71 | W293 | blank line contains whitespace |
+| ./scripts/recherche.py | 197 | W293 | blank line contains whitespace |
+| ./scripts/recherche.py | 199 | E303 | too many blank lines (2) |
 | ./scripts/update_database.py | 5 | F401 | '.database.update_performance.update_performance_database' imported but unused |
 | ./scripts/update_database.py | 15 | W293 | blank line contains whitespace |
 | ./scripts/update_database.py | 17 | E303 | too many blank lines (3) |
 | ./scripts/update_database.py | 23 | W293 | blank line contains whitespace |
 | ./scripts/update_database.py | 26 | E303 | too many blank lines (4) |
 | ./scripts/update_database.py | 28 | W293 | blank line contains whitespace |
+| ./scripts/utils/calculateur.py | 6 | F401 | 'gestionnaire_de_fichiers as gf' imported but unused |
+| ./scripts/utils/calculateur.py | 13 | E303 | too many blank lines (6) |
+| ./scripts/utils/calculateur.py | 14 | E501 | line too long (85 > 79 characters) |
+| ./scripts/utils/calculateur.py | 22 | E302 | expected 2 blank lines, found 0 |
+| ./scripts/utils/calculateur.py | 28 | F841 | local variable 'fichier' is assigned to but never used |
+| ./scripts/utils/calculateur.py | 29 | E501 | line too long (80 > 79 characters) |
+| ./scripts/utils/calculateur.py | 33 | E302 | expected 2 blank lines, found 1 |
+| ./scripts/utils/calculateur.py | 34 | W293 | blank line contains whitespace |
+| ./scripts/utils/calculateur.py | 35 | E225 | missing whitespace around operator |
+| ./scripts/utils/calculateur.py | 40 | W293 | blank line contains whitespace |
+| ./scripts/utils/calculateur.py | 48 | E225 | missing whitespace around operator |
+| ./scripts/utils/calculateur.py | 49 | W293 | blank line contains whitespace |
+| ./scripts/utils/calculateur.py | 50 | W293 | blank line contains whitespace |
+| ./scripts/utils/calculateur.py | 51 | E303 | too many blank lines (2) |
+| ./scripts/utils/calculateur.py | 52 | E225 | missing whitespace around operator |
+| ./scripts/utils/calculateur.py | 53 | W293 | blank line contains whitespace |
+| ./scripts/utils/calculateur.py | 54 | W293 | blank line contains whitespace |
+| ./scripts/utils/calculateur.py | 55 | E303 | too many blank lines (2) |
+| ./scripts/utils/calculateur.py | 56 | E231 | missing whitespace after ',' |
+| ./scripts/utils/calculateur.py | 57 | E111 | indentation is not a multiple of 4 |
+| ./scripts/utils/calculateur.py | 57 | E117 | over-indented |
+| ./scripts/utils/calculateur.py | 57 | F821 | undefined name 'fichier' |
+| ./scripts/utils/calculateur.py | 57 | E501 | line too long (80 > 79 characters) |
+| ./scripts/utils/calculateur.py | 61 | E303 | too many blank lines (3) |
+| ./scripts/utils/calculateur.py | 62 | E501 | line too long (81 > 79 characters) |
+| ./scripts/utils/calculateur.py | 63 | E302 | expected 2 blank lines, found 0 |
+| ./scripts/utils/calculateur.py | 63 | E501 | line too long (144 > 79 characters) |
+| ./scripts/utils/calculateur.py | 65 | E501 | line too long (121 > 79 characters) |
+| ./scripts/utils/calculateur.py | 77 | W291 | trailing whitespace |
+| ./scripts/utils/calculateur.py | 88 | E501 | line too long (84 > 79 characters) |
+| ./scripts/utils/calculateur.py | 96 | E501 | line too long (97 > 79 characters) |
+| ./scripts/utils/calculateur.py | 107 | E501 | line too long (84 > 79 characters) |
+| ./scripts/utils/calculateur.py | 109 | F841 | local variable 'existing_sheets' is assigned to but never used |
+| ./scripts/utils/calculateur.py | 111 | E501 | line too long (105 > 79 characters) |
+| ./scripts/utils/calculateur.py | 116 | W391 | blank line at end of file |
+| ./scripts/utils/file_chercheur.py | 16 | E302 | expected 2 blank lines, found 1 |
+| ./scripts/utils/gestionnaire.py | 74 | E302 | expected 2 blank lines, found 1 |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 7 | E303 | too many blank lines (3) |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 16 | F841 | local variable 'chemin_str' is assigned to but never used |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 17 | W291 | trailing whitespace |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 24 | E501 | line too long (84 > 79 characters) |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 31 | W391 | blank line at end of file |
+| ./security/vault.py | 3 | F401 | 'base64' imported but unused |
+| ./security/vault.py | 19 | W293 | blank line contains whitespace |
+| ./security/vault.py | 34 | W293 | blank line contains whitespace |
+| ./security/vault.py | 36 | E303 | too many blank lines (2) |
+| ./security/vault.py | 81 | E303 | too many blank lines (3) |
+| ./security/vault.py | 83 | W293 | blank line contains whitespace |
+| ./security/vault.py | 84 | E303 | too many blank lines (2) |
+| ./security/vault.py | 111 | W293 | blank line contains whitespace |
 | ./tests/__init__.py | 1 | W391 | blank line at end of file |
-| ./tests/test_client.py | 6 | E303 | too many blank lines (4) |
-| ./tests/test_client.py | 8 | W391 | blank line at end of file |
-| ./voir_database.py | 46 | W292 | no newline at end of file |
+| ./tests/test_client.py | 3 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_client.py | 5 | W391 | blank line at end of file |
+| ./tests/test_fuzzing.py | 16 | E303 | too many blank lines (3) |
+| ./tests/test_fuzzing.py | 29 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_fuzzing.py | 47 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_fuzzing.py | 54 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_fuzzing.py | 74 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_load.py | 13 | E303 | too many blank lines (4) |
+| ./tests/test_load.py | 49 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_load.py | 84 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_sql_injection.py | 31 | E303 | too many blank lines (3) |
+| ./tests/test_sql_injection.py | 46 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_sql_injection.py | 69 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_sql_injection.py | 107 | E302 | expected 2 blank lines, found 1 |
 
 </details>
 
@@ -1414,7 +1544,7 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 
 | Rang | Fichier | Erreurs |
 |----:|---------|--------:|
-| 1 | ./Ancien/table_de_conversion.py | 268 |
+| 1 | ./Ancien/table_de_conversion.py | 258 |
 | 2 | ./Ancien/inventaire.py | 218 |
 | 3 | ./Ancien/main.py | 114 |
 | 4 | ./Ancien/inv.py | 97 |
@@ -1422,7 +1552,7 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 | 6 | ./Ancien/admin_manager.py | 58 |
 | 7 | ./Ancien/banque.py | 50 |
 | 8 | ./scripts/generate_dashboard.py | 41 |
-| 9 | ./scripts/documentation/titles.py | 36 |
+| 9 | ./scripts/documentation/titles.py | 37 |
 | 10 | ./scripts/documentation/markdown.py | 36 |
 > 💡 Vous ne connaissez pas une erreur Flake8 ?
 >
@@ -1431,22 +1561,38 @@ Date : Wed Jul 22 07:32:06 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (3.826771653543307)
+**Average complexity:**  A (3.972826086956522)
 
 <details>
 <summary>Show complexity report</summary>
 
 dashboard.py
     F 10:0 start_server - A
-Ancien/jet_de_des.py
-    F 2:0 jet_de_des - A
+Ancien/generate_map.py
+    F 1:0 generate_map - C
 Ancien/main.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 Ancien/heure_locale.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 Ancien/tresor.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
-Ancien/localisation.py
+Ancien/inventaire.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+Ancien/table_de_conversion.py
+    F 269:0 l4_l5 - C
+    F 317:0 l5_l6 - C
+    F 227:0 l3_l4 - C
+    F 190:0 l2_l3 - C
+    F 153:0 l1_l2 - B
+    F 93:0 obtenir_enchantement_superieur - B
+    F 42:0 fusionner_enchantements - B
+    F 25:0 chercher_livre - B
+    F 130:0 convertir_livres - B
+    F 12:0 qtes - A
+    C 9:0 StatsConversion - A
+Ancien/grade_manager.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+Ancien/configuration.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 Ancien/inv.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
@@ -1457,9 +1603,34 @@ Ancien/index_manager.py
     F 47:0 _ajouter_mot_cle - A
     F 11:0 mettre_a_jour_index - A
     F 6:0 initialiser_index - A
-Ancien/grade_manager.py
-    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
-Ancien/configuration.py
+Ancien/banque.py
+    M 263:4 FenetreBanque.charger_etat_banque - B
+    M 116:4 FenetreBanque.investir - B
+    M 91:4 FenetreBanque.verifier_blocage_boutons - B
+    C 6:0 FenetreBanque - A
+    M 41:4 FenetreBanque.rembourser - A
+    M 202:4 FenetreBanque.verifier_investissements - A
+    M 221:4 FenetreBanque.sauvegarder_etat_banque - A
+    M 245:4 FenetreBanque.afficher_banque - A
+    F 294:0 afficher_banque - A
+    M 72:4 FenetreBanque.emprunter - A
+    M 8:4 FenetreBanque.__init__ - A
+Ancien/Secure_save.py
+    M 189:4 AutoSaver._loop - B
+    F 156:0 load_from_slot - A
+    C 179:0 AutoSaver - A
+    F 31:0 log_save_event - A
+    F 108:0 atomic_write_zip - A
+    M 210:4 AutoSaver.start - A
+    F 90:0 aesgcm_decrypt - A
+    F 124:0 save_to_slot - A
+    M 217:4 AutoSaver.stop - A
+    F 61:0 normalize_password - A
+    F 69:0 derive_key - A
+    F 80:0 aesgcm_encrypt - A
+    F 102:0 ensure_profile_dir - A
+    M 180:4 AutoSaver.__init__ - A
+Ancien/localisation.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 Ancien/debugger.py
     F 45:0 extract_imports_from_file - B
@@ -1490,79 +1661,69 @@ Ancien/debugger.py
     M 181:4 SoftDebugger.handle_error - A
     M 187:4 SoftDebugger.handle_warning - A
     M 190:4 SoftDebugger.wrap - A
-Ancien/banque.py
-    M 263:4 FenetreBanque.charger_etat_banque - B
-    M 116:4 FenetreBanque.investir - B
-    M 91:4 FenetreBanque.verifier_blocage_boutons - B
-    C 6:0 FenetreBanque - A
-    M 41:4 FenetreBanque.rembourser - A
-    M 202:4 FenetreBanque.verifier_investissements - A
-    M 221:4 FenetreBanque.sauvegarder_etat_banque - A
-    M 245:4 FenetreBanque.afficher_banque - A
-    F 294:0 afficher_banque - A
-    M 72:4 FenetreBanque.emprunter - A
-    M 8:4 FenetreBanque.__init__ - A
-Ancien/table_de_conversion.py
-    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 Ancien/horloge.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
-Ancien/Secure_save.py
-    M 172:4 AutoSaver._loop - B
-    F 139:0 load_from_slot - A
-    C 162:0 AutoSaver - A
-    F 31:0 log_save_event - A
-    F 94:0 atomic_write_zip - A
-    M 193:4 AutoSaver.start - A
-    F 79:0 aesgcm_decrypt - A
-    F 107:0 save_to_slot - A
-    M 200:4 AutoSaver.stop - A
-    F 57:0 normalize_password - A
-    F 61:0 derive_key - A
-    F 72:0 aesgcm_encrypt - A
-    F 88:0 ensure_profile_dir - A
-    M 163:4 AutoSaver.__init__ - A
 Ancien/admin_manager.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
-Ancien/generate_map.py
-    F 1:0 generate_map - C
-Ancien/inventaire.py
-    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
-client_python/main.py
-    F 3:0 main - A
-client_python/client.py
-    C 4:0 Client - A
-    M 18:4 Client.connect - A
-    M 48:4 Client.send_packet - A
-    M 67:4 Client.receive_packet - A
-    M 89:4 Client.disconnect - A
-    M 10:4 Client.__init__ - A
-scripts/generate_problems_md.py
-    F 10:0 generate_problems_md - C
+tests/test_load.py
+    F 50:0 run_test - A
+    F 85:0 main - A
+    F 14:0 ping - A
+tests/test_sql_injection.py
+    F 47:0 receive_packet - A
+    F 70:0 test_payload - A
+    F 108:0 main - A
+    F 32:0 create_login_packet - A
+tests/test_fuzzing.py
+    F 75:0 main - A
+    F 30:0 send_packet - A
+    F 17:0 create_packet - A
+    F 48:0 random_payload - A
+    F 55:0 random_packet - A
+tests/test_client.py
+    F 3:0 test_main - A
+security/vault.py
+    F 12:0 create_key - A
+    F 30:0 load_key - A
+    F 68:0 add_secret - A
+    F 40:0 encrypt_vault - A
+    F 54:0 decrypt_vault - A
 scripts/update_database.py
     F 9:0 update_database - A
+scripts/recherche.py
+    F 172:0 main - C
+    F 94:0 ecrire_fichier - B
+    F 34:0 rechercher - B
+scripts/voir_database.py
+    F 14:0 afficher_database - C
+scripts/generate_problems_md.py
+    F 10:0 generate_problems_md - C
+scripts/database_manager.py
+    C 9:0 DatabaseManager - A
+    M 360:4 DatabaseManager.add_run - A
+    M 414:4 DatabaseManager.insert - A
+    M 11:4 DatabaseManager.__init__ - A
+    M 25:4 DatabaseManager.create_tables - A
+    M 436:4 DatabaseManager.close - A
+    M 438:4 DatabaseManager.add_security - A
+    M 462:4 DatabaseManager.add_security_issue - A
+    M 492:4 DatabaseManager.add_performance - A
 scripts/generate_dashboard.py
     F 123:0 generate_json - C
     F 88:0 calculate_quality - A
     F 12:0 get_documentation_score - A
     F 28:0 get_database_data - A
-scripts/database_manager.py
-    C 9:0 DatabaseManager - A
-    M 333:4 DatabaseManager.add_run - A
-    M 387:4 DatabaseManager.insert - A
-    M 11:4 DatabaseManager.__init__ - A
-    M 25:4 DatabaseManager.create_tables - A
-    M 409:4 DatabaseManager.close - A
-    M 411:4 DatabaseManager.add_security - A
-    M 435:4 DatabaseManager.add_security_issue - A
-scripts/documentation/python_docs.py
-    F 9:0 check_python_docs - D
-scripts/documentation/navigation.py
-    F 1:0 check_navigation - A
-scripts/documentation/report.py
-    F 25:0 generate_report - C
-    F 11:0 _status - B
-scripts/documentation/score.py
-    F 11:0 generate_score - B
+scripts/utils/calculateur.py
+    F 63:0 mettre_a_jour_excel_fichiers_et_dossiers - B
+    F 22:0 creer_fichier_vide_async - A
+    F 33:0 calculer_taille_dossier_async - A
+    F 13:0 log_erreur_async - A
+scripts/utils/gestionnaire.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+scripts/utils/file_chercheur.py
+    F 16:0 iter_files - A
+scripts/utils/gestionnaire_de_fichiers.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 scripts/documentation/markdown.py
     F 91:0 check_empty_files - B
     F 129:0 check_line_length - B
@@ -1575,50 +1736,93 @@ scripts/documentation/markdown.py
     F 215:0 check_tables - A
     F 32:0 load_markdownlint_report - A
     F 56:0 check_markdown - A
-scripts/documentation/problem.py
-    F 3:0 add_problem - A
+scripts/documentation/score.py
+    F 11:0 generate_score - B
+scripts/documentation/links.py
+    F 111:0 check_local_links - B
+    F 191:0 check_images - B
+    F 16:0 check_links - A
+    F 141:0 check_external_links - A
+    F 85:0 check_empty_links - A
+    F 169:0 check_anchors - A
+    F 226:0 check_duplicate_links - A
+    F 68:0 extract_links - A
+scripts/documentation/report.py
+    F 25:0 generate_report - C
+    F 11:0 _status - B
+scripts/documentation/rust_docs.py
+    F 6:0 check_rust_docs - C
+scripts/documentation/organization.py
+    F 4:0 check_organization - C
+scripts/documentation/python_docs.py
+    F 9:0 check_python_docs - D
 scripts/documentation/spelling.py
     F 4:0 check_spelling - A
 scripts/documentation/titles.py
-    F 90:0 check_heading_spacing - B
-    F 66:0 check_heading_order - B
-    F 131:0 check_title_length - A
-    F 153:0 check_duplicate_titles - A
-    F 113:0 check_empty_titles - A
-    F 51:0 check_single_h1 - A
-    F 16:0 check_titles - A
-scripts/documentation/links.py
-    F 93:0 check_local_links - B
-    F 173:0 check_images - B
-    F 123:0 check_external_links - A
-    F 67:0 check_empty_links - A
-    F 151:0 check_anchors - A
-    F 208:0 check_duplicate_links - A
-    F 50:0 extract_links - A
-    F 16:0 check_links - A
-scripts/documentation/organization.py
-    F 4:0 check_organization - C
-scripts/documentation/rust_docs.py
-    F 6:0 check_rust_docs - C
+    F 91:0 check_heading_spacing - B
+    F 67:0 check_heading_order - B
+    F 132:0 check_title_length - A
+    F 154:0 check_duplicate_titles - A
+    F 114:0 check_empty_titles - A
+    F 52:0 check_single_h1 - A
+    F 17:0 check_titles - A
+scripts/documentation/navigation.py
+    F 1:0 check_navigation - A
+scripts/documentation/problem.py
+    F 3:0 add_problem - A
 scripts/database/utils.py
     F 5:0 read_report - A
     F 15:0 extract_int - A
     F 25:0 extract_float - A
-scripts/database/update_docs.py
-    F 7:0 update_docs_database - B
-scripts/database/update_performance.py
-    F 1:0 update_performance_database - A
-scripts/database/update_rust.py
-    F 19:0 update_rust_database - A
-scripts/database/update_python.py
-    F 18:0 update_python_database - A
 scripts/database/update_security.py
     F 13:0 update_security_database - A
-tests/test_client.py
-    F 6:0 test_main - A
+scripts/database/update_performance.py
+    F 1:0 update_performance_database - A
+scripts/database/update_python.py
+    F 18:0 update_python_database - A
+scripts/database/update_docs.py
+    F 7:0 update_docs_database - B
+scripts/database/update_rust.py
+    F 19:0 update_rust_database - A
+client_python/main.py
+    F 8:0 main - A
+client_python/logs.py
+    F 4:0 log - A
+client_python/packet.py
+    M 48:4 Packet.decode - B
+    C 14:0 Packet - A
+    C 5:0 PacketType - A
+    M 16:4 Packet.__init__ - A
+    M 26:4 Packet.encode - A
+client_python/client.py
+    M 85:4 Client.receive_packet - B
+    M 26:4 Client.connect - B
+    C 7:0 Client - A
+    M 118:4 Client._recv_exact - A
+    M 65:4 Client.send_packet - A
+    M 155:4 Client.disconnect - A
+    M 12:4 Client.__init__ - A
+client_python/packets/chat.py
+    C 4:0 ChatPacket - A
+    M 6:4 ChatPacket.__init__ - A
+    M 15:4 ChatPacket.from_payload - A
+client_python/packets/login.py
+    C 4:0 LoginPacket - A
+    M 6:4 LoginPacket.__init__ - A
+    M 15:4 LoginPacket.from_payload - A
+client_python/packets/move.py
+    C 6:0 MovePacket - A
+    M 8:4 MovePacket.__init__ - A
+    M 19:4 MovePacket.from_payload - A
+client_python/packets/ping.py
+    C 4:0 PingPacket - A
+    M 6:4 PingPacket.__init__ - A
+client_python/packets/log.py
+    C 4:0 LogPacket - A
+    M 6:4 LogPacket.__init__ - A
 
-127 blocks (classes, functions, methods) analyzed.
-Average complexity: A (3.826771653543307)
+184 blocks (classes, functions, methods) analyzed.
+Average complexity: A (3.972826086956522)
 
 </details>
 
@@ -1627,8 +1831,8 @@ Average complexity: A (3.826771653543307)
 | Severity | Count |
 |----------|------:|
 | High | 0 |
-| Medium | 6 |
-| Low | 38 |
+| Medium | 7 |
+| Low | 39 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -1637,20 +1841,21 @@ Average complexity: A (3.826771653543307)
 [main]	INFO	profile exclude tests: None
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
-[main]	INFO	running on Python 3.14.6
-Run started:2026-07-22 07:32:12.123916+00:00
+[main]	INFO	running on Python 3.14.7
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Run started:2026-08-14 11:54:20.501953+00:00
 
 Test results:
 >> Issue: [B110:try_except_pass] Try, Except, Pass detected.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
-   Location: ./Ancien/Secure_save.py:52:4
-51	
-52	    except Exception:
-53	        # Le journal ne doit JAMAIS faire planter le jeu
-54	        pass
+   Location: ./Ancien/Secure_save.py:56:4
 55	
+56	    except Exception:
+57	        # Le journal ne doit JAMAIS faire planter le jeu
+58	        pass
+59	
 
 --------------------------------------------------
 >> Issue: [B403:blacklist] Consider possible security implications associated with dill module.
@@ -1732,15 +1937,6 @@ Test results:
 158	    combinaisons = cache_enchantements[niveau][categorie]
 159	    en = random.choice(combinaisons)
 160	    return en,categorie
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./Ancien/jet_de_des.py:3:15
-2	def jet_de_des(face,nb):
-3	    return sum(random.randint(1, face) for _ in range(nb))
 
 --------------------------------------------------
 >> Issue: [B403:blacklist] Consider possible security implications associated with dill module.
@@ -2027,14 +2223,14 @@ Test results:
    Severity: Medium   Confidence: Medium
    CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
-   Location: ./scripts/database_manager.py:393:16
-392	        self.cursor.execute(
-393	            f"""
-394	            INSERT INTO {table}
-395	            ({columns})
-396	            VALUES ({placeholders})
-397	            """,
-398	            tuple(values.values())
+   Location: ./scripts/database_manager.py:420:16
+419	        self.cursor.execute(
+420	            f"""
+421	            INSERT INTO {table}
+422	            ({columns})
+423	            VALUES ({placeholders})
+424	            """,
+425	            tuple(values.values())
 
 --------------------------------------------------
 >> Issue: [B112:try_except_continue] Try, Except, Continue detected.
@@ -2085,53 +2281,99 @@ Test results:
    Severity: Medium   Confidence: Medium
    CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
-   Location: ./voir_database.py:38:21
-37	    # Données
-38	    cursor.execute(f"SELECT * FROM {table}")
-39	    rows = cursor.fetchall()
+   Location: ./scripts/recherche.py:61:24
+60	                cursor.execute(
+61	                    f"""
+62	                    SELECT rowid, *
+63	                    FROM {table}
+64	                    WHERE CAST({colonne} AS TEXT) LIKE ?
+65	                    """,
+66	                    (f"%{recherche}%",)
+
+--------------------------------------------------
+>> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
+   Location: ./scripts/voir_database.py:44:25
+43	
+44	        cursor.execute(f'SELECT * FROM "{table}"')
+45	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: ./tests/test_fuzzing.py:50:11
+49	
+50	    size = random.randint(0, 4096)
+51	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: ./tests/test_fuzzing.py:57:18
+56	
+57	    packet_type = random.choice([
+58	        1,      # PING
+59	        2,      # LOGIN
+60	        3,      # CHAT
+61	        4,      # MOVE
+62	        5,      # LOG
+63	        0,
+64	        6,
+65	        255,
+66	        65535,
+67	    ])
+68	
 
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 6644
+	Total lines of code: 7717
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 38
-		Medium: 6
+		Low: 39
+		Medium: 7
 		High: 0
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 0
-		Medium: 2
-		High: 42
+		Medium: 3
+		High: 43
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 6.46/10
+**Global score:** 6.62/10
 
 <details>
 <summary>Show Pylint report</summary>
 
-************* Module dashboard
-dashboard.py:47:0: C0304: Final newline missing (missing-final-newline)
-dashboard.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-dashboard.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module setup
 setup.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-************* Module voir_database
-voir_database.py:46:0: C0304: Final newline missing (missing-final-newline)
-voir_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-************* Module Ancien.jet_de_des
-Ancien/jet_de_des.py:3:0: C0304: Final newline missing (missing-final-newline)
-Ancien/jet_de_des.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/jet_de_des.py:2:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module dashboard
+dashboard.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+dashboard.py:5:0: E0611: No name 'generate_dashboard' in module 'scripts.generate_dashboard' (no-name-in-module)
+dashboard.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module Ancien.generate_map
+Ancien/generate_map.py:3:19: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/generate_map.py:94:0: C0304: Final newline missing (missing-final-newline)
+Ancien/generate_map.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/generate_map.py:1:0: R0914: Too many local variables (22/15) (too-many-locals)
+Ancien/generate_map.py:15:4: C0415: Import outside toplevel (numpy) (import-outside-toplevel)
+Ancien/generate_map.py:16:4: E0401: Unable to import 'PIL' (import-error)
+Ancien/generate_map.py:16:4: C0415: Import outside toplevel (PIL.Image, PIL.ImageDraw) (import-outside-toplevel)
+Ancien/generate_map.py:16:4: W0611: Unused ImageDraw imported from PIL (unused-import)
 ************* Module Ancien.main
 Ancien/main.py:162:41: C0303: Trailing whitespace (trailing-whitespace)
 Ancien/main.py:164:19: C0303: Trailing whitespace (trailing-whitespace)
@@ -2343,12 +2585,222 @@ Ancien/tresor.py:915:4: R0912: Too many branches (25/12) (too-many-branches)
 Ancien/tresor.py:973:4: C0116: Missing function or method docstring (missing-function-docstring)
 Ancien/tresor.py:974:8: W0621: Redefining name 'resultat' from outer scope (line 917) (redefined-outer-name)
 Ancien/tresor.py:992:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module Ancien.localisation
-Ancien/localisation.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/localisation.py:1:0: E0401: Unable to import 'requests' (import-error)
-Ancien/localisation.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/localisation.py:12:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
-Ancien/localisation.py:2:0: C0411: standard import "typing.Dict" should be placed before third party import "requests" (wrong-import-order)
+************* Module Ancien.inventaire
+Ancien/inventaire.py:26:0: C0301: Line too long (106/100) (line-too-long)
+Ancien/inventaire.py:87:0: C0301: Line too long (320/100) (line-too-long)
+Ancien/inventaire.py:88:0: C0301: Line too long (337/100) (line-too-long)
+Ancien/inventaire.py:89:0: C0301: Line too long (353/100) (line-too-long)
+Ancien/inventaire.py:90:0: C0301: Line too long (336/100) (line-too-long)
+Ancien/inventaire.py:91:0: C0301: Line too long (320/100) (line-too-long)
+Ancien/inventaire.py:92:0: C0301: Line too long (337/100) (line-too-long)
+Ancien/inventaire.py:225:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
+Ancien/inventaire.py:241:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:247:40: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:250:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:252:0: C0301: Line too long (103/100) (line-too-long)
+Ancien/inventaire.py:274:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:286:0: C0301: Line too long (153/100) (line-too-long)
+Ancien/inventaire.py:291:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:308:0: C0301: Line too long (117/100) (line-too-long)
+Ancien/inventaire.py:311:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:316:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
+Ancien/inventaire.py:317:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
+Ancien/inventaire.py:319:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:320:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:324:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:360:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:361:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:400:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:404:0: C0301: Line too long (104/100) (line-too-long)
+Ancien/inventaire.py:735:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/inventaire.py:742:0: C0301: Line too long (144/100) (line-too-long)
+Ancien/inventaire.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/inventaire.py:4:0: E0611: No name 'QTableWidget' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QTableWidgetItem' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QVBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QLabel' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QMessageBox' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QPushButton' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QSpinBox' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:4:0: E0611: No name 'QHBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/inventaire.py:15:0: E0611: No name 'QPixmap' in module 'PySide6.QtGui' (no-name-in-module)
+Ancien/inventaire.py:16:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
+Ancien/inventaire.py:19:0: E0401: Unable to import 'index_manager' (import-error)
+Ancien/inventaire.py:20:0: W0604: Using the global statement at the module level (global-at-module-level)
+Ancien/inventaire.py:23:0: W0604: Using the global statement at the module level (global-at-module-level)
+Ancien/inventaire.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:41:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+Ancien/inventaire.py:89:0: W1404: Implicit string concatenation found in list (implicit-str-concat)
+Ancien/inventaire.py:94:0: C0413: Import "from itertools import combinations" should be placed at the top of the module (wrong-import-position)
+Ancien/inventaire.py:100:0: W0404: Reimport 'combinations' (imported line 94) (reimported)
+Ancien/inventaire.py:100:0: C0413: Import "from itertools import combinations" should be placed at the top of the module (wrong-import-position)
+Ancien/inventaire.py:110:4: W0603: Using the global statement (global-statement)
+Ancien/inventaire.py:113:18: C0201: Consider iterating the dictionary directly instead of calling .keys() (consider-iterating-dictionary)
+Ancien/inventaire.py:173:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+Ancien/inventaire.py:177:15: R1701: Consider merging these isinstance calls to isinstance(obj, (Armes, equipement)) (consider-merging-isinstance)
+Ancien/inventaire.py:193:26: R1721: Unnecessary use of a comprehension, use dict(livres_enchant) instead. (unnecessary-comprehension)
+Ancien/inventaire.py:194:26: R1721: Unnecessary use of a comprehension, use dict(objets_enchantes) instead. (unnecessary-comprehension)
+Ancien/inventaire.py:195:26: R1721: Unnecessary use of a comprehension, use dict(autres_objets) instead. (unnecessary-comprehension)
+Ancien/inventaire.py:202:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/inventaire.py:211:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:214:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:221:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:224:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:225:40: C0121: Comparison 'self.nom_image != None' should be 'self.nom_image is not None' (singleton-comparison)
+Ancien/inventaire.py:227:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:230:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:237:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/inventaire.py:237:0: C0103: Class name "equipement" doesn't conform to PascalCase naming style (invalid-name)
+Ancien/inventaire.py:238:4: W0102: Dangerous default value [] as argument (dangerous-default-value)
+Ancien/inventaire.py:238:4: R0913: Too many arguments (7/5) (too-many-arguments)
+Ancien/inventaire.py:238:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+Ancien/inventaire.py:254:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:262:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/inventaire.py:263:4: W0102: Dangerous default value [] as argument (dangerous-default-value)
+Ancien/inventaire.py:263:4: R0913: Too many arguments (8/5) (too-many-arguments)
+Ancien/inventaire.py:263:4: R0917: Too many positional arguments (8/5) (too-many-positional-arguments)
+Ancien/inventaire.py:288:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:300:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/inventaire.py:305:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:307:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/inventaire.py:308:4: R0913: Too many arguments (7/5) (too-many-arguments)
+Ancien/inventaire.py:308:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+Ancien/inventaire.py:325:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:350:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+Ancien/inventaire.py:348:23: W0613: Unused argument 'inventaire' (unused-argument)
+Ancien/inventaire.py:357:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:357:0: R0913: Too many arguments (6/5) (too-many-arguments)
+Ancien/inventaire.py:357:0: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+Ancien/inventaire.py:405:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+Ancien/inventaire.py:426:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
+Ancien/inventaire.py:452:9: R1714: Consider merging these comparisons with 'in' by using 'type_objet in ('de base', 'base')'. Use a set instead if elements are hashable. (consider-using-in)
+Ancien/inventaire.py:357:0: R0912: Too many branches (19/12) (too-many-branches)
+Ancien/inventaire.py:370:17: W0612: Unused variable 'i' (unused-variable)
+Ancien/inventaire.py:458:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/inventaire.py:458:0: R0902: Too many instance attributes (13/7) (too-many-instance-attributes)
+Ancien/inventaire.py:460:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
+Ancien/inventaire.py:551:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/inventaire.py:553:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
+Ancien/inventaire.py:746:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/inventaire.py:17:0: C0411: standard import "asyncio" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt" (wrong-import-order)
+Ancien/inventaire.py:18:0: C0411: standard import "random" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt" (wrong-import-order)
+Ancien/inventaire.py:94:0: C0411: standard import "itertools.combinations" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt", "index_manager.mettre_a_jour_index" (wrong-import-order)
+Ancien/inventaire.py:100:0: C0411: standard import "itertools.combinations" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt", "index_manager.mettre_a_jour_index" (wrong-import-order)
+Ancien/inventaire.py:3:0: W0611: Unused import sys (unused-import)
+************* Module Ancien.table_de_conversion
+Ancien/table_de_conversion.py:32:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:37:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:80:0: C0301: Line too long (104/100) (line-too-long)
+Ancien/table_de_conversion.py:132:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:133:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:152:24: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:160:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:162:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:165:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:170:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:172:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:184:0: C0301: Line too long (139/100) (line-too-long)
+Ancien/table_de_conversion.py:187:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:197:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:199:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:202:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:215:0: C0301: Line too long (108/100) (line-too-long)
+Ancien/table_de_conversion.py:221:0: C0301: Line too long (139/100) (line-too-long)
+Ancien/table_de_conversion.py:224:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:226:0: C0301: Line too long (102/100) (line-too-long)
+Ancien/table_de_conversion.py:234:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:236:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:239:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:255:0: C0301: Line too long (126/100) (line-too-long)
+Ancien/table_de_conversion.py:262:0: C0301: Line too long (139/100) (line-too-long)
+Ancien/table_de_conversion.py:265:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:267:0: C0301: Line too long (113/100) (line-too-long)
+Ancien/table_de_conversion.py:268:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:276:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:278:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:281:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:300:0: C0301: Line too long (119/100) (line-too-long)
+Ancien/table_de_conversion.py:302:0: C0301: Line too long (144/100) (line-too-long)
+Ancien/table_de_conversion.py:310:0: C0301: Line too long (139/100) (line-too-long)
+Ancien/table_de_conversion.py:313:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:315:0: C0301: Line too long (124/100) (line-too-long)
+Ancien/table_de_conversion.py:324:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:326:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:329:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:350:0: C0301: Line too long (101/100) (line-too-long)
+Ancien/table_de_conversion.py:351:0: C0301: Line too long (137/100) (line-too-long)
+Ancien/table_de_conversion.py:352:0: C0301: Line too long (162/100) (line-too-long)
+Ancien/table_de_conversion.py:361:0: C0301: Line too long (139/100) (line-too-long)
+Ancien/table_de_conversion.py:364:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/table_de_conversion.py:366:0: C0301: Line too long (136/100) (line-too-long)
+Ancien/table_de_conversion.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/table_de_conversion.py:1:0: E0401: Unable to import 'index_manager' (import-error)
+Ancien/table_de_conversion.py:2:0: E0401: Unable to import 'inventaire' (import-error)
+Ancien/table_de_conversion.py:9:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/table_de_conversion.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/table_de_conversion.py:26:4: W0621: Redefining name 'lvs' from outer scope (line 5) (redefined-outer-name)
+Ancien/table_de_conversion.py:86:29: W0108: Lambda may not be necessary (unnecessary-lambda)
+Ancien/table_de_conversion.py:49:4: W0612: Unused variable 'niveaux_romains' (unused-variable)
+Ancien/table_de_conversion.py:124:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+Ancien/table_de_conversion.py:130:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/table_de_conversion.py:151:4: W0101: Unreachable code (unreachable)
+Ancien/table_de_conversion.py:153:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/table_de_conversion.py:154:8: W0612: Unused variable 'i' (unused-variable)
+Ancien/table_de_conversion.py:190:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/table_de_conversion.py:191:8: W0612: Unused variable 'i' (unused-variable)
+Ancien/table_de_conversion.py:227:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/table_de_conversion.py:227:0: R0914: Too many local variables (16/15) (too-many-locals)
+Ancien/table_de_conversion.py:228:8: W0612: Unused variable 'i' (unused-variable)
+Ancien/table_de_conversion.py:269:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/table_de_conversion.py:269:0: R0914: Too many local variables (18/15) (too-many-locals)
+Ancien/table_de_conversion.py:299:12: R0916: Too many boolean expressions in if statement (6/5) (too-many-boolean-expressions)
+Ancien/table_de_conversion.py:270:8: W0612: Unused variable 'i' (unused-variable)
+Ancien/table_de_conversion.py:317:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/table_de_conversion.py:317:0: R0914: Too many local variables (20/15) (too-many-locals)
+Ancien/table_de_conversion.py:350:11: W0125: Using a conditional statement with a constant value (using-constant-test)
+Ancien/table_de_conversion.py:318:8: W0612: Unused variable 'i' (unused-variable)
+Ancien/table_de_conversion.py:3:0: C0411: standard import "random" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
+Ancien/table_de_conversion.py:4:0: C0411: standard import "dataclasses.dataclass" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
+************* Module Ancien.grade_manager
+Ancien/grade_manager.py:11:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+Ancien/grade_manager.py:12:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+Ancien/grade_manager.py:13:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
+Ancien/grade_manager.py:14:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+Ancien/grade_manager.py:15:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
+Ancien/grade_manager.py:16:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+Ancien/grade_manager.py:17:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
+Ancien/grade_manager.py:18:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+Ancien/grade_manager.py:21:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+Ancien/grade_manager.py:22:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+Ancien/grade_manager.py:23:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
+Ancien/grade_manager.py:24:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+Ancien/grade_manager.py:25:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
+Ancien/grade_manager.py:26:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+Ancien/grade_manager.py:27:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
+Ancien/grade_manager.py:28:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+Ancien/grade_manager.py:43:0: C0305: Trailing newlines (trailing-newlines)
+Ancien/grade_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/grade_manager.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/grade_manager.py:1:26: W0613: Unused argument 'joueur' (unused-argument)
+Ancien/grade_manager.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/grade_manager.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/grade_manager.py:29:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module Ancien.configuration
+Ancien/configuration.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/configuration.py:1:0: E0611: No name 'QDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/configuration.py:1:0: E0611: No name 'QVBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/configuration.py:1:0: E0611: No name 'QPushButton' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/configuration.py:1:0: E0611: No name 'QLabel' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/configuration.py:1:0: E0611: No name 'QComboBox' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/configuration.py:1:0: E0611: No name 'QGroupBox' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/configuration.py:1:0: E0611: No name 'QHBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/configuration.py:10:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
+Ancien/configuration.py:13:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/configuration.py:13:0: R0902: Too many instance attributes (8/7) (too-many-instance-attributes)
+Ancien/configuration.py:13:0: R0903: Too few public methods (0/2) (too-few-public-methods)
+Ancien/configuration.py:96:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
 ************* Module Ancien.inv
 Ancien/inv.py:142:0: C0303: Trailing whitespace (trailing-whitespace)
 Ancien/inv.py:151:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -2468,44 +2920,61 @@ Ancien/index_manager.py:20:4: W0602: Using global for '_index_recherche' but no 
 Ancien/index_manager.py:49:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
 Ancien/index_manager.py:58:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
 Ancien/index_manager.py:76:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
-************* Module Ancien.grade_manager
-Ancien/grade_manager.py:11:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-Ancien/grade_manager.py:12:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-Ancien/grade_manager.py:13:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
-Ancien/grade_manager.py:14:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
-Ancien/grade_manager.py:15:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
-Ancien/grade_manager.py:16:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
-Ancien/grade_manager.py:17:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
-Ancien/grade_manager.py:18:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-Ancien/grade_manager.py:21:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-Ancien/grade_manager.py:22:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-Ancien/grade_manager.py:23:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
-Ancien/grade_manager.py:24:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
-Ancien/grade_manager.py:25:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
-Ancien/grade_manager.py:26:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
-Ancien/grade_manager.py:27:0: W0311: Bad indentation. Found 6 spaces, expected 8 (bad-indentation)
-Ancien/grade_manager.py:28:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-Ancien/grade_manager.py:43:0: C0305: Trailing newlines (trailing-newlines)
-Ancien/grade_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/grade_manager.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/grade_manager.py:1:26: W0613: Unused argument 'joueur' (unused-argument)
-Ancien/grade_manager.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/grade_manager.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/grade_manager.py:29:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module Ancien.configuration
-Ancien/configuration.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/configuration.py:1:0: E0611: No name 'QDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/configuration.py:1:0: E0611: No name 'QVBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/configuration.py:1:0: E0611: No name 'QPushButton' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/configuration.py:1:0: E0611: No name 'QLabel' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/configuration.py:1:0: E0611: No name 'QComboBox' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/configuration.py:1:0: E0611: No name 'QGroupBox' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/configuration.py:1:0: E0611: No name 'QHBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/configuration.py:10:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
-Ancien/configuration.py:13:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/configuration.py:13:0: R0902: Too many instance attributes (8/7) (too-many-instance-attributes)
-Ancien/configuration.py:13:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-Ancien/configuration.py:96:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+************* Module Ancien.banque
+Ancien/banque.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/banque.py:68:0: C0301: Line too long (102/100) (line-too-long)
+Ancien/banque.py:162:0: C0301: Line too long (113/100) (line-too-long)
+Ancien/banque.py:199:0: C0301: Line too long (173/100) (line-too-long)
+Ancien/banque.py:215:0: C0301: Line too long (160/100) (line-too-long)
+Ancien/banque.py:264:0: C0301: Line too long (118/100) (line-too-long)
+Ancien/banque.py:288:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/banque.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/banque.py:1:0: E0611: No name 'QVBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/banque.py:1:0: E0611: No name 'QMessageBox' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/banque.py:1:0: E0611: No name 'QInputDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/banque.py:1:0: E0611: No name 'QPushButton' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/banque.py:1:0: E0611: No name 'QDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/banque.py:2:0: E0401: Unable to import 'inventaire' (import-error)
+Ancien/banque.py:4:0: E0401: Unable to import 'horloge' (import-error)
+Ancien/banque.py:4:0: C2403: Module name "réinitialiser" contains a non-ASCII character, use an ASCII-only alias for import. (non-ascii-module-import)
+Ancien/banque.py:6:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/banque.py:6:0: R0902: Too many instance attributes (10/7) (too-many-instance-attributes)
+Ancien/banque.py:9:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
+Ancien/banque.py:91:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/banque.py:186:12: W0612: Unused variable 'mois_restants' (unused-variable)
+Ancien/banque.py:245:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/banque.py:260:11: C0121: Comparison 'kwargs.get('b', True) == True' should be 'kwargs.get('b', True) is True' if checking for the singleton value True, or 'kwargs.get('b', True)' if testing for truthiness (singleton-comparison)
+Ancien/banque.py:268:19: R1727: Boolean condition 'lignes and lignes[-1].strip() == 'reprise du jeu' or 'continuer' or 'charge'' will always evaluate to ''continuer'' (condition-evals-to-constant)
+Ancien/banque.py:290:28: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise json.JSONDecodeError from exc' (raise-missing-from)
+Ancien/banque.py:81:12: W0201: Attribute 'date_emprunt_mois' defined outside __init__ (attribute-defined-outside-init)
+Ancien/banque.py:82:12: W0201: Attribute 'date_emprunt_annees' defined outside __init__ (attribute-defined-outside-init)
+Ancien/banque.py:294:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/banque.py:299:7: C0121: Comparison 'b == False' should be 'b is False' if checking for the singleton value False, or 'not b' if testing for falsiness (singleton-comparison)
+Ancien/banque.py:3:0: C0411: standard import "json" should be placed before third party imports "PySide6.QtWidgets.QVBoxLayout", "inventaire.qtes" (wrong-import-order)
+Ancien/banque.py:5:0: C0411: standard import "os" should be placed before third party imports "PySide6.QtWidgets.QVBoxLayout", "inventaire.qtes", "horloge.réinitialiser" (wrong-import-order)
+************* Module Ancien.Secure_save
+Ancien/Secure_save.py:32:29: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/Secure_save.py:33:31: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/Secure_save.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/Secure_save.py:1:0: C0103: Module name "Secure_save" doesn't conform to snake_case naming style (invalid-name)
+Ancien/Secure_save.py:56:11: W0718: Catching too general exception Exception (broad-exception-caught)
+Ancien/Secure_save.py:69:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/Secure_save.py:102:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/Secure_save.py:108:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/Secure_save.py:124:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/Secure_save.py:156:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/Secure_save.py:174:8: W0707: Consider explicitly re-raising using 'except InvalidTag as exc' and 'raise ValueError('Mot de passe incorrect ou fichier corrompu.') from exc' (raise-missing-from)
+Ancien/Secure_save.py:179:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/Secure_save.py:200:19: W0718: Catching too general exception Exception (broad-exception-caught)
+Ancien/Secure_save.py:210:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/Secure_save.py:217:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/Secure_save.py:19:0: C0411: standard import "typing.Callable" should be placed before third party imports "cryptography.hazmat.primitives.hashes", "cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC", "cryptography.hazmat.primitives.ciphers.aead.AESGCM", "cryptography.exceptions.InvalidTag" (wrong-import-order)
+************* Module Ancien.localisation
+Ancien/localisation.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/localisation.py:1:0: E0401: Unable to import 'requests' (import-error)
+Ancien/localisation.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/localisation.py:12:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+Ancien/localisation.py:2:0: C0411: standard import "typing.Dict" should be placed before third party import "requests" (wrong-import-order)
 ************* Module Ancien.debugger
 Ancien/debugger.py:72:0: C0301: Line too long (121/100) (line-too-long)
 Ancien/debugger.py:167:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -2548,119 +3017,6 @@ Ancien/debugger.py:190:4: C0116: Missing function or method docstring (missing-f
 Ancien/debugger.py:194:19: W0718: Catching too general exception Exception (broad-exception-caught)
 Ancien/debugger.py:191:8: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 Ancien/debugger.py:211:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module Ancien.banque
-Ancien/banque.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/banque.py:68:0: C0301: Line too long (102/100) (line-too-long)
-Ancien/banque.py:162:0: C0301: Line too long (113/100) (line-too-long)
-Ancien/banque.py:199:0: C0301: Line too long (173/100) (line-too-long)
-Ancien/banque.py:215:0: C0301: Line too long (160/100) (line-too-long)
-Ancien/banque.py:264:0: C0301: Line too long (118/100) (line-too-long)
-Ancien/banque.py:288:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/banque.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/banque.py:1:0: E0611: No name 'QVBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/banque.py:1:0: E0611: No name 'QMessageBox' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/banque.py:1:0: E0611: No name 'QInputDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/banque.py:1:0: E0611: No name 'QPushButton' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/banque.py:1:0: E0611: No name 'QDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/banque.py:2:0: E0401: Unable to import 'inventaire' (import-error)
-Ancien/banque.py:4:0: E0401: Unable to import 'horloge' (import-error)
-Ancien/banque.py:4:0: C2403: Module name "réinitialiser" contains a non-ASCII character, use an ASCII-only alias for import. (non-ascii-module-import)
-Ancien/banque.py:6:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/banque.py:6:0: R0902: Too many instance attributes (10/7) (too-many-instance-attributes)
-Ancien/banque.py:9:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
-Ancien/banque.py:91:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/banque.py:186:12: W0612: Unused variable 'mois_restants' (unused-variable)
-Ancien/banque.py:245:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/banque.py:260:11: C0121: Comparison 'kwargs.get('b', True) == True' should be 'kwargs.get('b', True) is True' if checking for the singleton value True, or 'kwargs.get('b', True)' if testing for truthiness (singleton-comparison)
-Ancien/banque.py:268:19: R1727: Boolean condition 'lignes and lignes[-1].strip() == 'reprise du jeu' or 'continuer' or 'charge'' will always evaluate to ''continuer'' (condition-evals-to-constant)
-Ancien/banque.py:290:28: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise json.JSONDecodeError from exc' (raise-missing-from)
-Ancien/banque.py:81:12: W0201: Attribute 'date_emprunt_mois' defined outside __init__ (attribute-defined-outside-init)
-Ancien/banque.py:82:12: W0201: Attribute 'date_emprunt_annees' defined outside __init__ (attribute-defined-outside-init)
-Ancien/banque.py:294:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/banque.py:299:7: C0121: Comparison 'b == False' should be 'b is False' if checking for the singleton value False, or 'not b' if testing for falsiness (singleton-comparison)
-Ancien/banque.py:3:0: C0411: standard import "json" should be placed before third party imports "PySide6.QtWidgets.QVBoxLayout", "inventaire.qtes" (wrong-import-order)
-Ancien/banque.py:5:0: C0411: standard import "os" should be placed before third party imports "PySide6.QtWidgets.QVBoxLayout", "inventaire.qtes", "horloge.réinitialiser" (wrong-import-order)
-************* Module Ancien.table_de_conversion
-Ancien/table_de_conversion.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:33:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:81:0: C0301: Line too long (104/100) (line-too-long)
-Ancien/table_de_conversion.py:133:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:134:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:153:24: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:161:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:163:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:166:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:171:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:173:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:175:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:185:0: C0301: Line too long (139/100) (line-too-long)
-Ancien/table_de_conversion.py:188:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:198:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:200:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:203:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:216:0: C0301: Line too long (108/100) (line-too-long)
-Ancien/table_de_conversion.py:222:0: C0301: Line too long (139/100) (line-too-long)
-Ancien/table_de_conversion.py:225:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:227:0: C0301: Line too long (102/100) (line-too-long)
-Ancien/table_de_conversion.py:235:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:237:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:240:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:256:0: C0301: Line too long (126/100) (line-too-long)
-Ancien/table_de_conversion.py:263:0: C0301: Line too long (139/100) (line-too-long)
-Ancien/table_de_conversion.py:266:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:268:0: C0301: Line too long (113/100) (line-too-long)
-Ancien/table_de_conversion.py:269:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:277:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:279:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:282:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:301:0: C0301: Line too long (119/100) (line-too-long)
-Ancien/table_de_conversion.py:303:0: C0301: Line too long (144/100) (line-too-long)
-Ancien/table_de_conversion.py:311:0: C0301: Line too long (139/100) (line-too-long)
-Ancien/table_de_conversion.py:314:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:316:0: C0301: Line too long (124/100) (line-too-long)
-Ancien/table_de_conversion.py:325:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:327:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:330:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:351:0: C0301: Line too long (101/100) (line-too-long)
-Ancien/table_de_conversion.py:352:0: C0301: Line too long (137/100) (line-too-long)
-Ancien/table_de_conversion.py:353:0: C0301: Line too long (162/100) (line-too-long)
-Ancien/table_de_conversion.py:362:0: C0301: Line too long (139/100) (line-too-long)
-Ancien/table_de_conversion.py:365:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:367:0: C0301: Line too long (136/100) (line-too-long)
-Ancien/table_de_conversion.py:372:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:373:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:382:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:383:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/table_de_conversion.py:384:0: C0305: Trailing newlines (trailing-newlines)
-Ancien/table_de_conversion.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/table_de_conversion.py:2:0: E0401: Unable to import 'index_manager' (import-error)
-Ancien/table_de_conversion.py:3:0: E0401: Unable to import 'inventaire' (import-error)
-Ancien/table_de_conversion.py:9:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/table_de_conversion.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/table_de_conversion.py:27:4: W0621: Redefining name 'lvs' from outer scope (line 6) (redefined-outer-name)
-Ancien/table_de_conversion.py:87:29: W0108: Lambda may not be necessary (unnecessary-lambda)
-Ancien/table_de_conversion.py:50:4: W0612: Unused variable 'niveaux_romains' (unused-variable)
-Ancien/table_de_conversion.py:125:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
-Ancien/table_de_conversion.py:131:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/table_de_conversion.py:152:4: W0101: Unreachable code (unreachable)
-Ancien/table_de_conversion.py:154:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/table_de_conversion.py:155:8: W0612: Unused variable 'i' (unused-variable)
-Ancien/table_de_conversion.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/table_de_conversion.py:192:8: W0612: Unused variable 'i' (unused-variable)
-Ancien/table_de_conversion.py:228:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/table_de_conversion.py:228:0: R0914: Too many local variables (16/15) (too-many-locals)
-Ancien/table_de_conversion.py:229:8: W0612: Unused variable 'i' (unused-variable)
-Ancien/table_de_conversion.py:270:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/table_de_conversion.py:270:0: R0914: Too many local variables (18/15) (too-many-locals)
-Ancien/table_de_conversion.py:300:12: R0916: Too many boolean expressions in if statement (6/5) (too-many-boolean-expressions)
-Ancien/table_de_conversion.py:271:8: W0612: Unused variable 'i' (unused-variable)
-Ancien/table_de_conversion.py:318:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/table_de_conversion.py:318:0: R0914: Too many local variables (20/15) (too-many-locals)
-Ancien/table_de_conversion.py:351:11: W0125: Using a conditional statement with a constant value (using-constant-test)
-Ancien/table_de_conversion.py:319:8: W0612: Unused variable 'i' (unused-variable)
-Ancien/table_de_conversion.py:4:0: C0411: standard import "random" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
-Ancien/table_de_conversion.py:5:0: C0411: standard import "dataclasses.dataclass" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
 ************* Module Ancien.horloge
 Ancien/horloge.py:193:0: C0301: Line too long (137/100) (line-too-long)
 Ancien/horloge.py:198:0: C0301: Line too long (134/100) (line-too-long)
@@ -2680,35 +3036,6 @@ Ancien/horloge.py:221:19: W0622: Redefining built-in 'id' (redefined-builtin)
 Ancien/horloge.py:224:4: C2801: Unnecessarily calls dunder method __init__. Instantiate class directly. (unnecessary-dunder-call)
 Ancien/horloge.py:5:0: W0611: Unused Optional imported from typing (unused-import)
 Ancien/horloge.py:5:0: W0611: Unused Any imported from typing (unused-import)
-************* Module Ancien.Secure_save
-Ancien/Secure_save.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/Secure_save.py:1:0: C0103: Module name "Secure_save" doesn't conform to snake_case naming style (invalid-name)
-Ancien/Secure_save.py:13:0: E0401: Unable to import 'cryptography.hazmat.primitives' (import-error)
-Ancien/Secure_save.py:14:0: E0401: Unable to import 'cryptography.hazmat.primitives.kdf.pbkdf2' (import-error)
-Ancien/Secure_save.py:15:0: E0401: Unable to import 'cryptography.hazmat.primitives.ciphers.aead' (import-error)
-Ancien/Secure_save.py:16:0: E0401: Unable to import 'cryptography.exceptions' (import-error)
-Ancien/Secure_save.py:27:0: W0404: Reimport 'os' (imported line 1) (reimported)
-Ancien/Secure_save.py:27:0: C0413: Import "import os" should be placed at the top of the module (wrong-import-position)
-Ancien/Secure_save.py:28:0: W0404: Reimport 'datetime' (imported line 6) (reimported)
-Ancien/Secure_save.py:28:0: C0413: Import "from datetime import datetime" should be placed at the top of the module (wrong-import-position)
-Ancien/Secure_save.py:52:11: W0718: Catching too general exception Exception (broad-exception-caught)
-Ancien/Secure_save.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:72:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:88:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:107:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:139:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:157:8: W0707: Consider explicitly re-raising using 'except InvalidTag as exc' and 'raise ValueError('Mot de passe incorrect ou fichier corrompu.') from exc' (raise-missing-from)
-Ancien/Secure_save.py:162:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/Secure_save.py:183:19: W0718: Catching too general exception Exception (broad-exception-caught)
-Ancien/Secure_save.py:193:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:200:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/Secure_save.py:27:0: C0411: standard import "os" should be placed before third party imports "cryptography.hazmat.primitives.hashes", "cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC", "cryptography.hazmat.primitives.ciphers.aead.AESGCM", "cryptography.exceptions.InvalidTag" (wrong-import-order)
-Ancien/Secure_save.py:28:0: C0411: standard import "datetime.datetime" should be placed before third party imports "cryptography.hazmat.primitives.hashes", "cryptography.hazmat.primitives.kdf.pbkdf2.PBKDF2HMAC", "cryptography.hazmat.primitives.ciphers.aead.AESGCM", "cryptography.exceptions.InvalidTag" (wrong-import-order)
-Ancien/Secure_save.py:27:0: C0412: Imports from package os are not grouped (ungrouped-imports)
-Ancien/Secure_save.py:28:0: C0412: Imports from package datetime are not grouped (ungrouped-imports)
 ************* Module Ancien.admin_manager
 Ancien/admin_manager.py:8:0: C0301: Line too long (116/100) (line-too-long)
 Ancien/admin_manager.py:161:0: C0301: Line too long (110/100) (line-too-long)
@@ -2768,142 +3095,44 @@ Ancien/admin_manager.py:10:0: C0411: standard import "configparser" should be pl
 Ancien/admin_manager.py:11:0: C0412: Imports from package PySide6 are not grouped (ungrouped-imports)
 Ancien/admin_manager.py:4:0: W0611: Unused QTimer imported from PySide6.QtCore (unused-import)
 Ancien/admin_manager.py:8:0: W0611: Unused Objet imported from inventaire (unused-import)
-************* Module Ancien.generate_map
-Ancien/generate_map.py:3:19: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/generate_map.py:94:0: C0304: Final newline missing (missing-final-newline)
-Ancien/generate_map.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/generate_map.py:1:0: R0914: Too many local variables (22/15) (too-many-locals)
-Ancien/generate_map.py:15:4: C0415: Import outside toplevel (numpy) (import-outside-toplevel)
-Ancien/generate_map.py:16:4: E0401: Unable to import 'PIL' (import-error)
-Ancien/generate_map.py:16:4: C0415: Import outside toplevel (PIL.Image, PIL.ImageDraw) (import-outside-toplevel)
-Ancien/generate_map.py:16:4: W0611: Unused ImageDraw imported from PIL (unused-import)
-************* Module Ancien.inventaire
-Ancien/inventaire.py:26:0: C0301: Line too long (106/100) (line-too-long)
-Ancien/inventaire.py:87:0: C0301: Line too long (320/100) (line-too-long)
-Ancien/inventaire.py:88:0: C0301: Line too long (337/100) (line-too-long)
-Ancien/inventaire.py:89:0: C0301: Line too long (353/100) (line-too-long)
-Ancien/inventaire.py:90:0: C0301: Line too long (336/100) (line-too-long)
-Ancien/inventaire.py:91:0: C0301: Line too long (320/100) (line-too-long)
-Ancien/inventaire.py:92:0: C0301: Line too long (337/100) (line-too-long)
-Ancien/inventaire.py:225:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
-Ancien/inventaire.py:241:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:247:40: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:250:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:252:0: C0301: Line too long (103/100) (line-too-long)
-Ancien/inventaire.py:274:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:286:0: C0301: Line too long (153/100) (line-too-long)
-Ancien/inventaire.py:291:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:308:0: C0301: Line too long (117/100) (line-too-long)
-Ancien/inventaire.py:311:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:316:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
-Ancien/inventaire.py:317:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
-Ancien/inventaire.py:319:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:320:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:324:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:360:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:361:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:400:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:404:0: C0301: Line too long (104/100) (line-too-long)
-Ancien/inventaire.py:735:0: C0303: Trailing whitespace (trailing-whitespace)
-Ancien/inventaire.py:742:0: C0301: Line too long (144/100) (line-too-long)
-Ancien/inventaire.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/inventaire.py:4:0: E0611: No name 'QTableWidget' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QTableWidgetItem' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QVBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QLabel' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QMessageBox' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QPushButton' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QDialog' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QSpinBox' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:4:0: E0611: No name 'QHBoxLayout' in module 'PySide6.QtWidgets' (no-name-in-module)
-Ancien/inventaire.py:15:0: E0611: No name 'QPixmap' in module 'PySide6.QtGui' (no-name-in-module)
-Ancien/inventaire.py:16:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
-Ancien/inventaire.py:19:0: E0401: Unable to import 'index_manager' (import-error)
-Ancien/inventaire.py:20:0: W0604: Using the global statement at the module level (global-at-module-level)
-Ancien/inventaire.py:23:0: W0604: Using the global statement at the module level (global-at-module-level)
-Ancien/inventaire.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:41:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
-Ancien/inventaire.py:89:0: W1404: Implicit string concatenation found in list (implicit-str-concat)
-Ancien/inventaire.py:94:0: C0413: Import "from itertools import combinations" should be placed at the top of the module (wrong-import-position)
-Ancien/inventaire.py:100:0: W0404: Reimport 'combinations' (imported line 94) (reimported)
-Ancien/inventaire.py:100:0: C0413: Import "from itertools import combinations" should be placed at the top of the module (wrong-import-position)
-Ancien/inventaire.py:110:4: W0603: Using the global statement (global-statement)
-Ancien/inventaire.py:113:18: C0201: Consider iterating the dictionary directly instead of calling .keys() (consider-iterating-dictionary)
-Ancien/inventaire.py:173:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
-Ancien/inventaire.py:177:15: R1701: Consider merging these isinstance calls to isinstance(obj, (Armes, equipement)) (consider-merging-isinstance)
-Ancien/inventaire.py:193:26: R1721: Unnecessary use of a comprehension, use dict(livres_enchant) instead. (unnecessary-comprehension)
-Ancien/inventaire.py:194:26: R1721: Unnecessary use of a comprehension, use dict(objets_enchantes) instead. (unnecessary-comprehension)
-Ancien/inventaire.py:195:26: R1721: Unnecessary use of a comprehension, use dict(autres_objets) instead. (unnecessary-comprehension)
-Ancien/inventaire.py:202:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/inventaire.py:211:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:214:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:221:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:224:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:225:40: C0121: Comparison 'self.nom_image != None' should be 'self.nom_image is not None' (singleton-comparison)
-Ancien/inventaire.py:227:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:230:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:237:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/inventaire.py:237:0: C0103: Class name "equipement" doesn't conform to PascalCase naming style (invalid-name)
-Ancien/inventaire.py:238:4: W0102: Dangerous default value [] as argument (dangerous-default-value)
-Ancien/inventaire.py:238:4: R0913: Too many arguments (7/5) (too-many-arguments)
-Ancien/inventaire.py:238:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
-Ancien/inventaire.py:254:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:262:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/inventaire.py:263:4: W0102: Dangerous default value [] as argument (dangerous-default-value)
-Ancien/inventaire.py:263:4: R0913: Too many arguments (8/5) (too-many-arguments)
-Ancien/inventaire.py:263:4: R0917: Too many positional arguments (8/5) (too-many-positional-arguments)
-Ancien/inventaire.py:288:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:300:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/inventaire.py:305:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:307:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/inventaire.py:308:4: R0913: Too many arguments (7/5) (too-many-arguments)
-Ancien/inventaire.py:308:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
-Ancien/inventaire.py:325:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:350:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
-Ancien/inventaire.py:348:23: W0613: Unused argument 'inventaire' (unused-argument)
-Ancien/inventaire.py:357:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:357:0: R0913: Too many arguments (6/5) (too-many-arguments)
-Ancien/inventaire.py:357:0: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
-Ancien/inventaire.py:405:12: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
-Ancien/inventaire.py:426:4: R1702: Too many nested blocks (6/5) (too-many-nested-blocks)
-Ancien/inventaire.py:452:9: R1714: Consider merging these comparisons with 'in' by using 'type_objet in ('de base', 'base')'. Use a set instead if elements are hashable. (consider-using-in)
-Ancien/inventaire.py:357:0: R0912: Too many branches (19/12) (too-many-branches)
-Ancien/inventaire.py:370:17: W0612: Unused variable 'i' (unused-variable)
-Ancien/inventaire.py:458:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/inventaire.py:458:0: R0902: Too many instance attributes (13/7) (too-many-instance-attributes)
-Ancien/inventaire.py:460:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
-Ancien/inventaire.py:551:0: C0115: Missing class docstring (missing-class-docstring)
-Ancien/inventaire.py:553:8: R1725: Consider using Python 3 style super() without arguments (super-with-arguments)
-Ancien/inventaire.py:746:0: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:17:0: C0411: standard import "asyncio" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt" (wrong-import-order)
-Ancien/inventaire.py:18:0: C0411: standard import "random" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt" (wrong-import-order)
-Ancien/inventaire.py:94:0: C0411: standard import "itertools.combinations" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt", "index_manager.mettre_a_jour_index" (wrong-import-order)
-Ancien/inventaire.py:100:0: C0411: standard import "itertools.combinations" should be placed before third party imports "PySide6.QtWidgets.QTableWidget", "PySide6.QtGui.QPixmap", "PySide6.QtCore.Qt", "index_manager.mettre_a_jour_index" (wrong-import-order)
-Ancien/inventaire.py:3:0: W0611: Unused import sys (unused-import)
-************* Module client_python.main
-client_python/main.py:4:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-client_python/main.py:5:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-client_python/main.py:6:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-client_python/main.py:7:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-client_python/main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/main.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/main.py:2:0: C0411: standard import "time" should be placed before local import "client.Client" (wrong-import-order)
-************* Module client_python.client
-client_python/client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/client.py:40:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:61:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:81:15: W0718: Catching too general exception Exception (broad-exception-caught)
-************* Module client_python.__init__
-client_python/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
-************* Module scripts.transformateur
-scripts/transformateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/transformateur.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
-************* Module scripts.generate_problems_md
-scripts/generate_problems_md.py:64:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/generate_problems_md.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/generate_problems_md.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/generate_problems_md.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/generate_problems_md.py:75:7: W0718: Catching too general exception Exception (broad-exception-caught)
+************* Module tests.__init__
+tests/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
+************* Module tests.test_load
+tests/test_load.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_load.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_load.py:45:11: W0718: Catching too general exception Exception (broad-exception-caught)
+tests/test_load.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_load.py:85:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_sql_injection
+tests/test_sql_injection.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_sql_injection.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_sql_injection.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_sql_injection.py:70:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_sql_injection.py:103:11: W0718: Catching too general exception Exception (broad-exception-caught)
+tests/test_sql_injection.py:108:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_fuzzing
+tests/test_fuzzing.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_fuzzing.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
+tests/test_fuzzing.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_client
+tests/test_client.py:5:0: C0305: Trailing newlines (trailing-newlines)
+tests/test_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_client.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module security.vault
+security/vault.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:83:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:111:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+security/vault.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:3:0: W0611: Unused import base64 (unused-import)
 ************* Module scripts.update_database
 scripts/update_database.py:15:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/update_database.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -2921,6 +3150,44 @@ scripts/update_database.py:5:0: E0401: Unable to import 'database.update_perform
 scripts/update_database.py:5:0: E0611: No name 'update_performance' in module 'database' (no-name-in-module)
 scripts/update_database.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/update_database.py:5:0: W0611: Unused update_performance_database imported from database.update_performance (unused-import)
+************* Module scripts.transformateur
+scripts/transformateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/transformateur.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
+************* Module scripts.recherche
+scripts/recherche.py:197:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/recherche.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/recherche.py:37:4: W0621: Redefining name 'conn' from outer scope (line 9) (redefined-outer-name)
+scripts/recherche.py:38:4: W0621: Redefining name 'cursor' from outer scope (line 10) (redefined-outer-name)
+scripts/recherche.py:52:8: R1704: Redefining argument with the local name 'table' (redefined-argument-from-local)
+scripts/recherche.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/recherche.py:172:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.voir_database
+scripts/voir_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/voir_database.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/voir_database.py:14:22: W0621: Redefining name 'database' from outer scope (line 81) (redefined-outer-name)
+************* Module scripts.generate_problems_md
+scripts/generate_problems_md.py:64:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/generate_problems_md.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/generate_problems_md.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/generate_problems_md.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/generate_problems_md.py:75:7: W0718: Catching too general exception Exception (broad-exception-caught)
+************* Module scripts.database_manager
+scripts/database_manager.py:529:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database_manager.py:9:0: C0115: Missing class docstring (missing-class-docstring)
+scripts/database_manager.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:360:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:414:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:436:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:438:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:438:4: R0913: Too many arguments (6/5) (too-many-arguments)
+scripts/database_manager.py:438:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+scripts/database_manager.py:462:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:462:4: R0913: Too many arguments (9/5) (too-many-arguments)
+scripts/database_manager.py:462:4: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
+scripts/database_manager.py:492:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:492:4: R0913: Too many arguments (7/5) (too-many-arguments)
+scripts/database_manager.py:492:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
 ************* Module scripts.docs_score
 scripts/docs_score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/docs_score.py:1:0: E0401: Unable to import 'documentation.score' (import-error)
@@ -2938,31 +3205,96 @@ scripts/generate_dashboard.py:123:18: W0621: Redefining name 'rows' from outer s
 scripts/generate_dashboard.py:168:12: W0622: Redefining built-in 'id' (redefined-builtin)
 scripts/generate_dashboard.py:168:12: W0612: Unused variable 'id' (unused-variable)
 scripts/generate_dashboard.py:178:12: W0612: Unused variable 'documentation' (unused-variable)
-************* Module scripts.database_manager
-scripts/database_manager.py:465:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database_manager.py:9:0: C0115: Missing class docstring (missing-class-docstring)
-scripts/database_manager.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:333:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:387:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:409:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:411:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:411:4: R0913: Too many arguments (6/5) (too-many-arguments)
-scripts/database_manager.py:411:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
-scripts/database_manager.py:435:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:435:4: R0913: Too many arguments (9/5) (too-many-arguments)
-scripts/database_manager.py:435:4: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
-************* Module scripts.documentation.python_docs
-scripts/documentation/python_docs.py:185:0: C0301: Line too long (106/100) (line-too-long)
-scripts/documentation/python_docs.py:94:9: W0511: TODO / FIXME (fixme)
-scripts/documentation/python_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/python_docs.py:22:4: C0103: Variable name "MAX_SCORE" doesn't conform to snake_case naming style (invalid-name)
-scripts/documentation/python_docs.py:64:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/python_docs.py:9:0: R0912: Too many branches (17/12) (too-many-branches)
-************* Module scripts.documentation.navigation
-scripts/documentation/navigation.py:2:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-scripts/documentation/navigation.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/navigation.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.utils.calculateur
+scripts/utils/calculateur.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:50:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:53:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:57:0: W0311: Bad indentation. Found 13 spaces, expected 8 (bad-indentation)
+scripts/utils/calculateur.py:63:0: C0301: Line too long (144/100) (line-too-long)
+scripts/utils/calculateur.py:65:0: C0301: Line too long (121/100) (line-too-long)
+scripts/utils/calculateur.py:111:0: C0301: Line too long (105/100) (line-too-long)
+scripts/utils/calculateur.py:116:0: C0305: Trailing newlines (trailing-newlines)
+scripts/utils/calculateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/calculateur.py:4:0: E0401: Unable to import 'pandas' (import-error)
+scripts/utils/calculateur.py:6:0: E0401: Unable to import 'gestionnaire_de_fichiers' (import-error)
+scripts/utils/calculateur.py:17:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+scripts/utils/calculateur.py:28:17: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+scripts/utils/calculateur.py:28:46: W0612: Unused variable 'fichier' (unused-variable)
+scripts/utils/calculateur.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/calculateur.py:51:23: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/utils/calculateur.py:41:20: W0612: Unused variable 'sous_dossiers' (unused-variable)
+scripts/utils/calculateur.py:57:69: E0602: Undefined variable 'fichier' (undefined-variable)
+scripts/utils/calculateur.py:56:8: W0612: Unused variable 'values' (unused-variable)
+scripts/utils/calculateur.py:107:8: W0612: Unused variable 'existing_sheets' (unused-variable)
+scripts/utils/calculateur.py:5:0: C0411: standard import "datetime.datetime" should be placed before third party import "pandas" (wrong-import-order)
+scripts/utils/calculateur.py:6:0: W0611: Unused gestionnaire_de_fichiers imported as gf (unused-import)
+************* Module scripts.utils.gestionnaire
+scripts/utils/gestionnaire.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/gestionnaire.py:1:0: E0401: Unable to import 'calculateur' (import-error)
+scripts/utils/gestionnaire.py:2:0: E0401: Unable to import 'gestionnaire_de_fichiers' (import-error)
+scripts/utils/gestionnaire.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire.py:3:0: C0411: standard import "asyncio" should be placed before third party imports "calculateur", "gestionnaire_de_fichiers" (wrong-import-order)
+************* Module scripts.utils.file_chercheur
+scripts/utils/file_chercheur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/file_chercheur.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.utils.gestionnaire_de_fichiers
+scripts/utils/gestionnaire_de_fichiers.py:17:44: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/gestionnaire_de_fichiers.py:31:0: C0305: Trailing newlines (trailing-newlines)
+scripts/utils/gestionnaire_de_fichiers.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/gestionnaire_de_fichiers.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire_de_fichiers.py:16:12: W0612: Unused variable 'chemin_str' (unused-variable)
+************* Module scripts.documentation.markdown
+scripts/documentation/markdown.py:261:0: C0305: Trailing newlines (trailing-newlines)
+scripts/documentation/markdown.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/markdown.py:27:0: C0413: Import "import json" should be placed at the top of the module (wrong-import-position)
+scripts/documentation/markdown.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:42:11: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:56:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:91:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:97:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:122:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:129:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:134:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:146:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:151:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:163:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:168:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:177:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:181:4: C0103: Variable name "LIST_RULES" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/markdown.py:215:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:219:4: C0103: Variable name "TABLE_RULES" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/markdown.py:248:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:253:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:27:0: C0411: standard import "json" should be placed before local import "problem.add_problem" (wrong-import-order)
+************* Module scripts.documentation.score
+scripts/documentation/score.py:56:0: C0301: Line too long (113/100) (line-too-long)
+scripts/documentation/score.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/score.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/score.py:33:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/score.py:51:12: C0415: Import outside toplevel (json) (import-outside-toplevel)
+scripts/documentation/score.py:33:8: W0612: Unused variable 'e' (unused-variable)
+scripts/documentation/score.py:10:0: C0411: standard import "traceback" should be placed before local imports "markdown.check_markdown", "titles.check_titles", "spelling.check_spelling" (...) "organization.check_organization", "navigation.check_navigation", "report.generate_report" (wrong-import-order)
+************* Module scripts.documentation.links
+scripts/documentation/links.py:36:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/links.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/links.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:19:17: E0602: Undefined variable 'ROOT' (undefined-variable)
+scripts/documentation/links.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:72:4: W0612: Unused variable 'pattern' (unused-variable)
+scripts/documentation/links.py:85:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:141:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:169:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:226:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:1:0: W0611: Unused Path imported from pathlib (unused-import)
 ************* Module scripts.documentation.report
 scripts/documentation/report.py:27:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/report.py:28:0: C0301: Line too long (136/100) (line-too-long)
@@ -2989,84 +3321,12 @@ scripts/documentation/report.py:11:0: R0911: Too many return statements (10/6) (
 scripts/documentation/report.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/documentation/report.py:25:0: R0914: Too many local variables (17/15) (too-many-locals)
 scripts/documentation/report.py:35:31: C0321: More than one statement on a single line (multiple-statements)
-************* Module scripts.documentation.score
-scripts/documentation/score.py:52:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/score.py:53:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/score.py:54:0: C0301: Line too long (113/100) (line-too-long)
-scripts/documentation/score.py:58:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/score.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/score.py:33:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/score.py:33:8: W0612: Unused variable 'e' (unused-variable)
-scripts/documentation/score.py:10:0: C0411: standard import "traceback" should be placed before local imports "markdown.check_markdown", "titles.check_titles", "spelling.check_spelling" (...) "organization.check_organization", "navigation.check_navigation", "report.generate_report" (wrong-import-order)
-************* Module scripts.documentation.markdown
-scripts/documentation/markdown.py:261:0: C0305: Trailing newlines (trailing-newlines)
-scripts/documentation/markdown.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/markdown.py:27:0: C0413: Import "import json" should be placed at the top of the module (wrong-import-position)
-scripts/documentation/markdown.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:42:11: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:56:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:91:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:97:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:122:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:129:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:134:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:146:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:151:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:163:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:168:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:177:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:181:4: C0103: Variable name "LIST_RULES" doesn't conform to snake_case naming style (invalid-name)
-scripts/documentation/markdown.py:215:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:219:4: C0103: Variable name "TABLE_RULES" doesn't conform to snake_case naming style (invalid-name)
-scripts/documentation/markdown.py:248:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:253:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:27:0: C0411: standard import "json" should be placed before local import "problem.add_problem" (wrong-import-order)
-************* Module scripts.documentation.problem
-scripts/documentation/problem.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/problem.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/problem.py:2:0: W0611: Unused Any imported from typing (unused-import)
-************* Module scripts.documentation.spelling
-scripts/documentation/spelling.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-************* Module scripts.documentation.titles
-scripts/documentation/titles.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:82:0: C0301: Line too long (112/100) (line-too-long)
-scripts/documentation/titles.py:104:0: C0301: Line too long (102/100) (line-too-long)
-scripts/documentation/titles.py:125:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:146:0: C0301: Line too long (120/100) (line-too-long)
-scripts/documentation/titles.py:147:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:170:0: C0301: Line too long (129/100) (line-too-long)
-scripts/documentation/titles.py:171:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/titles.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:26:24: E0602: Undefined variable 'file' (undefined-variable)
-scripts/documentation/titles.py:51:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:66:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:90:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:113:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:131:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:153:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.documentation.links
-scripts/documentation/links.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/links.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:54:4: W0612: Unused variable 'pattern' (unused-variable)
-scripts/documentation/links.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:123:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:151:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:173:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:208:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.documentation.organization
-scripts/documentation/organization.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/organization.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module scripts.documentation.rust_docs
 scripts/documentation/rust_docs.py:20:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/rust_docs.py:21:34: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/rust_docs.py:58:28: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/rust_docs.py:61:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/rust_docs.py:64:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/rust_docs.py:75:62: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/rust_docs.py:76:62: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/rust_docs.py:86:0: C0301: Line too long (114/100) (line-too-long)
@@ -3079,34 +3339,56 @@ scripts/documentation/rust_docs.py:69:47: R1733: Unnecessary dictionary index lo
 scripts/documentation/rust_docs.py:65:20: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
 scripts/documentation/rust_docs.py:6:0: R0912: Too many branches (14/12) (too-many-branches)
 scripts/documentation/rust_docs.py:54:12: W0612: Unused variable 'file_elements' (unused-variable)
+************* Module scripts.documentation.organization
+scripts/documentation/organization.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/organization.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.documentation.python_docs
+scripts/documentation/python_docs.py:161:0: C0301: Line too long (116/100) (line-too-long)
+scripts/documentation/python_docs.py:175:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/python_docs.py:191:0: C0301: Line too long (106/100) (line-too-long)
+scripts/documentation/python_docs.py:220:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/python_docs.py:94:9: W0511: TODO / FIXME (fixme)
+scripts/documentation/python_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/python_docs.py:22:4: C0103: Variable name "MAX_SCORE" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/python_docs.py:64:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/python_docs.py:9:0: R0912: Too many branches (17/12) (too-many-branches)
+scripts/documentation/python_docs.py:9:0: R0915: Too many statements (51/50) (too-many-statements)
+************* Module scripts.documentation.spelling
+scripts/documentation/spelling.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module scripts.documentation.titles
+scripts/documentation/titles.py:61:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:83:0: C0301: Line too long (112/100) (line-too-long)
+scripts/documentation/titles.py:105:0: C0301: Line too long (102/100) (line-too-long)
+scripts/documentation/titles.py:126:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:147:0: C0301: Line too long (120/100) (line-too-long)
+scripts/documentation/titles.py:148:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:171:0: C0301: Line too long (129/100) (line-too-long)
+scripts/documentation/titles.py:172:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/titles.py:4:0: E0401: Unable to import 'utils.file_chercheur' (import-error)
+scripts/documentation/titles.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:27:24: E0602: Undefined variable 'file' (undefined-variable)
+scripts/documentation/titles.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:91:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:114:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:154:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:4:0: C0411: third party import "utils.file_chercheur.iter_files" should be placed before local import "problem.add_problem" (wrong-import-order)
+scripts/documentation/titles.py:1:0: W0611: Unused Path imported from pathlib (unused-import)
+************* Module scripts.documentation.navigation
+scripts/documentation/navigation.py:2:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+scripts/documentation/navigation.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/navigation.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.documentation.problem
+scripts/documentation/problem.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/problem.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/problem.py:2:0: W0611: Unused Any imported from typing (unused-import)
 ************* Module scripts.database.utils
 scripts/database/utils.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/database/utils.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/database/utils.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/database/utils.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.database.update_docs
-scripts/database/update_docs.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_docs.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_docs.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_docs.py:15:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-************* Module scripts.database.update_performance
-scripts/database/update_performance.py:2:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-scripts/database/update_performance.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_performance.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_performance.py:1:33: W0613: Unused argument 'db' (unused-argument)
-************* Module scripts.database.update_rust
-scripts/database/update_rust.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_rust.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_rust.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_rust.py:19:0: R0914: Too many local variables (21/15) (too-many-locals)
-scripts/database/update_rust.py:28:8: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
-************* Module scripts.database.update_python
-scripts/database/update_python.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_python.py:170:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_python.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_python.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_python.py:18:0: R0914: Too many local variables (23/15) (too-many-locals)
 ************* Module scripts.database.update_security
 scripts/database/update_security.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/database/update_security.py:96:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -3114,13 +3396,95 @@ scripts/database/update_security.py:1:0: C0114: Missing module docstring (missin
 scripts/database/update_security.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/database/update_security.py:13:0: R0914: Too many local variables (20/15) (too-many-locals)
 scripts/database/update_security.py:17:21: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
-************* Module tests.test_client
-tests/test_client.py:8:0: C0305: Trailing newlines (trailing-newlines)
-tests/test_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_client.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module tests.__init__
-tests/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+************* Module scripts.database.update_performance
+scripts/database/update_performance.py:2:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+scripts/database/update_performance.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_performance.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_performance.py:1:33: W0613: Unused argument 'db' (unused-argument)
+************* Module scripts.database.update_python
+scripts/database/update_python.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_python.py:170:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_python.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_python.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_python.py:18:0: R0914: Too many local variables (23/15) (too-many-locals)
+************* Module scripts.database.update_docs
+scripts/database/update_docs.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_docs.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_docs.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_docs.py:15:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+************* Module scripts.database.update_rust
+scripts/database/update_rust.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_rust.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_rust.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_rust.py:19:0: R0914: Too many local variables (21/15) (too-many-locals)
+scripts/database/update_rust.py:28:8: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
+************* Module client_python.__init__
+client_python/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
+************* Module client_python.main
+client_python/main.py:16:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/main.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/main.py:17:31: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:28:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:33:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:38:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:2:0: C0411: standard import "time" should be placed before local import "client.Client" (wrong-import-order)
+client_python/main.py:3:0: W0611: Unused Packet imported from packet (unused-import)
+client_python/main.py:6:0: W0611: Unused PingPacket imported from packets.ping (unused-import)
+client_python/main.py:7:0: W0611: Unused MovePacket imported from packets.move (unused-import)
+************* Module client_python.logs
+client_python/logs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/logs.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.packet
+client_python/packet.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packet.py:5:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packet.py:14:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packet.py:26:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:48:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:61:12: C0415: Import outside toplevel (packets.login.LoginPacket) (import-outside-toplevel)
+client_python/packet.py:66:12: C0415: Import outside toplevel (packets.chat.ChatPacket) (import-outside-toplevel)
+client_python/packet.py:71:12: C0415: Import outside toplevel (packets.move.MovePacket) (import-outside-toplevel)
+client_python/packet.py:76:12: C0415: Import outside toplevel (packets.ping.PingPacket) (import-outside-toplevel)
+client_python/packet.py:79:12: C0415: Import outside toplevel (packets.log.LogPacket) (import-outside-toplevel)
+************* Module client_python.client
+client_python/client.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:78:13: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:87:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:135:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:163:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/client.py:26:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/client.py:80:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:85:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/client.py:109:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:145:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:155:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/client.py:5:0: W0611: Unused LogPacket imported from packets.log (unused-import)
+************* Module client_python.packets
+client_python/packets/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module client_python.packets.chat
+client_python/packets/chat.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/chat.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/chat.py:15:4: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.packets.login
+client_python/packets/login.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/login.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/login.py:15:4: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.packets.move
+client_python/packets/move.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/move.py:6:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/move.py:19:4: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.packets.ping
+client_python/packets/ping.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/ping.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+************* Module client_python.packets.log
+client_python/packets/log.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/log.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_docs:[37:62]
 ==scripts.database.update_python:[25:54]
     run_number = int(
@@ -3147,12 +3511,8 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
         branch,
         commit
     )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
  (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
         report
@@ -3172,7 +3532,7 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
     # Flake8
     # ==========================================
  (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[20:37]
 ==Ancien.inventaire:[34:56]
     if nom not in joueur.stuff:
@@ -3192,24 +3552,19 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
     else:
         print(f" Type inattendu pour {nom}: {type(obj)}")
         return 0 (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
-==scripts.documentation.links:[12:25]
-==scripts.documentation.titles:[12:25]
-}
-
-
-def check_links():
-
-    files = list(Path(".").rglob("*.md"))
-
-    if not files:
-        return {
-            "score": 0,
-            "max_score": MAX_SCORE,
-            "results": {},
-            "problems": [{ (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_docs:[50:62]
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[19:27]
+==scripts.documentation.python_docs:[28:36]
+        if not any(
+            p in {
+                ".git",
+                "__pycache__",
+                ".venv",
+                "venv",
+                ".mypy_cache",
+                ".pytest_cache", (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==scripts.database.update_python:[38:54]
 ==scripts.database.update_rust:[36:52]
         "GITHUB_SHA",
         "unknown"
@@ -3224,21 +3579,21 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
     )
 
     # ==========================================
-    # Résumé Rust
+    # Quality metrics
     # ==========================================
  (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
-==scripts.database_manager:[440:447]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
-==scripts.documentation.links:[19:26]
+==scripts.database_manager:[467:474]
+        test,
+        severity,
+        confidence,
+        cwe,
+        info,
+        file,
+        line, (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[37:44]
 ==scripts.documentation.markdown:[59:66]
     if not files:
         return {
@@ -3247,7 +3602,7 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
             "results": {},
             "problems": [{
                 "file": "", (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.admin_manager:[196:202]
 ==Ancien.inventaire:[605:611]
         except json.JSONDecodeError:
@@ -3256,18 +3611,9 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
                 "Erreur",
                 "Le fichier objet_dispo.json n'est pas un fichier JSON valide.",
             ) (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
-==scripts.documentation.markdown:[59:65]
-==scripts.documentation.titles:[19:25]
-    if not files:
-        return {
-            "score": 0,
-            "max_score": MAX_SCORE,
-            "results": {},
-            "problems": [{ (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[59:69]
 ==scripts.documentation.markdown:[82:91]
-==scripts.documentation.titles:[41:51]
     return {
         "score": sum(results.values()),
         "max_score": MAX_SCORE,
@@ -3276,9 +3622,18 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
     }
 
 
-
-def check_single_h1(files, problems): (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+def extract_links(file):
+ (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.markdown:[59:65]
+==scripts.documentation.titles:[20:26]
+    if not files:
+        return {
+            "score": 0,
+            "max_score": MAX_SCORE,
+            "results": {},
+            "problems": [{ (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[82:91]
 ==Ancien.inventaire:[559:568]
         self.dossier_images = "assets"
@@ -3288,98 +3643,188 @@ tests/__init__.py:1:0: R0801: Similar lines in 2 files
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 7 colonnes
+        # Tableau avec 10 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
 ==Ancien.inventaire:[625:632]
-                else:
-                    image_label.setText("Erreur image")
             else:
-                image_label.setText("Aucune image")
-            self.table_widget.setCellWidget(row, 0, image_label)
+                image_label.setText("Erreur image")
+        else:
+            image_label.setText("Aucune image")
+        self.table_widget.setCellWidget(row, 0, image_label)
 
-            # 2. Nom (duplicate-code)
-tests/__init__.py:1:0: R0801: Similar lines in 2 files
+        # 2. Nom (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==tests.test_load:[17:24]
+==tests.test_sql_injection:[71:78]
+    try:
+
+        with socket.create_connection(
+            (HOST, PORT),
+            timeout=5,
+        ) as sock:
+ (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
-==scripts.database_manager:[415:420]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
+==scripts.database_manager:[442:447]
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 6.46/10
+Your code has been rated at 6.62/10
 
 
 </details>
 
 ##  📈 Coverage
 
-**Coverage:** 31%
+**Coverage:** 36%
 
 <details>
 <summary>Show coverage report</summary>
 
 ============================= test session starts ==============================
-platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0
+platform linux -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
 rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-7.1.0
-collected 1 item
+collected 2 items
 
-tests/test_client.py .                                                   [100%]
+tests/test_client.py F                                                   [ 50%]
+tests/test_sql_injection.py E                                            [100%]
 
+==================================== ERRORS ====================================
+________________________ ERROR at setup of test_payload ________________________
+file /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py, line 69
+  @pytest.mark.security
+  def test_payload(payload):
+E       fixture 'payload' not found
+>       available fixtures: cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:69
+=================================== FAILURES ===================================
+__________________________________ test_main ___________________________________
+
+    def test_main():
+>       main()
+
+tests/test_client.py:4: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+client_python/main.py:11: in main
+    client.connect()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <client_python.client.Client object at 0x7ff952712cf0>
+
+    def connect(self):
+        if self.connected:
+            return
+        timeout = 90
+        interval = 0.5
+        start_time = time.monotonic()
+        while True:
+            elapsed = time.monotonic() - start_time
+            if elapsed >= timeout:
+                self.connected = False
+>               raise SystemExit(1)
+E               SystemExit: 1
+
+client_python/client.py:36: SystemExit
+=============================== warnings summary ===============================
+../../../../../opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/site-packages/_pytest/config/__init__.py:1464
+  /opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: security
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+tests/test_fuzzing.py:16
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:16: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_fuzzing.py:29
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_fuzzing.py:47
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:47: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_fuzzing.py:54
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:54: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_fuzzing.py:74
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:74: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_load.py:13
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py:13: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_load.py:49
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py:49: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_load.py:84
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py:84: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:31
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:31: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:46
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:46: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:69
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:69: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:107
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:107: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 ================================ tests coverage ================================
-_______________ coverage: platform linux, python 3.14.6-final-0 ________________
+_______________ coverage: platform linux, python 3.14.7-final-0 ________________
 
-Name                        Stmts   Miss  Cover
------------------------------------------------
-client_python/__init__.py       0      0   100%
-client_python/client.py        44     21    52%
-client_python/main.py           7      0   100%
-dashboard.py                   24     24     0%
-setup.py                        2      2     0%
-tests/__init__.py               0      0   100%
-tests/test_client.py            3      0   100%
-voir_database.py               25     25     0%
------------------------------------------------
-TOTAL                         105     72    31%
-============================== 1 passed in 1.05s ===============================
-
-</details>
-
-##   🧪 Pytest
-
-
-| Result | Count |
-|--------|------:|
-| ✅ Passed | 1 |
-| ❌ Failed | 0 |
-| ⚠️ Errors | 0 |
-| ⏭️ Skipped | 0 |
-| **Total** | **1** |
-
-### 📂 Failed tests
-
-✅ No failed tests.
-
-<details>
-<summary>Show full pytest output</summary>
-
-============================= test session starts ==============================
-platform linux -- Python 3.14.6, pytest-9.1.1, pluggy-1.6.0 -- /opt/hostedtoolcache/Python/3.14.6/x64/bin/python
-cachedir: .pytest_cache
-rootdir: /home/runner/work/The-last-signal-/The-last-signal-
-configfile: pytest.ini
-testpaths: tests
-plugins: cov-7.1.0
-collecting ... collected 1 item
-
-tests/test_client.py::test_main PASSED                                   [100%]
-
-============================== 1 passed in 1.02s ===============================
+Name                                Stmts   Miss  Cover
+-------------------------------------------------------
+client_python/__init__.py               0      0   100%
+client_python/client.py                87     52    40%
+client_python/logs.py                   7      3    57%
+client_python/main.py                  28     17    39%
+client_python/packet.py                35     22    37%
+client_python/packets/__init__.py       4      0   100%
+client_python/packets/chat.py           8      3    62%
+client_python/packets/log.py            4      1    75%
+client_python/packets/login.py          9      4    56%
+client_python/packets/move.py          12      6    50%
+client_python/packets/ping.py           4      1    75%
+dashboard.py                           26     26     0%
+setup.py                                2      2     0%
+tests/__init__.py                       0      0   100%
+tests/test_client.py                    3      0   100%
+tests/test_fuzzing.py                  52     32    38%
+tests/test_load.py                     53     39    26%
+tests/test_sql_injection.py            64     48    25%
+-------------------------------------------------------
+TOTAL                                 398    256    36%
+=========================== short test summary info ============================
+FAILED tests/test_client.py::test_main - SystemExit: 1
+ERROR tests/test_sql_injection.py::test_payload
+============== 1 failed, 13 warnings, 1 error in 90.18s (0:01:30) ==============
 
 </details>
+
