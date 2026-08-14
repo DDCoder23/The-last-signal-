@@ -26,7 +26,8 @@ CREATE TABLE IF NOT EXISTS objets_dispo (
         'enchanted_book',
         'consumable',
         'material',
-        'armes'
+        'armes',
+        'basic',
     )),
 
     CHECK (prix_vente >= 0)
