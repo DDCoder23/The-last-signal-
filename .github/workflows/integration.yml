@@ -38,7 +38,8 @@ jobs:
       VAULT_KEY: ${{ secrets.VAULT_KEY }}
       DATABASE_PATH: ${{ github.workspace }}/database
       DATABASE_URL: sqlite:${{ github.workspace }}/database/the_last_signal.db
-  
+      DATABASE_Test_PATH: ${{ github.workspace }}/database-test
+      DATABASE_Test_URL: sqlite:${{ github.workspace }}/database-test/the_last_signal.db
     timeout-minutes: 20
 
     steps:
