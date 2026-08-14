@@ -20,7 +20,7 @@ def main():
     client.send_packet(
         ChatPacket("Momo dirige le jeu")
   )
-    response = client.receive_packet(type=PacketType.CHAT)
+    response = client.receive_packet(PacketType.CHAT)
     client.send_packet(
         ChatPacket("Le serveur est en rust")
   )
