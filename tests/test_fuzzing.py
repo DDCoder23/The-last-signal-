@@ -26,7 +26,7 @@ def create_packet(packet_type, payload):
         + body
     )
 
-
+@pytest.mark.security
 def send_packet(packet):
 
     try:
@@ -44,14 +44,14 @@ def send_packet(packet):
 
         return False
 
-
+@pytest.mark.security
 def random_payload():
 
     size = random.randint(0, 4096)
 
     return os.urandom(size)
 
-
+@pytest.mark.security
 def random_packet():
 
     packet_type = random.choice([
@@ -71,7 +71,7 @@ def random_packet():
         random_payload(),
     )
 
-
+@pytest.mark.security
 def main():
 
     print("# Packet Fuzzing")
