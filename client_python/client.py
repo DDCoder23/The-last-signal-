@@ -91,17 +91,17 @@ class Client:
                 header = self._recv_exact(4)
                 if header is None:
                     return None
-                    size = int.from_bytes(
+                size = int.from_bytes(
                             header,
                             "big"
                             )
-                    data = self._recv_exact(size)
-                    if data is None:
-                        return None
-                    packet = Packet.decode(data)
-                    if packet.packet_type == expected_type:
-                        return packet
-                    log(
+                data = self._recv_exact(size)
+                if data is None:
+                    return None
+                packet = Packet.decode(data)
+                if packet.packet_type == expected_type:
+                    return packet
+                log(
                              self,
                              "DEBUG",
                              f"Paquet ignoré : {packet.packet_type}"
