@@ -71,7 +71,7 @@ jobs:
             echo "## Python"
           } >> "$REPORT"
 
-          python -m compileall . >> "$REPORT" 2>&1
+          python -m compileall client_python tests >> "$REPORT" 2>&1
 
       - name: Rust build
         continue-on-error: true
