@@ -68,7 +68,7 @@ class Client:
         """
 
         if not self.connected:
-            log(self,"WARNING","client non connecté")
+        
             return
 
         try:
@@ -84,7 +84,7 @@ class Client:
             )
     def receive_packet(self, expected_type):
         if not self.connected:
-            log(self,"WARNING","client non connecté")
+            
             return None
         try:
             while self.connected:
