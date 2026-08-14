@@ -82,39 +82,39 @@ class Client:
             log(self,"ERROR",
                 f"Erreur d'envoi : {traceback.format_exc()}"
             )
-        def receive_packet(self, expected_type):
-            if not self.connected:
-                log(self,"WARNING","client non connecté")
-                return None
-            try:
-                while self.connected:
-                    header = self._recv_exact(4)
-                    if header is None:
-                        return None
-                        size = int.from_bytes(
+    def receive_packet(self, expected_type):
+        if not self.connected:
+            log(self,"WARNING","client non connecté")
+            return None
+        try:
+            while self.connected:
+                header = self._recv_exact(4)
+                if header is None:
+                    return None
+                    size = int.from_bytes(
                             header,
                             "big"
                             )
-                        data = self._recv_exact(size)
-                        if data is None:
-                            return None
-                        packet = Packet.decode(data)
-                        if packet.packet_type == expected_type:
-                            return packet
-                        log(
+                    data = self._recv_exact(size)
+                    if data is None:
+                        return None
+                    packet = Packet.decode(data)
+                    if packet.packet_type == expected_type:
+                        return packet
+                    log(
                              self,
                              "DEBUG",
                              f"Paquet ignoré : {packet.packet_type}"
                              )
-            except Exception:
-                log(
+        except Exception:
+            log(
                      self,
                      "ERROR",
                       f"Erreur de réception : "
                       f"{traceback.format_exc()}"
                      )
-                return None
             return None
+        return None
     def _recv_exact(self, size):
 
         if not self.connected:
