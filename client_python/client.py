@@ -33,7 +33,8 @@ class Client:
             elapsed = time.monotonic() - start_time
             if elapsed >= timeout:
                 self.connected = False
-                raise SystemExit(1)
+                time.sleep(90)
+                self.connect()
             self.socket = socket.socket(
             socket.AF_INET,
             socket.SOCK_STREAM
