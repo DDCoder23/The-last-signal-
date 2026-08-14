@@ -115,6 +115,7 @@ jobs:
           DATABASE_URL: ./data/security.db
           DATABASE_PATH: ./data
         run: |
+          mkdir -p server_rust/data
           cargo run > server.log 2>&1 &
 
           echo $! > server.pid
