@@ -12,9 +12,7 @@ def main():
     time.sleep(1)
     client2.connect()
     client.send_packet(LoginPacket("Momo"))
-    response = client.receive_packet(
-    type=PacketType.LOGIN
-    )
+    response = client.receive_packet(PacketType.LOGIN)
     
     print(response.username if response != None else "Vide")
     
@@ -26,16 +24,16 @@ def main():
     client.send_packet(
         ChatPacket("Le serveur est en rust")
   )
-    response = client.receive_packet(type=PacketType.CHAT)
+    response = client.receive_packet(PacketType.CHAT)
     print(response.message if response != None else "Vide")
     client.send_packet(
         ChatPacket("Le client est en python")
   )
-    response = client.receive_packet(type=PacketType.CHAT)
+    response = client.receive_packet(PacketType.CHAT)
     print(response.message if response != None else "Vide")
     client.send_packet(
         ChatPacket("Tests des trésors en cours...")
   )
-    response = client.receive_packet(type=PacketType.CHAT)
+    response = client.receive_packet(PacketType.CHAT)
     print(response.message if response != None else "Vide")
     client.disconnect()
