@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches: 
-      -main
+      - main
     
 
   workflow_dispatch:
@@ -16,7 +16,7 @@ on:
     - cron: "15 * * * *"
 concurrency:
   group: main-update
-  cancel-in-progress: false
+  queue: max
 permissions:
   actions: write
   contents: write
