@@ -3,6 +3,7 @@ import random
 import socket
 import struct
 import sys
+import pytest
 
 
 HOST = "127.0.0.1"
@@ -11,6 +12,8 @@ PORT = 5000
 TESTS = 1000
 
 
+
+@pytest.mark.security
 def create_packet(packet_type, payload):
 
     body = (
