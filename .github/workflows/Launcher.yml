@@ -9,14 +9,14 @@ on:
       -main
     
 
-  
-
   workflow_dispatch:
   workflow_call:
 
   schedule:
     - cron: "15 * * * *"
-
+concurrency:
+  group: main-update
+  cancel-in-progress: false
 permissions:
   actions: write
   contents: write
