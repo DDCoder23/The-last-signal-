@@ -9,6 +9,8 @@ permissions:
 env:
   RUST_PROJECT: server_rust
   CARGO_TERM_COLOR: never
+  DATABASE_Test_PATH: ${{ github.workspace }}/database-test
+  DATABASE_Test_URL: sqlite:${{ github.workspace }}/database-test/the_last_signal.db
 jobs:
   rust-report:
 
