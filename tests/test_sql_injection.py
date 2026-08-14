@@ -43,7 +43,7 @@ def create_login_packet(username: str) -> bytes:
         + body
     )
 
-
+@pytest.mark.security
 def receive_packet(sock):
 
     header = sock.recv(4)
@@ -66,7 +66,7 @@ def receive_packet(sock):
 
     return data
 
-
+@pytest.mark.security
 def test_payload(payload):
 
     try:
@@ -104,7 +104,7 @@ def test_payload(payload):
 
         return False, repr(error)
 
-
+@pytest.mark.security
 def main():
 
     print("# SQL Injection Security Test")
