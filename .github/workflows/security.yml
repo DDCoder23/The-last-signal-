@@ -112,7 +112,8 @@ jobs:
       - name: Start Rust server
         working-directory: server_rust
         env:
-          DATABASE_PATH: ./data/security.db
+          DATABASE_URL: ./data/security.db
+          DATABASE_PATH: ./data
         run: |
           cargo run > server.log 2>&1 &
 
