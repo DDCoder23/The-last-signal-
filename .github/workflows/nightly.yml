@@ -36,7 +36,5 @@ jobs:
 
   
 
-  sync:
-    needs: security
-    uses: ./.github/workflows/sync-ci.yml
+  
   
