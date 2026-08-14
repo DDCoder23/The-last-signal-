@@ -50,6 +50,7 @@ class Client:
                       "INFO",
                       "Connexion au serveur réussie."
                     )
+                return
                 
             except (ConnectionRefusedError, socket.timeout):
                 self.socket.close()
@@ -81,59 +82,39 @@ class Client:
             log(self,"ERROR",
                 f"Erreur d'envoi : {traceback.format_exc()}"
             )
-
-    def receive_packet(self,type):
-        """
-        Attend un Packet.
-        """
-
-        if not self.connected:
-            log(self,"WARNING","client non connecté")
-            return None
-
-        try:
-
-            header = self._recv_exact(4)
-
-            if header is None:
+        def receive_packet(self, expected_type):
+            if not self.connected:
+                log(self,"WARNING","client non connecté")
                 return None
-
-            size = int.from_bytes(
-                header,
-                "big"
-            )
-
-            data = self._recv_exact(size)
-
-            if data is None:
+            try:
+                while self.connected:
+                    header = self._recv_exact(4)
+                    if header is None:
+                        return None
+                        size = int.from_bytes(
+                            header,
+                            "big"
+                            )
+                        data = self._recv_exact(size)
+                        if data is None:
+                            return None
+                        packet = Packet.decode(data)
+                        if packet.packet_type == expected_type:
+                            return packet
+                        log(
+                             self,
+                             "DEBUG",
+                             f"Paquet ignoré : {packet.packet_type}"
+                             )
+            except Exception:
+                log(
+                     self,
+                     "ERROR",
+                      f"Erreur de réception : "
+                      f"{traceback.format_exc()}"
+                     )
                 return None
-            packet = Packet.decode(data)
-            
-            
-
-            # Paquet attendu
-            if packet.packet_type == type:
-                return packet
-            else:
-              log(
-                 self,
-                 "DEBUG",
-                 f"Paquet ignoré : {packet.packet_type}"
-                )
-                
-
-        
-
-        except Exception:
-
-            log(self,"ERROR",
-                f"Erreur de réception : {traceback.format_exc()}"
-            )
-
-            print(f"Erreur de réception : {traceback.format_exc()}"
-                 )
             return None
-
     def _recv_exact(self, size):
 
         if not self.connected:
