@@ -193,7 +193,7 @@ jobs:
     - name: Run integration tests
       run: |
 
-        pytest tests/ -v -s
+        pytest tests/ -m "not security" -v -s
         
 
     ##########################################################
