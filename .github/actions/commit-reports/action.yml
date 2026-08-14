@@ -63,12 +63,7 @@ runs:
             echo "Tentative $i/3"
             git fetch origin "${{ inputs.branch }}"
 
-            if ! git rebase "origin/${{ inputs.branch }}"
-            then
-            echo "Rebase impossible."
-            git rebase --abort || true
-            break
-            fi
+            
 
             echo "Branche actuelle :"
             git branch --show-current
