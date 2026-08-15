@@ -9,9 +9,31 @@ VALUES
 VALUES
     ('accounts.read', 'Lire les comptes'),
     ('accounts.write', 'Modifier les comptes'),
+    ('accounts.delete', 'delete accounts'),
     ('permissions.read', 'Lire les permissions'),
     ('permissions.write', 'Modifier les permissions'),
     ('roles.read', 'Lire les rôles'),
     ('roles.write', 'Modifier les rôles'),
     ('objets_dispo.read', 'Lire les objets disponibles'),
     ('objets_dispo.write', 'Modifier les objets disponibles');
+INSERT OR IGNORE INTO role_permissions (
+    role_id,
+    permission_id
+)
+SELECT
+    r.role_id,
+    p.permission_id
+FROM roles r
+CROSS JOIN permissions p
+WHERE r.role_name = 'SuperDev';
+INSERT OR IGNORE INTO role_permissions (
+    role_id,
+    permission_id
+)
+SELECT
+    r.role_id,
+    p.permission_id
+FROM roles r
+CROSS JOIN permissions p
+WHERE r.role_name = 'Dev'
+  AND p.permission_name != 'accounts.delete';
