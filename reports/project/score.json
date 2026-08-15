@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-14T12:04:40.207924",
+    "generated": "2026-08-15T12:20:35.167878",
     "score": 78,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 856,
+    "problem_count": 843,
     "details": {
         "markdown": {
             "score": 49,
@@ -1713,13 +1713,13 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 64,
-                "classes": 45,
-                "functions": 280,
-                "documented_modules": 1,
+                "modules": 63,
+                "classes": 44,
+                "functions": 268,
+                "documented_modules": 0,
                 "documented_classes": 3,
-                "documented_functions": 70,
-                "typed_functions": 31,
+                "documented_functions": 66,
+                "typed_functions": 23,
                 "todo": 4,
                 "long_functions": 11
             },
@@ -3186,84 +3186,6 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py",
                     "severity": "warning",
                     "message": "La fonction 'charger_etat_banque' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'derive_key'ligne 69 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'derive_key' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'ensure_profile_dir'ligne 102 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'atomic_write_zip'ligne 108 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'save_to_slot'ligne 124 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'load_from_slot'ligne 156 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La classe 'AutoSaver' ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'write_zip'ligne 139 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'write_zip' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'start'ligne 210 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'start' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'stop'ligne 217 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py",
-                    "severity": "warning",
-                    "message": "La fonction 'stop' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
