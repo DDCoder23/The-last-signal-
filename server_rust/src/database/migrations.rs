@@ -45,7 +45,7 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     "Admin@gmail.com",
     &password1_hash,
         "Cyril",
-        Some("Dev"),
+        "Dev",
 )
 .await?;
 
@@ -54,19 +54,18 @@ create_account(
     "Superadmin@gmail.com",
     &password2_hash,
     "Morgan",
-    Some("SuperDev"),
+    "SuperDev",
 )
 .await?;
 
     Ok(())
 }
-
 async fn create_account(
     pool: &SqlitePool,
     email: &str,
     password_hash: &str,
     account_name: &str,
-    role_name: Option<&str>,
+    role_name: &str,
 ) -> Result<(), sqlx::Error> {
     let mut tx = pool.begin().await?;
 
@@ -112,35 +111,20 @@ async fn create_account(
     };
 
     // ========================================================
-    // 2. Récupérer le rôle si un rôle est demandé
+    // 2. Récupérer le rôle
     // ========================================================
 
-    let role_id: Option<i64> = match role_name {
-        Some(role_name) => {
-            let role_id: Option<i64> = sqlx::query_scalar(
-                r#"
-                SELECT role_id
-                FROM roles
-                WHERE role_name = ?
-                "#,
-            )
-            .bind(role_name)
-            .fetch_optional(&mut *tx)
-            .await?;
-
-            match role_id {
-                Some(id) => Some(id),
-
-                // Le rôle demandé n'existe pas
-                None => {
-                    return Err(sqlx::Error::RowNotFound);
-                }
-            }
-        }
-
-        // Aucun rôle demandé
-        None => None,
-    };
+    let role_id: i64 = sqlx::query_scalar(
+        r#"
+        SELECT role_id
+        FROM roles
+        WHERE role_name = ?
+        "#,
+    )
+    .bind(role_name)
+    .fetch_optional(&mut *tx)
+    .await?
+    .ok_or(sqlx::Error::RowNotFound)?;
 
     // ========================================================
     // 3. Créer le compte
