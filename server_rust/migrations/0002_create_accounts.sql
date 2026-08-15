@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 
     account_name TEXT NOT NULL UNIQUE,
 
-    role_id INTEGER,
+    role_id INTEGER NOT NULL,
 
     FOREIGN KEY (user_id)
         REFERENCES users(user_id)
