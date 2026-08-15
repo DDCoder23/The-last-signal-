@@ -1,11 +1,26 @@
-CREATE TABLE IF NOT EXISTS perms (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    account_name TEXT NOT NULL,
-    perm TEXT NOT NULL,
-    UNIQUE (account_name, perm)
-    FOREIGN KEY (account_name)
-        REFERENCES accounts(account_name)
-        ON DELETE CASCADE
-        ON UPDATE CASCADE
+CREATE TABLE IF NOT EXISTS roles (
+    role_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role_name TEXT NOT NULL UNIQUE,
+    description TEXT
 );
 
+CREATE TABLE IF NOT EXISTS permissions (
+    permission_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    permission_name TEXT NOT NULL UNIQUE,
+    description TEXT
+);
+
+CREATE TABLE IF NOT EXISTS role_permissions (
+    role_id INTEGER NOT NULL,
+    permission_id INTEGER NOT NULL,
+
+    PRIMARY KEY (role_id, permission_id),
+
+    FOREIGN KEY (role_id)
+        REFERENCES roles(role_id)
+        ON DELETE CASCADE,
+
+    FOREIGN KEY (permission_id)
+        REFERENCES permissions(permission_id)
+        ON DELETE CASCADE
+);
