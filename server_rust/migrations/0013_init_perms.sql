@@ -15,7 +15,8 @@ VALUES
     ('roles.read', 'Lire les rôles'),
     ('roles.write', 'Modifier les rôles'),
     ('objets_dispo.read', 'Lire les objets disponibles'),
-    ('objets_dispo.write', 'Modifier les objets disponibles');
+    ('objets_dispo.write', 'Modifier les objets disponibles')
+    ('log.search', 'recherche dans les logs');
 INSERT OR IGNORE INTO role_permissions (
     role_id,
     permission_id
@@ -38,5 +39,6 @@ CROSS JOIN permissions p
 WHERE r.role_name = 'admin'
   AND p.permission_name NOT IN (
       'accounts.delete',
-      'roles.write'
+      'roles.write',
+      'log.search'
   );
