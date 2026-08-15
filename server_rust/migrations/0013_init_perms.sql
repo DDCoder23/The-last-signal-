@@ -4,7 +4,7 @@ VALUES
     ('modo', 'Modérateur'),
     ('admin', 'Administrateur'),
     ('Dev', 'Développeur'),
-    ('SuperDev', 'Développeur avec plus de perms')
+    ('SuperDev', 'Développeur avec plus de perms');
   INSERT INTO permissions (permission_name, description)
 VALUES
     ('accounts.read', 'Lire les comptes'),
@@ -35,5 +35,8 @@ SELECT
     p.permission_id
 FROM roles r
 CROSS JOIN permissions p
-WHERE r.role_name = 'Dev'
-  AND p.permission_name != 'accounts.delete';
+WHERE r.role_name = 'admin'
+  AND p.permission_name NOT IN (
+      'accounts.delete',
+      'roles.write'
+  );
