@@ -45,7 +45,7 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     "Admin@gmail.com",
     &password1_hash,
         "Cyril",
-        "Admin",
+        Some("Dev"),
 )
 .await?;
 
@@ -54,25 +54,26 @@ create_account(
     "Superadmin@gmail.com",
     &password2_hash,
     "Morgan",
-    "SuperAdmin",
+    Some("SuperDev"),
 )
 .await?;
 
     Ok(())
 }
 
-
-
-    async fn create_account(
+async fn create_account(
     pool: &SqlitePool,
     email: &str,
     password_hash: &str,
     account_name: &str,
-    perm: &str,
+    role_name: Option<&str>,
 ) -> Result<(), sqlx::Error> {
     let mut tx = pool.begin().await?;
 
-    // Chercher l'utilisateur existant
+    // ========================================================
+    // 1. Chercher l'utilisateur existant
+    // ========================================================
+
     let user_id: String = match sqlx::query_scalar(
         r#"
         SELECT user_id
@@ -110,37 +111,62 @@ create_account(
         }
     };
 
-    // Créer le compte
+    // ========================================================
+    // 2. Récupérer le rôle si un rôle est demandé
+    // ========================================================
+
+    let role_id: Option<i64> = match role_name {
+        Some(role_name) => {
+            let role_id: Option<i64> = sqlx::query_scalar(
+                r#"
+                SELECT role_id
+                FROM roles
+                WHERE role_name = ?
+                "#,
+            )
+            .bind(role_name)
+            .fetch_optional(&mut *tx)
+            .await?;
+
+            match role_id {
+                Some(id) => Some(id),
+
+                // Le rôle demandé n'existe pas
+                None => {
+                    return Err(sqlx::Error::RowNotFound);
+                }
+            }
+        }
+
+        // Aucun rôle demandé
+        None => None,
+    };
+
+    // ========================================================
+    // 3. Créer le compte
+    // ========================================================
+
     sqlx::query(
         r#"
         INSERT INTO accounts (
             user_id,
-            account_name
+            account_name,
+            role_id
         )
-        VALUES (?, ?)
+        VALUES (?, ?, ?)
         "#,
     )
     .bind(&user_id)
-    .bind(&account_name)
+    .bind(account_name)
+    .bind(role_id)
     .execute(&mut *tx)
     .await?;
 
-    // Créer la permission
-    sqlx::query(
-        r#"
-        INSERT INTO perms (
-            account_name,
-            perm
-        )
-        VALUES (?, ?)
-        "#,
-    )
-    .bind(&account_name)
-    .bind(perm)
-    .execute(&mut *tx)
-    .await?;
+    // ========================================================
+    // 4. Valider la transaction
+    // ========================================================
 
     tx.commit().await?;
 
     Ok(())
-    }
+}
