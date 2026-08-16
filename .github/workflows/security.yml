@@ -23,6 +23,9 @@ jobs:
     name: Security Analysis
 
     runs-on: ubuntu-latest
+    env: 
+      DATABASE_PATH: ${{ github.workspace }}/database-test
+      DATABASE_URL: sqlite:${{ github.workspace }}/database-test/the_last_signal.db
 
     steps:
 
@@ -94,6 +97,7 @@ jobs:
           
 
           mkdir -p reports/security
+          
         
 
           REPORT="reports/security/security-report-${GITHUB_RUN_NUMBER}.md"
@@ -113,12 +117,8 @@ jobs:
           cargo build
       - name: Start Rust server
         working-directory: server_rust
-        env:
-          DATABASE_URL: server_rust/data/security.db
-          DATABASE_PATH: server_rust/data
         run: |
-          mkdir -p server_rust/data
-          touch server_rust/data/security.db
+          
           cargo run > server.log 2>&1 &
 
           echo $! > server.pid
