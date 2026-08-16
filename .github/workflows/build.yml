@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 env:
   RUST_PROJECT: server_rust
   DATABASE_Test_PATH: ${{ github.workspace }}/database-test
