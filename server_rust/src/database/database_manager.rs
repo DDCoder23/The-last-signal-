@@ -1,8 +1,8 @@
 use std::str::FromStr;
 use std::path::Path;
 use sqlx::{
-    sqlite::SqliteConnectOptions,
-    SqlitePool,
+    sqlite::{SqliteConnectOptions, SqlitePool},
+    Error,
 };
 
 
