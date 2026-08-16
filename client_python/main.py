@@ -5,6 +5,7 @@ from .packets.chat import ChatPacket
 from .packets.login import LoginPacket
 from .packets.ping import PingPacket
 from .packets.move import MovePacket
+from security import vault
 def main():
     client = Client()
     client2 = Client()
