@@ -76,7 +76,62 @@ def add_secret(name, value):
 
     encrypt_vault(secrets)
 
+def get_secret(name):
+    """
+    Récupère un secret depuis le Vault.
 
+    Retourne None si le secret n'existe pas.
+    """
+
+    if not os.path.exists(VAULT_FILE):
+        return None
+
+    secrets = decrypt_vault()
+
+    return secrets.get(name)
+
+
+def generate_communication_key():
+    """
+    Génère une clé de communication aléatoire
+    de 64 octets (512 bits).
+    """
+
+    return os.urandom(64)
+
+
+def get_or_create_communication_key():
+    """
+    Récupère COMMUNICATION_KEY depuis le Vault.
+
+    Si elle n'existe pas, une nouvelle clé de 64 octets
+    est générée, encodée en Base64 puis enregistrée
+    dans le Vault.
+
+    Retourne la clé sous forme de bytes.
+    """
+
+    secret = get_secret("COMMUNICATION_KEY")
+
+    if secret is not None:
+
+        key = base64.b64decode(secret)
+
+        if len(key) != 64:
+            raise ValueError(
+                "COMMUNICATION_KEY doit faire exactement 64 octets."
+            )
+
+        return key
+
+    key = generate_communication_key()
+
+    add_secret(
+        "COMMUNICATION_KEY",
+        base64.b64encode(key).decode("ascii")
+    )
+
+    return key
 
 if __name__ == "__main__":
 
