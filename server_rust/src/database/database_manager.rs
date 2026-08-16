@@ -1,5 +1,6 @@
 use std::str::FromStr;
 use std::path::Path;
+
 use sqlx::{
     sqlite::{SqliteConnectOptions, SqlitePool},
     Error,
@@ -88,6 +89,9 @@ impl Database {
                     .map_err(sqlx::Error::Io)?;
             }
         }
+        std::fs::create_dir_all(path)
+        .map_err(sqlx::Error::Io)?;
+        
 
         // --------------------------------------------------
         // 3. Vérifier la DB si elle existe déjà
