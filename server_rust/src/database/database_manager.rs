@@ -1,50 +1,58 @@
 use std::str::FromStr;
 use std::path::Path;
 use sqlx::{
-    sqlite::SqliteConnectOptions,
-    SqlitePool,
+    sqlite::{SqliteConnectOptions, SqlitePool},
+    Error,
 };
+
 
 
 pub struct DatabaseManager {
     pool: SqlitePool,
 }
 
-impl DatabaseManager {
-    /// Crée un pool de connexions PostgreSQL.
-    pub async fn new(
-        database_path: &str,
+
+impl Database {
+    /// Vérifie si une base SQLite existante est corrompue.
+    ///
+    /// Retourne :
+    /// - Ok(false) → base valide
+    /// - Ok(true)  → base corrompue
+    /// - Err(...)  → impossible de vérifier la base
+    pub async fn is_database_corrupted(
         database_url: &str,
-    ) -> Result<Self, sqlx::Error> {
-        // Récupère le chemin du fichier SQLite.
-        let path = database_path
-            .strip_prefix("sqlite:")
-            .unwrap_or(database_path);
+    ) -> Result<bool, sqlx::Error> {
+        let options = SqliteConnectOptions::from_str(database_url)?
+            .create_if_missing(false);
 
-        // Crée le dossier parent s'il n'existe pas.
-        if let Some(parent) = Path::new(path).parent() {
-            if !parent.as_os_str().is_empty() {
-                std::fs::create_dir_all(parent)
-                    .map_err(sqlx::Error::Io)?;
-            }
-        }
-        
+        let pool = SqlitePool::connect_with(options).await?;
 
+        let integrity: String = sqlx::query_scalar(
+            "PRAGMA integrity_check"
+        )
+        .fetch_one(&pool)
+        .await?;
+
+        pool.close().await;
+
+        Ok(integrity.trim() != "ok")
+    }
+
+    /// Crée ou ouvre la base SQLite.
+    pub async fn create_database(
+        database_url: &str,
+    ) -> Result<SqlitePool, sqlx::Error> {
         let options = SqliteConnectOptions::from_str(database_url)?
             .create_if_missing(true);
 
         let pool = SqlitePool::connect_with(options).await?;
+
         sqlx::query("PRAGMA foreign_keys = ON")
-        .execute(&pool)
-        .await?;
-        
+            .execute(&pool)
+            .await?;
 
-        Ok(Self {
-            pool,
-        })
+        Ok(pool)
     }
-
-    /// Retourne le pool PostgreSQL.
     pub fn pool(&self) -> &SqlitePool {
         &self.pool
     }
@@ -58,4 +66,79 @@ impl DatabaseManager {
 
         Ok(())
     }
+
+    pub async fn new(
+        database_path: &str,
+        database_url: &str,
+    ) -> Result<Self, sqlx::Error> {
+        // --------------------------------------------------
+        // 1. Récupérer le chemin réel de la DB
+        // --------------------------------------------------
+
+        let path = database_path
+            .strip_prefix("sqlite:")
+            .unwrap_or(database_path);
+
+        // --------------------------------------------------
+        // 2. Créer le dossier parent si nécessaire
+        // --------------------------------------------------
+
+        if let Some(parent) = Path::new(path).parent() {
+            if !parent.as_os_str().is_empty() {
+                std::fs::create_dir_all(parent)
+                    .map_err(sqlx::Error::Io)?;
+            }
+        }
+
+        // --------------------------------------------------
+        // 3. Vérifier la DB si elle existe déjà
+        // --------------------------------------------------
+
+        if Path::new(path).exists() {
+            match Self::is_database_corrupted(database_url).await {
+                Ok(true) => {
+                    eprintln!(
+                        "⚠️ La base SQLite est corrompue. \
+                         Suppression et recréation..."
+                    );
+
+                    std::fs::remove_file(path)
+                        .map_err(sqlx::Error::Io)?;
+                }
+
+                Ok(false) => {
+                    eprintln!("✓ Base SQLite valide.");
+                }
+
+                Err(error) => {
+                    eprintln!(
+                        "❌ Impossible de vérifier l'intégrité \
+                         de la base SQLite : {error}"
+                    );
+
+                    // Très important :
+                    // on NE supprime pas la base ici.
+                    return Err(error);
+                }
+            }
+        }
+
+        // --------------------------------------------------
+        // 4. Créer / ouvrir la DB
+        // --------------------------------------------------
+
+        let pool = Self::create_database(database_url).await?;
+
+        // --------------------------------------------------
+        // 5. Retourner la structure
+        // --------------------------------------------------
+
+        Ok(Self {
+            pool,
+        })
+    }
 }
+
+
+
+
