@@ -99,6 +99,7 @@ jobs:
 
       - name: Commit changes
         run: |
+          sqlite3 database/the_last_signal.db "PRAGMA integrity_check;"
 
           git add reports database
           git status --short
