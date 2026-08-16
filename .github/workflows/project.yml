@@ -111,8 +111,9 @@ jobs:
           mkdir -p reports/project
 
           interrogate . \
-            -o markdown \
-            -f reports/project/python-docs.md
+           -o markdown \
+           -p reports/project/python-docs.md \
+           -f "$DOC_SCORE_MINIMUM"
 
       # =========================
       # Rust documentation
