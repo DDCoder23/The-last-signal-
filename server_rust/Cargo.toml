@@ -40,7 +40,7 @@ unicode-normalization = "0.1"
 
 # Pour la création de fichiers temporaires
 tempfile = "3.3"
-sqlx = { version = "0.8", features = [
+sqlx = { version = "0.9", features = [
     "runtime-tokio",
     "sqlite",
     "uuid",
