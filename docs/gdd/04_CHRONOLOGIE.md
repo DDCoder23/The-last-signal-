@@ -1,3 +1,4 @@
+[🏠 Documentation](../README.md) > [🎮 GDD](README.md)
 
 # 04 — Chronologie
 
