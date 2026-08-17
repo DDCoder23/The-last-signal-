@@ -126,12 +126,13 @@ jobs:
           cat "$REPORT" >> $GITHUB_STEP_SUMMARY
 
       - name: Upload report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: build-report-${{ matrix.os }}
           path: |
             reports/**
-            database/**
+          if-no-files-found: warn
       - name: 💾 Commit reports
         uses: ./.github/actions/commit-reports
         with:
