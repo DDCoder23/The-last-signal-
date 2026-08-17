@@ -22,6 +22,13 @@ runs:
   using: composite
 
   steps:
+    - name: Download build artifacts
+      if: inputs.report-type == 'build'
+      uses: actions/download-artifact@v4
+      with:
+        pattern: build-report-*
+        path: reports/build
+        merge-multiple: true
 
     - shell: bash
       run: |
