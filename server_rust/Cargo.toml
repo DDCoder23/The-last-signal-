@@ -14,7 +14,7 @@ aes-gcm = "0.11.0"
 pbkdf2 = "0.13"
 sha2 = "0.10"
 # Pour l'encodage/décodage Base64
-base64 = "0.21"
+base64 = "0.23"
 
 tracing = "0.1"
 tracing-subscriber = { version = "0.3", features = [
