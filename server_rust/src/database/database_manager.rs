@@ -12,7 +12,7 @@ pub struct DatabaseManager {
 }
 
 
-impl Database {
+impl DatabaseManager {
     /// Vérifie si une base SQLite existante est corrompue.
     ///
     /// Retourne :
@@ -78,6 +78,9 @@ impl Database {
         let path = database_path
             .strip_prefix("sqlite:")
             .unwrap_or(database_path);
+        let database_file = database_url
+            .strip_prefix("sqlite:")
+            .unwrap_or(database_url);
 
         // --------------------------------------------------
         // 2. Créer le dossier parent si nécessaire
@@ -97,7 +100,7 @@ impl Database {
         // 3. Vérifier la DB si elle existe déjà
         // --------------------------------------------------
 
-        if Path::new(path).exists() {
+        if Path::new(database_file).exists() {
             match Self::is_database_corrupted(database_url).await {
                 Ok(true) => {
                     eprintln!(
@@ -105,7 +108,7 @@ impl Database {
                          Suppression et recréation..."
                     );
 
-                    std::fs::remove_file(path)
+                    std::fs::remove_file(database_file)
                         .map_err(sqlx::Error::Io)?;
                 }
 
