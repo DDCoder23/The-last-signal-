@@ -40,4 +40,4 @@ updates:
     open-pull-requests-limit: 5
     ignore:
       - dependency-name: "actions/checkout"
-        versions: [">=v4"]
+        
