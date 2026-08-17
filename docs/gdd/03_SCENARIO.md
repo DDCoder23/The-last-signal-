@@ -183,7 +183,7 @@ Chaque décision du joueur affecte :
 
 ⬅️ [Retour au GDD](README.md)
 
-➡️ [Univers](04_CHRONOLOGIE.md)
+➡️ [Chronologie](04_CHRONOLOGIE.md)
 
 
 ---
