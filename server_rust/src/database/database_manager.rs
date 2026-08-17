@@ -82,16 +82,7 @@ impl DatabaseManager {
             .strip_prefix("sqlite:")
             .unwrap_or(database_url);
 
-        // --------------------------------------------------
-        // 2. Créer le dossier parent si nécessaire
-        // --------------------------------------------------
-
-        if let Some(parent) = Path::new(path).parent() {
-            if !parent.as_os_str().is_empty() {
-                std::fs::create_dir_all(parent)
-                    .map_err(sqlx::Error::Io)?;
-            }
-        }
+        
         std::fs::create_dir_all(path)
         .map_err(sqlx::Error::Io)?;
         
