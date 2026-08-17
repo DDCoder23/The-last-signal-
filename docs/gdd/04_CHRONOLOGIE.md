@@ -198,6 +198,25 @@ Chaque événement peut recevoir l'un des statuts suivants :
 
 > **Note de développement :** ce document doit évoluer avec le scénario. Les événements encore non définis ne doivent pas être présentés comme des faits établis de l'univers.
 >
+## 📚 Documents liés
+
+- [🎮 Game Design Document](README.md)
+- [Vision](01_VISION.md)
+- [🌍 Univers](02_UNIVERS.md)
+- [📜 Scénario](03_SCENARIO.md)
+
+---
+
+## Navigation
+
+⬅️ [Retour au GDD](README.md)
+
+➡️ [Univers](04_CHRONOLOGIE.md)
+
+
+---
+
+
 Documents du GDD
 01_VISION.md — Vision générale du projet.
 02_UNIVERS.md — Univers, contexte et éléments constitutifs du monde.
