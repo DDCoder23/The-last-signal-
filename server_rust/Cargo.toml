@@ -28,7 +28,7 @@ flate2 = "1"
 walkdir = "2"
 
 # Pour la gestion des fichiers ZIP
-zip = "0.6"
+zip = "8.6"
 
 # Pour la gestion des dates (équivalent à `datetime` en Python)
 
