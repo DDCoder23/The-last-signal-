@@ -165,7 +165,7 @@ impl Tresor {
         if jet_de_des(20, 1) >= 4 {
             niveau_1.insert(
                 "pain".to_string(),
-                rng.gen_range(3..=5),
+                rng.random_range(3..=5),
             );
         }
 
@@ -285,7 +285,7 @@ impl Tresor {
         ] {
             quantite_objets.insert(
                 objet.to_string(),
-                rng.gen_range(2..=9),
+                rng.random_range(2..=9),
             );
         }
         let mut sous_loot: HashMap<String, HashMap<String, f64>> =
