@@ -4,13 +4,15 @@ on:
   workflow_dispatch:
 
   schedule:
+    # Vérification toutes les 5 minutes
     - cron: "*/5 * * * *"
 
   workflow_run:
     workflows:
-      - "Python CI Report"
-      - "Integration"
-      - "Documentation Quality"
+      - "launcher"
+      - "Security Report"
+      - "Nightly"
+    
     types:
       - requested
       - in_progress
@@ -21,8 +23,10 @@ permissions:
   contents: read
 
 env:
+  # Temps maximum d'exécution RÉELLE.
+  # Le temps passé en queued/pending n'est pas compté.
   MAX_RUNTIME_MINUTES: 120
-  MAX_QUEUE_MINUTES: 60
+
   WATCHDOG_NAME: "Workflow Watchdog"
 
 jobs:
@@ -31,10 +35,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check workflows
+      - name: Check running workflows
         env:
           GH_TOKEN: ${{ github.token }}
+
         shell: bash
+
         run: |
           set -euo pipefail
 
@@ -45,16 +51,16 @@ jobs:
           echo "Repository : ${GITHUB_REPOSITORY}"
           echo "Date       : $(date -u)"
           echo "Max runtime: ${MAX_RUNTIME_MINUTES} min"
-          echo "Max queue  : ${MAX_QUEUE_MINUTES} min"
           echo
 
           NOW=$(date +%s)
 
           # ==========================================================
-          # WORKFLOWS EN COURS D'EXÉCUTION
+          # RÉCUPÉRATION DES WORKFLOWS EN COURS
           # ==========================================================
 
           echo "Recherche des workflows en cours..."
+          echo
 
           gh api \
             -H "Accept: application/vnd.github+json" \
@@ -62,29 +68,77 @@ jobs:
             "/repos/${GITHUB_REPOSITORY}/actions/runs?status=in_progress&per_page=100" \
             > /tmp/running.json
 
+          # ==========================================================
+          # ANALYSE
+          # ==========================================================
+
           jq -c '.workflow_runs[]' /tmp/running.json |
           while IFS= read -r RUN; do
 
             RUN_ID=$(echo "$RUN" | jq -r '.id')
             NAME=$(echo "$RUN" | jq -r '.name')
+
+            CREATED=$(echo "$RUN" | jq -r '.created_at')
             STARTED=$(echo "$RUN" | jq -r '.run_started_at')
 
+            # ------------------------------------------------------
             # Ne jamais surveiller le watchdog lui-même
+            # ------------------------------------------------------
+
             if [ "$NAME" = "$WATCHDOG_NAME" ]; then
               continue
             fi
 
+            # ------------------------------------------------------
+            # Vérification des timestamps
+            # ------------------------------------------------------
+
+            if [ "$STARTED" = "null" ] || [ -z "$STARTED" ]; then
+              echo "[SKIP] $NAME"
+              echo "       ID : $RUN_ID"
+              echo "       Aucun run_started_at disponible."
+              echo
+              continue
+            fi
+
+            CREATED_TS=$(date -d "$CREATED" +%s)
             STARTED_TS=$(date -d "$STARTED" +%s)
-            AGE=$((NOW - STARTED_TS))
-            AGE_MIN=$((AGE / 60))
+
+            TOTAL_AGE=$((NOW - CREATED_TS))
+            RUNTIME=$((NOW - STARTED_TS))
+
+            TOTAL_MIN=$((TOTAL_AGE / 60))
+            RUNTIME_MIN=$((RUNTIME / 60))
+
+            # ------------------------------------------------------
+            # AFFICHAGE
+            # ------------------------------------------------------
 
             echo "[RUNNING] $NAME"
-            echo "          ID      : $RUN_ID"
-            echo "          durée   : ${AGE_MIN} min"
+            echo "          ID          : $RUN_ID"
+            echo "          créé depuis : ${TOTAL_MIN} min"
+            echo "          exécuté     : ${RUNTIME_MIN} min"
+            echo "          created_at  : $CREATED"
+            echo "          started_at  : $STARTED"
 
-            if [ "$AGE_MIN" -ge "$MAX_RUNTIME_MINUTES" ]; then
+            # ------------------------------------------------------
+            # Protection contre un timestamp incohérent
+            # ------------------------------------------------------
 
-              echo "          ⚠️ Durée maximale dépassée."
+            if [ "$RUNTIME" -lt 0 ]; then
+              echo "          ⚠️ Timestamp incohérent."
+              echo
+              continue
+            fi
+
+            # ------------------------------------------------------
+            # Vérification du temps d'exécution RÉEL
+            # ------------------------------------------------------
+
+            if [ "$RUNTIME_MIN" -ge "$MAX_RUNTIME_MINUTES" ]; then
+
+              echo
+              echo "          ⚠️ Temps d'exécution maximal dépassé."
               echo "          → FORCE-CANCEL"
 
               gh api \
@@ -97,7 +151,10 @@ jobs:
 
             else
 
+              REMAINING=$((MAX_RUNTIME_MINUTES - RUNTIME_MIN))
+
               echo "          → OK"
+              echo "          → marge restante : ${REMAINING} min"
 
             fi
 
@@ -106,59 +163,24 @@ jobs:
           done
 
           # ==========================================================
-          # WORKFLOWS EN FILE D'ATTENTE
+          # IMPORTANT
+          # ==========================================================
+          #
+          # Les workflows queued/pending ne sont volontairement PAS
+          # annulés.
+          #
+          # Ton dépôt utilise :
+          #
+          #   concurrency:
+          #     group: main-update
+          #     queue: max
+          #
+          # Un workflow peut donc rester pending volontairement.
+          #
           # ==========================================================
 
-          echo "Recherche des workflows en attente..."
-
-          gh api \
-            -H "Accept: application/vnd.github+json" \
-            -H "X-GitHub-Api-Version: 2026-03-10" \
-            "/repos/${GITHUB_REPOSITORY}/actions/runs?status=queued&per_page=100" \
-            > /tmp/queued.json
-
-          jq -c '.workflow_runs[]' /tmp/queued.json |
-          while IFS= read -r RUN; do
-
-            RUN_ID=$(echo "$RUN" | jq -r '.id')
-            NAME=$(echo "$RUN" | jq -r '.name')
-            CREATED=$(echo "$RUN" | jq -r '.created_at')
-
-            if [ "$NAME" = "$WATCHDOG_NAME" ]; then
-              continue
-            fi
-
-            CREATED_TS=$(date -d "$CREATED" +%s)
-            AGE=$((NOW - CREATED_TS))
-            AGE_MIN=$((AGE / 60))
-
-            echo "[QUEUED] $NAME"
-            echo "         ID       : $RUN_ID"
-            echo "         attente  : ${AGE_MIN} min"
-
-            if [ "$AGE_MIN" -ge "$MAX_QUEUE_MINUTES" ]; then
-
-              echo "         ⚠️ Attente maximale dépassée."
-              echo "         → CANCEL"
-
-              gh api \
-                --method POST \
-                -H "Accept: application/vnd.github+json" \
-                -H "X-GitHub-Api-Version: 2026-03-10" \
-                "/repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/cancel"
-
-              echo "         ✅ Annulation demandée."
-
-            else
-
-              echo "         → OK"
-
-            fi
-
-            echo
-
-          done
-
+          echo "Les workflows queued/pending sont ignorés."
+          echo
           echo "========================================"
           echo "Surveillance terminée."
           echo "========================================"
