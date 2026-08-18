@@ -26,8 +26,6 @@ VALUES
     ('sac', 'material', 'sac.png', 5),
     ('corde', 'material', 'corde.png', 5),
 
-    ('chargeur', 'equipment', 'chargeur.png', 120),
-    ('Carreau d'' arbalète', 'equipment', 'carreau d'' arbalète.png', 15),
 
     ('torche', 'material', 'torche.png', 5),
     ('chargeur', 'muni', 'chargeur.png', 120),
