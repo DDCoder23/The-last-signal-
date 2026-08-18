@@ -90,12 +90,6 @@
         "module": "markdown"
     },
     {
-        "file": "docs/gdd/04_CHRONOLOGIE.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
         "file": "docs/gdd/13_COMPETENCES.md",
         "severity": "error",
         "message": "Fichier vide.",
@@ -211,8 +205,8 @@
     },
     {
         "file": "docs/gdd/05_FACTIONS.md",
-        "severity": "error",
-        "message": "Fichier vide.",
+        "severity": "warning",
+        "message": "Contenu très faible.",
         "module": "markdown"
     },
     {
@@ -645,6 +639,78 @@
         "file": "docs/QRB_flake8_error.md",
         "severity": "warning",
         "message": "Ligne 1878 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 9 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 11 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 17 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 35 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 50 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 78 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 110 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 112 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 132 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 146 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 154 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "Ligne 199 > 120 caractères.",
         "module": "markdown"
     },
     {
@@ -1128,12 +1194,6 @@
         "module": "titles"
     },
     {
-        "file": "docs/gdd/04_CHRONOLOGIE.md",
-        "severity": "error",
-        "message": "docs/gdd/04_CHRONOLOGIE.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
         "file": "docs/gdd/13_COMPETENCES.md",
         "severity": "error",
         "message": "docs/gdd/13_COMPETENCES.md: contient 0 titres H1 (1 attendu).",
@@ -1488,6 +1548,12 @@
         "module": "titles"
     },
     {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "docs/gdd/04_CHRONOLOGIE.md:201 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
         "file": "docs/gdd/03_SCENARIO.md",
         "severity": "warning",
         "message": "docs/gdd/03_SCENARIO.md:23 titre sans ligne vide avant.",
@@ -1563,6 +1629,18 @@
         "file": "docs/QRB_flake8_error.md",
         "severity": "warning",
         "message": "docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "docs/gdd/04_CHRONOLOGIE.md:201 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/gdd/04_CHRONOLOGIE.md",
+        "severity": "warning",
+        "message": "docs/gdd/04_CHRONOLOGIE.md:210 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
         "module": "titles"
     },
     {
