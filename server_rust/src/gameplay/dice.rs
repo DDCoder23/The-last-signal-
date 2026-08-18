@@ -1,4 +1,4 @@
-use rand::Rng;
+use rand::{Rng,RngExt};
 
 pub fn jet_de_des(face: u32, nb: u32) -> u32 {
     let mut rng = rand::rng();
