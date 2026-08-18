@@ -26,7 +26,7 @@ log = "0.4"
 flexi_logger = "0.31"
 flate2 = "1"
 walkdir = "2"
-
+rand_core = { version = "0.6.4", features = ["getrandom"] }
 # Pour la gestion des fichiers ZIP
 zip = "8.6"
 
