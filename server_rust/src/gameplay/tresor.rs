@@ -1,8 +1,9 @@
-use rand::Rng;
+use rand::{Rng,RngExt};
 use sqlx::SqlitePool;
 use std::collections::HashMap;
 use log::debug;
 use crate::gameplay::dice::jet_de_des;
+
 
 const PA: u32 = 1;
 const PO: u32 = PA * 10;
