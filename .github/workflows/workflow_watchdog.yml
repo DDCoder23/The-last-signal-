@@ -2,6 +2,13 @@ name: Workflow Watchdog
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - "launcher"
+      - "Nigthly"
+      - "Security Report"
+    types:
+      - in_progress
 
   schedule:
     # Vérification toutes les 5 minutes
