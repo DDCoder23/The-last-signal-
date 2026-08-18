@@ -2,34 +2,27 @@ name: Workflow Watchdog
 
 on:
   workflow_dispatch:
+
   schedule:
     - cron: "*/5 * * * *"
+
   workflow_run:
     workflows:
-      - "launcher"
-      - "Security Report"
-      - "Nightly"
-      
+      - "Python CI Report"
+      - "Integration"
+      - "Documentation Quality"
     types:
       - requested
       - in_progress
       - completed
-      
 
 permissions:
   actions: write
   contents: read
 
 env:
-  # Durée maximale d'un workflow en cours d'exécution.
-  # 180 minutes = 3 heures.
-  MAX_RUNTIME_MINUTES: 180
-
-  # Temps maximal passé en file d'attente.
-  # 90 minutes = 1 heure 30.
-  MAX_QUEUE_MINUTES: 90
-
-  # Le watchdog ne se surveille pas lui-même.
+  MAX_RUNTIME_MINUTES: 120
+  MAX_QUEUE_MINUTES: 60
   WATCHDOG_NAME: "Workflow Watchdog"
 
 jobs:
@@ -49,153 +42,123 @@ jobs:
           echo "       WORKFLOW WATCHDOG"
           echo "========================================"
 
-          NOW=$(date +%s)
-
           echo "Repository : ${GITHUB_REPOSITORY}"
           echo "Date       : $(date -u)"
           echo "Max runtime: ${MAX_RUNTIME_MINUTES} min"
           echo "Max queue  : ${MAX_QUEUE_MINUTES} min"
           echo
 
-          echo "Recherche des workflows..."
-          echo
+          NOW=$(date +%s)
+
+          # ==========================================================
+          # WORKFLOWS EN COURS D'EXÉCUTION
+          # ==========================================================
+
+          echo "Recherche des workflows en cours..."
 
           gh api \
-          -H "Accept: application/vnd.github+json" \
-          -H "X-GitHub-Api-Version: 2026-03-10" \
-          "/repos/${GITHUB_REPOSITORY}/actions/runs?status=in_progress&per_page=100" \
-          > /tmp/workflows.json
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            "/repos/${GITHUB_REPOSITORY}/actions/runs?status=in_progress&per_page=100" \
+            > /tmp/running.json
+
+          jq -c '.workflow_runs[]' /tmp/running.json |
+          while IFS= read -r RUN; do
+
+            RUN_ID=$(echo "$RUN" | jq -r '.id')
+            NAME=$(echo "$RUN" | jq -r '.name')
+            STARTED=$(echo "$RUN" | jq -r '.run_started_at')
+
+            # Ne jamais surveiller le watchdog lui-même
+            if [ "$NAME" = "$WATCHDOG_NAME" ]; then
+              continue
+            fi
+
+            STARTED_TS=$(date -d "$STARTED" +%s)
+            AGE=$((NOW - STARTED_TS))
+            AGE_MIN=$((AGE / 60))
+
+            echo "[RUNNING] $NAME"
+            echo "          ID      : $RUN_ID"
+            echo "          durée   : ${AGE_MIN} min"
+
+            if [ "$AGE_MIN" -ge "$MAX_RUNTIME_MINUTES" ]; then
+
+              echo "          ⚠️ Durée maximale dépassée."
+              echo "          → FORCE-CANCEL"
+
+              gh api \
+                --method POST \
+                -H "Accept: application/vnd.github+json" \
+                -H "X-GitHub-Api-Version: 2026-03-10" \
+                "/repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/force-cancel"
+
+              echo "          ✅ Force-cancel demandé."
+
+            else
+
+              echo "          → OK"
+
+            fi
+
+            echo
+
+          done
+
+          # ==========================================================
+          # WORKFLOWS EN FILE D'ATTENTE
+          # ==========================================================
+
+          echo "Recherche des workflows en attente..."
+
           gh api \
-          -H "Accept: application/vnd.github+json" \
-          -H "X-GitHub-Api-Version: 2026-03-10" \
-          "/repos/${GITHUB_REPOSITORY}/actions/runs?status=queued&per_page=100" \
-          >> /tmp/workflows.json
+            -H "Accept: application/vnd.github+json" \
+            -H "X-GitHub-Api-Version: 2026-03-10" \
+            "/repos/${GITHUB_REPOSITORY}/actions/runs?status=queued&per_page=100" \
+            > /tmp/queued.json
 
-          python3 <<'PY'
-          import json
-          import os
-          import subprocess
-          from datetime import datetime, timezone
+          jq -c '.workflow_runs[]' /tmp/queued.json |
+          while IFS= read -r RUN; do
 
-          MAX_RUNTIME = int(os.environ["MAX_RUNTIME_MINUTES"]) * 60
-          MAX_QUEUE = int(os.environ["MAX_QUEUE_MINUTES"]) * 60
-          WATCHDOG_NAME = os.environ["WATCHDOG_NAME"]
-          NOW = datetime.now(timezone.utc)
+            RUN_ID=$(echo "$RUN" | jq -r '.id')
+            NAME=$(echo "$RUN" | jq -r '.name')
+            CREATED=$(echo "$RUN" | jq -r '.created_at')
 
-          with open("/tmp/workflows.json", "r", encoding="utf-8") as f:
-              data = json.load(f)
+            if [ "$NAME" = "$WATCHDOG_NAME" ]; then
+              continue
+            fi
 
-          runs = data.get("workflow_runs", [])
+            CREATED_TS=$(date -d "$CREATED" +%s)
+            AGE=$((NOW - CREATED_TS))
+            AGE_MIN=$((AGE / 60))
 
-          print(f"Nombre de runs trouvés : {len(runs)}")
-          print()
+            echo "[QUEUED] $NAME"
+            echo "         ID       : $RUN_ID"
+            echo "         attente  : ${AGE_MIN} min"
 
-          for run in runs:
-              run_id = run["id"]
-              name = run["name"]
-              status = run["status"]
-              conclusion = run.get("conclusion")
-              html_url = run["html_url"]
+            if [ "$AGE_MIN" -ge "$MAX_QUEUE_MINUTES" ]; then
 
-              # Ne jamais annuler le watchdog lui-même.
-              if name == WATCHDOG_NAME:
-                  continue
+              echo "         ⚠️ Attente maximale dépassée."
+              echo "         → CANCEL"
 
-              if status == "in_progress":
-                  started = datetime.fromisoformat(
-                      run["run_started_at"].replace("Z", "+00:00")
-                  )
+              gh api \
+                --method POST \
+                -H "Accept: application/vnd.github+json" \
+                -H "X-GitHub-Api-Version: 2026-03-10" \
+                "/repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}/cancel"
 
-                  age = (NOW - started).total_seconds()
+              echo "         ✅ Annulation demandée."
 
-                  print(
-                      f"[RUNNING] {name} "
-                      f"(ID={run_id}) "
-                      f"durée={age / 60:.1f} min"
-                  )
+            else
 
-                  if age >= MAX_RUNTIME:
-                      print(
-                          f"  -> DÉPASSEMENT DU SEUIL "
-                          f"({MAX_RUNTIME / 60:.0f} min)"
-                      )
-                      print(f"  -> FORCE-CANCEL : {run_id}")
+              echo "         → OK"
 
-                      result = subprocess.run(
-                          [
-                              "gh",
-                              "api",
-                              "--method",
-                              "POST",
-                              "-H",
-                              "Accept: application/vnd.github+json",
-                              "-H",
-                              "X-GitHub-Api-Version: 2026-03-10",
-                              f"/repos/{os.environ['GITHUB_REPOSITORY']}"
-                              f"/actions/runs/{run_id}/force-cancel",
-                          ],
-                          capture_output=True,
-                          text=True,
-                      )
+            fi
 
-                      if result.returncode == 0:
-                          print("  -> Annulation demandée avec succès.")
-                      else:
-                          print("  -> ÉCHEC de l'annulation.")
-                          print(result.stdout)
-                          print(result.stderr)
+            echo
 
-                  continue
+          done
 
-              if status == "queued":
-                  created = datetime.fromisoformat(
-                      run["created_at"].replace("Z", "+00:00")
-                  )
-
-                  age = (NOW - created).total_seconds()
-
-                  print(
-                      f"[QUEUED] {name} "
-                      f"(ID={run_id}) "
-                      f"attente={age / 60:.1f} min"
-                  )
-
-                  if age >= MAX_QUEUE:
-                      print(
-                          f"  -> ATTENTE TROP LONGUE "
-                          f"({MAX_QUEUE / 60:.0f} min)"
-                      )
-
-                      print(
-                          "  -> Annulation du workflow en attente."
-                      )
-
-                      result = subprocess.run(
-                          [
-                              "gh",
-                              "api",
-                              "--method",
-                              "POST",
-                              "-H",
-                              "Accept: application/vnd.github+json",
-                              "-H",
-                              "X-GitHub-Api-Version: 2026-03-10",
-                              f"/repos/{os.environ['GITHUB_REPOSITORY']}"
-                              f"/actions/runs/{run_id}/cancel",
-                          ],
-                          capture_output=True,
-                          text=True,
-                      )
-
-                      if result.returncode == 0:
-                          print("  -> Annulation demandée.")
-                      else:
-                          print("  -> ÉCHEC.")
-                          print(result.stdout)
-                          print(result.stderr)
-
-          print()
-          print("========================================")
-          print("Surveillance terminée.")
-          print("========================================")
-          PY
+          echo "========================================"
+          echo "Surveillance terminée."
+          echo "========================================"
