@@ -176,14 +176,15 @@ Conférez-vous au fichier suivant:
 
 ## 🤝 Contribution
 
-Les contributions sont organisées autour de plusieurs règles :
+Les contributions sont les bienvenues ! 🤝
+Pour garantir la qualité et la cohérence du projet, merci de suivre ces quelques règles :
 
-- Respecter les conventions du projet
-- Documenter les nouvelles fonctionnalités
-- Tester les modifications avant intégration
-- Utiliser des branches Git dédiées
+- 📐 Respecter les conventions du projet
+- 📚 Documenter les nouvelles fonctionnalités
+- 🧪 Tester les modifications avant de proposer une intégration
+- 🌿 Utiliser une branche Git dédiée pour chaque modification
 
-Consultez :
+Pour connaître les détails et le processus de contribution, consultez :
 
 ➡️ [📜 Règles de développement](docs/CODING_RULES.md)
 
