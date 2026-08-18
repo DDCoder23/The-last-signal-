@@ -29,4 +29,7 @@ VALUES
     ('chargeur', 'equipment', 'chargeur.png', 120),
     ('Carreau d'' arbalète', 'equipment', 'carreau d'' arbalète.png', 15),
 
-    ('torche', 'material', 'torche.png', 5);
+    ('torche', 'material', 'torche.png', 5),
+    ('chargeur', 'muni', 'chargeur.png', 120),
+    ('carreau pour arbalète', 'muni', 'carreau.png', 15);
+    
