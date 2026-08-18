@@ -122,7 +122,7 @@ Elle contient :
 | 📚 Documentation | 🟡 En développement |
 | 🎮 Client Python | 🟡 En développement |
 | 🦀 Serveur Rust |  🟡 En développement  |
-| 🌐 Réseau | ⚪ Non commencé |
+| 🌐 Réseau |  🟡 En développement |
 | 🗄 Base de données |  🟡 En développement |
 | 🎨 Assets | 🟡 Préparation |
 | 🎮 Gameplay | 🟢 Prototype |
