@@ -105,7 +105,7 @@ def mix_before(
     x,
     key,
     state,
-    positions,
+    rotor_positions,
     packet_type,
     byte_counter,
     previous_ciphertext,
@@ -116,7 +116,7 @@ def mix_before(
     Cette fonction doit être strictement réversible.
     """
 
-    g1, g2, _, _ = rotor_groups(positions)
+    g1, g2, _, _ = rotor_groups(rotor_positions)
 
     k0 = key[byte_counter % 64]
     k1 = key[(byte_counter + 17) % 64]
@@ -170,7 +170,7 @@ def inverse_mix_before(
     x,
     key,
     state,
-    positions,
+    rotor_positions,
     packet_type,
     byte_counter,
     previous_ciphertext,
@@ -179,7 +179,7 @@ def inverse_mix_before(
     Inverse exacte de MIX_AVANT.
     """
 
-    g1, g2, _, _ = rotor_groups(positions)
+    g1, g2, _, _ = rotor_groups(rotor_positions)
 
     k0 = key[byte_counter % 64]
     k1 = key[(byte_counter + 17) % 64]
@@ -233,7 +233,7 @@ def mix_final(
     x,
     key,
     state,
-    positions,
+    rotor_positions,
     packet_type,
     byte_counter,
     previous_ciphertext,
@@ -242,7 +242,7 @@ def mix_final(
     MIX_FINAL.
     """
 
-    _, _, g3, g4 = rotor_groups(positions)
+    _, _, g3, g4 = rotor_groups(rotor_positions)
 
     k0 = key[byte_counter % 64]
     k2 = key[(byte_counter + 43) % 64]
@@ -297,7 +297,7 @@ def inverse_mix_final(
     x,
     key,
     state,
-    positions,
+    rotor_positions,
     packet_type,
     byte_counter,
     previous_ciphertext,
@@ -306,7 +306,7 @@ def inverse_mix_final(
     Inverse exacte de MIX_FINAL.
     """
 
-    _, _, g3, g4 = rotor_groups(positions)
+    _, _, g3, g4 = rotor_groups(rotor_positions)
 
     k0 = key[byte_counter % 64]
     k2 = key[(byte_counter + 43) % 64]
@@ -432,5 +432,5 @@ def test_complete_mix_chain(test_data, plaintext):
         value,
         **test_data,
     )
-
+    print(value,plaintext)
     assert value == plaintext
