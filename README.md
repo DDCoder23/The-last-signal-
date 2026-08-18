@@ -1,7 +1,6 @@
 # 🎮 The Last Signal 
 ## 🌐 README languages
 🇫🇷 Français — You are currently viewing the French version.
-
 🇬🇧 English — Coming soon
 🇪🇸 Español — Coming soon
 🇯🇵 日本語 — Coming soon
