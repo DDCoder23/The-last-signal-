@@ -83,8 +83,7 @@ impl DatabaseManager {
             .unwrap_or(database_url);
 
         
-        std::fs::create_dir_all(path)
-        .map_err(sqlx::Error::Io)?;
+        
         
 
         // --------------------------------------------------
@@ -118,7 +117,9 @@ impl DatabaseManager {
                     return Err(error);
                 }
             }
-        }
+        } else {
+            std::fs::create_dir_all(path)
+        .map_err(sqlx::Error::Io)?;}
 
         // --------------------------------------------------
         // 4. Créer / ouvrir la DB
