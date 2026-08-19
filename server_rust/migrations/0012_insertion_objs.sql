@@ -38,7 +38,12 @@ VALUES
     ('flèches épiques', 'muni', 'fleches.png', 500),
     ('flèches légendaires', 'muni', 'fleches.png', 1000),
     ('Cu', 'mineral', 'cu.png',30),
-
+    ('Fe', 'mineral', 'fe.png',60),
+    ('Lapiz', 'mineral', 'lapiz.png',80),
+    ('Redstone', 'mineral', 'redstone.png',90),
+    ('Au', 'mineral', 'au.png',150),
+    ('Diam', 'mineral', 'diam.png',400),
+    ('Netherite', 'mineral', 'netherite.png', 1200),
 
     ('carreau pour arbalète', 'muni', 'carreau.png', 15);
     
