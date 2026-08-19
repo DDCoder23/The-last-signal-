@@ -1,48 +1,48 @@
-[2026-08-19 22:27:10] [DEBUG] [migrations.rs:42] Migrations SQLite appliquées.
-[2026-08-19 22:27:10] [INFO] [main.rs:29] Base SQLite prête.
-[2026-08-19 22:27:10] [DEBUG] [server.rs:34] ==================================
-[2026-08-19 22:27:10] [DEBUG] [server.rs:35] The Last Signal Server
-[2026-08-19 22:27:10] [DEBUG] [server.rs:36] ==================================
-[2026-08-19 22:27:10] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
-[2026-08-19 22:27:55] [INFO] [server.rs:49] Client connecté : 127.0.0.1:52906
-[2026-08-19 22:27:55] [INFO] [client.rs:51] Client connecté : 127.0.0.1:52906 | Session : cd4c5435-dd1c-4e72-b379-edae84fc8a6f
-[2026-08-19 22:27:55] [DEBUG] [client.rs:63] Type : Log
-[2026-08-19 22:27:55] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
-[2026-08-19 22:27:55] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
-[2026-08-19 22:27:56] [INFO] [server.rs:49] Client connecté : 127.0.0.1:48988
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Login
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : Momo
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:102] Connexion joueur : Momo
-[2026-08-19 22:27:56] [INFO] [client.rs:51] Client connecté : 127.0.0.1:48988 | Session : dee3a5ae-afa6-4af1-80b8-e2dd106fc389
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Log
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
-[2026-08-19 22:27:56] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Log
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Chat
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : Momo dirige le jeu
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Log
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Chat
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : Le serveur est en rust
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:126] Message : Le serveur est en rust
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Log
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Chat
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : Le client est en python
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:126] Message : Le client est en python
-[2026-08-19 22:27:56] [DEBUG] [client.rs:63] Type : Log
-[2026-08-19 22:27:56] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
-[2026-08-19 22:27:56] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
-[2026-08-19 22:27:57] [DEBUG] [client.rs:63] Type : Chat
-[2026-08-19 22:27:57] [DEBUG] [client.rs:68] Payload : Tests des trésors en cours...
-[2026-08-19 22:27:57] [DEBUG] [handler.rs:126] Message : Tests des trésors en cours...
-[2026-08-19 22:27:57] [DEBUG] [client.rs:63] Type : Log
-[2026-08-19 22:27:57] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
-[2026-08-19 22:27:57] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
-[2026-08-19 22:27:57] [ERROR] [client.rs:96] Déconnexion [cd4c5435-dd1c-4e72-b379-edae84fc8a6f] : Connection reset by peer (os error 104)
-[2026-08-19 22:27:57] [ERROR] [client.rs:96] Déconnexion [dee3a5ae-afa6-4af1-80b8-e2dd106fc389] : Connection reset by peer (os error 104)
+[2026-08-19 22:54:08] [DEBUG] [migrations.rs:42] Migrations SQLite appliquées.
+[2026-08-19 22:54:08] [INFO] [main.rs:29] Base SQLite prête.
+[2026-08-19 22:54:08] [DEBUG] [server.rs:34] ==================================
+[2026-08-19 22:54:08] [DEBUG] [server.rs:35] The Last Signal Server
+[2026-08-19 22:54:08] [DEBUG] [server.rs:36] ==================================
+[2026-08-19 22:54:08] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
+[2026-08-19 22:54:54] [INFO] [server.rs:49] Client connecté : 127.0.0.1:37584
+[2026-08-19 22:54:54] [INFO] [client.rs:51] Client connecté : 127.0.0.1:37584 | Session : 5aed8563-6ab6-4c4d-8eaf-146422ebdace
+[2026-08-19 22:54:54] [DEBUG] [client.rs:63] Type : Log
+[2026-08-19 22:54:54] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
+[2026-08-19 22:54:54] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
+[2026-08-19 22:54:55] [INFO] [server.rs:49] Client connecté : 127.0.0.1:37588
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Login
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : Momo
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:102] Connexion joueur : Momo
+[2026-08-19 22:54:55] [INFO] [client.rs:51] Client connecté : 127.0.0.1:37588 | Session : 78c8fe04-a9b1-42f2-ae62-2d0b30cb2486
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Log
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : {"level": "INFO", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 48, "message": "Connexion au serveur r\u00e9ussie."}
+[2026-08-19 22:54:55] [INFO] [handler.rs:52] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:48] Connexion au serveur réussie.
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Log
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Chat
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : Momo dirige le jeu
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:126] Message : Momo dirige le jeu
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Log
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Chat
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : Le serveur est en rust
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:126] Message : Le serveur est en rust
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Log
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Chat
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : Le client est en python
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:126] Message : Le client est en python
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Log
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Chat
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : Tests des trésors en cours...
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:126] Message : Tests des trésors en cours...
+[2026-08-19 22:54:55] [DEBUG] [client.rs:63] Type : Log
+[2026-08-19 22:54:55] [DEBUG] [client.rs:68] Payload : {"level": "DEBUG", "module": "client_python.client", "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py", "line": 104, "message": "Paquet ignor\u00e9 : 5"}
+[2026-08-19 22:54:55] [DEBUG] [handler.rs:43] [CLIENT] [/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py:104] Paquet ignoré : 5
+[2026-08-19 22:54:55] [ERROR] [client.rs:96] Déconnexion [5aed8563-6ab6-4c4d-8eaf-146422ebdace] : Connection reset by peer (os error 104)
+[2026-08-19 22:54:55] [ERROR] [client.rs:96] Déconnexion [78c8fe04-a9b1-42f2-ae62-2d0b30cb2486] : Connection reset by peer (os error 104)
