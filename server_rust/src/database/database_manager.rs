@@ -84,7 +84,7 @@ impl DatabaseManager {
         
        std::fs::create_dir_all(path)
         .map_err(sqlx::Error::Io)?;
-      Self::create_database(database_url).await?;
+      let pool =Self::create_database(database_url).await?;
         
 
         
@@ -105,6 +105,10 @@ impl DatabaseManager {
 
                     std::fs::remove_file(database_file)
                         .map_err(sqlx::Error::Io)?;
+                    let pool =Self::create_database(database_url).await?;
+
+
+                    
                 }
 
                 Ok(false) => {
@@ -124,12 +128,7 @@ impl DatabaseManager {
             }
         } 
 
-        // --------------------------------------------------
-        // 4. Créer / ouvrir la DB
-        // --------------------------------------------------
-
-        let pool = Self::create_database(database_url).await?;
-
+        
         // --------------------------------------------------
         // 5. Retourner la structure
         // --------------------------------------------------
