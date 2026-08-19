@@ -24,8 +24,8 @@ jobs:
 
     runs-on: ubuntu-latest
     env: 
-      DATABASE_PATH: ${{ github.workspace }}/database_test
-      DATABASE_URL: sqlite:${{ github.workspace }}/database_test/the_last_signal.db
+      DATABASE_PATH: database_test
+      DATABASE_URL: sqlite:${{ github.workspace }}/server_rust/database_test/the_last_signal.db
 
     steps:
 
