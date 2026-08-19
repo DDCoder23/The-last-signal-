@@ -81,6 +81,11 @@ impl DatabaseManager {
         let database_file = database_url
             .strip_prefix("sqlite:")
             .unwrap_or(database_url);
+        
+       std::fs::create_dir_all(path)
+        .map_err(sqlx::Error::Io)?;
+      Self::create_database(database_url).await?;
+        
 
         
         
@@ -117,9 +122,7 @@ impl DatabaseManager {
                     return Err(error);
                 }
             }
-        } else {
-            std::fs::create_dir_all(path)
-        .map_err(sqlx::Error::Io)?;}
+        } 
 
         // --------------------------------------------------
         // 4. Créer / ouvrir la DB
