@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-18T02:44:59.696751",
+    "generated": "2026-08-19T03:58:31.141346",
     "score": 78,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 856,
+    "problem_count": 880,
     "details": {
         "markdown": {
             "score": 49,
@@ -385,13 +385,13 @@
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 13 > 120 caractères.",
+                    "message": "Ligne 17 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 15 > 120 caractères.",
+                    "message": "Ligne 19 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -593,9 +593,15 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Ligne 257 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/README.md",
                     "severity": "warning",
-                    "message": "Ligne 7 > 120 caractères.",
+                    "message": "Ligne 12 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -787,7 +793,7 @@
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "Ligne 7 > 120 caractères.",
+                    "message": "Ligne 12 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -1019,6 +1025,12 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (8).",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1).",
@@ -1028,6 +1040,12 @@
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (89).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (258).",
                     "module": "markdown"
                 },
                 {
@@ -1527,7 +1545,13 @@
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "README.md:172 titre sans ligne vide avant.",
+                    "message": "README.md:2 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "README.md:176 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1579,6 +1603,12 @@
                     "module": "titles"
                 },
                 {
+                    "file": "docs/README.md",
+                    "severity": "warning",
+                    "message": "docs/README.md:2 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "docs/QRB_flake8_error.md:935 titre sans ligne vide avant.",
@@ -1594,6 +1624,12 @@
                     "file": "docs/gdd/04_CHRONOLOGIE.md",
                     "severity": "warning",
                     "message": "docs/gdd/04_CHRONOLOGIE.md:201 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/gdd/README.md",
+                    "severity": "warning",
+                    "message": "docs/gdd/README.md:2 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1653,19 +1689,25 @@
                 {
                     "file": "docs/CODING_RULES.md",
                     "severity": "warning",
-                    "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).",
+                    "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:104).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/README.md",
                     "severity": "warning",
-                    "message": "docs/README.md:63 titre dupliqué (déjà présent dans README.md:118).",
+                    "message": "docs/README.md:2 titre dupliqué (déjà présent dans README.md:2).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/README.md",
                     "severity": "warning",
-                    "message": "docs/README.md:170 titre dupliqué (déjà présent dans README.md:161).",
+                    "message": "docs/README.md:68 titre dupliqué (déjà présent dans README.md:122).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/README.md",
+                    "severity": "warning",
+                    "message": "docs/README.md:175 titre dupliqué (déjà présent dans README.md:165).",
                     "module": "titles"
                 },
                 {
@@ -1713,7 +1755,7 @@
                 {
                     "file": "docs/gdd/02_UNIVERS.md",
                     "severity": "warning",
-                    "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:36).",
+                    "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:41).",
                     "module": "titles"
                 },
                 {
@@ -1737,19 +1779,25 @@
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "docs/gdd/README.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).",
+                    "message": "docs/gdd/README.md:2 titre dupliqué (déjà présent dans README.md:2).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "docs/gdd/README.md:31 titre dupliqué (déjà présent dans docs/README.md:36).",
+                    "message": "docs/gdd/README.md:18 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "docs/gdd/README.md:145 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+                    "message": "docs/gdd/README.md:36 titre dupliqué (déjà présent dans docs/README.md:41).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/gdd/README.md",
+                    "severity": "warning",
+                    "message": "docs/gdd/README.md:150 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
                     "module": "titles"
                 },
                 {
@@ -1791,13 +1839,13 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 63,
+                "modules": 64,
                 "classes": 44,
-                "functions": 268,
+                "functions": 282,
                 "documented_modules": 0,
                 "documented_classes": 3,
-                "documented_functions": 66,
-                "typed_functions": 23,
+                "documented_functions": 75,
+                "typed_functions": 27,
                 "todo": 4,
                 "long_functions": 11
             },
@@ -3924,6 +3972,102 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
                     "severity": "warning",
                     "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_data' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'rotor_groups'ligne 89 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'rotor_groups' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'mix_before' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'inverse_mix_before' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'mix_final' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'inverse_mix_final' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_rotl_rotr_inverse'ligne 362 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_rotl_rotr_inverse' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_mix_before_is_reversible'ligne 374 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_mix_before_is_reversible' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_mix_final_is_reversible'ligne 394 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_mix_final_is_reversible' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_complete_mix_chain'ligne 414 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_complete_mix_chain' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
