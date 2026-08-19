@@ -86,8 +86,8 @@ def test_data():
 # GROUPES DE ROTORS
 # ============================================================
 
-def rotor_groups(positions):
-    r = positions
+def rotor_groups(rotor_positions):
+    r = rotor_positions
 
     g1 = r[0] ^ r[4] ^ r[8] ^ r[12]
     g2 = r[1] ^ r[5] ^ r[9] ^ r[13]
@@ -133,7 +133,7 @@ def mix_before(
     rotation = (
         state[11]
         ^ byte_counter
-        ^ positions[7]
+        ^ rotor_positions[7]
     ) & 7
 
     x = rotl8(x, rotation)
@@ -148,7 +148,7 @@ def mix_before(
     rotation = (
         state[27]
         ^ byte_counter
-        ^ positions[8]
+        ^ rotor_positions[8]
     ) & 7
 
     x = rotl8(x, rotation)
