@@ -29,5 +29,16 @@ VALUES
 
     ('torche', 'material', 'torche.png', 5),
     ('chargeur', 'muni', 'chargeur.png', 120),
+    ('balles',  'muni',	'balles.png',20),
+    ('flèches communes', 'muni', 'fleches.png',	10),
+    ('flèches peu rares', 'muni', 'fleches.png', 25),
+    ('flèches rares', 'muni', 'fleches.png', 60),
+    ('flèches super rares', 'muni', 'fleches.png', 120),
+    ('flèches exotiques', 'muni', 'fleches.png', 250),
+    ('flèches épiques', 'muni', 'fleches.png', 500),
+    ('flèches légendaires', 'muni', 'fleches.png', 1000),
+    ('Cu', 'mineral', 'cu.png',30),
+
+
     ('carreau pour arbalète', 'muni', 'carreau.png', 15);
     
