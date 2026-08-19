@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-19T13:07:53.162513",
+    "generated": "2026-08-19T23:12:09.615646",
     "score": 78,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 880,
+    "problem_count": 864,
     "details": {
         "markdown": {
             "score": 49,
@@ -1839,13 +1839,13 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 64,
+                "modules": 63,
                 "classes": 44,
-                "functions": 282,
+                "functions": 268,
                 "documented_modules": 0,
                 "documented_classes": 3,
-                "documented_functions": 75,
-                "typed_functions": 27,
+                "documented_functions": 66,
+                "typed_functions": 23,
                 "todo": 4,
                 "long_functions": 11
             },
@@ -3972,102 +3972,6 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
                     "severity": "warning",
                     "message": "La fonction 'test_main' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_data' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'rotor_groups'ligne 89 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'rotor_groups' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'mix_before' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'inverse_mix_before' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'mix_final' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'inverse_mix_final' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_rotl_rotr_inverse'ligne 362 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_rotl_rotr_inverse' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_mix_before_is_reversible'ligne 374 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_mix_before_is_reversible' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_mix_final_is_reversible'ligne 394 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_mix_final_is_reversible' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_complete_mix_chain'ligne 414 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py",
-                    "severity": "warning",
-                    "message": "La fonction 'test_complete_mix_chain' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
