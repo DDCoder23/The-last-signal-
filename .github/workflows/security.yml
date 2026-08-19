@@ -24,6 +24,8 @@ jobs:
 
     runs-on: ubuntu-latest
     env: 
+      GH_TOKEN: ${{ github.token }}
+      VAULT_KEY: ${{ secrets.VAULT_KEY }}
       DATABASE_PATH: ${{ github.workspace }}/database_test
       DATABASE_URL: sqlite:${{ github.workspace }}/database_test/the_last_signal.db
 
