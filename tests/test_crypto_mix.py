@@ -196,7 +196,7 @@ def inverse_mix_before(
     rotation = (
         state[27]
         ^ byte_counter
-        ^ positions[8]
+        ^ rotor_positions[8]
     ) & 7
 
     x = rotr8(x, rotation)
@@ -211,7 +211,7 @@ def inverse_mix_before(
     rotation = (
         state[11]
         ^ byte_counter
-        ^ positions[7]
+        ^ rotor_positions[7]
     ) & 7
 
     x = rotr8(x, rotation)
@@ -259,7 +259,7 @@ def mix_final(
     rotation = (
         state[19]
         ^ byte_counter
-        ^ positions[7]
+        ^ rotor_positions[7]
         ^ packet_type
     ) & 7
 
@@ -275,7 +275,7 @@ def mix_final(
     rotation = (
         state[47]
         ^ byte_counter
-        ^ positions[8]
+        ^ rotor_positions[8]
     ) & 7
 
     x = rotl8(x, rotation)
@@ -323,7 +323,7 @@ def inverse_mix_final(
     rotation = (
         state[47]
         ^ byte_counter
-        ^ positions[8]
+        ^ rotor_positions[8]
     ) & 7
 
     x = rotr8(x, rotation)
@@ -338,7 +338,7 @@ def inverse_mix_final(
     rotation = (
         state[19]
         ^ byte_counter
-        ^ positions[7]
+        ^ rotor_positions[7]
         ^ packet_type
     ) & 7
 
