@@ -29,6 +29,10 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    ignore:
+      - dependency-name: "rand_core"
+        versions:
+          - "0.6.4"
 
   # Workflows GitHub Actions
   - package-ecosystem: "github-actions"
