@@ -113,6 +113,7 @@ jobs:
           echo "" >> "$REPORT"
       - name: Debug environment
         run: |
+            mkdir -p database_test
         
             echo "DATABASE_URL=$DATABASE_URL"
             echo "DATABASE_PATH=$DATABASE_PATH"
