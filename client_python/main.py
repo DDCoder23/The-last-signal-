@@ -14,6 +14,16 @@ def main():
     client2.connect()
     client.send_packet(LoginPacket("Modo@gmail.com","fhfjf6384"))
     response = client.receive_packet(PacketType.LOGIN)
+    LOGIN)
+    if response is None:
+        print("❌ Serveur déconnecté")
+    else:
+        print("📥 Serveur → client")
+        print(f"Type : {response.packet_type}")
+        print(f"Payload : {response.payload!r}")
+        print(
+        f"Message : {response.payload.decode('utf-8', errors='replace')}"
+         )
     
     
     
