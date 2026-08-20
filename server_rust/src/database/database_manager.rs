@@ -57,6 +57,14 @@ impl DatabaseManager {
     pub fn pool(&self) -> &SqlitePool {
         &self.pool
     }
+    pub async fn ping(&self) -> Result<(), sqlx::Error> {
+
+        sqlx::query("SELECT 1")
+            .execute(&self.pool)
+            .await?;
+
+        Ok(())
+    }
 
 
 
