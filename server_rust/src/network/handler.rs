@@ -363,7 +363,7 @@ impl PacketHandler {
 
         return Packet::new(
             PacketType::Login,
-            b"Compte banni définitivement".to_vec(),
+            b"Compte banni définitivement".as_bytes().to_vec(),
         );
     }
 
