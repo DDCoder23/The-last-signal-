@@ -20,7 +20,7 @@ jobs:
     steps:
 
       - name: Checkout main
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: main
           fetch-depth: 0
@@ -54,25 +54,56 @@ jobs:
 
       - name: Download ci-database
         run: |
+            set -Eeuo pipefail
 
-          git fetch origin ci-database
+            git fetch origin ci-database
 
-          mkdir ci-database-temp
+            rm -rf ci-database-temp
+            mkdir -p ci-database-temp
 
-          git --work-tree=ci-database-temp checkout origin/ci-database -- .
+            git archive origin/ci-database | tar -x -C ci-database-temp
 
-          mkdir -p database
+            DB_SOURCE="ci-database-temp/database/the_last_signal.db"
+            DB_TARGET="database/the_last_signal.db"
 
-          cp -r ci-database-temp/database/* database/ 2>/dev/null || true
+            if [ ! -f "$DB_SOURCE" ]; then
+            echo "::error::Database introuvable"
+            exit 1
+            fi
 
+            echo "=== Intégrité de la base source ==="
+            sha256sum "$DB_SOURCE"
+            sqlite3 "$DB_SOURCE" "PRAGMA integrity_check;"
+            
+            INTEGRITY=$(sqlite3 "$DB_SOURCE" "PRAGMA integrity_check;")
+
+            if [ "$INTEGRITY" != "ok" ]; then
+            echo "::error::La base source est CORROMPUE"
+            exit 1
+            fi
+
+            mkdir -p database
+            cp "$DB_SOURCE" "$DB_TARGET"
+
+            echo "=== Intégrité de la copie ==="
+            sha256sum "$DB_TARGET"
+            INTEGRITY=$(sqlite3 "$DB_TARGET" "PRAGMA integrity_check;")
+
+            if [ "$INTEGRITY" != "ok" ]; then
+            echo "::error::La copie est CORROMPUE"
+            exit 1
+            fi
+
+            echo "✓ Base SQLite valide"
       #######################################################
       # Commit
       #######################################################
 
       - name: Commit changes
         run: |
+          sqlite3 database/the_last_signal.db "PRAGMA integrity_check;"
 
-          git add reports dashboard database
+          git add reports database
           git status --short
           git diff --cached --stat
 

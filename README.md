@@ -1,7 +1,11 @@
 # 🎮 The Last Signal 
-
+## 🌐 **README languages**
+🇫🇷 **Français** — You are currently viewing the French version.<br>
+🇬🇧 **English** — Coming soon<br>
+🇪🇸 **Español** — Coming soon<br>
+🇯🇵 **日本語** — Coming soon
 > MMORPG de survie post-apocalyptique en monde persistant
-
+ 
 ![Status](https://img.shields.io/badge/status-prototype-orange)
 ![Documentation](https://img.shields.io/badge/docs-active-blue)
 ![Python](https://img.shields.io/badge/client-Python-yellow)
@@ -122,7 +126,7 @@ Elle contient :
 | 📚 Documentation | 🟡 En développement |
 | 🎮 Client Python | 🟡 En développement |
 | 🦀 Serveur Rust |  🟡 En développement  |
-| 🌐 Réseau | ⚪ Non commencé |
+| 🌐 Réseau |  🟡 En développement |
 | 🗄 Base de données |  🟡 En développement |
 | 🎨 Assets | 🟡 Préparation |
 | 🎮 Gameplay | 🟢 Prototype |
@@ -176,14 +180,15 @@ Conférez-vous au fichier suivant:
 
 ## 🤝 Contribution
 
-Les contributions sont organisées autour de plusieurs règles :
+Les contributions sont les bienvenues ! 🤝
+Pour garantir la qualité et la cohérence du projet, merci de suivre ces quelques règles :
 
-- Respecter les conventions du projet
-- Documenter les nouvelles fonctionnalités
-- Tester les modifications avant intégration
-- Utiliser des branches Git dédiées
+- 📐 Respecter les conventions du projet
+- 📚 Documenter les nouvelles fonctionnalités
+- 🧪 Tester les modifications avant de proposer une intégration
+- 🌿 Utiliser une branche Git dédiée pour chaque modification
 
-Consultez :
+Pour connaître les détails et le processus de contribution, consultez :
 
 ➡️ [📜 Règles de développement](docs/CODING_RULES.md)
 
