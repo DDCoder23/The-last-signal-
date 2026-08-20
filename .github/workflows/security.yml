@@ -610,3 +610,14 @@ jobs:
         with:
           report-type: security
           commit-message: "Security Report #${{ github.run_number }}"
+  archive:
+    needs: security
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.security.result == 'success' ||
+        needs.security.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/Archive.yml
