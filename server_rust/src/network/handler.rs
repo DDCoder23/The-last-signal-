@@ -184,7 +184,7 @@ impl PacketHandler {
                 );
 
                 return Packet::new(
-                    PacketType::SingUp,
+                    PacketType::SignUp,
                     b"Erreur serveur".to_vec(),
                 );
             }
