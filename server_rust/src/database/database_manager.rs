@@ -132,6 +132,7 @@ impl DatabaseManager {
             pool,
         })
     }
+}
 
 
 
