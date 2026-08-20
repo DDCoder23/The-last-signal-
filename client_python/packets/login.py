@@ -10,14 +10,14 @@ class LoginPacket(Packet):
         self.email = email
         self.password = password
 
-        email_data = email.encode("utf-8")
-        password_data = password.encode("utf-8")
+        email_bytes = email.encode("utf-8")
+        password_bytes = password.encode("utf-8")
 
         payload = (
-            struct.pack("!H", len(email_data))
-            + email_data
-            + struct.pack("!H", len(password_data))
-            + password_data
+            struct.pack("!H", len(email_bytes))
+            + email_bytes
+            + struct.pack("!H", len(password_bytes))
+            + password_bytes
         )
 
         super().__init__(
@@ -34,7 +34,7 @@ class LoginPacket(Packet):
         # Email
         # -------------------------
 
-        if len(payload) < offset + 2:
+        if len(payload) < 2:
             raise ValueError("Payload LOGIN trop court")
 
         email_length = struct.unpack(
