@@ -184,7 +184,7 @@ impl PacketHandler {
                 );
 
                 return Packet::new(
-                    PacketType::SignUp,
+                    PacketType::SingUp,
                     b"Erreur serveur".to_vec(),
                 );
             }
@@ -363,7 +363,7 @@ impl PacketHandler {
 
         return Packet::new(
             PacketType::Login,
-            b"Compte banni définitivement".as_bytes().to_vec(),
+            b"Compte banni definitivement".to_vec(),
         );
     }
 
