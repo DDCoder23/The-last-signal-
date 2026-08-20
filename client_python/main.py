@@ -5,6 +5,7 @@ from .packets.chat import ChatPacket
 from .packets.login import LoginPacket
 from .packets.ping import PingPacket
 from .packets.move import MovePacket
+from .packets.singup import SingupPacket
 
 def main():
     client = Client()
@@ -12,9 +13,10 @@ def main():
     client.connect()
     time.sleep(1)
     client2.connect()
+    client.send_packet(SingupPacket("Modo@gmail.com","fhfjf6384"))
+    response = client.receive_packet(PacketType.SINGUP)
     client.send_packet(LoginPacket("Modo@gmail.com","fhfjf6384"))
     response = client.receive_packet(PacketType.LOGIN)
-    LOGIN)
     if response is None:
         print("❌ Serveur déconnecté")
     else:
