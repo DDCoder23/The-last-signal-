@@ -288,7 +288,7 @@ impl PacketHandler {
         "#,
         email
     )
-    .fetch_optional(pool)
+    .fetch_optional(&pool)
     .await
     {
         Ok(Some(user)) => user,
@@ -335,7 +335,7 @@ impl PacketHandler {
             "#,
             user.user_id
         )
-        .fetch_one(pool)
+        .fetch_one(&pool)
         .await
         {
             Ok(value) => value != 0,
@@ -384,7 +384,7 @@ impl PacketHandler {
             "#,
             user.user_id
         )
-        .fetch_one(pool)
+        .fetch_one(&pool)
         .await
         {
             Ok(value) => value != 0,
@@ -458,7 +458,7 @@ impl PacketHandler {
             "#,
             user.user_id
         )
-        .fetch_one(pool)
+        .fetch_one(&pool)
         .await
         {
             Ok(value) => value,
@@ -529,7 +529,7 @@ impl PacketHandler {
                 "#,
                 user.user_id
             )
-            .execute(pool)
+            .execute(&pool)
             .await
             {
                 error!(
@@ -555,7 +555,7 @@ impl PacketHandler {
                 "#,
                 user.user_id
             )
-            .execute(pool)
+            .execute(&pool)
             .await
             {
                 error!(
@@ -601,7 +601,7 @@ impl PacketHandler {
         "#,
         user.user_id
     )
-    .execute(pool)
+    .execute(&pool)
     .await
     {
         error!(
