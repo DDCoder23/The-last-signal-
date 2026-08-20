@@ -73,8 +73,8 @@ impl Client {
                     );
 
                     let response =
-                     PacketHandler::handle(self, packet,self.pool)
-                     .await;
+                     PacketHandler::handle(self, packet,self.pool.clone())
+                        .await;
                     if let Err(e) =
                         send_packet(
                             &mut self.stream,
