@@ -9,6 +9,7 @@ class PacketType(IntEnum):
     CHAT = 3
     MOVE = 4
     LOG = 5
+    SINGUP = 6
 
 
 class Packet:
@@ -78,6 +79,9 @@ class Packet:
         if packet_type == PacketType.LOG:
             from .packets.log import LogPacket
             return LogPacket()
+        if packet_type == PacketType.SINGUP:
+            from .packets.singup import SingupPacket
+            return SingupPacket()
 
 
         return Packet(
