@@ -1,21 +1,77 @@
+import struct
+
 from ..packet import Packet, PacketType
 
 
 class LoginPacket(Packet):
 
-    def __init__(self, username):
+    def __init__(self, email: str, password: str):
 
-        self.username = username
+        self.email = email
+        self.password = password
+
+        email_data = email.encode("utf-8")
+        password_data = password.encode("utf-8")
+
+        payload = (
+            struct.pack("!H", len(email_data))
+            + email_data
+            + struct.pack("!H", len(password_data))
+            + password_data
+        )
 
         super().__init__(
             PacketType.LOGIN,
-            username.encode("utf-8")
+            payload
         )
+
     @classmethod
-    def from_payload(cls, payload):
+    def from_payload(cls, payload: bytes):
 
-        username = payload.decode(
-            "utf-8"
-        )
+        offset = 0
 
-        return cls(username)
+        # -------------------------
+        # Email
+        # -------------------------
+
+        if len(payload) < offset + 2:
+            raise ValueError("Payload LOGIN trop court")
+
+        email_length = struct.unpack(
+            "!H",
+            payload[offset:offset + 2]
+        )[0]
+
+        offset += 2
+
+        if len(payload) < offset + email_length:
+            raise ValueError("Email incomplet")
+
+        email = payload[
+            offset:offset + email_length
+        ].decode("utf-8")
+
+        offset += email_length
+
+        # -------------------------
+        # Password
+        # -------------------------
+
+        if len(payload) < offset + 2:
+            raise ValueError("Password absent")
+
+        password_length = struct.unpack(
+            "!H",
+            payload[offset:offset + 2]
+        )[0]
+
+        offset += 2
+
+        if len(payload) < offset + password_length:
+            raise ValueError("Password incomplet")
+
+        password = payload[
+            offset:offset + password_length
+        ].decode("utf-8")
+
+        return cls(email, password)
