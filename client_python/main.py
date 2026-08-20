@@ -12,10 +12,9 @@ def main():
     client.connect()
     time.sleep(1)
     client2.connect()
-    client.send_packet(LoginPacket("Momo"))
+    client.send_packet(LoginPacket("Modo@gmail.com","fhfjf6384"))
     response = client.receive_packet(PacketType.LOGIN)
     
-    print(response.username if response != None else "Vide")
     
     
     client.send_packet(
