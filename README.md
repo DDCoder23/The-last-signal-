@@ -1,7 +1,7 @@
 # 🎮 The Last Signal 
 ## 🌐 **README languages**
 🇫🇷 **Français** — You are currently viewing the French version.<br>
-🇬🇧 **English** — Coming soon<br>
+🇬🇧 **English** — ➡️ [English version](README_ENG.md) <br>
 🇪🇸 **Español** — Coming soon<br>
 🇯🇵 **日本語** — Coming soon
 > MMORPG de survie post-apocalyptique en monde persistant
