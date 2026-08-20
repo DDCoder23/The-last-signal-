@@ -60,8 +60,7 @@ impl DatabaseManager {
 
 
 
-        Ok(())
-    }
+    
 
     pub async fn new(
         database_path: &str,
@@ -80,7 +79,7 @@ impl DatabaseManager {
         
        std::fs::create_dir_all(path)
         .map_err(sqlx::Error::Io)?;
-      let pool =Self::create_database(database_url).await?;
+      let mut pool =Self::create_database(database_url).await?;
         
 
         
@@ -101,7 +100,7 @@ impl DatabaseManager {
 
                     std::fs::remove_file(database_file)
                         .map_err(sqlx::Error::Io)?;
-                    let pool =Self::create_database(database_url).await?;
+                    pool =Self::create_database(database_url).await?;
 
 
                     
