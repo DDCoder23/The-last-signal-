@@ -7,6 +7,7 @@ use sqlx::{
 };
 
 
+
 pub struct DatabaseManager {
     pool: SqlitePool,
 }
@@ -57,12 +58,7 @@ impl DatabaseManager {
         &self.pool
     }
 
-    /// Vérifie que PostgreSQL répond.
-    pub async fn ping(&self) -> Result<(), sqlx::Error> {
 
-        sqlx::query("SELECT 1")
-            .execute(&self.pool)
-            .await?;
 
         Ok(())
     }
