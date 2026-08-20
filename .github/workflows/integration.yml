@@ -49,7 +49,7 @@ jobs:
     ##########################################################
 
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
     
     
     
@@ -66,7 +66,7 @@ jobs:
         echo "version=$(cat .python-version)" >> $GITHUB_OUTPUT
         
     - name: Setup Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v7
       with:
         python-version: ${{ steps.current.outputs.version }}
         check-latest: ${{ github.workflow == 'Nightly' }}
@@ -245,7 +245,7 @@ jobs:
              
     - name: Upload server log
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: logs
         path: logs/
@@ -273,7 +273,7 @@ jobs:
              git config --global user.email "github-actions@github.com"
              git status
              git fetch origin
-             git rm -f logs/.gitkeep logs/the_last_signal.log
+             git rm -f --ignore-unmatch logs/.gitkeep logs/the_last_signal.log
              rm -rf ../ci-database
              if git ls-remote --exit-code --heads origin ci-database >/dev/null; then
              git worktree add ../ci-database ci-database
@@ -299,12 +299,8 @@ jobs:
              echo "Tentative $i/3"
              git fetch origin "${{ inputs.branch }}"
 
-             if ! git rebase "origin/${{ inputs.branch }}"
-             then
-             echo "Rebase impossible."
-             git rebase --abort || true
-             break
-             fi
+             
+             
 
              echo "Branche actuelle :"
              git branch --show-current

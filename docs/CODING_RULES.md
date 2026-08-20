@@ -254,8 +254,8 @@ Les informations sensibles doivent être stockées dans des variables d'environn
 
 Le code doit être :
 
-- lisible ;
-- maintenable ;
+- lisible => les noms de fonctions doivent être en caractères romains (si impossible veuillez vous adresser à membre du staff qui parle anglais).<br>
+- maintenable.<br> 
 - performant.
 
 Éviter l'optimisation prématurée.
