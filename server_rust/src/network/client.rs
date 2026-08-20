@@ -73,7 +73,7 @@ impl Client {
                     );
 
                     let response =
-                     PacketHandler::handle(self, packet,pool)
+                     PacketHandler::handle(self, packet,self.pool)
                      .await;
                     if let Err(e) =
                         send_packet(
