@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-19T13:07:53.162513",
+    "generated": "2026-08-19T23:12:09.615646",
     "score": 78,
     "status": "Satisfaisant",
     "scores": {
@@ -12,5 +12,5 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 880
+    "problem_count": 864
 }
