@@ -3,7 +3,7 @@ use crate::network::packet::{
     PacketType,LogLevel,ClientLog,
 };
 use crate::network::client::Client;
-use crate:: network::parser::{parse_login_payload,parse_signup_playload};
+use crate:: network::parser::{parse_login_payload,parse_signup_payload};
 use log::{trace, debug, info, warn, error};
 pub struct PacketHandler;
 use crate::utils::password::{verify_password,hash_password};
@@ -216,7 +216,7 @@ impl PacketHandler {
         email,
         password_hash
     )
-    .execute(pool)
+    .execute(&pool)
     .await
     {
         error!(
