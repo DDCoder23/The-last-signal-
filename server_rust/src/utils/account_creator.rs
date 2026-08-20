@@ -1,4 +1,5 @@
 use uuid::Uuid;
+use sqlx::SqlitePool;
 pub async fn create_account(
     pool: &SqlitePool,
     email: &str,
