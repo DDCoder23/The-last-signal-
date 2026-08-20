@@ -1,5 +1,6 @@
 use std::str::FromStr;
 use std::path::Path;
+
 use sqlx::{
     sqlite::{SqliteConnectOptions, SqlitePool},
     Error,
@@ -12,7 +13,7 @@ pub struct DatabaseManager {
 }
 
 
-impl Database {
+impl DatabaseManager {
     /// Vérifie si une base SQLite existante est corrompue.
     ///
     /// Retourne :
@@ -57,12 +58,7 @@ impl Database {
         &self.pool
     }
 
-    /// Vérifie que PostgreSQL répond.
-    pub async fn ping(&self) -> Result<(), sqlx::Error> {
 
-        sqlx::query("SELECT 1")
-            .execute(&self.pool)
-            .await?;
 
         Ok(())
     }
@@ -78,23 +74,24 @@ impl Database {
         let path = database_path
             .strip_prefix("sqlite:")
             .unwrap_or(database_path);
+        let database_file = database_url
+            .strip_prefix("sqlite:")
+            .unwrap_or(database_url);
+        
+       std::fs::create_dir_all(path)
+        .map_err(sqlx::Error::Io)?;
+      let pool =Self::create_database(database_url).await?;
+        
 
-        // --------------------------------------------------
-        // 2. Créer le dossier parent si nécessaire
-        // --------------------------------------------------
-
-        if let Some(parent) = Path::new(path).parent() {
-            if !parent.as_os_str().is_empty() {
-                std::fs::create_dir_all(parent)
-                    .map_err(sqlx::Error::Io)?;
-            }
-        }
+        
+        
+        
 
         // --------------------------------------------------
         // 3. Vérifier la DB si elle existe déjà
         // --------------------------------------------------
 
-        if Path::new(path).exists() {
+        if Path::new(database_file).exists() {
             match Self::is_database_corrupted(database_url).await {
                 Ok(true) => {
                     eprintln!(
@@ -102,8 +99,12 @@ impl Database {
                          Suppression et recréation..."
                     );
 
-                    std::fs::remove_file(path)
+                    std::fs::remove_file(database_file)
                         .map_err(sqlx::Error::Io)?;
+                    let pool =Self::create_database(database_url).await?;
+
+
+                    
                 }
 
                 Ok(false) => {
@@ -121,14 +122,9 @@ impl Database {
                     return Err(error);
                 }
             }
-        }
+        } 
 
-        // --------------------------------------------------
-        // 4. Créer / ouvrir la DB
-        // --------------------------------------------------
-
-        let pool = Self::create_database(database_url).await?;
-
+        
         // --------------------------------------------------
         // 5. Retourner la structure
         // --------------------------------------------------
@@ -140,5 +136,5 @@ impl Database {
 }
 
 
-
+    
 

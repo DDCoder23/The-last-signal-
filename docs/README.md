@@ -1,4 +1,9 @@
 # 📚 The Last Signal Online
+## 🌐 **README languages**
+🇫🇷 **Français** — You are currently viewing the French version.<br>
+🇬🇧 **English** — Coming soon<br>
+🇪🇸 **Español** — Coming soon<br>
+🇯🇵 **日本語** — Coming soon
 
 > Documentation officielle du projet
 
