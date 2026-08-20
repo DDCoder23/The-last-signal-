@@ -6,8 +6,9 @@ use crate::network::client::Client;
 use crate:: network::parser::parse_login_payload;
 use log::{trace, debug, info, warn, error};
 pub struct PacketHandler;
-use crate::utils::password::verify_password;
+use crate::utils::password::{verify_password,hash_password};
 
+use uuid::Uuid;
 impl PacketHandler {
 
     pub async fn handle(
@@ -92,6 +93,158 @@ impl PacketHandler {
                     b"PONG".to_vec(),
                 )
 
+            }
+            PacketType::SignUp => {
+
+    // ========================================================
+    // 1. Parser le packet SIGN_UP
+    // ========================================================
+
+    let (email, password) =
+        match parse_signup_payload(&packet.payload) {
+
+            Ok(signup) => signup,
+
+            Err(error) => {
+
+                debug!(
+                    "SIGN_UP invalide : {}",
+                    error
+                );
+
+                return Packet::new(
+                    PacketType::SignUp,
+                    b"SIGN_UP invalide".to_vec(),
+                );
+            }
+        };
+
+
+    // ========================================================
+    // 2. Vérifier que l'email n'existe pas
+    // ========================================================
+
+    let email_exists = match sqlx::query_scalar!(
+        r#"
+        SELECT EXISTS(
+            SELECT 1
+            FROM users
+            WHERE email = ?
+        )
+        "#,
+        email
+    )
+    .fetch_one(pool)
+    .await
+    {
+        Ok(value) => value != 0,
+
+        Err(error) => {
+
+            error!(
+                "Erreur lors de la vérification de l'email : {}",
+                error
+            );
+
+            return Packet::new(
+                PacketType::SignUp,
+                b"Erreur serveur".to_vec(),
+            );
+        }
+    };
+
+
+    if email_exists {
+
+        debug!(
+            "SIGN_UP refusé : email déjà utilisé"
+        );
+
+        return Packet::new(
+            PacketType::SignUp,
+            b"Email deja utilise".to_vec(),
+        );
+    }
+
+
+    // ========================================================
+    // 3. Générer le hash Argon2
+    // ========================================================
+
+    let password_hash =
+        match hash_password(&password) {
+
+            Ok(hash) => hash,
+
+            Err(error) => {
+
+                error!(
+                    "Erreur lors du hash du mot de passe : {}",
+                    error
+                );
+
+                return Packet::new(
+                    PacketType::SignUp,
+                    b"Erreur serveur".to_vec(),
+                );
+            }
+        };
+
+
+    // ========================================================
+    // 4. Générer le user_id
+    // ========================================================
+
+    let user_id =
+        Uuid::new_v4().to_string();
+
+
+    // ========================================================
+    // 5. Créer le user
+    // ========================================================
+
+    if let Err(error) = sqlx::query!(
+        r#"
+        INSERT INTO users (
+            user_id,
+            email,
+            password_hash
+        )
+        VALUES (?, ?, ?)
+        "#,
+        user_id,
+        email,
+        password_hash
+    )
+    .execute(pool)
+    .await
+    {
+        error!(
+            "Erreur lors de la création du user : {}",
+            error
+        );
+
+        return Packet::new(
+            PacketType::SignUp,
+            b"Impossible de creer le compte utilisateur".to_vec(),
+        );
+    }
+
+
+    // ========================================================
+    // 6. Succès
+    // ========================================================
+
+    debug!(
+        "Nouvel utilisateur créé : {}",
+        email
+    );
+
+
+    Packet::new(
+        PacketType::SignUp,
+        b"Utilisateur cree avec succes".to_vec(),
+    )
             }
 
             
