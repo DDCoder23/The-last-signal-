@@ -1,8 +1,9 @@
-use rand::Rng;
+use rand::{Rng,RngExt};
 use sqlx::SqlitePool;
 use std::collections::HashMap;
 use log::debug;
 use crate::gameplay::dice::jet_de_des;
+
 
 const PA: u32 = 1;
 const PO: u32 = PA * 10;
@@ -41,7 +42,7 @@ pub struct Tresor {
 
 impl Tresor {
     pub fn new() -> Self {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
 
         // -------------------------------------------------
         // LOOT PAR NIVEAU
@@ -165,7 +166,7 @@ impl Tresor {
         if jet_de_des(20, 1) >= 4 {
             niveau_1.insert(
                 "pain".to_string(),
-                rng.gen_range(3..=5),
+                rng.random_range(3..=5),
             );
         }
 
@@ -285,7 +286,7 @@ impl Tresor {
         ] {
             quantite_objets.insert(
                 objet.to_string(),
-                rng.gen_range(2..=9),
+                rng.random_range(2..=9),
             );
         }
         let mut sous_loot: HashMap<String, HashMap<String, f64>> =
@@ -412,7 +413,7 @@ let sous_loot_livre_admin = HashMap::from([
     niveau: u32,
     is_admin: bool,
 ) -> Result<HashMap<String, u32>, sqlx::Error> {
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
 
     let loot = self
         .loot_par_niveau
@@ -443,7 +444,7 @@ let sous_loot_livre_admin = HashMap::from([
             .copied()
             .unwrap_or(20);
 
-        let jet = rng.gen_range(1..=20);
+        let jet = rng.random_range(1..=20);
 
         if jet >= seuil {
             let objet = self
@@ -514,7 +515,7 @@ let sous_loot_livre_admin = HashMap::from([
         panic!("Table de loot vide");
     }
 
-    let tirage = rng.gen_range(0.0..total);
+    let tirage = rng.random_range(0.0..total);
 
     let mut cumul = 0.0;
 
