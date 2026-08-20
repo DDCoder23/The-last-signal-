@@ -134,7 +134,7 @@ impl PacketHandler {
         "#,
         email
     )
-    .fetch_one(pool)
+    .fetch_one(&pool)
     .await
     {
         Ok(value) => value != 0,
