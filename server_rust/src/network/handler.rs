@@ -6,7 +6,7 @@ use crate::network::client::Client;
 use crate:: network::parser::parse_login_payload;
 use log::{trace, debug, info, warn, error};
 pub struct PacketHandler;
-
+use crate::utils::password::verify_password;
 
 impl PacketHandler {
 
@@ -94,6 +94,7 @@ impl PacketHandler {
 
             }
 
+            
             PacketType::Login => {
 
     // ========================================================
@@ -215,7 +216,7 @@ impl PacketHandler {
 
 
     // ========================================================
-    // 4. Vérifier le ban ferme
+    // 4. Vérifier le ban temporaire
     // ========================================================
 
     let banned_temporarily =
@@ -264,22 +265,213 @@ impl PacketHandler {
 
 
     // ========================================================
-    // 5. Vérification du mot de passe
+    // 5. Vérifier le mot de passe
     // ========================================================
 
-    // TODO:
-    // Vérifier `password` avec `user.password_hash`.
-
-
-    debug!(
-        "Utilisateur autorisé à poursuivre la connexion : {}",
-        email
+    let password_valid = verify_password(
+        &password,
+        &user.password_hash,
     );
 
 
     // ========================================================
-    // 6. Pour l'instant : réponse temporaire
+    // 6. Mot de passe incorrect
     // ========================================================
+
+    if !password_valid {
+
+        let attempts = match sqlx::query_scalar!(
+            r#"
+            INSERT INTO login_attempts (
+                user_id,
+                failed_attempts,
+                last_attempt
+            )
+            VALUES (
+                ?,
+                1,
+                CURRENT_TIMESTAMP
+            )
+
+            ON CONFLICT(user_id)
+            DO UPDATE SET
+                failed_attempts =
+                    failed_attempts + 1,
+
+                last_attempt =
+                    CURRENT_TIMESTAMP
+
+            RETURNING failed_attempts
+            "#,
+            user.user_id
+        )
+        .fetch_one(pool)
+        .await
+        {
+            Ok(value) => value,
+
+            Err(error) => {
+
+                error!(
+                    "Erreur lors de l'enregistrement de la tentative : {}",
+                    error
+                );
+
+                return Packet::new(
+                    PacketType::Login,
+                    b"Erreur serveur".to_vec(),
+                );
+            }
+        };
+
+
+        debug!(
+            "Mot de passe incorrect pour {} : tentative {}",
+            email,
+            attempts
+        );
+
+
+        // ====================================================
+        // 3 échecs → ban de 10 minutes
+        // ====================================================
+
+        if attempts >= 3 {
+
+            if let Err(error) = sqlx::query!(
+                r#"
+                INSERT INTO bansferme (
+                    user_id,
+                    auteur,
+                    raison,
+                    date_ban,
+                    date_deban
+                )
+                VALUES (
+                    ?,
+                    'system',
+                    'Trop de tentatives de connexion échouées',
+                    CURRENT_TIMESTAMP,
+                    datetime(
+                        CURRENT_TIMESTAMP,
+                        '+10 minutes'
+                    )
+                )
+
+                ON CONFLICT(user_id)
+                DO UPDATE SET
+                    auteur = 'system',
+
+                    raison =
+                        'Trop de tentatives de connexion échouées',
+
+                    date_ban =
+                        CURRENT_TIMESTAMP,
+
+                    date_deban =
+                        datetime(
+                            CURRENT_TIMESTAMP,
+                            '+10 minutes'
+                        )
+                "#,
+                user.user_id
+            )
+            .execute(pool)
+            .await
+            {
+                error!(
+                    "Impossible de créer le ban temporaire : {}",
+                    error
+                );
+
+                return Packet::new(
+                    PacketType::Login,
+                    b"Erreur serveur".to_vec(),
+                );
+            }
+
+
+            // =================================================
+            // Supprimer le compteur
+            // =================================================
+
+            if let Err(error) = sqlx::query!(
+                r#"
+                DELETE FROM login_attempts
+                WHERE user_id = ?
+                "#,
+                user.user_id
+            )
+            .execute(pool)
+            .await
+            {
+                error!(
+                    "Impossible de supprimer le compteur : {}",
+                    error
+                );
+            }
+
+
+            debug!(
+                "Utilisateur {} banni pendant 10 minutes",
+                email
+            );
+
+
+            return Packet::new(
+                PacketType::Login,
+                b"Trop de tentatives. Compte bloque pendant 10 minutes."
+                    .to_vec(),
+            );
+        }
+
+
+        // ====================================================
+        // Échec mais moins de 3 tentatives
+        // ====================================================
+
+        return Packet::new(
+            PacketType::Login,
+            b"Identifiants invalides".to_vec(),
+        );
+    }
+
+
+    // ========================================================
+    // 7. Connexion réussie → remettre le compteur à zéro
+    // ========================================================
+
+    if let Err(error) = sqlx::query!(
+        r#"
+        DELETE FROM login_attempts
+        WHERE user_id = ?
+        "#,
+        user.user_id
+    )
+    .execute(pool)
+    .await
+    {
+        error!(
+            "Impossible de réinitialiser les tentatives : {}",
+            error
+        );
+
+        return Packet::new(
+            PacketType::Login,
+            b"Erreur serveur".to_vec(),
+        );
+    }
+
+
+    // ========================================================
+    // 8. Connexion réussie
+    // ========================================================
+
+    debug!(
+        "Utilisateur authentifié : {}",
+        email
+    );
+
 
     Packet::new(
         PacketType::Login,
