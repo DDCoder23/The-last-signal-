@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -59,9 +59,14 @@ jobs:
           } >> "$REPORT"
 
           if find . -name Cargo.toml | grep -q .; then
-            cargo fmt \
-             "$RUST_PROJECT/Cargo.toml"--release
+            if ! cargo fmt \
+            --manifest-path "$RUST_PROJECT/Cargo.toml" \
+            -- --check \
             >> "$REPORT" 2>&1
+            then
+            echo "⚠️ cargo fmt --check failed" \
+            >> "$REPORT"
+           fi
           else
             echo "No Rust project found." >> "$REPORT"
           fi

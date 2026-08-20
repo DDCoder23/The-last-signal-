@@ -27,7 +27,9 @@ CREATE TABLE IF NOT EXISTS objets_dispo (
         'consumable',
         'material',
         'armes',
-        'basic'
+        'basic',
+        'muni',
+        'mineral'
     )),
 
     CHECK (prix_vente >= 0)

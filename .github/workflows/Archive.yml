@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout ci-reports
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           ref: ci-reports
           fetch-depth: 0
@@ -31,7 +31,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Install zip
-        run: sudo apt-get update && sudo apt-get install -y zip
+        run: sudo apt-get install -y zip
 
       - name: Archive old reports
         shell: bash

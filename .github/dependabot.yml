@@ -29,6 +29,10 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    ignore:
+      - dependency-name: "rand_core"
+        versions:
+          - "0.6.4" #"argon2 0.5.3 en a besoin"
 
   # Workflows GitHub Actions
   - package-ecosystem: "github-actions"
@@ -38,6 +42,4 @@ updates:
      time: "02:00"
      timezone: "Asia/Tokyo" #"Europe/Paris"
     open-pull-requests-limit: 5
-    ignore:
-      - dependency-name: "actions/checkout"
-        versions: [">=v4"]
+    

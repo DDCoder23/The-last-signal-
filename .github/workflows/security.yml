@@ -23,6 +23,11 @@ jobs:
     name: Security Analysis
 
     runs-on: ubuntu-latest
+    env: 
+      GH_TOKEN: ${{ github.token }}
+      VAULT_KEY: ${{ secrets.VAULT_KEY }}
+      DATABASE_PATH: ${{ github.workspace }}/database_test
+      DATABASE_URL: sqlite:${{ github.workspace }}/database_test/the_last_signal.db
 
     steps:
 
@@ -31,7 +36,7 @@ jobs:
       ##########################################################
 
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
               fetch-depth: 0
               token: ${{ secrets.GITHUB_TOKEN }}
@@ -42,7 +47,7 @@ jobs:
       ##########################################################
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.14"
           
@@ -83,7 +88,7 @@ jobs:
       ##########################################################
 
       - name: Gitleaks
-        uses: gitleaks/gitleaks-action@v2
+        uses: gitleaks/gitleaks-action@v3
 
       ##########################################################
       # Rapport
@@ -94,6 +99,7 @@ jobs:
           
 
           mkdir -p reports/security
+          
         
 
           REPORT="reports/security/security-report-${GITHUB_RUN_NUMBER}.md"
@@ -107,18 +113,20 @@ jobs:
           echo "Date : $(date)" >> "$REPORT"
 
           echo "" >> "$REPORT"
+      - name: Debug environment
+        run: |
+            mkdir -p database_test
+        
+            echo "DATABASE_URL=$DATABASE_URL"
+            echo "DATABASE_PATH=$DATABASE_PATH"
       - name: Build Rust server
         working-directory: server_rust
         run: |
           cargo build
       - name: Start Rust server
         working-directory: server_rust
-        env:
-          DATABASE_URL: server_rust/data/security.db
-          DATABASE_PATH: server_rust/data
         run: |
-          mkdir -p server_rust/data
-          touch server_rust/data/security.db
+          
           cargo run > server.log 2>&1 &
 
           echo $! > server.pid
@@ -586,7 +594,7 @@ jobs:
       ##########################################################
 
       - name: Upload reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: security-report
           path: |
@@ -602,3 +610,14 @@ jobs:
         with:
           report-type: security
           commit-message: "Security Report #${{ github.run_number }}"
+  archive:
+    needs: security
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.security.result == 'success' ||
+        needs.security.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/Archive.yml

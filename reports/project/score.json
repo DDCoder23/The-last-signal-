@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-15T12:20:35.167878",
+    "generated": "2026-08-19T23:12:09.615646",
     "score": 78,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 100,
         "navigation": 0
     },
-    "problem_count": 843,
+    "problem_count": 864,
     "details": {
         "markdown": {
             "score": 49,
@@ -114,12 +114,6 @@
                 },
                 {
                     "file": "docs/gdd/14_CLASSES.md",
-                    "severity": "error",
-                    "message": "Fichier vide.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "docs/gdd/04_CHRONOLOGIE.md",
                     "severity": "error",
                     "message": "Fichier vide.",
                     "module": "markdown"
@@ -240,8 +234,8 @@
                 },
                 {
                     "file": "docs/gdd/05_FACTIONS.md",
-                    "severity": "error",
-                    "message": "Fichier vide.",
+                    "severity": "warning",
+                    "message": "Contenu très faible.",
                     "module": "markdown"
                 },
                 {
@@ -391,13 +385,13 @@
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 13 > 120 caractères.",
+                    "message": "Ligne 17 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 15 > 120 caractères.",
+                    "message": "Ligne 19 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -599,9 +593,15 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Ligne 257 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/README.md",
                     "severity": "warning",
-                    "message": "Ligne 7 > 120 caractères.",
+                    "message": "Ligne 12 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -677,6 +677,78 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 9 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 11 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 17 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 35 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 50 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 78 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 110 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 112 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 132 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 146 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 154 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "Ligne 199 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/gdd/01_VISION.md",
                     "severity": "warning",
                     "message": "Ligne 27 > 120 caractères.",
@@ -721,7 +793,7 @@
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "Ligne 7 > 120 caractères.",
+                    "message": "Ligne 12 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -953,6 +1025,12 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (8).",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1).",
@@ -962,6 +1040,12 @@
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (89).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CODING_RULES.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (258).",
                     "module": "markdown"
                 },
                 {
@@ -1168,12 +1252,6 @@
                     "file": "docs/gdd/14_CLASSES.md",
                     "severity": "error",
                     "message": "docs/gdd/14_CLASSES.md: contient 0 titres H1 (1 attendu).",
-                    "module": "titles"
-                },
-                {
-                    "file": "docs/gdd/04_CHRONOLOGIE.md",
-                    "severity": "error",
-                    "message": "docs/gdd/04_CHRONOLOGIE.md: contient 0 titres H1 (1 attendu).",
                     "module": "titles"
                 },
                 {
@@ -1467,7 +1545,13 @@
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "README.md:172 titre sans ligne vide avant.",
+                    "message": "README.md:2 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "README.md:176 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1519,6 +1603,12 @@
                     "module": "titles"
                 },
                 {
+                    "file": "docs/README.md",
+                    "severity": "warning",
+                    "message": "docs/README.md:2 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "docs/QRB_flake8_error.md:935 titre sans ligne vide avant.",
@@ -1528,6 +1618,18 @@
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "docs/QRB_flake8_error.md:1363 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "docs/gdd/04_CHRONOLOGIE.md:201 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/gdd/README.md",
+                    "severity": "warning",
+                    "message": "docs/gdd/README.md:2 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1587,25 +1689,43 @@
                 {
                     "file": "docs/CODING_RULES.md",
                     "severity": "warning",
-                    "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).",
+                    "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:104).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/README.md",
                     "severity": "warning",
-                    "message": "docs/README.md:63 titre dupliqué (déjà présent dans README.md:118).",
+                    "message": "docs/README.md:2 titre dupliqué (déjà présent dans README.md:2).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/README.md",
                     "severity": "warning",
-                    "message": "docs/README.md:170 titre dupliqué (déjà présent dans README.md:161).",
+                    "message": "docs/README.md:68 titre dupliqué (déjà présent dans README.md:122).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/README.md",
+                    "severity": "warning",
+                    "message": "docs/README.md:175 titre dupliqué (déjà présent dans README.md:165).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "docs/gdd/04_CHRONOLOGIE.md:201 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/gdd/04_CHRONOLOGIE.md",
+                    "severity": "warning",
+                    "message": "docs/gdd/04_CHRONOLOGIE.md:210 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).",
                     "module": "titles"
                 },
                 {
@@ -1635,7 +1755,7 @@
                 {
                     "file": "docs/gdd/02_UNIVERS.md",
                     "severity": "warning",
-                    "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:36).",
+                    "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:41).",
                     "module": "titles"
                 },
                 {
@@ -1659,19 +1779,25 @@
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "docs/gdd/README.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).",
+                    "message": "docs/gdd/README.md:2 titre dupliqué (déjà présent dans README.md:2).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "docs/gdd/README.md:31 titre dupliqué (déjà présent dans docs/README.md:36).",
+                    "message": "docs/gdd/README.md:18 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).",
                     "module": "titles"
                 },
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "docs/gdd/README.md:145 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
+                    "message": "docs/gdd/README.md:36 titre dupliqué (déjà présent dans docs/README.md:41).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/gdd/README.md",
+                    "severity": "warning",
+                    "message": "docs/gdd/README.md:150 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).",
                     "module": "titles"
                 },
                 {
