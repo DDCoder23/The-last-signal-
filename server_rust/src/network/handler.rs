@@ -3,6 +3,7 @@ use crate::network::packet::{
     PacketType,LogLevel,ClientLog,
 };
 use crate::network::client::Client;
+use crate:: network::client::parser::parse_login_payload;
 use log::{trace, debug, info, warn, error};
 pub struct PacketHandler;
 
@@ -94,32 +95,39 @@ impl PacketHandler {
 
             PacketType::Login => {
 
-                let username =
-                    String::from_utf8_lossy(
-                        &packet.payload
-                    );
+    let (email, _password) =
+        match parse_login_payload(&packet.payload) {
+
+            Ok(login) => login,
+
+            Err(error) => {
 
                 debug!(
-                    "Connexion joueur : {}",
-                    username
+                    "LOGIN invalide : {}",
+                    error
                 );
 
-                // Ici, plus tard :
-                // - rechercher le client
-                // - rechercher le compte
-                // - créer une session
-                // - logger la connexion
-
-                Packet::new(
+                return Packet::new(
                     PacketType::Login,
-                    format!(
-                        "Bienvenue {}",
-                        username
-                    )
-                    .into_bytes(),
-                )
-
+                    b"LOGIN invalide".to_vec(),
+                );
             }
+        };
+
+    debug!(
+        "Tentative de connexion : {}",
+        email
+    );
+
+    Packet::new(
+        PacketType::Login,
+        format!(
+            "Bienvenue {}",
+            email
+        )
+        .into_bytes(),
+    )
+}
 
             PacketType::Chat => {
 
