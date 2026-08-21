@@ -1,0 +1,526 @@
+# Rust Report
+
+Run : 1090
+Branch : main
+Commit : 9aab3783823ff1efc4f7c4a30fe90633cc582bf6
+Date : Fri Aug 21 21:50:28 UTC 2026
+
+
+## Cargo fmt
+error: expected `;`, found `{`
+   --> /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:330:7
+    |
+330 | .await
+    |       ^ help: add `;` here
+331 | {
+    | - unexpected token
+
+error: expected one of `.`, `;`, `?`, `}`, or an operator, found `=>`
+   --> /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:332:16
+    |
+332 |     Ok(result) => result.rows_affected() > 0,
+    |                ^^ expected one of `.`, `;`, `?`, `}`, or an operator
+
+Error writing files: failed to resolve mod `handler`: cannot parse /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:1:
++use log::{debug, info};
++use the_last_signal_server::database::{database_manager::DatabaseManager, migrations};
+ use the_last_signal_server::network::packet::PacketType;
+-use the_last_signal_server::database::{
+-    database_manager::DatabaseManager,
+-    migrations,
+-};
+-use log::{debug,info};
+ use the_last_signal_server::network::server::Server;
+ use the_last_signal_server::utils::logger::logger::ServerLogger;
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:10:
+ #[tokio::main]
+ async fn main() -> Result<(), Box<dyn std::error::Error>> {
+     let _guard = ServerLogger::init();
+-    
+-    
+-    let database_url = 
+-        std::env::var("DATABASE_URL")?;
+-    let database_path =
+-        std::env::var("DATABASE_PATH")?;
+ 
+-    let database =
+-        DatabaseManager::new(&database_path,& database_url)
+-            .await?;
++    let database_url = std::env::var("DATABASE_URL")?;
++    let database_path = std::env::var("DATABASE_PATH")?;
+ 
++    let database = DatabaseManager::new(&database_path, &database_url).await?;
++
+     database.ping().await?;
+ 
+-    migrations::run(&database.pool())
+-        .await?;
++    migrations::run(&database.pool()).await?;
+ 
+     info!("Base SQLite prête.");
+     ServerLogger::set_database(database.pool().clone());
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:31:
+-    
+ 
+-    let server =
+-        Server::new(
+-            "127.0.0.1:5000",
+-            database,
+-        )
+-        .await?;
++    let server = Server::new("127.0.0.1:5000", database).await?;
+ 
+-
+     server.start().await;
+-    
+ 
+     Ok(())
+ }
+⚠️ cargo fmt --check failed
+
+## Cargo clippy
+
+## Cargo test
+   Compiling libc v0.2.189
+   Compiling cfg-if v1.0.4
+   Compiling typenum v1.20.1
+   Compiling rand_core v0.10.1
+   Compiling zerofrom v0.1.8
+   Compiling stable_deref_trait v1.2.1
+   Compiling pin-project-lite v0.2.17
+   Compiling yoke v0.8.3
+   Compiling smallvec v1.15.2
+   Compiling zerovec v0.11.8
+   Compiling memchr v2.8.3
+   Compiling tinystr v0.8.4
+   Compiling hybrid-array v0.4.14
+   Compiling once_cell v1.21.4
+   Compiling jobserver v0.1.35
+   Compiling getrandom v0.4.3
+   Compiling scopeguard v1.2.0
+   Compiling litemap v0.8.3
+   Compiling cc v1.4.4
+   Compiling writeable v0.6.4
+   Compiling futures-core v0.3.34
+   Compiling lock_api v0.4.14
+   Compiling crypto-common v0.2.2
+   Compiling icu_locale_core v2.3.0
+   Compiling zeroize v1.9.0
+   Compiling potential_utf v0.1.6
+   Compiling zerotrie v0.2.5
+   Compiling utf8_iter v1.0.4
+   Compiling icu_collections v2.3.0
+   Compiling icu_provider v2.3.1
+   Compiling serde_core v1.0.229
+   Compiling cmov v0.5.4
+   Compiling num-traits v0.2.19
+   Compiling icu_normalizer_data v2.3.0
+   Compiling parking_lot_core v0.9.12
+   Compiling ctutils v0.4.2
+   Compiling icu_properties_data v2.3.0
+   Compiling block-buffer v0.12.1
+   Compiling socket2 v0.6.5
+   Compiling mio v1.2.2
+   Compiling futures-sink v0.3.34
+   Compiling equivalent v1.0.2
+   Compiling bytes v1.12.1
+   Compiling icu_properties v2.3.0
+   Compiling parking_lot v0.12.5
+   Compiling icu_normalizer v2.3.0
+   Compiling cpufeatures v0.3.0
+   Compiling cpufeatures v0.2.17
+   Compiling iana-time-zone v0.1.65
+   Compiling generic-array v0.14.7
+   Compiling serde v1.0.229
+   Compiling idna_adapter v1.2.2
+   Compiling futures-io v0.3.34
+   Compiling foldhash v0.2.0
+   Compiling hashbrown v0.17.1
+   Compiling slab v0.4.12
+   Compiling allocator-api2 v0.2.21
+   Compiling futures-task v0.3.34
+   Compiling percent-encoding v2.3.2
+   Compiling log v0.4.33
+   Compiling hashbrown v0.16.1
+   Compiling form_urlencoded v1.2.2
+   Compiling futures-util v0.3.34
+   Compiling idna v1.1.0
+   Compiling indexmap v2.14.0
+   Compiling crossbeam-utils v0.8.22
+   Compiling zmij v1.0.23
+   Compiling subtle v2.6.1
+   Compiling crc-catalog v2.5.0
+   Compiling itoa v1.0.18
+   Compiling parking v2.2.1
+   Compiling event-listener v5.4.2
+   Compiling crc v3.4.0
+   Compiling serde_json v1.0.151
+   Compiling crossbeam-queue v0.3.13
+   Compiling hashlink v0.11.1
+   Compiling url v2.5.8
+   Compiling either v1.18.0
+   Compiling crypto-common v0.1.7
+   Compiling block-buffer v0.10.4
+   Compiling futures-intrusive v0.5.0
+   Compiling const-oid v0.10.2
+   Compiling digest v0.11.3
+   Compiling digest v0.10.7
+   Compiling tokio v1.53.1
+   Compiling libsqlite3-sys v0.37.0
+   Compiling zstd-sys v2.0.16+zstd.1.5.7
+   Compiling spin v0.9.9
+   Compiling inout v0.2.2
+   Compiling tracing-core v0.1.36
+   Compiling errno v0.3.14
+   Compiling signal-hook-registry v1.4.8
+   Compiling tracing v0.1.44
+   Compiling flume v0.12.0
+   Compiling sha2 v0.10.9
+   Compiling futures-executor v0.3.34
+   Compiling chrono v0.4.45
+   Compiling futures-channel v0.3.34
+   Compiling atoi v2.0.0
+   Compiling openssl-sys v0.9.117
+   Compiling tokio-stream v0.1.19
+   Compiling aho-corasick v1.1.5
+   Compiling cpubits v0.1.1
+   Compiling regex-syntax v0.8.11
+   Compiling sqlx-core v0.9.0
+   Compiling regex-automata v0.4.18
+   Compiling thiserror v2.0.20
+   Compiling cipher v0.5.2
+   Compiling getrandom v0.2.17
+   Compiling simd-adler32 v0.3.10
+   Compiling bitflags v2.13.1
+   Compiling base64 v0.22.1
+   Compiling zstd-safe v7.2.4
+   Compiling sqlx-sqlite v0.9.0
+   Compiling crc32fast v1.5.0
+   Compiling universal-hash v0.6.1
+   Compiling uuid v1.24.1
+   Compiling hex v0.4.3
+   Compiling adler2 v2.0.1
+   Compiling foreign-types-shared v0.1.1
+   Compiling foreign-types v0.3.2
+   Compiling openssl v0.10.81
+   Compiling miniz_oxide v0.8.9
+   Compiling sqlx-macros-core v0.9.0
+   Compiling polyval v0.7.3
+   Compiling rand_core v0.6.4
+   Compiling aes v0.9.2
+   Compiling hmac v0.13.0
+   Compiling sha2 v0.11.0
+   Compiling zlib-rs v0.6.7
+   Compiling linux-raw-sys v0.12.1
+   Compiling nu-ansi-term v0.50.3
+   Compiling bumpalo v3.20.3
+   Compiling tinyvec_macros v0.1.1
+   Compiling lazy_static v1.5.0
+   Compiling deranged v0.5.8
+   Compiling powerfmt v0.2.0
+   Compiling base64ct v1.8.3
+   Compiling time-core v0.1.9
+   Compiling libbz2-rs-sys v0.2.5
+   Compiling num-conv v0.2.2
+   Compiling time v0.3.55
+   Compiling bzip2 v0.6.1
+   Compiling password-hash v0.5.0
+   Compiling sharded-slab v0.1.7
+   Compiling flate2 v1.1.9
+   Compiling tinyvec v1.12.0
+   Compiling zopfli v0.8.3
+   Compiling rustix v1.1.4
+   Compiling lzma-rust2 v0.16.5
+   Compiling pbkdf2 v0.13.0
+   Compiling sqlx-macros v0.9.0
+   Compiling zstd v0.13.3
+   Compiling ghash v0.6.0
+   Compiling ctr v0.10.1
+   Compiling regex v1.13.1
+   Compiling matchers v0.2.0
+   Compiling tracing-log v0.2.0
+   Compiling aead v0.6.1
+   Compiling blake2 v0.10.6
+   Compiling sha1 v0.11.0
+   Compiling chacha20 v0.10.1
+   Compiling thread_local v1.1.10
+   Compiling deflate64 v0.1.12
+   Compiling ppmd-rust v1.4.0
+   Compiling same-file v1.0.6
+   Compiling fastrand v2.5.0
+   Compiling constant_time_eq v0.4.2
+   Compiling byteorder v1.5.0
+   Compiling typed-path v0.12.3
+   Compiling fernet v0.2.2
+   Compiling tempfile v3.27.0
+   Compiling walkdir v2.5.0
+   Compiling zip v8.6.0
+   Compiling tracing-subscriber v0.3.23
+   Compiling rand v0.10.2
+   Compiling argon2 v0.5.3
+   Compiling aes-gcm v0.11.1
+   Compiling flexi_logger v0.31.10
+   Compiling sqlx v0.9.0
+   Compiling unicode-normalization v0.1.25
+   Compiling anyhow v1.0.104
+   Compiling base64 v0.23.1
+   Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
+error: expected `;`, found `{`
+   --> src/network/handler.rs:330:7
+    |
+330 | .await
+    |       ^ help: add `;` here
+331 | {
+    | - unexpected token
+
+error: expected one of `.`, `;`, `?`, `}`, or an operator, found `=>`
+   --> src/network/handler.rs:332:16
+    |
+332 |     Ok(result) => result.rows_affected() > 0,
+    |                ^^ expected one of `.`, `;`, `?`, `}`, or an operator
+
+error: set `DATABASE_URL` to use query macros online, or run `cargo sqlx prepare` to update the query cache
+   --> src/network/handler.rs:407:15
+    |
+407 |           match sqlx::query_scalar!(
+    |  _______________^
+408 | |             r#"
+409 | |             SELECT EXISTS(
+410 | |                 SELECT 1
+...   |
+415 | |             "#,)
+    | |________________^
+    |
+    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query_scalar` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+error: set `DATABASE_URL` to use query macros online, or run `cargo sqlx prepare` to update the query cache
+   --> src/network/handler.rs:580:33
+    |
+580 |               if let Err(error) = sqlx::query!(
+    |  _________________________________^
+581 | |                 r#"
+582 | |                 DELETE FROM login_attempts
+583 | |                 WHERE user_id = ?
+584 | |                 "#,
+585 | |                 user.user_id
+586 | |             )
+    | |_____________^
+    |
+    = note: this error originates in the macro `$crate::sqlx_macros::expand_query` which comes from the expansion of the macro `sqlx::query` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: unused import: `Error`
+ --> src/database/database_manager.rs:6:5
+  |
+6 |     Error,
+  |     ^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `uuid::Uuid`
+ --> src/database/migrations.rs:2:5
+  |
+2 | use uuid::Uuid;
+  |     ^^^^^^^^^^
+
+warning: unused import: `Rng`
+ --> src/gameplay/dice.rs:1:12
+  |
+1 | use rand::{Rng,RngExt};
+  |            ^^^
+
+warning: unused import: `log::debug`
+ --> src/gameplay/tresor.rs:4:5
+  |
+4 | use log::debug;
+  |     ^^^^^^^^^^
+
+error[E0308]: mismatched types
+  --> src/database/migrations.rs:50:9
+   |
+44 |     create_account(
+   |     -------------- arguments to this function are incorrect
+...
+50 |         "DISCONNECTED",
+   |         ^^^^^^^^^^^^^^ expected `Option<&str>`, found `&str`
+   |
+   = note:   expected enum `std::option::Option<&str>`
+           found reference `&'static str`
+note: function defined here
+  --> src/utils/account_creator.rs:3:14
+   |
+ 3 | pub async fn create_account(
+   |              ^^^^^^^^^^^^^^
+...
+ 9 |     status: Option<&str>,
+   |     --------------------
+help: try wrapping the expression in `Some`
+   |
+50 |         Some("DISCONNECTED"),
+   |         +++++              +
+
+error[E0308]: mismatched types
+  --> src/database/migrations.rs:60:5
+   |
+54 | create_account(
+   | -------------- arguments to this function are incorrect
+...
+60 |     "DISCONNECTED",
+   |     ^^^^^^^^^^^^^^ expected `Option<&str>`, found `&str`
+   |
+   = note:   expected enum `std::option::Option<&str>`
+           found reference `&'static str`
+note: function defined here
+  --> src/utils/account_creator.rs:3:14
+   |
+ 3 | pub async fn create_account(
+   |              ^^^^^^^^^^^^^^
+...
+ 9 |     status: Option<&str>,
+   |     --------------------
+help: try wrapping the expression in `Some`
+   |
+60 |     Some("DISCONNECTED"),
+   |     +++++              +
+
+error[E0609]: no field `user_id` on type `SqliteRow`
+   --> src/network/handler.rs:328:12
+    |
+328 | .bind(user.user_id)
+    |            ^^^^^^^ unknown field
+
+error[E0600]: cannot apply unary operator `!` to type `Result<SqliteQueryResult, sqlx::Error>`
+   --> src/network/handler.rs:347:4
+    |
+347 | if !connected {
+    |    ^^^^^^^^^^ cannot apply unary operator `!`
+    |
+note: `Result<SqliteQueryResult, sqlx::Error>` does not implement `Not`
+   --> /rustc/88d9e12ae178fab0fb5cc050a94da85685d449ea/library/core/src/result.rs:557:0
+    |
+    = note: `Result<SqliteQueryResult, sqlx::Error>` is defined in another crate
+
+error[E0609]: no field `user_id` on type `SqliteRow`
+   --> src/network/handler.rs:368:24
+    |
+368 |             .bind(user.user_id)
+    |                        ^^^^^^^ unknown field
+
+error[E0609]: no field `user_id` on type `SqliteRow`
+   --> src/network/handler.rs:416:24
+    |
+416 |             .bind(user.user_id)
+    |                        ^^^^^^^ unknown field
+
+error[E0609]: no field `password_hash` on type `SqliteRow`
+   --> src/network/handler.rs:456:15
+    |
+456 |         &user.password_hash,
+    |               ^^^^^^^^^^^^^ unknown field
+
+error[E0609]: no field `user_id` on type `SqliteRow`
+   --> src/network/handler.rs:489:24
+    |
+489 |             .bind(user.user_id)
+    |                        ^^^^^^^ unknown field
+
+error[E0609]: no field `user_id` on type `SqliteRow`
+   --> src/network/handler.rs:559:28
+    |
+559 |                 .bind(user.user_id
+    |                            ^^^^^^^ unknown field
+
+error[E0609]: no field `user_id` on type `SqliteRow`
+   --> src/network/handler.rs:631:20
+    |
+631 |         .bind(user.user_id
+    |                    ^^^^^^^ unknown field
+
+error[E0277]: the trait bound `&&Pool<Sqlite>: Executor<'_>` is not satisfied
+   --> src/utils/account_creator.rs:99:18
+    |
+ 99 |         .execute(&pool)
+    |          ------- ^^^^^ the trait `Executor<'_>` is not implemented for `&&Pool<Sqlite>`
+    |          |
+    |          required by a bound introduced by this call
+    |
+note: required by a bound in `Query::<'q, DB, A>::execute`
+   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/query.rs:189:12
+    |
+185 |     pub async fn execute<'e, 'c: 'e, E>(self, executor: E) -> Result<DB::QueryResult, Error>
+    |                  ------- required by a bound in this associated function
+...
+189 |         E: Executor<'c, Database = DB>,
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Query::<'q, DB, A>::execute`
+help: consider dereferencing here
+    |
+ 99 |         .execute(&*pool)
+    |                   +
+help: consider removing the leading `&`-reference
+    |
+ 99 -         .execute(&pool)
+ 99 +         .execute(pool)
+    |
+
+error[E0277]: the trait bound `&&Pool<Sqlite>: Executor<'_>` is not satisfied
+   --> src/utils/account_creator.rs:90:9
+    |
+ 90 | /         sqlx::query(
+ 91 | |             r#"
+ 92 | |             UPDATE users
+ 93 | |             SET status = ?
+...   |
+ 98 | |         .bind(&email)
+ 99 | |         .execute(&pool)
+    | |_______________________^ the trait `Executor<'_>` is not implemented for `&&Pool<Sqlite>`
+    |
+help: the trait `Executor<'_>` is not implemented for `&&Pool<Sqlite>`
+      but it is implemented for `&Pool<_>`
+   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/pool/executor.rs:12:1
+    |
+ 12 | / impl<'p, DB: Database> Executor<'p> for &'_ Pool<DB>
+ 13 | | where
+ 14 | |     for<'c> &'c mut DB::Connection: Executor<'c, Database = DB>,
+    | |________________________________________________________________^
+    = help: for that trait implementation, expected `Pool<_>`, found `&Pool<Sqlite>`
+note: required by a bound in `Query::<'q, DB, A>::execute`
+   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/query.rs:189:12
+    |
+185 |     pub async fn execute<'e, 'c: 'e, E>(self, executor: E) -> Result<DB::QueryResult, Error>
+    |                  ------- required by a bound in this associated function
+...
+189 |         E: Executor<'c, Database = DB>,
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Query::<'q, DB, A>::execute`
+
+error[E0277]: the trait bound `&&Pool<Sqlite>: Executor<'_>` is not satisfied
+   --> src/utils/account_creator.rs:100:10
+    |
+100 |         .await?;
+    |          ^^^^^ the trait `Executor<'_>` is not implemented for `&&Pool<Sqlite>`
+    |
+help: the trait `Executor<'_>` is not implemented for `&&Pool<Sqlite>`
+      but it is implemented for `&Pool<_>`
+   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/pool/executor.rs:12:1
+    |
+ 12 | / impl<'p, DB: Database> Executor<'p> for &'_ Pool<DB>
+ 13 | | where
+ 14 | |     for<'c> &'c mut DB::Connection: Executor<'c, Database = DB>,
+    | |________________________________________________________________^
+    = help: for that trait implementation, expected `Pool<_>`, found `&Pool<Sqlite>`
+note: required by a bound in `Query::<'q, DB, A>::execute`
+   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/query.rs:189:12
+    |
+185 |     pub async fn execute<'e, 'c: 'e, E>(self, executor: E) -> Result<DB::QueryResult, Error>
+    |                  ------- required by a bound in this associated function
+...
+189 |         E: Executor<'c, Database = DB>,
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^ required by this bound in `Query::<'q, DB, A>::execute`
+
+Some errors have detailed explanations: E0277, E0308, E0600, E0609.
+For more information about an error, try `rustc --explain E0277`.
+warning: `the-last-signal-server` (lib) generated 4 warnings
+error: could not compile `the-last-signal-server` (lib) due to 17 previous errors; 4 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+warning: `the-last-signal-server` (lib test) generated 4 warnings (4 duplicates)
+error: could not compile `the-last-signal-server` (lib test) due to 17 previous errors; 4 warnings emitted
