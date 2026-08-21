@@ -6,6 +6,7 @@ pub async fn create_account(
     password_hash: &str,
     account_name: &str,
     role_name: &str,
+    status: Option<&str>,
 ) -> Result<(), sqlx::Error> {
     let mut tx = pool.begin().await?;
 
@@ -41,7 +42,7 @@ pub async fn create_account(
                 "#,
             )
             .bind(&user_id)
-            .bind(email)
+            .bind(&email)
             .bind(password_hash)
             .execute(&mut *tx)
             .await?;
@@ -85,6 +86,19 @@ pub async fn create_account(
     .bind(role_id)
     .execute(&mut *tx)
     .await?;
+    if let Some(status) = status {
+        sqlx::query(
+            r#"
+            UPDATE users
+            SET status = ?
+            WHERE email = ?
+            "#,
+        )
+        .bind(status)
+        .bind(&email)
+        .execute(&pool)
+        .await?;
+    }
 
     // ========================================================
     // 4. Valider la transaction
