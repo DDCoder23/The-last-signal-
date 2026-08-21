@@ -124,7 +124,7 @@ impl PacketHandler {
     // 2. Vérifier que l'email n'existe pas
     // ========================================================
 
-    let email_exists = match sqlx::query_scalar!(
+    let email_exists = match sqlx::query_scalar(
         r#"
         SELECT EXISTS(
             SELECT 1
@@ -132,8 +132,8 @@ impl PacketHandler {
             WHERE email = ?
         )
         "#,
-        email
     )
+    .bind(email)
     .fetch_one(&pool)
     .await
     {
@@ -203,7 +203,7 @@ impl PacketHandler {
     // 5. Créer le user
     // ========================================================
 
-    if let Err(error) = sqlx::query!(
+    if let Err(error) = sqlx::query(
         r#"
         INSERT INTO users (
             user_id,
@@ -212,10 +212,10 @@ impl PacketHandler {
         )
         VALUES (?, ?, ?)
         "#,
-        user_id,
-        email,
-        password_hash
-    )
+        )
+        .bind(user_id)
+        .bind(email)
+        .bind(password_hash)
     .execute(&pool)
     .await
     {
@@ -278,16 +278,15 @@ impl PacketHandler {
     // 2. Chercher l'utilisateur
     // ========================================================
 
-    let user = match sqlx::query!(
+    let user = match sqlx::query(
         r#"
         SELECT
             user_id,
             password_hash
         FROM users
         WHERE email = ?
-        "#,
-        email
-    )
+        "#,)
+        .bind(email)
     .fetch_optional(&pool)
     .await
     {
@@ -325,16 +324,15 @@ impl PacketHandler {
     // ========================================================
 
     let banned_permanently =
-        match sqlx::query_scalar!(
+        match sqlx::query_scalar(
             r#"
             SELECT EXISTS(
                 SELECT 1
                 FROM bansperm
                 WHERE user_id = ?
             )
-            "#,
-            user.user_id
-        )
+            "#,)
+            .bind(user.user_id)
         .fetch_one(&pool)
         .await
         {
@@ -381,9 +379,8 @@ impl PacketHandler {
                 WHERE user_id = ?
                   AND datetime(date_deban) > CURRENT_TIMESTAMP
             )
-            "#,
-            user.user_id
-        )
+            "#,)
+            .bind(user.user_id)
         .fetch_one(&pool)
         .await
         {
@@ -433,7 +430,7 @@ impl PacketHandler {
 
     if !password_valid {
 
-        let attempts = match sqlx::query_scalar!(
+        let attempts = match sqlx::query_scalar(
             r#"
             INSERT INTO login_attempts (
                 user_id,
@@ -455,9 +452,8 @@ impl PacketHandler {
                     CURRENT_TIMESTAMP
 
             RETURNING failed_attempts
-            "#,
-            user.user_id
-        )
+            "#,)
+            .bind(user.user_id)
         .fetch_one(&pool)
         .await
         {
@@ -491,7 +487,7 @@ impl PacketHandler {
 
         if attempts >= 3 {
 
-            if let Err(error) = sqlx::query!(
+            if let Err(error) = sqlx::query(
                 r#"
                 INSERT INTO bansferme (
                     user_id,
@@ -526,8 +522,8 @@ impl PacketHandler {
                             CURRENT_TIMESTAMP,
                             '+10 minutes'
                         )
-                "#,
-                user.user_id
+                "#,)
+                .bind(user.user_id
             )
             .execute(&pool)
             .await
