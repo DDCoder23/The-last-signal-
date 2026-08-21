@@ -317,6 +317,39 @@ impl PacketHandler {
             );
         }
     };
+    let connected = sqlx::query(
+    r#"
+    UPDATE users
+    SET status = 'CONNECTED'
+    WHERE id = ?
+      AND status != 'CONNECED'
+    "#,
+)
+.bind(user.user_id)
+.execute(&pool)
+.await
+{
+    Ok(result) => result.rows_affected() > 0,
+
+    Err(error) => {
+        error!(
+            "Erreur lors de la connexion du joueur : {}",
+            error
+        );
+
+        return Packet::new(
+            PacketType::Login,
+            b"Erreur serveur".to_vec(),
+        );
+    }
+};
+
+if !connected {
+    return Packet::new(
+        PacketType::Login,
+        b"Ce compte est deja connecte".to_vec(),
+    );
+}
 
 
     // ========================================================
