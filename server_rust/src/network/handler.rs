@@ -590,12 +590,12 @@ impl PacketHandler {
     // 7. Connexion réussie → remettre le compteur à zéro
     // ========================================================
 
-    if let Err(error) = sqlx::query!(
+    if let Err(error) = sqlx::query(
         r#"
         DELETE FROM login_attempts
         WHERE user_id = ?
-        "#,
-        user.user_id
+        "#,)
+        .bind(user.user_id
     )
     .execute(&pool)
     .await
