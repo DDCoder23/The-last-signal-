@@ -354,6 +354,18 @@
         "module": "markdown"
     },
     {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 16 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 18 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
         "file": "README.md",
         "severity": "warning",
         "message": "Ligne 17 > 120 caractères.",
@@ -990,6 +1002,18 @@
         "module": "markdown"
     },
     {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "Espace en fin de ligne (1).",
+        "module": "markdown"
+    },
+    {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "Espace en fin de ligne (201).",
+        "module": "markdown"
+    },
+    {
         "file": "README.md",
         "severity": "warning",
         "message": "Espace en fin de ligne (1).",
@@ -1500,6 +1524,30 @@
         "module": "titles"
     },
     {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "README_ENG.md:2 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "README_ENG.md:14 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "README_ENG.md:32 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "README_ENG.md",
+        "severity": "warning",
+        "message": "README_ENG.md:176 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
         "file": "README.md",
         "severity": "warning",
         "message": "README.md:2 titre sans ligne vide avant.",
@@ -1644,15 +1692,51 @@
         "module": "titles"
     },
     {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "README.md:1 titre dupliqué (déjà présent dans README_ENG.md:1).",
+        "module": "titles"
+    },
+    {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "README.md:2 titre dupliqué (déjà présent dans README_ENG.md:2).",
+        "module": "titles"
+    },
+    {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "README.md:56 titre dupliqué (déjà présent dans README_ENG.md:53).",
+        "module": "titles"
+    },
+    {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "README.md:104 titre dupliqué (déjà présent dans README_ENG.md:103).",
+        "module": "titles"
+    },
+    {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "README.md:197 titre dupliqué (déjà présent dans README_ENG.md:198).",
+        "module": "titles"
+    },
+    {
+        "file": "README.md",
+        "severity": "warning",
+        "message": "README.md:204 titre dupliqué (déjà présent dans README_ENG.md:205).",
+        "module": "titles"
+    },
+    {
         "file": "docs/CODING_RULES.md",
         "severity": "warning",
-        "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:104).",
+        "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README_ENG.md:103).",
         "module": "titles"
     },
     {
         "file": "docs/README.md",
         "severity": "warning",
-        "message": "docs/README.md:2 titre dupliqué (déjà présent dans README.md:2).",
+        "message": "docs/README.md:2 titre dupliqué (déjà présent dans README_ENG.md:2).",
         "module": "titles"
     },
     {
@@ -1736,7 +1820,7 @@
     {
         "file": "docs/gdd/README.md",
         "severity": "warning",
-        "message": "docs/gdd/README.md:2 titre dupliqué (déjà présent dans README.md:2).",
+        "message": "docs/gdd/README.md:2 titre dupliqué (déjà présent dans README_ENG.md:2).",
         "module": "titles"
     },
     {
@@ -3776,43 +3860,319 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'create_login_packet'ligne 32 ne possède pas de docstring.",
+        "message": "La fonction 'open_database'ligne 44 ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'receive_packet'ligne 47 ne possède pas de docstring.",
+        "message": "La fonction 'get_tables'ligne 50 ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'receive_packet' ne possède pas d'annotations de type.",
+        "message": "La fonction 'check_integrity'ligne 61 ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'test_payload'ligne 70 ne possède pas de docstring.",
+        "message": "La fonction 'check_foreign_keys'ligne 70 ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'test_payload' ne possède pas d'annotations de type.",
+        "message": "La fonction 'get_table_schema'ligne 76 ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'main'ligne 108 ne possède pas de docstring.",
+        "message": "La fonction 'get_row_count'ligne 83 ne possède pas de docstring.",
         "module": "python"
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'main' ne possède pas d'annotations de type.",
+        "message": "La fonction 'create_test_database'ligne 92 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'attack_delete'ligne 111 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'attack_drop_table'ligne 129 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'attack_update'ligne 147 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'attack_invalid_insert'ligne 178 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'attack_large_value'ligne 224 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'test_payload_as_parameter'ligne 258 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'verify_database'ligne 275 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'test_sql_injection'ligne 285 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'test_sql_injection' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
+        "severity": "warning",
+        "message": "La fonction 'test_sql_injection' dépasse 80 lignes.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'splitmix64' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'derive_rotor_seed' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'generate_rotor' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'inverse_permutation'ligne 128 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'inverse_permutation' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'rotor_forward' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'rotor_inverse' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'communication_key'ligne 199 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'communication_key' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_splitmix64_deterministic'ligne 210 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_splitmix64_deterministic' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_splitmix64_different_seeds'ligne 220 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_splitmix64_different_seeds' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_splitmix64_is_u64'ligne 229 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_splitmix64_is_u64' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_seed_deterministic'ligne 243 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_seed_deterministic' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_seeds_are_different'ligne 260 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_seeds_are_different' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_seed_is_u64'ligne 275 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_seed_is_u64' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_has_256_values'ligne 293 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_has_256_values' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_is_permutation'ligne 305 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_is_permutation' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_all_16_rotors_are_valid'ligne 319 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_all_16_rotors_are_valid' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_is_deterministic'ligne 337 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_is_deterministic' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotors_are_different'ligne 354 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotors_are_different' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_forward_inverse'ligne 393 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_rotor_forward_inverse' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_all_16_rotors_forward_inverse'ligne 427 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py",
+        "severity": "warning",
+        "message": "La fonction 'test_all_16_rotors_forward_inverse' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -3900,6 +4260,24 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
+        "severity": "warning",
+        "message": "La fonction 'test_key'ligne 5 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py",
+        "severity": "warning",
+        "message": "La fonction 'test_key' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/security/__init__.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/security/vault.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -3957,6 +4335,24 @@
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/security/vault.py",
         "severity": "warning",
         "message": "La fonction 'add_secret' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/security/vault.py",
+        "severity": "warning",
+        "message": "La fonction 'get_secret' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/security/vault.py",
+        "severity": "warning",
+        "message": "La fonction 'generate_communication_key' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/security/vault.py",
+        "severity": "warning",
+        "message": "La fonction 'get_or_create_communication_key' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
@@ -4238,7 +4634,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
         "severity": "warning",
-        "message": "La fonction 'main'ligne 8 ne possède pas de docstring.",
+        "message": "La fonction 'main'ligne 10 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -4286,7 +4682,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
         "severity": "warning",
-        "message": "La fonction 'encode'ligne 26 ne possède pas de docstring.",
+        "message": "La fonction 'encode'ligne 27 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -4298,7 +4694,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
         "severity": "warning",
-        "message": "La fonction 'decode'ligne 48 ne possède pas de docstring.",
+        "message": "La fonction 'decode'ligne 49 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -4386,6 +4782,30 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py",
+        "severity": "warning",
+        "message": "La classe 'SingupPacket' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py",
+        "severity": "warning",
+        "message": "La fonction 'from_payload'ligne 29 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py",
+        "severity": "warning",
+        "message": "La fonction 'from_payload' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
@@ -4400,7 +4820,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py",
         "severity": "warning",
-        "message": "La fonction 'from_payload'ligne 15 ne possède pas de docstring.",
+        "message": "La fonction 'from_payload'ligne 29 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5176,6 +5596,13 @@
         "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 70, in check_rust_docs\n    element_name = name_match.group(1) if name_match else \"unknown\"\n                   ~~~~~~~~~~~~~~~~^^^\nIndexError: no such group\n",
         "module": "rust"
+    },
+    {
+        "file": "",
+        "severity": "info",
+        "message": "La racine contient beaucoup de fichiers.",
+        "suggestion": "Créer des dossiers pour mieux organiser le projet.",
+        "module": "organization"
     },
     {
         "file": "",
