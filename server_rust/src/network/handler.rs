@@ -144,6 +144,7 @@ impl PacketHandler {
                     SELECT
                         u.user_id,
                         u.password_hash,
+                        u.status,
                         COALESCE((SELECT EXISTS(SELECT 1 FROM bansperm WHERE user_id = u.user_id)), 0) as is_banned_perm,
                         COALESCE((SELECT EXISTS(SELECT 1 FROM bansferme WHERE user_id = u.user_id AND datetime(date_deban) > CURRENT_TIMESTAMP)), 0) as is_banned_temp
                     FROM users u
@@ -280,35 +281,51 @@ impl PacketHandler {
                     return Packet::new(PacketType::Login, b"Identifiants invalides".to_vec());
                 }
 
-                // 7. TRANSACTION : Vérifier le status ET mettre à jour atomiquement
-                // ✅ Cela évite les race conditions où 2 clients se connectent simultanément
-                let connected = match sqlx::query_scalar::<_, i64>(
+                // 7. ✅ OPTIMISATION OPTION 2 : Vérification en lecture rapide + UPDATE simple
+                // Vérifier d'abord si déjà connecté (lecture rapide, pas de lock)
+                let is_already_connected = match sqlx::query_scalar::<_, i64>(
                     r#"
-                    UPDATE users
-                    SET status = 'CONNECTED'
-                    WHERE user_id = ?
-                      AND status != 'CONNECTED'
-                    RETURNING 1
+                    SELECT EXISTS(
+                        SELECT 1
+                        FROM users
+                        WHERE user_id = ?
+                          AND status = 'CONNECTED'
+                    )
                     "#,
                 )
                 .bind(&login_data.user_id)
-                .fetch_optional(&pool)
+                .fetch_one(&pool)
                 .await
                 {
-                    Ok(Some(_)) => true,  // L'UPDATE a réussi, une ligne a été modifiée
-                    Ok(None) => false,    // Aucune ligne modifiée, déjà connecté
+                    Ok(value) => value != 0,
                     Err(error) => {
-                        error!("Erreur lors de la connexion du joueur : {}", error);
+                        error!("Erreur lors de la vérification de connexion : {}", error);
                         return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
                     }
                 };
 
-                if !connected {
+                if is_already_connected {
                     debug!("Tentative de connexion avec un compte déjà connecté");
                     return Packet::new(PacketType::Login, b"Ce compte est deja connecte".to_vec());
                 }
 
-                // 8. Connexion réussie → remettre le compteur à zéro
+                // 8. UPDATE direct sans WHERE complexe (très rapide)
+                if let Err(error) = sqlx::query(
+                    r#"
+                    UPDATE users
+                    SET status = 'CONNECTED'
+                    WHERE user_id = ?
+                    "#,
+                )
+                .bind(&login_data.user_id)
+                .execute(&pool)
+                .await
+                {
+                    error!("Erreur lors de la connexion du joueur : {}", error);
+                    return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+                }
+
+                // 9. Connexion réussie → remettre le compteur à zéro
                 if let Err(error) = sqlx::query(
                     r#"
                     DELETE FROM login_attempts
@@ -323,7 +340,7 @@ impl PacketHandler {
                     return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
                 }
 
-                // 9. Connexion réussie
+                // 10. Connexion réussie
                 debug!("Utilisateur authentifié : {}", email);
                 Packet::new(PacketType::Login, format!("Utilisateur {} authentifié", email).into_bytes())
             },
