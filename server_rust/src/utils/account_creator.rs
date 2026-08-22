@@ -96,7 +96,7 @@ pub async fn create_account(
         )
         .bind(status)
         .bind(&email)
-        .execute(pool)
+        .execute(&mut *tx)
         .await?;
     }
 
