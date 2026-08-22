@@ -29,7 +29,7 @@ pub struct PacketHandler;
 
 impl PacketHandler {
     pub async fn handle(
-        _client: &mut Client,
+        client: &mut Client,
         packet: Packet,
         pool: SqlitePool,
     ) -> Packet {
