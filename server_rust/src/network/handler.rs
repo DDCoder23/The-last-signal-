@@ -327,9 +327,9 @@ impl PacketHandler {
 )
 .bind(user.user_id)
 .execute(&pool)
-.await
-{
-    Ok(result) => result.rows_affected() > 0,
+.await;
+
+    Ok(result) => result.rows_affected() > 0;
 
     Err(error) => {
         error!(
@@ -404,7 +404,7 @@ if !connected {
     // ========================================================
 
     let banned_temporarily =
-        match sqlx::query_scalar!(
+        match sqlx::query_scalar(
             r#"
             SELECT EXISTS(
                 SELECT 1
