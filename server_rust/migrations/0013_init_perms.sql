@@ -16,6 +16,8 @@ VALUES
     ('roles.write', 'Modifier les rôles'),
     ('objets_dispo.read', 'Lire les objets disponibles'),
     ('objets_dispo.write', 'Modifier les objets disponible'),
+    ('chat.acces', 'accès au chat'),
+    ('chat.moderation', 'moderation du chat'),
     ('log.search', 'recherche dans les logs');
 INSERT OR IGNORE INTO role_permissions (
     role_id,
@@ -41,4 +43,17 @@ WHERE r.role_name = 'Dev'
       'accounts.delete',
       'roles.write',
       'log.search'
+  );
+INSERT OR IGNORE INTO role_permissions (
+    role_id,
+    permission_id
+)
+SELECT
+    r.role_id,
+    p.permission_id
+FROM roles r
+CROSS JOIN permissions p
+WHERE r.role_name = 'joueur'
+  AND p.permission_name  IN (
+      'chat.acces'
   );
