@@ -317,7 +317,7 @@ impl PacketHandler {
             );
         }
     };
-    let connected = sqlx::query(
+    let connected = match sqlx::query(
     r#"
     UPDATE users
     SET status = 'CONNECTED'
@@ -325,11 +325,11 @@ impl PacketHandler {
       AND status != 'CONNECED'
     "#,
 )
-.bind(user.user_id)
+.bind(&user.user_id)
 .execute(&pool)
-.await;
-
-    Ok(result) => result.rows_affected() > 0;
+.await
+{
+    Ok(result) => result.rows_affected() > 0,
 
     Err(error) => {
         error!(
@@ -365,7 +365,7 @@ if !connected {
                 WHERE user_id = ?
             )
             "#,)
-            .bind(user.user_id)
+            .bind(&user.user_id)
         .fetch_one(&pool)
         .await
         {
@@ -413,7 +413,7 @@ if !connected {
                   AND datetime(date_deban) > CURRENT_TIMESTAMP
             )
             "#,)
-            .bind(user.user_id)
+            .bind(&user.user_id)
         .fetch_one(&pool)
         .await
         {
@@ -486,7 +486,7 @@ if !connected {
 
             RETURNING failed_attempts
             "#,)
-            .bind(user.user_id)
+            .bind(&user.user_id)
         .fetch_one(&pool)
         .await
         {
@@ -556,8 +556,7 @@ if !connected {
                             '+10 minutes'
                         )
                 "#,)
-                .bind(user.user_id
-            )
+                .bind(&user.user_id)
             .execute(&pool)
             .await
             {
@@ -582,8 +581,7 @@ if !connected {
                 DELETE FROM login_attempts
                 WHERE user_id = ?
                 "#,)
-                .bind(user.user_id
-            )
+                .bind(&user.user_id)
             .execute(&pool)
             .await
             {
@@ -628,8 +626,7 @@ if !connected {
         DELETE FROM login_attempts
         WHERE user_id = ?
         "#,)
-        .bind(user.user_id
-    )
+        .bind(&user.user_id)
     .execute(&pool)
     .await
     {
@@ -697,6 +694,3 @@ if !connected {
     }
 
 }
-
-
-        
