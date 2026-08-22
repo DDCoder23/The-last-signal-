@@ -7,7 +7,7 @@ use crate:: network::parser::{parse_login_payload,parse_signup_payload};
 use log::{trace, debug, info, warn, error};
 pub struct PacketHandler;
 use crate::utils::password::{verify_password,hash_password};
-use sqlx::SqlitePool;
+use sqlx::{SqlitePool,Row};
 use uuid::Uuid;
 
 // Structure pour représenter un utilisateur
