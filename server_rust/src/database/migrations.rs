@@ -47,7 +47,7 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
     &password1_hash,
         "Cyril",
         "Dev",
-        "DISCONNECTED",
+        Some("DISCONNECTED"),
 )
 .await?;
 
@@ -57,7 +57,7 @@ create_account(
     &password2_hash,
     "Morgan",
     "SuperDev",
-    "DISCONNECTED",
+    Some("DISCONNECTED"),
 )
 .await?;
 
