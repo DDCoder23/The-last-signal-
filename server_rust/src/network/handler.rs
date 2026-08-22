@@ -112,6 +112,7 @@ impl PacketHandler {
                 {
                     Ok(_) => {
                         debug!("Nouvel utilisateur créé : {}", email);
+                        client.user_id = Some(user_id.clone());
                         Packet::new(PacketType::SignUp, b"Utilisateur cree avec succes".to_vec())
                     }
                     Err(error) => {
@@ -225,39 +226,59 @@ impl PacketHandler {
                     // 3 échecs → ban de 10 minutes
                     if attempts >= 3 {
                         match sqlx::query(
-                            r#"
-                            INSERT INTO bansferme (
-                                user_id,
-                                auteur,
-                                raison,
-                                date_ban,
-                                date_deban
-                            )
-                            VALUES (
-                                ?,
-                                'system',
-                                'Trop de tentatives de connexion échouées',
-                                CURRENT_TIMESTAMP,
-                                datetime(CURRENT_TIMESTAMP, '+10 minutes')
-                            )
-                            ON CONFLICT(user_id)
-                            DO UPDATE SET
-                                auteur = 'system',
-                                raison = 'Trop de tentatives de connexion échouées',
-                                date_ban = CURRENT_TIMESTAMP,
-                                date_deban = datetime(CURRENT_TIMESTAMP, '+10 minutes')
-                            "#,
-                        )
-                        .bind(&login_data.user_id)
-                        .execute(&pool)
-                        .await
-                        {
-                            Err(error) => {
-                                error!("Impossible de créer le ban temporaire : {}", error);
-                                return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
-                            }
-                            Ok(_) => {}
-                        }
+    r#"
+    INSERT INTO bansferme (
+        user_id,
+        auteur,
+        raison,
+        date_ban,
+        date_deban
+    )
+    VALUES (
+        ?,
+        'system',
+        'Trop de tentatives de connexion échouées',
+        CURRENT_TIMESTAMP,
+        datetime(CURRENT_TIMESTAMP, '+10 minutes')
+    )
+    ON CONFLICT(user_id)
+    DO UPDATE SET
+        auteur = CASE
+            WHEN instr(bansferme.auteur, 'system') = 0
+            THEN bansferme.auteur || ', system'
+            ELSE bansferme.auteur
+        END,
+
+        raison = CASE
+            WHEN instr(
+                bansferme.raison,
+                'Trop de tentatives de connexion échouées'
+            ) = 0
+            THEN bansferme.raison
+                 || ' | '
+                 || 'Trop de tentatives de connexion échouées'
+            ELSE bansferme.raison
+        END,
+
+        date_ban = CURRENT_TIMESTAMP,
+
+        date_deban = CASE
+            WHEN bansferme.date_deban > CURRENT_TIMESTAMP
+            THEN datetime(bansferme.date_deban, '+10 minutes')
+            ELSE datetime(CURRENT_TIMESTAMP, '+10 minutes')
+        END
+    "#,
+)
+.bind(&login_data.user_id)
+.execute(&pool)
+.await
+{
+    Err(error) => {
+        error!("Impossible de créer le ban temporaire : {}", error);
+        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+    }
+    Ok(_) => {}
+}
 
                         // Supprimer le compteur
                         if let Err(error) = sqlx::query(
@@ -342,6 +363,7 @@ impl PacketHandler {
 
                 // 10. Connexion réussie
                 debug!("Utilisateur authentifié : {}", email);
+                client.user_id = Some(login_data.user_id.clone());
                 Packet::new(PacketType::Login, format!("Utilisateur {} authentifié", email).into_bytes())
             },
 
