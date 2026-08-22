@@ -20,7 +20,9 @@ pub struct Client {
 
     client_id: Option<i64>,
 
-    account_id: Option<Uuid>,
+    user_id: Option<String>,
+
+    account_id: Option<i64>,
 }
 
 impl Client {
@@ -37,10 +39,13 @@ impl Client {
             pool,
 
             session_id: Uuid::new_v4(),
-
             client_id: None,
 
+            user_id: None,
+
             account_id: None,
+
+
 
         }
 
