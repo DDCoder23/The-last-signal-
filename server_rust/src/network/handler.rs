@@ -17,6 +17,14 @@ struct User {
     password_hash: String,
 }
 
+// Structure pour les données de login complètes
+struct LoginData {
+    user_id: String,
+    password_hash: String,
+    is_banned_perm: bool,
+    is_banned_temp: bool,
+}
+
 pub struct PacketHandler;
 
 impl PacketHandler {
@@ -71,33 +79,8 @@ impl PacketHandler {
                     }
                 };
 
-                // 2. Vérifier que l'email n'existe pas
-                let email_exists = match sqlx::query_scalar::<_, i64>(
-                    r#"
-                    SELECT EXISTS(
-                        SELECT 1
-                        FROM users
-                        WHERE email = ?
-                    )
-                    "#,
-                )
-                .bind(&email)
-                .fetch_one(&pool)
-                .await
-                {
-                    Ok(value) => value != 0,
-                    Err(error) => {
-                        error!("Erreur lors de la vérification de l'email : {}", error);
-                        return Packet::new(PacketType::SignUp, b"Erreur serveur".to_vec());
-                    }
-                };
-
-                if email_exists {
-                    debug!("SIGN_UP refusé : email déjà utilisé");
-                    return Packet::new(PacketType::SignUp, b"Email deja utilise".to_vec());
-                }
-
-                // 3. Générer le hash Argon2
+                // 2. Générer le hash Argon2 AVANT la requête DB
+                // (operation CPU-intensive, ne doit pas bloquer le pool)
                 let password_hash = match hash_password(&password) {
                     Ok(hash) => hash,
                     Err(error) => {
@@ -106,11 +89,12 @@ impl PacketHandler {
                     }
                 };
 
-                // 4. Générer le user_id
+                // 3. Générer le user_id
                 let user_id = Uuid::new_v4().to_string();
 
-                // 5. Créer le user
-                if let Err(error) = sqlx::query(
+                // 4. Insérer directement (SQLite gère les contraintes UNIQUE)
+                // Cela évite la vérification d'existence séparée
+                match sqlx::query(
                     r#"
                     INSERT INTO users (
                         user_id,
@@ -126,12 +110,22 @@ impl PacketHandler {
                 .execute(&pool)
                 .await
                 {
-                    error!("Erreur lors de la création du user : {}", error);
-                    return Packet::new(PacketType::SignUp, b"Impossible de creer le compte utilisateur".to_vec());
+                    Ok(_) => {
+                        debug!("Nouvel utilisateur créé : {}", email);
+                        Packet::new(PacketType::SignUp, b"Utilisateur cree avec succes".to_vec())
+                    }
+                    Err(error) => {
+                        // Vérifier si c'est un conflit d'email
+                        let error_msg = error.to_string();
+                        if error_msg.contains("UNIQUE constraint failed") {
+                            debug!("SIGN_UP refusé : email déjà utilisé");
+                            Packet::new(PacketType::SignUp, b"Email deja utilise".to_vec())
+                        } else {
+                            error!("Erreur lors de la création du user : {}", error);
+                            Packet::new(PacketType::SignUp, b"Erreur serveur".to_vec())
+                        }
+                    }
                 }
-
-                debug!("Nouvel utilisateur créé : {}", email);
-                Packet::new(PacketType::SignUp, b"Utilisateur cree avec succes".to_vec())
             },
 
             PacketType::Login => {
@@ -144,23 +138,29 @@ impl PacketHandler {
                     }
                 };
 
-                // 2. Chercher l'utilisateur
-                let user = match sqlx::query(
+                // 2. OPTIMISATION : Une seule requête pour toutes les données
+                let login_data = match sqlx::query(
                     r#"
                     SELECT
-                        user_id,
-                        password_hash
-                    FROM users
-                    WHERE email = ?
+                        u.user_id,
+                        u.password_hash,
+                        COALESCE((SELECT EXISTS(SELECT 1 FROM bansperm WHERE user_id = u.user_id)), 0) as is_banned_perm,
+                        COALESCE((SELECT EXISTS(SELECT 1 FROM bansferme WHERE user_id = u.user_id AND datetime(date_deban) > CURRENT_TIMESTAMP)), 0) as is_banned_temp
+                    FROM users u
+                    WHERE u.email = ?
                     "#,
                 )
                 .bind(&email)
                 .fetch_optional(&pool)
                 .await
                 {
-                    Ok(Some(row)) => User {
-                        user_id: row.get::<String, _>("user_id"),
-                        password_hash: row.get::<String, _>("password_hash"),
+                    Ok(Some(row)) => {
+                        LoginData {
+                            user_id: row.get::<String, _>("user_id"),
+                            password_hash: row.get::<String, _>("password_hash"),
+                            is_banned_perm: row.get::<i64, _>("is_banned_perm") != 0,
+                            is_banned_temp: row.get::<i64, _>("is_banned_temp") != 0,
+                        }
                     },
                     Ok(None) => {
                         debug!("Tentative de connexion avec un utilisateur inexistant");
@@ -172,85 +172,20 @@ impl PacketHandler {
                     }
                 };
 
-                // Marquer connecté seulement si pas déjà CONNECTED
-                let connected = match sqlx::query(
-                    r#"
-                    UPDATE users
-                    SET status = 'CONNECTED'
-                    WHERE user_id = ?
-                      AND status != 'CONNECTED'
-                    "#,
-                )
-                .bind(&user.user_id)
-                .execute(&pool)
-                .await
-                {
-                    Ok(result) => result.rows_affected() > 0,
-                    Err(error) => {
-                        error!("Erreur lors de la connexion du joueur : {}", error);
-                        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
-                    }
-                };
-
-                if !connected {
-                    return Packet::new(PacketType::Login, b"Ce compte est deja connecte".to_vec());
-                }
-
                 // 3. Vérifier le ban permanent
-                let banned_permanently = match sqlx::query_scalar::<_, i64>(
-                    r#"
-                    SELECT EXISTS(
-                        SELECT 1
-                        FROM bansperm
-                        WHERE user_id = ?
-                    )
-                    "#,
-                )
-                .bind(&user.user_id)
-                .fetch_one(&pool)
-                .await
-                {
-                    Ok(value) => value != 0,
-                    Err(error) => {
-                        error!("Erreur lors de la vérification de bansperm : {}", error);
-                        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
-                    }
-                };
-
-                if banned_permanently {
+                if login_data.is_banned_perm {
                     debug!("Connexion refusée : utilisateur banni définitivement");
                     return Packet::new(PacketType::Login, b"Compte banni definitivement".to_vec());
                 }
 
                 // 4. Vérifier le ban temporaire
-                let banned_temporarily = match sqlx::query_scalar::<_, i64>(
-                    r#"
-                    SELECT EXISTS(
-                        SELECT 1
-                        FROM bansferme
-                        WHERE user_id = ?
-                          AND datetime(date_deban) > CURRENT_TIMESTAMP
-                    )
-                    "#,
-                )
-                .bind(&user.user_id)
-                .fetch_one(&pool)
-                .await
-                {
-                    Ok(value) => value != 0,
-                    Err(error) => {
-                        error!("Erreur lors de la vérification de bansferme : {}", error);
-                        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
-                    }
-                };
-
-                if banned_temporarily {
+                if login_data.is_banned_temp {
                     debug!("Connexion refusée : utilisateur temporairement banni");
                     return Packet::new(PacketType::Login, b"Compte temporairement banni".to_vec());
                 }
 
                 // 5. Vérifier le mot de passe
-                let password_valid = verify_password(&password, &user.password_hash);
+                let password_valid = verify_password(&password, &login_data.password_hash);
 
                 // 6. Mot de passe incorrect
                 if !password_valid {
@@ -273,7 +208,7 @@ impl PacketHandler {
                         RETURNING failed_attempts
                         "#,
                     )
-                    .bind(&user.user_id)
+                    .bind(&login_data.user_id)
                     .fetch_one(&pool)
                     .await
                     {
@@ -312,7 +247,7 @@ impl PacketHandler {
                                 date_deban = datetime(CURRENT_TIMESTAMP, '+10 minutes')
                             "#,
                         )
-                        .bind(&user.user_id)
+                        .bind(&login_data.user_id)
                         .execute(&pool)
                         .await
                         {
@@ -330,7 +265,7 @@ impl PacketHandler {
                             WHERE user_id = ?
                             "#,
                         )
-                        .bind(&user.user_id)
+                        .bind(&login_data.user_id)
                         .execute(&pool)
                         .await
                         {
@@ -345,14 +280,42 @@ impl PacketHandler {
                     return Packet::new(PacketType::Login, b"Identifiants invalides".to_vec());
                 }
 
-                // 7. Connexion réussie → remettre le compteur à zéro
+                // 7. TRANSACTION : Vérifier le status ET mettre à jour atomiquement
+                // ✅ Cela évite les race conditions où 2 clients se connectent simultanément
+                let connected = match sqlx::query_scalar::<_, i64>(
+                    r#"
+                    UPDATE users
+                    SET status = 'CONNECTED'
+                    WHERE user_id = ?
+                      AND status != 'CONNECTED'
+                    RETURNING 1
+                    "#,
+                )
+                .bind(&login_data.user_id)
+                .fetch_optional(&pool)
+                .await
+                {
+                    Ok(Some(_)) => true,  // L'UPDATE a réussi, une ligne a été modifiée
+                    Ok(None) => false,    // Aucune ligne modifiée, déjà connecté
+                    Err(error) => {
+                        error!("Erreur lors de la connexion du joueur : {}", error);
+                        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+                    }
+                };
+
+                if !connected {
+                    debug!("Tentative de connexion avec un compte déjà connecté");
+                    return Packet::new(PacketType::Login, b"Ce compte est deja connecte".to_vec());
+                }
+
+                // 8. Connexion réussie → remettre le compteur à zéro
                 if let Err(error) = sqlx::query(
                     r#"
                     DELETE FROM login_attempts
                     WHERE user_id = ?
                     "#,
                 )
-                .bind(&user.user_id)
+                .bind(&login_data.user_id)
                 .execute(&pool)
                 .await
                 {
@@ -360,7 +323,7 @@ impl PacketHandler {
                     return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
                 }
 
-                // 8. Connexion réussie
+                // 9. Connexion réussie
                 debug!("Utilisateur authentifié : {}", email);
                 Packet::new(PacketType::Login, format!("Utilisateur {} authentifié", email).into_bytes())
             },
