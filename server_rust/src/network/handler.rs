@@ -288,7 +288,7 @@ impl PacketHandler {
 
                     // 3 échecs → ban de 10 minutes
                     if attempts >= 3 {
-                        if let Err(error) = sqlx::query(
+                        match sqlx::query(
                             r#"
                             INSERT INTO bansferme (
                                 user_id,
