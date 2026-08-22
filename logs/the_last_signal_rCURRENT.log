@@ -1,1 +1,2 @@
-[2026-08-22 16:47:05] [DEBUG] [migrations.rs:43] Migrations SQLite appliquées.
+[2026-08-22 17:00:55] [DEBUG] [migrations.rs:43] Migrations SQLite appliquées.
+[2026-08-22 17:01:00] [WARN] [logger.rs:121] slow statement: execution time exceeded alert threshold summary="UPDATE users SET status …" db.statement="\n\n\n            UPDATE users\n            SET status = ?\n            WHERE email = ?\n            \n" rows_affected=0 rows_returned=0 elapsed=5.00464446s elapsed_secs=5.00464446 slow_threshold=1s
