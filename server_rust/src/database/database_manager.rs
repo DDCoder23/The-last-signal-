@@ -2,7 +2,7 @@ use std::str::FromStr;
 use std::path::Path;
 
 use sqlx::{
-    sqlite::{SqliteConnectOptions, SqlitePool},
+    sqlite::{SqliteConnectOptions, SqlitePool, SqlitePoolOptions},
     Error,
 };
 
@@ -46,8 +46,16 @@ impl DatabaseManager {
         let options = SqliteConnectOptions::from_str(database_url)?
             .create_if_missing(true);
 
-        let pool = SqlitePool::connect_with(options).await?;
-        sqlx::query("PRAGMA pjournal_mode = WAL")
+        // Use SqlitePoolOptions to limit concurrent connections for SQLite.
+        // SQLite supports a single writer at a time; limiting the pool helps
+        // avoid write contention and "database is locked" errors.
+        let pool = SqlitePoolOptions::new()
+            .max_connections(1)
+            .connect_with(options)
+            .await?;
+
+        // Enable WAL properly (fixed typo from previous "pjournal_mode").
+        sqlx::query("PRAGMA journal_mode = WAL;")
             .execute(&pool)
             .await?;
         
@@ -152,8 +160,3 @@ impl DatabaseManager {
         })
     }
 }
-
-
-
-    
-
