@@ -9,6 +9,13 @@ pub struct PacketHandler;
 use crate::utils::password::{verify_password,hash_password};
 use sqlx::SqlitePool;
 use uuid::Uuid;
+
+// Structure pour représenter un utilisateur
+struct User {
+    user_id: String,
+    password_hash: String,
+}
+
 impl PacketHandler {
 
     pub async fn handle(
@@ -133,7 +140,7 @@ impl PacketHandler {
         )
         "#,
     )
-    .bind(email)
+    .bind(&email)
     .fetch_one(&pool)
     .await
     {
@@ -213,9 +220,9 @@ impl PacketHandler {
         VALUES (?, ?, ?)
         "#,
         )
-        .bind(user_id)
-        .bind(email)
-        .bind(password_hash)
+        .bind(&user_id)
+        .bind(&email)
+        .bind(&password_hash)
     .execute(&pool)
     .await
     {
@@ -286,11 +293,16 @@ impl PacketHandler {
         FROM users
         WHERE email = ?
         "#,)
-        .bind(email)
+        .bind(&email)
     .fetch_optional(&pool)
     .await
     {
-        Ok(Some(user)) => user,
+        Ok(Some(row)) => {
+            User {
+                user_id: row.get("user_id"),
+                password_hash: row.get("password_hash"),
+            }
+        },
 
         Ok(None) => {
 
