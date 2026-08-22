@@ -47,6 +47,17 @@ impl DatabaseManager {
             .create_if_missing(true);
 
         let pool = SqlitePool::connect_with(options).await?;
+        sqlx::query("PRAGMA pjournal_mode = WAL")
+            .execute(&pool)
+            .await?;
+        
+        sqlx::query("PRAGMA busy_timeout = 30000")  // 30 secondes
+            .execute(&pool)
+            .await?;
+        
+        sqlx::query("PRAGMA synchronous = NORMAL")  // Plus rapide
+            .execute(&pool)
+            .await?;
 
         sqlx::query("PRAGMA foreign_keys = ON")
             .execute(&pool)
