@@ -50,7 +50,7 @@ impl DatabaseManager {
         // SQLite supports a single writer at a time; limiting the pool helps
         // avoid write contention and "database is locked" errors.
         let pool = SqlitePoolOptions::new()
-            .max_connections(1)
+            .max_connections(100)
             .connect_with(options)
             .await?;
 
