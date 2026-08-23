@@ -28,6 +28,6 @@ Important modification of the project **The Last Signal Online** are documented 
 
 - Improvement of the protocol
 - controls are now aviable in English, Japanese and Spanish
-
+- improvement of the SQL injections' test
 
 ---
