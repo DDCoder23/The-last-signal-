@@ -53,6 +53,8 @@ impl PacketType {
             4 => Some(PacketType::Move),
             5 => Some(PacketType::Log),
             6 => Some(PacketType::SignUp),
+            7 => Some(PacketType::LoginResponse),
+            8 => Some(PacketType::SignUpResponse),
             _ => None,
         }
     }
