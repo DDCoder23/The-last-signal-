@@ -1,6 +1,6 @@
 {
-    "generated": "2026-08-23T11:16:45.750574",
-    "score": 75,
+    "generated": "2026-08-23T14:41:47.635801",
+    "score": 73,
     "status": "Satisfaisant",
     "scores": {
         "markdown": 42,
@@ -9,10 +9,10 @@
         "links": 0,
         "python": 0,
         "rust": 0,
-        "organization": 100,
+        "organization": 95,
         "navigation": 0
     },
-    "problem_count": 947,
+    "problem_count": 946,
     "details": {
         "markdown": {
             "score": 42,
@@ -1067,12 +1067,6 @@
                     "module": "markdown"
                 },
                 {
-                    "file": "docs/CHANGELOG_ENG.md",
-                    "severity": "warning",
-                    "message": "Espace en fin de ligne (29).",
-                    "module": "markdown"
-                },
-                {
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1).",
@@ -1118,12 +1112,6 @@
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1804).",
-                    "module": "markdown"
-                },
-                {
-                    "file": "docs/CHANGELOG.md",
-                    "severity": "warning",
-                    "message": "Espace en fin de ligne (29).",
                     "module": "markdown"
                 },
                 {
@@ -4073,7 +4061,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
                     "severity": "warning",
-                    "message": "La fonction 'test_payload_as_parameter'ligne 258 ne possède pas de docstring.",
+                    "message": "La fonction 'payload_as_parameter'ligne 258 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -5760,13 +5748,21 @@
             ]
         },
         "organization": {
-            "score": 100,
+            "score": 95,
             "max_score": 100,
             "results": {
                 "bonus": 1,
-                "problems": 0
+                "problems": 1
             },
-            "problems": []
+            "problems": [
+                {
+                    "file": "",
+                    "severity": "info",
+                    "message": "La racine contient beaucoup de fichiers.",
+                    "suggestion": "Créer des dossiers pour mieux organiser le projet.",
+                    "module": "organization"
+                }
+            ]
         },
         "navigation": {
             "score": 0,

@@ -1038,12 +1038,6 @@
         "module": "markdown"
     },
     {
-        "file": "docs/CHANGELOG_ENG.md",
-        "severity": "warning",
-        "message": "Espace en fin de ligne (29).",
-        "module": "markdown"
-    },
-    {
         "file": "docs/ROADMAP.md",
         "severity": "warning",
         "message": "Espace en fin de ligne (1).",
@@ -1089,12 +1083,6 @@
         "file": "docs/QRB_flake8_error.md",
         "severity": "warning",
         "message": "Espace en fin de ligne (1804).",
-        "module": "markdown"
-    },
-    {
-        "file": "docs/CHANGELOG.md",
-        "severity": "warning",
-        "message": "Espace en fin de ligne (29).",
         "module": "markdown"
     },
     {
@@ -3998,7 +3986,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py",
         "severity": "warning",
-        "message": "La fonction 'test_payload_as_parameter'ligne 258 ne possède pas de docstring.",
+        "message": "La fonction 'payload_as_parameter'ligne 258 ne possède pas de docstring.",
         "module": "python"
     },
     {
@@ -5674,6 +5662,13 @@
         "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 70, in check_rust_docs\n    element_name = name_match.group(1) if name_match else \"unknown\"\n                   ~~~~~~~~~~~~~~~~^^^\nIndexError: no such group\n",
         "module": "rust"
+    },
+    {
+        "file": "",
+        "severity": "info",
+        "message": "La racine contient beaucoup de fichiers.",
+        "suggestion": "Créer des dossiers pour mieux organiser le projet.",
+        "module": "organization"
     },
     {
         "file": "",
