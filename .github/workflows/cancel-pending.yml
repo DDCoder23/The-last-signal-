@@ -90,7 +90,7 @@ jobs:
               "/repos/$REPO/actions/workflows/$WORKFLOW_ID/runs?per_page=100" |
             jq -r '
               .workflow_runs[]
-              | select(.status == "waiting")
+              | select(.status == "pending" or .status == "queued")
               | .id
             ' |
             while read -r RUN_ID; do
