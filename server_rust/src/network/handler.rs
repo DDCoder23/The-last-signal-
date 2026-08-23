@@ -12,7 +12,7 @@ use sqlx::{SqlitePool, Row};
 use uuid::Uuid;
 
 // Structure pour représenter un utilisateur
-struct User {
+pub struct User {
     user_id: String,
     password_hash: String,
 }
