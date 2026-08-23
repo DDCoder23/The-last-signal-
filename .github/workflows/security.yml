@@ -626,3 +626,4 @@ jobs:
     uses: ./.github/workflows/Archive.yml
     with:
       archive_security: true
+      security_run_number: ${{ github.run_number }}
