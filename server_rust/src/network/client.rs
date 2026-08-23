@@ -45,8 +45,6 @@ impl Client {
 
             account_id: None,
 
-
-
         }
 
     }
@@ -112,6 +110,31 @@ impl Client {
 
         }
 
+    }
+
+    // Encapsulation: setters / getters for previously-private fields
+    pub fn set_user_id(&mut self, id: Option<String>) {
+        self.user_id = id;
+    }
+
+    pub fn user_id(&self) -> Option<&str> {
+        self.user_id.as_deref()
+    }
+
+    pub fn set_client_id(&mut self, id: Option<i64>) {
+        self.client_id = id;
+    }
+
+    pub fn client_id(&self) -> Option<i64> {
+        self.client_id
+    }
+
+    pub fn set_account_id(&mut self, id: Option<i64>) {
+        self.account_id = id;
+    }
+
+    pub fn account_id(&self) -> Option<i64> {
+        self.account_id
     }
 
 }
