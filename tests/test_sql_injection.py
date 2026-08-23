@@ -255,7 +255,7 @@ def attack_large_value(
         connection.rollback()
 
         return False, str(error)
-def test_payload_as_parameter(
+def payload_as_parameter(
     connection: sqlite3.Connection,
     payload: str,
 ) -> tuple[bool, str]:
@@ -368,7 +368,7 @@ def test_sql_injection():
 
             for payload in SQL_INJECTION_PAYLOADS:
 
-                success, result = test_payload_as_parameter(
+                success, result = payload_as_parameter(
                     connection,
                     payload,
                 )
