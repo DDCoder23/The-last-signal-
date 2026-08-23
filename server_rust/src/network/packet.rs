@@ -21,6 +21,8 @@ pub enum PacketType {
     Move = 4,
     Log = 5,
     SignUp = 6,
+     LoginResponse = 7,
+    SignUpResponse = 8,
 }
 
 
