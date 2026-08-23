@@ -112,7 +112,7 @@ impl PacketHandler {
                 {
                     Ok(_) => {
                         debug!("Nouvel utilisateur créé : {}", email);
-                        client.user_id = Some(user_id.clone());
+                        client.set_user_id(Some(user_id.clone()));
                         Packet::new(PacketType::SignUp, b"Utilisateur cree avec succes".to_vec())
                     }
                     Err(error) => {
@@ -363,7 +363,7 @@ impl PacketHandler {
 
                 // 10. Connexion réussie
                 debug!("Utilisateur authentifié : {}", email);
-                client.user_id = Some(login_data.user_id.clone());
+                client.set_user_id(Some(login_data.user_id.clone()));
                 Packet::new(PacketType::Login, format!("Utilisateur {} authentifié", email).into_bytes())
             },
 
