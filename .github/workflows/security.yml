@@ -22,6 +22,8 @@ permissions:
 
 jobs:
   security:
+    outputs:
+      critical_failure: ${{ steps.critical-status.outputs.failed }}
 
     name: Security Analysis
 
@@ -123,10 +125,12 @@ jobs:
             echo "DATABASE_URL=$DATABASE_URL"
             echo "DATABASE_PATH=$DATABASE_PATH"
       - name: Build Rust server
+        id: build-server
         working-directory: server_rust
         run: |
           cargo build
       - name: Start Rust server
+        id: start-server
         working-directory: server_rust
         run: |
           
@@ -134,6 +138,7 @@ jobs:
 
           echo $! > server.pid
       - name: Wait for server
+        id: wait-server
         run: |
           echo "Attente du démarrage du serveur..."
 
@@ -638,6 +643,21 @@ jobs:
         with:
           report-type: security
           commit-message: "Security Report #${{ github.run_number }}"
+      - name: Detect critical failure
+        id: critical-status
+        if: always()
+        run: |
+              if [[ \
+                     "${{ steps.build-server.outcome }}" == "failure" || \
+                     "${{ steps.start-server.outcome }}" == "failure" || \
+                    "${{ steps.wait-server.outcome }}" == "failure"
+                  ]]; then
+              echo "failed=true" >> "$GITHUB_OUTPUT"
+              echo "❌ Erreur critique détectée"
+              else
+              echo "failed=false" >> "$GITHUB_OUTPUT"
+              echo "✅ Aucune erreur critique"
+              fi
   archive:
     needs: security
     if: >-
@@ -652,3 +672,21 @@ jobs:
     with:
       archive_security: true
       security_run_number: ${{ github.run_number }}
+  
+  cancel-security:
+    needs:
+      - security
+      - archive
+     
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.security.result == 'failure' ||
+        needs.archive.result == 'failure'
+        
+      )
+     }}
+    uses: ./.github/workflows/cancel-pending.yml
+    with: 
+      mode: ${{ needs.security.outputs.critical_failure == 'true' && 'global' || 'security' }}
