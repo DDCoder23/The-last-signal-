@@ -14,9 +14,8 @@ def main():
     time.sleep(1)
     client2.connect()
     client.send_packet(SingupPacket("Modo@gmail.com","fhfjf6384"))
-    response = client.receive_packet(PacketType.SINGUP)
-    client.send_packet(LoginPacket("Modo@gmail.com","fhfjf6384"))
-    response = client.receive_packet(PacketType.LOGIN)
+    response = client.receive_packet(PacketType.SignUpResponse)
+    
     if response is None:
         print("❌ Serveur déconnecté")
     else:
@@ -49,3 +48,20 @@ def main():
     response = client.receive_packet(PacketType.CHAT)
     print(response.message if response != None else "Vide")
     client.disconnect()
+    for i in range(0,3):
+        client2.send_packet(LoginPacket("Modo@gmail.com","fhfjfdsalkjslf"))
+        response = client2.receive_packet(PacketType.LoginResponse)
+        if response is None:
+            print("❌ Serveur déconnecté")
+        else:
+            print("📥 Serveur → client")
+            print(f"Type : {response.packet_type}")
+            print(f"Payload : {response.payload!r}")
+            print(
+                  f"Message : {response.payload.decode('utf-8', errors='replace')}"
+                )
+    time.sleep(601)
+    client2.send_packet(LoginPacket("Modo@gmail.com","fhfjf6384"))
+    response = client2.receive_packet(PacketType.LoginResponse)
+    client2.disconnect()
+    
