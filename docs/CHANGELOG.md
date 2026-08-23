@@ -29,7 +29,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 - Amélioration du protocol
 - Commandes disponible en anglais, japonais, espagnol
 - amélioration du test d'injection SQL.
-- nouveau test de sécurité
+- nouveau tests de sécurité
 
 
 ---
