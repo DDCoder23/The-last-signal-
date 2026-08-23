@@ -225,60 +225,92 @@ impl PacketHandler {
 
                     // 3 échecs → ban de 10 minutes
                     if attempts >= 3 {
+                        // Vérifier s'il existe un ban sursis actif
+                        let existing_sursis_deban = match sqlx::query_scalar::<_, Option<String>>(
+                            r#"
+                            SELECT date_deban FROM bansursis
+                            WHERE user_id = ?
+                              AND datetime(date_deban) > CURRENT_TIMESTAMP
+                            LIMIT 1
+                            "#,
+                        )
+                        .bind(&login_data.user_id)
+                        .fetch_optional(&pool)
+                        .await
+                        {
+                            Ok(Some(Some(deban_date))) => Some(deban_date),
+                            Ok(_) => None,
+                            Err(error) => {
+                                error!("Erreur lors de la vérification du ban sursis : {}", error);
+                                return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
+                            }
+                        };
+
+                        // Calculer la date de débannissement
+                        // Si ban sursis actif : ajouter 10 minutes après sa fin
+                        // Sinon : ajouter 10 minutes à partir de maintenant
                         match sqlx::query(
-    r#"
-    INSERT INTO bansferme (
-        user_id,
-        auteur,
-        raison,
-        date_ban,
-        date_deban
-    )
-    VALUES (
-        ?,
-        'system',
-        'Trop de tentatives de connexion échouées',
-        CURRENT_TIMESTAMP,
-        datetime(CURRENT_TIMESTAMP, '+10 minutes')
-    )
-    ON CONFLICT(user_id)
-    DO UPDATE SET
-        auteur = CASE
-            WHEN instr(bansferme.auteur, 'system') = 0
-            THEN bansferme.auteur || ', system'
-            ELSE bansferme.auteur
-        END,
-
-        raison = CASE
-            WHEN instr(
-                bansferme.raison,
-                'Trop de tentatives de connexion échouées'
-            ) = 0
-            THEN bansferme.raison
-                 || ' | '
-                 || 'Trop de tentatives de connexion échouées'
-            ELSE bansferme.raison
-        END,
-
-        date_ban = CURRENT_TIMESTAMP,
-
-        date_deban = CASE
-            WHEN bansferme.date_deban > CURRENT_TIMESTAMP
-            THEN datetime(bansferme.date_deban, '+10 minutes')
-            ELSE datetime(CURRENT_TIMESTAMP, '+10 minutes')
-        END
-    "#,
-)
-.bind(&login_data.user_id)
-.execute(&pool)
-.await
-{
-    Err(error) => {
-        error!("Impossible de créer le ban temporaire : {}", error);
-        return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
-    }
-    Ok(_) => {}
-}
+                            r#"
+                            INSERT INTO bansferme (
+                                user_id,
+                                auteur,
+                                raison,
+                                date_ban,
+                                date_deban
+                            )
+                            VALUES (
+                                ?,
+                                'system',
+                                'Trop de tentatives de connexion échouées',
+                                CURRENT_TIMESTAMP,
+                                CASE
+                                    WHEN ? IS NOT NULL
+                                    THEN datetime(?, '+10 minutes')
+                                    ELSE datetime(CURRENT_TIMESTAMP, '+10 minutes')
+                                END
+                            )
+                            ON CONFLICT(user_id)
+                            DO UPDATE SET
+                                auteur = CASE
+                                    WHEN instr(bansferme.auteur, 'system') = 0
+                                    THEN bansferme.auteur || ', system'
+                                    ELSE bansferme.auteur
+                                END,
+                                raison = CASE
+                                    WHEN instr(
+                                        bansferme.raison,
+                                        'Trop de tentatives de connexion échouées'
+                                    ) = 0
+                                    THEN bansferme.raison
+                                         || ' | '
+                                         || 'Trop de tentatives de connexion échouées'
+                                    ELSE bansferme.raison
+                                END,
+                                date_ban = CURRENT_TIMESTAMP,
+                                date_deban = CASE
+                                    WHEN ? IS NOT NULL AND datetime(?, '+10 minutes') > bansferme.date_deban
+                                    THEN datetime(?, '+10 minutes')
+                                    WHEN ? IS NULL AND datetime(CURRENT_TIMESTAMP, '+10 minutes') > bansferme.date_deban
+                                    THEN datetime(CURRENT_TIMESTAMP, '+10 minutes')
+                                    ELSE bansferme.date_deban
+                                END
+                            "#,
+                        )
+                        .bind(&login_data.user_id)
+                        .bind(&existing_sursis_deban)
+                        .bind(&existing_sursis_deban)
+                        .bind(&existing_sursis_deban)
+                        .bind(&existing_sursis_deban)
+                        .bind(&existing_sursis_deban)
+                        .execute(&pool)
+                        .await
+                        {
+                            Err(error) => {
+                                error!("Impossible de créer le ban temporaire : {}", error);
+                                return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
+                            }
+                            Ok(_) => {}
+                        }
 
                         // Supprimer le compteur
                         if let Err(error) = sqlx::query(
