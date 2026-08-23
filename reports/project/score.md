@@ -1,21 +1,21 @@
 Documentation Quality Report
 
-**Date :** 2026-08-12 22:50:24
+**Date :** 2026-08-23 14:58:55
 
-# 78/100
+# 73/100
 
 **Statut :** Satisfaisant
 
 ## Résultats
 |Module|Score|
 |---|---:|
-|markdown|**49**|
+|markdown|**42**|
 |titles|**4**|
 |spelling|**10**|
 |links|**0**|
 |python|**0**|
 |rust|**0**|
-|organization|**100**|
+|organization|**95**|
 |navigation|**0**|
 
 ## Problèmes
@@ -47,6 +47,14 @@ IndexError: no such group
 
 - **module :** rust
 
+## ⚠️ Info
+- **Module :** organization
+- **Message :** La racine contient beaucoup de fichiers.
+
+- **suggestion :** Créer des dossiers pour mieux organiser le projet.
+
+- **module :** organization
+
 ## ❌ Error
 - **Module :** navigation
 - **Message :** Traceback (most recent call last):
@@ -56,86 +64,6 @@ TypeError: result doit être un dict, reçu int
 
 
 - **module :** navigation
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/Secure_save.py
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'derive_key'ligne 69 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'derive_key' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'ensure_profile_dir'ligne 102 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'atomic_write_zip'ligne 108 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'save_to_slot'ligne 124 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'load_from_slot'ligne 156 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La classe 'AutoSaver' ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'write_zip'ligne 139 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'write_zip' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'start'ligne 210 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'start' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'stop'ligne 217 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'stop' ne possède pas d'annotations de type.
-
-- **module :** python
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/admin_manager.py
 
@@ -2105,7 +2033,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'connect'ligne 25 ne possède pas de docstring.
+- **Message :** La fonction 'connect'ligne 26 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2123,13 +2051,19 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
+- **Message :** La fonction 'receive_packet'ligne 85 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
 - **Message :** La fonction 'receive_packet' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'disconnect'ligne 145 ne possède pas de docstring.
+- **Message :** La fonction 'disconnect'ligne 155 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2169,7 +2103,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'main'ligne 7 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 10 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2201,7 +2135,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'encode'ligne 26 ne possède pas de docstring.
+- **Message :** La fonction 'encode'ligne 29 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2213,7 +2147,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'decode'ligne 48 ne possède pas de docstring.
+- **Message :** La fonction 'decode'ligne 51 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2271,6 +2205,18 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload'ligne 12 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload' ne possède pas d'annotations de type.
+
+- **module :** python
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 
 ## ⚠️ Warning
@@ -2287,7 +2233,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'from_payload'ligne 15 ne possède pas de docstring.
+- **Message :** La fonction 'from_payload'ligne 29 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2334,6 +2280,32 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La classe 'PingPacket' ne possède pas de docstring.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La classe 'SingupPacket' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload'ligne 29 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload' ne possède pas d'annotations de type.
 
 - **module :** python
 
@@ -3393,6 +3365,14 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/security/__init__.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 
 ## ⚠️ Warning
@@ -3455,6 +3435,24 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'get_secret' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_communication_key' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'get_or_create_communication_key' ne possède pas d'annotations de type.
+
+- **module :** python
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 
 ## ⚠️ Warning
@@ -3468,6 +3466,334 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_advanced_attacks_database' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_advanced_attacks_database' dépasse 80 lignes.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_binary_protocol_attacks' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_binary_protocol_attacks' dépasse 80 lignes.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'login_thread'ligne 255 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'login_thread' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ban_toggle'ligne 293 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ban_toggle' ne possède pas d'annotations de type.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/attack_test.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'run'ligne 39 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'sha256_file'ligne 63 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'clone_repository'ligne 84 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'clone_repository' dépasse 80 lignes.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'create_test_environment_files'ligne 195 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'create_test_environment_files' dépasse 80 lignes.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'find_master_keys'ligne 287 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'attack_cargo_lock'ligne 364 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'attack_env'ligne 402 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'attack_idea'ligne 444 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'attack_security_access'ligne 487 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'attack_security_file'ligne 569 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'attack_vault'ligne 646 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'restore_file'ligne 692 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'run_integrity_check'ligne 722 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'execute_integrity_attack'ligne 747 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'execute_integrity_attack' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'execute_vault_attack'ligne 825 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'execute_vault_attack' dépasse 80 lignes.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'verify_git_clean'ligne 958 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 1017 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main' dépasse 80 lignes.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/integrity_check.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'create'ligne 236 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'check'ligne 262 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 343 ne possède pas de docstring.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'create_packet'ligne 17 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'create_packet' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'send_packet'ligne 30 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'send_packet' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'random_payload'ligne 48 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'random_payload' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'random_packet'ligne 55 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'random_packet' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 75 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ping'ligne 14 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'ping' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'run_test'ligne 50 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'run_test' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_main'ligne 85 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
 
 - **module :** python
 
@@ -3491,17 +3817,247 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_key'ligne 5 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_key' ne possède pas d'annotations de type.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'splitmix64' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'derive_rotor_seed' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_rotor' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'inverse_permutation'ligne 128 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'inverse_permutation' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'rotor_forward' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'rotor_inverse' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'communication_key'ligne 199 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'communication_key' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_splitmix64_deterministic'ligne 210 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_splitmix64_deterministic' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_splitmix64_different_seeds'ligne 220 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_splitmix64_different_seeds' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_splitmix64_is_u64'ligne 229 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_splitmix64_is_u64' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_seed_deterministic'ligne 243 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_seed_deterministic' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_seeds_are_different'ligne 260 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_seeds_are_different' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_seed_is_u64'ligne 275 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_seed_is_u64' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_has_256_values'ligne 293 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_has_256_values' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_is_permutation'ligne 305 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_is_permutation' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_all_16_rotors_are_valid'ligne 319 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_all_16_rotors_are_valid' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_is_deterministic'ligne 337 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_is_deterministic' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotors_are_different'ligne 354 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotors_are_different' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_forward_inverse'ligne 393 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_rotor_forward_inverse' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_all_16_rotors_forward_inverse'ligne 427 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'test_all_16_rotors_forward_inverse' ne possède pas d'annotations de type.
+
+- **module :** python
+
 # 📄 README.md
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
+- **Message :** Ligne 17 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
+- **Message :** Ligne 19 > 120 caractères.
 
 - **module :** markdown
 
@@ -3512,8 +4068,106 @@ TypeError: result doit être un dict, reçu int
 - **module :** markdown
 
 ## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (8).
+
+- **module :** markdown
+
+## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:172 titre sans ligne vide avant.
+- **Message :** README.md:2 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:176 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:1 titre dupliqué (déjà présent dans README_ENG.md:1).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:2 titre dupliqué (déjà présent dans README_ENG.md:2).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:56 titre dupliqué (déjà présent dans README_ENG.md:53).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:104 titre dupliqué (déjà présent dans README_ENG.md:103).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:197 titre dupliqué (déjà présent dans README_ENG.md:198).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:204 titre dupliqué (déjà présent dans README_ENG.md:205).
+
+- **module :** titles
+
+# 📄 README_ENG.md
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 16 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 18 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (1).
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (201).
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README_ENG.md:2 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README_ENG.md:14 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README_ENG.md:32 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README_ENG.md:176 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -3531,11 +4185,81 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
+# 📄 docs/CHANGELOG.md
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:25 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:1 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:1).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:7 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:7).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:9 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:25 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:25).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:27 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
+
+- **module :** titles
+
+# 📄 docs/CHANGELOG_ENG.md
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (17).
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (20).
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG_ENG.md:25 titre sans ligne vide avant.
+
+- **module :** titles
+
 # 📄 docs/CODING_RULES.md
 
 ## ⚠️ Warning
 - **Module :** markdown
 - **Message :** Ligne 151 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 257 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (258).
 
 - **module :** markdown
 
@@ -3559,7 +4283,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README.md:100).
+- **Message :** docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README_ENG.md:103).
 
 - **module :** titles
 
@@ -3729,7 +4453,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
+- **Message :** Ligne 12 > 120 caractères.
 
 - **module :** markdown
 
@@ -3741,13 +4465,25 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/README.md:63 titre dupliqué (déjà présent dans README.md:118).
+- **Message :** docs/README.md:2 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/README.md:170 titre dupliqué (déjà présent dans README.md:161).
+- **Message :** docs/README.md:2 titre dupliqué (déjà présent dans README_ENG.md:2).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/README.md:68 titre dupliqué (déjà présent dans README.md:122).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/README.md:175 titre dupliqué (déjà présent dans README.md:165).
 
 - **module :** titles
 
@@ -4153,7 +4889,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:36).
+- **Message :** docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:41).
 
 - **module :** titles
 
@@ -4467,23 +5203,101 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 docs/gdd/04_CHRONOLOGIE.md
 
-## ❌ Error
+## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Fichier vide.
+- **Message :** Ligne 9 > 120 caractères.
 
 - **module :** markdown
 
-## ❌ Error
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 11 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 17 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 35 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 50 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 78 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 110 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 112 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 132 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 146 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 154 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 199 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/gdd/04_CHRONOLOGIE.md: contient 0 titres H1 (1 attendu).
+- **Message :** docs/gdd/04_CHRONOLOGIE.md:201 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/gdd/04_CHRONOLOGIE.md:201 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/gdd/04_CHRONOLOGIE.md:210 titre dupliqué (déjà présent dans docs/CODING_RULES.md:419).
 
 - **module :** titles
 
 # 📄 docs/gdd/05_FACTIONS.md
 
-## ❌ Error
+## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Fichier vide.
+- **Message :** Contenu très faible.
 
 - **module :** markdown
 
@@ -5197,7 +6011,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
+- **Message :** Ligne 12 > 120 caractères.
 
 - **module :** markdown
 
@@ -5209,19 +6023,31 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/gdd/README.md:13 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).
+- **Message :** docs/gdd/README.md:2 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/gdd/README.md:31 titre dupliqué (déjà présent dans docs/README.md:36).
+- **Message :** docs/gdd/README.md:2 titre dupliqué (déjà présent dans README_ENG.md:2).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/gdd/README.md:145 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).
+- **Message :** docs/gdd/README.md:18 titre dupliqué (déjà présent dans docs/CODING_RULES.md:9).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/gdd/README.md:36 titre dupliqué (déjà présent dans docs/README.md:41).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/gdd/README.md:150 titre dupliqué (déjà présent dans docs/CODING_RULES.md:409).
 
 - **module :** titles
 
