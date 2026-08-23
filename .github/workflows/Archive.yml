@@ -2,7 +2,12 @@ name: Archive CI Reports
 
 on:
   workflow_call:
-  workflow_dispatch:
+    inputs:
+       archive_security:
+           required: false
+           type: boolean
+           default: false
+
 
 permissions:
   contents: write
@@ -34,6 +39,8 @@ jobs:
         run: sudo apt-get install -y zip
 
       - name: Archive old reports
+        env:
+           ARCHIVE_SECURITY: ${{ inputs.archive_security }}
         shell: bash
         run: |
                set -Eeuo pipefail
@@ -52,8 +59,14 @@ jobs:
 
                for DIR in "$REPORTS_DIR"/*; do
                [ -d "$DIR" ] || continue
-
                NAME=$(basename "$DIR")
+               # Security uniquement si demandé par security-reports
+               if [[ "$NAME" == "security" && "$ARCHIVE_SECURITY" != "true" ]]; then
+               echo "Ignoré : $NAME"
+               continue
+               fi
+
+               
                ZIP_FILE="$ARCHIVE_DIR/${NAME}.zip"
 
                echo "Traitement de $NAME"
