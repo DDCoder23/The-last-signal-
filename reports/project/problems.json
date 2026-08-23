@@ -1026,6 +1026,24 @@
         "module": "markdown"
     },
     {
+        "file": "docs/CHANGELOG_ENG.md",
+        "severity": "warning",
+        "message": "Espace en fin de ligne (17).",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/CHANGELOG_ENG.md",
+        "severity": "warning",
+        "message": "Espace en fin de ligne (20).",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/CHANGELOG_ENG.md",
+        "severity": "warning",
+        "message": "Espace en fin de ligne (29).",
+        "module": "markdown"
+    },
+    {
         "file": "docs/ROADMAP.md",
         "severity": "warning",
         "message": "Espace en fin de ligne (1).",
@@ -1071,6 +1089,12 @@
         "file": "docs/QRB_flake8_error.md",
         "severity": "warning",
         "message": "Espace en fin de ligne (1804).",
+        "module": "markdown"
+    },
+    {
+        "file": "docs/CHANGELOG.md",
+        "severity": "warning",
+        "message": "Espace en fin de ligne (29).",
         "module": "markdown"
     },
     {
@@ -1560,6 +1584,12 @@
         "module": "titles"
     },
     {
+        "file": "docs/CHANGELOG_ENG.md",
+        "severity": "warning",
+        "message": "docs/CHANGELOG_ENG.md:25 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
         "file": "docs/ROADMAP.md",
         "severity": "warning",
         "message": "docs/ROADMAP.md:54 titre sans ligne vide avant.",
@@ -1623,6 +1653,12 @@
         "file": "docs/QRB_flake8_error.md",
         "severity": "warning",
         "message": "docs/QRB_flake8_error.md:1363 titre sans ligne vide avant.",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CHANGELOG.md",
+        "severity": "warning",
+        "message": "docs/CHANGELOG.md:25 titre sans ligne vide avant.",
         "module": "titles"
     },
     {
@@ -1755,6 +1791,36 @@
         "file": "docs/QRB_flake8_error.md",
         "severity": "warning",
         "message": "docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CHANGELOG.md",
+        "severity": "warning",
+        "message": "docs/CHANGELOG.md:1 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:1).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CHANGELOG.md",
+        "severity": "warning",
+        "message": "docs/CHANGELOG.md:7 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:7).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CHANGELOG.md",
+        "severity": "warning",
+        "message": "docs/CHANGELOG.md:9 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CHANGELOG.md",
+        "severity": "warning",
+        "message": "docs/CHANGELOG.md:25 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:25).",
+        "module": "titles"
+    },
+    {
+        "file": "docs/CHANGELOG.md",
+        "severity": "warning",
+        "message": "docs/CHANGELOG.md:27 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).",
         "module": "titles"
     },
     {
@@ -5596,13 +5662,6 @@
         "severity": "error",
         "message": "Traceback (most recent call last):\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py\", line 30, in generate_score\n    result = check()\n  File \"/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py\", line 70, in check_rust_docs\n    element_name = name_match.group(1) if name_match else \"unknown\"\n                   ~~~~~~~~~~~~~~~~^^^\nIndexError: no such group\n",
         "module": "rust"
-    },
-    {
-        "file": "",
-        "severity": "info",
-        "message": "La racine contient beaucoup de fichiers.",
-        "suggestion": "Créer des dossiers pour mieux organiser le projet.",
-        "module": "organization"
     },
     {
         "file": "",
