@@ -21,6 +21,15 @@ permissions:
   actions: write
 
 jobs:
+  list-workflows:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: List workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow list --repo "$GITHUB_REPOSITORY"
   cancel:
     runs-on: ubuntu-latest
 
