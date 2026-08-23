@@ -113,7 +113,7 @@ impl PacketHandler {
                     Ok(_) => {
                         debug!("Nouvel utilisateur créé : {}", email);
                         client.set_user_id(Some(user_id.clone()));
-                        Packet::new(PacketType::SignUpResponse, b"Utilisateur cree avec succes".to_vec())
+                        return Some(Packet::new(PacketType::SignUpResponse, b"Utilisateur cree avec succes".to_vec()))
                     }
                     Err(error) => {
                         // Vérifier si c'est un conflit d'email
@@ -420,7 +420,7 @@ impl PacketHandler {
 
             PacketType::Move => {
                 debug!("Déplacement reçu");
-                return (Packet::new(PacketType::Move, packet.payload))
+                return Some(Packet::new(PacketType::Move, packet.payload))
             },
         }
     }
