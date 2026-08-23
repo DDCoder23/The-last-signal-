@@ -415,12 +415,12 @@ impl PacketHandler {
 
             PacketType::Chat => {
                 debug!("Message : {}", String::from_utf8_lossy(&packet.payload));
-                Packet::new(PacketType::Chat, packet.payload)
+                return Some(Packet::new(PacketType::Chat, packet.payload))
             },
 
             PacketType::Move => {
                 debug!("Déplacement reçu");
-                Packet::new(PacketType::Move, packet.payload)
+                return (Packet::new(PacketType::Move, packet.payload))
             },
         }
     }
