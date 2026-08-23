@@ -8,3 +8,6 @@ class LogPacket(Packet):
         super().__init__(
             PacketType.LOG
         )
+    @classmethod
+    def from_payload(cls, payload: bytes):
+        return cls(payload)
