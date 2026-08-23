@@ -32,7 +32,7 @@ impl PacketHandler {
         client: &mut Client,
         packet: Packet,
         pool: SqlitePool,
-    ) -> Packet {
+    ) -> Option<Packet> {
         match packet.packet_type {
             PacketType::Log => {
                 let log = match serde_json::from_slice::<ClientLog>(&packet.payload) {
@@ -61,7 +61,7 @@ impl PacketHandler {
                     },
                 }
 
-                Packet::new(PacketType::Log, b"OK".to_vec())
+                None
             },
 
             PacketType::Ping => {
