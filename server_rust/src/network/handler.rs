@@ -39,7 +39,7 @@ impl PacketHandler {
                     Ok(log) => log,
                     Err(e) => {
                         error!("Impossible de décoder le paquet LOG : {}", e);
-                        return Packet::new(PacketType::Log, b"INVALID_LOG".to_vec());
+                        return None;
                     }
                 };
 
