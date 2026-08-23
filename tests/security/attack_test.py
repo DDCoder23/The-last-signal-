@@ -643,48 +643,23 @@ def attack_security_file(
 # ============================================================
 # Scénario : corruption de vault.enc
 # ============================================================
+def attack_vault(repository: Path) -> tuple[bool, bytes | None]:
 
-def attack_vault(
-    repository: Path,
-) -> tuple[bool, bytes | None]:
+    target = repository / "vault.enc"
 
-    target = (
-        repository
-        / "vault.enc"
-    )
-
-    print(
-        "\n[ATTACK] vault.enc corruption"
-    )
+    print("\n[ATTACK] vault.enc corruption")
 
     if not target.exists():
-
-        print(
-            "[SKIP] vault.enc absent."
-        )
-
+        print("[SKIP] vault.enc absent.")
         return True, None
 
     original = target.read_bytes()
 
     if not original:
-
-        print(
-            "[WARN] vault.enc is empty."
-        )
-
+        print("[FAIL] vault.enc is empty.")
         return False, original
 
-    # --------------------------------------------------------
-    # Corruption contrôlée.
-    #
-    # On inverse quelques bits uniquement dans la copie
-    # temporaire du dépôt.
-    # --------------------------------------------------------
-
-    corrupted = bytearray(
-        original
-    )
+    corrupted = bytearray(original)
 
     positions = {
         0,
@@ -693,52 +668,22 @@ def attack_vault(
     }
 
     for position in positions:
+        corrupted[position] ^= 0xFF
 
-        if (
-            0 <= position
-            < len(corrupted)
-        ):
-            corrupted[position] ^= 0xFF
+    target.write_bytes(bytes(corrupted))
 
-    target.write_bytes(
-        bytes(corrupted)
-    )
-
-    modified_hash = sha256_file(
-        target
-    )
-
-    original_hash = (
-        __import__("hashlib")
-        .sha256(original)
-        .hexdigest()
-    )
-
-    print(
-        f"[VAULT] Original SHA256 : "
-        f"{original_hash}"
-    )
-
-    print(
-        f"[VAULT] Corrupted SHA256: "
-        f"{modified_hash}"
-    )
-
-    if original_hash == modified_hash:
-
-        print(
-            "[FAIL] Vault corruption "
-            "did not change the hash."
-        )
-
-        return False, original
-
-    print(
-        "[ATTACK] vault.enc corrupted."
-    )
+    print("[ATTACK] vault.enc corrupted.")
 
     return True, original
 
+
+  
+       
+    
+
+   
+
+    
 
 # ============================================================
 # Restauration d'un fichier
