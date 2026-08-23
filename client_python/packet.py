@@ -81,7 +81,7 @@ class Packet:
             return LogPacket()
         if packet_type == PacketType.SINGUP:
             from .packets.singup import SingupPacket
-            return SingupPacket()
+            return SingupPacket.from_payload(payload)
 
 
         return Packet(
