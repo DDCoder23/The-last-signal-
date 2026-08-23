@@ -26,7 +26,8 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 
 ### Ajout
 
-- Amélioration du protocol 
+- Amélioration du protocol
+- Commandes disponible en anglais, japonais, espagnol
 
 
 ---
