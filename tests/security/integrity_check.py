@@ -12,6 +12,9 @@ from pathlib import Path
 
 BASELINE_FILE = ".security-baseline.json"
 
+# Répertoires que le scanner ne doit jamais parcourir.
+# .git est volontairement exclu : nous ne voulons pas modifier
+# les métadonnées Git du clone.
 IGNORED_DIRECTORIES = {
     ".git",
     "target",
@@ -43,19 +46,23 @@ WATCHED_SPECIAL_FILES = {
     ".env",
     "Cargo.lock",
     "Cargo.toml",
+    "vault.enc",
+    "master.key",
 }
 
 WATCHED_DIRECTORIES = {
     ".github",
     ".idea",
+    "security",
 }
 
 
 # ============================================================
-# Hash
+# Hash SHA-256
 # ============================================================
 
 def sha256_file(path: Path) -> str:
+    """Calcule le SHA-256 d'un fichier."""
     digest = hashlib.sha256()
 
     with path.open("rb") as file:
@@ -66,22 +73,26 @@ def sha256_file(path: Path) -> str:
 
 
 # ============================================================
-# Détection des fichiers surveillés
+# Détermination des fichiers surveillés
 # ============================================================
 
 def is_watched(path: Path, root: Path) -> bool:
+    """
+    Détermine si un fichier doit être surveillé.
+    """
+
     relative = path.relative_to(root)
 
-    # Fichiers explicitement surveillés.
+    # Fichiers sensibles explicitement surveillés.
     if path.name in WATCHED_SPECIAL_FILES:
         return True
 
-    # Répertoires explicitement surveillés.
+    # Répertoires sensibles explicitement surveillés.
     for part in relative.parts:
         if part in WATCHED_DIRECTORIES:
             return True
 
-    # Extensions surveillées.
+    # Extensions de code/configuration.
     if path.suffix.lower() in WATCHED_EXTENSIONS:
         return True
 
@@ -89,6 +100,10 @@ def is_watched(path: Path, root: Path) -> bool:
 
 
 def should_ignore(path: Path, root: Path) -> bool:
+    """
+    Détermine si un fichier/répertoire doit être ignoré.
+    """
+
     relative = path.relative_to(root)
 
     if path.name in IGNORED_FILES:
@@ -102,13 +117,20 @@ def should_ignore(path: Path, root: Path) -> bool:
 
 
 # ============================================================
-# Scan
+# Scan du dépôt
 # ============================================================
 
 def scan_repository(root: Path) -> dict[str, str]:
+    """
+    Parcourt le dépôt et retourne :
+
+        chemin relatif -> SHA-256
+    """
+
     result: dict[str, str] = {}
 
     for path in root.rglob("*"):
+
         if not path.is_file():
             continue
 
@@ -122,6 +144,7 @@ def scan_repository(root: Path) -> dict[str, str]:
 
         try:
             result[relative] = sha256_file(path)
+
         except OSError as error:
             print(
                 f"[WARN] Impossible de lire {relative}: {error}",
@@ -135,7 +158,12 @@ def scan_repository(root: Path) -> dict[str, str]:
 # Baseline
 # ============================================================
 
-def save_baseline(root: Path, baseline: dict[str, str]) -> None:
+def save_baseline(
+    root: Path,
+    baseline: dict[str, str],
+) -> None:
+    """Sauvegarde la baseline."""
+
     path = root / BASELINE_FILE
 
     path.write_text(
@@ -149,15 +177,19 @@ def save_baseline(root: Path, baseline: dict[str, str]) -> None:
 
 
 def load_baseline(root: Path) -> dict[str, str]:
+    """Charge la baseline."""
+
     path = root / BASELINE_FILE
 
     if not path.exists():
         raise FileNotFoundError(
-            f"Baseline absente: {path}"
+            f"Baseline absente : {path}"
         )
 
     return json.loads(
-        path.read_text(encoding="utf-8")
+        path.read_text(
+            encoding="utf-8"
+        )
     )
 
 
@@ -169,11 +201,20 @@ def compare(
     before: dict[str, str],
     after: dict[str, str],
 ) -> dict[str, list[str]]:
+    """
+    Compare deux états du dépôt.
+    """
+
     before_files = set(before)
     after_files = set(after)
 
-    added = sorted(after_files - before_files)
-    removed = sorted(before_files - after_files)
+    added = sorted(
+        after_files - before_files
+    )
+
+    removed = sorted(
+        before_files - after_files
+    )
 
     modified = sorted(
         path
@@ -189,55 +230,107 @@ def compare(
 
 
 # ============================================================
-# Commandes
+# Création de baseline
 # ============================================================
 
 def create(root: Path) -> int:
-    baseline = scan_repository(root)
-    save_baseline(root, baseline)
 
     print("=== SECURITY BASELINE ===")
-    print(f"Files monitored: {len(baseline)}")
-    print(f"Baseline: {BASELINE_FILE}")
+
+    baseline = scan_repository(root)
+
+    save_baseline(
+        root,
+        baseline,
+    )
+
+    print(
+        f"Files monitored: {len(baseline)}"
+    )
+
+    print(
+        f"Baseline: {BASELINE_FILE}"
+    )
 
     return 0
 
 
+# ============================================================
+# Vérification d'intégrité
+# ============================================================
+
 def check(root: Path) -> int:
+
+    print("=== INTEGRITY CHECK ===")
+
     before = load_baseline(root)
+
     after = scan_repository(root)
 
-    differences = compare(before, after)
+    differences = compare(
+        before,
+        after,
+    )
 
     added = differences["added"]
     removed = differences["removed"]
     modified = differences["modified"]
 
-    print("=== INTEGRITY CHECK ===")
+    # --------------------------------------------------------
+    # Fichiers ajoutés
+    # --------------------------------------------------------
 
     if added:
         print("\n[ADDED]")
+
         for path in added:
             print(f"  + {path}")
 
+    # --------------------------------------------------------
+    # Fichiers supprimés
+    # --------------------------------------------------------
+
     if removed:
         print("\n[REMOVED]")
+
         for path in removed:
             print(f"  - {path}")
 
+    # --------------------------------------------------------
+    # Fichiers modifiés
+    # --------------------------------------------------------
+
     if modified:
         print("\n[MODIFIED]")
+
         for path in modified:
             print(f"  * {path}")
 
-    total = len(added) + len(removed) + len(modified)
+    total = (
+        len(added)
+        + len(removed)
+        + len(modified)
+    )
+
+    # --------------------------------------------------------
+    # Aucun changement
+    # --------------------------------------------------------
 
     if total == 0:
-        print("\n[PASS] No integrity violation detected.")
+
+        print(
+            "\n[PASS] No integrity violation detected."
+        )
+
         return 0
 
+    # --------------------------------------------------------
+    # Modification détectée
+    # --------------------------------------------------------
+
     print(
-        f"\n[FAIL] {total} integrity violation(s) detected."
+        f"\n[FAIL] "
+        f"{total} integrity violation(s) detected."
     )
 
     return 1
@@ -248,7 +341,9 @@ def check(root: Path) -> int:
 # ============================================================
 
 def main() -> int:
+
     if len(sys.argv) != 2:
+
         print(
             "Usage:\n"
             "  python integrity_check.py create\n"
@@ -267,7 +362,10 @@ def main() -> int:
     if command == "check":
         return check(root)
 
-    print(f"Unknown command: {command}")
+    print(
+        f"Unknown command: {command}"
+    )
+
     return 2
 
 
