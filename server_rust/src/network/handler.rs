@@ -417,11 +417,20 @@ impl PacketHandler {
                 debug!("Message : {}", String::from_utf8_lossy(&packet.payload));
                 return Some(Packet::new(PacketType::Chat, packet.payload))
             },
+            
 
             PacketType::Move => {
                 debug!("Déplacement reçu");
                 return Some(Packet::new(PacketType::Move, packet.payload))
             },
+            PacketType::LoginResponse | PacketType::SignUpResponse => {
+               error!(
+                       "Réponse reçue du client alors qu'elle doit être envoyée par le serveur : {:?}",
+                        packet.packet_type
+                       );
+
+             None
+           },
         }
     }
 }
