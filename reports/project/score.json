@@ -1,24 +1,24 @@
 {
-    "generated": "2026-08-22T14:10:45.518830",
-    "score": 76,
+    "generated": "2026-08-23T09:07:42.473211",
+    "score": 75,
     "status": "Satisfaisant",
     "scores": {
-        "markdown": 49,
+        "markdown": 42,
         "titles": 4,
         "spelling": 10,
         "links": 0,
         "python": 0,
         "rust": 0,
-        "organization": 95,
+        "organization": 100,
         "navigation": 0
     },
-    "problem_count": 935,
+    "problem_count": 945,
     "details": {
         "markdown": {
-            "score": 49,
+            "score": 42,
             "max_score": 50,
             "results": {
-                "empty_files": 9,
+                "empty_files": 2,
                 "encoding": 7,
                 "line_length": 7,
                 "trailing_spaces": 6,
@@ -1055,6 +1055,24 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "docs/CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (17).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (20).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (29).",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1).",
@@ -1100,6 +1118,12 @@
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1804).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (29).",
                     "module": "markdown"
                 },
                 {
@@ -1603,6 +1627,12 @@
                     "module": "titles"
                 },
                 {
+                    "file": "docs/CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG_ENG.md:25 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "docs/ROADMAP.md:54 titre sans ligne vide avant.",
@@ -1666,6 +1696,12 @@
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "docs/QRB_flake8_error.md:1363 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:25 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1798,6 +1834,36 @@
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "docs/QRB_flake8_error.md:1363 titre dupliqué (déjà présent dans docs/QRB_flake8_error.md:935).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:1 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:1).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:7 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:7).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:9 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:25 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:25).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:27 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).",
                     "module": "titles"
                 },
                 {
@@ -5682,21 +5748,13 @@
             ]
         },
         "organization": {
-            "score": 95,
+            "score": 100,
             "max_score": 100,
             "results": {
                 "bonus": 1,
-                "problems": 1
+                "problems": 0
             },
-            "problems": [
-                {
-                    "file": "",
-                    "severity": "info",
-                    "message": "La racine contient beaucoup de fichiers.",
-                    "suggestion": "Créer des dossiers pour mieux organiser le projet.",
-                    "module": "organization"
-                }
-            ]
+            "problems": []
         },
         "navigation": {
             "score": 0,
