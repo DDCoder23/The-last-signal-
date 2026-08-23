@@ -6,7 +6,7 @@ on:
       mode:
         required: true
         type: string
-
+  workflow_dispatch: 
 permissions:
   actions: write
 
