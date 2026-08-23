@@ -94,4 +94,27 @@ jobs:
       )
      }}
     uses: ./.github/workflows/sync-ci.yml
+  cancel-launcher:
+    needs:
+      - reset
+      - integration
+      - python
+      - rust
+      - project
+      - sync
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.reset.result == 'failure' ||
+        needs.integration.result == 'failure' ||
+        needs.python.result == 'failure' ||
+        needs.rust.result == 'failure' ||
+        needs.project.result == 'failure' ||
+        needs.sync.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/cancel-pending.yml
+    with: 
+      mode: launcher
   
