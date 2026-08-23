@@ -7,6 +7,10 @@ on:
            required: false
            type: boolean
            default: false
+       security_run_number:
+        required: false
+        type: number
+        default: 0
 
 
 permissions:
@@ -41,6 +45,7 @@ jobs:
       - name: Archive old reports
         env:
            ARCHIVE_SECURITY: ${{ inputs.archive_security }}
+           SECURITY_RUN_NUMBER: ${{ inputs.security_run_number }}
         shell: bash
         run: |
                set -Eeuo pipefail
@@ -49,8 +54,15 @@ jobs:
                mkdir -p "$ARCHIVE_DIR"
 
                shopt -s nullglob
+               if [[ "$ARCHIVE_SECURITY" == "true" ]]; then
+                CURRENT_RUN="$SECURITY_RUN_NUMBER"
+                echo "Mode security : utilisation du run security #$CURRENT_RUN"
+                else
+                CURRENT_RUN="$GITHUB_RUN_NUMBER"
+                echo "Mode normal : utilisation du run archive #$CURRENT_RUN"
+                fi
 
-               CURRENT_RUN=$GITHUB_RUN_NUMBER
+               
                PREVIOUS_RUN=$((CURRENT_RUN - 1))
                OLDER_RUN=$((CURRENT_RUN - 2))
                Run_3=$((CURRENT_RUN-3))
