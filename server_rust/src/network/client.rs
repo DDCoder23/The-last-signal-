@@ -77,22 +77,18 @@ impl Client {
 
                     if let Some(response) =
                      PacketHandler::handle(self, packet,self.pool.clone())
-                        .await;
+                        .await {
                     if let Err(e) =
-                        send_packet(
-                            &mut self.stream,
-                            &response,
-                        )
-                        .await
+                        send_packet(&mut self.stream, &response).await
                     {
-
                         error!("Erreur : {}", e);
-
                         break;
-
                     }
-
                 }
+            }
+                    
+
+                
 
                 Err(e) => {
 
