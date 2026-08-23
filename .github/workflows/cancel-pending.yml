@@ -6,7 +6,8 @@ on:
       mode:
         required: true
         type: string
-  workflow_dispatch: 
+
+  workflow_dispatch:
     inputs:
       mode:
         description: "Workflows à annuler"
@@ -17,19 +18,11 @@ on:
           - launcher
           - nightly
           - security
+
 permissions:
   actions: write
 
 jobs:
-  list-workflows:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: List workflows
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh workflow list --repo "$GITHUB_REPOSITORY"
   cancel:
     runs-on: ubuntu-latest
 
@@ -45,45 +38,56 @@ jobs:
           CURRENT_RUN="$GITHUB_RUN_ID"
 
           echo "Repository : $REPO"
-          echo "Current run: $CURRENT_RUN"
-          echo "Mode       : $MODE"
+          echo "Current run : $CURRENT_RUN"
+          echo "Mode : $MODE"
 
           case "$MODE" in
+
             global)
               WORKFLOWS=(
-                "launcher.yml"
-                "nightly.yml"
-                "security-reports.yml"
+                "323612663:launcher"
+                "310224372:Nightly"
+                "310224378:Security Report"
               )
               ;;
 
             launcher)
-              WORKFLOWS=("launcher.yml")
+              WORKFLOWS=(
+                "323612663:launcher"
+              )
               ;;
 
             nightly)
-              WORKFLOWS=("nightly.yml")
+              WORKFLOWS=(
+                "310224372:Nightly"
+              )
               ;;
 
             security)
-              WORKFLOWS=("security-reports.yml")
+              WORKFLOWS=(
+                "310224378:Security Report"
+              )
               ;;
 
             *)
-              echo "Mode inconnu : $MODE"
+              echo "❌ Mode inconnu : $MODE"
               exit 1
               ;;
           esac
 
-          for WORKFLOW in "${WORKFLOWS[@]}"; do
+          for ENTRY in "${WORKFLOWS[@]}"; do
+
+            WORKFLOW_ID="${ENTRY%%:*}"
+            WORKFLOW_NAME="${ENTRY#*:}"
 
             echo ""
             echo "======================================"
-            echo "Workflow : $WORKFLOW"
+            echo "Workflow : $WORKFLOW_NAME"
+            echo "ID       : $WORKFLOW_ID"
             echo "======================================"
 
             gh api \
-              "/repos/$REPO/actions/workflows/$WORKFLOW/runs?per_page=100" |
+              "/repos/$REPO/actions/workflows/$WORKFLOW_ID/runs?per_page=100" |
             jq -r '
               .workflow_runs[]
               | select(.status == "waiting")
@@ -102,11 +106,13 @@ jobs:
 
               gh api \
                 --method POST \
-                "/repos/$REPO/actions/runs/$RUN_ID/cancel" \
-                || echo "⚠️ Impossible d'annuler $RUN_ID"
+                "/repos/$REPO/actions/runs/$RUN_ID/cancel"
 
             done
+
           done
 
           echo ""
-          echo "Nettoyage terminé."
+          echo "======================================"
+          echo "✅ Nettoyage terminé"
+          echo "======================================"
