@@ -27,6 +27,8 @@ permissions:
 jobs:
 
   integration:
+    outputs:
+      critical_failure: ${{ steps.critical-status.outputs.failed }}
 
     name: Python ↔ Rust Integration
 
@@ -361,3 +363,31 @@ jobs:
              cd "$GITHUB_WORKSPACE"
              git worktree remove ../ci-database --force
              fi
+    - name: Detect critical failure
+      id: critical-status
+      if: always()
+      run: |
+        if [[ \
+          "${{ steps.build-server.outcome }}" == "failure" || \
+          "${{ steps.start-server.outcome }}" == "failure" || \
+          "${{ steps.check-server.outcome }}" == "failure"
+        ]]; then
+          echo "failed=true" >> "$GITHUB_OUTPUT"
+          echo "❌ Erreur critique détectée"
+        else
+          echo "failed=false" >> "$GITHUB_OUTPUT"
+          echo "✅ Aucune erreur critique"
+        fi
+  cancel-critical:
+    needs: integration
+
+    if: >-
+      ${{
+        always() &&
+        needs.integration.outputs.critical_failure == 'true'
+      }}
+
+    uses: ./.github/workflows/cancel-pending.yml
+
+    with:
+      mode: global
