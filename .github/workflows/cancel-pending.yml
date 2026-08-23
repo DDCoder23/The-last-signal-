@@ -1,0 +1,93 @@
+name: Cancel Pending Workflows
+
+on:
+  workflow_call:
+    inputs:
+      mode:
+        required: true
+        type: string
+
+permissions:
+  actions: write
+
+jobs:
+  cancel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Cancel waiting workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MODE: ${{ inputs.mode }}
+        run: |
+          set -Eeuo pipefail
+
+          REPO="$GITHUB_REPOSITORY"
+          CURRENT_RUN="$GITHUB_RUN_ID"
+
+          echo "Repository : $REPO"
+          echo "Current run: $CURRENT_RUN"
+          echo "Mode       : $MODE"
+
+          case "$MODE" in
+            global)
+              WORKFLOWS=(
+                "launcher.yml"
+                "nightly.yml"
+                "security-reports.yml"
+              )
+              ;;
+
+            launcher)
+              WORKFLOWS=("launcher.yml")
+              ;;
+
+            nightly)
+              WORKFLOWS=("nightly.yml")
+              ;;
+
+            security)
+              WORKFLOWS=("security-reports.yml")
+              ;;
+
+            *)
+              echo "Mode inconnu : $MODE"
+              exit 1
+              ;;
+          esac
+
+          for WORKFLOW in "${WORKFLOWS[@]}"; do
+
+            echo ""
+            echo "======================================"
+            echo "Workflow : $WORKFLOW"
+            echo "======================================"
+
+            gh api \
+              "/repos/$REPO/actions/workflows/$WORKFLOW/runs?per_page=100" |
+            jq -r '
+              .workflow_runs[]
+              | select(.status == "waiting")
+              | .id
+            ' |
+            while read -r RUN_ID; do
+
+              [ -z "$RUN_ID" ] && continue
+
+              if [ "$RUN_ID" = "$CURRENT_RUN" ]; then
+                echo "→ Run actuel ignoré : $RUN_ID"
+                continue
+              fi
+
+              echo "→ Annulation du run Waiting : $RUN_ID"
+
+              gh api \
+                --method POST \
+                "/repos/$REPO/actions/runs/$RUN_ID/cancel" \
+                || echo "⚠️ Impossible d'annuler $RUN_ID"
+
+            done
+          done
+
+          echo ""
+          echo "Nettoyage terminé."
