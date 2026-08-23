@@ -187,6 +187,26 @@ jobs:
           python tests/security/test_load.py \
             >> "$REPORT"
           echo "" >> "$REPORT"
+            
+
+      ##########################################################
+      # Red Team File Integrity
+      ##########################################################
+
+      - name: Red Team File Integrity Test
+        id: red_team
+        continue-on-error: true
+        shell: bash
+        run: |
+
+          echo "" >> "$REPORT"
+          echo "## Red Team File Integrity" >> "$REPORT"
+          echo "" >> "$REPORT"
+
+          python tests/security/attack_test.py \
+            >> "$REPORT" 2>&1
+
+          echo "" >> "$REPORT"
       
           
             
@@ -247,6 +267,11 @@ jobs:
               echo "| Stress test | ✅ PASS |"
             else
               echo "| Stress test | ❌ FAIL |"
+            fi
+            if [ "${{ steps.red_team.outcome }}" = "success" ]; then
+              echo "| Red Team File Integrity | ✅ PASS |"
+            else
+              echo "| Red Team File Integrity | ❌ FAIL |"
             fi
 
           } >> "$REPORT"
