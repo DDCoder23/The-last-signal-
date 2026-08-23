@@ -30,10 +30,7 @@ jobs:
       )
      }}
     uses: ./.github/workflows/build.yml
-
-  
-
-  security:
+  archive:
     needs: build
     if: >-
      ${{
@@ -41,6 +38,20 @@ jobs:
       (
         needs.build.result == 'success' ||
         needs.build.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/Archive.yml
+
+  
+
+  security:
+    needs: archive
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.archive.result == 'success' ||
+        needs.archive.result == 'failure'
       )
      }}
     
