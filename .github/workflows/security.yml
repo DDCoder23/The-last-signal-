@@ -624,3 +624,5 @@ jobs:
       )
      }}
     uses: ./.github/workflows/Archive.yml
+    with:
+      archive_security: true
