@@ -75,7 +75,7 @@ impl Client {
                         )
                     );
 
-                    let response =
+                    if let Some(response) =
                      PacketHandler::handle(self, packet,self.pool.clone())
                         .await;
                     if let Err(e) =
