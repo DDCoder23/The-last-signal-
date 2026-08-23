@@ -82,7 +82,7 @@ def run_test(connections):
     return successful, failed, average
 
 @pytest.mark.security
-def main():
+def test_main():
 
     print("# Server Load Test")
     print()
@@ -141,4 +141,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    test_main()
