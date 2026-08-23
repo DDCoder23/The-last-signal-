@@ -59,6 +59,27 @@ jobs:
     secrets:
         VAULT_KEY: ${{ secrets.VAULT_KEY }}
 
+  cancel-nightly:
+    needs:
+      - launch
+      - build
+      - archive
+      - security
+      
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.launch.result == 'failure' ||
+        needs.build.result == 'failure' ||
+        needs.archive.result == 'failure' ||
+        needs.security.result == 'failure' 
+      )
+     }}
+    uses: ./.github/workflows/cancel-pending.yml
+    with: 
+      mode: nighly
+
   
 
   
