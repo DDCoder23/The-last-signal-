@@ -312,6 +312,20 @@ impl PacketHandler {
                             Ok(_) => {}
                         }
 
+                        // Effacer le ban sursis
+                        if let Err(error) = sqlx::query(
+                            r#"
+                            DELETE FROM bansursis
+                            WHERE user_id = ?
+                            "#,
+                        )
+                        .bind(&login_data.user_id)
+                        .execute(&pool)
+                        .await
+                        {
+                            error!("Impossible de supprimer le ban sursis : {}", error);
+                        }
+
                         // Supprimer le compteur
                         if let Err(error) = sqlx::query(
                             r#"
