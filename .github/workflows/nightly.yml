@@ -34,7 +34,16 @@ jobs:
   
 
   security:
-    needs: launch
+    needs: build
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.build.result == 'success' ||
+        needs.build.result == 'failure'
+      )
+     }}
+    
     uses: ./.github/workflows/security.yml
     secrets:
         VAULT_KEY: ${{ secrets.VAULT_KEY }}
