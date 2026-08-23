@@ -66,7 +66,7 @@ impl PacketHandler {
 
             PacketType::Ping => {
                 debug!("Ping reçu");
-                Packet::new(PacketType::Ping, b"PONG".to_vec())
+                return Some(Packet::new(PacketType::Ping, b"PONG".to_vec()))
             },
 
             PacketType::SignUp => {
@@ -75,7 +75,7 @@ impl PacketHandler {
                     Ok(signup) => signup,
                     Err(error) => {
                         debug!("SIGN_UP invalide : {}", error);
-                        return Packet::new(PacketType::SignUp, b"SIGN_UP invalide".to_vec());
+                        return Some(Packet::new(PacketType::SignUpResponse, b"SIGN_UP invalide".to_vec()));
                     }
                 };
 
@@ -85,7 +85,7 @@ impl PacketHandler {
                     Ok(hash) => hash,
                     Err(error) => {
                         error!("Erreur lors du hash du mot de passe : {}", error);
-                        return Packet::new(PacketType::SignUp, b"Erreur serveur".to_vec());
+                        return Some(Packet::new(PacketType::SignUpResponse, b"Erreur serveur".to_vec()));
                     }
                 };
 
@@ -113,17 +113,17 @@ impl PacketHandler {
                     Ok(_) => {
                         debug!("Nouvel utilisateur créé : {}", email);
                         client.set_user_id(Some(user_id.clone()));
-                        Packet::new(PacketType::SignUp, b"Utilisateur cree avec succes".to_vec())
+                        Packet::new(PacketType::SignUpResponse, b"Utilisateur cree avec succes".to_vec())
                     }
                     Err(error) => {
                         // Vérifier si c'est un conflit d'email
                         let error_msg = error.to_string();
                         if error_msg.contains("UNIQUE constraint failed") {
                             debug!("SIGN_UP refusé : email déjà utilisé");
-                            Packet::new(PacketType::SignUp, b"Email deja utilise".to_vec())
+                            return Some(Packet::new(PacketType::SignUpResponse, b"Email deja utilise".to_vec()))
                         } else {
                             error!("Erreur lors de la création du user : {}", error);
-                            Packet::new(PacketType::SignUp, b"Erreur serveur".to_vec())
+                            return Some(Packet::new(PacketType::SignUpResponse, b"Erreur serveur".to_vec()))
                         }
                     }
                 }
@@ -135,7 +135,7 @@ impl PacketHandler {
                     Ok(login) => login,
                     Err(error) => {
                         debug!("LOGIN invalide : {}", error);
-                        return Packet::new(PacketType::Login, b"LOGIN invalide".to_vec());
+                        return Some(Packet::new(PacketType::LoginResponse, b"LOGIN invalide".to_vec()));
                     }
                 };
 
@@ -166,24 +166,24 @@ impl PacketHandler {
                     },
                     Ok(None) => {
                         debug!("Tentative de connexion avec un utilisateur inexistant");
-                        return Packet::new(PacketType::Login, b"Identifiants invalides".to_vec());
+                        return Some(Packet::new(PacketType::LoginResponse, b"Identifiants invalides".to_vec()));
                     }
                     Err(error) => {
                         error!("Erreur lors de la recherche de l'utilisateur : {}", error);
-                        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+                        return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
                     }
                 };
 
                 // 3. Vérifier le ban permanent
                 if login_data.is_banned_perm {
                     debug!("Connexion refusée : utilisateur banni définitivement");
-                    return Packet::new(PacketType::Login, b"Compte banni definitivement".to_vec());
+                    return Some(Packet::new(PacketType::LoginResponse, b"Compte banni definitivement".to_vec()));
                 }
 
                 // 4. Vérifier le ban temporaire
                 if login_data.is_banned_temp {
                     debug!("Connexion refusée : utilisateur temporairement banni");
-                    return Packet::new(PacketType::Login, b"Compte temporairement banni".to_vec());
+                    return Some(Packet::new(PacketType::LoginResponse, b"Compte temporairement banni".to_vec()));
                 }
 
                 // 5. Vérifier le mot de passe
@@ -217,7 +217,7 @@ impl PacketHandler {
                         Ok(value) => value,
                         Err(error) => {
                             error!("Erreur lors de l'enregistrement de la tentative : {}", error);
-                            return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+                            return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
                         }
                     };
 
@@ -275,7 +275,7 @@ impl PacketHandler {
 {
     Err(error) => {
         error!("Impossible de créer le ban temporaire : {}", error);
-        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+        return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
     }
     Ok(_) => {}
 }
@@ -296,10 +296,10 @@ impl PacketHandler {
 
                         debug!("Utilisateur {} banni pendant 10 minutes", email);
 
-                        return Packet::new(PacketType::Login, b"Trop de tentatives. Compte bloque pendant 10 minutes.".to_vec());
+                        return Some(Packet::new(PacketType::LoginResponse, b"Trop de tentatives. Compte bloque pendant 10 minutes.".to_vec()));
                     }
 
-                    return Packet::new(PacketType::Login, b"Identifiants invalides".to_vec());
+                    return Some(Packet::new(PacketType::LoginResponse, b"Identifiants invalides".to_vec()));
                 }
 
                 // 7. ✅ OPTIMISATION OPTION 2 : Vérification en lecture rapide + UPDATE simple
@@ -321,13 +321,13 @@ impl PacketHandler {
                     Ok(value) => value != 0,
                     Err(error) => {
                         error!("Erreur lors de la vérification de connexion : {}", error);
-                        return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+                        return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
                     }
                 };
 
                 if is_already_connected {
                     debug!("Tentative de connexion avec un compte déjà connecté");
-                    return Packet::new(PacketType::Login, b"Ce compte est deja connecte".to_vec());
+                    return Some(Packet::new(PacketType::LoginResponse, b"Ce compte est deja connecte".to_vec()));
                 }
 
                 // 8. UPDATE direct sans WHERE complexe (très rapide)
@@ -343,7 +343,7 @@ impl PacketHandler {
                 .await
                 {
                     error!("Erreur lors de la connexion du joueur : {}", error);
-                    return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+                    return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
                 }
 
                 // 9. Connexion réussie → remettre le compteur à zéro
@@ -358,13 +358,13 @@ impl PacketHandler {
                 .await
                 {
                     error!("Impossible de réinitialiser les tentatives : {}", error);
-                    return Packet::new(PacketType::Login, b"Erreur serveur".to_vec());
+                    return Some(Packet::new(PacketType::LoginResponse, b"Erreur serveur".to_vec()));
                 }
 
                 // 10. Connexion réussie
                 debug!("Utilisateur authentifié : {}", email);
                 client.set_user_id(Some(login_data.user_id.clone()));
-                Packet::new(PacketType::Login, format!("Utilisateur {} authentifié", email).into_bytes())
+                return Some(Packet::new(PacketType::LoginResponse, format!("Utilisateur {} authentifié", email).into_bytes()))
             },
 
             PacketType::Chat => {
