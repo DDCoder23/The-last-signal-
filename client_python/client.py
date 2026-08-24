@@ -101,8 +101,7 @@ class Client:
                 packet = Packet.decode(data)
                 if packet.packet_type == PacketType.BAN:
                     self.disconnect()
-
-    return packet
+                    return packet
                 if packet.packet_type == expected_type:
                     return packet
                 log(
