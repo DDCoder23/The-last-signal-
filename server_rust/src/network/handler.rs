@@ -68,6 +68,10 @@ impl PacketHandler {
                 debug!("Ping reçu");
                 return Some(Packet::new(PacketType::Ping, b"PONG".to_vec()))
             },
+            PacketType::BAN => {
+                
+                return None
+            },
 
             PacketType::SignUp => {
                 // 1. Parser le packet SIGN_UP
