@@ -18,7 +18,7 @@ concurrency:
 permissions:
   contents: write
   security-events: write
-  actions: read
+  actions: write
 
 jobs:
   security:
