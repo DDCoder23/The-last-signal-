@@ -58,12 +58,25 @@ jobs:
           echo "       WORKFLOW WATCHDOG"
           echo "========================================"
 
+          
+
+          echo "OS         : ${RUNNER_OS}"
           echo "Repository : ${GITHUB_REPOSITORY}"
           echo "Date       : $(date -u)"
           echo "Max job runtime : ${MAX_JOB_RUNTIME_MINUTES} min"
           echo
 
           NOW=$(date +%s)
+
+          iso_to_timestamp() {
+            local timestamp="$1"
+
+            if [ "$RUNNER_OS" = "macOS" ]; then
+              date -j -f "%Y-%m-%dT%H:%M:%SZ" "$timestamp" "+%s"
+            else
+              date -d "$timestamp" "+%s"
+            fi
+          }
 
           # ==========================================================
           # RÉCUPÉRATION DES WORKFLOWS ACTUELLEMENT EN COURS
