@@ -228,7 +228,7 @@ impl PacketHandler {
                         // Vérifier s'il existe un ban sursis actif
                         let existing_sursis_deban = match sqlx::query_scalar::<_, Option<String>>(
                             r#"
-                            SELECT date_deban FROM bansursis
+                            SELECT date_deban FROM banssursis
                             WHERE user_id = ?
                               AND datetime(date_deban) > CURRENT_TIMESTAMP
                             LIMIT 1
