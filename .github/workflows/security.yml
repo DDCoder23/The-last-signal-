@@ -664,14 +664,7 @@ jobs:
               fi
   archive:
     needs: security
-    if: >-
-     ${{
-      always() &&
-      (
-        needs.security.result == 'success' ||
-        needs.security.result == 'failure'
-      )
-     }}
+    if: always()
     uses: ./.github/workflows/Archive.yml
     with:
       archive_security: true
