@@ -167,8 +167,12 @@ jobs:
           echo "Injections SQL" >> "$REPORT"
 
           echo "" >> "$REPORT"
-          python tests/security/test_sql_injection.py \
-            >>"$REPORT"
+          echo "PWD=$(pwd)" 
+          echo "Recherche du fichier :" >> "$REPORT"
+          find tests/security -maxdepth 1 -type f -print 
+
+
+          python tests/security/test_sql_injection.py >>"$REPORT"
           echo "" >> "$REPORT"
       - name: Packet fuzzing
         id: fuzzing
