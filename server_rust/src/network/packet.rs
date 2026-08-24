@@ -23,8 +23,18 @@ pub enum PacketType {
     SignUp = 6,
      LoginResponse = 7,
     SignUpResponse = 8,
+    BAN = 9,
 }
-
+#[derive(Debug, Clone, Copy)]
+pub enum BanType {
+    Temporary = 1,
+    Permanent = 2,
+}
+pub struct BanInfo {
+    pub ban_type: BanType,
+    pub reason: String,
+    pub date_deban: Option<String>,
+}
 
 #[derive(Debug, Serialize, Deserialize)]
 pub enum LogLevel {
@@ -55,6 +65,8 @@ impl PacketType {
             6 => Some(PacketType::SignUp),
             7 => Some(PacketType::LoginResponse),
             8 => Some(PacketType::SignUpResponse),
+            9 => Some(PacketType::BAN),
+
             _ => None,
         }
     }
@@ -77,6 +89,20 @@ impl Packet {
             payload,
         }
     }
+}
+pub fn encode_ban(
+    ban_type: BanType,
+    reason: &str,
+    date_deban: Option<&str>,
+) -> Vec<u8> {
+
+    format!(
+        "{}\0{}\0{}",
+        ban_type as u8,
+        reason,
+        date_deban.unwrap_or("")
+    )
+    .into_bytes()
 }
 
 /// Envoie un paquet.
