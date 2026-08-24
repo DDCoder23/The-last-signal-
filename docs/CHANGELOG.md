@@ -33,5 +33,13 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 
 
 ---
+## [1.0.1] - 24/08/2026
+
+### Ajout
+
+- vérification du ban par le serveur 
+
+---
+
 
 
