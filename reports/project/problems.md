@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-24 12:42:28
+Generated: 2026-08-24 14:56:44
 
 ## Summary
 
@@ -3063,50 +3063,6 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_advanced_attacks_database' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_advanced_attacks_database' dépasse 80 lignes.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_binary_protocol_attacks' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'test_binary_protocol_attacks' dépasse 80 lignes.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'login_thread'ligne 255 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'login_thread' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'ban_toggle'ligne 293 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'ban_toggle' ne possède pas d'annotations de type.
-
----
-
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/attack_test.py
 
 ## ⚠️ Warning
@@ -3345,6 +3301,50 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'test_main' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_advanced_attacks_database' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_advanced_attacks_database' dépasse 80 lignes.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_binary_protocol_attacks' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_binary_protocol_attacks' dépasse 80 lignes.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'login_thread'ligne 256 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'login_thread' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'ban_toggle'ligne 294 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'ban_toggle' ne possède pas d'annotations de type.
 
 ---
 
@@ -3752,7 +3752,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** markdown
-- **Message :** Espace en fin de ligne (38).
+- **Message :** Espace en fin de ligne (39).
 
 ## ⚠️ Warning
 
