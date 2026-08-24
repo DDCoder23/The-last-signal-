@@ -38,6 +38,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 ### Ajout
 
 - vérification du ban par le serveur 
+- correction des bugs
 
 ---
 
