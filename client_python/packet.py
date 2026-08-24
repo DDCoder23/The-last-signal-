@@ -10,8 +10,8 @@ class PacketType(IntEnum):
     MOVE = 4
     LOG = 5
     SINGUP = 6
-    LoginResponse = 7,
-    SignUpResponse = 8,
+    LoginResponse = 7
+    SignUpResponse = 8
 
 
 class Packet:
@@ -85,7 +85,10 @@ class Packet:
             from .packets.singup import SingupPacket
             return SingupPacket.from_payload(payload)
         if packet_type == PacketType.LoginResponse or packet_type == PacketType.SignUpResponse :
-            return payload
+            return Packet(
+            packet_type,
+            payload
+        )
 
 
         return Packet(
