@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-24T12:42:28.110330",
+    "generated": "2026-08-24T14:56:44.362506",
     "score": 73,
     "status": "Satisfaisant",
     "scores": {
@@ -1069,7 +1069,7 @@
                 {
                     "file": "docs/CHANGELOG_ENG.md",
                     "severity": "warning",
-                    "message": "Espace en fin de ligne (38).",
+                    "message": "Espace en fin de ligne (39).",
                     "module": "markdown"
                 },
                 {
@@ -5655,49 +5655,49 @@
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
                     "message": "La fonction 'test_advanced_attacks_database' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
                     "message": "La fonction 'test_advanced_attacks_database' dépasse 80 lignes.",
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
                     "message": "La fonction 'test_binary_protocol_attacks' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
                     "message": "La fonction 'test_binary_protocol_attacks' dépasse 80 lignes.",
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
-                    "message": "La fonction 'login_thread'ligne 255 ne possède pas de docstring.",
+                    "message": "La fonction 'login_thread'ligne 256 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
                     "message": "La fonction 'login_thread' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
-                    "message": "La fonction 'ban_toggle'ligne 293 ne possède pas de docstring.",
+                    "message": "La fonction 'ban_toggle'ligne 294 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/ test_sql_injection.py",
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py",
                     "severity": "warning",
                     "message": "La fonction 'ban_toggle' ne possède pas d'annotations de type.",
                     "module": "python"
