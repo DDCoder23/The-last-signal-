@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-08-24 09:01:26
+**Date :** 2026-08-24 10:15:32
 
 # 73/100
 
@@ -2025,51 +2025,9 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 
-## ⚠️ Warning
+## ❌ Error
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'connect'ligne 26 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'connect' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'send_packet' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'receive_packet'ligne 85 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'receive_packet' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'disconnect'ligne 155 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
+- **Message :** Impossible d'analyser le fichier : expected 'except' or 'finally' block (<unknown>, line 105)
 
 - **module :** python
 
@@ -2135,7 +2093,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'encode'ligne 29 ne possède pas de docstring.
+- **Message :** La fonction 'encode'ligne 30 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2147,7 +2105,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'decode'ligne 51 ne possède pas de docstring.
+- **Message :** La fonction 'decode'ligne 52 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2162,6 +2120,38 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La classe 'BanType' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La classe 'BanPacket' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload'ligne 23 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'from_payload' ne possède pas d'annotations de type.
 
 - **module :** python
 
@@ -4188,8 +4178,20 @@ TypeError: result doit être un dict, reçu int
 # 📄 docs/CHANGELOG.md
 
 ## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (40).
+
+- **module :** markdown
+
+## ⚠️ Warning
 - **Module :** titles
 - **Message :** docs/CHANGELOG.md:25 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:36 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -4223,6 +4225,18 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:36 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:34).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:38 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
+
+- **module :** titles
+
 # 📄 docs/CHANGELOG_ENG.md
 
 ## ⚠️ Warning
@@ -4238,8 +4252,26 @@ TypeError: result doit être un dict, reçu int
 - **module :** markdown
 
 ## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (38).
+
+- **module :** markdown
+
+## ⚠️ Warning
 - **Module :** titles
 - **Message :** docs/CHANGELOG_ENG.md:25 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG_ENG.md:34 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/CHANGELOG_ENG.md:36 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
 
 - **module :** titles
 
