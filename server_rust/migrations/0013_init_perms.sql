@@ -19,8 +19,8 @@ VALUES
     ('chat.acces', 'accès au chat'),
     ('chat.moderation', 'moderation du chat'),
     ('ban.proposition', 'proposition de ban'),
-    ('ban.banir', 'bannissement d\'un joueur'),
-    ('signalement', 'signalement de joueurs')
+    ('ban.banir', 'bannissement d''un joueur'),
+    ('signalement', 'signalement d''un joueur'),
     ('log.search', 'recherche dans les logs');
 INSERT OR IGNORE INTO role_permissions (
     role_id,
