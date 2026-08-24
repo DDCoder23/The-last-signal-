@@ -99,7 +99,7 @@ class Client:
                 if data is None:
                     return None
                 packet = Packet.decode(data)
-                if packet.packet_type == PacketType.BAN:
+                if packet.packet_type == packet_type.BAN:
                     self.disconnect()
                     return packet
                 if packet.packet_type == expected_type:
