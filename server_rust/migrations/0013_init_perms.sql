@@ -18,6 +18,9 @@ VALUES
     ('objets_dispo.write', 'Modifier les objets disponible'),
     ('chat.acces', 'accès au chat'),
     ('chat.moderation', 'moderation du chat'),
+    ('ban.proposition', 'proposition de ban'),
+    ('ban.banir', 'bannissement d'un joueur'),
+    ('signalement', 'signalement de joueurs')
     ('log.search', 'recherche dans les logs');
 INSERT OR IGNORE INTO role_permissions (
     role_id,
@@ -56,4 +59,21 @@ CROSS JOIN permissions p
 WHERE r.role_name = 'joueur'
   AND p.permission_name  IN (
       'chat.acces'
+     'signalement'
+  );
+INSERT OR IGNORE INTO role_permissions (
+    role_id,
+    permission_id
+)
+SELECT
+    r.role_id,
+    p.permission_id
+FROM roles r
+CROSS JOIN permissions p
+WHERE r.role_name = 'modo'
+  AND p.permission_name  IN (
+      'chat.acces',
+      'chat.moderation',
+      'ban.proposition',
+      'signalement'
   );
