@@ -19,7 +19,7 @@ VALUES
     ('chat.acces', 'accès au chat'),
     ('chat.moderation', 'moderation du chat'),
     ('ban.proposition', 'proposition de ban'),
-    ('ban.banir', 'bannissement d'un joueur'),
+    ('ban.banir', 'bannissement d\'un joueur'),
     ('signalement', 'signalement de joueurs')
     ('log.search', 'recherche dans les logs');
 INSERT OR IGNORE INTO role_permissions (
@@ -58,7 +58,7 @@ FROM roles r
 CROSS JOIN permissions p
 WHERE r.role_name = 'joueur'
   AND p.permission_name  IN (
-      'chat.acces'
+      'chat.acces',
      'signalement'
   );
 INSERT OR IGNORE INTO role_permissions (
