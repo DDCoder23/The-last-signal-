@@ -8,3 +8,10 @@ target/*
 node_modules/*
 .venv/*
 __pycache__/*
+start_rust.bat
+start_rust.sh
+database/the_last_signal.db-shm
+database/the_last_signal.db-wal
+server_rust/Cargo.lock
+server_rust/server.log
+server_rust/target/
