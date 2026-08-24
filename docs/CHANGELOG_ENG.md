@@ -35,6 +35,7 @@ Important modification of the project **The Last Signal Online** are documented 
 
 ### Ajout
 
-- verification of the ban by the server 
+- verification of the ban by the server
+- bugs correction 
 
 ---
