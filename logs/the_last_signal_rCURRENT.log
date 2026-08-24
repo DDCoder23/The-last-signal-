@@ -1,6 +1,6 @@
-[2026-08-24 13:11:58] [DEBUG] [migrations.rs:43] Migrations SQLite appliquées.
-[2026-08-24 13:11:58] [INFO] [main.rs:29] Base SQLite prête.
-[2026-08-24 13:11:58] [DEBUG] [server.rs:34] ==================================
-[2026-08-24 13:11:58] [DEBUG] [server.rs:35] The Last Signal Server
-[2026-08-24 13:11:58] [DEBUG] [server.rs:36] ==================================
-[2026-08-24 13:11:58] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
+[2026-08-24 13:32:08] [DEBUG] [migrations.rs:43] Migrations SQLite appliquées.
+[2026-08-24 13:32:08] [INFO] [main.rs:29] Base SQLite prête.
+[2026-08-24 13:32:08] [DEBUG] [server.rs:34] ==================================
+[2026-08-24 13:32:08] [DEBUG] [server.rs:35] The Last Signal Server
+[2026-08-24 13:32:08] [DEBUG] [server.rs:36] ==================================
+[2026-08-24 13:32:08] [DEBUG] [server.rs:38] Listening on 127.0.0.1:5000
