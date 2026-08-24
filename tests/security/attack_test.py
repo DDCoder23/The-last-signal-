@@ -1251,6 +1251,8 @@ def main() -> int:
 
         if result:
             passed += 1
+        else:
+            print(f"[DEBUG] Scenario failed: {name}")
 
     total = len(results)
 
