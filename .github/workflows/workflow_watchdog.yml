@@ -27,12 +27,20 @@ env:
 jobs:
   watchdog:
     name: Monitor Workflow Jobs
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
+
+    runs-on: ${{ matrix.os }}
+    
 
     # Le watchdog ne doit jamais être bloqué par
     # la concurrency de main-update.
     concurrency:
-      group: workflow-watchdog
+      group: workflow-watchdog-${{ matrix.os }}
       cancel-in-progress: true
 
     steps:
