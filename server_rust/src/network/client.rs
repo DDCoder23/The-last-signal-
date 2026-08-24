@@ -56,10 +56,13 @@ impl Client {
             self.stream.peer_addr().unwrap(),
             self.session_id,
         );
-
         loop {
 
-            match receive_packet(&mut self.stream).await {
+    tokio::select! {
+
+        packet = receive_packet(&mut self.stream) => {
+
+            match packet {
 
                 Ok(packet) => {
 
@@ -68,27 +71,24 @@ impl Client {
                         packet.packet_type
                     );
 
-                    debug!(
-                        "Payload : {}",
-                        String::from_utf8_lossy(
-                            &packet.payload
-                        )
-                    );
-
                     if let Some(response) =
-                     PacketHandler::handle(self, packet,self.pool.clone())
-                        .await {
-                    if let Err(e) =
-                        send_packet(&mut self.stream, &response).await
+                        PacketHandler::handle(
+                            self,
+                            packet,
+                            self.pool.clone()
+                        ).await
                     {
-                        error!("Erreur : {}", e);
-                        break;
+                        if let Err(e) =
+                            send_packet(
+                                &mut self.stream,
+                                &response
+                            ).await
+                        {
+                            error!("Erreur : {}", e);
+                            break;
+                        }
                     }
                 }
-            }
-                    
-
-                
 
                 Err(e) => {
 
@@ -99,14 +99,85 @@ impl Client {
                     );
 
                     break;
-
                 }
-
             }
-
         }
 
+        _ = sleep(Duration::from_secs(1)) => {
+
+            match self.is_banned().await {
+
+                Ok(true) => {
+
+                    info!(
+                        "Client banni : {}",
+                        self.session_id
+                    );
+
+                    break;
+                }
+
+                Ok(false) => {}
+
+                Err(e) => {
+
+                    error!(
+                        "Erreur vérification ban [{}] : {}",
+                        self.session_id,
+                        e
+                    );
+
+                    break;
+                }
+            }
+        }
     }
+}
+
+        
+
+    }
+    pub async fn is_banned(&self) -> Result<bool, sqlx::Error> {
+    let user_id = match self.user_id() {
+        Some(id) => id,
+        None => return Ok(false),
+    };
+
+    // Ban permanent
+    let permanent = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT EXISTS(
+            SELECT 1
+            FROM bansperm
+            WHERE user_id = ?
+        )
+        "#
+    )
+    .bind(user_id)
+    .fetch_one(&self.pool)
+    .await?;
+
+    if permanent != 0 {
+        return Ok(true);
+    }
+
+    // Ban temporaire encore actif
+    let temporary = sqlx::query_scalar::<_, i64>(
+        r#"
+        SELECT EXISTS(
+            SELECT 1
+            FROM bansferme
+            WHERE user_id = ?
+              AND datetime(date_deban) > CURRENT_TIMESTAMP
+        )
+        "#
+    )
+    .bind(user_id)
+    .fetch_one(&self.pool)
+    .await?;
+
+    Ok(temporary != 0)
+}
 
     // Encapsulation: setters / getters for previously-private fields
     pub fn set_user_id(&mut self, id: Option<String>) {
