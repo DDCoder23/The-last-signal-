@@ -4585,8 +4585,50 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-        "severity": "error",
-        "message": "Impossible d'analyser le fichier : expected 'except' or 'finally' block (<unknown>, line 105)",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'connect'ligne 26 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'connect' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'send_packet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'receive_packet'ligne 85 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'receive_packet' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'disconnect'ligne 158 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
+        "severity": "warning",
+        "message": "La fonction 'disconnect' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {

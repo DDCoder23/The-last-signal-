@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-24 11:51:19
+Generated: 2026-08-24 12:42:28
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|127|
-|⚠️ Warnings|836|
-|**Total**|**968**|
+|❌ Errors|126|
+|⚠️ Warnings|844|
+|**Total**|**975**|
 
 ---
 
@@ -1726,10 +1726,45 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 
-## ❌ Error
+## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Impossible d'analyser le fichier : expected 'except' or 'finally' block (<unknown>, line 105)
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'connect'ligne 26 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'connect' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'send_packet' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'receive_packet'ligne 85 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'receive_packet' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'disconnect'ligne 158 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
 
 ---
 
