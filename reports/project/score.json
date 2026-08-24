@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-24T09:01:26.409692",
+    "generated": "2026-08-24T10:15:32.325029",
     "score": 73,
     "status": "Satisfaisant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 95,
         "navigation": 0
     },
-    "problem_count": 963,
+    "problem_count": 968,
     "details": {
         "markdown": {
             "score": 42,
@@ -1067,6 +1067,12 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "docs/CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (38).",
+                    "module": "markdown"
+                },
+                {
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1).",
@@ -1112,6 +1118,12 @@
                     "file": "docs/QRB_flake8_error.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (1804).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (40).",
                     "module": "markdown"
                 },
                 {
@@ -1621,6 +1633,12 @@
                     "module": "titles"
                 },
                 {
+                    "file": "docs/CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG_ENG.md:34 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
                     "file": "docs/ROADMAP.md",
                     "severity": "warning",
                     "message": "docs/ROADMAP.md:54 titre sans ligne vide avant.",
@@ -1690,6 +1708,12 @@
                     "file": "docs/CHANGELOG.md",
                     "severity": "warning",
                     "message": "docs/CHANGELOG.md:25 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:36 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -1795,6 +1819,12 @@
                     "module": "titles"
                 },
                 {
+                    "file": "docs/CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG_ENG.md:36 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).",
+                    "module": "titles"
+                },
+                {
                     "file": "docs/CODING_RULES.md",
                     "severity": "warning",
                     "message": "docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README_ENG.md:103).",
@@ -1852,6 +1882,18 @@
                     "file": "docs/CHANGELOG.md",
                     "severity": "warning",
                     "message": "docs/CHANGELOG.md:27 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:36 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:34).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "docs/CHANGELOG.md:38 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).",
                     "module": "titles"
                 },
                 {
@@ -1977,12 +2019,12 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 68,
-                "classes": 53,
-                "functions": 337,
+                "modules": 69,
+                "classes": 54,
+                "functions": 334,
                 "documented_modules": 1,
-                "documented_classes": 11,
-                "documented_functions": 99,
+                "documented_classes": 10,
+                "documented_functions": 98,
                 "typed_functions": 64,
                 "todo": 4,
                 "long_functions": 17
@@ -4595,7 +4637,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
                     "severity": "warning",
-                    "message": "La fonction 'encode'ligne 29 ne possède pas de docstring.",
+                    "message": "La fonction 'encode'ligne 30 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -4607,7 +4649,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
                     "severity": "warning",
-                    "message": "La fonction 'decode'ligne 51 ne possède pas de docstring.",
+                    "message": "La fonction 'decode'ligne 52 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -4618,50 +4660,8 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'connect'ligne 26 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'connect' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'send_packet' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'receive_packet'ligne 85 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'receive_packet' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'disconnect'ligne 155 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
-                    "severity": "warning",
-                    "message": "La fonction 'disconnect' ne possède pas d'annotations de type.",
+                    "severity": "error",
+                    "message": "Impossible d'analyser le fichier : expected 'except' or 'finally' block (<unknown>, line 105)",
                     "module": "python"
                 },
                 {
@@ -4798,6 +4798,36 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py",
+                    "severity": "warning",
+                    "message": "La fonction 'from_payload' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py",
+                    "severity": "warning",
+                    "message": "La classe 'BanType' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py",
+                    "severity": "warning",
+                    "message": "La classe 'BanPacket' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py",
+                    "severity": "warning",
+                    "message": "La fonction 'from_payload'ligne 23 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py",
                     "severity": "warning",
                     "message": "La fonction 'from_payload' ne possède pas d'annotations de type.",
                     "module": "python"
