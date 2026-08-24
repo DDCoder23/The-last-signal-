@@ -40,7 +40,7 @@ jobs:
     # Le watchdog ne doit jamais être bloqué par
     # la concurrency de main-update.
     concurrency:
-      group: workflow-watchdog
+      group: workflow-watchdog-${{ matrix.os }}
       cancel-in-progress: true
 
     steps:
