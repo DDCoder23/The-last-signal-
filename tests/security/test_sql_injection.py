@@ -26,6 +26,7 @@ import struct
 import threading
 import time
 import os
+import pytest
 
 DATABASE_PATH = os.getenv("DATABASE_PATH")
 
