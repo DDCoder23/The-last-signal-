@@ -1,4 +1,4 @@
-use tokio::{net::TcpStream,time::{sleep, Duration}};
+use tokio::{net::TcpStream,time::{sleep, Duration},io::AsyncWriteExt};
 use sqlx::SqlitePool;
 use uuid::Uuid;
 use log::{
@@ -150,7 +150,7 @@ impl Client {
                                 &ban
                             );
 
-                            let packet = Packet::new(PacketType::Ban,payload);
+                            let packet = Packet::new(PacketType::BAN,payload);
                             if let Err(e) =
                                             send_packet(&mut self.stream, &packet).await
                             {
