@@ -31,3 +31,10 @@ Important modification of the project **The Last Signal Online** are documented 
 - improvement of the SQL injections' test
 - New security tests
 ---
+## [1.0.1] - 24/08/2026
+
+### Ajout
+
+- verification of the ban by the server 
+
+---
