@@ -12,6 +12,7 @@ class PacketType(IntEnum):
     SINGUP = 6
     LoginResponse = 7
     SignUpResponse = 8
+    BAN = 9
 
 
 class Packet:
@@ -84,6 +85,9 @@ class Packet:
         if packet_type == PacketType.SINGUP:
             from .packets.singup import SingupPacket
             return SingupPacket.from_payload(payload)
+        if packet_type == PacketType.BAN:
+            from .packets.ban import BanPacket
+            return BanPacket.from_payload(payload)
         if packet_type == PacketType.LoginResponse or packet_type == PacketType.SignUpResponse :
             return Packet(
             packet_type,
