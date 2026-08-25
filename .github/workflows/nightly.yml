@@ -6,7 +6,7 @@ on:
   schedule:
     - cron: "0 22 * * *"
 concurrency:
-  group: main-update
+  group: nighly
   queue: max
 
 permissions:
