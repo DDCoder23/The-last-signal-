@@ -1,10 +1,8 @@
-```python id="7e4x9k"
 from __future__ import annotations
 
 import hashlib
 import json
 import os
-import stat
 import sys
 from pathlib import Path
 
@@ -13,9 +11,9 @@ from pathlib import Path
 # Configuration
 # ============================================================
 
-BASELINE_FILE = ".security-baseline.json"
+BASELINE_VERSION = 3
+HASH_ALGORITHM = "sha256"
 
-# Répertoires complètement exclus du scan.
 IGNORED_DIRECTORIES = {
     ".git",
     "target",
@@ -27,12 +25,10 @@ IGNORED_DIRECTORIES = {
     "venv",
 }
 
-# Fichiers exclus du scan.
 IGNORED_FILES = {
-    BASELINE_FILE,
+    ".security-baseline.json",
 }
 
-# Extensions considérées comme sensibles au niveau intégrité.
 WATCHED_EXTENSIONS = {
     ".py",
     ".rs",
@@ -49,7 +45,6 @@ WATCHED_EXTENSIONS = {
     ".pfx",
 }
 
-# Fichiers sensibles surveillés explicitement.
 WATCHED_SPECIAL_FILES = {
     ".env",
     "Cargo.lock",
@@ -62,70 +57,21 @@ WATCHED_SPECIAL_FILES = {
     "id_dsa",
 }
 
-# Répertoires dont tous les fichiers sont surveillés.
 WATCHED_DIRECTORIES = {
     ".github",
     ".idea",
     "security",
 }
 
-# Taille maximale d'un fichier que ce scanner acceptera.
-#
-# Cela évite qu'un test d'intégrité tente de charger un énorme
-# fichier accidentellement ajouté au dépôt.
-MAX_FILE_SIZE = 256 * 1024 * 1024  # 256 MiB
+MAX_FILE_SIZE = 256 * 1024 * 1024
 
 
 # ============================================================
-# Exceptions
+# Exception
 # ============================================================
 
 class IntegrityError(RuntimeError):
-    """Erreur interne du vérificateur d'intégrité."""
-
-
-# ============================================================
-# SHA-256
-# ============================================================
-
-def sha256_file(path: Path) -> str:
-    """
-    Calcule le SHA-256 d'un fichier.
-
-    Le fichier est lu par blocs pour éviter de charger
-    l'intégralité du contenu en mémoire.
-    """
-
-    try:
-        file_size = path.stat().st_size
-
-    except OSError as error:
-        raise IntegrityError(
-            f"Impossible d'obtenir la taille de {path}: {error}"
-        ) from error
-
-    if file_size > MAX_FILE_SIZE:
-        raise IntegrityError(
-            f"Fichier trop volumineux pour le scan: {path}"
-        )
-
-    digest = hashlib.sha256()
-
-    try:
-        with path.open("rb") as file:
-
-            for chunk in iter(
-                lambda: file.read(1024 * 1024),
-                b"",
-            ):
-                digest.update(chunk)
-
-    except OSError as error:
-        raise IntegrityError(
-            f"Impossible de lire {path}: {error}"
-        ) from error
-
-    return digest.hexdigest()
+    pass
 
 
 # ============================================================
@@ -141,12 +87,13 @@ def relative_path(
         return path.relative_to(root)
 
     except ValueError as error:
+
         raise IntegrityError(
             f"Path outside repository: {path}"
         ) from error
 
 
-def is_path_ignored(
+def is_ignored(
     path: Path,
     root: Path,
 ) -> bool:
@@ -166,28 +113,51 @@ def is_path_ignored(
 
 
 # ============================================================
-# Symlinks
+# SHA-256
 # ============================================================
 
-def is_symlink(path: Path) -> bool:
-    """
-    Retourne True si path est un lien symbolique.
-
-    Les symlinks sont volontairement traités comme des éléments
-    suspects plutôt que suivis aveuglément.
-    """
+def sha256_file(
+    path: Path,
+) -> str:
 
     try:
-        return path.is_symlink()
+        size = path.stat().st_size
 
     except OSError as error:
+
         raise IntegrityError(
-            f"Impossible d'inspecter {path}: {error}"
+            f"Cannot stat file {path}: {error}"
         ) from error
+
+    if size > MAX_FILE_SIZE:
+
+        raise IntegrityError(
+            f"File too large to scan: {path}"
+        )
+
+    digest = hashlib.sha256()
+
+    try:
+
+        with path.open("rb") as file:
+
+            for chunk in iter(
+                lambda: file.read(1024 * 1024),
+                b"",
+            ):
+                digest.update(chunk)
+
+    except OSError as error:
+
+        raise IntegrityError(
+            f"Cannot read file {path}: {error}"
+        ) from error
+
+    return digest.hexdigest()
 
 
 # ============================================================
-# Détermination des fichiers surveillés
+# Watched files
 # ============================================================
 
 def is_watched(
@@ -200,25 +170,13 @@ def is_watched(
         root,
     )
 
-    # --------------------------------------------------------
-    # Fichiers sensibles explicites
-    # --------------------------------------------------------
-
     if path.name in WATCHED_SPECIAL_FILES:
         return True
-
-    # --------------------------------------------------------
-    # Répertoires sensibles
-    # --------------------------------------------------------
 
     for part in relative.parts:
 
         if part in WATCHED_DIRECTORIES:
             return True
-
-    # --------------------------------------------------------
-    # Extensions
-    # --------------------------------------------------------
 
     if path.suffix.lower() in WATCHED_EXTENSIONS:
         return True
@@ -227,42 +185,22 @@ def is_watched(
 
 
 # ============================================================
-# Scan du dépôt
+# Repository scan
 # ============================================================
 
 def scan_repository(
     root: Path,
 ) -> dict[str, str]:
 
-    """
-    Retourne :
-
-        chemin relatif POSIX -> SHA-256
-
-    Exemple :
-
-        {
-            "src/main.py": "...",
-            "Cargo.lock": "...",
-        }
-
-    Les erreurs de lecture sont considérées comme des erreurs
-    critiques plutôt que silencieusement ignorées.
-    """
-
     root = root.resolve()
 
     if not root.is_dir():
+
         raise IntegrityError(
-            f"Repository directory not found: {root}"
+            f"Repository not found: {root}"
         )
 
     result: dict[str, str] = {}
-
-    # --------------------------------------------------------
-    # os.walk permet de contrôler les répertoires ignorés
-    # avant de les parcourir.
-    # --------------------------------------------------------
 
     for current_root, directories, files in os.walk(
         root,
@@ -271,10 +209,6 @@ def scan_repository(
     ):
 
         current = Path(current_root)
-
-        # ----------------------------------------------------
-        # Ne jamais entrer dans les répertoires ignorés.
-        # ----------------------------------------------------
 
         directories[:] = [
             directory
@@ -286,19 +220,17 @@ def scan_repository(
 
             path = current / filename
 
-            if is_path_ignored(
+            if is_ignored(
                 path,
                 root,
             ):
                 continue
 
             # ------------------------------------------------
-            # Symlink :
-            #
-            # Ne pas suivre un lien vers l'extérieur.
+            # Never follow watched symlinks.
             # ------------------------------------------------
 
-            if is_symlink(path):
+            if path.is_symlink():
 
                 if is_watched(
                     path,
@@ -314,15 +246,11 @@ def scan_repository(
                     )
 
                     raise IntegrityError(
-                        "Watched path is a symbolic link: "
+                        "Watched file is a symbolic link: "
                         f"{relative}"
                     )
 
                 continue
-
-            # ------------------------------------------------
-            # Seulement les fichiers surveillés.
-            # ------------------------------------------------
 
             if not is_watched(
                 path,
@@ -350,7 +278,7 @@ def scan_repository(
 
 
 # ============================================================
-# Validation SHA
+# Baseline validation
 # ============================================================
 
 def validate_sha(
@@ -372,11 +300,7 @@ def validate_sha(
     )
 
 
-# ============================================================
-# Validation des chemins de baseline
-# ============================================================
-
-def validate_baseline_path(
+def validate_path(
     value: object,
 ) -> bool:
 
@@ -389,92 +313,92 @@ def validate_baseline_path(
     if not value:
         return False
 
-    path = Path(value)
-
-    # Un chemin de baseline doit être relatif.
-    if path.is_absolute():
-        return False
-
-    # Normalisation POSIX utilisée par le scanner.
     normalized = value.replace(
         "\\",
         "/",
     )
 
-    parts = Path(normalized).parts
+    path = Path(normalized)
 
-    if ".." in parts:
+    if path.is_absolute():
         return False
 
     if normalized.startswith("/"):
         return False
 
+    if ".." in path.parts:
+        return False
+
     return True
 
 
-# ============================================================
-# Validation baseline
-# ============================================================
-
 def validate_baseline(
-    baseline: object,
+    value: object,
 ) -> dict[str, str]:
 
     if not isinstance(
-        baseline,
+        value,
         dict,
     ):
+
         raise IntegrityError(
-            "Baseline must contain a JSON object."
+            "Baseline files must be a JSON object."
         )
 
-    validated: dict[str, str] = {}
+    result: dict[str, str] = {}
 
-    for path, digest in baseline.items():
+    for path, digest in value.items():
 
-        if not validate_baseline_path(
-            path
-        ):
+        if not validate_path(path):
+
             raise IntegrityError(
                 f"Invalid baseline path: {path!r}"
             )
 
-        if not validate_sha(
-            digest
-        ):
+        if not validate_sha(digest):
+
             raise IntegrityError(
-                f"Invalid SHA-256 for: {path!r}"
+                f"Invalid SHA-256: {path!r}"
             )
 
-        validated[path] = digest.lower()
+        result[path] = digest.lower()
 
     return dict(
         sorted(
-            validated.items()
+            result.items()
         )
     )
 
 
 # ============================================================
-# Baseline
+# Baseline create
 # ============================================================
 
 def save_baseline(
-    root: Path,
-    baseline: dict[str, str],
+    path: Path,
+    files: dict[str, str],
 ) -> None:
 
-    path = root / BASELINE_FILE
+    path = path.resolve()
+
+    path.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     data = {
-        "version": 2,
-        "algorithm": "sha256",
-        "files": baseline,
+        "version": BASELINE_VERSION,
+        "algorithm": HASH_ALGORITHM,
+        "files": files,
     }
+
+    temporary = path.with_suffix(
+        path.suffix + ".tmp"
+    )
 
     try:
 
-        path.write_text(
+        temporary.write_text(
             json.dumps(
                 data,
                 indent=2,
@@ -484,22 +408,31 @@ def save_baseline(
             encoding="utf-8",
         )
 
+        temporary.replace(
+            path
+        )
+
     except OSError as error:
 
+        temporary.unlink(
+            missing_ok=True
+        )
+
         raise IntegrityError(
-            f"Unable to write baseline: {error}"
+            f"Cannot write baseline: {error}"
         ) from error
 
 
 def load_baseline(
-    root: Path,
+    path: Path,
 ) -> dict[str, str]:
 
-    path = root / BASELINE_FILE
+    path = path.resolve()
 
     if not path.is_file():
+
         raise IntegrityError(
-            f"Baseline missing: {path}"
+            f"Baseline not found: {path}"
         )
 
     try:
@@ -510,49 +443,46 @@ def load_baseline(
             )
         )
 
-    except (OSError, UnicodeError) as error:
-
-        raise IntegrityError(
-            f"Unable to read baseline: {error}"
-        ) from error
-
     except json.JSONDecodeError as error:
 
         raise IntegrityError(
             f"Invalid baseline JSON: {error}"
         ) from error
 
-    # --------------------------------------------------------
-    # Format v2
-    # --------------------------------------------------------
+    except OSError as error:
+
+        raise IntegrityError(
+            f"Cannot read baseline: {error}"
+        ) from error
 
     if not isinstance(
         raw,
         dict,
     ):
+
         raise IntegrityError(
-            "Invalid baseline root."
+            "Invalid baseline structure."
         )
 
-    if raw.get("version") != 2:
+    if raw.get("version") != BASELINE_VERSION:
+
         raise IntegrityError(
             "Unsupported baseline version."
         )
 
-    if raw.get("algorithm") != "sha256":
+    if raw.get("algorithm") != HASH_ALGORITHM:
+
         raise IntegrityError(
-            "Unsupported baseline hashing algorithm."
+            "Unsupported hashing algorithm."
         )
 
-    files = raw.get("files")
-
     return validate_baseline(
-        files
+        raw.get("files")
     )
 
 
 # ============================================================
-# Comparaison
+# Comparison
 # ============================================================
 
 def compare(
@@ -588,26 +518,25 @@ def compare(
 
 
 # ============================================================
-# Création baseline
+# Create
 # ============================================================
 
 def create(
-    root: Path,
+    repository: Path,
+    baseline_path: Path,
 ) -> int:
 
-    print(
-        "=== SECURITY BASELINE ==="
-    )
+    print("=== SECURITY BASELINE ===")
 
     try:
 
-        baseline = scan_repository(
-            root
+        files = scan_repository(
+            repository
         )
 
         save_baseline(
-            root,
-            baseline,
+            baseline_path,
+            files,
         )
 
     except IntegrityError as error:
@@ -620,96 +549,35 @@ def create(
         return 2
 
     print(
-        f"Files monitored: {len(baseline)}"
+        f"Files monitored: {len(files)}"
     )
 
     print(
-        f"Baseline: {BASELINE_FILE}"
+        f"Baseline: {baseline_path}"
     )
 
     return 0
 
 
 # ============================================================
-# Affichage différences
-# ============================================================
-
-def print_differences(
-    differences: dict[str, list[str]],
-) -> int:
-
-    added = differences["added"]
-    removed = differences["removed"]
-    modified = differences["modified"]
-
-    total = (
-        len(added)
-        + len(removed)
-        + len(modified)
-    )
-
-    # --------------------------------------------------------
-    # Ajouts
-    # --------------------------------------------------------
-
-    if added:
-
-        print("\n[ADDED]")
-
-        for path in added:
-            print(
-                f"  + {path}"
-            )
-
-    # --------------------------------------------------------
-    # Suppressions
-    # --------------------------------------------------------
-
-    if removed:
-
-        print("\n[REMOVED]")
-
-        for path in removed:
-            print(
-                f"  - {path}"
-            )
-
-    # --------------------------------------------------------
-    # Modifications
-    # --------------------------------------------------------
-
-    if modified:
-
-        print("\n[MODIFIED]")
-
-        for path in modified:
-            print(
-                f"  * {path}"
-            )
-
-    return total
-
-
-# ============================================================
-# Vérification intégrité
+# Check
 # ============================================================
 
 def check(
-    root: Path,
+    repository: Path,
+    baseline_path: Path,
 ) -> int:
 
-    print(
-        "=== INTEGRITY CHECK ==="
-    )
+    print("=== INTEGRITY CHECK ===")
 
     try:
 
         before = load_baseline(
-            root
+            baseline_path
         )
 
         after = scan_repository(
-            root
+            repository
         )
 
         differences = compare(
@@ -720,14 +588,47 @@ def check(
     except IntegrityError as error:
 
         print(
-            f"\n[ERROR] {error}",
+            f"[ERROR] {error}",
             file=sys.stderr,
         )
 
         return 2
 
-    total = print_differences(
-        differences
+    added = differences["added"]
+    removed = differences["removed"]
+    modified = differences["modified"]
+
+    if added:
+
+        print("\n[ADDED]")
+
+        for path in added:
+            print(
+                f"  + {path}"
+            )
+
+    if removed:
+
+        print("\n[REMOVED]")
+
+        for path in removed:
+            print(
+                f"  - {path}"
+            )
+
+    if modified:
+
+        print("\n[MODIFIED]")
+
+        for path in modified:
+            print(
+                f"  * {path}"
+            )
+
+    total = (
+        len(added)
+        + len(removed)
+        + len(modified)
     )
 
     if total == 0:
@@ -751,54 +652,61 @@ def check(
 # CLI
 # ============================================================
 
-def print_usage() -> None:
+def usage() -> None:
 
     print(
         "Usage:\n"
-        "  python integrity_check.py create\n"
-        "  python integrity_check.py check"
+        "\n"
+        "  python integrity_check.py create "
+        "<repository> <baseline>\n"
+        "\n"
+        "  python integrity_check.py check "
+        "<repository> <baseline>"
     )
 
 
 def main() -> int:
 
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 4:
 
-        print_usage()
+        usage()
 
         return 2
 
-    root = Path.cwd().resolve()
-
     command = sys.argv[1]
+
+    repository = Path(
+        sys.argv[2]
+    ).resolve()
+
+    baseline = Path(
+        sys.argv[3]
+    ).resolve()
 
     if command == "create":
 
         return create(
-            root
+            repository,
+            baseline,
         )
 
     if command == "check":
 
         return check(
-            root
+            repository,
+            baseline,
         )
 
     print(
         f"Unknown command: {command}"
     )
 
-    print_usage()
+    usage()
 
     return 2
 
-
-# ============================================================
-# Entry point
-# ============================================================
 
 if __name__ == "__main__":
     raise SystemExit(
         main()
     )
-```
