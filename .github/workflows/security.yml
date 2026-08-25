@@ -202,20 +202,24 @@ jobs:
       # Red Team File Integrity
       ##########################################################
 
+      - name: Prepare integrity baseline
+        run: |
+          mkdir -p "$RUNNER_TEMP/security-baseline"
       - name: Red Team File Integrity Test
         id: red_team
         continue-on-error: true
         shell: bash
         run: |
+              echo "" >> "$REPORT"
+              echo "## Red Team File Integrity" >> "$REPORT"
+              echo "" >> "$REPORT"
 
-          echo "" >> "$REPORT"
-          echo "## Red Team File Integrity" >> "$REPORT"
-          echo "" >> "$REPORT"
+              python .github/security/attack_test.py \
+              --repository "$GITHUB_WORKSPACE" \
+              --baseline "$RUNNER_TEMP/security-baseline/baseline.json" \
+              >> "$REPORT" 2>&1
 
-          python tests/security/attack_test.py \
-            >> "$REPORT" 2>&1
-
-          echo "" >> "$REPORT"
+              echo "" >> "$REPORT"
       
           
             
