@@ -222,9 +222,69 @@ jobs:
               echo "" >> "$REPORT"
       
           
-            
-      
-      
+      ##########################################################
+      # Additional Security Tests
+      ##########################################################
+
+      - name: Secrets Security Test
+        id: secrets_test
+        continue-on-error: true
+        run: |
+          echo "" >> "$REPORT"
+          echo "## Secrets Security Test" >> "$REPORT"
+
+          python .github/security/test_secrets.py \
+            >> "$REPORT" 2>&1
+
+      - name: Filesystem Security Test
+        id: filesystem_test
+        continue-on-error: true
+        run: |
+          echo "" >> "$REPORT"
+          echo "## Filesystem Security Test" >> "$REPORT"
+
+          python .github/security/test_filesystem.py \
+            >> "$REPORT" 2>&1
+
+      - name: Git Security Test
+        id: git_security_test
+        continue-on-error: true
+        run: |
+          echo "" >> "$REPORT"
+          echo "## Git Security Test" >> "$REPORT"
+
+          python .github/security/test_git_security.py \
+            >> "$REPORT" 2>&1
+
+      - name: Python Security Test
+        id: python_security_test
+        continue-on-error: true
+        run: |
+          echo "" >> "$REPORT"
+          echo "## Python Security Test" >> "$REPORT"
+
+          python .github/security/test_python_security.py \
+            >> "$REPORT" 2>&1
+
+      - name: Rust Security Test
+        id: rust_security_test
+        continue-on-error: true
+        run: |
+          echo "" >> "$REPORT"
+          echo "## Rust Security Test" >> "$REPORT"
+
+          python .github/security/test_rust_security.py \
+            >> "$REPORT" 2>&1
+
+      - name: Web Security Test
+        id: web_security_test
+        continue-on-error: true
+        run: |
+          echo "" >> "$REPORT"
+          echo "## Web Security Test" >> "$REPORT"
+
+          python .github/security/test_web_security.py \
+            >> "$REPORT" 2>&1
       - name: Save server logs
         if: always()
         run: |
@@ -286,6 +346,37 @@ jobs:
             else
               echo "| Red Team File Integrity | ❌ FAIL |"
             fi
+            if [ "${{ steps.secrets_test.outcome }}" = "success" ]; then
+              echo "| Secret Test | ✅ PASS |"
+            else
+              echo "| Secret Test | ❌ FAIL |"
+            fi
+            if [ "${{ steps.filesystem_test.outcome }}" = "success" ]; then
+              echo "| Test fichier système | ✅ PASS |"
+            else
+              echo "| Test fichier système | ❌ FAIL |"
+            fi
+            if [ "${{ steps.git_security_test.outcome }}" = "success" ]; then
+              echo "| Test sécurité git | ✅ PASS |"
+            else
+              echo "| Test sécurité git | ❌ FAIL |"
+            fi
+            if [ "${{ steps.python_security_test.outcome }}" = "success" ]; then
+              echo "| Test de sécurité python | ✅ PASS |"
+            else
+              echo "| Test de sécurité python | ❌ FAIL |"
+            fi
+            if [ "${{ steps.rust_security_test.outcome }}" = "success" ]; then
+              echo "| Test de sécurité de rust | ✅ PASS |"
+            else
+              echo "| Test de sécurité de rust | ❌ FAIL |"
+            fi
+            if [ "${{ steps.web_security_test.outcome }}" = "success" ]; then
+              echo "| Test sécurité web | ✅ PASS |"
+            else
+              echo "| Test sécurité web | ❌ FAIL |"
+            fi
+            
 
           } >> "$REPORT"
           echo "" >> "$REPORT"
