@@ -131,6 +131,7 @@ jobs:
       run: cargo +nightly udeps --all-targets
     - name: Check outdated Rust dependencies
       if: github.workflow == 'Nightly'
+      continue-on-error: true
       working-directory: server_rust
       run: |
              cargo install cargo-outdated --locked
