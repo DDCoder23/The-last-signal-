@@ -1,5 +1,4 @@
 use log::debug;
-use uuid::Uuid;
 use sqlx::SqlitePool;
 use crate::utils::vault::decrypt_vault;
 use crate::utils::password::hash_password;
