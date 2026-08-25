@@ -1,9 +1,7 @@
 from __future__ import annotations
 
-import argparse
 import hashlib
 import os
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -12,35 +10,32 @@ from typing import Callable
 
 
 # ============================================================
-# Configuration
+# Configuration GitHub
 # ============================================================
 
-SCRIPT_DIRECTORY = Path(
-    __file__
-).resolve().parent
+REPOSITORY = os.environ.get(
+    "GITHUB_REPOSITORY",
+    "",
+)
+
+SHA = os.environ.get(
+    "GITHUB_SHA",
+    "",
+)
+
+GITHUB_SERVER = os.environ.get(
+    "GITHUB_SERVER_URL",
+    "https://github.com",
+).rstrip("/")
+
+
+SCRIPT_DIRECTORY = (
+    Path(__file__).resolve().parent
+)
 
 INTEGRITY_CHECKER = (
     SCRIPT_DIRECTORY
     / "integrity_check.py"
-)
-
-FAKE_ENV_CONTENT = (
-    "# SECURITY LAB - FAKE SECRET ONLY\n"
-    "TEST_SECRET=FAKE_TEST_SECRET\n"
-    "DATABASE_URL=sqlite://security-test.db\n"
-    "API_KEY=FAKE_API_KEY\n"
-)
-
-FAKE_WORKSPACE = """<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-    <component name="SecurityTest">
-        <option name="test" value="original" />
-    </component>
-</project>
-"""
-
-FAKE_VAULT = (
-    b"FAKE_ENCRYPTED_VAULT_SECURITY_TEST_ONLY"
 )
 
 
@@ -72,23 +67,10 @@ def run(
 # SHA-256
 # ============================================================
 
-def sha256_bytes(
-    content: bytes,
-) -> str:
-
-    return hashlib.sha256(
-        content
-    ).hexdigest()
-
-
-def sha256_file(
-    path: Path,
-) -> str:
-
+def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
 
     with path.open("rb") as file:
-
         for chunk in iter(
             lambda: file.read(1024 * 1024),
             b"",
@@ -99,62 +81,93 @@ def sha256_file(
 
 
 # ============================================================
-# Arguments
+# Git
 # ============================================================
 
-def parse_arguments() -> argparse.Namespace:
-
-    parser = argparse.ArgumentParser(
-        description=(
-            "Red Team File Integrity Test"
-        )
-    )
-
-    parser.add_argument(
-        "--repository",
-        required=True,
-        type=Path,
-        help=(
-            "Path of the repository being tested."
-        ),
-    )
-
-    parser.add_argument(
-        "--baseline",
-        required=True,
-        type=Path,
-        help=(
-            "External baseline path."
-        ),
-    )
-
-    return parser.parse_args()
-
-
-# ============================================================
-# Validation
-# ============================================================
-
-def validate_environment(
-    repository: Path,
+def clone_repository(
+    destination: Path,
 ) -> None:
 
-    if not repository.is_dir():
-
+    if not REPOSITORY:
         raise RuntimeError(
-            f"Repository does not exist: {repository}"
+            "GITHUB_REPOSITORY est absent."
         )
 
-    if not INTEGRITY_CHECKER.is_file():
-
+    if not SHA:
         raise RuntimeError(
-            "Integrity checker missing: "
-            f"{INTEGRITY_CHECKER}"
+            "GITHUB_SHA est absent."
         )
+
+    repository_url = (
+        f"{GITHUB_SERVER}/"
+        f"{REPOSITORY}.git"
+    )
+
+    print("\n=== RED TEAM CLONE ===")
+
+    print(
+        f"Repository : {repository_url}"
+    )
+
+    print(
+        f"SHA        : {SHA}"
+    )
+
+    run(
+        [
+            "git",
+            "clone",
+            "--no-tags",
+            "--filter=blob:none",
+            repository_url,
+            str(destination),
+        ]
+    )
+
+    run(
+        [
+            "git",
+            "fetch",
+            "--depth=1",
+            "origin",
+            SHA,
+        ],
+        cwd=destination,
+    )
+
+    run(
+        [
+            "git",
+            "checkout",
+            "--detach",
+            SHA,
+        ],
+        cwd=destination,
+    )
+
+    actual_sha = run(
+        [
+            "git",
+            "rev-parse",
+            "HEAD",
+        ],
+        cwd=destination,
+    ).stdout.strip()
+
+    if actual_sha != SHA:
+        raise RuntimeError(
+            "Le clone ne correspond pas au SHA attendu.\n"
+            f"Expected: {SHA}\n"
+            f"Actual:   {actual_sha}"
+        )
+
+    print(
+        f"[PASS] Exact commit verified: {actual_sha}"
+    )
 
 
 # ============================================================
-# Laboratory files
+# Laboratoire
 # ============================================================
 
 def create_test_environment_files(
@@ -162,224 +175,71 @@ def create_test_environment_files(
 ) -> None:
 
     print(
-        "\n=== CREATING SECURITY LABORATORY ==="
+        "\n=== CREATING SECURITY LAB ==="
     )
 
-    # --------------------------------------------------------
-    # Fake .env
-    # --------------------------------------------------------
-
-    env_file = (
-        repository
-        / ".env"
-    )
+    env_file = repository / ".env"
 
     if not env_file.exists():
-
         env_file.write_text(
-            FAKE_ENV_CONTENT,
+            "# TEST ONLY\n"
+            "TEST_SECRET=FAKE_TEST_SECRET\n"
+            "API_KEY=FAKE_API_KEY\n",
             encoding="utf-8",
         )
 
-        print(
-            "[LAB] Created fake .env"
-        )
-
-    # --------------------------------------------------------
-    # Fake .idea
-    # --------------------------------------------------------
-
-    idea = (
-        repository
-        / ".idea"
-    )
-
+    idea = repository / ".idea"
     idea.mkdir(
         parents=True,
         exist_ok=True,
     )
 
     workspace = (
-        idea
-        / "workspace.xml"
+        idea / "workspace.xml"
     )
 
     if not workspace.exists():
-
         workspace.write_text(
-            FAKE_WORKSPACE,
+            """<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+    <component name="SecurityTest">
+        <option name="test" value="original" />
+    </component>
+</project>
+""",
             encoding="utf-8",
         )
 
-        print(
-            "[LAB] Created fake "
-            ".idea/workspace.xml"
-        )
-
-    # --------------------------------------------------------
-    # Fake vault
-    # --------------------------------------------------------
-
-    vault = (
-        repository
-        / "vault.enc"
-    )
+    vault = repository / "vault.enc"
 
     if not vault.exists():
-
         vault.write_bytes(
-            FAKE_VAULT
+            b"FAKE_ENCRYPTED_VAULT_SECURITY_TEST"
         )
-
-        print(
-            "[LAB] Created fake vault.enc"
-        )
-
-
-# ============================================================
-# Integrity checker
-# ============================================================
-
-def create_baseline(
-    repository: Path,
-    baseline: Path,
-) -> None:
-
-    run(
-        [
-            sys.executable,
-            str(INTEGRITY_CHECKER),
-            "create",
-            str(repository),
-            str(baseline),
-        ]
-    )
-
-
-def run_integrity_check(
-    repository: Path,
-    baseline: Path,
-) -> bool:
-
-    result = run(
-        [
-            sys.executable,
-            str(INTEGRITY_CHECKER),
-            "check",
-            str(repository),
-            str(baseline),
-        ],
-        check=False,
-    )
 
     print(
-        result.stdout
+        "[PASS] Laboratory created."
     )
-
-    return result.returncode == 1
 
 
 # ============================================================
-# Attack helpers
-# ============================================================
-
-def append_bytes(
-    path: Path,
-    payload: bytes,
-) -> None:
-
-    original = path.read_bytes()
-
-    path.write_bytes(
-        original + payload
-    )
-
-
-def execute_integrity_attack(
-    name: str,
-    repository: Path,
-    baseline: Path,
-    attack: Callable[[Path], None],
-) -> bool:
-
-    print(
-        "\n"
-        + "=" * 70
-    )
-
-    print(
-        f" ATTACK: {name}"
-    )
-
-    print(
-        "=" * 70
-    )
-
-    create_baseline(
-        repository,
-        baseline,
-    )
-
-    try:
-
-        attack(
-            repository
-        )
-
-        detected = run_integrity_check(
-            repository,
-            baseline,
-        )
-
-        if not detected:
-
-            print(
-                "[FAIL] Attack was NOT detected."
-            )
-
-            return False
-
-        print(
-            "[PASS] Attack detected."
-        )
-
-        return True
-
-    finally:
-
-        baseline.unlink(
-            missing_ok=True
-        )
-
-
-# ============================================================
-# Cargo.lock attack
+# Attaques
 # ============================================================
 
 def attack_cargo_lock(
     repository: Path,
 ) -> None:
 
-    target = (
-        repository
-        / "Cargo.lock"
-    )
-
-    print(
-        "\n[ATTACK] Cargo.lock"
-    )
+    target = repository / "Cargo.lock"
 
     if not target.exists():
-
-        print(
-            "[SKIP] Cargo.lock absent."
+        raise FileNotFoundError(
+            "Cargo.lock absent."
         )
 
-        return
-
-    append_bytes(
-        target,
-        b"\n# RED TEAM INTEGRITY TEST\n",
+    target.write_bytes(
+        target.read_bytes()
+        + b"\n# RED TEAM INTEGRITY TEST\n"
     )
 
     print(
@@ -387,42 +247,29 @@ def attack_cargo_lock(
     )
 
 
-# ============================================================
-# .env attack
-# ============================================================
-
 def attack_env(
     repository: Path,
 ) -> None:
 
-    target = (
-        repository
-        / ".env"
-    )
-
-    print(
-        "\n[ATTACK] .env"
-    )
+    target = repository / ".env"
 
     if not target.exists():
-
-        raise RuntimeError(
-            ".env laboratory file missing."
+        raise FileNotFoundError(
+            ".env absent."
         )
 
-    append_bytes(
-        target,
-        b"\nATTACK_TEST_MODIFICATION=TRUE\n",
+    target.write_text(
+        target.read_text(
+            encoding="utf-8"
+        )
+        + "\nATTACK_TEST_MODIFICATION=TRUE\n",
+        encoding="utf-8",
     )
 
     print(
         "[ATTACK] .env modified."
     )
 
-
-# ============================================================
-# .idea attack
-# ============================================================
 
 def attack_idea(
     repository: Path,
@@ -434,30 +281,18 @@ def attack_idea(
         / "workspace.xml"
     )
 
-    print(
-        "\n[ATTACK] .idea/workspace.xml"
-    )
-
     if not target.exists():
-
-        raise RuntimeError(
-            ".idea/workspace.xml missing."
+        raise FileNotFoundError(
+            "workspace.xml absent."
         )
 
     content = target.read_text(
         encoding="utf-8"
     )
 
-    if 'value="original"' not in content:
-
-        raise RuntimeError(
-            "Expected laboratory marker not found."
-        )
-
     content = content.replace(
         'value="original"',
         'value="attacker-modified"',
-        1,
     )
 
     target.write_text(
@@ -470,143 +305,94 @@ def attack_idea(
     )
 
 
-# ============================================================
-# Security file attack
-# ============================================================
-
-def find_security_directory(
+def find_security_file(
     repository: Path,
 ) -> Path | None:
 
-    candidates = [
+    candidates: list[Path] = []
+
+    for directory in (
         repository / "security",
         repository / "tests" / "security",
-    ]
+    ):
 
-    for directory in candidates:
+        if not directory.exists():
+            continue
 
-        if directory.is_dir():
-            return directory
+        for path in directory.rglob("*"):
 
-    return None
+            if not path.is_file():
+                continue
+
+            if path.name in {
+                "attack_test.py",
+                "integrity_check.py",
+            }:
+                continue
+
+            candidates.append(path)
+
+    if not candidates:
+        return None
+
+    return sorted(candidates)[0]
 
 
 def attack_security_file(
     repository: Path,
 ) -> None:
 
-    security = find_security_directory(
+    target = find_security_file(
         repository
     )
 
-    print(
-        "\n[ATTACK] Security directory tampering"
-    )
-
-    if security is None:
-
-        print(
-            "[SKIP] Security directory absent."
+    if target is None:
+        raise RuntimeError(
+            "Aucun fichier security disponible."
         )
 
-        return
-
-    candidates = []
-
-    for path in security.rglob("*"):
-
-        if not path.is_file():
-            continue
-
-        if path.name in {
-            "attack_test.py",
-            "integrity_check.py",
-        }:
-            continue
-
-        if path.is_symlink():
-            continue
-
-        candidates.append(
-            path
-        )
-
-    if not candidates:
-
-        print(
-            "[SKIP] No suitable security file."
-        )
-
-        return
-
-    target = sorted(
-        candidates
-    )[0]
-
-    print(
-        f"[TARGET] "
-        f"{target.relative_to(repository)}"
-    )
-
-    append_bytes(
-        target,
-        b"\n# RED TEAM INTEGRITY TEST\n",
+    target.write_bytes(
+        target.read_bytes()
+        + b"\n# RED TEAM INTEGRITY TEST\n"
     )
 
     print(
-        "[ATTACK] Security file modified."
+        "[ATTACK] Security file modified:"
+        f" {target.relative_to(repository)}"
     )
 
-
-# ============================================================
-# Vault attack
-# ============================================================
 
 def attack_vault(
     repository: Path,
 ) -> None:
 
-    target = (
-        repository
-        / "vault.enc"
-    )
-
-    print(
-        "\n[ATTACK] vault.enc corruption"
-    )
+    target = repository / "vault.enc"
 
     if not target.exists():
-
-        print(
-            "[SKIP] vault.enc absent."
+        raise FileNotFoundError(
+            "vault.enc absent."
         )
 
-        return
-
-    original = target.read_bytes()
+    original = bytearray(
+        target.read_bytes()
+    )
 
     if not original:
-
         raise RuntimeError(
-            "vault.enc is empty."
+            "vault.enc est vide."
         )
-
-    corrupted = bytearray(
-        original
-    )
 
     positions = {
         0,
-        len(corrupted) // 2,
-        len(corrupted) - 1,
+        len(original) // 2,
+        len(original) - 1,
     }
 
     for position in positions:
-
-        corrupted[position] ^= 0xFF
+        original[position] ^= 0xFF
 
     target.write_bytes(
-        bytes(corrupted)
+        bytes(original)
     )
 
     print(
@@ -614,81 +400,116 @@ def attack_vault(
     )
 
 
-# ============================================================
-# master.key discovery
-# ============================================================
-
-def find_master_keys(
-    repository: Path,
-) -> list[Path]:
-
-    found: list[Path] = []
-
-    for path in repository.rglob(
-        "master.key"
-    ):
-
-        try:
-
-            relative = path.relative_to(
-                repository
-            )
-
-        except ValueError:
-
-            continue
-
-        if ".git" in relative.parts:
-
-            continue
-
-        found.append(
-            path
-        )
-
-    return found
-
-
 def attack_master_key_discovery(
     repository: Path,
 ) -> bool:
 
-    print(
-        "\n[ATTACK] Searching for master.key"
-    )
+    found = []
 
-    found = find_master_keys(
-        repository
-    )
+    for path in repository.rglob("master.key"):
+
+        try:
+            relative = path.relative_to(
+                repository
+            )
+        except ValueError:
+            continue
+
+        if ".git" in relative.parts:
+            continue
+
+        found.append(relative)
 
     if not found:
-
         print(
-            "[PASS] master.key not present."
+            "[PASS] No master.key exposed."
         )
-
         return True
 
     print(
-        "[CRITICAL] master.key found!"
+        "[FAIL] master.key exposed:"
     )
 
     for path in found:
-
-        print(
-            f"  ! "
-            f"{path.relative_to(repository)}"
-        )
-
-    print(
-        "[FAIL] master.key is exposed."
-    )
+        print(f"  ! {path}")
 
     return False
 
 
 # ============================================================
-# Git verification
+# Integrity
+# ============================================================
+
+def run_integrity_check(
+    repository: Path,
+) -> bool:
+
+    result = run(
+        [
+            sys.executable,
+            str(INTEGRITY_CHECKER),
+            "check",
+        ],
+        cwd=repository,
+        check=False,
+    )
+
+    print(result.stdout)
+
+    return result.returncode == 1
+
+
+def execute_integrity_attack(
+    name: str,
+    repository: Path,
+    attack: Callable[[Path], None],
+) -> bool:
+
+    print("\n" + "=" * 70)
+    print(f" ATTACK: {name}")
+    print("=" * 70)
+
+    run(
+        [
+            sys.executable,
+            str(INTEGRITY_CHECKER),
+            "create",
+        ],
+        cwd=repository,
+    )
+
+    baseline = (
+        repository
+        / ".security-baseline.json"
+    )
+
+    try:
+        attack(repository)
+
+        detected = run_integrity_check(
+            repository
+        )
+
+        if not detected:
+            print(
+                "[FAIL] Attack was NOT detected."
+            )
+            return False
+
+        print(
+            "[PASS] Attack detected."
+        )
+
+        return True
+
+    finally:
+        baseline.unlink(
+            missing_ok=True
+        )
+
+
+# ============================================================
+# Git final
 # ============================================================
 
 def verify_git_clean(
@@ -696,10 +517,10 @@ def verify_git_clean(
 ) -> bool:
 
     print(
-        "\n=== GIT STATE CHECK ==="
+        "\n=== FINAL GIT STATE ==="
     )
 
-    result = run(
+    status = run(
         [
             "git",
             "status",
@@ -709,19 +530,30 @@ def verify_git_clean(
         check=False,
     )
 
-    if result.stdout.strip():
+    if status.stdout.strip():
+        print(status.stdout)
 
-        print(
-            result.stdout
-        )
+    # Le laboratoire contient volontairement des fichiers
+    # non suivis. Nous vérifions donc spécifiquement les
+    # modifications des fichiers suivis.
+    diff = run(
+        [
+            "git",
+            "diff",
+            "--exit-code",
+        ],
+        cwd=repository,
+        check=False,
+    )
 
+    if diff.returncode != 0:
         print(
-            "[INFO] Laboratory files or attack "
-            "artifacts remain in the clone."
+            "[FAIL] Tracked files remain modified."
         )
+        return False
 
     print(
-        "[PASS] Git state inspection completed."
+        "[PASS] No tracked files modified."
     )
 
     return True
@@ -733,34 +565,44 @@ def verify_git_clean(
 
 def main() -> int:
 
+    print("=" * 70)
     print(
-        "=" * 70
+        "THE LAST SIGNAL - "
+        "RED TEAM FILE INTEGRITY TEST V2"
     )
+    print("=" * 70)
 
-    print(
-        " THE LAST SIGNAL - "
-        "RED TEAM FILE INTEGRITY TEST v3"
-    )
+    if not REPOSITORY:
+        print(
+            "[ERROR] GITHUB_REPOSITORY missing."
+        )
+        return 2
 
-    print(
-        "=" * 70
-    )
+    if not SHA:
+        print(
+            "[ERROR] GITHUB_SHA missing."
+        )
+        return 2
 
-    args = parse_arguments()
+    if not INTEGRITY_CHECKER.exists():
+        print(
+            "[ERROR] integrity_check.py missing:"
+        )
+        print(INTEGRITY_CHECKER)
+        return 2
 
-    repository = (
-        args.repository
-        .resolve()
-    )
+    results: list[tuple[str, bool]] = []
 
-    baseline = (
-        args.baseline
-        .resolve()
-    )
+    with tempfile.TemporaryDirectory(
+        prefix="security_red_team_"
+    ) as temporary_directory:
 
-    try:
+        repository = (
+            Path(temporary_directory)
+            / "repository"
+        )
 
-        validate_environment(
+        clone_repository(
             repository
         )
 
@@ -768,211 +610,121 @@ def main() -> int:
             repository
         )
 
-    except (RuntimeError, OSError) as error:
+        # ----------------------------------------------------
+        # Cargo.lock
+        # ----------------------------------------------------
 
-        print(
-            f"[ERROR] {error}"
-        )
-
-        return 2
-
-    results: list[
-        tuple[str, bool]
-    ] = []
-
-    # --------------------------------------------------------
-    # Cargo.lock
-    # --------------------------------------------------------
-
-    try:
-
-        result = execute_integrity_attack(
-            "Cargo.lock tampering",
-            repository,
-            baseline,
-            attack_cargo_lock,
-        )
-
-        results.append(
-            ("Cargo.lock", result)
-        )
-
-    except Exception as error:
-
-        print(
-            f"[ERROR] Cargo.lock test: {error}"
-        )
-
-        results.append(
-            ("Cargo.lock", False)
-        )
-
-    # --------------------------------------------------------
-    # .env
-    # --------------------------------------------------------
-
-    try:
-
-        result = execute_integrity_attack(
-            ".env tampering",
-            repository,
-            baseline,
-            attack_env,
-        )
-
-        results.append(
-            (".env", result)
-        )
-
-    except Exception as error:
-
-        print(
-            f"[ERROR] .env test: {error}"
-        )
-
-        results.append(
-            (".env", False)
-        )
-
-    # --------------------------------------------------------
-    # .idea
-    # --------------------------------------------------------
-
-    try:
-
-        result = execute_integrity_attack(
-            ".idea tampering",
-            repository,
-            baseline,
-            attack_idea,
-        )
-
-        results.append(
-            (".idea", result)
-        )
-
-    except Exception as error:
-
-        print(
-            f"[ERROR] .idea test: {error}"
-        )
-
-        results.append(
-            (".idea", False)
-        )
-
-    # --------------------------------------------------------
-    # Security directory
-    # --------------------------------------------------------
-
-    if find_security_directory(
-        repository
-    ) is not None:
-
-        try:
-
-            result = execute_integrity_attack(
-                "security directory tampering",
-                repository,
-                baseline,
-                attack_security_file,
-            )
+        if (repository / "Cargo.lock").exists():
 
             results.append(
-                ("security tampering", result)
+                (
+                    "Cargo.lock tampering",
+                    execute_integrity_attack(
+                        "Cargo.lock tampering",
+                        repository,
+                        attack_cargo_lock,
+                    ),
+                )
             )
 
-        except Exception as error:
+        # ----------------------------------------------------
+        # .env
+        # ----------------------------------------------------
 
+        results.append(
+            (
+                ".env tampering",
+                execute_integrity_attack(
+                    ".env tampering",
+                    repository,
+                    attack_env,
+                ),
+            )
+        )
+
+        # ----------------------------------------------------
+        # .idea
+        # ----------------------------------------------------
+
+        results.append(
+            (
+                ".idea tampering",
+                execute_integrity_attack(
+                    ".idea tampering",
+                    repository,
+                    attack_idea,
+                ),
+            )
+        )
+
+        # ----------------------------------------------------
+        # security/
+        # ----------------------------------------------------
+
+        security_file = find_security_file(
+            repository
+        )
+
+        if security_file is not None:
+
+            results.append(
+                (
+                    "security tampering",
+                    execute_integrity_attack(
+                        "security file tampering",
+                        repository,
+                        attack_security_file,
+                    ),
+                )
+            )
+        else:
             print(
-                f"[ERROR] Security test: {error}"
+                "[SKIP] No security file."
             )
 
-            results.append(
-                ("security tampering", False)
+        # ----------------------------------------------------
+        # vault.enc
+        # ----------------------------------------------------
+
+        results.append(
+            (
+                "vault.enc tampering",
+                execute_integrity_attack(
+                    "vault.enc corruption",
+                    repository,
+                    attack_vault,
+                ),
             )
-
-    else:
-
-        print(
-            "[SKIP] No security directory."
         )
 
-    # --------------------------------------------------------
-    # vault.enc
-    # --------------------------------------------------------
+        # ----------------------------------------------------
+        # master.key
+        # ----------------------------------------------------
 
-    if (
-        repository
-        / "vault.enc"
-    ).exists():
-
-        try:
-
-            result = execute_integrity_attack(
-                "vault.enc corruption",
-                repository,
-                baseline,
-                attack_vault,
+        results.append(
+            (
+                "master.key exposure",
+                attack_master_key_discovery(
+                    repository
+                ),
             )
-
-            results.append(
-                ("vault.enc", result)
-            )
-
-        except Exception as error:
-
-            print(
-                f"[ERROR] vault.enc test: {error}"
-            )
-
-            results.append(
-                ("vault.enc", False)
-            )
-
-    else:
-
-        print(
-            "[SKIP] vault.enc absent."
         )
 
-    # --------------------------------------------------------
-    # master.key
-    # --------------------------------------------------------
+        # ----------------------------------------------------
+        # Git
+        # ----------------------------------------------------
 
-    results.append(
-        (
-            "master.key exposure",
-            attack_master_key_discovery(
-                repository
-            ),
+        git_ok = verify_git_clean(
+            repository
         )
-    )
-
-    # --------------------------------------------------------
-    # Git
-    # --------------------------------------------------------
-
-    git_ok = verify_git_clean(
-        repository
-    )
 
     # ========================================================
-    # Result
+    # Résultat
     # ========================================================
 
-    print(
-        "\n"
-        + "=" * 70
-    )
-
-    print(
-        " FINAL RED TEAM RESULT"
-    )
-
-    print(
-        "=" * 70
-    )
+    print("\n" + "=" * 70)
+    print(" FINAL RED TEAM RESULT")
+    print("=" * 70)
 
     passed = 0
 
@@ -993,21 +745,17 @@ def main() -> int:
 
     total = len(results)
 
+    print()
     print(
-        "\n"
-        f"Security scenarios: "
-        f"{passed}/{total}"
+        f"Security scenarios: {passed}/{total}"
     )
 
     print(
-        "Git inspection: "
+        "Git integrity: "
         f"{'PASS' if git_ok else 'FAIL'}"
     )
 
-    if (
-        passed == total
-        and git_ok
-    ):
+    if passed == total and git_ok:
 
         print(
             "\n[PASS] "
