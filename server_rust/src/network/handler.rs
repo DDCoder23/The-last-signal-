@@ -680,117 +680,67 @@ impl PacketHandler {
                             //     10 minutes
                             // ----------------------------------------
 
-                            let result =
-                                sqlx::query(
-                                    r#"
-                                    INSERT INTO bansferme (
-                                        user_id,
-                                        auteur,
-                                        raison,
-                                        date_ban,
-                                        date_deban
-                                    )
+                            let result = sqlx::query(
+    r#"
+    INSERT INTO bansferme (
+        user_id,
+        auteur,
+        raison,
+        date_ban,
+        date_deban
+    )
+    VALUES (
+        ?,
+        'system',
+        'Activation du sursis',
+        CURRENT_TIMESTAMP,
+        datetime(CURRENT_TIMESTAMP, '+' || ? || ' days', '+10 minutes')
+    )
+    ON CONFLICT(user_id) DO UPDATE SET
 
-                                    VALUES (
-                                        ?,
-                                        'system',
-                                        'Activation du sursis',
-                                        CURRENT_TIMESTAMP,
+        auteur = CASE
+            WHEN COALESCE(bansferme.auteur, '') = ''
+                THEN 'system'
 
-                                        datetime(
-                                            CURRENT_TIMESTAMP,
-                                            '+' || ? || ' days',
-                                            '+10 minutes'
-                                        )
-                                    )
+            WHEN instr(bansferme.auteur, 'system') = 0
+                THEN bansferme.auteur || ', system'
 
-                                    ON CONFLICT(user_id)
+            ELSE bansferme.auteur
+        END,
 
-                                    DO UPDATE SET
-                                    auteur = CASE
-    WHEN COALESCE(bansferme.auteur, '') = '' THEN 'system'
-    WHEN instr(bansferme.auteur, 'system') = 0
-        THEN bansferme.auteur || ', system'
-    ELSE bansferme.auteur
-END
+        raison = CASE
+            WHEN COALESCE(bansferme.raison, '') = ''
+                THEN 'Activation du sursis'
 
-                                        
+            WHEN instr(bansferme.raison, 'Activation du sursis') = 0
+                THEN bansferme.raison || ' | Activation du sursis'
 
-                                                        
+            ELSE bansferme.raison
+        END,
 
-                                                    
+        date_ban = CURRENT_TIMESTAMP,
 
+        date_deban = CASE
+            WHEN datetime(bansferme.date_deban) > CURRENT_TIMESTAMP
+                THEN datetime(
+                    bansferme.date_deban,
+                    '+' || ? || ' days'
+                )
 
-                                        raison =
-                                            CASE
-
-                                                WHEN instr(
-                                                    COALESCE(
-                                                        bansferme.raison,
-                                                        ''
-                                                    ),
-                                                    'Activation du sursis'
-                                                ) = 0
-
-                                                THEN
-                                                    CASE
-
-                                                        WHEN COALESCE(
-                                                            bansferme.raison,
-                                                            ''
-                                                        ) = ''
-
-                                                        THEN
-                                                            'Activation du sursis'
-
-                                                        ELSE
-                                                            bansferme.raison
-                                                            || ' | Activation du sursis'
-
-                                                    END
-
-                                                ELSE
-                                                    bansferme.raison
-
-                                            END,
-
-
-                                        date_ban =
-                                            CURRENT_TIMESTAMP,
-
-
-                                        date_deban =
-                                            CASE
-
-                                                -- Ban ferme encore actif
-                                                WHEN datetime(
-                                                    bansferme.date_deban
-                                                ) > CURRENT_TIMESTAMP
-
-                                                THEN
-                                                    datetime(
-                                                        bansferme.date_deban,
-                                                        '+' || ? || ' days'
-                                                    )
-
-                                                -- Ban ferme expiré
-                                                ELSE
-                                                    datetime(
-                                                        CURRENT_TIMESTAMP,
-                                                        '+' || ? || ' days',
-                                                        '+10 minutes'
-                                                    )
-
-                                            END
-                                    "#,
-                                )
-                                .bind(&login_data.user_id)
-                                .bind(jours)
-                                .bind(jours)
-                                .bind(jours)
-                                .execute(&pool)
-                                .await;
-
+            ELSE datetime(
+                CURRENT_TIMESTAMP,
+                '+' || ? || ' days',
+                '+10 minutes'
+            )
+        END
+    "#,
+)
+.bind(&login_data.user_id)
+.bind(jours)
+.bind(jours)
+.bind(jours)
+.execute(&pool)
+.await;
 
                             if let Err(error) =
                                 result
