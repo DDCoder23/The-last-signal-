@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS banssursis (
     auteur TEXT,
     raison TEXT,
     date_ban TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    sursis TEXT NOT NULL CHECK (sursis > 0),
+    sursis_jours INTEGER NOT NULL CHECK (sursis > 0),
 
     FOREIGN KEY (user_id)
         REFERENCES users(user_id)
