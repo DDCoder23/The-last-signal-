@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-25 13:51:23
+Generated: 2026-08-25 17:51:33
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|126|
-|⚠️ Warnings|844|
-|**Total**|**975**|
+|⚠️ Warnings|892|
+|**Total**|**1023**|
 
 ---
 
@@ -52,6 +52,383 @@ IndexError: no such group
     raise TypeError(f"result doit être un dict, reçu {type(result).__name__}")
 TypeError: result doit être un dict, reçu int
 
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'run'ligne 46 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'sha256_file'ligne 70 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'clone_repository'ligne 87 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'create_test_environment_files'ligne 173 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'attack_cargo_lock'ligne 229 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'attack_env'ligne 250 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'attack_idea'ligne 274 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'find_security_file'ligne 308 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'attack_security_file'ligne 341 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'attack_vault'ligne 365 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'attack_master_key_discovery'ligne 403 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'run_integrity_check'ligne 443 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'execute_integrity_attack'ligne 462 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'verify_git_clean'ligne 515 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 566 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'sha256_file'ligne 53 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'should_ignore'ligne 66 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'is_watched'ligne 78 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'scan_repository'ligne 93 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'save_baseline'ligne 120 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'load_baseline'ligne 136 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'compare'ligne 161 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'create'ligne 184 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check'ligne 205 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 267 ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'should_ignore'ligne 37 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'is_world_writable'ligne 49 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'is_group_writable'ligne 55 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'is_world_executable'ligne 61 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 67 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'run_git'ligne 31 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 45 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'should_ignore'ligne 23 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La classe 'SecurityVisitor' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'scan_file'ligne 205 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 241 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'report'ligne 44 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'report' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'visit_Call'ligne 63 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'visit_Call' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'visit_Call' dépasse 80 lignes.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'should_ignore'ligne 60 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'scan_file'ligne 72 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 115 ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'should_ignore'ligne 101 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'looks_textual'ligne 116 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'mask'ligne 127 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'scan_file'ligne 138 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 190 ne possède pas de docstring.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La classe 'CheckResult' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_port'ligne 38 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'fetch'ligne 59 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_headers'ligne 131 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_headers' dépasse 80 lignes.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_http_methods'ligne 264 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'check_information_exposure'ligne 319 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 364 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' dépasse 80 lignes.
 
 ---
 
@@ -3063,149 +3440,6 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/attack_test.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'run'ligne 39 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'sha256_file'ligne 63 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'clone_repository'ligne 84 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'clone_repository' dépasse 80 lignes.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_test_environment_files'ligne 195 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create_test_environment_files' dépasse 80 lignes.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'find_master_keys'ligne 287 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'attack_cargo_lock'ligne 364 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'attack_env'ligne 402 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'attack_idea'ligne 444 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'attack_security_access'ligne 487 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'attack_security_file'ligne 569 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'attack_vault'ligne 646 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'restore_file'ligne 692 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'run_integrity_check'ligne 722 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'execute_integrity_attack'ligne 747 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'execute_integrity_attack' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'execute_vault_attack'ligne 825 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'execute_vault_attack' dépasse 80 lignes.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'verify_git_clean'ligne 958 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main'ligne 1017 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main' dépasse 80 lignes.
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/integrity_check.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'create'ligne 236 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'check'ligne 262 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main'ligne 343 ne possède pas de docstring.
-
----
-
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
 
 ## ⚠️ Warning
@@ -3692,6 +3926,11 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (49).
+
+## ⚠️ Warning
+
 - **Module :** titles
 - **Message :** docs/CHANGELOG.md:25 titre sans ligne vide avant.
 
@@ -3699,6 +3938,11 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** titles
 - **Message :** docs/CHANGELOG.md:36 titre sans ligne vide avant.
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:44 titre sans ligne vide avant.
 
 ## ⚠️ Warning
 
@@ -3735,6 +3979,16 @@ TypeError: result doit être un dict, reçu int
 - **Module :** titles
 - **Message :** docs/CHANGELOG.md:38 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
 
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:44 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:42).
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:46 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
+
 ---
 
 # 📄 docs/CHANGELOG_ENG.md
@@ -3767,7 +4021,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** titles
+- **Message :** docs/CHANGELOG_ENG.md:42 titre sans ligne vide avant.
+
+## ⚠️ Warning
+
+- **Module :** titles
 - **Message :** docs/CHANGELOG_ENG.md:36 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/CHANGELOG_ENG.md:44 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
 
 ---
 
