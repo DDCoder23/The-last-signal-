@@ -39,3 +39,10 @@ Important modification of the project **The Last Signal Online** are documented 
 - bugs correction 
 
 ---
+## [1.0.1] - 25/08/2026
+
+### Ajout
+
+- new security test 
+
+---
