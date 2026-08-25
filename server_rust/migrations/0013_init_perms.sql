@@ -22,13 +22,93 @@ VALUES
     ('ban.banir', 'bannissement d''un joueur'),
     ('signalement', 'signalement d''un joueur'),
     ('log.search', 'recherche dans les logs');
+
+INSERT OR IGNORE INTO role_inheritance (
+    role_id,
+    parent_role_id
+)
+SELECT child.role_id, parent.role_id
+FROM roles child
+JOIN roles parent
+WHERE child.role_name = 'modo'
+  AND parent.role_name = 'joueur';
+
+INSERT OR IGNORE INTO role_inheritance (
+    role_id,
+    parent_role_id
+)
+SELECT child.role_id, parent.role_id
+FROM roles child
+JOIN roles parent
+WHERE child.role_name = 'admin'
+  AND parent.role_name = 'modo';
+
+INSERT OR IGNORE INTO role_inheritance (
+    role_id,
+    parent_role_id
+)
+SELECT child.role_id, parent.role_id
+FROM roles child
+JOIN roles parent
+WHERE child.role_name = 'Dev'
+  AND parent.role_name = 'admin';
+
+INSERT OR IGNORE INTO role_inheritance (
+    role_id,
+    parent_role_id
+)
+SELECT child.role_id, parent.role_id
+FROM roles child
+JOIN roles parent
+WHERE child.role_name = 'SuperDev'
+  AND parent.role_name = 'Dev';
 INSERT OR IGNORE INTO role_permissions (
     role_id,
     permission_id
 )
-SELECT
-    r.role_id,
-    p.permission_id
+SELECT r.role_id, p.permission_id
+FROM roles r
+JOIN permissions p
+WHERE r.role_name = 'joueur'
+  AND p.permission_name IN (
+      'chat.acces',
+      'signalement'
+  );
+INSERT OR IGNORE INTO role_permissions (
+    role_id,
+    permission_id
+)
+SELECT r.role_id, p.permission_id
+FROM roles r
+JOIN permissions p
+WHERE r.role_name = 'modo'
+  AND p.permission_name IN (
+      'chat.moderation',
+      'ban.proposition');
+INSERT OR IGNORE INTO role_permissions (
+    role_id,
+    permission_id
+)
+SELECT r.role_id, p.permission_id
+FROM roles r
+JOIN permissions p
+WHERE r.role_name = 'admin'
+  AND p.permission_name IN (
+      'accounts.read',
+      'accounts.write',
+      'accounts.delete',
+      'permissions.read',
+      'permissions.write',
+      'roles.read',
+      'roles.write',
+      'objets_dispo.read',
+      'objets_dispo.write'
+  );
+INSERT OR IGNORE INTO role_permissions (
+    role_id,
+    permission_id
+)
+SELECT r.role_id, p.permission_id
 FROM roles r
 CROSS JOIN permissions p
 WHERE r.role_name = 'SuperDev';
@@ -36,44 +116,13 @@ INSERT OR IGNORE INTO role_permissions (
     role_id,
     permission_id
 )
-SELECT
-    r.role_id,
-    p.permission_id
+SELECT r.role_id, p.permission_id
 FROM roles r
-CROSS JOIN permissions p
+JOIN permissions p
 WHERE r.role_name = 'Dev'
   AND p.permission_name NOT IN (
       'accounts.delete',
       'roles.write',
       'log.search'
-  );
-INSERT OR IGNORE INTO role_permissions (
-    role_id,
-    permission_id
-)
-SELECT
-    r.role_id,
-    p.permission_id
-FROM roles r
-CROSS JOIN permissions p
-WHERE r.role_name = 'joueur'
-  AND p.permission_name  IN (
-      'chat.acces',
-     'signalement'
-  );
-INSERT OR IGNORE INTO role_permissions (
-    role_id,
-    permission_id
-)
-SELECT
-    r.role_id,
-    p.permission_id
-FROM roles r
-CROSS JOIN permissions p
-WHERE r.role_name = 'modo'
-  AND p.permission_name  IN (
-      'chat.acces',
-      'chat.moderation',
-      'ban.proposition',
-      'signalement'
+      
   );
