@@ -43,6 +43,6 @@ Important modification of the project **The Last Signal Online** are documented 
 
 ### Ajout
 
-- new security test 
+- new security tests
 
 ---
