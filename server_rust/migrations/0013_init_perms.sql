@@ -126,3 +126,36 @@ WHERE r.role_name = 'Dev'
       'log.search'
       
   );
+CREATE VIEW IF NOT EXISTS effective_role_permissions AS
+
+WITH RECURSIVE role_tree (
+    role_id,
+    inherited_role_id
+) AS (
+
+    -- Le rôle lui-même
+    SELECT
+        role_id,
+        role_id
+    FROM roles
+
+    UNION
+
+    -- Tous les parents, grands-parents, etc.
+    SELECT
+        rt.role_id,
+        ri.parent_role_id
+    FROM role_tree rt
+    JOIN role_inheritance ri
+        ON ri.role_id = rt.inherited_role_id
+)
+
+SELECT DISTINCT
+    rt.role_id,
+    p.permission_id,
+    p.permission_name
+FROM role_tree rt
+JOIN role_permissions rp
+    ON rp.role_id = rt.inherited_role_id
+JOIN permissions p
+    ON p.permission_id = rp.permission_id;
