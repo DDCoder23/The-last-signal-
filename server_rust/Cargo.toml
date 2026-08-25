@@ -11,43 +11,16 @@ uuid = { version = "1", features = ["v4"] }
 serde = { version = "1.0", features = ["derive"] }
 rand = "0.10" 
 serde_json = "1.0"
-aes-gcm = "0.11.0"
-pbkdf2 = "0.13"
-sha2 = "0.11"
-# Pour l'encodage/décodage Base64
-base64 = "0.23"
-
-tracing = "0.1"
-tracing-subscriber = { version = "0.3", features = [
-    "fmt",
-    "env-filter"
-] }
-hex = "0.4"
 log = "0.4"
 flexi_logger = "0.31"
 flate2 = "1"
-walkdir = "2"
-
-# Pour la gestion des fichiers ZIP
-zip = "8.6"
-
-# Pour la gestion des dates (équivalent à `datetime` en Python)
-
-chrono = { version = "0.4", features = ["serde"] }
-
-
-# Pour la normalisation des chaînes (équivalent à `unicodedata.normalize`)
-unicode-normalization = "0.1"
-
-# Pour la création de fichiers temporaires
 tempfile = "3.3"
 sqlx = { version = "0.9", features = [
     "runtime-tokio",
     "sqlite",
     "uuid",
-    "macros",
-    "chrono"
+    "macros"
 ] }
 
 tokio = { version = "1", features = ["full"] }
-anyhow = "1"
+
