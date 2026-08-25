@@ -41,6 +41,13 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 - correction des bugs
 
 ---
+## [1.0.1] - 25/08/2026
 
+### Ajout
+
+- ajout de nouveau tests de sécurité
+  
+
+---
 
 
