@@ -15,3 +15,4 @@ database/the_last_signal.db-wal
 server_rust/Cargo.lock
 server_rust/server.log
 server_rust/target/
+.cargo/
