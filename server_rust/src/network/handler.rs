@@ -591,9 +591,9 @@ impl PacketHandler {
                         // --------------------------------------------
 
                         let sursis_jours =
-                            match sqlx::query_scalar::<_, Option<i64>>(
+                            match sqlx::query_scalar::<_, i64>(
                                 r#"
-                                SELECT sursis_jours
+                                SELECT sursis
 
                                 FROM banssursis
 
@@ -603,7 +603,7 @@ impl PacketHandler {
                                 "#,
                             )
                             .bind(&login_data.user_id)
-                            .fetch_one(&pool)
+                            .fetch_optional(&pool)
                             .await
                             {
 

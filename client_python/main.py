@@ -60,7 +60,11 @@ def main():
             print(
                   f"Message : {response.payload.decode('utf-8', errors='replace')}"
                 )
-    time.sleep(601)
+    for i in range (0,602):
+            time.sleep(1)
+            print(f'ban restant : {601-i} secondes')
+    
+    client2.connect()
     client2.send_packet(LoginPacket("Modo@gmail.com","fhfjf6384"))
     response = client2.receive_packet(PacketType.LoginResponse)
     client2.disconnect()
