@@ -141,6 +141,19 @@ jobs:
       run: |
         mkdir -p database
         echo "DATABASE_URL=$DATABASE_URL"
+    - name: update cargo vendor
+      run: | cargo update 
+             cargo vendor
+             git config user.name github-actions
+             git config user.email github-actions@github.com
+             
+
+             git add vendor
+
+             git diff --cached --quiet || git commit -m "chore: update Cargo vendor"
+             git pull --rebase origin main
+             
+             git push origin main
     - name: Check VAULT_KEY
       run: |
              echo "VAULT_KEY présente : ${VAULT_KEY:+oui}"
