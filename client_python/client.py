@@ -25,6 +25,7 @@ class Client:
 
     def connect(self):
         if self.connected:
+            print(self.connected)
             return
         timeout = 90
         interval = 0.5
@@ -44,6 +45,7 @@ class Client:
                      (self.host, self.port)
             )
                 self.connected = True
+                self.socket.settimeout(None)
 
                 log(
                       self,
@@ -162,5 +164,6 @@ class Client:
             self.socket.close()
 
         self.connected = False
+        print(self.connected)
 
         
