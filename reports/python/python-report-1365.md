@@ -3,7 +3,7 @@
 Run : 1365
 Branch : main
 Commit : 6b405a42cf4c26c9d9f8e9b5f907a3b9b1ec43f6
-Date : Fri Aug 28 13:15:06 UTC 2026
+Date : Fri Aug 28 15:04:16 UTC 2026
 
 ---
 
@@ -38,16 +38,16 @@ Date : Fri Aug 28 13:15:06 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
@@ -60,19 +60,19 @@ Date : Fri Aug 28 13:15:06 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/docker.py
@@ -2367,8 +2367,8 @@ Average complexity: A (4.214285714285714)
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
-Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-08-28 13:15:16.063568+00:00
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Run started:2026-08-28 15:04:28.596908+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -5245,10 +5245,6 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         branch,
         commit
     )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[8:22]
@@ -5266,9 +5262,7 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
-
-
-def should_ignore(path: Path) -> bool: (duplicate-code)
+ (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
@@ -5393,7 +5387,14 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+# ============================================================
+# Git
+# ============================================================
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
@@ -5421,19 +5422,19 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     )
 
     # ==========================================
-    # Quality metrics
+    # Résumé Rust
     # ==========================================
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
+        test,
+        severity,
+        confidence,
+        cwe,
+        info,
+        file,
+        line, (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[37:44]
 ==scripts.documentation.markdown:[59:66]
@@ -5475,7 +5476,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     )
 
 
-def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
+def looks_textual(data: bytes) -> bool: (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[59:69]
 ==scripts.documentation.markdown:[82:91]
@@ -5508,18 +5509,18 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 10 colonnes
+        # Tableau avec 7 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
 ==Ancien.inventaire:[625:632]
+                else:
+                    image_label.setText("Erreur image")
             else:
-                image_label.setText("Erreur image")
-        else:
-            image_label.setText("Aucune image")
-        self.table_widget.setCellWidget(row, 0, image_label)
+                image_label.setText("Aucune image")
+            self.table_widget.setCellWidget(row, 0, image_label)
 
-        # 2. Nom (duplicate-code)
+            # 2. Nom (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[10:15]
 ==.github.security.test_rust_security:[9:14]
@@ -5531,17 +5532,17 @@ IGNORED_DIRECTORIES = {
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 
 -----------------------------------
@@ -5612,7 +5613,7 @@ tests/security/test_load.py:84
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-========================= 9 warnings, 1 error in 0.27s =========================
+========================= 9 warnings, 1 error in 0.30s =========================
 
 </details>
 
