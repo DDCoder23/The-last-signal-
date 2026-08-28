@@ -3,7 +3,7 @@
 Run : 1365
 Branch : main
 Commit : 6b405a42cf4c26c9d9f8e9b5f907a3b9b1ec43f6
-Date : Fri Aug 28 13:19:11 UTC 2026
+Date : Fri Aug 28 15:08:14 UTC 2026
 
 
 ## Cargo fmt
@@ -4217,69 +4217,69 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling stable_deref_trait v1.2.1
    Compiling zerofrom v0.1.8
    Compiling typenum v1.20.1
-   Compiling smallvec v1.15.2
-   Compiling yoke v0.8.3
-   Compiling zerovec v0.11.8
    Compiling pin-project-lite v0.2.17
-   Compiling memchr v2.8.3
-   Compiling tinystr v0.8.4
-   Compiling generic-array v0.14.7
-   Compiling scopeguard v1.2.0
+   Compiling yoke v0.8.3
+   Compiling smallvec v1.15.2
+   Compiling zerovec v0.11.8
    Compiling writeable v0.6.4
-   Compiling futures-core v0.3.34
    Compiling litemap v0.8.3
-   Compiling lock_api v0.4.14
+   Compiling scopeguard v1.2.0
+   Compiling generic-array v0.14.7
+   Compiling tinystr v0.8.4
+   Compiling futures-core v0.3.34
+   Compiling memchr v2.8.3
    Compiling icu_locale_core v2.3.0
+   Compiling lock_api v0.4.14
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
+   Compiling block-buffer v0.10.4
    Compiling utf8_iter v1.0.4
    Compiling icu_collections v2.3.0
-   Compiling block-buffer v0.10.4
    Compiling parking_lot_core v0.9.12
    Compiling icu_properties_data v2.3.0
    Compiling icu_normalizer_data v2.3.0
-   Compiling socket2 v0.6.5
    Compiling mio v1.2.2
-   Compiling bytes v1.12.1
+   Compiling socket2 v0.6.5
    Compiling icu_provider v2.3.1
    Compiling futures-sink v0.3.34
    Compiling once_cell v1.21.4
-   Compiling icu_properties v2.3.0
+   Compiling bytes v1.12.1
    Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
    Compiling parking_lot v0.12.5
    Compiling serde_core v1.0.229
-   Compiling equivalent v1.0.2
    Compiling cpufeatures v0.2.17
+   Compiling equivalent v1.0.2
    Compiling tracing-core v0.1.36
-   Compiling foldhash v0.2.0
    Compiling allocator-api2 v0.2.21
-   Compiling futures-task v0.3.34
-   Compiling idna_adapter v1.2.2
-   Compiling futures-io v0.3.34
-   Compiling slab v0.4.12
    Compiling percent-encoding v2.3.2
+   Compiling idna_adapter v1.2.2
+   Compiling futures-task v0.3.34
+   Compiling foldhash v0.2.0
+   Compiling slab v0.4.12
+   Compiling futures-io v0.3.34
+   Compiling hashbrown v0.16.1
+   Compiling idna v1.1.0
    Compiling futures-util v0.3.34
    Compiling form_urlencoded v1.2.2
-   Compiling idna v1.1.0
-   Compiling hashbrown v0.16.1
    Compiling num-traits v0.2.19
+   Compiling crossbeam-utils v0.8.22
    Compiling serde v1.0.229
    Compiling zmij v1.0.23
-   Compiling crossbeam-utils v0.8.22
-   Compiling parking v2.2.1
-   Compiling crc-catalog v2.5.0
-   Compiling subtle v2.6.1
-   Compiling itoa v1.0.18
-   Compiling hashbrown v0.17.1
    Compiling rand_core v0.10.1
-   Compiling crossbeam-queue v0.3.13
+   Compiling subtle v2.6.1
+   Compiling hashbrown v0.17.1
+   Compiling crc-catalog v2.5.0
+   Compiling itoa v1.0.18
+   Compiling parking v2.2.1
    Compiling serde_json v1.0.151
-   Compiling crc v3.4.0
    Compiling event-listener v5.4.2
    Compiling indexmap v2.14.0
    Compiling either v1.18.0
-   Compiling hashlink v0.11.1
+   Compiling crc v3.4.0
+   Compiling crossbeam-queue v0.3.13
    Compiling url v2.5.8
+   Compiling hashlink v0.11.1
    Compiling futures-intrusive v0.5.0
    Compiling crypto-common v0.1.7
    Compiling digest v0.10.7
@@ -4312,20 +4312,20 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling sqlx-sqlite v0.9.0
    Compiling openssl-sys v0.9.117
    Compiling base64ct v1.8.3
-   Compiling linux-raw-sys v0.12.1
    Compiling iana-time-zone v0.1.65
    Compiling adler2 v2.0.1
-   Compiling cpufeatures v0.3.1
    Compiling simd-adler32 v0.3.10
-   Compiling chacha20 v0.10.2
+   Compiling cpufeatures v0.3.1
+   Compiling linux-raw-sys v0.12.1
    Compiling miniz_oxide v0.9.1
    Compiling rustix v1.1.4
+   Compiling chacha20 v0.10.2
+   Compiling password-hash v0.5.0
    Compiling sqlx-macros-core v0.9.0
    Compiling chrono v0.4.45
-   Compiling password-hash v0.5.0
-   Compiling sqlx-macros v0.9.0
-   Compiling zeroize v1.9.0
    Compiling openssl v0.10.81
+   Compiling zeroize v1.9.0
+   Compiling sqlx-macros v0.9.0
    Compiling regex v1.13.1
    Compiling crc32fast v1.5.1
    Compiling blake2 v0.10.6
@@ -4334,8 +4334,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling byteorder v1.5.0
    Compiling tempfile v3.27.0
    Compiling flexi_logger v0.31.10
-   Compiling argon2 v0.5.3
    Compiling sqlx v0.9.0
+   Compiling argon2 v0.5.3
    Compiling flate2 v1.1.10
    Compiling fernet v0.2.2
    Compiling rand v0.10.2
@@ -4381,10 +4381,10 @@ warning: unused import: `debug`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 1 warning (1 duplicate)
+warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 1 warning (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server --tests` to apply 1 suggestion)
 warning: `the-last-signal-server` (lib test) generated 4 warnings (4 duplicates)
-warning: `the-last-signal-server` (bin "the-last-signal-server") generated 1 warning (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 1 suggestion)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.83s
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 1 warning (1 duplicate)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 20.68s
      Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-04ce6f50feaa325a)
 
 running 0 tests
