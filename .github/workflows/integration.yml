@@ -142,17 +142,19 @@ jobs:
         mkdir -p database
         echo "DATABASE_URL=$DATABASE_URL"
     - name: update cargo vendor
+      working-directory: server_rust
       run: | 
-             cargo update 
+             rm -rf vendor
+             cargo update
              cargo vendor
              git config user.name github-actions
              git config user.email github-actions@github.com
              
 
-             git add vendor
+             git add vendor Cargo.lock
 
              git diff --cached --quiet || git commit -m "chore: update Cargo vendor"
-             git pull --rebase origin main
+             
              
              git push origin main
     - name: Check VAULT_KEY
@@ -170,7 +172,7 @@ jobs:
     - name: Build Rust server
       id: build-server
       working-directory: server_rust
-      run: cargo build --release
+      run: cargo build --locked --release
 
     ##########################################################
     # Start server
@@ -181,7 +183,7 @@ jobs:
       working-directory: server_rust
       run: |
 
-        cargo run --release > server.log 2>&1 &
+        cargo run --locked --release > server.log 2>&1 &
 
         echo $! > server.pid
 
