@@ -142,7 +142,8 @@ jobs:
         mkdir -p database
         echo "DATABASE_URL=$DATABASE_URL"
     - name: update cargo vendor
-      run: | cargo update 
+      run: | 
+             cargo update 
              cargo vendor
              git config user.name github-actions
              git config user.email github-actions@github.com
