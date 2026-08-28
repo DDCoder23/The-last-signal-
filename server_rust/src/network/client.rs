@@ -1,22 +1,32 @@
-use tokio::{net::TcpStream,time::{sleep, Duration},io::AsyncWriteExt};
+use tokio::{
+    io::AsyncWriteExt,
+    net::TcpStream,
+    time::{interval, Duration},
+};
+
 use sqlx::SqlitePool;
 use uuid::Uuid;
+
 use log::{
-    info,
     debug,
-    error,};
+    error,
+    info,
+};
+
 use crate::network::handler::PacketHandler;
 
 use crate::network::packet::{
-    Packet,
-    PacketType,
     receive_packet,
     send_packet,
-    BanType,
     BanInfo,
+    BanType,
+    Packet,
+    PacketType,
 };
 
+
 pub struct Client {
+
     stream: TcpStream,
 
     pool: SqlitePool,
@@ -30,7 +40,12 @@ pub struct Client {
     account_id: Option<i64>,
 }
 
+
 impl Client {
+
+    // ============================================================
+    // CONSTRUCTEUR
+    // ============================================================
 
     pub fn new(
         stream: TcpStream,
@@ -38,54 +53,95 @@ impl Client {
     ) -> Self {
 
         Self {
-
             stream,
 
             pool,
 
             session_id: Uuid::new_v4(),
+
             client_id: None,
 
             user_id: None,
 
             account_id: None,
-
         }
-
     }
+
+
+    // ============================================================
+    // BOUCLE PRINCIPALE
+    // ============================================================
 
     pub async fn run(&mut self) {
 
+        let peer = self
+            .stream
+            .peer_addr()
+            .map(|addr| addr.to_string())
+            .unwrap_or_else(|_| "adresse inconnue".to_string());
+
+
         info!(
             "Client connecté : {} | Session : {}",
-            self.stream.peer_addr().unwrap(),
-            self.session_id,
+            peer,
+            self.session_id
         );
+
+
+        // --------------------------------------------------------
+        // Timer de vérification du ban
+        // --------------------------------------------------------
+
+        let mut ban_checker =
+            interval(Duration::from_secs(1));
+
+
+        // interval() déclenche immédiatement son premier tick.
+        //
+        // On le consomme donc ici pour que la première véritable
+        // vérification ait lieu après 1 seconde.
+        ban_checker.tick().await;
+
+
+        // ========================================================
+        // BOUCLE
+        // ========================================================
+
         loop {
 
             tokio::select! {
 
-                // =====================================================
-                // Réception des paquets
-                // =====================================================
+                // =================================================
+                // RÉCEPTION DES PAQUETS
+                // =================================================
 
-                packet = receive_packet(&mut self.stream) => {
+                packet = receive_packet(
+                    &mut self.stream
+                ) => {
 
                     match packet {
 
                         Ok(packet) => {
 
                             debug!(
-                                "Type : {:?}",
+                                "[{}] Paquet reçu : {:?}",
+                                self.session_id,
                                 packet.packet_type
                             );
 
+
                             debug!(
-                                "Payload : {}",
+                                "[{}] Payload : {}",
+                                self.session_id,
                                 String::from_utf8_lossy(
                                     &packet.payload
                                 )
                             );
+
+
+                            // -----------------------------------------
+                            // Traitement du paquet
+                            // -----------------------------------------
 
                             if let Some(response) =
                                 PacketHandler::handle(
@@ -95,12 +151,17 @@ impl Client {
                                 ).await
                             {
 
+                                // -------------------------------------
+                                // Envoi de la réponse
+                                // -------------------------------------
+
                                 if let Err(e) =
                                     send_packet(
                                         &mut self.stream,
                                         &response
                                     ).await
                                 {
+
                                     error!(
                                         "Erreur d'envoi [{}] : {}",
                                         self.session_id,
@@ -112,10 +173,15 @@ impl Client {
                             }
                         }
 
+
+                        // ---------------------------------------------
+                        // Erreur / déconnexion du client
+                        // ---------------------------------------------
+
                         Err(e) => {
 
-                            error!(
-                                "Déconnexion [{}] : {}",
+                            debug!(
+                                "Déconnexion du client [{}] : {}",
                                 self.session_id,
                                 e
                             );
@@ -125,61 +191,117 @@ impl Client {
                     }
                 }
 
-                // =====================================================
-                // Vérification du ban toutes les secondes
-                // =====================================================
 
-                _ = sleep(Duration::from_secs(1)) => {
+                // =================================================
+                // VÉRIFICATION DU BAN
+                // =================================================
+
+                _ = ban_checker.tick() => {
+
+                    // ---------------------------------------------
+                    // Aucun utilisateur authentifié
+                    // ---------------------------------------------
+                    //
+                    // Il n'y a aucun intérêt à vérifier les bans
+                    // si le client n'est pas encore connecté.
+                    //
+                    // ---------------------------------------------
+
+                    if self.user_id.is_none() {
+                        continue;
+                    }
+
+
+                    // ---------------------------------------------
+                    // Recherche d'un ban actif
+                    // ---------------------------------------------
 
                     match self.get_ban_info().await {
 
                         Ok(Some(ban)) => {
 
                             info!(
-                                "Client banni : {} | Type : {:?} | Raison : {}",
+                                "Ban détecté [{}] | Type : {:?} | Raison : {}",
                                 self.session_id,
                                 ban.ban_type,
                                 ban.reason
                             );
 
-                            // -------------------------------------------------
-                            // Construction du payload BAN
-                            // -------------------------------------------------
 
-                            let payload = Self::encode_ban_payload(
-                                &ban
-                            );
+                            // -----------------------------------------
+                            // Création du paquet BAN
+                            // -----------------------------------------
 
-                            let packet = Packet::new(PacketType::BAN,payload);
-                            if let Err(e) =
-                                            send_packet(&mut self.stream, &packet).await
-                            {
-                               error!(
+                            let payload =
+                                Self::encode_ban_payload(
+                                    &ban
+                                );
+
+
+                            let packet =
+                                Packet::new(
+                                    PacketType::BAN,
+                                    payload
+                                );
+
+
+                            // -----------------------------------------
+                            // Envoi du BAN
+                            // -----------------------------------------
+
+                            match send_packet(
+                                &mut self.stream,
+                                &packet
+                            ).await {
+
+                                Ok(()) => {
+
+                                    info!(
+                                        "Paquet BAN envoyé [{}]",
+                                        self.session_id
+                                    );
+                                }
+
+
+                                Err(e) => {
+
+                                    error!(
                                         "Impossible d'envoyer le BAN [{}] : {}",
                                         self.session_id,
-                                          e
-                                   );
-                             }
+                                        e
+                                    );
+                                }
+                            }
 
 
-
-                            // -------------------------------------------------
-                            // Fermeture de la connexion
-                            // -------------------------------------------------
+                            // -----------------------------------------
+                            // Déconnexion
+                            // -----------------------------------------
 
                             self.disconnect().await;
 
                             break;
                         }
 
+
+                        // ---------------------------------------------
+                        // Aucun ban
+                        // ---------------------------------------------
+
                         Ok(None) => {
-                            // Aucun ban actif.
+
+                            // Rien à faire.
                         }
+
+
+                        // ---------------------------------------------
+                        // Erreur SQL
+                        // ---------------------------------------------
 
                         Err(e) => {
 
                             error!(
-                                "Erreur vérification ban [{}] : {}",
+                                "Erreur lors de la vérification du ban [{}] : {}",
                                 self.session_id,
                                 e
                             );
@@ -190,6 +312,14 @@ impl Client {
                 }
             }
         }
+
+
+        // ========================================================
+        // FIN DE SESSION
+        // ========================================================
+
+        self.mark_disconnected().await;
+
 
         info!(
             "Fin de session : {}",
@@ -197,56 +327,36 @@ impl Client {
         );
     }
 
-        
 
-    
+    // ============================================================
+    // RÉCUPÉRATION DES INFORMATIONS DE BAN
+    // ============================================================
+
     pub async fn get_ban_info(
         &self,
     ) -> Result<Option<BanInfo>, sqlx::Error> {
 
-        let user_id = match self.user_id() {
+        let user_id =
+            match self.user_id() {
 
-            Some(id) => id,
+                Some(id) => id,
 
-            None => {
-                return Ok(None);
-            }
-        };
+                None => {
+                    return Ok(None);
+                }
+            };
 
-        // ---------------------------------------------------------
-        // Ban permanent
-        // ---------------------------------------------------------
 
-        if let Some((reason,)) = sqlx::query_as::<_, (String,)>(
-            r#"
-            SELECT raison
-            FROM bansperm
-            WHERE user_id = ?
-            LIMIT 1
-            "#
-        )
-        .bind(user_id)
-        .fetch_optional(&self.pool)
-        .await?
-        {
-            return Ok(Some(BanInfo {
-                ban_type: BanType::Permanent,
-                reason,
-                date_deban: None,
-            }));
-        }
+        // ========================================================
+        // BAN PERMANENT
+        // ========================================================
 
-        // ---------------------------------------------------------
-        // Ban temporaire
-        // ---------------------------------------------------------
-
-        if let Some((reason, date_deban)) =
-            sqlx::query_as::<_, (Option<String>, String)>(
+        if let Some((reason,)) =
+            sqlx::query_as::<_, (Option<String>,)>(
                 r#"
-                SELECT raison, date_deban
-                FROM bansferme
+                SELECT raison
+                FROM bansperm
                 WHERE user_id = ?
-                  AND datetime(date_deban) > CURRENT_TIMESTAMP
                 LIMIT 1
                 "#
             )
@@ -254,19 +364,81 @@ impl Client {
             .fetch_optional(&self.pool)
             .await?
         {
-            return Ok(Some(BanInfo {
-                ban_type: BanType::Temporary,
 
-                reason: reason.unwrap_or_else(
-                    || "Aucune raison fournie".to_string()
-                ),
+            return Ok(Some(
+                BanInfo {
 
-                date_deban: Some(date_deban),
-            }));
+                    ban_type:
+                        BanType::Permanent,
+
+                    reason:
+                        reason.unwrap_or_else(
+                            || "Aucune raison fournie".to_string()
+                        ),
+
+                    date_deban:
+                        None,
+                }
+            ));
         }
+
+
+        // ========================================================
+        // BAN TEMPORAIRE
+        // ========================================================
+
+        if let Some((reason, date_deban)) =
+            sqlx::query_as::<_, (Option<String>, String)>(
+                r#"
+                SELECT
+                    raison,
+                    date_deban
+
+                FROM bansferme
+
+                WHERE user_id = ?
+
+                  AND datetime(date_deban)
+                      > CURRENT_TIMESTAMP
+
+                LIMIT 1
+                "#
+            )
+            .bind(user_id)
+            .fetch_optional(&self.pool)
+            .await?
+        {
+
+            return Ok(Some(
+                BanInfo {
+
+                    ban_type:
+                        BanType::Temporary,
+
+                    reason:
+                        reason.unwrap_or_else(
+                            || "Aucune raison fournie".to_string()
+                        ),
+
+                    date_deban:
+                        Some(date_deban),
+                }
+            ));
+        }
+
+
+        // ========================================================
+        // PAS DE BAN
+        // ========================================================
 
         Ok(None)
     }
+
+
+    // ============================================================
+    // ENCODAGE DU PAQUET BAN
+    // ============================================================
+
     fn encode_ban_payload(
         ban: &BanInfo,
     ) -> Vec<u8> {
@@ -274,7 +446,9 @@ impl Client {
         format!(
             "{}\0{}\0{}",
             ban.ban_type as u8,
+
             ban.reason,
+
             ban.date_deban
                 .as_deref()
                 .unwrap_or("")
@@ -282,43 +456,171 @@ impl Client {
         .into_bytes()
     }
 
-    // Encapsulation: setters / getters for previously-private fields
-    pub fn set_user_id(&mut self, id: Option<String>) {
-        self.user_id = id;
-    }
 
-    pub fn user_id(&self) -> Option<&str> {
-        self.user_id.as_deref()
-    }
+    // ============================================================
+    // MARQUER COMME DÉCONNECTÉ
+    // ============================================================
 
-    pub fn set_client_id(&mut self, id: Option<i64>) {
-        self.client_id = id;
-    }
+    async fn mark_disconnected(
+        &self,
+    ) {
 
-    pub fn client_id(&self) -> Option<i64> {
-        self.client_id
-    }
+        let user_id =
+            match self.user_id() {
 
-    pub fn set_account_id(&mut self, id: Option<i64>) {
-        self.account_id = id;
-    }
+                Some(id) => id,
 
-    pub fn account_id(&self) -> Option<i64> {
-        self.account_id
-    }
-pub async fn disconnect(&mut self) {
-    if let Err(e) = self.stream.shutdown().await {
-        error!(
-            "Erreur lors de la déconnexion [{}] : {}",
-            self.session_id,
-            e
-        );
-    } else {
-        info!(
-            "Client déconnecté : {}",
+                None => return,
+            };
+
+
+        if let Err(e) =
+            sqlx::query(
+                r#"
+                UPDATE users
+
+                SET status = 'DISCONNECTED'
+
+                WHERE user_id = ?
+
+                  AND status = 'CONNECTED'
+                "#
+            )
+            .bind(user_id)
+            .execute(&self.pool)
+            .await
+        {
+
+            error!(
+                "Impossible de mettre le joueur {} en DISCONNECTED [{}] : {}",
+                user_id,
+                self.session_id,
+                e
+            );
+
+            return;
+        }
+
+
+        debug!(
+            "Utilisateur {} marqué comme DISCONNECTED [{}]",
+            user_id,
             self.session_id
         );
     }
-}
 
+
+    // ============================================================
+    // SET USER ID
+    // ============================================================
+
+    pub fn set_user_id(
+        &mut self,
+        id: Option<String>,
+    ) {
+
+        self.user_id = id;
+    }
+
+
+    // ============================================================
+    // GET USER ID
+    // ============================================================
+
+    pub fn user_id(
+        &self,
+    ) -> Option<&str> {
+
+        self.user_id
+            .as_deref()
+    }
+
+
+    // ============================================================
+    // SET CLIENT ID
+    // ============================================================
+
+    pub fn set_client_id(
+        &mut self,
+        id: Option<i64>,
+    ) {
+
+        self.client_id = id;
+    }
+
+
+    // ============================================================
+    // GET CLIENT ID
+    // ============================================================
+
+    pub fn client_id(
+        &self,
+    ) -> Option<i64> {
+
+        self.client_id
+    }
+
+
+    // ============================================================
+    // SET ACCOUNT ID
+    // ============================================================
+
+    pub fn set_account_id(
+        &mut self,
+        id: Option<i64>,
+    ) {
+
+        self.account_id = id;
+    }
+
+
+    // ============================================================
+    // GET ACCOUNT ID
+    // ============================================================
+
+    pub fn account_id(
+        &self,
+    ) -> Option<i64> {
+
+        self.account_id
+    }
+
+
+    // ============================================================
+    // DÉCONNEXION
+    // ============================================================
+
+    pub async fn disconnect(
+        &mut self,
+    ) {
+
+        // --------------------------------------------------------
+        // Mettre le compte hors ligne AVANT de fermer le socket
+        // --------------------------------------------------------
+
+        self.mark_disconnected().await;
+
+
+        // --------------------------------------------------------
+        // Fermeture du socket
+        // --------------------------------------------------------
+
+        if let Err(e) =
+            self.stream.shutdown().await
+        {
+
+            error!(
+                "Erreur lors de la déconnexion [{}] : {}",
+                self.session_id,
+                e
+            );
+        }
+        else {
+
+            info!(
+                "Client déconnecté : {}",
+                self.session_id
+            );
+        }
+    }
 }
