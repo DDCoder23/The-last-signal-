@@ -13,13 +13,13 @@ class MovePacket(Packet):
 
         super().__init__(
             PacketType.MOVE,
-            struct.pack("!ff", x, y, z)
+            struct.pack("!iii", x, y, z)
         )
     @classmethod
     def from_payload(cls, payload):
 
         x, y, z = struct.unpack(
-            "!ff",
+            "!iii",
             payload
         )
 
