@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-08-29 20:20:01
+**Date :** 2026-08-29 21:57:37
 
 # 28/100
 
@@ -69,97 +69,91 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** La fonction 'run'ligne 47 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'run'ligne 46 ne possède pas de docstring.
+- **Message :** La fonction 'sha256_file'ligne 71 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'sha256_file'ligne 70 ne possède pas de docstring.
+- **Message :** La fonction 'clone_repository'ligne 88 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'clone_repository'ligne 87 ne possède pas de docstring.
+- **Message :** La fonction 'create_test_environment_files'ligne 174 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'create_test_environment_files'ligne 173 ne possède pas de docstring.
+- **Message :** La fonction 'attack_cargo_lock'ligne 230 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'attack_cargo_lock'ligne 229 ne possède pas de docstring.
+- **Message :** La fonction 'attack_env'ligne 251 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'attack_env'ligne 250 ne possède pas de docstring.
+- **Message :** La fonction 'attack_idea'ligne 275 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'attack_idea'ligne 274 ne possède pas de docstring.
+- **Message :** La fonction 'find_security_file'ligne 309 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'find_security_file'ligne 308 ne possède pas de docstring.
+- **Message :** La fonction 'attack_security_file'ligne 342 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'attack_security_file'ligne 341 ne possède pas de docstring.
+- **Message :** La fonction 'attack_vault'ligne 366 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'attack_vault'ligne 365 ne possède pas de docstring.
+- **Message :** La fonction 'attack_master_key_discovery'ligne 404 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'attack_master_key_discovery'ligne 403 ne possède pas de docstring.
+- **Message :** La fonction 'run_integrity_check'ligne 444 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'run_integrity_check'ligne 443 ne possède pas de docstring.
+- **Message :** La fonction 'execute_integrity_attack'ligne 463 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'execute_integrity_attack'ligne 462 ne possède pas de docstring.
+- **Message :** La fonction 'verify_git_clean'ligne 516 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'verify_git_clean'ligne 515 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'main'ligne 566 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 567 ne possède pas de docstring.
 
 - **module :** python
 
