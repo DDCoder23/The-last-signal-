@@ -221,6 +221,7 @@ jobs:
             reports/**
             database/**
       - name: 💾 Commit reports
+        if: always()
         uses: ./.github/actions/commit-reports
         with:
           report-type: project
