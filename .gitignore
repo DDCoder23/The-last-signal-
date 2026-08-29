@@ -12,6 +12,6 @@ node_modules/*
 __pycache__/*
 database/the_last_signal.db-shm
 database/the_last_signal.db-wal
-server_rust/Cargo.lock
+
 server_rust/server.log
 server_rust/target/
