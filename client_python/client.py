@@ -84,7 +84,7 @@ class Client:
             log(self,"ERROR",
                 f"Erreur d'envoi : {traceback.format_exc()}"
             )
-    def receive_packet(self, expected_type):
+    def receive_packet(self):
         if not self.connected:
             
             return None
@@ -102,15 +102,10 @@ class Client:
                     return None
                 packet = Packet.decode(data)
                 if packet.packet_type == packet.packet_type.BAN:
-                    self.disconnect()
-                    return packet
-                if packet.packet_type == expected_type:
-                    return packet
-                log(
-                             self,
-                             "DEBUG",
-                             f"Paquet ignoré : {packet.packet_type}"
-                             )
+                    raise SystemExit
+                    
+                return packet
+                
         except Exception:
             log(
                      self,
@@ -158,6 +153,7 @@ class Client:
             return None
 
     def disconnect(self):
+        print("deconnexion")
 
         if self.socket:
 
