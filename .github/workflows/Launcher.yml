@@ -22,18 +22,10 @@ permissions:
   pull-requests: write
 
 jobs:
-  reset:
-    uses: ./.github/workflows/Reset.yml
+  
   integration:
-    needs: reset
-    if: >-
-      ${{
-      always() &&
-      (
-        needs.reset.result == 'success' ||
-        needs.reset.result == 'failure'
-      )
-      }}
+    
+    
     uses: ./.github/workflows/integration.yml
     secrets:
         VAULT_KEY: ${{ secrets.VAULT_KEY }}
@@ -96,7 +88,7 @@ jobs:
     uses: ./.github/workflows/sync-ci.yml
   cancel-launcher:
     needs:
-      - reset
+
       - integration
       - python
       - rust
