@@ -583,13 +583,17 @@ impl PacketHandler {
                     // =================================================
                     // 3 ÉCHECS
                     // =================================================
-
+                    
                     if attempts >= 3 {
 
                         // --------------------------------------------
                         // Recherche du sursis
                         // --------------------------------------------
-
+                        debug!(
+    "DEBUG BAN : création du ban pour user_id={}, tentatives={}",
+    login_data.user_id,
+    attempts
+);
                         let sursis_jours =
                             match sqlx::query_scalar::<_, i64>(
                                 r#"
@@ -957,7 +961,10 @@ impl PacketHandler {
                                 );
                             }
                         }
-
+                        debug!(
+    "DEBUG BAN : INSERT terminé pour {}",
+    login_data.user_id
+);
 
                         // =================================================
                         // RESET DES TENTATIVES
@@ -993,7 +1000,7 @@ impl PacketHandler {
                         // =================================================
                         // RÉPONSE
                         // =================================================
-
+                        info!("Utilisateur banni");
                         return Some(
                             Packet::new(
                                 PacketType::LoginResponse,

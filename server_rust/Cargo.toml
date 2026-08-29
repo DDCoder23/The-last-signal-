@@ -3,6 +3,10 @@ name = "the-last-signal-server"
 version = "0.1.0"
 edition = "2024"
 
+[profile.dev]
+opt-level = 0
+debug = 2
+incremental = true
 [dependencies]
 fernet = "0.2"
 argon2 =  "0.5.3"
@@ -22,5 +26,11 @@ sqlx = { version = "0.9", features = [
     "macros"
 ] }
 
-tokio = { version = "1", features = ["full"] }
+tokio = { version = "1", default-features = false, features = [
+    "macros",
+    "rt-multi-thread",
+    "net",
+    "time",
+    "sync"
+] }
 
