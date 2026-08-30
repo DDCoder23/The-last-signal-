@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-08-30 17:41:41
+**Date :** 2026-08-30 18:37:40
 
 # 28/100
 
@@ -46,14 +46,6 @@ IndexError: no such group
 
 
 - **module :** rust
-
-## ⚠️ Info
-- **Module :** organization
-- **Message :** La racine contient beaucoup de fichiers.
-
-- **suggestion :** Créer des dossiers pour mieux organiser le projet.
-
-- **module :** organization
 
 ## ❌ Error
 - **Module :** navigation

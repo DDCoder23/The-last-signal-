@@ -1,6 +1,6 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-30 17:41:42
+Generated: 2026-08-30 18:37:41
 
 ## Summary
 
@@ -8,7 +8,7 @@ Generated: 2026-08-30 17:41:42
 |---|---:|
 |❌ Errors|254|
 |⚠️ Warnings|7460|
-|**Total**|**7721**|
+|**Total**|**7720**|
 
 ---
 
@@ -37,12 +37,6 @@ NameError: name 'ROOT' is not defined
                    ~~~~~~~~~~~~~~~~^^^
 IndexError: no such group
 
-
-## ⚠️ Info
-
-- **Module :** organization
-- **Message :** La racine contient beaucoup de fichiers.
-- **suggestion :** Créer des dossiers pour mieux organiser le projet.
 
 ## ❌ Error
 
