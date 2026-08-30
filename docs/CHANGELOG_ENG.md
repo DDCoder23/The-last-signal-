@@ -46,3 +46,11 @@ Important modification of the project **The Last Signal Online** are documented 
 - new security tests
 
 ---
+## [1.0.1] - 26/08/2026~30/08/2026
+
+### Optimisation
+
+-optimisation of the communication's protocol and the client
+
+
+---
