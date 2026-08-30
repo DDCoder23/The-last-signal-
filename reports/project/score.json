@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-30T19:02:24.246288",
+    "generated": "2026-08-30T20:07:14.080301",
     "score": 28,
     "status": "Très Décevant",
     "scores": {
@@ -433,7 +433,7 @@
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
-                    "message": "Ligne 33 > 120 caractères.",
+                    "message": "Ligne 158 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
