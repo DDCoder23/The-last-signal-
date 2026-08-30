@@ -54,20 +54,24 @@ jobs:
       # Création du fichier rapport
       - name: Create report
         run: |
-          mkdir -p reports/python
-          LAST=$(find reports/python -type f -name 'python-report-*.md' \
-          -printf '%f\n' |
-           sed -E 's/python-report-([0-9]+)\.md/\1/' |
-           sort -n |
-           tail -1)
+          DATE=$(date -u +"%Y-%m-%d")
+
+          REPORT_DIR="reports/python/${DATE}"
+          mkdir -p "$REPORT_DIR"
+
+          LAST=$(find "$REPORT_DIR" -type f -name 'python-report-*.md' \
+          -exec basename {} \; |
+          sed -E 's/python-report-([0-9]+)\.md/\1/' |
+          sort -n |
+          tail -1)
 
           REPORT_NUMBER=$(( ${LAST:-0} + 1 ))
 
-          REPORT="reports/python/python-report-${REPORT_NUMBER}.md"
-         
+          REPORT="${REPORT_DIR}/python-report-${REPORT_NUMBER}.md"
 
           echo "REPORT=$REPORT" >> "$GITHUB_ENV"
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> "$GITHUB_ENV"
+          echo "REPORT_DATE=$DATE" >> "$GITHUB_ENV"
 
           {
             echo "# 🐍 Python CI Report"
