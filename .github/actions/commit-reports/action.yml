@@ -27,7 +27,7 @@ runs:
       uses: actions/download-artifact@v4
       with:
         pattern: build-report-*
-        path: reports/build
+        path: reports/build/*
         merge-multiple: true
 
     - shell: bash
