@@ -51,3 +51,12 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 ---
 
 
+## [1.0.1] - 26/08/2026~30/08/2026
+
+### Optimisation
+
+-optimisation du protocole de communication et du client
+  
+
+---
+
