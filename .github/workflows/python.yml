@@ -66,7 +66,8 @@ jobs:
           REPORT="reports/python/python-report-${REPORT_NUMBER}.md"
          
 
-          echo "REPORT=$REPORT" >> $GITHUB_ENV
+          echo "REPORT=$REPORT" >> "$GITHUB_ENV"
+          echo "REPORT_NUMBER=$REPORT_NUMBER" >> "$GITHUB_ENV"
 
           {
             echo "# 🐍 Python CI Report"
@@ -332,7 +333,7 @@ jobs:
                 git worktree remove /tmp/ci-worktree --force
                 exit 0
                 fi
-                git commit -m "Report python n° ${{ REPORT_NUMBER}}"
+                git commit -m "Report python n° ${REPORT_NUMBER}"
                 for i in 1 2 3
                 do
                 echo "Tentative $i/3"
@@ -379,10 +380,10 @@ jobs:
                 echo "Création de la Pull Request..."
 
                 gh pr create \
-                --base "${{ inputs.branch }}" \
+                --base ci-reports \
                 --head "$FALLBACK_BRANCH" \
-                --title "${{ inputs.commit-message }}" \
-                --body "Le push direct vers \`${{ inputs.branch }}\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont     disponibles dans cette Pull Request."
+                --title "Report python n° ${REPORT_NUMBER}"\
+                --body "Le push direct vers \`ci-reports\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont     disponibles dans cette Pull Request."
                 fi
 
                 cd "$GITHUB_WORKSPACE"
