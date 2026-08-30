@@ -1,3 +1,4 @@
+''' Test de la sécurité du web'''
 from __future__ import annotations
 
 import os
