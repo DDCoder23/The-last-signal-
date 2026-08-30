@@ -326,8 +326,8 @@ jobs:
                 else
                 git worktree add -b ci-reports/tmp/ci-worktree
                 fi
-                mkdir -p "/tmp/ci-worktree/reports"
-                cp -r reports/python/* "/tmp/ci-worktree/reports/" 2>/dev/null || true
+                mkdir -p "/tmp/ci-worktree/reports/python"
+                cp -r reports/python/* "/tmp/ci-worktree/reports/python" 2>/dev/null || true
                 cd /tmp/ci-worktree
                 git add .
                 git status
