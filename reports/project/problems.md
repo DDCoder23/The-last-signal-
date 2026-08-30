@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-30 11:00:17
+Generated: 2026-08-30 13:05:10
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|254|
-|⚠️ Warnings|7463|
-|**Total**|**7724**|
+|⚠️ Warnings|7460|
+|**Total**|**7721**|
 
 ---
 
@@ -144,57 +144,52 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** La fonction 'sha256_file'ligne 54 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'sha256_file'ligne 53 ne possède pas de docstring.
+- **Message :** La fonction 'should_ignore'ligne 67 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'should_ignore'ligne 66 ne possède pas de docstring.
+- **Message :** La fonction 'is_watched'ligne 79 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'is_watched'ligne 78 ne possède pas de docstring.
+- **Message :** La fonction 'scan_repository'ligne 94 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'scan_repository'ligne 93 ne possède pas de docstring.
+- **Message :** La fonction 'save_baseline'ligne 121 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'save_baseline'ligne 120 ne possède pas de docstring.
+- **Message :** La fonction 'load_baseline'ligne 137 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'load_baseline'ligne 136 ne possède pas de docstring.
+- **Message :** La fonction 'compare'ligne 162 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'compare'ligne 161 ne possède pas de docstring.
+- **Message :** La fonction 'create'ligne 185 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'create'ligne 184 ne possède pas de docstring.
+- **Message :** La fonction 'check'ligne 206 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check'ligne 205 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main'ligne 267 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 268 ne possède pas de docstring.
 
 ---
 
@@ -203,32 +198,27 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** La fonction 'should_ignore'ligne 38 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'should_ignore'ligne 37 ne possède pas de docstring.
+- **Message :** La fonction 'is_world_writable'ligne 50 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'is_world_writable'ligne 49 ne possède pas de docstring.
+- **Message :** La fonction 'is_group_writable'ligne 56 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'is_group_writable'ligne 55 ne possède pas de docstring.
+- **Message :** La fonction 'is_world_executable'ligne 62 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'is_world_executable'ligne 61 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main'ligne 67 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 68 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -242,17 +232,12 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** La fonction 'run_git'ligne 32 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'run_git'ligne 31 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main'ligne 45 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 46 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -266,12 +251,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'should_ignore'ligne 23 ne possède pas de docstring.
+- **Message :** La fonction 'should_ignore'ligne 24 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -281,17 +261,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'scan_file'ligne 205 ne possède pas de docstring.
+- **Message :** La fonction 'scan_file'ligne 206 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main'ligne 241 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 242 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'report'ligne 44 ne possède pas de docstring.
+- **Message :** La fonction 'report'ligne 45 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -301,7 +281,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'visit_Call'ligne 63 ne possède pas de docstring.
+- **Message :** La fonction 'visit_Call'ligne 64 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -320,22 +300,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** La fonction 'should_ignore'ligne 61 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'should_ignore'ligne 60 ne possède pas de docstring.
+- **Message :** La fonction 'scan_file'ligne 73 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'scan_file'ligne 72 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main'ligne 115 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 116 ne possède pas de docstring.
 
 ---
 
@@ -344,41 +319,31 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** Le module ne possède pas de docstring.
+- **Message :** La fonction 'should_ignore'ligne 102 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'should_ignore'ligne 101 ne possède pas de docstring.
+- **Message :** La fonction 'looks_textual'ligne 117 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'looks_textual'ligne 116 ne possède pas de docstring.
+- **Message :** La fonction 'mask'ligne 128 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'mask'ligne 127 ne possède pas de docstring.
+- **Message :** La fonction 'scan_file'ligne 139 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'scan_file'ligne 138 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'main'ligne 190 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 191 ne possède pas de docstring.
 
 ---
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -388,17 +353,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_port'ligne 38 ne possède pas de docstring.
+- **Message :** La fonction 'check_port'ligne 39 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'fetch'ligne 59 ne possède pas de docstring.
+- **Message :** La fonction 'fetch'ligne 60 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_headers'ligne 131 ne possède pas de docstring.
+- **Message :** La fonction 'check_headers'ligne 132 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -408,17 +373,17 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_http_methods'ligne 264 ne possède pas de docstring.
+- **Message :** La fonction 'check_http_methods'ligne 265 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_information_exposure'ligne 319 ne possède pas de docstring.
+- **Message :** La fonction 'check_information_exposure'ligne 320 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
 - **Module :** python
-- **Message :** La fonction 'main'ligne 364 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 365 ne possède pas de docstring.
 
 ## ⚠️ Warning
 
@@ -6514,6 +6479,11 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (59).
+
+## ⚠️ Warning
+
 - **Module :** titles
 - **Message :** docs/CHANGELOG.md:25 titre sans ligne vide avant.
 
@@ -6572,6 +6542,16 @@ TypeError: result doit être un dict, reçu int
 - **Module :** titles
 - **Message :** docs/CHANGELOG.md:46 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:27).
 
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:54 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:49).
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/CHANGELOG.md:56 titre dupliqué (déjà présent dans docs/CHANGELOG_ENG.md:51).
+
 ---
 
 # 📄 docs/CHANGELOG_ENG.md
@@ -6605,6 +6585,11 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** titles
 - **Message :** docs/CHANGELOG_ENG.md:42 titre sans ligne vide avant.
+
+## ⚠️ Warning
+
+- **Module :** titles
+- **Message :** docs/CHANGELOG_ENG.md:49 titre sans ligne vide avant.
 
 ## ⚠️ Warning
 
