@@ -1,3 +1,4 @@
+'''Test de sécurité de git'''
 from __future__ import annotations
 
 import re
