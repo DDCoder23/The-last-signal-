@@ -124,17 +124,36 @@ jobs:
         
             echo "DATABASE_URL=$DATABASE_URL"
             echo "DATABASE_PATH=$DATABASE_PATH"
+      - name: update cargo vendor
+        working-directory: server_rust
+        run: | 
+             mv .cargo/config.toml /tmp/cargo-config.toml
+             rm -rf vendor
+             rm -f Cargo.lock
+             cargo update
+             cargo vendor vendor
+             mv /tmp/cargo-config.toml .cargo/config.toml
+             git config user.name github-actions
+             git config user.email github-actions@github.com
+             
+
+             git add vendor Cargo.lock
+
+             git diff --cached --quiet || git commit -m "chore: update Cargo vendor"
+             
+             
+             git push origin main
       - name: Build Rust server
         id: build-server
         working-directory: server_rust
         run: |
-          cargo build
+          cargo build --locked
       - name: Start Rust server
         id: start-server
         working-directory: server_rust
         run: |
           
-          cargo run > server.log 2>&1 &
+          cargo run --locked > server.log 2>&1 &
 
           echo $! > server.pid
       - name: Wait for server
