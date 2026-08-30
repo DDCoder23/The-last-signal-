@@ -1,3 +1,4 @@
+'''Test de sécurité python'''
 from __future__ import annotations
 
 import ast
