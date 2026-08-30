@@ -45150,13 +45150,6 @@
         "module": "rust"
     },
     {
-        "file": "",
-        "severity": "info",
-        "message": "La racine contient beaucoup de fichiers.",
-        "suggestion": "Créer des dossiers pour mieux organiser le projet.",
-        "module": "organization"
-    },
-    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/redox_syscall/Cargo.toml.orig",
         "severity": "warning",
         "message": "Fichier temporaire trouvé.",

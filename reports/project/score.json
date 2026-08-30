@@ -1,5 +1,5 @@
 {
-    "generated": "2026-08-30T17:41:41.555133",
+    "generated": "2026-08-30T18:37:40.033346",
     "score": 28,
     "status": "Très Décevant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 7721,
+    "problem_count": 7720,
     "details": {
         "markdown": {
             "score": 49,
@@ -45238,16 +45238,9 @@
             "max_score": 100,
             "results": {
                 "bonus": 1,
-                "problems": 195
+                "problems": 194
             },
             "problems": [
-                {
-                    "file": "",
-                    "severity": "info",
-                    "message": "La racine contient beaucoup de fichiers.",
-                    "suggestion": "Créer des dossiers pour mieux organiser le projet.",
-                    "module": "organization"
-                },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/redox_syscall/Cargo.toml.orig",
                     "severity": "warning",
