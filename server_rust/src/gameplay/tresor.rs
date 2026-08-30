@@ -357,6 +357,18 @@ impl Tresor {
         
     ]),
 );
+        sous_loot.insert(
+    "équi".to_string(),
+    HashMap::from([
+        ("armes".to_string(), 20.0),
+        ("outils".to_string(), 20.0),
+        ("armure".to_string(), 20.0),
+        ("véhicules".to_string(), 20.0),
+        ("batiments".to_string(), 20.0),
+        
+        
+    ]),
+);
             
 
             
