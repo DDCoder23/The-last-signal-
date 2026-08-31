@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-08-31 08:52:42
+Generated: 2026-08-31 12:48:46
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|254|
-|⚠️ Warnings|7460|
-|**Total**|**7720**|
+|⚠️ Warnings|6250|
+|**Total**|**6510**|
 
 ---
 
@@ -8308,21 +8308,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 22 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/adler2/CHANGELOG.md:17 saut de niveau H2 → H5.
 
@@ -8407,26 +8392,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 45 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 46 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (46).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/adler2/README.md:15 titre dupliqué (déjà présent dans server_rust/vendor/spin/README.md:19).
 
@@ -8447,15 +8412,6 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/adler2/RELEASE_PROCESS.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (8).
-
----
-
 # 📄 server_rust/vendor/aho-corasick/DESIGN.md
 
 ## ❌ Error
@@ -8466,11 +8422,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/aho-corasick/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
 
 ## ❌ Error
 
@@ -8524,26 +8475,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/allocator-api2/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 58 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -8562,11 +8493,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/android_system_properties/CONTRIBUTING.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 40 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -8914,11 +8840,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/atoi/CONTRIBUTING.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Contenu très faible.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -8970,16 +8891,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/base64/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 89 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -9008,16 +8919,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/base64/RELEASE-NOTES.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
 
 ## ❌ Error
 
@@ -9425,96 +9326,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/bitflags/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 29 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 53 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 119 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 132 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 167 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 260 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 262 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 266 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 285 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 297 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 330 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 334 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 348 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 354 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 460 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 615 > 120 caractères.
 
 ## ❌ Error
 
@@ -9972,21 +9783,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/bitflags/CONTRIBUTING.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/bitflags/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
 
 ## ❌ Error
 
@@ -10019,16 +9816,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/bitflags/SECURITY.md:1 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/SECURITY.md:1).
 
@@ -10048,82 +9835,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 27 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 45 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 49 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 338 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 351 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 400 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 437 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 500 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 504 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 506 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/bitflags/spec.md:284 titre dupliqué (déjà présent dans server_rust/vendor/bitflags/spec.md:47).
 
 ---
 
 # 📄 server_rust/vendor/blake2/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (70).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (84).
 
 ## ⚠️ Warning
 
@@ -10364,11 +10081,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 23 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/block-buffer-0.10.4/README.md:12 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
@@ -10527,11 +10239,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 23 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/block-buffer/README.md:1 titre dupliqué (déjà présent dans server_rust/vendor/block-buffer-0.10.4/README.md:1).
 
@@ -10548,11 +10255,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/bumpalo/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 853 > 120 caractères.
 
 ## ❌ Error
 
@@ -10870,11 +10572,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/bumpalo/README.md:12 saut de niveau H1 → H3.
 
@@ -10930,11 +10627,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/byteorder/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
 
 ## ❌ Error
 
@@ -11400,11 +11092,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/bytes/SECURITY.md:1 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/SECURITY.md:1).
 
@@ -11416,201 +11103,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/cc/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 88 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 132 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 138 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 139 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 174 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 175 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 190 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 232 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 258 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 303 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 337 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 359 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 378 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 412 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 444 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 488 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 501 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 508 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 509 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 526 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 527 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 573 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 586 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 587 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 588 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 652 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 670 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 676 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 695 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 747 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 757 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 768 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 803 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 809 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 821 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 826 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 865 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 879 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -13299,11 +12791,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 144 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/chacha20/README.md:49 titre sans ligne vide avant.
 
@@ -13359,11 +12846,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/cmov/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -13573,11 +13055,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/cmov/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 117 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -13977,11 +13454,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/cpufeatures-0.2.17/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 126 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -14302,16 +13774,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 171 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (43).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/cpufeatures/README.md:22 titre sans ligne vide avant.
 
@@ -14336,11 +13798,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/crc-catalog/README.md:13 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
@@ -14352,26 +13809,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/crc/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 48 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 58 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 60 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -14406,31 +13843,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/crc32fast/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 61 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 65 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 71 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 73 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 77 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -14533,66 +13945,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/crossbeam-utils/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 42 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 57 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 84 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 86 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 87 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 91 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 98 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 104 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 110 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 119 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 124 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 128 > 120 caractères.
 
 ## ❌ Error
 
@@ -15108,11 +14460,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (21).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:9 titre sans ligne vide avant.
 
@@ -15278,11 +14625,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/digest/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (110).
 
 ## ⚠️ Warning
 
@@ -15716,26 +15058,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/displaydoc/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 23 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 51 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 96 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 99 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -15777,56 +15099,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 46 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 57 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 70 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 71 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 78 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 80 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/dotenvy/README.md:21 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:45).
 
@@ -15838,11 +15110,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/either/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -15871,11 +15138,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/errno/CHANGELOG.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 118 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -15892,11 +15154,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/errno/README.md:1 titre très long (251 caractères).
 
@@ -15908,51 +15165,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/etcetera/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 22 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 47 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 49 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (52).
 
 ## ❌ Error
 
@@ -16100,11 +15312,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/fastrand/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 86 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -16137,31 +15344,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/fernet/CODE_OF_CONDUCT.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (3).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (5).
-
----
-
 # 📄 server_rust/vendor/fernet/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
 
 ## ❌ Error
 
@@ -16298,11 +15481,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/find-msvc-tools/README.md:14 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
@@ -16314,21 +15492,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/flate2/MAINTENANCE.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 28 > 120 caractères.
 
 ## ❌ Error
 
@@ -16375,52 +15538,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 155 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 199 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 465 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 497 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/flexi_logger/CHANGELOG.md:896 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:365).
 
 ---
 
 # 📄 server_rust/vendor/flexi_logger/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 142 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -16439,31 +15562,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/flexi_logger/docs/Threads in flexi_logger.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/flexi_logger/src/code_examples.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 202 > 120 caractères.
 
 ## ❌ Error
 
@@ -17054,11 +16153,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/flume/CHANGELOG.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 55 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -17293,26 +16387,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/flume/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 58 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 60 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 62 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 64 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -17339,72 +16413,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 65 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 66 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 201 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 246 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (2).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (16).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (28).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (65).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (66).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (118).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (119).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/foldhash/README.md:30 titre dupliqué (déjà présent dans server_rust/vendor/itoa/README.md:38).
 
 ---
 
 # 📄 server_rust/vendor/foreign-types/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -17546,26 +16560,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/generic-array/CHANGELOG.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 56 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -17574,26 +16568,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/generic-array/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 29 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -18075,26 +17049,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 62 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 63 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (59).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/getrandom-0.2.17/README.md:29 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:45).
 
@@ -18115,26 +17069,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/getrandom-0.2.17/SECURITY.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/getrandom/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (199).
 
 ## ⚠️ Warning
 
@@ -18905,66 +17840,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/getrandom/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 36 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 96 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 97 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 100 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 102 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 103 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 104 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 388 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 390 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 392 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 396 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 403 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -19036,16 +17911,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/getrandom/SECURITY.md:1 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/SECURITY.md:1).
 
@@ -19062,21 +17927,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/hashbrown-0.16.1/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 325 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 326 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (25).
 
 ## ⚠️ Warning
 
@@ -19567,16 +18417,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/hashbrown-0.16.1/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 30 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -19605,21 +18445,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/hashbrown/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 356 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 357 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (56).
 
 ## ⚠️ Warning
 
@@ -20407,11 +19232,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/hashbrown/README.md:25 titre dupliqué (déjà présent dans server_rust/vendor/hashbrown-0.16.1/README.md:24).
 
@@ -20452,11 +19272,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/hashlink/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -20502,11 +19317,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/hex/README.md:9 titre dupliqué (déjà présent dans server_rust/vendor/icu_locale_core/README.md:24).
 
@@ -20533,36 +19343,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/hkdf/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 44 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (92).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (95).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (101).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (103).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (118).
 
 ## ⚠️ Warning
 
@@ -20792,26 +19572,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/hkdf/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 38 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (69).
 
 ## ❌ Error
 
@@ -21251,56 +20011,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/iana-time-zone-haiku/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/iana-time-zone/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 36 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 48 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 88 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 112 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 120 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 225 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -21993,42 +20704,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/iana-time-zone/README.md:38 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
 ---
 
 # 📄 server_rust/vendor/icu_collections/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 27 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -22046,21 +20727,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 47 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 55 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/icu_locale_core/README.md:1 titre très long (121 caractères).
 
@@ -22072,21 +20738,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/icu_normalizer/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 26 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 50 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -22111,11 +20762,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/icu_normalizer/benches/data/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (3).
 
 ## ❌ Error
 
@@ -22143,16 +20789,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/icu_normalizer_data/README.md:1 titre très long (133 caractères).
 
@@ -22164,11 +20800,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/icu_properties/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 62 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -22191,16 +20822,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/icu_properties_data/README.md:1 titre très long (133 caractères).
 
@@ -22212,11 +20833,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/icu_provider/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 84 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -22239,61 +20855,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 16 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 22 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 26 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 33 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 37 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 40 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/idna/README.md:18 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:45).
 
@@ -22313,62 +20874,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 19 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 25 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 31 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 37 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/idna_adapter/README.md:39 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
 ---
 
 # 📄 server_rust/vendor/indexmap/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
 
 ## ❌ Error
 
@@ -22403,26 +20914,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/itoa/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -22446,441 +20937,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/libc/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 26 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 74 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 82 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 83 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 97 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 125 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 129 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 130 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 133 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 134 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 137 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 142 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 150 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 155 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 159 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 175 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 176 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 177 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 178 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 196 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 239 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 240 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 244 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 246 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 263 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 298 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 308 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 320 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 321 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 324 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 351 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 352 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 364 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 367 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 368 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 402 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 415 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 432 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 434 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 436 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 437 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 449 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 451 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 472 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 488 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 489 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 493 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 514 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 515 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 530 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 563 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 568 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 576 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 579 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 580 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 584 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 589 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 607 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 621 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 626 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 642 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 670 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 673 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 681 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 715 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 727 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 755 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 760 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 781 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 804 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 819 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 899 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 903 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 940 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 949 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 954 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 967 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 995 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 996 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1050 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1107 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1111 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1164 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -23611,11 +21667,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/libc/CONTRIBUTING.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 121 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -23653,156 +21704,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/libsqlite3-sys/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 100 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 122 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 124 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 125 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 127 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 128 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 129 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 131 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 136 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 138 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 140 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 143 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 151 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 156 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 160 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 166 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 167 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 168 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 170 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 177 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 241 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 249 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 251 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 253 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 255 > 120 caractères.
 
 ## ❌ Error
 
@@ -23876,96 +21777,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/libsqlite3-sys/Upgrade.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 16 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/linux-raw-sys/CODE_OF_CONDUCT.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 29 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 31 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 45 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -24003,91 +21815,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (11).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (12).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (13).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (34).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (35).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (41).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (50).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (62).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (86).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (123).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (124).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (125).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (126).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (127).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (128).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (129).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/linux-raw-sys/ORG_CODE_OF_CONDUCT.md:121 titre dupliqué (déjà présent dans CODE_OF_CONDUCT.md:59).
 
@@ -24097,37 +21824,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/linux-raw-sys/README.md:36 titre dupliqué (déjà présent dans server_rust/vendor/libsqlite3-sys/README.md:257).
 
 ---
 
 # 📄 server_rust/vendor/litemap/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 27 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 51 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -24142,91 +21844,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/log/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 28 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 59 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 71 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 72 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 73 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 132 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 152 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 153 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 154 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 157 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 158 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 181 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 204 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 212 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 223 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 224 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 258 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -24452,21 +22069,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/log/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 23 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 93 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -24663,16 +22265,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/memchr/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 195 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -24715,26 +22307,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/miniz_oxide/LICENSE-ZLIB.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -24743,56 +22315,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/miniz_oxide/Readme.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 16 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 22 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 24 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 26 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 28 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 51 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -25188,11 +22710,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/nu-ansi-term/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
 
@@ -25205,126 +22722,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/nu-ansi-term/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 25 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 29 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 38 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 42 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 58 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 71 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 86 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 98 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 122 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 133 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 135 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 145 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 146 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 148 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 149 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 151 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 169 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 170 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 171 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 175 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 177 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -25333,16 +22730,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/num-traits/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
 
 ## ❌ Error
 
@@ -25399,26 +22786,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 32 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 52 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 157 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/once_cell/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
 
@@ -25451,11 +22818,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/once_cell/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -25464,46 +22826,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/openssl-sys/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 27 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 44 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 192 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 228 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 279 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 326 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 386 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -26062,161 +23384,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/openssl/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 34 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 40 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 42 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 43 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 48 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 49 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 50 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 51 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 64 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 65 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 68 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 77 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 96 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 110 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 157 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 244 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 278 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 282 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 288 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 381 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 395 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 419 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 420 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 421 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 454 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 456 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -26981,11 +24148,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/parking/CHANGELOG.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -27018,41 +24180,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/parking_lot/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 24 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 33 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 38 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 43 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (54).
 
 ## ⚠️ Warning
 
@@ -27097,16 +24224,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/parking_lot/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (33).
 
 ## ❌ Error
 
@@ -27382,91 +24499,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 25 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 37 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 49 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 53 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 57 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 61 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 65 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 146 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 160 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 172 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 183 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 219 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 225 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/pin-project-lite/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
 
@@ -27478,26 +24510,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/pin-project-lite/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 107 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -27719,11 +24731,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/pkg-config/README.md:18 titre dupliqué (déjà présent dans server_rust/vendor/regex-automata/README.md:18).
 
@@ -27743,11 +24750,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/potential_utf/README.md:1 titre très long (115 caractères).
 
@@ -27759,26 +24761,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/proc-macro2/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -27798,26 +24780,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/quote/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
 
 ## ❌ Error
 
@@ -27856,111 +24818,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/rand/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 37 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 38 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 97 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 116 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 120 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 170 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 179 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 190 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 193 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 196 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 334 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 345 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 346 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 352 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 355 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 379 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 449 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 483 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 583 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 633 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 747 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -28646,51 +25503,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/rand/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 24 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 60 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 92 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 107 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -28858,16 +25670,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/rand_core-0.6.4/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
 
 ## ❌ Error
 
@@ -29194,11 +25996,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (4).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/rand_core/README.md:23 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
@@ -29258,16 +26055,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/regex/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 353 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1090 > 120 caractères.
 
 ## ❌ Error
 
@@ -29337,11 +26124,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/regex/bench/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Contenu très faible.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -29349,66 +26131,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/rustix/CHANGES.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 105 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 222 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 223 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/rustix/CODE_OF_CONDUCT.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 29 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 31 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 45 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -29460,91 +26183,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (11).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (12).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (13).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (34).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (35).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (41).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (50).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (62).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (86).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (123).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (124).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (125).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (126).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (127).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (128).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (129).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/rustix/ORG_CODE_OF_CONDUCT.md:1 titre dupliqué (déjà présent dans server_rust/vendor/linux-raw-sys/ORG_CODE_OF_CONDUCT.md:1).
 
@@ -29566,21 +26204,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/rustix/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
 
 ## ❌ Error
 
@@ -29608,41 +26231,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 19 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/rustix/SECURITY.md:1 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/SECURITY.md:1).
 
@@ -29654,26 +26242,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/rustversion/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
 
 ## ❌ Error
 
@@ -29716,27 +26284,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/scopeguard/README.md:21 titre sans ligne vide avant.
 
 ---
 
 # 📄 server_rust/vendor/serde/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 30 > 120 caractères.
 
 ## ❌ Error
 
@@ -29870,16 +26423,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/serde_derive/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 30 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -29974,31 +26517,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 83 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 143 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 212 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 247 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 280 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/serde_json/README.md:375 saut de niveau H2 → H4.
 
@@ -30025,11 +26543,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/sha1/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 68 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -30893,11 +27406,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (12).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/sha2/README.md:21 titre dupliqué (déjà présent dans server_rust/vendor/icu_locale_core/README.md:24).
 
@@ -30929,36 +27437,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/shlex/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
 
 ## ❌ Error
 
@@ -30993,11 +27471,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/shlex/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -31109,22 +27582,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/slab/SECURITY.md:1 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/SECURITY.md:1).
 
 ---
 
 # 📄 server_rust/vendor/smallvec/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (14).
 
 ## ❌ Error
 
@@ -31139,21 +27602,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/smallvec/debug_metadata/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 95 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (83).
 
 ## ❌ Error
 
@@ -31439,11 +27887,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 109 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/spin/README.md:30 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:45).
 
@@ -31495,26 +27938,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/sqlx-postgres/src/types/bigdecimal-range.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (4).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (10).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (11).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (17).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -31524,16 +27947,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/sqlx-postgres/src/types/rust_decimal-range.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (2).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (5).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -31542,556 +27955,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/sqlx/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 54 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 55 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 56 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 57 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 97 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 101 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 117 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 132 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 147 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 718 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 778 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 784 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 787 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 789 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 790 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 794 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1267 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1268 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1270 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1271 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1272 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1275 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1278 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1280 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1282 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1982 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2114 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2386 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2388 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2411 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2432 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2434 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2486 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2569 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2570 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2602 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2613 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2698 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2701 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2702 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2703 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2722 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2733 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2735 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2736 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2738 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2802 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2830 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2845 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2875 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2877 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2889 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2891 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (17).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (21).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (41).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (48).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (49).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (76).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (77).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (80).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (82).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (93).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (98).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (99).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (102).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (108).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (110).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (116).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (120).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (122).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (130).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (138).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (493).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (497).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (667).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (672).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (691).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (713).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (715).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (716).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (790).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1066).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1248).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1258).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1259).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1462).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1464).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1467).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1470).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1569).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1634).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1637).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1674).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1691).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1703).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1760).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1761).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1862).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1865).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1869).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1870).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1949).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1961).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1986).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1993).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (2027).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (2028).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (2034).
 
 ## ⚠️ Warning
 
@@ -32644,592 +28507,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/sqlx/CONTRIBUTING.md:7 titre dupliqué (déjà présent dans server_rust/vendor/uuid/README.md:25).
 
 ---
 
 # 📄 server_rust/vendor/sqlx/FAQ.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 8 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 16 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 46 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 50 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 54 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 56 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 57 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 59 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 63 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 69 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 72 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 73 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 80 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 82 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 84 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 86 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 88 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 90 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 97 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 99 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 100 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 103 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 108 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 112 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 114 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 115 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 118 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 119 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 120 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 128 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 130 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 149 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 159 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 160 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 171 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 172 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 187 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 189 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 190 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 199 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 214 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 215 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 218 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 222 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 227 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 229 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 230 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 231 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 234 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 235 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 236 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 239 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 241 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 242 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 244 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 245 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 247 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 248 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 252 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 256 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 258 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 269 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 307 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 318 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 372 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 392 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 393 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 416 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 473 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 477 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (6).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (33).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (46).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (47).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (48).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (49).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (65).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (66).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (99).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (101).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (106).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (108).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (120).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (189).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (192).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (208).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (210).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (211).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (218).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (235).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (244).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (251).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (255).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (304).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (315).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (338).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (356).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (410).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (417).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (418).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (425).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (429).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (430).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (431).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (434).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (435).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (457).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (465).
 
 ## ❌ Error
 
@@ -33319,96 +28602,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/sqlx/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 75 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 77 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 79 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 118 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 122 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 172 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 181 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 185 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 190 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 196 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 204 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 210 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 241 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 406 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 453 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 461 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (46).
 
 ## ❌ Error
 
@@ -33519,21 +28712,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/sqlx/src/any/install_drivers_note.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (1).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (6).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -33543,16 +28721,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/sqlx/src/lib.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 46 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 61 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -33561,111 +28729,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/sqlx/src/macros/test.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (16).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (51).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (65).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (77).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (80).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (97).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (109).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (127).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (131).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (134).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (146).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (156).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (162).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (170).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (198).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (210).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (211).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (212).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (216).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (218).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (229).
 
 ## ❌ Error
 
@@ -33911,26 +28974,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/sqlx/tests/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 57 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 59 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (5).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -33942,47 +28985,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (14).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (44).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (59).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/sqlx/tests/certs/README.md:17 saut de niveau H1 → H3.
 
 ---
 
 # 📄 server_rust/vendor/stable_deref_trait/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
 
 ## ❌ Error
 
@@ -34061,11 +29069,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/subtle/CONTRIBUTING.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (4).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -34074,11 +29077,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/subtle/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -34098,26 +29096,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/syn-2.0.119/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
 
 ## ❌ Error
 
@@ -34205,26 +29183,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/syn/README.md:284 saut de niveau H2 → H4.
 
@@ -34261,16 +29219,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/synstructure/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
 
 ## ❌ Error
 
@@ -34345,126 +29293,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/tempfile/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 34 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 54 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 56 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 60 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 61 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 63 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 72 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 82 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 90 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 91 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 94 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 104 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 106 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 110 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 115 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 125 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 129 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 130 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 154 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 185 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 189 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -34612,21 +29440,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 40 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 42 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/tempfile/README.md:13 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:45).
 
@@ -34638,26 +29451,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/thiserror/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
 
 ## ❌ Error
 
@@ -34685,11 +29478,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 57 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/tinystr/README.md:1 titre très long (97 caractères).
 
@@ -34711,31 +29499,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/tinyvec/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 71 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 77 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 86 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 87 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (48).
 
 ## ⚠️ Warning
 
@@ -34815,21 +29578,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/tinyvec/LICENSE-MIT.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -34839,26 +29587,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/tinyvec/LICENSE-ZLIB.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -34866,31 +29594,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/tinyvec/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/tinyvec/debug_metadata/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 95 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (83).
 
 ## ❌ Error
 
@@ -35218,11 +29922,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/tokio/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 150 > 120 caractères.
 
 ## ❌ Error
 
@@ -37696,11 +32395,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/tracing-attributes/CHANGELOG.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (408).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -38133,36 +32827,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/tracing-core/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (371).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (420).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (453).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (460).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (471).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (488).
 
 ## ❌ Error
 
@@ -38711,71 +33375,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/tracing/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (671).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (741).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (760).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (769).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (780).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (797).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (810).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (833).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (862).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (865).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (870).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (876).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (878).
 
 ## ❌ Error
 
@@ -39518,31 +34117,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 64 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 378 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 379 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 389 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 400 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/tracing/README.md:208 saut de niveau H1 → H3.
 
@@ -39607,16 +34181,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (11).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (17).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/typenum/CHANGELOG.md:8 saut de niveau H1 → H3.
 
@@ -39633,11 +34197,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/typenum/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 2 > 120 caractères.
 
 ## ❌ Error
 
@@ -39661,51 +34220,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/unicode-bidi/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/unicode-ident/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 205 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 206 > 120 caractères.
 
 ## ❌ Error
 
@@ -39724,60 +34239,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/unicode-normalization/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 45 > 120 caractères.
-
----
-
-# 📄 server_rust/vendor/unicode-properties/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
----
-
 # 📄 server_rust/vendor/url/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 14 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
 
 ## ❌ Error
 
@@ -39832,11 +34294,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/uuid/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -39865,36 +34322,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/vcpkg/CHANGELOG.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 76 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 83 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 89 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 95 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 99 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -39992,26 +34419,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 9 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/vcpkg/README.md:1 titre très long (470 caractères).
 
@@ -40027,100 +34434,7 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/vcpkg/notes.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 25 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 27 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 44 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 48 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 50 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 54 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 56 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 62 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 63 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 71 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 73 > 120 caractères.
-
----
-
-# 📄 server_rust/vendor/vcpkg/tests/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (3).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (5).
-
----
-
 # 📄 server_rust/vendor/version_check/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -40145,46 +34459,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/wasi/CODE_OF_CONDUCT.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 29 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 31 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 35 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 41 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 45 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -40227,91 +34501,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (11).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (12).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (13).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (34).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (35).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (41).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (50).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (62).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (86).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (123).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (124).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (125).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (126).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (127).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (128).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (129).
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/wasi/ORG_CODE_OF_CONDUCT.md:1 titre dupliqué (déjà présent dans server_rust/vendor/linux-raw-sys/ORG_CODE_OF_CONDUCT.md:1).
 
@@ -40333,26 +34522,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/wasi/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 76 > 120 caractères.
 
 ## ❌ Error
 
@@ -40385,41 +34554,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 19 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/wasi/SECURITY.md:1 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/SECURITY.md:1).
 
@@ -40449,42 +34583,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 24 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/wasm-bindgen-macro/README.md:6 titre dupliqué (déjà présent dans server_rust/vendor/syn/README.md:205).
 
 ---
 
 # 📄 server_rust/vendor/wasm-bindgen/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 10 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 12 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 113 > 120 caractères.
 
 ## ❌ Error
 
@@ -40535,36 +34639,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/whoami/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 7 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (7).
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (10).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -40604,11 +34678,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/windows-core/readme.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -40617,11 +34686,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/windows-implement/readme.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Contenu très faible.
 
 ## ❌ Error
 
@@ -40632,11 +34696,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/windows-interface/readme.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Contenu très faible.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -40645,11 +34704,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/windows-link/readme.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
 
 ## ❌ Error
 
@@ -40660,11 +34714,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/windows-result/readme.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -40673,11 +34722,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/windows-strings/readme.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
 
 ## ❌ Error
 
@@ -40688,21 +34732,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/windows-sys/readme.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 22 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Espace en fin de ligne (42).
-
 ## ❌ Error
 
 - **Module :** titles
@@ -40711,11 +34740,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/writeable/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 67 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -40738,37 +34762,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/yoke-derive/README.md:1 titre très long (109 caractères).
 
 ---
 
 # 📄 server_rust/vendor/yoke/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 15 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 16 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 31 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -40786,16 +34785,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 1 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/zerofrom-derive/README.md:1 titre très long (121 caractères).
 
@@ -40807,11 +34796,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/zerofrom/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 13 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -41285,11 +35269,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 51 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/zerotrie/README.md:1 titre très long (100 caractères).
 
@@ -41309,11 +35288,6 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 
-- **Module :** markdown
-- **Message :** Ligne 11 > 120 caractères.
-
-## ⚠️ Warning
-
 - **Module :** titles
 - **Message :** server_rust/vendor/zerovec-derive/README.md:1 titre très long (118 caractères).
 
@@ -41325,56 +35299,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/zerovec/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 22 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 27 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 28 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 29 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 32 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 42 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 44 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 138 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 178 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 197 > 120 caractères.
 
 ## ⚠️ Warning
 
@@ -41450,16 +35374,6 @@ TypeError: result doit être un dict, reçu int
 
 # 📄 server_rust/vendor/zlib-rs/README.md
 
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
 ## ❌ Error
 
 - **Module :** titles
@@ -41473,26 +35387,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/vendor/zmij/README.md
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 3 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 4 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 5 > 120 caractères.
-
-## ⚠️ Warning
-
-- **Module :** markdown
-- **Message :** Ligne 6 > 120 caractères.
 
 ## ⚠️ Warning
 
