@@ -9,8 +9,8 @@ on:
            default: false
        security_run_number:
         required: false
-        type: number
-        default: 0
+        type: string
+        default: "0"
 
 
 permissions:
