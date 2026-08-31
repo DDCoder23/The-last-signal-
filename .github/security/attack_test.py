@@ -10,10 +10,10 @@ from pathlib import Path
 from typing import Callable
 
 
-''' 
+'''
 ============================================================
                   Configuration GitHub
-============================================================ 
+============================================================
 '''
 
 REPOSITORY = os.environ.get(
@@ -48,6 +48,7 @@ INTEGRITY_CHECKER = (
 ============================================================
 '''
 
+
 def run(
     command: list[str],
     cwd: Path | None = None,
@@ -73,6 +74,8 @@ def run(
                        SHA-256
 ============================================================
 '''
+
+
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
 
@@ -91,6 +94,8 @@ def sha256_file(path: Path) -> str:
                          Git
 ============================================================
 '''
+
+
 def clone_repository(
     destination: Path,
 ) -> None:
@@ -169,15 +174,17 @@ def clone_repository(
         )
 
     print(
-        f"[PASS] Exact commit verified: {actual_sha}"
+      f"[PASS] Exact commit verified: {actual_sha}"
     )
 
 
-''' 
+'''
 ============================================================
                       Laboratoire
 ============================================================
 '''
+
+
 def create_test_environment_files(
     repository: Path,
 ) -> None:
@@ -230,9 +237,12 @@ def create_test_environment_files(
     )
 
 
-# ============================================================
-# Attaques
-# ============================================================
+'''
+===========================================================
+                  Attaques
+===========================================================
+'''
+
 
 def attack_cargo_lock(
     repository: Path,
