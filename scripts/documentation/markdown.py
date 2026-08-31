@@ -20,7 +20,7 @@ HTML_TAGS = ("font", "center", "marquee")
 IGNORED_DIRS = {
     ".git", ".github", ".venv", "venv", "__pycache__",
     "node_modules", "build", "dist", "target",
-    "reports", ".pytest_cache", ".mypy_cache"
+    "reports", ".pytest_cache", ".mypy_cache","server_rust/vendor"
 }
 
 
