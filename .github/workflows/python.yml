@@ -732,6 +732,11 @@ jobs:
                 else
                 git worktree add -b ci-reports/tmp/ci-worktree
                 fi
+                echo "=== SOURCE ==="
+                find "$GITHUB_WORKSPACE/reports/python" -maxdepth 4 -type d -print
+
+                echo "=== DESTINATION ==="
+                find "/tmp/ci-worktree/reports" -maxdepth 4 -type d -print
                 rm -rf --ignore-unmatch "/tmp/ci-worktree/reports/python"
                 mkdir -p "/tmp/ci-worktree/reports/python"
                 cp -ra "$GITHUB_WORKSPACE/reports/python/." "/tmp/ci-worktree/reports/python/" 2>/dev/null || true
