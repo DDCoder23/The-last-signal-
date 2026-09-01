@@ -20,6 +20,7 @@ jobs:
   build:
 
     name: Build (${{ matrix.os }})
+    
 
     runs-on: ${{ matrix.os }}
 
@@ -47,11 +48,12 @@ jobs:
       
 
       - name: Create report
+        id: report
         shell: bash
         run: |
           DATE=$(date -u +"%Y-%m-%d")
 
-          REPORT_DIR="reports/build-${{ matrix.os }}/${DATE}"
+          REPORT_DIR="reports/build/build-${{ matrix.os }}/${DATE}"
           mkdir -p "$REPORT_DIR"
 
           LAST=$(find "$REPORT_DIR" -type f -name 'build-${{ matrix.os }}*.md' \
@@ -67,6 +69,8 @@ jobs:
           echo "REPORT=$REPORT" >> "$GITHUB_ENV"
           echo "REPORT_NUMBER=$REPORT_NUMBER" >> "$GITHUB_ENV"
           echo "REPORT_DATE=$DATE" >> "$GITHUB_ENV"
+          echo "$REPORT_NUMBER" > \
+                "report-numbers/${{ matrix.os }}.txt"
           
 
           {
@@ -138,12 +142,40 @@ jobs:
         shell: bash
         run: |
           cat "$REPORT" >> $GITHUB_STEP_SUMMARY
+      - name: Upload report number
+        uses: actions/upload-artifact@v5
+        with:
+           name: report-number-${{ matrix.os }}
+           path: report-numbers/
+           if-no-files-found: warning
+      - name: Upload build report
+        uses: actions/upload-artifact@v5
+        with:
+          name: build-report-${{ matrix.os }}
+          path: reports/build/build-${{ matrix.os }}/
+          if-no-files-found: warning
 
   commit:
    name: commits
    needs: build
    runs-on: ubuntu-latest
    steps:
+      - name: Download build reports
+        uses: actions/download-artifact@v5
+        with:
+          pattern: build-report-*
+          path: reports/build
+          merge-multiple: true
+      - name: Display report numbers
+        run: |
+           echo "Ubuntu :"
+           cat report-numbers/ubuntu-latest.txt
+
+           echo "Windows :"
+           cat report-numbers/windows-latest.txt
+
+           echo "macOS :"
+           cat report-numbers/macos-latest.txt
       - name: Install archive tools
         if: github.workflow == 'Nightly'
         run: |
@@ -628,7 +660,7 @@ jobs:
                 echo "find :"
 
                 find "/tmp/ci-worktree/reports" -maxdepth 4 -print
-                rm -rf "/tmp/ci-worktree/reports/build"
+                
                 mkdir -p "/tmp/ci-worktree/reports/build"
                 cp -a "$GITHUB_WORKSPACE/reports/build/." "/tmp/ci-worktree/reports/build/" 2>/dev/null || true
                 cd /tmp/ci-worktree
@@ -640,7 +672,34 @@ jobs:
                 git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/build"
                 exit 0
                 fi
-                git commit -m "Report build n° ${REPORT_NUMBER}"
+                UBUNTU_NUMBER=""
+                WINDOWS_NUMBER=""
+                MACOS_NUMBER=""
+
+                [ -f report-numbers/ubuntu-latest.txt ] && \
+                UBUNTU_NUMBER=$(cat report-numbers/ubuntu-latest.txt)
+
+                [ -f report-numbers/windows-latest.txt ] && \
+                WINDOWS_NUMBER=$(cat report-numbers/windows-latest.txt)
+
+                [ -f report-numbers/macos-latest.txt ] && \
+                MACOS_NUMBER=$(cat report-numbers/macos-latest.txt)
+
+                COMMIT_MESSAGE="Report build"
+
+                [ -n "$UBUNTU_NUMBER" ] && \
+                    COMMIT_MESSAGE+=" Ubuntu n° $UBUNTU_NUMBER"
+
+                [ -n "$WINDOWS_NUMBER" ] && \
+                          COMMIT_MESSAGE+=" Windows n° $WINDOWS_NUMBER"
+
+                [ -n "$MACOS_NUMBER" ] && \
+                       COMMIT_MESSAGE+=" macOS n° $MACOS_NUMBER"
+
+                echo "Message : $COMMIT_MESSAGE"
+
+                git commit -m "$COMMIT_MESSAGE"
+                
                 for i in 1 2 3
                 do
                 echo "Tentative $i/3"
