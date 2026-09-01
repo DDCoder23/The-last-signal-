@@ -600,8 +600,9 @@ jobs:
                 else
                 git worktree add -b ci-reports/tmp/ci-worktree
                 fi
+                 rm -rf --ignore-unmatch "/tmp/ci-worktree/reports/build"
                 mkdir -p "/tmp/ci-worktree/reports/build"
-                cp -ra "$GITHUB_WORKSPACE/reports/build" "/tmp/ci-worktree/reports/build" 2>/dev/null || true
+                cp -ra "$GITHUB_WORKSPACE/reports/build/." "/tmp/ci-worktree/reports/build/" 2>/dev/null || true
                 cd /tmp/ci-worktree
                 git add -A
                 git status
