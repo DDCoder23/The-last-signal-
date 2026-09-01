@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-09-01 06:21:50
+Generated: 2026-09-01 07:54:53
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|254|
+|❌ Errors|253|
 |⚠️ Warnings|6250|
-|**Total**|**6510**|
+|**Total**|**6509**|
 
 ---
 
@@ -8291,11 +8291,6 @@ TypeError: result doit être un dict, reçu int
 ---
 
 # 📄 server_rust/README.md
-
-## ❌ Error
-
-- **Module :** markdown
-- **Message :** Fichier vide.
 
 ## ❌ Error
 
