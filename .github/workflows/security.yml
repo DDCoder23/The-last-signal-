@@ -145,6 +145,17 @@ jobs:
              
 
              git add vendor Cargo.lock
+             git stash --staged
+             git pull
+             git stash pop --index @{0}
+             if git diff --name-only --diff-filter=U | grep -q .; then
+             echo "⚠️ Conflits détectés"
+             git checkout --ours .
+             git add -u
+             echo "✅ Conflits résolus avec ours"
+             else
+             echo "✅ Aucun conflit"
+             fi
 
              git diff --cached --quiet || git commit -m "chore: update Cargo vendor"
              
