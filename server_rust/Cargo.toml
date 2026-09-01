@@ -9,7 +9,7 @@ debug = 2
 incremental = true
 [dependencies]
 fernet = "0.2"
-argon2 =  "0.5.3"
+argon2 =  "0.6.0"
 rand_core = { version = "0.6.4", features = ["getrandom"] }
 uuid = { version = "1", features = ["v4"] }
 serde = { version = "1.0", features = ["derive"] }
