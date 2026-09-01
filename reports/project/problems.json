@@ -2208,12 +2208,6 @@
         "module": "titles"
     },
     {
-        "file": "server_rust/vendor/smallvec/debug_metadata/README.md",
-        "severity": "error",
-        "message": "server_rust/vendor/smallvec/debug_metadata/README.md: contient 0 titres H1 (1 attendu).",
-        "module": "titles"
-    },
-    {
         "file": "server_rust/vendor/icu_normalizer/benches/data/README.md",
         "severity": "error",
         "message": "server_rust/vendor/icu_normalizer/benches/data/README.md: contient 4 titres H1 (1 attendu).",
@@ -4599,12 +4593,6 @@
         "file": "server_rust/vendor/tracing-core/CHANGELOG.md",
         "severity": "warning",
         "message": "server_rust/vendor/tracing-core/CHANGELOG.md:601 saut de niveau H1 → H3.",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/smallvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/smallvec/debug_metadata/README.md:90 saut de niveau H1 → H4.",
         "module": "titles"
     },
     {
@@ -8823,18 +8811,6 @@
         "file": "server_rust/vendor/wasm-bindgen/README.md",
         "severity": "warning",
         "message": "server_rust/vendor/wasm-bindgen/README.md:62 titre sans ligne vide avant.",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/smallvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/smallvec/debug_metadata/README.md:60 titre sans ligne vide avant.",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/smallvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/smallvec/debug_metadata/README.md:72 titre sans ligne vide avant.",
         "module": "titles"
     },
     {
@@ -32580,12 +32556,6 @@
         "module": "titles"
     },
     {
-        "file": "server_rust/vendor/smallvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/smallvec/debug_metadata/README.md:72 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:60).",
-        "module": "titles"
-    },
-    {
         "file": "server_rust/vendor/sqlx/src/macros/test.md",
         "severity": "warning",
         "message": "server_rust/vendor/sqlx/src/macros/test.md:68 titre dupliqué (déjà présent dans server_rust/vendor/sqlx/src/macros/test.md:13).",
@@ -32672,49 +32642,7 @@
     {
         "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
         "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:1 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:1).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:23 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:23).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:36 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:36).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:57 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:57).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:60 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:60).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:72 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:60).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:90 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:90).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/tinyvec/debug_metadata/README.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:99 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:99).",
+        "message": "server_rust/vendor/tinyvec/debug_metadata/README.md:72 titre dupliqué (déjà présent dans server_rust/vendor/tinyvec/debug_metadata/README.md:60).",
         "module": "titles"
     },
     {
