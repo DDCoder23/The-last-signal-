@@ -2129,66 +2129,66 @@ tests/test_splitmix64.py
     F 59:0 test_different_seed_different_sequence - A
     F 111:0 test_zero_seed - A
     F 128:0 test_max_seed - A
-    F 81:0 test_output_is_u64 - A
-    F 96:0 test_state_changes - A
-    C 7:0 SplitMix64 - A
-    M 8:4 SplitMix64.__init__ - A
-    M 11:4 SplitMix64.next - A
-tests/security/test_load.py
-    F 50:0 run_test - A
-    F 85:0 test_main - A
-    F 14:0 ping - A
-tests/security/test_sql_injection.py
-    F 447:0 test_advanced_attacks_database - D
-    F 605:0 test_binary_protocol_attacks - C
-    F 417:0 create_test_database - A
-    F 429:0 get_row_count - A
-    F 435:0 get_tables - A
-    F 410:0 open_database - A
-    C 51:0 AdvancedPayloads - A
-tests/security/test_fuzzing.py
-    F 75:0 main - A
-    F 30:0 send_packet - A
-    F 17:0 create_packet - A
-    F 48:0 random_payload - A
-    F 55:0 random_packet - A
-security/vault.py
-    F 12:0 create_key - A
-    F 103:0 get_or_create_communication_key - A
-    F 30:0 load_key - A
-    F 68:0 add_secret - A
-    F 79:0 get_secret - A
-    F 40:0 encrypt_vault - A
-    F 54:0 decrypt_vault - A
-    F 94:0 generate_communication_key - A
-scripts/update_database.py
-    F 9:0 update_database - A
-scripts/recherche.py
-    F 172:0 main - C
-    F 94:0 ecrire_fichier - B
-    F 34:0 rechercher - B
-scripts/voir_database.py
-    F 14:0 afficher_database - C
-scripts/generate_problems_md.py
-    F 10:0 generate_problems_md - C
-scripts/database_manager.py
-    C 9:0 DatabaseManager - A
-    M 360:4 DatabaseManager.add_run - A
-    M 414:4 DatabaseManager.insert - A
-    M 11:4 DatabaseManager.__init__ - A
-    M 25:4 DatabaseManager.create_tables - A
-    M 436:4 DatabaseManager.close - A
-    M 438:4 DatabaseManager.add_security - A
-    M 462:4 DatabaseManager.add_security_issue - A
-    M 492:4 DatabaseManager.add_performance - A
-scripts/generate_dashboard.py
-    F 123:0 generate_json - C
-    F 88:0 calculate_quality - A
-    F 12:0 get_documentation_score - A
-    F 28:0 get_database_data - A
-scripts/utils/calculateur.py
-    F 63:0 mettre_a_jour_excel_fichiers_et_dossiers - B
-    F 22:0 creer_fichier_vide_async - A
+    F 81:0 test_outpuur.py
+    F 16:0 iter_files - A
+scripts/utils/gestionnaire_de_fichiers.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+scripts/documentation/markdown.py
+    F 91:0 check_empty_files - B
+    F 129:0 check_line_length - B
+    F 146:0 check_trailing_spaces - B
+    F 248:0 check_html - A
+    F 44:0 get_markdown_files - A
+    F 117:0 check_encoding - A
+    F 163:0 check_code_blocks - A
+    F 177:0 check_lists - A
+    F 215:0 check_tables - A
+    F 32:0 load_markdownlint_report - A
+    F 56:0 check_markdown - A
+scripts/documentation/score.py
+    F 11:0 generate_score - B
+scripts/documentation/links.py
+    F 111:0 check_local_links - B
+    F 191:0 check_images - B
+    F 16:0 check_links - A
+    F 141:0 check_external_links - A
+    F 85:0 check_empty_links - A
+    F 169:0 check_anchors - A
+    F 226:0 check_duplicate_links - A
+    F 68:0 extract_links - A
+scripts/documentation/report.py
+    F 25:0 generate_report - C
+    F 11:0 _status - B
+scripts/documentation/rust_docs.py
+    F 6:0 check_rust_docs - C
+scripts/documentation/organization.py
+    F 4:0 check_organization - C
+scripts/documentation/python_docs.py
+    F 9:0 check_python_docs - D
+scripts/documentation/spelling.py
+    F 4:0 check_spelling - A
+scripts/documentation/titles.py
+    F 91:0 check_heading_spacing - B
+    F 67:0 check_heading_order - B
+    F 132:0 check_title_length - A
+    F 154:0 check_duplicate_titles - A
+    F 114:0 check_empty_titles - A
+    F 52:0 check_single_h1 - A
+    F 17:0 check_titles - A
+scripts/documentation/navigation.py
+    F 1:0 check_navigation - A
+scripts/documentation/problem.py
+    F 3:0 add_problem - A
+scripts/database/utils.py
+    F 5:0 read_report - A
+    F 15:0 extract_int - A
+    F 25:0 extract_float - A
+scripts/database/update_security.py
+    F 13:0 update_security_database - A
+scripts/database/update_performance.py
+    F 1:0 update_performance_database - A
+scripts/database/update_python.py
+    F 18:0 update_python_database -_vide_async - A
     F 33:0 calculer_taille_dossier_async - A
     F 13:0 log_erreur_async - A
 scripts/utils/gestionnaire.py
