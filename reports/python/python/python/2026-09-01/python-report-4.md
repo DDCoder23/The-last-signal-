@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1438
+Run : 1436
 Branch : main
-Commit : e4f7128b5e4dea39445fcfe8b8f21e596cba4b8f
-Date : Tue Sep  1 09:44:45 UTC 2026
+Commit : 025cd315580b920a6905014bd404bc9682f2e97b
+Date : Tue Sep  1 08:08:12 UTC 2026
 
 ---
 
@@ -33,8 +33,8 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
@@ -42,8 +42,8 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
@@ -53,25 +53,25 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/navigation.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/docker.py
@@ -1912,7 +1912,7 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.100946372239748)
+**Average complexity:**  A (4.135483870967742)
 
 <details>
 <summary>Show complexity report</summary>
@@ -2136,14 +2136,6 @@ tests/test_splitmix64.py
     C 7:0 SplitMix64 - A
     M 8:4 SplitMix64.__init__ - A
     M 11:4 SplitMix64.next - A
-tests/test_fisher_yates.py
-    F 15:0 test_is_permutation - A
-    F 39:0 test_contains_every_value_once - A
-    F 47:0 test_zero_seed - A
-    F 55:0 test_max_seed - A
-    F 4:0 fisher_yates - A
-    F 23:0 test_is_deterministic - A
-    F 31:0 test_different_seeds_produce_different_permutations - A
 tests/security/test_load.py
     F 50:0 run_test - A
     F 85:0 test_main - A
@@ -2314,8 +2306,8 @@ client_python/packets/ban.py
     C 4:0 BanType - A
     M 11:4 BanPacket.__init__ - A
 
-317 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.100946372239748)
+310 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.135483870967742)
 
 </details>
 
@@ -2325,7 +2317,7 @@ Average complexity: A (4.100946372239748)
 |----------|------:|
 | High | 1 |
 | Medium | 9 |
-| Low | 135 |
+| Low | 126 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -2336,7 +2328,7 @@ Average complexity: A (4.100946372239748)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
-Run started:2026-09-01 09:44:57.072795+00:00
+Run started:2026-09-01 08:08:24.014708+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -3664,95 +3656,6 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:19:4
-18	
-19	    assert len(rotor) == 256
-20	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:20:4
-19	    assert len(rotor) == 256
-20	    assert sorted(rotor) == list(range(256))
-21	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:28:4
-27	
-28	    assert rotor_a == rotor_b
-29	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:36:4
-35	
-36	    assert rotor_a != rotor_b
-37	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:44:8
-43	    for value in range(256):
-44	        assert rotor.count(value) == 1
-45	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:51:4
-50	
-51	    assert len(rotor) == 256
-52	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:52:4
-51	    assert len(rotor) == 256
-52	    assert sorted(rotor) == list(range(256))
-53	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:59:4
-58	
-59	    assert len(rotor) == 256
-60	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:60:4
-59	    assert len(rotor) == 256
-60	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_rotor_seeds.py:31:4
 30	
 31	    assert seed_a == seed_b
@@ -3902,21 +3805,21 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12292
+	Total lines of code: 12260
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 135
+		Low: 126
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 14
-		High: 130
+		High: 121
 Files skipped (0):
 
 </details>
@@ -4871,16 +4774,6 @@ tests/test_splitmix64.py:96:0: C0116: Missing function or method docstring (miss
 tests/test_splitmix64.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_splitmix64.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
-************* Module tests.test_fisher_yates
-tests/test_fisher_yates.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_fisher_yates.py:1:0: E0401: Unable to import 'test_splitmix64' (import-error)
-tests/test_fisher_yates.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:31:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.security.test_load
 tests/security/test_load.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/security/test_load.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -5618,8 +5511,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         for part in relative.parts
     )
 
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
+ (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.attack_test:[79:102]
 ==.github.security.integrity_check:[54:67]
@@ -5635,7 +5527,17 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+'''
+============================================================
+                         Git
+============================================================
+'''
+
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
@@ -5708,7 +5610,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     )
 
 
-def looks_textual(data: bytes) -> bool: (duplicate-code)
+def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[59:69]
 ==scripts.documentation.markdown:[82:91]
@@ -5720,8 +5622,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     }
 
 
-def extract_links(file):
- (duplicate-code)
+def check_empty_files(files, problems): (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.markdown:[59:65]
 ==scripts.documentation.titles:[20:26]
@@ -5741,7 +5642,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 10 colonnes
+        # Tableau avec 7 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
@@ -5769,12 +5670,12 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         medium,
         low,
         total, (duplicate-code)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 
 -----------------------------------
@@ -5796,23 +5697,13 @@ rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-7.1.0
-collected 2074 items / 2 errors
+collected 2074 items / 1 error
 
 ==================================== ERRORS ====================================
 ____________ ERROR collecting tests/security/test_sql_injection.py _____________
 tests/security/test_sql_injection.py:34: in <module>
     raise RuntimeError("DATABASE_PATH n'est pas définie")
 E   RuntimeError: DATABASE_PATH n'est pas définie
-_________________ ERROR collecting tests/test_fisher_yates.py __________________
-ImportError while importing test module '/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/importlib/__init__.py:88: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/test_fisher_yates.py:1: in <module>
-    from test_splitmix64 import SplitMix64
-E   ModuleNotFoundError: No module named 'test_splitmix64'
 =============================== warnings summary ===============================
 ../../../../../opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/site-packages/_pytest/config/__init__.py:1464
   /opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: security
@@ -5854,9 +5745,8 @@ tests/security/test_load.py:84
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
-ERROR tests/test_fisher_yates.py
-!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
-======================== 9 warnings, 2 errors in 0.30s =========================
+!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
+========================= 9 warnings, 1 error in 0.28s =========================
 
 </details>
 

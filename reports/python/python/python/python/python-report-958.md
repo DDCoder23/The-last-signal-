@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1438
+Run : 958
 Branch : main
-Commit : e4f7128b5e4dea39445fcfe8b8f21e596cba4b8f
-Date : Tue Sep  1 09:44:45 UTC 2026
+Commit : 7570a608c1adb8250db487da90af289bdcef089c
+Date : Wed Aug 19 12:57:16 UTC 2026
 
 ---
 
@@ -11,81 +11,65 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 71
+**Files to reformat:** 55
 
 <details>
 <summary>Show files</summary>
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/grade_manager.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/admin_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
-/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
+/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/navigation.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/navigation.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/setup.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
-/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
-/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/docker.py
-/home/runner/work/The-last-signal-/The-last-signal-/setup.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
-/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
-/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
-/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py
 </details>
 
 ##   Flake8
@@ -94,52 +78,41 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 
 | Code | Nombre |
 |------|-------:|
-| E501 | 471 |
-| E231 | 336 |
-| W293 | 155 |
-| E225 | 142 |
-| E303 | 116 |
-| E122 | 115 |
-| E302 | 100 |
-| F401 | 38 |
-| E203 | 27 |
+| E231 | 335 |
+| E501 | 251 |
+| E225 | 154 |
+| W293 | 130 |
+| E303 | 118 |
+| E122 | 116 |
+| E302 | 77 |
+| F401 | 26 |
+| W291 | 24 |
+| E301 | 22 |
 | E111 | 22 |
-| W291 | 21 |
-| E301 | 20 |
-| E402 | 16 |
-| E128 | 15 |
 | F811 | 14 |
-| F841 | 12 |
 | E701 | 12 |
-| E305 | 9 |
+| E203 | 12 |
+| F841 | 11 |
+| E402 | 11 |
 | W391 | 8 |
-| E251 | 8 |
 | E211 | 7 |
-| F821 | 6 |
-| E266 | 6 |
+| E711 | 6 |
 | E129 | 6 |
-| F541 | 5 |
-| W292 | 4 |
+| E305 | 5 |
+| E128 | 5 |
 | F824 | 4 |
-| E713 | 4 |
-| E703 | 4 |
+| F821 | 4 |
 | E131 | 4 |
+| W292 | 3 |
 | E712 | 3 |
-| E306 | 3 |
 | E124 | 3 |
-| E741 | 2 |
-| E731 | 2 |
 | E722 | 2 |
-| E711 | 2 |
-| E275 | 2 |
+| E306 | 2 |
 | E265 | 2 |
-| E262 | 2 |
-| E261 | 2 |
 | F634 | 1 |
-| E401 | 1 |
+| E741 | 1 |
 | E271 | 1 |
 | E201 | 1 |
-| E125 | 1 |
 | E117 | 1 |
 | E115 | 1 |
 
@@ -149,24 +122,64 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 
 | Fichier | Ligne | Code | Message |
 |---------|------:|------|---------|
-| ./.github/security/test_filesystem.py | 4 | F401 | 'os' imported but unused |
-| ./.github/security/test_filesystem.py | 6 | F401 | 'sys' imported but unused |
-| ./.github/security/test_git_security.py | 6 | F401 | 'sys' imported but unused |
-| ./.github/security/test_python_security.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_rust_security.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_rust_security.py | 37 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 37 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 37 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_rust_security.py | 43 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 43 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 43 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_secrets.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_secrets.py | 58 | E501 | line too long (91 > 79 characters) |
-| ./.github/security/test_secrets.py | 76 | E501 | line too long (80 > 79 characters) |
-| ./.github/security/test_secrets.py | 82 | E501 | line too long (85 > 79 characters) |
-| ./.github/security/test_web_security.py | 6 | F401 | 'ssl' imported but unused |
-| ./.github/security/test_web_security.py | 7 | F401 | 'sys' imported but unused |
-| ./.github/security/test_web_security.py | 469 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 4 | F401 | 'PySide6.QtCore.QTimer' imported but unused |
+| ./Ancien/admin_manager.py | 8 | F401 | 'inventaire.Objet' imported but unused |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E501 | line too long (116 > 79 characters) |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 27 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/admin_manager.py | 43 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/admin_manager.py | 43 | E501 | line too long (84 > 79 characters) |
+| ./Ancien/admin_manager.py | 141 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 159 | E501 | line too long (82 > 79 characters) |
+| ./Ancien/admin_manager.py | 161 | E501 | line too long (110 > 79 characters) |
+| ./Ancien/admin_manager.py | 201 | E501 | line too long (80 > 79 characters) |
+| ./Ancien/admin_manager.py | 211 | E501 | line too long (97 > 79 characters) |
+| ./Ancien/admin_manager.py | 240 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 244 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 245 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 247 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 248 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 249 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 251 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 251 | E501 | line too long (134 > 79 characters) |
+| ./Ancien/admin_manager.py | 251 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 252 | E501 | line too long (87 > 79 characters) |
+| ./Ancien/admin_manager.py | 253 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 256 | E501 | line too long (172 > 79 characters) |
+| ./Ancien/admin_manager.py | 256 | E211 | whitespace before '(' |
+| ./Ancien/admin_manager.py | 269 | E301 | expected 1 blank line, found 0 |
+| ./Ancien/admin_manager.py | 269 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 279 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 289 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 297 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 304 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 317 | E722 | do not use bare 'except' |
+| ./Ancien/admin_manager.py | 317 | E203 | whitespace before ' |
+| ./Ancien/admin_manager.py | 319 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 320 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 321 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 324 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 328 | E501 | line too long (110 > 79 characters) |
+| ./Ancien/admin_manager.py | 343 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 344 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 349 | E303 | too many blank lines (4) |
+| ./Ancien/admin_manager.py | 357 | E303 | too many blank lines (3) |
+| ./Ancien/admin_manager.py | 361 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 381 | E301 | expected 1 blank line, found 0 |
+| ./Ancien/admin_manager.py | 381 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 387 | E722 | do not use bare 'except' |
+| ./Ancien/admin_manager.py | 387 | E203 | whitespace before ' |
+| ./Ancien/admin_manager.py | 389 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 390 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 392 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 397 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 402 | E501 | line too long (116 > 79 characters) |
+| ./Ancien/admin_manager.py | 404 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 406 | E301 | expected 1 blank line, found 0 |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
@@ -1045,71 +1058,54 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 | ./client_python/__init__.py | 1 | W391 | blank line at end of file |
 | ./client_python/client.py | 5 | F401 | '.packets.log.LogPacket' imported but unused |
 | ./client_python/client.py | 7 | E302 | expected 2 blank lines, found 0 |
+| ./client_python/client.py | 38 | E122 | continuation line missing indentation or outdented |
 | ./client_python/client.py | 39 | E122 | continuation line missing indentation or outdented |
 | ./client_python/client.py | 40 | E122 | continuation line missing indentation or outdented |
-| ./client_python/client.py | 41 | E122 | continuation line missing indentation or outdented |
-| ./client_python/client.py | 46 | E122 | continuation line missing indentation or outdented |
-| ./client_python/client.py | 56 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 73 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 80 | W291 | trailing whitespace |
-| ./client_python/client.py | 84 | E231 | missing whitespace after ',' |
-| ./client_python/client.py | 86 | E124 | closing bracket does not match visual indentation |
-| ./client_python/client.py | 87 | E301 | expected 1 blank line, found 0 |
-| ./client_python/client.py | 89 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 106 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 108 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 45 | E122 | continuation line missing indentation or outdented |
+| ./client_python/client.py | 54 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 71 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 78 | W291 | trailing whitespace |
+| ./client_python/client.py | 82 | E231 | missing whitespace after ',' |
+| ./client_python/client.py | 84 | E124 | closing bracket does not match visual indentation |
+| ./client_python/client.py | 85 | E301 | expected 1 blank line, found 0 |
+| ./client_python/client.py | 87 | W293 | blank line contains whitespace |
 | ./client_python/client.py | 113 | E131 | continuation line unaligned for hanging indent |
 | ./client_python/client.py | 118 | E301 | expected 1 blank line, found 0 |
 | ./client_python/client.py | 135 | W293 | blank line contains whitespace |
 | ./client_python/client.py | 137 | E303 | too many blank lines (3) |
 | ./client_python/client.py | 147 | E231 | missing whitespace after ',' |
 | ./client_python/client.py | 149 | E124 | closing bracket does not match visual indentation |
-| ./client_python/client.py | 165 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 163 | W293 | blank line contains whitespace |
 | ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 2 | F401 | 'time' imported but unused |
 | ./client_python/main.py | 3 | F401 | '.packet.Packet' imported but unused |
-| ./client_python/main.py | 3 | F401 | '.packet.PacketType' imported but unused |
-| ./client_python/main.py | 12 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 14 | E306 | expected 1 blank line before a nested definition, found 0 |
+| ./client_python/main.py | 6 | F401 | '.packets.ping.PingPacket' imported but unused |
+| ./client_python/main.py | 7 | F401 | '.packets.move.MovePacket' imported but unused |
+| ./client_python/main.py | 8 | E302 | expected 2 blank lines, found 0 |
+| ./client_python/main.py | 16 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 17 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 18 | W293 | blank line contains whitespace |
 | ./client_python/main.py | 19 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 20 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 21 | E303 | too many blank lines (2) |
-| ./client_python/main.py | 21 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 35 | E211 | whitespace before '(' |
-| ./client_python/main.py | 35 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 35 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 36 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 38 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E501 | line too long (111 > 79 characters) |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 56 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 68 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 72 | W293 | blank line contains whitespace |
-| ./client_python/packet.py | 30 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 51 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 64 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 69 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 74 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 79 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 91 | E501 | line too long (96 > 79 characters) |
-| ./client_python/packet.py | 91 | E203 | whitespace before ' |
-| ./client_python/packet.py | 93 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 94 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 95 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 98 | E303 | too many blank lines (2) |
+| ./client_python/main.py | 20 | E303 | too many blank lines (2) |
+| ./client_python/main.py | 22 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 26 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 28 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 31 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 33 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 36 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 38 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/packet.py | 26 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 47 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 60 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 65 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 70 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 75 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 83 | E303 | too many blank lines (2) |
 | ./client_python/packets/__init__.py | 1 | F401 | '.ping.PingPacket' imported but unused |
 | ./client_python/packets/__init__.py | 2 | F401 | '.login.LoginPacket' imported but unused |
-| ./client_python/packets/__init__.py | 3 | F401 | '.singup.SingupPacket' imported but unused |
-| ./client_python/packets/__init__.py | 4 | F401 | '.log.LogPacket' imported but unused |
-| ./client_python/packets/__init__.py | 5 | F401 | '.chat.ChatPacket' imported but unused |
-| ./client_python/packets/__init__.py | 6 | F401 | '.move.MovePacket' imported but unused |
-| ./client_python/packets/ban.py | 39 | W292 | no newline at end of file |
+| ./client_python/packets/__init__.py | 3 | F401 | '.chat.ChatPacket' imported but unused |
+| ./client_python/packets/__init__.py | 4 | F401 | '.move.MovePacket' imported but unused |
 | ./client_python/packets/chat.py | 14 | E301 | expected 1 blank line, found 0 |
-| ./client_python/packets/log.py | 11 | E301 | expected 1 blank line, found 0 |
+| ./client_python/packets/login.py | 14 | E301 | expected 1 blank line, found 0 |
 | ./client_python/packets/move.py | 8 | E231 | missing whitespace after ',' |
 | ./client_python/packets/move.py | 18 | E301 | expected 1 blank line, found 0 |
 | ./scripts/database/update_docs.py | 7 | E303 | too many blank lines (3) |
@@ -1168,7 +1164,6 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 | ./scripts/documentation/links.py | 36 | W293 | blank line contains whitespace |
 | ./scripts/documentation/links.py | 38 | E303 | too many blank lines (3) |
 | ./scripts/documentation/links.py | 72 | F841 | local variable 'pattern' is assigned to but never used |
-| ./scripts/documentation/markdown.py | 23 | E231 | missing whitespace after ',' |
 | ./scripts/documentation/markdown.py | 27 | E402 | module level import not at top of file |
 | ./scripts/documentation/markdown.py | 44 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/markdown.py | 56 | E303 | too many blank lines (5) |
@@ -1508,386 +1503,30 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 | ./scripts/utils/gestionnaire_de_fichiers.py | 17 | W291 | trailing whitespace |
 | ./scripts/utils/gestionnaire_de_fichiers.py | 24 | E501 | line too long (84 > 79 characters) |
 | ./scripts/utils/gestionnaire_de_fichiers.py | 31 | W391 | blank line at end of file |
-| ./security/__init__.py | 1 | W391 | blank line at end of file |
+| ./security/vault.py | 3 | F401 | 'base64' imported but unused |
 | ./security/vault.py | 19 | W293 | blank line contains whitespace |
 | ./security/vault.py | 34 | W293 | blank line contains whitespace |
 | ./security/vault.py | 36 | E303 | too many blank lines (2) |
-| ./security/vault.py | 79 | E302 | expected 2 blank lines, found 1 |
-| ./security/vault.py | 136 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./security/vault.py | 138 | W293 | blank line contains whitespace |
-| ./security/vault.py | 139 | E303 | too many blank lines (2) |
-| ./security/vault.py | 166 | W293 | blank line contains whitespace |
-| ./server_rust/vendor/libc/etc/libc-util.py | 33 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 38 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 64 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 92 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 97 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 109 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 110 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 118 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 137 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 163 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 178 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 185 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 193 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 201 | E501 | line too long (90 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 206 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 209 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 242 | E501 | line too long (102 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 266 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 272 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 273 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 280 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 287 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 297 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 299 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 301 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 304 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 324 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 328 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 329 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 388 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 403 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 436 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 442 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 492 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 505 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 561 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 596 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 602 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 606 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 607 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 609 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 626 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 693 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 696 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 697 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 698 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 701 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 708 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 722 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 729 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 730 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 731 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 732 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 744 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 749 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 777 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 779 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 813 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 823 | E501 | line too long (96 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 852 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 853 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 867 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 870 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 871 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 872 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 879 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 911 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 921 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 922 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 923 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 935 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 940 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 957 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 964 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 977 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 1008 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 1068 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/sqlx/examples/x.py | 17 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 18 | F401 | 'time' imported but unused |
-| ./server_rust/vendor/sqlx/examples/x.py | 18 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 19 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 20 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 21 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 48 | E501 | line too long (103 > 79 characters) |
-| ./server_rust/vendor/sqlx/examples/x.py | 81 | E231 | missing whitespace after ',' |
-| ./server_rust/vendor/sqlx/examples/x.py | 81 | E231 | missing whitespace after ',' |
-| ./server_rust/vendor/sqlx/examples/x.py | 87 | E501 | line too long (104 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/docker.py | 77 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/docker.py | 95 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 6 | F401 | 'time' imported but unused |
-| ./server_rust/vendor/sqlx/tests/x.py | 43 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 93 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 121 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/sqlx/tests/x.py | 121 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 121 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/sqlx/tests/x.py | 123 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/sqlx/tests/x.py | 126 | E303 | too many blank lines (2) |
-| ./server_rust/vendor/sqlx/tests/x.py | 127 | E501 | line too long (125 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 140 | E501 | line too long (116 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 147 | E501 | line too long (98 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 187 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 199 | E501 | line too long (151 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 222 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 246 | E501 | line too long (122 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 260 | E501 | line too long (106 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 268 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 271 | E501 | line too long (110 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 273 | E501 | line too long (97 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 279 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 282 | E501 | line too long (110 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 284 | E501 | line too long (181 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 295 | E501 | line too long (103 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 296 | E501 | line too long (112 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 298 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 303 | E501 | line too long (94 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 312 | E501 | line too long (108 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 315 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 324 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 325 | E501 | line too long (107 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 327 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 331 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 336 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 348 | E501 | line too long (103 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 349 | E501 | line too long (112 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 351 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 361 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 364 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 366 | E501 | line too long (177 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 371 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 373 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 381 | E501 | line too long (111 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 20 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 28 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 38 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 67 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 74 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 81 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 88 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 104 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 105 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 106 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 109 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 112 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 122 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 124 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 129 | E501 | line too long (90 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 131 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 132 | E501 | line too long (97 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 135 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 137 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 145 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 148 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 162 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 162 | E501 | line too long (114 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 163 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 163 | E501 | line too long (119 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 164 | E501 | line too long (132 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 165 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 168 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 170 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 170 | E501 | line too long (107 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 171 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 171 | E501 | line too long (109 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 172 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 206 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 258 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 264 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 307 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 308 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 326 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 347 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 347 | E731 | do not assign a lambda expression, use a def |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 351 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 358 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 375 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 377 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 379 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 386 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 388 | E501 | line too long (95 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 392 | E501 | line too long (116 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 398 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 398 | E501 | line too long (91 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 399 | E501 | line too long (129 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 403 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 413 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 413 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 415 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 422 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 430 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 437 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 444 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 451 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 458 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 460 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 462 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 485 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 499 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 501 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 514 | E731 | do not assign a lambda expression, use a def |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 528 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 535 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 536 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 543 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 543 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 548 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 549 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 569 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 570 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 571 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 572 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 575 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 576 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 577 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 578 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 583 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 585 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 585 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 599 | E501 | line too long (127 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 615 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 615 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 19 | F401 | 'operator' imported but unused |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 19 | E401 | multiple imports on one line |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 21 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 31 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 38 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 41 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 52 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 58 | E501 | line too long (95 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 95 | E501 | line too long (95 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 122 | E275 | missing whitespace after keyword |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 123 | E275 | missing whitespace after keyword |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 137 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 152 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 157 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 157 | E741 | ambiguous variable name 'l' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 170 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 170 | E501 | line too long (90 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 187 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 269 | W291 | trailing whitespace |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 278 | E501 | line too long (106 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 282 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 283 | E501 | line too long (124 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 287 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 306 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 313 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 324 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 325 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 326 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 329 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 332 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 335 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 336 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 337 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 338 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 339 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 342 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 343 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 346 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 349 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 350 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 351 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 356 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 363 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 364 | E501 | line too long (124 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 365 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 365 | E125 | continuation line with same indent as next logical line |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 365 | E501 | line too long (116 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 366 | E501 | line too long (128 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 367 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 367 | E501 | line too long (117 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 369 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 370 | E501 | line too long (117 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 371 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 371 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 392 | E501 | line too long (97 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 398 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 409 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 414 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 427 | W293 | blank line contains whitespace |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 428 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 429 | E501 | line too long (140 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 430 | E501 | line too long (113 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 435 | W293 | blank line contains whitespace |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 443 | E301 | expected 1 blank line, found 0 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 470 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 472 | E501 | line too long (125 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 473 | E501 | line too long (147 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 476 | E501 | line too long (143 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 479 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 481 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 483 | E501 | line too long (125 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 486 | E501 | line too long (127 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 490 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 491 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 491 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 494 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 500 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 519 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 535 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 537 | E266 | too many leading '#' for block comment |
+| ./security/vault.py | 81 | E303 | too many blank lines (3) |
+| ./security/vault.py | 83 | W293 | blank line contains whitespace |
+| ./security/vault.py | 84 | E303 | too many blank lines (2) |
+| ./security/vault.py | 111 | W293 | blank line contains whitespace |
 | ./tests/__init__.py | 1 | W391 | blank line at end of file |
-| ./tests/security/test_fuzzing.py | 16 | E303 | too many blank lines (3) |
-| ./tests/security/test_fuzzing.py | 29 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_fuzzing.py | 47 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_fuzzing.py | 54 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_fuzzing.py | 74 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_load.py | 13 | E303 | too many blank lines (4) |
-| ./tests/security/test_load.py | 49 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_load.py | 84 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_sql_injection.py | 23 | F401 | 'typing.Any' imported but unused |
-| ./tests/security/test_sql_injection.py | 39 | E303 | too many blank lines (4) |
-| ./tests/security/test_sql_injection.py | 78 | E501 | line too long (94 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 94 | E501 | line too long (95 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 107 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 113 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 117 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 119 | F841 | local variable 'e' is assigned to but never used |
-| ./tests/security/test_sql_injection.py | 133 | E501 | line too long (87 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 221 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 225 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 228 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 230 | E501 | line too long (96 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 231 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 233 | E501 | line too long (91 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 264 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 303 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 305 | E501 | line too long (196 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 309 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 312 | E722 | do not use bare 'except' |
-| ./tests/security/test_sql_injection.py | 327 | E501 | line too long (82 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 350 | E501 | line too long (82 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 354 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 359 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 360 | E722 | do not use bare 'except' |
-| ./tests/security/test_sql_injection.py | 362 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 458 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 485 | E501 | line too long (84 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 508 | E501 | line too long (93 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 509 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 530 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 535 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 543 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 546 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 548 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 555 | E501 | line too long (82 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 563 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 566 | E501 | line too long (91 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 587 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 591 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 595 | E501 | line too long (90 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 604 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_sql_injection.py | 624 | E501 | line too long (87 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 646 | E501 | line too long (86 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 660 | E501 | line too long (84 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 661 | E501 | line too long (87 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 662 | E501 | line too long (81 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 663 | E501 | line too long (89 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 668 | E501 | line too long (86 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 669 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 671 | E501 | line too long (80 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 682 | E501 | line too long (92 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 687 | E501 | line too long (98 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 689 | E501 | line too long (92 > 79 characters) |
-| ./tests/test_client.py | 5 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_client.py | 10 | W293 | blank line contains whitespace |
-| ./tests/test_client.py | 11 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_splitmix64.py | 1 | F401 | 'pytest' imported but unused |
+| ./tests/test_client.py | 3 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_client.py | 5 | W391 | blank line at end of file |
+| ./tests/test_crypto_mix.py | 435 | E231 | missing whitespace after ',' |
+| ./tests/test_fuzzing.py | 16 | E303 | too many blank lines (3) |
+| ./tests/test_fuzzing.py | 29 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_fuzzing.py | 47 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_fuzzing.py | 54 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_fuzzing.py | 74 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_load.py | 13 | E303 | too many blank lines (4) |
+| ./tests/test_load.py | 49 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_load.py | 84 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_sql_injection.py | 31 | E303 | too many blank lines (3) |
+| ./tests/test_sql_injection.py | 46 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_sql_injection.py | 69 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_sql_injection.py | 107 | E302 | expected 2 blank lines, found 1 |
 
 </details>
 
@@ -1900,11 +1539,11 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 | 3 | ./Ancien/main.py | 114 |
 | 4 | ./Ancien/inv.py | 97 |
 | 5 | ./scripts/documentation/report.py | 96 |
-| 6 | ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 89 |
-| 7 | ./server_rust/vendor/unicode-properties/scripts/unicode.py | 84 |
-| 8 | ./server_rust/vendor/libc/etc/libc-util.py | 77 |
-| 9 | ./tests/security/test_sql_injection.py | 54 |
-| 10 | ./Ancien/banque.py | 50 |
+| 6 | ./Ancien/admin_manager.py | 58 |
+| 7 | ./Ancien/banque.py | 50 |
+| 8 | ./scripts/generate_dashboard.py | 41 |
+| 9 | ./scripts/documentation/titles.py | 37 |
+| 10 | ./scripts/documentation/markdown.py | 36 |
 > 💡 Vous ne connaissez pas une erreur Flake8 ?
 >
 > Consultez le guide complet :
@@ -1912,7 +1551,7 @@ Date : Tue Sep  1 09:44:45 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.100946372239748)
+**Average complexity:**  A (3.902173913043478)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1999,178 +1638,46 @@ Ancien/debugger.py
     M 190:4 SoftDebugger.wrap - A
 Ancien/horloge.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
-server_rust/vendor/libc/etc/libc-util.py
-    M 462:4 CheckAllTargets.check_all_targets - C
-    M 372:4 CheckAllTargets.prepare - C
-    C 320:0 CheckAllTargets - C
-    C 224:0 MakeChangelog - B
-    M 762:4 Backporter.fetch_needs_backport_list - B
-    M 233:4 MakeChangelog.execute - B
-    M 866:4 Backporter.add_backport_trailer - B
-    C 132:0 Relabel - B
-    M 142:4 Relabel.execute - B
-    M 707:4 Backporter.prepare_rebase_todo - A
-    F 1084:0 xtrace - A
-    M 192:4 Relabel.do_relabel_inner - A
-    C 595:0 Backporter - A
-    C 576:0 CheckInvocation - A
-    M 920:4 Backporter.backport_pr_description - A
-    C 944:0 RustcTarget - A
-    C 998:0 Commit - A
-    F 1052:0 cache_dir - A
-    F 1072:0 check_output - A
-    F 1078:0 run - A
-    F 1099:0 trunc_lines - A
-    M 570:4 CheckAllTargets.get_cache_toolchain - A
-    M 588:4 CheckInvocation.pattern_matches - A
-    M 675:4 Backporter.start_backports - A
-    M 812:4 Backporter.ensure_local_updated - A
-    M 828:4 Backporter.ensure_branch - A
-    M 835:4 Backporter.ensure_worktree - A
-    M 969:4 RustcTarget.fetch_all - A
-    M 1007:4 Commit.__post_init__ - A
-    M 1016:4 Commit.from_object - A
-    C 1027:0 E - A
-    F 24:0 main - A
-    F 1059:0 repo_fetch_url - A
-    F 1063:0 pr_url - A
-    F 1067:0 mstr - A
-    F 1107:0 eprint - A
-    M 851:4 Backporter.sequence_editor - A
-    M 933:4 Backporter.rebase_todo_tmp_path - A
-    M 938:4 Backporter.commit_map_path - A
-    M 955:4 RustcTarget.get_one - A
-    C 984:0 PullRequest - A
-    M 1046:4 E.u - A
-server_rust/vendor/unicode-normalization/scripts/unicode.py
-    M 96:4 UnicodeData._load_unicode_data - C
-    M 139:4 UnicodeData._load_cjk_compat_ideograph_variants - C
-    F 536:0 minimal_perfect_hash - C
-    M 227:4 UnicodeData._compute_fully_decomposed - B
-    M 305:4 UnicodeData._compute_stream_safe_tables - B
-    C 67:0 UnicodeData - B
-    M 211:4 UnicodeData._compute_canonical_comp - B
-    F 379:0 gen_composition_table - B
-    F 351:0 is_first_and_last - A
-    F 358:0 gen_mph_data - A
-    F 398:0 gen_decomposition_tables - A
-    F 415:0 gen_qc_match - A
-    M 174:4 UnicodeData._load_norm_props - A
-    M 197:4 UnicodeData._load_norm_tests - A
-    F 462:0 gen_public_assigned - A
-    F 501:0 gen_tests - A
-    F 485:0 gen_stream_safe - A
-    F 375:0 gen_combining_class - A
-    F 430:0 gen_nfc_qc - A
-    F 437:0 gen_nfkc_qc - A
-    F 444:0 gen_nfd_qc - A
-    F 451:0 gen_nfkd_qc - A
-    F 458:0 gen_combining_mark - A
-    F 528:0 my_hash - A
-    M 68:4 UnicodeData.__init__ - A
-    M 92:4 UnicodeData._fetch - A
-server_rust/vendor/sqlx/examples/x.py
-    F 52:0 project - B
-    F 30:0 run - A
-    F 47:0 sqlx - A
-server_rust/vendor/sqlx/tests/x.py
-    F 93:0 run - E
-    F 38:0 maybe_fetch_sqlite_extension - A
-    F 75:0 extract_features - A
-    F 83:0 core_tls_features - A
-    F 68:0 required_feature_for_test - A
-    F 174:0 postgres_env - A
-server_rust/vendor/sqlx/tests/docker.py
-    F 23:0 start_database - C
-    F 15:0 docker_compose_command - A
-server_rust/vendor/unicode-properties/scripts/unicode.py
-    F 375:0 emit_emoji_module - C
-    F 84:0 load_general_category_properties - B
-    F 187:0 emit_general_category_module - B
-    F 52:0 load_emoji_properties - A
-    F 169:0 emit_table - A
-    F 137:0 format_table_content - A
-    F 41:0 fetch_unidata - A
-    F 157:0 escape_char_list - A
-    F 152:0 escape_char - A
-    F 494:0 emit_util_mod - A
-tests/test_rotor_seeds.py
-    F 48:0 test_all_rotors_have_different_seeds - A
-    F 61:0 test_different_keys_produce_different_seeds - A
-    F 34:0 test_seed_is_u64 - A
-    F 24:0 test_seed_is_deterministic - A
-    F 79:0 test_rotor_id_changes_seed - A
-    F 89:0 test_invalid_key_length - A
-    F 9:0 derive_rotor_seed - A
-tests/test_crypto_rotor.py
-    F 354:0 test_rotors_are_different - A
-    F 319:0 test_all_16_rotors_are_valid - A
-    F 51:0 derive_rotor_seed - A
-    F 210:0 test_splitmix64_deterministic - A
-    F 229:0 test_splitmix64_is_u64 - A
-    F 260:0 test_rotor_seeds_are_different - A
-    F 275:0 test_rotor_seed_is_u64 - A
-    F 427:0 test_all_16_rotors_forward_inverse - A
-    F 91:0 generate_rotor - A
-    F 128:0 inverse_permutation - A
-    F 220:0 test_splitmix64_different_seeds - A
-    F 243:0 test_rotor_seed_deterministic - A
-    F 293:0 test_rotor_has_256_values - A
-    F 305:0 test_rotor_is_permutation - A
-    F 337:0 test_rotor_is_deterministic - A
-    F 393:0 test_rotor_forward_inverse - A
-    F 13:0 splitmix64 - A
-    F 142:0 rotor_forward - A
-    F 168:0 rotor_inverse - A
-    F 199:0 communication_key - A
-tests/test_client.py
-    F 5:0 test_main - A
-    F 11:0 test_key - A
-tests/test_splitmix64.py
-    F 37:0 test_same_seed_same_sequence - A
-    F 59:0 test_different_seed_different_sequence - A
-    F 111:0 test_zero_seed - A
-    F 128:0 test_max_seed - A
-    F 81:0 test_output_is_u64 - A
-    F 96:0 test_state_changes - A
-    C 7:0 SplitMix64 - A
-    M 8:4 SplitMix64.__init__ - A
-    M 11:4 SplitMix64.next - A
-tests/test_fisher_yates.py
-    F 15:0 test_is_permutation - A
-    F 39:0 test_contains_every_value_once - A
-    F 47:0 test_zero_seed - A
-    F 55:0 test_max_seed - A
-    F 4:0 fisher_yates - A
-    F 23:0 test_is_deterministic - A
-    F 31:0 test_different_seeds_produce_different_permutations - A
-tests/security/test_load.py
+Ancien/admin_manager.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+tests/test_load.py
     F 50:0 run_test - A
-    F 85:0 test_main - A
+    F 85:0 main - A
     F 14:0 ping - A
-tests/security/test_sql_injection.py
-    F 447:0 test_advanced_attacks_database - D
-    F 605:0 test_binary_protocol_attacks - C
-    F 417:0 create_test_database - A
-    F 429:0 get_row_count - A
-    F 435:0 get_tables - A
-    F 410:0 open_database - A
-    C 51:0 AdvancedPayloads - A
-tests/security/test_fuzzing.py
+tests/test_sql_injection.py
+    F 47:0 receive_packet - A
+    F 70:0 test_payload - A
+    F 108:0 main - A
+    F 32:0 create_login_packet - A
+tests/test_fuzzing.py
     F 75:0 main - A
     F 30:0 send_packet - A
     F 17:0 create_packet - A
     F 48:0 random_payload - A
     F 55:0 random_packet - A
+tests/test_client.py
+    F 3:0 test_main - A
+tests/test_crypto_mix.py
+    F 11:0 rotl8 - A
+    F 24:0 rotr8 - A
+    F 52:0 test_data - A
+    F 362:0 test_rotl_rotr_inverse - A
+    F 374:0 test_mix_before_is_reversible - A
+    F 394:0 test_mix_final_is_reversible - A
+    F 414:0 test_complete_mix_chain - A
+    F 37:0 add8 - A
+    F 42:0 sub8 - A
+    F 89:0 rotor_groups - A
+    F 104:0 mix_before - A
+    F 169:0 inverse_mix_before - A
+    F 232:0 mix_final - A
+    F 296:0 inverse_mix_final - A
 security/vault.py
     F 12:0 create_key - A
-    F 103:0 get_or_create_communication_key - A
     F 30:0 load_key - A
     F 68:0 add_secret - A
-    F 79:0 get_secret - A
     F 40:0 encrypt_vault - A
     F 54:0 decrypt_vault - A
-    F 94:0 generate_communication_key - A
 scripts/update_database.py
     F 9:0 update_database - A
 scripts/recherche.py
@@ -2268,35 +1775,31 @@ scripts/database/update_docs.py
 scripts/database/update_rust.py
     F 19:0 update_rust_database - A
 client_python/main.py
-    F 12:0 main - B
+    F 8:0 main - A
 client_python/logs.py
     F 4:0 log - A
 client_python/packet.py
-    M 52:4 Packet.decode - B
-    C 18:0 Packet - A
+    M 48:4 Packet.decode - B
+    C 14:0 Packet - A
     C 5:0 PacketType - A
-    M 20:4 Packet.__init__ - A
-    M 30:4 Packet.encode - A
+    M 16:4 Packet.__init__ - A
+    M 26:4 Packet.encode - A
 client_python/client.py
-    M 87:4 Client.receive_packet - B
+    M 85:4 Client.receive_packet - B
     M 26:4 Client.connect - B
     C 7:0 Client - A
     M 118:4 Client._recv_exact - A
-    M 67:4 Client.send_packet - A
+    M 65:4 Client.send_packet - A
     M 155:4 Client.disconnect - A
     M 12:4 Client.__init__ - A
 client_python/packets/chat.py
     C 4:0 ChatPacket - A
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
-client_python/packets/singup.py
-    M 29:4 SingupPacket.from_payload - A
-    C 6:0 SingupPacket - A
-    M 8:4 SingupPacket.__init__ - A
 client_python/packets/login.py
-    M 29:4 LoginPacket.from_payload - A
-    C 6:0 LoginPacket - A
-    M 8:4 LoginPacket.__init__ - A
+    C 4:0 LoginPacket - A
+    M 6:4 LoginPacket.__init__ - A
+    M 15:4 LoginPacket.from_payload - A
 client_python/packets/move.py
     C 6:0 MovePacket - A
     M 8:4 MovePacket.__init__ - A
@@ -2307,15 +1810,9 @@ client_python/packets/ping.py
 client_python/packets/log.py
     C 4:0 LogPacket - A
     M 6:4 LogPacket.__init__ - A
-    M 12:4 LogPacket.from_payload - A
-client_python/packets/ban.py
-    C 9:0 BanPacket - A
-    M 23:4 BanPacket.from_payload - A
-    C 4:0 BanType - A
-    M 11:4 BanPacket.__init__ - A
 
-317 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.100946372239748)
+184 blocks (classes, functions, methods) analyzed.
+Average complexity: A (3.902173913043478)
 
 </details>
 
@@ -2323,9 +1820,9 @@ Average complexity: A (4.100946372239748)
 
 | Severity | Count |
 |----------|------:|
-| High | 1 |
-| Medium | 9 |
-| Low | 135 |
+| High | 0 |
+| Medium | 7 |
+| Low | 42 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -2335,105 +1832,58 @@ Average complexity: A (4.100946372239748)
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
-Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
-Run started:2026-09-01 09:44:57.072795+00:00
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
+Run started:2026-08-19 12:58:16.795492+00:00
 
 Test results:
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+>> Issue: [B403:blacklist] Consider possible security implications associated with dill module.
    Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./.github/security/attack_test.py:6:0
-5	import os
-6	import subprocess
-7	import sys
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle
+   Location: ./Ancien/admin_manager.py:12:0
+11	from PySide6.QtWidgets import QMessageBox
+12	import dill
+13	
 
 --------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./.github/security/attack_test.py:62:11
-61	
-62	    return subprocess.run(
-63	        command,
-64	        cwd=cwd,
-65	        text=True,
-66	        stdout=subprocess.PIPE,
-67	        stderr=subprocess.STDOUT,
-68	        check=check,
-69	    )
-70	
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./.github/security/test_git_security.py:5:0
-4	import re
-5	import subprocess
-6	import sys
-
---------------------------------------------------
->> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
-   Location: ./.github/security/test_git_security.py:36:11
-35	
-36	    return subprocess.run(
-37	        ["git", *arguments],
-38	        cwd=ROOT,
-39	        text=True,
-40	        stdout=subprocess.PIPE,
-41	        stderr=subprocess.STDOUT,
-42	        check=False,
-43	    )
-44	
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./.github/security/test_git_security.py:36:11
-35	
-36	    return subprocess.run(
-37	        ["git", *arguments],
-38	        cwd=ROOT,
-39	        text=True,
-40	        stdout=subprocess.PIPE,
-41	        stderr=subprocess.STDOUT,
-42	        check=False,
-43	    )
-44	
-
---------------------------------------------------
->> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
    Severity: Medium   Confidence: High
-   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./.github/security/test_web_security.py:79:13
-78	    try:
-79	        with urllib.request.urlopen(
-80	            request,
-81	            timeout=TIMEOUT,
-82	        ) as response:
-83	
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b307-eval
+   Location: ./Ancien/admin_manager.py:117:25
+116	            try:
+117	                result = eval(cmd, self.contexte)
+118	                if result is not None:
 
 --------------------------------------------------
->> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
+>> Issue: [B102:exec_used] Use of exec detected.
    Severity: Medium   Confidence: High
-   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./.github/security/test_web_security.py:281:17
-280	
-281	            with urllib.request.urlopen(
-282	                request,
-283	                timeout=TIMEOUT,
-284	            ) as response:
-285	
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b102_exec_used.html
+   Location: ./Ancien/admin_manager.py:121:16
+120	            except SyntaxError:
+121	                exec(cmd, self.contexte)
+122	        except Exception:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle
+   Location: ./Ancien/admin_manager.py:316:23
+315	            try:
+316	                data = dill.load(fichier)
+317	            except :
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle
+   Location: ./Ancien/admin_manager.py:386:23
+385	            try:
+386	                data = dill.load(fichier)
+387	            except :
 
 --------------------------------------------------
 >> Issue: [B110:try_except_pass] Try, Except, Pass detected.
@@ -2747,106 +2197,6 @@ Test results:
 888	        cumul = 0
 
 --------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:21:12
-20	        
-21	        a = random.choice(["Chat", "Login", "Ping", "Move","Singup"])
-22	        message = [
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'sfdqmjlsdlj@sqghl}^=)à)=à{¹~#fsdjfqsmkdfsdfj€'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./client_python/main.py:33:24
-32	                  ]
-33	        password_cara = "sfdqmjlsdlj@sqghl}^=)à)=à{¹~#fsdjfqsmkdfsdfj€"
-34	        password = "d"
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'd'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./client_python/main.py:34:19
-33	        password_cara = "sfdqmjlsdlj@sqghl}^=)à)=à{¹~#fsdjfqsmkdfsdfj€"
-34	        password = "d"
-35	        for i in range (0,random.randint(1,101)):
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:35:26
-34	        password = "d"
-35	        for i in range (0,random.randint(1,101)):
-36	            password += password_cara[random.randint(0,len(password_cara)-1)]
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:36:38
-35	        for i in range (0,random.randint(1,101)):
-36	            password += password_cara[random.randint(0,len(password_cara)-1)]
-37	        email = f'{random.choice(personne)}@gmail.com'
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:37:19
-36	            password += password_cara[random.randint(0,len(password_cara)-1)]
-37	        email = f'{random.choice(personne)}@gmail.com'
-38	        
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:40:42
-39	        if a == "Chat":
-40	            client.send_packet(ChatPacket(random.choice(message)))
-41	            print("chat")
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:52:42
-51	        elif a == "Move":
-52	            client.send_packet(MovePacket(random.randint(0,8096),random.randint(0,8096),random.randint(0,100)))
-53	            print("move")
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:52:65
-51	        elif a == "Move":
-52	            client.send_packet(MovePacket(random.randint(0,8096),random.randint(0,8096),random.randint(0,100)))
-53	            print("move")
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:52:88
-51	        elif a == "Move":
-52	            client.send_packet(MovePacket(random.randint(0,8096),random.randint(0,8096),random.randint(0,100)))
-53	            print("move")
-
---------------------------------------------------
 >> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
    Severity: Medium   Confidence: Medium
    CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
@@ -2929,418 +2279,50 @@ Test results:
 45	
 
 --------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./server_rust/vendor/libc/etc/libc-util.py:13:0
-12	import re
-13	import subprocess as sp
-14	import sys
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:366:4
+365	
+366	    assert result == value
+367	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/libc/etc/libc-util.py:590:8
-589	        """Ensure pattern matching is applied consistently"""
-590	        assert self.name != ""
-591	        return re.search(pat, self.name) is not None
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/libc/etc/libc-util.py:1075:11
-1074	        xtrace(args, env=kw.get("env"))
-1075	    return sp.check_output(args, encoding="utf8", text=True, **kw)
-1076	
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/libc/etc/libc-util.py:1081:11
-1080	        xtrace(args, env=kw.get("env"))
-1081	    return sp.run(args, check=True, text=True, **kw)
-1082	
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./server_rust/vendor/sqlx/examples/x.py:17:0
-16	
-17	import subprocess
-18	import time
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/sqlx/examples/x.py:37:10
-36	
-37	    res = subprocess.run(
-38	        command.split(" "),
-39	        env=os.environ | env,
-40	        cwd=cwd,
-41	    )
-42	
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:1:0
-1	import subprocess
-2	import sys
-3	import time
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:38:10
-37	    compose_args = [*compose_cmd, "-p", "sqlx"]
-38	    res = subprocess.run(
-39	        [*compose_args, "up", "-d", driver],
-40	        stdout=subprocess.PIPE,
-41	        stderr=subprocess.PIPE,
-42	        cwd=dir_tests,
-43	    )
-44	
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:51:10
-50	
-51	    res = subprocess.run(
-52	        [*compose_args, "ps", "-q", driver],
-53	        stdout=subprocess.PIPE,
-54	        stderr=subprocess.PIPE,
-55	        cwd=dir_tests,
-56	    )
-57	
-
---------------------------------------------------
->> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:78:10
-77	    format_arg = f"{{{{(index (index .NetworkSettings.Ports \"{port}/tcp\") 0).HostPort}}}}"
-78	    res = subprocess.run(
-79	        ["docker", "inspect", "-f", format_arg, container_id],
-80	        stdout=subprocess.PIPE,
-81	        stderr=subprocess.PIPE,
-82	        cwd=dir_tests,
-83	    )
-84	
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:78:10
-77	    format_arg = f"{{{{(index (index .NetworkSettings.Ports \"{port}/tcp\") 0).HostPort}}}}"
-78	    res = subprocess.run(
-79	        ["docker", "inspect", "-f", format_arg, container_id],
-80	        stdout=subprocess.PIPE,
-81	        stderr=subprocess.PIPE,
-82	        cwd=dir_tests,
-83	    )
-84	
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:96:14
-95	        mysql_args.extend(["-e", "GRANT ALL PRIVILEGES ON *.* TO 'root' WITH GRANT OPTION;"])
-96	        res = subprocess.run(
-97	            mysql_args,
-98	            stdout=subprocess.PIPE,
-99	            stderr=subprocess.PIPE,
-100	            cwd=dir_tests,
-101	        )
-102	
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: ''
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:108:19
-107	    if driver.endswith("client_ssl"):
-108	        password = ""
-109	    else:
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: ':password'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./server_rust/vendor/sqlx/tests/docker.py:110:19
-109	    else:
-110	        password = ":password"
-111	
-
---------------------------------------------------
->> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./server_rust/vendor/sqlx/tests/x.py:3:0
-2	
-3	import subprocess
-4	import os
-
---------------------------------------------------
->> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
-   Severity: Medium   Confidence: High
-   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./server_rust/vendor/sqlx/tests/x.py:61:18
-60	    if not os.path.exists(filename):
-61	        content = urllib.request.urlopen(download_url).read()
-62	        with open(filename, "wb") as fd:
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: '--features'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./server_rust/vendor/sqlx/tests/x.py:78:20
-77	    for i, token in enumerate(tokens):
-78	        if token == "--features" and i + 1 < len(tokens):
-79	            return set(tokens[i + 1].split(","))
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./server_rust/vendor/sqlx/tests/x.py:161:10
-160	    cwd = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-161	    res = subprocess.run(
-162	        [
-163	            *command.split(" "),
-164	            *command_args
-165	        ],
-166	        env=dict(list(os.environ.items()) + list(environ.items())),
-167	        cwd=cwd,
-168	    )
-169	
-
---------------------------------------------------
->> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
-   Severity: Medium   Confidence: High
-   CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:93:15
-92	    def _fetch(self, filename):
-93	        resp = urllib.request.urlopen(UCD_URL + filename)
-94	        return resp.read().decode('utf-8')
+   Location: ./tests/test_crypto_mix.py:386:4
+385	
+386	    assert decrypted == plaintext
+387	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:111:12
-110	            pieces = line.split(';')
-111	            assert len(pieces) == 15
-112	            char, name, category, cc, decomp = pieces[0], pieces[1], pieces[2], pieces[3], pieces[5]
+   Location: ./tests/test_crypto_mix.py:406:4
+405	
+406	    assert decrypted == value
+407	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:129:12
-128	
-129	            assert category != 'Cn', "Unexpected: Unassigned codepoint in UnicodeData.txt"
-130	            if category not in ['Co', 'Cs']:
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:162:12
-161	
-162	            assert not char_int in self.combining_classes, "Unexpected: CJK compat variant with a combining class"
-163	            assert not char_int in self.compat_decomp, "Unexpected: CJK compat variant and compatibility decomposition"
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:163:12
-162	            assert not char_int in self.combining_classes, "Unexpected: CJK compat variant with a combining class"
-163	            assert not char_int in self.compat_decomp, "Unexpected: CJK compat variant and compatibility decomposition"
-164	            assert len(self.canon_decomp[char_int]) == 1, "Unexpected: CJK compat variant and non-singleton canonical decomposition"
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:164:12
-163	            assert not char_int in self.compat_decomp, "Unexpected: CJK compat variant and compatibility decomposition"
-164	            assert len(self.canon_decomp[char_int]) == 1, "Unexpected: CJK compat variant and non-singleton canonical decomposition"
-165	            # If we ever need to handle Hangul here, we'll need to handle it separately.
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:166:12
-165	            # If we ever need to handle Hangul here, we'll need to handle it separately.
-166	            assert not (S_BASE <= char_int < S_BASE + S_COUNT)
-167	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:170:16
-169	            for c in cjk_compat_variant_parts:
-170	                assert not c in self.canon_decomp, "Unexpected: CJK compat variant is unnormalized (canon)"
-171	                assert not c in self.compat_decomp, "Unexpected: CJK compat variant is unnormalized (compat)"
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:171:16
-170	                assert not c in self.canon_decomp, "Unexpected: CJK compat variant is unnormalized (canon)"
-171	                assert not c in self.compat_decomp, "Unexpected: CJK compat variant is unnormalized (compat)"
-172	            self.cjk_compat_variants_fully_decomp[char_int] = cjk_compat_variant_parts
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:184:12
-183	
-184	            assert len(prop_pieces) <= 3
-185	            (low, _, high) = prop_pieces[0].strip().partition("..")
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:221:12
-220	
-221	            assert len(decomp) == 2
-222	            assert (decomp[0], decomp[1]) not in canon_comp
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:222:12
-221	            assert len(decomp) == 2
-222	            assert (decomp[0], decomp[1]) not in canon_comp
-223	            canon_comp[(decomp[0], decomp[1])] = char_int
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:253:12
-252	            # Assert that we're handling Hangul separately.
-253	            assert not (S_BASE <= char_int < S_BASE + S_COUNT)
-254	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:297:8
-296	        # that first when normalizing to NFKD.
-297	        assert set(canon_fully_decomp) <= set(compat_fully_decomp)
-298	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:410:8
-409	        # The largest offset must fit in a u16.
-410	        assert offset < 65536
-411	        out.write("];\n")
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-normalization/scripts/unicode.py:419:8
-418	    for low, high, data in prop_table:
-419	        assert data in ('N', 'M')
-420	        result = "No" if data == 'N' else "Maybe"
-
---------------------------------------------------
->> Issue: [B605:start_process_with_a_shell] Starting a process with a shell, possible injection detected, security issue.
-   Severity: High   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html
-   Location: ./server_rust/vendor/unicode-properties/scripts/unicode.py:43:8
-42	    if not os.path.exists(os.path.basename(f)):
-43	        os.system("curl -O https://www.unicode.org/Public/%s/ucd/%s"
-44	                  % (UNICODE_VERSION_NUMBER, f))
-45	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-properties/scripts/unicode.py:122:12
-121	        if m3:
-122	            assert(special_group_text == m3.group(1))
-123	            assert(special_group_gc == d_gc)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./server_rust/vendor/unicode-properties/scripts/unicode.py:123:12
-122	            assert(special_group_text == m3.group(1))
-123	            assert(special_group_gc == d_gc)
-124	            d_lo = special_group_lo
+   Location: ./tests/test_crypto_mix.py:436:4
+435	    print(value,plaintext)
+436	    assert value == plaintext
 
 --------------------------------------------------
 >> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
    Severity: Low   Confidence: High
    CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./tests/security/test_fuzzing.py:50:11
+   Location: ./tests/test_fuzzing.py:50:11
 49	
 50	    size = random.randint(0, 4096)
 51	
@@ -3350,7 +2332,7 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./tests/security/test_fuzzing.py:57:18
+   Location: ./tests/test_fuzzing.py:57:18
 56	
 57	    packet_type = random.choice([
 58	        1,      # PING
@@ -3366,564 +2348,30 @@ Test results:
 68	
 
 --------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'test'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./tests/security/test_sql_injection.py:134:16
-133	                "email": "test\u2019 OR \u20181\u2019=\u20181@test.com",  # ' OR '1'='1
-134	                "password": "test",
-135	            },
-136	            # Null byte injection (if not filtered)
-137	            {
-138	                "name": "Null byte injection",
-139	                "email": "test\x00admin@test.com",
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'test'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./tests/security/test_sql_injection.py:140:16
-139	                "email": "test\x00admin@test.com",
-140	                "password": "test",
-141	            },
-142	            # Invalid UTF-8 sequences
-143	            {
-144	                "name": "Invalid UTF-8",
-145	                "email": "test\xff\xfe@test.com",
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'test'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./tests/security/test_sql_injection.py:146:16
-145	                "email": "test\xff\xfe@test.com",
-146	                "password": "test",
-147	            },
-148	            # Control characters
-149	            {
-150	                "name": "Control characters (bell, etc)",
-151	                "email": "test\x07\x08\x09@test.com",
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'test'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./tests/security/test_sql_injection.py:152:16
-151	                "email": "test\x07\x08\x09@test.com",
-152	                "password": "test",
-153	            },
-154	            # Bidirectional text
-155	            {
-156	                "name": "Bidirectional override (U+202E)",
-157	                "email": "test\u202e@test.com",
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'test'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./tests/security/test_sql_injection.py:158:16
-157	                "email": "test\u202e@test.com",
-158	                "password": "test",
-159	            },
-160	        ]
-161	
-162	    # ================================================================
-163	    # PARSER EDGE CASES
-
---------------------------------------------------
->> Issue: [B110:try_except_pass] Try, Except, Pass detected.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
-   Location: ./tests/security/test_sql_injection.py:360:16
-359	                
-360	                except:
-361	                    pass
-362	                
-
---------------------------------------------------
->> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
-   Severity: Medium   Confidence: Medium
-   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
-   Location: ./tests/security/test_sql_injection.py:431:34
-430	    """Get row count"""
-431	    result = connection.execute(f'SELECT COUNT(*) FROM "{table}"').fetchone()
-432	    return int(result[0]) if result else 0
-
---------------------------------------------------
->> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
-   Severity: Medium   Confidence: Low
-   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
-   Location: ./tests/security/test_sql_injection.py:485:30
-484	                try:
-485	                    query = f"SELECT * FROM users WHERE email = '{payload}' LIMIT 1"
-486	                    cursor = conn.execute(query)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_client.py:9:4
-8	
-9	    assert exc.value.code == 1
-10	    
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:65:4
-64	
-65	    assert len(communication_key) == 64
-66	    assert 1 <= rotor_id <= 16
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:66:4
-65	    assert len(communication_key) == 64
-66	    assert 1 <= rotor_id <= 16
-67	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:216:4
-215	
-216	    assert state1 == state2
-217	    assert value1 == value2
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:217:4
-216	    assert state1 == state2
-217	    assert value1 == value2
-218	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:226:4
-225	
-226	    assert value1 != value2
-227	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:235:4
-234	
-235	    assert 0 <= state <= MASK_64
-236	    assert 0 <= value <= MASK_64
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:236:4
-235	    assert 0 <= state <= MASK_64
-236	    assert 0 <= value <= MASK_64
-237	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:257:4
-256	
-257	    assert seed1 == seed2
-258	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:272:4
-271	
-272	    assert len(set(seeds)) == 16
-273	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:286:8
-285	
-286	        assert 0 <= seed <= MASK_64
-287	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:302:4
-301	
-302	    assert len(rotor) == 256
-303	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:314:4
-313	
-314	    assert sorted(rotor) == list(
-315	        range(256)
-316	    )
-317	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:330:8
-329	
-330	        assert len(rotor) == 256
-331	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:332:8
-331	
-332	        assert sorted(rotor) == list(
-333	            range(256)
-334	        )
-335	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:351:4
-350	
-351	    assert rotor1 == rotor2
-352	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:370:12
-369	
-370	            assert rotors[i] != rotors[j]
-371	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:416:4
-415	
-416	    assert decrypted == value
-417	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:455:8
-454	
-455	        assert decrypted == value
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:19:4
-18	
-19	    assert len(rotor) == 256
-20	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:20:4
-19	    assert len(rotor) == 256
-20	    assert sorted(rotor) == list(range(256))
-21	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:28:4
-27	
-28	    assert rotor_a == rotor_b
-29	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:36:4
-35	
-36	    assert rotor_a != rotor_b
-37	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:44:8
-43	    for value in range(256):
-44	        assert rotor.count(value) == 1
-45	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:51:4
-50	
-51	    assert len(rotor) == 256
-52	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:52:4
-51	    assert len(rotor) == 256
-52	    assert sorted(rotor) == list(range(256))
-53	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:59:4
-58	
-59	    assert len(rotor) == 256
-60	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:60:4
-59	    assert len(rotor) == 256
-60	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:31:4
-30	
-31	    assert seed_a == seed_b
-32	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:45:8
-44	
-45	        assert 0 <= seed <= MASK64
-46	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:57:4
-56	
-57	    assert len(seeds) == 16
-58	    assert len(set(seeds)) == 16
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:58:4
-57	    assert len(seeds) == 16
-58	    assert len(set(seeds)) == 16
-59	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:76:4
-75	
-76	    assert seeds_a != seeds_b
-77	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:86:4
-85	
-86	    assert seed_1 != seed_2
-87	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:100:4
-99	
-100	    assert isinstance(seed, int)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:52:4
-51	
-52	    assert sequence_a == sequence_b
-53	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:74:4
-73	
-74	    assert sequence_a != sequence_b
-75	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:89:8
-88	
-89	        assert 0 <= value <= MASK64
-90	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:104:4
-103	
-104	    assert generator.state != first_state
-105	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:120:4
-119	
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:121:4
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
-122	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:137:4
-136	
-137	    assert len(values) == 10
-138	    assert all(
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:138:4
-137	    assert len(values) == 10
-138	    assert all(
-139	        0 <= value <= MASK64
-140	        for value in values
-141	    )
-
---------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12292
+	Total lines of code: 7796
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 135
-		Medium: 9
-		High: 1
+		Low: 42
+		Medium: 7
+		High: 0
 	Total issues (by confidence):
 		Undefined: 0
-		Low: 1
-		Medium: 14
-		High: 130
+		Low: 0
+		Medium: 3
+		High: 46
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 7.22/10
+**Global score:** 6.60/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4588,457 +3036,123 @@ Ancien/horloge.py:221:19: W0622: Redefining built-in 'id' (redefined-builtin)
 Ancien/horloge.py:224:4: C2801: Unnecessarily calls dunder method __init__. Instantiate class directly. (unnecessary-dunder-call)
 Ancien/horloge.py:5:0: W0611: Unused Optional imported from typing (unused-import)
 Ancien/horloge.py:5:0: W0611: Unused Any imported from typing (unused-import)
-************* Module server_rust.vendor.libc.etc.libc-util
-server_rust/vendor/libc/etc/libc-util.py:242:0: C0301: Line too long (102/100) (line-too-long)
-server_rust/vendor/libc/etc/libc-util.py:1:0: C0302: Too many lines in module (1112/1000) (too-many-lines)
-server_rust/vendor/libc/etc/libc-util.py:1:0: C0103: Module name "libc-util" doesn't conform to snake_case naming style (invalid-name)
-server_rust/vendor/libc/etc/libc-util.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:142:4: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:161:12: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/libc/etc/libc-util.py:164:12: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/libc/etc/libc-util.py:192:4: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:233:4: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:233:4: R0914: Too many local variables (22/15) (too-many-locals)
-server_rust/vendor/libc/etc/libc-util.py:285:16: W0621: Redefining name 'pr_url' from outer scope (line 1063) (redefined-outer-name)
-server_rust/vendor/libc/etc/libc-util.py:462:4: W0102: Dangerous default value [] as argument (dangerous-default-value)
-server_rust/vendor/libc/etc/libc-util.py:462:4: R0914: Too many local variables (20/15) (too-many-locals)
-server_rust/vendor/libc/etc/libc-util.py:462:4: R0912: Too many branches (16/12) (too-many-branches)
-server_rust/vendor/libc/etc/libc-util.py:462:4: R0915: Too many statements (53/50) (too-many-statements)
-server_rust/vendor/libc/etc/libc-util.py:570:4: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:675:4: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:705:12: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/libc/etc/libc-util.py:725:16: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/libc/etc/libc-util.py:804:16: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/libc/etc/libc-util.py:826:12: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/libc/etc/libc-util.py:862:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-server_rust/vendor/libc/etc/libc-util.py:928:12: R1713: Consider using str.join(sequence) for concatenating strings from an iterable (consider-using-join)
-server_rust/vendor/libc/etc/libc-util.py:955:4: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:984:0: R0902: Too many instance attributes (8/7) (too-many-instance-attributes)
-server_rust/vendor/libc/etc/libc-util.py:1016:4: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:1052:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:1059:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:1063:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:1072:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:1078:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/libc/etc/libc-util.py:1107:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module server_rust.vendor.unicode-normalization.scripts.unicode
-server_rust/vendor/unicode-normalization/scripts/unicode.py:104:0: W0301: Unnecessary semicolon (unnecessary-semicolon)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:105:0: W0301: Unnecessary semicolon (unnecessary-semicolon)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:106:0: W0301: Unnecessary semicolon (unnecessary-semicolon)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:135:0: W0301: Unnecessary semicolon (unnecessary-semicolon)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:162:0: C0301: Line too long (114/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:163:0: C0301: Line too long (119/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:164:0: C0301: Line too long (132/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:166:0: C0325: Unnecessary parens after 'not' keyword (superfluous-parens)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:170:0: C0301: Line too long (107/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:171:0: C0301: Line too long (109/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:253:0: C0325: Unnecessary parens after 'not' keyword (superfluous-parens)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:392:0: C0301: Line too long (116/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:399:0: C0301: Line too long (129/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:599:0: C0301: Line too long (127/100) (line-too-long)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:26:10: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:67:0: C0115: Missing class docstring (missing-class-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:67:0: R0205: Class 'UnicodeData' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:67:0: R0902: Too many instance attributes (14/7) (too-many-instance-attributes)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:81:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:93:15: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:189:12: W0621: Redefining name 'data' from outer scope (line 584) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:258:20: R1737: Use 'yield from' directly instead of yielding each element one by one (use-yield-from)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:264:20: R1737: Use 'yield from' directly instead of yielding each element one by one (use-yield-from)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:271:24: W3301: Do not use nested call of 'max'; it's possible to do 'max(*self.canon_decomp.keys(), *self.compat_decomp.keys())' instead (nested-min-max)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:67:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:347:9: C3001: Lambda expression assigned to a variable. Define a function using the "def" keyword instead. (unnecessary-lambda-assignment)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:347:9: W0108: Lambda may not be necessary (unnecessary-lambda)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:347:19: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:351:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:358:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:360:4: E0606: Possibly using variable 'out' before assignment (possibly-used-before-assignment)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:375:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:375:43: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:375:43: W0613: Unused argument 'out' (unused-argument)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:379:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:379:38: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:384:5: W0612: Unused variable 'salt' (unused-variable)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:384:11: W0612: Unused variable 'keys' (unused-variable)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:398:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:398:86: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:403:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:413:40: W0640: Cell variable offsets defined in loop (cell-var-from-loop)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:413:64: W0640: Cell variable table defined in loop (cell-var-from-loop)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:415:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:415:29: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:418:19: W0621: Redefining name 'data' from outer scope (line 584) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:430:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:430:28: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:437:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:437:29: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:444:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:444:28: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:451:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:451:29: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:458:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:458:46: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:460:8: W0108: Lambda may not be necessary (unnecessary-lambda)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:460:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:458:46: W0613: Unused argument 'out' (unused-argument)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:462:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:462:58: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:485:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:485:39: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:501:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:501:21: W0621: Redefining name 'out' from outer scope (line 585) (redefined-outer-name)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:514:18: C3001: Lambda expression assigned to a variable. Define a function using the "def" keyword instead. (unnecessary-lambda-assignment)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:518:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:519:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:520:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:521:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:522:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:528:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:536:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:552:8: R1723: Unnecessary "else" after "break", remove the "else" and de-indent the code inside it (no-else-break)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:580:16: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:585:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:591:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:593:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-normalization/scripts/unicode.py:615:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-************* Module server_rust.vendor.sqlx.examples.x
-server_rust/vendor/sqlx/examples/x.py:48:0: C0301: Line too long (103/100) (line-too-long)
-server_rust/vendor/sqlx/examples/x.py:87:0: C0301: Line too long (104/100) (line-too-long)
-server_rust/vendor/sqlx/examples/x.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/sqlx/examples/x.py:17:0: C0413: Import "import subprocess" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:18:0: C0413: Import "import time" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:19:0: C0413: Import "import argparse" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:20:0: C0413: Import "import runpy" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:21:0: E0401: Unable to import 'docker' (import-error)
-server_rust/vendor/sqlx/examples/x.py:21:0: C0413: Import "from docker import start_database" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/examples/x.py:37:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/examples/x.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/examples/x.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/examples/x.py:83:15: C0123: Use isinstance() rather than type() for a typecheck. (unidiomatic-typecheck)
-server_rust/vendor/sqlx/examples/x.py:18:0: W0611: Unused import time (unused-import)
-************* Module server_rust.vendor.sqlx.tests.x
-server_rust/vendor/sqlx/tests/x.py:127:0: C0301: Line too long (125/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:140:0: C0301: Line too long (116/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:199:0: C0301: Line too long (151/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:246:0: C0301: Line too long (122/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:260:0: C0301: Line too long (106/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:271:0: C0301: Line too long (110/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:282:0: C0301: Line too long (110/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:284:0: C0301: Line too long (181/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:295:0: C0301: Line too long (103/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:296:0: C0301: Line too long (112/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:312:0: C0301: Line too long (108/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:325:0: C0301: Line too long (107/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:348:0: C0301: Line too long (103/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:349:0: C0301: Line too long (112/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:366:0: C0301: Line too long (177/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:381:0: C0301: Line too long (111/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:380:1: W0511: TODO: Use [grcov] if available (fixme)
-server_rust/vendor/sqlx/tests/x.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/sqlx/tests/x.py:11:0: E0401: Unable to import 'docker' (import-error)
-server_rust/vendor/sqlx/tests/x.py:45:4: C0103: Variable name "BASE_URL" doesn't conform to snake_case naming style (invalid-name)
-server_rust/vendor/sqlx/tests/x.py:61:18: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
-server_rust/vendor/sqlx/tests/x.py:65:11: C0207: Use filename.split('.', maxsplit=1)[0] instead (use-maxsplit-arg)
-server_rust/vendor/sqlx/tests/x.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:83:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:83:22: W0621: Redefining name 'tls' from outer scope (line 197) (redefined-outer-name)
-server_rust/vendor/sqlx/tests/x.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:93:0: R0913: Too many arguments (7/5) (too-many-arguments)
-server_rust/vendor/sqlx/tests/x.py:93:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
-server_rust/vendor/sqlx/tests/x.py:146:12: W0621: Redefining name 'features' from outer scope (line 297) (redefined-outer-name)
-server_rust/vendor/sqlx/tests/x.py:161:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/x.py:93:0: R0912: Too many branches (24/12) (too-many-branches)
-server_rust/vendor/sqlx/tests/x.py:174:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:174:17: W0621: Redefining name 'version' from outer scope (line 257) (redefined-outer-name)
-server_rust/vendor/sqlx/tests/x.py:6:0: W0611: Unused import time (unused-import)
-************* Module server_rust.vendor.sqlx.tests.docker
-server_rust/vendor/sqlx/tests/docker.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/sqlx/tests/docker.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/docker.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/docker.py:38:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:51:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:78:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:96:14: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:113:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
-server_rust/vendor/sqlx/tests/docker.py:23:0: R0912: Too many branches (19/12) (too-many-branches)
-************* Module server_rust.vendor.unicode-properties.scripts.unicode
-server_rust/vendor/unicode-properties/scripts/unicode.py:122:0: C0325: Unnecessary parens after 'assert' keyword (superfluous-parens)
-server_rust/vendor/unicode-properties/scripts/unicode.py:123:0: C0325: Unnecessary parens after 'assert' keyword (superfluous-parens)
-server_rust/vendor/unicode-properties/scripts/unicode.py:364:0: C0301: Line too long (124/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:365:0: C0301: Line too long (116/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:366:0: C0301: Line too long (128/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:367:0: C0301: Line too long (117/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:370:0: C0301: Line too long (117/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:427:0: C0303: Trailing whitespace (trailing-whitespace)
-server_rust/vendor/unicode-properties/scripts/unicode.py:429:0: C0301: Line too long (140/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:430:0: C0301: Line too long (113/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:435:0: C0303: Trailing whitespace (trailing-whitespace)
-server_rust/vendor/unicode-properties/scripts/unicode.py:472:0: C0301: Line too long (125/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:473:0: C0301: Line too long (147/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:476:0: C0301: Line too long (143/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:483:0: C0301: Line too long (125/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:486:0: C0301: Line too long (127/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:19:0: C0410: Multiple imports on one line (fileinput, re, os, sys, operator) (multiple-imports)
-server_rust/vendor/unicode-properties/scripts/unicode.py:21:0: C0103: Constant name "preamble" doesn't conform to UPPER_CASE naming style (invalid-name)
-server_rust/vendor/unicode-properties/scripts/unicode.py:38:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:41:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:43:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:47:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:48:8: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/unicode-properties/scripts/unicode.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:84:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:84:0: R0914: Too many local variables (19/15) (too-many-locals)
-server_rust/vendor/unicode-properties/scripts/unicode.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:152:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:157:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: R0913: Too many arguments (7/5) (too-many-arguments)
-server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
-server_rust/vendor/unicode-properties/scripts/unicode.py:170:23: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:176:12: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:187:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:358:4: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
-server_rust/vendor/unicode-properties/scripts/unicode.py:371:27: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:375:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:444:8: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
-server_rust/vendor/unicode-properties/scripts/unicode.py:443:4: R0911: Too many return statements (11/6) (too-many-return-statements)
-server_rust/vendor/unicode-properties/scripts/unicode.py:470:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
-server_rust/vendor/unicode-properties/scripts/unicode.py:481:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
-server_rust/vendor/unicode-properties/scripts/unicode.py:491:27: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:494:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:523:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-server_rust/vendor/unicode-properties/scripts/unicode.py:527:17: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:19:0: W0611: Unused import operator (unused-import)
+************* Module Ancien.admin_manager
+Ancien/admin_manager.py:8:0: C0301: Line too long (116/100) (line-too-long)
+Ancien/admin_manager.py:161:0: C0301: Line too long (110/100) (line-too-long)
+Ancien/admin_manager.py:240:36: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/admin_manager.py:247:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/admin_manager.py:251:0: C0301: Line too long (134/100) (line-too-long)
+Ancien/admin_manager.py:253:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/admin_manager.py:256:0: C0301: Line too long (172/100) (line-too-long)
+Ancien/admin_manager.py:328:0: C0301: Line too long (110/100) (line-too-long)
+Ancien/admin_manager.py:402:0: C0301: Line too long (116/100) (line-too-long)
+Ancien/admin_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/admin_manager.py:2:0: E0401: Unable to import 'debugger' (import-error)
+Ancien/admin_manager.py:4:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
+Ancien/admin_manager.py:4:0: E0611: No name 'QTimer' in module 'PySide6.QtCore' (no-name-in-module)
+Ancien/admin_manager.py:7:0: E0401: Unable to import 'table_de_conversion' (import-error)
+Ancien/admin_manager.py:8:0: E0401: Unable to import 'inventaire' (import-error)
+Ancien/admin_manager.py:11:0: E0611: No name 'QMessageBox' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/admin_manager.py:19:0: C0103: Variable name "IS_ADMIN" doesn't conform to snake_case naming style (invalid-name)
+Ancien/admin_manager.py:20:0: C0103: Constant name "_console" doesn't conform to UPPER_CASE naming style (invalid-name)
+Ancien/admin_manager.py:21:0: C0103: Constant name "_current_joueur" doesn't conform to UPPER_CASE naming style (invalid-name)
+Ancien/admin_manager.py:23:0: C0103: Variable name "IS_ADMIN" doesn't conform to snake_case naming style (invalid-name)
+Ancien/admin_manager.py:25:0: C0103: Constant name "_console_frame" doesn't conform to UPPER_CASE naming style (invalid-name)
+Ancien/admin_manager.py:27:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:29:15: W1114: Positional arguments appear to be out of order (arguments-out-of-order)
+Ancien/admin_manager.py:43:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:68:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/admin_manager.py:68:19: I1101: Module 'PySide6.QtWidgets' has no 'QWidget' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:82:17: I1101: Module 'PySide6.QtWidgets' has no 'QVBoxLayout' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:84:22: I1101: Module 'PySide6.QtWidgets' has no 'QTextEdit' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:87:22: I1101: Module 'PySide6.QtWidgets' has no 'QLineEdit' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:99:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:102:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:122:15: W0718: Catching too general exception Exception (broad-exception-caught)
+Ancien/admin_manager.py:117:25: W0123: Use of eval (eval-used)
+Ancien/admin_manager.py:121:16: W0122: Use of exec (exec-used)
+Ancien/admin_manager.py:126:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:126:4: R0912: Too many branches (14/12) (too-many-branches)
+Ancien/admin_manager.py:256:8: W0106: Expression "self.log(f"[ADMIN] {nom_objet} x{qty} ajouté(e)(s) à l'inventaire.") if not nom_objet.startswith('livre enchant') else self.log(' Vos livres ont bien été ajoutés')" is assigned to nothing (expression-not-assigned)
+Ancien/admin_manager.py:173:4: R0912: Too many branches (13/12) (too-many-branches)
+Ancien/admin_manager.py:246:16: W0612: Unused variable 'i' (unused-variable)
+Ancien/admin_manager.py:317:12: W0702: No exception type(s) specified (bare-except)
+Ancien/admin_manager.py:387:12: W0702: No exception type(s) specified (bare-except)
+Ancien/admin_manager.py:443:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:444:4: W0603: Using the global statement (global-statement)
+Ancien/admin_manager.py:463:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:464:4: C0103: Function name "keyPressEvent" doesn't conform to snake_case naming style (invalid-name)
+Ancien/admin_manager.py:486:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:488:10: I1101: Module 'PySide6.QtWidgets' has no 'QInputDialog' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:489:24: I1101: Module 'PySide6.QtWidgets' has no 'QLineEdit' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:492:21: I1101: Module 'PySide6.QtWidgets' has no 'QDialog' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:512:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+Ancien/admin_manager.py:5:0: C0411: standard import "functools.wraps" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt" (wrong-import-order)
+Ancien/admin_manager.py:6:0: C0411: standard import "json" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt" (wrong-import-order)
+Ancien/admin_manager.py:9:0: C0411: standard import "re" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt", "table_de_conversion.qtes", "inventaire.safe_increment" (wrong-import-order)
+Ancien/admin_manager.py:10:0: C0411: standard import "configparser" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt", "table_de_conversion.qtes", "inventaire.safe_increment" (wrong-import-order)
+Ancien/admin_manager.py:11:0: C0412: Imports from package PySide6 are not grouped (ungrouped-imports)
+Ancien/admin_manager.py:4:0: W0611: Unused QTimer imported from PySide6.QtCore (unused-import)
+Ancien/admin_manager.py:8:0: W0611: Unused Objet imported from inventaire (unused-import)
 ************* Module tests.__init__
 tests/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
-************* Module tests.test_rotor_seeds
-tests/test_rotor_seeds.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_seeds.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module tests.test_crypto_rotor
-tests/test_crypto_rotor.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_crypto_rotor.py:52:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:92:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:199:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:210:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:220:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:229:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:243:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:244:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:260:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:261:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:275:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:276:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:293:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:294:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:305:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:306:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:319:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:320:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:337:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:338:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:354:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:355:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:393:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:394:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:427:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:428:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
+************* Module tests.test_load
+tests/test_load.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_load.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_load.py:45:11: W0718: Catching too general exception Exception (broad-exception-caught)
+tests/test_load.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_load.py:85:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_sql_injection
+tests/test_sql_injection.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_sql_injection.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_sql_injection.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_sql_injection.py:70:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_sql_injection.py:103:11: W0718: Catching too general exception Exception (broad-exception-caught)
+tests/test_sql_injection.py:108:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_fuzzing
+tests/test_fuzzing.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_fuzzing.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
+tests/test_fuzzing.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fuzzing.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.test_client
-tests/test_client.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
+tests/test_client.py:5:0: C0305: Trailing newlines (trailing-newlines)
 tests/test_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_client.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_client.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_client.py:3:0: C0411: third party import "pytest" should be placed before first party imports "client_python.main.main", "security.vault"  (wrong-import-order)
-************* Module tests.test_splitmix64
-tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_splitmix64.py:7:0: C0115: Missing class docstring (missing-class-docstring)
-tests/test_splitmix64.py:11:4: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:7:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-tests/test_splitmix64.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:81:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
-************* Module tests.test_fisher_yates
-tests/test_fisher_yates.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_fisher_yates.py:1:0: E0401: Unable to import 'test_splitmix64' (import-error)
-tests/test_fisher_yates.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:31:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module tests.security.test_load
-tests/security/test_load.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/security/test_load.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_load.py:45:11: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_load.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_load.py:85:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module tests.security.test_sql_injection
-tests/security/test_sql_injection.py:107:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:113:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:117:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:221:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:225:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:228:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:231:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:264:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:303:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:305:0: C0301: Line too long (196/100) (line-too-long)
-tests/security/test_sql_injection.py:309:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:354:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:359:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:362:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:509:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:530:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:543:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:546:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:563:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:669:0: C0303: Trailing whitespace (trailing-whitespace)
-tests/security/test_sql_injection.py:119:19: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_sql_injection.py:119:12: W0612: Unused variable 'e' (unused-variable)
-tests/security/test_sql_injection.py:126:4: R0903: Too few public methods (0/2) (too-few-public-methods)
-tests/security/test_sql_injection.py:212:4: R0903: Too few public methods (0/2) (too-few-public-methods)
-tests/security/test_sql_injection.py:312:16: W0702: No exception type(s) specified (bare-except)
-tests/security/test_sql_injection.py:360:16: W0702: No exception type(s) specified (bare-except)
-tests/security/test_sql_injection.py:345:16: W0612: Unused variable 'pwd' (unused-variable)
-tests/security/test_sql_injection.py:333:4: R0903: Too few public methods (1/2) (too-few-public-methods)
-tests/security/test_sql_injection.py:406:19: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_sql_injection.py:391:16: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
-tests/security/test_sql_injection.py:376:8: R0911: Too many return statements (9/6) (too-many-return-statements)
-tests/security/test_sql_injection.py:372:4: R0903: Too few public methods (1/2) (too-few-public-methods)
-tests/security/test_sql_injection.py:51:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-tests/security/test_sql_injection.py:422:15: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
-tests/security/test_sql_injection.py:447:0: R0914: Too many local variables (33/15) (too-many-locals)
-tests/security/test_sql_injection.py:458:10: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
-tests/security/test_sql_injection.py:535:30: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
-tests/security/test_sql_injection.py:548:22: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
-tests/security/test_sql_injection.py:587:22: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
-tests/security/test_sql_injection.py:591:22: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
-tests/security/test_sql_injection.py:447:0: R0912: Too many branches (24/12) (too-many-branches)
-tests/security/test_sql_injection.py:447:0: R0915: Too many statements (98/50) (too-many-statements)
-tests/security/test_sql_injection.py:566:16: W0612: Unused variable 'success' (unused-variable)
-tests/security/test_sql_injection.py:614:4: C0103: Variable name "HOST" doesn't conform to snake_case naming style (invalid-name)
-tests/security/test_sql_injection.py:615:4: C0103: Variable name "PORT" doesn't conform to snake_case naming style (invalid-name)
-tests/security/test_sql_injection.py:633:11: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_sql_injection.py:653:15: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_sql_injection.py:675:15: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_sql_injection.py:691:11: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_sql_injection.py:605:0: R0912: Too many branches (13/12) (too-many-branches)
-tests/security/test_sql_injection.py:682:19: W0612: Unused variable 'failures' (unused-variable)
-tests/security/test_sql_injection.py:23:0: W0611: Unused Any imported from typing (unused-import)
-************* Module tests.security.test_fuzzing
-tests/security/test_fuzzing.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/security/test_fuzzing.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_fuzzing.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_git_security
-.github/security/test_git_security.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_git_security.py:46:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_git_security.py:46:0: R0912: Too many branches (13/12) (too-many-branches)
-.github/security/test_git_security.py:6:0: W0611: Unused import sys (unused-import)
-************* Module .github.security.test_python_security
-.github/security/test_python_security.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:36:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_python_security.py:45:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:64:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:64:4: C0103: Method name "visit_Call" doesn't conform to snake_case naming style (invalid-name)
-.github/security/test_python_security.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:242:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:5:0: W0611: Unused import sys (unused-import)
-************* Module .github.security.integrity_check
-.github/security/integrity_check.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:121:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:162:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:185:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_filesystem
-.github/security/test_filesystem.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:56:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:62:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:4:0: W0611: Unused import os (unused-import)
-.github/security/test_filesystem.py:6:0: W0611: Unused import sys (unused-import)
-************* Module .github.security.test_rust_security
-.github/security/test_rust_security.py:37:12: E0602: Undefined variable 'r' (undefined-variable)
-.github/security/test_rust_security.py:43:12: E0602: Undefined variable 'r' (undefined-variable)
-.github/security/test_rust_security.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:73:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:5:0: W0611: Unused import sys (unused-import)
-************* Module .github.security.test_secrets
-.github/security/test_secrets.py:102:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:139:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:5:0: W0611: Unused import sys (unused-import)
-************* Module .github.security.attack_test
-.github/security/attack_test.py:13:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:72:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:92:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:99:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:181:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:188:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:240:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:247:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:292:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:326:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:359:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:383:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:421:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:461:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:480:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:533:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:584:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_web_security
-.github/security/test_web_security.py:469:0: C0303: Trailing whitespace (trailing-whitespace)
-.github/security/test_web_security.py:33:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_web_security.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:60:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:265:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:320:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:365:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:6:0: W0611: Unused import ssl (unused-import)
-.github/security/test_web_security.py:7:0: W0611: Unused import sys (unused-import)
-************* Module security.__init__
-security/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
+tests/test_client.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_crypto_mix
+tests/test_crypto_mix.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_crypto_mix.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:104:0: R0913: Too many arguments (7/5) (too-many-arguments)
+tests/test_crypto_mix.py:104:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+tests/test_crypto_mix.py:109:4: W0613: Unused argument 'packet_type' (unused-argument)
+tests/test_crypto_mix.py:169:0: R0913: Too many arguments (7/5) (too-many-arguments)
+tests/test_crypto_mix.py:169:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+tests/test_crypto_mix.py:174:4: W0613: Unused argument 'packet_type' (unused-argument)
+tests/test_crypto_mix.py:232:0: R0913: Too many arguments (7/5) (too-many-arguments)
+tests/test_crypto_mix.py:232:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+tests/test_crypto_mix.py:296:0: R0913: Too many arguments (7/5) (too-many-arguments)
+tests/test_crypto_mix.py:296:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+tests/test_crypto_mix.py:362:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:374:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:374:34: W0621: Redefining name 'test_data' from outer scope (line 52) (redefined-outer-name)
+tests/test_crypto_mix.py:394:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:394:33: W0621: Redefining name 'test_data' from outer scope (line 52) (redefined-outer-name)
+tests/test_crypto_mix.py:414:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:414:28: W0621: Redefining name 'test_data' from outer scope (line 52) (redefined-outer-name)
 ************* Module security.vault
 security/vault.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
 security/vault.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
-security/vault.py:138:0: C0303: Trailing whitespace (trailing-whitespace)
-security/vault.py:166:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:83:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:111:0: C0303: Trailing whitespace (trailing-whitespace)
 security/vault.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 security/vault.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
 security/vault.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
 security/vault.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
 security/vault.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:3:0: W0611: Unused import base64 (unused-import)
 ************* Module scripts.update_database
 scripts/update_database.py:15:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/update_database.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -5328,57 +3442,44 @@ scripts/database/update_rust.py:28:8: W1508: os.getenv default type is builtins.
 ************* Module client_python.__init__
 client_python/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
 ************* Module client_python.main
+client_python/main.py:16:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/main.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:20:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:52:0: C0301: Line too long (111/100) (line-too-long)
-client_python/main.py:56:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:68:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/main.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/main.py:35:12: W0612: Unused variable 'i' (unused-variable)
-client_python/main.py:65:11: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/main.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/main.py:17:31: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:28:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:33:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:38:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
 client_python/main.py:2:0: C0411: standard import "time" should be placed before local import "client.Client" (wrong-import-order)
-client_python/main.py:9:0: C0411: standard import "sys" should be placed before local imports "client.Client", "packet.Packet", "packets.chat.ChatPacket" (...) "packets.ping.PingPacket", "packets.move.MovePacket", "packets.singup.SingupPacket" (wrong-import-order)
-client_python/main.py:10:0: C0411: standard import "atexit" should be placed before local imports "client.Client", "packet.Packet", "packets.chat.ChatPacket" (...) "packets.ping.PingPacket", "packets.move.MovePacket", "packets.singup.SingupPacket" (wrong-import-order)
-client_python/main.py:11:0: C0411: standard import "random" should be placed before local imports "client.Client", "packet.Packet", "packets.chat.ChatPacket" (...) "packets.ping.PingPacket", "packets.move.MovePacket", "packets.singup.SingupPacket" (wrong-import-order)
-client_python/main.py:2:0: W0611: Unused import time (unused-import)
 client_python/main.py:3:0: W0611: Unused Packet imported from packet (unused-import)
-client_python/main.py:3:0: W0611: Unused PacketType imported from packet (unused-import)
+client_python/main.py:6:0: W0611: Unused PingPacket imported from packets.ping (unused-import)
+client_python/main.py:7:0: W0611: Unused MovePacket imported from packets.move (unused-import)
 ************* Module client_python.logs
 client_python/logs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/logs.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module client_python.packet
 client_python/packet.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packet.py:5:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packet.py:13:4: C0103: Class constant name "LoginResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
-client_python/packet.py:14:4: C0103: Class constant name "SignUpResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
-client_python/packet.py:18:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packet.py:30:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packet.py:52:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packet.py:65:12: C0415: Import outside toplevel (packets.login.LoginPacket) (import-outside-toplevel)
-client_python/packet.py:70:12: C0415: Import outside toplevel (packets.chat.ChatPacket) (import-outside-toplevel)
-client_python/packet.py:75:12: C0415: Import outside toplevel (packets.move.MovePacket) (import-outside-toplevel)
-client_python/packet.py:80:12: C0415: Import outside toplevel (packets.ping.PingPacket) (import-outside-toplevel)
-client_python/packet.py:83:12: C0415: Import outside toplevel (packets.log.LogPacket) (import-outside-toplevel)
-client_python/packet.py:86:12: C0415: Import outside toplevel (packets.singup.SingupPacket) (import-outside-toplevel)
-client_python/packet.py:89:12: C0415: Import outside toplevel (packets.ban.BanPacket) (import-outside-toplevel)
-client_python/packet.py:91:11: R1714: Consider merging these comparisons with 'in' by using 'packet_type in (PacketType.LoginResponse, PacketType.SignUpResponse)'. Use a set instead if elements are hashable. (consider-using-in)
-client_python/packet.py:52:4: R0911: Too many return statements (9/6) (too-many-return-statements)
+client_python/packet.py:14:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packet.py:26:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:48:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:61:12: C0415: Import outside toplevel (packets.login.LoginPacket) (import-outside-toplevel)
+client_python/packet.py:66:12: C0415: Import outside toplevel (packets.chat.ChatPacket) (import-outside-toplevel)
+client_python/packet.py:71:12: C0415: Import outside toplevel (packets.move.MovePacket) (import-outside-toplevel)
+client_python/packet.py:76:12: C0415: Import outside toplevel (packets.ping.PingPacket) (import-outside-toplevel)
+client_python/packet.py:79:12: C0415: Import outside toplevel (packets.log.LogPacket) (import-outside-toplevel)
 ************* Module client_python.client
-client_python/client.py:56:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:73:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:80:13: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:89:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:106:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:108:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:78:13: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:87:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/client.py:135:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:165:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:163:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/client.py:26:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/client.py:82:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:87:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/client.py:80:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:85:4: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/client.py:109:15: W0718: Catching too general exception Exception (broad-exception-caught)
 client_python/client.py:145:15: W0718: Catching too general exception Exception (broad-exception-caught)
 client_python/client.py:155:4: C0116: Missing function or method docstring (missing-function-docstring)
@@ -5389,14 +3490,10 @@ client_python/packets/__init__.py:1:0: C0114: Missing module docstring (missing-
 client_python/packets/chat.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/chat.py:4:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packets/chat.py:15:4: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module client_python.packets.singup
-client_python/packets/singup.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/singup.py:6:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/singup.py:29:4: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module client_python.packets.login
 client_python/packets/login.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/login.py:6:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/login.py:29:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packets/login.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/login.py:15:4: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module client_python.packets.move
 client_python/packets/move.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/move.py:6:0: C0115: Missing class docstring (missing-class-docstring)
@@ -5407,58 +3504,7 @@ client_python/packets/ping.py:4:0: C0115: Missing class docstring (missing-class
 ************* Module client_python.packets.log
 client_python/packets/log.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/log.py:4:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/log.py:12:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packets/log.py:13:15: E1121: Too many positional arguments for constructor call (too-many-function-args)
-************* Module client_python.packets.ban
-client_python/packets/ban.py:39:0: C0304: Final newline missing (missing-final-newline)
-client_python/packets/ban.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/ban.py:4:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/ban.py:4:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-client_python/packets/ban.py:9:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/ban.py:23:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packets/ban.py:9:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==client_python.packets.login:[39:77]
-==client_python.packets.singup:[39:77]
-        email_length = struct.unpack(
-            "!H",
-            payload[offset:offset + 2]
-        )[0]
-
-        offset += 2
-
-        if len(payload) < offset + email_length:
-            raise ValueError("Email incomplet")
-
-        email = payload[
-            offset:offset + email_length
-        ].decode("utf-8")
-
-        offset += email_length
-
-        # -------------------------
-        # Password
-        # -------------------------
-
-        if len(payload) < offset + 2:
-            raise ValueError("Password absent")
-
-        password_length = struct.unpack(
-            "!H",
-            payload[offset:offset + 2]
-        )[0]
-
-        offset += 2
-
-        if len(payload) < offset + password_length:
-            raise ValueError("Password incomplet")
-
-        password = payload[
-            offset:offset + password_length
-        ].decode("utf-8")
-
-        return cls(email, password) (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_docs:[37:62]
 ==scripts.database.update_python:[25:54]
     run_number = int(
@@ -5486,26 +3532,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         commit
     )
  (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[9:23]
-==.github.security.test_python_security:[8:24]
-ROOT = Path.cwd().resolve()
-
-IGNORED_DIRECTORIES = {
-    ".git",
-    "target",
-    "__pycache__",
-    ".pytest_cache",
-    ".mypy_cache",
-    ".ruff_cache",
-    ".venv",
-    "venv",
-    "node_modules",
-}
-
-
-def should_ignore(path: Path) -> bool: (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
         report
@@ -5525,24 +3552,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     # Flake8
     # ==========================================
  (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==client_python.packets.login:[9:23]
-==client_python.packets.singup:[9:23]
-        self.email = email
-        self.password = password
-
-        email_bytes = email.encode("utf-8")
-        password_bytes = password.encode("utf-8")
-
-        payload = (
-            struct.pack("!H", len(email_bytes))
-            + email_bytes
-            + struct.pack("!H", len(password_bytes))
-            + password_bytes
-        )
-
-        super().__init__( (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[20:37]
 ==Ancien.inventaire:[34:56]
     if nom not in joueur.stuff:
@@ -5561,82 +3571,8 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     # Cas 3 : Autre type (ne devrait pas arriver)
     else:
         print(f" Type inattendu pour {nom}: {type(obj)}")
-        return 0
-
-
-
-
- (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==server_rust.vendor.unicode-normalization.scripts.unicode:[28:38]
-==server_rust.vendor.unicode-properties.scripts.unicode:[21:31]
-// file at the top-level directory of this distribution and at
-// http://rust-lang.org/COPYRIGHT.
-//
-// Licensed under the Apache License, Version 2.0 <LICENSE-APACHE or
-// http://www.apache.org/licenses/LICENSE-2.0> or the MIT license
-// <LICENSE-MIT or http://opensource.org/licenses/MIT>, at your
-// option. This file may not be copied, modified, or distributed
-// except according to those terms.
-
-// NOTE: The following code was generated by "scripts/unicode.py", do not edit directly (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[24:34]
-==.github.security.test_git_security:[82:92]
-    ".env",
-    ".env.local",
-    ".env.production",
-    "master.key",
-    "id_rsa",
-    "id_ed25519",
-    "credentials.json",
-    "service-account.json",
-}
- (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.integrity_check:[11:20]
-==.github.security.test_python_security:[10:19]
-IGNORED_DIRECTORIES = {
-    ".git",
-    "target",
-    "__pycache__",
-    ".pytest_cache",
-    ".mypy_cache",
-    ".ruff_cache",
-    ".venv",
-    "venv", (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[38:50]
-==.github.security.test_python_security:[24:35]
-    try:
-        relative = path.relative_to(ROOT)
-    except ValueError:
-        return True
-
-    return any(
-        part in IGNORED_DIRECTORIES
-        for part in relative.parts
-    )
-
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.attack_test:[79:102]
-==.github.security.integrity_check:[54:67]
-    digest = hashlib.sha256()
-
-    with path.open("rb") as file:
-        for chunk in iter(
-            lambda: file.read(1024 * 1024),
-            b"",
-        ):
-            digest.update(chunk)
-
-    return digest.hexdigest()
-
-
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+        return 0 (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
         if not any(
@@ -5647,7 +3583,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
                 "venv",
                 ".mypy_cache",
                 ".pytest_cache", (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[38:54]
 ==scripts.database.update_rust:[36:52]
         "GITHUB_SHA",
@@ -5666,17 +3602,17 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     # Quality metrics
     # ==========================================
  (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-        test,
-        severity,
-        confidence,
-        cwe,
-        info,
-        file,
-        line, (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+            test,
+            severity,
+            confidence,
+            cwe,
+            info,
+            file,
+            line, (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[37:44]
 ==scripts.documentation.markdown:[59:66]
     if not files:
@@ -5686,30 +3622,16 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
             "results": {},
             "problems": [{
                 "file": "", (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_python_security:[8:15]
-==.github.security.test_rust_security:[8:15]
-ROOT = Path.cwd().resolve()
-
-IGNORED_DIRECTORIES = {
-    ".git",
-    "target",
-    "__pycache__",
-    ".pytest_cache", (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.integrity_check:[69:79]
-==.github.security.test_secrets:[107:117]
-    if path.name in IGNORED_FILES:
-        return True
-
-    return any(
-        part in IGNORED_DIRECTORIES
-        for part in relative.parts
-    )
-
-
-def looks_textual(data: bytes) -> bool: (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==Ancien.admin_manager:[196:202]
+==Ancien.inventaire:[605:611]
+        except json.JSONDecodeError:
+            QMessageBox.warning(
+                self,
+                "Erreur",
+                "Le fichier objet_dispo.json n'est pas un fichier JSON valide.",
+            ) (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[59:69]
 ==scripts.documentation.markdown:[82:91]
     return {
@@ -5722,7 +3644,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 
 def extract_links(file):
  (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.markdown:[59:65]
 ==scripts.documentation.titles:[20:26]
     if not files:
@@ -5731,7 +3653,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
             "max_score": MAX_SCORE,
             "results": {},
             "problems": [{ (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[82:91]
 ==Ancien.inventaire:[559:568]
         self.dossier_images = "assets"
@@ -5741,51 +3663,51 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 10 colonnes
+        # Tableau avec 7 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
 ==Ancien.inventaire:[625:632]
+                else:
+                    image_label.setText("Erreur image")
             else:
-                image_label.setText("Erreur image")
-        else:
-            image_label.setText("Aucune image")
-        self.table_widget.setCellWidget(row, 0, image_label)
+                image_label.setText("Aucune image")
+            self.table_widget.setCellWidget(row, 0, image_label)
 
-        # 2. Nom (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.integrity_check:[11:16]
-==.github.security.test_rust_security:[10:15]
-IGNORED_DIRECTORIES = {
-    ".git",
-    "target",
-    "__pycache__",
-    ".pytest_cache", (duplicate-code)
-client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+            # 2. Nom (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
+==tests.test_load:[17:24]
+==tests.test_sql_injection:[71:78]
+    try:
+
+        with socket.create_connection(
+            (HOST, PORT),
+            timeout=5,
+        ) as sock:
+ (duplicate-code)
+client_python/packets/log.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-        run_id,
-        high,
-        medium,
-        low,
-        total, (duplicate-code)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+            run_id,
+            high,
+            medium,
+            low,
+            total, (duplicate-code)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+client_python/packets/log.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.22/10
+Your code has been rated at 6.60/10
 
 
 </details>
 
 ##  📈 Coverage
 
-**Coverage:** 0%
+**Coverage:** 50%
 
 <details>
 <summary>Show coverage report</summary>
@@ -5796,67 +3718,174 @@ rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-7.1.0
-collected 2074 items / 2 errors
+collected 2818 items
+
+tests/test_client.py F                                                   [  0%]
+tests/test_crypto_mix.py ............................................... [  1%]
+........................................................................ [  4%]
+........................................................................ [  6%]
+........................................................................ [  9%]
+........................................................................ [ 11%]
+........................................................................ [ 14%]
+........................................................................ [ 17%]
+........................................................................ [ 19%]
+........................................................................ [ 22%]
+........................................................................ [ 24%]
+........................................................................ [ 27%]
+........................................................................ [ 29%]
+........................................................................ [ 32%]
+........................................................................ [ 34%]
+........................................................................ [ 37%]
+........................................................................ [ 40%]
+........................................................................ [ 42%]
+........................................................................ [ 45%]
+........................................................................ [ 47%]
+........................................................................ [ 50%]
+........................................................................ [ 52%]
+........................................................................ [ 55%]
+........................................................................ [ 57%]
+........................................................................ [ 60%]
+........................................................................ [ 63%]
+........................................................................ [ 65%]
+........................................................................ [ 68%]
+........................................................................ [ 70%]
+........................................................................ [ 73%]
+........................................................................ [ 75%]
+........................................................................ [ 78%]
+........................................................................ [ 80%]
+........................................................................ [ 83%]
+........................................................................ [ 86%]
+........................................................................ [ 88%]
+........................................................................ [ 91%]
+........................................................................ [ 93%]
+........................................................................ [ 96%]
+........................................................................ [ 98%]
+.................................                                        [ 99%]
+tests/test_sql_injection.py E                                            [100%]
 
 ==================================== ERRORS ====================================
-____________ ERROR collecting tests/security/test_sql_injection.py _____________
-tests/security/test_sql_injection.py:34: in <module>
-    raise RuntimeError("DATABASE_PATH n'est pas définie")
-E   RuntimeError: DATABASE_PATH n'est pas définie
-_________________ ERROR collecting tests/test_fisher_yates.py __________________
-ImportError while importing test module '/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py'.
-Hint: make sure your test modules/packages have valid Python names.
-Traceback:
-/opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/importlib/__init__.py:88: in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-tests/test_fisher_yates.py:1: in <module>
-    from test_splitmix64 import SplitMix64
-E   ModuleNotFoundError: No module named 'test_splitmix64'
+________________________ ERROR at setup of test_payload ________________________
+file /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py, line 69
+  @pytest.mark.security
+  def test_payload(payload):
+E       fixture 'payload' not found
+>       available fixtures: cache, capfd, capfdbinary, caplog, capsys, capsysbinary, capteesys, cov, doctest_namespace, monkeypatch, no_cover, pytestconfig, record_property, record_testsuite_property, record_xml_attribute, recwarn, subtests, tmp_path, tmp_path_factory, tmpdir, tmpdir_factory
+>       use 'pytest --fixtures [testpath]' for help on them.
+
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:69
+=================================== FAILURES ===================================
+__________________________________ test_main ___________________________________
+
+    def test_main():
+>       main()
+
+tests/test_client.py:4: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+client_python/main.py:11: in main
+    client.connect()
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <client_python.client.Client object at 0x7f1387efae40>
+
+    def connect(self):
+        if self.connected:
+            return
+        timeout = 90
+        interval = 0.5
+        start_time = time.monotonic()
+        while True:
+            elapsed = time.monotonic() - start_time
+            if elapsed >= timeout:
+                self.connected = False
+>               raise SystemExit(1)
+E               SystemExit: 1
+
+client_python/client.py:36: SystemExit
 =============================== warnings summary ===============================
 ../../../../../opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/site-packages/_pytest/config/__init__.py:1464
   /opt/hostedtoolcache/Python/3.14.7/x64/lib/python3.14/site-packages/_pytest/config/__init__.py:1464: PytestConfigWarning: Unknown config option: security
   
     self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
 
-tests/security/test_fuzzing.py:16
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py:16: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_fuzzing.py:16
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:16: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
-tests/security/test_fuzzing.py:29
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_fuzzing.py:29
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
-tests/security/test_fuzzing.py:47
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py:47: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_fuzzing.py:47
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:47: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
-tests/security/test_fuzzing.py:54
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py:54: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_fuzzing.py:54
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:54: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
-tests/security/test_fuzzing.py:74
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py:74: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_fuzzing.py:74
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fuzzing.py:74: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
-tests/security/test_load.py:13
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py:13: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_load.py:13
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py:13: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
-tests/security/test_load.py:49
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py:49: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_load.py:49
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py:49: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
-tests/security/test_load.py:84
-  /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py:84: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+tests/test_load.py:84
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_load.py:84: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:31
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:31: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:46
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:46: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:69
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:69: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.security
+
+tests/test_sql_injection.py:107
+  /home/runner/work/The-last-signal-/The-last-signal-/tests/test_sql_injection.py:107: PytestUnknownMarkWarning: Unknown pytest.mark.security - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
     @pytest.mark.security
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.14.7-final-0 ________________
+
+Name                                Stmts   Miss  Cover
+-------------------------------------------------------
+client_python/__init__.py               0      0   100%
+client_python/client.py                87     52    40%
+client_python/logs.py                   7      3    57%
+client_python/main.py                  28     17    39%
+client_python/packet.py                35     22    37%
+client_python/packets/__init__.py       4      0   100%
+client_python/packets/chat.py           8      3    62%
+client_python/packets/log.py            4      1    75%
+client_python/packets/login.py          9      4    56%
+client_python/packets/move.py          12      6    50%
+client_python/packets/ping.py           4      1    75%
+dashboard.py                           26     26     0%
+setup.py                                2      2     0%
+tests/__init__.py                       0      0   100%
+tests/test_client.py                    3      0   100%
+tests/test_crypto_mix.py              117      0   100%
+tests/test_fuzzing.py                  52     32    38%
+tests/test_load.py                     53     39    26%
+tests/test_sql_injection.py            64     48    25%
+-------------------------------------------------------
+TOTAL                                 515    256    50%
 =========================== short test summary info ============================
-ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
-ERROR tests/test_fisher_yates.py
-!!!!!!!!!!!!!!!!!!! Interrupted: 2 errors during collection !!!!!!!!!!!!!!!!!!!!
-======================== 9 warnings, 2 errors in 0.30s =========================
+FAILED tests/test_client.py::test_main - SystemExit: 1
+ERROR tests/test_sql_injection.py::test_payload
+======= 1 failed, 2816 passed, 13 warnings, 1 error in 91.48s (0:01:31) ========
 
 </details>
 
