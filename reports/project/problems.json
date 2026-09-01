@@ -1,11 +1,5 @@
 [
     {
-        "file": "server_rust/README.md",
-        "severity": "error",
-        "message": "Fichier vide.",
-        "module": "markdown"
-    },
-    {
         "file": "docs/NETWORK.md",
         "severity": "error",
         "message": "Fichier vide.",
