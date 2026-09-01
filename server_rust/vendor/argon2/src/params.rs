@@ -1,11 +1,17 @@
 //! Argon2 password hash parameters.
 
-use crate::{Algorithm, Argon2, Error, Result, Version, SYNC_POINTS};
+#![allow(missing_copy_implementations, reason = "unnecessary")]
+#![allow(clippy::doc_markdown, reason = "false positive")]
+
+use crate::{Algorithm, Argon2, Error, Result, SYNC_POINTS, Version};
 use base64ct::{Base64Unpadded as B64, Encoding};
 use core::str::FromStr;
 
 #[cfg(feature = "password-hash")]
-use password_hash::{ParamsString, PasswordHash};
+use {
+    core::fmt::{self, Display},
+    password_hash::phc::{ParamsString, PasswordHash},
+};
 
 /// Argon2 password hash parameters.
 ///
@@ -104,6 +110,16 @@ impl Params {
     /// - `t_cost`: number of iterations. Between 1 and (2^32)-1.
     /// - `p_cost`: degree of parallelism. Between 1 and (2^24)-1.
     /// - `output_len`: size of the KDF output in bytes. Default 32.
+    ///
+    /// # Errors
+    /// - Returns [`Error::MemoryTooLittle`] if `m_cost` is smaller than [`Params::MIN_M_COST`].
+    /// - Returns [`Error::ThreadsTooFew`] if `p_cost` is smaller than [`Params::MIN_P_COST`].
+    /// - Returns [`Error::ThreadsTooMany`] if `p_cost` is larger than [`Params::MAX_P_COST`].
+    /// - Returns [`Error::TimeTooSmall`] if `t_cost` is smaller than [`Params::MIN_T_COST`].
+    /// - Returns [`Error::OutputTooShort`] if `output_len` is smaller than
+    ///   [`Params::MIN_OUTPUT_LEN`].
+    /// - Returns [`Error::OutputTooLong`] if `output_len` is larger than
+    ///   [`Params::MAX_OUTPUT_LEN`].
     pub const fn new(
         m_cost: u32,
         t_cost: u32,
@@ -114,16 +130,6 @@ impl Params {
             return Err(Error::MemoryTooLittle);
         }
 
-        // Note: we don't need to check `MAX_M_COST`, since it's `u32::MAX`
-
-        if m_cost < p_cost * 8 {
-            return Err(Error::MemoryTooLittle);
-        }
-
-        if t_cost < Params::MIN_T_COST {
-            return Err(Error::TimeTooSmall);
-        }
-
         // Note: we don't need to check `MAX_T_COST`, since it's `u32::MAX`
 
         if p_cost < Params::MIN_P_COST {
@@ -132,6 +138,16 @@ impl Params {
 
         if p_cost > Params::MAX_P_COST {
             return Err(Error::ThreadsTooMany);
+        }
+
+        // Note: we don't need to check `MAX_M_COST`, since it's `u32::MAX`
+
+        if m_cost < p_cost * 8 {
+            return Err(Error::MemoryTooLittle);
+        }
+
+        if t_cost < Params::MIN_T_COST {
+            return Err(Error::TimeTooSmall);
         }
 
         if let Some(len) = output_len {
@@ -157,6 +173,7 @@ impl Params {
     /// Memory size, expressed in kibibytes. Between 8\*`p_cost` and (2^32)-1.
     ///
     /// Value is an integer in decimal (1 to 10 digits).
+    #[must_use]
     pub const fn m_cost(&self) -> u32 {
         self.m_cost
     }
@@ -164,6 +181,7 @@ impl Params {
     /// Number of iterations. Between 1 and (2^32)-1.
     ///
     /// Value is an integer in decimal (1 to 10 digits).
+    #[must_use]
     pub const fn t_cost(&self) -> u32 {
         self.t_cost
     }
@@ -171,6 +189,7 @@ impl Params {
     /// Degree of parallelism. Between 1 and (2^24)-1.
     ///
     /// Value is an integer in decimal (1 to 3 digits).
+    #[must_use]
     pub const fn p_cost(&self) -> u32 {
         self.p_cost
     }
@@ -186,6 +205,7 @@ impl Params {
     /// On top of that, this field is not longer part of the Argon2 standard
     /// (see: <https://github.com/P-H-C/phc-winner-argon2/pull/173>), and should
     /// not be used for any non-legacy work.
+    #[must_use]
     pub fn keyid(&self) -> &[u8] {
         self.keyid.as_bytes()
     }
@@ -197,11 +217,13 @@ impl Params {
     /// This field is not longer part of the argon2 standard
     /// (see: <https://github.com/P-H-C/phc-winner-argon2/pull/173>), and should
     /// not be used for any non-legacy work.
+    #[must_use]
     pub fn data(&self) -> &[u8] {
         self.data.as_bytes()
     }
 
     /// Length of the output (in bytes).
+    #[must_use]
     pub const fn output_len(&self) -> Option<usize> {
         self.output_len
     }
@@ -219,7 +241,7 @@ impl Params {
 
     /// Get the segment length given the configured `m_cost` and `p_cost`.
     ///
-    /// Minimum memory_blocks = 8*`L` blocks, where `L` is the number of lanes.
+    /// Minimum `memory_blocks` = 8*`L` blocks, where `L` is the number of lanes.
     pub(crate) const fn segment_length(&self) -> usize {
         let m_cost = self.m_cost as usize;
 
@@ -233,6 +255,7 @@ impl Params {
     }
 
     /// Get the number of blocks required given the configured `m_cost` and `p_cost`.
+    #[must_use]
     pub const fn block_count(&self) -> usize {
         self.segment_length() * self.lanes() * SYNC_POINTS
     }
@@ -262,12 +285,13 @@ macro_rules! param_buf {
 
             #[doc = "Create a new"]
             #[doc = $name]
-            #[doc = "from a slice."]
+            #[doc = "from a slice.\n"]
+            #[doc = "# Errors"]
+            #[doc = concat!("Returns [`", stringify!($error), "`] in event the provided slice is too long.")]
             pub fn new(slice: &[u8]) -> Result<Self> {
                 let mut bytes = [0u8; Self::MAX_LEN];
                 let len = slice.len();
                 bytes.get_mut(..len).ok_or($error)?.copy_from_slice(slice);
-
                 Ok(Self { bytes, len })
             }
 
@@ -279,11 +303,12 @@ macro_rules! param_buf {
 
             #[doc = "Decode"]
             #[doc = $name]
-            #[doc = " from a B64 string"]
+            #[doc = " from a B64 string.\n"]
+            #[doc = "# Errors"]
+            #[doc = "Returns [`Error::B64Encoding`] if the providing string couldn't be decoded as B64." ]
             pub fn from_b64(s: &str) -> Result<Self> {
                 let mut bytes = [0u8; Self::MAX_LEN];
                 let len = B64::decode(s, &mut bytes)?.len();
-
                 Ok(Self { bytes, len })
             }
 
@@ -346,36 +371,71 @@ param_buf!(
 );
 
 #[cfg(feature = "password-hash")]
-#[cfg_attr(docsrs, doc(cfg(feature = "password-hash")))]
-impl<'a> TryFrom<&'a PasswordHash<'a>> for Params {
+impl Display for Params {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        ParamsString::try_from(self).map_err(|_| fmt::Error)?.fmt(f)
+    }
+}
+
+#[cfg(feature = "password-hash")]
+impl FromStr for Params {
+    type Err = password_hash::Error;
+
+    fn from_str(s: &str) -> password_hash::Result<Self> {
+        let params_string =
+            ParamsString::from_str(s).map_err(|_| password_hash::Error::ParamsInvalid)?;
+        Self::try_from(&params_string)
+    }
+}
+
+#[cfg(feature = "password-hash")]
+impl TryFrom<&ParamsString> for Params {
     type Error = password_hash::Error;
 
-    fn try_from(hash: &'a PasswordHash<'a>) -> password_hash::Result<Self> {
+    fn try_from(params: &ParamsString) -> password_hash::Result<Self> {
         let mut builder = ParamsBuilder::new();
 
-        for (ident, value) in hash.params.iter() {
+        for (ident, value) in params.iter() {
             match ident.as_str() {
                 "m" => {
-                    builder.m_cost(value.decimal()?);
+                    builder.m_cost(
+                        value
+                            .decimal()
+                            .map_err(|_| password_hash::Error::ParamInvalid { name: "m" })?,
+                    );
                 }
                 "t" => {
-                    builder.t_cost(value.decimal()?);
+                    builder.t_cost(
+                        value
+                            .decimal()
+                            .map_err(|_| password_hash::Error::ParamInvalid { name: "t" })?,
+                    );
                 }
                 "p" => {
-                    builder.p_cost(value.decimal()?);
+                    builder.p_cost(
+                        value
+                            .decimal()
+                            .map_err(|_| password_hash::Error::ParamInvalid { name: "p" })?,
+                    );
                 }
                 "keyid" => {
-                    builder.keyid(value.as_str().parse()?);
+                    builder.keyid(
+                        value
+                            .as_str()
+                            .parse()
+                            .map_err(|_| password_hash::Error::ParamInvalid { name: "keyid" })?,
+                    );
                 }
                 "data" => {
-                    builder.data(value.as_str().parse()?);
+                    builder.data(
+                        value
+                            .as_str()
+                            .parse()
+                            .map_err(|_| password_hash::Error::ParamInvalid { name: "data" })?,
+                    );
                 }
-                _ => return Err(password_hash::Error::ParamNameInvalid),
+                _ => return Err(password_hash::Error::ParamsInvalid),
             }
-        }
-
-        if let Some(output) = &hash.hash {
-            builder.output_len(output.len());
         }
 
         Ok(builder.build()?)
@@ -383,7 +443,21 @@ impl<'a> TryFrom<&'a PasswordHash<'a>> for Params {
 }
 
 #[cfg(feature = "password-hash")]
-#[cfg_attr(docsrs, doc(cfg(feature = "password-hash")))]
+impl TryFrom<&PasswordHash> for Params {
+    type Error = password_hash::Error;
+
+    fn try_from(hash: &PasswordHash) -> password_hash::Result<Self> {
+        let mut params = Self::try_from(&hash.params)?;
+
+        if let Some(output) = &hash.hash {
+            params.output_len = Some(output.len());
+        }
+
+        Ok(params)
+    }
+}
+
+#[cfg(feature = "password-hash")]
 impl TryFrom<Params> for ParamsString {
     type Error = password_hash::Error;
 
@@ -393,22 +467,32 @@ impl TryFrom<Params> for ParamsString {
 }
 
 #[cfg(feature = "password-hash")]
-#[cfg_attr(docsrs, doc(cfg(feature = "password-hash")))]
 impl TryFrom<&Params> for ParamsString {
     type Error = password_hash::Error;
 
     fn try_from(params: &Params) -> password_hash::Result<ParamsString> {
         let mut output = ParamsString::new();
-        output.add_decimal("m", params.m_cost)?;
-        output.add_decimal("t", params.t_cost)?;
-        output.add_decimal("p", params.p_cost)?;
+
+        for (name, value) in [
+            ("m", params.m_cost),
+            ("t", params.t_cost),
+            ("p", params.p_cost),
+        ] {
+            output
+                .add_decimal(name, value)
+                .map_err(|_| password_hash::Error::ParamInvalid { name })?;
+        }
 
         if !params.keyid.is_empty() {
-            output.add_b64_bytes("keyid", params.keyid.as_bytes())?;
+            output
+                .add_b64_bytes("keyid", params.keyid.as_bytes())
+                .map_err(|_| password_hash::Error::ParamInvalid { name: "keyid" })?;
         }
 
         if !params.data.is_empty() {
-            output.add_b64_bytes("data", params.data.as_bytes())?;
+            output
+                .add_b64_bytes("data", params.data.as_bytes())
+                .map_err(|_| password_hash::Error::ParamInvalid { name: "keyid" })?;
         }
 
         Ok(output)
@@ -428,6 +512,7 @@ pub struct ParamsBuilder {
 
 impl ParamsBuilder {
     /// Create a new builder with the default parameters.
+    #[must_use]
     pub const fn new() -> Self {
         Self::DEFAULT
     }
@@ -472,6 +557,10 @@ impl ParamsBuilder {
     ///
     /// This performs validations to ensure that the given parameters are valid
     /// and compatible with each other, and will return an error if they are not.
+    ///
+    /// # Errors
+    /// Propagates errors from [`Params::new`]. See error documentation for that function for
+    /// additional information.
     pub const fn build(&self) -> Result<Params> {
         let mut params = match Params::new(self.m_cost, self.t_cost, self.p_cost, self.output_len) {
             Ok(params) => params,
@@ -490,9 +579,14 @@ impl ParamsBuilder {
     }
 
     /// Create a new [`Argon2`] context using the provided algorithm/version.
+    ///
+    /// # Errors
+    /// Propagates errors from [`Params::new`]. See error documentation for that function for
+    /// additional information.
     pub fn context(&self, algorithm: Algorithm, version: Version) -> Result<Argon2<'_>> {
         Ok(Argon2::new(algorithm, version, self.build()?))
     }
+
     /// Default parameters (recommended).
     pub const DEFAULT: ParamsBuilder = {
         let params = Params::DEFAULT;

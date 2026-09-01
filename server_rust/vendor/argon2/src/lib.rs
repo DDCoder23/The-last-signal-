@@ -13,8 +13,10 @@
     clippy::cast_sign_loss,
     clippy::checked_conversions,
     clippy::implicit_saturating_sub,
+    clippy::missing_safety_doc,
     clippy::panic,
     clippy::panic_in_result_fn,
+    clippy::undocumented_unsafe_blocks,
     clippy::unwrap_used,
     missing_docs,
     rust_2018_idioms,
@@ -30,25 +32,23 @@
 //! password-based authentication. Do not use this API to derive cryptographic
 //! keys: see the "key derivation" usage example below.
 //!
-#![cfg_attr(feature = "std", doc = "```")]
-#![cfg_attr(not(feature = "std"), doc = "```ignore")]
-//! # fn main() -> Result<(), Box<dyn std::error::Error>> {
+#![cfg_attr(all(feature = "alloc", feature = "getrandom"), doc = "```")]
+#![cfg_attr(not(all(feature = "alloc", feature = "getrandom")), doc = "```ignore")]
+//! # fn main() -> Result<(), Box<dyn core::error::Error>> {
+//! // NOTE: example requires `getrandom` feature is enabled
+//!
 //! use argon2::{
-//!     password_hash::{
-//!         rand_core::OsRng,
-//!         PasswordHash, PasswordHasher, PasswordVerifier, SaltString
-//!     },
+//!     password_hash::{PasswordHasher, PasswordVerifier, phc::PasswordHash},
 //!     Argon2
 //! };
 //!
 //! let password = b"hunter42"; // Bad password; don't actually use!
-//! let salt = SaltString::generate(&mut OsRng);
 //!
-//! // Argon2 with default params (Argon2id v19)
+//! // Argon2 with default params (Argon2id v19), generating a random salt
 //! let argon2 = Argon2::default();
 //!
 //! // Hash password to PHC string ($argon2id$v=19$...)
-//! let password_hash = argon2.hash_password(password, &salt)?.to_string();
+//! let password_hash = argon2.hash_password(password)?.to_string();
 //!
 //! // Verify password against PHC string.
 //! //
@@ -60,14 +60,59 @@
 //! # }
 //! ```
 //!
+//! To [pepper] as well as salt your passwords:
+//!
+//! [pepper]: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#peppering
+//!
+#![cfg_attr(all(feature = "alloc", feature = "getrandom"), doc = "```")]
+#![cfg_attr(not(all(feature = "alloc", feature = "getrandom")), doc = "```ignore")]
+//! # fn main() -> Result<(), Box<dyn core::error::Error>> {
+//! // NOTE: example requires `getrandom` feature is enabled
+//!
+//! use argon2::{
+//!     password_hash::{PasswordHasher, PasswordVerifier, phc::PasswordHash},
+//!     Algorithm, Argon2, Params, Version
+//! };
+//!
+//! let password = b"hunter42"; // Bad password; don't actually use!
+//!
+//! // Argon2 with default params (Argon2id v19) and pepper
+//! let argon2 = Argon2::new_with_secret(
+//!     b"secret pepper",
+//!     Algorithm::default(),
+//!     Version::default(),
+//!     Params::default()
+//! )?;
+//!
+//! // Hash password to PHC string ($argon2id$v=19$...), generating a random salt
+//! let password_hash = argon2.hash_password(password)?.to_string();
+//!
+//! // Verify password against PHC string.
+//! //
+//! // NOTE: hash params from `parsed_hash` are used instead of what is configured in the
+//! // `Argon2` instance.
+//! let parsed_hash = PasswordHash::new(&password_hash)?;
+//! let argon2 = Argon2::new_with_secret(
+//!     b"secret pepper",
+//!     Algorithm::default(),
+//!     Version::default(),
+//!     Params::default(),
+//! )
+//! .unwrap();
+//! let res = argon2.verify_password(password, &parsed_hash);
+//! assert!(res.is_ok());
+//! # Ok(())
+//! # }
+//! ```
+//!
 //! ### Key Derivation
 //!
 //! This API is useful for transforming a password into cryptographic keys for
 //! e.g. password-based encryption.
 //!
-#![cfg_attr(feature = "std", doc = "```")]
-#![cfg_attr(not(feature = "std"), doc = "```ignore")]
-//! # fn main() -> Result<(), Box<dyn std::error::Error>> {
+#![cfg_attr(feature = "alloc", doc = "```")]
+#![cfg_attr(not(feature = "alloc"), doc = "```ignore")]
+//! # fn main() -> Result<(), Box<dyn core::error::Error>> {
 //! use argon2::Argon2;
 //!
 //! let password = b"hunter42"; // Bad password; don't actually use!
@@ -85,16 +130,13 @@
 compile_error!("this crate builds on 32-bit and 64-bit platforms only");
 
 #[cfg(feature = "alloc")]
-#[macro_use]
 extern crate alloc;
-
-#[cfg(feature = "std")]
-extern crate std;
 
 mod algorithm;
 mod blake2b_long;
 mod block;
 mod error;
+mod memory;
 mod params;
 mod version;
 
@@ -106,19 +148,23 @@ pub use crate::{
     version::Version,
 };
 
+#[cfg(feature = "kdf")]
+pub use kdf::{self, Kdf, Pbkdf};
 #[cfg(feature = "password-hash")]
-#[cfg_attr(docsrs, doc(cfg(feature = "password-hash")))]
 pub use {
-    crate::algorithm::{ARGON2D_IDENT, ARGON2ID_IDENT, ARGON2I_IDENT},
-    password_hash::{self, PasswordHash, PasswordHasher, PasswordVerifier},
+    crate::algorithm::{ARGON2D_IDENT, ARGON2I_IDENT, ARGON2ID_IDENT},
+    password_hash::{
+        self, CustomizedPasswordHasher, PasswordHasher, PasswordVerifier, phc::PasswordHash,
+    },
 };
 
 use crate::blake2b_long::blake2b_long;
-use blake2::{digest, Blake2b512, Digest};
+use blake2::{Blake2b512, Digest, digest};
 use core::fmt;
+use memory::Memory;
 
 #[cfg(all(feature = "alloc", feature = "password-hash"))]
-use password_hash::{Decimal, Ident, ParamsString, Salt};
+use password_hash::phc::{Output, ParamsString, Salt};
 
 #[cfg(feature = "zeroize")]
 use zeroize::Zeroize;
@@ -191,6 +237,7 @@ impl fmt::Debug for Argon2<'_> {
 
 impl<'key> Argon2<'key> {
     /// Create a new Argon2 context.
+    #[must_use]
     pub fn new(algorithm: Algorithm, version: Version, params: Params) -> Self {
         Self {
             algorithm,
@@ -203,6 +250,9 @@ impl<'key> Argon2<'key> {
     }
 
     /// Create a new Argon2 context.
+    ///
+    /// # Errors
+    /// Returns [`Error::SecretTooLong`] in the event `secret` is too long.
     pub fn new_with_secret(
         secret: &'key [u8],
         algorithm: Algorithm,
@@ -224,11 +274,18 @@ impl<'key> Argon2<'key> {
     }
 
     /// Hash a password and associated parameters into the provided output buffer.
+    ///
+    /// # Errors
+    /// - Returns [`Error::PwdTooLong`] if `pwd` is longer than `MAX_PWD_LEN`.
+    /// - Returns [`Error::SaltTooShort`] if `salt` is shorter than `MIN_SALT_LEN`.
+    /// - Returns [`Error::SaltTooLong`] if `salt` is longer than `MAX_SALT_LEN`.
+    /// - Returns [`Error::OutputTooShort`] if `out` is too short.
+    /// - Returns [`Error::OutputTooLong`] if `out` is too long.
     #[cfg(feature = "alloc")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "alloc")))]
     pub fn hash_password_into(&self, pwd: &[u8], salt: &[u8], out: &mut [u8]) -> Result<()> {
-        let mut blocks = vec![Block::default(); self.params.block_count()];
-        self.hash_password_into_with_memory(pwd, salt, out, &mut blocks)
+        let blocks_len = self.params.block_count();
+        let mut blocks = block::Blocks::new(blocks_len).ok_or(Error::OutOfMemory)?;
+        self.hash_password_into_with_memory(pwd, salt, out, blocks.as_slice())
     }
 
     /// Hash a password and associated parameters into the provided output buffer.
@@ -240,6 +297,13 @@ impl<'key> Argon2<'key> {
     ///   to have it allocated for them.
     /// - `no_std` users on "heapless" targets can use an array of the [`Block`] type
     ///   to stack allocate this buffer.
+    ///
+    /// # Errors
+    /// - Returns [`Error::PwdTooLong`] if `pwd` is longer than `MAX_PWD_LEN`.
+    /// - Returns [`Error::SaltTooShort`] if `salt` is shorter than `MIN_SALT_LEN`.
+    /// - Returns [`Error::SaltTooLong`] if `salt` is longer than `MAX_SALT_LEN`.
+    /// - Returns [`Error::OutputTooShort`] if `out` is too short.
+    /// - Returns [`Error::OutputTooLong`] if `out` is too long.
     pub fn hash_password_into_with_memory(
         &self,
         pwd: &[u8],
@@ -260,7 +324,6 @@ impl<'key> Argon2<'key> {
 
         // Hashing all inputs
         let initial_hash = self.initial_hash(pwd, salt, out);
-
         self.fill_blocks(memory_blocks.as_mut(), initial_hash)?;
         self.finalize(memory_blocks.as_mut(), out)
     }
@@ -270,6 +333,11 @@ impl<'key> Argon2<'key> {
     /// This method omits the calculation of a hash and can be used when only the
     /// filled memory is required. It is not necessary to call this method
     /// before calling any of the hashing functions.
+    ///
+    /// # Errors
+    /// - Returns [`Error::PwdTooLong`] if `pwd` is longer than `MAX_PWD_LEN`.
+    /// - Returns [`Error::SaltTooShort`] if `salt` is shorter than `MIN_SALT_LEN`.
+    /// - Returns [`Error::SaltTooLong`] if `salt` is longer than `MAX_SALT_LEN`.
     pub fn fill_memory(
         &self,
         pwd: &[u8],
@@ -279,7 +347,6 @@ impl<'key> Argon2<'key> {
         Self::verify_inputs(pwd, salt)?;
 
         let initial_hash = self.initial_hash(pwd, salt, &[]);
-
         self.fill_blocks(memory_blocks.as_mut(), initial_hash)
     }
 
@@ -290,7 +357,7 @@ impl<'key> Argon2<'key> {
         mut initial_hash: digest::Output<Blake2b512>,
     ) -> Result<()> {
         let block_count = self.params.block_count();
-        let memory_blocks = memory_blocks
+        let mut memory_blocks = memory_blocks
             .get_mut(..block_count)
             .ok_or(Error::MemoryTooLittle)?;
 
@@ -324,31 +391,59 @@ impl<'key> Argon2<'key> {
 
         // Run passes on blocks
         for pass in 0..iterations {
-            for slice in 0..SYNC_POINTS {
+            memory_blocks.for_each_segment(lanes, |mut memory_view, slice, lane| {
                 let data_independent_addressing = self.algorithm == Algorithm::Argon2i
                     || (self.algorithm == Algorithm::Argon2id
                         && pass == 0
                         && slice < SYNC_POINTS / 2);
 
-                for lane in 0..lanes {
-                    let mut address_block = Block::default();
-                    let mut input_block = Block::default();
-                    let zero_block = Block::default();
+                let mut address_block = Block::default();
+                let mut input_block = Block::default();
+                let zero_block = Block::default();
 
+                if data_independent_addressing {
+                    input_block.as_mut()[..6].copy_from_slice(&[
+                        pass as u64,
+                        lane as u64,
+                        slice as u64,
+                        block_count as u64,
+                        iterations as u64,
+                        self.algorithm as u64,
+                    ]);
+                }
+
+                let first_block = if pass == 0 && slice == 0 {
                     if data_independent_addressing {
-                        input_block.as_mut()[..6].copy_from_slice(&[
-                            pass as u64,
-                            lane as u64,
-                            slice as u64,
-                            memory_blocks.len() as u64,
-                            iterations as u64,
-                            self.algorithm as u64,
-                        ]);
+                        // Generate first set of addresses
+                        self.update_address_block(
+                            &mut address_block,
+                            &mut input_block,
+                            &zero_block,
+                        );
                     }
 
-                    let first_block = if pass == 0 && slice == 0 {
-                        if data_independent_addressing {
-                            // Generate first set of addresses
+                    // The first two blocks of each lane are already initialized
+                    2
+                } else {
+                    0
+                };
+
+                let mut cur_index = lane * lane_length + slice * segment_length + first_block;
+                let mut prev_index = if slice == 0 && first_block == 0 {
+                    // Last block in current lane
+                    cur_index + lane_length - 1
+                } else {
+                    // Previous block
+                    cur_index - 1
+                };
+
+                // Fill blocks in the segment
+                for block in first_block..segment_length {
+                    // Extract entropy
+                    let rand = if data_independent_addressing {
+                        let address_index = block % ADDRESSES_IN_BLOCK;
+
+                        if address_index == 0 {
                             self.update_address_block(
                                 &mut address_block,
                                 &mut input_block,
@@ -356,101 +451,73 @@ impl<'key> Argon2<'key> {
                             );
                         }
 
-                        // The first two blocks of each lane are already initialized
-                        2
+                        address_block.as_ref()[address_index]
+                    } else {
+                        memory_view.get_block(prev_index).as_ref()[0]
+                    };
+
+                    // Calculate source block index for compress function
+                    let ref_lane = if pass == 0 && slice == 0 {
+                        // Cannot reference other lanes yet
+                        lane
+                    } else {
+                        (rand >> 32) as usize % lanes
+                    };
+
+                    let reference_area_size = if pass == 0 {
+                        // First pass
+                        if slice == 0 {
+                            // First slice
+                            block - 1 // all but the previous
+                        } else if ref_lane == lane {
+                            // The same lane => add current segment
+                            slice * segment_length + block - 1
+                        } else {
+                            slice * segment_length - if block == 0 { 1 } else { 0 }
+                        }
+                    } else {
+                        // Second pass
+                        if ref_lane == lane {
+                            lane_length - segment_length + block - 1
+                        } else {
+                            lane_length - segment_length - if block == 0 { 1 } else { 0 }
+                        }
+                    };
+
+                    // 1.2.4. Mapping rand to 0..<reference_area_size-1> and produce
+                    // relative position
+                    let mut map = rand & 0xFFFFFFFF;
+                    map = (map * map) >> 32;
+                    let relative_position = reference_area_size
+                        - 1
+                        - ((reference_area_size as u64 * map) >> 32) as usize;
+
+                    // 1.2.5 Computing starting position
+                    let start_position = if pass != 0 && slice != SYNC_POINTS - 1 {
+                        (slice + 1) * segment_length
                     } else {
                         0
                     };
 
-                    let mut cur_index = lane * lane_length + slice * segment_length + first_block;
-                    let mut prev_index = if slice == 0 && first_block == 0 {
-                        // Last block in current lane
-                        cur_index + lane_length - 1
+                    let lane_index = (start_position + relative_position) % lane_length;
+                    let ref_index = ref_lane * lane_length + lane_index;
+
+                    // Calculate new block
+                    let result = self.compress(
+                        memory_view.get_block(prev_index),
+                        memory_view.get_block(ref_index),
+                    );
+
+                    if self.version == Version::V0x10 || pass == 0 {
+                        *memory_view.get_block_mut(cur_index) = result;
                     } else {
-                        // Previous block
-                        cur_index - 1
+                        *memory_view.get_block_mut(cur_index) ^= &result;
                     };
 
-                    // Fill blocks in the segment
-                    for block in first_block..segment_length {
-                        // Extract entropy
-                        let rand = if data_independent_addressing {
-                            let addres_index = block % ADDRESSES_IN_BLOCK;
-
-                            if addres_index == 0 {
-                                self.update_address_block(
-                                    &mut address_block,
-                                    &mut input_block,
-                                    &zero_block,
-                                );
-                            }
-
-                            address_block.as_ref()[addres_index]
-                        } else {
-                            memory_blocks[prev_index].as_ref()[0]
-                        };
-
-                        // Calculate source block index for compress function
-                        let ref_lane = if pass == 0 && slice == 0 {
-                            // Cannot reference other lanes yet
-                            lane
-                        } else {
-                            (rand >> 32) as usize % lanes
-                        };
-
-                        let reference_area_size = if pass == 0 {
-                            // First pass
-                            if slice == 0 {
-                                // First slice
-                                block - 1 // all but the previous
-                            } else if ref_lane == lane {
-                                // The same lane => add current segment
-                                slice * segment_length + block - 1
-                            } else {
-                                slice * segment_length - if block == 0 { 1 } else { 0 }
-                            }
-                        } else {
-                            // Second pass
-                            if ref_lane == lane {
-                                lane_length - segment_length + block - 1
-                            } else {
-                                lane_length - segment_length - if block == 0 { 1 } else { 0 }
-                            }
-                        };
-
-                        // 1.2.4. Mapping rand to 0..<reference_area_size-1> and produce
-                        // relative position
-                        let mut map = rand & 0xFFFFFFFF;
-                        map = (map * map) >> 32;
-                        let relative_position = reference_area_size
-                            - 1
-                            - ((reference_area_size as u64 * map) >> 32) as usize;
-
-                        // 1.2.5 Computing starting position
-                        let start_position = if pass != 0 && slice != SYNC_POINTS - 1 {
-                            (slice + 1) * segment_length
-                        } else {
-                            0
-                        };
-
-                        let lane_index = (start_position + relative_position) % lane_length;
-                        let ref_index = ref_lane * lane_length + lane_index;
-
-                        // Calculate new block
-                        let result =
-                            self.compress(&memory_blocks[prev_index], &memory_blocks[ref_index]);
-
-                        if self.version == Version::V0x10 || pass == 0 {
-                            memory_blocks[cur_index] = result;
-                        } else {
-                            memory_blocks[cur_index] ^= &result;
-                        };
-
-                        prev_index = cur_index;
-                        cur_index += 1;
-                    }
+                    prev_index = cur_index;
+                    cur_index += 1;
                 }
-            }
+            });
         }
 
         Ok(())
@@ -466,6 +533,7 @@ impl<'key> Argon2<'key> {
             }
 
             if self.cpu_feat_avx2.get() {
+                // SAFETY: checked that AVX2 was detected.
                 return unsafe { compress_avx2(rhs, lhs) };
             }
         }
@@ -474,6 +542,7 @@ impl<'key> Argon2<'key> {
     }
 
     /// Get default configured [`Params`].
+    #[must_use]
     pub const fn params(&self) -> &Params {
         &self.params
     }
@@ -493,7 +562,7 @@ impl<'key> Argon2<'key> {
         let mut blockhash_bytes = [0u8; Block::SIZE];
 
         for (chunk, v) in blockhash_bytes.chunks_mut(8).zip(blockhash.iter()) {
-            chunk.copy_from_slice(&v.to_le_bytes())
+            chunk.copy_from_slice(&v.to_le_bytes());
         }
 
         blake2b_long(&[&blockhash_bytes], out)?;
@@ -563,47 +632,29 @@ impl<'key> Argon2<'key> {
     }
 }
 
+#[cfg(feature = "kdf")]
+impl Kdf for Argon2<'_> {
+    fn derive_key(&self, password: &[u8], salt: &[u8], out: &mut [u8]) -> kdf::Result<()> {
+        self.hash_password_into(password, salt, out)?;
+        Ok(())
+    }
+}
+
+#[cfg(feature = "kdf")]
+impl Pbkdf for Argon2<'_> {}
+
 #[cfg(all(feature = "alloc", feature = "password-hash"))]
-#[cfg_attr(docsrs, doc(cfg(feature = "alloc")))]
-#[cfg_attr(docsrs, doc(cfg(feature = "password-hash")))]
-impl PasswordHasher for Argon2<'_> {
+impl CustomizedPasswordHasher<PasswordHash> for Argon2<'_> {
     type Params = Params;
 
-    fn hash_password<'a>(
+    fn hash_password_customized(
         &self,
         password: &[u8],
-        salt: impl Into<Salt<'a>>,
-    ) -> password_hash::Result<PasswordHash<'a>> {
-        let salt = salt.into();
-        let mut salt_arr = [0u8; 64];
-        let salt_bytes = salt.decode_b64(&mut salt_arr)?;
-
-        let output_len = self
-            .params
-            .output_len()
-            .unwrap_or(Params::DEFAULT_OUTPUT_LEN);
-
-        let output = password_hash::Output::init_with(output_len, |out| {
-            Ok(self.hash_password_into(password, salt_bytes, out)?)
-        })?;
-
-        Ok(PasswordHash {
-            algorithm: self.algorithm.ident(),
-            version: Some(self.version.into()),
-            params: ParamsString::try_from(&self.params)?,
-            salt: Some(salt),
-            hash: Some(output),
-        })
-    }
-
-    fn hash_password_customized<'a>(
-        &self,
-        password: &[u8],
-        alg_id: Option<Ident<'a>>,
-        version: Option<Decimal>,
+        salt: &[u8],
+        alg_id: Option<&str>,
+        version: Option<u32>,
         params: Params,
-        salt: impl Into<Salt<'a>>,
-    ) -> password_hash::Result<PasswordHash<'a>> {
+    ) -> password_hash::Result<PasswordHash> {
         let algorithm = alg_id
             .map(Algorithm::try_from)
             .transpose()?
@@ -614,8 +665,6 @@ impl PasswordHasher for Argon2<'_> {
             .transpose()?
             .unwrap_or_default();
 
-        let salt = salt.into();
-
         Self {
             secret: self.secret,
             algorithm,
@@ -624,17 +673,56 @@ impl PasswordHasher for Argon2<'_> {
             #[cfg(any(target_arch = "x86", target_arch = "x86_64"))]
             cpu_feat_avx2: self.cpu_feat_avx2,
         }
-        .hash_password(password, salt)
+        .hash_password_with_salt(password, salt)
     }
 }
 
-impl<'key> From<Params> for Argon2<'key> {
+#[cfg(all(feature = "alloc", feature = "password-hash"))]
+impl PasswordHasher<PasswordHash> for Argon2<'_> {
+    fn hash_password_with_salt(
+        &self,
+        password: &[u8],
+        salt: &[u8],
+    ) -> password_hash::Result<PasswordHash> {
+        let salt = Salt::new(salt)?;
+
+        let output_len = self
+            .params
+            .output_len()
+            .unwrap_or(Params::DEFAULT_OUTPUT_LEN);
+
+        let mut buffer = [0u8; Output::MAX_LENGTH];
+        let out = buffer
+            .get_mut(..output_len)
+            .ok_or(password_hash::Error::OutputSize)?;
+
+        self.hash_password_into(password, &salt, out)?;
+        let output = Output::new(out)?;
+
+        Ok(PasswordHash {
+            algorithm: self.algorithm.ident(),
+            version: Some(self.version.into()),
+            params: ParamsString::try_from(&self.params)?,
+            salt: Some(salt),
+            hash: Some(output),
+        })
+    }
+}
+
+#[cfg(all(feature = "alloc", feature = "password-hash"))]
+impl PasswordVerifier<str> for Argon2<'_> {
+    fn verify_password(&self, password: &[u8], hash: &str) -> password_hash::Result<()> {
+        self.verify_password(password, &PasswordHash::new(hash)?)
+    }
+}
+
+impl From<Params> for Argon2<'_> {
     fn from(params: Params) -> Self {
         Self::new(Algorithm::default(), Version::default(), params)
     }
 }
 
-impl<'key> From<&Params> for Argon2<'key> {
+impl From<&Params> for Argon2<'_> {
     fn from(params: &Params) -> Self {
         Self::from(params.clone())
     }
@@ -643,33 +731,32 @@ impl<'key> From<&Params> for Argon2<'key> {
 #[cfg(all(test, feature = "alloc", feature = "password-hash"))]
 #[allow(clippy::unwrap_used)]
 mod tests {
-    use crate::{Algorithm, Argon2, Params, PasswordHasher, Salt, Version};
+    use crate::{
+        Algorithm, Argon2, CustomizedPasswordHasher, Params, PasswordHasher, PasswordVerifier,
+        Version,
+    };
 
     /// Example password only: don't use this as a real password!!!
     const EXAMPLE_PASSWORD: &[u8] = b"hunter42";
 
     /// Example salt value. Don't use a static salt value!!!
-    const EXAMPLE_SALT: &str = "examplesaltvalue";
+    const EXAMPLE_SALT: &[u8] = b"example-salt";
 
     #[test]
     fn decoded_salt_too_short() {
         let argon2 = Argon2::default();
 
-        // Too short after decoding
-        let salt = Salt::from_b64("somesalt").unwrap();
+        // Too short: minimum size 8-bytes
+        let salt = b"weesalt";
 
         let res =
-            argon2.hash_password_customized(EXAMPLE_PASSWORD, None, None, Params::default(), salt);
-        assert_eq!(
-            res,
-            Err(password_hash::Error::SaltInvalid(
-                password_hash::errors::InvalidValue::TooShort
-            ))
-        );
+            argon2.hash_password_customized(EXAMPLE_PASSWORD, salt, None, None, Params::default());
+
+        assert_eq!(res, Err(password_hash::Error::SaltInvalid));
     }
 
     #[test]
-    fn hash_simple_retains_configured_params() {
+    fn password_hash_retains_configured_params() {
         // Non-default but valid parameters
         let t_cost = 4;
         let m_cost = 2048;
@@ -678,8 +765,9 @@ mod tests {
 
         let params = Params::new(m_cost, t_cost, p_cost, None).unwrap();
         let hasher = Argon2::new(Algorithm::default(), version, params);
-        let salt = Salt::from_b64(EXAMPLE_SALT).unwrap();
-        let hash = hasher.hash_password(EXAMPLE_PASSWORD, salt).unwrap();
+        let hash = hasher
+            .hash_password_with_salt(EXAMPLE_PASSWORD, EXAMPLE_SALT)
+            .unwrap();
 
         assert_eq!(hash.version.unwrap(), version.into());
 
@@ -692,5 +780,18 @@ mod tests {
                 value,
             );
         }
+    }
+
+    #[test]
+    fn non_default_output_len_round_trip_should_verify() {
+        let params = Params::new(8, 1, 1, Some(16)).unwrap();
+        let hash = Argon2::new(Algorithm::Argon2id, Version::V0x13, params)
+            .hash_password_with_salt(EXAMPLE_PASSWORD, EXAMPLE_SALT)
+            .unwrap();
+
+        assert_eq!(
+            Argon2::default().verify_password(EXAMPLE_PASSWORD, &hash),
+            Ok(())
+        );
     }
 }
