@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-09-01 08:15:10
+Generated: 2026-09-01 09:51:15
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|253|
-|⚠️ Warnings|6250|
-|**Total**|**6509**|
+|⚠️ Warnings|6264|
+|**Total**|**6523**|
 
 ---
 
@@ -6179,6 +6179,80 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'fisher_yates'ligne 4 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_is_permutation'ligne 15 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_is_permutation' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_is_deterministic'ligne 23 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_is_deterministic' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_different_seeds_produce_different_permutations'ligne 31 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_different_seeds_produce_different_permutations' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_contains_every_value_once'ligne 39 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_contains_every_value_once' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_zero_seed'ligne 47 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_zero_seed' ne possède pas d'annotations de type.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_max_seed'ligne 55 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'test_max_seed' ne possède pas d'annotations de type.
+
+---
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 
 ## ⚠️ Warning
@@ -8286,7 +8360,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** markdown
-- **Message :** Ligne 158 > 120 caractères.
+- **Message :** Ligne 33 > 120 caractères.
 
 ---
 
