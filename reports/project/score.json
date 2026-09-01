@@ -1,5 +1,5 @@
 {
-    "generated": "2026-09-01T05:16:00.037236",
+    "generated": "2026-09-01T07:54:51.886620",
     "score": 25,
     "status": "Très Décevant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 6510,
+    "problem_count": 6509,
     "details": {
         "markdown": {
             "score": 42,
@@ -28,12 +28,6 @@
                 "html": 5
             },
             "problems": [
-                {
-                    "file": "server_rust/README.md",
-                    "severity": "error",
-                    "message": "Fichier vide.",
-                    "module": "markdown"
-                },
                 {
                     "file": "docs/NETWORK.md",
                     "severity": "error",
