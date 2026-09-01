@@ -594,6 +594,7 @@ jobs:
                 git config --global user.name "github-actions"
                 git config --global user.email "github-actions@github.com"
                 export GH_TOKEN="${{ github.token }}"
+                
                 git fetch origin
                 if git show-ref --verify --quiet refs/remotes/origin/ci-reports
                 then
@@ -601,7 +602,33 @@ jobs:
                 else
                 git worktree add -b ci-reports/tmp/ci-worktree
                 fi
-                
+                echo "======================================"
+                echo "SOURCE BUILD"
+                echo "======================================"
+
+                ls -la "$GITHUB_WORKSPACE/reports/build"
+
+                echo ""
+                echo "find :"
+
+                find "$GITHUB_WORKSPACE/reports/build" -maxdepth 4 -print
+
+                echo ""
+                echo "Noms bruts :"
+
+                printf '<%s>\n' "$GITHUB_WORKSPACE"/reports/build/*
+
+                echo ""
+                echo "DESTINATION BUILD"
+                echo "======================================"
+
+                ls -la "/tmp/ci-worktree/reports"
+
+                echo ""
+                echo "find :"
+
+                find "/tmp/ci-worktree/reports" -maxdepth 4 -print
+                rm -rf "/tmp/ci-worktree/reports/build"
                 mkdir -p "/tmp/ci-worktree/reports/build"
                 cp -a "$GITHUB_WORKSPACE/reports/build/." "/tmp/ci-worktree/reports/build/" 2>/dev/null || true
                 cd /tmp/ci-worktree
