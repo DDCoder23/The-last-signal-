@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-09-01 11:49:31
+**Date :** 2026-09-01 12:17:28
 
 # 25/100
 
@@ -3997,7 +3997,7 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** organization
 
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/crypto-common-0.1.7/Cargo.toml.orig
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/crypto-common-0.1.6/Cargo.toml.orig
 
 ## ⚠️ Warning
 - **Module :** organization
@@ -4945,6 +4945,16 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** organization
 
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/phc/Cargo.toml.orig
+
+## ⚠️ Warning
+- **Module :** organization
+- **Message :** Fichier temporaire trouvé.
+
+- **suggestion :** Supprimer ce fichier.
+
+- **module :** organization
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/pin-project-lite/Cargo.toml.orig
 
 ## ⚠️ Warning
@@ -5478,16 +5488,6 @@ TypeError: result doit être un dict, reçu int
 - **module :** organization
 
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/stringprep/Cargo.toml.orig
-
-## ⚠️ Warning
-- **Module :** organization
-- **Message :** Fichier temporaire trouvé.
-
-- **suggestion :** Supprimer ce fichier.
-
-- **module :** organization
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/subtle/Cargo.toml.orig
 
 ## ⚠️ Warning
 - **Module :** organization
@@ -9471,121 +9471,127 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:18 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:43 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:28 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:52 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:46 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:62 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:75 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:80 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:81 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:109 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:89 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:115 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:95 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:123 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:101 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:129 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:107 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:135 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:113 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:141 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:140 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:147 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:152 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:174 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:158 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:186 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:164 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:192 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:173 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:198 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:185 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:207 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:191 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:219 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:197 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:225 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:203 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:231 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:209 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:237 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:243 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -9597,199 +9603,223 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:9 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:9 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:18 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:15 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:21 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:23 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:28 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:26 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:45 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:8).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:43 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:46 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:52 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:50 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:55 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:57 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:62 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:61 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:79 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:57).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:75 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:80 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:81 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:84 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:89 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:91 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:95 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:95 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:101 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:109 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:107 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:115 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:112 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:81).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:123 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:113 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:129 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:117 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:135 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:128 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:141 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:140 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:146 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:130).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:152 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:147 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:157 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:105).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:151 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:158 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:162 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:164 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:174 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:167 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:186 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:172 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:121).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:191 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:154).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:173 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:192 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:177 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:198 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:185 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:201 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:191 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:206 titre dupliqué (déjà présent dans server_rust/vendor/password-hash/CHANGELOG.md:170).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:197 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:207 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:203 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:211 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/CHANGELOG.md:209 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:219 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:225 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:231 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:237 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/argon2/CHANGELOG.md:243 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
@@ -9803,31 +9833,19 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/README.md:14 titre dupliqué (déjà présent dans server_rust/vendor/subtle/README.md:50).
+- **Message :** server_rust/vendor/argon2/README.md:12 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:20).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/README.md:28 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/README.md:53).
+- **Message :** server_rust/vendor/argon2/README.md:26 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/argon2/README.md:35 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/README.md:13).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/argon2/README.md:40 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/argon2/README.md:49 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
+- **Message :** server_rust/vendor/argon2/README.md:35 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
 
 - **module :** titles
 
@@ -10377,7 +10395,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/base64ct/README.md:20 titre dupliqué (déjà présent dans server_rust/vendor/subtle/README.md:50).
+- **Message :** server_rust/vendor/base64ct/README.md:45 titre dupliqué (déjà présent dans server_rust/vendor/phc/README.md:19).
 
 - **module :** titles
 
@@ -11007,55 +11025,61 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:19 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:40 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:25 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:50 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:31 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:56 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:37 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:62 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:45 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:68 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:51 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:76 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:69 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:82 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:75 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:100 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:83 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:106 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:114 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -11073,79 +11097,103 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:12 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:15 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:19 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:21 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:25 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:26 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:31 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:40 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:37 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:43 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:45 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:50 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:51 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:56 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:59 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:62 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:62 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:68 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:69 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:76 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:75 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:82 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:83 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:90 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/CHANGELOG.md:86 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:93 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:100 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:106 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:114 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/blake2/CHANGELOG.md:117 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
@@ -11153,25 +11201,19 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/README.md:14 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/README.md:53).
+- **Message :** server_rust/vendor/blake2/README.md:12 titre dupliqué (déjà présent dans server_rust/vendor/icu_locale_core/README.md:24).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/README.md:21 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/README.md:13).
+- **Message :** server_rust/vendor/blake2/README.md:58 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/blake2/README.md:26 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/blake2/README.md:35 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
+- **Message :** server_rust/vendor/blake2/README.md:67 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
 
 - **module :** titles
 
@@ -14799,7 +14841,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/cmov/README.md:17 titre dupliqué (déjà présent dans server_rust/vendor/subtle/README.md:50).
+- **Message :** server_rust/vendor/cmov/README.md:17 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:20).
 
 - **module :** titles
 
@@ -14817,7 +14859,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/cmov/README.md:78 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:45).
+- **Message :** server_rust/vendor/cmov/README.md:78 titre dupliqué (déjà présent dans server_rust/vendor/phc/README.md:19).
 
 - **module :** titles
 
@@ -15857,175 +15899,157 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-# 📄 server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md
+# 📄 server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:9 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:9 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:15 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:15 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:21 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:21 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:27 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:27 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:33 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:33 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:39 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:41 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:47 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:8 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:74).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:8 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:68).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:9 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:9 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:14 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:80).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:14 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:74).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:15 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:15 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:20 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:86).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:20 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:80).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:21 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:21 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:26 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:92).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:26 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:86).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:27 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:27 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:32 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:32 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:92).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:33 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:33 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:40 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:106).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:38 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:41 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:39 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/CHANGELOG.md:46 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:112).
+
+- **module :** titles
+
+# 📄 server_rust/vendor/crypto-common-0.1.6/README.md
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/crypto-common-0.1.6/README.md:1 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/README.md:1).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:46 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:106).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/README.md:15 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/README.md:53).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:47 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/README.md:22 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/README.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/CHANGELOG.md:52 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/CHANGELOG.md:112).
-
-- **module :** titles
-
-# 📄 server_rust/vendor/crypto-common-0.1.7/README.md
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/README.md:1 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/README.md:1).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/README.md:27 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/README.md:15 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/README.md:53).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/README.md:22 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/README.md:13).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/README.md:27 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/crypto-common-0.1.7/README.md:36 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
+- **Message :** server_rust/vendor/crypto-common-0.1.6/README.md:36 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
 
 - **module :** titles
 
@@ -16399,7 +16423,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/ctutils/README.md:14 titre dupliqué (déjà présent dans server_rust/vendor/subtle/README.md:50).
+- **Message :** server_rust/vendor/ctutils/README.md:14 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:20).
 
 - **module :** titles
 
@@ -16411,7 +16435,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/ctutils/README.md:54 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:45).
+- **Message :** server_rust/vendor/ctutils/README.md:54 titre dupliqué (déjà présent dans server_rust/vendor/phc/README.md:19).
 
 - **module :** titles
 
@@ -16539,7 +16563,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:58 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:50).
+- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:58 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:81).
 
 - **module :** titles
 
@@ -16563,31 +16587,31 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:119 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:112).
+- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:119 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:143).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:123 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:116).
+- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:123 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:147).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:125 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:118).
+- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:125 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:149).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:131 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:122).
+- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:131 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:153).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:135 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:124).
+- **Message :** server_rust/vendor/digest-0.10.7/CHANGELOG.md:135 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:155).
 
 - **module :** titles
 
@@ -16831,7 +16855,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest/CHANGELOG.md:147 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:50).
+- **Message :** server_rust/vendor/digest/CHANGELOG.md:147 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:81).
 
 - **module :** titles
 
@@ -16927,7 +16951,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest/CHANGELOG.md:208 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:112).
+- **Message :** server_rust/vendor/digest/CHANGELOG.md:208 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:143).
 
 - **module :** titles
 
@@ -16939,13 +16963,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest/CHANGELOG.md:212 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:116).
+- **Message :** server_rust/vendor/digest/CHANGELOG.md:212 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:147).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest/CHANGELOG.md:214 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:118).
+- **Message :** server_rust/vendor/digest/CHANGELOG.md:214 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:149).
 
 - **module :** titles
 
@@ -16963,7 +16987,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest/CHANGELOG.md:220 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:122).
+- **Message :** server_rust/vendor/digest/CHANGELOG.md:220 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:153).
 
 - **module :** titles
 
@@ -16975,7 +16999,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/digest/CHANGELOG.md:224 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:124).
+- **Message :** server_rust/vendor/digest/CHANGELOG.md:224 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:155).
 
 - **module :** titles
 
@@ -22903,13 +22927,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/hybrid-array/README.md:15 titre dupliqué (déjà présent dans server_rust/vendor/subtle/README.md:50).
+- **Message :** server_rust/vendor/hybrid-array/README.md:15 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:20).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/hybrid-array/README.md:26 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:45).
+- **Message :** server_rust/vendor/hybrid-array/README.md:26 titre dupliqué (déjà présent dans server_rust/vendor/phc/README.md:19).
 
 - **module :** titles
 
@@ -25517,7 +25541,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/md-5/CHANGELOG.md:97 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:108).
+- **Message :** server_rust/vendor/md-5/CHANGELOG.md:97 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:139).
 
 - **module :** titles
 
@@ -27893,31 +27917,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:33 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:39 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:45 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:64 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:70 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:58 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -27929,37 +27929,31 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:100 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:88 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:106 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:94 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:116 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:113 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:122 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:119 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:130 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:139 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:131 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -27977,139 +27971,145 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:165 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:171 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:179 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:188 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:198 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:204 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
 - **Message :** server_rust/vendor/password-hash/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:9 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:9 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:14 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:18 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:22 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:25 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:33 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:30 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:39 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:58 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:45 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:63 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:50 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:71 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:53 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:82 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:64 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:88 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:70 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:94 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:73 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:99 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:82 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:102 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:88 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:113 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:100 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:119 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:106 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:122 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:109 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:131 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:116 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:122 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:130 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:133 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:139 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:142 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:137 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
@@ -28121,13 +28121,67 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:155 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:155 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:159 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:158 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:165 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:171 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:179 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:182 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:188 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:191 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:198 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:204 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/password-hash/CHANGELOG.md:208 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
@@ -28135,31 +28189,59 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/README.md:14 titre dupliqué (déjà présent dans server_rust/vendor/subtle/README.md:50).
+- **Message :** server_rust/vendor/password-hash/README.md:12 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:20).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/README.md:30 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/README.md:53).
+- **Message :** server_rust/vendor/password-hash/README.md:35 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/README.md:37 titre dupliqué (déjà présent dans server_rust/vendor/crypto-common/README.md:13).
+- **Message :** server_rust/vendor/password-hash/README.md:44 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
+
+- **module :** titles
+
+# 📄 server_rust/vendor/phc/CHANGELOG.md
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/phc/CHANGELOG.md:8 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/README.md:42 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
+- **Message :** server_rust/vendor/phc/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/password-hash/README.md:51 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
+- **Message :** server_rust/vendor/phc/CHANGELOG.md:8 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+
+- **module :** titles
+
+# 📄 server_rust/vendor/phc/README.md
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/phc/README.md:13 saut de niveau H1 → H3.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/phc/README.md:26 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:60).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/phc/README.md:35 titre dupliqué (déjà présent dans server_rust/vendor/crossbeam-utils/README.md:69).
 
 - **module :** titles
 
@@ -30913,7 +30995,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:61 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:50).
+- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:61 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:81).
 
 - **module :** titles
 
@@ -31093,7 +31175,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:164 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:112).
+- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:164 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:143).
 
 - **module :** titles
 
@@ -31117,7 +31199,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:172 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:118).
+- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:172 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:149).
 
 - **module :** titles
 
@@ -31141,7 +31223,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:180 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:122).
+- **Message :** server_rust/vendor/sha2-0.10.9/CHANGELOG.md:180 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:153).
 
 - **module :** titles
 
@@ -31421,7 +31503,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:89 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:50).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:89 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:81).
 
 - **module :** titles
 
@@ -31523,13 +31605,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:192 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:112).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:192 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:143).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:200 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:118).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:200 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:149).
 
 - **module :** titles
 
@@ -31541,7 +31623,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:208 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:122).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:208 titre dupliqué (déjà présent dans server_rust/vendor/blake2/CHANGELOG.md:153).
 
 - **module :** titles
 
@@ -33397,96 +33479,6 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
-# 📄 server_rust/vendor/subtle/CHANGELOG.md
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:1 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:1).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:5 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:790).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:20 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:824).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:25 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:832).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:30 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:842).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:43 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:858).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:48 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:867).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:56 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:876).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:65 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:885).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CHANGELOG.md:71 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:893).
-
-- **module :** titles
-
-# 📄 server_rust/vendor/subtle/CONTRIBUTING.md
-
-## ❌ Error
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/CONTRIBUTING.md: contient 2 titres H1 (1 attendu).
-
-- **module :** titles
-
-# 📄 server_rust/vendor/subtle/README.md
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/README.md:1 titre très long (416 caractères).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/README.md:40 titre dupliqué (déjà présent dans server_rust/vendor/regex-automata/README.md:13).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/subtle/README.md:44 titre dupliqué (déjà présent dans server_rust/vendor/getrandom-0.2.17/README.md:53).
-
-- **module :** titles
-
 # 📄 server_rust/vendor/syn-2.0.119/README.md
 
 ## ❌ Error
@@ -33858,12 +33850,6 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** titles
 - **Message :** server_rust/vendor/tempfile/CHANGELOG.md:357 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:876).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/tempfile/CHANGELOG.md:384 titre dupliqué (déjà présent dans server_rust/vendor/subtle/CHANGELOG.md:60).
 
 - **module :** titles
 
@@ -40487,7 +40473,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/zeroize/README.md:19 titre dupliqué (déjà présent dans server_rust/vendor/subtle/README.md:50).
+- **Message :** server_rust/vendor/zeroize/README.md:19 titre dupliqué (déjà présent dans server_rust/vendor/base64ct/README.md:20).
 
 - **module :** titles
 
