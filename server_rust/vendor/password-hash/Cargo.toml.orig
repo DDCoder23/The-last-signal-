@@ -1,35 +1,33 @@
 [package]
 name = "password-hash"
-description = """
-Traits which describe the functionality of password hashing algorithms,
-as well as a `no_std`-friendly implementation of the PHC string format
-(a well-defined subset of the Modular Crypt Format a.k.a. MCF)
-"""
-version = "0.5.0"
+version = "0.6.1"
 authors = ["RustCrypto Developers"]
-license = "MIT OR Apache-2.0"
-readme = "README.md"
+edition = "2024"
+rust-version = "1.85"
 documentation = "https://docs.rs/password-hash"
-repository = "https://github.com/RustCrypto/traits/tree/master/password-hash"
+readme = "README.md"
+repository = "https://github.com/RustCrypto/traits"
+license = "MIT OR Apache-2.0"
 categories = ["authentication", "cryptography", "no-std"]
 keywords = ["crypt", "mcf", "password", "pbkdf", "phc"]
-edition = "2021"
-rust-version = "1.60"
+description = """
+Traits which describe the functionality of password hashing algorithms, with optional support for a
+`no_std`/`no_alloc`-friendly implementation of the PHC string format, as well as generic support for other
+formats (e.g. Modular Crypt Format)
+"""
 
 [dependencies]
-base64ct = "1"
-subtle = { version = "2", default-features = false }
-
-# optional dependencies
-rand_core = { version = "0.6.4", optional = true, default-features = false }
+getrandom = { version = "0.4", optional = true, default-features = false }
+phc = { version = "0.6", optional = true, default-features = false }
+rand_core = { version = "0.10", optional = true, default-features = false }
 
 [features]
-default = ["rand_core"]
-alloc = ["base64ct/alloc"]
-std = ["alloc", "base64ct/std", "rand_core/std"]
+alloc = ["phc?/alloc"]
+getrandom = ["dep:getrandom", "phc?/getrandom"]
+rand_core = ["dep:rand_core", "phc?/rand_core"]
 
-getrandom = ["rand_core/getrandom"]
+[lints]
+workspace = true
 
 [package.metadata.docs.rs]
 all-features = true
-rustdoc-args = ["--cfg", "docsrs"]
