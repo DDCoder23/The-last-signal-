@@ -19,7 +19,8 @@ jobs:
 
   launch:
     uses: ./.github/workflows/Launcher.yml
-  build:
+  
+  archive:
     needs: launch
     if: >-
      ${{
@@ -27,17 +28,6 @@ jobs:
       (
         needs.launch.result == 'success' ||
         needs.launch.result == 'failure'
-      )
-     }}
-    uses: ./.github/workflows/build.yml
-  archive:
-    needs: build
-    if: >-
-     ${{
-      always() &&
-      (
-        needs.build.result == 'success' ||
-        needs.build.result == 'failure'
       )
      }}
     uses: ./.github/workflows/Archive.yml
@@ -62,7 +52,6 @@ jobs:
   cancel-nightly:
     needs:
       - launch
-      - build
       - archive
       - security
       
@@ -71,7 +60,6 @@ jobs:
       always() &&
       (
         needs.launch.result == 'failure' ||
-        needs.build.result == 'failure' ||
         needs.archive.result == 'failure' ||
         needs.security.result == 'failure' 
       )
