@@ -609,7 +609,7 @@ jobs:
                 if git diff --cached --quiet; then
                 echo "No changes to commit."
                 cd "$GITHUB_WORKSPACE"
-                git worktree remove /tmp/ci-worktree --force
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/build"
                 exit 0
                 fi
                 git commit -m "Report build n° ${REPORT_NUMBER}"
@@ -626,7 +626,7 @@ jobs:
                 then
                 echo "Push réussi"
                 cd "$GITHUB_WORKSPACE"
-                git worktree remove /tmp/ci-worktree --force
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/build"
                 exit 0
                 fi
 
@@ -666,6 +666,6 @@ jobs:
                 fi
 
                 cd "$GITHUB_WORKSPACE"
-                git worktree remove /tmp/ci-worktree --force
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/build"
       
   
