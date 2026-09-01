@@ -576,9 +576,9 @@ jobs:
                 else
                 git worktree add -b ci-reports/tmp/ci-worktree
                 fi
-                 rm -rf --ignore-unmatch "/tmp/ci-worktree/reports/rust"
+                
                 mkdir -p "/tmp/ci-worktree/reports/rust"
-                cp -ra "$GITHUB_WORKSPACE/reports/rust/." "/tmp/ci-worktree/reports/rust/" 2>/dev/null || true
+                cp -a "$GITHUB_WORKSPACE/reports/rust/." "/tmp/ci-worktree/reports/rust/" 2>/dev/null || true
                 cd /tmp/ci-worktree
                 git add -A
                 git status
