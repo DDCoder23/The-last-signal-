@@ -1,5 +1,5 @@
 {
-    "generated": "2026-09-01T08:15:09.191701",
+    "generated": "2026-09-01T09:51:14.434205",
     "score": 25,
     "status": "Très Décevant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 6509,
+    "problem_count": 6523,
     "details": {
         "markdown": {
             "score": 42,
@@ -403,7 +403,7 @@
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
-                    "message": "Ligne 158 > 120 caractères.",
+                    "message": "Ligne 33 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -33117,13 +33117,13 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 82,
+                "modules": 83,
                 "classes": 67,
-                "functions": 434,
+                "functions": 441,
                 "documented_modules": 10,
                 "documented_classes": 20,
                 "documented_functions": 109,
-                "typed_functions": 106,
+                "typed_functions": 107,
                 "todo": 6,
                 "long_functions": 26
             },
@@ -35340,6 +35340,90 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py",
                     "severity": "warning",
                     "message": "La fonction 'next' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'fisher_yates'ligne 4 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_is_permutation'ligne 15 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_is_permutation' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_is_deterministic'ligne 23 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_is_deterministic' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_different_seeds_produce_different_permutations'ligne 31 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_different_seeds_produce_different_permutations' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_contains_every_value_once'ligne 39 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_contains_every_value_once' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_zero_seed'ligne 47 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_zero_seed' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_max_seed'ligne 55 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py",
+                    "severity": "warning",
+                    "message": "La fonction 'test_max_seed' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
