@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-09-01 14:49:55
+**Date :** 2026-09-01 18:42:23
 
 # 25/100
 
@@ -2280,6 +2280,32 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
+
+- **module :** python
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La classe 'SplitMix64' ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'next'ligne 9 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'next' ne possède pas d'annotations de type.
 
 - **module :** python
 
