@@ -590,6 +590,7 @@ jobs:
       
       - name: 💾 Commit reports
         run: |
+                cd "$GITHUB_WORKSPACE"   
                 git config --global user.name "github-actions"
                 git config --global user.email "github-actions@github.com"
                 export GH_TOKEN="${{ github.token }}"
