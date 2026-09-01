@@ -746,7 +746,7 @@ jobs:
                 if git diff --cached --quiet; then
                 echo "No changes to commit."
                 cd "$GITHUB_WORKSPACE"
-                git worktree remove /tmp/ci-worktree --force
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/python"
                 exit 0
                 fi
                 git commit -m "Report python n° ${REPORT_NUMBER}"
@@ -763,7 +763,7 @@ jobs:
                 then
                 echo "Push réussi"
                 cd "$GITHUB_WORKSPACE"
-                git worktree remove /tmp/ci-worktree --force
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/python"
                 exit 0
                 fi
 
@@ -801,9 +801,9 @@ jobs:
                 --title "Report python n° ${REPORT_NUMBER}"\
                 --body "Le push direct vers \`ci-reports\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont     disponibles dans cette Pull Request."
                 fi
-
+                
                 cd "$GITHUB_WORKSPACE"
-                git worktree remove /tmp/ci-worktree --force
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/python"
         
            
 
