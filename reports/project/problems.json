@@ -35784,6 +35784,30 @@
         "module": "python"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+        "severity": "warning",
+        "message": "Le module ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+        "severity": "warning",
+        "message": "La classe 'SplitMix64' ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+        "severity": "warning",
+        "message": "La fonction 'next'ligne 9 ne possède pas de docstring.",
+        "module": "python"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+        "severity": "warning",
+        "message": "La fonction 'next' ne possède pas d'annotations de type.",
+        "module": "python"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py",
         "severity": "warning",
         "message": "Le module ne possède pas de docstring.",
