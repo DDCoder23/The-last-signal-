@@ -28,10 +28,9 @@ Ok(hash) => hash,
 Err(_) => return false,
 };
 
-```
+
 Argon2::default()
     .verify_password(password.as_bytes(), &parsed_hash)
     .is_ok()
-```
 
 }
