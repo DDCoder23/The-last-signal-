@@ -732,7 +732,7 @@ jobs:
                 else
                 git worktree add -b ci-reports/tmp/ci-worktree
                 fi
-                rm -rf "/tmp/ci-worktree/reports/python"
+                rm -rf --ignore-unmatch "/tmp/ci-worktree/reports/python"
                 mkdir -p "/tmp/ci-worktree/reports/python"
                 cp -ra "$GITHUB_WORKSPACE/reports/python/." "/tmp/ci-worktree/reports/python/" 2>/dev/null || true
                 cd /tmp/ci-worktree
