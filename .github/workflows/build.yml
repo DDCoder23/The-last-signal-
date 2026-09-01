@@ -52,7 +52,7 @@ jobs:
         shell: bash
         run: |
           DATE=$(date -u +"%Y-%m-%d")
-
+          mkdir -p report-numbers
           REPORT_DIR="reports/build/build-${{ matrix.os }}/${DATE}"
           mkdir -p "$REPORT_DIR"
 
