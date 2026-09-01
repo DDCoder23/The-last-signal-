@@ -144,7 +144,8 @@ jobs:
     - name: update cargo vendor
       working-directory: server_rust
       run: | 
-             
+             set -euxo pipefail
+
              rm -rf vendor
              rm -f Cargo.lock
              cargo update
