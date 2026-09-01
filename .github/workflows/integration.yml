@@ -167,7 +167,7 @@ jobs:
              git add vendor Cargo.lock
              git stash --staged
              git pull
-             git stash pop --index @{0}
+             git stash pop --index stash@{0}
              if git diff --name-only --diff-filter=U | grep -q .; then
              echo "⚠️ Conflits détectés"
              git checkout --ours .
