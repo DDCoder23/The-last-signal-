@@ -1,4 +1,4 @@
-from test_splitmix64 import SplitMix64
+import client_python.crypto 
 
 
 def fisher_yates(seed: int) -> list[int]:
