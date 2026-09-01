@@ -147,7 +147,7 @@ jobs:
         with:
            name: report-number-${{ matrix.os }}
            path: report-numbers/
-           if-no-files-found: warning
+           if-no-files-found: ignore
       - name: Upload build report
         uses: actions/upload-artifact@v5
         with:
