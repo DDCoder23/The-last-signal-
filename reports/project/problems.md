@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-09-01 14:49:56
+Generated: 2026-09-01 15:19:28
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|252|
-|⚠️ Warnings|6263|
-|**Total**|**6521**|
+|⚠️ Warnings|6267|
+|**Total**|**6525**|
 
 ---
 
@@ -1957,6 +1957,30 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'disconnect' ne possède pas d'annotations de type.
+
+---
+
+# 📄 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La classe 'SplitMix64' ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'next'ligne 9 ne possède pas de docstring.
+
+## ⚠️ Warning
+
+- **Module :** python
+- **Message :** La fonction 'next' ne possède pas d'annotations de type.
 
 ---
 

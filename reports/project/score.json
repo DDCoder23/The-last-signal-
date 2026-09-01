@@ -1,5 +1,5 @@
 {
-    "generated": "2026-09-01T14:49:55.333980",
+    "generated": "2026-09-01T15:19:27.439990",
     "score": 25,
     "status": "Très Décevant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 6521,
+    "problem_count": 6525,
     "details": {
         "markdown": {
             "score": 42,
@@ -33105,9 +33105,9 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 83,
-                "classes": 67,
-                "functions": 441,
+                "modules": 84,
+                "classes": 68,
+                "functions": 442,
                 "documented_modules": 10,
                 "documented_classes": 20,
                 "documented_functions": 109,
@@ -35856,6 +35856,30 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py",
                     "severity": "warning",
                     "message": "La fonction 'decode' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+                    "severity": "warning",
+                    "message": "La classe 'SplitMix64' ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+                    "severity": "warning",
+                    "message": "La fonction 'next'ligne 9 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py",
+                    "severity": "warning",
+                    "message": "La fonction 'next' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
