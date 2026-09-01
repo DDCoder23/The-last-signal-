@@ -1,4 +1,4 @@
-# RustCrypto: Argon2
+# [RustCrypto]: Argon2
 
 [![crate][crate-image]][crate-link]
 [![Docs][docs-image]][docs-link]
@@ -8,8 +8,6 @@
 [![Project Chat][chat-image]][chat-link]
 
 Pure Rust implementation of the [Argon2] password hashing function.
-
-[Documentation][docs-link]
 
 # About
 
@@ -24,18 +22,6 @@ It implements the following three algorithmic variants:
 
 Support is provided for embedded (i.e. `no_std`) environments, including
 ones without `alloc` support.
-
-## Minimum Supported Rust Version
-
-Rust **1.65** or higher.
-
-Minimum supported Rust version can be changed in the future, but it will be
-done with a minor version bump.
-
-## SemVer Policy
-
-- All on-by-default features of this library are covered by SemVer
-- MSRV is considered exempt from SemVer as noted above
 
 ## License
 
@@ -54,19 +40,20 @@ dual licensed as above, without any additional terms or conditions.
 
 [//]: # (badges)
 
-[crate-image]: https://buildstats.info/crate/argon2
+[crate-image]: https://img.shields.io/crates/v/argon2
 [crate-link]: https://crates.io/crates/argon2
 [docs-image]: https://docs.rs/argon2/badge.svg
 [docs-link]: https://docs.rs/argon2/
+[build-image]: https://github.com/RustCrypto/password-hashes/actions/workflows/argon2.yml/badge.svg
+[build-link]: https://github.com/RustCrypto/password-hashes/actions/workflows/argon2.yml
 [license-image]: https://img.shields.io/badge/license-Apache2.0/MIT-blue.svg
-[rustc-image]: https://img.shields.io/badge/rustc-1.65+-blue.svg
+[rustc-image]: https://img.shields.io/badge/rustc-1.85+-blue.svg
 [chat-image]: https://img.shields.io/badge/zulip-join_chat-blue.svg
 [chat-link]: https://rustcrypto.zulipchat.com/#narrow/stream/260046-password-hashes
-[build-image]: https://github.com/RustCrypto/password-hashes/workflows/argon2/badge.svg?branch=master&event=push
-[build-link]: https://github.com/RustCrypto/password-hashes/actions?query=workflow%3Aargon2
 
 [//]: # (general links)
 
+[RustCrypto]: https://github.com/RustCrypto
 [Argon2]: https://en.wikipedia.org/wiki/Argon2
 [key derivation function]: https://en.wikipedia.org/wiki/Key_derivation_function
 [Password Hashing Competition]: https://www.password-hashing.net/

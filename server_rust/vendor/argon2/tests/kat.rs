@@ -5,6 +5,7 @@
 //! <https://datatracker.ietf.org/doc/draft-irtf-cfrg-argon2/>
 
 #![cfg(all(feature = "alloc", feature = "password-hash"))]
+#![allow(clippy::unwrap_used, reason = "tests")]
 
 // TODO(tarcieri): test full set of vectors from the reference implementation:
 // https://github.com/P-H-C/phc-winner-argon2/blob/master/src/test.c
@@ -14,7 +15,6 @@ use argon2::{
     PasswordVerifier, Version,
 };
 use hex_literal::hex;
-use password_hash::SaltString;
 
 /// Params used by the KATs.
 fn example_params() -> Params {
@@ -367,8 +367,7 @@ fn hashtest(
     assert_eq!(out, expected_raw_hash);
 
     // Test hash encoding
-    let salt_string = SaltString::encode_b64(salt).unwrap();
-    let phc_hash = ctx.hash_password(pwd, &salt_string).unwrap().to_string();
+    let phc_hash = ctx.hash_password_with_salt(pwd, salt).unwrap().to_string();
     assert_eq!(phc_hash, expected_phc_hash);
 
     let hash = PasswordHash::new(alternative_phc_hash).unwrap();
@@ -452,7 +451,7 @@ ignored_testcase_good!(
 
 // TODO: If version is not provided, verifier incorrectly uses version 0x13
 #[ignore]
-#[cfg(feature = "test_large_ram")]
+#[cfg(test_large_ram)]
 testcase_good!(
     reference_argon2i_v0x10_2_20_1_large_ram,
     Algorithm::Argon2i,
@@ -585,7 +584,7 @@ fn reference_argon2i_v0x10_mismatching_hash() {
     .unwrap();
     assert_eq!(
         Argon2::default().verify_password(b"password", &hash),
-        Err(password_hash::errors::Error::Password)
+        Err(password_hash::Error::PasswordInvalid)
     );
 }
 
@@ -604,7 +603,7 @@ testcase_good!(
     "$argon2i$v=19$m=65536,t=2,p=1$c29tZXNhbHQ$wWKIMhR9lyDFvRz9YTZweHKfbftvj+qf+YFY4NeBbtA"
 );
 
-#[cfg(feature = "test_large_ram")]
+#[cfg(test_large_ram)]
 testcase_good!(
     reference_argon2i_v0x13_2_20_1,
     Algorithm::Argon2i,
@@ -718,7 +717,7 @@ fn reference_argon2i_v0x13_mismatching_hash() {
     .unwrap();
     assert_eq!(
         Argon2::default().verify_password(b"password", &hash),
-        Err(password_hash::errors::Error::Password)
+        Err(password_hash::Error::PasswordInvalid)
     );
 }
 
