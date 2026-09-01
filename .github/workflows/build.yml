@@ -153,7 +153,7 @@ jobs:
         with:
           name: build-report-${{ matrix.os }}
           path: reports/build/build-${{ matrix.os }}/
-          if-no-files-found: warning
+          if-no-files-found: ignore
 
   commit:
    name: commits
