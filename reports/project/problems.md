@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-09-01 18:42:25
+Generated: 2026-09-01 20:09:50
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|❌ Errors|252|
-|⚠️ Warnings|6267|
-|**Total**|**6525**|
+|❌ Errors|251|
+|⚠️ Warnings|6256|
+|**Total**|**6513**|
 
 ---
 
@@ -27767,35 +27767,6 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 server_rust/vendor/smallvec/debug_metadata/README.md
-
-## ❌ Error
-
-- **Module :** titles
-- **Message :** server_rust/vendor/smallvec/debug_metadata/README.md: contient 0 titres H1 (1 attendu).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/smallvec/debug_metadata/README.md:90 saut de niveau H1 → H4.
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/smallvec/debug_metadata/README.md:60 titre sans ligne vide avant.
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/smallvec/debug_metadata/README.md:72 titre sans ligne vide avant.
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/smallvec/debug_metadata/README.md:72 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:60).
-
----
-
 # 📄 server_rust/vendor/socket2/README.md
 
 ## ❌ Error
@@ -29698,42 +29669,7 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 
 - **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:1 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:1).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:23 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:23).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:36 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:36).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:57 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:57).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:60 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:60).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:72 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:60).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:90 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:90).
-
-## ⚠️ Warning
-
-- **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:99 titre dupliqué (déjà présent dans server_rust/vendor/smallvec/debug_metadata/README.md:99).
+- **Message :** server_rust/vendor/tinyvec/debug_metadata/README.md:72 titre dupliqué (déjà présent dans server_rust/vendor/tinyvec/debug_metadata/README.md:60).
 
 ---
 
