@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1429
+Run : 626
 Branch : main
-Commit : 0b63ed999cb8cf818b453f461ca8076d38e44d0f
-Date : Tue Sep  1 06:12:39 UTC 2026
+Commit : 4184a2eec4766d7dc3ce36ff6dac3c2a07e9bdb0
+Date : Sat Aug 29 03:42:27 UTC 2026
 
 ---
 
@@ -11,67 +11,68 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 71
+**Files to reformat:** 70
 
 <details>
 <summary>Show files</summary>
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/grade_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/admin_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
+/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/navigation.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/navigation.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/docker.py
@@ -81,8 +82,6 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
@@ -94,18 +93,18 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 
 | Code | Nombre |
 |------|-------:|
-| E501 | 471 |
-| E231 | 336 |
+| E501 | 482 |
+| E231 | 341 |
+| E225 | 158 |
 | W293 | 155 |
-| E225 | 142 |
-| E303 | 116 |
-| E122 | 115 |
-| E302 | 100 |
-| F401 | 38 |
-| E203 | 27 |
+| E122 | 120 |
+| E303 | 118 |
+| E302 | 102 |
+| F401 | 39 |
+| E203 | 29 |
+| W291 | 25 |
+| E301 | 23 |
 | E111 | 22 |
-| W291 | 21 |
-| E301 | 20 |
 | E402 | 16 |
 | E128 | 15 |
 | F811 | 14 |
@@ -114,33 +113,33 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | E305 | 9 |
 | W391 | 8 |
 | E251 | 8 |
-| E211 | 7 |
+| E211 | 8 |
 | F821 | 6 |
 | E266 | 6 |
 | E129 | 6 |
 | F541 | 5 |
+| E711 | 5 |
 | W292 | 4 |
 | F824 | 4 |
+| E722 | 4 |
 | E713 | 4 |
 | E703 | 4 |
 | E131 | 4 |
 | E712 | 3 |
-| E306 | 3 |
 | E124 | 3 |
 | E741 | 2 |
 | E731 | 2 |
-| E722 | 2 |
-| E711 | 2 |
+| E306 | 2 |
 | E275 | 2 |
 | E265 | 2 |
 | E262 | 2 |
 | E261 | 2 |
+| E117 | 2 |
 | F634 | 1 |
 | E401 | 1 |
 | E271 | 1 |
 | E201 | 1 |
 | E125 | 1 |
-| E117 | 1 |
 | E115 | 1 |
 
 
@@ -149,24 +148,82 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 
 | Fichier | Ligne | Code | Message |
 |---------|------:|------|---------|
-| ./.github/security/test_filesystem.py | 4 | F401 | 'os' imported but unused |
-| ./.github/security/test_filesystem.py | 6 | F401 | 'sys' imported but unused |
-| ./.github/security/test_git_security.py | 6 | F401 | 'sys' imported but unused |
-| ./.github/security/test_python_security.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_rust_security.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_rust_security.py | 37 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 37 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 37 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_rust_security.py | 43 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 43 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 43 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_secrets.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_secrets.py | 58 | E501 | line too long (91 > 79 characters) |
-| ./.github/security/test_secrets.py | 76 | E501 | line too long (80 > 79 characters) |
-| ./.github/security/test_secrets.py | 82 | E501 | line too long (85 > 79 characters) |
-| ./.github/security/test_web_security.py | 6 | F401 | 'ssl' imported but unused |
-| ./.github/security/test_web_security.py | 7 | F401 | 'sys' imported but unused |
-| ./.github/security/test_web_security.py | 469 | W293 | blank line contains whitespace |
+| ./.github/security/test_filesystem.py | 3 | F401 | 'os' imported but unused |
+| ./.github/security/test_filesystem.py | 5 | F401 | 'sys' imported but unused |
+| ./.github/security/test_git_security.py | 5 | F401 | 'sys' imported but unused |
+| ./.github/security/test_python_security.py | 4 | F401 | 'sys' imported but unused |
+| ./.github/security/test_rust_security.py | 4 | F401 | 'sys' imported but unused |
+| ./.github/security/test_rust_security.py | 36 | F821 | undefined name 'r' |
+| ./.github/security/test_rust_security.py | 36 | E261 | at least two spaces before inline comment |
+| ./.github/security/test_rust_security.py | 36 | E262 | inline comment should start with '# ' |
+| ./.github/security/test_rust_security.py | 42 | F821 | undefined name 'r' |
+| ./.github/security/test_rust_security.py | 42 | E261 | at least two spaces before inline comment |
+| ./.github/security/test_rust_security.py | 42 | E262 | inline comment should start with '# ' |
+| ./.github/security/test_secrets.py | 4 | F401 | 'sys' imported but unused |
+| ./.github/security/test_secrets.py | 57 | E501 | line too long (91 > 79 characters) |
+| ./.github/security/test_secrets.py | 75 | E501 | line too long (80 > 79 characters) |
+| ./.github/security/test_secrets.py | 81 | E501 | line too long (85 > 79 characters) |
+| ./.github/security/test_web_security.py | 5 | F401 | 'ssl' imported but unused |
+| ./.github/security/test_web_security.py | 6 | F401 | 'sys' imported but unused |
+| ./.github/security/test_web_security.py | 468 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 4 | F401 | 'PySide6.QtCore.QTimer' imported but unused |
+| ./Ancien/admin_manager.py | 8 | F401 | 'inventaire.Objet' imported but unused |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E501 | line too long (116 > 79 characters) |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 8 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 27 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/admin_manager.py | 43 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/admin_manager.py | 43 | E501 | line too long (84 > 79 characters) |
+| ./Ancien/admin_manager.py | 141 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 159 | E501 | line too long (82 > 79 characters) |
+| ./Ancien/admin_manager.py | 161 | E501 | line too long (110 > 79 characters) |
+| ./Ancien/admin_manager.py | 201 | E501 | line too long (80 > 79 characters) |
+| ./Ancien/admin_manager.py | 211 | E501 | line too long (97 > 79 characters) |
+| ./Ancien/admin_manager.py | 240 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 244 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 245 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 247 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 248 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 249 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 251 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 251 | E501 | line too long (134 > 79 characters) |
+| ./Ancien/admin_manager.py | 251 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 252 | E501 | line too long (87 > 79 characters) |
+| ./Ancien/admin_manager.py | 253 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 256 | E501 | line too long (172 > 79 characters) |
+| ./Ancien/admin_manager.py | 256 | E211 | whitespace before '(' |
+| ./Ancien/admin_manager.py | 269 | E301 | expected 1 blank line, found 0 |
+| ./Ancien/admin_manager.py | 269 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 279 | W293 | blank line contains whitespace |
+| ./Ancien/admin_manager.py | 289 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 297 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 304 | W291 | trailing whitespace |
+| ./Ancien/admin_manager.py | 317 | E722 | do not use bare 'except' |
+| ./Ancien/admin_manager.py | 317 | E203 | whitespace before ' |
+| ./Ancien/admin_manager.py | 319 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 320 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 321 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 324 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 328 | E501 | line too long (110 > 79 characters) |
+| ./Ancien/admin_manager.py | 343 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 344 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 349 | E303 | too many blank lines (4) |
+| ./Ancien/admin_manager.py | 357 | E303 | too many blank lines (3) |
+| ./Ancien/admin_manager.py | 361 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 381 | E301 | expected 1 blank line, found 0 |
+| ./Ancien/admin_manager.py | 381 | E231 | missing whitespace after ',' |
+| ./Ancien/admin_manager.py | 387 | E722 | do not use bare 'except' |
+| ./Ancien/admin_manager.py | 387 | E203 | whitespace before ' |
+| ./Ancien/admin_manager.py | 389 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 390 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 392 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 397 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 402 | E501 | line too long (116 > 79 characters) |
+| ./Ancien/admin_manager.py | 404 | E225 | missing whitespace around operator |
+| ./Ancien/admin_manager.py | 406 | E301 | expected 1 blank line, found 0 |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
@@ -1056,39 +1113,41 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | ./client_python/client.py | 86 | E124 | closing bracket does not match visual indentation |
 | ./client_python/client.py | 87 | E301 | expected 1 blank line, found 0 |
 | ./client_python/client.py | 89 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 106 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 108 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 113 | E131 | continuation line unaligned for hanging indent |
-| ./client_python/client.py | 118 | E301 | expected 1 blank line, found 0 |
-| ./client_python/client.py | 135 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 137 | E303 | too many blank lines (3) |
-| ./client_python/client.py | 147 | E231 | missing whitespace after ',' |
-| ./client_python/client.py | 149 | E124 | closing bracket does not match visual indentation |
-| ./client_python/client.py | 165 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 118 | E131 | continuation line unaligned for hanging indent |
+| ./client_python/client.py | 123 | E301 | expected 1 blank line, found 0 |
+| ./client_python/client.py | 140 | W293 | blank line contains whitespace |
+| ./client_python/client.py | 142 | E303 | too many blank lines (3) |
+| ./client_python/client.py | 152 | E231 | missing whitespace after ',' |
+| ./client_python/client.py | 154 | E124 | closing bracket does not match visual indentation |
+| ./client_python/client.py | 169 | W293 | blank line contains whitespace |
 | ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 2 | F401 | 'time' imported but unused |
 | ./client_python/main.py | 3 | F401 | '.packet.Packet' imported but unused |
-| ./client_python/main.py | 3 | F401 | '.packet.PacketType' imported but unused |
-| ./client_python/main.py | 12 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 14 | E306 | expected 1 blank line before a nested definition, found 0 |
-| ./client_python/main.py | 19 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 20 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 21 | E303 | too many blank lines (2) |
-| ./client_python/main.py | 21 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 35 | E211 | whitespace before '(' |
-| ./client_python/main.py | 35 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 35 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 36 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 38 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 6 | F401 | '.packets.ping.PingPacket' imported but unused |
+| ./client_python/main.py | 7 | F401 | '.packets.move.MovePacket' imported but unused |
+| ./client_python/main.py | 10 | E302 | expected 2 blank lines, found 1 |
+| ./client_python/main.py | 16 | E231 | missing whitespace after ',' |
+| ./client_python/main.py | 18 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 26 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 28 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 29 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 30 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 31 | E303 | too many blank lines (3) |
+| ./client_python/main.py | 33 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 37 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 39 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 42 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 44 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 47 | E122 | continuation line missing indentation or outdented |
+| ./client_python/main.py | 49 | E711 | comparison to None should be 'if cond is not None |
+| ./client_python/main.py | 51 | E231 | missing whitespace after ',' |
 | ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E501 | line too long (111 > 79 characters) |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 52 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 56 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 68 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 72 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 61 | E501 | line too long (83 > 79 characters) |
+| ./client_python/main.py | 63 | E211 | whitespace before '(' |
+| ./client_python/main.py | 63 | E231 | missing whitespace after ',' |
+| ./client_python/main.py | 64 | E117 | over-indented |
+| ./client_python/main.py | 66 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 68 | E231 | missing whitespace after ',' |
+| ./client_python/main.py | 71 | W293 | blank line contains whitespace |
 | ./client_python/packet.py | 30 | E303 | too many blank lines (2) |
 | ./client_python/packet.py | 51 | E303 | too many blank lines (2) |
 | ./client_python/packet.py | 64 | E303 | too many blank lines (2) |
@@ -1168,7 +1227,6 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | ./scripts/documentation/links.py | 36 | W293 | blank line contains whitespace |
 | ./scripts/documentation/links.py | 38 | E303 | too many blank lines (3) |
 | ./scripts/documentation/links.py | 72 | F841 | local variable 'pattern' is assigned to but never used |
-| ./scripts/documentation/markdown.py | 23 | E231 | missing whitespace after ',' |
 | ./scripts/documentation/markdown.py | 27 | E402 | module level import not at top of file |
 | ./scripts/documentation/markdown.py | 44 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/markdown.py | 56 | E303 | too many blank lines (5) |
@@ -1884,10 +1942,8 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | ./tests/security/test_sql_injection.py | 682 | E501 | line too long (92 > 79 characters) |
 | ./tests/security/test_sql_injection.py | 687 | E501 | line too long (98 > 79 characters) |
 | ./tests/security/test_sql_injection.py | 689 | E501 | line too long (92 > 79 characters) |
-| ./tests/test_client.py | 5 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_client.py | 10 | W293 | blank line contains whitespace |
-| ./tests/test_client.py | 11 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_splitmix64.py | 1 | F401 | 'pytest' imported but unused |
+| ./tests/test_client.py | 3 | E302 | expected 2 blank lines, found 0 |
+| ./tests/test_client.py | 5 | E302 | expected 2 blank lines, found 0 |
 
 </details>
 
@@ -1903,8 +1959,8 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | 6 | ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 89 |
 | 7 | ./server_rust/vendor/unicode-properties/scripts/unicode.py | 84 |
 | 8 | ./server_rust/vendor/libc/etc/libc-util.py | 77 |
-| 9 | ./tests/security/test_sql_injection.py | 54 |
-| 10 | ./Ancien/banque.py | 50 |
+| 9 | ./Ancien/admin_manager.py | 58 |
+| 10 | ./tests/security/test_sql_injection.py | 54 |
 > 💡 Vous ne connaissez pas une erreur Flake8 ?
 >
 > Consultez le guide complet :
@@ -1912,7 +1968,7 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.135483870967742)
+**Average complexity:**  A (4.214285714285714)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1998,6 +2054,8 @@ Ancien/debugger.py
     M 187:4 SoftDebugger.handle_warning - A
     M 190:4 SoftDebugger.wrap - A
 Ancien/horloge.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+Ancien/admin_manager.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 server_rust/vendor/libc/etc/libc-util.py
     M 462:4 CheckAllTargets.check_all_targets - C
@@ -2094,14 +2152,6 @@ server_rust/vendor/unicode-properties/scripts/unicode.py
     F 157:0 escape_char_list - A
     F 152:0 escape_char - A
     F 494:0 emit_util_mod - A
-tests/test_rotor_seeds.py
-    F 48:0 test_all_rotors_have_different_seeds - A
-    F 61:0 test_different_keys_produce_different_seeds - A
-    F 34:0 test_seed_is_u64 - A
-    F 24:0 test_seed_is_deterministic - A
-    F 79:0 test_rotor_id_changes_seed - A
-    F 89:0 test_invalid_key_length - A
-    F 9:0 derive_rotor_seed - A
 tests/test_crypto_rotor.py
     F 354:0 test_rotors_are_different - A
     F 319:0 test_all_16_rotors_are_valid - A
@@ -2124,18 +2174,8 @@ tests/test_crypto_rotor.py
     F 168:0 rotor_inverse - A
     F 199:0 communication_key - A
 tests/test_client.py
-    F 5:0 test_main - A
-    F 11:0 test_key - A
-tests/test_splitmix64.py
-    F 37:0 test_same_seed_same_sequence - A
-    F 59:0 test_different_seed_different_sequence - A
-    F 111:0 test_zero_seed - A
-    F 128:0 test_max_seed - A
-    F 81:0 test_output_is_u64 - A
-    F 96:0 test_state_changes - A
-    C 7:0 SplitMix64 - A
-    M 8:4 SplitMix64.__init__ - A
-    M 11:4 SplitMix64.next - A
+    F 3:0 test_main - A
+    F 5:0 test_key - A
 tests/security/test_load.py
     F 50:0 run_test - A
     F 85:0 test_main - A
@@ -2260,7 +2300,7 @@ scripts/database/update_docs.py
 scripts/database/update_rust.py
     F 19:0 update_rust_database - A
 client_python/main.py
-    F 12:0 main - B
+    F 10:0 main - B
 client_python/logs.py
     F 4:0 log - A
 client_python/packet.py
@@ -2273,9 +2313,9 @@ client_python/client.py
     M 87:4 Client.receive_packet - B
     M 26:4 Client.connect - B
     C 7:0 Client - A
-    M 118:4 Client._recv_exact - A
+    M 123:4 Client._recv_exact - A
     M 67:4 Client.send_packet - A
-    M 155:4 Client.disconnect - A
+    M 160:4 Client.disconnect - A
     M 12:4 Client.__init__ - A
 client_python/packets/chat.py
     C 4:0 ChatPacket - A
@@ -2306,8 +2346,8 @@ client_python/packets/ban.py
     C 4:0 BanType - A
     M 11:4 BanPacket.__init__ - A
 
-310 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.135483870967742)
+294 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.214285714285714)
 
 </details>
 
@@ -2316,8 +2356,8 @@ Average complexity: A (4.135483870967742)
 | Severity | Count |
 |----------|------:|
 | High | 1 |
-| Medium | 9 |
-| Low | 126 |
+| Medium | 13 |
+| Low | 101 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -2327,105 +2367,155 @@ Average complexity: A (4.135483870967742)
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
-Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-01 06:12:47.083669+00:00
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Run started:2026-08-29 03:42:39.645239+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./.github/security/attack_test.py:6:0
-5	import os
-6	import subprocess
-7	import sys
+   Location: ./.github/security/attack_test.py:5:0
+4	import os
+5	import subprocess
+6	import sys
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./.github/security/attack_test.py:62:11
-61	
-62	    return subprocess.run(
-63	        command,
-64	        cwd=cwd,
-65	        text=True,
-66	        stdout=subprocess.PIPE,
-67	        stderr=subprocess.STDOUT,
-68	        check=check,
-69	    )
-70	
+   Location: ./.github/security/attack_test.py:56:11
+55	
+56	    return subprocess.run(
+57	        command,
+58	        cwd=cwd,
+59	        text=True,
+60	        stdout=subprocess.PIPE,
+61	        stderr=subprocess.STDOUT,
+62	        check=check,
+63	    )
+64	
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./.github/security/test_git_security.py:5:0
-4	import re
-5	import subprocess
-6	import sys
+   Location: ./.github/security/test_git_security.py:4:0
+3	import re
+4	import subprocess
+5	import sys
 
 --------------------------------------------------
 >> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
-   Location: ./.github/security/test_git_security.py:36:11
-35	
-36	    return subprocess.run(
-37	        ["git", *arguments],
-38	        cwd=ROOT,
-39	        text=True,
-40	        stdout=subprocess.PIPE,
-41	        stderr=subprocess.STDOUT,
-42	        check=False,
-43	    )
-44	
+   Location: ./.github/security/test_git_security.py:35:11
+34	
+35	    return subprocess.run(
+36	        ["git", *arguments],
+37	        cwd=ROOT,
+38	        text=True,
+39	        stdout=subprocess.PIPE,
+40	        stderr=subprocess.STDOUT,
+41	        check=False,
+42	    )
+43	
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./.github/security/test_git_security.py:36:11
-35	
-36	    return subprocess.run(
-37	        ["git", *arguments],
-38	        cwd=ROOT,
-39	        text=True,
-40	        stdout=subprocess.PIPE,
-41	        stderr=subprocess.STDOUT,
-42	        check=False,
-43	    )
-44	
+   Location: ./.github/security/test_git_security.py:35:11
+34	
+35	    return subprocess.run(
+36	        ["git", *arguments],
+37	        cwd=ROOT,
+38	        text=True,
+39	        stdout=subprocess.PIPE,
+40	        stderr=subprocess.STDOUT,
+41	        check=False,
+42	    )
+43	
 
 --------------------------------------------------
 >> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
    Severity: Medium   Confidence: High
    CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./.github/security/test_web_security.py:79:13
-78	    try:
-79	        with urllib.request.urlopen(
-80	            request,
-81	            timeout=TIMEOUT,
-82	        ) as response:
-83	
+   Location: ./.github/security/test_web_security.py:78:13
+77	    try:
+78	        with urllib.request.urlopen(
+79	            request,
+80	            timeout=TIMEOUT,
+81	        ) as response:
+82	
 
 --------------------------------------------------
 >> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
    Severity: Medium   Confidence: High
    CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./.github/security/test_web_security.py:281:17
-280	
-281	            with urllib.request.urlopen(
-282	                request,
-283	                timeout=TIMEOUT,
-284	            ) as response:
-285	
+   Location: ./.github/security/test_web_security.py:280:17
+279	
+280	            with urllib.request.urlopen(
+281	                request,
+282	                timeout=TIMEOUT,
+283	            ) as response:
+284	
+
+--------------------------------------------------
+>> Issue: [B403:blacklist] Consider possible security implications associated with dill module.
+   Severity: Low   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b403-import-pickle
+   Location: ./Ancien/admin_manager.py:12:0
+11	from PySide6.QtWidgets import QMessageBox
+12	import dill
+13	
+
+--------------------------------------------------
+>> Issue: [B307:blacklist] Use of possibly insecure function - consider using safer ast.literal_eval.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b307-eval
+   Location: ./Ancien/admin_manager.py:117:25
+116	            try:
+117	                result = eval(cmd, self.contexte)
+118	                if result is not None:
+
+--------------------------------------------------
+>> Issue: [B102:exec_used] Use of exec detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b102_exec_used.html
+   Location: ./Ancien/admin_manager.py:121:16
+120	            except SyntaxError:
+121	                exec(cmd, self.contexte)
+122	        except Exception:
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle
+   Location: ./Ancien/admin_manager.py:316:23
+315	            try:
+316	                data = dill.load(fichier)
+317	            except :
+
+--------------------------------------------------
+>> Issue: [B301:blacklist] Pickle and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue.
+   Severity: Medium   Confidence: High
+   CWE: CWE-502 (https://cwe.mitre.org/data/definitions/502.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b301-pickle
+   Location: ./Ancien/admin_manager.py:386:23
+385	            try:
+386	                data = dill.load(fichier)
+387	            except :
 
 --------------------------------------------------
 >> Issue: [B110:try_except_pass] Try, Except, Pass detected.
@@ -2737,106 +2827,6 @@ Test results:
 886	        total = sum(ch for _, ch in table)
 887	        r = random.uniform(0, total)
 888	        cumul = 0
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:21:12
-20	        
-21	        a = random.choice(["Chat", "Login", "Ping", "Move","Singup"])
-22	        message = [
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'sfdqmjlsdlj@sqghl}^=)à)=à{¹~#fsdjfqsmkdfsdfj€'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./client_python/main.py:33:24
-32	                  ]
-33	        password_cara = "sfdqmjlsdlj@sqghl}^=)à)=à{¹~#fsdjfqsmkdfsdfj€"
-34	        password = "d"
-
---------------------------------------------------
->> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'd'
-   Severity: Low   Confidence: Medium
-   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
-   Location: ./client_python/main.py:34:19
-33	        password_cara = "sfdqmjlsdlj@sqghl}^=)à)=à{¹~#fsdjfqsmkdfsdfj€"
-34	        password = "d"
-35	        for i in range (0,random.randint(1,101)):
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:35:26
-34	        password = "d"
-35	        for i in range (0,random.randint(1,101)):
-36	            password += password_cara[random.randint(0,len(password_cara)-1)]
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:36:38
-35	        for i in range (0,random.randint(1,101)):
-36	            password += password_cara[random.randint(0,len(password_cara)-1)]
-37	        email = f'{random.choice(personne)}@gmail.com'
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:37:19
-36	            password += password_cara[random.randint(0,len(password_cara)-1)]
-37	        email = f'{random.choice(personne)}@gmail.com'
-38	        
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:40:42
-39	        if a == "Chat":
-40	            client.send_packet(ChatPacket(random.choice(message)))
-41	            print("chat")
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:52:42
-51	        elif a == "Move":
-52	            client.send_packet(MovePacket(random.randint(0,8096),random.randint(0,8096),random.randint(0,100)))
-53	            print("move")
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:52:65
-51	        elif a == "Move":
-52	            client.send_packet(MovePacket(random.randint(0,8096),random.randint(0,8096),random.randint(0,100)))
-53	            print("move")
-
---------------------------------------------------
->> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
-   Severity: Low   Confidence: High
-   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
-   Location: ./client_python/main.py:52:88
-51	        elif a == "Move":
-52	            client.send_packet(MovePacket(random.randint(0,8096),random.randint(0,8096),random.randint(0,100)))
-53	            print("move")
 
 --------------------------------------------------
 >> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
@@ -3463,16 +3453,6 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_client.py:9:4
-8	
-9	    assert exc.value.code == 1
-10	    
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_crypto_rotor.py:65:4
 64	
 65	    assert len(communication_key) == 64
@@ -3652,181 +3632,30 @@ Test results:
 455	        assert decrypted == value
 
 --------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:31:4
-30	
-31	    assert seed_a == seed_b
-32	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:45:8
-44	
-45	        assert 0 <= seed <= MASK64
-46	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:57:4
-56	
-57	    assert len(seeds) == 16
-58	    assert len(set(seeds)) == 16
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:58:4
-57	    assert len(seeds) == 16
-58	    assert len(set(seeds)) == 16
-59	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:76:4
-75	
-76	    assert seeds_a != seeds_b
-77	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:86:4
-85	
-86	    assert seed_1 != seed_2
-87	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_seeds.py:100:4
-99	
-100	    assert isinstance(seed, int)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:52:4
-51	
-52	    assert sequence_a == sequence_b
-53	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:74:4
-73	
-74	    assert sequence_a != sequence_b
-75	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:89:8
-88	
-89	        assert 0 <= value <= MASK64
-90	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:104:4
-103	
-104	    assert generator.state != first_state
-105	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:120:4
-119	
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:121:4
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
-122	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:137:4
-136	
-137	    assert len(values) == 10
-138	    assert all(
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:138:4
-137	    assert len(values) == 10
-138	    assert all(
-139	        0 <= value <= MASK64
-140	        for value in values
-141	    )
-
---------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12260
+	Total lines of code: 12503
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 126
-		Medium: 9
+		Low: 101
+		Medium: 13
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
-		Medium: 14
-		High: 121
+		Medium: 12
+		High: 102
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 7.22/10
+**Global score:** 7.23/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4491,6 +4320,65 @@ Ancien/horloge.py:221:19: W0622: Redefining built-in 'id' (redefined-builtin)
 Ancien/horloge.py:224:4: C2801: Unnecessarily calls dunder method __init__. Instantiate class directly. (unnecessary-dunder-call)
 Ancien/horloge.py:5:0: W0611: Unused Optional imported from typing (unused-import)
 Ancien/horloge.py:5:0: W0611: Unused Any imported from typing (unused-import)
+************* Module Ancien.admin_manager
+Ancien/admin_manager.py:8:0: C0301: Line too long (116/100) (line-too-long)
+Ancien/admin_manager.py:161:0: C0301: Line too long (110/100) (line-too-long)
+Ancien/admin_manager.py:240:36: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/admin_manager.py:247:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/admin_manager.py:251:0: C0301: Line too long (134/100) (line-too-long)
+Ancien/admin_manager.py:253:0: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/admin_manager.py:256:0: C0301: Line too long (172/100) (line-too-long)
+Ancien/admin_manager.py:328:0: C0301: Line too long (110/100) (line-too-long)
+Ancien/admin_manager.py:402:0: C0301: Line too long (116/100) (line-too-long)
+Ancien/admin_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/admin_manager.py:2:0: E0401: Unable to import 'debugger' (import-error)
+Ancien/admin_manager.py:4:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
+Ancien/admin_manager.py:4:0: E0611: No name 'QTimer' in module 'PySide6.QtCore' (no-name-in-module)
+Ancien/admin_manager.py:7:0: E0401: Unable to import 'table_de_conversion' (import-error)
+Ancien/admin_manager.py:8:0: E0401: Unable to import 'inventaire' (import-error)
+Ancien/admin_manager.py:11:0: E0611: No name 'QMessageBox' in module 'PySide6.QtWidgets' (no-name-in-module)
+Ancien/admin_manager.py:19:0: C0103: Variable name "IS_ADMIN" doesn't conform to snake_case naming style (invalid-name)
+Ancien/admin_manager.py:20:0: C0103: Constant name "_console" doesn't conform to UPPER_CASE naming style (invalid-name)
+Ancien/admin_manager.py:21:0: C0103: Constant name "_current_joueur" doesn't conform to UPPER_CASE naming style (invalid-name)
+Ancien/admin_manager.py:23:0: C0103: Variable name "IS_ADMIN" doesn't conform to snake_case naming style (invalid-name)
+Ancien/admin_manager.py:25:0: C0103: Constant name "_console_frame" doesn't conform to UPPER_CASE naming style (invalid-name)
+Ancien/admin_manager.py:27:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:29:15: W1114: Positional arguments appear to be out of order (arguments-out-of-order)
+Ancien/admin_manager.py:43:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:68:0: C0115: Missing class docstring (missing-class-docstring)
+Ancien/admin_manager.py:68:19: I1101: Module 'PySide6.QtWidgets' has no 'QWidget' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:82:17: I1101: Module 'PySide6.QtWidgets' has no 'QVBoxLayout' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:84:22: I1101: Module 'PySide6.QtWidgets' has no 'QTextEdit' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:87:22: I1101: Module 'PySide6.QtWidgets' has no 'QLineEdit' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:99:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:102:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:122:15: W0718: Catching too general exception Exception (broad-exception-caught)
+Ancien/admin_manager.py:117:25: W0123: Use of eval (eval-used)
+Ancien/admin_manager.py:121:16: W0122: Use of exec (exec-used)
+Ancien/admin_manager.py:126:4: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:126:4: R0912: Too many branches (14/12) (too-many-branches)
+Ancien/admin_manager.py:256:8: W0106: Expression "self.log(f"[ADMIN] {nom_objet} x{qty} ajouté(e)(s) à l'inventaire.") if not nom_objet.startswith('livre enchant') else self.log(' Vos livres ont bien été ajoutés')" is assigned to nothing (expression-not-assigned)
+Ancien/admin_manager.py:173:4: R0912: Too many branches (13/12) (too-many-branches)
+Ancien/admin_manager.py:246:16: W0612: Unused variable 'i' (unused-variable)
+Ancien/admin_manager.py:317:12: W0702: No exception type(s) specified (bare-except)
+Ancien/admin_manager.py:387:12: W0702: No exception type(s) specified (bare-except)
+Ancien/admin_manager.py:443:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:444:4: W0603: Using the global statement (global-statement)
+Ancien/admin_manager.py:463:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:464:4: C0103: Function name "keyPressEvent" doesn't conform to snake_case naming style (invalid-name)
+Ancien/admin_manager.py:486:0: C0116: Missing function or method docstring (missing-function-docstring)
+Ancien/admin_manager.py:488:10: I1101: Module 'PySide6.QtWidgets' has no 'QInputDialog' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:489:24: I1101: Module 'PySide6.QtWidgets' has no 'QLineEdit' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:492:21: I1101: Module 'PySide6.QtWidgets' has no 'QDialog' member, but source is unavailable. Consider adding this module to extension-pkg-allow-list if you want to perform analysis based on run-time introspection of living objects. (c-extension-no-member)
+Ancien/admin_manager.py:512:8: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+Ancien/admin_manager.py:5:0: C0411: standard import "functools.wraps" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt" (wrong-import-order)
+Ancien/admin_manager.py:6:0: C0411: standard import "json" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt" (wrong-import-order)
+Ancien/admin_manager.py:9:0: C0411: standard import "re" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt", "table_de_conversion.qtes", "inventaire.safe_increment" (wrong-import-order)
+Ancien/admin_manager.py:10:0: C0411: standard import "configparser" should be placed before third party imports "debugger.debug", "PySide6.QtWidgets", "PySide6.QtCore.Qt", "table_de_conversion.qtes", "inventaire.safe_increment" (wrong-import-order)
+Ancien/admin_manager.py:11:0: C0412: Imports from package PySide6 are not grouped (ungrouped-imports)
+Ancien/admin_manager.py:4:0: W0611: Unused QTimer imported from PySide6.QtCore (unused-import)
+Ancien/admin_manager.py:8:0: W0611: Unused Objet imported from inventaire (unused-import)
 ************* Module server_rust.vendor.libc.etc.libc-util
 server_rust/vendor/libc/etc/libc-util.py:242:0: C0301: Line too long (102/100) (line-too-long)
 server_rust/vendor/libc/etc/libc-util.py:1:0: C0302: Too many lines in module (1112/1000) (too-many-lines)
@@ -4713,20 +4601,12 @@ server_rust/vendor/unicode-properties/scripts/unicode.py:470:12: R1724: Unnecess
 server_rust/vendor/unicode-properties/scripts/unicode.py:481:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
 server_rust/vendor/unicode-properties/scripts/unicode.py:491:27: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
 server_rust/vendor/unicode-properties/scripts/unicode.py:494:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:520:4: C0103: Constant name "r" doesn't conform to UPPER_CASE naming style (invalid-name)
 server_rust/vendor/unicode-properties/scripts/unicode.py:523:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
 server_rust/vendor/unicode-properties/scripts/unicode.py:527:17: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
 server_rust/vendor/unicode-properties/scripts/unicode.py:19:0: W0611: Unused import operator (unused-import)
 ************* Module tests.__init__
 tests/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
-************* Module tests.test_rotor_seeds
-tests/test_rotor_seeds.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_seeds.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.test_crypto_rotor
 tests/test_crypto_rotor.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_crypto_rotor.py:52:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
@@ -4757,23 +4637,9 @@ tests/test_crypto_rotor.py:394:4: W0621: Redefining name 'communication_key' fro
 tests/test_crypto_rotor.py:427:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_crypto_rotor.py:428:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
 ************* Module tests.test_client
-tests/test_client.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
 tests/test_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_client.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_client.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_client.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_client.py:3:0: C0411: third party import "pytest" should be placed before first party imports "client_python.main.main", "security.vault"  (wrong-import-order)
-************* Module tests.test_splitmix64
-tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_splitmix64.py:7:0: C0115: Missing class docstring (missing-class-docstring)
-tests/test_splitmix64.py:11:4: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:7:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-tests/test_splitmix64.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:81:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
 ************* Module tests.security.test_load
 tests/security/test_load.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/security/test_load.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -4842,84 +4708,87 @@ tests/security/test_fuzzing.py:48:0: C0116: Missing function or method docstring
 tests/security/test_fuzzing.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/security/test_fuzzing.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_git_security
-.github/security/test_git_security.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_git_security.py:46:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_git_security.py:46:0: R0912: Too many branches (13/12) (too-many-branches)
-.github/security/test_git_security.py:6:0: W0611: Unused import sys (unused-import)
+.github/security/test_git_security.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/test_git_security.py:31:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_git_security.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_git_security.py:45:0: R0912: Too many branches (13/12) (too-many-branches)
+.github/security/test_git_security.py:5:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.test_python_security
-.github/security/test_python_security.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:36:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_python_security.py:45:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:64:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:64:4: C0103: Method name "visit_Call" doesn't conform to snake_case naming style (invalid-name)
-.github/security/test_python_security.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:242:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:5:0: W0611: Unused import sys (unused-import)
+.github/security/test_python_security.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/test_python_security.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:35:0: C0115: Missing class docstring (missing-class-docstring)
+.github/security/test_python_security.py:44:4: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:63:4: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:63:4: C0103: Method name "visit_Call" doesn't conform to snake_case naming style (invalid-name)
+.github/security/test_python_security.py:205:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:241:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:4:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.integrity_check
-.github/security/integrity_check.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:121:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:162:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:185:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/integrity_check.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:66:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:78:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:120:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:136:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:161:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:184:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:205:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:267:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_filesystem
-.github/security/test_filesystem.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:56:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:62:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:4:0: W0611: Unused import os (unused-import)
-.github/security/test_filesystem.py:6:0: W0611: Unused import sys (unused-import)
+.github/security/test_filesystem.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/test_filesystem.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:49:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:3:0: W0611: Unused import os (unused-import)
+.github/security/test_filesystem.py:5:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.test_rust_security
-.github/security/test_rust_security.py:37:12: E0602: Undefined variable 'r' (undefined-variable)
-.github/security/test_rust_security.py:43:12: E0602: Undefined variable 'r' (undefined-variable)
-.github/security/test_rust_security.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:73:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:5:0: W0611: Unused import sys (unused-import)
+.github/security/test_rust_security.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/test_rust_security.py:36:12: E0602: Undefined variable 'r' (undefined-variable)
+.github/security/test_rust_security.py:42:12: E0602: Undefined variable 'r' (undefined-variable)
+.github/security/test_rust_security.py:60:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:72:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:115:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:4:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.test_secrets
-.github/security/test_secrets.py:102:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:139:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:5:0: W0611: Unused import sys (unused-import)
+.github/security/test_secrets.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/test_secrets.py:101:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:127:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:138:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:190:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:4:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.attack_test
-.github/security/attack_test.py:13:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:72:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:92:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:99:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:181:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:188:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:240:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:247:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:292:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:326:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:359:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:383:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:421:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:461:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:480:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:533:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:584:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/attack_test.py:46:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:70:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:87:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:173:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:229:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:250:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:274:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:308:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:341:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:365:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:403:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:443:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:462:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:515:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:566:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_web_security
-.github/security/test_web_security.py:469:0: C0303: Trailing whitespace (trailing-whitespace)
-.github/security/test_web_security.py:33:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_web_security.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:60:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:265:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:320:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:365:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:6:0: W0611: Unused import ssl (unused-import)
-.github/security/test_web_security.py:7:0: W0611: Unused import sys (unused-import)
+.github/security/test_web_security.py:468:0: C0303: Trailing whitespace (trailing-whitespace)
+.github/security/test_web_security.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+.github/security/test_web_security.py:32:0: C0115: Missing class docstring (missing-class-docstring)
+.github/security/test_web_security.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:131:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:264:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:319:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:364:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:5:0: W0611: Unused import ssl (unused-import)
+.github/security/test_web_security.py:6:0: W0611: Unused import sys (unused-import)
 ************* Module security.__init__
 security/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
 ************* Module security.vault
@@ -5221,24 +5090,23 @@ scripts/database/update_rust.py:28:8: W1508: os.getenv default type is builtins.
 ************* Module client_python.__init__
 client_python/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
 ************* Module client_python.main
-client_python/main.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:20:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:52:0: C0301: Line too long (111/100) (line-too-long)
-client_python/main.py:56:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:68:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/main.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:29:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:30:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:64:0: W0311: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+client_python/main.py:65:0: W0311: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+client_python/main.py:66:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/main.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/main.py:35:12: W0612: Unused variable 'i' (unused-variable)
-client_python/main.py:65:11: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/main.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/main.py:39:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:44:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
+client_python/main.py:49:30: C0121: Comparison 'response != None' should be 'response is not None' (singleton-comparison)
 client_python/main.py:2:0: C0411: standard import "time" should be placed before local import "client.Client" (wrong-import-order)
-client_python/main.py:9:0: C0411: standard import "sys" should be placed before local imports "client.Client", "packet.Packet", "packets.chat.ChatPacket" (...) "packets.ping.PingPacket", "packets.move.MovePacket", "packets.singup.SingupPacket" (wrong-import-order)
-client_python/main.py:10:0: C0411: standard import "atexit" should be placed before local imports "client.Client", "packet.Packet", "packets.chat.ChatPacket" (...) "packets.ping.PingPacket", "packets.move.MovePacket", "packets.singup.SingupPacket" (wrong-import-order)
-client_python/main.py:11:0: C0411: standard import "random" should be placed before local imports "client.Client", "packet.Packet", "packets.chat.ChatPacket" (...) "packets.ping.PingPacket", "packets.move.MovePacket", "packets.singup.SingupPacket" (wrong-import-order)
-client_python/main.py:2:0: W0611: Unused import time (unused-import)
 client_python/main.py:3:0: W0611: Unused Packet imported from packet (unused-import)
-client_python/main.py:3:0: W0611: Unused PacketType imported from packet (unused-import)
+client_python/main.py:6:0: W0611: Unused PingPacket imported from packets.ping (unused-import)
+client_python/main.py:7:0: W0611: Unused MovePacket imported from packets.move (unused-import)
 ************* Module client_python.logs
 client_python/logs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/logs.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -5264,17 +5132,16 @@ client_python/client.py:56:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/client.py:73:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/client.py:80:13: C0303: Trailing whitespace (trailing-whitespace)
 client_python/client.py:89:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:106:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:108:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:135:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:165:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:140:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:169:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/client.py:26:4: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/client.py:82:15: W0718: Catching too general exception Exception (broad-exception-caught)
 client_python/client.py:87:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/client.py:109:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:145:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:155:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/client.py:114:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:87:4: R0911: Too many return statements (7/6) (too-many-return-statements)
+client_python/client.py:150:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:160:4: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/client.py:5:0: W0611: Unused LogPacket imported from packets.log (unused-import)
 ************* Module client_python.packets
 client_python/packets/__init__.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -5378,10 +5245,14 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         branch,
         commit
     )
+
+    # ==========================================
+    # Quality metrics
+    # ==========================================
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[9:23]
-==.github.security.test_python_security:[8:24]
+==.github.security.test_filesystem:[8:22]
+==.github.security.test_python_security:[7:23]
 ROOT = Path.cwd().resolve()
 
 IGNORED_DIRECTORIES = {
@@ -5415,7 +5286,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     )
 
     # ==========================================
-    # Flake8
+    # Détails Clippy
     # ==========================================
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
@@ -5474,21 +5345,21 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 
 // NOTE: The following code was generated by "scripts/unicode.py", do not edit directly (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[24:34]
-==.github.security.test_git_security:[82:92]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
+==.github.security.test_filesystem:[23:33]
+==.github.security.test_git_security:[81:91]
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.integrity_check:[11:20]
-==.github.security.test_python_security:[10:19]
+==.github.security.integrity_check:[10:19]
+==.github.security.test_python_security:[9:18]
 IGNORED_DIRECTORIES = {
     ".git",
     "target",
@@ -5499,8 +5370,8 @@ IGNORED_DIRECTORIES = {
     ".venv",
     "venv", (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[38:50]
-==.github.security.test_python_security:[24:35]
+==.github.security.test_filesystem:[37:49]
+==.github.security.test_python_security:[23:34]
     try:
         relative = path.relative_to(ROOT)
     except ValueError:
@@ -5511,11 +5382,10 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         for part in relative.parts
     )
 
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
+ (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.attack_test:[79:102]
-==.github.security.integrity_check:[54:67]
+==.github.security.attack_test:[70:90]
+==.github.security.integrity_check:[53:66]
     digest = hashlib.sha256()
 
     with path.open("rb") as file:
@@ -5580,8 +5450,17 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
             "problems": [{
                 "file": "", (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_python_security:[8:15]
-==.github.security.test_rust_security:[8:15]
+==Ancien.admin_manager:[196:202]
+==Ancien.inventaire:[605:611]
+        except json.JSONDecodeError:
+            QMessageBox.warning(
+                self,
+                "Erreur",
+                "Le fichier objet_dispo.json n'est pas un fichier JSON valide.",
+            ) (duplicate-code)
+client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
+==.github.security.test_python_security:[7:14]
+==.github.security.test_rust_security:[7:14]
 ROOT = Path.cwd().resolve()
 
 IGNORED_DIRECTORIES = {
@@ -5590,8 +5469,8 @@ IGNORED_DIRECTORIES = {
     "__pycache__",
     ".pytest_cache", (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.integrity_check:[69:79]
-==.github.security.test_secrets:[107:117]
+==.github.security.integrity_check:[68:78]
+==.github.security.test_secrets:[106:116]
     if path.name in IGNORED_FILES:
         return True
 
@@ -5634,7 +5513,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 7 colonnes
+        # Tableau avec 10 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
@@ -5647,8 +5526,8 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 
         # 2. Nom (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.integrity_check:[11:16]
-==.github.security.test_rust_security:[10:15]
+==.github.security.integrity_check:[10:15]
+==.github.security.test_rust_security:[9:14]
 IGNORED_DIRECTORIES = {
     ".git",
     "target",
@@ -5662,16 +5541,16 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
             medium,
             low,
             total, (duplicate-code)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.22/10
+Your code has been rated at 7.23/10
 
 
 </details>
@@ -5689,7 +5568,7 @@ rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-7.1.0
-collected 2074 items / 1 error
+collected 2062 items / 1 error
 
 ==================================== ERRORS ====================================
 ____________ ERROR collecting tests/security/test_sql_injection.py _____________
@@ -5738,7 +5617,7 @@ tests/security/test_load.py:84
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-========================= 9 warnings, 1 error in 0.21s =========================
+========================= 9 warnings, 1 error in 0.28s =========================
 
 </details>
 

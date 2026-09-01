@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1429
+Run : 1400
 Branch : main
-Commit : 0b63ed999cb8cf818b453f461ca8076d38e44d0f
-Date : Tue Sep  1 06:12:39 UTC 2026
+Commit : 22e564b5acb713036cef2ffe6a70211d74dac3ee
+Date : Sun Aug 30 12:57:16 UTC 2026
 
 ---
 
@@ -15,15 +15,15 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 
 <details>
 <summary>Show files</summary>
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/grade_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/debugger.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
@@ -33,8 +33,8 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
@@ -42,9 +42,9 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
+/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
@@ -65,20 +65,20 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/docker.py
 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
@@ -95,8 +95,8 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | Code | Nombre |
 |------|-------:|
 | E501 | 471 |
-| E231 | 336 |
-| W293 | 155 |
+| E231 | 335 |
+| W293 | 154 |
 | E225 | 142 |
 | E303 | 116 |
 | E122 | 115 |
@@ -1168,7 +1168,6 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | ./scripts/documentation/links.py | 36 | W293 | blank line contains whitespace |
 | ./scripts/documentation/links.py | 38 | E303 | too many blank lines (3) |
 | ./scripts/documentation/links.py | 72 | F841 | local variable 'pattern' is assigned to but never used |
-| ./scripts/documentation/markdown.py | 23 | E231 | missing whitespace after ',' |
 | ./scripts/documentation/markdown.py | 27 | E402 | module level import not at top of file |
 | ./scripts/documentation/markdown.py | 44 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/markdown.py | 56 | E303 | too many blank lines (5) |
@@ -1884,9 +1883,8 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 | ./tests/security/test_sql_injection.py | 682 | E501 | line too long (92 > 79 characters) |
 | ./tests/security/test_sql_injection.py | 687 | E501 | line too long (98 > 79 characters) |
 | ./tests/security/test_sql_injection.py | 689 | E501 | line too long (92 > 79 characters) |
-| ./tests/test_client.py | 5 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_client.py | 10 | W293 | blank line contains whitespace |
-| ./tests/test_client.py | 11 | E302 | expected 2 blank lines, found 1 |
+| ./tests/test_client.py | 3 | E302 | expected 2 blank lines, found 0 |
+| ./tests/test_client.py | 5 | E302 | expected 2 blank lines, found 0 |
 | ./tests/test_splitmix64.py | 1 | F401 | 'pytest' imported but unused |
 
 </details>
@@ -1912,7 +1910,7 @@ Date : Tue Sep  1 06:12:39 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.135483870967742)
+**Average complexity:**  A (4.132258064516129)
 
 <details>
 <summary>Show complexity report</summary>
@@ -2124,8 +2122,8 @@ tests/test_crypto_rotor.py
     F 168:0 rotor_inverse - A
     F 199:0 communication_key - A
 tests/test_client.py
-    F 5:0 test_main - A
-    F 11:0 test_key - A
+    F 3:0 test_main - A
+    F 5:0 test_key - A
 tests/test_splitmix64.py
     F 37:0 test_same_seed_same_sequence - A
     F 59:0 test_different_seed_different_sequence - A
@@ -2307,7 +2305,7 @@ client_python/packets/ban.py
     M 11:4 BanPacket.__init__ - A
 
 310 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.135483870967742)
+Average complexity: A (4.132258064516129)
 
 </details>
 
@@ -2317,7 +2315,7 @@ Average complexity: A (4.135483870967742)
 |----------|------:|
 | High | 1 |
 | Medium | 9 |
-| Low | 126 |
+| Low | 125 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -2328,7 +2326,7 @@ Average complexity: A (4.135483870967742)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-01 06:12:47.083669+00:00
+Run started:2026-08-30 12:57:23.519149+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2345,17 +2343,17 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./.github/security/attack_test.py:62:11
-61	
-62	    return subprocess.run(
-63	        command,
-64	        cwd=cwd,
-65	        text=True,
-66	        stdout=subprocess.PIPE,
-67	        stderr=subprocess.STDOUT,
-68	        check=check,
-69	    )
-70	
+   Location: ./.github/security/attack_test.py:57:11
+56	
+57	    return subprocess.run(
+58	        command,
+59	        cwd=cwd,
+60	        text=True,
+61	        stdout=subprocess.PIPE,
+62	        stderr=subprocess.STDOUT,
+63	        check=check,
+64	    )
+65	
 
 --------------------------------------------------
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -3463,16 +3461,6 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_client.py:9:4
-8	
-9	    assert exc.value.code == 1
-10	    
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_crypto_rotor.py:65:4
 64	
 65	    assert len(communication_key) == 64
@@ -3805,28 +3793,28 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12260
+	Total lines of code: 12227
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 126
+		Low: 125
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 14
-		High: 121
+		High: 120
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 7.22/10
+**Global score:** 7.23/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4757,11 +4745,9 @@ tests/test_crypto_rotor.py:394:4: W0621: Redefining name 'communication_key' fro
 tests/test_crypto_rotor.py:427:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_crypto_rotor.py:428:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
 ************* Module tests.test_client
-tests/test_client.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
 tests/test_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_client.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_client.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_client.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_client.py:3:0: C0411: third party import "pytest" should be placed before first party imports "client_python.main.main", "security.vault"  (wrong-import-order)
 ************* Module tests.test_splitmix64
 tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_splitmix64.py:7:0: C0115: Missing class docstring (missing-class-docstring)
@@ -4889,26 +4875,21 @@ tests/security/test_fuzzing.py:75:0: C0116: Missing function or method docstring
 .github/security/test_secrets.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
 .github/security/test_secrets.py:5:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.attack_test
-.github/security/attack_test.py:13:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:72:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:92:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:99:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:181:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:188:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:240:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:247:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:292:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:326:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:359:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:383:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:421:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:461:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:480:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:533:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:584:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:88:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:174:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:230:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:251:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:275:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:309:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:342:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:366:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:404:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:444:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:463:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:516:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:567:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_web_security
 .github/security/test_web_security.py:469:0: C0303: Trailing whitespace (trailing-whitespace)
 .github/security/test_web_security.py:33:0: C0115: Missing class docstring (missing-class-docstring)
@@ -5378,6 +5359,10 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         branch,
         commit
     )
+
+    # ==========================================
+    # Quality metrics
+    # ==========================================
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[9:23]
@@ -5476,15 +5461,15 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[24:34]
 ==.github.security.test_git_security:[82:92]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
@@ -5511,10 +5496,9 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         for part in relative.parts
     )
 
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
+ (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
-==.github.security.attack_test:[79:102]
+==.github.security.attack_test:[71:91]
 ==.github.security.integrity_check:[54:67]
     digest = hashlib.sha256()
 
@@ -5528,7 +5512,14 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+# ============================================================
+# Git
+# ============================================================
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
@@ -5556,19 +5547,19 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     )
 
     # ==========================================
-    # Quality metrics
+    # Résumé Rust
     # ==========================================
  (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
+        test,
+        severity,
+        confidence,
+        cwe,
+        info,
+        file,
+        line, (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[37:44]
 ==scripts.documentation.markdown:[59:66]
@@ -5601,7 +5592,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     )
 
 
-def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
+def looks_textual(data: bytes) -> bool: (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[59:69]
 ==scripts.documentation.markdown:[82:91]
@@ -5613,8 +5604,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
     }
 
 
-def extract_links(file):
- (duplicate-code)
+def check_empty_files(files, problems): (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.markdown:[59:65]
 ==scripts.documentation.titles:[20:26]
@@ -5634,7 +5624,7 @@ client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 7 colonnes
+        # Tableau avec 10 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
@@ -5657,21 +5647,21 @@ IGNORED_DIRECTORIES = {
 client_python/packets/ban.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/ban.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.22/10
+Your code has been rated at 7.23/10
 
 
 </details>
@@ -5738,7 +5728,7 @@ tests/security/test_load.py:84
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-========================= 9 warnings, 1 error in 0.21s =========================
+========================= 9 warnings, 1 error in 0.18s =========================
 
 </details>
 
