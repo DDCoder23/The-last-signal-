@@ -54,13 +54,7 @@ jobs:
      }}
     uses: ./.github/workflows/rust.yml
 
-  
-
-  
-
-
-  
-  project:
+  build:
     needs: rust
     if: >-
      ${{
@@ -68,6 +62,22 @@ jobs:
       (
         needs.rust.result == 'success' ||
         needs.rust.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/build.yml
+
+  
+
+
+  
+  project:
+    needs: build
+    if: >-
+     ${{
+      always() &&
+      (
+        needs.build.result == 'success' ||
+        needs.build.result == 'failure'
       )
      }}
     uses: ./.github/workflows/project.yml
