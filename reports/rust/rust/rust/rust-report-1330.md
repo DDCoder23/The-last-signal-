@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 1438
+Run : 1330
 Branch : main
-Commit : e4f7128b5e4dea39445fcfe8b8f21e596cba4b8f
-Date : Tue Sep  1 09:47:36 UTC 2026
+Commit : 8318df05259e46bcaa2b1c235a70f7c947422e0e
+Date : Tue Aug 25 19:36:59 UTC 2026
 
 
 ## Cargo fmt
@@ -174,14 +174,16 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/data
 +use crate::utils::password::hash_password;
 +use crate::utils::vault::decrypt_vault;
  use log::debug;
+-use uuid::Uuid;
  use sqlx::SqlitePool;
 -use crate::utils::vault::decrypt_vault;
 -use crate::utils::password::hash_password;
 -use crate::utils::account_creator::create_account;
++use uuid::Uuid;
  /// Exécute toutes les migrations SQL non encore appliquées.
  pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
      sqlx::query(
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/database/migrations.rs:23:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/database/migrations.rs:24:
      let vault = decrypt_vault()?;
  
      let password1 = vault["user1_password"]
@@ -220,7 +222,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/data
          "Cyril",
          "Dev",
          Some("DISCONNECTED"),
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/database/migrations.rs:50:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/database/migrations.rs:51:
 -)
 -.await?;
 +    )
@@ -247,7 +249,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/data
  
      Ok(())
  }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/database/migrations.rs:65:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/database/migrations.rs:66:
 -
 -
  
@@ -257,9 +259,13 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/data
 -
 -
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/dice.rs:3:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/dice.rs:1:
+-use rand::{Rng,RngExt};
++use rand::{Rng, RngExt};
+ 
  pub fn jet_de_des(face: u32, nb: u32) -> u32 {
      let mut rng = rand::rng();
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/dice.rs:5:
  
 -    (0..nb)
 -        .map(|_| rng.random_range(1..=face))
@@ -313,16 +319,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1:
 -use rand::{Rng,RngExt};
 +use crate::gameplay::dice::jet_de_des;
++use log::debug;
 +use rand::{Rng, RngExt};
  use sqlx::SqlitePool;
  use std::collections::HashMap;
+-use log::debug;
 -use crate::gameplay::dice::jet_de_des;
  
 -
  const PA: u32 = 1;
  const PO: u32 = PA * 10;
  const PP: u32 = PO * 10;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:21:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:22:
  
  #[derive(Debug, Clone)]
  pub struct Tresor {
@@ -330,7 +338,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
      pub loot_par_niveau: HashMap<u32, Loot>,
  
      pub objets_garantis: HashMap<u32, HashMap<String, u32>>,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:31:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:32:
      pub seuil_artefact_commun: HashMap<u32, u32>,
      pub seuil_artefact_peu_commun: HashMap<u32, u32>,
      pub sous_loot: HashMap<String, HashMap<String, f64>>,
@@ -344,7 +352,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  }
  
  impl Tresor {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:147:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:148:
          // Niveau 1
          let mut niveau_1 = HashMap::new();
  
@@ -356,7 +364,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_1.insert("torche".to_string(), 2);
          niveau_1.insert("sac".to_string(), 3);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:163:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:164:
  
          // 17 chances sur 20 : pain
          if jet_de_des(20, 1) >= 4 {
@@ -368,7 +376,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          }
  
          objets_garantis.insert(1, niveau_1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:174:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:175:
          // Niveau 2
          let mut niveau_2 = HashMap::new();
  
@@ -380,7 +388,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_2.insert("torche".to_string(), 1);
          niveau_2.insert("sac".to_string(), 2);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:192:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:193:
          // Niveau 3
          let mut niveau_3 = HashMap::new();
  
@@ -392,7 +400,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_3.insert("torche".to_string(), 2);
          niveau_3.insert("sac".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:210:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:211:
          // Niveau 4
          let mut niveau_4 = HashMap::new();
  
@@ -404,7 +412,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 12 {
              niveau_4.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:224:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:225:
          // Niveau 5
          let mut niveau_5 = HashMap::new();
  
@@ -416,7 +424,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 10 {
              niveau_5.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:236:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:237:
          objets_garantis.insert(5, niveau_5);
          let mut niveau_6 = HashMap::new();
  
@@ -428,7 +436,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 8 {
              niveau_6.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:248:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:249:
          objets_garantis.insert(6, niveau_6);
          let mut niveau_7 = HashMap::new();
  
@@ -440,7 +448,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 6 {
              niveau_7.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:283:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:284:
              "flèches épiques",
              "flèches légendaires",
          ] {
@@ -571,30 +579,9 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        
 -    ]),
 -);
+-            
 +            "Artefact admin".to_string(),
 +            HashMap::from([("livre enchant".to_string(), 100.0)]),
-+        );
-         sous_loot.insert(
--    "équi".to_string(),
--    HashMap::from([
--        ("armes".to_string(), 20.0),
--        ("outils".to_string(), 20.0),
--        ("armure".to_string(), 20.0),
--        ("véhicules".to_string(), 20.0),
--        ("batiments".to_string(), 20.0),
--        
--        
--    ]),
--);
--            
-+            "équi".to_string(),
-+            HashMap::from([
-+                ("armes".to_string(), 20.0),
-+                ("outils".to_string(), 20.0),
-+                ("armure".to_string(), 20.0),
-+                ("véhicules".to_string(), 20.0),
-+                ("batiments".to_string(), 20.0),
-+            ]),
 +        );
  
 -            
@@ -650,7 +637,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          Self {
              loot_par_niveau,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:412:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:401:
              seuil_artefact_commun,
              seuil_artefact_peu_commun,
              sous_loot_livre_normal,
@@ -933,7 +920,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  SELECT nombre
                  FROM echecs
                  WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:593:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:582:
                    AND categorie = ?
                    AND objet = ?
                  "#,
@@ -1039,7 +1026,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:666:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:655:
                      DO UPDATE SET
                          nombre = 0
                      "#,
@@ -1072,7 +1059,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:696:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:685:
                      DO UPDATE SET
                          nombre = nombre + 1
                      "#,
@@ -1209,7 +1196,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              SELECT nombre
              FROM echecs
              WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:779:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:768:
                AND categorie = ?
                AND objet = ?
              "#,
@@ -1308,7 +1295,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:849:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:838:
                  DO UPDATE SET
                      nombre = 0
                  "#,
@@ -1341,7 +1328,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:879:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:868:
                  DO UPDATE SET
                      nombre = nombre + 1
                  "#,
@@ -1384,55 +1371,39 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.
 -pub mod gameplay;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:1:
- use tokio::{
-     io::AsyncWriteExt,
-     net::TcpStream,
--    time::{interval, Duration},
-+    time::{Duration, interval},
- };
- 
- use sqlx::SqlitePool;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:8:
- use uuid::Uuid;
- 
--use log::{
--    debug,
--    error,
--    info,
--};
+-use tokio::{net::TcpStream,time::{sleep, Duration},io::AsyncWriteExt};
++use crate::network::handler::PacketHandler;
 +use log::{debug, error, info};
+ use sqlx::SqlitePool;
++use tokio::{
++    io::AsyncWriteExt,
++    net::TcpStream,
++    time::{Duration, sleep},
++};
+ use uuid::Uuid;
+-use log::{
+-    info,
+-    debug,
+-    error,};
+-use crate::network::handler::PacketHandler;
  
- use crate::network::handler::PacketHandler;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:18:
 -use crate::network::packet::{
--    receive_packet,
--    send_packet,
--    BanInfo,
--    BanType,
 -    Packet,
 -    PacketType,
+-    receive_packet,
+-    send_packet,
+-    BanType,
+-    BanInfo,
 -};
 +use crate::network::packet::{BanInfo, BanType, Packet, PacketType, receive_packet, send_packet};
  
--
  pub struct Client {
--
      stream: TcpStream,
- 
-     pool: SqlitePool,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:40:
-     account_id: Option<i64>,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:31:
  }
  
--
  impl Client {
 -
-     // ============================================================
-     // CONSTRUCTEUR
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:49:
- 
 -    pub fn new(
 -        stream: TcpStream,
 -        pool: SqlitePool,
@@ -1440,77 +1411,37 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -
 +    pub fn new(stream: TcpStream, pool: SqlitePool) -> Self {
          Self {
+-
              stream,
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:67:
+             pool,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:49:
+             user_id: None,
+ 
+             account_id: None,
+-
          }
+-
      }
  
--
-     // ============================================================
-     // BOUCLE PRINCIPALE
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:74:
- 
      pub async fn run(&mut self) {
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:58:
 -
-         let peer = self
-             .stream
-             .peer_addr()
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:80:
-             .map(|addr| addr.to_string())
-             .unwrap_or_else(|_| "adresse inconnue".to_string());
- 
-+        info!("Client connecté : {} | Session : {}", peer, self.session_id);
- 
--        info!(
--            "Client connecté : {} | Session : {}",
--            peer,
--            self.session_id
--        );
--
--
-         // --------------------------------------------------------
-         // Timer de vérification du ban
-         // --------------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:94:
- 
--        let mut ban_checker =
--            interval(Duration::from_secs(1));
-+        let mut ban_checker = interval(Duration::from_secs(1));
- 
--
-         // interval() déclenche immédiatement son premier tick.
-         //
-         // On le consomme donc ici pour que la première véritable
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:102:
-         // vérification ait lieu après 1 seconde.
-         ban_checker.tick().await;
- 
--
-         // ========================================================
-         // BOUCLE
-         // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:109:
- 
+         info!(
+             "Client connecté : {} | Session : {}",
+             self.stream.peer_addr().unwrap(),
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:62:
+             self.session_id,
+         );
          loop {
 -
              tokio::select! {
  
-                 // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:313:
+                 // =====================================================
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:191:
              }
          }
  
--
-         // ========================================================
-         // FIN DE SESSION
-         // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:320:
- 
-         self.mark_disconnected().await;
- 
--
 -        info!(
 -            "Fin de session : {}",
 -            self.session_id
@@ -1518,100 +1449,42 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +        info!("Fin de session : {}", self.session_id);
      }
  
+-        
 -
-     // ============================================================
-     // RÉCUPÉRATION DES INFORMATIONS DE BAN
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:334:
- 
+-    
 -    pub async fn get_ban_info(
 -        &self,
 -    ) -> Result<Option<BanInfo>, sqlx::Error> {
+-
 +    pub async fn get_ban_info(&self) -> Result<Option<BanInfo>, sqlx::Error> {
-+        let user_id = match self.user_id() {
-+            Some(id) => id,
- 
--        let user_id =
--            match self.user_id() {
-+            None => {
-+                return Ok(None);
-+            }
-+        };
- 
--                Some(id) => id,
+         let user_id = match self.user_id() {
 -
--                None => {
--                    return Ok(None);
--                }
--            };
--
--
-         // ========================================================
-         // BAN PERMANENT
-         // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:353:
+             Some(id) => id,
  
--        if let Some((reason,)) =
--            sqlx::query_as::<_, (Option<String>,)>(
--                r#"
-+        if let Some((reason,)) = sqlx::query_as::<_, (Option<String>,)>(
-+            r#"
-                 SELECT raison
-                 FROM bansperm
-                 WHERE user_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:360:
-                 LIMIT 1
--                "#
--            )
--            .bind(user_id)
--            .fetch_optional(&self.pool)
--            .await?
-+                "#,
-+        )
-+        .bind(user_id)
-+        .fetch_optional(&self.pool)
-+        .await?
-         {
-+            return Ok(Some(BanInfo {
-+                ban_type: BanType::Permanent,
- 
--            return Ok(Some(
--                BanInfo {
-+                reason: reason.unwrap_or_else(|| "Aucune raison fournie".to_string()),
- 
--                    ban_type:
--                        BanType::Permanent,
--
--                    reason:
--                        reason.unwrap_or_else(
--                            || "Aucune raison fournie".to_string()
--                        ),
--
--                    date_deban:
--                        None,
--                }
--            ));
-+                date_deban: None,
-+            }));
-         }
- 
--
-         // ========================================================
-         // BAN TEMPORAIRE
-         // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:389:
+             None => {
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:223:
+             FROM bansperm
+             WHERE user_id = ?
+             LIMIT 1
+-            "#
++            "#,
+         )
+         .bind(user_id)
+         .fetch_optional(&self.pool)
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:240:
+         // Ban temporaire
+         // ---------------------------------------------------------
  
 -        if let Some((reason, date_deban)) =
 -            sqlx::query_as::<_, (Option<String>, String)>(
 -                r#"
 +        if let Some((reason, date_deban)) = sqlx::query_as::<_, (Option<String>, String)>(
 +            r#"
-                 SELECT
-                     raison,
-                     date_deban
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:402:
-                       > CURRENT_TIMESTAMP
- 
+                 SELECT raison, date_deban
+                 FROM bansferme
+                 WHERE user_id = ?
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:249:
+                   AND datetime(date_deban) > CURRENT_TIMESTAMP
                  LIMIT 1
 -                "#
 -            )
@@ -1624,43 +1497,21 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +        .fetch_optional(&self.pool)
 +        .await?
          {
-+            return Ok(Some(BanInfo {
-+                ban_type: BanType::Temporary,
+             return Ok(Some(BanInfo {
+                 ban_type: BanType::Temporary,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:259:
  
--            return Ok(Some(
--                BanInfo {
+-                reason: reason.unwrap_or_else(
+-                    || "Aucune raison fournie".to_string()
+-                ),
 +                reason: reason.unwrap_or_else(|| "Aucune raison fournie".to_string()),
  
--                    ban_type:
--                        BanType::Temporary,
--
--                    reason:
--                        reason.unwrap_or_else(
--                            || "Aucune raison fournie".to_string()
--                        ),
--
--                    date_deban:
--                        Some(date_deban),
--                }
--            ));
-+                date_deban: Some(date_deban),
-+            }));
-         }
+                 date_deban: Some(date_deban),
+             }));
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:267:
  
--
-         // ========================================================
-         // PAS DE BAN
-         // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:434:
          Ok(None)
      }
- 
--
-     // ============================================================
-     // ENCODAGE DU PAQUET BAN
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:441:
- 
 -    fn encode_ban_payload(
 -        ban: &BanInfo,
 -    ) -> Vec<u8> {
@@ -1669,10 +1520,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          format!(
              "{}\0{}\0{}",
              ban.ban_type as u8,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:449:
--
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:277:
              ban.reason,
--
 -            ban.date_deban
 -                .as_deref()
 -                .unwrap_or("")
@@ -1680,221 +1529,36 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          )
          .into_bytes()
      }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:458:
- 
--
-     // ============================================================
-     // MARQUER COMME DÉCONNECTÉ
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:463:
- 
--    async fn mark_disconnected(
--        &self,
--    ) {
-+    async fn mark_disconnected(&self) {
-+        let user_id = match self.user_id() {
-+            Some(id) => id,
- 
--        let user_id =
--            match self.user_id() {
-+            None => return,
-+        };
- 
--                Some(id) => id,
--
--                None => return,
--            };
--
--
--        if let Err(e) =
--            sqlx::query(
--                r#"
-+        if let Err(e) = sqlx::query(
-+            r#"
-                 UPDATE users
- 
-                 SET status = 'DISCONNECTED'
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:484:
-                 WHERE user_id = ?
- 
-                   AND status = 'CONNECTED'
--                "#
--            )
--            .bind(user_id)
--            .execute(&self.pool)
--            .await
-+                "#,
-+        )
-+        .bind(user_id)
-+        .execute(&self.pool)
-+        .await
-         {
--
-             error!(
-                 "Impossible de mettre le joueur {} en DISCONNECTED [{}] : {}",
--                user_id,
--                self.session_id,
--                e
-+                user_id, self.session_id, e
-             );
- 
-             return;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:502:
-         }
- 
--
-         debug!(
-             "Utilisateur {} marqué comme DISCONNECTED [{}]",
--            user_id,
--            self.session_id
-+            user_id, self.session_id
-         );
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:512:
--
-     // ============================================================
-     // SET USER ID
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:516:
- 
--    pub fn set_user_id(
--        &mut self,
--        id: Option<String>,
--    ) {
--
-+    pub fn set_user_id(&mut self, id: Option<String>) {
-         self.user_id = id;
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:525:
--
-     // ============================================================
-     // GET USER ID
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:529:
- 
--    pub fn user_id(
--        &self,
--    ) -> Option<&str> {
--
--        self.user_id
--            .as_deref()
-+    pub fn user_id(&self) -> Option<&str> {
-+        self.user_id.as_deref()
-     }
- 
--
-     // ============================================================
-     // SET CLIENT ID
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:542:
- 
--    pub fn set_client_id(
--        &mut self,
--        id: Option<i64>,
--    ) {
--
-+    pub fn set_client_id(&mut self, id: Option<i64>) {
-         self.client_id = id;
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:551:
--
-     // ============================================================
-     // GET CLIENT ID
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:555:
- 
--    pub fn client_id(
--        &self,
--    ) -> Option<i64> {
--
-+    pub fn client_id(&self) -> Option<i64> {
-         self.client_id
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:563:
--
-     // ============================================================
-     // SET ACCOUNT ID
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:567:
- 
--    pub fn set_account_id(
--        &mut self,
--        id: Option<i64>,
--    ) {
--
-+    pub fn set_account_id(&mut self, id: Option<i64>) {
-         self.account_id = id;
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:576:
--
-     // ============================================================
-     // GET ACCOUNT ID
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:580:
- 
--    pub fn account_id(
--        &self,
--    ) -> Option<i64> {
--
-+    pub fn account_id(&self) -> Option<i64> {
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:306:
+     pub fn account_id(&self) -> Option<i64> {
          self.account_id
      }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:588:
--
-     // ============================================================
-     // DÉCONNEXION
-     // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:592:
- 
--    pub async fn disconnect(
--        &mut self,
--    ) {
--
+-pub async fn disconnect(&mut self) {
+-    if let Err(e) = self.stream.shutdown().await {
+-        error!(
+-            "Erreur lors de la déconnexion [{}] : {}",
+-            self.session_id,
+-            e
+-        );
+-    } else {
+-        info!(
+-            "Client déconnecté : {}",
+-            self.session_id
+-        );
 +    pub async fn disconnect(&mut self) {
-         // --------------------------------------------------------
-         // Mettre le compte hors ligne AVANT de fermer le socket
-         // --------------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:600:
- 
-         self.mark_disconnected().await;
- 
--
-         // --------------------------------------------------------
-         // Fermeture du socket
-         // --------------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:607:
- 
--        if let Err(e) =
--            self.stream.shutdown().await
--        {
--
 +        if let Err(e) = self.stream.shutdown().await {
-             error!(
-                 "Erreur lors de la déconnexion [{}] : {}",
--                self.session_id,
--                e
++            error!(
++                "Erreur lors de la déconnexion [{}] : {}",
 +                self.session_id, e
-             );
--        }
--        else {
--
--            info!(
--                "Client déconnecté : {}",
--                self.session_id
--            );
++            );
 +        } else {
 +            info!("Client déconnecté : {}", self.session_id);
-         }
++        }
      }
+-}
+-
  }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:627:
-+
+ 
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1:
 -use crate::network::packet::{
 -    Packet,
@@ -2581,42 +2245,34 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                      // 3 ÉCHECS
                      // =================================================
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:586:
--                    
--                    if attempts >= 3 {
  
-+                    if attempts >= 3 {
+                     if attempts >= 3 {
+-
                          // --------------------------------------------
                          // Recherche du sursis
                          // --------------------------------------------
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:592:
-                         debug!(
--    "DEBUG BAN : création du ban pour user_id={}, tentatives={}",
--    login_data.user_id,
--    attempts
--);
+ 
 -                        let sursis_jours =
--                            match sqlx::query_scalar::<_, i64>(
+-                            match sqlx::query_scalar::<_, Option<i64>>(
 -                                r#"
-+                            "DEBUG BAN : création du ban pour user_id={}, tentatives={}",
-+                            login_data.user_id, attempts
-+                        );
-+                        let sursis_jours = match sqlx::query_scalar::<_, i64>(
++                        let sursis_jours = match sqlx::query_scalar::<_, Option<i64>>(
 +                            r#"
-                                 SELECT sursis
+                                 SELECT sursis_jours
  
                                  FROM banssursis
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:605:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:601:
  
                                  LIMIT 1
                                  "#,
 -                            )
 -                            .bind(&login_data.user_id)
--                            .fetch_optional(&pool)
+-                            .fetch_one(&pool)
 -                            .await
 -                            {
 +                        )
 +                        .bind(&login_data.user_id)
-+                        .fetch_optional(&pool)
++                        .fetch_one(&pool)
 +                        .await
 +                        {
 +                            Ok(value) => value,
@@ -2651,7 +2307,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                          // =================================================
                          // SURsis EXISTANT
                          // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:636:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:632:
  
 -                        if let Some(jours) =
 -                            sursis_jours
@@ -2661,7 +2317,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                              // ----------------------------------------
                              // Validation
                              // ----------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:644:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:640:
  
                              if jours <= 0 {
 +                                error!("Sursis invalide pour {} : {} jour(s)", email, jours);
@@ -2696,7 +2352,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                              // ----------------------------------------
                              // Ajouter le sursis au ban ferme
                              //
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:685:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:681:
                              // ----------------------------------------
  
                              let result = sqlx::query(
@@ -2705,7 +2361,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
      INSERT INTO bansferme (
          user_id,
          auteur,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:738:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:734:
              )
          END
      "#,
@@ -2752,7 +2408,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                              // ----------------------------------------
                              // Supprimer le sursis consommé
                              // ----------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:771:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:767:
  
 -                            if let Err(error) =
 -                                sqlx::query(
@@ -2762,7 +2418,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                                      DELETE FROM banssursis
  
                                      WHERE user_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:778:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:774:
                                      "#,
 -                                )
 -                                .bind(&login_data.user_id)
@@ -2805,7 +2461,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                          // =================================================
                          // PAS DE SURsis
                          // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:810:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:806:
 -
                          else {
 +                            debug!("Aucun sursis pour {}", email);
@@ -2819,7 +2475,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                              // --------------------------------------------
                              // Ban automatique de 10 minutes
                              // --------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:943:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:939:
                                  .execute(&pool)
                                  .await;
  
@@ -2847,16 +2503,13 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +                                ));
                              }
                          }
--                        debug!(
--    "DEBUG BAN : INSERT terminé pour {}",
--    login_data.user_id
--);
-+                        debug!("DEBUG BAN : INSERT terminé pour {}", login_data.user_id);
  
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:961:
+-
                          // =================================================
                          // RESET DES TENTATIVES
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:971:
                          // =================================================
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:965:
  
 -                        if let Err(error) =
 -                            sqlx::query(
@@ -2866,7 +2519,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                                  DELETE FROM login_attempts
  
                                  WHERE user_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:979:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:972:
                                  "#,
 -                            )
 -                            .bind(&login_data.user_id)
@@ -2900,8 +2553,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                          // =================================================
                          // RÉPONSE
                          // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1003:
-                         info!("Utilisateur banni");
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:996:
+ 
 -                        return Some(
 -                            Packet::new(
 -                                PacketType::LoginResponse,
@@ -2918,7 +2571,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                      // ------------------------------------------------
                      // Moins de 3 tentatives
                      // ------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1016:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1009:
  
 -                    return Some(
 -                        Packet::new(
@@ -2936,7 +2589,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                  // =================================================
                  // MOT DE PASSE CORRECT
                  // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1031:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1024:
                  // Vérifier si déjà connecté
                  // ------------------------------------------------
  
@@ -2948,7 +2601,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                          SELECT EXISTS(
                              SELECT 1
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1044:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1037:
                                AND status = 'CONNECTED'
                          )
                          "#,
@@ -3015,7 +2668,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                  // ------------------------------------------------
                  // CONNECTED
                  // ------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1091:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1084:
  
 -                if let Err(error) =
 -                    sqlx::query(
@@ -3025,7 +2678,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                          UPDATE users
  
                          SET status = 'CONNECTED'
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1098:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1091:
  
                          WHERE user_id = ?
                          "#,
@@ -3061,7 +2714,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                  // ------------------------------------------------
                  // Reset login attempts
                  // ------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1124:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1117:
  
 -                if let Err(error) =
 -                    sqlx::query(
@@ -3071,7 +2724,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                          DELETE FROM login_attempts
  
                          WHERE user_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1131:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1124:
                          "#,
 -                    )
 -                    .bind(&login_data.user_id)
@@ -3105,7 +2758,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                  // ------------------------------------------------
                  // Login réussi
                  // ------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1155:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1148:
  
 -                debug!(
 -                    "Utilisateur authentifié : {}",
@@ -3142,7 +2795,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
              // =================================================
              // CHAT
              // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1185:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1178:
 -
              PacketType::Chat => {
 +                debug!("Message : {}", String::from_utf8_lossy(&packet.payload));
@@ -3167,7 +2820,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
              // =================================================
              // MOVE
              // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1207:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1200:
 -
              PacketType::Move => {
 +                debug!("Déplacement reçu");
@@ -3189,7 +2842,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
              // =================================================
              // Réponses interdites venant du client
              // =================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1226:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/handler.rs:1219:
 -
 -            PacketType::LoginResponse
 -            | PacketType::SignUpResponse => {
@@ -4185,17 +3838,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
      let encrypted = fs::read_to_string("../security/vault.enc")?;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:1:
++use log::{debug, info};
++use the_last_signal_server::database::{database_manager::DatabaseManager, migrations};
+ use the_last_signal_server::network::packet::PacketType;
 -use the_last_signal_server::database::{
 -    database_manager::DatabaseManager,
 -    migrations,
 -};
 -use log::{debug,info};
-+use log::{debug, info};
-+use the_last_signal_server::database::{database_manager::DatabaseManager, migrations};
  use the_last_signal_server::network::server::Server;
  use the_last_signal_server::utils::logger::logger::ServerLogger;
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:9:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:10:
  #[tokio::main]
  async fn main() -> Result<(), Box<dyn std::error::Error>> {
      let _guard = ServerLogger::init();
@@ -4222,7 +3876,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
  
      info!("Base SQLite prête.");
      ServerLogger::set_database(database.pool().clone());
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:30:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:31:
 -    
  
 -    let server =
@@ -4248,151 +3902,130 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling libc v0.2.189
    Compiling stable_deref_trait v1.2.1
    Compiling zerofrom v0.1.8
-   Compiling pin-project-lite v0.2.17
-   Compiling writeable v0.6.4
-   Compiling yoke v0.8.3
-   Compiling futures-core v0.3.34
-   Compiling zerovec v0.11.8
    Compiling typenum v1.20.1
-   Compiling litemap v0.8.3
-   Compiling memchr v2.8.3
-   Compiling tinystr v0.8.4
+   Compiling pin-project-lite v0.2.17
    Compiling smallvec v1.15.2
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
+   Compiling litemap v0.8.3
+   Compiling scopeguard v1.2.0
+   Compiling writeable v0.6.4
+   Compiling futures-core v0.3.34
+   Compiling memchr v2.8.3
+   Compiling generic-array v0.14.7
+   Compiling tinystr v0.8.4
    Compiling icu_locale_core v2.3.0
    Compiling potential_utf v0.1.6
-   Compiling zerotrie v0.2.5
-   Compiling utf8_iter v1.0.4
-   Compiling icu_collections v2.3.0
-   Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
+   Compiling zerotrie v0.2.5
+   Compiling block-buffer v0.10.4
+   Compiling utf8_iter v1.0.4
    Compiling icu_normalizer_data v2.3.0
+   Compiling icu_collections v2.3.0
+   Compiling parking_lot_core v0.9.12
    Compiling icu_properties_data v2.3.0
-   Compiling mio v1.2.2
    Compiling socket2 v0.6.5
+   Compiling mio v1.2.2
    Compiling icu_provider v2.3.1
+   Compiling once_cell v1.21.4
    Compiling bytes v1.12.1
    Compiling futures-sink v0.3.34
-   Compiling rand_core v0.10.1
-   Compiling once_cell v1.21.4
    Compiling icu_normalizer v2.3.0
    Compiling icu_properties v2.3.0
+   Compiling parking_lot v0.12.5
    Compiling serde_core v1.0.229
    Compiling equivalent v1.0.2
-   Compiling generic-array v0.14.7
+   Compiling cpufeatures v0.2.17
    Compiling tracing-core v0.1.36
-   Compiling getrandom v0.4.3
-   Compiling idna_adapter v1.2.2
-   Compiling parking_lot_core v0.9.12
    Compiling futures-io v0.3.34
-   Compiling percent-encoding v2.3.2
    Compiling allocator-api2 v0.2.21
    Compiling foldhash v0.2.0
-   Compiling futures-task v0.3.34
-   Compiling cpufeatures v0.2.17
    Compiling slab v0.4.12
-   Compiling form_urlencoded v1.2.2
-   Compiling hashbrown v0.16.1
+   Compiling idna_adapter v1.2.2
+   Compiling percent-encoding v2.3.2
+   Compiling futures-task v0.3.34
    Compiling futures-util v0.3.34
-   Compiling parking_lot v0.12.5
+   Compiling form_urlencoded v1.2.2
    Compiling idna v1.1.0
-   Compiling serde v1.0.229
+   Compiling hashbrown v0.16.1
    Compiling num-traits v0.2.19
-   Compiling zmij v1.0.23
    Compiling crossbeam-utils v0.8.22
-   Compiling hashbrown v0.17.1
-   Compiling crc-catalog v2.5.0
-   Compiling itoa v1.0.18
+   Compiling serde v1.0.229
+   Compiling zmij v1.0.23
    Compiling parking v2.2.1
-   Compiling serde_json v1.0.151
-   Compiling event-listener v5.4.2
-   Compiling indexmap v2.14.1
-   Compiling crossbeam-queue v0.3.13
+   Compiling rand_core v0.10.1
+   Compiling itoa v1.0.18
+   Compiling crc-catalog v2.5.0
+   Compiling subtle v2.6.1
+   Compiling hashbrown v0.17.1
    Compiling crc v3.4.0
+   Compiling serde_json v1.0.151
    Compiling either v1.18.0
-   Compiling url v2.5.8
+   Compiling event-listener v5.4.2
+   Compiling indexmap v2.14.0
+   Compiling crossbeam-queue v0.3.13
    Compiling hashlink v0.11.1
+   Compiling url v2.5.8
    Compiling futures-intrusive v0.5.0
    Compiling crypto-common v0.1.7
-   Compiling block-buffer v0.10.4
    Compiling digest v0.10.7
+   Compiling getrandom v0.4.3
    Compiling tokio v1.53.1
    Compiling spin v0.9.9
-   Compiling cmov v0.5.4
-   Compiling flume v0.12.0
+   Compiling errno v0.3.14
    Compiling tracing v0.1.44
-   Compiling ctutils v0.4.2
+   Compiling signal-hook-registry v1.4.8
+   Compiling flume v0.12.0
    Compiling sha2 v0.10.9
    Compiling futures-executor v0.3.34
    Compiling atoi v2.0.0
    Compiling futures-channel v0.3.34
-   Compiling hybrid-array v0.4.14
    Compiling log v0.4.34
    Compiling thiserror v2.0.20
-   Compiling base64 v0.22.1
+   Compiling getrandom v0.2.17
    Compiling bitflags v2.13.1
-   Compiling crypto-common v0.2.2
-   Compiling block-buffer v0.12.1
-   Compiling uuid v1.26.0
+   Compiling base64 v0.22.1
+   Compiling uuid v1.25.0
    Compiling aho-corasick v1.1.5
-   Compiling base64ct v1.8.3
-   Compiling cpufeatures v0.3.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling sqlx-core v0.9.0
    Compiling foreign-types-shared v0.1.1
    Compiling foreign-types v0.3.2
    Compiling regex-automata v0.4.18
-   Compiling phc v0.6.1
-   Compiling sqlx-sqlite v0.9.0
-   Compiling digest v0.11.3
    Compiling libsqlite3-sys v0.37.0
+   Compiling sqlx-sqlite v0.9.0
+   Compiling rand_core v0.6.4
    Compiling openssl-sys v0.9.117
-   Compiling getrandom v0.2.17
-   Compiling sqlx-macros-core v0.9.0
-   Compiling linux-raw-sys v0.12.1
    Compiling adler2 v2.0.1
+   Compiling base64ct v1.8.3
    Compiling iana-time-zone v0.1.65
    Compiling simd-adler32 v0.3.10
-   Compiling miniz_oxide v0.9.1
-   Compiling chrono v0.4.45
+   Compiling cpufeatures v0.3.0
+   Compiling linux-raw-sys v0.12.1
+   Compiling miniz_oxide v0.8.9
    Compiling rustix v1.1.4
+   Compiling sqlx-macros-core v0.9.0
+   Compiling chacha20 v0.10.1
+   Compiling password-hash v0.5.0
+   Compiling chrono v0.4.45
    Compiling openssl v0.10.81
    Compiling sqlx-macros v0.9.0
    Compiling zeroize v1.9.0
-   Compiling blake2 v0.11.0
-   Compiling password-hash v0.6.1
    Compiling regex v1.13.1
    Compiling crc32fast v1.5.1
-   Compiling chacha20 v0.10.2
-   Compiling nu-ansi-term v0.50.3
+   Compiling blake2 v0.10.6
    Compiling fastrand v2.5.0
    Compiling byteorder v1.5.0
+   Compiling nu-ansi-term v0.50.3
    Compiling tempfile v3.27.0
-   Compiling fernet v0.2.2
-   Compiling sqlx v0.9.0
    Compiling flexi_logger v0.31.10
+   Compiling sqlx v0.9.0
+   Compiling argon2 v0.5.3
+   Compiling fernet v0.2.2
+   Compiling flate2 v1.1.9
    Compiling rand v0.10.2
-   Compiling flate2 v1.1.10
-   Compiling argon2 v0.6.0
-   Compiling rand_core v0.6.4
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
-error[E0432]: unresolved imports `argon2::password_hash::rand_core`, `argon2::password_hash::SaltString`
-  --> src/utils/password.rs:3:9
-   |
- 3 |         rand_core::OsRng,
-   |         ^^^^^^^^^ could not find `rand_core` in `password_hash`
-...
- 7 |         SaltString,
-   |         ^^^^^^^^^^ no `SaltString` in the root
-   |
-note: found an item that was configured out
-  --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/password-hash-0.6.1/src/lib.rs:40:9
-   |
-39 | #[cfg(feature = "rand_core")]
-   |       --------------------- the item is gated behind the `rand_core` feature
-40 | pub use rand_core;
-   |         ^^^^^^^^^
-
 warning: unused import: `Error`
  --> src/database/database_manager.rs:6:5
   |
@@ -4401,39 +4034,88 @@ warning: unused import: `Error`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-warning: use of deprecated type alias `argon2::password_hash::PasswordHash`: import as `password_hash::phc::PasswordHash` instead
- --> src/utils/password.rs:4:9
+warning: unused import: `uuid::Uuid`
+ --> src/database/migrations.rs:2:5
   |
-4 |         PasswordHash,
-  |         ^^^^^^^^^^^^
-  |
-  = note: `#[warn(deprecated)]` on by default
+2 | use uuid::Uuid;
+  |     ^^^^^^^^^^
 
-warning: use of deprecated type alias `argon2::password_hash::PasswordHash`: import as `password_hash::phc::PasswordHash` instead
-  --> src/utils/password.rs:30:29
+warning: unused import: `Rng`
+ --> src/gameplay/dice.rs:1:12
+  |
+1 | use rand::{Rng,RngExt};
+  |            ^^^
+
+warning: unused import: `log::debug`
+ --> src/gameplay/tresor.rs:4:5
+  |
+4 | use log::debug;
+  |     ^^^^^^^^^^
+
+warning: fields `user_id` and `password_hash` are never read
+  --> src/network/handler.rs:41:5
    |
-30 |     let parsed_hash = match PasswordHash::new(password_hash) {
-   |                             ^^^^^^^^^^^^
+40 | pub struct User {
+   |            ---- fields in this struct
+41 |     user_id: String,
+   |     ^^^^^^^
+42 |     password_hash: String,
+   |     ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
-error[E0061]: this method takes 1 argument but 2 arguments were supplied
-   --> src/utils/password.rs:20:10
-    |
- 20 |         .hash_password(password.as_bytes(), &salt)
-    |          ^^^^^^^^^^^^^                      ----- unexpected argument #2
-    |
-note: method defined here
-   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/password-hash-0.6.1/src/lib.rs:107:8
-    |
-107 |     fn hash_password(&self, password: &[u8]) -> Result<H> {
-    |        ^^^^^^^^^^^^^
-help: remove the extra argument
-    |
- 20 -         .hash_password(password.as_bytes(), &salt)
- 20 +         .hash_password(password.as_bytes())
-    |
+warning: constant `PO` is never used
+ --> src/gameplay/tresor.rs:9:7
+  |
+9 | const PO: u32 = PA * 10;
+  |       ^^
 
-Some errors have detailed explanations: E0061, E0432.
-For more information about an error, try `rustc --explain E0061`.
-warning: `the-last-signal-server` (lib) generated 3 warnings
-error: could not compile `the-last-signal-server` (lib) due to 2 previous errors; 3 warnings emitted
-warning: build failed, waiting for other jobs to finish...
+warning: constant `PP` is never used
+  --> src/gameplay/tresor.rs:10:7
+   |
+10 | const PP: u32 = PO * 10;
+   |       ^^
+
+warning: `the-last-signal-server` (lib) generated 7 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 4 suggestions)
+warning: unused import: `the_last_signal_server::network::packet::PacketType`
+ --> src/main.rs:1:5
+  |
+1 | use the_last_signal_server::network::packet::PacketType;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `debug`
+ --> src/main.rs:6:11
+  |
+6 | use log::{debug,info};
+  |           ^^^^^
+
+warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server --tests` to apply 2 suggestions)
+warning: `the-last-signal-server` (lib test) generated 7 warnings (7 duplicates)
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (2 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.71s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-d0e0d0dddb99ebeb)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-ad321f0f01db3e98)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-3768396dade814d1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests the_last_signal_server
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
