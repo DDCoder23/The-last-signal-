@@ -577,9 +577,9 @@ jobs:
                 git worktree add -b ci-reports/tmp/ci-worktree
                 fi
                 mkdir -p "/tmp/ci-worktree/reports/rust"
-                cp -r reports/rust/* "/tmp/ci-worktree/reports/rust" 2>/dev/null || true
+                cp -ra "$GITHUB_WORKSPACE/reports/rust" "/tmp/ci-worktree/reports/rust" 2>/dev/null || true
                 cd /tmp/ci-worktree
-                git add .
+                git add -A
                 git status
                 if git diff --cached --quiet; then
                 echo "No changes to commit."
