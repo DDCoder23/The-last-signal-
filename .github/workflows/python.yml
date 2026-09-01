@@ -737,9 +737,9 @@ jobs:
 
                 echo "=== DESTINATION ==="
                 find "/tmp/ci-worktree/reports" -maxdepth 4 -type d -print
-                rm -rf --ignore-unmatch "/tmp/ci-worktree/reports/python"
+                
                 mkdir -p "/tmp/ci-worktree/reports/python"
-                cp -ra "$GITHUB_WORKSPACE/reports/python/." "/tmp/ci-worktree/reports/python/" 2>/dev/null || true
+                cp -a "$GITHUB_WORKSPACE/reports/python/." "/tmp/ci-worktree/reports/python/" 2>/dev/null || true
                 cd /tmp/ci-worktree
                 git add -A
                 git status
