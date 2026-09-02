@@ -396,17 +396,17 @@ jobs:
 
           mv \
           "$TEMP_DIR/${DATE}.tar.zst" \
-        "$ARCHIVE"
+          "$ARCHIVE"
 
 
-      ##########################################################
-      # Supprimer les rapports originaux
-      ##########################################################
+          ##########################################################
+          # Supprimer les rapports originaux
+          ##########################################################
 
-      for OS_DIR in \
-        "build-ubuntu-latest" \
-        "build-windows-latest" \
-        "build-macos-latest"
+          for OS_DIR in \
+          "build-ubuntu-latest" \
+          "build-windows-latest" \
+          "build-macos-latest"
       do
 
         SOURCE="$REPORT_ROOT/$OS_DIR/$DATE"
