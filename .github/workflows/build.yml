@@ -269,58 +269,58 @@ jobs:
 
           ############################################################
           # 2. Archives quotidiennes
-         ############################################################
+           ############################################################
 
-         echo ""
-         echo "======================================"
-         echo "📦 ARCHIVES QUOTIDIENNES"
-         echo "======================================"
+          echo ""
+          echo "======================================"
+          echo "📦 ARCHIVES QUOTIDIENNES"
+          echo "======================================"
 
           LIMIT=$(date -u -d "2 days ago" +%s)
 
           while read -r DATE
-         do
-         [ -n "$DATE" ] || continue
+          do
+          [ -n "$DATE" ] || continue
 
           DATE_TS=$(date -u -d "$DATE" +%s 2>/dev/null || continue)
 
-         if [ "$DATE_TS" -gt "$LIMIT" ]
-         then
-         echo "⏭️ $DATE : trop récent"
-         continue
-         fi
+          if [ "$DATE_TS" -gt "$LIMIT" ]
+          then
+          echo "⏭️ $DATE : trop récent"
+          continue
+          fi
 
-        ARCHIVE="$REPORT_ROOT/${DATE}.tar.zst"
+          ARCHIVE="$REPORT_ROOT/${DATE}.tar.zst"
 
-        if [ -f "$ARCHIVE" ]
-        then
-        echo "⏭️ $DATE : archive déjà présente"
-        continue
-        fi
+          if [ -f "$ARCHIVE" ]
+          then
+          echo "⏭️ $DATE : archive déjà présente"
+          continue
+          fi
 
-      echo ""
-      echo "📅 Traitement de $DATE"
+          echo ""
+          echo "📅 Traitement de $DATE"
 
-      DAY_DIR="$TEMP_DIR/$DATE"
+          DAY_DIR="$TEMP_DIR/$DATE"
 
-      mkdir -p "$DAY_DIR"
+            mkdir -p "$DAY_DIR"
 
-      FOUND=false
+            FOUND=false
 
-      ##########################################################
-      # Récupérer les rapports des trois OS
-      ##########################################################
+           ##########################################################
+           # Récupérer les rapports des trois OS
+           ##########################################################
 
-      for OS_DIR in \
-        "build-ubuntu-latest" \
-        "build-windows-latest" \
-        "build-macos-latest"
-      do
+           for OS_DIR in \
+           "build-ubuntu-latest" \
+           "build-windows-latest" \
+           "build-macos-latest"
+           do
 
-        SOURCE="$REPORT_ROOT/$OS_DIR/$DATE"
+           SOURCE="$REPORT_ROOT/$OS_DIR/$DATE"
 
-        if [ -d "$SOURCE" ]
-        then
+           if [ -d "$SOURCE" ]
+           then
           echo "   📁 $OS_DIR"
 
           mkdir -p "$DAY_DIR/$OS_DIR"
@@ -328,58 +328,58 @@ jobs:
           cp -a "$SOURCE/." "$DAY_DIR/$OS_DIR/"
 
           FOUND=true
-        fi
+          fi
 
-      done
+          done
 
-      if [ "$FOUND" = false ]
-      then
-        echo "ℹ️ Aucun rapport trouvé pour $DATE"
-        rm -rf "$DAY_DIR"
-        continue
-      fi
-
-
-      ##########################################################
-      # Taille originale
-      ##########################################################
-
-      ORIGINAL_SIZE=$(du -sb "$DAY_DIR" | awk '{print $1}')
-
-      echo "   Taille originale : $ORIGINAL_SIZE octets"
+          if [ "$FOUND" = false ]
+          then
+          echo "ℹ️ Aucun rapport trouvé pour $DATE"
+          rm -rf "$DAY_DIR"
+          continue
+          fi
 
 
-      ##########################################################
-      # Compression
-      ##########################################################
+          ##########################################################
+            # Taille originale
+           ##########################################################
 
-      compress_best \
-        "$DAY_DIR" \
-        "$TEMP_DIR/${DATE}.tar.zst"
+            ORIGINAL_SIZE=$(du -sb "$DAY_DIR" | awk '{print $1}')
 
-      COMPRESSED_SIZE=$(du -sb \
-        "$TEMP_DIR/${DATE}.tar.zst" \
-        | awk '{print $1}')
+            echo "   Taille originale : $ORIGINAL_SIZE octets"
 
 
-      PERCENT=$(awk \
-        -v compressed="$COMPRESSED_SIZE" \
-        -v original="$ORIGINAL_SIZE" \
-        'BEGIN {
+            ##########################################################
+           # Compression
+           ##########################################################
+
+          compress_best \
+          "$DAY_DIR" \
+          "$TEMP_DIR/${DATE}.tar.zst"
+
+          COMPRESSED_SIZE=$(du -sb \
+          "$TEMP_DIR/${DATE}.tar.zst" \
+          | awk '{print $1}')
+
+
+           PERCENT=$(awk \
+          -v compressed="$COMPRESSED_SIZE" \
+          -v original="$ORIGINAL_SIZE" \
+          'BEGIN {
           if (original == 0)
             print "0.00"
           else
             printf "%.2f", (compressed / original) * 100
-        }')
+          }')
 
 
-      echo "   Taille compressée : $COMPRESSED_SIZE octets"
-      echo "   📊 Taille finale : ${PERCENT} %"
+          echo "   Taille compressée : $COMPRESSED_SIZE octets"
+          echo "   📊 Taille finale : ${PERCENT} %"
 
 
-      ##########################################################
-      # Vérification
-      ##########################################################
+         ##########################################################
+          # Vérification
+         ##########################################################
 
       if zstd -t "$TEMP_DIR/${DATE}.tar.zst" >/dev/null 2>&1
       then
@@ -592,7 +592,7 @@ jobs:
 
       fi
 
-    fi
+     fi
 
 
     ############################################################
