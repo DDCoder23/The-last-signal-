@@ -24,24 +24,38 @@ Security fixes are therefore primarily focused on the current development versio
 
 # 🚨 Reporting a Security Vulnerability
 
-If you believe you have discovered a security vulnerability, **please do not immediately disclose detailed exploit information publicly**.
+If you believe you have discovered a security vulnerability in The Last Signal, please report it **privately**.
 
-Whenever possible, report the vulnerability privately through GitHub's security reporting mechanisms.
+### 🔐 Preferred method
 
-This allows the maintainers to investigate the issue before potentially sensitive technical information becomes public.
+Please use **GitHub's Private Vulnerability Reporting** for this repository.
 
-When reporting a vulnerability, please provide as much of the following information as possible:
+You can access it from the repository's **Security** tab:
+
+**Security → Advisories → Report a vulnerability**
+
+Private vulnerability reports allow the maintainers to investigate security issues without immediately exposing potentially sensitive technical details publicly.
+
+### 📋 What to include
+
+Please provide as much relevant information as possible:
 
 * A clear description of the vulnerability
 * The affected component
 * The affected file or module, if known
 * Steps to reproduce the issue
-* The potential impact
+* The potential security impact
 * Relevant logs or error messages
 * A proof of concept, when appropriate
 * Possible mitigation or remediation ideas
 
-Please avoid including real credentials, private keys, personal information, or other sensitive data in a report.
+Please **do not include real credentials, private keys, personal information, or other sensitive data** in the report.
+
+### ⚠️ If you are unsure
+
+If you are not sure whether an issue qualifies as a security vulnerability, please report it privately anyway.
+
+It is better to have a potentially non-security issue reviewed privately than to publicly disclose a vulnerability that could affect other users.
 
 ---
 
