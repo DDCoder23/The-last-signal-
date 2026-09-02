@@ -1,5 +1,5 @@
 {
-    "generated": "2026-09-02T19:02:15.740274",
+    "generated": "2026-09-02T20:43:40.537307",
     "score": 25,
     "status": "Très Décevant",
     "scores": {
@@ -12,7 +12,7 @@
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 6498,
+    "problem_count": 6485,
     "details": {
         "markdown": {
             "score": 42,
@@ -33207,39 +33207,21 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 82,
+                "modules": 80,
                 "classes": 62,
-                "functions": 424,
+                "functions": 419,
                 "documented_modules": 10,
                 "documented_classes": 20,
                 "documented_functions": 109,
                 "typed_functions": 108,
                 "todo": 6,
-                "long_functions": 26
+                "long_functions": 25
             },
             "problems": [
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/setup.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'start_server'ligne 10 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'start_server' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
@@ -35430,66 +35412,6 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "Le module ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'get_documentation_score'ligne 12 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'get_documentation_score' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'get_database_data'ligne 28 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'get_database_data' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'calculate_quality'ligne 88 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'calculate_quality' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'generate_json'ligne 123 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'generate_json' ne possède pas d'annotations de type.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py",
-                    "severity": "warning",
-                    "message": "La fonction 'generate_json' dépasse 80 lignes.",
                     "module": "python"
                 },
                 {

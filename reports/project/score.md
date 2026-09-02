@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-09-02 19:02:15
+**Date :** 2026-09-02 20:43:40
 
 # 25/100
 
@@ -2317,26 +2317,6 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'start_server'ligne 10 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'start_server' ne possède pas d'annotations de type.
-
-- **module :** python
-
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 
 ## ⚠️ Warning
@@ -3098,68 +3078,6 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** python
 - **Message :** La fonction 'check_duplicate_titles' ne possède pas d'annotations de type.
-
-- **module :** python
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'get_documentation_score'ligne 12 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'get_documentation_score' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'get_database_data'ligne 28 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'get_database_data' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'calculate_quality'ligne 88 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'calculate_quality' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'generate_json'ligne 123 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'generate_json' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'generate_json' dépasse 80 lignes.
 
 - **module :** python
 
