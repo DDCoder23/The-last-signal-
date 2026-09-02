@@ -262,7 +262,7 @@ def check_tables(files, problems, report):
 def check_html(files, problems):
     bad=0
     for file in files:
-    if is_ignored(file):
+        if is_ignored(file):
             continue
         try:
             text=file.read_text(encoding="utf-8",errors="ignore")
