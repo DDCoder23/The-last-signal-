@@ -29,6 +29,31 @@ The project aims to create an immersive multiplayer experience combining:
 - 🔎 Exploration and discovery
 
 ---
+🧑‍💻 Contributors Wanted
+
+The Last Signal Online is an open-source project, and contributions are welcome!
+
+We are currently looking for contributors interested in:
+
+🦀 Rust — server development, networking and backend systems
+🐍 Python — client development and network communication
+🧪 Testing — unit tests, integration tests and network protocol testing
+🔐 Security & experimental cryptography — security reviews and technical feedback
+⚙️ CI/CD — GitHub Actions and development infrastructure
+📚 Documentation & translations
+
+You don't need to commit to the project long-term. Small fixes, tests, documentation improvements and technical feedback are all valuable.
+
+👉 Check the [open Issues](../../issues) to find available tasks and choose one that matches your experience.
+To ensure the project's quality and consistency, please follow these guidelines:
+
+📐 Follow the project's conventions
+📚 Document new features
+🧪 Test changes before proposing an integration
+🌿 Use a dedicated Git branch for each modification
+
+For details about the contribution process, see:
+📜 Development Guidelines - coming soon
 ## 🚀 Project Vision
 
 The goal of **The Last Signal Online** is to create an independent MMORPG offering:
@@ -76,9 +101,9 @@ The game is developed using an approach similar to that of a real game studio:
 ```text
 The-last-signal/
 │
-├── client/              # Game client
+├── client_python/              # Game client
 │
-├── server/              # Rust server
+├── server-rust/              # Rust server
 │
 ├── database/            # Database scripts
 │
@@ -178,20 +203,6 @@ Every major feature must be documented before implementation.
 Please refer to the following file:
 
 ➡️ [🎮 Controls](docs/touches_de_commandes)
-
-## 🤝 Contributing
-
-Contributions are welcome! 🤝
-
-To ensure the project's quality and consistency, please follow these guidelines:
-
-📐 Follow the project's conventions
-📚 Document new features
-🧪 Test changes before proposing an integration
-🌿 Use a dedicated Git branch for each modification
-
-For details about the contribution process, see:
-📜 Development Guidelines - coming soon
 
 ---
 
