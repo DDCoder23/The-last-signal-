@@ -30,6 +30,46 @@ Le projet vise à créer une expérience multijoueur immersive combinant :
 - 🔎 Exploration et découverte
 
 ---
+## 🤝 Contribution
+
+**The Last Signal** est un projet open source et nous accueillons les contributions de développeurs, testeurs, rédacteurs et autres participants intéressés.
+
+### 🟢 Vous débutez ?
+
+Pas besoin de connaître tout le projet avant de contribuer.
+
+Vous pouvez commencer par :
+
+* 🐛 Corriger un problème simple
+* 🧪 Ajouter ou améliorer un test
+* 📚 Améliorer la documentation
+* 🌍 Ajouter une traduction
+* 🔧 Améliorer les outils de développement
+
+### 🛠️ Vous êtes développeur ?
+
+Des contributions sont particulièrement recherchées dans :
+
+* 🦀 Rust / serveur
+* 🐍 Python / client
+* 🌐 Réseau et protocoles
+* 🧪 Tests
+* 🔐 Sécurité
+* ⚙️ CI/CD
+
+👉 **Consultez les [Issues ouvertes](../../issues)** pour trouver une tâche.
+Pour garantir la qualité et la cohérence du projet, merci de suivre ces quelques règles :
+
+- 📐 Respecter les conventions du projet
+- 📚 Documenter les nouvelles fonctionnalités
+- 🧪 Tester les modifications avant de proposer une intégration
+- 🌿 Utiliser une branche Git dédiée pour chaque modification
+  
+Avant de contribuer, consultez également :
+
+➡️ [📜 Règles de développement](docs/CODING_RULES.md)
+
+➡️ [📖 Documentation](docs/README.md)
 
 ## 🚀 Vision du projet
 
@@ -78,9 +118,9 @@ Le jeu est développé avec une approche proche d'un véritable studio :
 ```text
 The-last-signal/
 │
-├── client/              # Client du jeu
+├── client_python/              # Client du jeu
 │
-├── server/              # Serveur Rust
+├── server_rust/              # Serveur Rust
 │
 ├── database/            # Scripts base de données
 │
@@ -177,20 +217,6 @@ Chaque fonctionnalité importante doit être documentée avant son implémentati
 Conférez-vous au fichier suivant:
 
 ➡️ [🎮 Commandes](docs/touches_de_commandes)
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! 🤝
-Pour garantir la qualité et la cohérence du projet, merci de suivre ces quelques règles :
-
-- 📐 Respecter les conventions du projet
-- 📚 Documenter les nouvelles fonctionnalités
-- 🧪 Tester les modifications avant de proposer une intégration
-- 🌿 Utiliser une branche Git dédiée pour chaque modification
-
-Pour connaître les détails et le processus de contribution, consultez :
-
-➡️ [📜 Règles de développement](docs/CODING_RULES.md)
 
 ---
 
