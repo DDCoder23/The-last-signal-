@@ -9,6 +9,16 @@ from .packets.singup import SingupPacket
 import sys
 import atexit
 import random
+import secrets
+import string
+def generate_random_password(min_length=1, max_length=101):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    length = random.randint(min_length, max_length)
+
+    return ''.join(
+        secrets.choice(characters)
+        for _ in range(length)
+    )
 def main():
     client = Client()
     def on_exit():
@@ -30,10 +40,7 @@ def main():
                     "Momo",
                     "Modo"
                   ]
-        password_cara = "sfdqmjlsdlj@sqghl}^=)à)=à{¹~#fsdjfqsmkdfsdfj€"
-        password = "d"
-        for i in range (0,random.randint(1,101)):
-            password += password_cara[random.randint(0,len(password_cara)-1)]
+        password = generate_random_password()
         email = f'{random.choice(personne)}@gmail.com'
         
         if a == "Chat":
