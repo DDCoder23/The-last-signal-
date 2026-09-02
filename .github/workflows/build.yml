@@ -377,25 +377,25 @@ jobs:
           echo "   📊 Taille finale : ${PERCENT} %"
 
 
-         ##########################################################
-          # Vérification
-         ##########################################################
+             ##########################################################
+             # Vérification
+            ##########################################################
 
-      if zstd -t "$TEMP_DIR/${DATE}.tar.zst" >/dev/null 2>&1
-      then
-        echo "   ✅ Archive valide"
-      else
-        echo "   ❌ Archive invalide"
-        exit 1
-      fi
+          if zstd -t "$TEMP_DIR/${DATE}.tar.zst" >/dev/null 2>&1
+           then
+           echo "   ✅ Archive valide"
+          else
+          echo "   ❌ Archive invalide"
+          exit 1
+          fi
 
 
-      ##########################################################
-      # Installer l'archive
-      ##########################################################
+           ##########################################################
+            # Installer l'archive
+           ##########################################################
 
-      mv \
-        "$TEMP_DIR/${DATE}.tar.zst" \
+          mv \
+          "$TEMP_DIR/${DATE}.tar.zst" \
         "$ARCHIVE"
 
 
