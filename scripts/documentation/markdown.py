@@ -44,13 +44,15 @@ def load_markdownlint_report():
 def get_markdown_files() -> list[Path]:
     files = []
     for f in Path(".").rglob("*.md"):
-        if any(part in IGNORED_DIRS for part in f.parts):
+        if is_ignored(f):
             continue
         files.append(f)
     return files
 
 
-
+def is_ignored(path: str | Path) -> bool:
+    path = Path(path)
+    return any(part in IGNORED_DIRS for part in path.parts)
 
 
 def check_markdown() -> dict[str, Any]:
@@ -146,6 +148,8 @@ def check_line_length(files, problems):
 def check_trailing_spaces(files, problems):
     total = errors = 0
     for file in files:
+        if is_ignored(file):
+            continue
         try:
             lines = file.read_text(encoding="utf-8", errors="ignore").splitlines()
         except Exception:
@@ -163,6 +167,8 @@ def check_trailing_spaces(files, problems):
 def check_code_blocks(files, problems):
     bad=0
     for file in files:
+        if is_ignored(file):
+            continue
         try:
             text=file.read_text(encoding="utf-8",errors="ignore")
         except Exception:
@@ -188,6 +194,10 @@ def check_lists(files, problems, report):
     }
 
     for issue in report:
+        
+
+        if is_ignored(issue.get("fileName", "")):
+            continue
 
         rules = set(issue.get("ruleNames", []))
 
@@ -221,6 +231,10 @@ def check_tables(files, problems, report):
     }
 
     for issue in report:
+        
+
+        if is_ignored(issue.get("fileName", "")):
+            continue
 
         rules = set(issue.get("ruleNames", []))
 
@@ -248,6 +262,8 @@ def check_tables(files, problems, report):
 def check_html(files, problems):
     bad=0
     for file in files:
+    if is_ignored(file):
+            continue
         try:
             text=file.read_text(encoding="utf-8",errors="ignore")
         except Exception:
