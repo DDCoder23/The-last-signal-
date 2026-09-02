@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1493
+Run : 1494
 Branch : main
-Commit : a491711c638ac653be28c271957652f29d690b78
-Date : Wed Sep  2 16:02:03 UTC 2026
+Commit : 63e188cb290b4d4aa81685f4db64632c328c305b
+Date : Wed Sep  2 16:35:59 UTC 2026
 
 ---
 
@@ -11,7 +11,7 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 69
+**Files to reformat:** 70
 
 <details>
 <summary>Show files</summary>
@@ -25,8 +25,8 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
@@ -35,14 +35,14 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
+/home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
@@ -54,19 +54,20 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
@@ -75,8 +76,8 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/docker.py
 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
@@ -92,30 +93,30 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 
 | Code | Nombre |
 |------|-------:|
-| E501 | 459 |
-| E231 | 307 |
-| W293 | 154 |
-| E225 | 132 |
-| E303 | 115 |
+| E501 | 464 |
+| E231 | 324 |
+| W293 | 156 |
+| E225 | 142 |
+| E303 | 117 |
 | E122 | 115 |
-| E302 | 88 |
+| E302 | 89 |
 | F401 | 38 |
 | E203 | 27 |
 | W291 | 21 |
 | E301 | 18 |
-| E402 | 15 |
+| E402 | 16 |
 | E128 | 15 |
 | F811 | 14 |
 | E305 | 13 |
 | F841 | 12 |
 | E701 | 10 |
 | E251 | 8 |
+| W391 | 6 |
 | F821 | 6 |
 | E266 | 6 |
 | E211 | 6 |
 | E129 | 6 |
 | E111 | 6 |
-| W391 | 5 |
 | W292 | 5 |
 | F541 | 5 |
 | F824 | 4 |
@@ -125,6 +126,7 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 | E712 | 3 |
 | E306 | 3 |
 | E124 | 3 |
+| E741 | 2 |
 | E731 | 2 |
 | E722 | 2 |
 | E711 | 2 |
@@ -133,8 +135,6 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 | E262 | 2 |
 | E261 | 2 |
 | F634 | 1 |
-| E999 | 1 |
-| E741 | 1 |
 | E401 | 1 |
 | E271 | 1 |
 | E201 | 1 |
@@ -1118,7 +1118,46 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 | ./scripts/documentation/links.py | 36 | W293 | blank line contains whitespace |
 | ./scripts/documentation/links.py | 38 | E303 | too many blank lines (3) |
 | ./scripts/documentation/links.py | 72 | F841 | local variable 'pattern' is assigned to but never used |
-| ./scripts/documentation/markdown.py | 265 | E999 | IndentationError |
+| ./scripts/documentation/markdown.py | 23 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 27 | E402 | module level import not at top of file |
+| ./scripts/documentation/markdown.py | 44 | E302 | expected 2 blank lines, found 0 |
+| ./scripts/documentation/markdown.py | 80 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 81 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 109 | E741 | ambiguous variable name 'l' |
+| ./scripts/documentation/markdown.py | 135 | E501 | line too long (82 > 79 characters) |
+| ./scripts/documentation/markdown.py | 142 | E501 | line too long (86 > 79 characters) |
+| ./scripts/documentation/markdown.py | 154 | E501 | line too long (82 > 79 characters) |
+| ./scripts/documentation/markdown.py | 157 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 161 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 161 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 161 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 161 | E501 | line too long (85 > 79 characters) |
+| ./scripts/documentation/markdown.py | 162 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 168 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 173 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 173 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 176 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 177 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 178 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 178 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 178 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 179 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 179 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 197 | W293 | blank line contains whitespace |
+| ./scripts/documentation/markdown.py | 199 | E303 | too many blank lines (2) |
+| ./scripts/documentation/markdown.py | 234 | W293 | blank line contains whitespace |
+| ./scripts/documentation/markdown.py | 236 | E303 | too many blank lines (2) |
+| ./scripts/documentation/markdown.py | 263 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 268 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 268 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 273 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 274 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 274 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 274 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 274 | E501 | line too long (84 > 79 characters) |
+| ./scripts/documentation/markdown.py | 275 | E225 | missing whitespace around operator |
+| ./scripts/documentation/markdown.py | 275 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/markdown.py | 277 | W391 | blank line at end of file |
 | ./scripts/documentation/navigation.py | 2 | E111 | indentation is not a multiple of 4 |
 | ./scripts/documentation/organization.py | 4 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/organization.py | 8 | E501 | line too long (86 > 79 characters) |
@@ -1826,7 +1865,7 @@ Date : Wed Sep  2 16:02:03 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.162629757785467)
+**Average complexity:**  A (4.1827242524916945)
 
 <details>
 <summary>Show complexity report</summary>
@@ -2122,7 +2161,18 @@ scripts/documentation/problem.py
 scripts/documentation/python_docs.py
     F 9:0 check_python_docs - D
 scripts/documentation/markdown.py
-    ERROR: expected an indented block after 'for' statement on line 264 (<unknown>, line 265)
+    F 93:0 check_empty_files - B
+    F 148:0 check_trailing_spaces - B
+    F 131:0 check_line_length - B
+    F 262:0 check_html - B
+    F 167:0 check_code_blocks - A
+    F 183:0 check_lists - A
+    F 225:0 check_tables - A
+    F 119:0 check_encoding - A
+    F 32:0 load_markdownlint_report - A
+    F 44:0 get_markdown_files - A
+    F 53:0 is_ignored - A
+    F 58:0 check_markdown - A
 scripts/documentation/titles.py
     F 91:0 check_heading_spacing - B
     F 67:0 check_heading_order - B
@@ -2199,8 +2249,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-289 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.162629757785467)
+301 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.1827242524916945)
 
 </details>
 
@@ -2210,7 +2260,7 @@ Average complexity: A (4.162629757785467)
 |----------|------:|
 | High | 1 |
 | Medium | 9 |
-| Low | 127 |
+| Low | 131 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -2221,7 +2271,7 @@ Average complexity: A (4.162629757785467)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-02 16:02:14.368352+00:00
+Run started:2026-09-02 16:36:08.852064+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2703,6 +2753,50 @@ Test results:
 423	            VALUES ({placeholders})
 424	            """,
 425	            tuple(values.values())
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: ./scripts/documentation/markdown.py:136:8
+135	            lines = file.read_text(encoding="utf-8", errors="ignore").splitlines()
+136	        except Exception:
+137	            continue
+138	        for i, line in enumerate(lines, 1):
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: ./scripts/documentation/markdown.py:155:8
+154	            lines = file.read_text(encoding="utf-8", errors="ignore").splitlines()
+155	        except Exception:
+156	            continue
+157	        for i, line in enumerate(lines,1):
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: ./scripts/documentation/markdown.py:174:8
+173	            text=file.read_text(encoding="utf-8",errors="ignore")
+174	        except Exception:
+175	            continue
+176	        if text.count("```") %2:
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: ./scripts/documentation/markdown.py:269:8
+268	            text=file.read_text(encoding="utf-8",errors="ignore")
+269	        except Exception:
+270	            continue
+271	        for tag in HTML_TAGS:
 
 --------------------------------------------------
 >> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
@@ -3709,28 +3803,25 @@ Code scanned:
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 127
+		Low: 131
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 12
-		High: 124
-Files skipped (1):
-	./scripts/documentation/markdown.py (syntax error while parsing AST from file)
+		High: 128
+Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 7.20/10
+**Global score:** 7.24/10
 
 <details>
 <summary>Show Pylint report</summary>
 
-************* Module scripts.documentation.markdown
-scripts/documentation/markdown.py:265:5: E0001: Parsing failed: 'expected an indented block after 'for' statement on line 264 (scripts.documentation.markdown, line 265)' (syntax-error)
 ************* Module dashboard
 dashboard.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 dashboard.py:5:0: E0611: No name 'generate_dashboard' in module 'scripts.generate_dashboard' (no-name-in-module)
@@ -4872,7 +4963,6 @@ scripts/documentation/organization.py:4:0: C0116: Missing function or method doc
 scripts/documentation/score.py:56:0: C0301: Line too long (113/100) (line-too-long)
 scripts/documentation/score.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/score.py:1:0: E0001: Cannot import 'markdown' due to 'expected an indented block after 'for' statement on line 264 (scripts.documentation.markdown, line 265)' (syntax-error)
 scripts/documentation/score.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/documentation/score.py:33:15: W0718: Catching too general exception Exception (broad-exception-caught)
 scripts/documentation/score.py:51:12: C0415: Import outside toplevel (json) (import-outside-toplevel)
@@ -4925,6 +5015,34 @@ scripts/documentation/python_docs.py:22:4: C0103: Variable name "MAX_SCORE" does
 scripts/documentation/python_docs.py:64:15: W0718: Catching too general exception Exception (broad-exception-caught)
 scripts/documentation/python_docs.py:9:0: R0912: Too many branches (17/12) (too-many-branches)
 scripts/documentation/python_docs.py:9:0: R0915: Too many statements (51/50) (too-many-statements)
+************* Module scripts.documentation.markdown
+scripts/documentation/markdown.py:197:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/markdown.py:234:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/markdown.py:277:0: C0305: Trailing newlines (trailing-newlines)
+scripts/documentation/markdown.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/markdown.py:27:0: C0413: Import "import json" should be placed at the top of the module (wrong-import-position)
+scripts/documentation/markdown.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:42:11: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:58:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:99:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:119:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:124:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:131:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:136:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:148:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:155:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:167:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:174:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:183:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:187:4: C0103: Variable name "LIST_RULES" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/markdown.py:225:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:229:4: C0103: Variable name "TABLE_RULES" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/markdown.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:269:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:27:0: C0411: standard import "json" should be placed before local import "problem.add_problem" (wrong-import-order)
 ************* Module scripts.documentation.titles
 scripts/documentation/titles.py:61:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/titles.py:83:0: C0301: Line too long (112/100) (line-too-long)
@@ -5291,10 +5409,6 @@ def communication_key():
         branch,
         commit
     )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==client_python.crypto:[69:96]
@@ -5342,7 +5456,9 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
- (duplicate-code)
+
+
+def should_ignore(path: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
@@ -5360,7 +5476,7 @@ IGNORED_DIRECTORIES = {
     )
 
     # ==========================================
-    # Détails Clippy
+    # Flake8
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5399,12 +5515,7 @@ IGNORED_DIRECTORIES = {
     # Cas 3 : Autre type (ne devrait pas arriver)
     else:
         print(f" Type inattendu pour {nom}: {type(obj)}")
-        return 0
-
-
-
-
- (duplicate-code)
+        return 0 (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==server_rust.vendor.unicode-normalization.scripts.unicode:[28:38]
 ==server_rust.vendor.unicode-properties.scripts.unicode:[21:31]
@@ -5421,17 +5532,17 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==client_python.crypto:[31:43]
 ==tests.test_crypto_rotor:[26:38]
-    z = (
-        (z ^ (z >> 30))
-        * 0xBF58476D1CE4E5B9
-    ) & MASK_64
+        z = (
+            (z ^ (z >> 30))
+            * 0xBF58476D1CE4E5B9
+        ) & MASK_64
 
-    z = (
-        (z ^ (z >> 27))
-        * 0x94D049BB133111EB
-    ) & MASK_64
+        z = (
+            (z ^ (z >> 27))
+            * 0x94D049BB133111EB
+        ) & MASK_64
 
-    z ^= z >> 31
+        z ^= z >> 31
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
@@ -5518,7 +5629,17 @@ def is_world_writable(mode: int) -> bool: (duplicate-code)
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+'''
+============================================================
+                         Git
+============================================================
+'''
+
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
@@ -5530,17 +5651,18 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
             file,
             line, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.documentation.links:[37:43]
-==scripts.documentation.titles:[20:26]
+==scripts.documentation.links:[37:44]
+==scripts.documentation.markdown:[61:68]
     if not files:
         return {
             "score": 0,
             "max_score": MAX_SCORE,
             "results": {},
-            "problems": [{ (duplicate-code)
+            "problems": [{
+                "file": "", (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[59:69]
-==scripts.documentation.titles:[42:52]
+==scripts.documentation.markdown:[84:93]
     return {
         "score": sum(results.values()),
         "max_score": MAX_SCORE,
@@ -5551,6 +5673,15 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 
 def extract_links(file):
  (duplicate-code)
+.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[37:43]
+==scripts.documentation.titles:[20:26]
+    if not files:
+        return {
+            "score": 0,
+            "max_score": MAX_SCORE,
+            "results": {},
+            "problems": [{ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[9:16]
 ==.github.security.test_rust_security:[8:15]
@@ -5584,18 +5715,18 @@ def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 7 colonnes
+        # Tableau avec 10 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
 ==Ancien.inventaire:[625:632]
+                else:
+                    image_label.setText("Erreur image")
             else:
-                image_label.setText("Erreur image")
-        else:
-            image_label.setText("Aucune image")
-        self.table_widget.setCellWidget(row, 0, image_label)
+                image_label.setText("Aucune image")
+            self.table_widget.setCellWidget(row, 0, image_label)
 
-        # 2. Nom (duplicate-code)
+            # 2. Nom (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
@@ -5612,16 +5743,16 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.20/10
+Your code has been rated at 7.24/10
 
 
 </details>
@@ -5688,7 +5819,7 @@ tests/security/test_load.py:84
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-========================= 9 warnings, 1 error in 0.27s =========================
+========================= 9 warnings, 1 error in 0.22s =========================
 
 </details>
 
