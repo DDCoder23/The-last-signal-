@@ -407,207 +407,152 @@ jobs:
           "build-ubuntu-latest" \
           "build-windows-latest" \
           "build-macos-latest"
-      do
+          do
 
-        SOURCE="$REPORT_ROOT/$OS_DIR/$DATE"
+          SOURCE="$REPORT_ROOT/$OS_DIR/$DATE"
 
-        if [ -d "$SOURCE" ]
-        then
+          if [ -d "$SOURCE" ]
+          then
           rm -rf "$SOURCE"
           echo "   🗑️ Supprimé : $SOURCE"
-        fi
+          fi
 
-      done
-
-
-      if awk -v percent="$PERCENT" \
-        'BEGIN { exit !(percent <= 25) }'
-      then
-        echo "   🎯 Objectif ≤ 25 % atteint !"
-      else
-        echo "   ⚠️ > 25 % : meilleure compression conservée"
-      fi
-
-    done < "$DATES_FILE"
+          done
 
 
-    ############################################################
-    # 3. Archive mensuelle
-    ############################################################
-
-    echo ""
-    echo "======================================"
-    echo "📅 ARCHIVE MENSUELLE"
-    echo "======================================"
-
-    CURRENT_YEAR=$(date -u +%Y)
-    CURRENT_MONTH=$(date -u +%m)
-
-    PREVIOUS_DATE=$(date -u \
-      -d "$CURRENT_YEAR-$CURRENT_MONTH-01 - 1 month" \
-      +%Y-%m)
-
-    PREVIOUS_YEAR=${PREVIOUS_DATE%-*}
-    PREVIOUS_MONTH=${PREVIOUS_DATE#*-}
-
-    MONTH_NAME="${PREVIOUS_MONTH}-${PREVIOUS_YEAR}"
-
-    MONTH_ARCHIVE="$REPORT_ROOT/${MONTH_NAME}.tar.zst"
-
-    echo "📅 Mois précédent : $MONTH_NAME"
+          if awk -v percent="$PERCENT" \
+          'BEGIN { exit !(percent <= 25) }'
+          then
+          echo "   🎯 Objectif ≤ 25 % atteint !"
+          else
+          echo "   ⚠️ > 25 % : meilleure compression conservée"
+          fi
+          done < "$DATES_FILE"
 
 
-    ############################################################
-    # 4. Vérifier si l'archive mensuelle existe
-    ############################################################
+          ############################################################
+          # 3. Archive mensuelle
+          ############################################################
 
-    if [ -f "$MONTH_ARCHIVE" ]
-    then
+          echo ""
+          echo "======================================"
+          echo "📅 ARCHIVE MENSUELLE"
+          echo "======================================"
 
-      echo "ℹ️ Archive mensuelle déjà présente : $MONTH_ARCHIVE"
+          CURRENT_YEAR=$(date -u +%Y)
+          CURRENT_MONTH=$(date -u +%m)
 
-    else
+          PREVIOUS_DATE=$(date -u \
+          -d "$CURRENT_YEAR-$CURRENT_MONTH-01 - 1 month" \
+          +%Y-%m)
 
-      MONTH_DIR="$TEMP_DIR/$MONTH_NAME"
+          PREVIOUS_YEAR=${PREVIOUS_DATE%-*}
+          PREVIOUS_MONTH=${PREVIOUS_DATE#*-}
 
-      mkdir -p "$MONTH_DIR"
+          MONTH_NAME="${PREVIOUS_MONTH}-${PREVIOUS_YEAR}"
 
-      FOUND=false
+          MONTH_ARCHIVE="$REPORT_ROOT/${MONTH_NAME}.tar.zst"
 
-
-      ##########################################################
-      # 5. Récupérer les archives quotidiennes du mois
-      ##########################################################
-
-      for ARCHIVE in "$REPORT_ROOT"/*.tar.zst
-      do
-
-        [ -f "$ARCHIVE" ] || continue
-
-        NAME=$(basename "$ARCHIVE" .tar.zst)
-
-        if [[ "$NAME" =~ ^${PREVIOUS_YEAR}-${PREVIOUS_MONTH}-[0-9]{2}$ ]]
-        then
-
-          echo "📦 Ajout de l'archive quotidienne : $NAME"
-
-          zstd -d "$ARCHIVE" -c \
-            | tar -x -C "$MONTH_DIR"
-
-          FOUND=true
-
-        fi
-
-      done
+          echo "📅 Mois précédent : $MONTH_NAME"
 
 
-      ##########################################################
-      # 6. Créer l'archive mensuelle
-      ##########################################################
+          ############################################################
+          # 4. Vérifier si l'archive mensuelle existe
+          ############################################################
 
-      if [ "$FOUND" = true ]
-      then
+          if [ -f "$MONTH_ARCHIVE" ]
+          then
 
-        ORIGINAL_SIZE=$(du -sb "$MONTH_DIR" | awk '{print $1}')
+          echo "ℹ️ Archive mensuelle déjà présente : $MONTH_ARCHIVE"
 
-        compress_best \
-          "$MONTH_DIR" \
-          "$TEMP_DIR/${MONTH_NAME}.tar.zst"
+          else
 
-        COMPRESSED_SIZE=$(du -sb \
-          "$TEMP_DIR/${MONTH_NAME}.tar.zst" \
-          | awk '{print $1}')
+          MONTH_DIR="$TEMP_DIR/$MONTH_NAME"
 
+          mkdir -p "$MONTH_DIR"
 
-        PERCENT=$(awk \
-          -v compressed="$COMPRESSED_SIZE" \
-          -v original="$ORIGINAL_SIZE" \
-          'BEGIN {
-            if (original == 0)
-              print "0.00"
-            else
-              printf "%.2f", (compressed / original) * 100
-          }')
+          FOUND=false
 
 
-        echo "📊 Taille originale : $ORIGINAL_SIZE octets"
-        echo "📊 Taille compressée : $COMPRESSED_SIZE octets"
-        echo "📊 Taille finale : ${PERCENT} %"
+           ##########################################################
+           # 5. Récupérer les archives quotidiennes du mois
+           ##########################################################
 
-
-        if zstd -t \
-          "$TEMP_DIR/${MONTH_NAME}.tar.zst" \
-          >/dev/null 2>&1
-        then
-
-          echo "✅ Archive mensuelle valide"
-
-        else
-
-          echo "❌ Archive mensuelle invalide"
-          exit 1
-
-        fi
-
-
-        mv \
-          "$TEMP_DIR/${MONTH_NAME}.tar.zst" \
-          "$MONTH_ARCHIVE"
-
-
-        ########################################################
-        # 7. Supprimer les archives quotidiennes
-        ########################################################
-
-        for ARCHIVE in "$REPORT_ROOT"/*.tar.zst
-        do
+           for ARCHIVE in "$REPORT_ROOT"/*.tar.zst
+           do
 
           [ -f "$ARCHIVE" ] || continue
 
-          NAME=$(basename "$ARCHIVE" .tar.zst)
+           NAME=$(basename "$ARCHIVE" .tar.zst)
 
-          if [[ "$NAME" =~ ^${PREVIOUS_YEAR}-${PREVIOUS_MONTH}-[0-9]{2}$ ]]
-          then
+           if [[ "$NAME" =~ ^${PREVIOUS_YEAR}-${PREVIOUS_MONTH}-[0-9]{2}$ ]]
+           then
 
-            rm -f "$ARCHIVE"
+           echo "📦 Ajout de l'archive quotidienne : $NAME"
 
-            echo "🗑️ $NAME.tar.zst"
+           zstd -d "$ARCHIVE" -c \
+             | tar -x -C "$MONTH_DIR"
 
-          fi
+           FOUND=true
 
-        done
+           fi
 
-
-        if awk -v percent="$PERCENT" \
-          'BEGIN { exit !(percent <= 25) }'
-        then
-          echo "🎯 Archive mensuelle ≤ 25 % !"
-        else
-          echo "⚠️ > 25 % : meilleure compression conservée."
-        fi
-
-      else
-
-        echo "ℹ️ Aucun rapport archivable pour le mois précédent."
-
-      fi
-
-     fi
+           done
 
 
-    ############################################################
-    # 8. Résultat
-    ############################################################
+           ##########################################################
+           # 6. Créer l'archive mensuelle
+          ##########################################################
 
-    echo ""
-    echo "======================================"
-    echo "✅ ARCHIVAGE TERMINÉ"
-    echo "======================================"
+          if zstd -t \
+              "$TEMP_DIR/${MONTH_NAME}.tar.zst" \
+              >/dev/null 2>&1
+            then
+              echo "✅ Archive mensuelle valide"
+            else
+              echo "❌ Archive mensuelle invalide"
+              exit 1
+            fi
 
-    echo ""
-    echo "📂 Structure actuelle :"
+            mv \
+              "$TEMP_DIR/${MONTH_NAME}.tar.zst" \
+              "$MONTH_ARCHIVE"
 
-    find "$REPORT_ROOT" -maxdepth 4 -print | sort
+            for ARCHIVE in "$REPORT_ROOT"/*.tar.zst
+            do
+              [ -f "$ARCHIVE" ] || continue
+
+              NAME=$(basename "$ARCHIVE" .tar.zst)
+
+              if [[ "$NAME" =~ ^${PREVIOUS_YEAR}-${PREVIOUS_MONTH}-[0-9]{2}$ ]]
+              then
+                rm -f "$ARCHIVE"
+                echo "🗑️ $NAME.tar.zst"
+              fi
+            done
+
+            if awk -v percent="$PERCENT" \
+              'BEGIN { exit !(percent <= 25) }'
+            then
+              echo "🎯 Archive mensuelle ≤ 25 % !"
+            else
+              echo "⚠️ > 25 % : meilleure compression conservée."
+            fi
+
+          else
+
+            echo "ℹ️ Aucun rapport archivable pour le mois précédent."
+
+          fi   
+          echo ""
+          echo "======================================"
+          echo "✅ ARCHIVAGE TERMINÉ"
+          echo "======================================"
+
+          echo ""
+          echo "📂 Structure actuelle :"
+
+          find "$REPORT_ROOT" -maxdepth 4 -print | sort
 
 
       
