@@ -657,9 +657,11 @@ Please:
 * Give constructive feedback.
 * Help other contributors when possible.
 
+For the project's community standards and expected behavior, please read the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 You do not need to be an expert to contribute.
 
-Small improvements, documentation fixes, tests, and beginner-friendly Issues are all valuable. ❤️
+Small improvements, documentation fixes, tests, and beginner-friendly Issues are all valuable contributions. ❤️
 
 ---
 
