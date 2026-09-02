@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-09-02 12:12:10
+**Date :** 2026-09-02 16:44:31
 
 # 25/100
 
@@ -1931,7 +1931,91 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'next'ligne 9 ne possède pas de docstring.
+- **Message :** La fonction 'derive_rotor_seed'ligne 55 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'derive_rotor_seed' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'fisher_yates'ligne 95 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'fisher_yates' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_rotor'ligne 123 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_rotor' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_rotors'ligne 142 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_rotors' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'inverse_permutation'ligne 169 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'inverse_permutation' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'rotor_forward'ligne 190 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'rotor_forward' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'rotor_inverse'ligne 215 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'rotor_inverse' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'next'ligne 23 ne possède pas de docstring.
 
 - **module :** python
 
@@ -1971,7 +2055,19 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'main'ligne 12 ne possède pas de docstring.
+- **Message :** La fonction 'generate_random_password'ligne 14 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'generate_random_password' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 22 ne possède pas de docstring.
 
 - **module :** python
 
@@ -1983,7 +2079,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'on_exit'ligne 14 ne possède pas de docstring.
+- **Message :** La fonction 'on_exit'ligne 24 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2647,13 +2743,19 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_markdown'ligne 56 ne possède pas de docstring.
+- **Message :** La fonction 'is_ignored'ligne 53 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_empty_files'ligne 91 ne possède pas de docstring.
+- **Message :** La fonction 'check_markdown'ligne 58 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'check_empty_files'ligne 93 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2665,7 +2767,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_encoding'ligne 117 ne possède pas de docstring.
+- **Message :** La fonction 'check_encoding'ligne 119 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2677,7 +2779,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_line_length'ligne 129 ne possède pas de docstring.
+- **Message :** La fonction 'check_line_length'ligne 131 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2689,7 +2791,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_trailing_spaces'ligne 146 ne possède pas de docstring.
+- **Message :** La fonction 'check_trailing_spaces'ligne 148 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2701,7 +2803,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_code_blocks'ligne 163 ne possède pas de docstring.
+- **Message :** La fonction 'check_code_blocks'ligne 167 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2713,7 +2815,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_lists'ligne 177 ne possède pas de docstring.
+- **Message :** La fonction 'check_lists'ligne 183 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2725,7 +2827,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_tables'ligne 215 ne possède pas de docstring.
+- **Message :** La fonction 'check_tables'ligne 225 ne possède pas de docstring.
 
 - **module :** python
 
@@ -2737,7 +2839,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'check_html'ligne 248 ne possède pas de docstring.
+- **Message :** La fonction 'check_html'ligne 262 ne possède pas de docstring.
 
 - **module :** python
 
@@ -6729,6 +6831,80 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** python
 
+# 📄 CONTRIBUTING.md
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 5 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 7 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 458 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 545 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 714 > 120 caractères.
+
+- **module :** markdown
+
+## ❌ Error
+- **Module :** titles
+- **Message :** CONTRIBUTING.md: contient 20 titres H1 (1 attendu).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** CONTRIBUTING.md:295 saut de niveau H1 → H3.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** CONTRIBUTING.md:395 saut de niveau H1 → H3.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** CONTRIBUTING.md:479 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** CONTRIBUTING.md:206 titre dupliqué (déjà présent dans README_ENG.md:128).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** CONTRIBUTING.md:395 titre dupliqué (déjà présent dans CONTRIBUTING.md:305).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** CONTRIBUTING.md:409 titre dupliqué (déjà présent dans CONTRIBUTING.md:295).
+
+- **module :** titles
+
 # 📄 README.md
 
 ## ⚠️ Warning
@@ -6745,6 +6921,12 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** markdown
+- **Message :** Ligne 35 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
 - **Message :** Espace en fin de ligne (1).
 
 - **module :** markdown
@@ -6756,6 +6938,12 @@ TypeError: result doit être un dict, reçu int
 - **module :** markdown
 
 ## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (67).
+
+- **module :** markdown
+
+## ⚠️ Warning
 - **Module :** titles
 - **Message :** README.md:2 titre sans ligne vide avant.
 
@@ -6763,7 +6951,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:176 titre sans ligne vide avant.
+- **Message :** README.md:33 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:216 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -6781,25 +6975,25 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:56 titre dupliqué (déjà présent dans README_ENG.md:53).
+- **Message :** README.md:96 titre dupliqué (déjà présent dans README_ENG.md:78).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:104 titre dupliqué (déjà présent dans README_ENG.md:103).
+- **Message :** README.md:144 titre dupliqué (déjà présent dans README_ENG.md:128).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:197 titre dupliqué (déjà présent dans README_ENG.md:198).
+- **Message :** README.md:223 titre dupliqué (déjà présent dans README_ENG.md:209).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:204 titre dupliqué (déjà présent dans README_ENG.md:205).
+- **Message :** README.md:230 titre dupliqué (déjà présent dans README_ENG.md:216).
 
 - **module :** titles
 
@@ -6819,13 +7013,19 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** markdown
+- **Message :** Ligne 45 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
 - **Message :** Espace en fin de ligne (1).
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Espace en fin de ligne (201).
+- **Message :** Espace en fin de ligne (212).
 
 - **module :** markdown
 
@@ -6843,13 +7043,81 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README_ENG.md:32 titre sans ligne vide avant.
+- **Message :** README_ENG.md:57 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README_ENG.md:176 titre sans ligne vide avant.
+- **Message :** README_ENG.md:201 titre sans ligne vide avant.
+
+- **module :** titles
+
+# 📄 SECURITY.md
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 5 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 37 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 58 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 64 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 245 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 251 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 253 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 290 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 294 > 120 caractères.
+
+- **module :** markdown
+
+## ❌ Error
+- **Module :** titles
+- **Message :** SECURITY.md: contient 13 titres H1 (1 attendu).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** SECURITY.md:29 saut de niveau H1 → H3.
 
 - **module :** titles
 
@@ -7067,7 +7335,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README_ENG.md:103).
+- **Message :** docs/CODING_RULES.md:363 titre dupliqué (déjà présent dans README_ENG.md:128).
 
 - **module :** titles
 
@@ -7261,13 +7529,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/README.md:68 titre dupliqué (déjà présent dans README.md:122).
+- **Message :** docs/README.md:68 titre dupliqué (déjà présent dans README.md:162).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/README.md:175 titre dupliqué (déjà présent dans README.md:165).
+- **Message :** docs/README.md:175 titre dupliqué (déjà présent dans README.md:205).
 
 - **module :** titles
 
@@ -9647,13 +9915,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/base64/RELEASE-NOTES.md:227 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:307).
+- **Message :** server_rust/vendor/base64/RELEASE-NOTES.md:227 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:318).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/base64/RELEASE-NOTES.md:231 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:543).
+- **Message :** server_rust/vendor/base64/RELEASE-NOTES.md:231 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:554).
 
 - **module :** titles
 
@@ -10511,13 +10779,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:579 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:55).
+- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:579 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:66).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:589 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:66).
+- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:589 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:77).
 
 - **module :** titles
 
@@ -10541,31 +10809,31 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:669 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:283).
+- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:669 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:294).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:672 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:289).
+- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:672 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:300).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:675 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:307).
+- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:675 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:318).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:683 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:500).
+- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:683 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:511).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:686 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:543).
+- **Message :** server_rust/vendor/bitflags/CHANGELOG.md:686 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:554).
 
 - **module :** titles
 
@@ -14199,7 +14467,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/chacha20/README.md:37 titre dupliqué (déjà présent dans server_rust/vendor/vcpkg/notes.md:1).
+- **Message :** server_rust/vendor/chacha20/README.md:37 titre dupliqué (déjà présent dans CONTRIBUTING.md:497).
 
 - **module :** titles
 
@@ -25293,31 +25561,19 @@ TypeError: result doit être un dict, reçu int
 
 ## ❌ Error
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md: contient 64 titres H1 (1 attendu).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md: contient 65 titres H1 (1 attendu).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:609 saut de niveau H1 → H3.
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:620 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:623 saut de niveau H1 → H3.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:628 saut de niveau H1 → H3.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:633 saut de niveau H1 → H3.
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:634 saut de niveau H1 → H3.
 
 - **module :** titles
 
@@ -25335,181 +25591,181 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:649 saut de niveau H1 → H3.
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:650 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:8 titre dupliqué (déjà présent dans server_rust/vendor/shlex/CHANGELOG.md:18).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:655 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:19 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:902).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:660 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:35 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:911).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:19 titre dupliqué (déjà présent dans server_rust/vendor/shlex/CHANGELOG.md:18).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:76 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:921).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:30 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:902).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:84 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:925).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:46 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:911).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:103 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:87 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:921).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:121 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:95 titre dupliqué (déjà présent dans server_rust/vendor/bumpalo/CHANGELOG.md:925).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:127 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:114 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:153 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:132 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:160 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:138 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:177 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:164 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:186 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:171 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:192 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:188 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:198 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:197 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:209 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:203 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:216 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:209 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:221 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:220 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:228 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:227 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:237 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:232 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:249 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:239 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:258 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:248 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:267 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:260 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:274 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:269 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:285 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:278 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:291 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:285 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:309 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:296 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:324 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:302 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:329 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:320 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:336 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:335 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:98).
 
 - **module :** titles
 
@@ -25521,169 +25777,169 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:346 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:347 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:353 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:351 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:361 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:357 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:368 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:364 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:375 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:372 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:387 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:379 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:396 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:386 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:409 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:398 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:425 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:407 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:440 titre dupliqué (déjà présent dans server_rust/vendor/libc/CHANGELOG.md:11).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:420 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:449 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:436 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:461 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:451 titre dupliqué (déjà présent dans server_rust/vendor/libc/CHANGELOG.md:11).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:476 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:460 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:481 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:472 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:488 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:487 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:495 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:492 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:509 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:499 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:519 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:506 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:531 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:520 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:538 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:530 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:553 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:542 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:561 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:549 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:579 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:564 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:609 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:572 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:12).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:614 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:590 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:623 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:620 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:14).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:628 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:625 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:633 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:634 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
@@ -25701,13 +25957,25 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:649 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:650 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/CHANGELOG.md:655 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:655 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:660 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:16).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/mio/CHANGELOG.md:666 titre dupliqué (déjà présent dans server_rust/vendor/flume/CHANGELOG.md:10).
 
 - **module :** titles
 
@@ -25733,13 +26001,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/README.md:195 titre dupliqué (déjà présent dans server_rust/vendor/libsqlite3-sys/README.md:239).
+- **Message :** server_rust/vendor/mio/README.md:191 titre dupliqué (déjà présent dans server_rust/vendor/libsqlite3-sys/README.md:239).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/mio/README.md:204 titre dupliqué (déjà présent dans server_rust/vendor/libsqlite3-sys/README.md:214).
+- **Message :** server_rust/vendor/mio/README.md:200 titre dupliqué (déjà présent dans server_rust/vendor/libsqlite3-sys/README.md:214).
 
 - **module :** titles
 
@@ -29719,7 +29987,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/regex-syntax/README.md:71 titre dupliqué (déjà présent dans server_rust/vendor/syn/README.md:205).
+- **Message :** server_rust/vendor/regex-syntax/README.md:71 titre dupliqué (déjà présent dans CONTRIBUTING.md:491).
 
 - **module :** titles
 
@@ -29861,7 +30129,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/rustix/CONTRIBUTING.md:6 titre dupliqué (déjà présent dans server_rust/vendor/syn/README.md:205).
+- **Message :** server_rust/vendor/rustix/CONTRIBUTING.md:6 titre dupliqué (déjà présent dans CONTRIBUTING.md:491).
 
 - **module :** titles
 
@@ -33175,7 +33443,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/syn-2.0.119/README.md:190 titre dupliqué (déjà présent dans server_rust/vendor/syn/README.md:205).
+- **Message :** server_rust/vendor/syn-2.0.119/README.md:190 titre dupliqué (déjà présent dans CONTRIBUTING.md:491).
 
 - **module :** titles
 
@@ -33232,6 +33500,12 @@ TypeError: result doit être un dict, reçu int
 ## ⚠️ Warning
 - **Module :** titles
 - **Message :** server_rust/vendor/syn/README.md:143 titre dupliqué (déjà présent dans server_rust/vendor/syn/README.md:125).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/syn/README.md:205 titre dupliqué (déjà présent dans CONTRIBUTING.md:491).
 
 - **module :** titles
 
@@ -33615,7 +33889,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/tinyvec/CHANGELOG.md:95 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:28).
+- **Message :** server_rust/vendor/tinyvec/CHANGELOG.md:95 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:39).
 
 - **module :** titles
 
@@ -39173,13 +39447,13 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/utf8_iter/README.md:37 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:55).
+- **Message :** server_rust/vendor/utf8_iter/README.md:37 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:66).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/utf8_iter/README.md:41 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:66).
+- **Message :** server_rust/vendor/utf8_iter/README.md:41 titre dupliqué (déjà présent dans server_rust/vendor/mio/CHANGELOG.md:77).
 
 - **module :** titles
 
@@ -39363,6 +39637,14 @@ TypeError: result doit être un dict, reçu int
 
 - **module :** titles
 
+# 📄 server_rust/vendor/vcpkg/notes.md
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/vcpkg/notes.md:1 titre dupliqué (déjà présent dans CONTRIBUTING.md:497).
+
+- **module :** titles
+
 # 📄 server_rust/vendor/version_check/README.md
 
 ## ⚠️ Warning
@@ -39527,7 +39809,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/wasm-bindgen-macro/README.md:6 titre dupliqué (déjà présent dans server_rust/vendor/syn/README.md:205).
+- **Message :** server_rust/vendor/wasm-bindgen-macro/README.md:6 titre dupliqué (déjà présent dans CONTRIBUTING.md:491).
 
 - **module :** titles
 
@@ -39571,7 +39853,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/wasm-bindgen/README.md:108 titre dupliqué (déjà présent dans server_rust/vendor/mio/README.md:157).
+- **Message :** server_rust/vendor/wasm-bindgen/README.md:108 titre dupliqué (déjà présent dans server_rust/vendor/mio/README.md:153).
 
 - **module :** titles
 
@@ -39615,7 +39897,7 @@ TypeError: result doit être un dict, reçu int
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/whoami/README.md:77 titre dupliqué (déjà présent dans server_rust/vendor/syn/README.md:205).
+- **Message :** server_rust/vendor/whoami/README.md:77 titre dupliqué (déjà présent dans CONTRIBUTING.md:491).
 
 - **module :** titles
 
