@@ -1,14 +1,14 @@
 # 📚 Documentation Problems
 
-Generated: 2026-09-02 19:02:16
+Generated: 2026-09-02 20:43:41
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |❌ Errors|253|
-|⚠️ Warnings|6238|
-|**Total**|**6498**|
+|⚠️ Warnings|6225|
+|**Total**|**6485**|
 
 ---
 
@@ -2011,25 +2011,6 @@ TypeError: result doit être un dict, reçu int
 
 ---
 
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/dashboard.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'start_server'ligne 10 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'start_server' ne possède pas d'annotations de type.
-
----
-
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
 
 ## ⚠️ Warning
@@ -2708,60 +2689,6 @@ TypeError: result doit être un dict, reçu int
 
 - **Module :** python
 - **Message :** La fonction 'check_duplicate_titles' ne possède pas d'annotations de type.
-
----
-
-# 📄 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_dashboard.py
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** Le module ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_documentation_score'ligne 12 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_documentation_score' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_database_data'ligne 28 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'get_database_data' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'calculate_quality'ligne 88 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'calculate_quality' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_json'ligne 123 ne possède pas de docstring.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_json' ne possède pas d'annotations de type.
-
-## ⚠️ Warning
-
-- **Module :** python
-- **Message :** La fonction 'generate_json' dépasse 80 lignes.
 
 ---
 
