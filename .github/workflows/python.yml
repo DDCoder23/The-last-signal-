@@ -730,7 +730,7 @@ jobs:
                 then
                 git worktree add /tmp/ci-worktree origin/ci-reports
                 else
-                git worktree add -b ci-reports/tmp/ci-worktree
+                git worktree add -b ci-reports /tmp/ci-worktree
                 fi
                 echo "=== SOURCE ==="
                 find "$GITHUB_WORKSPACE/reports/python" -maxdepth 4 -type d -print
