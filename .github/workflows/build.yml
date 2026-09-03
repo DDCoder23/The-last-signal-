@@ -579,7 +579,7 @@ jobs:
                 then
                 git worktree add /tmp/ci-worktree origin/ci-reports
                 else
-                git worktree add -b ci-reports/tmp/ci-worktree
+                git worktree add -b ci-reports /tmp/ci-worktree
                 fi
                 echo "======================================"
                 echo "SOURCE BUILD"
