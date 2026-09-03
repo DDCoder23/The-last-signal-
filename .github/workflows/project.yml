@@ -68,7 +68,7 @@ jobs:
       # =========================
 
       - name: 📑 Check Markdown
-        continue-on-error: true
+        
         run: |
            mkdir -p reports/project
            markdownlint-cli2 \
@@ -79,7 +79,7 @@ jobs:
       # =========================
 
       - name: ✍️ Check spelling
-        continue-on-error: true
+        
         run: |
           mkdir -p reports/project
           
@@ -95,7 +95,7 @@ jobs:
       # =========================
 
       - name: 🔗 Check links
-        continue-on-error: true
+        
         uses: lycheeverse/lychee-action@v2
         with:
           args: |
