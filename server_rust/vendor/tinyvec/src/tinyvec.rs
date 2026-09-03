@@ -46,7 +46,7 @@ macro_rules! tiny_vec {
           f($crate::array_vec!($array_type => $($elem),*))
         }
         $crate::TinyVecConstructor::Heap(f) => {
-          f(vec!($($elem),*))
+          f(vec![$($elem),*])
         }
       }
     }
@@ -681,6 +681,33 @@ impl<A: Array> TinyVec<A> {
       TinyVec::Inline(ArrayVec::default())
     } else {
       TinyVec::Heap(Vec::with_capacity(cap))
+    }
+  }
+
+  /// Makes a default-initialized TinyVec with the given initial length.
+  ///
+  /// If the requested length is less than or equal to the array capacity you
+  /// get an inline vec. If it's greater than you get a heap vec.
+  /// ```
+  /// # use tinyvec::*;
+  /// let t = TinyVec::<[u8; 10]>::with_initial_len(5);
+  /// assert!(t.is_inline());
+  /// assert_eq!(t.len(), 5);
+  ///
+  /// let t = TinyVec::<[u8; 10]>::with_initial_len(20);
+  /// assert!(t.is_heap());
+  /// assert_eq!(t.len(), 20);
+  /// ```
+  #[inline]
+  #[must_use]
+  pub fn with_initial_len(len: usize) -> Self
+  where
+    A::Item: Clone,
+  {
+    if len <= A::CAPACITY {
+      TinyVec::Inline(ArrayVec::from_array_len(A::default(), len))
+    } else {
+      TinyVec::Heap(vec![A::Item::default(); len])
     }
   }
 
