@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.13
+
+* Adds `TinyVec::with_initial_len`
+* fix the `Write` impl on `ArrayVec`.
+
 ## 1.12
 
 * Add `schemars` support.
