@@ -753,7 +753,7 @@ jobs:
                 for i in 1 2 3
                 do
                 echo "Tentative $i/3"
-                git fetch origin ci-reports
+                git fetch origin 
                 echo "Branche actuelle :"
                 git branch --show-current
 
