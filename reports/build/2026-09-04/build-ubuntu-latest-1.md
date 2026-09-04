@@ -1,10 +1,10 @@
 # Build Report
 
-Run : 1523
+Run : 1525
 OS : ubuntu-latest
 Branch : main
-Commit : ab0f4cd952178f82eb0f1c638bd2825bec015e2b
-Date : Fri Sep  4 19:50:05 UTC 2026
+Commit : 7d3a94b8654d5cdbbeb276285e0fbf2a33e6241c
+Date : Fri Sep  4 20:31:05 UTC 2026
 
 
 ## Python
@@ -38,7 +38,7 @@ Compiling 'tests/test_rotor_seeds.py'...
 Compiling 'tests/test_splitmix64.py'...
 
 ## Rust
-No Rust project found.
+[1m[91merror[0m: manifest path `server_rust/Cargo.toml` does not exist
 
 ## Godot
 No Godot project found.
