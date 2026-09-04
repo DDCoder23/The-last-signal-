@@ -1,16 +1,16 @@
 {
-    "generated": "2026-09-04T19:24:30.585532",
-    "score": -64009,
+    "generated": "2026-09-04T19:53:34.628362",
+    "score": -60435,
     "status": "Très mauvais",
     "scores": {
         "markdown": 42,
         "titles": 0,
         "spelling": 10,
-        "links": 0,
+        "links": 9,
         "python": 0,
         "rust": -151754,
         "organization": 0,
         "navigation": 0
     },
-    "problem_count": 158286
+    "problem_count": 158366
 }
