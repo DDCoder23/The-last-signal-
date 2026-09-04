@@ -178,7 +178,8 @@ def check_rust_docs() -> Dict[str, Any]:
             problems.extend(file_problems)
 
     # Calcul du score en pourcentage (0-20)
-
+    if score < 0:
+        score = 0
     return {
         "score": int(score),
         "max_score": max_score,
