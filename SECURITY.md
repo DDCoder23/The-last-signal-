@@ -22,7 +22,7 @@ Security fixes are therefore primarily focused on the current development versio
 
 ---
 
-# 🚨 Reporting a Security Vulnerability
+## 🚨 Reporting a Security Vulnerability
 
 If you believe you have discovered a security vulnerability in The Last Signal, please report it **privately**.
 
@@ -59,7 +59,7 @@ It is better to have a potentially non-security issue reviewed privately than to
 
 ---
 
-# 🔎 What Should Be Reported Privately?
+## 🔎 What Should Be Reported Privately?
 
 Security issues that could affect the confidentiality, integrity, or availability of the project should generally be reported privately.
 
@@ -83,8 +83,7 @@ Examples include:
 When in doubt, it is safer to report the issue privately first.
 
 ---
-
-# 🧪 Experimental Cryptography
+## 🧪 Experimental Cryptography
 
 The project currently contains experimental cryptographic components.
 
@@ -120,7 +119,7 @@ Please report significant vulnerabilities privately before publicly disclosing t
 
 ---
 
-# 🌐 Network Security
+## 🌐 Network Security
 
 The Last Signal uses communication between a Python client and a Rust server.
 
@@ -154,7 +153,7 @@ Network protocol changes should also be reviewed carefully because they can affe
 
 ---
 
-# 🗄️ Database Security
+## 🗄️ Database Security
 
 The project contains database-related code and migrations.
 
@@ -180,7 +179,7 @@ Never commit database credentials, passwords, API keys, or other secrets to the 
 
 ---
 
-# 🔑 Secrets and Credentials
+## 🔑 Secrets and Credentials
 
 **Never commit secrets to the repository.**
 
@@ -201,7 +200,7 @@ The secret should be considered compromised and should be revoked or rotated as 
 
 ---
 
-# ⚙️ CI/CD Security
+## ⚙️ CI/CD Security
 
 The project uses GitHub Actions for automated builds, tests, reports, and other development tasks.
 
@@ -227,7 +226,7 @@ When modifying workflows, contributors should also avoid unnecessarily increasin
 
 ---
 
-# 🧪 Security Testing
+## 🧪 Security Testing
 
 Security testing is welcome.
 
@@ -246,7 +245,7 @@ Security tests should be deterministic, understandable, and safe to run in the p
 
 ---
 
-# 🛡️ Responsible Disclosure
+## 🛡️ Responsible Disclosure
 
 Please give the maintainers a reasonable opportunity to investigate and address a security vulnerability before publicly disclosing detailed exploit information.
 
@@ -262,7 +261,7 @@ The exact disclosure timeline may depend on:
 
 ---
 
-# 👥 Security Contributions
+ ## 👥 Security Contributions
 
 Security-related contributions are welcome.
 
@@ -283,7 +282,7 @@ For substantial security changes, please open a discussion or Issue before imple
 
 ---
 
-# ⚠️ Important Disclaimer
+## ⚠️ Important Disclaimer
 
 The Last Signal is an actively developed open-source project.
 
@@ -295,7 +294,7 @@ In particular, the experimental cryptographic implementation should not be used 
 
 ---
 
-# 📬 Thank You
+## 📬 Thank You
 
 Security research and responsible vulnerability reports help make The Last Signal a stronger project.
 
