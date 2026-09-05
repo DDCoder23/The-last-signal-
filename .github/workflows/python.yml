@@ -181,8 +181,7 @@ jobs:
           echo "<summary>📋 Voir toutes les erreurs Flake8</summary>" >> "$REPORT"
           echo "" >> "$REPORT"
 
-          echo '<div id="flake8-interactive-table">' >> "$REPORT"
-          echo "" >> "$REPORT"
+          
 
           echo "| Fichier | Ligne | Code | Message |" >> "$REPORT"
           echo "|---------|------:|------|---------|" >> "$REPORT"
@@ -213,7 +212,7 @@ jobs:
           ' flake8.txt >> "$REPORT"
 
           echo "" >> "$REPORT"
-          echo "</div>" >> "$REPORT"
+          
           echo "</details>" >> "$REPORT"
           echo "" >> "$REPORT"
 
@@ -405,6 +404,29 @@ jobs:
                   "sane_lists",
               ],
           )
+          flake8_heading = "<h2>Flake8</h2>"
+
+          flake8_start = body.find(flake8_heading)
+
+          if flake8_start != -1:
+
+          table_start = body.find("<table>", flake8_start)
+
+          if table_start != -1:
+
+          table_end = body.find("</table>", table_start)
+
+          if table_end != -1:
+
+            table_end += len("</table>")
+
+            body = (
+                body[:table_start]
+                + '<div id="flake8-interactive-table">'
+                + body[table_start:table_end]
+                + "</div>"
+                + body[table_end:]
+            )
 
 
           # ========================================================
