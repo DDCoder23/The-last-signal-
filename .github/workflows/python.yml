@@ -177,7 +177,7 @@ jobs:
           # TABLEAU INTERACTIF
           # ========================================================
           
-          echo "<details>" >> "$REPORT"
+          
           echo "<summary>📋 Voir toutes les erreurs Flake8</summary>" >> "$REPORT"
           echo "" >> "$REPORT"
 
@@ -213,8 +213,7 @@ jobs:
           echo "<!-- END_FLAKE8_INTERACTIVE_TABLE -->" >> "$REPORT"
           echo "" >> "$REPORT"
           
-          echo "</details>" >> "$REPORT"
-          echo "" >> "$REPORT"
+          
 
           # ========================================================
           # TOP 10 DES FICHIERS
