@@ -216,7 +216,7 @@ Chaque fonctionnalité importante doit être documentée avant son implémentati
 ## Commande de jeu 🎮
 Conférez-vous au fichier suivant:
 
-➡️ [🎮 Commandes](docs/touches_de_commandes)
+➡️ [🎮 Commandes](touches_de_commandes)
 
 ---
 

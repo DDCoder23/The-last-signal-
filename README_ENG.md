@@ -202,7 +202,7 @@ Every major feature must be documented before implementation.
 
 Please refer to the following file:
 
-➡️ [🎮 Controls](docs/touches_de_commandes)
+➡️ [🎮 Controls](touches_de_commandes)
 
 ---
 
