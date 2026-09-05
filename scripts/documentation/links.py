@@ -58,7 +58,8 @@ def check_links():
     results["anchors"] = check_anchors(files, problems)
     results["images"] = check_images(files, problems)
     results["duplicates"] = check_duplicate_links(files, problems)
-
+    if score < 0:
+        score = 0
     return {
         "score": sum(results.values()),
         "max_score": MAX_SCORE,
