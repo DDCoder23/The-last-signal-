@@ -13,7 +13,7 @@
 edition = "2021"
 rust-version = "1.60"
 name = "crossbeam-queue"
-version = "0.3.13"
+version = "0.3.14"
 build = false
 autolib = false
 autobins = false
