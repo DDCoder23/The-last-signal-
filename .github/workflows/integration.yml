@@ -160,6 +160,7 @@ jobs:
              echo '' >> .cargo/config.toml
              echo '[source.vendored-sources]' >> .cargo/config.toml
              echo 'directory = "vendor"' >> .cargo/config.toml
+             cargo check
              git config user.name github-actions
              git config user.email github-actions@github.com
              
@@ -219,7 +220,7 @@ jobs:
 
         echo $! > server.pid
 
-        sleep 45
+        sleep 15
 
     ##########################################################
     # Vérifie que le serveur est lancé
@@ -286,17 +287,7 @@ jobs:
               fi
               rm -f server_rust/server.pid
 
-    ##########################################################
-    # Upload log
-    ##########################################################
-    - name: Check generated files
-      continue-on-error: true
-      run: |
-             
-             echo "=== LOG FILE ==="
-             ls -lah logs
-             stat logs/the_last_signal.log
-             tail -20 logs/the_last_signal.log
+
 
              
     - name: Upload server log
@@ -309,11 +300,7 @@ jobs:
       run: |
             echo "PWD=$(pwd)"
             find . -name "*.db" -type f -ls
-            find . -name "echecs_loot.json"
-            echo "-----"
-            cat ./server_rust/echecs_loot.json
-            echo "----"
-            cat ./echecs_loot.json
+            
             python scripts/voir_database.py database/the_last_signal.db
     
   

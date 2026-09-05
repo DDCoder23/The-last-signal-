@@ -81,9 +81,9 @@ def check_markdown() -> dict[str, Any]:
         "tables": check_tables(files, problems,report),
         "html": check_html(files, problems),
     }
-
+    
     return {
-        "score": sum(results.values()),
+        "score": max(0,sum(results.values())),
         "max_score": MAX_SCORE,
         "results": results,
         "problems": problems
