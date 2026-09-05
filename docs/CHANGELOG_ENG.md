@@ -22,35 +22,44 @@ Important modification of the project **The Last Signal Online** are documented 
 
 
 ---
-## [1.0.1] - 23/08/2026
+## [1.0.01] - 23/08/2026
 
-### Ajout
+### Insertions
 
 - Improvement of the protocol
 - controls are now aviable in English, Japanese and Spanish
 - improvement of the SQL injections' test
 - New security tests
 ---
-## [1.0.1] - 24/08/2026
+## [1.0.02] - 24/08/2026
 
-### Ajout
+### Insertions
 
 - verification of the ban by the server
 - bugs correction 
 
 ---
-## [1.0.1] - 25/08/2026
+## [1.0.03] - 25/08/2026
 
 ### Ajout
 
 - new security tests
 
 ---
-## [1.0.1] - 26/08/2026~30/08/2026
+## [1.0.04] - 26/08/2026~30/08/2026
 
 ### Optimisation
 
 -optimisation of the communication's protocol and the client
+## [1.0.05] - 01/09/2026~05/09/2026
+
+### correction
+
+-bugs correction
+
+### Insertions
+- New test
+---
 
 
 ---
