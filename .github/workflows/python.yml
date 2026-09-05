@@ -176,12 +176,12 @@ jobs:
           # ========================================================
           # TABLEAU INTERACTIF
           # ========================================================
-
+          
           echo "<details>" >> "$REPORT"
           echo "<summary>📋 Voir toutes les erreurs Flake8</summary>" >> "$REPORT"
           echo "" >> "$REPORT"
 
-          
+          echo "<!-- FLAKE8_INTERACTIVE_TABLE -->" >> "$REPORT"
 
           echo "| Fichier | Ligne | Code | Message |" >> "$REPORT"
           echo "|---------|------:|------|---------|" >> "$REPORT"
@@ -210,7 +210,7 @@ jobs:
           msg
           }
           ' flake8.txt >> "$REPORT"
-
+          echo "<!-- END_FLAKE8_INTERACTIVE_TABLE -->" >> "$REPORT"
           echo "" >> "$REPORT"
           
           echo "</details>" >> "$REPORT"
@@ -408,25 +408,26 @@ jobs:
           # IDENTIFICATION DU TABLEAU FLAKE8
           # ========================================================
 
-          flake8_heading = "<h2>Flake8</h2>"
+          start_marker = "<!-- FLAKE8_INTERACTIVE_TABLE -->"
+          end_marker = "<!-- END_FLAKE8_INTERACTIVE_TABLE -->"
+          start = body.find(start_marker)
+          end = body.find(end_marker)
 
-          flake8_start = body.find(flake8_heading)
-
-          if flake8_start != -1:
-              table_start = body.find("<table>", flake8_start)
-              if table_start != -1:
-                 table_end = body.find("</table>", table_start)
-
-                 if table_end != -1:
-                    table_end += len("</table>")
-
-                    body = (
-                             body[:table_start]
-                             + '<div id="flake8-interactive-table">'
-                             + body[table_start:table_end]
-                             + "</div>"
-                             + body[table_end:]
-                            )
+          
+          if start != -1 and table_end != -1:
+              
+              table_start = body.find("<table>", start)
+              table_end = body.find("</table>", table_start)
+              if table_start != -1 and table_end != -1:
+                  table_end += len("</table>")
+              
+                  body = (
+                           body[:table_start]
+                           + '<div id="flake8-interactive-table">'
+                           + body[table_start:table_end]
+                           + "</div>"
+                           + body[table_end:]
+                          )
 
           # ========================================================
           # JAVASCRIPT
