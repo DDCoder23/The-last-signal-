@@ -1,14 +1,14 @@
 {
-    "generated": "2026-09-04T19:53:34.628362",
-    "score": -60435,
-    "status": "Très mauvais",
+    "generated": "2026-09-05T06:36:02.768228",
+    "score": 24,
+    "status": "Très Décevant",
     "scores": {
         "markdown": 42,
         "titles": 0,
         "spelling": 10,
         "links": 9,
         "python": 0,
-        "rust": -151754,
+        "rust": 0,
         "organization": 0,
         "navigation": 0
     },
