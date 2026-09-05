@@ -181,7 +181,7 @@ jobs:
           echo "<summary>📋 Voir toutes les erreurs Flake8</summary>" >> "$REPORT"
           echo "" >> "$REPORT"
 
-         
+          echo '<div id="flake8-interactive-table">' >> "$REPORT"
           echo "" >> "$REPORT"
 
           echo "| Fichier | Ligne | Code | Message |" >> "$REPORT"
@@ -189,36 +189,33 @@ jobs:
 
           awk -F: '
           {
-              file=$1
-              line=$2
+           file = $1
+           line = $2
 
-              gsub(/^ +/, "", $4)
-              split($4, a, " ")
+           gsub(/^ +/, "", $4)
 
-              code=a[1]
-              msg=$4
+           split($4, a, " ")
 
-              sub(code " ", "", msg)
+           code = a[1]
+           msg = $4
 
-              # Protection minimale du Markdown
-              gsub(/\|/, "\\|", msg)
+          sub(code " ", "", msg)
 
-              printf(
-                  "| `%s` | %s | `%s` | %s |\n",
-                  file,
-                  line,
-                  code,
-                  msg
-              )
+          # Protection Markdown
+          gsub(/\|/, "\\|", msg)
+
+          printf "| `%s` | %s | `%s` | %s |\n", \
+          file, \
+          line, \
+          code, \
+          msg
           }
           ' flake8.txt >> "$REPORT"
 
           echo "" >> "$REPORT"
           echo "</div>" >> "$REPORT"
-
           echo "</details>" >> "$REPORT"
           echo "" >> "$REPORT"
-
 
           # ========================================================
           # TOP 10 DES FICHIERS
