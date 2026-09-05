@@ -414,7 +414,7 @@ jobs:
           end = body.find(end_marker)
 
           
-          if start != -1 and table_end != -1:
+          if start != -1 and end != -1:
               
               table_start = body.find("<table>", start)
               table_end = body.find("</table>", table_start)
