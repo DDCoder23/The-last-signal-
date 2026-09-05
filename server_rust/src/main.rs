@@ -7,6 +7,17 @@ use the_last_signal_server::network::server::Server;
 use the_last_signal_server::utils::logger::logger::ServerLogger;
 
 #[tokio::main]
+
+/*
+    Fonction asynchrone exécutée par le runtime Tokio. 
+    Point d'entrée principal du serveur.
+
+    Initialise :
+    - le logger
+    - la base de données
+    - les migrations
+    - le serveur TCP
+*/
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let _guard = ServerLogger::init();
     
