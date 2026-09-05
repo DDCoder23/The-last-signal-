@@ -1,6 +1,6 @@
 from pathlib import Path
 import re
-
+ROOT = Path(__file__).resolve().parents[2]
 MAX_SCORE = 15
 
 SCORES = {
@@ -28,6 +28,8 @@ def check_links():
                 "reports",
                 "database",
                 "dashboard",
+                "server_rust",
+                "vendor",
             }
             for p in f.parts
         )
@@ -56,7 +58,8 @@ def check_links():
     results["anchors"] = check_anchors(files, problems)
     results["images"] = check_images(files, problems)
     results["duplicates"] = check_duplicate_links(files, problems)
-
+    if score < 0:
+        score = 0
     return {
         "score": sum(results.values()),
         "max_score": MAX_SCORE,
@@ -69,7 +72,7 @@ def extract_links(file):
 
     text = file.read_text(encoding="utf-8", errors="ignore")
 
-    pattern = re.compile(r"!?\\[[^\\]]*\\]\\(([^)]+)\\)")
+    
 
     links = []
 

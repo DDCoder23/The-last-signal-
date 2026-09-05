@@ -1,15 +1,7 @@
-from client_python.crypto import SplitMix64
+from client_python.crypto import SplitMix64,fisher_yates
 
 
-def fisher_yates(seed: int) -> list[int]:
-    values = list(range(256))
-    rng = SplitMix64(seed)
 
-    for i in range(255, 0, -1):
-        j = rng.next() % (i + 1)
-        values[i], values[j] = values[j], values[i]
-
-    return values
 
 
 def test_is_permutation():
