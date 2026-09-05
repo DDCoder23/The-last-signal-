@@ -1,9 +1,9 @@
 {
-    "generated": "2026-09-05T07:22:35.858503",
+    "generated": "2026-09-05T10:05:19.409789",
     "score": 66,
     "status": "Bon",
     "scores": {
-        "markdown": 42,
+        "markdown": 41,
         "titles": 0,
         "spelling": 10,
         "links": 0,
@@ -11,5 +11,5 @@
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 152851
+    "problem_count": 123277
 }
