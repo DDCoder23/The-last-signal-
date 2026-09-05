@@ -1,0 +1,15 @@
+{
+    "generated": "2026-09-05T15:33:30.291078",
+    "score": 66,
+    "status": "Bon",
+    "scores": {
+        "markdown": 41,
+        "titles": 0,
+        "spelling": 10,
+        "links": 0,
+        "python": 0,
+        "rust": 0,
+        "organization": 95
+    },
+    "problem_count": 123274
+}
