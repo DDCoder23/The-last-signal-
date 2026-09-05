@@ -22,7 +22,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 
 
 ---
-## [1.0.1] - 23/08/2026
+## [1.0.01] - 23/08/2026
 
 ### Ajout
 
@@ -33,7 +33,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 
 
 ---
-## [1.0.1] - 24/08/2026
+## [1.0.02] - 24/08/2026
 
 ### Ajout
 
@@ -41,7 +41,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 - correction des bugs
 
 ---
-## [1.0.1] - 25/08/2026
+## [1.0.03] - 25/08/2026
 
 ### Ajout
 
@@ -51,7 +51,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 ---
 
 
-## [1.0.1] - 26/08/2026~30/08/2026
+## [1.0.04] - 26/08/2026~30/08/2026
 
 ### Optimisation
 
@@ -59,7 +59,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
   
 
 ---
-## [1.0.1] - 01/09/2026~05/09/2026
+## [1.0.05] - 01/09/2026~05/09/2026
 
 ### correction
 
