@@ -415,3 +415,16 @@ No Godot project found.
 - Python build completed
 - Rust build completed
 - Godot build completed
+n by default
+
+[1m[33mwarning[0m: `the-last-signal-server` (bin "the-last-signal-server") generated 1 warning (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 1 suggestion)
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 1m 55s
+
+## Godot
+No Godot project found.
+
+## Summary
+
+- Python build completed
+- Rust build completed
+- Godot build completed
