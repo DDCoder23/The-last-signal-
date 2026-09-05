@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1560
+Run : 1561
 Branch : main
-Commit : 6a1f419b014dcfe2071b2e0758accf8c2e86735e
-Date : Sat Sep  5 12:34:15 UTC 2026
+Commit : 2d1d49ba1096d359802ac7e0104ec2cdf2248f9c
+Date : Sat Sep  5 12:50:31 UTC 2026
 
 ---
 
@@ -33,11 +33,11 @@ Date : Sat Sep  5 12:34:15 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
@@ -56,16 +56,16 @@ Date : Sat Sep  5 12:34:15 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
@@ -98,8 +98,8 @@ Date : Sat Sep  5 12:34:15 UTC 2026
 | W293 | 151 |
 | E225 | 138 |
 | E122 | 102 |
-| E303 | 91 |
-| E302 | 88 |
+| E303 | 92 |
+| E302 | 89 |
 | F401 | 42 |
 | E203 | 27 |
 | E301 | 18 |
@@ -1793,6 +1793,8 @@ Date : Sat Sep  5 12:34:15 UTC 2026
 | ./tests/test_fisher_yates.py | 1 | E231 | missing whitespace after ',' |
 | ./tests/test_fisher_yates.py | 7 | E303 | too many blank lines (5) |
 | ./tests/test_splitmix64.py | 1 | F401 | 'pytest' imported but unused |
+| ./tests/test_splitmix64.py | 9 | E303 | too many blank lines (4) |
+| ./tests/test_splitmix64.py | 13 | E302 | expected 2 blank lines, found 4 |
 
 </details>
 
@@ -1817,7 +1819,7 @@ Date : Sat Sep  5 12:34:15 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.2087542087542085)
+**Average complexity:**  A (4.238095238095238)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1951,15 +1953,12 @@ tests/test_fisher_yates.py
     F 15:0 test_is_deterministic - A
     F 23:0 test_different_seeds_produce_different_permutations - A
 tests/test_splitmix64.py
-    F 37:0 test_same_seed_same_sequence - A
-    F 59:0 test_different_seed_different_sequence - A
-    F 111:0 test_zero_seed - A
-    F 128:0 test_max_seed - A
-    F 81:0 test_output_is_u64 - A
-    F 96:0 test_state_changes - A
-    C 7:0 SplitMix64 - A
-    M 8:4 SplitMix64.__init__ - A
-    M 11:4 SplitMix64.next - A
+    F 13:0 test_same_seed_same_sequence - A
+    F 35:0 test_different_seed_different_sequence - A
+    F 87:0 test_zero_seed - A
+    F 104:0 test_max_seed - A
+    F 57:0 test_output_is_u64 - A
+    F 72:0 test_state_changes - A
 tests/test_client_class.py
     M 11:4 TestClientInitAndConnect.test_init_default_values - B
     M 20:4 TestClientInitAndConnect.test_init_custom_values - B
@@ -2195,8 +2194,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-297 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.2087542087542085)
+294 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.238095238095238)
 
 </details>
 
@@ -2217,7 +2216,7 @@ Average complexity: A (4.2087542087542085)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-05 12:34:25.178408+00:00
+Run started:2026-09-05 12:50:42.689542+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -3841,87 +3840,87 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:52:4
+   Location: ./tests/test_splitmix64.py:28:4
+27	
+28	    assert sequence_a == sequence_b
+29	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_splitmix64.py:50:4
+49	
+50	    assert sequence_a != sequence_b
 51	
-52	    assert sequence_a == sequence_b
-53	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:74:4
-73	
-74	    assert sequence_a != sequence_b
-75	
+   Location: ./tests/test_splitmix64.py:65:8
+64	
+65	        assert 0 <= value <= MASK64
+66	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:89:8
-88	
-89	        assert 0 <= value <= MASK64
-90	
+   Location: ./tests/test_splitmix64.py:80:4
+79	
+80	    assert generator.state != first_state
+81	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:104:4
-103	
-104	    assert generator.state != first_state
-105	
+   Location: ./tests/test_splitmix64.py:96:4
+95	
+96	    assert len(values) == 10
+97	    assert len(set(values)) == 10
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:120:4
-119	
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
+   Location: ./tests/test_splitmix64.py:97:4
+96	    assert len(values) == 10
+97	    assert len(set(values)) == 10
+98	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:121:4
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
-122	
+   Location: ./tests/test_splitmix64.py:113:4
+112	
+113	    assert len(values) == 10
+114	    assert all(
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:137:4
-136	
-137	    assert len(values) == 10
-138	    assert all(
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:138:4
-137	    assert len(values) == 10
-138	    assert all(
-139	        0 <= value <= MASK64
-140	        for value in values
-141	    )
+   Location: ./tests/test_splitmix64.py:114:4
+113	    assert len(values) == 10
+114	    assert all(
+115	        0 <= value <= MASK64
+116	        for value in values
+117	    )
 
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12094
+	Total lines of code: 12077
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
@@ -4238,15 +4237,12 @@ tests/test_fisher_yates.py:47:0: C0116: Missing function or method docstring (mi
 tests/test_fisher_yates.py:1:0: W0611: Unused SplitMix64 imported from client_python.crypto (unused-import)
 ************* Module tests.test_splitmix64
 tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_splitmix64.py:7:0: C0115: Missing class docstring (missing-class-docstring)
-tests/test_splitmix64.py:11:4: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:7:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-tests/test_splitmix64.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:81:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:72:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:87:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:104:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
 ************* Module tests.test_client_class
 tests/test_client_class.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -5445,10 +5441,6 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         branch,
         commit
     )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[9:23]
@@ -5466,9 +5458,7 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
-
-
-def should_ignore(path: Path) -> bool: (duplicate-code)
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
@@ -5486,7 +5476,7 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
     )
 
     # ==========================================
-    # Détails Clippy
+    # Flake8
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5525,12 +5515,7 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
     # Cas 3 : Autre type (ne devrait pas arriver)
     else:
         print(f" Type inattendu pour {nom}: {type(obj)}")
-        return 0
-
-
-
-
- (duplicate-code)
+        return 0 (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==server_rust.vendor.unicode-normalization.scripts.unicode:[28:38]
 ==server_rust.vendor.unicode-properties.scripts.unicode:[21:31]
@@ -5559,15 +5544,15 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[24:34]
 ==.github.security.test_git_security:[82:92]
-    ".env",
-    ".env.local",
-    ".env.production",
-    "master.key",
-    "id_rsa",
-    "id_ed25519",
-    "credentials.json",
-    "service-account.json",
-}
+        ".env",
+        ".env.local",
+        ".env.production",
+        "master.key",
+        "id_rsa",
+        "id_ed25519",
+        "credentials.json",
+        "service-account.json",
+    }
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[38:54]
@@ -5643,17 +5628,27 @@ def extract_links(file):
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+'''
+============================================================
+                         Git
+============================================================
+'''
+
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
+        test,
+        severity,
+        confidence,
+        cwe,
+        info,
+        file,
+        line, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[39:46]
 ==scripts.documentation.markdown:[61:68]
@@ -5706,7 +5701,7 @@ def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 10 colonnes
+        # Tableau avec 7 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
@@ -5721,11 +5716,11 @@ def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[10:15]
@@ -5735,12 +5730,12 @@ IGNORED_DIRECTORIES = {
     "__pycache__",
     ".pytest_cache", (duplicate-code)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
 Your code has been rated at 7.21/10
@@ -5771,7 +5766,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.31s ===============================
+=============================== 1 error in 0.30s ===============================
 
 </details>
 
