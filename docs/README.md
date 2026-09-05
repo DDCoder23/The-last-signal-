@@ -152,8 +152,7 @@ docs/
 ├── NETWORK.md
 ├── ROADMAP.md
 ├── TEAM.md
-├── CODING_RULES.md
-└── CHANGELOG.md
+└── CODING_RULES.md
 ```
 
 ---
