@@ -19,6 +19,11 @@ def check_organization() -> Dict[str, Any]:
     expected_files = [
         "README.md",
         ".gitignore",
+        "requirements.txt",
+        ".markdownlint-cli2.jsonc",
+        ".python-version",
+        "pytest.ini",
+        "README_ENG.md",
     ]
 
     bonus_files = [
@@ -40,6 +45,7 @@ def check_organization() -> Dict[str, Any]:
         "target",
         "venv",
         ".venv",
+        "server_rust",
     }
 
     # ------------------------

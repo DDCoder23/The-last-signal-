@@ -2,8 +2,8 @@
 ## 🌐 **README languages**
 🇫🇷 **Français** — ➡️ [French version](README.md)<br>
 🇬🇧 **English** — You are currently viewing the English version.<br>
-🇪🇸 **Español** — Coming soon<br>
-🇯🇵 **日本語** — Coming soon
+🇪🇸 **Español** — ➡️ [Spanish version](README_ESP.md)<br>
+🇯🇵 **日本語** — ➡️ [Japanese version](README_JP.md)
 
 > Post-apocalyptic survival MMORPG set in a persistent world
 
@@ -222,7 +222,7 @@ Every major feature must be documented before implementation.
 
 Please refer to the following file:
 
-➡️ [🎮 Controls](docs/touches_de_commandes.md)
+➡️ [🎮 Controls](touches_de_commandes)
 
 ---
 

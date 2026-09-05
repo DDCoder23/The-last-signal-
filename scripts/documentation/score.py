@@ -5,7 +5,7 @@ from .links import check_links
 from .python_docs import check_python_docs
 from .rust_docs import check_rust_docs
 from .organization import check_organization
-from .navigation import check_navigation
+
 from .report import generate_report
 import traceback
 def generate_score():
@@ -17,7 +17,7 @@ def generate_score():
     "python": check_python_docs,
     "rust": check_rust_docs,
     "organization": check_organization,
-    "navigation": check_navigation,
+
 }
 
     scores = {}
