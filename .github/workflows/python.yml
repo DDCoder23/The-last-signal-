@@ -181,8 +181,7 @@ jobs:
           echo "<summary>📋 Voir toutes les erreurs Flake8</summary>" >> "$REPORT"
           echo "" >> "$REPORT"
 
-          # Marqueur utilisé par le générateur HTML
-          echo '<div id="flake8-interactive-table">' >> "$REPORT"
+         
           echo "" >> "$REPORT"
 
           echo "| Fichier | Ligne | Code | Message |" >> "$REPORT"
