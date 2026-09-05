@@ -1,16 +1,15 @@
 {
-    "generated": "2026-09-05T06:36:02.768228",
-    "score": 24,
-    "status": "Très Décevant",
+    "generated": "2026-09-05T07:09:14.701372",
+    "score": 66,
+    "status": "Bon",
     "scores": {
         "markdown": 42,
         "titles": 0,
         "spelling": 10,
-        "links": 9,
+        "links": 0,
         "python": 0,
         "rust": 0,
-        "organization": 0,
-        "navigation": 0
+        "organization": 95
     },
-    "problem_count": 158366
+    "problem_count": 152851
 }
