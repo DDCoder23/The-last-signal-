@@ -219,7 +219,7 @@ jobs:
 
         echo $! > server.pid
 
-        sleep 45
+        sleep 15
 
     ##########################################################
     # Vérifie que le serveur est lancé
