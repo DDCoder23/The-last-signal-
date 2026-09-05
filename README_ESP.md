@@ -5,7 +5,7 @@
 🇪🇸 **Español** — Estás viendo actualmente la versión en español.<br>
 🇫🇷 **Français** — ➡️ [Versión francesa](README.md)<br>
 🇬🇧 **English** — ➡️ [Versión inglesa](README_ENG.md)<br>
-🇯🇵 **日本語** — ➡️ [Versión japonesa](README_ENG.md)
+🇯🇵 **日本語** — ➡️ [Versión japonesa](README_JP.md)
 
 > MMORPG de supervivencia postapocalíptica en un mundo persistente
 
