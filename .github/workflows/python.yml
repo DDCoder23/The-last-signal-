@@ -1,4 +1,3 @@
-```yaml
 name: Python CI Report
 
 on:
@@ -1617,4 +1616,4 @@ jobs:
               --force && \
           rm -rf \
               "/tmp/ci-worktree/reports/python"
-```
+
