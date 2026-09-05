@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1558
+Run : 1563
 Branch : main
-Commit : 7a9eadad1729317dcc62b469342720e8f0dd67b5
-Date : Sat Sep  5 12:00:28 UTC 2026
+Commit : 758f541b47e4aa4781c4dbf8b836ad18a89c6e05
+Date : Sat Sep  5 13:07:14 UTC 2026
 
 ---
 
@@ -11,7 +11,7 @@ Date : Sat Sep  5 12:00:28 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 69
+**Files to reformat:** 70
 
 <details>
 <summary>Show files</summary>
@@ -22,8 +22,8 @@ Date : Sat Sep  5 12:00:28 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
@@ -36,8 +36,8 @@ Date : Sat Sep  5 12:00:28 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
@@ -51,22 +51,22 @@ Date : Sat Sep  5 12:00:28 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
@@ -79,38 +79,39 @@ Date : Sat Sep  5 12:00:28 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 </details>
 
-##   Flake8
+## Flake8
 
 ### 📊 Erreurs par code
 
 | Code | Nombre |
 |------|-------:|
 | E501 | 464 |
-| E231 | 324 |
+| E231 | 325 |
 | W293 | 151 |
 | E225 | 138 |
 | E122 | 102 |
-| E303 | 89 |
-| E302 | 87 |
-| F401 | 37 |
+| E303 | 92 |
+| E302 | 89 |
+| F401 | 42 |
 | E203 | 27 |
 | E301 | 18 |
-| E402 | 16 |
+| E402 | 17 |
 | E128 | 15 |
 | F811 | 14 |
 | W291 | 13 |
 | E305 | 13 |
 | F841 | 12 |
+| F821 | 12 |
 | E701 | 10 |
 | E251 | 8 |
-| F821 | 7 |
 | W391 | 6 |
 | W292 | 6 |
 | E266 | 6 |
@@ -140,1668 +141,16 @@ Date : Sat Sep  5 12:00:28 UTC 2026
 | E117 | 1 |
 | E115 | 1 |
 
-
 <details>
 <summary>📋 Voir toutes les erreurs Flake8</summary>
 
+<div id="flake8-interactive-table">
+
 | Fichier | Ligne | Code | Message |
 |---------|------:|------|---------|
-| ./.github/security/test_filesystem.py | 4 | F401 | 'os' imported but unused |
-| ./.github/security/test_filesystem.py | 6 | F401 | 'sys' imported but unused |
-| ./.github/security/test_git_security.py | 6 | F401 | 'sys' imported but unused |
-| ./.github/security/test_python_security.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_rust_security.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_rust_security.py | 37 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 37 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 37 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_rust_security.py | 43 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 43 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 43 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_secrets.py | 5 | F401 | 'sys' imported but unused |
-| ./.github/security/test_secrets.py | 58 | E501 | line too long (91 > 79 characters) |
-| ./.github/security/test_secrets.py | 76 | E501 | line too long (80 > 79 characters) |
-| ./.github/security/test_secrets.py | 82 | E501 | line too long (85 > 79 characters) |
-| ./.github/security/test_web_security.py | 6 | F401 | 'ssl' imported but unused |
-| ./.github/security/test_web_security.py | 7 | F401 | 'sys' imported but unused |
-| ./.github/security/test_web_security.py | 469 | W293 | blank line contains whitespace |
-| ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 1 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 2 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 6 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/banque.py | 8 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/banque.py | 8 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 8 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 8 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 8 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 12 | E225 | missing whitespace around operator |
-| ./Ancien/banque.py | 40 | W293 | blank line contains whitespace |
-| ./Ancien/banque.py | 41 | E303 | too many blank lines (2) |
-| ./Ancien/banque.py | 45 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/banque.py | 68 | E501 | line too long (102 > 79 characters) |
-| ./Ancien/banque.py | 73 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/banque.py | 87 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/banque.py | 101 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/banque.py | 103 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/banque.py | 117 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/banque.py | 155 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/banque.py | 162 | E501 | line too long (113 > 79 characters) |
-| ./Ancien/banque.py | 174 | E225 | missing whitespace around operator |
-| ./Ancien/banque.py | 179 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/banque.py | 186 | F841 | local variable 'mois_restants' is assigned to but never used |
-| ./Ancien/banque.py | 194 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/banque.py | 199 | E501 | line too long (173 > 79 characters) |
-| ./Ancien/banque.py | 215 | E501 | line too long (160 > 79 characters) |
-| ./Ancien/banque.py | 219 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 235 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/banque.py | 236 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/banque.py | 237 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/banque.py | 260 | E712 | comparison to True should be 'if cond is True |
-| ./Ancien/banque.py | 264 | E501 | line too long (118 > 79 characters) |
-| ./Ancien/banque.py | 268 | E501 | line too long (96 > 79 characters) |
-| ./Ancien/banque.py | 277 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/banque.py | 286 | E501 | line too long (95 > 79 characters) |
-| ./Ancien/banque.py | 286 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 287 | E501 | line too long (99 > 79 characters) |
-| ./Ancien/banque.py | 287 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 288 | W293 | blank line contains whitespace |
-| ./Ancien/banque.py | 294 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/banque.py | 294 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 294 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 294 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 294 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 296 | E231 | missing whitespace after ',' |
-| ./Ancien/banque.py | 299 | E712 | comparison to False should be 'if cond is False |
-| ./Ancien/configuration.py | 37 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/configuration.py | 89 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/generate_map.py | 3 | W291 | trailing whitespace |
-| ./Ancien/generate_map.py | 16 | F401 | 'PIL.ImageDraw' imported but unused |
-| ./Ancien/generate_map.py | 94 | W292 | no newline at end of file |
-| ./Ancien/heure_locale.py | 10 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/heure_locale.py | 16 | E501 | line too long (96 > 79 characters) |
-| ./Ancien/heure_locale.py | 35 | E501 | line too long (106 > 79 characters) |
-| ./Ancien/heure_locale.py | 45 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/heure_locale.py | 60 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/heure_locale.py | 62 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/heure_locale.py | 63 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/heure_locale.py | 66 | E501 | line too long (100 > 79 characters) |
-| ./Ancien/heure_locale.py | 78 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/heure_locale.py | 85 | E501 | line too long (100 > 79 characters) |
-| ./Ancien/heure_locale.py | 86 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/heure_locale.py | 105 | F841 | local variable 'heure' is assigned to but never used |
-| ./Ancien/horloge.py | 5 | F401 | 'typing.Optional' imported but unused |
-| ./Ancien/horloge.py | 5 | F401 | 'typing.Any' imported but unused |
-| ./Ancien/horloge.py | 31 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/horloge.py | 101 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/horloge.py | 111 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/horloge.py | 150 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/horloge.py | 168 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/horloge.py | 180 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/horloge.py | 185 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/horloge.py | 186 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/horloge.py | 188 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/horloge.py | 190 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/horloge.py | 193 | E501 | line too long (137 > 79 characters) |
-| ./Ancien/horloge.py | 198 | E501 | line too long (134 > 79 characters) |
-| ./Ancien/horloge.py | 205 | E501 | line too long (129 > 79 characters) |
-| ./Ancien/horloge.py | 216 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/horloge.py | 218 | E225 | missing whitespace around operator |
-| ./Ancien/horloge.py | 221 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/horloge.py | 221 | E231 | missing whitespace after ',' |
-| ./Ancien/horloge.py | 222 | E225 | missing whitespace around operator |
-| ./Ancien/horloge.py | 224 | E231 | missing whitespace after ',' |
-| ./Ancien/horloge.py | 227 | W292 | no newline at end of file |
-| ./Ancien/index_manager.py | 6 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 11 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 18 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 20 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 47 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 49 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 56 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 58 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 74 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 76 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 81 | W292 | no newline at end of file |
-| ./Ancien/inv.py | 14 | E231 | missing whitespace after ',' |
-| ./Ancien/inv.py | 15 | E231 | missing whitespace after ',' |
-| ./Ancien/inv.py | 15 | E231 | missing whitespace after ',' |
-| ./Ancien/inv.py | 15 | E231 | missing whitespace after ',' |
-| ./Ancien/inv.py | 15 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/inv.py | 19 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/inv.py | 38 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/inv.py | 41 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 42 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 43 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 44 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 45 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 46 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 47 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 48 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 49 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 50 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 51 | F811 | redefinition of unused 'QPixmap' from line 12 |
-| ./Ancien/inv.py | 51 | E305 | expected 2 blank lines after class or function definition, found 0 |
-| ./Ancien/inv.py | 51 | E402 | module level import not at top of file |
-| ./Ancien/inv.py | 52 | F811 | redefinition of unused 'Qt' from line 13 |
-| ./Ancien/inv.py | 52 | E402 | module level import not at top of file |
-| ./Ancien/inv.py | 53 | F811 | redefinition of unused 'mettre_a_jour_index' from line 14 |
-| ./Ancien/inv.py | 53 | F811 | redefinition of unused 'rechercher_dans_index' from line 14 |
-| ./Ancien/inv.py | 53 | E402 | module level import not at top of file |
-| ./Ancien/inv.py | 54 | F811 | redefinition of unused 'Objet' from line 15 |
-| ./Ancien/inv.py | 54 | F811 | redefinition of unused 'safe_increment' from line 15 |
-| ./Ancien/inv.py | 54 | F811 | redefinition of unused 'Potion' from line 15 |
-| ./Ancien/inv.py | 54 | F811 | redefinition of unused 'Livres' from line 15 |
-| ./Ancien/inv.py | 54 | E402 | module level import not at top of file |
-| ./Ancien/inv.py | 55 | F811 | redefinition of unused 'math' from line 16 |
-| ./Ancien/inv.py | 55 | E402 | module level import not at top of file |
-| ./Ancien/inv.py | 56 | F811 | redefinition of unused 'json' from line 17 |
-| ./Ancien/inv.py | 56 | E402 | module level import not at top of file |
-| ./Ancien/inv.py | 57 | F811 | redefinition of unused 'os' from line 18 |
-| ./Ancien/inv.py | 57 | E402 | module level import not at top of file |
-| ./Ancien/inv.py | 59 | F811 | redefinition of unused 'qtes' from line 19 |
-| ./Ancien/inv.py | 59 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/inv.py | 71 | F811 | redefinition of unused 'FenetreInventaire' from line 38 |
-| ./Ancien/inv.py | 71 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/inv.py | 125 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/inv.py | 142 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 151 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 179 | E501 | line too long (92 > 79 characters) |
-| ./Ancien/inv.py | 180 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/inv.py | 182 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 186 | E501 | line too long (105 > 79 characters) |
-| ./Ancien/inv.py | 187 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 195 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/inv.py | 212 | E501 | line too long (97 > 79 characters) |
-| ./Ancien/inv.py | 215 | E501 | line too long (99 > 79 characters) |
-| ./Ancien/inv.py | 221 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/inv.py | 226 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/inv.py | 233 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/inv.py | 238 | E501 | line too long (103 > 79 characters) |
-| ./Ancien/inv.py | 240 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 241 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 251 | E501 | line too long (113 > 79 characters) |
-| ./Ancien/inv.py | 260 | E303 | too many blank lines (3) |
-| ./Ancien/inv.py | 274 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 279 | E303 | too many blank lines (5) |
-| ./Ancien/inv.py | 298 | E501 | line too long (101 > 79 characters) |
-| ./Ancien/inv.py | 305 | E225 | missing whitespace around operator |
-| ./Ancien/inv.py | 306 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 309 | E225 | missing whitespace around operator |
-| ./Ancien/inv.py | 313 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 314 | E303 | too many blank lines (2) |
-| ./Ancien/inv.py | 314 | W291 | trailing whitespace |
-| ./Ancien/inv.py | 320 | E501 | line too long (96 > 79 characters) |
-| ./Ancien/inv.py | 327 | E501 | line too long (102 > 79 characters) |
-| ./Ancien/inv.py | 340 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 346 | E501 | line too long (105 > 79 characters) |
-| ./Ancien/inv.py | 359 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/inv.py | 360 | W293 | blank line contains whitespace |
-| ./Ancien/inv.py | 368 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 369 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 370 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 371 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 372 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 378 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 379 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 379 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/inv.py | 380 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 392 | E501 | line too long (95 > 79 characters) |
-| ./Ancien/inv.py | 395 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/inv.py | 399 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/inv.py | 446 | E501 | line too long (90 > 79 characters) |
-| ./Ancien/inv.py | 450 | E501 | line too long (90 > 79 characters) |
-| ./Ancien/inv.py | 451 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/inv.py | 466 | E501 | line too long (94 > 79 characters) |
-| ./Ancien/inv.py | 472 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/inv.py | 493 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/inv.py | 504 | E115 | expected an indented block (comment) |
-| ./Ancien/inv.py | 512 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 513 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 514 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inv.py | 516 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/inventaire.py | 3 | F401 | 'sys' imported but unused |
-| ./Ancien/inventaire.py | 24 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 25 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/inventaire.py | 26 | E501 | line too long (106 > 79 characters) |
-| ./Ancien/inventaire.py | 29 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/inventaire.py | 32 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./Ancien/inventaire.py | 32 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 32 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 32 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 33 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/inventaire.py | 57 | E303 | too many blank lines (5) |
-| ./Ancien/inventaire.py | 87 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E501 | line too long (320 > 79 characters) |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 87 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 88 | E128 | continuation line under-indented for visual indent |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E501 | line too long (337 > 79 characters) |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 88 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 89 | E128 | continuation line under-indented for visual indent |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E501 | line too long (353 > 79 characters) |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 89 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 90 | E128 | continuation line under-indented for visual indent |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E501 | line too long (336 > 79 characters) |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 90 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 91 | E128 | continuation line under-indented for visual indent |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E501 | line too long (320 > 79 characters) |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 91 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 92 | E128 | continuation line under-indented for visual indent |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E501 | line too long (337 > 79 characters) |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 92 | E231 | missing whitespace after ' |
-| ./Ancien/inventaire.py | 93 | E124 | closing bracket does not match visual indentation |
-| ./Ancien/inventaire.py | 94 | E402 | module level import not at top of file |
-| ./Ancien/inventaire.py | 100 | F811 | redefinition of unused 'combinations' from line 94 |
-| ./Ancien/inventaire.py | 100 | E402 | module level import not at top of file |
-| ./Ancien/inventaire.py | 104 | E303 | too many blank lines (3) |
-| ./Ancien/inventaire.py | 106 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/inventaire.py | 107 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/inventaire.py | 120 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/inventaire.py | 123 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/inventaire.py | 127 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 136 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 143 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/inventaire.py | 145 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/inventaire.py | 153 | E303 | too many blank lines (3) |
-| ./Ancien/inventaire.py | 157 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/inventaire.py | 160 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 203 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 207 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 212 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/inventaire.py | 216 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 216 | E501 | line too long (87 > 79 characters) |
-| ./Ancien/inventaire.py | 223 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/inventaire.py | 225 | E111 | indentation is not a multiple of 4 |
-| ./Ancien/inventaire.py | 225 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 225 | E711 | comparison to None should be 'if cond is not None |
-| ./Ancien/inventaire.py | 225 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 239 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 239 | E501 | line too long (94 > 79 characters) |
-| ./Ancien/inventaire.py | 241 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 243 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 246 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 247 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 247 | W291 | trailing whitespace |
-| ./Ancien/inventaire.py | 250 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 252 | E501 | line too long (103 > 79 characters) |
-| ./Ancien/inventaire.py | 254 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 257 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 274 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 277 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 278 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 280 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 281 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 282 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 286 | E501 | line too long (153 > 79 characters) |
-| ./Ancien/inventaire.py | 287 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/inventaire.py | 291 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 292 | E303 | too many blank lines (2) |
-| ./Ancien/inventaire.py | 292 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 295 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 303 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 303 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 307 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/inventaire.py | 308 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 308 | E501 | line too long (117 > 79 characters) |
-| ./Ancien/inventaire.py | 308 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 308 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 311 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 312 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 313 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 314 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 315 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/inventaire.py | 316 | E111 | indentation is not a multiple of 4 |
-| ./Ancien/inventaire.py | 316 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/inventaire.py | 317 | E111 | indentation is not a multiple of 4 |
-| ./Ancien/inventaire.py | 319 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 320 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 324 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 325 | E303 | too many blank lines (7) |
-| ./Ancien/inventaire.py | 347 | E303 | too many blank lines (2) |
-| ./Ancien/inventaire.py | 348 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/inventaire.py | 351 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 353 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 353 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 357 | E303 | too many blank lines (3) |
-| ./Ancien/inventaire.py | 358 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/inventaire.py | 360 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 361 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 362 | E303 | too many blank lines (2) |
-| ./Ancien/inventaire.py | 367 | E303 | too many blank lines (2) |
-| ./Ancien/inventaire.py | 400 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 402 | E303 | too many blank lines (2) |
-| ./Ancien/inventaire.py | 404 | E501 | line too long (104 > 79 characters) |
-| ./Ancien/inventaire.py | 412 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inventaire.py | 413 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inventaire.py | 414 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inventaire.py | 415 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inventaire.py | 416 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inventaire.py | 417 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inventaire.py | 417 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 418 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/inventaire.py | 421 | E225 | missing whitespace around operator |
-| ./Ancien/inventaire.py | 436 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 450 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/inventaire.py | 476 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/inventaire.py | 610 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/inventaire.py | 615 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/inventaire.py | 621 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 625 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 633 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/inventaire.py | 656 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 660 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/inventaire.py | 668 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/inventaire.py | 675 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/inventaire.py | 726 | E501 | line too long (97 > 79 characters) |
-| ./Ancien/inventaire.py | 734 | E231 | missing whitespace after ',' |
-| ./Ancien/inventaire.py | 735 | W293 | blank line contains whitespace |
-| ./Ancien/inventaire.py | 742 | E501 | line too long (144 > 79 characters) |
-| ./Ancien/inventaire.py | 749 | E305 | expected 2 blank lines after class or function definition, found 0 |
-| ./Ancien/inventaire.py | 749 | E225 | missing whitespace around operator |
-| ./Ancien/localisation.py | 29 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/main.py | 2 | F401 | 'random' imported but unused |
-| ./Ancien/main.py | 14 | F401 | 'table_de_conversion as tc' imported but unused |
-| ./Ancien/main.py | 19 | F401 | 'logging' imported but unused |
-| ./Ancien/main.py | 20 | F401 | 'admin_manager.IS_ADMIN' imported but unused |
-| ./Ancien/main.py | 43 | F401 | 're' imported but unused |
-| ./Ancien/main.py | 44 | F401 | 'collections.defaultdict' imported but unused |
-| ./Ancien/main.py | 49 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 51 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/main.py | 85 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/main.py | 134 | E402 | module level import not at top of file |
-| ./Ancien/main.py | 136 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/main.py | 152 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/main.py | 161 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 162 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 162 | W291 | trailing whitespace |
-| ./Ancien/main.py | 164 | W291 | trailing whitespace |
-| ./Ancien/main.py | 182 | E265 | block comment should start with '# ' |
-| ./Ancien/main.py | 190 | E265 | block comment should start with '# ' |
-| ./Ancien/main.py | 235 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/main.py | 256 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 288 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/main.py | 289 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 294 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/main.py | 306 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/main.py | 321 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 323 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 323 | E712 | comparison to False should be 'if cond is False |
-| ./Ancien/main.py | 327 | F841 | local variable 'clefs' is assigned to but never used |
-| ./Ancien/main.py | 327 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 327 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 341 | W291 | trailing whitespace |
-| ./Ancien/main.py | 344 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 345 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 346 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 348 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 350 | E303 | too many blank lines (6) |
-| ./Ancien/main.py | 369 | E231 | missing whitespace after ' |
-| ./Ancien/main.py | 369 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 369 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 370 | E231 | missing whitespace after ' |
-| ./Ancien/main.py | 370 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 370 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 371 | E231 | missing whitespace after ' |
-| ./Ancien/main.py | 371 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 371 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 372 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 392 | E203 | whitespace before ' |
-| ./Ancien/main.py | 395 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 399 | E303 | too many blank lines (5) |
-| ./Ancien/main.py | 508 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/main.py | 580 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 583 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/main.py | 592 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 594 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 596 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 598 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 600 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 601 | W291 | trailing whitespace |
-| ./Ancien/main.py | 603 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 607 | F841 | local variable '_console' is assigned to but never used |
-| ./Ancien/main.py | 608 | E501 | line too long (98 > 79 characters) |
-| ./Ancien/main.py | 638 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/main.py | 642 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/main.py | 650 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/main.py | 654 | E711 | comparison to None should be 'if cond is not None |
-| ./Ancien/main.py | 657 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/main.py | 669 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 671 | E303 | too many blank lines (3) |
-| ./Ancien/main.py | 676 | E302 | expected 2 blank lines, found 3 |
-| ./Ancien/main.py | 722 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 723 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 724 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 725 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 731 | E303 | too many blank lines (5) |
-| ./Ancien/main.py | 733 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 735 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 738 | E501 | line too long (99 > 79 characters) |
-| ./Ancien/main.py | 740 | E225 | missing whitespace around operator |
-| ./Ancien/main.py | 747 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 748 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 748 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 749 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 750 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 751 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 752 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 753 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 754 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 757 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 767 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 768 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 769 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 770 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 771 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 772 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/main.py | 777 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 779 | E303 | too many blank lines (3) |
-| ./Ancien/main.py | 782 | E301 | expected 1 blank line, found 0 |
-| ./Ancien/main.py | 898 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/main.py | 900 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/main.py | 904 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 905 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 906 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 914 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 916 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 919 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 923 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 925 | E303 | too many blank lines (2) |
-| ./Ancien/main.py | 928 | W293 | blank line contains whitespace |
-| ./Ancien/main.py | 961 | E501 | line too long (80 > 79 characters) |
-| ./Ancien/main.py | 974 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/main.py | 984 | E501 | line too long (89 > 79 characters) |
-| ./Ancien/main.py | 1041 | E231 | missing whitespace after ',' |
-| ./Ancien/main.py | 1061 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/main.py | 1078 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 12 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 12 | F821 | undefined name 'joueur' |
-| ./Ancien/table_de_conversion.py | 12 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 13 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 25 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 25 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 25 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 25 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 27 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 32 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 36 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 37 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 45 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 49 | F841 | local variable 'niveaux_romains' is assigned to but never used |
-| ./Ancien/table_de_conversion.py | 52 | E306 | expected 1 blank line before a nested definition, found 0 |
-| ./Ancien/table_de_conversion.py | 56 | E306 | expected 1 blank line before a nested definition, found 0 |
-| ./Ancien/table_de_conversion.py | 64 | E501 | line too long (83 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 75 | E501 | line too long (94 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 80 | E501 | line too long (104 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 85 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 93 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 101 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 121 | E501 | line too long (95 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 126 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 129 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 130 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 132 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 133 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 135 | E303 | too many blank lines (3) |
-| ./Ancien/table_de_conversion.py | 135 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 137 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 137 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 139 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 139 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 141 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 142 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 142 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 145 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 145 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 148 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 148 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 150 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 150 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 150 | E203 | whitespace before ' |
-| ./Ancien/table_de_conversion.py | 150 | E501 | line too long (90 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 152 | W291 | trailing whitespace |
-| ./Ancien/table_de_conversion.py | 153 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 153 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 153 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 156 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 157 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 158 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 160 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 161 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 162 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 165 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 166 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 168 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 169 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 169 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 169 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 169 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 170 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 172 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 174 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 175 | E303 | too many blank lines (5) |
-| ./Ancien/table_de_conversion.py | 178 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 179 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 179 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 179 | E501 | line too long (89 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 181 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 182 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 183 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 184 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 184 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 184 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 186 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 187 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 189 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 190 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 190 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 190 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 193 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 194 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 195 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 197 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 198 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 199 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 202 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 203 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 205 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 206 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 207 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 207 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 207 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 207 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 208 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 209 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 213 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 214 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 215 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 215 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 215 | E501 | line too long (108 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 217 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 218 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 219 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 220 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 221 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 221 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 221 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 223 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 224 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 226 | E501 | line too long (102 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 227 | E302 | expected 2 blank lines, found 0 |
-| ./Ancien/table_de_conversion.py | 227 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 227 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 230 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 231 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 232 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 234 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 235 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 236 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 239 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 240 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 242 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 243 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 244 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 245 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 245 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 245 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 245 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 246 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 247 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 248 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 253 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 253 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 254 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 254 | E501 | line too long (97 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 255 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 255 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 255 | E501 | line too long (126 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 255 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 257 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 258 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 259 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 260 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 261 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 262 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 262 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 262 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 264 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 265 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 267 | E501 | line too long (113 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 268 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 269 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/table_de_conversion.py | 269 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 269 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 272 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 273 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 274 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 276 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 277 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 278 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 281 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 282 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 284 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 285 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 286 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 287 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 288 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 288 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 288 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 288 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 289 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 290 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 291 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 292 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 296 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 299 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 299 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 299 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 299 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 299 | E501 | line too long (86 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 300 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 300 | E501 | line too long (119 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 302 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 302 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 302 | E501 | line too long (144 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 302 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 302 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 304 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 305 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 306 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 307 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 308 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 309 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 310 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 310 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 310 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 312 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 313 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 315 | E501 | line too long (124 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 317 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/table_de_conversion.py | 317 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 317 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 320 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 321 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 322 | E122 | continuation line missing indentation or outdented |
-| ./Ancien/table_de_conversion.py | 324 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 325 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 326 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 329 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 330 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 332 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 333 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 334 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 335 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 336 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 337 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 337 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 337 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 337 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 338 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 339 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 340 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 341 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 342 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 346 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 347 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 350 | F634 | 'if tuple literal' is always true, perhaps remove accidental comma? |
-| ./Ancien/table_de_conversion.py | 350 | E303 | too many blank lines (2) |
-| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 350 | E501 | line too long (101 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 350 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 351 | E129 | visually indented line with same indent as next logical line |
-| ./Ancien/table_de_conversion.py | 351 | E501 | line too long (137 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 351 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 352 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 352 | E501 | line too long (162 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 352 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 354 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 355 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 356 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 357 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 358 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 359 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 360 | E501 | line too long (91 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 361 | E501 | line too long (139 > 79 characters) |
-| ./Ancien/table_de_conversion.py | 361 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 361 | E231 | missing whitespace after ',' |
-| ./Ancien/table_de_conversion.py | 363 | E225 | missing whitespace around operator |
-| ./Ancien/table_de_conversion.py | 364 | W293 | blank line contains whitespace |
-| ./Ancien/table_de_conversion.py | 366 | E501 | line too long (136 > 79 characters) |
-| ./Ancien/tresor.py | 13 | E303 | too many blank lines (3) |
-| ./Ancien/tresor.py | 21 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/tresor.py | 22 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/tresor.py | 23 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/tresor.py | 24 | E501 | line too long (85 > 79 characters) |
-| ./Ancien/tresor.py | 354 | E501 | line too long (88 > 79 characters) |
-| ./Ancien/tresor.py | 468 | W291 | trailing whitespace |
-| ./Ancien/tresor.py | 517 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/tresor.py | 527 | E231 | missing whitespace after ',' |
-| ./Ancien/tresor.py | 527 | E203 | whitespace before ' |
-| ./Ancien/tresor.py | 527 | E231 | missing whitespace after ' |
-| ./Ancien/tresor.py | 527 | E231 | missing whitespace after ',' |
-| ./Ancien/tresor.py | 527 | E501 | line too long (93 > 79 characters) |
-| ./Ancien/tresor.py | 527 | E231 | missing whitespace after ' |
-| ./Ancien/tresor.py | 537 | E131 | continuation line unaligned for hanging indent |
-| ./Ancien/tresor.py | 538 | E203 | whitespace before ' |
-| ./Ancien/tresor.py | 543 | E231 | missing whitespace after ' |
-| ./Ancien/tresor.py | 546 | E203 | whitespace before ' |
-| ./Ancien/tresor.py | 558 | E131 | continuation line unaligned for hanging indent |
-| ./Ancien/tresor.py | 563 | E231 | missing whitespace after ' |
-| ./Ancien/tresor.py | 563 | E203 | whitespace before ',' |
-| ./Ancien/tresor.py | 564 | E231 | missing whitespace after ' |
-| ./Ancien/tresor.py | 564 | E203 | whitespace before ',' |
-| ./Ancien/tresor.py | 567 | W293 | blank line contains whitespace |
-| ./Ancien/tresor.py | 585 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/tresor.py | 862 | E501 | line too long (84 > 79 characters) |
-| ./Ancien/tresor.py | 930 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/tresor.py | 932 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/tresor.py | 946 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/tresor.py | 948 | E501 | line too long (82 > 79 characters) |
-| ./Ancien/tresor.py | 962 | E501 | line too long (81 > 79 characters) |
-| ./Ancien/tresor.py | 964 | E501 | line too long (82 > 79 characters) |
-| ./client_python/__init__.py | 1 | W391 | blank line at end of file |
-| ./client_python/client.py | 5 | F401 | '.packets.log.LogPacket' imported but unused |
-| ./client_python/client.py | 7 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/client.py | 39 | E122 | continuation line missing indentation or outdented |
-| ./client_python/client.py | 40 | E122 | continuation line missing indentation or outdented |
-| ./client_python/client.py | 41 | E122 | continuation line missing indentation or outdented |
-| ./client_python/client.py | 46 | E122 | continuation line missing indentation or outdented |
-| ./client_python/client.py | 56 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 73 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 80 | W291 | trailing whitespace |
-| ./client_python/client.py | 84 | E231 | missing whitespace after ',' |
-| ./client_python/client.py | 86 | E124 | closing bracket does not match visual indentation |
-| ./client_python/client.py | 87 | E301 | expected 1 blank line, found 0 |
-| ./client_python/client.py | 89 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 106 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 108 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 113 | E131 | continuation line unaligned for hanging indent |
-| ./client_python/client.py | 118 | E301 | expected 1 blank line, found 0 |
-| ./client_python/client.py | 135 | W293 | blank line contains whitespace |
-| ./client_python/client.py | 137 | E303 | too many blank lines (3) |
-| ./client_python/client.py | 147 | E231 | missing whitespace after ',' |
-| ./client_python/client.py | 149 | E124 | closing bracket does not match visual indentation |
-| ./client_python/client.py | 165 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 18 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/crypto.py | 48 | E303 | too many blank lines (3) |
-| ./client_python/crypto.py | 88 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 116 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 135 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 162 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 183 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 208 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 235 | W292 | no newline at end of file |
-| ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 2 | F401 | 'time' imported but unused |
-| ./client_python/main.py | 3 | F401 | '.packet.Packet' imported but unused |
-| ./client_python/main.py | 3 | F401 | '.packet.PacketType' imported but unused |
-| ./client_python/main.py | 14 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 22 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 24 | E306 | expected 1 blank line before a nested definition, found 0 |
-| ./client_python/main.py | 29 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 30 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 31 | E303 | too many blank lines (2) |
-| ./client_python/main.py | 31 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 45 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 59 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 59 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 59 | E501 | line too long (111 > 79 characters) |
-| ./client_python/main.py | 59 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 59 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 59 | E231 | missing whitespace after ',' |
-| ./client_python/main.py | 63 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 75 | W293 | blank line contains whitespace |
-| ./client_python/main.py | 79 | W293 | blank line contains whitespace |
-| ./client_python/packet.py | 30 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 51 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 64 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 69 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 74 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 79 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 91 | E501 | line too long (96 > 79 characters) |
-| ./client_python/packet.py | 91 | E203 | whitespace before ' |
-| ./client_python/packet.py | 93 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 94 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 95 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 98 | E303 | too many blank lines (2) |
-| ./client_python/packets/__init__.py | 1 | F401 | '.ping.PingPacket' imported but unused |
-| ./client_python/packets/__init__.py | 2 | F401 | '.login.LoginPacket' imported but unused |
-| ./client_python/packets/__init__.py | 3 | F401 | '.singup.SingupPacket' imported but unused |
-| ./client_python/packets/__init__.py | 4 | F401 | '.log.LogPacket' imported but unused |
-| ./client_python/packets/__init__.py | 5 | F401 | '.chat.ChatPacket' imported but unused |
-| ./client_python/packets/__init__.py | 6 | F401 | '.move.MovePacket' imported but unused |
-| ./client_python/packets/ban.py | 39 | W292 | no newline at end of file |
-| ./client_python/packets/chat.py | 14 | E301 | expected 1 blank line, found 0 |
-| ./client_python/packets/log.py | 11 | E301 | expected 1 blank line, found 0 |
-| ./client_python/packets/move.py | 8 | E231 | missing whitespace after ',' |
-| ./client_python/packets/move.py | 18 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database/update_docs.py | 7 | E303 | too many blank lines (3) |
-| ./scripts/database/update_docs.py | 55 | W293 | blank line contains whitespace |
-| ./scripts/database/update_docs.py | 57 | E303 | too many blank lines (3) |
-| ./scripts/database/update_docs.py | 84 | W293 | blank line contains whitespace |
-| ./scripts/database/update_docs.py | 86 | E303 | too many blank lines (3) |
-| ./scripts/database/update_performance.py | 1 | E271 | multiple spaces after keyword |
-| ./scripts/database/update_performance.py | 2 | E111 | indentation is not a multiple of 4 |
-| ./scripts/database/update_python.py | 12 | E303 | too many blank lines (3) |
-| ./scripts/database/update_python.py | 43 | W293 | blank line contains whitespace |
-| ./scripts/database/update_python.py | 45 | E303 | too many blank lines (3) |
-| ./scripts/database/update_python.py | 170 | W293 | blank line contains whitespace |
-| ./scripts/database/update_python.py | 172 | E303 | too many blank lines (3) |
-| ./scripts/database/update_rust.py | 13 | E303 | too many blank lines (4) |
-| ./scripts/database/update_rust.py | 43 | E303 | too many blank lines (3) |
-| ./scripts/database/update_rust.py | 150 | W293 | blank line contains whitespace |
-| ./scripts/database/update_rust.py | 152 | E303 | too many blank lines (3) |
-| ./scripts/database/update_security.py | 21 | W293 | blank line contains whitespace |
-| ./scripts/database/update_security.py | 23 | E303 | too many blank lines (3) |
-| ./scripts/database/update_security.py | 96 | W293 | blank line contains whitespace |
-| ./scripts/database/update_security.py | 98 | E303 | too many blank lines (3) |
-| ./scripts/database_manager.py | 325 | W293 | blank line contains whitespace |
-| ./scripts/database_manager.py | 327 | W293 | blank line contains whitespace |
-| ./scripts/database_manager.py | 438 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 440 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 452 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 460 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 462 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E501 | line too long (91 > 79 characters) |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 464 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 479 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 490 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 492 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 504 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 517 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 526 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 529 | W293 | blank line contains whitespace |
-| ./scripts/docs_score.py | 5 | W293 | blank line contains whitespace |
-| ./scripts/documentation/links.py | 38 | W293 | blank line contains whitespace |
-| ./scripts/documentation/links.py | 40 | E303 | too many blank lines (3) |
-| ./scripts/documentation/links.py | 61 | F821 | undefined name 'score' |
-| ./scripts/documentation/links.py | 62 | F841 | local variable 'score' is assigned to but never used |
-| ./scripts/documentation/links.py | 75 | W293 | blank line contains whitespace |
-| ./scripts/documentation/links.py | 77 | E303 | too many blank lines (3) |
-| ./scripts/documentation/markdown.py | 23 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 27 | E402 | module level import not at top of file |
-| ./scripts/documentation/markdown.py | 44 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/documentation/markdown.py | 80 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 81 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 84 | W293 | blank line contains whitespace |
-| ./scripts/documentation/markdown.py | 86 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 109 | E741 | ambiguous variable name 'l' |
-| ./scripts/documentation/markdown.py | 135 | E501 | line too long (82 > 79 characters) |
-| ./scripts/documentation/markdown.py | 142 | E501 | line too long (86 > 79 characters) |
-| ./scripts/documentation/markdown.py | 154 | E501 | line too long (82 > 79 characters) |
-| ./scripts/documentation/markdown.py | 157 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 161 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 161 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 161 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 161 | E501 | line too long (85 > 79 characters) |
-| ./scripts/documentation/markdown.py | 162 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 168 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 173 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 173 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 176 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 177 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 178 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 178 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 178 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 179 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 179 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 197 | W293 | blank line contains whitespace |
-| ./scripts/documentation/markdown.py | 199 | E303 | too many blank lines (2) |
-| ./scripts/documentation/markdown.py | 234 | W293 | blank line contains whitespace |
-| ./scripts/documentation/markdown.py | 236 | E303 | too many blank lines (2) |
-| ./scripts/documentation/markdown.py | 263 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 268 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 268 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 273 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 274 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 274 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 274 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 274 | E501 | line too long (84 > 79 characters) |
-| ./scripts/documentation/markdown.py | 275 | E225 | missing whitespace around operator |
-| ./scripts/documentation/markdown.py | 275 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/markdown.py | 277 | W391 | blank line at end of file |
-| ./scripts/documentation/organization.py | 4 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/documentation/organization.py | 8 | E501 | line too long (86 > 79 characters) |
-| ./scripts/documentation/problem.py | 2 | F401 | 'typing.Any' imported but unused |
-| ./scripts/documentation/problem.py | 3 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/documentation/problem.py | 3 | E501 | line too long (85 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 133 | E501 | line too long (95 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 161 | E501 | line too long (116 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 170 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/python_docs.py | 171 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/python_docs.py | 172 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/python_docs.py | 173 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/python_docs.py | 175 | W293 | blank line contains whitespace |
-| ./scripts/documentation/python_docs.py | 176 | E303 | too many blank lines (2) |
-| ./scripts/documentation/python_docs.py | 191 | E501 | line too long (106 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 212 | E501 | line too long (87 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 220 | W293 | blank line contains whitespace |
-| ./scripts/documentation/report.py | 8 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 9 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 11 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/documentation/report.py | 11 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 11 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 12 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 12 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 12 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 13 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 13 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 13 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 14 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 14 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 14 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 15 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 15 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 15 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 16 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 16 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 16 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 17 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 17 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 17 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 18 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 18 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 18 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 19 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 19 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 19 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 20 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 20 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 20 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 25 | E303 | too many blank lines (3) |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 25 | E501 | line too long (94 > 79 characters) |
-| ./scripts/documentation/report.py | 25 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 25 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 26 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 27 | W293 | blank line contains whitespace |
-| ./scripts/documentation/report.py | 28 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 28 | E501 | line too long (136 > 79 characters) |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 28 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 29 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 30 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 30 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 30 | E501 | line too long (108 > 79 characters) |
-| ./scripts/documentation/report.py | 30 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 31 | W293 | blank line contains whitespace |
-| ./scripts/documentation/report.py | 32 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 32 | E231 | missing whitespace after ' |
-| ./scripts/documentation/report.py | 32 | E501 | line too long (140 > 79 characters) |
-| ./scripts/documentation/report.py | 32 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 32 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 32 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 32 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 33 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 33 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 33 | E501 | line too long (122 > 79 characters) |
-| ./scripts/documentation/report.py | 33 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 33 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 34 | E225 | missing whitespace around operator |
-| ./scripts/documentation/report.py | 34 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 34 | E501 | line too long (199 > 79 characters) |
-| ./scripts/documentation/report.py | 34 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 34 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 34 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 35 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 35 | E701 | multiple statements on one line (colon) |
-| ./scripts/documentation/report.py | 40 | W293 | blank line contains whitespace |
-| ./scripts/documentation/report.py | 41 | E303 | too many blank lines (3) |
-| ./scripts/documentation/report.py | 42 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 48 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/report.py | 49 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/report.py | 50 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/report.py | 51 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/report.py | 53 | W293 | blank line contains whitespace |
-| ./scripts/documentation/report.py | 54 | E303 | too many blank lines (2) |
-| ./scripts/documentation/report.py | 70 | E303 | too many blank lines (2) |
-| ./scripts/documentation/report.py | 72 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/report.py | 73 | W293 | blank line contains whitespace |
-| ./scripts/documentation/report.py | 74 | W293 | blank line contains whitespace |
-| ./scripts/documentation/rust_docs.py | 192 | W292 | no newline at end of file |
-| ./scripts/documentation/score.py | 11 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/documentation/score.py | 13 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 14 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 15 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 16 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 17 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 18 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 19 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 21 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 26 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 32 | E501 | line too long (90 > 79 characters) |
-| ./scripts/documentation/score.py | 33 | F841 | local variable 'e' is assigned to but never used |
-| ./scripts/documentation/score.py | 34 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 35 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 36 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 37 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 38 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/score.py | 46 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 56 | E501 | line too long (113 > 79 characters) |
-| ./scripts/documentation/score.py | 56 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 57 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 58 | E225 | missing whitespace around operator |
-| ./scripts/documentation/score.py | 59 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/score.py | 59 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/score.py | 59 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/score.py | 60 | W293 | blank line contains whitespace |
-| ./scripts/documentation/spelling.py | 4 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/documentation/titles.py | 1 | F401 | 'pathlib.Path' imported but unused |
-| ./scripts/documentation/titles.py | 27 | F821 | undefined name 'file' |
-| ./scripts/documentation/titles.py | 42 | F821 | undefined name 'score' |
-| ./scripts/documentation/titles.py | 43 | F841 | local variable 'score' is assigned to but never used |
-| ./scripts/documentation/titles.py | 53 | E303 | too many blank lines (3) |
-| ./scripts/documentation/titles.py | 61 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 61 | E501 | line too long (95 > 79 characters) |
-| ./scripts/documentation/titles.py | 62 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 84 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 84 | E501 | line too long (112 > 79 characters) |
-| ./scripts/documentation/titles.py | 106 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 106 | E501 | line too long (102 > 79 characters) |
-| ./scripts/documentation/titles.py | 126 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 126 | E501 | line too long (83 > 79 characters) |
-| ./scripts/documentation/titles.py | 127 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 148 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 148 | E501 | line too long (120 > 79 characters) |
-| ./scripts/documentation/titles.py | 149 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 172 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 172 | E501 | line too long (129 > 79 characters) |
-| ./scripts/documentation/titles.py | 173 | W293 | blank line contains whitespace |
-| ./scripts/generate_problems_md.py | 64 | W293 | blank line contains whitespace |
-| ./scripts/generate_problems_md.py | 66 | E303 | too many blank lines (2) |
-| ./scripts/generate_problems_md.py | 71 | W293 | blank line contains whitespace |
-| ./scripts/recherche.py | 197 | W293 | blank line contains whitespace |
-| ./scripts/recherche.py | 199 | E303 | too many blank lines (2) |
-| ./scripts/update_database.py | 5 | F401 | '.database.update_performance.update_performance_database' imported but unused |
-| ./scripts/update_database.py | 15 | W293 | blank line contains whitespace |
-| ./scripts/update_database.py | 17 | E303 | too many blank lines (3) |
-| ./scripts/update_database.py | 23 | W293 | blank line contains whitespace |
-| ./scripts/update_database.py | 26 | E303 | too many blank lines (4) |
-| ./scripts/update_database.py | 28 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 6 | F401 | 'gestionnaire_de_fichiers as gf' imported but unused |
-| ./scripts/utils/calculateur.py | 13 | E303 | too many blank lines (6) |
-| ./scripts/utils/calculateur.py | 14 | E501 | line too long (85 > 79 characters) |
-| ./scripts/utils/calculateur.py | 22 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/utils/calculateur.py | 28 | F841 | local variable 'fichier' is assigned to but never used |
-| ./scripts/utils/calculateur.py | 29 | E501 | line too long (80 > 79 characters) |
-| ./scripts/utils/calculateur.py | 33 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/utils/calculateur.py | 34 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 35 | E225 | missing whitespace around operator |
-| ./scripts/utils/calculateur.py | 40 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 48 | E225 | missing whitespace around operator |
-| ./scripts/utils/calculateur.py | 49 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 50 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 51 | E303 | too many blank lines (2) |
-| ./scripts/utils/calculateur.py | 52 | E225 | missing whitespace around operator |
-| ./scripts/utils/calculateur.py | 53 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 54 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 55 | E303 | too many blank lines (2) |
-| ./scripts/utils/calculateur.py | 56 | E231 | missing whitespace after ',' |
-| ./scripts/utils/calculateur.py | 57 | E111 | indentation is not a multiple of 4 |
-| ./scripts/utils/calculateur.py | 57 | E117 | over-indented |
-| ./scripts/utils/calculateur.py | 57 | F821 | undefined name 'fichier' |
-| ./scripts/utils/calculateur.py | 57 | E501 | line too long (80 > 79 characters) |
-| ./scripts/utils/calculateur.py | 61 | E303 | too many blank lines (3) |
-| ./scripts/utils/calculateur.py | 62 | E501 | line too long (81 > 79 characters) |
-| ./scripts/utils/calculateur.py | 63 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/utils/calculateur.py | 63 | E501 | line too long (144 > 79 characters) |
-| ./scripts/utils/calculateur.py | 65 | E501 | line too long (121 > 79 characters) |
-| ./scripts/utils/calculateur.py | 77 | W291 | trailing whitespace |
-| ./scripts/utils/calculateur.py | 88 | E501 | line too long (84 > 79 characters) |
-| ./scripts/utils/calculateur.py | 96 | E501 | line too long (97 > 79 characters) |
-| ./scripts/utils/calculateur.py | 107 | E501 | line too long (84 > 79 characters) |
-| ./scripts/utils/calculateur.py | 109 | F841 | local variable 'existing_sheets' is assigned to but never used |
-| ./scripts/utils/calculateur.py | 111 | E501 | line too long (105 > 79 characters) |
-| ./scripts/utils/calculateur.py | 116 | W391 | blank line at end of file |
-| ./scripts/utils/file_chercheur.py | 16 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/utils/gestionnaire.py | 74 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/utils/gestionnaire_de_fichiers.py | 7 | E303 | too many blank lines (3) |
-| ./scripts/utils/gestionnaire_de_fichiers.py | 16 | F841 | local variable 'chemin_str' is assigned to but never used |
-| ./scripts/utils/gestionnaire_de_fichiers.py | 17 | W291 | trailing whitespace |
-| ./scripts/utils/gestionnaire_de_fichiers.py | 24 | E501 | line too long (84 > 79 characters) |
-| ./scripts/utils/gestionnaire_de_fichiers.py | 31 | W391 | blank line at end of file |
-| ./security/__init__.py | 1 | W391 | blank line at end of file |
-| ./security/vault.py | 19 | W293 | blank line contains whitespace |
-| ./security/vault.py | 34 | W293 | blank line contains whitespace |
-| ./security/vault.py | 36 | E303 | too many blank lines (2) |
-| ./security/vault.py | 79 | E302 | expected 2 blank lines, found 1 |
-| ./security/vault.py | 136 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./security/vault.py | 138 | W293 | blank line contains whitespace |
-| ./security/vault.py | 139 | E303 | too many blank lines (2) |
-| ./security/vault.py | 166 | W293 | blank line contains whitespace |
-| ./server_rust/vendor/libc/etc/libc-util.py | 33 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 38 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 64 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 92 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 97 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 109 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 110 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 118 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 137 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 163 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 178 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 185 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 193 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 201 | E501 | line too long (90 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 206 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 209 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 242 | E501 | line too long (102 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 266 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 272 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 273 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 280 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 287 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 297 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 299 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 301 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 304 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 324 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 328 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 329 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 388 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 403 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 436 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 442 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 492 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 505 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 561 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 596 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 602 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 606 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 607 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 609 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 626 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 693 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 696 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 697 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 698 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 701 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 708 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 722 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 729 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 730 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 731 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 732 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 744 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 749 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 777 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 779 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 813 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 823 | E501 | line too long (96 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 852 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 853 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 867 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 870 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 871 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 872 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 879 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 911 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 921 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 922 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 923 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 935 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 940 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 957 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 964 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 977 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 1008 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/libc/etc/libc-util.py | 1068 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/sqlx/examples/x.py | 17 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 18 | F401 | 'time' imported but unused |
-| ./server_rust/vendor/sqlx/examples/x.py | 18 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 19 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 20 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 21 | E402 | module level import not at top of file |
-| ./server_rust/vendor/sqlx/examples/x.py | 48 | E501 | line too long (103 > 79 characters) |
-| ./server_rust/vendor/sqlx/examples/x.py | 81 | E231 | missing whitespace after ',' |
-| ./server_rust/vendor/sqlx/examples/x.py | 81 | E231 | missing whitespace after ',' |
-| ./server_rust/vendor/sqlx/examples/x.py | 87 | E501 | line too long (104 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/docker.py | 77 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/docker.py | 95 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 6 | F401 | 'time' imported but unused |
-| ./server_rust/vendor/sqlx/tests/x.py | 43 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 93 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 121 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/sqlx/tests/x.py | 121 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 121 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/sqlx/tests/x.py | 123 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/sqlx/tests/x.py | 126 | E303 | too many blank lines (2) |
-| ./server_rust/vendor/sqlx/tests/x.py | 127 | E501 | line too long (125 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 140 | E501 | line too long (116 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 147 | E501 | line too long (98 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 187 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 199 | E501 | line too long (151 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 222 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 246 | E501 | line too long (122 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 260 | E501 | line too long (106 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 268 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 271 | E501 | line too long (110 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 273 | E501 | line too long (97 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 279 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 282 | E501 | line too long (110 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 284 | E501 | line too long (181 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 295 | E501 | line too long (103 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 296 | E501 | line too long (112 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 298 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 303 | E501 | line too long (94 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 312 | E501 | line too long (108 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 315 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 324 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 325 | E501 | line too long (107 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 327 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 331 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 336 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 348 | E501 | line too long (103 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 349 | E501 | line too long (112 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 351 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 361 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/sqlx/tests/x.py | 364 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 366 | E501 | line too long (177 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 371 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 373 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/sqlx/tests/x.py | 381 | E501 | line too long (111 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 20 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 28 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 38 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 67 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 74 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 81 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 88 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 104 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 105 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 106 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 109 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 112 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 122 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 124 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 129 | E501 | line too long (90 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 131 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 132 | E501 | line too long (97 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 135 | E703 | statement ends with a semicolon |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 137 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 145 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 148 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 162 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 162 | E501 | line too long (114 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 163 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 163 | E501 | line too long (119 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 164 | E501 | line too long (132 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 165 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 168 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 170 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 170 | E501 | line too long (107 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 171 | E713 | test for membership should be 'not in' |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 171 | E501 | line too long (109 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 172 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 206 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 258 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 264 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 307 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 308 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 326 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 347 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 347 | E731 | do not assign a lambda expression, use a def |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 351 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 358 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 375 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 377 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 379 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 386 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 388 | E501 | line too long (95 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 392 | E501 | line too long (116 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 398 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 398 | E501 | line too long (91 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 399 | E501 | line too long (129 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 403 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 413 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 413 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 415 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 422 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 430 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 437 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 444 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 451 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 458 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 460 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 462 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 485 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 499 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 501 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 514 | E731 | do not assign a lambda expression, use a def |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 528 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 535 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 536 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 543 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 543 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 548 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 549 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 569 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 570 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 571 | E501 | line too long (86 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 572 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 575 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 576 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 577 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 578 | E501 | line too long (89 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 583 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 585 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 585 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 599 | E501 | line too long (127 > 79 characters) |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 615 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 615 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 19 | F401 | 'operator' imported but unused |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 19 | E401 | multiple imports on one line |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 21 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 31 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 38 | E225 | missing whitespace around operator |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 41 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 52 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 58 | E501 | line too long (95 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 95 | E501 | line too long (95 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 122 | E275 | missing whitespace after keyword |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 123 | E275 | missing whitespace after keyword |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 137 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 152 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 157 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 157 | E741 | ambiguous variable name 'l' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E251 | unexpected spaces around keyword / parameter equals |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 169 | E501 | line too long (80 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 170 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 170 | E501 | line too long (90 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 187 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 269 | W291 | trailing whitespace |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 278 | E501 | line too long (106 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 282 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 283 | E501 | line too long (124 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 287 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 306 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 313 | E501 | line too long (83 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 324 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 325 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 326 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 329 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 332 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 335 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 336 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 337 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 338 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 339 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 342 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 343 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 346 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 349 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 350 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 351 | E203 | whitespace before ',' |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 356 | E501 | line too long (85 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 363 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 364 | E501 | line too long (124 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 365 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 365 | E125 | continuation line with same indent as next logical line |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 365 | E501 | line too long (116 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 366 | E501 | line too long (128 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 367 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 367 | E501 | line too long (117 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 369 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 370 | E501 | line too long (117 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 371 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 371 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 392 | E501 | line too long (97 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 398 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 409 | E501 | line too long (93 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 414 | E501 | line too long (84 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 427 | W293 | blank line contains whitespace |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 428 | E501 | line too long (82 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 429 | E501 | line too long (140 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 430 | E501 | line too long (113 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 435 | W293 | blank line contains whitespace |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 443 | E301 | expected 1 blank line, found 0 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 470 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 472 | E501 | line too long (125 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 473 | E501 | line too long (147 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 476 | E501 | line too long (143 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 479 | E501 | line too long (81 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 481 | E501 | line too long (88 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 483 | E501 | line too long (125 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 486 | E501 | line too long (127 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 490 | E501 | line too long (92 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 491 | E128 | continuation line under-indented for visual indent |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 491 | E501 | line too long (87 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 494 | E302 | expected 2 blank lines, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 500 | E501 | line too long (100 > 79 characters) |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 519 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 535 | E266 | too many leading '#' for block comment |
-| ./server_rust/vendor/unicode-properties/scripts/unicode.py | 537 | E266 | too many leading '#' for block comment |
-| ./tests/__init__.py | 1 | W391 | blank line at end of file |
-| ./tests/security/test_fuzzing.py | 16 | E303 | too many blank lines (3) |
-| ./tests/security/test_fuzzing.py | 29 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_fuzzing.py | 47 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_fuzzing.py | 54 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_fuzzing.py | 74 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_load.py | 13 | E303 | too many blank lines (4) |
-| ./tests/security/test_load.py | 49 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_load.py | 84 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_sql_injection.py | 23 | F401 | 'typing.Any' imported but unused |
-| ./tests/security/test_sql_injection.py | 39 | E303 | too many blank lines (4) |
-| ./tests/security/test_sql_injection.py | 78 | E501 | line too long (94 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 94 | E501 | line too long (95 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 107 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 113 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 117 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 119 | F841 | local variable 'e' is assigned to but never used |
-| ./tests/security/test_sql_injection.py | 133 | E501 | line too long (87 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 221 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 225 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 228 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 230 | E501 | line too long (96 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 231 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 233 | E501 | line too long (91 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 264 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 303 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 305 | E501 | line too long (196 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 309 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 312 | E722 | do not use bare 'except' |
-| ./tests/security/test_sql_injection.py | 327 | E501 | line too long (82 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 350 | E501 | line too long (82 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 354 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 359 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 360 | E722 | do not use bare 'except' |
-| ./tests/security/test_sql_injection.py | 362 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 458 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 485 | E501 | line too long (84 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 508 | E501 | line too long (93 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 509 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 530 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 535 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 543 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 546 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 548 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 555 | E501 | line too long (82 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 563 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 566 | E501 | line too long (91 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 587 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 591 | F541 | f-string is missing placeholders |
-| ./tests/security/test_sql_injection.py | 595 | E501 | line too long (90 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 604 | E302 | expected 2 blank lines, found 1 |
-| ./tests/security/test_sql_injection.py | 624 | E501 | line too long (87 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 646 | E501 | line too long (86 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 660 | E501 | line too long (84 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 661 | E501 | line too long (87 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 662 | E501 | line too long (81 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 663 | E501 | line too long (89 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 668 | E501 | line too long (86 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 669 | W293 | blank line contains whitespace |
-| ./tests/security/test_sql_injection.py | 671 | E501 | line too long (80 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 682 | E501 | line too long (92 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 687 | E501 | line too long (98 > 79 characters) |
-| ./tests/security/test_sql_injection.py | 689 | E501 | line too long (92 > 79 characters) |
-| ./tests/test_client.py | 5 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_client.py | 10 | W293 | blank line contains whitespace |
-| ./tests/test_client.py | 11 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_client_class.py | 1 | E401 | multiple imports on one line |
-| ./tests/test_client_class.py | 8 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_client_class.py | 48 | E501 | line too long (81 > 79 characters) |
-| ./tests/test_client_class.py | 71 | E501 | line too long (83 > 79 characters) |
-| ./tests/test_client_class.py | 101 | E501 | line too long (83 > 79 characters) |
-| ./tests/test_splitmix64.py | 1 | F401 | 'pytest' imported but unused |
-
-</details>
-
-###   📂 Top 10 des fichiers avec le plus d'erreurs
-
-| Rang | Fichier | Erreurs |
-|----:|---------|--------:|
-| 1 | ./Ancien/table_de_conversion.py | 258 |
-| 2 | ./Ancien/inventaire.py | 218 |
-| 3 | ./Ancien/main.py | 114 |
-| 4 | ./Ancien/inv.py | 97 |
-| 5 | ./scripts/documentation/report.py | 96 |
-| 6 | ./server_rust/vendor/unicode-normalization/scripts/unicode.py | 89 |
-| 7 | ./server_rust/vendor/unicode-properties/scripts/unicode.py | 84 |
-| 8 | ./server_rust/vendor/libc/etc/libc-util.py | 77 |
-| 9 | ./tests/security/test_sql_injection.py | 54 |
-| 10 | ./Ancien/banque.py | 50 |
-> 💡 Vous ne connaissez pas une erreur Flake8 ?
->
-> Consultez le guide complet :
-> [📘 Guide Flake8](https://github.com/DDCoder23/The-last-signal-/blob/main/docs/QRB_flake8_error.md)
-
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.151315789473684)
+**Average complexity:**  A (4.238095238095238)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1913,44 +262,34 @@ tests/test_rotor_seeds.py
     F 89:0 test_invalid_key_length - A
     F 9:0 derive_rotor_seed - A
 tests/test_crypto_rotor.py
-    F 354:0 test_rotors_are_different - A
-    F 319:0 test_all_16_rotors_are_valid - A
-    F 51:0 derive_rotor_seed - A
-    F 210:0 test_splitmix64_deterministic - A
-    F 229:0 test_splitmix64_is_u64 - A
-    F 260:0 test_rotor_seeds_are_different - A
-    F 275:0 test_rotor_seed_is_u64 - A
-    F 427:0 test_all_16_rotors_forward_inverse - A
-    F 91:0 generate_rotor - A
-    F 128:0 inverse_permutation - A
-    F 220:0 test_splitmix64_different_seeds - A
-    F 243:0 test_rotor_seed_deterministic - A
-    F 293:0 test_rotor_has_256_values - A
-    F 305:0 test_rotor_is_permutation - A
-    F 337:0 test_rotor_is_deterministic - A
-    F 393:0 test_rotor_forward_inverse - A
-    F 13:0 splitmix64 - A
-    F 142:0 rotor_forward - A
-    F 168:0 rotor_inverse - A
-    F 199:0 communication_key - A
+    F 189:0 test_rotors_are_different - A
+    F 154:0 test_all_16_rotors_are_valid - A
+    F 45:0 test_splitmix64_deterministic - A
+    F 64:0 test_splitmix64_is_u64 - A
+    F 95:0 test_rotor_seeds_are_different - A
+    F 110:0 test_rotor_seed_is_u64 - A
+    F 262:0 test_all_16_rotors_forward_inverse - A
+    F 55:0 test_splitmix64_different_seeds - A
+    F 78:0 test_rotor_seed_deterministic - A
+    F 128:0 test_rotor_has_256_values - A
+    F 140:0 test_rotor_is_permutation - A
+    F 172:0 test_rotor_is_deterministic - A
+    F 228:0 test_rotor_forward_inverse - A
+    F 34:0 communication_key - A
 tests/test_fisher_yates.py
-    F 15:0 test_is_permutation - A
-    F 39:0 test_contains_every_value_once - A
-    F 47:0 test_zero_seed - A
-    F 55:0 test_max_seed - A
-    F 4:0 fisher_yates - A
-    F 23:0 test_is_deterministic - A
-    F 31:0 test_different_seeds_produce_different_permutations - A
+    F 7:0 test_is_permutation - A
+    F 31:0 test_contains_every_value_once - A
+    F 39:0 test_zero_seed - A
+    F 47:0 test_max_seed - A
+    F 15:0 test_is_deterministic - A
+    F 23:0 test_different_seeds_produce_different_permutations - A
 tests/test_splitmix64.py
-    F 37:0 test_same_seed_same_sequence - A
-    F 59:0 test_different_seed_different_sequence - A
-    F 111:0 test_zero_seed - A
-    F 128:0 test_max_seed - A
-    F 81:0 test_output_is_u64 - A
-    F 96:0 test_state_changes - A
-    C 7:0 SplitMix64 - A
-    M 8:4 SplitMix64.__init__ - A
-    M 11:4 SplitMix64.next - A
+    F 13:0 test_same_seed_same_sequence - A
+    F 35:0 test_different_seed_different_sequence - A
+    F 87:0 test_zero_seed - A
+    F 104:0 test_max_seed - A
+    F 57:0 test_output_is_u64 - A
+    F 72:0 test_state_changes - A
 tests/test_client_class.py
     M 11:4 TestClientInitAndConnect.test_init_default_values - B
     M 20:4 TestClientInitAndConnect.test_init_custom_values - B
@@ -2186,8 +525,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-304 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.151315789473684)
+294 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.238095238095238)
 
 </details>
 
@@ -2197,7 +536,7 @@ Average complexity: A (4.151315789473684)
 |----------|------:|
 | High | 1 |
 | Medium | 9 |
-| Low | 151 |
+| Low | 149 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -2207,8 +546,8 @@ Average complexity: A (4.151315789473684)
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
-Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-05 12:00:40.275524+00:00
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Run started:2026-09-05 13:07:25.490506+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -3511,193 +1850,183 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:65:4
-64	
-65	    assert len(communication_key) == 64
-66	    assert 1 <= rotor_id <= 16
+   Location: ./tests/test_crypto_rotor.py:51:4
+50	
+51	    assert state1 == state2
+52	    assert value1 == value2
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:66:4
-65	    assert len(communication_key) == 64
-66	    assert 1 <= rotor_id <= 16
-67	
+   Location: ./tests/test_crypto_rotor.py:52:4
+51	    assert state1 == state2
+52	    assert value1 == value2
+53	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:216:4
-215	
-216	    assert state1 == state2
-217	    assert value1 == value2
+   Location: ./tests/test_crypto_rotor.py:61:4
+60	
+61	    assert value1 != value2
+62	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:217:4
-216	    assert state1 == state2
-217	    assert value1 == value2
-218	
+   Location: ./tests/test_crypto_rotor.py:70:4
+69	
+70	    assert 0 <= state <= MASK_64
+71	    assert 0 <= value <= MASK_64
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:226:4
-225	
-226	    assert value1 != value2
-227	
+   Location: ./tests/test_crypto_rotor.py:71:4
+70	    assert 0 <= state <= MASK_64
+71	    assert 0 <= value <= MASK_64
+72	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:235:4
-234	
-235	    assert 0 <= state <= MASK_64
-236	    assert 0 <= value <= MASK_64
+   Location: ./tests/test_crypto_rotor.py:92:4
+91	
+92	    assert seed1 == seed2
+93	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:236:4
-235	    assert 0 <= state <= MASK_64
-236	    assert 0 <= value <= MASK_64
-237	
+   Location: ./tests/test_crypto_rotor.py:107:4
+106	
+107	    assert len(set(seeds)) == 16
+108	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:257:4
-256	
-257	    assert seed1 == seed2
-258	
+   Location: ./tests/test_crypto_rotor.py:121:8
+120	
+121	        assert 0 <= seed <= MASK_64
+122	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:272:4
-271	
-272	    assert len(set(seeds)) == 16
-273	
+   Location: ./tests/test_crypto_rotor.py:137:4
+136	
+137	    assert len(rotor) == 256
+138	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:286:8
-285	
-286	        assert 0 <= seed <= MASK_64
-287	
+   Location: ./tests/test_crypto_rotor.py:149:4
+148	
+149	    assert sorted(rotor) == list(
+150	        range(256)
+151	    )
+152	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:302:4
-301	
-302	    assert len(rotor) == 256
-303	
+   Location: ./tests/test_crypto_rotor.py:165:8
+164	
+165	        assert len(rotor) == 256
+166	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:314:4
-313	
-314	    assert sorted(rotor) == list(
-315	        range(256)
-316	    )
-317	
+   Location: ./tests/test_crypto_rotor.py:167:8
+166	
+167	        assert sorted(rotor) == list(
+168	            range(256)
+169	        )
+170	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:330:8
-329	
-330	        assert len(rotor) == 256
-331	
+   Location: ./tests/test_crypto_rotor.py:186:4
+185	
+186	    assert rotor1 == rotor2
+187	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:332:8
-331	
-332	        assert sorted(rotor) == list(
-333	            range(256)
-334	        )
-335	
+   Location: ./tests/test_crypto_rotor.py:205:12
+204	
+205	            assert rotors[i] != rotors[j]
+206	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:351:4
-350	
-351	    assert rotor1 == rotor2
-352	
+   Location: ./tests/test_crypto_rotor.py:251:4
+250	
+251	    assert decrypted == value
+252	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:370:12
-369	
-370	            assert rotors[i] != rotors[j]
-371	
+   Location: ./tests/test_crypto_rotor.py:290:8
+289	
+290	        assert decrypted == value
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:416:4
-415	
-416	    assert decrypted == value
-417	
+   Location: ./tests/test_fisher_yates.py:11:4
+10	
+11	    assert len(rotor) == 256
+12	    assert sorted(rotor) == list(range(256))
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:455:8
-454	
-455	        assert decrypted == value
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:19:4
-18	
-19	    assert len(rotor) == 256
-20	    assert sorted(rotor) == list(range(256))
+   Location: ./tests/test_fisher_yates.py:12:4
+11	    assert len(rotor) == 256
+12	    assert sorted(rotor) == list(range(256))
+13	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3705,8 +2034,8 @@ Test results:
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_fisher_yates.py:20:4
-19	    assert len(rotor) == 256
-20	    assert sorted(rotor) == list(range(256))
+19	
+20	    assert rotor_a == rotor_b
 21	
 
 --------------------------------------------------
@@ -3716,7 +2045,7 @@ Test results:
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_fisher_yates.py:28:4
 27	
-28	    assert rotor_a == rotor_b
+28	    assert rotor_a != rotor_b
 29	
 
 --------------------------------------------------
@@ -3724,9 +2053,9 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:36:4
-35	
-36	    assert rotor_a != rotor_b
+   Location: ./tests/test_fisher_yates.py:36:8
+35	    for value in range(256):
+36	        assert rotor.count(value) == 1
 37	
 
 --------------------------------------------------
@@ -3734,9 +2063,19 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:44:8
-43	    for value in range(256):
-44	        assert rotor.count(value) == 1
+   Location: ./tests/test_fisher_yates.py:43:4
+42	
+43	    assert len(rotor) == 256
+44	    assert sorted(rotor) == list(range(256))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_fisher_yates.py:44:4
+43	    assert len(rotor) == 256
+44	    assert sorted(rotor) == list(range(256))
 45	
 
 --------------------------------------------------
@@ -3757,26 +2096,6 @@ Test results:
    Location: ./tests/test_fisher_yates.py:52:4
 51	    assert len(rotor) == 256
 52	    assert sorted(rotor) == list(range(256))
-53	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:59:4
-58	
-59	    assert len(rotor) == 256
-60	    assert sorted(rotor) == list(range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_fisher_yates.py:60:4
-59	    assert len(rotor) == 256
-60	    assert sorted(rotor) == list(range(256))
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3852,108 +2171,108 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:52:4
+   Location: ./tests/test_splitmix64.py:28:4
+27	
+28	    assert sequence_a == sequence_b
+29	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_splitmix64.py:50:4
+49	
+50	    assert sequence_a != sequence_b
 51	
-52	    assert sequence_a == sequence_b
-53	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:74:4
-73	
-74	    assert sequence_a != sequence_b
-75	
+   Location: ./tests/test_splitmix64.py:65:8
+64	
+65	        assert 0 <= value <= MASK64
+66	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:89:8
-88	
-89	        assert 0 <= value <= MASK64
-90	
+   Location: ./tests/test_splitmix64.py:80:4
+79	
+80	    assert generator.state != first_state
+81	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:104:4
-103	
-104	    assert generator.state != first_state
-105	
+   Location: ./tests/test_splitmix64.py:96:4
+95	
+96	    assert len(values) == 10
+97	    assert len(set(values)) == 10
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:120:4
-119	
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
+   Location: ./tests/test_splitmix64.py:97:4
+96	    assert len(values) == 10
+97	    assert len(set(values)) == 10
+98	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:121:4
-120	    assert len(values) == 10
-121	    assert len(set(values)) == 10
-122	
+   Location: ./tests/test_splitmix64.py:113:4
+112	
+113	    assert len(values) == 10
+114	    assert all(
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:137:4
-136	
-137	    assert len(values) == 10
-138	    assert all(
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_splitmix64.py:138:4
-137	    assert len(values) == 10
-138	    assert all(
-139	        0 <= value <= MASK64
-140	        for value in values
-141	    )
+   Location: ./tests/test_splitmix64.py:114:4
+113	    assert len(values) == 10
+114	    assert all(
+115	        0 <= value <= MASK64
+116	        for value in values
+117	    )
 
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12204
+	Total lines of code: 12077
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 151
+		Low: 149
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 12
-		High: 148
+		High: 146
 Files skipped (0):
 
 </details>
 
-##  📏 Pylint
+## 📏 Pylint
 
-**Global score:** 7.27/10
+**Global score:** 7.21/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4204,53 +2523,57 @@ tests/test_rotor_seeds.py:79:0: C0116: Missing function or method docstring (mis
 tests/test_rotor_seeds.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.test_crypto_rotor
 tests/test_crypto_rotor.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_crypto_rotor.py:52:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:92:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
+tests/test_crypto_rotor.py:7:0: C0413: Import "from client_python.crypto import SplitMix64, derive_rotor_seed, generate_rotor, generate_rotors, inverse_permutation, rotor_forward, rotor_inverse" should be placed at the top of the module (wrong-import-position)
+tests/test_crypto_rotor.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:47:21: E0602: Undefined variable 'splitmix64' (undefined-variable)
+tests/test_crypto_rotor.py:49:21: E0602: Undefined variable 'splitmix64' (undefined-variable)
+tests/test_crypto_rotor.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:57:16: E0602: Undefined variable 'splitmix64' (undefined-variable)
+tests/test_crypto_rotor.py:59:16: E0602: Undefined variable 'splitmix64' (undefined-variable)
+tests/test_crypto_rotor.py:64:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:66:19: E0602: Undefined variable 'splitmix64' (undefined-variable)
+tests/test_crypto_rotor.py:78:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:79:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:95:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:96:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:110:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:111:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
 tests/test_crypto_rotor.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:199:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:210:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:220:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:229:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:243:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:244:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:260:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:261:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:275:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:276:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:293:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:294:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:305:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:306:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:319:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:320:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:337:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:338:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:354:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:355:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:393:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:394:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
-tests/test_crypto_rotor.py:427:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:428:4: W0621: Redefining name 'communication_key' from outer scope (line 199) (redefined-outer-name)
+tests/test_crypto_rotor.py:129:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:140:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:141:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:154:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:155:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:172:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:173:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:189:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:190:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:228:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:229:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:263:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:1:0: W0611: Unused import hashlib (unused-import)
+tests/test_crypto_rotor.py:7:0: W0611: Unused SplitMix64 imported from client_python.crypto (unused-import)
+tests/test_crypto_rotor.py:7:0: W0611: Unused generate_rotors imported from client_python.crypto (unused-import)
+tests/test_crypto_rotor.py:7:0: W0611: Unused inverse_permutation imported from client_python.crypto (unused-import)
 ************* Module tests.test_fisher_yates
 tests/test_fisher_yates.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_fisher_yates.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fisher_yates.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:31:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_fisher_yates.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_fisher_yates.py:1:0: W0611: Unused SplitMix64 imported from client_python.crypto (unused-import)
 ************* Module tests.test_splitmix64
 tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_splitmix64.py:7:0: C0115: Missing class docstring (missing-class-docstring)
-tests/test_splitmix64.py:11:4: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:7:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-tests/test_splitmix64.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:81:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:72:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:87:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:104:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
 ************* Module tests.test_client_class
 tests/test_client_class.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -5423,78 +3746,6 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 
         return cls(email, password) (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==client_python.crypto:[177:235]
-==tests.test_crypto_rotor:[131:200]
-    for index, value in enumerate(permutation):
-        inverse[value] = index
-
-    return inverse
-
-
-# ============================================================
-# ROTOR FORWARD
-# ============================================================
-
-def rotor_forward(
-    value,
-    position,
-    permutation,
-):
-    """
-    Passage normal dans le rotor.
-    """
-
-    value = (
-        value + position
-    ) & 0xFF
-
-    value = permutation[value]
-
-    value = (
-        value - position
-    ) & 0xFF
-
-    return value
-
-
-# ============================================================
-# ROTOR INVERSE
-# ============================================================
-
-def rotor_inverse(
-    value,
-    position,
-    permutation,
-):
-    """
-    Passage inverse dans le rotor.
-    """
-
-    inverse = inverse_permutation(
-        permutation
-    )
-
-    value = (
-        value + position
-    ) & 0xFF
-
-    value = inverse[value]
-
-    value = (
-        value - position
-    ) & 0xFF
-
-    return value
-
-
-# ============================================================
-# FIXTURE
-# ============================================================
-
-@pytest.fixture
-def communication_key():
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_docs:[37:62]
 ==scripts.database.update_python:[25:54]
     run_number = int(
@@ -5523,36 +3774,6 @@ def communication_key():
     )
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==client_python.crypto:[69:96]
-==tests.test_crypto_rotor:[67:98]
-    rotor_id_bytes = rotor_id.to_bytes(
-        4,
-        "big",
-    )
-
-    data = (
-        communication_key
-        + ROTOR_DOMAIN
-        + rotor_id_bytes
-    )
-
-    digest = hashlib.sha256(data).digest()
-
-    return int.from_bytes(
-        digest[:8],
-        "big",
-    )
-
-'''
-============================================================
-                   FISHER-YATES
-============================================================
-'''
-
-
-def fisher_yates(seed):
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[9:23]
 ==.github.security.test_python_security:[8:24]
 ROOT = Path.cwd().resolve()
@@ -5568,7 +3789,9 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
- (duplicate-code)
+
+
+def should_ignore(path: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
@@ -5640,21 +3863,6 @@ IGNORED_DIRECTORIES = {
 
 // NOTE: The following code was generated by "scripts/unicode.py", do not edit directly (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==client_python.crypto:[31:43]
-==tests.test_crypto_rotor:[26:38]
-        z = (
-            (z ^ (z >> 30))
-            * 0xBF58476D1CE4E5B9
-        ) & MASK_64
-
-        z = (
-            (z ^ (z >> 27))
-            * 0x94D049BB133111EB
-        ) & MASK_64
-
-        z ^= z >> 31
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
 ==.github.security.test_filesystem:[11:20]
 IGNORED_DIRECTORIES = {
@@ -5669,15 +3877,15 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[24:34]
 ==.github.security.test_git_security:[82:92]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[38:54]
@@ -5695,7 +3903,7 @@ IGNORED_DIRECTORIES = {
     )
 
     # ==========================================
-    # Quality metrics
+    # Résumé Rust
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5722,8 +3930,8 @@ IGNORED_DIRECTORIES = {
     }
 
 
-def extract_links(file):
- (duplicate-code)
+
+def check_single_h1(files, problems): (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[38:50]
 ==.github.security.test_python_security:[24:35]
@@ -5737,7 +3945,8 @@ def extract_links(file):
         for part in relative.parts
     )
 
- (duplicate-code)
+
+def is_world_writable(mode: int) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.attack_test:[79:102]
 ==.github.security.integrity_check:[54:67]
@@ -5753,17 +3962,7 @@ def extract_links(file):
     return digest.hexdigest()
 
 
-'''
-============================================================
-                         Git
-============================================================
-'''
-
-
-def clone_repository(
-    destination: Path,
-) -> None:
- (duplicate-code)
+def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
@@ -5831,13 +4030,13 @@ def looks_textual(data: bytes) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
 ==Ancien.inventaire:[625:632]
+                else:
+                    image_label.setText("Erreur image")
             else:
-                image_label.setText("Erreur image")
-        else:
-            image_label.setText("Aucune image")
-        self.table_widget.setCellWidget(row, 0, image_label)
+                image_label.setText("Aucune image")
+            self.table_widget.setCellWidget(row, 0, image_label)
 
-        # 2. Nom (duplicate-code)
+            # 2. Nom (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
@@ -5854,21 +4053,21 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.27/10
+Your code has been rated at 7.21/10
 
 
 </details>
 
-##  📈 Coverage
+## 📈 Coverage
 
 **Coverage:** 0%
 
@@ -5891,7 +4090,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.33s ===============================
+=============================== 1 error in 0.31s ===============================
 
 </details>
 
