@@ -6,7 +6,7 @@ permissions:
   contents: write
   actions: write
   pull-requests: write
-
+  workflows: write
 jobs:
 
   python-check:
