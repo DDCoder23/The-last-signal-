@@ -3,9 +3,9 @@
 ## 🌐 **Idiomas del README**
 
 🇪🇸 **Español** — Estás viendo actualmente la versión en español.<br>
-🇫🇷 **Français** — ➡️ [Version française](README.md)<br>
-🇬🇧 **English** — ➡️ [English version](README_ENG.md)<br>
-🇯🇵 **日本語** — Próximamente
+🇫🇷 **Français** — ➡️ [Versión francesa](README.md)<br>
+🇬🇧 **English** — ➡️ [Versión inglesa](README_ENG.md)<br>
+🇯🇵 **日本語** — ➡️ [Versión japonesa](README_ENG.md)
 
 > MMORPG de supervivencia postapocalíptica en un mundo persistente
 
