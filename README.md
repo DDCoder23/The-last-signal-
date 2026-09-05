@@ -2,8 +2,8 @@
 ## 🌐 **README languages**
 🇫🇷 **Français** — You are currently viewing the French version.<br>
 🇬🇧 **English** — ➡️ [English version](README_ENG.md) <br>
-🇪🇸 **Español** — Coming soon<br>
-🇯🇵 **日本語** — Coming soon
+🇪🇸 **Español** — ➡️ [Spanish version](README_ESP.md)<br>
+🇯🇵 **日本語** — ➡️ [Japanaseversion](README_JP.md)
 > MMORPG de survie post-apocalyptique en monde persistant
  
 ![Status](https://img.shields.io/badge/status-prototype-orange)
