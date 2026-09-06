@@ -353,6 +353,7 @@ jobs:
           echo "" >> "$REPORT"
 
 
+
       # ============================================================
       # Génération du HTML interactif Flake8
       # ============================================================
@@ -380,7 +381,9 @@ jobs:
           # Lecture du rapport Markdown
           # --------------------------------------------------------
 
-          markdown_text = md_file.read_text(encoding="utf-8")
+          markdown_text = md_file.read_text(
+              encoding="utf-8"
+          )
 
 
           START_MARKER = "<!-- FLAKE8_INTERACTIVE_TABLE -->"
@@ -410,7 +413,7 @@ jobs:
 
 
           # --------------------------------------------------------
-          # Extraction UNIQUEMENT du tableau Flake8
+          # Extraction du tableau Flake8
           # --------------------------------------------------------
 
           flake8_markdown = markdown_text[
@@ -436,9 +439,17 @@ jobs:
 
           # --------------------------------------------------------
           # HTML final
+          #
+          # IMPORTANT :
+          # Pas de f-string ici.
+          #
+          # Cela évite les conflits entre les accolades
+          # Python et les accolades JavaScript/CSS.
           # --------------------------------------------------------
 
-          html = f"""<!DOCTYPE html>
+          html = """
+          <!DOCTYPE html>
+
           <html lang="fr">
 
           <head>
@@ -452,100 +463,86 @@ jobs:
 
               <title>Flake8 Interactive Report</title>
 
-
               <style>
 
-                  body {{
+                  body {
                       font-family: Arial, sans-serif;
                       margin: 30px;
                       background: #f5f5f5;
                       color: #222;
-                  }}
+                  }
 
-
-                  h1 {{
+                  h1 {
                       margin-bottom: 20px;
-                  }}
+                  }
 
-
-                  .controls {{
+                  .controls {
                       display: flex;
                       gap: 10px;
                       flex-wrap: wrap;
                       margin-bottom: 15px;
-                  }}
-
+                  }
 
                   input,
-                  select {{
+                  select {
                       padding: 8px 10px;
                       border: 1px solid #ccc;
                       border-radius: 5px;
                       font-size: 14px;
-                  }}
+                  }
 
-
-                  #counter {{
+                  #counter {
                       margin: 10px 0;
                       font-weight: bold;
-                  }}
+                  }
 
-
-                  .table-container {{
+                  .table-container {
                       overflow-x: auto;
                       background: white;
                       border-radius: 8px;
                       padding: 10px;
-                  }}
+                  }
 
-
-                  table {{
+                  table {
                       width: 100%;
                       border-collapse: collapse;
-                  }}
-
+                  }
 
                   th,
-                  td {{
+                  td {
                       padding: 10px;
                       border-bottom: 1px solid #ddd;
                       text-align: left;
-                  }}
+                  }
 
-
-                  th {{
+                  th {
                       cursor: pointer;
                       user-select: none;
                       background: #eee;
                       position: sticky;
                       top: 0;
-                  }}
+                  }
 
-
-                  th:hover {{
+                  th:hover {
                       background: #ddd;
-                  }}
+                  }
 
-
-                  tr:hover {{
+                  tr:hover {
                       background: #f5f5f5;
-                  }}
+                  }
 
-
-                  .sort-indicator {{
+                  .sort-indicator {
                       margin-left: 5px;
                       font-size: 12px;
-                  }}
+                  }
 
               </style>
 
           </head>
 
-
           <body>
 
               <h1>Flake8 Errors</h1>
-
 
               <div class="controls">
 
@@ -554,7 +551,6 @@ jobs:
                       id="search"
                       placeholder="Rechercher dans les erreurs..."
                   >
-
 
                   <select id="categoryFilter">
 
@@ -566,16 +562,13 @@ jobs:
 
               </div>
 
-
               <div id="counter"></div>
-
 
               <div class="table-container">
 
-                  {table_html}
+                  __TABLE_HTML__
 
               </div>
-
 
               <script>
 
@@ -590,20 +583,16 @@ jobs:
                           tbody.querySelectorAll("tr")
                       );
 
-
                   const searchInput =
                       document.getElementById("search");
-
 
                   const categoryFilter =
                       document.getElementById(
                           "categoryFilter"
                       );
 
-
                   const counter =
                       document.getElementById("counter");
-
 
                   const headers =
                       Array.from(
@@ -642,56 +631,48 @@ jobs:
                   const categories = new Set();
 
 
-                  rows.forEach(row => {{
+                  rows.forEach(row => {
 
                       const codeCell =
                           row.cells[CODE_COLUMN];
 
-
-                      if (!codeCell) {{
+                      if (!codeCell) {
                           return;
-                      }}
-
+                      }
 
                       const code =
                           codeCell.textContent.trim();
 
-
-                      if (code) {{
-
+                      if (code) {
                           categories.add(
                               code.charAt(0)
                           );
+                      }
 
-                      }}
-
-                  }});
+                  });
 
 
                   Array.from(categories)
                       .sort()
-                      .forEach(category => {{
+                      .forEach(category => {
 
                           const option =
                               document.createElement(
                                   "option"
                               );
 
-
                           option.value =
                               category;
-
 
                           option.textContent =
                               "Catégorie " +
                               category;
 
-
                           categoryFilter.appendChild(
                               option
                           );
 
-                      }});
+                      });
 
 
                   /*
@@ -700,33 +681,29 @@ jobs:
                    * =================================================
                    */
 
-                  function filterTable() {{
+                  function filterTable() {
 
                       const search =
                           searchInput.value
                               .toLowerCase()
                               .trim();
 
-
                       const category =
                           categoryFilter.value;
-
 
                       let visible = 0;
 
 
-                      rows.forEach(row => {{
+                      rows.forEach(row => {
 
                           const text =
                               row.textContent
                                   .toLowerCase();
 
-
                           const codeCell =
                               row.cells[
                                   CODE_COLUMN
                               ];
-
 
                           const code =
                               codeCell
@@ -735,11 +712,9 @@ jobs:
                                       .trim()
                                   : "";
 
-
                           const matchesSearch =
                               !search ||
                               text.includes(search);
-
 
                           const matchesCategory =
                               !category ||
@@ -747,21 +722,18 @@ jobs:
                                   category
                               );
 
-
                           const show =
                               matchesSearch &&
                               matchesCategory;
 
-
                           row.style.display =
                               show ? "" : "none";
 
-
-                          if (show) {{
+                          if (show) {
                               visible++;
-                          }}
+                          }
 
-                      }});
+                      });
 
 
                       counter.textContent =
@@ -769,7 +741,7 @@ jobs:
                           " erreur(s) affichée(s) sur " +
                           rows.length;
 
-                  }}
+                  }
 
 
                   searchInput.addEventListener(
@@ -789,17 +761,15 @@ jobs:
                    * Tri des colonnes
                    * =================================================
                    *
-                   * Le tri fonctionne pour :
-                   *
                    * - Fichier
                    * - Ligne
-                   * - Code / catégorie
+                   * - Code
                    * - Message
                    *
                    */
 
                   headers.forEach(
-                      (header, columnIndex) => {{
+                      (header, columnIndex) => {
 
                       let ascending = true;
 
@@ -808,7 +778,6 @@ jobs:
                           document.createElement(
                               "span"
                           );
-
 
                       indicator.className =
                           "sort-indicator";
@@ -821,7 +790,7 @@ jobs:
 
                       header.addEventListener(
                           "click",
-                          () => {{
+                          () => {
 
                               const sortedRows =
                                   Array.from(
@@ -832,13 +801,12 @@ jobs:
 
 
                               sortedRows.sort(
-                                  (a, b) => {{
+                                  (a, b) => {
 
                                       const aCell =
                                           a.cells[
                                               columnIndex
                                           ];
-
 
                                       const bCell =
                                           b.cells[
@@ -849,9 +817,9 @@ jobs:
                                       if (
                                           !aCell ||
                                           !bCell
-                                      ) {{
+                                      ) {
                                           return 0;
-                                      }}
+                                      }
 
 
                                       const aText =
@@ -877,14 +845,13 @@ jobs:
                                       if (
                                           columnIndex ===
                                           LINE_COLUMN
-                                      ) {{
+                                      ) {
 
                                           const aNumber =
                                               parseInt(
                                                   aText,
                                                   10
                                               );
-
 
                                           const bNumber =
                                               parseInt(
@@ -900,17 +867,15 @@ jobs:
                                               !Number.isNaN(
                                                   bNumber
                                               )
-                                          ) {{
+                                          ) {
 
                                               return ascending
-                                                  ? aNumber -
-                                                    bNumber
-                                                  : bNumber -
-                                                    aNumber;
+                                                  ? aNumber - bNumber
+                                                  : bNumber - aNumber;
 
-                                          }}
+                                          }
 
-                                      }}
+                                      }
 
 
                                       /*
@@ -927,7 +892,7 @@ jobs:
                                               aText
                                           );
 
-                                  }}
+                                  }
                               );
 
 
@@ -944,20 +909,19 @@ jobs:
                                */
 
                               headers.forEach(
-                                  h => {{
+                                  h => {
 
                                   const span =
                                       h.querySelector(
                                           ".sort-indicator"
                                       );
 
-
-                                  if (span) {{
+                                  if (span) {
                                       span.textContent =
                                           "";
-                                  }}
+                                  }
 
-                              }});
+                              });
 
 
                               indicator.textContent =
@@ -972,14 +936,16 @@ jobs:
 
                               filterTable();
 
-                          }}
+                          }
                       );
 
                   });
 
 
                   /*
+                   * =================================================
                    * État initial
+                   * =================================================
                    */
 
                   filterTable();
@@ -990,6 +956,16 @@ jobs:
 
           </html>
           """
+
+
+          # --------------------------------------------------------
+          # Injection du tableau Markdown converti
+          # --------------------------------------------------------
+
+          html = html.replace(
+              "__TABLE_HTML__",
+              table_html
+          )
 
 
           # --------------------------------------------------------
@@ -1007,6 +983,8 @@ jobs:
           )
 
           PYTHON
+
+
 
 
       # ============================================================
