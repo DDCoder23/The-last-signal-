@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 1595
+Run : 1596
 Branch : main
-Commit : 55c5532c9f38fcae8f631fec003e23091e6faf69
-Date : Sun Sep  6 11:16:01 UTC 2026
+Commit : dd46639505ac62a49ae94e879cc4ffc6467ac52c
+Date : Sun Sep  6 11:31:55 UTC 2026
 
 
 ## Cargo fmt
@@ -4286,66 +4286,66 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling zerofrom v0.1.8
    Compiling pin-project-lite v0.2.17
    Compiling memchr v2.8.3
-   Compiling yoke v0.8.3
-   Compiling litemap v0.8.3
-   Compiling zerovec v0.11.8
    Compiling typenum v1.20.1
+   Compiling yoke v0.8.3
+   Compiling zerovec v0.11.8
    Compiling tinystr v0.8.4
+   Compiling litemap v0.8.3
    Compiling writeable v0.6.4
-   Compiling smallvec v1.16.0
    Compiling futures-core v0.3.34
-   Compiling icu_locale_core v2.3.0
+   Compiling smallvec v1.16.0
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
+   Compiling icu_locale_core v2.3.0
    Compiling utf8_iter v1.0.4
    Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
    Compiling icu_collections v2.3.0
    Compiling icu_properties_data v2.3.0
    Compiling icu_normalizer_data v2.3.0
-   Compiling socket2 v0.6.5
    Compiling mio v1.2.3
+   Compiling socket2 v0.6.5
    Compiling bytes v1.12.1
-   Compiling icu_provider v2.3.1
    Compiling futures-sink v0.3.34
    Compiling serde_core v1.0.229
-   Compiling icu_normalizer v2.3.0
-   Compiling icu_properties v2.3.0
-   Compiling once_cell v1.21.4
-   Compiling equivalent v1.0.2
    Compiling rand_core v0.10.1
+   Compiling icu_provider v2.3.1
+   Compiling icu_properties v2.3.0
+   Compiling icu_normalizer v2.3.0
+   Compiling equivalent v1.0.2
+   Compiling once_cell v1.21.4
    Compiling tracing-core v0.1.36
    Compiling generic-array v0.14.9
    Compiling parking_lot_core v0.9.12
-   Compiling slab v0.4.12
-   Compiling idna_adapter v1.2.2
-   Compiling futures-io v0.3.34
-   Compiling percent-encoding v2.3.2
-   Compiling allocator-api2 v0.2.21
-   Compiling futures-task v0.3.34
    Compiling foldhash v0.2.0
+   Compiling idna_adapter v1.2.2
+   Compiling futures-task v0.3.34
+   Compiling allocator-api2 v0.2.21
    Compiling cpufeatures v0.2.17
+   Compiling futures-io v0.3.34
+   Compiling slab v0.4.12
+   Compiling percent-encoding v2.3.2
    Compiling futures-util v0.3.34
-   Compiling form_urlencoded v1.2.2
    Compiling hashbrown v0.16.1
+   Compiling form_urlencoded v1.2.2
    Compiling idna v1.1.0
    Compiling serde v1.0.229
-   Compiling parking_lot v0.12.5
    Compiling num-traits v0.2.19
+   Compiling parking_lot v0.12.5
+   Compiling getrandom v0.4.3
    Compiling crossbeam-utils v0.8.23
    Compiling zmij v1.0.23
-   Compiling getrandom v0.4.3
    Compiling crc-catalog v2.5.0
-   Compiling parking v2.2.1
    Compiling itoa v1.0.18
    Compiling hashbrown v0.17.1
+   Compiling parking v2.2.1
    Compiling serde_json v1.0.151
    Compiling event-listener v5.4.2
-   Compiling crc v3.4.0
    Compiling crossbeam-queue v0.3.14
+   Compiling crc v3.4.0
    Compiling indexmap v2.14.2
-   Compiling either v1.18.0
    Compiling futures-intrusive v0.5.0
+   Compiling either v1.18.0
    Compiling hashlink v0.11.1
    Compiling url v2.5.8
    Compiling crypto-common v0.1.6
@@ -4369,12 +4369,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling block-buffer v0.12.1
    Compiling uuid v1.26.0
    Compiling aho-corasick v1.1.5
-   Compiling cpufeatures v0.3.1
    Compiling foreign-types-shared v0.1.1
+   Compiling cpufeatures v0.3.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
-   Compiling sqlx-core v0.9.0
    Compiling base64ct v1.8.3
+   Compiling sqlx-core v0.9.0
    Compiling phc v0.6.1
    Compiling regex-automata v0.4.18
    Compiling foreign-types v0.3.2
@@ -4384,10 +4384,10 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling openssl-sys v0.9.117
    Compiling sqlx-macros-core v0.9.0
    Compiling getrandom v0.2.17
-   Compiling iana-time-zone v0.1.65
-   Compiling simd-adler32 v0.3.10
-   Compiling bitflags v2.13.1
    Compiling adler2 v2.0.1
+   Compiling iana-time-zone v0.1.65
+   Compiling bitflags v2.13.1
+   Compiling simd-adler32 v0.3.10
    Compiling openssl v0.10.81
    Compiling miniz_oxide v0.9.1
    Compiling chrono v0.4.45
@@ -4398,14 +4398,14 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling crc32fast v1.5.1
    Compiling password-hash v0.6.1
    Compiling chacha20 v0.10.2
-   Compiling nu-ansi-term v0.50.3
    Compiling byteorder v1.5.0
-   Compiling flexi_logger v0.31.10
+   Compiling nu-ansi-term v0.50.3
    Compiling rand v0.10.2
    Compiling fernet v0.2.2
+   Compiling flexi_logger v0.31.10
    Compiling sqlx v0.9.0
-   Compiling flate2 v1.1.10
    Compiling argon2 v0.6.0
+   Compiling flate2 v1.1.10
    Compiling rand_core v0.6.4
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
 warning: fields `user_id` and `password_hash` are never read
@@ -4441,10 +4441,10 @@ warning: unused import: `debug`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 1 warning (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server --tests` to apply 1 suggestion)
+warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 1 warning (1 duplicate)
 warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
-warning: `the-last-signal-server` (bin "the-last-signal-server") generated 1 warning (1 duplicate)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 23.39s
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 1 warning (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 23.90s
      Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-9f40c6f04f6203fc)
 
 running 0 tests
