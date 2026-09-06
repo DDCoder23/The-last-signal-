@@ -62,6 +62,8 @@ Important modification of the project **The Last Signal Online** are documented 
 - insertion of placeholder files for
   English, Spanish and Japanese documentation 
 - creation of  05_FACTIONS.md
+- creation of Japanase and Spanish main README
+
 ---
 ## [1.0.06] - 06/09/2026
 
