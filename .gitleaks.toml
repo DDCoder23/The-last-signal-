@@ -1,4 +1,0 @@
-[allowlist]
-paths = [
-    '''^server_rust/vendor/'''
-]
