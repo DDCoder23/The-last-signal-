@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 1614
+Run : 1616
 Branch : main
-Commit : c24cb90c049cc5ffde1a4034726c43dbbc2d9509
-Date : Sun Sep  6 15:56:58 UTC 2026
+Commit : 35338ab9bf7be8d5404c52e288694b2ff4efd0dd
+Date : Sun Sep  6 16:34:22 UTC 2026
 
 
 ## Cargo fmt
@@ -4216,7 +4216,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
 -    database_manager::DatabaseManager,
 -    migrations,
 -};
- use log::info;
+-use log::{debug,info};
++use log::{debug, info};
 +use the_last_signal_server::database::{database_manager::DatabaseManager, migrations};
  use the_last_signal_server::network::server::Server;
  use the_last_signal_server::utils::logger::logger::ServerLogger;
@@ -4284,77 +4285,77 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling stable_deref_trait v1.2.1
    Compiling zerofrom v0.1.8
    Compiling pin-project-lite v0.2.17
-   Compiling futures-core v0.3.34
+   Compiling memchr v2.8.3
    Compiling yoke v0.8.3
    Compiling litemap v0.8.3
-   Compiling memchr v2.8.3
    Compiling zerovec v0.11.8
+   Compiling writeable v0.6.4
+   Compiling futures-core v0.3.34
    Compiling typenum v1.20.1
    Compiling tinystr v0.8.4
-   Compiling writeable v0.6.4
    Compiling smallvec v1.16.0
-   Compiling potential_utf v0.1.6
    Compiling icu_locale_core v2.3.0
+   Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
    Compiling utf8_iter v1.0.4
    Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
-   Compiling icu_properties_data v2.3.0
    Compiling icu_normalizer_data v2.3.0
+   Compiling icu_properties_data v2.3.0
    Compiling socket2 v0.6.5
    Compiling mio v1.2.3
    Compiling futures-sink v0.3.34
    Compiling bytes v1.12.1
+   Compiling icu_provider v2.3.1
    Compiling serde_core v1.0.229
    Compiling rand_core v0.10.1
-   Compiling icu_provider v2.3.1
    Compiling icu_normalizer v2.3.0
    Compiling icu_properties v2.3.0
    Compiling equivalent v1.0.2
    Compiling once_cell v1.21.4
-   Compiling tracing-core v0.1.36
    Compiling generic-array v0.14.9
+   Compiling tracing-core v0.1.36
    Compiling parking_lot_core v0.9.12
-   Compiling futures-io v0.3.34
-   Compiling cpufeatures v0.2.17
+   Compiling foldhash v0.2.0
+   Compiling idna_adapter v1.2.2
    Compiling percent-encoding v2.3.2
    Compiling allocator-api2 v0.2.21
-   Compiling idna_adapter v1.2.2
-   Compiling foldhash v0.2.0
-   Compiling futures-task v0.3.34
+   Compiling futures-io v0.3.34
    Compiling slab v0.4.12
+   Compiling futures-task v0.3.34
+   Compiling cpufeatures v0.2.17
    Compiling hashbrown v0.16.1
-   Compiling idna v1.1.0
-   Compiling futures-util v0.3.34
-   Compiling serde v1.0.229
    Compiling form_urlencoded v1.2.2
-   Compiling num-traits v0.2.19
+   Compiling futures-util v0.3.34
+   Compiling idna v1.1.0
    Compiling parking_lot v0.12.5
-   Compiling getrandom v0.4.3
-   Compiling crossbeam-utils v0.8.23
+   Compiling serde v1.0.229
+   Compiling num-traits v0.2.19
    Compiling zmij v1.0.23
+   Compiling crossbeam-utils v0.8.23
+   Compiling getrandom v0.4.3
+   Compiling crc-catalog v2.5.0
    Compiling itoa v1.0.18
    Compiling parking v2.2.1
    Compiling hashbrown v0.17.1
-   Compiling crc-catalog v2.5.0
-   Compiling event-listener v5.4.2
-   Compiling crc v3.4.0
-   Compiling crossbeam-queue v0.3.14
    Compiling serde_json v1.0.151
-   Compiling futures-intrusive v0.5.0
+   Compiling event-listener v5.4.2
+   Compiling crossbeam-queue v0.3.14
+   Compiling crc v3.4.0
    Compiling indexmap v2.14.2
    Compiling either v1.18.0
-   Compiling url v2.5.8
+   Compiling futures-intrusive v0.5.0
    Compiling hashlink v0.11.1
+   Compiling url v2.5.8
    Compiling block-buffer v0.10.4
    Compiling crypto-common v0.1.6
    Compiling digest v0.10.7
    Compiling tokio v1.53.1
    Compiling spin v0.9.9
    Compiling cmov v0.5.4
-   Compiling tracing v0.1.44
    Compiling ctutils v0.4.2
+   Compiling tracing v0.1.44
    Compiling flume v0.12.0
    Compiling sha2 v0.10.9
    Compiling futures-executor v0.3.34
@@ -4368,9 +4369,9 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling crypto-common v0.2.2
    Compiling uuid v1.26.0
    Compiling aho-corasick v1.1.5
+   Compiling cpufeatures v0.3.1
    Compiling foreign-types-shared v0.1.1
    Compiling base64ct v1.8.3
-   Compiling cpufeatures v0.3.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling regex-automata v0.4.18
@@ -4382,10 +4383,10 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling libsqlite3-sys v0.37.0
    Compiling openssl-sys v0.9.117
    Compiling getrandom v0.2.17
-   Compiling adler2 v2.0.1
    Compiling sqlx-macros-core v0.9.0
    Compiling iana-time-zone v0.1.65
    Compiling bitflags v2.13.1
+   Compiling adler2 v2.0.1
    Compiling simd-adler32 v0.3.10
    Compiling miniz_oxide v0.9.1
    Compiling openssl v0.10.81
@@ -4393,8 +4394,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling zeroize v1.9.0
    Compiling sqlx-macros v0.9.0
    Compiling blake2 v0.11.0
-   Compiling crc32fast v1.5.1
    Compiling password-hash v0.6.1
+   Compiling crc32fast v1.5.1
    Compiling regex v1.13.1
    Compiling chacha20 v0.10.2
    Compiling nu-ansi-term v0.50.3
@@ -4403,8 +4404,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling sqlx v0.9.0
    Compiling rand v0.10.2
    Compiling fernet v0.2.2
-   Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
+   Compiling argon2 v0.6.0
    Compiling rand_core v0.6.4
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
 warning: fields `user_id` and `password_hash` are never read
@@ -4432,8 +4433,18 @@ warning: constant `PP` is never used
   |       ^^
 
 warning: `the-last-signal-server` (lib) generated 3 warnings
+warning: unused import: `debug`
+ --> src/main.rs:5:11
+  |
+5 | use log::{debug,info};
+  |           ^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 1 warning (1 duplicate)
 warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.06s
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 1 warning (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 1 suggestion)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.22s
      Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-9f40c6f04f6203fc)
 
 running 0 tests
