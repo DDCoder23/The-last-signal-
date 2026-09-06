@@ -1,3 +1,0 @@
--- no-transaction
-
-VACUUM;
