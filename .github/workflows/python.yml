@@ -1486,11 +1486,7 @@ jobs:
               "/tmp/ci-worktree/reports/python"
 
 
-          cp -a \
-              "$GITHUB_WORKSPACE/reports/python/." \
-              "/tmp/ci-worktree/reports/python/" \
-              2>/dev/null || true
-
+          rsync -a --delete   "$GITHUB_WORKSPACE/reports/python/"   "/tmp/ci-worktree/reports/python/" 2>/dev/null || true
 
           cd /tmp/ci-worktree
 
