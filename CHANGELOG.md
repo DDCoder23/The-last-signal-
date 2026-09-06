@@ -65,5 +65,17 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 
 -correction de bugs
 ### ajout
--ajout d'un test pour le client
+
+- ajout d'un test clien
+- ajout des fichiers de documentation future pour l'anglais,
+l'espagnol et le japonais
+- ajout du fichier 05_FACTIONS.md
+---
+## [1.0.06] - 06/09/2026
+
+### Ajout
+
+- ajout de la configuration CodeQl
+  
+
 ---
