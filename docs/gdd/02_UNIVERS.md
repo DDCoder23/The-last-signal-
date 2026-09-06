@@ -6,11 +6,11 @@
 > **Code :** GDD-002  
 > **Version :** 1.0.0  
 > **Statut :** 🟡 En cours de rédaction  
-> **Dernière mise à jour :** 13 juillet 2026
+> **Dernière mise à jour :** 06 septembre 2026
 
 ---
 
-# 📖 Table des matières
+## 📖 Table des matières
 
 1. Présentation
 2. Contexte
@@ -25,7 +25,7 @@
 
 ---
 
-# 1. Présentation
+### 1. Présentation
 
 L'univers de **The Last Signal Online** est un monde post-apocalyptique où la civilisation s'est effondrée après une catastrophe scientifique.
 
@@ -35,7 +35,7 @@ Les survivants tentent de reconstruire leur vie tout en cherchant des réponses 
 
 ---
 
-# 2. Contexte
+### 2. Contexte
 
 Avant la catastrophe, l'humanité connaissait une période de grands progrès scientifiques.
 
@@ -47,7 +47,7 @@ En quelques semaines, la société s'effondra.
 
 ---
 
-# 3. Le monde
+### 3. Le monde
 
 Le monde est entièrement ouvert.
 
@@ -65,7 +65,7 @@ Certaines régions seront plus dangereuses que d'autres.
 
 ---
 
-# 4. Les régions
+### 4. Les régions
 
 Le monde sera composé de nombreuses zones.
 
@@ -86,7 +86,7 @@ Chaque région possède sa propre identité visuelle.
 
 ---
 
-# 5. La contamination
+### 5. La contamination
 
 La contamination est l'élément central du monde.
 
@@ -99,7 +99,7 @@ D'autres restent relativement sûres.
 Plus la contamination est importante, plus les ennemis deviennent puissants.
 ---
 
-# 5.1 Niveaux de contamination
+#### 5.1 Niveaux de contamination
 
 Le monde est divisé en plusieurs niveaux de contamination.
 
@@ -111,7 +111,7 @@ Chaque niveau influence :
 - les récompenses ;
 - les risques pour les joueurs.
 
-## 🟢 Zone Verte
+##### 🟢 Zone Verte
 
 Les zones vertes sont les plus sûres.
 
@@ -119,9 +119,9 @@ Elles accueillent les principaux camps de survivants ainsi que les nouveaux joue
 
 Les créatures y sont peu nombreuses et relativement faibles.
 
----
 
-## 🟡 Zone Jaune
+
+##### 🟡 Zone Jaune
 
 Les zones jaunes représentent les premières régions contaminées.
 
@@ -129,9 +129,9 @@ Les joueurs y rencontrent leurs premiers véritables défis.
 
 Les ressources y sont plus abondantes mais les dangers augmentent.
 
----
 
-## 🔴 Zone Rouge
+
+##### 🔴 Zone Rouge
 
 Les zones rouges sont fortement contaminées.
 
@@ -139,9 +139,9 @@ Les créatures y sont nombreuses et beaucoup plus agressives.
 
 Les joueurs devront être correctement équipés avant de s'y aventurer.
 
----
 
-## ⚫ Zone Noire
+
+##### ⚫ Zone Noire
 
 Les zones noires représentent le cœur de la contamination.
 
@@ -158,7 +158,7 @@ La Montagne du Dernier Signal se situe dans une Zone Noire.
 
 ---
 
-# 5.2 Les Signaux
+#### 5.2 Les Signaux
 
 Le phénomène appelé **"The Last Signal"** est au cœur de l'univers.
 
@@ -172,7 +172,7 @@ Les joueurs découvriront progressivement leur véritable nature au cours de l'h
 
 ---
 
-# 5.3 La Montagne du Dernier Signal
+#### 5.3 La Montagne du Dernier Signal
 
 Au centre du continent se dresse une immense montagne visible depuis de nombreuses régions.
 
@@ -188,7 +188,7 @@ Les survivants la surnomment :
 
 ---
 
-# 5.4 Les villes
+#### 5.4 Les villes
 
 Avant la catastrophe, plusieurs grandes villes occupaient le territoire.
 
@@ -206,7 +206,7 @@ Certaines villes pourront être partiellement sécurisées par les joueurs au fi
 
 ---
 
-# 5.5 Les anomalies
+#### 5.5 Les anomalies
 
 La catastrophe a laissé derrière elle d'étranges phénomènes.
 
@@ -222,7 +222,7 @@ Ces anomalies pourront modifier temporairement le gameplay et créer des événe
 
 ---
 
-# 6. Les survivants
+### 6. Les survivants
 
 Les joueurs incarnent des survivants immunisés.
 
@@ -239,7 +239,7 @@ Ils peuvent :
 
 ---
 
-# 7. Les créatures
+### 7. Les créatures
 
 Les créatures sont les principales menaces.
 
@@ -258,7 +258,7 @@ Chaque famille de créatures possède :
 
 ---
 
-# 8. Les ressources
+### 8. Les ressources
 
 Les joueurs peuvent récolter :
 
@@ -279,7 +279,7 @@ Ces ressources permettent :
 
 ---
 
-# 9. Les mystères
+### 9. Les mystères
 
 Le monde cache de nombreux secrets.
 
@@ -295,7 +295,7 @@ Les joueurs découvriront progressivement ces éléments.
 
 ---
 
-# 10. Ambiance
+### 10. Ambiance
 
 L'univers doit transmettre plusieurs émotions :
 
@@ -309,7 +309,7 @@ Le monde raconte une histoire à travers ses décors, ses bâtiments et les trac
 
 ---
 
-# 📚 Documents liés
+## 📚 Documents liés
 
 - [🌟 Vision du projet](01_VISION.md)
 - [📜 Scénario](03_SCENARIO.md)
