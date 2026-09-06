@@ -66,10 +66,11 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 -correction de bugs
 ### ajout
 
-- ajout d'un test clien
+- ajout d'un test client
 - ajout des fichiers de documentation future pour l'anglais,
 l'espagnol et le japonais
 - ajout du fichier 05_FACTIONS.md
+- création des README en japonais et en espagnol
 ---
 ## [1.0.06] - 06/09/2026
 
