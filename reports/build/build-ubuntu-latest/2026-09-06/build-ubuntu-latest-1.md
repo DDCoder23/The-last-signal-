@@ -48,6 +48,3 @@ No Godot project found.
 - Python build completed
 - Rust build completed
 - Godot build completed
-
-- Rust build completed
-- Godot build completed
