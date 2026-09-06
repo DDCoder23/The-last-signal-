@@ -1618,7 +1618,7 @@ jobs:
             exit 0
 
           fi
-
+          git switch -c ci-reports --track origin/ci-reports
 
           git commit \
             -m "Report python n° ${REPORT_NUMBER}"
@@ -1631,7 +1631,7 @@ jobs:
 
 
             git fetch origin
-            git switch -c ci-reports --track origin/ci-reports
+            
 
 
             echo "Branche actuelle :"
