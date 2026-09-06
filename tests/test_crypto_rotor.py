@@ -44,9 +44,9 @@ def communication_key():
 
 def test_splitmix64_deterministic():
 
-    state1, value1 = SplitMix64(123456789)
+    state1, value1 = splitmix64(123456789)
 
-    state2, value2 = SplitMix64(123456789)
+    state2, value2 = splitmix64(123456789)
 
     assert state1 == state2
     assert value1 == value2
@@ -54,16 +54,16 @@ def test_splitmix64_deterministic():
 
 def test_splitmix64_different_seeds():
 
-    _, value1 = SplitMix64(1)
+    _, value1 = splitmix64(1)
 
-    _, value2 = SplitMix64(2)
+    _, value2 = splitmix64(2)
 
     assert value1 != value2
 
 
 def test_splitmix64_is_u64():
 
-    state, value = SplitMix64(
+    state, value = splitmix64(
         0xFFFFFFFFFFFFFFFF
     )
 
