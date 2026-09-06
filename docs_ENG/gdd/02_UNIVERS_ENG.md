@@ -120,7 +120,7 @@ They are home to the main survivor camps and serve as starting areas for new pla
 
 Creatures are few and relatively weak.
 
----
+
 
 ##### 🟡 Yellow Zone
 
@@ -130,7 +130,7 @@ Players encounter their first real challenges here.
 
 Resources are more abundant, but the dangers increase.
 
----
+
 
 ##### 🔴 Red Zone
 
@@ -140,7 +140,7 @@ Creatures are numerous and much more aggressive.
 
 Players will need to be properly equipped before venturing into these areas.
 
----
+
 
 ##### ⚫ Black Zone
 
