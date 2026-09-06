@@ -357,6 +357,7 @@ jobs:
       # Génération du HTML interactif Flake8
       # ============================================================
 
+      
       - name: Generate interactive HTML report
         run: |
 
@@ -376,9 +377,9 @@ jobs:
           html_file = Path(sys.argv[2])
 
 
-          # --------------------------------------------------------
+          # ============================================================
           # Lecture du rapport Markdown
-          # --------------------------------------------------------
+          # ============================================================
 
           markdown_text = md_file.read_text(encoding="utf-8")
 
@@ -409,18 +410,18 @@ jobs:
               )
 
 
-          # --------------------------------------------------------
+          # ============================================================
           # Extraction UNIQUEMENT du tableau Flake8
-          # --------------------------------------------------------
+          # ============================================================
 
           flake8_markdown = markdown_text[
               start + len(START_MARKER):end
           ].strip()
 
 
-          # --------------------------------------------------------
+          # ============================================================
           # Conversion Markdown -> HTML
-          # --------------------------------------------------------
+          # ============================================================
 
           table_html = markdown.markdown(
               flake8_markdown,
@@ -434,11 +435,16 @@ jobs:
               )
 
 
-          # --------------------------------------------------------
-          # HTML final
-          # --------------------------------------------------------
+          # ============================================================
+          # HTML
+          #
+          # IMPORTANT :
+          # Ce n'est PAS une f-string.
+          # Les accolades du JavaScript ne sont donc pas interprétées
+          # par Python.
+          # ============================================================
 
-          html = f"""<!DOCTYPE html>
+          html = """<!DOCTYPE html>
           <html lang="fr">
 
           <head>
@@ -455,87 +461,87 @@ jobs:
 
               <style>
 
-                  body {{
+                  body {
                       font-family: Arial, sans-serif;
                       margin: 30px;
                       background: #f5f5f5;
                       color: #222;
-                  }}
+                  }
 
 
-                  h1 {{
+                  h1 {
                       margin-bottom: 20px;
-                  }}
+                  }
 
 
-                  .controls {{
+                  .controls {
                       display: flex;
                       gap: 10px;
                       flex-wrap: wrap;
                       margin-bottom: 15px;
-                  }}
+                  }
 
 
                   input,
-                  select {{
+                  select {
                       padding: 8px 10px;
                       border: 1px solid #ccc;
                       border-radius: 5px;
                       font-size: 14px;
-                  }}
+                  }
 
 
-                  #counter {{
+                  #counter {
                       margin: 10px 0;
                       font-weight: bold;
-                  }}
+                  }
 
 
-                  .table-container {{
+                  .table-container {
                       overflow-x: auto;
                       background: white;
                       border-radius: 8px;
                       padding: 10px;
-                  }}
+                  }
 
 
-                  table {{
+                  table {
                       width: 100%;
                       border-collapse: collapse;
-                  }}
+                  }
 
 
                   th,
-                  td {{
+                  td {
                       padding: 10px;
                       border-bottom: 1px solid #ddd;
                       text-align: left;
-                  }}
+                  }
 
 
-                  th {{
+                  th {
                       cursor: pointer;
                       user-select: none;
                       background: #eee;
                       position: sticky;
                       top: 0;
-                  }}
+                  }
 
 
-                  th:hover {{
+                  th:hover {
                       background: #ddd;
-                  }}
+                  }
 
 
-                  tr:hover {{
+                  tr:hover {
                       background: #f5f5f5;
-                  }}
+                  }
 
 
-                  .sort-indicator {{
+                  .sort-indicator {
                       margin-left: 5px;
                       font-size: 12px;
-                  }}
+                  }
 
               </style>
 
@@ -572,7 +578,7 @@ jobs:
 
               <div class="table-container">
 
-                  {table_html}
+                  __TABLE_HTML__
 
               </div>
 
@@ -582,8 +588,17 @@ jobs:
                   const table =
                       document.querySelector("table");
 
+
+                  if (!table) {
+                      throw new Error(
+                          "Tableau Flake8 introuvable."
+                      );
+                  }
+
+
                   const tbody =
                       table.querySelector("tbody");
+
 
                   const rows =
                       Array.from(
@@ -629,48 +644,47 @@ jobs:
 
 
                   /*
-                   * =================================================
-                   * Création du filtre des catégories
-                   * =================================================
+                   * ==================================================
+                   * FILTRE DES CATÉGORIES
+                   * ==================================================
                    *
                    * E501 -> E
                    * F401 -> F
                    * W291 -> W
-                   *
                    */
 
                   const categories = new Set();
 
 
-                  rows.forEach(row => {{
+                  rows.forEach(row => {
 
                       const codeCell =
                           row.cells[CODE_COLUMN];
 
 
-                      if (!codeCell) {{
+                      if (!codeCell) {
                           return;
-                      }}
+                      }
 
 
                       const code =
                           codeCell.textContent.trim();
 
 
-                      if (code) {{
+                      if (code) {
 
                           categories.add(
                               code.charAt(0)
                           );
 
-                      }}
+                      }
 
-                  }});
+                  });
 
 
                   Array.from(categories)
                       .sort()
-                      .forEach(category => {{
+                      .forEach(category => {
 
                           const option =
                               document.createElement(
@@ -683,24 +697,23 @@ jobs:
 
 
                           option.textContent =
-                              "Catégorie " +
-                              category;
+                              "Catégorie " + category;
 
 
                           categoryFilter.appendChild(
                               option
                           );
 
-                      }});
+                      });
 
 
                   /*
-                   * =================================================
-                   * Filtrage
-                   * =================================================
+                   * ==================================================
+                   * FILTRE + RECHERCHE
+                   * ==================================================
                    */
 
-                  function filterTable() {{
+                  function filterTable() {
 
                       const search =
                           searchInput.value
@@ -715,7 +728,7 @@ jobs:
                       let visible = 0;
 
 
-                      rows.forEach(row => {{
+                      rows.forEach(row => {
 
                           const text =
                               row.textContent
@@ -730,9 +743,7 @@ jobs:
 
                           const code =
                               codeCell
-                                  ? codeCell
-                                      .textContent
-                                      .trim()
+                                  ? codeCell.textContent.trim()
                                   : "";
 
 
@@ -743,9 +754,7 @@ jobs:
 
                           const matchesCategory =
                               !category ||
-                              code.startsWith(
-                                  category
-                              );
+                              code.startsWith(category);
 
 
                           const show =
@@ -757,11 +766,11 @@ jobs:
                               show ? "" : "none";
 
 
-                          if (show) {{
+                          if (show) {
                               visible++;
-                          }}
+                          }
 
-                      }});
+                      });
 
 
                       counter.textContent =
@@ -769,7 +778,7 @@ jobs:
                           " erreur(s) affichée(s) sur " +
                           rows.length;
 
-                  }}
+                  }
 
 
                   searchInput.addEventListener(
@@ -785,201 +794,191 @@ jobs:
 
 
                   /*
-                   * =================================================
-                   * Tri des colonnes
-                   * =================================================
-                   *
-                   * Le tri fonctionne pour :
-                   *
-                   * - Fichier
-                   * - Ligne
-                   * - Code / catégorie
-                   * - Message
-                   *
+                   * ==================================================
+                   * TRI DES COLONNES
+                   * ==================================================
                    */
 
                   headers.forEach(
-                      (header, columnIndex) => {{
+                      (header, columnIndex) => {
 
-                      let ascending = true;
+                          let ascending = true;
 
 
-                      const indicator =
-                          document.createElement(
-                              "span"
+                          const indicator =
+                              document.createElement(
+                                  "span"
+                              );
+
+
+                          indicator.className =
+                              "sort-indicator";
+
+
+                          header.appendChild(
+                              indicator
                           );
 
 
-                      indicator.className =
-                          "sort-indicator";
+                          header.addEventListener(
+                              "click",
+                              () => {
 
-
-                      header.appendChild(
-                          indicator
-                      );
-
-
-                      header.addEventListener(
-                          "click",
-                          () => {{
-
-                              const sortedRows =
-                                  Array.from(
-                                      tbody.querySelectorAll(
-                                          "tr"
-                                      )
-                                  );
-
-
-                              sortedRows.sort(
-                                  (a, b) => {{
-
-                                      const aCell =
-                                          a.cells[
-                                              columnIndex
-                                          ];
-
-
-                                      const bCell =
-                                          b.cells[
-                                              columnIndex
-                                          ];
-
-
-                                      if (
-                                          !aCell ||
-                                          !bCell
-                                      ) {{
-                                          return 0;
-                                      }}
-
-
-                                      const aText =
-                                          aCell
-                                              .textContent
-                                              .trim()
-                                              .toLowerCase();
-
-
-                                      const bText =
-                                          bCell
-                                              .textContent
-                                              .trim()
-                                              .toLowerCase();
-
-
-                                      /*
-                                       * Ligne :
-                                       *
-                                       * tri numérique
-                                       */
-
-                                      if (
-                                          columnIndex ===
-                                          LINE_COLUMN
-                                      ) {{
-
-                                          const aNumber =
-                                              parseInt(
-                                                  aText,
-                                                  10
-                                              );
-
-
-                                          const bNumber =
-                                              parseInt(
-                                                  bText,
-                                                  10
-                                              );
-
-
-                                          if (
-                                              !Number.isNaN(
-                                                  aNumber
-                                              ) &&
-                                              !Number.isNaN(
-                                                  bNumber
-                                              )
-                                          ) {{
-
-                                              return ascending
-                                                  ? aNumber -
-                                                    bNumber
-                                                  : bNumber -
-                                                    aNumber;
-
-                                          }}
-
-                                      }}
-
-
-                                      /*
-                                       * Fichier,
-                                       * Code,
-                                       * Message
-                                       */
-
-                                      return ascending
-                                          ? aText.localeCompare(
-                                              bText
+                                  const sortedRows =
+                                      Array.from(
+                                          tbody.querySelectorAll(
+                                              "tr"
                                           )
-                                          : bText.localeCompare(
-                                              aText
-                                          );
-
-                                  }}
-                              );
-
-
-                              sortedRows.forEach(
-                                  row =>
-                                      tbody.appendChild(
-                                          row
-                                      )
-                              );
-
-
-                              /*
-                               * Réinitialiser les indicateurs
-                               */
-
-                              headers.forEach(
-                                  h => {{
-
-                                  const span =
-                                      h.querySelector(
-                                          ".sort-indicator"
                                       );
 
 
-                                  if (span) {{
-                                      span.textContent =
-                                          "";
-                                  }}
+                                  sortedRows.sort(
+                                      (a, b) => {
 
-                              }});
-
-
-                              indicator.textContent =
-                                  ascending
-                                      ? " ▲"
-                                      : " ▼";
+                                          const aCell =
+                                              a.cells[
+                                                  columnIndex
+                                              ];
 
 
-                              ascending =
-                                  !ascending;
+                                          const bCell =
+                                              b.cells[
+                                                  columnIndex
+                                              ];
 
 
-                              filterTable();
+                                          if (
+                                              !aCell ||
+                                              !bCell
+                                          ) {
+                                              return 0;
+                                          }
 
-                          }}
-                      );
 
-                  });
+                                          const aText =
+                                              aCell.textContent
+                                                  .trim()
+                                                  .toLowerCase();
+
+
+                                          const bText =
+                                              bCell.textContent
+                                                  .trim()
+                                                  .toLowerCase();
+
+
+                                          /*
+                                           * Ligne :
+                                           * tri numérique
+                                           */
+
+                                          if (
+                                              columnIndex ===
+                                              LINE_COLUMN
+                                          ) {
+
+                                              const aNumber =
+                                                  parseInt(
+                                                      aText,
+                                                      10
+                                                  );
+
+
+                                              const bNumber =
+                                                  parseInt(
+                                                      bText,
+                                                      10
+                                                  );
+
+
+                                              if (
+                                                  !Number.isNaN(
+                                                      aNumber
+                                                  ) &&
+                                                  !Number.isNaN(
+                                                      bNumber
+                                                  )
+                                              ) {
+
+                                                  return ascending
+                                                      ? aNumber - bNumber
+                                                      : bNumber - aNumber;
+
+                                              }
+
+                                          }
+
+
+                                          /*
+                                           * Fichier,
+                                           * Code,
+                                           * Message
+                                           */
+
+                                          return ascending
+                                              ? aText.localeCompare(
+                                                  bText
+                                              )
+                                              : bText.localeCompare(
+                                                  aText
+                                              );
+
+                                      }
+                                  );
+
+
+                                  sortedRows.forEach(
+                                      row =>
+                                          tbody.appendChild(
+                                              row
+                                          )
+                                  );
+
+
+                                  /*
+                                   * Réinitialiser les indicateurs
+                                   */
+
+                                  headers.forEach(
+                                      h => {
+
+                                          const span =
+                                              h.querySelector(
+                                                  ".sort-indicator"
+                                              );
+
+
+                                          if (span) {
+                                              span.textContent = "";
+                                          }
+
+                                      }
+                                  );
+
+
+                                  indicator.textContent =
+                                      ascending
+                                          ? " ▲"
+                                          : " ▼";
+
+
+                                  ascending =
+                                      !ascending;
+
+
+                                  filterTable();
+
+                              }
+                          );
+
+                      }
+                  );
 
 
                   /*
-                   * État initial
+                   * ==================================================
+                   * ÉTAT INITIAL
+                   * ==================================================
                    */
 
                   filterTable();
@@ -992,9 +991,19 @@ jobs:
           """
 
 
-          # --------------------------------------------------------
+          # ============================================================
+          # Insertion du tableau extrait
+          # ============================================================
+
+          html = html.replace(
+              "__TABLE_HTML__",
+              table_html
+          )
+
+
+          # ============================================================
           # Écriture du fichier HTML
-          # --------------------------------------------------------
+          # ============================================================
 
           html_file.write_text(
               html,
@@ -1007,6 +1016,8 @@ jobs:
           )
 
           PYTHON
+
+
 
 
       # ============================================================
