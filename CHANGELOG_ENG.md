@@ -58,8 +58,16 @@ Important modification of the project **The Last Signal Online** are documented 
 -bugs correction
 
 ### Insertions
-- New test
+- New client test
+- insertion of placeholder files for
+  English, Spanish and Japanese documentation 
+- creation of  05_FACTIONS.md
 ---
+## [1.0.06] - 06/09/2026
 
+### Insertions
+
+- configuration CodeQl
+  
 
 ---
