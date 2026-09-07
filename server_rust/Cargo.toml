@@ -10,7 +10,6 @@ incremental = true
 [dependencies]
 fernet = "0.2"
 argon2 =  "0.6.0"
-rand_core = { version = "0.6.4", features = ["getrandom"] }
 uuid = { version = "1", features = ["v4"] }
 serde = { version = "1.0", features = ["derive"] }
 rand = "0.10" 
@@ -24,7 +23,6 @@ sqlx = { version = "0.9", features = [
     "uuid",
     "macros"
 ] }
-
 tokio = { version = "1", default-features = false, features = [
     "macros",
     "rt-multi-thread",
