@@ -1,12 +1,12 @@
 [🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
 
-# 🌟 Univers
+# 🌍 Universe
 
-> **Document :** Univers
-> **Code :** GDD-001  
-> **Version :** 1.0.0  
-> **Status :** 🟡 Writting  
-> **Last update :** September 6th 2026
+> **Document:** Universe  
+> **Code:** GDD-002  
+> **Version:** 1.0.0  
+> **Status:** 🟡 In progress  
+> **Last updated:** September 6, 2026  
 
 ---
 
@@ -27,163 +27,141 @@
 
 ### 1. Overview
 
-The world of **The Last Signal Online** is a post-apocalyptic world where civilization collapsed following a scientific catastrophe.
+The world of **The Last Signal Online** is a post-apocalyptic universe where civilization collapsed following a catastrophic scientific event.
 
-Infrastructure lies in ruins, nature is reclaiming the land, and contaminated creatures now roam the world.
+Infrastructure lies in ruins, nature is reclaiming the land, and contaminated creatures now roam the wilderness.
 
-Survivors struggle to rebuild their lives while searching for answers about the origins of the catastrophe.
+Survivors struggle to rebuild their lives while searching for answers about the origin of the catastrophe.
 
 ---
 
 ### 2. Background
 
-Before the catastrophe, humanity was experiencing a period of major scientific advancement.
+Before the catastrophe, humanity was experiencing a golden era of scientific advancement.
 
-In complete secrecy, a scientist ran a laboratory where experiments were being conducted to enhance the human genome.
+In absolute secrecy, a rogue scientist directed a laboratory conducting experiments on genetic human enhancement.
 
-These experiments caused a worldwide contamination.
+These experiments caused an uncontrollable worldwide contamination.
 
-Within a few weeks, society collapsed.
+Within a matter of weeks, global society collapsed.
 
 ---
 
 ### 3. The World
 
-The world is completely open.
+The world is entirely open-world.
 
-Players can freely explore the different regions.
+Players can freely explore diverse regions.
 
-Each area has:
+Each region features:
 
-* its own climate;
-* its own resources;
-* its own dangers;
-* its own creatures;
-* its own history.
+* its own distinct climate;
+* its own gatherable resources;
+* its own environmental hazards;
+* its own creature species;
+* its own lore and history.
 
-Some regions will be more dangerous than others.
+Some regions are significantly more dangerous than others.
 
 ---
 
 ### 4. Regions
 
-The world will be made up of numerous areas.
+The game world comprises numerous environmental zones:
 
-Examples include:
+* Abandoned cities
+* Destroyed villages
+* Contaminated forests
+* Mountainous peaks
+* Secret laboratories
+* Military outposts and bases
+* Industrial factories
+* Swamps and wetlands
+* Caverns and cave systems
+* Underground bunkers
 
-* abandoned cities;
-* destroyed villages;
-* contaminated forests;
-* mountains;
-* secret laboratories;
-* military bases;
-* factories;
-* swamps;
-* caves;
-* underground bunkers.
-
-Each region has its own visual identity.
+Each region has its own visual identity and atmosphere.
 
 ---
 
 ### 5. The Contamination
 
-The contamination is the central element of the world.
+Contamination is the central force shaping the world.
 
-It progressively transforms living beings.
+It progressively mutates and transforms living organisms.
 
-Some areas are heavily contaminated.
+Certain areas suffer from extreme contamination levels, while others remain relatively sheltered.
 
-Others remain relatively safe.
-
-The stronger the contamination, the more powerful the enemies become.
+The higher the contamination level, the stronger and more aggressive the enemies become.
 
 ---
 
 #### 5.1 Contamination Levels
 
-The world is divided into several levels of contamination.
-
-Each level affects:
-
-* the creatures encountered;
-* the resources available;
-* the difficulty;
-* the rewards;
-* the risks for players.
+The world is categorized into distinct contamination zones:
 
 ##### 🟢 Green Zone
 
-Green Zones are the safest areas.
+Green Zones are the safest areas in the world.
 
-They are home to the main survivor camps and serve as starting areas for new players.
+They house the main survivor settlements and serve as starting areas for new players.
 
-Creatures are few and relatively weak.
-
-
+Creatures here are sparse and relatively weak.
 
 ##### 🟡 Yellow Zone
 
-Yellow Zones represent the first contaminated regions.
+Yellow Zones represent the boundary of contaminated regions.
 
-Players encounter their first real challenges here.
+Players face their first genuine survival challenges here.
 
-Resources are more abundant, but the dangers increase.
-
-
+Resources are more abundant, but environmental dangers increase.
 
 ##### 🔴 Red Zone
 
-Red Zones are heavily contaminated.
+Red Zones are heavily contaminated and hostile.
 
-Creatures are numerous and much more aggressive.
+Creatures are numerous, aggressive, and mutated.
 
-Players will need to be properly equipped before venturing into these areas.
-
-
+Players must be properly equipped with protective gear before entering.
 
 ##### ⚫ Black Zone
 
-Black Zones represent the heart of the contamination.
+Black Zones represent the epicenter of contamination.
 
-They are the most dangerous areas in the world.
+They are the most lethal areas in the world.
 
 They contain:
 
-* the most powerful creatures;
-* major bosses;
-* forgotten laboratories;
-* lost technologies.
+* the most powerful elite creatures;
+* endgame world bosses;
+* forgotten research laboratories;
+* lost high-grade technology.
 
-The Last Signal Mountain is located within a Black Zone.
+The Last Signal Mountain is located at the center of a Black Zone.
 
 ---
 
 #### 5.2 The Signals
 
-The phenomenon known as **"The Last Signal"** lies at the heart of the universe.
+The phenomenon known as **"The Last Signal"** is at the core of the game's mystery.
 
-In certain locations around the world, strange radio transmissions can be detected.
+In specific locations across the continent, mysterious radio transmissions can be detected.
 
-These signals appear to have an unknown influence on contaminated creatures.
+These signals appear to exert an unknown influence over contaminated creatures.
 
-Their origin remains a mystery.
-
-Players will gradually discover their true nature throughout the main storyline.
+Their true origin remains shrouded in mystery, and players will gradually uncover the truth throughout the main campaign.
 
 ---
 
 #### 5.3 The Last Signal Mountain
 
-At the center of the continent stands a massive mountain that can be seen from many regions.
+At the center of the continent rises a colossal mountain visible from almost every region.
 
-At its summit lies a gigantic waterfall, behind which an ancient scientific facility is hidden.
+At its summit lies a massive waterfall, concealing an ancient high-security scientific facility behind it.
 
-This mountain is the main objective of the adventure.
+Reaching and uncovering this mountain is the ultimate objective of the campaign.
 
-It is considered the most dangerous place in the world.
-
-Survivors have nicknamed it:
+Survivors refer to this peak as:
 
 > **The Last Signal Mountain**
 
@@ -191,35 +169,33 @@ Survivors have nicknamed it:
 
 #### 5.4 The Cities
 
-Before the catastrophe, several major cities occupied the territory.
+Prior to the catastrophe, several bustling metropolises dominated the land.
 
-Today, they lie in ruins.
+Today, they lie in ruined silence.
 
-Each city has:
+Each city possesses:
 
-* its own history;
-* its own architecture;
-* its own inhabitants from before the catastrophe;
-* its own resources;
-* its own secrets.
+* its own unique history;
+* distinct architectural styles;
+* traces of its former pre-war inhabitants;
+* scavengeable resources and technology;
+* hidden secrets and underground sectors.
 
-Some cities may be partially secured by players as development progresses.
+Over time, players can help secure and reclaim parts of certain cities.
 
 ---
 
 #### 5.5 Anomalies
 
-The catastrophe left strange phenomena in its wake.
+The catastrophe left behind erratic spatial and physical phenomena:
 
-These include:
+* Electromagnetic storms (EMPs);
+* Dead communication zones;
+* Visual and light distortions;
+* Localized gravitational anomalies;
+* Unstable radiation and bio-hazard fields.
 
-* electromagnetic storms;
-* areas where communications become impossible;
-* light disturbances;
-* gravitational anomalies;
-* unstable contamination fields.
-
-These anomalies may temporarily alter gameplay and create unpredictable events.
+These anomalies dynamically alter gameplay and create unpredictable world events.
 
 ---
 
@@ -227,102 +203,89 @@ These anomalies may temporarily alter gameplay and create unpredictable events.
 
 Players take on the role of immune survivors.
 
-They represent one of humanity's last hopes.
+They represent humanity's best chance at survival and rebirth.
 
-They can:
+Players can:
 
-* explore;
-* trade;
-* fight;
-* cooperate;
-* form guilds;
-* rebuild certain areas.
+* explore ruins and wilderness;
+* trade and barter;
+* fight hostile threats;
+* cooperate on major objectives;
+* form guilds and alliances;
+* reconstruct and fortify outposts.
 
 ---
 
 ### 7. The Creatures
 
-Creatures are the main threats in the world.
+Mutated creatures are the primary hostile threats in the world.
 
 They originate from:
 
-* contaminated humans;
-* mutated animals;
-* scientific experiments.
+* contaminated human victims;
+* mutated wildlife;
+* escaped artificial laboratory experiments.
 
-Each creature family has:
+Each creature archetype possesses:
 
-* unique behavior;
-* unique abilities;
-* strengths;
-* weaknesses.
+* distinct AI behaviors;
+* unique attack abilities;
+* specific elemental and physical strengths;
+* exploitable combat weaknesses.
 
 ---
 
 ### 8. Resources
 
-Players can gather:
+Players can harvest and scavenge:
 
-* wood;
-* stone;
-* metals;
-* food;
-* electronic components;
-* fuel;
-* medicine.
+* Timber and wood;
+* Stone and minerals;
+* Metals and alloys;
+* Food and potable water;
+* Electronic components;
+* Fuel and chemicals;
+* Pharmaceuticals and medical supplies.
 
-These resources are used for:
-
-* crafting;
-* repairs;
-* construction;
-* trading.
+These resources are used for crafting, equipment repairs, camp construction, and economic trading.
 
 ---
 
 ### 9. Mysteries
 
-The world hides many secrets.
+The world contains numerous hidden secrets to uncover:
 
-Among them are:
-
-* the main laboratory;
-* the scientist's research;
-* forgotten bunkers;
-* confidential documents;
-* the origin of the "Last Signal".
-
-Players will gradually uncover these elements throughout the game.
+* The primary hidden research facility;
+* Dr. Voss's original scientific records;
+* Classified military bunkers;
+* Encrypted pre-war documents;
+* The true nature and purpose of the Last Signal.
 
 ---
 
 ### 10. Atmosphere
 
-The universe should evoke several emotions:
+The game world is designed to evoke a compelling range of emotions:
 
-* loneliness;
-* tension;
-* exploration;
-* hope;
-* mystery.
-
-The world tells a story through its environments, buildings, and the traces left behind by humanity.
-
+* Solitude and isolation;
+* Constant survival tension;
+* The thrill of uncharted exploration;
+* Hope in human resilience;
+* Deep curiosity for the unknown.
 
 ---
-## 📚 Linked documents 
 
+## 📚 Related Documents
 
 - [🌟 Project Vision](01_VISION_ENG.md)
-- [📜 Scénario](03_SCENARIO_ENG.md)
-- [🗺 Regions](03_SCENARIO_ENG.md)
+- [📜 Scenario & Quests](03_SCENARIO_ENG.md)
+- [🗺 Chronology](04_CHRONOLOGIE_ENG.md)
+- [⚔️ Factions](05_FACTIONS_ENG.md)
 
 ---
 
 ## Navigation
 
-⬅️ [Retour au GDD](README_ENG.md)
+⬅️ [Back to GDD](README_ENG.md)
 
 ➡️ [Scenario](03_SCENARIO_ENG.md)
-
-
