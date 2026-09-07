@@ -13,7 +13,7 @@ def generate_map(
     """
 
     import numpy as np
-    from PIL import Image, ImageDraw
+    from PIL import Image
 
     if seed is not None:
         np.random.seed(seed)
