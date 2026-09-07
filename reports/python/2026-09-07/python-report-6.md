@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1645
+Run : 1646
 Branch : main
-Commit : 74a3d17e2af7deca880446447fa62d7fcc470290
-Date : Mon Sep  7 19:23:11 UTC 2026
+Commit : 21d2020e6783a8668573b922ab1d43626661c583
+Date : Mon Sep  7 19:38:52 UTC 2026
 
 ---
 
@@ -11,61 +11,60 @@ Date : Mon Sep  7 19:23:11 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 71
+**Files to reformat:** 70
 
 <details>
 <summary>Show files</summary>
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
@@ -100,7 +99,7 @@ Date : Mon Sep  7 19:23:11 UTC 2026
 | E225 | 138 |
 | E122 | 102 |
 | E303 | 92 |
-| E302 | 92 |
+| E302 | 86 |
 | F401 | 30 |
 | E203 | 27 |
 | E301 | 18 |
@@ -116,10 +115,9 @@ Date : Mon Sep  7 19:23:11 UTC 2026
 | W391 | 6 |
 | E266 | 6 |
 | E211 | 6 |
-| W292 | 5 |
 | F541 | 5 |
 | E129 | 5 |
-| F824 | 4 |
+| W292 | 4 |
 | E713 | 4 |
 | E703 | 4 |
 | E111 | 4 |
@@ -243,17 +241,6 @@ Date : Mon Sep  7 19:23:11 UTC 2026
 | ./Ancien/horloge.py | 221 | E231 | missing whitespace after ',' |
 | ./Ancien/horloge.py | 222 | E225 | missing whitespace around operator |
 | ./Ancien/horloge.py | 224 | E231 | missing whitespace after ',' |
-| ./Ancien/index_manager.py | 6 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 11 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 18 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 20 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 47 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 49 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 56 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 58 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 74 | E302 | expected 2 blank lines, found 1 |
-| ./Ancien/index_manager.py | 76 | F824 | `global _index_recherche` is unused |
-| ./Ancien/index_manager.py | 81 | W292 | no newline at end of file |
 | ./Ancien/inv.py | 14 | E231 | missing whitespace after ',' |
 | ./Ancien/inv.py | 15 | E231 | missing whitespace after ',' |
 | ./Ancien/inv.py | 15 | E231 | missing whitespace after ',' |
@@ -1807,7 +1794,7 @@ Date : Mon Sep  7 19:23:11 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.196774193548387)
+**Average complexity:**  A (4.207236842105263)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1987,13 +1974,6 @@ Ancien/table_de_conversion.py
     F 130:0 convertir_livres - B
     F 12:0 qtes - A
     C 9:0 StatsConversion - A
-Ancien/index_manager.py
-    F 18:0 _ajouter_objet_au_index - B
-    F 56:0 rechercher_dans_index - A
-    F 74:0 supprimer_de_l_index - A
-    F 47:0 _ajouter_mot_cle - A
-    F 11:0 mettre_a_jour_index - A
-    F 6:0 initialiser_index - A
 Ancien/inventaire.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 Ancien/generate_map.py
@@ -2199,8 +2179,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-310 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.196774193548387)
+304 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.207236842105263)
 
 </details>
 
@@ -2221,7 +2201,7 @@ Average complexity: A (4.196774193548387)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-07 19:23:21.575654+00:00
+Run started:2026-09-07 19:39:02.577676+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -4021,7 +4001,7 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12517
+	Total lines of code: 12459
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
@@ -4042,7 +4022,7 @@ Files skipped (0):
 
 ##  📏 Pylint
 
-**Global score:** 7.31/10
+**Global score:** 7.30/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4493,15 +4473,6 @@ Ancien/table_de_conversion.py:350:11: W0125: Using a conditional statement with 
 Ancien/table_de_conversion.py:318:8: W0612: Unused variable 'i' (unused-variable)
 Ancien/table_de_conversion.py:3:0: C0411: standard import "random" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
 Ancien/table_de_conversion.py:4:0: C0411: standard import "dataclasses.dataclass" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
-************* Module Ancien.index_manager
-Ancien/index_manager.py:81:0: C0304: Final newline missing (missing-final-newline)
-Ancien/index_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/index_manager.py:8:4: W0603: Using the global statement (global-statement)
-Ancien/index_manager.py:13:4: W0603: Using the global statement (global-statement)
-Ancien/index_manager.py:20:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
-Ancien/index_manager.py:49:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
-Ancien/index_manager.py:58:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
-Ancien/index_manager.py:76:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
 ************* Module Ancien.inventaire
 Ancien/inventaire.py:26:0: C0301: Line too long (106/100) (line-too-long)
 Ancien/inventaire.py:87:0: C0301: Line too long (320/100) (line-too-long)
@@ -5539,10 +5510,6 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         branch,
         commit
     )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -5646,15 +5613,15 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[169:179]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[38:54]
@@ -5672,7 +5639,7 @@ IGNORED_DIRECTORIES = {
     )
 
     # ==========================================
-    # Quality metrics
+    # Résumé Rust
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5745,13 +5712,13 @@ def clone_repository(
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-        test,
-        severity,
-        confidence,
-        cwe,
-        info,
-        file,
-        line, (duplicate-code)
+            test,
+            severity,
+            confidence,
+            cwe,
+            info,
+            file,
+            line, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[39:46]
 ==scripts.documentation.markdown:[61:68]
@@ -5793,7 +5760,7 @@ IGNORED_DIRECTORIES = {
     )
 
 
-def looks_textual(data: bytes) -> bool: (duplicate-code)
+def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[82:91]
 ==Ancien.inventaire:[559:568]
@@ -5819,11 +5786,11 @@ def looks_textual(data: bytes) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-        run_id,
-        high,
-        medium,
-        low,
-        total, (duplicate-code)
+            run_id,
+            high,
+            medium,
+            low,
+            total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[8:13]
@@ -5832,16 +5799,16 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.31/10
+Your code has been rated at 7.30/10
 
 
 </details>
@@ -5869,7 +5836,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.30s ===============================
+=============================== 1 error in 0.32s ===============================
 
 </details>
 
