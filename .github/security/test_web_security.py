@@ -1,10 +1,7 @@
 ''' Test de la sécurité du web'''
 from __future__ import annotations
-
 import os
 import socket
-import ssl
-import sys
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
