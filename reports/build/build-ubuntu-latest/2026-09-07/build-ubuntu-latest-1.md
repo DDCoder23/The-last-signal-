@@ -1,6 +1,5 @@
 # Build Report
-
-Run : 1631
+un : 1631
 OS : ubuntu-latest
 Branch : main
 Commit : 1de25554d99ee28cc77b2e264f08caa9f8f800cd
@@ -46,5 +45,8 @@ No Godot project found.
 ## Summary
 
 - Python build completed
+- Rust build completed
+- Godot build completed
+
 - Rust build completed
 - Godot build completed
