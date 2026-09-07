@@ -1,75 +1,81 @@
 # 📝 Changelog
 
-Important modification of the project **The Last Signal Online** are documented here.
+All notable changes to the **The Last Signal Online** project are documented in this file.
 
 ---
 
-## [1.0.0] - 13/07/2026~22/08/2026
+## [1.0.0] - 2026-07-13 ~ 2026-08-22
 
-### Insertions
+### Added
 
-- Creation of the project's official documentation.
-- Creation of the file  `docs/README.md`.
-- Definition of the documentation's organisation.
-- Mise en place de la structure des futurs documents.
-- creation of files `docs/gdd/01_VISION`,`docs/gdd/02_UNIVERS`,`docs/gdd/03_SCENARIO`,`docs/gdd/04_VISION`.
-- crearion of  TCP protocol  for the server
-- creation of the treasures' logic 
-- creation of the database and its migrations
-- début d'une sécurisation de la communication
-- creation of the englsih version of the main README.md 
-
-
+- Created the project's official documentation.
+- Created `docs/README.md`.
+- Defined documentation architecture and organization.
+- Established document structure for future specifications.
+- Created `docs/gdd/01_VISION.md`, `docs/gdd/02_UNIVERS.md`, `docs/gdd/03_SCENARIO.md`, and `docs/gdd/04_CHRONOLOGIE.md`.
+- Implemented the server TCP communication protocol.
+- Implemented treasure and loot logic.
+- Created database schema and SQL migrations.
+- Initial security enhancements for network communication.
+- Created the English version of the root `README.md`.
 
 ---
-## [1.0.01] - 23/08/2026
 
-### Insertions
+## [1.0.01] - 2026-08-23
 
-- Improvement of the protocol
-- controls are now aviable in English, Japanese and Spanish
-- improvement of the SQL injections' test
-- New security tests
----
-## [1.0.02] - 24/08/2026
+### Added
 
-### Insertions
-
-- verification of the ban by the server
-- bugs correction 
+- Protocol improvements.
+- Keyboard commands available in English, Japanese, and Spanish.
+- Improved SQL injection tests.
+- Added new security tests.
 
 ---
-## [1.0.03] - 25/08/2026
 
-### Ajout
+## [1.0.02] - 2026-08-24
 
-- new security tests
+### Added
 
----
-## [1.0.04] - 26/08/2026~30/08/2026
-
-### Optimisation
-
--optimisation of the communication's protocol and the client
-## [1.0.05] - 01/09/2026~05/09/2026
-
-### correction
-
--bugs correction
-
-### Insertions
-- New client test
-- insertion of placeholder files for
-  English, Spanish and Japanese documentation 
-- creation of  05_FACTIONS.md
-- creation of Japanase and Spanish main README
+- Server-side ban verification.
+- Bug fixes.
 
 ---
-## [1.0.06] - 06/09/2026
 
-### Insertions
+## [1.0.03] - 2026-08-25
 
-- configuration CodeQl
-  
+### Added
+
+- Added new security tests.
+
+---
+
+## [1.0.04] - 2026-08-26 ~ 2026-08-30
+
+### Performance Improvements
+
+- Optimized communication protocol and client handling.
+
+---
+
+## [1.0.05] - 2026-09-01 ~ 2026-09-05
+
+### Bug Fixes
+
+- Resolved bugs and improved stability.
+
+### Added
+
+- Added client test suite.
+- Added documentation placeholders for English, Spanish, and Japanese.
+- Created `docs/gdd/05_FACTIONS.md`.
+- Created root `README_JP.md` (Japanese) and `README_ESP.md` (Spanish).
+
+---
+
+## [1.0.06] - 2026-09-06
+
+### Added
+
+- Added CodeQL analysis configuration.
 
 ---
