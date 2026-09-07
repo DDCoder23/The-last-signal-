@@ -222,7 +222,7 @@ class Objet:
         return self.nom_affiche()
     @property
     def image(self):
-       return self.nom_image +".png" if self.nom_image!= None else " "
+        return self.nom_image +".png" if self.nom_image!= None else " "
 
     def ajouter(self, qte):
         self.quantite += qte
