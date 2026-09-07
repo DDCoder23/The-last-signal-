@@ -2,7 +2,7 @@ use the_last_signal_server::database::{
     database_manager::DatabaseManager,
     migrations,
 };
-use log::{debug,info};
+use log::info;
 use the_last_signal_server::network::server::Server;
 use the_last_signal_server::utils::logger::logger::ServerLogger;
 
