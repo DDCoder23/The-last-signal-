@@ -142,8 +142,7 @@ Compiling 'tests/test_splitmix64.py'...
 [1m[92m  Downloaded[0m openssl-macros v0.1.1
 [1m[92m  Downloaded[0m parking_lot_core v0.9.12
 [1m[92m  Downloaded[0m sqlx-macros-core v0.9.0
-[1m[92m  Downloaded[0m uni0
-[1m[92m  Dow8
+[1m[92m  Downloaded[0m unicode-bidi v0.3.18
 [1m[92m  Downloaded[0m uuid v1.26.0
 [1m[92m  Downloaded[0m crypto-common v0.2.2
 [1m[92m  Downloaded[0m foldhash v0.2.0
