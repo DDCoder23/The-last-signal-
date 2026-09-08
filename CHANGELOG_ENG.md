@@ -79,3 +79,10 @@ All notable changes to the **The Last Signal Online** project are documented in 
 - Added CodeQL analysis configuration.
 
 ---
+
+## [1.0.07] - 2026-09-07
+### Added
+
+-Added new docupmentation in English
+
+---
