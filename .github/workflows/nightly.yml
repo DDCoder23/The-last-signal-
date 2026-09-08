@@ -19,7 +19,8 @@ jobs:
 
   launch:
     uses: ./.github/workflows/Launcher.yml
-  
+    secrets:
+        VAULT_KEY: ${{ secrets.VAULT_KEY }}
   archive:
     needs: launch
     if: >-
