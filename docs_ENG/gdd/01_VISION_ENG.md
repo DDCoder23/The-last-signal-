@@ -1,14 +1,15 @@
 [🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
 
-# 🌟 Project vision
+# 🌟 Project Vision
 
-> **Document :** Project vision
-> **Code :** GDD-001  
-> **Version :** 1.0.0  
-> **Status :** 🟡 Writting  
-> **Last update :** September 6th 2026
+> **Document:** Project Vision  
+> **Code:** GDD-001  
+> **Version:** 1.0.0  
+> **Status:** 🟡 In progress  
+> **Last updated:** September 6, 2026  
 
 ---
+
 ## 📖 Table of Contents
 
 1. Objective
@@ -121,13 +122,13 @@ We want players to experience:
 
 The development of the game is based on several core principles:
 
-* Accessibility.
-* Cooperation.
-* Immersion.
-* Freedom of exploration.
-* Rewarding progression.
-* Constant evolution.
-* Respect for the community.
+* Accessibility
+* Cooperation
+* Immersion
+* Freedom of exploration
+* Rewarding progression
+* Constant evolution
+* Respect for the community
 
 ---
 
@@ -137,9 +138,9 @@ In the long term, **The Last Signal Online** aims to provide:
 
 * a vast persistent world;
 * several hundred concurrent players;
-* regular updates;
+* regular content updates;
 * a player-driven economy;
-* global events;
+* global world events;
 * story-driven expansions.
 
 ---
@@ -155,23 +156,20 @@ The game is intended for players who enjoy:
 * cooperative gameplay;
 * long-term progression.
 
-**Recommended age:**
-
-**12+**
-
+**Recommended age:** **12+**
 
 ---
 
-## 📚 Linked documents 
+## 📚 Related Documents
 
 - [🎮 Game Design Document](README_ENG.md)
-- [🌍 Univers](02_UNIVERS_ENG.md)
-- [📜 Scénario](03_SCENARIO_ENG.md)
+- [🌍 Universe](02_UNIVERS_ENG.md)
+- [📜 Scenario & Quests](03_SCENARIO_ENG.md)
 
 ---
 
 ## Navigation
 
-⬅️ [Retour au GDD](README_ENG.md)
+⬅️ [Back to GDD](README_ENG.md)
 
-➡️ [Univers](02_UNIVERS_ENG.md)
+➡️ [Universe](02_UNIVERS_ENG.md)
