@@ -71,9 +71,9 @@ To ensure quality and consistency, please follow these guidelines:
 
 Before contributing, also see:
 
-➡️ [📜 Development Rules](docs/CODING_RULES.md)
+➡️ [📜 Development Rules](docs_ENG/CODING_RULES_ENG.md)
 
-➡️ [📖 Documentation](docs/README.md)
+➡️ [📖 Documentation](docs_ENG/README_ENG.md)
 
 ## 🚀 Project Vision
 
@@ -130,7 +130,12 @@ The-last-signal/
 │
 ├── assets/                     # Graphics and audio resources
 │
-├── docs/                       # Complete documentation
+├── docs/                       # Complete documentation (French)
+│   ├── gdd/                    # Game Design Document
+│   ├── tdd/                    # Technical Design Document
+│   └── ...
+│
+├── docs_ENG/                   # Complete documentation (English)
 │   ├── gdd/                    # Game Design Document
 │   ├── tdd/                    # Technical Design Document
 │   └── ...
@@ -149,7 +154,7 @@ The-last-signal/
 
 The complete project documentation is available here:
 
-➡️ [📖 Official Documentation](docs/README.md)
+➡️ [📖 Official Documentation](docs_ENG/README_ENG.md)
 
 It contains:
 
@@ -230,13 +235,13 @@ Please refer to the following file:
 
 See:
 
-➡️ [📅 Roadmap](docs/ROADMAP.md)
+➡️ [📅 Roadmap](docs_ENG/ROADMAP_ENG.md)
 
 ---
 
-## 📜 Licence
+## 📜 License
 
-➡️ [📜 Licence](LICENSE)
+➡️ [📜 License](LICENSE)
 
 ---
 
