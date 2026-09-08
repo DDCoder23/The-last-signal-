@@ -80,3 +80,11 @@ l'espagnol et le japonais
   
 
 ---
+## [1.0.07] - 07/09/2026
+
+### Ajout
+
+- ajout de nouvelle documentation anglaise
+  
+
+---
