@@ -39,7 +39,7 @@ pub struct Tresor {
 }
 
 impl Tresor {
-    pub fn new(coeff_loot: f64) -> Self {
+    pub fn new() -> Self {
         let mut rng = rand::rng();
 
         // -------------------------------------------------
@@ -430,7 +430,7 @@ let sous_loot_livre_admin = HashMap::from([
             seuil_artefact_peu_commun,
             sous_loot_livre_normal,
             sous_loot_livre_admin,
-            coeff_loot,
+            coeff_loot: 1.0,
         
         }
     }
@@ -443,7 +443,7 @@ let sous_loot_livre_admin = HashMap::from([
     is_admin: bool,
     coeff_loot: f64,
 ) -> Result<HashMap<String, u32>, sqlx::Error> {
-    // Mise à jour du coefficient de loot
+    // Mise à jour du coefficient de loot (par défaut 1.0)
     self.coeff_loot = coeff_loot;
     
     let mut rng = rand::rng();
