@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 1672
+Run : 1673
 Branch : main
-Commit : bb3823936fa2821287c17aca9d8306109c8e5be5
-Date : Wed Sep  9 11:48:07 UTC 2026
+Commit : 8d57db028db9ff27579baefcf3e2b34f72e392a8
+Date : Wed Sep  9 12:08:15 UTC 2026
 
 
 ## Cargo fmt
@@ -529,6 +529,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        ("veau".to_string(), 10.0),
 -        ("morue".to_string(), 10.0),
 -        ("crabe".to_string(), 10.0),
+-        ("saumon".to_string(), 10.0),
 -    ]),
 -);
 +            "viande".to_string(),
@@ -542,6 +543,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +                ("veau".to_string(), 10.0),
 +                ("morue".to_string(), 10.0),
 +                ("crabe".to_string(), 10.0),
++                ("saumon".to_string(), 10.0),
 +            ]),
 +        );
          sous_loot.insert(
@@ -679,7 +681,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          Self {
              loot_par_niveau,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:428:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:429:
              seuil_artefact_commun,
              seuil_artefact_peu_commun,
              sous_loot_livre_normal,
@@ -962,7 +964,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  SELECT nombre
                  FROM echecs
                  WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:609:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:610:
                    AND categorie = ?
                    AND objet = ?
                  "#,
@@ -1068,7 +1070,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:682:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:683:
                      DO UPDATE SET
                          nombre = 0
                      "#,
@@ -1101,7 +1103,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:712:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:713:
                      DO UPDATE SET
                          nombre = nombre + 1
                      "#,
@@ -1238,7 +1240,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              SELECT nombre
              FROM echecs
              WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:795:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:796:
                AND categorie = ?
                AND objet = ?
              "#,
@@ -1337,7 +1339,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:865:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:866:
                  DO UPDATE SET
                      nombre = 0
                  "#,
@@ -1370,7 +1372,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:895:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:896:
                  DO UPDATE SET
                      nombre = nombre + 1
                  "#,
@@ -4313,18 +4315,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling stable_deref_trait v1.2.1
    Compiling zerofrom v0.1.8
    Compiling pin-project-lite v0.2.17
-   Compiling memchr v2.8.3
+   Compiling typenum v1.20.1
    Compiling yoke v0.8.3
    Compiling futures-core v0.3.34
-   Compiling smallvec v1.16.0
-   Compiling zerovec v0.11.8
    Compiling writeable v0.6.4
-   Compiling typenum v1.20.1
+   Compiling zerovec v0.11.8
+   Compiling smallvec v1.16.0
+   Compiling memchr v2.8.3
    Compiling tinystr v0.8.4
    Compiling litemap v0.8.3
+   Compiling icu_locale_core v2.3.0
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
-   Compiling icu_locale_core v2.3.0
    Compiling utf8_iter v1.0.4
    Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
@@ -4337,24 +4339,24 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling bytes v1.12.1
    Compiling icu_provider v2.3.1
    Compiling serde_core v1.0.229
-   Compiling icu_properties v2.3.0
    Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
    Compiling rand_core v0.10.1
-   Compiling once_cell v1.21.4
    Compiling equivalent v1.0.2
-   Compiling generic-array v0.14.9
+   Compiling once_cell v1.21.4
    Compiling tracing-core v0.1.36
+   Compiling generic-array v0.14.9
    Compiling parking_lot_core v0.9.12
-   Compiling idna_adapter v1.2.2
-   Compiling allocator-api2 v0.2.21
    Compiling cpufeatures v0.2.17
-   Compiling percent-encoding v2.3.2
    Compiling slab v0.4.12
-   Compiling futures-io v0.3.34
    Compiling foldhash v0.2.0
+   Compiling idna_adapter v1.2.2
    Compiling futures-task v0.3.34
-   Compiling form_urlencoded v1.2.2
+   Compiling percent-encoding v2.3.2
+   Compiling allocator-api2 v0.2.21
+   Compiling futures-io v0.3.34
    Compiling futures-util v0.3.34
+   Compiling form_urlencoded v1.2.2
    Compiling hashbrown v0.16.1
    Compiling idna v1.1.0
    Compiling serde v1.0.229
@@ -4363,27 +4365,27 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling getrandom v0.4.3
    Compiling zmij v1.0.23
    Compiling crossbeam-utils v0.8.23
-   Compiling crc-catalog v2.5.0
-   Compiling parking v2.2.1
    Compiling itoa v1.0.18
+   Compiling parking v2.2.1
    Compiling hashbrown v0.17.1
-   Compiling serde_json v1.0.151
+   Compiling crc-catalog v2.5.0
+   Compiling crc v3.4.0
    Compiling crossbeam-queue v0.3.14
+   Compiling serde_json v1.0.151
    Compiling event-listener v5.4.2
    Compiling indexmap v2.14.2
-   Compiling crc v3.4.0
-   Compiling futures-intrusive v0.5.0
    Compiling either v1.18.0
+   Compiling futures-intrusive v0.5.0
    Compiling hashlink v0.11.1
    Compiling url v2.5.8
    Compiling block-buffer v0.10.4
    Compiling crypto-common v0.1.6
-   Compiling tokio v1.53.1
    Compiling digest v0.10.7
+   Compiling tokio v1.53.1
    Compiling spin v0.9.9
    Compiling cmov v0.5.4
-   Compiling ctutils v0.4.2
    Compiling tracing v0.1.44
+   Compiling ctutils v0.4.2
    Compiling flume v0.12.0
    Compiling sha2 v0.10.9
    Compiling futures-executor v0.3.34
@@ -4393,47 +4395,47 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling log v0.4.34
    Compiling thiserror v2.0.20
    Compiling base64 v0.22.1
-   Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
    Compiling uuid v1.26.0
    Compiling aho-corasick v1.1.5
    Compiling cpufeatures v0.3.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
-   Compiling foreign-types-shared v0.1.1
-   Compiling base64ct v1.8.3
    Compiling sqlx-core v0.9.0
-   Compiling phc v0.6.1
+   Compiling base64ct v1.8.3
+   Compiling foreign-types-shared v0.1.1
    Compiling foreign-types v0.3.2
+   Compiling phc v0.6.1
    Compiling regex-automata v0.4.18
    Compiling digest v0.11.3
    Compiling libsqlite3-sys v0.37.0
-   Compiling sqlx-sqlite v0.9.0
    Compiling openssl-sys v0.9.117
-   Compiling sqlx-macros-core v0.9.0
+   Compiling sqlx-sqlite v0.9.0
    Compiling adler2 v2.0.1
-   Compiling simd-adler32 v0.3.10
    Compiling bitflags v2.13.1
+   Compiling simd-adler32 v0.3.10
+   Compiling sqlx-macros-core v0.9.0
    Compiling iana-time-zone v0.1.65
    Compiling chrono v0.4.45
-   Compiling openssl v0.10.81
    Compiling miniz_oxide v0.9.1
-   Compiling sqlx-macros v0.9.0
+   Compiling openssl v0.10.81
    Compiling zeroize v1.9.0
+   Compiling sqlx-macros v0.9.0
    Compiling regex v1.13.1
    Compiling blake2 v0.11.0
-   Compiling crc32fast v1.5.1
    Compiling password-hash v0.6.1
+   Compiling crc32fast v1.5.1
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
    Compiling byteorder v1.5.0
    Compiling nu-ansi-term v0.50.3
    Compiling rand v0.10.2
    Compiling flexi_logger v0.31.10
-   Compiling fernet v0.2.2
-   Compiling argon2 v0.6.0
    Compiling sqlx v0.9.0
    Compiling flate2 v1.1.10
+   Compiling fernet v0.2.2
+   Compiling argon2 v0.6.0
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
 warning: fields `user_id` and `password_hash` are never read
   --> src/network/handler.rs:41:5
@@ -4461,7 +4463,7 @@ warning: constant `PP` is never used
 
 warning: `the-last-signal-server` (lib) generated 3 warnings
 warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.31s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.24s
      Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-e87c1254ed6ecc2a)
 
 running 0 tests
