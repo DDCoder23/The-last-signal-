@@ -52,10 +52,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                  category: String::from("épée") , 
                                  enchantements: Vec::from["Aura de feu I"], 
                                 niv: 1,)),
-    convertir_livres(
-        stuff: inventaire,
-        niv: 2,
-        nb: 1,).await?;
+   
     
     let server =
         Server::new(
