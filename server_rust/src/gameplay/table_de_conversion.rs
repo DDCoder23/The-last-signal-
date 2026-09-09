@@ -1,7 +1,7 @@
 use rand::Rng;
 use sqlx::SqlitePool;
 use std::collections::HashMap;
-use crate::objets::{Livre, Objet};
+use crate::gameplay::objets::{Livre, Objet};
 
 #[derive(Debug, Clone)]
 pub struct StatsConversion {
@@ -208,7 +208,7 @@ impl TableDeConversion {
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
 
         for _ in 0..nb {
             let livres_niv1: Vec<String> = stuff
@@ -282,7 +282,7 @@ impl TableDeConversion {
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
 
         for _ in 0..nb {
             let livres_niv2: Vec<String> = stuff
@@ -365,8 +365,7 @@ impl TableDeConversion {
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
-        let mut rng = rand::thread_rng();
-
+        let mut rng = rand::rng();
         for _ in 0..nb {
             let livres_niv3: Vec<String> = stuff
                 .iter()
@@ -450,8 +449,7 @@ impl TableDeConversion {
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
-        let mut rng = rand::thread_rng();
-
+        let mut rng = rand::rng();
         for _ in 0..nb {
             let livres_niv4: Vec<String> = stuff
                 .iter()
@@ -541,7 +539,7 @@ impl TableDeConversion {
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
 
         for _ in 0..nb {
             let livres_niv5: Vec<String> = stuff
