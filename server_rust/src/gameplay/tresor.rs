@@ -441,10 +441,10 @@ let sous_loot_livre_admin = HashMap::from([
     account_id: i64,
     niveau: u32,
     is_admin: bool,
-    coeff_loot: f64,
+    coeff_loot: Option<f64>,
 ) -> Result<HashMap<String, u32>, sqlx::Error> {
-    // Mise à jour du coefficient de loot (par défaut 1.0)
-    self.coeff_loot = coeff_loot;
+    // Mise à jour du coefficient de loot avec valeur par défaut 1.0
+    self.coeff_loot = coeff_loot.unwrap_or(1.0);
     
     let mut rng = rand::rng();
 
