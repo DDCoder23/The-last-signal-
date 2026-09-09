@@ -1,8 +1,5 @@
-
 """Test de sécurité de Git."""
-
 from __future__ import annotations
-
 import re
 import subprocess
 from pathlib import Path
@@ -259,4 +256,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-    
