@@ -577,4 +577,61 @@ impl TableDeConversion {
                 && lv2.category == lv3.category
                 && lv3.category == lv4.category
                 && lv4.category == lv5.category
+                && lv5.category == lv6.category
+                && lv1.enchantements.is_some()
+                && !lv1.enchantements.as_ref().unwrap().is_empty()
+                && lv2.enchantements.is_some()
+                && !lv2.enchantements.as_ref().unwrap().is_empty()
+                && lv3.enchantements.is_some()
+                && !lv3.enchantements.as_ref().unwrap().is_empty()
+                && lv4.enchantements.is_some()
+                && !lv4.enchantements.as_ref().unwrap().is_empty()
+                && lv5.enchantements.is_some()
+                && !lv5.enchantements.as_ref().unwrap().is_empty()
+                && lv6.enchantements.is_some()
+                && !lv6.enchantements.as_ref().unwrap().is_empty()
+            {
+                let enchantements = Self::fusionner_enchantements(
+                    6,
+                    &[
+                        lv1.enchantements.as_ref().unwrap().clone(),
+                        lv2.enchantements.as_ref().unwrap().clone(),
+                        lv3.enchantements.as_ref().unwrap().clone(),
+                        lv4.enchantements.as_ref().unwrap().clone(),
+                        lv5.enchantements.as_ref().unwrap().clone(),
+                        lv6.enchantements.as_ref().unwrap().clone(),
+                    ],
+                );
+
+                let new_livre = Livre::new(
+                    "livre enchant niv 6",
+                    None,
+                    1,
+                    lv1.category.clone().as_deref(),
+                    Some(enchantements),
+                    6,
+                );
+
+                // Reduce quantities
+                for clef in &[clef1, clef2, clef3, clef4, clef5, clef6] {
+                    if let Some(livre) = stuff.get_mut(*clef) {
+                        livre.retirer(1);
+                    }
+                }
+
+                // Add or increment new book
+                stuff
+                    .entry("livre enchant niv 6".to_string())
+                    .and_modify(|l| l.ajouter(1))
+                    .or_insert(new_livre);
+
+                stats.livres_utilises += 6;
+                stats.livres_crees += 1;
+            }
+        }
+
+        Ok(())
+    }
+}
+
             
