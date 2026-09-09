@@ -41,17 +41,23 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     ServerLogger::set_database(database.pool().clone());
     let mut inventaire = HashMap::new();
     inventaire.insert("livre enchant niv 1".to_string(), 
-                      Livre::new(String::from("livre enchant niv 1"), 
-                                 1, 
-                                 String::from("épée") , 
-                                 Vec::from["Aura de feu I"], 
-                                1,));
+                      Livre::new(
+    "livre enchant niv 1",
+    None,
+    1,
+    Some("épée"),
+    Some(vec!["Aura de feu I".to_string()]),
+    1,
+));
     inventaire.insert("livre enchant niv 1".to_string(), 
-                      Livre::new(String::from("livre enchant niv 1"), 
-                                 1, 
-                                 String::from("épée") , 
-                                 Vec::from["Aura de feu I"], 
-                                1,));
+                      Livre::new(
+    "livre enchant niv 1",
+    None,
+    1,
+    Some("épée"),
+    Some(vec!["Aura de feu I".to_string()]),
+    1,
+));
    
     
     let server =
