@@ -629,17 +629,17 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
              * PITY :
              *
              * Un objet dont la probabilité originale
-             * est strictement inférieure à 3 % bénéficie
+             * est strictement inférieure à 5 % bénéficie
              * du bonus.
              *
              * +7,5 % du poids original par échec.
              * 
              * Applique aussi le coefficient de loot
              */
-            let poids_ajuste = if probabilite < 0.03 {
+            let poids_ajuste = if probabilite < 0.05 {
                 *poids * self.coeff_loot * (1.0 + 0.075 * echecs as f64)
             } else {
-                *poids * self.coeff_loot
+                *poids
             };
 
             table_ajustee.insert(
