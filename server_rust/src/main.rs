@@ -45,13 +45,13 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
                                  1, 
                                  String::from("épée") , 
                                  Vec::from["Aura de feu I"], 
-                                niv: 1,));
+                                1,));
     inventaire.insert("livre enchant niv 1".to_string(), 
                       Livre::new(String::from("livre enchant niv 1"), 
                                  1, 
                                  String::from("épée") , 
                                  Vec::from["Aura de feu I"], 
-                                niv: 1,));
+                                1,));
    
     
     let server =
