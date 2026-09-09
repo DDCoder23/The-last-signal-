@@ -43,10 +43,11 @@ jobs:
 
           git --work-tree=ci-reports-temp checkout origin/ci-reports -- .
 
-          mkdir -p reports dashboard
+          mkdir -p reports
 
-          cp -r ci-reports-temp/reports/* reports/ 2>/dev/null || true
-          cp -r ci-reports-temp/dashboard/* dashboard/ 2>/dev/null || true
+          
+          rsync -a --delete  ci-reports-temp/reports/  "$GITHUB_WORKSPACE/reports" 2>/dev/null || true
+          
 
       #######################################################
       # Databases
