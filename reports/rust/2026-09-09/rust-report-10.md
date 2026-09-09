@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 1697
+Run : 1702
 Branch : main
-Commit : 7a9e46925890895c690a4d13093775f8330e657c
-Date : Wed Sep  9 20:30:22 UTC 2026
+Commit : bac58131bd28d781f29a86bb3f9dd34fbb539063
+Date : Wed Sep  9 20:57:42 UTC 2026
 
 
 ## Cargo fmt
@@ -267,13 +267,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +    (0..nb).map(|_| rng.random_range(1..=face)).sum()
  }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/mod.rs:1:
- pub mod dice;
- pub mod objets;
--pub mod tresor;
- pub mod table_de_conversion;
-+pub mod tresor;
- 
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:1:
 -use serde::{Serialize, Deserialize};
 +use serde::{Deserialize, Serialize};
@@ -317,35 +310,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          let objet = Objet::new(nom, image, quantite, TypeObjet::Potion);
          Self {
              objet,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/table_de_conversion.rs:1:
-+use crate::gameplay::objets::{Livre, Objet};
- use rand::Rng;
- use sqlx::SqlitePool;
- use std::collections::HashMap;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/table_de_conversion.rs:4:
--use crate::gameplay::objets::{Livre, Objet};
- 
- #[derive(Debug, Clone)]
- pub struct StatsConversion {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/table_de_conversion.rs:22:
- 
- impl InventaireManager {
-     /// Retourne la quantité et la catégorie d'un livre dans l'inventaire du joueur
--    pub fn qtes(
--        nom: &str,
--        stuff: &HashMap<String, Objet>,
--    ) -> (u32, Option<String>) {
-+    pub fn qtes(nom: &str, stuff: &HashMap<String, Objet>) -> (u32, Option<String>) {
-         if let Some(livre) = stuff.get(nom) {
-             (livre.objet.quantite, livre.category.clone())
-         } else {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/table_de_conversion.rs:631:
-         Ok(())
-     }
- }
--
--            
- 
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1:
 -use rand::{Rng,RngExt};
 +use crate::gameplay::dice::jet_de_des;
@@ -4317,39 +4281,105 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
  
      let encrypted = fs::read_to_string("../security/vault.enc")?;
  
-error: invalid `struct` delimiters or `fn` call arguments
-  --> /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:44:23
-   |
-44 | /                       Livre::new(nom: String::from("livre enchant niv 1"), 
-45 | |                                  quantite: 1, 
-46 | |                                  category: String::from("épée") , 
-47 | |                                  enchantements: Vec::from["Aura de feu I"], 
-48 | |                                 niv: 1,)),
-   | |________________________________________^
-   |
-help: if `Livre::new` is a struct, use braces as delimiters
-   |
-44 ~                       Livre::new { nom: String::from("livre enchant niv 1"), 
-45 |                                  quantite: 1, 
-46 |                                  category: String::from("épée") , 
-47 |                                  enchantements: Vec::from["Aura de feu I"], 
-48 ~                                 niv: 1, }),
-   |
-help: if `Livre::new` is a function, use the arguments directly
-   |
-44 ~                       Livre::new(String::from("livre enchant niv 1"), 
-45 ~                                  1, 
-46 ~                                  String::from("épée") , 
-47 ~                                  Vec::from["Aura de feu I"], 
-48 ~                                 1,)),
-   |
-
-error: expected one of `.`, `;`, `?`, `}`, or an operator, found `,`
-  --> /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:48:42
-   |
-48 | ...                   niv: 1,)),
-   |                                ^ expected one of `.`, `;`, `?`, `}`, or an operator
-
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:1:
+-use the_last_signal_server::database::{
+-    database_manager::DatabaseManager,
+-    migrations,
+-};
+ use log::info;
+-use the_last_signal_server::network::server::Server;
++use std::collections::HashMap;
++use the_last_signal_server::database::{database_manager::DatabaseManager, migrations};
+ use the_last_signal_server::gameplay::objets::Livre;
++use the_last_signal_server::network::server::Server;
+ use the_last_signal_server::utils::logger::logger::ServerLogger;
+-use std::collections::HashMap;
+ #[tokio::main]
+ 
+ /*
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:13:
+-    Fonction asynchrone exécutée par le runtime Tokio. 
++    Fonction asynchrone exécutée par le runtime Tokio.
+     Point d'entrée principal du serveur.
+ 
+     Initialise :
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:21:
+ */
+ async fn main() -> Result<(), Box<dyn std::error::Error>> {
+     let _guard = ServerLogger::init();
+-    
+-    
+-    let database_url = 
+-        std::env::var("DATABASE_URL")?;
+-    let database_path =
+-        std::env::var("DATABASE_PATH")?;
+ 
+-    let database =
+-        DatabaseManager::new(&database_path,& database_url)
+-            .await?;
++    let database_url = std::env::var("DATABASE_URL")?;
++    let database_path = std::env::var("DATABASE_PATH")?;
+ 
++    let database = DatabaseManager::new(&database_path, &database_url).await?;
++
+     database.ping().await?;
+ 
+-    migrations::run(&database.pool())
+-        .await?;
++    migrations::run(&database.pool()).await?;
+ 
+     info!("Base SQLite prête.");
+     ServerLogger::set_database(database.pool().clone());
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:42:
+     let mut inventaire = HashMap::new();
+-    inventaire.insert("livre enchant niv 1".to_string(), 
+-                      Livre::new(String::from("livre enchant niv 1"), 
+-                                 1, 
+-                                 String::from("épée") , 
+-                                 Vec::from["Aura de feu I"], 
+-                                1,));
+-    inventaire.insert("livre enchant niv 1".to_string(), 
+-                      Livre::new(String::from("livre enchant niv 1"), 
+-                                 1, 
+-                                 String::from("épée") , 
+-                                 Vec::from["Aura de feu I"], 
+-                                1,));
+-   
+-    
+-    let server =
+-        Server::new(
+-            "127.0.0.1:5000",
+-            database,
+-        )
+-        .await?;
++    inventaire.insert(
++        "livre enchant niv 1".to_string(),
++        Livre::new(
++            String::from("livre enchant niv 1"),
++            1,
++            String::from("épée"),
++            Vec::from["Aura de feu I"],
++            1,
++        ),
++    );
++    inventaire.insert(
++        "livre enchant niv 1".to_string(),
++        Livre::new(
++            String::from("livre enchant niv 1"),
++            1,
++            String::from("épée"),
++            Vec::from["Aura de feu I"],
++            1,
++        ),
++    );
+ 
++    let server = Server::new("127.0.0.1:5000", database).await?;
+ 
+     server.start().await;
+-    
+ 
+     Ok(())
+ }
 ⚠️ cargo fmt --check failed
 
 ## Cargo clippy
@@ -4360,55 +4390,55 @@ error: expected one of `.`, `;`, `?`, `}`, or an operator, found `,`
    Compiling stable_deref_trait v1.2.1
    Compiling zerofrom v0.1.8
    Compiling pin-project-lite v0.2.17
-   Compiling smallvec v1.16.0
+   Compiling writeable v0.6.4
    Compiling yoke v0.8.3
    Compiling memchr v2.8.3
-   Compiling typenum v1.20.1
    Compiling zerovec v0.11.8
-   Compiling tinystr v0.8.4
    Compiling litemap v0.8.3
-   Compiling writeable v0.6.4
+   Compiling smallvec v1.16.0
    Compiling futures-core v0.3.34
-   Compiling icu_locale_core v2.3.0
+   Compiling typenum v1.20.1
+   Compiling tinystr v0.8.4
    Compiling potential_utf v0.1.6
+   Compiling icu_locale_core v2.3.0
    Compiling zerotrie v0.2.5
    Compiling utf8_iter v1.0.4
+   Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
-   Compiling icu_collections v2.3.0
    Compiling icu_normalizer_data v2.3.0
    Compiling icu_properties_data v2.3.0
-   Compiling socket2 v0.6.5
    Compiling mio v1.2.3
+   Compiling socket2 v0.6.5
    Compiling futures-sink v0.3.34
    Compiling bytes v1.12.1
    Compiling icu_provider v2.3.1
    Compiling serde_core v1.0.229
-   Compiling icu_properties v2.3.0
-   Compiling icu_normalizer v2.3.0
-   Compiling once_cell v1.21.4
-   Compiling equivalent v1.0.2
    Compiling rand_core v0.10.1
+   Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling equivalent v1.0.2
+   Compiling once_cell v1.21.4
    Compiling generic-array v0.14.9
    Compiling tracing-core v0.1.36
    Compiling parking_lot_core v0.9.12
-   Compiling idna_adapter v1.2.2
-   Compiling slab v0.4.12
-   Compiling foldhash v0.2.0
-   Compiling futures-task v0.3.34
-   Compiling percent-encoding v2.3.2
-   Compiling allocator-api2 v0.2.21
-   Compiling cpufeatures v0.2.17
    Compiling futures-io v0.3.34
-   Compiling form_urlencoded v1.2.2
+   Compiling allocator-api2 v0.2.21
+   Compiling idna_adapter v1.2.2
+   Compiling cpufeatures v0.2.17
+   Compiling slab v0.4.12
+   Compiling futures-task v0.3.34
+   Compiling foldhash v0.2.0
+   Compiling percent-encoding v2.3.2
    Compiling futures-util v0.3.34
-   Compiling idna v1.1.0
    Compiling hashbrown v0.16.1
+   Compiling form_urlencoded v1.2.2
+   Compiling idna v1.1.0
+   Compiling num-traits v0.2.19
    Compiling serde v1.0.229
    Compiling parking_lot v0.12.5
-   Compiling num-traits v0.2.19
-   Compiling zmij v1.0.23
    Compiling getrandom v0.4.3
+   Compiling zmij v1.0.23
    Compiling crossbeam-utils v0.8.23
    Compiling itoa v1.0.18
    Compiling crc-catalog v2.5.0
@@ -4418,20 +4448,20 @@ error: expected one of `.`, `;`, `?`, `}`, or an operator, found `,`
    Compiling event-listener v5.4.2
    Compiling crc v3.4.0
    Compiling serde_json v1.0.151
-   Compiling either v1.18.0
-   Compiling indexmap v2.14.2
    Compiling futures-intrusive v0.5.0
+   Compiling indexmap v2.14.2
+   Compiling either v1.18.0
    Compiling hashlink v0.11.1
    Compiling url v2.5.8
-   Compiling block-buffer v0.10.4
    Compiling crypto-common v0.1.6
+   Compiling block-buffer v0.10.4
    Compiling digest v0.10.7
    Compiling tokio v1.53.1
    Compiling spin v0.9.9
    Compiling cmov v0.5.4
    Compiling tracing v0.1.44
-   Compiling ctutils v0.4.2
    Compiling flume v0.12.0
+   Compiling ctutils v0.4.2
    Compiling sha2 v0.10.9
    Compiling futures-executor v0.3.34
    Compiling atoi v2.0.0
@@ -4440,37 +4470,37 @@ error: expected one of `.`, `;`, `?`, `}`, or an operator, found `,`
    Compiling log v0.4.34
    Compiling thiserror v2.0.20
    Compiling base64 v0.22.1
-   Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
    Compiling uuid v1.26.0
    Compiling aho-corasick v1.1.5
-   Compiling foreign-types-shared v0.1.1
+   Compiling cpufeatures v0.3.1
    Compiling base64ct v1.8.3
+   Compiling foreign-types-shared v0.1.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling sqlx-core v0.9.0
-   Compiling cpufeatures v0.3.1
    Compiling regex-automata v0.4.18
+   Compiling foreign-types v0.3.2
    Compiling phc v0.6.1
    Compiling sqlx-sqlite v0.9.0
-   Compiling foreign-types v0.3.2
    Compiling digest v0.11.3
-   Compiling sqlx-macros-core v0.9.0
    Compiling libsqlite3-sys v0.37.0
+   Compiling sqlx-macros-core v0.9.0
    Compiling openssl-sys v0.9.117
-   Compiling bitflags v2.13.1
    Compiling adler2 v2.0.1
-   Compiling simd-adler32 v0.3.10
+   Compiling bitflags v2.13.1
    Compiling iana-time-zone v0.1.65
+   Compiling simd-adler32 v0.3.10
    Compiling chrono v0.4.45
    Compiling miniz_oxide v0.9.1
    Compiling openssl v0.10.81
    Compiling sqlx-macros v0.9.0
    Compiling zeroize v1.9.0
    Compiling blake2 v0.11.0
+   Compiling crc32fast v1.5.1
    Compiling regex v1.13.1
    Compiling password-hash v0.6.1
-   Compiling crc32fast v1.5.1
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
    Compiling nu-ansi-term v0.50.3
@@ -4479,1323 +4509,121 @@ error: expected one of `.`, `;`, `?`, `}`, or an operator, found `,`
    Compiling rand v0.10.2
    Compiling sqlx v0.9.0
    Compiling fernet v0.2.2
-   Compiling flate2 v1.1.10
    Compiling argon2 v0.6.0
+   Compiling flate2 v1.1.10
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
-warning: unused import: `rand::Rng`
- --> src/gameplay/table_de_conversion.rs:1:5
+warning: fields `user_id` and `password_hash` are never read
+  --> src/network/handler.rs:41:5
+   |
+40 | pub struct User {
+   |            ---- fields in this struct
+41 |     user_id: String,
+   |     ^^^^^^^
+42 |     password_hash: String,
+   |     ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `PO` is never used
+ --> src/gameplay/tresor.rs:8:7
   |
-1 | use rand::Rng;
-  |     ^^^^^^^^^
+8 | const PO: u32 = PA * 10;
+  |       ^^
+
+warning: constant `PP` is never used
+ --> src/gameplay/tresor.rs:9:7
   |
-  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+9 | const PP: u32 = PO * 10;
+  |       ^^
 
-warning: unused import: `sqlx::SqlitePool`
- --> src/gameplay/table_de_conversion.rs:2:5
-  |
-2 | use sqlx::SqlitePool;
-  |     ^^^^^^^^^^^^^^^^
-
-error[E0609]: no field `objet` on type `&Objet`
-  --> src/gameplay/table_de_conversion.rs:30:20
+warning: `the-last-signal-server` (lib) generated 3 warnings
+error[E0608]: cannot index into a value of type `fn(_) -> Vec<_, _> {<Vec<_, _> as From<_>>::from}`
+  --> src/main.rs:47:43
    |
-30 |             (livre.objet.quantite, livre.category.clone())
-   |                    ^^^^^ unknown field
+47 | ...                   Vec::from["Aura de feu I"], 
+   |                                ^^^^^^^^^^^^^^^^^
+
+error[E0061]: this function takes 6 arguments but 5 arguments were supplied
+   --> src/main.rs:44:23
+    |
+ 44 |                       Livre::new(String::from("livre enchant niv 1"), 
+    |                       ^^^^^^^^^^ ----------------------------------- expected `&str`, found `String`
+ 45 |                                  1, 
+    |                                  - argument #2 of type `Option<&str>` is missing
+    |
+note: expected `Option<Vec<String>>`, found `String`
+   --> src/main.rs:46:34
+    |
+ 46 | ...                   String::from("épée") , 
+    |                       ^^^^^^^^^^^^^^^^^^^^
+    = note: expected enum `Option<Vec<String>>`
+             found struct `String`
+note: associated function defined here
+   --> src/gameplay/objets.rs:284:12
+    |
+284 |     pub fn new(
+    |            ^^^
+help: consider borrowing here
+    |
+ 44 |                       Livre::new(&String::from("livre enchant niv 1"), 
+    |                                  +
+help: provide the argument
+    |
+ 44 ~                       Livre::new(
+ 45 +                                  /* &str */,
+ 46 +                                  /* Option<&str> */,
+ 47 +                                  1,
+ 48 +                                  Vec::from["Aura de feu I"],
+ 49 +                                  /* Option<Vec<String>> */,
+ 50 +                                 1,
+ 51 ~                       ));
+    |
+
+error[E0608]: cannot index into a value of type `fn(_) -> Vec<_, _> {<Vec<_, _> as From<_>>::from}`
+  --> src/main.rs:53:43
    |
-   = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
+53 | ...                   Vec::from["Aura de feu I"], 
+   |                                ^^^^^^^^^^^^^^^^^
 
-error[E0609]: no field `category` on type `&Objet`
-  --> src/gameplay/table_de_conversion.rs:30:42
-   |
-30 |             (livre.objet.quantite, livre.category.clone())
-   |                                          ^^^^^^^^ unknown field
-   |
-   = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `&Objet`
-   --> src/gameplay/table_de_conversion.rs:165:32
+error[E0061]: this function takes 6 arguments but 5 arguments were supplied
+   --> src/main.rs:50:23
     |
-165 |                     if lv_temp.category == lv1.category
-    |                                ^^^^^^^^ unknown field
+ 50 |                       Livre::new(String::from("livre enchant niv 1"), 
+    |                       ^^^^^^^^^^ ----------------------------------- expected `&str`, found `String`
+ 51 |                                  1, 
+    |                                  - argument #2 of type `Option<&str>` is missing
     |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `&Objet`
-   --> src/gameplay/table_de_conversion.rs:166:36
+note: expected `Option<Vec<String>>`, found `String`
+   --> src/main.rs:52:34
     |
-166 |                         && lv_temp.enchantements.is_some()
-    |                                    ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `&Objet`
-   --> src/gameplay/table_de_conversion.rs:167:37
-    |
-167 |                         && !lv_temp.enchantements.as_ref().unwrap().is_empty()
-    |                                     ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `niv` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:216:40
-    |
-216 |                 .filter(|(_, obj)| obj.niv == 1 && obj.objet.quantite > 0)
-    |                                        ^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `objet` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:216:56
-    |
-216 |                 .filter(|(_, obj)| obj.niv == 1 && obj.objet.quantite > 0)
-    |                                                        ^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `shuffle` found for struct `Vec<std::string::String>` in the current scope
-   --> src/gameplay/table_de_conversion.rs:225:25
-    |
-225 |             livres_copy.shuffle(&mut rng);
-    |                         ^^^^^^^ method not found in `Vec<std::string::String>`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `SliceRandom` which provides `shuffle` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use rand::prelude::SliceRandom;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:230:66
-    |
-230 |             let clefs_lv = Self::chercher_livre(1, &livres_niv1, &lv1, clef1, stuff);
-    |                            --------------------                  ^^^^ expected `&Livre`, found `&Objet`
-    |                            |
-    |                            arguments to this function are incorrect
-    |
-    = note: expected reference `&Livre`
-               found reference `&Objet`
+ 52 | ...                   String::from("épée") , 
+    |                       ^^^^^^^^^^^^^^^^^^^^
+    = note: expected enum `Option<Vec<String>>`
+             found struct `String`
 note: associated function defined here
-   --> src/gameplay/table_de_conversion.rs:153:8
-    |
-153 |     fn chercher_livre(
-    |        ^^^^^^^^^^^^^^
-...
-156 |         lv1: &Livre,
-    |         -----------
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:235:20
-    |
-235 |             if lv1.category == lv2.category
-    |                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:235:36
-    |
-235 |             if lv1.category == lv2.category
-    |                                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:236:24
-    |
-236 |                 && lv1.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:237:25
-    |
-237 |                 && !lv1.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:238:24
-    |
-238 |                 && lv2.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:239:25
-    |
-239 |                 && !lv2.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:244:29
-    |
-244 |                         lv1.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:245:29
-    |
-245 |                         lv2.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:253:25
-    |
-253 |                     lv1.category.clone().as_deref(),
-    |                         ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:260:28
-    |
-260 |                     livre1.retirer(1);
-    |                            ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:263:28
-    |
-263 |                     livre2.retirer(1);
-    |                            ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `ajouter` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:269:39
-    |
-269 |                     .and_modify(|l| l.ajouter(1))
-    |                                       ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `ajouter` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:270:32
-    |
-270 |                     .or_insert(new_livre);
-    |                      --------- ^^^^^^^^^ expected `Objet`, found `Livre`
-    |                      |
-    |                      arguments to this method are incorrect
-    |
-help: the return type of this call is `Livre` due to the type of the argument passed
-   --> src/gameplay/table_de_conversion.rs:267:17
-    |
-267 | /                 stuff
-268 | |                     .entry("livre enchant niv 2".to_string())
-269 | |                     .and_modify(|l| l.ajouter(1))
-270 | |                     .or_insert(new_livre);
-    | |________________________________---------^
-    |                                  |
-    |                                  this argument influences the return type of `or_insert`
-note: method defined here
-   --> /rustc/48a229ceaefd4985c50990b14116b6d856af0985/library/std/src/collections/hash/map.rs:2516:11
-
-error[E0609]: no field `niv` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:290:40
-    |
-290 |                 .filter(|(_, obj)| obj.niv == 2 && obj.objet.quantite > 0)
-    |                                        ^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `objet` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:290:56
-    |
-290 |                 .filter(|(_, obj)| obj.niv == 2 && obj.objet.quantite > 0)
-    |                                                        ^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `shuffle` found for struct `Vec<std::string::String>` in the current scope
-   --> src/gameplay/table_de_conversion.rs:299:25
-    |
-299 |             livres_copy.shuffle(&mut rng);
-    |                         ^^^^^^^ method not found in `Vec<std::string::String>`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `SliceRandom` which provides `shuffle` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use rand::prelude::SliceRandom;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:304:66
-    |
-304 |             let clefs_lv = Self::chercher_livre(2, &livres_niv2, &lv1, clef1, stuff);
-    |                            --------------------                  ^^^^ expected `&Livre`, found `&Objet`
-    |                            |
-    |                            arguments to this function are incorrect
-    |
-    = note: expected reference `&Livre`
-               found reference `&Objet`
-note: associated function defined here
-   --> src/gameplay/table_de_conversion.rs:153:8
-    |
-153 |     fn chercher_livre(
-    |        ^^^^^^^^^^^^^^
-...
-156 |         lv1: &Livre,
-    |         -----------
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:311:20
-    |
-311 |             if lv1.category == lv2.category
-    |                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:311:36
-    |
-311 |             if lv1.category == lv2.category
-    |                                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:312:24
-    |
-312 |                 && lv2.category == lv3.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:312:40
-    |
-312 |                 && lv2.category == lv3.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:313:24
-    |
-313 |                 && lv1.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:314:25
-    |
-314 |                 && !lv1.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:315:24
-    |
-315 |                 && lv2.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:316:25
-    |
-316 |                 && !lv2.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:317:24
-    |
-317 |                 && lv3.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:318:25
-    |
-318 |                 && !lv3.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:323:29
-    |
-323 |                         lv1.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:324:29
-    |
-324 |                         lv2.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:325:29
-    |
-325 |                         lv3.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:333:25
-    |
-333 |                     lv1.category.clone().as_deref(),
-    |                         ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:340:27
-    |
-340 |                     livre.retirer(1);
-    |                           ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:343:27
-    |
-343 |                     livre.retirer(1);
-    |                           ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:346:27
-    |
-346 |                     livre.retirer(1);
-    |                           ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `ajouter` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:352:39
-    |
-352 |                     .and_modify(|l| l.ajouter(1))
-    |                                       ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `ajouter` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:353:32
-    |
-353 |                     .or_insert(new_livre);
-    |                      --------- ^^^^^^^^^ expected `Objet`, found `Livre`
-    |                      |
-    |                      arguments to this method are incorrect
-    |
-help: the return type of this call is `Livre` due to the type of the argument passed
-   --> src/gameplay/table_de_conversion.rs:350:17
-    |
-350 | /                 stuff
-351 | |                     .entry("livre enchant niv 3".to_string())
-352 | |                     .and_modify(|l| l.ajouter(1))
-353 | |                     .or_insert(new_livre);
-    | |________________________________---------^
-    |                                  |
-    |                                  this argument influences the return type of `or_insert`
-note: method defined here
-   --> /rustc/48a229ceaefd4985c50990b14116b6d856af0985/library/std/src/collections/hash/map.rs:2516:11
-
-error[E0609]: no field `niv` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:372:40
-    |
-372 |                 .filter(|(_, obj)| obj.niv == 3 && obj.objet.quantite > 0)
-    |                                        ^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `objet` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:372:56
-    |
-372 |                 .filter(|(_, obj)| obj.niv == 3 && obj.objet.quantite > 0)
-    |                                                        ^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `shuffle` found for struct `Vec<std::string::String>` in the current scope
-   --> src/gameplay/table_de_conversion.rs:381:25
-    |
-381 |             livres_copy.shuffle(&mut rng);
-    |                         ^^^^^^^ method not found in `Vec<std::string::String>`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `SliceRandom` which provides `shuffle` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use rand::prelude::SliceRandom;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:386:66
-    |
-386 |             let clefs_lv = Self::chercher_livre(3, &livres_niv3, &lv1, clef1, stuff);
-    |                            --------------------                  ^^^^ expected `&Livre`, found `&Objet`
-    |                            |
-    |                            arguments to this function are incorrect
-    |
-    = note: expected reference `&Livre`
-               found reference `&Objet`
-note: associated function defined here
-   --> src/gameplay/table_de_conversion.rs:153:8
-    |
-153 |     fn chercher_livre(
-    |        ^^^^^^^^^^^^^^
-...
-156 |         lv1: &Livre,
-    |         -----------
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:395:20
-    |
-395 |             if lv1.category == lv2.category
-    |                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:395:36
-    |
-395 |             if lv1.category == lv2.category
-    |                                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:396:24
-    |
-396 |                 && lv2.category == lv3.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:396:40
-    |
-396 |                 && lv2.category == lv3.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:397:24
-    |
-397 |                 && lv3.category == lv4.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:397:40
-    |
-397 |                 && lv3.category == lv4.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:398:24
-    |
-398 |                 && lv1.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:399:25
-    |
-399 |                 && !lv1.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:400:24
-    |
-400 |                 && lv2.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:401:25
-    |
-401 |                 && !lv2.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:402:24
-    |
-402 |                 && lv3.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:403:25
-    |
-403 |                 && !lv3.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:404:24
-    |
-404 |                 && lv4.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:405:25
-    |
-405 |                 && !lv4.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:410:29
-    |
-410 |                         lv1.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:411:29
-    |
-411 |                         lv2.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:412:29
-    |
-412 |                         lv3.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:413:29
-    |
-413 |                         lv4.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:421:25
-    |
-421 |                     lv1.category.clone().as_deref(),
-    |                         ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:429:31
-    |
-429 |                         livre.retirer(1);
-    |                               ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `ajouter` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:436:39
-    |
-436 |                     .and_modify(|l| l.ajouter(1))
-    |                                       ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `ajouter` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:437:32
-    |
-437 |                     .or_insert(new_livre);
-    |                      --------- ^^^^^^^^^ expected `Objet`, found `Livre`
-    |                      |
-    |                      arguments to this method are incorrect
-    |
-help: the return type of this call is `Livre` due to the type of the argument passed
-   --> src/gameplay/table_de_conversion.rs:434:17
-    |
-434 | /                 stuff
-435 | |                     .entry("livre enchant niv 4".to_string())
-436 | |                     .and_modify(|l| l.ajouter(1))
-437 | |                     .or_insert(new_livre);
-    | |________________________________---------^
-    |                                  |
-    |                                  this argument influences the return type of `or_insert`
-note: method defined here
-   --> /rustc/48a229ceaefd4985c50990b14116b6d856af0985/library/std/src/collections/hash/map.rs:2516:11
-
-error[E0609]: no field `niv` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:456:40
-    |
-456 |                 .filter(|(_, obj)| obj.niv == 4 && obj.objet.quantite > 0)
-    |                                        ^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `objet` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:456:56
-    |
-456 |                 .filter(|(_, obj)| obj.niv == 4 && obj.objet.quantite > 0)
-    |                                                        ^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `shuffle` found for struct `Vec<std::string::String>` in the current scope
-   --> src/gameplay/table_de_conversion.rs:465:25
-    |
-465 |             livres_copy.shuffle(&mut rng);
-    |                         ^^^^^^^ method not found in `Vec<std::string::String>`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `SliceRandom` which provides `shuffle` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use rand::prelude::SliceRandom;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:470:66
-    |
-470 |             let clefs_lv = Self::chercher_livre(4, &livres_niv4, &lv1, clef1, stuff);
-    |                            --------------------                  ^^^^ expected `&Livre`, found `&Objet`
-    |                            |
-    |                            arguments to this function are incorrect
-    |
-    = note: expected reference `&Livre`
-               found reference `&Objet`
-note: associated function defined here
-   --> src/gameplay/table_de_conversion.rs:153:8
-    |
-153 |     fn chercher_livre(
-    |        ^^^^^^^^^^^^^^
-...
-156 |         lv1: &Livre,
-    |         -----------
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:481:20
-    |
-481 |             if lv1.category == lv2.category
-    |                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:481:36
-    |
-481 |             if lv1.category == lv2.category
-    |                                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:482:24
-    |
-482 |                 && lv2.category == lv3.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:482:40
-    |
-482 |                 && lv2.category == lv3.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:483:24
-    |
-483 |                 && lv3.category == lv4.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:483:40
-    |
-483 |                 && lv3.category == lv4.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:484:24
-    |
-484 |                 && lv4.category == lv5.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:484:40
-    |
-484 |                 && lv4.category == lv5.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:485:24
-    |
-485 |                 && lv1.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:486:25
-    |
-486 |                 && !lv1.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:487:24
-    |
-487 |                 && lv2.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:488:25
-    |
-488 |                 && !lv2.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:489:24
-    |
-489 |                 && lv3.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:490:25
-    |
-490 |                 && !lv3.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:491:24
-    |
-491 |                 && lv4.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:492:25
-    |
-492 |                 && !lv4.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:493:24
-    |
-493 |                 && lv5.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:494:25
-    |
-494 |                 && !lv5.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:499:29
-    |
-499 |                         lv1.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:500:29
-    |
-500 |                         lv2.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:501:29
-    |
-501 |                         lv3.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:502:29
-    |
-502 |                         lv4.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:503:29
-    |
-503 |                         lv5.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:511:25
-    |
-511 |                     lv1.category.clone().as_deref(),
-    |                         ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:519:31
-    |
-519 |                         livre.retirer(1);
-    |                               ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `ajouter` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:526:39
-    |
-526 |                     .and_modify(|l| l.ajouter(1))
-    |                                       ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `ajouter` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:527:32
-    |
-527 |                     .or_insert(new_livre);
-    |                      --------- ^^^^^^^^^ expected `Objet`, found `Livre`
-    |                      |
-    |                      arguments to this method are incorrect
-    |
-help: the return type of this call is `Livre` due to the type of the argument passed
-   --> src/gameplay/table_de_conversion.rs:524:17
-    |
-524 | /                 stuff
-525 | |                     .entry("livre enchant niv 5".to_string())
-526 | |                     .and_modify(|l| l.ajouter(1))
-527 | |                     .or_insert(new_livre);
-    | |________________________________---------^
-    |                                  |
-    |                                  this argument influences the return type of `or_insert`
-note: method defined here
-   --> /rustc/48a229ceaefd4985c50990b14116b6d856af0985/library/std/src/collections/hash/map.rs:2516:11
-
-error[E0609]: no field `niv` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:547:40
-    |
-547 |                 .filter(|(_, obj)| obj.niv == 5 && obj.objet.quantite > 0)
-    |                                        ^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `objet` on type `&&Objet`
-   --> src/gameplay/table_de_conversion.rs:547:56
-    |
-547 |                 .filter(|(_, obj)| obj.niv == 5 && obj.objet.quantite > 0)
-    |                                                        ^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `shuffle` found for struct `Vec<std::string::String>` in the current scope
-   --> src/gameplay/table_de_conversion.rs:556:25
-    |
-556 |             livres_copy.shuffle(&mut rng);
-    |                         ^^^^^^^ method not found in `Vec<std::string::String>`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `SliceRandom` which provides `shuffle` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use rand::prelude::SliceRandom;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:561:66
-    |
-561 |             let clefs_lv = Self::chercher_livre(5, &livres_niv5, &lv1, clef1, stuff);
-    |                            --------------------                  ^^^^ expected `&Livre`, found `&Objet`
-    |                            |
-    |                            arguments to this function are incorrect
-    |
-    = note: expected reference `&Livre`
-               found reference `&Objet`
-note: associated function defined here
-   --> src/gameplay/table_de_conversion.rs:153:8
-    |
-153 |     fn chercher_livre(
-    |        ^^^^^^^^^^^^^^
-...
-156 |         lv1: &Livre,
-    |         -----------
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:574:20
-    |
-574 |             if lv1.category == lv2.category
-    |                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:574:36
-    |
-574 |             if lv1.category == lv2.category
-    |                                    ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:575:24
-    |
-575 |                 && lv2.category == lv3.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:575:40
-    |
-575 |                 && lv2.category == lv3.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:576:24
-    |
-576 |                 && lv3.category == lv4.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:576:40
-    |
-576 |                 && lv3.category == lv4.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:577:24
-    |
-577 |                 && lv4.category == lv5.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:577:40
-    |
-577 |                 && lv4.category == lv5.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:578:24
-    |
-578 |                 && lv5.category == lv6.category
-    |                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:578:40
-    |
-578 |                 && lv5.category == lv6.category
-    |                                        ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:579:24
-    |
-579 |                 && lv1.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:580:25
-    |
-580 |                 && !lv1.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:581:24
-    |
-581 |                 && lv2.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:582:25
-    |
-582 |                 && !lv2.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:583:24
-    |
-583 |                 && lv3.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:584:25
-    |
-584 |                 && !lv3.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:585:24
-    |
-585 |                 && lv4.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:586:25
-    |
-586 |                 && !lv4.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:587:24
-    |
-587 |                 && lv5.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:588:25
-    |
-588 |                 && !lv5.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:589:24
-    |
-589 |                 && lv6.enchantements.is_some()
-    |                        ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:590:25
-    |
-590 |                 && !lv6.enchantements.as_ref().unwrap().is_empty()
-    |                         ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:595:29
-    |
-595 |                         lv1.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:596:29
-    |
-596 |                         lv2.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:597:29
-    |
-597 |                         lv3.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:598:29
-    |
-598 |                         lv4.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:599:29
-    |
-599 |                         lv5.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `enchantements` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:600:29
-    |
-600 |                         lv6.enchantements.as_ref().unwrap().clone(),
-    |                             ^^^^^^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0609]: no field `category` on type `Objet`
-   --> src/gameplay/table_de_conversion.rs:608:25
-    |
-608 |                     lv1.category.clone().as_deref(),
-    |                         ^^^^^^^^ unknown field
-    |
-    = note: available fields are: `nom_base`, `quantite`, `type_objet`, `nom_image`, `attributs`
-
-error[E0599]: no method named `retirer` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:616:31
-    |
-616 |                         livre.retirer(1);
-    |                               ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `retirer` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0599]: no method named `ajouter` found for mutable reference `&mut Objet` in the current scope
-   --> src/gameplay/table_de_conversion.rs:623:39
-    |
-623 |                     .and_modify(|l| l.ajouter(1))
-    |                                       ^^^^^^^ method not found in `&mut Objet`
-    |
-    = help: items from traits can only be used if the trait is in scope
-help: trait `AjouterRetirer` which provides `ajouter` is implemented but not in scope; perhaps you want to import it
-    |
-  1 + use crate::gameplay::objets::AjouterRetirer;
-    |
-
-error[E0308]: mismatched types
-   --> src/gameplay/table_de_conversion.rs:624:32
-    |
-624 |                     .or_insert(new_livre);
-    |                      --------- ^^^^^^^^^ expected `Objet`, found `Livre`
-    |                      |
-    |                      arguments to this method are incorrect
-    |
-help: the return type of this call is `Livre` due to the type of the argument passed
-   --> src/gameplay/table_de_conversion.rs:621:17
-    |
-621 | /                 stuff
-622 | |                     .entry("livre enchant niv 6".to_string())
-623 | |                     .and_modify(|l| l.ajouter(1))
-624 | |                     .or_insert(new_livre);
-    | |________________________________---------^
-    |                                  |
-    |                                  this argument influences the return type of `or_insert`
-note: method defined here
-   --> /rustc/48a229ceaefd4985c50990b14116b6d856af0985/library/std/src/collections/hash/map.rs:2516:11
-
-Some errors have detailed explanations: E0308, E0599, E0609.
-For more information about an error, try `rustc --explain E0308`.
-warning: `the-last-signal-server` (lib) generated 2 warnings
-error: could not compile `the-last-signal-server` (lib) due to 138 previous errors; 2 warnings emitted
+   --> src/gameplay/objets.rs:284:12
+    |
+284 |     pub fn new(
+    |            ^^^
+help: consider borrowing here
+    |
+ 50 |                       Livre::new(&String::from("livre enchant niv 1"), 
+    |                                  +
+help: provide the argument
+    |
+ 50 ~                       Livre::new(
+ 51 +                                  /* &str */,
+ 52 +                                  /* Option<&str> */,
+ 53 +                                  1,
+ 54 +                                  Vec::from["Aura de feu I"],
+ 55 +                                  /* Option<Vec<String>> */,
+ 56 +                                 1,
+ 57 ~                       ));
+    |
+
+Some errors have detailed explanations: E0061, E0608.
+For more information about an error, try `rustc --explain E0061`.
+error: could not compile `the-last-signal-server` (bin "the-last-signal-server") due to 4 previous errors
 warning: build failed, waiting for other jobs to finish...
-warning: `the-last-signal-server` (lib test) generated 2 warnings (2 duplicates)
-error: could not compile `the-last-signal-server` (lib test) due to 138 previous errors; 2 warnings emitted
+error: could not compile `the-last-signal-server` (bin "the-last-signal-server" test) due to 4 previous errors
+warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
