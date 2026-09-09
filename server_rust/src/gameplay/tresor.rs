@@ -321,6 +321,22 @@ impl Tresor {
         ("pain".to_string(), 70.0),
         ("fruit et légumes".to_string(), 10.0),
         ("herbes et racines".to_string(), 10.0),
+        
+    ]),
+);  
+        // La liste de viande pourra être extendue
+        sous_loot.insert(
+    "viande".to_string(),
+    HashMap::from([
+        ("mouton".to_string(), 10.0),
+        ("cerf".to_string(), 3.0),
+        ("sanglier".to_string(), 2.0),
+        ("poulet".to_string(), 10.0),
+        ("boeuf".to_string(), 10.0),
+        ("agneau".to_string(), 10.0),
+        ("veau".to_string(), 10.0),
+        ("morue".to_string(), 10.0),
+        ("crabe".to_string(), 10.0),
     ]),
 );
         sous_loot.insert(
