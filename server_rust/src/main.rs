@@ -4,7 +4,7 @@ use the_last_signal_server::database::{
 };
 use log::info;
 use the_last_signal_server::network::server::Server;
-use the_last_signal_server::gameplay::{objets::Livre,table_de_conversion::convertir_livres};
+use the_last_signal_server::gameplay::objets::Livre;
 use the_last_signal_server::utils::logger::logger::ServerLogger;
 use std::collections::HashMap;
 #[tokio::main]
@@ -41,17 +41,17 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     ServerLogger::set_database(database.pool().clone());
     let mut inventaire = HashMap::new();
     inventaire.insert("livre enchant niv 1".to_string(), 
-                      Livre::new(nom: String::from("livre enchant niv 1"), 
-                                 quantite: 1, 
-                                 category: String::from("épée") , 
-                                 enchantements: Vec::from["Aura de feu I"], 
-                                niv: 1,)),
+                      Livre::new(String::from("livre enchant niv 1"), 
+                                 1, 
+                                 String::from("épée") , 
+                                 Vec::from["Aura de feu I"], 
+                                niv: 1,));
     inventaire.insert("livre enchant niv 1".to_string(), 
-                      Livre::new(nom: String::from("livre enchant niv 1"), 
-                                 quantite: 1, 
-                                 category: String::from("épée") , 
-                                 enchantements: Vec::from["Aura de feu I"], 
-                                niv: 1,)),
+                      Livre::new(String::from("livre enchant niv 1"), 
+                                 1, 
+                                 String::from("épée") , 
+                                 Vec::from["Aura de feu I"], 
+                                niv: 1,));
    
     
     let server =
