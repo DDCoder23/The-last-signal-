@@ -1,7 +1,7 @@
 use rand::Rng;
 use sqlx::SqlitePool;
 use std::collections::HashMap;
-use crate::objects::{Livre, Objet};
+use crate::objets::{Livre, Objet};
 
 #[derive(Debug, Clone)]
 pub struct StatsConversion {
@@ -183,7 +183,7 @@ impl TableDeConversion {
 
     /// Convertit des livres de niveau `niv` à `niv + 1`
     pub async fn convertir_livres(
-        stuff: &mut HashMap<String, Livre>,
+        stuff: &mut HashMap<String, Objet>,
         niv: u32,
         nb: u32,
     ) -> Result<StatsConversion, String> {
