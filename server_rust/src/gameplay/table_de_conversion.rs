@@ -155,7 +155,7 @@ impl TableDeConversion {
         dict_livre: &[String],
         lv1: &Livre,
         clef1: &str,
-        stuff: &HashMap<String, Livre>,
+        stuff: &HashMap<String, Objet>,
     ) -> Vec<String> {
         let mut lvs = Vec::new();
 
@@ -204,7 +204,7 @@ impl TableDeConversion {
     }
 
     fn l1_l2(
-        stuff: &mut HashMap<String, Livre>,
+        stuff: &mut HashMap<String, Objet>,
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
@@ -278,7 +278,7 @@ impl TableDeConversion {
     }
 
     fn l2_l3(
-        stuff: &mut HashMap<String, Livre>,
+        stuff: &mut HashMap<String, Objet>,
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
@@ -361,7 +361,7 @@ impl TableDeConversion {
     }
 
     fn l3_l4(
-        stuff: &mut HashMap<String, Livre>,
+        stuff: &mut HashMap<String, Objet>,
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
@@ -445,7 +445,7 @@ impl TableDeConversion {
     }
 
     fn l4_l5(
-        stuff: &mut HashMap<String, Livre>,
+        stuff: &mut HashMap<String, Objet>,
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
@@ -535,7 +535,7 @@ impl TableDeConversion {
     }
 
     fn l5_l6(
-        stuff: &mut HashMap<String, Livre>,
+        stuff: &mut HashMap<String, Objet>,
         nb: usize,
         stats: &mut StatsConversion,
     ) -> Result<(), String> {
