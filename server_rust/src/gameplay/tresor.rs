@@ -946,12 +946,4 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
     Ok(resultat)
     }
 
-    
-
-        
-
-    
-    
-        
-    
-      }
+}
