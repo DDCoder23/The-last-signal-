@@ -277,7 +277,7 @@ impl Tresor {
         );
 
         if jet_de_des(20, 1) >= 4 {
-            niveau_7.insert("gemmes".to_string(), 1);
+            niveau_8.insert("gemmes".to_string(), 1);
         }
 
         objets_garantis.insert(8, niveau_8);
