@@ -35,12 +35,11 @@ pub struct Tresor {
     pub sous_loot_livre_normal: HashMap<String, f64>,
     pub sous_loot_livre_admin: HashMap<String, f64>,
     
-
-    
+    pub coeff_loot: f64,
 }
 
 impl Tresor {
-    pub fn new() -> Self {
+    pub fn new(coeff_loot: f64) -> Self {
         let mut rng = rand::rng();
 
         // -------------------------------------------------
@@ -430,7 +429,8 @@ let sous_loot_livre_admin = HashMap::from([
             seuil_artefact_commun,
             seuil_artefact_peu_commun,
             sous_loot_livre_normal,
-            sous_loot_livre_admin, 
+            sous_loot_livre_admin,
+            coeff_loot,
         
         }
     }
@@ -441,7 +441,11 @@ let sous_loot_livre_admin = HashMap::from([
     account_id: i64,
     niveau: u32,
     is_admin: bool,
+    coeff_loot: f64,
 ) -> Result<HashMap<String, u32>, sqlx::Error> {
+    // Mise à jour du coefficient de loot
+    self.coeff_loot = coeff_loot;
+    
     let mut rng = rand::rng();
 
     let loot = self
@@ -473,9 +477,11 @@ let sous_loot_livre_admin = HashMap::from([
             .copied()
             .unwrap_or(20);
 
+        // Application du coefficient au seuil
+        let seuil_ajuste = (seuil as f64 * (1.0 / self.coeff_loot).max(0.1)) as u32;
         let jet = rng.random_range(1..=20);
 
-        if jet >= seuil {
+        if jet >= seuil_ajuste {
             let objet = self
                 .tirer_objet(
                     pool,
@@ -627,11 +633,13 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
              * du bonus.
              *
              * +7,5 % du poids original par échec.
+             * 
+             * Applique aussi le coefficient de loot
              */
             let poids_ajuste = if probabilite < 0.03 {
-                *poids * (1.0 + 0.075 * echecs as f64)
+                *poids * self.coeff_loot * (1.0 + 0.075 * echecs as f64)
             } else {
-                *poids
+                *poids * self.coeff_loot
             };
 
             table_ajustee.insert(
@@ -808,13 +816,14 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
         /*
          * Seuls les livres ayant une probabilité
          * originale < 3 % bénéficient du pity.
-         
+         * 
+         * Applique aussi le coefficient de loot
          */
 
         let poids_ajuste = if probabilite < 0.03 {
-            *poids * (1.0 + 0.075 * echecs as f64)
+            *poids * self.coeff_loot * (1.0 + 0.075 * echecs as f64)
         } else {
-            *poids
+            *poids * self.coeff_loot
         };
 
         table_ajustee.insert(
