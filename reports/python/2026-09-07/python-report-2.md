@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1667
+Run : 1633
 Branch : main
-Commit : ec223a18d8c3fc36fd8fa9bb64aaee423abbd93d
-Date : Wed Sep  9 00:25:42 UTC 2026
+Commit : d937b04d2949a824389c32573dec66969a9526d7
+Date : Mon Sep  7 05:07:16 UTC 2026
 
 ---
 
@@ -11,62 +11,63 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 70
+**Files to reformat:** 71
 
 <details>
 <summary>Show files</summary>
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/index_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
@@ -74,15 +75,15 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/open_report.py
 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 </details>
@@ -99,8 +100,8 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 | E225 | 138 |
 | E122 | 102 |
 | E303 | 92 |
-| E302 | 86 |
-| F401 | 30 |
+| E302 | 92 |
+| F401 | 40 |
 | E203 | 27 |
 | E301 | 18 |
 | E402 | 17 |
@@ -111,16 +112,17 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 | F841 | 12 |
 | E701 | 10 |
 | E251 | 8 |
+| W292 | 7 |
 | F821 | 7 |
 | W391 | 6 |
 | E266 | 6 |
 | E211 | 6 |
 | F541 | 5 |
 | E129 | 5 |
-| W292 | 4 |
+| E111 | 5 |
+| F824 | 4 |
 | E713 | 4 |
 | E703 | 4 |
-| E111 | 4 |
 | E731 | 3 |
 | E712 | 3 |
 | E306 | 3 |
@@ -146,17 +148,24 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 <!-- FLAKE8_INTERACTIVE_TABLE -->
 | Fichier | Ligne | Code | Message |
 |---------|------:|------|---------|
+| ./.github/security/test_filesystem.py | 4 | F401 | 'os' imported but unused |
+| ./.github/security/test_filesystem.py | 6 | F401 | 'sys' imported but unused |
 | ./.github/security/test_git_security.py | 262 | W293 | blank line contains whitespace |
-| ./.github/security/test_rust_security.py | 35 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 35 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 35 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_rust_security.py | 41 | F821 | undefined name 'r' |
-| ./.github/security/test_rust_security.py | 41 | E261 | at least two spaces before inline comment |
-| ./.github/security/test_rust_security.py | 41 | E262 | inline comment should start with '# ' |
-| ./.github/security/test_secrets.py | 56 | E501 | line too long (91 > 79 characters) |
-| ./.github/security/test_secrets.py | 74 | E501 | line too long (80 > 79 characters) |
-| ./.github/security/test_secrets.py | 80 | E501 | line too long (85 > 79 characters) |
-| ./.github/security/test_web_security.py | 466 | W293 | blank line contains whitespace |
+| ./.github/security/test_python_security.py | 5 | F401 | 'sys' imported but unused |
+| ./.github/security/test_rust_security.py | 5 | F401 | 'sys' imported but unused |
+| ./.github/security/test_rust_security.py | 37 | F821 | undefined name 'r' |
+| ./.github/security/test_rust_security.py | 37 | E261 | at least two spaces before inline comment |
+| ./.github/security/test_rust_security.py | 37 | E262 | inline comment should start with '# ' |
+| ./.github/security/test_rust_security.py | 43 | F821 | undefined name 'r' |
+| ./.github/security/test_rust_security.py | 43 | E261 | at least two spaces before inline comment |
+| ./.github/security/test_rust_security.py | 43 | E262 | inline comment should start with '# ' |
+| ./.github/security/test_secrets.py | 5 | F401 | 'sys' imported but unused |
+| ./.github/security/test_secrets.py | 58 | E501 | line too long (91 > 79 characters) |
+| ./.github/security/test_secrets.py | 76 | E501 | line too long (80 > 79 characters) |
+| ./.github/security/test_secrets.py | 82 | E501 | line too long (85 > 79 characters) |
+| ./.github/security/test_web_security.py | 6 | F401 | 'ssl' imported but unused |
+| ./.github/security/test_web_security.py | 7 | F401 | 'sys' imported but unused |
+| ./.github/security/test_web_security.py | 469 | W293 | blank line contains whitespace |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
 | ./Ancien/banque.py | 1 | E231 | missing whitespace after ',' |
@@ -210,6 +219,8 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 | ./Ancien/configuration.py | 37 | E501 | line too long (81 > 79 characters) |
 | ./Ancien/configuration.py | 89 | E501 | line too long (84 > 79 characters) |
 | ./Ancien/generate_map.py | 3 | W291 | trailing whitespace |
+| ./Ancien/generate_map.py | 16 | F401 | 'PIL.ImageDraw' imported but unused |
+| ./Ancien/generate_map.py | 94 | W292 | no newline at end of file |
 | ./Ancien/heure_locale.py | 10 | E501 | line too long (84 > 79 characters) |
 | ./Ancien/heure_locale.py | 16 | E501 | line too long (96 > 79 characters) |
 | ./Ancien/heure_locale.py | 35 | E501 | line too long (106 > 79 characters) |
@@ -222,6 +233,8 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 | ./Ancien/heure_locale.py | 85 | E501 | line too long (100 > 79 characters) |
 | ./Ancien/heure_locale.py | 86 | E501 | line too long (80 > 79 characters) |
 | ./Ancien/heure_locale.py | 105 | F841 | local variable 'heure' is assigned to but never used |
+| ./Ancien/horloge.py | 5 | F401 | 'typing.Optional' imported but unused |
+| ./Ancien/horloge.py | 5 | F401 | 'typing.Any' imported but unused |
 | ./Ancien/horloge.py | 31 | E501 | line too long (87 > 79 characters) |
 | ./Ancien/horloge.py | 101 | E501 | line too long (80 > 79 characters) |
 | ./Ancien/horloge.py | 111 | E501 | line too long (85 > 79 characters) |
@@ -241,6 +254,18 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 | ./Ancien/horloge.py | 221 | E231 | missing whitespace after ',' |
 | ./Ancien/horloge.py | 222 | E225 | missing whitespace around operator |
 | ./Ancien/horloge.py | 224 | E231 | missing whitespace after ',' |
+| ./Ancien/horloge.py | 227 | W292 | no newline at end of file |
+| ./Ancien/index_manager.py | 6 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/index_manager.py | 11 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/index_manager.py | 18 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/index_manager.py | 20 | F824 | `global _index_recherche` is unused |
+| ./Ancien/index_manager.py | 47 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/index_manager.py | 49 | F824 | `global _index_recherche` is unused |
+| ./Ancien/index_manager.py | 56 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/index_manager.py | 58 | F824 | `global _index_recherche` is unused |
+| ./Ancien/index_manager.py | 74 | E302 | expected 2 blank lines, found 1 |
+| ./Ancien/index_manager.py | 76 | F824 | `global _index_recherche` is unused |
+| ./Ancien/index_manager.py | 81 | W292 | no newline at end of file |
 | ./Ancien/inv.py | 14 | E231 | missing whitespace after ',' |
 | ./Ancien/inv.py | 15 | E231 | missing whitespace after ',' |
 | ./Ancien/inv.py | 15 | E231 | missing whitespace after ',' |
@@ -469,6 +494,7 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 | ./Ancien/inventaire.py | 216 | E225 | missing whitespace around operator |
 | ./Ancien/inventaire.py | 216 | E501 | line too long (87 > 79 characters) |
 | ./Ancien/inventaire.py | 223 | E301 | expected 1 blank line, found 0 |
+| ./Ancien/inventaire.py | 225 | E111 | indentation is not a multiple of 4 |
 | ./Ancien/inventaire.py | 225 | E225 | missing whitespace around operator |
 | ./Ancien/inventaire.py | 225 | E711 | comparison to None should be 'if cond is not None |
 | ./Ancien/inventaire.py | 225 | E225 | missing whitespace around operator |
@@ -1778,7 +1804,7 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 | Rang | Fichier | Erreurs |
 |----:|---------|--------:|
 | 1 | ./Ancien/table_de_conversion.py | 258 |
-| 2 | ./Ancien/inventaire.py | 217 |
+| 2 | ./Ancien/inventaire.py | 218 |
 | 3 | ./Ancien/main.py | 114 |
 | 4 | ./Ancien/inv.py | 97 |
 | 5 | ./scripts/documentation/report.py | 96 |
@@ -1794,7 +1820,7 @@ Date : Wed Sep  9 00:25:42 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.207236842105263)
+**Average complexity:**  A (4.196774193548387)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1974,6 +2000,13 @@ Ancien/table_de_conversion.py
     F 130:0 convertir_livres - B
     F 12:0 qtes - A
     C 9:0 StatsConversion - A
+Ancien/index_manager.py
+    F 18:0 _ajouter_objet_au_index - B
+    F 56:0 rechercher_dans_index - A
+    F 74:0 supprimer_de_l_index - A
+    F 47:0 _ajouter_mot_cle - A
+    F 11:0 mettre_a_jour_index - A
+    F 6:0 initialiser_index - A
 Ancien/inventaire.py
     ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 Ancien/generate_map.py
@@ -2179,8 +2212,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-304 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.207236842105263)
+310 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.196774193548387)
 
 </details>
 
@@ -2201,7 +2234,7 @@ Average complexity: A (4.207236842105263)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-09 00:25:51.008305+00:00
+Run started:2026-09-07 05:07:26.219945+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2327,26 +2360,26 @@ Test results:
    Severity: Medium   Confidence: High
    CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./.github/security/test_web_security.py:76:13
-75	    try:
-76	        with urllib.request.urlopen(
-77	            request,
-78	            timeout=TIMEOUT,
-79	        ) as response:
-80	
+   Location: ./.github/security/test_web_security.py:79:13
+78	    try:
+79	        with urllib.request.urlopen(
+80	            request,
+81	            timeout=TIMEOUT,
+82	        ) as response:
+83	
 
 --------------------------------------------------
 >> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
    Severity: Medium   Confidence: High
    CWE: CWE-22 (https://cwe.mitre.org/data/definitions/22.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b310-urllib-urlopen
-   Location: ./.github/security/test_web_security.py:278:17
-277	
-278	            with urllib.request.urlopen(
-279	                request,
-280	                timeout=TIMEOUT,
-281	            ) as response:
-282	
+   Location: ./.github/security/test_web_security.py:281:17
+280	
+281	            with urllib.request.urlopen(
+282	                request,
+283	                timeout=TIMEOUT,
+284	            ) as response:
+285	
 
 --------------------------------------------------
 >> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
@@ -4001,7 +4034,7 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 12459
+	Total lines of code: 12524
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
@@ -4022,7 +4055,7 @@ Files skipped (0):
 
 ##  📏 Pylint
 
-**Global score:** 7.30/10
+**Global score:** 7.29/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4473,6 +4506,15 @@ Ancien/table_de_conversion.py:350:11: W0125: Using a conditional statement with 
 Ancien/table_de_conversion.py:318:8: W0612: Unused variable 'i' (unused-variable)
 Ancien/table_de_conversion.py:3:0: C0411: standard import "random" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
 Ancien/table_de_conversion.py:4:0: C0411: standard import "dataclasses.dataclass" should be placed before third party imports "index_manager.mettre_a_jour_index", "inventaire.safe_increment" (wrong-import-order)
+************* Module Ancien.index_manager
+Ancien/index_manager.py:81:0: C0304: Final newline missing (missing-final-newline)
+Ancien/index_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+Ancien/index_manager.py:8:4: W0603: Using the global statement (global-statement)
+Ancien/index_manager.py:13:4: W0603: Using the global statement (global-statement)
+Ancien/index_manager.py:20:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
+Ancien/index_manager.py:49:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
+Ancien/index_manager.py:58:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
+Ancien/index_manager.py:76:4: W0602: Using global for '_index_recherche' but no assignment is done (global-variable-not-assigned)
 ************* Module Ancien.inventaire
 Ancien/inventaire.py:26:0: C0301: Line too long (106/100) (line-too-long)
 Ancien/inventaire.py:87:0: C0301: Line too long (320/100) (line-too-long)
@@ -4481,6 +4523,7 @@ Ancien/inventaire.py:89:0: C0301: Line too long (353/100) (line-too-long)
 Ancien/inventaire.py:90:0: C0301: Line too long (336/100) (line-too-long)
 Ancien/inventaire.py:91:0: C0301: Line too long (320/100) (line-too-long)
 Ancien/inventaire.py:92:0: C0301: Line too long (337/100) (line-too-long)
+Ancien/inventaire.py:225:0: W0311: Bad indentation. Found 7 spaces, expected 8 (bad-indentation)
 Ancien/inventaire.py:241:0: C0303: Trailing whitespace (trailing-whitespace)
 Ancien/inventaire.py:247:40: C0303: Trailing whitespace (trailing-whitespace)
 Ancien/inventaire.py:250:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -4534,7 +4577,7 @@ Ancien/inventaire.py:211:4: C0116: Missing function or method docstring (missing
 Ancien/inventaire.py:214:4: C0116: Missing function or method docstring (missing-function-docstring)
 Ancien/inventaire.py:221:4: C0116: Missing function or method docstring (missing-function-docstring)
 Ancien/inventaire.py:224:4: C0116: Missing function or method docstring (missing-function-docstring)
-Ancien/inventaire.py:225:41: C0121: Comparison 'self.nom_image != None' should be 'self.nom_image is not None' (singleton-comparison)
+Ancien/inventaire.py:225:40: C0121: Comparison 'self.nom_image != None' should be 'self.nom_image is not None' (singleton-comparison)
 Ancien/inventaire.py:227:4: C0116: Missing function or method docstring (missing-function-docstring)
 Ancien/inventaire.py:230:4: C0116: Missing function or method docstring (missing-function-docstring)
 Ancien/inventaire.py:237:0: C0115: Missing class docstring (missing-class-docstring)
@@ -4577,11 +4620,13 @@ Ancien/inventaire.py:100:0: C0411: standard import "itertools.combinations" shou
 Ancien/inventaire.py:3:0: W0611: Unused import sys (unused-import)
 ************* Module Ancien.generate_map
 Ancien/generate_map.py:3:19: C0303: Trailing whitespace (trailing-whitespace)
+Ancien/generate_map.py:94:0: C0304: Final newline missing (missing-final-newline)
 Ancien/generate_map.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-Ancien/generate_map.py:1:0: R0914: Too many local variables (21/15) (too-many-locals)
+Ancien/generate_map.py:1:0: R0914: Too many local variables (22/15) (too-many-locals)
 Ancien/generate_map.py:15:4: C0415: Import outside toplevel (numpy) (import-outside-toplevel)
 Ancien/generate_map.py:16:4: E0401: Unable to import 'PIL' (import-error)
-Ancien/generate_map.py:16:4: C0415: Import outside toplevel (PIL.Image) (import-outside-toplevel)
+Ancien/generate_map.py:16:4: C0415: Import outside toplevel (PIL.Image, PIL.ImageDraw) (import-outside-toplevel)
+Ancien/generate_map.py:16:4: W0611: Unused ImageDraw imported from PIL (unused-import)
 ************* Module Ancien.banque
 Ancien/banque.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
 Ancien/banque.py:68:0: C0301: Line too long (102/100) (line-too-long)
@@ -4959,6 +5004,7 @@ Ancien/localisation.py:2:0: C0411: standard import "typing.Dict" should be place
 Ancien/horloge.py:193:0: C0301: Line too long (137/100) (line-too-long)
 Ancien/horloge.py:198:0: C0301: Line too long (134/100) (line-too-long)
 Ancien/horloge.py:205:0: C0301: Line too long (129/100) (line-too-long)
+Ancien/horloge.py:227:0: C0304: Final newline missing (missing-final-newline)
 Ancien/horloge.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 Ancien/horloge.py:10:0: R0902: Too many instance attributes (12/7) (too-many-instance-attributes)
 Ancien/horloge.py:18:23: W0622: Redefining built-in 'id' (redefined-builtin)
@@ -4971,6 +5017,8 @@ Ancien/horloge.py:221:0: C0116: Missing function or method docstring (missing-fu
 Ancien/horloge.py:221:0: C2401: Function name "réinitialiser" contains a non-ASCII character, consider renaming it. (non-ascii-name)
 Ancien/horloge.py:221:19: W0622: Redefining built-in 'id' (redefined-builtin)
 Ancien/horloge.py:224:4: C2801: Unnecessarily calls dunder method __init__. Instantiate class directly. (unnecessary-dunder-call)
+Ancien/horloge.py:5:0: W0611: Unused Optional imported from typing (unused-import)
+Ancien/horloge.py:5:0: W0611: Unused Any imported from typing (unused-import)
 ************* Module scripts.database_manager
 scripts/database_manager.py:529:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/database_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -5373,28 +5421,33 @@ client_python/packets/chat.py:1:0: C0114: Missing module docstring (missing-modu
 client_python/packets/chat.py:4:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packets/chat.py:15:4: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_web_security
-.github/security/test_web_security.py:466:0: C0303: Trailing whitespace (trailing-whitespace)
-.github/security/test_web_security.py:30:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_web_security.py:36:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:129:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:317:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:362:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:469:0: C0303: Trailing whitespace (trailing-whitespace)
+.github/security/test_web_security.py:33:0: C0115: Missing class docstring (missing-class-docstring)
+.github/security/test_web_security.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:60:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:265:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:320:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:365:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:6:0: W0611: Unused import ssl (unused-import)
+.github/security/test_web_security.py:7:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.test_filesystem
-.github/security/test_filesystem.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:65:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:56:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:62:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:4:0: W0611: Unused import os (unused-import)
+.github/security/test_filesystem.py:6:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.test_python_security
-.github/security/test_python_security.py:22:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:34:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_python_security.py:43:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:62:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:62:4: C0103: Method name "visit_Call" doesn't conform to snake_case naming style (invalid-name)
-.github/security/test_python_security.py:204:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:240:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:36:0: C0115: Missing class docstring (missing-class-docstring)
+.github/security/test_python_security.py:45:4: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:64:4: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:64:4: C0103: Method name "visit_Call" doesn't conform to snake_case naming style (invalid-name)
+.github/security/test_python_security.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:242:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:5:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.attack_test
 .github/security/attack_test.py:13:0: W0105: String statement has no effect (pointless-string-statement)
 .github/security/attack_test.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -5417,11 +5470,12 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 .github/security/attack_test.py:533:0: C0116: Missing function or method docstring (missing-function-docstring)
 .github/security/attack_test.py:584:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_secrets
-.github/security/test_secrets.py:100:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:115:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:126:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:189:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:102:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:139:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:5:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.integrity_check
 .github/security/integrity_check.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
 .github/security/integrity_check.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -5434,11 +5488,12 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 .github/security/integrity_check.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
 .github/security/integrity_check.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_rust_security
-.github/security/test_rust_security.py:35:12: E0602: Undefined variable 'r' (undefined-variable)
-.github/security/test_rust_security.py:41:12: E0602: Undefined variable 'r' (undefined-variable)
-.github/security/test_rust_security.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:114:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:37:12: E0602: Undefined variable 'r' (undefined-variable)
+.github/security/test_rust_security.py:43:12: E0602: Undefined variable 'r' (undefined-variable)
+.github/security/test_rust_security.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:73:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:5:0: W0611: Unused import sys (unused-import)
 ************* Module .github.security.test_git_security
 .github/security/test_git_security.py:262:0: C0303: Trailing whitespace (trailing-whitespace)
 .github/security/test_git_security.py:54:14: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
@@ -5510,14 +5565,10 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         branch,
         commit
     )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[6:20]
-==.github.security.test_python_security:[6:22]
+==.github.security.test_filesystem:[9:23]
+==.github.security.test_python_security:[8:24]
 ROOT = Path.cwd().resolve()
 
 IGNORED_DIRECTORIES = {
@@ -5551,7 +5602,7 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
     )
 
     # ==========================================
-    # Détails Clippy
+    # Flake8
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5590,7 +5641,12 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
     # Cas 3 : Autre type (ne devrait pas arriver)
     else:
         print(f" Type inattendu pour {nom}: {type(obj)}")
-        return 0 (duplicate-code)
+        return 0
+
+
+
+
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==server_rust.vendor.unicode-normalization.scripts.unicode:[28:38]
 ==server_rust.vendor.unicode-properties.scripts.unicode:[21:31]
@@ -5606,7 +5662,7 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
 // NOTE: The following code was generated by "scripts/unicode.py", do not edit directly (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
-==.github.security.test_filesystem:[8:17]
+==.github.security.test_filesystem:[11:20]
 IGNORED_DIRECTORIES = {
     ".git",
     "target",
@@ -5617,7 +5673,7 @@ IGNORED_DIRECTORIES = {
     ".venv",
     "venv", (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[21:31]
+==.github.security.test_filesystem:[24:34]
 ==.github.security.test_git_security:[169:179]
         ".env",
         ".env.local",
@@ -5645,7 +5701,7 @@ IGNORED_DIRECTORIES = {
     )
 
     # ==========================================
-    # Résumé Rust
+    # Quality metrics
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5675,8 +5731,8 @@ IGNORED_DIRECTORIES = {
 
 def check_single_h1(files, problems): (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[35:47]
-==.github.security.test_python_security:[22:33]
+==.github.security.test_filesystem:[38:50]
+==.github.security.test_python_security:[24:35]
     try:
         relative = path.relative_to(ROOT)
     except ValueError:
@@ -5704,17 +5760,7 @@ def is_world_writable(mode: int) -> bool: (duplicate-code)
     return digest.hexdigest()
 
 
-'''
-============================================================
-                         Git
-============================================================
-'''
-
-
-def clone_repository(
-    destination: Path,
-) -> None:
- (duplicate-code)
+def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
@@ -5745,8 +5791,8 @@ def clone_repository(
             "results": {},
             "problems": [{ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[6:13]
-==.github.security.test_rust_security:[6:13]
+==.github.security.test_filesystem:[9:16]
+==.github.security.test_rust_security:[8:15]
 ROOT = Path.cwd().resolve()
 
 IGNORED_DIRECTORIES = {
@@ -5756,7 +5802,7 @@ IGNORED_DIRECTORIES = {
     ".pytest_cache", (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[69:79]
-==.github.security.test_secrets:[105:115]
+==.github.security.test_secrets:[107:117]
     if path.name in IGNORED_FILES:
         return True
 
@@ -5777,7 +5823,7 @@ def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
         # Layout principal
         layout = QVBoxLayout(self)
 
-        # Tableau avec 7 colonnes
+        # Tableau avec 10 colonnes
         self.table_widget = QTableWidget() (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
@@ -5792,29 +5838,29 @@ def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-        run_id,
-        high,
-        medium,
-        low,
-        total, (duplicate-code)
+            run_id,
+            high,
+            medium,
+            low,
+            total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
-==.github.security.test_rust_security:[8:13]
+==.github.security.test_rust_security:[10:15]
 IGNORED_DIRECTORIES = {
     ".git",
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.30/10
+Your code has been rated at 7.29/10
 
 
 </details>
