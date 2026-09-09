@@ -338,6 +338,7 @@ impl Tresor {
         ("morue".to_string(), 10.0),
         ("crabe".to_string(), 10.0),
         ("saumon".to_string(), 10.0),
+        ("thon".to_string(), 10.0),
     ]),
 );
         sous_loot.insert(
