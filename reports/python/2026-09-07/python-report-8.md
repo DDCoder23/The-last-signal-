@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1674
+Run : 1654
 Branch : main
-Commit : a284f0fab56dd5160979459695bd5a27d4163aba
-Date : Wed Sep  9 12:25:59 UTC 2026
+Commit : fb9c68d44bba71b4276f242d9c9eae0b284e1cac
+Date : Mon Sep  7 23:39:01 UTC 2026
 
 ---
 
@@ -24,49 +24,49 @@ Date : Wed Sep  9 12:25:59 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/generate_map.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/horloge.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/banque.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inv.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/table_de_conversion.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/Ancien/inventaire.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/Ancien/tresor.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
@@ -81,8 +81,8 @@ Date : Wed Sep  9 12:25:59 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 </details>
@@ -95,7 +95,7 @@ Date : Wed Sep  9 12:25:59 UTC 2026
 |------|-------:|
 | E501 | 464 |
 | E231 | 325 |
-| W293 | 151 |
+| W293 | 152 |
 | E225 | 138 |
 | E122 | 102 |
 | E303 | 92 |
@@ -146,6 +146,7 @@ Date : Wed Sep  9 12:25:59 UTC 2026
 <!-- FLAKE8_INTERACTIVE_TABLE -->
 | Fichier | Ligne | Code | Message |
 |---------|------:|------|---------|
+| ./.github/security/test_git_security.py | 262 | W293 | blank line contains whitespace |
 | ./.github/security/test_rust_security.py | 35 | F821 | undefined name 'r' |
 | ./.github/security/test_rust_security.py | 35 | E261 | at least two spaces before inline comment |
 | ./.github/security/test_rust_security.py | 35 | E262 | inline comment should start with '# ' |
@@ -2199,8 +2200,8 @@ Average complexity: A (4.207236842105263)
 [main]	INFO	cli include tests: None
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
-Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-09 12:26:08.008376+00:00
+Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:01
+Run started:2026-09-07 23:39:14.238145+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2234,92 +2235,92 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
-   Location: ./.github/security/test_git_security.py:4:0
-3	import re
-4	import subprocess
-5	from pathlib import Path
+   Location: ./.github/security/test_git_security.py:7:0
+6	import re
+7	import subprocess
+8	from pathlib import Path
 
 --------------------------------------------------
 >> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
-   Location: ./.github/security/test_git_security.py:29:11
-28	
-29	    return subprocess.run(
-30	        ["git", *arguments],
-31	        cwd=ROOT,
-32	        text=True,
-33	        stdout=subprocess.PIPE,
-34	        stderr=subprocess.STDOUT,
-35	        check=False,
-36	    )
-37	
+   Location: ./.github/security/test_git_security.py:32:11
+31	
+32	    return subprocess.run(
+33	        ["git", *arguments],
+34	        cwd=ROOT,
+35	        text=True,
+36	        stdout=subprocess.PIPE,
+37	        stderr=subprocess.STDOUT,
+38	        check=False,
+39	    )
+40	
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./.github/security/test_git_security.py:29:11
-28	
-29	    return subprocess.run(
-30	        ["git", *arguments],
-31	        cwd=ROOT,
-32	        text=True,
-33	        stdout=subprocess.PIPE,
-34	        stderr=subprocess.STDOUT,
-35	        check=False,
-36	    )
-37	
+   Location: ./.github/security/test_git_security.py:32:11
+31	
+32	    return subprocess.run(
+33	        ["git", *arguments],
+34	        cwd=ROOT,
+35	        text=True,
+36	        stdout=subprocess.PIPE,
+37	        stderr=subprocess.STDOUT,
+38	        check=False,
+39	    )
+40	
 
 --------------------------------------------------
 >> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
-   Location: ./.github/security/test_git_security.py:51:14
-50	
-51	    process = subprocess.Popen(
-52	        [
-53	            "git",
-54	            "log",
-55	            "--all",
-56	            "--format=",
-57	            "-p",
-58	            "--unified=0",
-59	            "--no-ext-diff",
-60	        ],
-61	        cwd=ROOT,
-62	        text=True,
-63	        stdout=subprocess.PIPE,
-64	        stderr=subprocess.STDOUT,
-65	    )
-66	
+   Location: ./.github/security/test_git_security.py:54:14
+53	
+54	    process = subprocess.Popen(
+55	        [
+56	            "git",
+57	            "log",
+58	            "--all",
+59	            "--format=",
+60	            "-p",
+61	            "--unified=0",
+62	            "--no-ext-diff",
+63	        ],
+64	        cwd=ROOT,
+65	        text=True,
+66	        stdout=subprocess.PIPE,
+67	        stderr=subprocess.STDOUT,
+68	    )
+69	
 
 --------------------------------------------------
 >> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
    Severity: Low   Confidence: High
    CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./.github/security/test_git_security.py:51:14
-50	
-51	    process = subprocess.Popen(
-52	        [
-53	            "git",
-54	            "log",
-55	            "--all",
-56	            "--format=",
-57	            "-p",
-58	            "--unified=0",
-59	            "--no-ext-diff",
-60	        ],
-61	        cwd=ROOT,
-62	        text=True,
-63	        stdout=subprocess.PIPE,
-64	        stderr=subprocess.STDOUT,
-65	    )
-66	
+   Location: ./.github/security/test_git_security.py:54:14
+53	
+54	    process = subprocess.Popen(
+55	        [
+56	            "git",
+57	            "log",
+58	            "--all",
+59	            "--format=",
+60	            "-p",
+61	            "--unified=0",
+62	            "--no-ext-diff",
+63	        ],
+64	        cwd=ROOT,
+65	        text=True,
+66	        stdout=subprocess.PIPE,
+67	        stderr=subprocess.STDOUT,
+68	    )
+69	
 
 --------------------------------------------------
 >> Issue: [B310:blacklist] Audit url open for permitted schemes. Allowing use of file:/ or custom schemes is often unexpected.
@@ -5439,7 +5440,8 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 .github/security/test_rust_security.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
 .github/security/test_rust_security.py:114:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module .github.security.test_git_security
-.github/security/test_git_security.py:51:14: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+.github/security/test_git_security.py:262:0: C0303: Trailing whitespace (trailing-whitespace)
+.github/security/test_git_security.py:54:14: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==client_python.packets.login:[39:77]
 ==client_python.packets.singup:[39:77]
@@ -5508,10 +5510,6 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         branch,
         commit
     )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -5549,7 +5547,7 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
     )
 
     # ==========================================
-    # Flake8
+    # Détails Clippy
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5621,16 +5619,16 @@ IGNORED_DIRECTORIES = {
     "venv", (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
-==.github.security.test_git_security:[166:176]
-    ".env",
-    ".env.local",
-    ".env.production",
-    "master.key",
-    "id_rsa",
-    "id_ed25519",
-    "credentials.json",
-    "service-account.json",
-}
+==.github.security.test_git_security:[169:179]
+        ".env",
+        ".env.local",
+        ".env.production",
+        "master.key",
+        "id_rsa",
+        "id_ed25519",
+        "credentials.json",
+        "service-account.json",
+    }
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[38:54]
@@ -5648,7 +5646,7 @@ IGNORED_DIRECTORIES = {
     )
 
     # ==========================================
-    # Résumé Rust
+    # Quality metrics
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -5675,8 +5673,8 @@ IGNORED_DIRECTORIES = {
     }
 
 
-
-def check_single_h1(files, problems): (duplicate-code)
+def extract_links(file):
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[35:47]
 ==.github.security.test_python_security:[22:33]
@@ -5690,8 +5688,7 @@ def check_single_h1(files, problems): (duplicate-code)
         for part in relative.parts
     )
 
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.attack_test:[79:102]
 ==.github.security.integrity_check:[54:67]
@@ -5711,13 +5708,13 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
+        test,
+        severity,
+        confidence,
+        cwe,
+        info,
+        file,
+        line, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[39:46]
 ==scripts.documentation.markdown:[61:68]
@@ -5775,21 +5772,21 @@ def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==Ancien.inv:[187:194]
 ==Ancien.inventaire:[625:632]
-                else:
-                    image_label.setText("Erreur image")
             else:
-                image_label.setText("Aucune image")
-            self.table_widget.setCellWidget(row, 0, image_label)
+                image_label.setText("Erreur image")
+        else:
+            image_label.setText("Aucune image")
+        self.table_widget.setCellWidget(row, 0, image_label)
 
-            # 2. Nom (duplicate-code)
+        # 2. Nom (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[8:13]
@@ -5798,10 +5795,10 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
@@ -5835,7 +5832,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.22s ===============================
+=============================== 1 error in 0.30s ===============================
 
 </details>
 
