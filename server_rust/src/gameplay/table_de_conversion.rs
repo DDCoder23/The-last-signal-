@@ -1,6 +1,7 @@
 use rand::Rng;
 use sqlx::SqlitePool;
 use std::collections::HashMap;
+use crate::objects::{Livre, Objet};
 
 #[derive(Debug, Clone)]
 pub struct StatsConversion {
@@ -17,24 +18,16 @@ impl Default for StatsConversion {
     }
 }
 
-#[derive(Debug, Clone)]
-pub struct Livre {
-    pub niv: u32,
-    pub quantite: u32,
-    pub category: String,
-    pub enchantements: Vec<String>,
-}
-
 pub struct InventaireManager;
 
 impl InventaireManager {
-    /// Retourne la quantité et la catégorie d'un objet dans l'inventaire du joueur
+    /// Retourne la quantité et la catégorie d'un livre dans l'inventaire du joueur
     pub fn qtes(
         nom: &str,
-        stuff: &HashMap<String, Livre>,
+        stuff: &HashMap<String, Objet>,
     ) -> (u32, Option<String>) {
         if let Some(livre) = stuff.get(nom) {
-            (livre.quantite, Some(livre.category.clone()))
+            (livre.objet.quantite, livre.category.clone())
         } else {
             (0, None)
         }
@@ -169,7 +162,10 @@ impl TableDeConversion {
         for i in 0..nb {
             for cle in dict_livre.iter().skip(1) {
                 if let Some(lv_temp) = stuff.get(cle) {
-                    if lv_temp.category == lv1.category && !lv_temp.enchantements.is_empty() {
+                    if lv_temp.category == lv1.category
+                        && lv_temp.enchantements.is_some()
+                        && !lv_temp.enchantements.as_ref().unwrap().is_empty()
+                    {
                         lvs.push(cle.clone());
                         break;
                     }
@@ -217,7 +213,7 @@ impl TableDeConversion {
         for _ in 0..nb {
             let livres_niv1: Vec<String> = stuff
                 .iter()
-                .filter(|(_, obj)| obj.niv == 1 && obj.quantite > 0)
+                .filter(|(_, obj)| obj.niv == 1 && obj.objet.quantite > 0)
                 .map(|(cle, _)| cle.clone())
                 .collect();
 
@@ -229,10 +225,7 @@ impl TableDeConversion {
             livres_copy.shuffle(&mut rng);
 
             let clef1 = &livres_copy[0];
-            let lv1 = stuff
-                .get(clef1)
-                .ok_or("Livre not found")?
-                .clone();
+            let lv1 = stuff.get(clef1).ok_or("Livre not found")?.clone();
 
             let clefs_lv = Self::chercher_livre(1, &livres_niv1, &lv1, clef1, stuff);
             let clef2 = clefs_lv.get(0).ok_or("No second book found")?;
@@ -240,31 +233,40 @@ impl TableDeConversion {
             let lv2 = stuff.get(clef2).ok_or("Livre not found")?.clone();
 
             if lv1.category == lv2.category
-                && !lv1.enchantements.is_empty()
-                && !lv2.enchantements.is_empty()
+                && lv1.enchantements.is_some()
+                && !lv1.enchantements.as_ref().unwrap().is_empty()
+                && lv2.enchantements.is_some()
+                && !lv2.enchantements.as_ref().unwrap().is_empty()
             {
-                let enchantements =
-                    Self::fusionner_enchantements(2, &[lv1.enchantements.clone(), lv2.enchantements.clone()]);
+                let enchantements = Self::fusionner_enchantements(
+                    2,
+                    &[
+                        lv1.enchantements.as_ref().unwrap().clone(),
+                        lv2.enchantements.as_ref().unwrap().clone(),
+                    ],
+                );
 
-                let new_livre = Livre {
-                    niv: 2,
-                    quantite: 1,
-                    category: lv1.category.clone(),
-                    enchantements,
-                };
+                let mut new_livre = Livre::new(
+                    "livre enchant niv 2",
+                    None,
+                    1,
+                    lv1.category.clone().as_deref(),
+                    Some(enchantements),
+                    2,
+                );
 
                 // Reduce quantities
                 if let Some(livre1) = stuff.get_mut(clef1) {
-                    livre1.quantite = livre1.quantite.saturating_sub(1);
+                    livre1.retirer(1);
                 }
                 if let Some(livre2) = stuff.get_mut(clef2) {
-                    livre2.quantite = livre2.quantite.saturating_sub(1);
+                    livre2.retirer(1);
                 }
 
-                // Add new book
+                // Add or increment new book
                 stuff
                     .entry("livre enchant niv 2".to_string())
-                    .and_modify(|l| l.quantite += 1)
+                    .and_modify(|l| l.ajouter(1))
                     .or_insert(new_livre);
 
                 stats.livres_utilises += 2;
@@ -285,7 +287,7 @@ impl TableDeConversion {
         for _ in 0..nb {
             let livres_niv2: Vec<String> = stuff
                 .iter()
-                .filter(|(_, obj)| obj.niv == 2 && obj.quantite > 0)
+                .filter(|(_, obj)| obj.niv == 2 && obj.objet.quantite > 0)
                 .map(|(cle, _)| cle.clone())
                 .collect();
 
@@ -308,41 +310,46 @@ impl TableDeConversion {
 
             if lv1.category == lv2.category
                 && lv2.category == lv3.category
-                && !lv1.enchantements.is_empty()
-                && !lv2.enchantements.is_empty()
-                && !lv3.enchantements.is_empty()
+                && lv1.enchantements.is_some()
+                && !lv1.enchantements.as_ref().unwrap().is_empty()
+                && lv2.enchantements.is_some()
+                && !lv2.enchantements.as_ref().unwrap().is_empty()
+                && lv3.enchantements.is_some()
+                && !lv3.enchantements.as_ref().unwrap().is_empty()
             {
                 let enchantements = Self::fusionner_enchantements(
                     3,
                     &[
-                        lv1.enchantements.clone(),
-                        lv2.enchantements.clone(),
-                        lv3.enchantements.clone(),
+                        lv1.enchantements.as_ref().unwrap().clone(),
+                        lv2.enchantements.as_ref().unwrap().clone(),
+                        lv3.enchantements.as_ref().unwrap().clone(),
                     ],
                 );
 
-                let new_livre = Livre {
-                    niv: 3,
-                    quantite: 1,
-                    category: lv1.category.clone(),
-                    enchantements,
-                };
+                let new_livre = Livre::new(
+                    "livre enchant niv 3",
+                    None,
+                    1,
+                    lv1.category.clone().as_deref(),
+                    Some(enchantements),
+                    3,
+                );
 
                 // Reduce quantities
                 if let Some(livre) = stuff.get_mut(clef1) {
-                    livre.quantite = livre.quantite.saturating_sub(1);
+                    livre.retirer(1);
                 }
                 if let Some(livre) = stuff.get_mut(clef2) {
-                    livre.quantite = livre.quantite.saturating_sub(1);
+                    livre.retirer(1);
                 }
                 if let Some(livre) = stuff.get_mut(clef3) {
-                    livre.quantite = livre.quantite.saturating_sub(1);
+                    livre.retirer(1);
                 }
 
-                // Add new book
+                // Add or increment new book
                 stuff
                     .entry("livre enchant niv 3".to_string())
-                    .and_modify(|l| l.quantite += 1)
+                    .and_modify(|l| l.ajouter(1))
                     .or_insert(new_livre);
 
                 stats.livres_utilises += 3;
@@ -363,7 +370,7 @@ impl TableDeConversion {
         for _ in 0..nb {
             let livres_niv3: Vec<String> = stuff
                 .iter()
-                .filter(|(_, obj)| obj.niv == 3 && obj.quantite > 0)
+                .filter(|(_, obj)| obj.niv == 3 && obj.objet.quantite > 0)
                 .map(|(cle, _)| cle.clone())
                 .collect();
 
@@ -389,39 +396,45 @@ impl TableDeConversion {
             if lv1.category == lv2.category
                 && lv2.category == lv3.category
                 && lv3.category == lv4.category
-                && !lv1.enchantements.is_empty()
-                && !lv2.enchantements.is_empty()
-                && !lv3.enchantements.is_empty()
-                && !lv4.enchantements.is_empty()
+                && lv1.enchantements.is_some()
+                && !lv1.enchantements.as_ref().unwrap().is_empty()
+                && lv2.enchantements.is_some()
+                && !lv2.enchantements.as_ref().unwrap().is_empty()
+                && lv3.enchantements.is_some()
+                && !lv3.enchantements.as_ref().unwrap().is_empty()
+                && lv4.enchantements.is_some()
+                && !lv4.enchantements.as_ref().unwrap().is_empty()
             {
                 let enchantements = Self::fusionner_enchantements(
                     4,
                     &[
-                        lv1.enchantements.clone(),
-                        lv2.enchantements.clone(),
-                        lv3.enchantements.clone(),
-                        lv4.enchantements.clone(),
+                        lv1.enchantements.as_ref().unwrap().clone(),
+                        lv2.enchantements.as_ref().unwrap().clone(),
+                        lv3.enchantements.as_ref().unwrap().clone(),
+                        lv4.enchantements.as_ref().unwrap().clone(),
                     ],
                 );
 
-                let new_livre = Livre {
-                    niv: 4,
-                    quantite: 1,
-                    category: lv1.category.clone(),
-                    enchantements,
-                };
+                let new_livre = Livre::new(
+                    "livre enchant niv 4",
+                    None,
+                    1,
+                    lv1.category.clone().as_deref(),
+                    Some(enchantements),
+                    4,
+                );
 
                 // Reduce quantities
                 for clef in &[clef1, clef2, clef3, clef4] {
                     if let Some(livre) = stuff.get_mut(*clef) {
-                        livre.quantite = livre.quantite.saturating_sub(1);
+                        livre.retirer(1);
                     }
                 }
 
-                // Add new book
+                // Add or increment new book
                 stuff
                     .entry("livre enchant niv 4".to_string())
-                    .and_modify(|l| l.quantite += 1)
+                    .and_modify(|l| l.ajouter(1))
                     .or_insert(new_livre);
 
                 stats.livres_utilises += 4;
@@ -442,7 +455,7 @@ impl TableDeConversion {
         for _ in 0..nb {
             let livres_niv4: Vec<String> = stuff
                 .iter()
-                .filter(|(_, obj)| obj.niv == 4 && obj.quantite > 0)
+                .filter(|(_, obj)| obj.niv == 4 && obj.objet.quantite > 0)
                 .map(|(cle, _)| cle.clone())
                 .collect();
 
@@ -471,41 +484,48 @@ impl TableDeConversion {
                 && lv2.category == lv3.category
                 && lv3.category == lv4.category
                 && lv4.category == lv5.category
-                && !lv1.enchantements.is_empty()
-                && !lv2.enchantements.is_empty()
-                && !lv3.enchantements.is_empty()
-                && !lv4.enchantements.is_empty()
-                && !lv5.enchantements.is_empty()
+                && lv1.enchantements.is_some()
+                && !lv1.enchantements.as_ref().unwrap().is_empty()
+                && lv2.enchantements.is_some()
+                && !lv2.enchantements.as_ref().unwrap().is_empty()
+                && lv3.enchantements.is_some()
+                && !lv3.enchantements.as_ref().unwrap().is_empty()
+                && lv4.enchantements.is_some()
+                && !lv4.enchantements.as_ref().unwrap().is_empty()
+                && lv5.enchantements.is_some()
+                && !lv5.enchantements.as_ref().unwrap().is_empty()
             {
                 let enchantements = Self::fusionner_enchantements(
                     5,
                     &[
-                        lv1.enchantements.clone(),
-                        lv2.enchantements.clone(),
-                        lv3.enchantements.clone(),
-                        lv4.enchantements.clone(),
-                        lv5.enchantements.clone(),
+                        lv1.enchantements.as_ref().unwrap().clone(),
+                        lv2.enchantements.as_ref().unwrap().clone(),
+                        lv3.enchantements.as_ref().unwrap().clone(),
+                        lv4.enchantements.as_ref().unwrap().clone(),
+                        lv5.enchantements.as_ref().unwrap().clone(),
                     ],
                 );
 
-                let new_livre = Livre {
-                    niv: 5,
-                    quantite: 1,
-                    category: lv1.category.clone(),
-                    enchantements,
-                };
+                let new_livre = Livre::new(
+                    "livre enchant niv 5",
+                    None,
+                    1,
+                    lv1.category.clone().as_deref(),
+                    Some(enchantements),
+                    5,
+                );
 
                 // Reduce quantities
                 for clef in &[clef1, clef2, clef3, clef4, clef5] {
                     if let Some(livre) = stuff.get_mut(*clef) {
-                        livre.quantite = livre.quantite.saturating_sub(1);
+                        livre.retirer(1);
                     }
                 }
 
-                // Add new book
+                // Add or increment new book
                 stuff
                     .entry("livre enchant niv 5".to_string())
-                    .and_modify(|l| l.quantite += 1)
+                    .and_modify(|l| l.ajouter(1))
                     .or_insert(new_livre);
 
                 stats.livres_utilises += 5;
@@ -526,7 +546,7 @@ impl TableDeConversion {
         for _ in 0..nb {
             let livres_niv5: Vec<String> = stuff
                 .iter()
-                .filter(|(_, obj)| obj.niv == 5 && obj.quantite > 0)
+                .filter(|(_, obj)| obj.niv == 5 && obj.objet.quantite > 0)
                 .map(|(cle, _)| cle.clone())
                 .collect();
 
@@ -557,51 +577,4 @@ impl TableDeConversion {
                 && lv2.category == lv3.category
                 && lv3.category == lv4.category
                 && lv4.category == lv5.category
-                && lv5.category == lv6.category
-                && !lv1.enchantements.is_empty()
-                && !lv2.enchantements.is_empty()
-                && !lv3.enchantements.is_empty()
-                && !lv4.enchantements.is_empty()
-                && !lv5.enchantements.is_empty()
-                && !lv6.enchantements.is_empty()
-            {
-                let enchantements = Self::fusionner_enchantements(
-                    6,
-                    &[
-                        lv1.enchantements.clone(),
-                        lv2.enchantements.clone(),
-                        lv3.enchantements.clone(),
-                        lv4.enchantements.clone(),
-                        lv5.enchantements.clone(),
-                        lv6.enchantements.clone(),
-                    ],
-                );
-
-                let new_livre = Livre {
-                    niv: 6,
-                    quantite: 1,
-                    category: lv1.category.clone(),
-                    enchantements,
-                };
-
-                // Reduce quantities
-                for clef in &[clef1, clef2, clef3, clef4, clef5, clef6] {
-                    if let Some(livre) = stuff.get_mut(*clef) {
-                        livre.quantite = livre.quantite.saturating_sub(1);
-                    }
-                }
-
-                // Add new book
-                stuff
-                    .entry("livre enchant niv 6".to_string())
-                    .and_modify(|l| l.quantite += 1)
-                    .or_insert(new_livre);
-
-                stats.livres_utilises += 6;
-                stats.livres_crees += 1;
-            }
-        }
-
-        Ok(())
-    }
-}
+            
