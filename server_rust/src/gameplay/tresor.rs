@@ -355,6 +355,7 @@ impl Tresor {
         ("mouton".to_string(), 10.0),
         ("cerf".to_string(), 3.0),
         ("sanglier".to_string(), 2.0),
+        ("pigeon".to_string(), 4.0),
         ("poulet".to_string(), 10.0),
         ("boeuf".to_string(), 10.0),
         ("agneau".to_string(), 10.0),
