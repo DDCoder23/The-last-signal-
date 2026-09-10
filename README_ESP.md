@@ -85,13 +85,13 @@ El juego se desarrolla con un enfoque similar al de un verdadero estudio:
 
 ---
 
-
 ## ❓ FAQ
 
-Have a question about the project?
+¿Tienes alguna pregunta sobre el proyecto?
+
+➡️ [Consulta la FAQ completa](docs_ESP/FAQ_ESP.md)
 
 ---
-➡️ [Read the full FAQ](docs_ENG/FAQ_ENG.md)
 ## 🛠 Tecnologías utilizadas
 
 ### 🎮 Cliente
