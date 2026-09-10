@@ -90,6 +90,13 @@ Le jeu est développé avec une approche proche d'un véritable studio :
 - 📊 Suivi qualité du code
 
 ---
+## ❓ FAQ
+
+Vous avez une question sur le projet ?
+
+➡️ [Consultez la FAQ complète](docs/FAQ.md)
+
+---
 
 ## 🛠 Technologies utilisées
 
