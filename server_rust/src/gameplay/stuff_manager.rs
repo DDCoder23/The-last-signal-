@@ -3,7 +3,7 @@ use serde::{Serialize, Deserialize};
 use std::collections::HashMap;
 use log::{debug, error, info};
 
-use crate::objets::{Objet, TypeObjet, NomAffiche, AjouterRetirer, Equipement, Arme, Potion, Livre};
+use crate::gameplay::objets::{Objet, TypeObjet, NomAffiche, AjouterRetirer, Equipement, Arme, Potion, Livre};
 
 // ============================================================
 // ENUM UNIFIÉ POUR LE HASHMAP D'INVENTAIRE
