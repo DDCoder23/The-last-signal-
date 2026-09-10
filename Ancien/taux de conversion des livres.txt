@@ -1,5 +1,0 @@
-﻿-1 livre niv 2 = 2 livres niv 1
--1 livre niv 3 = 3 livres niv 2 = 6 livres niv 1
--1 livre niv 4 = 4 livres niv 3 = 12 livres niv 2 = 24 livres niv 1
--1 livre niv 5 = 5 livres niv 4 = 20 livres niv 3 = 60 livres niv 2 = 120 livres niv 1
-- 1 livre niv 6 = 6 livres niv 5 = 30 livres niv 4 = 120 livres niv 3 =  360 livres niv 2 = 720 livres niv 1 
