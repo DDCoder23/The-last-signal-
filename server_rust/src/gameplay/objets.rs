@@ -218,12 +218,8 @@ impl std::fmt::Display for Arme {
         write!(
             f,
             "{} [Niveau {} | bonus : {} | enchantements : {:?} | dura : {}/{}]",
-            self.equipement.objet.quantite,
-            self.equipement.niv,
-            self.equipement.bonus,
-            self.equipement.enchantements,
-            self.durabilite,
-            self.durabilite_max
+            self.equipement.objet.quantite, self.equipement.niv, self.equipement.bonus,
+            self.equipement.enchantements, self.durabilite, self.durabilite_max
         )
     }
 }
@@ -297,6 +293,34 @@ impl Livre {
             niv,
         }
     }
+
+    pub fn niv_to_roman(niv: u32) -> &'static str {
+        match niv {
+            1 => "I",
+            2 => "II",
+            3 => "III",
+            4 => "IV",
+            5 => "V",
+            6 => "VI",
+            _ => "?",
+        }
+    }
+
+    /// Ajoute un enchantement en respectant la règle : niveau N du livre => N enchantements max.
+    pub fn ajouter_enchantement(&mut self, nom_enchantement: &str, niveau_enchant: u32) -> Result<(), String> {
+        let max_enchants = self.niv as usize;
+        let enchants = self.enchantements.get_or_insert_with(Vec::new);
+
+        if enchants.len() >= max_enchants {
+            return Err(format!(
+                "Un livre de niveau {} ne peut pas avoir plus de {} enchantement(s)",
+                self.niv, max_enchants
+            ));
+        }
+
+        enchants.push(format!("{} {}", nom_enchantement, Self::niv_to_roman(niveau_enchant)));
+        Ok(())
+    }
 }
 
 impl NomAffiche for Livre {
@@ -328,3 +352,4 @@ impl std::fmt::Display for Livre {
         )
     }
 }
+
