@@ -59,7 +59,14 @@ Contributions are especially welcome in:
 - 🧪 Testing
 - 🔐 Security
 - ⚙️ CI/CD
+- 📚 Documentation
+- 🌍 Documentation translation
 
+### 🚀 Want to contribute?
+
+👉 **[👋 New Contributor? Start Here!](../../issues/97)**
+
+Not sure where to start? This guide will help you find a suitable contribution and explains how to make your first Pull Request.
 👉 Check the [open Issues](../../issues) to find a task that matches your experience.
 
 To ensure quality and consistency, please follow these guidelines:
@@ -69,6 +76,22 @@ To ensure quality and consistency, please follow these guidelines:
 - 🧪 Test changes before submitting them for integration
 - 🌿 Use a dedicated Git branch for each modification
 
+### 🔥 Current Contribution Opportunities
+
+Looking for something specific to work on?
+
+Here are some of the areas currently looking for contributors:
+
+- 🦀 Rust / Networking
+- 🐍 Python / Testing
+- 🧪 Network testing
+- 📚 Documentation
+- 🇯🇵 Japanese translation
+- 🇪🇸 Spanish translation
+- 🔐 Security / Cryptography
+- ⚙️ CI/CD
+
+👉 **[Browse all open Issues](../../issues)**
 Before contributing, also see:
 
 ➡️ [📜 Development Rules](docs_ENG/CODING_RULES_ENG.md)
@@ -113,7 +136,7 @@ The game is developed with an approach similar to that of a real game studio:
 |------------|-------|
 | 🦀 Rust | Multiplayer server |
 | 🌐 Networking | Client/server communication |
-| 🗄 PostgreSQL | Database |
+| 🗄 SQLite | Database |
 
 ---
 
