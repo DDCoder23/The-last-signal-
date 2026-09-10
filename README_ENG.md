@@ -118,6 +118,14 @@ The game is developed with an approach similar to that of a real game studio:
 
 ---
 
+
+## ❓ FAQ
+
+Have a question about the project?
+
+---
+
+➡️ [Read the full FAQ](docs_ENG/FAQ_ENG.md)
 ## 🛠 Technologies Used
 
 ### 🎮 Client
