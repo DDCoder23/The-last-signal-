@@ -298,3 +298,7 @@ def test_all_16_rotors_forward_inverse(
         )
 
         assert decrypted == value
+def test_invalid_communication_key():
+
+    with pytest.raises(ValueError):
+        generate_rotors(b"too-short")
