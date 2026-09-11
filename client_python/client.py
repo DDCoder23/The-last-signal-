@@ -2,7 +2,6 @@ import socket
 import time
 import traceback
 from .packet import Packet
-from .packets.log import LogPacket
 from .logs import log
 class Client:
     """
