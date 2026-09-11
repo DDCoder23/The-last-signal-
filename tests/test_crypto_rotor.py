@@ -44,31 +44,41 @@ def communication_key():
 
 def test_splitmix64_deterministic():
 
-    state1, value1 = SplitMix64(123456789)
+    generator1 = SplitMix64(123456789)
+    generator2 = SplitMix64(123456789)
 
-    state2, value2 = SplitMix64(123456789)
+    value1 = generator1.next()
+    value2 = generator2.next()
 
-    assert state1 == state2
     assert value1 == value2
+    assert generator1.state == generator2.state
 
 
 def test_splitmix64_different_seeds():
 
-    _, value1 = SplitMix64(1)
+    generator1 = SplitMix64(1)
+    generator2 = SplitMix64(2)
 
-    _, value2 = SplitMix64(2)
+    value1 = generator1.next()
+    value2 = generator2.next()
 
     assert value1 != value2
 
 
 def test_splitmix64_is_u64():
 
-    state, value = SplitMix64(
+    generator = SplitMix64(
         0xFFFFFFFFFFFFFFFF
     )
 
-    assert 0 <= state <= MASK_64
-    assert 0 <= value <= MASK_64
+    value = generator.next()
+
+    assert 0 <= value <= MASK64
+
+
+
+
+
 
 
 # ============================================================
