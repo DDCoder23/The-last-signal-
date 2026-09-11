@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1731
+Run : 1733
 Branch : main
-Commit : bb2b0d2763d9fd4638a7c05ae2f59a64b263b742
-Date : Fri Sep 11 06:10:21 UTC 2026
+Commit : 863667e4c27411cbd7c38325643cb4d9eeb9f2a2
+Date : Fri Sep 11 08:10:55 UTC 2026
 
 ---
 
@@ -24,23 +24,23 @@ Date : Fri Sep 11 06:10:21 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
@@ -56,8 +56,8 @@ Date : Fri Sep 11 06:10:21 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
@@ -66,14 +66,14 @@ Date : Fri Sep 11 06:10:21 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/open_report.py
 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
@@ -88,11 +88,11 @@ Date : Fri Sep 11 06:10:21 UTC 2026
 | E501 | 271 |
 | E231 | 118 |
 | W293 | 81 |
-| E302 | 57 |
+| E302 | 54 |
 | E303 | 49 |
 | E225 | 37 |
 | E122 | 36 |
-| F401 | 23 |
+| F401 | 24 |
 | E203 | 17 |
 | E701 | 10 |
 | E305 | 10 |
@@ -549,11 +549,9 @@ Date : Fri Sep 11 06:10:21 UTC 2026
 | ./scripts/utils/gestionnaire_de_fichiers.py | 17 | W291 | trailing whitespace |
 | ./scripts/utils/gestionnaire_de_fichiers.py | 24 | E501 | line too long (84 > 79 characters) |
 | ./scripts/utils/gestionnaire_de_fichiers.py | 31 | W391 | blank line at end of file |
-| ./scripts/utils/open_report.py | 108 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/utils/open_report.py | 258 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/utils/open_report.py | 271 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/utils/open_report.py | 438 | E731 | do not assign a lambda expression, use a def |
-| ./scripts/utils/open_report.py | 651 | W292 | no newline at end of file |
+| ./scripts/utils/open_report.py | 5 | F401 | 'subprocess' imported but unused |
+| ./scripts/utils/open_report.py | 545 | E731 | do not assign a lambda expression, use a def |
+| ./scripts/utils/open_report.py | 829 | W292 | no newline at end of file |
 | ./security/__init__.py | 1 | W391 | blank line at end of file |
 | ./security/vault.py | 19 | W293 | blank line contains whitespace |
 | ./security/vault.py | 34 | W293 | blank line contains whitespace |
@@ -975,7 +973,7 @@ Date : Fri Sep 11 06:10:21 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (4.02846975088968)
+**Average complexity:**  A (4.082142857142857)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1178,22 +1176,21 @@ scripts/database/update_python.py
 scripts/database/update_docs.py
     F 7:0 update_docs_database - B
 scripts/utils/open_report.py
-    F 271:0 find_archived_report - B
-    F 475:0 main - B
-    F 211:0 find_archive_member - B
-    F 128:0 choose_report_type - A
-    F 45:0 find_git_root - A
-    F 85:0 find_project_root - A
-    F 108:0 get_report_types - A
-    F 152:0 ask_report_number - A
-    F 402:0 find_free_port - A
-    F 190:0 find_unarchived_report - A
-    F 258:0 find_reports_root - A
-    F 429:0 start_server - A
-    F 25:0 print_header - A
-    F 32:0 print_error - A
-    F 37:0 print_info - A
-    F 172:0 build_report_filename - A
+    F 387:0 find_available_archived_reports - C
+    F 595:0 main - C
+    F 242:0 find_archived_report - B
+    F 194:0 find_archive_member - B
+    F 134:0 find_available_html_reports - A
+    F 158:0 choose_html_report - A
+    F 48:0 find_project_root - A
+    F 88:0 ask_report_date - A
+    F 501:0 find_free_port - A
+    F 69:0 find_reports_root - A
+    F 534:0 start_server - A
+    F 28:0 print_header - A
+    F 35:0 print_error - A
+    F 40:0 print_info - A
+    F 116:0 get_python_report_directory - A
 scripts/utils/calculateur.py
     F 63:0 mettre_a_jour_excel_fichiers_et_dossiers - B
     F 22:0 creer_fichier_vide_async - A
@@ -1318,8 +1315,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-281 blocks (classes, functions, methods) analyzed.
-Average complexity: A (4.02846975088968)
+280 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.082142857142857)
 
 </details>
 
@@ -1329,7 +1326,7 @@ Average complexity: A (4.02846975088968)
 |----------|------:|
 | High | 1 |
 | Medium | 9 |
-| Low | 124 |
+| Low | 122 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -1340,7 +1337,7 @@ Average complexity: A (4.02846975088968)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-11 06:10:29.473985+00:00
+Run started:2026-09-11 08:11:04.250050+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -1638,44 +1635,6 @@ Test results:
 4	import socket
 5	import subprocess
 6	import sys
-
---------------------------------------------------
->> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
-   Location: ./scripts/utils/open_report.py:52:17
-51	    try:
-52	        result = subprocess.run(
-53	            [
-54	                "git",
-55	                "rev-parse",
-56	                "--show-toplevel",
-57	            ],
-58	            capture_output=True,
-59	            text=True,
-60	            check=True,
-61	        )
-62	
-
---------------------------------------------------
->> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
-   Severity: Low   Confidence: High
-   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
-   Location: ./scripts/utils/open_report.py:52:17
-51	    try:
-52	        result = subprocess.run(
-53	            [
-54	                "git",
-55	                "rev-parse",
-56	                "--show-toplevel",
-57	            ],
-58	            capture_output=True,
-59	            text=True,
-60	            check=True,
-61	        )
-62	
 
 --------------------------------------------------
 >> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
@@ -2840,21 +2799,21 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 8720
+	Total lines of code: 8865
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 124
+		Low: 122
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 12
-		High: 121
+		High: 119
 Files skipped (0):
 
 </details>
@@ -3332,18 +3291,21 @@ scripts/database/update_docs.py:1:0: C0114: Missing module docstring (missing-mo
 scripts/database/update_docs.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/database/update_docs.py:15:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
 ************* Module scripts.utils.open_report
-scripts/utils/open_report.py:651:0: C0304: Final newline missing (missing-final-newline)
+scripts/utils/open_report.py:829:0: C0304: Final newline missing (missing-final-newline)
 scripts/utils/open_report.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/utils/open_report.py:13:0: E0401: Unable to import 'zstandard' (import-error)
-scripts/utils/open_report.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/open_report.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/open_report.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/open_report.py:64:8: W0707: Consider explicitly re-raising using 'except FileNotFoundError as exc' and 'raise RuntimeError("Git n'est pas installé ou n'est pas présent dans le PATH.") from exc' (raise-missing-from)
-scripts/utils/open_report.py:69:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise RuntimeError('Impossible de trouver la racine Git depuis le répertoire courant.') from exc' (raise-missing-from)
-scripts/utils/open_report.py:251:11: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/utils/open_report.py:229:16: C0415: Import outside toplevel (tarfile) (import-outside-toplevel)
-scripts/utils/open_report.py:438:14: C3001: Lambda expression assigned to a variable. Define a function using the "def" keyword instead. (unnecessary-lambda-assignment)
-scripts/utils/open_report.py:475:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:28:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:234:11: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/utils/open_report.py:212:16: C0415: Import outside toplevel (tarfile) (import-outside-toplevel)
+scripts/utils/open_report.py:387:0: R0914: Too many local variables (17/15) (too-many-locals)
+scripts/utils/open_report.py:437:4: C0415: Import outside toplevel (tarfile) (import-outside-toplevel)
+scripts/utils/open_report.py:485:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/utils/open_report.py:545:14: C3001: Lambda expression assigned to a variable. Define a function using the "def" keyword instead. (unnecessary-lambda-assignment)
+scripts/utils/open_report.py:595:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:595:0: R0915: Too many statements (52/50) (too-many-statements)
+scripts/utils/open_report.py:5:0: W0611: Unused import subprocess (unused-import)
 ************* Module scripts.utils.calculateur
 scripts/utils/calculateur.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/utils/calculateur.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -3775,6 +3737,10 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         branch,
         commit
     )
+
+    # ==========================================
+    # Quality metrics
+    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -3792,7 +3758,9 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
- (duplicate-code)
+
+
+def should_ignore(path: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
@@ -3858,15 +3826,15 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
-    ".env",
-    ".env.local",
-    ".env.production",
-    "master.key",
-    "id_rsa",
-    "id_ed25519",
-    "credentials.json",
-    "service-account.json",
-}
+        ".env",
+        ".env.local",
+        ".env.production",
+        "master.key",
+        "id_rsa",
+        "id_ed25519",
+        "credentials.json",
+        "service-account.json",
+    }
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[38:54]
@@ -3884,7 +3852,7 @@ IGNORED_DIRECTORIES = {
     )
 
     # ==========================================
-    # Quality metrics
+    # Résumé Rust
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -3911,8 +3879,8 @@ IGNORED_DIRECTORIES = {
     }
 
 
-def extract_links(file):
- (duplicate-code)
+
+def check_single_h1(files, problems): (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[35:47]
 ==.github.security.test_python_security:[22:33]
@@ -3942,17 +3910,27 @@ def extract_links(file):
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+'''
+============================================================
+                         Git
+============================================================
+'''
+
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-        test,
-        severity,
-        confidence,
-        cwe,
-        info,
-        file,
-        line, (duplicate-code)
+            test,
+            severity,
+            confidence,
+            cwe,
+            info,
+            file,
+            line, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[39:46]
 ==scripts.documentation.markdown:[61:68]
@@ -3994,15 +3972,15 @@ IGNORED_DIRECTORIES = {
     )
 
 
-def looks_textual(data: bytes) -> bool: (duplicate-code)
+def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-        run_id,
-        high,
-        medium,
-        low,
-        total, (duplicate-code)
+            run_id,
+            high,
+            medium,
+            low,
+            total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[8:13]
@@ -4011,11 +3989,11 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
@@ -4048,7 +4026,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.24s ===============================
+=============================== 1 error in 0.28s ===============================
 
 </details>
 
