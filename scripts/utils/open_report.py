@@ -17,6 +17,9 @@ HOST = "127.0.0.1"
 DEFAULT_PORT = 8000
 ARCHIVE_EXTENSION = ".tar.zst"
 
+# Type de rapport utilisé automatiquement
+REPORT_TYPE = "python"
+
 
 # ============================================================
 # AFFICHAGE
@@ -39,47 +42,7 @@ def print_info(message: str) -> None:
 
 
 # ============================================================
-# GIT
-# ============================================================
-
-def find_git_root() -> Path:
-    """
-    Détecte automatiquement la racine du dépôt Git
-    depuis le répertoire courant.
-    """
-
-    try:
-        result = subprocess.run(
-            [
-                "git",
-                "rev-parse",
-                "--show-toplevel",
-            ],
-            capture_output=True,
-            text=True,
-            check=True,
-        )
-
-    except FileNotFoundError:
-        raise RuntimeError(
-            "Git n'est pas installé ou n'est pas présent dans le PATH."
-        )
-
-    except subprocess.CalledProcessError:
-        raise RuntimeError(
-            "Impossible de trouver la racine Git depuis le répertoire courant."
-        )
-
-    root = result.stdout.strip()
-
-    if not root:
-        raise RuntimeError("Git n'a retourné aucune racine de dépôt.")
-
-    return Path(root).resolve()
-
-
-# ============================================================
-# RAPPORTS
+# RACINE DU PROJET
 # ============================================================
 
 def find_project_root() -> Path:
@@ -89,13 +52,10 @@ def find_project_root() -> Path:
     """
 
     if getattr(sys, "frozen", False):
-        # Exécution depuis un .exe PyInstaller
         current = Path(sys.executable).resolve().parent
     else:
-        # Exécution directe du script Python
         current = Path(__file__).resolve().parent
 
-    # On remonte jusqu'à trouver le dossier reports/
     for directory in [current, *current.parents]:
         if (directory / "reports").is_dir():
             return directory
@@ -105,103 +65,126 @@ def find_project_root() -> Path:
         "(dossier reports introuvable)."
     )
 
-def get_report_types(reports_root: Path) -> list[Path]:
+
+def find_reports_root(git_root: Path) -> Path:
     """
-    Détecte automatiquement les types de rapports.
+    Trouve le dossier reports du projet.
+    """
+
+    reports_root = git_root / "reports"
+
+    if not reports_root.is_dir():
+        raise RuntimeError(
+            f"Le dossier reports est introuvable : {reports_root}"
+        )
+
+    return reports_root
+
+
+# ============================================================
+# DATE
+# ============================================================
+
+def ask_report_date() -> str:
+    """
+    Demande la date du rapport au format YYYY-MM-DD.
+    """
+
+    while True:
+        value = input(
+            "\nDate du rapport (YYYY-MM-DD) : "
+        ).strip()
+
+        try:
+            date = datetime.strptime(
+                value,
+                "%Y-%m-%d",
+            )
+
+            return date.strftime("%Y-%m-%d")
+
+        except ValueError:
+            print(
+                "Date invalide. Utilisez le format YYYY-MM-DD."
+            )
+
+
+# ============================================================
+# RAPPORTS PYTHON
+# ============================================================
+
+def get_python_report_directory(
+    reports_root: Path,
+    report_date: str,
+) -> Path:
+    """
+    Retourne le dossier des rapports Python pour une date donnée.
 
     Exemple :
-        reports/python
-        reports/build
-        reports/security
-        reports/integration
+        reports/python/2026-09-10/
     """
 
-    report_types = [
+    return (
+        reports_root
+        / REPORT_TYPE
+        / report_date
+    )
+
+
+def find_available_html_reports(
+    report_directory: Path,
+) -> list[Path]:
+    """
+    Retourne tous les fichiers HTML disponibles
+    dans le dossier d'une date.
+    """
+
+    if not report_directory.is_dir():
+        return []
+
+    reports = [
         path
-        for path in reports_root.iterdir()
-        if path.is_dir() and not path.name.startswith(".")
+        for path in report_directory.iterdir()
+        if path.is_file()
+        and path.suffix.lower() == ".html"
     ]
 
-    return sorted(report_types, key=lambda path: path.name.lower())
+    return sorted(
+        reports,
+        key=lambda path: path.name.lower(),
+    )
 
 
-def choose_report_type(report_types: list[Path]) -> Path:
+def choose_html_report(
+    reports: list[Path],
+) -> Path:
     """
-    Demande à l'utilisateur quel type de rapport ouvrir.
+    Affiche les rapports disponibles et demande
+    lequel ouvrir.
     """
 
-    print_header("TYPES DE RAPPORTS DISPONIBLES")
+    print_header("RAPPORTS PYTHON DISPONIBLES")
 
-    for index, report_type in enumerate(report_types, start=1):
-        print(f"{index}. {report_type.name}")
+    for index, report in enumerate(reports, start=1):
+        print(f"{index}. {report.name}")
 
     while True:
+        choice = input(
+            "\nChoisissez un rapport : "
+        ).strip()
+
         try:
-            choice = input("\nChoisissez un type de rapport : ").strip()
             index = int(choice)
 
-            if 1 <= index <= len(report_types):
-                return report_types[index - 1]
+            if 1 <= index <= len(reports):
+                return reports[index - 1]
 
         except ValueError:
             pass
 
-        print("Choix invalide. Entrez le numéro correspondant.")
-
-
-def ask_report_number() -> int:
-    """
-    Demande le numéro du rapport.
-    """
-
-    while True:
-        value = input("\nNuméro du rapport : ").strip()
-
-        try:
-            number = int(value)
-
-            if number >= 1:
-                return number
-
-        except ValueError:
-            pass
-
-        print("Veuillez entrer un numéro de rapport valide.")
-
-
-def build_report_filename(
-    report_type: Path,
-    report_number: int,
-) -> str:
-    """
-    Construit le nom du fichier HTML.
-
-    Exemple :
-        python-report-3.html
-    """
-
-    return f"{report_type.name}-report-{report_number}.html"
-
-
-# ============================================================
-# RECHERCHE DIRECTE
-# ============================================================
-
-def find_unarchived_report(
-    report_type: Path,
-    current_date: str,
-    filename: str,
-) -> Path | None:
-    """
-    Recherche d'abord le rapport non archivé.
-    """
-
-    report_path = report_type / current_date / filename
-
-    if report_path.is_file():
-        return report_path
-
-    return None
+        print(
+            "Choix invalide. Entrez le numéro correspondant."
+        )
 
 
 # ============================================================
@@ -213,10 +196,8 @@ def find_archive_member(
     expected_members: list[str],
 ) -> bytes | None:
     """
-    Recherche et extrait uniquement le fichier demandé
+    Recherche et extrait uniquement les fichiers demandés
     depuis une archive .tar.zst.
-
-    Aucun programme externe zstd/tar n'est nécessaire.
     """
 
     try:
@@ -224,7 +205,9 @@ def find_archive_member(
 
             decompressor = zstandard.ZstdDecompressor()
 
-            with decompressor.stream_reader(compressed_file) as reader:
+            with decompressor.stream_reader(
+                compressed_file
+            ) as reader:
 
                 import tarfile
 
@@ -255,22 +238,10 @@ def find_archive_member(
 
     return None
 
-def find_reports_root(git_root: Path) -> Path:
-    """
-    Trouve le dossier reports du projet.
-    """
 
-    reports_root = git_root / "reports"
-
-    if not git_root.is_dir():
-        raise RuntimeError(
-            f"Le dossier reports est introuvable : {reports_root}"
-        )
-
-    return reports_root
 def find_archived_report(
     report_type: Path,
-    current_date: str,
+    report_date: str,
     filename: str,
     temp_directory: Path,
 ) -> Path | None:
@@ -287,12 +258,19 @@ def find_archived_report(
     """
 
     month_year = datetime.strptime(
-        current_date,
+        report_date,
         "%Y-%m-%d",
     ).strftime("%m-%Y")
 
-    daily_archive = report_type / f"{current_date}.tar.zst"
-    monthly_archive = report_type / f"{month_year}.tar.zst"
+    daily_archive = (
+        report_type
+        / f"{report_date}.tar.zst"
+    )
+
+    monthly_archive = (
+        report_type
+        / f"{month_year}.tar.zst"
+    )
 
     archives: list[tuple[Path, list[str]]] = []
 
@@ -305,7 +283,7 @@ def find_archived_report(
             (
                 daily_archive,
                 [
-                    f"{current_date}/{filename}",
+                    f"{report_date}/{filename}",
                     filename,
                 ],
             )
@@ -320,15 +298,15 @@ def find_archived_report(
             (
                 monthly_archive,
                 [
-                    f"{month_year}/{current_date}/{filename}",
-                    f"{current_date}/{filename}",
+                    f"{month_year}/{report_date}/{filename}",
+                    f"{report_date}/{filename}",
                     filename,
                 ],
             )
         )
 
     # --------------------------------------------------------
-    # Recherche de secours dans toutes les archives
+    # Autres archives
     # --------------------------------------------------------
 
     already_checked = {
@@ -337,7 +315,9 @@ def find_archived_report(
     }
 
     for archive in sorted(
-        report_type.glob(f"*{ARCHIVE_EXTENSION}")
+        report_type.glob(
+            f"*{ARCHIVE_EXTENSION}"
+        )
     ):
         if archive.resolve() in already_checked:
             continue
@@ -346,8 +326,8 @@ def find_archived_report(
             (
                 archive,
                 [
-                    f"{current_date}/{filename}",
-                    f"{month_year}/{current_date}/{filename}",
+                    f"{report_date}/{filename}",
+                    f"{month_year}/{report_date}/{filename}",
                     filename,
                 ],
             )
@@ -360,7 +340,8 @@ def find_archived_report(
     for archive_path, expected_members in archives:
 
         print_info(
-            f"Recherche dans l'archive : {archive_path.name}"
+            f"Recherche dans l'archive : "
+            f"{archive_path.name}"
         )
 
         data = find_archive_member(
@@ -374,7 +355,7 @@ def find_archived_report(
         output_directory = (
             temp_directory
             / report_type.name
-            / current_date
+            / report_date
         )
 
         output_directory.mkdir(
@@ -382,17 +363,135 @@ def find_archived_report(
             exist_ok=True,
         )
 
-        output_file = output_directory / filename
+        output_file = (
+            output_directory
+            / filename
+        )
 
         output_file.write_bytes(data)
 
         print_info(
-            f"Rapport extrait depuis : {archive_path.name}"
+            f"Rapport extrait depuis : "
+            f"{archive_path.name}"
         )
 
         return output_file
 
     return None
+
+
+# ============================================================
+# RECHERCHE DES RAPPORTS DANS LES ARCHIVES
+# ============================================================
+
+def find_available_archived_reports(
+    report_type: Path,
+    report_date: str,
+) -> list[str]:
+    """
+    Recherche les noms des rapports HTML présents
+    dans les archives correspondant à une date.
+
+    Cette fonction permet d'afficher les rapports disponibles
+    avant de demander lequel extraire.
+    """
+
+    month_year = datetime.strptime(
+        report_date,
+        "%Y-%m-%d",
+    ).strftime("%m-%Y")
+
+    daily_archive = (
+        report_type
+        / f"{report_date}.tar.zst"
+    )
+
+    monthly_archive = (
+        report_type
+        / f"{month_year}.tar.zst"
+    )
+
+    archives: list[Path] = []
+
+    if daily_archive.is_file():
+        archives.append(daily_archive)
+
+    if monthly_archive.is_file():
+        archives.append(monthly_archive)
+
+    already_checked = {
+        archive.resolve()
+        for archive in archives
+    }
+
+    for archive in sorted(
+        report_type.glob(
+            f"*{ARCHIVE_EXTENSION}"
+        )
+    ):
+        if archive.resolve() not in already_checked:
+            archives.append(archive)
+
+    found: set[str] = set()
+
+    import tarfile
+
+    for archive_path in archives:
+
+        print_info(
+            f"Inspection de l'archive : "
+            f"{archive_path.name}"
+        )
+
+        try:
+            with archive_path.open("rb") as compressed_file:
+
+                decompressor = zstandard.ZstdDecompressor()
+
+                with decompressor.stream_reader(
+                    compressed_file
+                ) as reader:
+
+                    with tarfile.open(
+                        fileobj=reader,
+                        mode="r|",
+                    ) as archive:
+
+                        for member in archive:
+
+                            if not member.isfile():
+                                continue
+
+                            if not member.name.lower().endswith(
+                                ".html"
+                            ):
+                                continue
+
+                            filename = Path(
+                                member.name
+                            ).name
+
+                            # On vérifie que le fichier
+                            # appartient bien à la date demandée.
+                            if (
+                                f"/{report_date}/"
+                                in f"/{member.name}"
+                                or member.name.startswith(
+                                    f"{report_date}/"
+                                )
+                            ):
+                                found.add(filename)
+
+        except Exception as exc:
+            print_info(
+                f"Impossible d'inspecter "
+                f"{archive_path.name} : {exc}"
+            )
+
+    return sorted(
+        found,
+        key=str.lower,
+    )
 
 
 # ============================================================
@@ -407,7 +506,10 @@ def find_free_port(
     Trouve automatiquement un port libre.
     """
 
-    for port in range(start_port, start_port + 100):
+    for port in range(
+        start_port,
+        start_port + 100,
+    ):
 
         with socket.socket(
             socket.AF_INET,
@@ -415,7 +517,10 @@ def find_free_port(
         ) as sock:
 
             try:
-                sock.bind((host, port))
+                sock.bind(
+                    (host, port)
+                )
+
                 return port
 
             except OSError:
@@ -428,17 +533,21 @@ def find_free_port(
 
 def start_server(
     directory: Path,
+    filename: str,
 ) -> None:
     """
-    Lance le serveur HTTP local et ouvre le navigateur.
+    Lance le serveur HTTP local et ouvre
+    directement le fichier HTML demandé.
     """
 
     port = find_free_port()
 
-    handler = lambda *args, **kwargs: SimpleHTTPRequestHandler(
-        *args,
-        directory=str(directory),
-        **kwargs,
+    handler = lambda *args, **kwargs: (
+        SimpleHTTPRequestHandler(
+            *args,
+            directory=str(directory),
+            **kwargs,
+        )
     )
 
     server = ThreadingHTTPServer(
@@ -446,15 +555,24 @@ def start_server(
         handler,
     )
 
-    url = f"http://{HOST}:{port}/"
+    url = (
+        f"http://{HOST}:{port}/"
+        f"{filename}"
+    )
 
     print_header("SERVEUR HTTP")
 
     print(f"Répertoire : {directory}")
     print(f"Adresse    : {url}")
     print()
-    print("Le rapport va être ouvert dans votre navigateur.")
-    print("Appuyez sur Ctrl+C pour arrêter le serveur.")
+    print(
+        "Le rapport va être ouvert "
+        "dans votre navigateur."
+    )
+    print(
+        "Appuyez sur Ctrl+C pour arrêter "
+        "le serveur."
+    )
 
     webbrowser.open(url)
 
@@ -462,7 +580,9 @@ def start_server(
         server.serve_forever()
 
     except KeyboardInterrupt:
-        print("\nArrêt du serveur...")
+        print(
+            "\nArrêt du serveur..."
+        )
 
     finally:
         server.server_close()
@@ -474,111 +594,161 @@ def start_server(
 
 def main() -> int:
 
-    print_header("OPEN REPORT")
+    print_header("OPEN PYTHON REPORT")
 
     # --------------------------------------------------------
-    # Date système
-    # --------------------------------------------------------
-
-    current_date = datetime.now().strftime("%Y-%m-%d")
-
-    print_info(f"Date système : {current_date}")
-
-    # --------------------------------------------------------
-    # Racine Git
+    # Racine du projet
     # --------------------------------------------------------
 
     try:
-        git_root = find_project_root()
+        project_root = find_project_root()
 
     except RuntimeError as exc:
         print_error(str(exc))
-        time.sleep(30)
+        time.sleep(3)
         return 1
 
-    print_info(f"Racine : {git_root}")
+    print_info(
+        f"Racine : {project_root}"
+    )
 
     # --------------------------------------------------------
     # Dossier reports
     # --------------------------------------------------------
 
     try:
-        reports_root = find_reports_root(git_root)
+        reports_root = find_reports_root(
+            project_root
+        )
 
     except RuntimeError as exc:
         print_error(str(exc))
         return 1
 
-    print_info(f"Dossier reports : {reports_root}")
-
-    # --------------------------------------------------------
-    # Types de rapports
-    # --------------------------------------------------------
-
-    report_types = get_report_types(
-        reports_root
+    print_info(
+        f"Dossier reports : {reports_root}"
     )
 
-    if not report_types:
+    # --------------------------------------------------------
+    # Type de rapport automatique
+    # --------------------------------------------------------
+
+    report_type = (
+        reports_root
+        / REPORT_TYPE
+    )
+
+    if not report_type.is_dir():
         print_error(
-            "Aucun type de rapport trouvé dans reports/."
+            f"Le dossier des rapports Python "
+            f"est introuvable : {report_type}"
         )
         return 1
 
-    # --------------------------------------------------------
-    # Choix du type
-    # --------------------------------------------------------
-
-    report_type = choose_report_type(
-        report_types
+    print_info(
+        f"Type de rapport : {REPORT_TYPE}"
     )
 
     # --------------------------------------------------------
-    # Numéro du rapport
+    # Date
     # --------------------------------------------------------
 
-    report_number = ask_report_number()
+    report_date = ask_report_date()
 
-    filename = build_report_filename(
-        report_type,
-        report_number,
+    print_info(
+        f"Date sélectionnée : {report_date}"
     )
 
-    print()
-    print_info(f"Rapport demandé : {filename}")
-
     # --------------------------------------------------------
-    # Recherche directe
+    # Dossier de la date
     # --------------------------------------------------------
 
-    report_path = find_unarchived_report(
-        report_type,
-        current_date,
-        filename,
+    report_directory = (
+        report_type
+        / report_date
     )
 
-    temporary_directory: Path | None = None
+    # --------------------------------------------------------
+    # Recherche des fichiers non archivés
+    # --------------------------------------------------------
 
-    if report_path is not None:
+    available_reports = (
+        find_available_html_reports(
+            report_directory
+        )
+    )
+
+    # --------------------------------------------------------
+    # Si aucun fichier direct,
+    # recherche dans les archives
+    # --------------------------------------------------------
+
+    if not available_reports:
 
         print_info(
-            f"Rapport non archivé trouvé : {report_path}"
-        )
-
-        server_directory = report_path.parent
-
-    else:
-
-        print_info(
-            "Rapport non trouvé dans les fichiers actuels."
+            "Aucun fichier HTML non archivé trouvé."
         )
 
         print_info(
-            "Recherche dans les archives..."
+            "Recherche des rapports dans les archives..."
         )
+
+        archived_filenames = (
+            find_available_archived_reports(
+                report_type,
+                report_date,
+            )
+        )
+
+        if not archived_filenames:
+            print_error(
+                f"Aucun rapport Python trouvé "
+                f"pour le {report_date}."
+            )
+
+            return 1
+
+        print_header(
+            "RAPPORTS PYTHON DISPONIBLES"
+        )
+
+        for index, filename in enumerate(
+            archived_filenames,
+            start=1,
+        ):
+            print(
+                f"{index}. {filename}"
+            )
+
+        while True:
+
+            choice = input(
+                "\nChoisissez un rapport : "
+            ).strip()
+
+            try:
+                index = int(choice)
+
+                if 1 <= index <= len(
+                    archived_filenames
+                ):
+                    filename = (
+                        archived_filenames[
+                            index - 1
+                        ]
+                    )
+                    break
+
+            except ValueError:
+                pass
+
+            print(
+                "Choix invalide. "
+                "Entrez le numéro correspondant."
+            )
 
         # ----------------------------------------------------
-        # Répertoire temporaire
+        # Extraction
         # ----------------------------------------------------
 
         temporary_directory = Path(
@@ -587,49 +757,32 @@ def main() -> int:
             )
         )
 
-        report_path = find_archived_report(
-            report_type,
-            current_date,
-            filename,
-            temporary_directory,
-        )
+        try:
 
-        if report_path is None:
-
-            print_error(
-                f"Rapport introuvable : {filename}"
-            )
-
-            print()
-            print(
-                "Recherche effectuée dans :"
-            )
-            print(
-                f"  {report_type / current_date}"
-            )
-            print(
-                f"  {report_type}/*.tar.zst"
-            )
-
-            shutil.rmtree(
+            report_path = find_archived_report(
+                report_type,
+                report_date,
+                filename,
                 temporary_directory,
-                ignore_errors=True,
             )
 
-            return 1
+            if report_path is None:
+                print_error(
+                    f"Impossible d'extraire "
+                    f"{filename}."
+                )
+                return 1
 
-        server_directory = report_path.parent
+            server_directory = (
+                report_path.parent
+            )
 
-    # --------------------------------------------------------
-    # Serveur
-    # --------------------------------------------------------
+            start_server(
+                server_directory,
+                report_path.name,
+            )
 
-    try:
-        start_server(server_directory)
-
-    finally:
-
-        if temporary_directory is not None:
+        finally:
 
             shutil.rmtree(
                 temporary_directory,
@@ -639,6 +792,31 @@ def main() -> int:
             print_info(
                 "Répertoire temporaire supprimé."
             )
+
+    else:
+
+        # ----------------------------------------------------
+        # Affichage des rapports disponibles
+        # ----------------------------------------------------
+
+        report_path = choose_html_report(
+            available_reports
+        )
+
+        print()
+        print_info(
+            f"Rapport sélectionné : "
+            f"{report_path.name}"
+        )
+
+        # ----------------------------------------------------
+        # Serveur
+        # ----------------------------------------------------
+
+        start_server(
+            report_path.parent,
+            report_path.name,
+        )
 
     return 0
 
