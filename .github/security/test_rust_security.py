@@ -32,13 +32,13 @@ PATTERNS: list[tuple[str, re.Pattern[str]]] = [
     (
         "Shell invocation",
         re.compile(
-            r#"(?i)\b(?:sh|bash|cmd|powershell)\b"#
+            r"(?i)\b(?:sh|bash|cmd|powershell)\b"
         ),
     ),
     (
         "Potential dynamic SQL",
         re.compile(
-            r#"(?i)\b(?:execute|query|query_as|prepare)\s*\("#
+            r"(?i)\b(?:execute|query|query_as|prepare)\s*\("
         ),
     ),
     (
