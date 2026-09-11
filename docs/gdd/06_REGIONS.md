@@ -496,4 +496,4 @@ avant leur intégration définitive dans la carte du monde.
 
 ⬅️ [Retour au GDD](README.md)
 
-➡️ [Régions](07_VILLES.md)
+➡️ [Villes](07_VILLES.md)
