@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 1687
+Run : 640
 Branch : main
-Commit : 7b178f5a0be938a0fd191c5da9debc690465c139
-Date : Wed Sep  9 17:18:49 UTC 2026
+Commit : 2cdd90817c333ecf40171528fa42bccf0b46d32d
+Date : Fri Sep 11 00:03:38 UTC 2026
 
 
 ## Cargo fmt
@@ -267,6 +267,13 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +    (0..nb).map(|_| rng.random_range(1..=face)).sum()
  }
  
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/mod.rs:1:
+ pub mod dice;
+ pub mod objets;
+-pub mod tresor;
+ pub mod stuff_manager;
++pub mod tresor;
+ 
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:1:
 -use serde::{Serialize, Deserialize};
 +use serde::{Deserialize, Serialize};
@@ -296,7 +303,22 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          let parts: Vec<&str> = nom.split_whitespace().collect();
          let category = parts.get(0).unwrap_or(&"").to_string();
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:236:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:218:
+         write!(
+             f,
+             "{} [Niveau {} | bonus : {} | enchantements : {:?} | dura : {}/{}]",
+-            self.equipement.objet.quantite, self.equipement.niv, self.equipement.bonus,
+-            self.equipement.enchantements, self.durabilite, self.durabilite_max
++            self.equipement.objet.quantite,
++            self.equipement.niv,
++            self.equipement.bonus,
++            self.equipement.enchantements,
++            self.durabilite,
++            self.durabilite_max
+         )
+     }
+ }
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:232:
  }
  
  impl Potion {
@@ -310,6 +332,130 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          let objet = Objet::new(nom, image, quantite, TypeObjet::Potion);
          Self {
              objet,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:307:
+     }
+ 
+     /// Ajoute un enchantement en respectant la règle : niveau N du livre => N enchantements max.
+-    pub fn ajouter_enchantement(&mut self, nom_enchantement: &str, niveau_enchant: u32) -> Result<(), String> {
++    pub fn ajouter_enchantement(
++        &mut self,
++        nom_enchantement: &str,
++        niveau_enchant: u32,
++    ) -> Result<(), String> {
+         let max_enchants = self.niv as usize;
+         let enchants = self.enchantements.get_or_insert_with(Vec::new);
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:318:
+             ));
+         }
+ 
+-        enchants.push(format!("{} {}", nom_enchantement, Self::niv_to_roman(niveau_enchant)));
++        enchants.push(format!(
++            "{} {}",
++            nom_enchantement,
++            Self::niv_to_roman(niveau_enchant)
++        ));
+         Ok(())
+     }
+ }
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:352:
+         )
+     }
+ }
+-
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:1:
++use log::{debug, error, info};
++use serde::{Deserialize, Serialize};
+ use sqlx::SqlitePool;
+-use serde::{Serialize, Deserialize};
+ use std::collections::HashMap;
+-use log::{debug, error, info};
+ 
+-use crate::gameplay::objets::{Objet, TypeObjet, NomAffiche, AjouterRetirer, Equipement, Arme, Potion, Livre};
++use crate::gameplay::objets::{
++    AjouterRetirer, Arme, Equipement, Livre, NomAffiche, Objet, Potion, TypeObjet,
++};
+ 
+ // ============================================================
+ // ENUM UNIFIÉ POUR LE HASHMAP D'INVENTAIRE
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:99:
+ impl Inventaire {
+     pub async fn new(pool: SqlitePool, account_id: i64) -> Result<Self, sqlx::Error> {
+         let objets = Self::charger_objets(&pool, account_id).await?;
+-        Ok(Self { pool, account_id, objets })
++        Ok(Self {
++            pool,
++            account_id,
++            objets,
++        })
+     }
+ 
+     async fn charger_objets(
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:126:
+         Ok(inventaire)
+     }
+ 
+-    async fn construire_objet(pool: &SqlitePool, row: &StuffRow) -> Result<ObjetInventaire, sqlx::Error> {
++    async fn construire_objet(
++        pool: &SqlitePool,
++        row: &StuffRow,
++    ) -> Result<ObjetInventaire, sqlx::Error> {
+         let qte = row.quantity as u32;
+         let image = row.image_path.as_deref();
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:141:
+ 
+                 if eq.equipment_type == "weapon" {
+                     ObjetInventaire::Arme(Arme::new(
+-                        &row.nom, image, qte, 1, eq.durability as u32, eq.attack as i32, Vec::new(),
++                        &row.nom,
++                        image,
++                        qte,
++                        1,
++                        eq.durability as u32,
++                        eq.attack as i32,
++                        Vec::new(),
+                     ))
+                 } else {
+                     ObjetInventaire::Equipement(Equipement::new(
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:148:
+-                        &row.nom, image, qte, 1, eq.defense as i32, Vec::new(),
++                        &row.nom,
++                        image,
++                        qte,
++                        1,
++                        eq.defense as i32,
++                        Vec::new(),
+                     ))
+                 }
+             }
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:181:
+ 
+                 let enchants: Vec<String> = enchant_rows
+                     .into_iter()
+-                    .map(|e| format!("{} {}", e.enchantment_name, Livre::niv_to_roman(e.enchantment_level as u32)))
++                    .map(|e| {
++                        format!(
++                            "{} {}",
++                            e.enchantment_name,
++                            Livre::niv_to_roman(e.enchantment_level as u32)
++                        )
++                    })
+                     .collect();
+ 
+                 ObjetInventaire::Livre(Livre::new(
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:188:
+-                    &row.nom, image, qte, None, Some(enchants), book.book_level as u32,
++                    &row.nom,
++                    image,
++                    qte,
++                    None,
++                    Some(enchants),
++                    book.book_level as u32,
+                 ))
+             }
+ 
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1:
 -use rand::{Rng,RngExt};
 +use crate::gameplay::dice::jet_de_des;
@@ -450,7 +596,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +        niveau_8.insert("argent".to_string(), jet_de_des(6, 1) * 100 * PA);
  
          if jet_de_des(20, 1) >= 4 {
-             niveau_7.insert("gemmes".to_string(), 1);
+             niveau_8.insert("gemmes".to_string(), 1);
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:281:
          }
  
@@ -4287,20 +4433,23 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
 -    migrations,
 -};
  use log::info;
+-use the_last_signal_server::network::server::Server;
++use std::collections::HashMap;
 +use the_last_signal_server::database::{database_manager::DatabaseManager, migrations};
- use the_last_signal_server::network::server::Server;
+ use the_last_signal_server::gameplay::objets::Livre;
++use the_last_signal_server::network::server::Server;
  use the_last_signal_server::utils::logger::logger::ServerLogger;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:9:
+-use std::collections::HashMap;
  #[tokio::main]
  
  /*
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:13:
 -    Fonction asynchrone exécutée par le runtime Tokio. 
 +    Fonction asynchrone exécutée par le runtime Tokio.
      Point d'entrée principal du serveur.
  
      Initialise :
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:20:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:21:
  */
  async fn main() -> Result<(), Box<dyn std::error::Error>> {
      let _guard = ServerLogger::init();
@@ -4327,18 +4476,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
  
      info!("Base SQLite prête.");
      ServerLogger::set_database(database.pool().clone());
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:41:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:42:
+-   
 -    
- 
 -    let server =
 -        Server::new(
 -            "127.0.0.1:5000",
 -            database,
 -        )
 -        .await?;
+ 
 +    let server = Server::new("127.0.0.1:5000", database).await?;
  
--
      server.start().await;
 -    
  
@@ -4354,65 +4503,65 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling stable_deref_trait v1.2.1
    Compiling zerofrom v0.1.8
    Compiling pin-project-lite v0.2.17
-   Compiling memchr v2.8.3
-   Compiling yoke v0.8.3
-   Compiling typenum v1.20.1
-   Compiling zerovec v0.11.8
-   Compiling tinystr v0.8.4
-   Compiling smallvec v1.16.0
-   Compiling litemap v0.8.3
    Compiling writeable v0.6.4
+   Compiling yoke v0.8.3
+   Compiling smallvec v1.16.0
+   Compiling zerovec v0.11.8
+   Compiling memchr v2.8.3
+   Compiling litemap v0.8.3
    Compiling futures-core v0.3.34
+   Compiling typenum v1.20.1
+   Compiling tinystr v0.8.4
+   Compiling icu_locale_core v2.3.0
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
    Compiling utf8_iter v1.0.4
+   Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
-   Compiling icu_locale_core v2.3.0
-   Compiling icu_collections v2.3.0
    Compiling icu_properties_data v2.3.0
    Compiling icu_normalizer_data v2.3.0
-   Compiling socket2 v0.6.5
    Compiling mio v1.2.3
-   Compiling futures-sink v0.3.34
+   Compiling socket2 v0.6.5
    Compiling bytes v1.12.1
+   Compiling icu_provider v2.3.1
+   Compiling futures-sink v0.3.34
    Compiling serde_core v1.0.229
+   Compiling once_cell v1.21.4
+   Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
    Compiling rand_core v0.10.1
    Compiling equivalent v1.0.2
-   Compiling once_cell v1.21.4
-   Compiling icu_provider v2.3.1
-   Compiling icu_properties v2.3.0
-   Compiling icu_normalizer v2.3.0
    Compiling generic-array v0.14.9
    Compiling tracing-core v0.1.36
    Compiling parking_lot_core v0.9.12
-   Compiling foldhash v0.2.0
    Compiling allocator-api2 v0.2.21
+   Compiling futures-task v0.3.34
    Compiling idna_adapter v1.2.2
    Compiling futures-io v0.3.34
-   Compiling percent-encoding v2.3.2
-   Compiling futures-task v0.3.34
    Compiling cpufeatures v0.2.17
    Compiling slab v0.4.12
-   Compiling form_urlencoded v1.2.2
-   Compiling hashbrown v0.16.1
+   Compiling foldhash v0.2.0
+   Compiling percent-encoding v2.3.2
    Compiling futures-util v0.3.34
+   Compiling hashbrown v0.16.1
+   Compiling form_urlencoded v1.2.2
    Compiling idna v1.1.0
-   Compiling serde v1.0.229
    Compiling num-traits v0.2.19
+   Compiling serde v1.0.229
    Compiling parking_lot v0.12.5
-   Compiling zmij v1.0.23
    Compiling getrandom v0.4.3
    Compiling crossbeam-utils v0.8.23
+   Compiling zmij v1.0.23
+   Compiling parking v2.2.1
    Compiling crc-catalog v2.5.0
    Compiling hashbrown v0.17.1
    Compiling itoa v1.0.18
-   Compiling parking v2.2.1
+   Compiling crc v3.4.0
+   Compiling serde_json v1.0.151
    Compiling crossbeam-queue v0.3.14
    Compiling event-listener v5.4.2
-   Compiling serde_json v1.0.151
    Compiling indexmap v2.14.2
-   Compiling crc v3.4.0
    Compiling futures-intrusive v0.5.0
    Compiling either v1.18.0
    Compiling hashlink v0.11.1
@@ -4434,66 +4583,128 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling log v0.4.34
    Compiling thiserror v2.0.20
    Compiling base64 v0.22.1
-   Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
-   Compiling uuid v1.26.0
+   Compiling block-buffer v0.12.1
+   Compiling uuid v1.26.1
    Compiling aho-corasick v1.1.5
-   Compiling base64ct v1.8.3
    Compiling cpufeatures v0.3.1
-   Compiling foreign-types-shared v0.1.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
-   Compiling regex-automata v0.4.18
    Compiling sqlx-core v0.9.0
-   Compiling foreign-types v0.3.2
+   Compiling foreign-types-shared v0.1.1
+   Compiling base64ct v1.8.3
    Compiling phc v0.6.1
-   Compiling sqlx-sqlite v0.9.0
+   Compiling foreign-types v0.3.2
+   Compiling regex-automata v0.4.18
    Compiling digest v0.11.3
+   Compiling sqlx-sqlite v0.9.0
    Compiling libsqlite3-sys v0.37.0
-   Compiling openssl-sys v0.9.117
-   Compiling bitflags v2.13.1
    Compiling sqlx-macros-core v0.9.0
-   Compiling iana-time-zone v0.1.65
+   Compiling openssl-sys v0.9.117
    Compiling simd-adler32 v0.3.10
    Compiling adler2 v2.0.1
-   Compiling miniz_oxide v0.9.1
-   Compiling chrono v0.4.45
+   Compiling iana-time-zone v0.1.65
+   Compiling bitflags v2.13.2
    Compiling openssl v0.10.81
-   Compiling zeroize v1.9.0
+   Compiling chrono v0.4.45
+   Compiling miniz_oxide v0.9.1
    Compiling sqlx-macros v0.9.0
+   Compiling zeroize v1.9.0
+   Compiling regex v1.13.1
    Compiling blake2 v0.11.0
    Compiling password-hash v0.6.1
    Compiling crc32fast v1.5.1
-   Compiling regex v1.13.1
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
-   Compiling nu-ansi-term v0.50.3
    Compiling byteorder v1.5.0
-   Compiling flexi_logger v0.31.10
-   Compiling sqlx v0.9.0
+   Compiling nu-ansi-term v0.50.3
    Compiling rand v0.10.2
+   Compiling sqlx v0.9.0
+   Compiling flexi_logger v0.31.10
    Compiling fernet v0.2.2
    Compiling flate2 v1.1.10
    Compiling argon2 v0.6.0
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
-error[E0382]: borrow of moved value: `niveau_7`
-   --> src/gameplay/tresor.rs:280:13
-    |
-260 |         let mut niveau_7 = HashMap::new();
-    |             ------------ move occurs because `niveau_7` has type `HashMap<std::string::String, u32>`, which does not implement the `Copy` trait
-...
-271 |         objets_garantis.insert(7, niveau_7);
-    |                                   -------- value moved here
-...
-280 |             niveau_7.insert("gemmes".to_string(), 1);
-    |             ^^^^^^^^ value borrowed here after move
-    |
-help: consider cloning the value if the performance cost is acceptable
-    |
-271 |         objets_garantis.insert(7, niveau_7.clone());
-    |                                           ++++++++
+warning: unused imports: `debug`, `error`, and `info`
+ --> src/gameplay/stuff_manager.rs:4:11
+  |
+4 | use log::{debug, error, info};
+  |           ^^^^^  ^^^^^  ^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-For more information about this error, try `rustc --explain E0382`.
-error: could not compile `the-last-signal-server` (lib) due to 1 previous error
-warning: build failed, waiting for other jobs to finish...
-error: could not compile `the-last-signal-server` (lib test) due to 1 previous error
+warning: fields `user_id` and `password_hash` are never read
+  --> src/network/handler.rs:41:5
+   |
+40 | pub struct User {
+   |            ---- fields in this struct
+41 |     user_id: String,
+   |     ^^^^^^^
+42 |     password_hash: String,
+   |     ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+warning: constant `PO` is never used
+ --> src/gameplay/tresor.rs:8:7
+  |
+8 | const PO: u32 = PA * 10;
+  |       ^^
+
+warning: constant `PP` is never used
+ --> src/gameplay/tresor.rs:9:7
+  |
+9 | const PP: u32 = PO * 10;
+  |       ^^
+
+warning: field `pool` is never read
+  --> src/gameplay/stuff_manager.rs:60:5
+   |
+59 | pub struct Inventaire {
+   |            ---------- field in this struct
+60 |     pool: SqlitePool,
+   |     ^^^^
+
+warning: `the-last-signal-server` (lib) generated 5 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 1 suggestion)
+warning: unused import: `the_last_signal_server::gameplay::objets::Livre`
+ --> src/main.rs:7:5
+  |
+7 | use the_last_signal_server::gameplay::objets::Livre;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+warning: unused import: `std::collections::HashMap`
+ --> src/main.rs:9:5
+  |
+9 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 2 warnings (2 duplicates)
+warning: `the-last-signal-server` (lib test) generated 5 warnings (5 duplicates)
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.56s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-8dfd8a310a549324)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-b3e70e40db2ef90b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-f55e340124d7ad4a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests the_last_signal_server
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
