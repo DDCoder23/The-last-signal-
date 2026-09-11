@@ -1,5 +1,4 @@
 from .client import Client
-import time
 from .packet import Packet, PacketType
 from .packets.chat import ChatPacket
 from .packets.login import LoginPacket
