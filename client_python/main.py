@@ -1,5 +1,5 @@
 from .client import Client
-from .packet import Packet, PacketType
+from .packet import PacketType
 from .packets.chat import ChatPacket
 from .packets.login import LoginPacket
 from .packets.ping import PingPacket
