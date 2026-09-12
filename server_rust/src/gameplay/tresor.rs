@@ -148,6 +148,18 @@ impl Tresor {
                 admin: 2,
             },
         );
+        loot_par_niveau.insert(
+            9,
+            Loot {
+                commun: 2,
+                peu_commun: 1,
+                rare: 0,
+                super_rare: 0,
+                epique: 0,
+                legendaire: 0,
+                admin: 2,
+            },
+        );
 
         // -------------------------------------------------
         // OBJETS GARANTIS
@@ -281,6 +293,18 @@ impl Tresor {
         }
 
         objets_garantis.insert(8, niveau_8);
+        let mut niveau_9 = HashMap::new();
+
+        niveau_9.insert(
+            "argent".to_string(),
+            jet_de_des(6, 2) * 100 * PA,
+        );
+
+        if jet_de_des(20, 1) >= 2 {
+            niveau_9.insert("gemmes".to_string(), 1);
+        }
+
+        objets_garantis.insert(9, niveau_9);
         
 
         // -------------------------------------------------
@@ -423,11 +447,13 @@ impl Tresor {
     (6, 15),
     (7, 14),
     (8, 13),
+    (9, 12),
 ]);
         let seuil_artefact_peu_commun: HashMap<u32, u32> = HashMap::from([
     (6, 20),
     (7, 19),
-    (8,13),
+    (8,17),
+    (9, 15),
 
 ]);
         let sous_loot_livre_normal = HashMap::from([
