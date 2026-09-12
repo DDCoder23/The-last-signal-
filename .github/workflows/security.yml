@@ -19,6 +19,7 @@ permissions:
   contents: write
   security-events: write
   actions: write
+  pull-requests: write
 
 jobs:
   security:
