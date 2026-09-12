@@ -21,7 +21,11 @@ jobs:
     uses: ./.github/workflows/Launcher.yml
     secrets:
         VAULT_KEY: ${{ secrets.VAULT_KEY }}
-  archive:
+  
+
+  
+
+  security:
     needs: launch
     if: >-
      ${{
@@ -29,20 +33,6 @@ jobs:
       (
         needs.launch.result == 'success' ||
         needs.launch.result == 'failure'
-      )
-     }}
-    uses: ./.github/workflows/Archive.yml
-
-  
-
-  security:
-    needs: archive
-    if: >-
-     ${{
-      always() &&
-      (
-        needs.archive.result == 'success' ||
-        needs.archive.result == 'failure'
       )
      }}
     
@@ -53,7 +43,6 @@ jobs:
   cancel-nightly:
     needs:
       - launch
-      - archive
       - security
       
     if: >-
@@ -61,7 +50,6 @@ jobs:
       always() &&
       (
         needs.launch.result == 'failure' ||
-        needs.archive.result == 'failure' ||
         needs.security.result == 'failure' 
       )
      }}
