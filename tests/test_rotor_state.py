@@ -266,3 +266,71 @@ def test_rotor_7_wraps():
     state.update()
 
     assert state.positions[6] == 246
+# ============================================================
+# ROTOR 8
+# ============================================================
+
+def test_rotor_8():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    initial_position = state.positions[7]
+
+    state.update()
+
+    assert state.positions[7] != initial_position
+
+
+def test_rotor_8_stays_in_u8():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    for _ in range(1000):
+        state.update()
+
+        assert 0 <= state.positions[7] <= 255
+
+
+# ============================================================
+# ROTOR 9
+# ============================================================
+
+def test_rotor_9():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    initial_position = state.positions[8]
+
+    state.update()
+
+    assert state.positions[8] != initial_position
+
+
+def test_rotor_9_stays_in_u8():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    for _ in range(1000):
+        state.update()
+
+        assert 0 <= state.positions[8] <= 255
