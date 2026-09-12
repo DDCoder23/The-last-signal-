@@ -1,6 +1,4 @@
 import hashlib
-
-
 MASK_64 = 0xFFFFFFFFFFFFFFFF
 
 ROTOR_COUNT = 16
@@ -233,3 +231,39 @@ def rotor_inverse(
     ) & 0xFF
 
     return value
+
+class RotorState:
+
+    def __init__(self, communication_key, packet_type):
+        if len(communication_key) != 64:
+            raise ValueError(
+                "Communication_key must be exactly 64 bytes"
+            )
+
+        self.communication_key = communication_key
+        self.packet_type = packet_type
+
+        self.positions = [0] * 16
+        self.byte_counter = 0
+
+    def update(self):
+        # R1 : +1 à chaque octet
+        previous_r1 = self.positions[0]
+
+        self.positions[0] = (
+            self.positions[0] + 1
+        ) & 0xFF
+
+        # Détection du tour complet de R1
+        r1_completed_rotation = (
+            previous_r1 == 255
+            and self.positions[0] == 0
+        )
+
+        # R4 : +8 à chaque tour complet de R1
+        if r1_completed_rotation:
+            self.positions[3] = (
+                self.positions[3] + 8
+            ) & 0xFF
+
+        self.byte_counter += 1
