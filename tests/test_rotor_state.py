@@ -89,3 +89,62 @@ def test_rotor_4_reacts_to_rotor_1_full_rotation():
         state.update()
 
     assert state.positions[3] == 8
+# ============================================================
+# ROTOR 2
+# ============================================================
+
+def test_rotor_2_rotates_by_key_each_byte():
+
+    key = bytes(range(64))
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    # Pour le test, on utilise le premier octet de la clé.
+    key_value = key[0]
+
+    state.update()
+
+    assert state.positions[1] == key_value
+
+    state.update()
+
+    assert state.positions[1] == (
+        key_value * 2
+    ) & 0xFF
+
+
+def test_rotor_2_wraps():
+
+    key = bytes([7] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state.positions[1] = 250
+
+    state.update()
+
+    assert state.positions[1] == 1
+# ============================================================
+# ROTOR 5
+# ============================================================
+
+def test_rotor_5_reacts_to_rotor_2_full_rotation():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    for _ in range(256):
+        state.update()
+
+    assert state.positions[1] == 0
+    assert state.positions[4] == 251
