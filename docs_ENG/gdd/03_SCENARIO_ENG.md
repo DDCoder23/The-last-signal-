@@ -9,17 +9,17 @@
 ---
 
 ## 📌 **Table of Contents**
-1. [Global Context](#-1-global-context)
-2. [Main Campaign Scenario](#-2-main-campaign-scenario)
-3. [Epic Quests](#-3-epic-quests)
-4. [Side Quests](#-4-side-quests)
-5. [Choice System & Consequences](#-5-choice-system--consequences)
-6. [Key Lore Elements](#-6-key-lore-elements)
-7. [Gameplay Integration](#-7-gameplay-integration)
+1. [Global Context](#1-global-context)
+2. [Main Campaign Scenario](#2-main-campaign-scenario)
+3. [Epic Quests](#3-epic-quests)
+4. [Side Quests](#4-side-quests)
+5. [Choice System & Consequences](#5-choice-system-consequences)
+6. [Key Lore Elements](#6-key-lore-elements)
+7. [Gameplay Integration](#7-gameplay-integration)
 
 ---
 
-## 🌍 **1. Global Context**
+## 1. Global Context
 
 ### **The World of The Last Signal**
 In **2045**, a worldwide **electromagnetic pulse (EMP)** crippled all electronic infrastructure, plunging humanity into chaos.  
@@ -35,7 +35,7 @@ A **mysterious radio signal** is transmitted every **24 hours** from an ancient 
 
 ---
 
-## 🎬 **2. Main Campaign Scenario**
+## 2. Main Campaign Scenario
 
 ### **🔴 Main Campaign: "The Mystery of the Lighthouse"**
 - **Type**: Core storyline quest (Mandatory endgame progression)
@@ -112,7 +112,7 @@ The player, an amnesiac survivor, awakens and discovers an ancient **military te
 
 ---
 
-## 🏆 **3. Epic Quests** *(Optional major storyline arcs)*
+## 3. Epic Quests
 
 | Quest ID | Title | Level | Objectives & Narrative Impact | Key Rewards |
 |:--------:|-------|:-----:|--------------------------------|-------------|
@@ -123,7 +123,7 @@ The player, an amnesiac survivor, awakens and discovers an ancient **military te
 
 ---
 
-## 🎯 **4. Side Quests** *(Short & repeatable missions)*
+## 4. Side Quests
 
 | Quest ID | Title | Type | Level | Objectives | Rewards | Repeatable |
 |:--------:|-------|:----:|:-----:|------------|---------|:----------:|
@@ -135,7 +135,7 @@ The player, an amnesiac survivor, awakens and discovers an ancient **military te
 
 ---
 
-## 🔄 **5. Choice System & Consequences**
+## 5. Choice System & Consequences
 
 ### **Moral Decisions and Systemic Impact**
 Player choices dynamically influence:
@@ -153,7 +153,7 @@ Player choices dynamically influence:
 
 ---
 
-## 📜 **6. Key Lore Elements**
+## 6. Key Lore Elements
 
 ### **Important Characters**
 
@@ -177,7 +177,7 @@ Player choices dynamically influence:
 
 ---
 
-## 🎮 **7. Gameplay Integration**
+## 7. Gameplay Integration
 
 ### **Narrative Mechanics**
 
