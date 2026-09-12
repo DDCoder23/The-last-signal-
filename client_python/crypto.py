@@ -290,7 +290,7 @@ class RotorState:
         
 
         if r2_completed_rotation:
-                self.positions[4] = (self.positions[4] - 5) & 0xFF
+            self.positions[4] = (self.positions[4] - 5) & 0xFF
         
         # R3
 
