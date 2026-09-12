@@ -209,25 +209,89 @@ jobs:
           python -m scripts.generate_problems_md
                 
         
-      # =========================
-      # Upload reports
-      # =========================
-
-      - name: 📦 Upload reports
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: documentation-report-${{ github.run_number }}
-          retention-days: 30
-          path: |
-            reports/**
-            database/**
       - name: 💾 Commit reports
         if: always()
-        uses: ./.github/actions/commit-reports
-        with:
-          report-type: project
-          commit-message: "Documentation Report #${{ github.run_number }}"
+        run: |
+                git config --global user.name "github-actions"
+                git config --global user.email "github-actions@github.com"
+                export GH_TOKEN="${{ github.token }}"
+                git fetch origin
+                if git show-ref --verify --quiet refs/remotes/origin/ci-reports
+                then
+                git worktree add /tmp/ci-worktree origin/ci-reports
+                else
+                git worktree add -b ci-reports /tmp/ci-worktree
+                fi
+                
+                mkdir -p "/tmp/ci-worktree/reports/rust"
+                rsync -a --delete   "$GITHUB_WORKSPACE/reports/project/"   "/tmp/ci-worktree/reports/project/" 2>/dev/null || true
+                cd /tmp/ci-worktree
+                git add -A
+                git status
+                if git diff --cached --quiet; then
+                echo "No changes to commit."
+                cd "$GITHUB_WORKSPACE"
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/project"
+                exit 0
+                fi
+                git commit -m "Report project"
+                for i in 1 2 3
+                do
+                echo "Tentative $i/3"
+                git fetch origin 
+                echo "Branche actuelle :"
+                git branch --show-current
+
+                git status
+
+                if git push origin HEAD:ci-reports
+                then
+                echo "Push réussi"
+                cd "$GITHUB_WORKSPACE"
+                git worktree remove /tmp/ci-worktree --force && rm -rf "/tmp/ci-worktree/reports/project"
+                exit 0
+                fi
+
+                echo "Push échoué."
+                sleep 2
+                done
+
+                echo "======================================"
+                echo "Push direct impossible"
+                echo "Création de la branche de secours"
+                echo "======================================"
+
+                FALLBACK_BRANCH="ci-reports-update"
+                echo "Branche de secours : $FALLBACK_BRANCH"
+
+                # Crée ou met à jour la branche de secours
+                git push --force origin HEAD:"refs/heads/$FALLBACK_BRANCH"
+                echo "Branche de secours poussée."
+
+                # Vérifie si une PR existe déjà
+                PR_URL=$(gh pr list \
+                --base "ci-reports" \
+                --head "$FALLBACK_BRANCH" \
+                --state open \
+                --json url \
+                --jq '.[0].url')
+                if [ -n "$PR_URL" ]; then
+                echo "Une Pull Request existe déjà : $PR_URL"
+                else
+                echo "Création de la Pull Request..."
+
+                gh pr create \
+                --base ci-reports \
+                --head "$FALLBACK_BRANCH" \
+                --title "Report project "\
+                --body "Le push direct vers \`ci-reports\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont     disponibles dans cette Pull Request."
+                fi
+
+                cd "$GITHUB_WORKSPACE"
+                git worktree remove /tmp/ci-worktree --force && rm -rf /tmp/ci-worktree/reports/project
+
+
+      
 
 
       

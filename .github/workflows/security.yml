@@ -103,21 +103,38 @@ jobs:
         run: |
           
 
-          mkdir -p reports/security
+          
           
         
 
-          REPORT="reports/security/security-report-${GITHUB_RUN_NUMBER}.md"
+          DATE=$(date -u +"%Y-%m-%d")
 
-          echo "REPORT=$REPORT" >> $GITHUB_ENV
+          REPORT_DIR="reports/security/${DATE}"
+          mkdir -p "$REPORT_DIR"
 
-          echo "# Security Report" > "$REPORT"
+          LAST=$(find "$REPORT_DIR" -type f -name 'security-report-*.md' \
+          -exec basename {} \; |
+          sed -E 's/security-report-([0-9]+)\.md/\1/' |
+          sort -n |
+          tail -1)
 
-          echo "" >> "$REPORT"
+          REPORT_NUMBER=$(( ${LAST:-0} + 1 ))
 
-          echo "Date : $(date)" >> "$REPORT"
+          REPORT="${REPORT_DIR}/security-report-${REPORT_NUMBER}.md"
 
-          echo "" >> "$REPORT"
+          echo "REPORT=$REPORT" >> "$GITHUB_ENV"
+          echo "REPORT_NUMBER=$REPORT_NUMBER" >> "$GITHUB_ENV"
+          echo "REPORT_DATE=$DATE" >> "$GITHUB_ENV"
+
+          {
+            echo "# Security Report"
+            echo ""
+            echo "Run : ${GITHUB_RUN_NUMBER}"
+            echo "Branch : ${GITHUB_REF_NAME}"
+            echo "Commit : ${GITHUB_SHA}"
+            echo "Date : $(date)"
+            echo ""
+          } > "$REPORT"
       - name: Debug environment
         run: |
             mkdir -p database_test
