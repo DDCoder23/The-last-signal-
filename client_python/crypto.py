@@ -306,7 +306,7 @@ class RotorState:
         # R7
         self.positions[6] = (
                  self.positions[6] - 20
-                  ) & 0xF
+                  ) & 0xFF
       
 
         # ========================================================
