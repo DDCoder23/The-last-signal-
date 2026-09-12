@@ -247,9 +247,9 @@ class RotorState:
         self.byte_counter = 0
 
     def update(self):
-        # ========================================================
-        # R1 : +1 à chaque octet
-        # ========================================================
+        
+        # R1
+        
 
         previous_r1 = self.positions[0]
 
@@ -262,15 +262,15 @@ class RotorState:
             and self.positions[0] == 0
         )
 
-        # R4 : +8 à chaque tour complet de R1
+        # R4
         if r1_completed_rotation:
                 self.positions[3] = (
                 self.positions[3] + 8
                 ) & 0xFF
 
-        # ========================================================
-        # R2 : +key à chaque octet
-        # ========================================================
+      
+        # R2
+      
 
         key_value = self.communication_key[0]
 
@@ -285,15 +285,15 @@ class RotorState:
             previous_r2 + key_value >= 256
         )
 
-        # ========================================================
-        # R5 : -5 à chaque tour complet de R2
-        # ========================================================
+  
+        # R5 
+        
 
         if r2_completed_rotation:
                 self.positions[4] = (self.positions[4] - 5) & 0xFF
-        # ========================================================
-        # R3 : -packet_type à chaque octet
-        # ========================================================
+        
+        # R3
+
         self.positions[2] = (self.positions[2] - self.packet_type) & 0xFF
 
         # ========================================================
