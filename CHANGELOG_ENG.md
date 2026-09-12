@@ -96,7 +96,7 @@ All notable changes to the **The Last Signal Online** project are documented in 
 - Added new crypto's test
 - Added navigation in all French gdd files
 - Added a stuff manager
-- Added  treasure levels 7 to 8
+- Added  treasure levels 7 to 9
 
 ### Optimisation
 
