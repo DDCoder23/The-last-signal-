@@ -293,6 +293,12 @@ class RotorState:
                 self.positions[4] = (
                 self.positions[4] - 5
             ) & 0xFF
+         # ========================================================
+         # R3 : -packet_type à chaque octet
+         # ========================================================
+         self.positions[2] = (
+              self.positions[2] - self.packet_type
+              ) & 0xFF
 
         # ========================================================
         # Compteur d'octets
