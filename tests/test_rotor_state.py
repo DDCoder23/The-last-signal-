@@ -234,3 +234,35 @@ def test_rotor_6_rotates_by_seed_every_two_bytes():
         state.update()
         state.update()
         assert state.positions[5] == 0
+def test_rotor_7_rotation():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state.update()
+
+    assert state.positions[6] == 236
+
+    state.update()
+
+    assert state.positions[6] == 216
+
+
+def test_rotor_7_wraps():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state.positions[6] = 10
+
+    state.update()
+
+    assert state.positions[6] == 246
