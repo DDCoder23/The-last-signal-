@@ -247,55 +247,55 @@ class RotorState:
         self.byte_counter = 0
 
     def update(self):
-    # ========================================================
-    # R1 : +1 à chaque octet
-    # ========================================================
+        # ========================================================
+        # R1 : +1 à chaque octet
+        # ========================================================
 
-    previous_r1 = self.positions[0]
+        previous_r1 = self.positions[0]
 
-    self.positions[0] = (
-        self.positions[0] + 1
-    ) & 0xFF
+        self.positions[0] = (
+                self.positions[0] + 1
+               ) & 0xFF
 
-    r1_completed_rotation = (
-        previous_r1 == 255
-        and self.positions[0] == 0
-    )
+        r1_completed_rotation = (
+            previous_r1 == 255
+            and self.positions[0] == 0
+        )
 
-    # R4 : +8 à chaque tour complet de R1
-    if r1_completed_rotation:
-        self.positions[3] = (
-            self.positions[3] + 8
+        # R4 : +8 à chaque tour complet de R1
+        if r1_completed_rotation:
+                self.positions[3] = (
+                self.positions[3] + 8
+                ) & 0xFF
+
+        # ========================================================
+        # R2 : +key à chaque octet
+        # ========================================================
+
+        key_value = self.communication_key[0]
+
+        previous_r2 = self.positions[1]
+
+        self.positions[1] = (
+            self.positions[1] + key_value
         ) & 0xFF
 
-    # ========================================================
-    # R2 : +key à chaque octet
-    # ========================================================
+        # Détection d'un tour complet de R2
+        r2_completed_rotation = (
+            previous_r2 + key_value >= 256
+        )
 
-    key_value = self.communication_key[0]
+        # ========================================================
+        # R5 : -5 à chaque tour complet de R2
+        # ========================================================
 
-    previous_r2 = self.positions[1]
+        if r2_completed_rotation:
+                self.positions[4] = (
+                self.positions[4] - 5
+            ) & 0xFF
 
-    self.positions[1] = (
-        self.positions[1] + key_value
-    ) & 0xFF
+        # ========================================================
+        # Compteur d'octets
+        # ========================================================
 
-    # Détection d'un tour complet de R2
-    r2_completed_rotation = (
-        previous_r2 + key_value >= 256
-    )
-
-    # ========================================================
-    # R5 : -5 à chaque tour complet de R2
-    # ========================================================
-
-    if r2_completed_rotation:
-        self.positions[4] = (
-            self.positions[4] - 5
-        ) & 0xFF
-
-    # ========================================================
-    # Compteur d'octets
-    # ========================================================
-
-    self.byte_counter += 1
+        self.byte_counter += 1
