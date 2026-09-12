@@ -148,3 +148,39 @@ def test_rotor_5_reacts_to_rotor_2_full_rotation():
 
     assert state.positions[1] == 0
     assert state.positions[4] == 251
+# ============================================================
+# ROTOR 3
+# ============================================================
+
+def test_rotor_3_rotates_by_packet_type():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=7,
+    )
+
+    state.update()
+
+    assert state.positions[2] == 249
+
+    state.update()
+
+    assert state.positions[2] == 242
+
+
+def test_rotor_3_wraps():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=7,
+    )
+
+    state.positions[2] = 3
+
+    state.update()
+
+    assert state.positions[2] == 252
