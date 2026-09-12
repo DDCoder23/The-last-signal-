@@ -85,7 +85,7 @@ jobs:
       )
      }}
     uses: ./.github/workflows/project.yml
-  project-other:
+  project_other:
     needs: integration
     if: >-
      ${{
@@ -103,16 +103,16 @@ jobs:
 
   sync:
     needs: 
-      - project-scheduled
-      - project-other
+      - project_scheduled
+      - project_other
     if: >-
      ${{
       always() &&
       (
-          needs.project-scheduled.result == 'success' ||
-          needs.project-scheduled.result == 'failure' ||
-          needs.project-other.result == 'success' ||
-          needs.project-other.result == 'failure'
+          needs.project_scheduled.result == 'success' ||
+          needs.project_scheduled.result == 'failure' ||
+          needs.project_other.result == 'success' ||
+          needs.project_other.result == 'failure'
       )
      }}
     uses: ./.github/workflows/sync-ci.yml
@@ -123,8 +123,8 @@ jobs:
       - python
       - rust
       - build
-      - project-scheduled
-      - project-other
+      - project_scheduled
+      - project_other
       - sync
     if: >-
      ${{
@@ -134,8 +134,8 @@ jobs:
         needs.python.result == 'failure' ||
         needs.rust.result == 'failure' ||
         needs.build.result == 'failure' ||
-        needs.project-scheduled.result == 'failure' ||
-        needs.project-other.result == 'failure' ||
+        needs.project_scheduled.result == 'failure' ||
+        needs.project_other.result == 'failure' ||
         needs.sync.result == 'failure'
       )
      }}
