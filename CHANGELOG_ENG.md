@@ -86,3 +86,20 @@ All notable changes to the **The Last Signal Online** project are documented in 
 -Added new docupmentation in English
 
 ---
+
+## [1.0.08] - 2026-09-08 ~ 2026-09-12
+
+### Added
+
+- Added 06_REGIONS.md et 07_VILLES.md
+- fix bugs in crypto tests 
+- Added new crypto's test
+- Added navigation in all French gdd files
+- Added a stuff manager
+- Added  treasure levels 7 to 8
+
+### Optimisation
+
+- workflows'optimisation  
+
+---  
