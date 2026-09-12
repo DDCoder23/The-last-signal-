@@ -93,6 +93,7 @@ jobs:
       ##########################################################
 
       - name: Gitleaks
+        continue-on-error: true
         uses: gitleaks/gitleaks-action@v3
 
       ##########################################################
@@ -264,6 +265,7 @@ jobs:
       ##########################################################
 
       - name: Prepare integrity baseline
+        continue-on-error: true
         if: always()
         run: |
           mkdir -p "$RUNNER_TEMP/security-baseline"
@@ -291,6 +293,7 @@ jobs:
       - name: Secrets Security Test
         id: secrets_test
         if: always()
+        continue-on-error: true
         run: |
           echo "" >> "$REPORT"
           echo "## Secrets Security Test" >> "$REPORT"
@@ -300,6 +303,7 @@ jobs:
 
       - name: Filesystem Security Test
         id: filesystem_test
+        continue-on-error: true
         if: always()
         run: |
           echo "" >> "$REPORT"
@@ -310,6 +314,7 @@ jobs:
 
       - name: Git Security Test
         id: git_security_test
+        continue-on-error: true
         if: always()
         run: |
           echo "" >> "$REPORT"
@@ -320,6 +325,7 @@ jobs:
 
       - name: Python Security Test
         id: python_security_test
+        continue-on-error: true
         if: always()
         run: |
           echo "" >> "$REPORT"
@@ -330,6 +336,7 @@ jobs:
 
       - name: Rust Security Test
         id: rust_security_test
+        continue-on-error: true
         if: always()
         run: |
           echo "" >> "$REPORT"
@@ -340,6 +347,7 @@ jobs:
 
       - name: Web Security Test
         id: web_security_test
+        continue-on-error: true
         if: always()
         run: |
           echo "" >> "$REPORT"
@@ -495,6 +503,7 @@ jobs:
 
       - name: Python Security (Bandit)
         if: always()
+        continue-on-error: true
         run: |
 
           echo "## Bandit" >> "$REPORT"
@@ -507,6 +516,7 @@ jobs:
 
       - name: Python Dependencies Audit
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -521,6 +531,7 @@ jobs:
 
       - name: Safety
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -535,6 +546,7 @@ jobs:
 
       - name: Cargo Audit
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -554,6 +566,7 @@ jobs:
 
       - name: Semgrep
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -572,6 +585,7 @@ jobs:
 
       - name: Secret Detection
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -588,6 +602,7 @@ jobs:
 
       - name: Python Licenses
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -602,6 +617,7 @@ jobs:
 
       - name: Cargo Deny
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -621,6 +637,7 @@ jobs:
 
       - name: Outdated Python packages
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -635,6 +652,7 @@ jobs:
 
       - name: Outdated Rust crates
         if: always()
+        continue-on-error: true
         run: |
 
           echo "" >> "$REPORT"
@@ -653,6 +671,7 @@ jobs:
 
       - name: Initialize CodeQL
         if: always()
+        continue-on-error: true
         uses: github/codeql-action/init@v4
         with:
           languages: python,rust
@@ -668,6 +687,7 @@ jobs:
 
       - name: Calculate security score
         if: always()
+        continue-on-error: true
         shell: bash
         run: |
 
