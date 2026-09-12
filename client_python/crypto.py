@@ -245,7 +245,10 @@ class RotorState:
 
         self.positions = [0] * 16
         self.byte_counter = 0
-
+        self.rotor_6_seed = derive_rotor_seed(
+    communication_key,
+    6,
+) & 0xFF
     def update(self):
         
         # R1
@@ -295,6 +298,13 @@ class RotorState:
         # R3
 
         self.positions[2] = (self.positions[2] - self.packet_type) & 0xFF
+        # R6
+        if (self.byte_counter + 1) % 2 == 0:
+            self.positions[5] = (
+                        self.positions[5]
+                        + self.rotor_6_seed
+                         ) & 0xFF
+      
 
         # ========================================================
         # Compteur d'octets
