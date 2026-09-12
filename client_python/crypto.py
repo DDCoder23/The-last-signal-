@@ -302,8 +302,11 @@ class RotorState:
         if (self.byte_counter + 1) % 2 == 0:
             self.positions[5] = (
                         self.positions[5]
-                        + self.rotor_6_seed
-                         ) & 0xFF
+                        + self.rotor_6_seed) & 0xFF
+        # R7
+        self.positions[6] = (
+                 self.positions[6] - 20
+                  ) & 0xF
       
 
         # ========================================================
