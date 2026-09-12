@@ -14,7 +14,7 @@ on:
         required: true
 
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "7 * * * *"
 concurrency:
   group: main-update
   queue: max
@@ -41,7 +41,7 @@ jobs:
       (
         needs.integration.result == 'success' ||
         needs.integration.result == 'failure'
-      )
+      ) && github.event_name == 'schedule'
      }}
     uses: ./.github/workflows/python.yml
 
@@ -53,7 +53,7 @@ jobs:
       (
         needs.python.result == 'success' ||
         needs.python.result == 'failure'
-      )
+      ) && github.event_name == 'schedule'
      }}
     uses: ./.github/workflows/rust.yml
 
@@ -65,7 +65,7 @@ jobs:
       (
         needs.rust.result == 'success' ||
         needs.rust.result == 'failure'
-      )
+      ) && github.event_name == 'schedule'
      }}
     uses: ./.github/workflows/build.yml
 
