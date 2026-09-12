@@ -418,3 +418,20 @@ def test_rotor_9_depends_on_state():
     state2.update()
 
     assert state1.positions[8] != state2.positions[8]
+def test_rotor_state_reference_r1_r9():
+
+    key = bytes(range(64))
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=3,
+    )
+
+    for _ in range(10):
+        state.update()
+
+    assert state.byte_counter == 10
+
+    # Référence à remplir avec les valeurs obtenues
+    print("positions =", state.positions)
+    print("byte_counter =", state.byte_counter)
