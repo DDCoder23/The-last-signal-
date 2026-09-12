@@ -97,7 +97,7 @@ l'espagnol et le japonais
 - ajout de nouveau de test de crypto
 - ajout de la navigation dans tout les fichiers du gdd français
 - ajout d'un stuff manager
-- ajout des trésors niveau 7 à niveau 8
+- ajout des trésors niveau 7 à niveau 9
 
 ### Optimisation
 
