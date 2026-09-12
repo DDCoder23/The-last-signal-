@@ -334,3 +334,87 @@ def test_rotor_9_stays_in_u8():
         state.update()
 
         assert 0 <= state.positions[8] <= 255
+def test_rotor_8_depends_on_state():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2.positions[0] ^= 0x55
+
+    state1.update()
+    state2.update()
+
+    assert state1.positions[7] != state2.positions[7]
+
+
+def test_rotor_9_depends_on_state():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2.positions[1] ^= 0x55
+
+    state1.update()
+    state2.update()
+
+    assert state1.positions[8] != state2.positions[8]
+def test_rotor_8_depends_on_state():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2.positions[0] ^= 0x55
+
+    state1.update()
+    state2.update()
+
+    assert state1.positions[7] != state2.positions[7]
+
+
+def test_rotor_9_depends_on_state():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2.positions[1] ^= 0x55
+
+    state1.update()
+    state2.update()
+
+    assert state1.positions[8] != state2.positions[8]
