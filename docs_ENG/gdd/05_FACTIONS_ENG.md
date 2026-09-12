@@ -410,6 +410,6 @@ Key narrative secrets to be discovered over the course of progression:
 
 ## Navigation
 
-⬅️ [Back to GDD](README_ENG.md)
+⬅️ [Chronology](04_CHRONOLOGIE_ENG.md)
 
 ➡️ [Regions](06_REGIONS_ENG.md)
