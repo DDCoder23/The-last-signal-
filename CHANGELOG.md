@@ -88,3 +88,21 @@ l'espagnol et le japonais
   
 
 ---
+## [1.0.08] - 08/09/2026~12/09/2026
+
+### Ajout
+
+- ajout des fichiers 06_REGIONS.md et 07_VILLES.md
+- corrections des erreurs dans les tests de crypto
+- ajout de nouveau de test de crypto
+- ajout de la navigation dans tout les fichiers du gdd français
+- ajout d'un stuff manager
+- ajout des trésors niveau 7 à niveau 8
+
+### Optimisation
+
+-optimisation des workflows
+
+---  
+
+
