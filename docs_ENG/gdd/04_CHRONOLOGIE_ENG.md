@@ -200,6 +200,6 @@ When proposing a new narrative beat or historical event:
 
 ## Navigation
 
-⬅️ [Back to GDD](README_ENG.md)
+⬅️ [Scenario](03_SCENARIO_ENG.md)
 
 ➡️ [Factions](05_FACTIONS_ENG.md)

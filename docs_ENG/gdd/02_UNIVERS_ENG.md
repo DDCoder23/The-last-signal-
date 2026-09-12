@@ -286,6 +286,6 @@ The game world is designed to evoke a compelling range of emotions:
 
 ## Navigation
 
-⬅️ [Back to GDD](README_ENG.md)
+⬅️ [Project Vision](01_VISION_ENG.md)
 
 ➡️ [Scenario](03_SCENARIO_ENG.md)

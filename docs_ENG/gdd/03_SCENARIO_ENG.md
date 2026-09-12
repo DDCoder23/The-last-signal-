@@ -215,7 +215,7 @@ Player choices dynamically influence:
 
 ## Navigation
 
-⬅️ [Back to GDD](README_ENG.md)
+⬅️ [Universe](02_UNIVERS_ENG.md)
 
 ➡️ [Chronology](04_CHRONOLOGIE_ENG.md)
 
