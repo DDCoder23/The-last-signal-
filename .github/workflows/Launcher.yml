@@ -14,7 +14,7 @@ on:
         required: true
 
   schedule:
-    - cron: "15 * * * *"
+    - cron: "*/10 * * * *"
 concurrency:
   group: main-update
   queue: max
