@@ -67,13 +67,11 @@ def test_splitmix64_different_seeds():
 
 def test_splitmix64_is_u64():
 
-    generator = SplitMix64(
-        0xFFFFFFFFFFFFFFFF
-    )
+    generator = SplitMix64(MASK_64)
 
     value = generator.next()
 
-    assert 0 <= value <= MASK64
+    assert 0 <= value <= MASK_64
 
 
 
