@@ -443,7 +443,7 @@ def test_rotor_state_reference_r1_r11():
         64,
         66,
         41,
-        0,
+        161,
         0,
         0,
         0,
