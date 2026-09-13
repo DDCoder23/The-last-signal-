@@ -449,3 +449,79 @@ def test_rotor_state_reference_r1_r9():
         0,
         0,
     ]
+# ============================================================
+# ROTOR 10
+# ============================================================
+
+def test_rotor_10_changes():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    initial_position = state.positions[9]
+
+    state.update()
+
+    assert state.positions[9] != initial_position
+
+
+def test_rotor_10_stays_in_u8():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    for _ in range(1000):
+        state.update()
+
+        assert 0 <= state.positions[9] <= 255
+
+
+def test_rotor_10_is_deterministic():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=3,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=3,
+    )
+
+    for _ in range(100):
+        state1.update()
+        state2.update()
+
+        assert state1.positions[9] == state2.positions[9]
+
+
+def test_rotor_10_depends_on_state():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2.positions[0] ^= 0x55
+
+    state1.update()
+    state2.update()
+
+    assert state1.positions[9] != state2.positions[9]
