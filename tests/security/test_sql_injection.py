@@ -32,7 +32,7 @@ DATABASE_PATH = os.getenv("DATABASE_PATH")
 
 if DATABASE_PATH is None:
     raise RuntimeError("DATABASE_PATH n'est pas définie")
-
+DATABASE_PATH = Path(DATABASE_PATH)
 
 
 
