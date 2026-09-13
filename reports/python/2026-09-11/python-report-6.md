@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1797
+Run : 1742
 Branch : main
-Commit : 5385571ec344294fc36769cc6d78b81dfc7e59fa
-Date : Sun Sep 13 00:57:29 UTC 2026
+Commit : d9143a67724322326ef7629917c74608e168bc3c
+Date : Fri Sep 11 16:39:10 UTC 2026
 
 ---
 
@@ -11,7 +11,7 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 63
+**Files to reformat:** 62
 
 <details>
 <summary>Show files</summary>
@@ -19,28 +19,28 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
@@ -55,10 +55,10 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
@@ -71,12 +71,11 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
-/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_state.py
+/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 </details>
 
@@ -87,44 +86,42 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 | Code | Nombre |
 |------|-------:|
 | E501 | 271 |
-| E231 | 119 |
-| W293 | 90 |
-| E302 | 66 |
-| E303 | 56 |
-| E122 | 40 |
+| E231 | 118 |
+| W293 | 81 |
+| E302 | 56 |
+| E303 | 50 |
 | E225 | 37 |
+| E122 | 36 |
 | E203 | 17 |
-| F401 | 15 |
-| E128 | 11 |
+| F401 | 14 |
 | E701 | 10 |
 | E305 | 10 |
-| E301 | 10 |
+| E128 | 10 |
+| E301 | 9 |
 | E251 | 8 |
 | F841 | 7 |
 | E402 | 7 |
 | W391 | 6 |
 | E266 | 6 |
 | E211 | 6 |
-| W291 | 5 |
+| F821 | 5 |
 | F541 | 5 |
-| F821 | 4 |
+| W292 | 4 |
+| W291 | 4 |
 | E713 | 4 |
 | E703 | 4 |
-| W292 | 3 |
 | E731 | 3 |
-| E124 | 3 |
-| F811 | 2 |
 | E741 | 2 |
 | E722 | 2 |
 | E401 | 2 |
-| E306 | 2 |
 | E275 | 2 |
-| E117 | 2 |
+| E124 | 2 |
 | E111 | 2 |
+| E306 | 1 |
 | E271 | 1 |
 | E131 | 1 |
 | E125 | 1 |
-| E116 | 1 |
+| E117 | 1 |
 
 <details>
 <summary>📋 Voir toutes les erreurs Flake8</summary>
@@ -158,38 +155,15 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 | ./client_python/client.py | 146 | E231 | missing whitespace after ',' |
 | ./client_python/client.py | 148 | E124 | closing bracket does not match visual indentation |
 | ./client_python/client.py | 164 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 16 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/crypto.py | 46 | E303 | too many blank lines (3) |
-| ./client_python/crypto.py | 86 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 114 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 133 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 160 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 181 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 206 | E305 | expected 2 blank lines after class or function definition, found 1 |
-| ./client_python/crypto.py | 235 | E302 | expected 2 blank lines, found 1 |
-| ./client_python/crypto.py | 249 | E122 | continuation line missing indentation or outdented |
-| ./client_python/crypto.py | 250 | E122 | continuation line missing indentation or outdented |
-| ./client_python/crypto.py | 251 | E122 | continuation line missing indentation or outdented |
-| ./client_python/crypto.py | 252 | E301 | expected 1 blank line, found 0 |
-| ./client_python/crypto.py | 253 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 255 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 257 | E303 | too many blank lines (2) |
-| ./client_python/crypto.py | 270 | E117 | over-indented |
-| ./client_python/crypto.py | 271 | E122 | continuation line missing indentation or outdented |
-| ./client_python/crypto.py | 274 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 275 | E303 | too many blank lines (2) |
-| ./client_python/crypto.py | 276 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 278 | E303 | too many blank lines (2) |
-| ./client_python/crypto.py | 291 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 292 | E303 | too many blank lines (2) |
-| ./client_python/crypto.py | 292 | W291 | trailing whitespace |
-| ./client_python/crypto.py | 293 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 295 | E303 | too many blank lines (2) |
-| ./client_python/crypto.py | 297 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 310 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 311 | E116 | unexpected indentation (comment) |
-| ./client_python/crypto.py | 376 | W293 | blank line contains whitespace |
-| ./client_python/crypto.py | 377 | E303 | too many blank lines (2) |
+| ./client_python/crypto.py | 18 | E302 | expected 2 blank lines, found 0 |
+| ./client_python/crypto.py | 48 | E303 | too many blank lines (3) |
+| ./client_python/crypto.py | 88 | E305 | expected 2 blank lines after class or function definition, found 1 |
+| ./client_python/crypto.py | 116 | E305 | expected 2 blank lines after class or function definition, found 1 |
+| ./client_python/crypto.py | 135 | E305 | expected 2 blank lines after class or function definition, found 1 |
+| ./client_python/crypto.py | 162 | E305 | expected 2 blank lines after class or function definition, found 1 |
+| ./client_python/crypto.py | 183 | E305 | expected 2 blank lines after class or function definition, found 1 |
+| ./client_python/crypto.py | 208 | E305 | expected 2 blank lines after class or function definition, found 1 |
+| ./client_python/crypto.py | 235 | W292 | no newline at end of file |
 | ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/main.py | 2 | F401 | '.packet.PacketType' imported but unused |
 | ./client_python/main.py | 13 | E302 | expected 2 blank lines, found 0 |
@@ -950,28 +924,13 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 | ./tests/test_crypto_rotor.py | 7 | E402 | module level import not at top of file |
 | ./tests/test_crypto_rotor.py | 29 | E303 | too many blank lines (13) |
 | ./tests/test_crypto_rotor.py | 33 | E302 | expected 2 blank lines, found 13 |
-| ./tests/test_crypto_rotor.py | 82 | E303 | too many blank lines (7) |
-| ./tests/test_crypto_rotor.py | 86 | E302 | expected 2 blank lines, found 7 |
-| ./tests/test_crypto_rotor.py | 299 | E302 | expected 2 blank lines, found 0 |
+| ./tests/test_crypto_rotor.py | 76 | F821 | undefined name 'MASK64' |
+| ./tests/test_crypto_rotor.py | 84 | E303 | too many blank lines (7) |
+| ./tests/test_crypto_rotor.py | 88 | E302 | expected 2 blank lines, found 7 |
+| ./tests/test_crypto_rotor.py | 301 | E302 | expected 2 blank lines, found 0 |
 | ./tests/test_fisher_yates.py | 1 | F401 | 'client_python.crypto.SplitMix64' imported but unused |
 | ./tests/test_fisher_yates.py | 1 | E231 | missing whitespace after ',' |
 | ./tests/test_fisher_yates.py | 7 | E303 | too many blank lines (5) |
-| ./tests/test_rotor_state.py | 1 | F401 | 'pytest' imported but unused |
-| ./tests/test_rotor_state.py | 3 | E231 | missing whitespace after ',' |
-| ./tests/test_rotor_state.py | 96 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_rotor_state.py | 137 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_rotor_state.py | 155 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_rotor_state.py | 191 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_rotor_state.py | 224 | E306 | expected 1 blank line before a nested definition, found 0 |
-| ./tests/test_rotor_state.py | 227 | E128 | continuation line under-indented for visual indent |
-| ./tests/test_rotor_state.py | 228 | E124 | closing bracket does not match visual indentation |
-| ./tests/test_rotor_state.py | 237 | E302 | expected 2 blank lines, found 0 |
-| ./tests/test_rotor_state.py | 273 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_rotor_state.py | 337 | E302 | expected 2 blank lines, found 0 |
-| ./tests/test_rotor_state.py | 379 | F811 | redefinition of unused 'test_rotor_8_depends_on_state' from line 337 |
-| ./tests/test_rotor_state.py | 379 | E302 | expected 2 blank lines, found 0 |
-| ./tests/test_rotor_state.py | 401 | F811 | redefinition of unused 'test_rotor_9_depends_on_state' from line 359 |
-| ./tests/test_rotor_state.py | 421 | E302 | expected 2 blank lines, found 0 |
 | ./tests/test_splitmix64.py | 1 | F401 | 'pytest' imported but unused |
 | ./tests/test_splitmix64.py | 9 | E303 | too many blank lines (4) |
 | ./tests/test_splitmix64.py | 13 | E302 | expected 2 blank lines, found 4 |
@@ -992,7 +951,7 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 | 7 | ./scripts/documentation/markdown.py | 42 |
 | 8 | ./scripts/documentation/titles.py | 39 |
 | 9 | ./scripts/utils/calculateur.py | 35 |
-| 10 | ./client_python/crypto.py | 32 |
+| 10 | ./scripts/database_manager.py | 31 |
 > 💡 Vous ne connaissez pas une erreur Flake8 ?
 >
 > Consultez le guide complet :
@@ -1000,7 +959,7 @@ Date : Sun Sep 13 00:57:29 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (3.957654723127036)
+**Average complexity:**  A (4.067615658362989)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1103,30 +1062,6 @@ server_rust/vendor/sqlx/examples/x.py
 tests/test_client.py
     F 5:0 test_main - A
     F 11:0 test_key - A
-tests/test_rotor_state.py
-    F 191:0 test_rotor_6_rotates_by_seed_every_two_bytes - A
-    F 137:0 test_rotor_5_reacts_to_rotor_2_full_rotation - A
-    F 34:0 test_rotor_1_rotates_by_one_each_byte - A
-    F 68:0 test_rotor_1_full_rotation - A
-    F 81:0 test_rotor_4_reacts_to_rotor_1_full_rotation - A
-    F 96:0 test_rotor_2_rotates_by_key_each_byte - A
-    F 155:0 test_rotor_3_rotates_by_packet_type - A
-    F 237:0 test_rotor_7_rotation - A
-    F 289:0 test_rotor_8_stays_in_u8 - A
-    F 324:0 test_rotor_9_stays_in_u8 - A
-    F 421:0 test_rotor_state_reference_r1_r9 - A
-    F 10:0 test_rotor_state_has_16_positions - A
-    F 20:0 test_rotor_state_starts_at_zero - A
-    F 50:0 test_rotor_1_wraps - A
-    F 119:0 test_rotor_2_wraps - A
-    F 173:0 test_rotor_3_wraps - A
-    F 255:0 test_rotor_7_wraps - A
-    F 273:0 test_rotor_8 - A
-    F 308:0 test_rotor_9 - A
-    F 337:0 test_rotor_8_depends_on_state - A
-    F 359:0 test_rotor_9_depends_on_state - A
-    F 379:0 test_rotor_8_depends_on_state - A
-    F 401:0 test_rotor_9_depends_on_state - A
 tests/test_rotor_seeds.py
     F 48:0 test_all_rotors_have_different_seeds - A
     F 61:0 test_different_keys_produce_different_seeds - A
@@ -1136,21 +1071,21 @@ tests/test_rotor_seeds.py
     F 89:0 test_invalid_key_length - A
     F 9:0 derive_rotor_seed - A
 tests/test_crypto_rotor.py
-    F 197:0 test_rotors_are_different - A
-    F 162:0 test_all_16_rotors_are_valid - A
+    F 199:0 test_rotors_are_different - A
+    F 164:0 test_all_16_rotors_are_valid - A
     F 45:0 test_splitmix64_deterministic - A
-    F 103:0 test_rotor_seeds_are_different - A
-    F 118:0 test_rotor_seed_is_u64 - A
-    F 270:0 test_all_16_rotors_forward_inverse - A
+    F 105:0 test_rotor_seeds_are_different - A
+    F 120:0 test_rotor_seed_is_u64 - A
+    F 272:0 test_all_16_rotors_forward_inverse - A
     F 57:0 test_splitmix64_different_seeds - A
     F 68:0 test_splitmix64_is_u64 - A
-    F 86:0 test_rotor_seed_deterministic - A
-    F 136:0 test_rotor_has_256_values - A
-    F 148:0 test_rotor_is_permutation - A
-    F 180:0 test_rotor_is_deterministic - A
-    F 236:0 test_rotor_forward_inverse - A
+    F 88:0 test_rotor_seed_deterministic - A
+    F 138:0 test_rotor_has_256_values - A
+    F 150:0 test_rotor_is_permutation - A
+    F 182:0 test_rotor_is_deterministic - A
+    F 238:0 test_rotor_forward_inverse - A
     F 34:0 communication_key - A
-    F 299:0 test_invalid_communication_key - A
+    F 301:0 test_invalid_communication_key - A
 tests/test_fisher_yates.py
     F 7:0 test_is_permutation - A
     F 31:0 test_contains_every_value_once - A
@@ -1328,19 +1263,16 @@ client_python/main.py
     F 21:0 main - B
     F 13:0 generate_random_password - A
 client_python/crypto.py
-    C 235:0 RotorState - A
-    M 252:4 RotorState.update - A
-    F 53:0 derive_rotor_seed - A
-    F 140:0 generate_rotors - A
-    F 167:0 inverse_permutation - A
-    F 93:0 fisher_yates - A
-    C 16:0 SplitMix64 - A
-    M 237:4 RotorState.__init__ - A
-    F 121:0 generate_rotor - A
-    F 188:0 rotor_forward - A
-    F 213:0 rotor_inverse - A
-    M 18:4 SplitMix64.__init__ - A
-    M 21:4 SplitMix64.next - A
+    F 55:0 derive_rotor_seed - A
+    F 142:0 generate_rotors - A
+    F 169:0 inverse_permutation - A
+    F 95:0 fisher_yates - A
+    C 18:0 SplitMix64 - A
+    F 123:0 generate_rotor - A
+    F 190:0 rotor_forward - A
+    F 215:0 rotor_inverse - A
+    M 20:4 SplitMix64.__init__ - A
+    M 23:4 SplitMix64.next - A
 client_python/packets/ping.py
     C 4:0 PingPacket - A
     M 6:4 PingPacket.__init__ - A
@@ -1370,8 +1302,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-307 blocks (classes, functions, methods) analyzed.
-Average complexity: A (3.957654723127036)
+281 blocks (classes, functions, methods) analyzed.
+Average complexity: A (4.067615658362989)
 
 </details>
 
@@ -1381,7 +1313,7 @@ Average complexity: A (3.957654723127036)
 |----------|------:|
 | High | 1 |
 | Medium | 9 |
-| Low | 153 |
+| Low | 121 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -1392,7 +1324,7 @@ Average complexity: A (3.957654723127036)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-13 00:57:36.309985+00:00
+Run started:2026-09-11 16:39:19.962426+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2483,72 +2415,62 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:74:4
-73	
-74	    assert 0 <= value <= MASK_64
+   Location: ./tests/test_crypto_rotor.py:76:4
 75	
+76	    assert 0 <= value <= MASK64
+77	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:100:4
-99	
-100	    assert seed1 == seed2
+   Location: ./tests/test_crypto_rotor.py:102:4
 101	
+102	    assert seed1 == seed2
+103	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:115:4
-114	
-115	    assert len(set(seeds)) == 16
+   Location: ./tests/test_crypto_rotor.py:117:4
 116	
+117	    assert len(set(seeds)) == 16
+118	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:129:8
-128	
-129	        assert 0 <= seed <= MASK_64
+   Location: ./tests/test_crypto_rotor.py:131:8
 130	
+131	        assert 0 <= seed <= MASK_64
+132	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:145:4
-144	
-145	    assert len(rotor) == 256
+   Location: ./tests/test_crypto_rotor.py:147:4
 146	
+147	    assert len(rotor) == 256
+148	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:157:4
-156	
-157	    assert sorted(rotor) == list(
-158	        range(256)
-159	    )
-160	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:173:8
-172	
-173	        assert len(rotor) == 256
-174	
+   Location: ./tests/test_crypto_rotor.py:159:4
+158	
+159	    assert sorted(rotor) == list(
+160	        range(256)
+161	    )
+162	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -2557,50 +2479,60 @@ Test results:
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_crypto_rotor.py:175:8
 174	
-175	        assert sorted(rotor) == list(
-176	            range(256)
-177	        )
-178	
+175	        assert len(rotor) == 256
+176	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:194:4
-193	
-194	    assert rotor1 == rotor2
+   Location: ./tests/test_crypto_rotor.py:177:8
+176	
+177	        assert sorted(rotor) == list(
+178	            range(256)
+179	        )
+180	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_rotor.py:196:4
 195	
+196	    assert rotor1 == rotor2
+197	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:213:12
-212	
-213	            assert rotors[i] != rotors[j]
+   Location: ./tests/test_crypto_rotor.py:215:12
 214	
+215	            assert rotors[i] != rotors[j]
+216	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:259:4
-258	
-259	    assert decrypted == value
+   Location: ./tests/test_crypto_rotor.py:261:4
 260	
+261	    assert decrypted == value
+262	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_rotor.py:298:8
-297	
-298	        assert decrypted == value
-299	def test_invalid_communication_key():
+   Location: ./tests/test_crypto_rotor.py:300:8
+299	
+300	        assert decrypted == value
+301	def test_invalid_communication_key():
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -2765,330 +2697,6 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:17:4
-16	
-17	    assert len(state.positions) == 16
-18	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:27:4
-26	
-27	    assert state.positions == [0] * 16
-28	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:43:4
-42	
-43	    assert state.positions[0] == 1
-44	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:47:4
-46	
-47	    assert state.positions[0] == 2
-48	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:61:4
-60	
-61	    assert state.positions[0] == 0
-62	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:78:4
-77	
-78	    assert state.positions[0] == 0
-79	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:91:4
-90	
-91	    assert state.positions[3] == 8
-92	# ============================================================
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:110:4
-109	
-110	    assert state.positions[1] == key_value
-111	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:114:4
-113	
-114	    assert state.positions[1] == (
-115	        key_value * 2
-116	    ) & 0xFF
-117	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:132:4
-131	
-132	    assert state.positions[1] == 1
-133	# ============================================================
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:149:4
-148	
-149	    assert state.positions[1] == 0
-150	    assert state.positions[4] == 251
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:150:4
-149	    assert state.positions[1] == 0
-150	    assert state.positions[4] == 251
-151	# ============================================================
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:166:4
-165	
-166	    assert state.positions[2] == 249
-167	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:170:4
-169	
-170	    assert state.positions[2] == 242
-171	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:186:4
-185	
-186	    assert state.positions[2] == 252
-187	# ============================================================
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:206:4
-205	
-206	    assert state.positions[5] == 0
-207	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:211:4
-210	
-211	    assert state.positions[5] == seed_value
-212	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:216:4
-215	
-216	    assert state.positions[5] == seed_value
-217	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:221:4
-220	
-221	    assert state.positions[5] == (
-222	        seed_value * 2
-223	    ) & 0xFF
-224	    def test_rotor_6_wraps():
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:236:8
-235	        state.update()
-236	        assert state.positions[5] == 0
-237	def test_rotor_7_rotation():
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:248:4
-247	
-248	    assert state.positions[6] == 236
-249	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:252:4
-251	
-252	    assert state.positions[6] == 216
-253	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:268:4
-267	
-268	    assert state.positions[6] == 246
-269	# ============================================================
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:286:4
-285	
-286	    assert state.positions[7] != initial_position
-287	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:301:8
-300	
-301	        assert 0 <= state.positions[7] <= 255
-302	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:321:4
-320	
-321	    assert state.positions[8] != initial_position
-322	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:336:8
-335	
-336	        assert 0 <= state.positions[8] <= 255
-337	def test_rotor_8_depends_on_state():
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:356:4
-355	
-356	    assert state1.positions[7] != state2.positions[7]
-357	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:378:4
-377	
-378	    assert state1.positions[8] != state2.positions[8]
-379	def test_rotor_8_depends_on_state():
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:398:4
-397	
-398	    assert state1.positions[7] != state2.positions[7]
-399	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:420:4
-419	
-420	    assert state1.positions[8] != state2.positions[8]
-421	def test_rotor_state_reference_r1_r9():
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_state.py:433:4
-432	
-433	    assert state.byte_counter == 10
-434	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_splitmix64.py:28:4
 27	
 28	    assert sequence_a == sequence_b
@@ -3169,28 +2777,28 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 9210
+	Total lines of code: 8864
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 153
+		Low: 121
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 12
-		High: 150
+		High: 118
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 8.08/10
+**Global score:** 8.04/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -3428,35 +3036,6 @@ tests/test_client.py:1:0: C0114: Missing module docstring (missing-module-docstr
 tests/test_client.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_client.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_client.py:3:0: C0411: third party import "pytest" should be placed before first party imports "client_python.main.main", "security.vault"  (wrong-import-order)
-************* Module tests.test_rotor_state
-tests/test_rotor_state.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_state.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:81:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:119:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:155:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:173:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:224:4: W0612: Unused variable 'test_rotor_6_wraps' (unused-variable)
-tests/test_rotor_state.py:237:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:255:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:273:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:289:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:308:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:324:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:337:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:359:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:379:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:379:0: E0102: function already defined line 337 (function-redefined)
-tests/test_rotor_state.py:401:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:401:0: E0102: function already defined line 359 (function-redefined)
-tests/test_rotor_state.py:421:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_state.py:1:0: W0611: Unused import pytest (unused-import)
 ************* Module tests.__init__
 tests/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
 ************* Module tests.test_rotor_seeds
@@ -3475,27 +3054,28 @@ tests/test_crypto_rotor.py:34:0: C0116: Missing function or method docstring (mi
 tests/test_crypto_rotor.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_crypto_rotor.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_crypto_rotor.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:86:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:87:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:103:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:104:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:118:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:119:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:136:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:137:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:148:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:149:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:162:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:163:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:180:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:181:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:197:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:198:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:236:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:237:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:270:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_rotor.py:271:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
-tests/test_crypto_rotor.py:299:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:76:25: E0602: Undefined variable 'MASK64' (undefined-variable)
+tests/test_crypto_rotor.py:88:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:89:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:105:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:106:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:120:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:121:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:138:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:139:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:150:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:151:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:164:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:165:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:182:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:183:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:199:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:200:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:238:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:239:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:272:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_rotor.py:273:4: W0621: Redefining name 'communication_key' from outer scope (line 34) (redefined-outer-name)
+tests/test_crypto_rotor.py:301:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_crypto_rotor.py:1:0: W0611: Unused import hashlib (unused-import)
 tests/test_crypto_rotor.py:7:0: W0611: Unused inverse_permutation imported from client_python.crypto (unused-import)
 ************* Module tests.test_fisher_yates
@@ -3638,10 +3218,15 @@ scripts/update_database.py:23:0: C0303: Trailing whitespace (trailing-whitespace
 scripts/update_database.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/update_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/update_database.py:1:0: E0401: Unable to import 'database.update_python' (import-error)
+scripts/update_database.py:1:0: E0611: No name 'update_python' in module 'database' (no-name-in-module)
 scripts/update_database.py:2:0: E0401: Unable to import 'database.update_docs' (import-error)
+scripts/update_database.py:2:0: E0611: No name 'update_docs' in module 'database' (no-name-in-module)
 scripts/update_database.py:3:0: E0401: Unable to import 'database.update_security' (import-error)
+scripts/update_database.py:3:0: E0611: No name 'update_security' in module 'database' (no-name-in-module)
 scripts/update_database.py:4:0: E0401: Unable to import 'database.update_rust' (import-error)
+scripts/update_database.py:4:0: E0611: No name 'update_rust' in module 'database' (no-name-in-module)
 scripts/update_database.py:5:0: E0401: Unable to import 'database.update_performance' (import-error)
+scripts/update_database.py:5:0: E0611: No name 'update_performance' in module 'database' (no-name-in-module)
 scripts/update_database.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/update_database.py:5:0: W0611: Unused update_performance_database imported from database.update_performance (unused-import)
 ************* Module scripts.database.update_rust
@@ -3932,38 +3517,25 @@ client_python/main.py:11:0: C0411: standard import "secrets" should be placed be
 client_python/main.py:12:0: C0411: standard import "string" should be placed before local imports "client.Client", "packet.PacketType", "packets.chat.ChatPacket" (...) "packets.ping.PingPacket", "packets.move.MovePacket", "packets.singup.SingupPacket" (wrong-import-order)
 client_python/main.py:2:0: W0611: Unused PacketType imported from packet (unused-import)
 ************* Module client_python.crypto
-client_python/crypto.py:253:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:255:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:270:0: W0311: Bad indentation. Found 16 spaces, expected 12 (bad-indentation)
-client_python/crypto.py:274:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:276:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:291:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:292:12: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:293:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:297:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:310:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/crypto.py:376:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/crypto.py:235:0: C0304: Final newline missing (missing-final-newline)
 client_python/crypto.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/crypto.py:16:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/crypto.py:21:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:16:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-client_python/crypto.py:46:0: W0105: String statement has no effect (pointless-string-statement)
-client_python/crypto.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:86:0: W0105: String statement has no effect (pointless-string-statement)
-client_python/crypto.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:114:0: W0105: String statement has no effect (pointless-string-statement)
-client_python/crypto.py:121:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:133:0: W0105: String statement has no effect (pointless-string-statement)
-client_python/crypto.py:140:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:160:0: W0105: String statement has no effect (pointless-string-statement)
-client_python/crypto.py:167:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:181:0: W0105: String statement has no effect (pointless-string-statement)
-client_python/crypto.py:188:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:206:0: W0105: String statement has no effect (pointless-string-statement)
-client_python/crypto.py:213:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:235:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/crypto.py:252:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:235:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+client_python/crypto.py:18:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/crypto.py:23:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/crypto.py:18:0: R0903: Too few public methods (1/2) (too-few-public-methods)
+client_python/crypto.py:48:0: W0105: String statement has no effect (pointless-string-statement)
+client_python/crypto.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/crypto.py:88:0: W0105: String statement has no effect (pointless-string-statement)
+client_python/crypto.py:95:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/crypto.py:116:0: W0105: String statement has no effect (pointless-string-statement)
+client_python/crypto.py:123:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/crypto.py:135:0: W0105: String statement has no effect (pointless-string-statement)
+client_python/crypto.py:142:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/crypto.py:162:0: W0105: String statement has no effect (pointless-string-statement)
+client_python/crypto.py:169:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/crypto.py:183:0: W0105: String statement has no effect (pointless-string-statement)
+client_python/crypto.py:190:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/crypto.py:208:0: W0105: String statement has no effect (pointless-string-statement)
+client_python/crypto.py:215:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module client_python.packets.ping
 client_python/packets/ping.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/ping.py:4:0: C0115: Missing class docstring (missing-class-docstring)
@@ -4131,6 +3703,10 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         branch,
         commit
     )
+
+    # ==========================================
+    # Quality metrics
+    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -4148,9 +3724,7 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
-
-
-def should_ignore(path: Path) -> bool: (duplicate-code)
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
@@ -4168,7 +3742,7 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
     )
 
     # ==========================================
-    # Flake8
+    # Détails Clippy
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -4242,7 +3816,7 @@ IGNORED_DIRECTORIES = {
     )
 
     # ==========================================
-    # Résumé Rust
+    # Quality metrics
     # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
@@ -4269,8 +3843,8 @@ IGNORED_DIRECTORIES = {
     }
 
 
-
-def check_single_h1(files, problems): (duplicate-code)
+def extract_links(file):
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[35:47]
 ==.github.security.test_python_security:[22:33]
@@ -4284,8 +3858,7 @@ def check_single_h1(files, problems): (duplicate-code)
         for part in relative.parts
     )
 
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.attack_test:[79:102]
 ==.github.security.integrity_check:[54:67]
@@ -4301,17 +3874,7 @@ def is_world_writable(mode: int) -> bool: (duplicate-code)
     return digest.hexdigest()
 
 
-'''
-============================================================
-                         Git
-============================================================
-'''
-
-
-def clone_repository(
-    destination: Path,
-) -> None:
- (duplicate-code)
+def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
@@ -4380,16 +3943,16 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 8.08/10
+Your code has been rated at 8.04/10
 
 
 </details>
@@ -4407,7 +3970,7 @@ rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-7.1.0
-collected 2110 items / 1 error
+collected 2089 items / 1 error
 
 ==================================== ERRORS ====================================
 ____________ ERROR collecting tests/security/test_sql_injection.py _____________
@@ -4417,7 +3980,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.27s ===============================
+=============================== 1 error in 0.32s ===============================
 
 </details>
 
