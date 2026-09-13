@@ -377,5 +377,46 @@ class RotorState:
         # ========================================================
         # Compteur d'octets
         # ========================================================
+                # R8
+        ...
 
+        # R9
+        ...
+
+        # R10
+        r10_value = (
+            self.positions[0]
+            ^ self.positions[3]
+            ^ self.positions[6]
+        )
+
+        r10_value ^= (
+            self.positions[1] >> 2
+        )
+
+        r10_value = (
+            r10_value
+            + (
+                self.positions[4]
+                & self.positions[8]
+                & self.positions[9]
+            )
+        ) & 0xFF
+
+        r10_value ^= (
+            (self.positions[2] * 7)
+            & 0xFF
+        )
+
+        r10_value ^= (
+            (r10_value << 2)
+            & 0xFF
+        )
+
+        self.positions[9] = (
+            self.positions[9] + r10_value
+        ) & 0xFF
+
+        # Compteur d'octets
         self.byte_counter += 1
+        
