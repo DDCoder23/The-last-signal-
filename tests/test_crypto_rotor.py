@@ -351,6 +351,52 @@ def test_rotors_depend_on_key():
         )
 
         assert rotor1 != rotor2
+@pytest.mark.parametrize(
+    "value",
+    range(256),
+)
+def test_all_16_rotors_round_trip(
+    communication_key,
+    value,
+):
+
+    rotors = [
+        generate_rotor(
+            communication_key,
+            rotor_id,
+        )
+        for rotor_id in range(1, 17)
+    ]
+
+    positions = [
+        (rotor_id * 17) & 0xFF
+        for rotor_id in range(1, 17)
+    ]
+
+    original = value
+
+    # Forward : R1 -> R16
+    for rotor, position in zip(
+        rotors,
+        positions,
+    ):
+        value = rotor_forward(
+            value,
+            position,
+            rotor,
+        )
+
+    # Inverse : R16 -> R1
+    for rotor, position in reversed(
+        list(zip(rotors, positions))
+    ):
+        value = rotor_inverse(
+            value,
+            position,
+            rotor,
+        )
+
+    assert value == original
 def test_invalid_communication_key():
 
     with pytest.raises(ValueError):
