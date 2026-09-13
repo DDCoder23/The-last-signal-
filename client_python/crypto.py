@@ -635,3 +635,46 @@ class RotorState:
         # Compteur d'octets
         self.byte_counter += 1
         
+def rotl8(value, shift):
+    value &= 0xFF
+    shift &= 7
+
+    if shift == 0:
+        return value
+
+    return (
+        ((value << shift) & 0xFF)
+        | (value >> (8 - shift))
+    )
+
+
+def rotr8(value, shift):
+    value &= 0xFF
+    shift &= 7
+
+    if shift == 0:
+        return value
+
+    return (
+        (value >> shift)
+        | ((value << (8 - shift)) & 0xFF)
+      )
+def rotor_groups(rotor_positions):
+    return (
+        rotor_positions[0]
+        ^ rotor_positions[4]
+        ^ rotor_positions[8]
+        ^ rotor_positions[12],
+        rotor_positions[1]
+        ^ rotor_positions[5]
+        ^ rotor_positions[9]
+        ^ rotor_positions[13],
+        rotor_positions[2]
+        ^ rotor_positions[6]
+        ^ rotor_positions[10]
+        ^ rotor_positions[14],
+        rotor_positions[3]
+        ^ rotor_positions[7]
+        ^ rotor_positions[11]
+        ^ rotor_positions[15],
+    )
