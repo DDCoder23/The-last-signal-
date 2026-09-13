@@ -104,5 +104,12 @@ l'espagnol et le japonais
 -optimisation des workflows
 
 ---  
+## [1.0.09] - 13/09/2026
 
+### Ajout
+
+- ajout des tests et implémentation des rotor 10 à 16
+- ajout des fichiers 08_.DONJONS.md
+
+---
 
