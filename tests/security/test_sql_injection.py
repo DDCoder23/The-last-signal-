@@ -412,18 +412,43 @@ def open_database(path: Path) -> sqlite3.Connection:
     connection = sqlite3.connect(path)
     connection.execute("PRAGMA foreign_keys = ON")
     return connection
+def resolve_database_file(path: Path) -> Path:
+    """Résout le chemin vers le fichier .db, que DATABASE_PATH pointe
+    vers un fichier ou vers un dossier le contenant."""
+    if not path.exists():
+        raise FileNotFoundError(f"Database not found: {path}")
+
+    if path.is_file():
+        return path
+
+    if path.is_dir():
+        # Cherche un fichier .db dans le dossier
+        db_files = list(path.glob("*.db"))
+        if len(db_files) == 1:
+            return db_files[0]
+        elif len(db_files) > 1:
+            raise RuntimeError(
+                f"Plusieurs fichiers .db trouvés dans {path} : {db_files}\n"
+                f"Impossible de déterminer lequel utiliser."
+            )
+        else:
+            raise FileNotFoundError(
+                f"Aucun fichier .db trouvé dans le dossier : {path}"
+            )
+
+    raise RuntimeError(f"Chemin invalide (ni fichier ni dossier) : {path}")
 
 
 def create_test_database() -> Tuple[Path, tempfile.TemporaryDirectory]:
     """Create throwaway database copy"""
-    if not DATABASE_PATH.exists():
-        raise FileNotFoundError(f"Database not found: {DATABASE_PATH}")
+    db_file = resolve_database_file(DATABASE_PATH)
 
     temp_dir = tempfile.TemporaryDirectory()
     temp_path = Path(temp_dir.name) / "the_last_signal_attack.db"
-    shutil.copy2(DATABASE_PATH, temp_path)
+    shutil.copy2(db_file, temp_path)
 
     return temp_path, temp_dir
+
 
 
 def get_row_count(connection: sqlite3.Connection, table: str) -> int:
