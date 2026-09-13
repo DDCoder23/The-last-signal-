@@ -601,3 +601,79 @@ def test_rotor_11_depends_on_state():
     state2.update()
 
     assert state1.positions[10] != state2.positions[10]
+# ============================================================
+# ROTOR 12
+# ============================================================
+
+def test_rotor_12_changes_each_update():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    initial_position = state.positions[11]
+
+    state.update()
+
+    assert state.positions[11] != initial_position
+
+
+def test_rotor_12_stays_in_u8():
+
+    key = bytes([1] * 64)
+
+    state = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    for _ in range(1000):
+        state.update()
+
+        assert 0 <= state.positions[11] <= 255
+
+
+def test_rotor_12_is_deterministic():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=3,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=3,
+    )
+
+    for _ in range(100):
+        state1.update()
+        state2.update()
+
+        assert state1.positions[11] == state2.positions[11]
+
+
+def test_rotor_12_depends_on_state():
+
+    key = bytes(range(64))
+
+    state1 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2 = RotorState(
+        communication_key=key,
+        packet_type=1,
+    )
+
+    state2.positions[0] ^= 0x55
+
+    state1.update()
+    state2.update()
+
+    assert state1.positions[11] != state2.positions[11]
