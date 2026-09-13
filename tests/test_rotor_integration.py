@@ -121,3 +121,71 @@ def test_rotor_state_multiple_updates(
             )
 
         assert decrypted == original
+
+
+
+@pytest.mark.parametrize("packet_type", range(1, 10))
+def test_rotor_stream_round_trip(packet_type):
+    communication_key = bytes(range(64))
+
+    state = RotorState(
+        communication_key=communication_key,
+        packet_type=packet_type,
+    )
+
+    rotors = [
+        generate_rotor(communication_key, rotor_id)
+        for rotor_id in range(1, 17)
+    ]
+
+    plaintext = bytes(
+        (i * 37 + 11) & 0xFF
+        for i in range(1000)
+    )
+
+    ciphertext = []
+
+    # Chiffrement : un update par octet
+    for value in plaintext:
+        state.update()
+
+        positions = state.positions.copy()
+
+        encrypted = value
+
+        for rotor, position in zip(rotors, positions):
+            encrypted = rotor_forward(
+                encrypted,
+                position,
+                rotor,
+            )
+
+        ciphertext.append(encrypted)
+
+    # Nouveau RotorState pour le déchiffrement
+    decrypt_state = RotorState(
+        communication_key=communication_key,
+        packet_type=packet_type,
+    )
+
+    decrypted = []
+
+    for value in ciphertext:
+        decrypt_state.update()
+
+        positions = decrypt_state.positions.copy()
+
+        decrypted_value = value
+
+        for rotor, position in reversed(
+            list(zip(rotors, positions))
+        ):
+            decrypted_value = rotor_inverse(
+                decrypted_value,
+                position,
+                rotor,
+            )
+
+        decrypted.append(decrypted_value)
+
+    assert bytes(decrypted) == plaintext
