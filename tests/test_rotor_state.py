@@ -431,7 +431,21 @@ def test_rotor_state_reference_r1_r9():
         state.update()
 
     assert state.byte_counter == 10
-
-    # Référence à remplir avec les valeurs obtenues
-    print("positions =", state.positions)
-    print("byte_counter =", state.byte_counter)
+    assert state.positions == [
+        10,
+        0,
+        226,
+        0,
+        0,
+        139,
+        56,
+        230,
+        64,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+    ]
