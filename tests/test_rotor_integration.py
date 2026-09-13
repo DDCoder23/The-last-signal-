@@ -13,9 +13,10 @@ from client_python.crypto import (
     range(256),
 )
 def test_rotor_state_round_trip(
-    communication_key,
     value,
 ):
+
+    communication_key = bytes(range(64))
 
     state = RotorState(
         communication_key=communication_key,
@@ -30,7 +31,6 @@ def test_rotor_state_round_trip(
         for rotor_id in range(1, 17)
     ]
 
-    # Mise à jour de l'état réel
     state.update()
 
     positions = state.positions.copy()
