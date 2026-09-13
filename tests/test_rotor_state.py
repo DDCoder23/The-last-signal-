@@ -418,7 +418,7 @@ def test_rotor_9_depends_on_state():
     state2.update()
 
     assert state1.positions[8] != state2.positions[8]
-def test_rotor_state_reference_r1_r10():
+def test_rotor_state_reference_r1_r11():
 
     key = bytes(range(64))
 
@@ -442,7 +442,7 @@ def test_rotor_state_reference_r1_r10():
         230,
         64,
         66,
-        0,
+        41,
         0,
         0,
         0,
