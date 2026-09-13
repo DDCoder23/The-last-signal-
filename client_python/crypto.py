@@ -416,6 +416,39 @@ class RotorState:
         self.positions[9] = (
             self.positions[9] + r10_value
         ) & 0xFF
+        # R11
+        r11_value = (
+            self.positions[1]
+            ^ self.positions[4]
+            ^ self.positions[7]
+        )
+
+        r11_value = (
+            r11_value
+            + (
+                self.positions[2]
+                & self.positions[9]
+            )
+        ) & 0xFF
+
+        r11_value ^= (
+            (self.positions[3] * 9)
+            & 0xFF
+        )
+
+        r11_value = (
+            ((r11_value << 3) & 0xFF)
+            | (r11_value >> 5)
+        )
+
+        r11_value = (
+            r11_value
+            + self.positions[5]
+        ) & 0xFF
+
+        self.positions[10] = (
+            self.positions[10] + r11_value
+        ) & 0xFF
 
         # Compteur d'octets
         self.byte_counter += 1
