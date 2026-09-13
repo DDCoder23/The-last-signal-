@@ -93,7 +93,7 @@ All notable changes to the **The Last Signal Online** project are documented in 
 
 - Added 06_REGIONS.md et 07_VILLES.md
 - fix bugs in crypto tests 
-- Added new crypto's test
+- Added new crypto's tests and implementation of  Rotor 1 to 9 
 - Added navigation in all French gdd files
 - Added a stuff manager
 - Added  treasure levels 7 to 9

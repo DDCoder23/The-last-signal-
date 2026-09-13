@@ -94,7 +94,7 @@ l'espagnol et le japonais
 
 - ajout des fichiers 06_REGIONS.md et 07_VILLES.md
 - corrections des erreurs dans les tests de crypto
-- ajout de nouveau de test de crypto
+- ajout de nouveau tests de crypto et implémentation des Rotor 1 à 9
 - ajout de la navigation dans tout les fichiers du gdd français
 - ajout d'un stuff manager
 - ajout des trésors niveau 7 à niveau 9
