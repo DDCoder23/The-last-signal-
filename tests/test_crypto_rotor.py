@@ -296,6 +296,61 @@ def test_all_16_rotors_forward_inverse(
         )
 
         assert decrypted == value
+def test_rotors_are_valid_permutations(
+    communication_key,
+):
+
+    rotors = [
+        generate_rotor(
+            communication_key,
+            rotor_id,
+        )
+        for rotor_id in range(1, 17)
+    ]
+
+    for rotor in rotors:
+
+        assert len(rotor) == 256
+        assert sorted(rotor) == list(range(256))
+def test_rotors_are_deterministic(
+    communication_key,
+):
+
+    rotors1 = [
+        generate_rotor(
+            communication_key,
+            rotor_id,
+        )
+        for rotor_id in range(1, 17)
+    ]
+
+    rotors2 = [
+        generate_rotor(
+            communication_key,
+            rotor_id,
+        )
+        for rotor_id in range(1, 17)
+    ]
+
+    assert rotors1 == rotors2
+def test_rotors_depend_on_key():
+
+    key1 = bytes(range(64))
+    key2 = bytes([255] * 64)
+
+    for rotor_id in range(1, 17):
+
+        rotor1 = generate_rotor(
+            key1,
+            rotor_id,
+        )
+
+        rotor2 = generate_rotor(
+            key2,
+            rotor_id,
+        )
+
+        assert rotor1 != rotor2
 def test_invalid_communication_key():
 
     with pytest.raises(ValueError):
