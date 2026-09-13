@@ -103,3 +103,11 @@ All notable changes to the **The Last Signal Online** project are documented in 
 - workflows'optimisation  
 
 ---  
+## [1.0.09] - 2026-09-13
+
+### Added
+
+- added tests and implémentation for rotors 10 to 16
+- added  08_.DONJONS.md
+
+---
