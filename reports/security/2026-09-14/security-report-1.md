@@ -1,9 +1,9 @@
 # Security Report
 
-Run : 569
+Run : 643
 Branch : main
 Commit : bf7dc4f477446238f2f792690d845f148782f65c
-Date : Mon Sep 14 01:02:30 UTC 2026
+Date : Mon Sep 14 01:44:06 UTC 2026
 
 Fuzzing
 
@@ -37,7 +37,7 @@ THE LAST SIGNAL - RED TEAM FILE INTEGRITY TEST V2
 === RED TEAM CLONE ===
 Repository : https://github.com/DDCoder23/The-last-signal-.git
 SHA        : bf7dc4f477446238f2f792690d845f148782f65c
-[CMD] git clone --no-tags --filter=blob:none https://github.com/DDCoder23/The-last-signal-.git /tmp/security_red_team_d9i9nvtu/repository
+[CMD] git clone --no-tags --filter=blob:none https://github.com/DDCoder23/The-last-signal-.git /tmp/security_red_team_xghn7_zu/repository
 [CMD] git fetch --depth=1 origin bf7dc4f477446238f2f792690d845f148782f65c
 [CMD] git checkout --detach bf7dc4f477446238f2f792690d845f148782f65c
 [CMD] git rev-parse HEAD
@@ -174,9 +174,6 @@ Git integrity: FAIL
 [FAIL] Password assignment: reports/python/2026-09-12/python-report-3.md:1796 [pas***rd']
 [FAIL] Password assignment: reports/python/2026-09-12/python-report-3.md:1802 [pas***rd"]
 [FAIL] Password assignment: reports/python/2026-09-12/python-report-3.md:1826 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-14/python-report-1.md:1940 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-14/python-report-1.md:1946 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-14/python-report-1.md:1970 [pas***es']
 [FAIL] Database credential URL: server_rust/vendor/sqlx/README.md:266 [pos***rd@]
 [FAIL] Database credential URL: server_rust/vendor/sqlx/README.md:294 [mys***ss@]
 [FAIL] Private key: server_rust/vendor/sqlx-postgres/src/options/mod.rs:306 [---***---]
@@ -291,7 +288,7 @@ Git integrity: FAIL
 [FAIL] Database credential URL: server_rust/vendor/url/tests/urltestdata.json:7333 [red***ar@]
 [FAIL] Database credential URL: server_rust/vendor/url/tests/urltestdata.json:7335 [red***ar@]
 
-[FAIL] 158 potential secret(s) detected.
+[FAIL] 155 potential secret(s) detected.
 [INFO] Secret values were intentionally masked.
 
 ## Filesystem Security Test
@@ -308,7 +305,7 @@ Git integrity: FAIL
 [WARN] World-executable script: server_rust/vendor/libc/etc/libc-util.py
 [WARN] World-executable script: server_rust/vendor/unicode-normalization/scripts/unicode.py
 
-Files/objects inspected: 10335
+Files/objects inspected: 10334
 [PASS] No dangerous filesystem permissions detected.
 
 ## Git Security Test
@@ -316,7 +313,7 @@ Files/objects inspected: 10335
 [INFO] Working tree contains changes.
 [FAIL] Sensitive file tracked by Git: server_rust/vendor/sqlx/tests/.env
 [INFO] core.filemode=true
-[INFO] HEAD=1a1fd5313c90802ac219057b5cc8401074b9a8d0
+[INFO] HEAD=bf7dc4f477446238f2f792690d845f148782f65c
 [INFO] Scanning Git history for obvious secrets...
 [FAIL] Potential secret detected in Git history.
 [FAIL] 2 Git security issue(s) detected.
@@ -6058,7 +6055,7 @@ Python files inspected: 71
 [WARN] server_rust/vendor/tinyvec/tests/arrayvec.rs:539 - Potential unwrap
 [WARN] server_rust/vendor/tinyvec/tests/arrayvec.rs:555 - Potential unwrap
 [WARN] server_rust/vendor/tinyvec/tests/arrayvec.rs:559 - Potential unwrap
-[WARN] server_rust/vendor/tinyvec/src/tinyvec.rs:802 - Shell invocation
+[WARN] server_rust/vendor/tinyvec/src/tinyvec.rs:782 - Shell invocation
 [WARN] server_rust/vendor/tinyvec/src/arrayvec.rs:1054 - Potential expect
 [WARN] server_rust/vendor/tinyvec/src/arrayvec.rs:1187 - Potential unwrap
 [WARN] server_rust/vendor/tinyvec/src/arrayvec.rs:1189 - Potential unwrap
@@ -41109,7 +41106,7 @@ Python files inspected: 71
 [WARN] server_rust/vendor/bumpalo/src/collections/str/lossy.rs:83 - unsafe block/function
 [WARN] server_rust/vendor/bumpalo/src/collections/str/lossy.rs:144 - unsafe block/function
 
-Rust files inspected: 5039
+Rust files inspected: 5040
 [WARN] 40771 Rust security review point(s) detected.
 
 ## Web Security Test
@@ -41127,7 +41124,7 @@ Aucun log disponible.
 
 # Security report
 
-**Run:** 569
+**Run:** 643
 
 ## Tests
 
@@ -41151,7 +41148,7 @@ Aucun log disponible.
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-14 01:03:53.052779+00:00
+Run started:2026-09-14 01:45:41.494411+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -43381,7 +43378,7 @@ It will be compatible before version 2.0.0.
 
   Using [1mopen-source vulnerability database[0m
 [1m  Found and scanned 140 packages[0m
-  Timestamp [1m2026-09-14 01:03:59[0m
+  Timestamp [1m2026-09-14 01:45:48[0m
 [1m  1[0m[1m vulnerability reported[0m
 [1m  0[0m[1m vulnerabilities ignored[0m
 
@@ -43447,9 +43444,9 @@ Caused by:
     ○ ░
     ░    gitleaks
 
-[90m1:19AM[0m [32mINF[0m [1m3681 commits scanned.[0m
-[90m1:19AM[0m [32mINF[0m [1mscanned ~52997413729 bytes (53 GB) in 15m35s[0m
-[90m1:19AM[0m [32mINF[0m [1mno leaks found[0m
+[90m2:02AM[0m [32mINF[0m [1m3683 commits scanned.[0m
+[90m2:02AM[0m [32mINF[0m [1mscanned ~53005237609 bytes (53.01 GB) in 16m44s[0m
+[90m2:02AM[0m [32mINF[0m [1mno leaks found[0m
 
 ## Python Licenses
  Name                                      Version    License                                            
@@ -43591,7 +43588,7 @@ Caused by:
  zipp                                      4.1.0      MIT                                                
 
 ## Cargo Deny
-2026-09-14 01:19:42 [[31mERROR[0m] the directory /home/runner/work/The-last-signal-/The-last-signal- doesn't contain a Cargo.toml file[0m
+2026-09-14 02:02:40 [[31mERROR[0m] the directory /home/runner/work/The-last-signal-/The-last-signal- doesn't contain a Cargo.toml file[0m
 
 ## Outdated Python packages
 Package                                  Version Latest Type
