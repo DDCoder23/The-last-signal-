@@ -678,3 +678,107 @@ def rotor_groups(rotor_positions):
         ^ rotor_positions[11]
         ^ rotor_positions[15],
     )
+def mix_before(
+    value,
+    communication_key,
+    rotor_positions,
+    byte_counter,
+    previous_ciphertext,
+):
+    if len(communication_key) != 64:
+        raise ValueError(
+            "Communication_key must be exactly 64 bytes"
+        )
+
+    if len(rotor_positions) != 16:
+        raise ValueError(
+            "rotor_positions must contain exactly 16 values"
+        )
+
+    value &= 0xFF
+    byte_counter &= 0xFF
+    previous_ciphertext &= 0xFF
+
+    k0 = communication_key[0]
+    k1 = communication_key[1]
+
+    g1, g2, _, _ = rotor_groups(rotor_positions)
+
+    value ^= k0
+    value = (value + rotor_positions[3]) & 0xFF
+
+    shift = (
+        communication_key[11]
+        ^ byte_counter
+        ^ rotor_positions[7]
+    ) & 7
+    value = rotl8(value, shift)
+
+    value ^= previous_ciphertext
+
+    value = (value - g1) & 0xFF
+
+    shift = (
+        communication_key[27]
+        ^ byte_counter
+        ^ rotor_positions[8]
+    ) & 7
+    value = rotl8(value, shift)
+
+    value = (value + g2) & 0xFF
+    value ^= k1
+
+    return value & 0xFF
+def inverse_mix_before(
+    value,
+    communication_key,
+    rotor_positions,
+    byte_counter,
+    previous_ciphertext,
+):
+    if len(communication_key) != 64:
+        raise ValueError(
+            "Communication_key must be exactly 64 bytes"
+        )
+
+    if len(rotor_positions) != 16:
+        raise ValueError(
+            "rotor_positions must contain exactly 16 values"
+        )
+
+    value &= 0xFF
+    byte_counter &= 0xFF
+    previous_ciphertext &= 0xFF
+
+    k0 = communication_key[0]
+    k1 = communication_key[1]
+
+    g1, g2, _, _ = rotor_groups(rotor_positions)
+
+    value ^= k1
+
+    value = (value - g2) & 0xFF
+
+    shift = (
+        communication_key[27]
+        ^ byte_counter
+        ^ rotor_positions[8]
+    ) & 7
+    value = rotr8(value, shift)
+
+    value = (value + g1) & 0xFF
+
+    value ^= previous_ciphertext
+
+    shift = (
+        communication_key[11]
+        ^ byte_counter
+        ^ rotor_positions[7]
+    ) & 7
+    value = rotr8(value, shift)
+
+    value = (value - rotor_positions[3]) & 0xFF
+
+    value ^= k0
+
+    return value & 0xFF
