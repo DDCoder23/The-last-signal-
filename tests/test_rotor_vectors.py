@@ -5,7 +5,7 @@ from client_python.crypto import (
     mix_final,
     rotor_forward,
 )
-
+import pytest
 
 def encrypt_reference(
     communication_key,
