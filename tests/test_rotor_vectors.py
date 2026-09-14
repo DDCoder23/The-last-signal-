@@ -93,3 +93,23 @@ def test_reference_vectors_all_packet_types(
     )
 
     assert ciphertext == bytes.fromhex(expected)
+def test_reference_vector_1024_bytes():
+    communication_key = bytes(range(64))
+    packet_type = 1
+
+    plaintext = bytes(
+        (i * 37 + 11) & 0xFF
+        for i in range(1024)
+    )
+
+    ciphertext = encrypt_reference(
+        communication_key,
+        packet_type,
+        plaintext,
+    )
+
+    print()
+    print("1024-byte ciphertext:")
+    print(ciphertext.hex())
+
+    assert len(ciphertext) == 1024
