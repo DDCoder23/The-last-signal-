@@ -1,12 +1,14 @@
 import pytest
 
 from client_python.crypto import (
-    RotorState,
-    generate_rotor,
-    rotor_forward,
-    rotor_inverse,
+    inverse_mix_before,
+    inverse_mix_final,
+    mix_before,
+    mix_final,
+    rotl8,
+    rotr8,
+    rotor_groups,
 )
-
 
 @pytest.mark.parametrize(
     "value",
@@ -189,3 +191,28 @@ def test_rotor_stream_round_trip(packet_type):
         decrypted.append(decrypted_value)
 
     assert bytes(decrypted) == plaintext
+@pytest.mark.parametrize("value", range(256))
+@pytest.mark.parametrize("packet_type", range(1, 10))
+def test_mix_final_round_trip(value, packet_type):
+    communication_key = bytes(range(64))
+    rotor_positions = list(range(16))
+
+    mixed = mix_final(
+        value,
+        communication_key,
+        rotor_positions,
+        42,
+        123,
+        packet_type,
+    )
+
+    restored = inverse_mix_final(
+        mixed,
+        communication_key,
+        rotor_positions,
+        42,
+        123,
+        packet_type,
+    )
+
+    assert restored == value
