@@ -3,6 +3,7 @@ import pytest
 from client_python.crypto import (
     inverse_mix_before,
     rotor_forward,
+    rotor_inverse,
     inverse_mix_final,
     mix_before,
     mix_final,
