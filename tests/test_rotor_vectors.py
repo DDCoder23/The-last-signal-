@@ -128,20 +128,14 @@ def test_reference_vectors_all_packet_types(
     "fee898c72f5bda8cd03e568f51f7254b41fad7159b84a0cb9d3d2c4f1ef27f9e"
     )
     def test_reference_vector_1024_bytes():
-    communication_key = bytes(range(64))
-    packet_type = 1
-
-    plaintext = bytes(
-        (i * 37 + 11) & 0xFF
-        for i in range(1024)
-    )
-
-    ciphertext = encrypt_reference(
-        communication_key,
-        packet_type,
-        plaintext,
-    )
-
-    assert ciphertext == bytes.fromhex(
-        EXPECTED_CIPHERTEXT_1024
-    )
+        communication_key = bytes(range(64))
+        packet_type = 1
+        plaintext = bytes(
+            (i * 37 + 11) & 0xFF
+            for i in range(1024))
+        ciphertext = encrypt_reference(
+            communication_key,
+            packet_type,
+            plaintext,)
+        assert ciphertext == bytes.fromhex(
+            EXPECTED_CIPHERTEXT_1024)
