@@ -52,7 +52,7 @@ pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
 
 create_account(
     pool,
-    "Superadmin@gmail.com",
+    "thelastsignalfr@gmail.com",
     &password2_hash,
     "Morgan",
     "SuperDev",
