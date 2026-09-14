@@ -55,7 +55,7 @@ jobs:
      }}
     uses: ./.github/workflows/cancel-pending.yml
     with: 
-      mode: nighly
+      mode: nightly
 
   
 
