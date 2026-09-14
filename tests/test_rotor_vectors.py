@@ -63,10 +63,23 @@ def encrypt_reference(
     return bytes(ciphertext)
 
 
-def test_generate_reference_vector():
-    communication_key = bytes(range(64))
+def test_reference_vector_packet_type_1():
+    communication_key = bytes.fromhex(
+        "000102030405060708090a0b0c0d0e0f"
+        "101112131415161718191a1b1c1d1e1f"
+        "202122232425262728292a2b2c2d2e2f"
+        "303132333435363738393a3b3c3d3e3f"
+    )
+
     packet_type = 1
-    plaintext = bytes(range(16))
+
+    plaintext = bytes.fromhex(
+        "000102030405060708090a0b0c0d0e0f"
+    )
+
+    expected_ciphertext = bytes.fromhex(
+        "e2d0c4f302ea3da12ce8af9b852460d4"
+    )
 
     ciphertext = encrypt_reference(
         communication_key,
@@ -74,10 +87,4 @@ def test_generate_reference_vector():
         plaintext,
     )
 
-    print()
-    print("Communication key :", communication_key.hex())
-    print("Packet type       :", packet_type)
-    print("Plaintext         :", plaintext.hex())
-    print("Ciphertext        :", ciphertext.hex())
-
-    assert len(ciphertext) == len(plaintext)
+    assert ciphertext == expected_ciphertext
