@@ -1,3 +1,5 @@
+import pytest
+
 from client_python.crypto import (
     RotorState,
     generate_rotor,
@@ -5,7 +7,7 @@ from client_python.crypto import (
     mix_final,
     rotor_forward,
 )
-import pytest
+
 
 def encrypt_reference(
     communication_key,
@@ -63,88 +65,26 @@ def encrypt_reference(
     return bytes(ciphertext)
 
 
-def test_reference_vector_packet_type_1():
-    communication_key = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-        "101112131415161718191a1b1c1d1e1f"
-        "202122232425262728292a2b2c2d2e2f"
-        "303132333435363738393a3b3c3d3e3f"
-    )
-
-    packet_type = 1
-
-    plaintext = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-    )
-
-    expected_ciphertext = bytes.fromhex(
-        "e2d0c4f302ea3da12ce8af9b852460d4"
-    )
-
-    ciphertext = encrypt_reference(
-        communication_key,
-        packet_type,
-        plaintext,
-    )
-
-    assert ciphertext == expected_ciphertext
-def test_reference_vector_packet_type_2():
-    communication_key = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-        "101112131415161718191a1b1c1d1e1f"
-        "202122232425262728292a2b2c2d2e2f"
-        "303132333435363738393a3b3c3d3e3f"
-    )
-
-    plaintext = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-    )
-
-    expected_ciphertext = encrypt_reference(
-        communication_key,
-        2,
-        plaintext,
-    )
-
-    assert expected_ciphertext != bytes.fromhex(
-        "e2d0c4f302ea3da12ce8af9b852460d4"
-    )
-def test_reference_vector_packet_type_9():
-    communication_key = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-        "101112131415161718191a1b1c1d1e1f"
-        "202122232425262728292a2b2c2d2e2f"
-        "303132333435363738393a3b3c3d3e3f"
-    )
-
-    plaintext = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-    )
-
-    expected_ciphertext = encrypt_reference(
-        communication_key,
-        9,
-        plaintext,
-    )
-
-    assert expected_ciphertext != bytes.fromhex(
-        "e2d0c4f302ea3da12ce8af9b852460d4"
-    )
 @pytest.mark.parametrize(
-    "packet_type",
-    range(1, 10),
+    "packet_type, expected",
+    [
+        (1, "e2d0c4f302ea3da12ce8af9b852460d4"),
+        (2, "7fabeba06378b7008931bb28552e9c54"),
+        (3, "0bd95e008752e01024d66fc1e2927d9a"),
+        (4, "8169db319e9d65941cb6712d06c7f9e5"),
+        (5, "95997b1d3274ba5b25f2a747337b06e3"),
+        (6, "0a79ca20d68373815974a73c4e39db8e"),
+        (7, "c746f799a8d46175cbfc50cd80fe7c85"),
+        (8, "3cef509235062d02e5c7856d666ccc35"),
+        (9, "696106774cfcaffd46d70629e4b00e1c"),
+    ],
 )
-def test_reference_vectors_all_packet_types(packet_type):
-    communication_key = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-        "101112131415161718191a1b1c1d1e1f"
-        "202122232425262728292a2b2c2d2e2f"
-        "303132333435363738393a3b3c3d3e3f"
-    )
-
-    plaintext = bytes.fromhex(
-        "000102030405060708090a0b0c0d0e0f"
-    )
+def test_reference_vectors_all_packet_types(
+    packet_type,
+    expected,
+):
+    communication_key = bytes(range(64))
+    plaintext = bytes(range(16))
 
     ciphertext = encrypt_reference(
         communication_key,
@@ -152,9 +92,4 @@ def test_reference_vectors_all_packet_types(packet_type):
         plaintext,
     )
 
-    print(
-        f"packet_type={packet_type}: "
-        f"{ciphertext.hex()}"
-    )
-
-    assert len(ciphertext) == len(plaintext)
+    assert ciphertext == bytes.fromhex(expected)
