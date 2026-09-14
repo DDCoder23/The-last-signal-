@@ -13,6 +13,7 @@ class PacketType(IntEnum):
     LoginResponse = 7
     SignUpResponse = 8
     BAN = 9
+    DECO =10
 
 
 class Packet:
@@ -93,6 +94,9 @@ class Packet:
             packet_type,
             payload
         )
+        if packet_type == PacketType.DECO:
+            from .packets.Deco import decoPacket
+            return decoPacket.frompayload(payload)
 
 
         return Packet(
