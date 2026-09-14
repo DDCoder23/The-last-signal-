@@ -2,12 +2,13 @@ import pytest
 
 from client_python.crypto import (
     inverse_mix_before,
+    rotor_forward,
     inverse_mix_final,
     mix_before,
     mix_final,
     rotl8,
     rotr8,
-    rotor_groups,
+    rotor_groups,RotorState,generate_rotor
 )
 
 @pytest.mark.parametrize(
