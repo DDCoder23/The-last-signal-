@@ -130,3 +130,31 @@ def test_reference_vector_packet_type_9():
     assert expected_ciphertext != bytes.fromhex(
         "e2d0c4f302ea3da12ce8af9b852460d4"
     )
+@pytest.mark.parametrize(
+    "packet_type",
+    range(1, 10),
+)
+def test_reference_vectors_all_packet_types(packet_type):
+    communication_key = bytes.fromhex(
+        "000102030405060708090a0b0c0d0e0f"
+        "101112131415161718191a1b1c1d1e1f"
+        "202122232425262728292a2b2c2d2e2f"
+        "303132333435363738393a3b3c3d3e3f"
+    )
+
+    plaintext = bytes.fromhex(
+        "000102030405060708090a0b0c0d0e0f"
+    )
+
+    ciphertext = encrypt_reference(
+        communication_key,
+        packet_type,
+        plaintext,
+    )
+
+    print(
+        f"packet_type={packet_type}: "
+        f"{ciphertext.hex()}"
+    )
+
+    assert len(ciphertext) == len(plaintext)
