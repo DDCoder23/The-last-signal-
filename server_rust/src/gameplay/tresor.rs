@@ -30,6 +30,7 @@ pub struct Tresor {
 
     pub seuil_artefact_commun: HashMap<u32, u32>,
     pub seuil_artefact_peu_commun: HashMap<u32, u32>,
+    pub seuil_artefact_rare: HashMap<u32, u32>,
     pub sous_loot: HashMap<String, HashMap<String, f64>>,
     
     pub sous_loot_livre_normal: HashMap<String, f64>,
@@ -469,12 +470,19 @@ impl Tresor {
     (7, 14),
     (8, 13),
     (9, 12),
+    (10,11),
 ]);
         let seuil_artefact_peu_commun: HashMap<u32, u32> = HashMap::from([
     (6, 20),
     (7, 19),
     (8,17),
     (9, 15),
+    (10,15),
+
+]);
+        let seuil_artefact_rare: HashMap<u32, u32> = HashMap::from([
+    (10, 20),
+    
 
 ]);
         let sous_loot_livre_normal = HashMap::from([
