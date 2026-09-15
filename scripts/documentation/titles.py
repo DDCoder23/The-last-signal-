@@ -39,10 +39,11 @@ def check_titles():
     results["empty_titles"] = check_empty_titles(files, problems)
     results["title_length"] = check_title_length(files, problems)
     results["duplicate_titles"] = check_duplicate_titles(files, problems)
+    score = sum(results.values())
     if score < 0:
         score = 0
     return {
-        "score": sum(results.values()),
+        "score": score,
         "max_score": MAX_SCORE,
         "results": results,
         "problems": problems
