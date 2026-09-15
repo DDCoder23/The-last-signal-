@@ -111,5 +111,19 @@ l'espagnol et le japonais
 - ajout des tests et implémentation des rotor 10 à 16
 - ajout des fichiers 08_.DONJONS.md
 
+---  
+## [1.0.10] - 14/09/2026
+
+### Ajout
+
+- ajout des tests de crypto pour tester la stabilité
+
+---
+## [1.0.11] - 15/09/2026
+
+### Ajout
+
+- ajout du Splitmix64 pour le rust
+- ajout du trésor niveau 10 
 ---
 
