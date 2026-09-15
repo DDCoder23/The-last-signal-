@@ -55,7 +55,7 @@ Toutes les modifications importantes apportées au projet **The Last Signal Onli
 
 ### Optimisation
 
--optimisation du protocole de communication et du client
+- optimisation du protocole de communication et du client
   
 
 ---
