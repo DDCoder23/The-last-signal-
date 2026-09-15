@@ -111,3 +111,18 @@ All notable changes to the **The Last Signal Online** project are documented in 
 - added  08_.DONJONS.md
 
 ---
+---  
+## [1.0.10] - 2026-09-14
+
+### Added
+
+- crypto tests for stability
+
+---
+## [1.0.11] - 2026-09-15
+
+### Added
+
+- Splitmix64 for rust
+- Added  treasure level 10 
+---
