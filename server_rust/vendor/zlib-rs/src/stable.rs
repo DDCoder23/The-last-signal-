@@ -305,6 +305,16 @@ impl Deflate {
             ..DeflateConfig::default()
         };
 
+        Self::new_with_config(config)
+    }
+
+    /// Create a new instance with the provided [`DeflateConfig`].
+    ///
+    /// In most cases it is recommended to use the standard [`Deflate::new`] constructor unless
+    /// tweaking `mem_level` or `strategy` is desired.
+    ///
+    /// This allocates, so should be done with care.
+    pub fn new_with_config(config: DeflateConfig) -> Self {
         Self {
             inner: crate::deflate::DeflateStream::new(config),
             total_in: 0,
