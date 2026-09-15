@@ -511,6 +511,7 @@ let sous_loot_livre_admin = HashMap::from([
             sous_loot,
             seuil_artefact_commun,
             seuil_artefact_peu_commun,
+            seuil_artefact_rare,
             sous_loot_livre_normal,
             sous_loot_livre_admin,
             coeff_loot: 1.0,
