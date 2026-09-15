@@ -160,6 +160,18 @@ impl Tresor {
                 admin: 2,
             },
         );
+         loot_par_niveau.insert(
+            10,
+            Loot {
+                commun: 2,
+                peu_commun: 2,
+                rare: 1,
+                super_rare: 0,
+                epique: 0,
+                legendaire: 0,
+                admin: 2,
+            },
+        );
 
         // -------------------------------------------------
         // OBJETS GARANTIS
@@ -305,6 +317,15 @@ impl Tresor {
         }
 
         objets_garantis.insert(9, niveau_9);
+        let mut niveau_10 = HashMap::new();
+
+        niveau_10.insert(
+            "argent".to_string(),
+            jet_de_des(6, 3) * 100 * PA,
+        );
+        niveau_10.insert("gemmes".to_string(), 1);
+        
+        objets_garantis.insert(10, niveau_10);
         
 
         // -------------------------------------------------
