@@ -1,5 +1,9 @@
-
+use sha2::{Digest, Sha256};
 const MASK_64: u64 = 0xFFFF_FFFF_FFFF_FFFF;
+const COMMUNICATION_KEY_SIZE: usize = 64;
+const ROTOR_COUNT: u8 = 16;
+const ROTOR_DOMAIN: &[u8] = b"TheLastSignal-Rotor-v1";
+
 
 pub struct SplitMix64 {
     state: u64,
@@ -31,6 +35,35 @@ impl SplitMix64 {
     }
 }
 
+
+pub fn derive_rotor_seed(
+    communication_key: &[u8],
+    rotor_id: u8,
+) -> Result<u64, &'static str> {
+    if communication_key.len() != COMMUNICATION_KEY_SIZE {
+        return Err("Communication_key must be exactly 64 bytes");
+    }
+
+    if !(1..=ROTOR_COUNT).contains(&rotor_id) {
+        return Err("rotor_id must be between 1 and 16");
+    }
+
+    let mut hasher = Sha256::new();
+
+    hasher.update(communication_key);
+    hasher.update(ROTOR_DOMAIN);
+    hasher.update((rotor_id as u32).to_be_bytes());
+
+    let digest = hasher.finalize();
+
+    let seed = u64::from_be_bytes(
+        digest[..8]
+            .try_into()
+            .expect("SHA-256 digest is at least 8 bytes"),
+    );
+
+    Ok(seed)
+}
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -85,5 +118,46 @@ mod tests {
 
         assert_ne!(first, second);
     }
+    #[test]
+fn derive_rotor_seed_rejects_invalid_key_length() {
+    let key = [0u8; 63];
+
+    assert!(
+        derive_rotor_seed(&key, 1).is_err()
+    );
+}
+
+#[test]
+fn derive_rotor_seed_rejects_invalid_rotor_id() {
+    let key = [0u8; 64];
+
+    assert!(
+        derive_rotor_seed(&key, 0).is_err()
+    );
+
+    assert!(
+        derive_rotor_seed(&key, 17).is_err()
+    );
+}
+
+#[test]
+fn derive_rotor_seed_is_deterministic() {
+    let key = [0u8; 64];
+
+    let seed1 = derive_rotor_seed(&key, 1).unwrap();
+    let seed2 = derive_rotor_seed(&key, 1).unwrap();
+
+    assert_eq!(seed1, seed2);
+}
+
+#[test]
+fn derive_rotor_seed_differs_between_rotors() {
+    let key = [0u8; 64];
+
+    let seed1 = derive_rotor_seed(&key, 1).unwrap();
+    let seed2 = derive_rotor_seed(&key, 2).unwrap();
+
+    assert_ne!(seed1, seed2);
+}
 }
 
