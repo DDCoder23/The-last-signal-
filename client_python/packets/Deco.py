@@ -9,7 +9,11 @@ class decoPacket:
   ):
     
     self.reason = reason
-    self.packet_type = PacketType.DECO
+    super().__init__(
+            PacketType.DECO,
+            reason.encode("utf-8")
+        )
+   
 
 @classmethod
 def from_payload(cls, payload):
