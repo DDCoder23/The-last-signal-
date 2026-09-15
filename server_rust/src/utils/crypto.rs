@@ -72,7 +72,7 @@ mod tests {
 
         assert_eq!(
             rng.next(),
-            0xE220_A839_7B1D_CD AFu64
+            0xE220_A839_7B1D_CDAFu64
         );
     }
 
