@@ -9,6 +9,7 @@ class decoPacket:
   ):
     
     self.reason = reason
+    self.packet_type = PacketType.DECO
 
 @classmethod
 def from_payload(cls, payload):
