@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1896
+Run : 1845
 Branch : main
-Commit : 593441821c1de4acea6f4ca4f8e5fa404915837a
-Date : Wed Sep 16 00:42:10 UTC 2026
+Commit : deedfdf65f19f3e6d9a1b2995e93c42c2c24a00a
+Date : Mon Sep 14 04:46:40 UTC 2026
 
 ---
 
@@ -11,7 +11,7 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 66
+**Files to reformat:** 64
 
 <details>
 <summary>Show files</summary>
@@ -25,40 +25,41 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/examples/x.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/docker.py
@@ -69,16 +70,13 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_pipeline.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
-/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
+/home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_state.py
 </details>
@@ -89,33 +87,32 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 
 | Code | Nombre |
 |------|-------:|
-| E501 | 270 |
-| E231 | 121 |
-| W293 | 94 |
-| E302 | 88 |
-| E122 | 78 |
-| E303 | 57 |
-| E225 | 39 |
-| F401 | 21 |
+| E501 | 271 |
+| E231 | 119 |
+| W293 | 91 |
+| E302 | 81 |
+| E303 | 58 |
+| E122 | 46 |
+| E225 | 38 |
 | E203 | 17 |
+| F401 | 15 |
 | E128 | 15 |
-| E301 | 11 |
 | E701 | 10 |
 | E305 | 10 |
+| E301 | 10 |
 | E251 | 8 |
+| F841 | 7 |
 | E402 | 7 |
+| W391 | 6 |
 | E266 | 6 |
 | E211 | 6 |
-| W391 | 5 |
-| F841 | 5 |
+| W291 | 5 |
 | F541 | 5 |
-| W291 | 4 |
+| F821 | 4 |
 | E713 | 4 |
 | E703 | 4 |
 | E124 | 4 |
-| E111 | 4 |
 | W292 | 3 |
-| F821 | 3 |
 | E731 | 3 |
 | E116 | 3 |
 | F811 | 2 |
@@ -126,6 +123,7 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | E275 | 2 |
 | E201 | 2 |
 | E117 | 2 |
+| E111 | 2 |
 | E271 | 1 |
 | E131 | 1 |
 | E125 | 1 |
@@ -213,10 +211,6 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./client_python/crypto.py | 637 | W293 | blank line contains whitespace |
 | ./client_python/crypto.py | 638 | E302 | expected 2 blank lines, found 1 |
 | ./client_python/crypto.py | 662 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/crypto.py | 681 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/crypto.py | 732 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/crypto.py | 785 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/crypto.py | 841 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/main.py | 2 | F401 | '.packet.PacketType' imported but unused |
 | ./client_python/main.py | 13 | E302 | expected 2 blank lines, found 0 |
@@ -236,26 +230,18 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./client_python/main.py | 62 | W293 | blank line contains whitespace |
 | ./client_python/main.py | 74 | W293 | blank line contains whitespace |
 | ./client_python/main.py | 78 | W293 | blank line contains whitespace |
-| ./client_python/packet.py | 16 | E225 | missing whitespace around operator |
-| ./client_python/packet.py | 31 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 52 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 65 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 70 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 75 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 80 | E303 | too many blank lines (2) |
-| ./client_python/packet.py | 92 | E501 | line too long (96 > 79 characters) |
-| ./client_python/packet.py | 92 | E203 | whitespace before ' |
+| ./client_python/packet.py | 30 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 51 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 64 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 69 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 74 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 79 | E303 | too many blank lines (2) |
+| ./client_python/packet.py | 91 | E501 | line too long (96 > 79 characters) |
+| ./client_python/packet.py | 91 | E203 | whitespace before ' |
+| ./client_python/packet.py | 93 | E122 | continuation line missing indentation or outdented |
 | ./client_python/packet.py | 94 | E122 | continuation line missing indentation or outdented |
 | ./client_python/packet.py | 95 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 96 | E122 | continuation line missing indentation or outdented |
-| ./client_python/packet.py | 102 | E303 | too many blank lines (2) |
-| ./client_python/packets/Deco.py | 1 | F401 | '..packet.Packet' imported but unused |
-| ./client_python/packets/Deco.py | 3 | E302 | expected 2 blank lines, found 1 |
-| ./client_python/packets/Deco.py | 5 | E111 | indentation is not a multiple of 4 |
-| ./client_python/packets/Deco.py | 7 | W293 | blank line contains whitespace |
-| ./client_python/packets/Deco.py | 10 | W293 | blank line contains whitespace |
-| ./client_python/packets/Deco.py | 16 | W293 | blank line contains whitespace |
-| ./client_python/packets/Deco.py | 20 | E111 | indentation is not a multiple of 4 |
+| ./client_python/packet.py | 98 | E303 | too many blank lines (2) |
 | ./client_python/packets/ban.py | 39 | W292 | no newline at end of file |
 | ./client_python/packets/chat.py | 14 | E301 | expected 1 blank line, found 0 |
 | ./client_python/packets/log.py | 11 | E301 | expected 1 blank line, found 0 |
@@ -503,41 +489,43 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./scripts/documentation/spelling.py | 4 | E302 | expected 2 blank lines, found 1 |
 | ./scripts/documentation/titles.py | 1 | F401 | 'pathlib.Path' imported but unused |
 | ./scripts/documentation/titles.py | 27 | F821 | undefined name 'file' |
-| ./scripts/documentation/titles.py | 54 | E303 | too many blank lines (3) |
-| ./scripts/documentation/titles.py | 62 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 62 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 62 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 62 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 62 | E501 | line too long (95 > 79 characters) |
-| ./scripts/documentation/titles.py | 63 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 85 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 85 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 85 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 85 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 85 | E501 | line too long (112 > 79 characters) |
-| ./scripts/documentation/titles.py | 107 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 107 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 107 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 107 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 107 | E501 | line too long (102 > 79 characters) |
-| ./scripts/documentation/titles.py | 127 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 127 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 127 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 127 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 127 | E501 | line too long (83 > 79 characters) |
-| ./scripts/documentation/titles.py | 128 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 149 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 149 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 149 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 149 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 149 | E501 | line too long (120 > 79 characters) |
-| ./scripts/documentation/titles.py | 150 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 173 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 173 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 173 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 173 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 173 | E501 | line too long (129 > 79 characters) |
-| ./scripts/documentation/titles.py | 174 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 42 | F821 | undefined name 'score' |
+| ./scripts/documentation/titles.py | 43 | F841 | local variable 'score' is assigned to but never used |
+| ./scripts/documentation/titles.py | 53 | E303 | too many blank lines (3) |
+| ./scripts/documentation/titles.py | 61 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 61 | E501 | line too long (95 > 79 characters) |
+| ./scripts/documentation/titles.py | 62 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 84 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 84 | E501 | line too long (112 > 79 characters) |
+| ./scripts/documentation/titles.py | 106 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 106 | E501 | line too long (102 > 79 characters) |
+| ./scripts/documentation/titles.py | 126 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 126 | E501 | line too long (83 > 79 characters) |
+| ./scripts/documentation/titles.py | 127 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 148 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 148 | E501 | line too long (120 > 79 characters) |
+| ./scripts/documentation/titles.py | 149 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 172 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 172 | E501 | line too long (129 > 79 characters) |
+| ./scripts/documentation/titles.py | 173 | W293 | blank line contains whitespace |
 | ./scripts/generate_problems_md.py | 64 | W293 | blank line contains whitespace |
 | ./scripts/generate_problems_md.py | 66 | E303 | too many blank lines (2) |
 | ./scripts/generate_problems_md.py | 71 | W293 | blank line contains whitespace |
@@ -585,6 +573,12 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./scripts/utils/calculateur.py | 111 | E501 | line too long (105 > 79 characters) |
 | ./scripts/utils/calculateur.py | 116 | W391 | blank line at end of file |
 | ./scripts/utils/file_chercheur.py | 16 | E302 | expected 2 blank lines, found 1 |
+| ./scripts/utils/gestionnaire.py | 74 | E302 | expected 2 blank lines, found 1 |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 7 | E303 | too many blank lines (3) |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 16 | F841 | local variable 'chemin_str' is assigned to but never used |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 17 | W291 | trailing whitespace |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 24 | E501 | line too long (84 > 79 characters) |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 31 | W391 | blank line at end of file |
 | ./scripts/utils/open_report.py | 5 | F401 | 'subprocess' imported but unused |
 | ./scripts/utils/open_report.py | 545 | E731 | do not assign a lambda expression, use a def |
 | ./scripts/utils/open_report.py | 829 | W292 | no newline at end of file |
@@ -974,7 +968,6 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./tests/test_client_class.py | 48 | E501 | line too long (81 > 79 characters) |
 | ./tests/test_client_class.py | 71 | E501 | line too long (83 > 79 characters) |
 | ./tests/test_client_class.py | 101 | E501 | line too long (83 > 79 characters) |
-| ./tests/test_crypto_mix.py | 63 | E302 | expected 2 blank lines, found 0 |
 | ./tests/test_crypto_rotor.py | 1 | F401 | 'hashlib' imported but unused |
 | ./tests/test_crypto_rotor.py | 7 | F401 | 'client_python.crypto.inverse_permutation' imported but unused |
 | ./tests/test_crypto_rotor.py | 7 | E402 | module level import not at top of file |
@@ -990,17 +983,8 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./tests/test_fisher_yates.py | 1 | F401 | 'client_python.crypto.SplitMix64' imported but unused |
 | ./tests/test_fisher_yates.py | 1 | E231 | missing whitespace after ',' |
 | ./tests/test_fisher_yates.py | 7 | E303 | too many blank lines (5) |
-| ./tests/test_rotor_integration.py | 3 | F401 | 'client_python.crypto.inverse_mix_before' imported but unused |
-| ./tests/test_rotor_integration.py | 3 | F401 | 'client_python.crypto.mix_before' imported but unused |
-| ./tests/test_rotor_integration.py | 3 | F401 | 'client_python.crypto.rotl8' imported but unused |
-| ./tests/test_rotor_integration.py | 3 | F401 | 'client_python.crypto.rotr8' imported but unused |
-| ./tests/test_rotor_integration.py | 3 | F401 | 'client_python.crypto.rotor_groups' imported but unused |
-| ./tests/test_rotor_integration.py | 12 | E231 | missing whitespace after ',' |
-| ./tests/test_rotor_integration.py | 12 | E231 | missing whitespace after ',' |
-| ./tests/test_rotor_integration.py | 15 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_rotor_integration.py | 66 | E302 | expected 2 blank lines, found 0 |
-| ./tests/test_rotor_integration.py | 131 | E303 | too many blank lines (3) |
-| ./tests/test_rotor_integration.py | 196 | E302 | expected 2 blank lines, found 0 |
+| ./tests/test_rotor_integration.py | 62 | E302 | expected 2 blank lines, found 0 |
+| ./tests/test_rotor_integration.py | 127 | E303 | too many blank lines (3) |
 | ./tests/test_rotor_state.py | 1 | F401 | 'pytest' imported but unused |
 | ./tests/test_rotor_state.py | 3 | E231 | missing whitespace after ',' |
 | ./tests/test_rotor_state.py | 96 | E302 | expected 2 blank lines, found 1 |
@@ -1024,39 +1008,6 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./tests/test_rotor_state.py | 761 | E302 | expected 2 blank lines, found 1 |
 | ./tests/test_rotor_state.py | 838 | E302 | expected 2 blank lines, found 1 |
 | ./tests/test_rotor_state.py | 915 | E302 | expected 2 blank lines, found 1 |
-| ./tests/test_rotor_vectors.py | 97 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 98 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 99 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 100 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 101 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 102 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 103 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 104 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 105 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 106 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 107 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 108 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 109 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 110 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 111 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 112 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 113 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 114 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 115 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 116 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 117 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 118 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 119 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 120 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 121 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 122 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 123 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 124 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 125 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 126 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 127 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 128 | E122 | continuation line missing indentation or outdented |
-| ./tests/test_rotor_vectors.py | 130 | E301 | expected 1 blank line, found 0 |
 | ./tests/test_splitmix64.py | 1 | F401 | 'pytest' imported but unused |
 | ./tests/test_splitmix64.py | 9 | E303 | too many blank lines (4) |
 | ./tests/test_splitmix64.py | 13 | E302 | expected 2 blank lines, found 4 |
@@ -1073,10 +1024,10 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | 3 | ./server_rust/vendor/unicode-properties/scripts/unicode.py | 84 |
 | 4 | ./server_rust/vendor/libc/etc/libc-util.py | 77 |
 | 5 | ./tests/security/test_sql_injection.py | 56 |
-| 6 | ./client_python/crypto.py | 55 |
+| 6 | ./client_python/crypto.py | 51 |
 | 7 | ./server_rust/vendor/sqlx/tests/x.py | 42 |
 | 8 | ./scripts/documentation/markdown.py | 42 |
-| 9 | ./scripts/documentation/titles.py | 37 |
+| 9 | ./scripts/documentation/titles.py | 39 |
 | 10 | ./scripts/utils/calculateur.py | 35 |
 > 💡 Vous ne connaissez pas une erreur Flake8 ?
 >
@@ -1085,7 +1036,7 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (3.8121546961325965)
+**Average complexity:**  A (3.852601156069364)
 
 <details>
 <summary>Show complexity report</summary>
@@ -1275,8 +1226,6 @@ tests/test_fisher_yates.py
     F 47:0 test_max_seed - A
     F 15:0 test_is_deterministic - A
     F 23:0 test_different_seeds_produce_different_permutations - A
-tests/test_crypto_pipeline.py
-    F 16:0 test_full_crypto_pipeline - B
 tests/test_splitmix64.py
     F 13:0 test_same_seed_same_sequence - A
     F 35:0 test_different_seed_different_sequence - A
@@ -1285,16 +1234,9 @@ tests/test_splitmix64.py
     F 57:0 test_output_is_u64 - A
     F 72:0 test_state_changes - A
 tests/test_rotor_integration.py
-    F 132:0 test_rotor_stream_round_trip - B
-    F 74:0 test_rotor_state_multiple_updates - B
-    F 19:0 test_rotor_state_round_trip - A
-    F 198:0 test_mix_final_round_trip - A
-tests/test_crypto_mix.py
-    F 54:0 test_rotor_groups - A
-    F 45:0 test_rotations_stay_u8 - A
-    F 19:0 test_rotl8_rotr8_round_trip - A
-    F 32:0 test_rotr8_rotl8_round_trip - A
-    F 64:0 test_mix_before_round_trip - A
+    F 128:0 test_rotor_stream_round_trip - B
+    F 70:0 test_rotor_state_multiple_updates - B
+    F 15:0 test_rotor_state_round_trip - A
 tests/test_client_class.py
     M 11:4 TestClientInitAndConnect.test_init_default_values - B
     M 20:4 TestClientInitAndConnect.test_init_custom_values - B
@@ -1305,9 +1247,6 @@ tests/test_client_class.py
     M 83:4 TestClientInitAndConnect.test_connect_timeout_exception - A
     M 54:4 TestClientInitAndConnect.test_connect_timeout - A
     M 97:4 TestClientInitAndConnect.test_connect_runtime_exception - A
-tests/test_rotor_vectors.py
-    F 12:0 encrypt_reference - A
-    F 82:0 test_reference_vectors_all_packet_types - A
 tests/security/test_fuzzing.py
     F 75:0 main - A
     F 30:0 send_packet - A
@@ -1384,6 +1323,10 @@ scripts/utils/calculateur.py
     F 13:0 log_erreur_async - A
 scripts/utils/file_chercheur.py
     F 16:0 iter_files - A
+scripts/utils/gestionnaire_de_fichiers.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+scripts/utils/gestionnaire.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 scripts/documentation/spelling.py
     F 4:0 check_spelling - A
 scripts/documentation/report.py
@@ -1422,13 +1365,13 @@ scripts/documentation/markdown.py
     F 53:0 is_ignored - A
     F 58:0 check_markdown - A
 scripts/documentation/titles.py
-    F 93:0 check_heading_spacing - B
-    F 69:0 check_heading_order - B
-    F 134:0 check_title_length - A
-    F 156:0 check_duplicate_titles - A
-    F 116:0 check_empty_titles - A
+    F 92:0 check_heading_spacing - B
+    F 68:0 check_heading_order - B
+    F 133:0 check_title_length - A
+    F 155:0 check_duplicate_titles - A
+    F 115:0 check_empty_titles - A
     F 17:0 check_titles - A
-    F 54:0 check_single_h1 - A
+    F 53:0 check_single_h1 - A
 security/vault.py
     F 12:0 create_key - A
     F 103:0 get_or_create_communication_key - A
@@ -1447,11 +1390,11 @@ client_python/client.py
     M 154:4 Client.disconnect - A
     M 11:4 Client.__init__ - A
 client_python/packet.py
-    M 53:4 Packet.decode - C
-    C 19:0 Packet - A
+    M 52:4 Packet.decode - B
+    C 18:0 Packet - A
     C 5:0 PacketType - A
-    M 21:4 Packet.__init__ - A
-    M 31:4 Packet.encode - A
+    M 20:4 Packet.__init__ - A
+    M 30:4 Packet.encode - A
 client_python/logs.py
     F 4:0 log - A
 client_python/main.py
@@ -1463,10 +1406,6 @@ client_python/crypto.py
     F 53:0 derive_rotor_seed - A
     F 140:0 generate_rotors - A
     F 167:0 inverse_permutation - A
-    F 681:0 mix_before - A
-    F 732:0 inverse_mix_before - A
-    F 785:0 mix_final - A
-    F 841:0 inverse_mix_final - A
     F 93:0 fisher_yates - A
     F 638:0 rotl8 - A
     F 651:0 rotr8 - A
@@ -1502,17 +1441,13 @@ client_python/packets/log.py
     C 4:0 LogPacket - A
     M 6:4 LogPacket.__init__ - A
     M 12:4 LogPacket.from_payload - A
-client_python/packets/Deco.py
-    C 3:0 decoPacket - A
-    F 19:0 from_payload - A
-    M 5:2 decoPacket.__init__ - A
 client_python/packets/chat.py
     C 4:0 ChatPacket - A
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-362 blocks (classes, functions, methods) analyzed.
-Average complexity: A (3.8121546961325965)
+346 blocks (classes, functions, methods) analyzed.
+Average complexity: A (3.852601156069364)
 
 </details>
 
@@ -1522,7 +1457,7 @@ Average complexity: A (3.8121546961325965)
 |----------|------:|
 | High | 1 |
 | Medium | 9 |
-| Low | 203 |
+| Low | 190 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -1533,7 +1468,7 @@ Average complexity: A (3.8121546961325965)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-16 00:42:19.700037+00:00
+Run started:2026-09-14 04:46:49.798935+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -2594,104 +2529,6 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:23:4
-22	
-23	    assert restored == value
-24	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:36:4
-35	
-36	    assert restored == value
-37	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:46:4
-45	def test_rotations_stay_u8(value, shift):
-46	    assert 0 <= rotl8(value, shift) <= 255
-47	    assert 0 <= rotr8(value, shift) <= 255
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:47:4
-46	    assert 0 <= rotl8(value, shift) <= 255
-47	    assert 0 <= rotr8(value, shift) <= 255
-48	
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:59:4
-58	
-59	    assert g1 == (0 ^ 4 ^ 8 ^ 12)
-60	    assert g2 == (1 ^ 5 ^ 9 ^ 13)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:60:4
-59	    assert g1 == (0 ^ 4 ^ 8 ^ 12)
-60	    assert g2 == (1 ^ 5 ^ 9 ^ 13)
-61	    assert g3 == (2 ^ 6 ^ 10 ^ 14)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:61:4
-60	    assert g2 == (1 ^ 5 ^ 9 ^ 13)
-61	    assert g3 == (2 ^ 6 ^ 10 ^ 14)
-62	    assert g4 == (3 ^ 7 ^ 11 ^ 15)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:62:4
-61	    assert g3 == (2 ^ 6 ^ 10 ^ 14)
-62	    assert g4 == (3 ^ 7 ^ 11 ^ 15)
-63	@pytest.mark.parametrize("value", range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_mix.py:84:4
-83	
-84	    assert restored == value
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_crypto_pipeline.py:124:4
-123	
-124	    assert bytes(decrypted) == plaintext
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_crypto_rotor.py:53:4
 52	
 53	    assert value1 == value2
@@ -2985,39 +2822,29 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_integration.py:65:4
-64	
-65	    assert value == original
-66	@pytest.mark.parametrize(
+   Location: ./tests/test_rotor_integration.py:61:4
+60	
+61	    assert value == original
+62	@pytest.mark.parametrize(
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_integration.py:127:8
-126	
-127	        assert decrypted == original
-128	
+   Location: ./tests/test_rotor_integration.py:123:8
+122	
+123	        assert decrypted == original
+124	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_integration.py:195:4
-194	
-195	    assert bytes(decrypted) == plaintext
-196	@pytest.mark.parametrize("value", range(256))
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_integration.py:220:4
-219	
-220	    assert restored == value
+   Location: ./tests/test_rotor_integration.py:191:4
+190	
+191	    assert bytes(decrypted) == plaintext
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -3723,26 +3550,6 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_vectors.py:95:4
-94	
-95	    assert ciphertext == bytes.fromhex(expected)
-96	    EXPECTED_CIPHERTEXT_1024 = (
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_vectors.py:140:8
-139	            plaintext,)
-140	        assert ciphertext == bytes.fromhex(
-141	            EXPECTED_CIPHERTEXT_1024)
-
---------------------------------------------------
->> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_splitmix64.py:28:4
 27	
 28	    assert sequence_a == sequence_b
@@ -3823,28 +3630,28 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 10446
+	Total lines of code: 10049
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 203
+		Low: 190
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 12
-		High: 200
+		High: 187
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 8.04/10
+**Global score:** 8.07/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4196,9 +4003,6 @@ tests/test_fisher_yates.py:31:0: C0116: Missing function or method docstring (mi
 tests/test_fisher_yates.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:1:0: W0611: Unused SplitMix64 imported from client_python.crypto (unused-import)
-************* Module tests.test_crypto_pipeline
-tests/test_crypto_pipeline.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_crypto_pipeline.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.test_splitmix64
 tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_splitmix64.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -4210,22 +4014,9 @@ tests/test_splitmix64.py:104:0: C0116: Missing function or method docstring (mis
 tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
 ************* Module tests.test_rotor_integration
 tests/test_rotor_integration.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_integration.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:198:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:3:0: W0611: Unused inverse_mix_before imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused mix_before imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused rotl8 imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused rotr8 imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused rotor_groups imported from client_python.crypto (unused-import)
-************* Module tests.test_crypto_mix
-tests/test_crypto_mix.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_crypto_mix.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:64:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_integration.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_integration.py:70:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_integration.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.test_client_class
 tests/test_client_class.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_client_class.py:1:0: C0410: Multiple imports on one line (sys, pytest, socket) (multiple-imports)
@@ -4233,12 +4024,6 @@ tests/test_client_class.py:33:8: E1128: Assigning result of a function call, whe
 tests/test_client_class.py:1:0: C0411: standard import "socket" should be placed before third party import "pytest" (wrong-import-order)
 tests/test_client_class.py:2:0: C0411: standard import "pathlib.Path" should be placed before third party import "pytest" (wrong-import-order)
 tests/test_client_class.py:3:0: C0411: standard import "unittest.mock.patch" should be placed before third party import "pytest" (wrong-import-order)
-************* Module tests.test_rotor_vectors
-tests/test_rotor_vectors.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_vectors.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_vectors.py:82:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_vectors.py:96:4: C0103: Variable name "EXPECTED_CIPHERTEXT_1024" doesn't conform to snake_case naming style (invalid-name)
-tests/test_rotor_vectors.py:130:4: W0612: Unused variable 'test_reference_vector_1024_bytes' (unused-variable)
 ************* Module tests.security.test_fuzzing
 tests/security/test_fuzzing.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/security/test_fuzzing.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -4446,6 +4231,19 @@ scripts/utils/calculateur.py:6:0: W0611: Unused gestionnaire_de_fichiers importe
 ************* Module scripts.utils.file_chercheur
 scripts/utils/file_chercheur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/utils/file_chercheur.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.utils.gestionnaire_de_fichiers
+scripts/utils/gestionnaire_de_fichiers.py:17:44: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/gestionnaire_de_fichiers.py:31:0: C0305: Trailing newlines (trailing-newlines)
+scripts/utils/gestionnaire_de_fichiers.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/gestionnaire_de_fichiers.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire_de_fichiers.py:16:12: W0612: Unused variable 'chemin_str' (unused-variable)
+************* Module scripts.utils.gestionnaire
+scripts/utils/gestionnaire.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/gestionnaire.py:1:0: E0401: Unable to import 'calculateur' (import-error)
+scripts/utils/gestionnaire.py:2:0: E0401: Unable to import 'gestionnaire_de_fichiers' (import-error)
+scripts/utils/gestionnaire.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire.py:3:0: C0411: standard import "asyncio" should be placed before third party imports "calculateur", "gestionnaire_de_fichiers" (wrong-import-order)
 ************* Module scripts.documentation.spelling
 scripts/documentation/spelling.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module scripts.documentation.report
@@ -4551,25 +4349,25 @@ scripts/documentation/markdown.py:262:0: C0116: Missing function or method docst
 scripts/documentation/markdown.py:269:15: W0718: Catching too general exception Exception (broad-exception-caught)
 scripts/documentation/markdown.py:27:0: C0411: standard import "json" should be placed before local import "problem.add_problem" (wrong-import-order)
 ************* Module scripts.documentation.titles
-scripts/documentation/titles.py:63:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:85:0: C0301: Line too long (112/100) (line-too-long)
-scripts/documentation/titles.py:107:0: C0301: Line too long (102/100) (line-too-long)
-scripts/documentation/titles.py:128:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:149:0: C0301: Line too long (120/100) (line-too-long)
-scripts/documentation/titles.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:173:0: C0301: Line too long (129/100) (line-too-long)
-scripts/documentation/titles.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:62:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:84:0: C0301: Line too long (112/100) (line-too-long)
+scripts/documentation/titles.py:106:0: C0301: Line too long (102/100) (line-too-long)
+scripts/documentation/titles.py:127:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:148:0: C0301: Line too long (120/100) (line-too-long)
+scripts/documentation/titles.py:149:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:172:0: C0301: Line too long (129/100) (line-too-long)
+scripts/documentation/titles.py:173:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/titles.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/documentation/titles.py:4:0: E0401: Unable to import 'utils.file_chercheur' (import-error)
 scripts/documentation/titles.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/documentation/titles.py:27:24: E0602: Undefined variable 'file' (undefined-variable)
-scripts/documentation/titles.py:43:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
-scripts/documentation/titles.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:69:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:134:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:156:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:42:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
+scripts/documentation/titles.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:92:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:115:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:133:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:155:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/documentation/titles.py:4:0: C0411: third party import "utils.file_chercheur.iter_files" should be placed before local import "problem.add_problem" (wrong-import-order)
 scripts/documentation/titles.py:1:0: W0611: Unused Path imported from pathlib (unused-import)
 ************* Module security.__init__
@@ -4607,20 +4405,18 @@ client_python/packet.py:1:0: C0114: Missing module docstring (missing-module-doc
 client_python/packet.py:5:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packet.py:13:4: C0103: Class constant name "LoginResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
 client_python/packet.py:14:4: C0103: Class constant name "SignUpResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
-client_python/packet.py:19:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packet.py:31:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packet.py:53:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packet.py:66:12: C0415: Import outside toplevel (packets.login.LoginPacket) (import-outside-toplevel)
-client_python/packet.py:71:12: C0415: Import outside toplevel (packets.chat.ChatPacket) (import-outside-toplevel)
-client_python/packet.py:76:12: C0415: Import outside toplevel (packets.move.MovePacket) (import-outside-toplevel)
-client_python/packet.py:81:12: C0415: Import outside toplevel (packets.ping.PingPacket) (import-outside-toplevel)
-client_python/packet.py:84:12: C0415: Import outside toplevel (packets.log.LogPacket) (import-outside-toplevel)
-client_python/packet.py:87:12: C0415: Import outside toplevel (packets.singup.SingupPacket) (import-outside-toplevel)
-client_python/packet.py:90:12: C0415: Import outside toplevel (packets.ban.BanPacket) (import-outside-toplevel)
-client_python/packet.py:92:11: R1714: Consider merging these comparisons with 'in' by using 'packet_type in (PacketType.LoginResponse, PacketType.SignUpResponse)'. Use a set instead if elements are hashable. (consider-using-in)
-client_python/packet.py:98:12: C0415: Import outside toplevel (packets.Deco.decoPacket) (import-outside-toplevel)
-client_python/packet.py:99:19: E1101: Class 'decoPacket' has no 'frompayload' member (no-member)
-client_python/packet.py:53:4: R0911: Too many return statements (10/6) (too-many-return-statements)
+client_python/packet.py:18:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packet.py:30:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:52:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:65:12: C0415: Import outside toplevel (packets.login.LoginPacket) (import-outside-toplevel)
+client_python/packet.py:70:12: C0415: Import outside toplevel (packets.chat.ChatPacket) (import-outside-toplevel)
+client_python/packet.py:75:12: C0415: Import outside toplevel (packets.move.MovePacket) (import-outside-toplevel)
+client_python/packet.py:80:12: C0415: Import outside toplevel (packets.ping.PingPacket) (import-outside-toplevel)
+client_python/packet.py:83:12: C0415: Import outside toplevel (packets.log.LogPacket) (import-outside-toplevel)
+client_python/packet.py:86:12: C0415: Import outside toplevel (packets.singup.SingupPacket) (import-outside-toplevel)
+client_python/packet.py:89:12: C0415: Import outside toplevel (packets.ban.BanPacket) (import-outside-toplevel)
+client_python/packet.py:91:11: R1714: Consider merging these comparisons with 'in' by using 'packet_type in (PacketType.LoginResponse, PacketType.SignUpResponse)'. Use a set instead if elements are hashable. (consider-using-in)
+client_python/packet.py:52:4: R0911: Too many return statements (9/6) (too-many-return-statements)
 ************* Module client_python.logs
 client_python/logs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/logs.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -4682,14 +4478,6 @@ client_python/crypto.py:235:0: R0903: Too few public methods (1/2) (too-few-publ
 client_python/crypto.py:638:0: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/crypto.py:651:0: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/crypto.py:662:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:681:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:732:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:785:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:785:0: R0913: Too many arguments (6/5) (too-many-arguments)
-client_python/crypto.py:785:0: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
-client_python/crypto.py:841:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/crypto.py:841:0: R0913: Too many arguments (6/5) (too-many-arguments)
-client_python/crypto.py:841:0: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
 ************* Module client_python.packets.ping
 client_python/packets/ping.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/ping.py:4:0: C0115: Missing class docstring (missing-class-docstring)
@@ -4718,22 +4506,6 @@ client_python/packets/log.py:1:0: C0114: Missing module docstring (missing-modul
 client_python/packets/log.py:4:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packets/log.py:12:4: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/packets/log.py:13:15: E1121: Too many positional arguments for constructor call (too-many-function-args)
-************* Module client_python.packets.Deco
-client_python/packets/Deco.py:5:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-client_python/packets/Deco.py:7:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/packets/Deco.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/packets/Deco.py:11:0: W0311: Bad indentation. Found 4 spaces, expected 8 (bad-indentation)
-client_python/packets/Deco.py:12:0: W0311: Bad indentation. Found 4 spaces, expected 8 (bad-indentation)
-client_python/packets/Deco.py:16:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/packets/Deco.py:20:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-client_python/packets/Deco.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/Deco.py:1:0: C0103: Module name "Deco" doesn't conform to snake_case naming style (invalid-name)
-client_python/packets/Deco.py:3:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/Deco.py:3:0: C0103: Class name "decoPacket" doesn't conform to PascalCase naming style (invalid-name)
-client_python/packets/Deco.py:3:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-client_python/packets/Deco.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packets/Deco.py:20:9: E1102: cls is not callable (not-callable)
-client_python/packets/Deco.py:1:0: W0611: Unused Packet imported from packet (unused-import)
 ************* Module client_python.packets.chat
 client_python/packets/chat.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/chat.py:4:0: C0115: Missing class docstring (missing-class-docstring)
@@ -4847,45 +4619,11 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 
         return cls(email, password) (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[54:85]
-==tests.test_rotor_vectors:[37:64]
-        value = mix_before(
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext,
-        )
-
-        for rotor, position in zip(rotors, positions):
-            value = rotor_forward(
-                value,
-                position,
-                rotor,
-            )
-
-        value = mix_final(
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext,
-            packet_type,
-        )
-
-        ciphertext.append(value)
-        previous_ciphertext = value
-
-    # ========================================================
-    # DÉCHIFFREMENT
-    # ========================================================
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[375:401]
-==tests.test_rotor_integration:[41:78]
+==tests.test_rotor_integration:[37:74]
     original = value
 
-    # Forward : R1 -> R16
+    # Forward : R1 → R16
     for rotor, position in zip(
         rotors,
         positions,
@@ -4896,7 +4634,7 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
             rotor,
         )
 
-    # Inverse : R16 -> R1
+    # Inverse : R16 → R1
     for rotor, position in reversed(
         list(zip(rotors, positions))
     ):
@@ -4907,7 +4645,18 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         )
 
     assert value == original
-def test_invalid_communication_key():
+@pytest.mark.parametrize(
+    "packet_type",
+    range(1, 10),
+)
+@pytest.mark.parametrize(
+    "value",
+    range(256),
+)
+def test_rotor_state_multiple_updates(
+    value,
+    packet_type,
+):
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_docs:[37:62]
@@ -4955,22 +4704,6 @@ IGNORED_DIRECTORIES = {
 }
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_rotor_integration:[80:93]
-==tests.test_rotor_vectors:[16:29]
-    state = RotorState(
-        communication_key=communication_key,
-        packet_type=packet_type,
-    )
-
-    rotors = [
-        generate_rotor(
-            communication_key,
-            rotor_id,
-        )
-        for rotor_id in range(1, 17)
-    ]
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
         report
@@ -5008,21 +4741,6 @@ IGNORED_DIRECTORIES = {
 
         super().__init__( (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[24:36]
-==tests.test_rotor_integration:[81:93]
-        communication_key=communication_key,
-        packet_type=packet_type,
-    )
-
-    rotors = [
-        generate_rotor(
-            communication_key,
-            rotor_id,
-        )
-        for rotor_id in range(1, 17)
-    ]
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==server_rust.vendor.unicode-normalization.scripts.unicode:[28:38]
 ==server_rust.vendor.unicode-properties.scripts.unicode:[21:31]
 // file at the top-level directory of this distribution and at
@@ -5035,20 +4753,6 @@ IGNORED_DIRECTORIES = {
 // except according to those terms.
 
 // NOTE: The following code was generated by "scripts/unicode.py", do not edit directly (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[101:112]
-==tests.test_crypto_rotor:[386:398]
-        )
-
-        for rotor, position in reversed(
-            list(zip(rotors, positions))
-        ):
-            value = rotor_inverse(
-                value,
-                position,
-                rotor,
-            )
- (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
 ==.github.security.test_filesystem:[8:17]
@@ -5064,28 +4768,15 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[26:36]
-==tests.test_rotor_integration:[27:37]
-    )
-
-    rotors = [
-        generate_rotor(
-            communication_key,
-            rotor_id,
-        )
-        for rotor_id in range(1, 17)
-    ]
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[38:54]
@@ -5118,6 +4809,21 @@ IGNORED_DIRECTORIES = {
                 ".mypy_cache",
                 ".pytest_cache", (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[60:72]
+==scripts.documentation.titles:[41:53]
+    if score < 0:
+        score = 0
+    return {
+        "score": sum(results.values()),
+        "max_score": MAX_SCORE,
+        "results": results,
+        "problems": problems
+    }
+
+
+
+def check_single_h1(files, problems): (duplicate-code)
+.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[35:47]
 ==.github.security.test_python_security:[22:33]
     try:
@@ -5146,10 +4852,20 @@ IGNORED_DIRECTORIES = {
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+'''
+============================================================
+                         Git
+============================================================
+'''
+
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[28:36]
 ==tests.test_crypto_rotor:[200:208]
+==tests.test_rotor_integration:[25:33]
     rotors = [
         generate_rotor(
             communication_key,
@@ -5160,7 +4876,7 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[302:310]
-==tests.test_rotor_integration:[29:37]
+==tests.test_rotor_integration:[81:89]
     rotors = [
         generate_rotor(
             communication_key,
@@ -5168,42 +4884,6 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
         )
         for rotor_id in range(1, 17)
     ]
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_rotor:[362:370]
-==tests.test_rotor_integration:[85:93]
-    rotors = [
-        generate_rotor(
-            communication_key,
-            rotor_id,
-        )
-        for rotor_id in range(1, 17)
-    ]
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[33:42]
-==tests.test_rotor_integration:[141:152]
-        for rotor_id in range(1, 17)
-    ]
-
-    plaintext = bytes(
-        (i * 37 + 11) & 0xFF
-        for i in range(1000)
-    )
-
-    ciphertext = []
-
-    # Chiffrement : un update par octet (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[95:103]
-==tests.test_rotor_vectors:[53:61]
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext,
-            packet_type,
-        )
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
@@ -5225,16 +4905,6 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
             "results": {},
             "problems": [{
                 "file": "", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[113:120]
-==tests.test_rotor_vectors:[38:45]
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext,
-        )
- (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[39:45]
 ==scripts.documentation.titles:[20:26]
@@ -5266,47 +4936,15 @@ IGNORED_DIRECTORIES = {
     )
 
 
-def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[55:60]
-==tests.test_rotor_vectors:[53:58]
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[70:75]
-==tests.test_rotor_vectors:[38:43]
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_mix:[68:73]
-==tests.test_rotor_integration:[202:207]
-        value,
-        communication_key,
-        rotor_positions,
-        42,
-        123, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_mix:[76:81]
-==tests.test_rotor_integration:[211:216]
-        mixed,
-        communication_key,
-        rotor_positions,
-        42,
-        123, (duplicate-code)
+def looks_textual(data: bytes) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[8:13]
@@ -5315,17 +4953,16 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 8.04/10
+Your code has been rated at 8.07/10
 
 
 </details>
@@ -5343,7 +4980,7 @@ rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
 plugins: cov-7.1.0
-collected 13689 items / 1 error
+collected 4966 items / 1 error
 
 ==================================== ERRORS ====================================
 ____________ ERROR collecting tests/security/test_sql_injection.py _____________
@@ -5353,7 +4990,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.82s ===============================
+=============================== 1 error in 0.47s ===============================
 
 </details>
 
