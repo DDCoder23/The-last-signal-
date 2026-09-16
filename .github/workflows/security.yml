@@ -635,10 +635,13 @@ jobs:
           echo "" >> "$REPORT"
 
           echo "## Cargo Deny" >> "$REPORT"
+          if [ -f "server_rust/Cargo.toml" ]; then
+            (
+            cd server_rust
+            cargo deny check licenses
+            ) >> "$REPORT" 2>&1
 
-          if find . -name Cargo.toml | grep -q .
-          then
-            cargo deny check licenses >> "$REPORT" 2>&1
+          
           else
             echo "No Cargo project found." >> "$REPORT"
           fi
