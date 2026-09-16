@@ -264,7 +264,8 @@ jobs:
 
           echo "" >> "$REPORT"
           python tests/security/test_load.py \
-            >> "$REPORT"
+          >> "$REPORT" 2>&1
+  
           echo "" >> "$REPORT"
             
 
