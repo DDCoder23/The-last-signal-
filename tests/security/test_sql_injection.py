@@ -485,7 +485,10 @@ def test_advanced_attacks_database():
     print(f"Testbed : {test_db}")
 
     try:
+        
         conn = open_database(test_db)
+        print("Database:", test_db)
+        print("Tables:", get_tables(conn))
 
         try:
             # ========== BASELINE ==========
