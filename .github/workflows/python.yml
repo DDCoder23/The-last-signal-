@@ -107,7 +107,7 @@ jobs:
 
           echo "## ⚫ Black" >> "$REPORT"
 
-          black --check . > black.txt 2>&1 || true
+          black --check . --exclude '/server_rust/' > black.txt 2>&1 || true
 
           COUNT=$(grep -c "would reformat" black.txt || true)
 
