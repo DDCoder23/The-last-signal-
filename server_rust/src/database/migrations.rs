@@ -1,7 +1,7 @@
 use log::debug;
 use sqlx::SqlitePool;
 use crate::utils::vault::decrypt_vault;
-use crate::utils::password::hash_password;
+use crate::auth::password::hash_password;
 use crate::utils::account_creator::create_account;
 /// Exécute toutes les migrations SQL non encore appliquées.
 pub async fn run(pool: &SqlitePool) -> Result<(), Box<dyn std::error::Error>> {
