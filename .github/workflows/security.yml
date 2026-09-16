@@ -587,8 +587,8 @@ jobs:
 
           semgrep scan \
           --config auto \
-          client-python \
-          server-rust \
+          client_python \
+          server_rust \
           scripts >> "$REPORT" 2>&1
 
       ##########################################################
