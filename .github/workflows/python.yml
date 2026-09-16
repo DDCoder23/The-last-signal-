@@ -143,7 +143,7 @@ jobs:
           echo "##   Flake8" >> "$REPORT"
           echo "" >> "$REPORT"
 
-          flake8 . > flake8.txt 2>&1 || true
+          flake8 . --exclude=server_rust > flake8.txt 2>&1 || true
 
 
           # --------------------------------------------------------
