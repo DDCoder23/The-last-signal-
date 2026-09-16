@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1896
+Run : 1874
 Branch : main
-Commit : 593441821c1de4acea6f4ca4f8e5fa404915837a
-Date : Wed Sep 16 00:42:10 UTC 2026
+Commit : 50d38b27fd010e948d726f3fc845feb1c0939804
+Date : Mon Sep 14 23:57:50 UTC 2026
 
 ---
 
@@ -11,7 +11,7 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 66
+**Files to reformat:** 68
 
 <details>
 <summary>Show files</summary>
@@ -22,15 +22,15 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
@@ -43,19 +43,21 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/gestionnaire_de_fichiers.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
@@ -65,17 +67,17 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/open_report.py
 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/sqlx/tests/x.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-properties/scripts/unicode.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_pipeline.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/vendor/unicode-normalization/scripts/unicode.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
@@ -89,33 +91,33 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 
 | Code | Nombre |
 |------|-------:|
-| E501 | 270 |
-| E231 | 121 |
-| W293 | 94 |
-| E302 | 88 |
+| E501 | 271 |
+| E231 | 122 |
+| W293 | 91 |
+| E302 | 90 |
 | E122 | 78 |
-| E303 | 57 |
+| E303 | 58 |
 | E225 | 39 |
 | F401 | 21 |
 | E203 | 17 |
 | E128 | 15 |
+| E305 | 11 |
 | E301 | 11 |
 | E701 | 10 |
-| E305 | 10 |
+| F841 | 8 |
 | E251 | 8 |
 | E402 | 7 |
+| W391 | 6 |
+| F821 | 6 |
 | E266 | 6 |
 | E211 | 6 |
-| W391 | 5 |
-| F841 | 5 |
+| W291 | 5 |
 | F541 | 5 |
-| W291 | 4 |
 | E713 | 4 |
 | E703 | 4 |
 | E124 | 4 |
 | E111 | 4 |
 | W292 | 3 |
-| F821 | 3 |
 | E731 | 3 |
 | E116 | 3 |
 | F811 | 2 |
@@ -126,6 +128,7 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | E275 | 2 |
 | E201 | 2 |
 | E117 | 2 |
+| F706 | 1 |
 | E271 | 1 |
 | E131 | 1 |
 | E125 | 1 |
@@ -252,10 +255,14 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./client_python/packets/Deco.py | 1 | F401 | '..packet.Packet' imported but unused |
 | ./client_python/packets/Deco.py | 3 | E302 | expected 2 blank lines, found 1 |
 | ./client_python/packets/Deco.py | 5 | E111 | indentation is not a multiple of 4 |
-| ./client_python/packets/Deco.py | 7 | W293 | blank line contains whitespace |
-| ./client_python/packets/Deco.py | 10 | W293 | blank line contains whitespace |
-| ./client_python/packets/Deco.py | 16 | W293 | blank line contains whitespace |
-| ./client_python/packets/Deco.py | 20 | E111 | indentation is not a multiple of 4 |
+| ./client_python/packets/Deco.py | 14 | E302 | expected 2 blank lines, found 1 |
+| ./client_python/packets/Deco.py | 15 | E231 | missing whitespace after ',' |
+| ./client_python/packets/Deco.py | 17 | F841 | local variable 'parts' is assigned to but never used |
+| ./client_python/packets/Deco.py | 17 | E111 | indentation is not a multiple of 4 |
+| ./client_python/packets/Deco.py | 19 | E305 | expected 2 blank lines after class or function definition, found 1 |
+| ./client_python/packets/Deco.py | 19 | F821 | undefined name 'part' |
+| ./client_python/packets/Deco.py | 20 | F821 | undefined name 'part' |
+| ./client_python/packets/Deco.py | 22 | F706 | 'return' outside function |
 | ./client_python/packets/ban.py | 39 | W292 | no newline at end of file |
 | ./client_python/packets/chat.py | 14 | E301 | expected 1 blank line, found 0 |
 | ./client_python/packets/log.py | 11 | E301 | expected 1 blank line, found 0 |
@@ -503,41 +510,43 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./scripts/documentation/spelling.py | 4 | E302 | expected 2 blank lines, found 1 |
 | ./scripts/documentation/titles.py | 1 | F401 | 'pathlib.Path' imported but unused |
 | ./scripts/documentation/titles.py | 27 | F821 | undefined name 'file' |
-| ./scripts/documentation/titles.py | 54 | E303 | too many blank lines (3) |
-| ./scripts/documentation/titles.py | 62 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 62 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 62 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 62 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 62 | E501 | line too long (95 > 79 characters) |
-| ./scripts/documentation/titles.py | 63 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 85 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 85 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 85 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 85 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 85 | E501 | line too long (112 > 79 characters) |
-| ./scripts/documentation/titles.py | 107 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 107 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 107 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 107 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 107 | E501 | line too long (102 > 79 characters) |
-| ./scripts/documentation/titles.py | 127 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 127 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 127 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 127 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 127 | E501 | line too long (83 > 79 characters) |
-| ./scripts/documentation/titles.py | 128 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 149 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 149 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 149 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 149 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 149 | E501 | line too long (120 > 79 characters) |
-| ./scripts/documentation/titles.py | 150 | W293 | blank line contains whitespace |
-| ./scripts/documentation/titles.py | 173 | E211 | whitespace before '(' |
-| ./scripts/documentation/titles.py | 173 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 173 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 173 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/titles.py | 173 | E501 | line too long (129 > 79 characters) |
-| ./scripts/documentation/titles.py | 174 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 42 | F821 | undefined name 'score' |
+| ./scripts/documentation/titles.py | 43 | F841 | local variable 'score' is assigned to but never used |
+| ./scripts/documentation/titles.py | 53 | E303 | too many blank lines (3) |
+| ./scripts/documentation/titles.py | 61 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 61 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 61 | E501 | line too long (95 > 79 characters) |
+| ./scripts/documentation/titles.py | 62 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 84 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 84 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 84 | E501 | line too long (112 > 79 characters) |
+| ./scripts/documentation/titles.py | 106 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 106 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 106 | E501 | line too long (102 > 79 characters) |
+| ./scripts/documentation/titles.py | 126 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 126 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 126 | E501 | line too long (83 > 79 characters) |
+| ./scripts/documentation/titles.py | 127 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 148 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 148 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 148 | E501 | line too long (120 > 79 characters) |
+| ./scripts/documentation/titles.py | 149 | W293 | blank line contains whitespace |
+| ./scripts/documentation/titles.py | 172 | E211 | whitespace before '(' |
+| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 172 | E231 | missing whitespace after ',' |
+| ./scripts/documentation/titles.py | 172 | E501 | line too long (129 > 79 characters) |
+| ./scripts/documentation/titles.py | 173 | W293 | blank line contains whitespace |
 | ./scripts/generate_problems_md.py | 64 | W293 | blank line contains whitespace |
 | ./scripts/generate_problems_md.py | 66 | E303 | too many blank lines (2) |
 | ./scripts/generate_problems_md.py | 71 | W293 | blank line contains whitespace |
@@ -585,6 +594,12 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | ./scripts/utils/calculateur.py | 111 | E501 | line too long (105 > 79 characters) |
 | ./scripts/utils/calculateur.py | 116 | W391 | blank line at end of file |
 | ./scripts/utils/file_chercheur.py | 16 | E302 | expected 2 blank lines, found 1 |
+| ./scripts/utils/gestionnaire.py | 74 | E302 | expected 2 blank lines, found 1 |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 7 | E303 | too many blank lines (3) |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 16 | F841 | local variable 'chemin_str' is assigned to but never used |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 17 | W291 | trailing whitespace |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 24 | E501 | line too long (84 > 79 characters) |
+| ./scripts/utils/gestionnaire_de_fichiers.py | 31 | W391 | blank line at end of file |
 | ./scripts/utils/open_report.py | 5 | F401 | 'subprocess' imported but unused |
 | ./scripts/utils/open_report.py | 545 | E731 | do not assign a lambda expression, use a def |
 | ./scripts/utils/open_report.py | 829 | W292 | no newline at end of file |
@@ -1076,7 +1091,7 @@ Date : Wed Sep 16 00:42:10 UTC 2026
 | 6 | ./client_python/crypto.py | 55 |
 | 7 | ./server_rust/vendor/sqlx/tests/x.py | 42 |
 | 8 | ./scripts/documentation/markdown.py | 42 |
-| 9 | ./scripts/documentation/titles.py | 37 |
+| 9 | ./scripts/documentation/titles.py | 39 |
 | 10 | ./scripts/utils/calculateur.py | 35 |
 > 💡 Vous ne connaissez pas une erreur Flake8 ?
 >
@@ -1384,6 +1399,10 @@ scripts/utils/calculateur.py
     F 13:0 log_erreur_async - A
 scripts/utils/file_chercheur.py
     F 16:0 iter_files - A
+scripts/utils/gestionnaire_de_fichiers.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
+scripts/utils/gestionnaire.py
+    ERROR: invalid non-printable character U+FEFF (<unknown>, line 1)
 scripts/documentation/spelling.py
     F 4:0 check_spelling - A
 scripts/documentation/report.py
@@ -1422,13 +1441,13 @@ scripts/documentation/markdown.py
     F 53:0 is_ignored - A
     F 58:0 check_markdown - A
 scripts/documentation/titles.py
-    F 93:0 check_heading_spacing - B
-    F 69:0 check_heading_order - B
-    F 134:0 check_title_length - A
-    F 156:0 check_duplicate_titles - A
-    F 116:0 check_empty_titles - A
+    F 92:0 check_heading_spacing - B
+    F 68:0 check_heading_order - B
+    F 133:0 check_title_length - A
+    F 155:0 check_duplicate_titles - A
+    F 115:0 check_empty_titles - A
     F 17:0 check_titles - A
-    F 54:0 check_single_h1 - A
+    F 53:0 check_single_h1 - A
 security/vault.py
     F 12:0 create_key - A
     F 103:0 get_or_create_communication_key - A
@@ -1504,7 +1523,7 @@ client_python/packets/log.py
     M 12:4 LogPacket.from_payload - A
 client_python/packets/Deco.py
     C 3:0 decoPacket - A
-    F 19:0 from_payload - A
+    F 15:0 from_payload - A
     M 5:2 decoPacket.__init__ - A
 client_python/packets/chat.py
     C 4:0 ChatPacket - A
@@ -1533,7 +1552,7 @@ Average complexity: A (3.8121546961325965)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-16 00:42:19.700037+00:00
+Run started:2026-09-14 23:57:59.812322+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -3823,7 +3842,7 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 10446
+	Total lines of code: 10533
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
@@ -3844,7 +3863,7 @@ Files skipped (0):
 
 ##  📏 Pylint
 
-**Global score:** 8.04/10
+**Global score:** 7.97/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4446,6 +4465,19 @@ scripts/utils/calculateur.py:6:0: W0611: Unused gestionnaire_de_fichiers importe
 ************* Module scripts.utils.file_chercheur
 scripts/utils/file_chercheur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/utils/file_chercheur.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.utils.gestionnaire_de_fichiers
+scripts/utils/gestionnaire_de_fichiers.py:17:44: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/gestionnaire_de_fichiers.py:31:0: C0305: Trailing newlines (trailing-newlines)
+scripts/utils/gestionnaire_de_fichiers.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/gestionnaire_de_fichiers.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire_de_fichiers.py:16:12: W0612: Unused variable 'chemin_str' (unused-variable)
+************* Module scripts.utils.gestionnaire
+scripts/utils/gestionnaire.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/gestionnaire.py:1:0: E0401: Unable to import 'calculateur' (import-error)
+scripts/utils/gestionnaire.py:2:0: E0401: Unable to import 'gestionnaire_de_fichiers' (import-error)
+scripts/utils/gestionnaire.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/gestionnaire.py:3:0: C0411: standard import "asyncio" should be placed before third party imports "calculateur", "gestionnaire_de_fichiers" (wrong-import-order)
 ************* Module scripts.documentation.spelling
 scripts/documentation/spelling.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 ************* Module scripts.documentation.report
@@ -4551,25 +4583,25 @@ scripts/documentation/markdown.py:262:0: C0116: Missing function or method docst
 scripts/documentation/markdown.py:269:15: W0718: Catching too general exception Exception (broad-exception-caught)
 scripts/documentation/markdown.py:27:0: C0411: standard import "json" should be placed before local import "problem.add_problem" (wrong-import-order)
 ************* Module scripts.documentation.titles
-scripts/documentation/titles.py:63:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:85:0: C0301: Line too long (112/100) (line-too-long)
-scripts/documentation/titles.py:107:0: C0301: Line too long (102/100) (line-too-long)
-scripts/documentation/titles.py:128:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:149:0: C0301: Line too long (120/100) (line-too-long)
-scripts/documentation/titles.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:173:0: C0301: Line too long (129/100) (line-too-long)
-scripts/documentation/titles.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:62:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:84:0: C0301: Line too long (112/100) (line-too-long)
+scripts/documentation/titles.py:106:0: C0301: Line too long (102/100) (line-too-long)
+scripts/documentation/titles.py:127:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:148:0: C0301: Line too long (120/100) (line-too-long)
+scripts/documentation/titles.py:149:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:172:0: C0301: Line too long (129/100) (line-too-long)
+scripts/documentation/titles.py:173:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/documentation/titles.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/documentation/titles.py:4:0: E0401: Unable to import 'utils.file_chercheur' (import-error)
 scripts/documentation/titles.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/documentation/titles.py:27:24: E0602: Undefined variable 'file' (undefined-variable)
-scripts/documentation/titles.py:43:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
-scripts/documentation/titles.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:69:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:134:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:156:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:42:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
+scripts/documentation/titles.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:92:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:115:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:133:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:155:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/documentation/titles.py:4:0: C0411: third party import "utils.file_chercheur.iter_files" should be placed before local import "problem.add_problem" (wrong-import-order)
 scripts/documentation/titles.py:1:0: W0611: Unused Path imported from pathlib (unused-import)
 ************* Module security.__init__
@@ -4720,19 +4752,25 @@ client_python/packets/log.py:12:4: C0116: Missing function or method docstring (
 client_python/packets/log.py:13:15: E1121: Too many positional arguments for constructor call (too-many-function-args)
 ************* Module client_python.packets.Deco
 client_python/packets/Deco.py:5:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-client_python/packets/Deco.py:7:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/packets/Deco.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/packets/Deco.py:10:0: W0311: Bad indentation. Found 4 spaces, expected 8 (bad-indentation)
 client_python/packets/Deco.py:11:0: W0311: Bad indentation. Found 4 spaces, expected 8 (bad-indentation)
 client_python/packets/Deco.py:12:0: W0311: Bad indentation. Found 4 spaces, expected 8 (bad-indentation)
-client_python/packets/Deco.py:16:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/packets/Deco.py:20:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+client_python/packets/Deco.py:17:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
 client_python/packets/Deco.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/Deco.py:1:0: C0103: Module name "Deco" doesn't conform to snake_case naming style (invalid-name)
 client_python/packets/Deco.py:3:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packets/Deco.py:3:0: C0103: Class name "decoPacket" doesn't conform to PascalCase naming style (invalid-name)
+client_python/packets/Deco.py:7:4: W0621: Redefining name 'deco_type' from outer scope (line 19) (redefined-outer-name)
+client_python/packets/Deco.py:8:4: W0621: Redefining name 'reason' from outer scope (line 20) (redefined-outer-name)
 client_python/packets/Deco.py:3:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-client_python/packets/Deco.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packets/Deco.py:20:9: E1102: cls is not callable (not-callable)
+client_python/packets/Deco.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packets/Deco.py:15:17: W0613: Unused argument 'cls' (unused-argument)
+client_python/packets/Deco.py:17:2: W0612: Unused variable 'parts' (unused-variable)
+client_python/packets/Deco.py:19:16: E0602: Undefined variable 'part' (undefined-variable)
+client_python/packets/Deco.py:20:9: E0602: Undefined variable 'part' (undefined-variable)
+client_python/packets/Deco.py:22:0: E0104: Return outside function (return-outside-function)
+client_python/packets/Deco.py:22:7: E0602: Undefined variable 'cls' (undefined-variable)
+client_python/packets/Deco.py:23:2: E0602: Undefined variable 'ban_type' (undefined-variable)
 client_python/packets/Deco.py:1:0: W0611: Unused Packet imported from packet (unused-import)
 ************* Module client_python.packets.chat
 client_python/packets/chat.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -4875,17 +4913,13 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 
         ciphertext.append(value)
         previous_ciphertext = value
-
-    # ========================================================
-    # DÉCHIFFREMENT
-    # ========================================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[375:401]
 ==tests.test_rotor_integration:[41:78]
     original = value
 
-    # Forward : R1 -> R16
+    # Forward : R1 → R16
     for rotor, position in zip(
         rotors,
         positions,
@@ -4896,7 +4930,7 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
             rotor,
         )
 
-    # Inverse : R16 -> R1
+    # Inverse : R16 → R1
     for rotor, position in reversed(
         list(zip(rotors, positions))
     ):
@@ -4907,7 +4941,18 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         )
 
     assert value == original
-def test_invalid_communication_key():
+@pytest.mark.parametrize(
+    "packet_type",
+    range(1, 10),
+)
+@pytest.mark.parametrize(
+    "value",
+    range(256),
+)
+def test_rotor_state_multiple_updates(
+    value,
+    packet_type,
+):
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_docs:[37:62]
@@ -4936,6 +4981,10 @@ def test_invalid_communication_key():
         branch,
         commit
     )
+
+    # ==========================================
+    # Quality metrics
+    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -4953,7 +5002,9 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
- (duplicate-code)
+
+
+def should_ignore(path: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_rotor_integration:[80:93]
 ==tests.test_rotor_vectors:[16:29]
@@ -5040,14 +5091,15 @@ IGNORED_DIRECTORIES = {
 ==tests.test_crypto_rotor:[386:398]
         )
 
-        for rotor, position in reversed(
-            list(zip(rotors, positions))
-        ):
-            value = rotor_inverse(
-                value,
-                position,
-                rotor,
-            )
+    # Inverse : R16 -> R1
+    for rotor, position in reversed(
+        list(zip(rotors, positions))
+    ):
+        value = rotor_inverse(
+            value,
+            position,
+            rotor,
+        )
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
@@ -5118,6 +5170,21 @@ IGNORED_DIRECTORIES = {
                 ".mypy_cache",
                 ".pytest_cache", (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[60:72]
+==scripts.documentation.titles:[41:53]
+    if score < 0:
+        score = 0
+    return {
+        "score": sum(results.values()),
+        "max_score": MAX_SCORE,
+        "results": results,
+        "problems": problems
+    }
+
+
+
+def check_single_h1(files, problems): (duplicate-code)
+.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[35:47]
 ==.github.security.test_python_security:[22:33]
     try:
@@ -5130,7 +5197,8 @@ IGNORED_DIRECTORIES = {
         for part in relative.parts
     )
 
- (duplicate-code)
+
+def is_world_writable(mode: int) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.attack_test:[79:102]
 ==.github.security.integrity_check:[54:67]
@@ -5146,7 +5214,17 @@ IGNORED_DIRECTORIES = {
     return digest.hexdigest()
 
 
-def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
+'''
+============================================================
+                         Git
+============================================================
+'''
+
+
+def clone_repository(
+    destination: Path,
+) -> None:
+ (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[28:36]
 ==tests.test_crypto_rotor:[200:208]
@@ -5191,9 +5269,7 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
         for i in range(1000)
     )
 
-    ciphertext = []
-
-    # Chiffrement : un update par octet (duplicate-code)
+    ciphertext = [] (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[95:103]
 ==tests.test_rotor_vectors:[53:61]
@@ -5266,7 +5342,7 @@ IGNORED_DIRECTORIES = {
     )
 
 
-def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
+def looks_textual(data: bytes) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[55:60]
 ==tests.test_rotor_vectors:[53:58]
@@ -5302,11 +5378,11 @@ def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[8:13]
@@ -5315,17 +5391,17 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 8.04/10
+Your code has been rated at 7.97/10
 
 
 </details>
@@ -5353,7 +5429,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.82s ===============================
+=============================== 1 error in 0.79s ===============================
 
 </details>
 
