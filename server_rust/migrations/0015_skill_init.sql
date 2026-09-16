@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS skill (
      
 
     skill_name TEXT NOT NULL UNIQUE,
-    level_max INTEGER NOT NULL DEFAULT 1
+    level_max INTEGER NOT NULL UNIQUE DEFAULT 1
 );
 
 
