@@ -164,7 +164,7 @@ jobs:
              git config user.email github-actions@github.com
              
 
-             git add vendor Cargo.lock "$REPORT"
+             git add vendor Cargo.lock "../$REPORT"
              git stash --staged
              git pull
              if git stash list | grep -q '^stash@{0}:'
