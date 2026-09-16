@@ -12,7 +12,7 @@ use crate::network::parser::{
     parse_signup_payload,
 };
 
-use crate::utils::password::{
+use crate::auth::password::{
     verify_password,
     hash_password,
 };
