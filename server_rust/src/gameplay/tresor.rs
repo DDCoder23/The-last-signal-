@@ -17,6 +17,7 @@ pub struct Loot {
     pub epique: u32,
     pub legendaire: u32,
     pub admin: u32,
+    pub militaire: u32,
 }
 
 #[derive(Debug, Clone)]
@@ -59,6 +60,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 1,
+                militaire: 1,
             },
         );
 
@@ -72,6 +74,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 1,
+                militaire: 1,
             },
         );
 
@@ -85,6 +88,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 1,
+                militaire: 1,
             },
         );
 
@@ -98,6 +102,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 1,
+                militaire: 1,
             },
         );
 
@@ -111,6 +116,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 1,
+                militaire: 1,
             },
         );
         loot_par_niveau.insert(
@@ -123,6 +129,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 2,
+                militaire: 2,
             },
         );
         loot_par_niveau.insert(
@@ -135,6 +142,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 2,
+                militaire: 2,
             },
         );
         loot_par_niveau.insert(
@@ -147,6 +155,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 2,
+                militaire: 2,
             },
         );
         loot_par_niveau.insert(
@@ -159,6 +168,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 2,
+                militaire: 2,
             },
         );
          loot_par_niveau.insert(
@@ -171,6 +181,7 @@ impl Tresor {
                 epique: 0,
                 legendaire: 0,
                 admin: 2,
+                militaire: 2,
             },
         );
 
@@ -436,6 +447,14 @@ impl Tresor {
         ("potion".to_string(), 5.0),
         ("équi".to_string(), 75.0),
         ("livre enchant".to_string(), 20.0),
+        
+    ]),
+);
+        sous_loot.insert(
+    "Artefact militaire".to_string(),
+    HashMap::from([
+        ("parachute".to_string(), 5.0),
+        
         
     ]),
 );
