@@ -1,9 +1,9 @@
 # Security Report
 
-Run : 643
+Run : 645
 Branch : main
-Commit : bf7dc4f477446238f2f792690d845f148782f65c
-Date : Mon Sep 14 01:44:06 UTC 2026
+Commit : 593441821c1de4acea6f4ca4f8e5fa404915837a
+Date : Wed Sep 16 01:06:34 UTC 2026
 
 Fuzzing
 
@@ -36,12 +36,12 @@ THE LAST SIGNAL - RED TEAM FILE INTEGRITY TEST V2
 
 === RED TEAM CLONE ===
 Repository : https://github.com/DDCoder23/The-last-signal-.git
-SHA        : bf7dc4f477446238f2f792690d845f148782f65c
-[CMD] git clone --no-tags --filter=blob:none https://github.com/DDCoder23/The-last-signal-.git /tmp/security_red_team_xghn7_zu/repository
-[CMD] git fetch --depth=1 origin bf7dc4f477446238f2f792690d845f148782f65c
-[CMD] git checkout --detach bf7dc4f477446238f2f792690d845f148782f65c
+SHA        : 593441821c1de4acea6f4ca4f8e5fa404915837a
+[CMD] git clone --no-tags --filter=blob:none https://github.com/DDCoder23/The-last-signal-.git /tmp/security_red_team_evaxhhjo/repository
+[CMD] git fetch --depth=1 origin 593441821c1de4acea6f4ca4f8e5fa404915837a
+[CMD] git checkout --detach 593441821c1de4acea6f4ca4f8e5fa404915837a
 [CMD] git rev-parse HEAD
-[PASS] Exact commit verified: bf7dc4f477446238f2f792690d845f148782f65c
+[PASS] Exact commit verified: 593441821c1de4acea6f4ca4f8e5fa404915837a
 
 === CREATING SECURITY LAB ===
 [PASS] Laboratory created.
@@ -132,48 +132,39 @@ Git integrity: FAIL
 
 ## Secrets Security Test
 === SECRET SECURITY SCAN ===
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-1.md:1864 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-1.md:1870 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-1.md:1894 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-2.md:1871 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-2.md:1877 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-2.md:1901 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-3.md:1940 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-3.md:1946 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-13/python-report-3.md:1970 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-5.md:1804 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-5.md:1810 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-5.md:1834 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-6.md:1796 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-6.md:1802 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-6.md:1826 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-1.md:1850 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-1.md:1856 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-1.md:1880 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-8.md:1796 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-8.md:1802 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-8.md:1826 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-2.md:1850 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-2.md:1856 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-2.md:1880 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-7.md:1796 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-7.md:1802 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-7.md:1826 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-4.md:1804 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-4.md:1810 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-4.md:1834 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-3.md:1804 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-3.md:1810 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-11/python-report-3.md:1834 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-1.md:1796 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-1.md:1802 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-1.md:1826 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-2.md:1796 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-2.md:1802 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-2.md:1826 [pas***es']
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-3.md:1796 [pas***rd']
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-3.md:1802 [pas***rd"]
-[FAIL] Password assignment: reports/python/2026-09-12/python-report-3.md:1826 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-5.md:2005 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-5.md:2011 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-5.md:2035 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-6.md:2005 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-6.md:2011 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-6.md:2035 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-1.md:2024 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-1.md:2030 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-1.md:2054 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-2.md:2024 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-2.md:2030 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-2.md:2054 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-4.md:2005 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-4.md:2011 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-4.md:2035 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-3.md:2005 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-3.md:2011 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-15/python-report-3.md:2035 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-5.md:2024 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-5.md:2030 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-5.md:2054 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-1.md:1940 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-1.md:1946 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-1.md:1970 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-2.md:1940 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-2.md:1946 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-2.md:1970 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-4.md:1990 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-4.md:1996 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-4.md:2020 [pas***es']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-3.md:1952 [pas***rd']
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-3.md:1958 [pas***rd"]
+[FAIL] Password assignment: reports/python/2026-09-14/python-report-3.md:1982 [pas***es']
 [FAIL] Database credential URL: server_rust/vendor/sqlx/README.md:266 [pos***rd@]
 [FAIL] Database credential URL: server_rust/vendor/sqlx/README.md:294 [mys***ss@]
 [FAIL] Private key: server_rust/vendor/sqlx-postgres/src/options/mod.rs:306 [---***---]
@@ -288,7 +279,7 @@ Git integrity: FAIL
 [FAIL] Database credential URL: server_rust/vendor/url/tests/urltestdata.json:7333 [red***ar@]
 [FAIL] Database credential URL: server_rust/vendor/url/tests/urltestdata.json:7335 [red***ar@]
 
-[FAIL] 155 potential secret(s) detected.
+[FAIL] 146 potential secret(s) detected.
 [INFO] Secret values were intentionally masked.
 
 ## Filesystem Security Test
@@ -305,7 +296,7 @@ Git integrity: FAIL
 [WARN] World-executable script: server_rust/vendor/libc/etc/libc-util.py
 [WARN] World-executable script: server_rust/vendor/unicode-normalization/scripts/unicode.py
 
-Files/objects inspected: 10334
+Files/objects inspected: 10315
 [PASS] No dangerous filesystem permissions detected.
 
 ## Git Security Test
@@ -313,7 +304,7 @@ Files/objects inspected: 10334
 [INFO] Working tree contains changes.
 [FAIL] Sensitive file tracked by Git: server_rust/vendor/sqlx/tests/.env
 [INFO] core.filemode=true
-[INFO] HEAD=bf7dc4f477446238f2f792690d845f148782f65c
+[INFO] HEAD=593441821c1de4acea6f4ca4f8e5fa404915837a
 [INFO] Scanning Git history for obvious secrets...
 [FAIL] Potential secret detected in Git history.
 [FAIL] 2 Git security issue(s) detected.
@@ -324,13 +315,11 @@ Files/objects inspected: 10334
 [FAIL] scripts/voir_database.py:44 - Potential dynamically constructed SQL query
 [FAIL] scripts/recherche.py:54 - Potential dynamically constructed SQL query
 [FAIL] scripts/recherche.py:60 - Potential dynamically constructed SQL query
-[FAIL] scripts/utils/gestionnaire_de_fichiers.py:1 - Python syntax error
-[FAIL] scripts/utils/gestionnaire.py:1 - Python syntax error
 [FAIL] tests/security/test_sql_injection.py:456 - Potential dynamically constructed SQL query
 [FAIL] server_rust/vendor/unicode-properties/scripts/unicode.py:43 - os.system() command execution
 
-Python files inspected: 71
-[FAIL] 8 Python security finding(s) detected.
+Python files inspected: 73
+[FAIL] 6 Python security finding(s) detected.
 
 ## Rust Security Test
 === RUST SECURITY SCAN ===
@@ -364,21 +353,26 @@ Python files inspected: 71
 [WARN] server_rust/src/database/database_manager.rs:82 - Potential dynamic SQL
 [WARN] server_rust/src/database/migrations.rs:8 - Potential dynamic SQL
 [WARN] server_rust/src/database/migrations.rs:21 - Potential dynamic SQL
+[WARN] server_rust/src/utils/crypto.rs:62 - Potential expect
+[WARN] server_rust/src/utils/crypto.rs:147 - Potential unwrap
+[WARN] server_rust/src/utils/crypto.rs:148 - Potential unwrap
+[WARN] server_rust/src/utils/crypto.rs:157 - Potential unwrap
+[WARN] server_rust/src/utils/crypto.rs:158 - Potential unwrap
 [WARN] server_rust/src/utils/account_creator.rs:34 - Potential dynamic SQL
 [WARN] server_rust/src/utils/account_creator.rs:47 - Potential dynamic SQL
 [WARN] server_rust/src/utils/account_creator.rs:74 - Potential dynamic SQL
 [WARN] server_rust/src/utils/account_creator.rs:87 - Potential dynamic SQL
 [WARN] server_rust/src/utils/account_creator.rs:90 - Potential dynamic SQL
 [WARN] server_rust/src/utils/account_creator.rs:99 - Potential dynamic SQL
-[WARN] server_rust/src/gameplay/tresor.rs:509 - Potential expect
-[WARN] server_rust/src/gameplay/tresor.rs:731 - Potential dynamic SQL
-[WARN] server_rust/src/gameplay/tresor.rs:753 - Potential dynamic SQL
+[WARN] server_rust/src/gameplay/tresor.rs:539 - Potential expect
 [WARN] server_rust/src/gameplay/tresor.rs:761 - Potential dynamic SQL
 [WARN] server_rust/src/gameplay/tresor.rs:783 - Potential dynamic SQL
-[WARN] server_rust/src/gameplay/tresor.rs:915 - Potential dynamic SQL
-[WARN] server_rust/src/gameplay/tresor.rs:937 - Potential dynamic SQL
+[WARN] server_rust/src/gameplay/tresor.rs:791 - Potential dynamic SQL
+[WARN] server_rust/src/gameplay/tresor.rs:813 - Potential dynamic SQL
 [WARN] server_rust/src/gameplay/tresor.rs:945 - Potential dynamic SQL
 [WARN] server_rust/src/gameplay/tresor.rs:967 - Potential dynamic SQL
+[WARN] server_rust/src/gameplay/tresor.rs:975 - Potential dynamic SQL
+[WARN] server_rust/src/gameplay/tresor.rs:997 - Potential dynamic SQL
 [WARN] server_rust/src/gameplay/stuff_manager.rs:135 - Potential dynamic SQL
 [WARN] server_rust/src/gameplay/stuff_manager.rs:154 - Potential dynamic SQL
 [WARN] server_rust/src/gameplay/stuff_manager.rs:163 - Potential dynamic SQL
@@ -971,47 +965,47 @@ Python files inspected: 71
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1162 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1216 - Potential expect
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1219 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1881 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1885 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1889 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1900 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1902 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1909 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1911 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1919 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1944 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1973 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2021 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1880 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1884 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1888 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1899 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1901 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1908 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1910 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1918 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1943 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:1972 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2020 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2259 - Potential unwrap
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2260 - Potential unwrap
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2261 - Potential unwrap
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2273 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2272 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2274 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2275 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2276 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2278 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2279 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2280 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2284 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2377 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2391 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2397 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2495 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2500 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2542 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2552 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2564 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2283 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2376 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2390 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2396 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2494 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2499 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2541 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2551 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2563 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2565 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2566 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2567 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2573 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2574 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2575 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2576 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2577 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2578 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2579 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2580 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2581 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2582 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2583 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2584 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2660 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2673 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2691 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2696 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2659 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2672 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2690 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/inflate.rs:2695 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/c_api.rs:8 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/c_api.rs:9 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/c_api.rs:12 - unsafe block/function
@@ -1024,7 +1018,7 @@ Python files inspected: 71
 [WARN] server_rust/vendor/zlib-rs/src/stable.rs:160 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/stable.rs:187 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/stable.rs:290 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/stable.rs:333 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/stable.rs:343 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/weak_slice.rs:21 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/weak_slice.rs:34 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/weak_slice.rs:38 - unsafe block/function
@@ -1288,7 +1282,7 @@ Python files inspected: 71
 [WARN] server_rust/vendor/zlib-rs/src/adler32/neon.rs:97 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/adler32/neon.rs:99 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/adler32/neon.rs:123 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/adler32/neon.rs:133 - unsafe block/function
+[WARN] server_rust/vendor/zlib-rs/src/adler32/neon.rs:134 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/deflate/pending.rs:25 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/deflate/pending.rs:73 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/deflate/pending.rs:80 - unsafe block/function
@@ -1361,8 +1355,8 @@ Python files inspected: 71
 [WARN] server_rust/vendor/zlib-rs/src/deflate/algorithm/stored.rs:276 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/deflate/algorithm/stored.rs:278 - unsafe block/function
 [WARN] server_rust/vendor/zlib-rs/src/deflate/algorithm/stored.rs:281 - unsafe block/function
-[WARN] server_rust/vendor/zlib-rs/src/deflate/algorithm/quick.rs:100 - Potential unwrap
-[WARN] server_rust/vendor/zlib-rs/src/deflate/algorithm/quick.rs:129 - Potential unwrap
+[WARN] server_rust/vendor/zlib-rs/src/deflate/algorithm/quick.rs:99 - Potential unwrap
+[WARN] server_rust/vendor/zlib-rs/src/deflate/algorithm/quick.rs:128 - Potential unwrap
 [WARN] server_rust/vendor/version_check/src/date.rs:190 - Potential unwrap
 [WARN] server_rust/vendor/version_check/src/lib.rs:161 - Command execution
 [WARN] server_rust/vendor/version_check/src/lib.rs:479 - Potential unwrap
@@ -3835,13 +3829,13 @@ Python files inspected: 71
 [WARN] server_rust/vendor/cpufeatures/src/x86.rs:71 - unsafe block/function
 [WARN] server_rust/vendor/cpufeatures/src/loongarch64.rs:30 - unsafe block/function
 [WARN] server_rust/vendor/cpufeatures/src/loongarch64.rs:49 - unsafe block/function
-[WARN] server_rust/vendor/synstructure/src/lib.rs:1014 - Potential expect
-[WARN] server_rust/vendor/synstructure/src/lib.rs:1929 - unsafe block/function
-[WARN] server_rust/vendor/synstructure/src/lib.rs:2046 - unsafe block/function
-[WARN] server_rust/vendor/synstructure/src/lib.rs:2066 - Potential expect
-[WARN] server_rust/vendor/synstructure/src/lib.rs:2300 - Potential expect
-[WARN] server_rust/vendor/synstructure/src/lib.rs:2304 - unsafe block/function
-[WARN] server_rust/vendor/synstructure/src/lib.rs:2308 - unsafe block/function
+[WARN] server_rust/vendor/synstructure/src/lib.rs:1010 - Potential expect
+[WARN] server_rust/vendor/synstructure/src/lib.rs:1927 - unsafe block/function
+[WARN] server_rust/vendor/synstructure/src/lib.rs:2044 - unsafe block/function
+[WARN] server_rust/vendor/synstructure/src/lib.rs:2064 - Potential expect
+[WARN] server_rust/vendor/synstructure/src/lib.rs:2298 - Potential expect
+[WARN] server_rust/vendor/synstructure/src/lib.rs:2302 - unsafe block/function
+[WARN] server_rust/vendor/synstructure/src/lib.rs:2306 - unsafe block/function
 [WARN] server_rust/vendor/synstructure/src/macros.rs:227 - Potential expect
 [WARN] server_rust/vendor/synstructure/src/macros.rs:235 - Potential expect
 [WARN] server_rust/vendor/litemap/tests/rkyv.rs:67 - Potential expect
@@ -6055,7 +6049,7 @@ Python files inspected: 71
 [WARN] server_rust/vendor/tinyvec/tests/arrayvec.rs:539 - Potential unwrap
 [WARN] server_rust/vendor/tinyvec/tests/arrayvec.rs:555 - Potential unwrap
 [WARN] server_rust/vendor/tinyvec/tests/arrayvec.rs:559 - Potential unwrap
-[WARN] server_rust/vendor/tinyvec/src/tinyvec.rs:782 - Shell invocation
+[WARN] server_rust/vendor/tinyvec/src/tinyvec.rs:802 - Shell invocation
 [WARN] server_rust/vendor/tinyvec/src/arrayvec.rs:1054 - Potential expect
 [WARN] server_rust/vendor/tinyvec/src/arrayvec.rs:1187 - Potential unwrap
 [WARN] server_rust/vendor/tinyvec/src/arrayvec.rs:1189 - Potential unwrap
@@ -15433,19 +15427,19 @@ Python files inspected: 71
 [WARN] server_rust/vendor/windows-result/src/error.rs:351 - unsafe block/function
 [WARN] server_rust/vendor/windows-result/src/bool.rs:30 - Potential unwrap
 [WARN] server_rust/vendor/windows-result/src/bool.rs:37 - Potential expect
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:203 - Potential expect
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:221 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:238 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:298 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:321 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:328 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:363 - Potential expect
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:483 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:515 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:532 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:202 - Potential expect
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:220 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:237 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:297 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:320 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:327 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:362 - Potential expect
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:482 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:514 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:531 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:534 - unsafe block/function
 [WARN] server_rust/vendor/yoke-derive/src/lib.rs:535 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:536 - unsafe block/function
-[WARN] server_rust/vendor/yoke-derive/src/lib.rs:542 - unsafe block/function
+[WARN] server_rust/vendor/yoke-derive/src/lib.rs:541 - unsafe block/function
 [WARN] server_rust/vendor/generic-array/src/functional.rs:12 - unsafe block/function
 [WARN] server_rust/vendor/generic-array/src/functional.rs:20 - unsafe block/function
 [WARN] server_rust/vendor/generic-array/src/functional.rs:29 - unsafe block/function
@@ -41107,7 +41101,7 @@ Python files inspected: 71
 [WARN] server_rust/vendor/bumpalo/src/collections/str/lossy.rs:144 - unsafe block/function
 
 Rust files inspected: 5040
-[WARN] 40771 Rust security review point(s) detected.
+[WARN] 40776 Rust security review point(s) detected.
 
 ## Web Security Test
 === WEB SECURITY SCAN ===
@@ -41124,7 +41118,7 @@ Aucun log disponible.
 
 # Security report
 
-**Run:** 643
+**Run:** 645
 
 ## Tests
 
@@ -41148,7 +41142,7 @@ Aucun log disponible.
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-14 01:45:41.494411+00:00
+Run started:2026-09-16 01:07:35.265019+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -42209,6 +42203,104 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:23:4
+22	
+23	    assert restored == value
+24	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:36:4
+35	
+36	    assert restored == value
+37	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:46:4
+45	def test_rotations_stay_u8(value, shift):
+46	    assert 0 <= rotl8(value, shift) <= 255
+47	    assert 0 <= rotr8(value, shift) <= 255
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:47:4
+46	    assert 0 <= rotl8(value, shift) <= 255
+47	    assert 0 <= rotr8(value, shift) <= 255
+48	
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:59:4
+58	
+59	    assert g1 == (0 ^ 4 ^ 8 ^ 12)
+60	    assert g2 == (1 ^ 5 ^ 9 ^ 13)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:60:4
+59	    assert g1 == (0 ^ 4 ^ 8 ^ 12)
+60	    assert g2 == (1 ^ 5 ^ 9 ^ 13)
+61	    assert g3 == (2 ^ 6 ^ 10 ^ 14)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:61:4
+60	    assert g2 == (1 ^ 5 ^ 9 ^ 13)
+61	    assert g3 == (2 ^ 6 ^ 10 ^ 14)
+62	    assert g4 == (3 ^ 7 ^ 11 ^ 15)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:62:4
+61	    assert g3 == (2 ^ 6 ^ 10 ^ 14)
+62	    assert g4 == (3 ^ 7 ^ 11 ^ 15)
+63	@pytest.mark.parametrize("value", range(256))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_mix.py:84:4
+83	
+84	    assert restored == value
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_crypto_pipeline.py:124:4
+123	
+124	    assert bytes(decrypted) == plaintext
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_crypto_rotor.py:53:4
 52	
 53	    assert value1 == value2
@@ -42502,29 +42594,39 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_integration.py:61:4
-60	
-61	    assert value == original
-62	@pytest.mark.parametrize(
+   Location: ./tests/test_rotor_integration.py:65:4
+64	
+65	    assert value == original
+66	@pytest.mark.parametrize(
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_integration.py:123:8
-122	
-123	        assert decrypted == original
-124	
+   Location: ./tests/test_rotor_integration.py:127:8
+126	
+127	        assert decrypted == original
+128	
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
-   Location: ./tests/test_rotor_integration.py:191:4
-190	
-191	    assert bytes(decrypted) == plaintext
+   Location: ./tests/test_rotor_integration.py:195:4
+194	
+195	    assert bytes(decrypted) == plaintext
+196	@pytest.mark.parametrize("value", range(256))
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_rotor_integration.py:220:4
+219	
+220	    assert restored == value
 
 --------------------------------------------------
 >> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
@@ -43230,6 +43332,26 @@ Test results:
    Severity: Low   Confidence: High
    CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
    More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_rotor_vectors.py:95:4
+94	
+95	    assert ciphertext == bytes.fromhex(expected)
+96	    EXPECTED_CIPHERTEXT_1024 = (
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
+   Location: ./tests/test_rotor_vectors.py:140:8
+139	            plaintext,)
+140	        assert ciphertext == bytes.fromhex(
+141	            EXPECTED_CIPHERTEXT_1024)
+
+--------------------------------------------------
+>> Issue: [B101:assert_used] Use of assert detected. The enclosed code will be removed when compiling to optimised byte code.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b101_assert_used.html
    Location: ./tests/test_splitmix64.py:28:4
 27	
 28	    assert sequence_a == sequence_b
@@ -43310,21 +43432,21 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 10049
+	Total lines of code: 10446
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 190
+		Low: 203
 		Medium: 9
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 12
-		High: 187
+		High: 200
 Files skipped (0):
 
 ## pip-audit
@@ -43378,7 +43500,7 @@ It will be compatible before version 2.0.0.
 
   Using [1mopen-source vulnerability database[0m
 [1m  Found and scanned 140 packages[0m
-  Timestamp [1m2026-09-14 01:45:48[0m
+  Timestamp [1m2026-09-16 01:07:39[0m
 [1m  1[0m[1m vulnerability reported[0m
 [1m  0[0m[1m vulnerabilities ignored[0m
 
@@ -43426,7 +43548,7 @@ It will be compatible before version 2.0.0.
 
 ## cargo-audit
 [0m[0m[1m[32m    Fetching[0m advisory database from `https://github.com/RustSec/advisory-db.git`
-[0m[0m[1m[32m      Loaded[0m 1244 security advisories (from /home/runner/.cargo/advisory-db)
+[0m[0m[1m[32m      Loaded[0m 1246 security advisories (from /home/runner/.cargo/advisory-db)
 [0m[0m[1m[32m    Updating[0m crates.io index
 [0m[0m[1m[31merror:[0m not found: Couldn't load Cargo.lock
 Caused by:
@@ -43434,7 +43556,7 @@ Caused by:
   -> I/O operation failed: entity not found
 
 ## Semgrep
-[ERROR] Invalid scanning root: client-python
+[ERROR] Invalid scanning root: server-rust
 
 ## Gitleaks
 
@@ -43444,9 +43566,9 @@ Caused by:
     ○ ░
     ░    gitleaks
 
-[90m2:02AM[0m [32mINF[0m [1m3683 commits scanned.[0m
-[90m2:02AM[0m [32mINF[0m [1mscanned ~53005237609 bytes (53.01 GB) in 16m44s[0m
-[90m2:02AM[0m [32mINF[0m [1mno leaks found[0m
+[90m1:17AM[0m [32mINF[0m [1m3836 commits scanned.[0m
+[90m1:17AM[0m [32mINF[0m [1mscanned ~53039754261 bytes (53.04 GB) in 9m30s[0m
+[90m1:17AM[0m [32mINF[0m [1mno leaks found[0m
 
 ## Python Licenses
  Name                                      Version    License                                            
@@ -43485,7 +43607,7 @@ Caused by:
  dparse                                    0.6.4      MIT License                                        
  exceptiongroup                            1.2.2      MIT License                                        
  face                                      26.0.1     UNKNOWN                                            
- filelock                                  3.32.6     MIT                                                
+ filelock                                  3.32.7     MIT                                                
  flake8                                    7.3.0      MIT License                                        
  freetype-py                               2.5.1      BSD License                                        
  glom                                      25.12.0    BSD License                                        
@@ -43580,15 +43702,15 @@ Caused by:
  typer                                     0.25.1     MIT                                                
  typing-inspection                         0.4.4      MIT                                                
  typing_extensions                         4.16.0     PSF-2.0                                            
- urllib3                                   2.7.0      MIT                                                
- uvicorn                                   0.52.4     BSD-3-Clause                                       
+ urllib3                                   2.8.0      MIT                                                
+ uvicorn                                   0.53.0     BSD-3-Clause                                       
  vispy                                     0.17.0     BSD-3-Clause                                       
  wcmatch                                   8.5.2      MIT                                                
  wrapt                                     1.17.3     BSD License                                        
  zipp                                      4.1.0      MIT                                                
 
 ## Cargo Deny
-2026-09-14 02:02:40 [[31mERROR[0m] the directory /home/runner/work/The-last-signal-/The-last-signal- doesn't contain a Cargo.toml file[0m
+2026-09-16 01:17:15 [[31mERROR[0m] the directory /home/runner/work/The-last-signal-/The-last-signal- doesn't contain a Cargo.toml file[0m
 
 ## Outdated Python packages
 Package                                  Version Latest Type
@@ -43623,8 +43745,8 @@ error: could not find `Cargo.toml` in `/home/runner/work/The-last-signal-/The-la
 | Level | Count |
 |-------|------:|
 | Critical | 0 |
-| High | 193 |
+| High | 206 |
 | Medium | 19 |
-| Low | 256 |
+| Low | 269 |
 
 ## Score : 0/100
