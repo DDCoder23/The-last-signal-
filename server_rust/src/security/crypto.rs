@@ -3,6 +3,7 @@ const MASK_64: u64 = 0xFFFF_FFFF_FFFF_FFFF;
 const COMMUNICATION_KEY_SIZE: usize = 64;
 const ROTOR_COUNT: u8 = 16;
 const ROTOR_DOMAIN: &[u8] = b"TheLastSignal-Rotor-v1";
+const ROTOR_SIZE: usize = 256;
 
 
 pub struct SplitMix64 {
@@ -63,6 +64,24 @@ pub fn derive_rotor_seed(
     );
 
     Ok(seed)
+}
+
+pub fn fisher_yates(seed: u64) -> [u8; ROTOR_SIZE] {
+    let mut rotor = [0u8; ROTOR_SIZE];
+
+    for (index, value) in rotor.iter_mut().enumerate() {
+        *value = index as u8;
+    }
+
+    let mut rng = SplitMix64::new(seed);
+
+    for i in (1..ROTOR_SIZE).rev() {
+        let j = (rng.next() % (i as u64 + 1)) as usize;
+
+        rotor.swap(i, j);
+    }
+
+    rotor
 }
 #[cfg(test)]
 mod tests {
@@ -158,6 +177,35 @@ fn derive_rotor_seed_differs_between_rotors() {
     let seed2 = derive_rotor_seed(&key, 2).unwrap();
 
     assert_ne!(seed1, seed2);
+}
+    #[test]
+fn fisher_yates_contains_all_values() {
+    let rotor = fisher_yates(0);
+
+    let mut sorted = rotor;
+
+    sorted.sort_unstable();
+
+    let expected: [u8; ROTOR_SIZE] =
+        core::array::from_fn(|i| i as u8);
+
+    assert_eq!(sorted, expected);
+}
+
+#[test]
+fn fisher_yates_is_deterministic() {
+    let rotor1 = fisher_yates(123456789);
+    let rotor2 = fisher_yates(123456789);
+
+    assert_eq!(rotor1, rotor2);
+}
+
+#[test]
+fn fisher_yates_changes_with_seed() {
+    let rotor1 = fisher_yates(0);
+    let rotor2 = fisher_yates(1);
+
+    assert_ne!(rotor1, rotor2);
 }
 }
 
