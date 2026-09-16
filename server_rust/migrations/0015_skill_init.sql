@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS skills_level (
     skill_level INTEGER PRIMARY KEY AUTOINCREMENT,
 
     level INTERGER NOT NULL DEFAULT 1,
-    level_max INTEGER NOT NULL DEFAULT 1
+    level_max INTEGER NOT NULL DEFAULT 1,
     bonus INTEGER NOT NULL,
     categorie TEXT  NOT NULL,
     CHECK ( level <= level_max),
