@@ -593,7 +593,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact commun",
                     &mut rng,
                     is_admin,
-                    is_militaire,
+                    
                 )
                 .await?;
 
@@ -625,7 +625,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact peu commun",
                     &mut rng,
                     is_admin,
-                    is_militaire,
+                    
                 )
                 .await?;
 
@@ -657,7 +657,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact rare",
                     &mut rng,
                     is_admin,
-                    is_militaire,
+                    
                 )
                 .await?;
 
@@ -684,7 +684,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact admin",
                     &mut rng,
                     is_admin,
-                    is_militaire,
+                    
                 )
                 .await?;
 
@@ -697,7 +697,7 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet).or_insert(0) += quantite;
         }
     }
-          if (is_admin and is_militaire) or is_militaire {
+          if (is_admin && is_militaire) || is_militaire {
         for _ in 0..loot.militaire {
             let objet = self
                 .tirer_objet(
@@ -706,7 +706,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact militaire",
                     &mut rng,
                     is_admin,
-                    is_militaire,
+                    
                 )
                 .await?;
 
