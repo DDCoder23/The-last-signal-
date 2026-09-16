@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 1860
+Run : 645
 Branch : main
-Commit : 8b6c0254533968a776a5cba3cbcefc47aef3875f
-Date : Mon Sep 14 17:12:09 UTC 2026
+Commit : 593441821c1de4acea6f4ca4f8e5fa404915837a
+Date : Wed Sep 16 00:21:08 UTC 2026
 
 
 ## Cargo fmt
@@ -476,9 +476,9 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
      pub loot_par_niveau: HashMap<u32, Loot>,
  
      pub objets_garantis: HashMap<u32, HashMap<String, u32>>,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:31:
-     pub seuil_artefact_commun: HashMap<u32, u32>,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:32:
      pub seuil_artefact_peu_commun: HashMap<u32, u32>,
+     pub seuil_artefact_rare: HashMap<u32, u32>,
      pub sous_loot: HashMap<String, HashMap<String, f64>>,
 -    
 +
@@ -489,7 +489,16 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
      pub coeff_loot: f64,
  }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:170:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:161:
+                 admin: 2,
+             },
+         );
+-         loot_par_niveau.insert(
++        loot_par_niveau.insert(
+             10,
+             Loot {
+                 commun: 2,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:183:
          // Niveau 1
          let mut niveau_1 = HashMap::new();
  
@@ -501,7 +510,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_1.insert("torche".to_string(), 2);
          niveau_1.insert("sac".to_string(), 3);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:186:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:199:
  
          // 17 chances sur 20 : pain
          if jet_de_des(20, 1) >= 4 {
@@ -513,7 +522,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          }
  
          objets_garantis.insert(1, niveau_1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:197:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:210:
          // Niveau 2
          let mut niveau_2 = HashMap::new();
  
@@ -525,7 +534,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_2.insert("torche".to_string(), 1);
          niveau_2.insert("sac".to_string(), 2);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:215:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:228:
          // Niveau 3
          let mut niveau_3 = HashMap::new();
  
@@ -537,7 +546,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_3.insert("torche".to_string(), 2);
          niveau_3.insert("sac".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:233:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:246:
          // Niveau 4
          let mut niveau_4 = HashMap::new();
  
@@ -549,7 +558,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 12 {
              niveau_4.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:247:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:260:
          // Niveau 5
          let mut niveau_5 = HashMap::new();
  
@@ -561,7 +570,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 10 {
              niveau_5.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:259:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:272:
          objets_garantis.insert(5, niveau_5);
          let mut niveau_6 = HashMap::new();
  
@@ -573,7 +582,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 8 {
              niveau_6.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:271:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:284:
          objets_garantis.insert(6, niveau_6);
          let mut niveau_7 = HashMap::new();
  
@@ -585,7 +594,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 6 {
              niveau_7.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:283:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:296:
          objets_garantis.insert(7, niveau_7);
          let mut niveau_8 = HashMap::new();
  
@@ -597,7 +606,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 4 {
              niveau_8.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:295:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:308:
          objets_garantis.insert(8, niveau_8);
          let mut niveau_9 = HashMap::new();
  
@@ -609,15 +618,24 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 2 {
              niveau_9.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:305:
-         }
- 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:320:
          objets_garantis.insert(9, niveau_9);
+         let mut niveau_10 = HashMap::new();
+ 
+-        niveau_10.insert(
+-            "argent".to_string(),
+-            jet_de_des(6, 3) * 100 * PA,
+-        );
++        niveau_10.insert("argent".to_string(), jet_de_des(6, 3) * 100 * PA);
+         niveau_10.insert("gemmes".to_string(), 1);
+-        
++
+         objets_garantis.insert(10, niveau_10);
 -        
  
          // -------------------------------------------------
          // QUANTITÉS DES OBJETS
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:331:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:353:
              "flèches épiques",
              "flèches légendaires",
          ] {
@@ -819,12 +837,19 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    (7, 14),
 -    (8, 13),
 -    (9, 12),
+-    (10,11),
 -]);
 -        let seuil_artefact_peu_commun: HashMap<u32, u32> = HashMap::from([
 -    (6, 20),
 -    (7, 19),
 -    (8,17),
 -    (9, 15),
+-    (10,15),
+-
+-]);
+-        let seuil_artefact_rare: HashMap<u32, u32> = HashMap::from([
+-    (10, 20),
+-    
 -
 -]);
 +            (2, 20),
@@ -835,9 +860,11 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            (7, 14),
 +            (8, 13),
 +            (9, 12),
++            (10, 11),
 +        ]);
 +        let seuil_artefact_peu_commun: HashMap<u32, u32> =
-+            HashMap::from([(6, 20), (7, 19), (8, 17), (9, 15)]);
++            HashMap::from([(6, 20), (7, 19), (8, 17), (9, 15), (10, 15)]);
++        let seuil_artefact_rare: HashMap<u32, u32> = HashMap::from([(10, 20)]);
          let sous_loot_livre_normal = HashMap::from([
 -    ("livre enchant niv 1".to_string(), 70.0),
 -    ("livre enchant niv 2".to_string(), 20.0),
@@ -874,7 +901,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          Self {
              loot_par_niveau,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:485:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:515:
              sous_loot_livre_normal,
              sous_loot_livre_admin,
              coeff_loot: 1.0,
@@ -1167,7 +1194,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  SELECT nombre
                  FROM echecs
                  WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:671:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:701:
                    AND categorie = ?
                    AND objet = ?
                  "#,
@@ -1277,7 +1304,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:746:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:776:
                      DO UPDATE SET
                          nombre = 0
                      "#,
@@ -1310,7 +1337,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:776:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:806:
                      DO UPDATE SET
                          nombre = nombre + 1
                      "#,
@@ -1447,7 +1474,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              SELECT nombre
              FROM echecs
              WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:859:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:889:
                AND categorie = ?
                AND objet = ?
              "#,
@@ -1548,7 +1575,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:930:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:960:
                  DO UPDATE SET
                      nombre = 0
                  "#,
@@ -1581,7 +1608,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:960:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:990:
                  DO UPDATE SET
                      nombre = nombre + 1
                  "#,
@@ -3818,6 +3845,132 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
 +    Ok(())
 +}
  
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/crypto.rs:4:
+ const ROTOR_COUNT: u8 = 16;
+ const ROTOR_DOMAIN: &[u8] = b"TheLastSignal-Rotor-v1";
+ 
+-
+ pub struct SplitMix64 {
+     state: u64,
+ }
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/crypto.rs:17:
+     }
+ 
+     pub fn next(&mut self) -> u64 {
+-        self.state = self
+-            .state
+-            .wrapping_add(0x9E37_79B9_7F4A_7C15);
++        self.state = self.state.wrapping_add(0x9E37_79B9_7F4A_7C15);
+ 
+         let mut z = self.state;
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/crypto.rs:26:
+-        z = (z ^ (z >> 30))
+-            .wrapping_mul(0xBF58_476D_1CE4_E5B9);
++        z = (z ^ (z >> 30)).wrapping_mul(0xBF58_476D_1CE4_E5B9);
+ 
+-        z = (z ^ (z >> 27))
+-            .wrapping_mul(0x94D0_49BB_1331_11EB);
++        z = (z ^ (z >> 27)).wrapping_mul(0x94D0_49BB_1331_11EB);
+ 
+         z ^= z >> 31;
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/crypto.rs:35:
+     }
+ }
+ 
+-
+-pub fn derive_rotor_seed(
+-    communication_key: &[u8],
+-    rotor_id: u8,
+-) -> Result<u64, &'static str> {
++pub fn derive_rotor_seed(communication_key: &[u8], rotor_id: u8) -> Result<u64, &'static str> {
+     if communication_key.len() != COMMUNICATION_KEY_SIZE {
+         return Err("Communication_key must be exactly 64 bytes");
+     }
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/crypto.rs:103:
+     fn splitmix64_zero_seed() {
+         let mut rng = SplitMix64::new(0);
+ 
+-        assert_eq!(
+-            rng.next(),
+-            0xE220_A839_7B1D_CDAFu64
+-        );
++        assert_eq!(rng.next(), 0xE220_A839_7B1D_CDAFu64);
+     }
+ 
+     #[test]
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/crypto.rs:119:
+         assert_ne!(first, second);
+     }
+     #[test]
+-fn derive_rotor_seed_rejects_invalid_key_length() {
+-    let key = [0u8; 63];
++    fn derive_rotor_seed_rejects_invalid_key_length() {
++        let key = [0u8; 63];
+ 
+-    assert!(
+-        derive_rotor_seed(&key, 1).is_err()
+-    );
+-}
++        assert!(derive_rotor_seed(&key, 1).is_err());
++    }
+ 
+-#[test]
+-fn derive_rotor_seed_rejects_invalid_rotor_id() {
+-    let key = [0u8; 64];
++    #[test]
++    fn derive_rotor_seed_rejects_invalid_rotor_id() {
++        let key = [0u8; 64];
+ 
+-    assert!(
+-        derive_rotor_seed(&key, 0).is_err()
+-    );
++        assert!(derive_rotor_seed(&key, 0).is_err());
+ 
+-    assert!(
+-        derive_rotor_seed(&key, 17).is_err()
+-    );
+-}
++        assert!(derive_rotor_seed(&key, 17).is_err());
++    }
+ 
+-#[test]
+-fn derive_rotor_seed_is_deterministic() {
+-    let key = [0u8; 64];
++    #[test]
++    fn derive_rotor_seed_is_deterministic() {
++        let key = [0u8; 64];
+ 
+-    let seed1 = derive_rotor_seed(&key, 1).unwrap();
+-    let seed2 = derive_rotor_seed(&key, 1).unwrap();
++        let seed1 = derive_rotor_seed(&key, 1).unwrap();
++        let seed2 = derive_rotor_seed(&key, 1).unwrap();
+ 
+-    assert_eq!(seed1, seed2);
+-}
++        assert_eq!(seed1, seed2);
++    }
+ 
+-#[test]
+-fn derive_rotor_seed_differs_between_rotors() {
+-    let key = [0u8; 64];
++    #[test]
++    fn derive_rotor_seed_differs_between_rotors() {
++        let key = [0u8; 64];
+ 
+-    let seed1 = derive_rotor_seed(&key, 1).unwrap();
+-    let seed2 = derive_rotor_seed(&key, 2).unwrap();
++        let seed1 = derive_rotor_seed(&key, 1).unwrap();
++        let seed2 = derive_rotor_seed(&key, 2).unwrap();
+ 
+-    assert_ne!(seed1, seed2);
++        assert_ne!(seed1, seed2);
++    }
+ }
+-}
+-
+ 
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/logger/compressor.rs:1:
 -use flate2::{
 -    write::GzEncoder,
@@ -4371,8 +4524,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
  pub mod macros;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/mod.rs:1:
--
 +pub mod account_creator;
+ pub mod crypto;
  pub mod logger;
 -pub mod vault;
  pub mod password;
@@ -4518,71 +4671,71 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling stable_deref_trait v1.2.1
    Compiling zerofrom v0.1.8
    Compiling pin-project-lite v0.2.17
-   Compiling smallvec v1.16.1
+   Compiling writeable v0.6.4
    Compiling yoke v0.8.3
-   Compiling memchr v2.8.3
+   Compiling typenum v1.20.1
    Compiling zerovec v0.11.8
    Compiling futures-core v0.3.34
-   Compiling writeable v0.6.4
-   Compiling litemap v0.8.3
-   Compiling typenum v1.20.1
+   Compiling memchr v2.8.3
    Compiling tinystr v0.8.4
+   Compiling litemap v0.8.3
+   Compiling smallvec v1.16.1
    Compiling potential_utf v0.1.6
    Compiling icu_locale_core v2.3.0
    Compiling zerotrie v0.2.5
    Compiling utf8_iter v1.0.4
-   Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
-   Compiling icu_properties_data v2.3.0
+   Compiling icu_collections v2.3.0
    Compiling icu_normalizer_data v2.3.0
+   Compiling icu_properties_data v2.3.0
    Compiling mio v1.2.3
    Compiling socket2 v0.6.5
-   Compiling bytes v1.12.1
-   Compiling icu_provider v2.3.1
    Compiling futures-sink v0.3.34
+   Compiling bytes v1.12.1
    Compiling serde_core v1.0.229
-   Compiling rand_core v0.10.1
-   Compiling once_cell v1.21.4
+   Compiling icu_provider v2.3.1
    Compiling icu_normalizer v2.3.0
    Compiling icu_properties v2.3.0
+   Compiling once_cell v1.21.4
    Compiling equivalent v1.0.2
-   Compiling tracing-core v0.1.36
+   Compiling rand_core v0.10.1
    Compiling generic-array v0.14.9
+   Compiling tracing-core v0.1.36
    Compiling parking_lot_core v0.9.12
-   Compiling cpufeatures v0.2.17
-   Compiling futures-io v0.3.34
-   Compiling percent-encoding v2.3.2
    Compiling idna_adapter v1.2.2
+   Compiling percent-encoding v2.3.2
+   Compiling cpufeatures v0.2.17
    Compiling foldhash v0.2.0
+   Compiling futures-io v0.3.34
    Compiling slab v0.4.12
-   Compiling allocator-api2 v0.2.21
    Compiling futures-task v0.3.34
+   Compiling allocator-api2 v0.2.21
    Compiling futures-util v0.3.34
+   Compiling form_urlencoded v1.2.2
    Compiling idna v1.1.0
    Compiling hashbrown v0.16.1
    Compiling serde v1.0.229
-   Compiling form_urlencoded v1.2.2
-   Compiling num-traits v0.2.19
    Compiling parking_lot v0.12.5
-   Compiling crossbeam-utils v0.8.23
+   Compiling num-traits v0.2.19
    Compiling zmij v1.0.23
+   Compiling crossbeam-utils v0.8.23
    Compiling getrandom v0.4.3
-   Compiling parking v2.2.1
-   Compiling hashbrown v0.17.1
    Compiling itoa v1.0.18
+   Compiling parking v2.2.1
    Compiling crc-catalog v2.5.0
+   Compiling hashbrown v0.17.1
    Compiling crc v3.4.0
-   Compiling serde_json v1.0.151
-   Compiling event-listener v5.4.2
    Compiling crossbeam-queue v0.3.14
+   Compiling event-listener v5.4.2
+   Compiling serde_json v1.0.151
+   Compiling futures-intrusive v0.5.0
    Compiling indexmap v2.14.2
    Compiling either v1.18.0
-   Compiling futures-intrusive v0.5.0
-   Compiling url v2.5.8
    Compiling hashlink v0.11.1
-   Compiling crypto-common v0.1.6
+   Compiling url v2.5.8
    Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
    Compiling digest v0.10.7
    Compiling tokio v1.53.1
    Compiling spin v0.9.9
@@ -4604,39 +4757,39 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling aho-corasick v1.1.5
    Compiling cpufeatures v0.3.1
    Compiling foreign-types-shared v0.1.1
-   Compiling base64ct v1.8.3
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
-   Compiling regex-automata v0.4.18
+   Compiling base64ct v1.8.3
    Compiling sqlx-core v0.9.0
    Compiling phc v0.6.1
-   Compiling sqlx-sqlite v0.9.0
+   Compiling regex-automata v0.4.18
    Compiling foreign-types v0.3.2
    Compiling digest v0.11.3
    Compiling libsqlite3-sys v0.37.0
+   Compiling sqlx-sqlite v0.9.0
    Compiling openssl-sys v0.9.117
-   Compiling simd-adler32 v0.3.10
    Compiling sqlx-macros-core v0.9.0
-   Compiling bitflags v2.13.2
+   Compiling simd-adler32 v0.3.10
    Compiling iana-time-zone v0.1.65
+   Compiling bitflags v2.13.2
    Compiling adler2 v2.0.1
    Compiling miniz_oxide v0.9.1
-   Compiling chrono v0.4.45
    Compiling openssl v0.10.81
+   Compiling chrono v0.4.45
    Compiling zeroize v1.9.0
    Compiling sqlx-macros v0.9.0
+   Compiling regex v1.13.1
    Compiling blake2 v0.11.0
    Compiling crc32fast v1.5.2
    Compiling password-hash v0.6.1
-   Compiling regex v1.13.1
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
    Compiling byteorder v1.5.0
    Compiling nu-ansi-term v0.50.3
-   Compiling sqlx v0.9.0
    Compiling flexi_logger v0.31.10
-   Compiling rand v0.10.2
    Compiling fernet v0.2.2
+   Compiling sqlx v0.9.0
+   Compiling rand v0.10.2
    Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
@@ -4698,20 +4851,29 @@ warning: unused import: `std::collections::HashMap`
 warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 2 warnings (2 duplicates)
 warning: `the-last-signal-server` (lib test) generated 5 warnings (5 duplicates)
 warning: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 26.53s
-     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-5f059a5b0bafb529)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 26.11s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-415aa90dea18a9dd)
+
+running 9 tests
+test utils::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
+test utils::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
+test utils::crypto::tests::derive_rotor_seed_is_deterministic ... ok
+test utils::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
+test utils::crypto::tests::splitmix64_different_seed_different_sequence ... ok
+test utils::crypto::tests::splitmix64_max_seed ... ok
+test utils::crypto::tests::splitmix64_same_seed_same_sequence ... ok
+test utils::crypto::tests::splitmix64_state_changes ... ok
+test utils::crypto::tests::splitmix64_zero_seed ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-5f7137f254707bd4)
 
 running 0 tests
 
 test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-4544dd6a350996d4)
-
-running 0 tests
-
-test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
-
-     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-875e2c7c3a9743cd)
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-1b38c3169f76742a)
 
 running 0 tests
 
