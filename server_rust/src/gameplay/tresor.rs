@@ -544,6 +544,7 @@ let sous_loot_livre_admin = HashMap::from([
     account_id: i64,
     niveau: u32,
     is_admin: bool,
+    is_militaire: bool,
     coeff_loot: Option<f64>,
 ) -> Result<HashMap<String, u32>, sqlx::Error> {
     // Mise à jour du coefficient de loot avec valeur par défaut 1.0
@@ -592,6 +593,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact commun",
                     &mut rng,
                     is_admin,
+                    is_militaire,
                 )
                 .await?;
 
@@ -623,6 +625,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact peu commun",
                     &mut rng,
                     is_admin,
+                    is_militaire,
                 )
                 .await?;
 
@@ -654,6 +657,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact rare",
                     &mut rng,
                     is_admin,
+                    is_militaire,
                 )
                 .await?;
 
@@ -680,6 +684,7 @@ let sous_loot_livre_admin = HashMap::from([
                     "Artefact admin",
                     &mut rng,
                     is_admin,
+                    is_militaire,
                 )
                 .await?;
 
@@ -692,6 +697,28 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet).or_insert(0) += quantite;
         }
     }
+          if (is_admin and is_militaire) or is_militaire {
+        for _ in 0..loot.militaire {
+            let objet = self
+                .tirer_objet(
+                    pool,
+                    account_id,
+                    "Artefact militaire",
+                    &mut rng,
+                    is_admin,
+                    is_militaire,
+                )
+                .await?;
+
+            let quantite = self
+                .quantite_objets
+                .get(&objet)
+                .copied()
+                .unwrap_or(1);
+
+            *objets.entry(objet).or_insert(0) += quantite;
+        }
+          }
 
     Ok(objets)
                 }  
