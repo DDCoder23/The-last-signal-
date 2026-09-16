@@ -663,13 +663,9 @@ jobs:
           echo "" >> "$REPORT"
 
           echo "## Outdated Rust crates" >> "$REPORT"
-
-          if find . -name Cargo.toml | grep -q .
-          then
-            cargo outdated >> "$REPORT" 2>&1
-          else
-            echo "No Cargo project found." >> "$REPORT"
-          fi
+          cd server_rust
+          cargo outdated >> "$REPORT" 2>&1
+          
       ##########################################################
       # CodeQL
       ##########################################################
