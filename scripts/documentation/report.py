@@ -87,5 +87,3 @@ def generate_report(total:int,scores:dict[str,int],details:dict[str,Any],problem
     else:
         md.append("Aucun problème détecté.\n")
     (REPORT_DIR/"score.md").write_text("".join(md),encoding="utf-8")
-    
-    
