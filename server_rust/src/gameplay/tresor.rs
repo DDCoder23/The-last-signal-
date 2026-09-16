@@ -585,6 +585,68 @@ let sous_loot_livre_admin = HashMap::from([
             *objets.entry(objet).or_insert(0) += quantite;
         }
     }
+          for _ in 0..loot.peu_commun {
+        let seuil = self
+            .seuil_artefact_peu_commun
+            .get(&niveau)
+            .copied()
+            .unwrap_or(20);
+
+        // Application du coefficient au seuil
+        let seuil_ajuste = (seuil as f64 * (1.0 / self.coeff_loot).max(0.1)) as u32;
+        let jet = rng.random_range(1..=20);
+
+        if jet >= seuil_ajuste {
+            let objet = self
+                .tirer_objet(
+                    pool,
+                    account_id,
+                    "Artefact peu commun",
+                    &mut rng,
+                    is_admin,
+                )
+                .await?;
+
+            let quantite = self
+                .quantite_objets
+                .get(&objet)
+                .copied()
+                .unwrap_or(1);
+
+            *objets.entry(objet).or_insert(0) += quantite;
+        }
+          }
+          for _ in 0..loot.rare {
+        let seuil = self
+            .seuil_artefact_rare
+            .get(&niveau)
+            .copied()
+            .unwrap_or(20);
+
+        // Application du coefficient au seuil
+        let seuil_ajuste = (seuil as f64 * (1.0 / self.coeff_loot).max(0.1)) as u32;
+        let jet = rng.random_range(1..=20);
+
+        if jet >= seuil_ajuste {
+            let objet = self
+                .tirer_objet(
+                    pool,
+                    account_id,
+                    "Artefact rare",
+                    &mut rng,
+                    is_admin,
+                )
+                .await?;
+
+            let quantite = self
+                .quantite_objets
+                .get(&objet)
+                .copied()
+                .unwrap_or(1);
+
+            *objets.entry(objet).or_insert(0) += quantite;
+        }
+          }
 
     // ==========================================
     // LOOT ADMIN
