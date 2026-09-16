@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS skill_saves (
     skill_id INTEGER NOT NULL,
 
     account_id INTEGER NOT NULL UNIQUE,
-    skill_level INTERGER NOT NULL,
+    skill_level INTEGER NOT NULL,
 
 
     FOREIGN KEY (account_id)
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS skill (
 
 CREATE TABLE IF NOT EXISTS skills_level (
     skill_level INTEGER PRIMARY KEY AUTOINCREMENT,
-
+    skill_id INTEGER NOT NULL,
     level INTERGER NOT NULL DEFAULT 1,
     level_max INTEGER NOT NULL DEFAULT 1,
     bonus INTEGER NOT NULL,
