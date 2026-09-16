@@ -35,7 +35,7 @@ jobs:
       DATABASE_PATH: ${{ github.workspace }}/database
       DATABASE_URL: sqlite:${{ github.workspace }}/database/the_last_signal.db
       
-    timeout-minutes: 20
+  
 
     
 
