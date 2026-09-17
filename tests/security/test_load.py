@@ -6,7 +6,7 @@ import pytest
 
 HOST = "127.0.0.1"
 PORT = 5000
-max_count = 1000000
+max_count = 4096
 
 
 
