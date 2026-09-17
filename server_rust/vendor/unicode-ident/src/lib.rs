@@ -242,7 +242,7 @@
 //! this data structure is straight-line code with no need for branching.
 
 #![no_std]
-#![doc(html_root_url = "https://docs.rs/unicode-ident/1.0.25")]
+#![doc(html_root_url = "https://docs.rs/unicode-ident/1.0.26")]
 #![allow(
     clippy::doc_markdown,
     clippy::must_use_candidate,
@@ -253,16 +253,19 @@
 mod tables;
 
 pub use crate::tables::UNICODE_VERSION;
-use crate::tables::{ASCII_CONTINUE, ASCII_START, CHUNK, LEAF, TRIE_CONTINUE, TRIE_START};
-
-static ZERO: u8 = 0;
+use crate::tables::{
+    ASCII_CONTINUE, ASCII_START, CHUNK, LEAF, TRIE_CONTINUE, TRIE_START, ZERO_CONTINUE, ZERO_START,
+};
 
 /// Whether the character has the Unicode property XID\_Start.
 pub fn is_xid_start(ch: char) -> bool {
     if ch.is_ascii() {
         return ASCII_START & (1 << ch as u128) != 0;
     }
-    let chunk = *TRIE_START.0.get(ch as usize / 8 / CHUNK).unwrap_or(&ZERO);
+    let chunk = *TRIE_START
+        .0
+        .get(ch as usize / 8 / CHUNK)
+        .unwrap_or(&TRIE_START.0[ZERO_START]);
     let offset = chunk as usize * CHUNK / 2 + ch as usize / 8 % CHUNK;
     unsafe { LEAF.0.get_unchecked(offset) }.wrapping_shr(ch as u32 % 8) & 1 != 0
 }
@@ -275,7 +278,7 @@ pub fn is_xid_continue(ch: char) -> bool {
     let chunk = *TRIE_CONTINUE
         .0
         .get(ch as usize / 8 / CHUNK)
-        .unwrap_or(&ZERO);
+        .unwrap_or(&TRIE_CONTINUE.0[ZERO_CONTINUE]);
     let offset = chunk as usize * CHUNK / 2 + ch as usize / 8 % CHUNK;
     unsafe { LEAF.0.get_unchecked(offset) }.wrapping_shr(ch as u32 % 8) & 1 != 0
 }
