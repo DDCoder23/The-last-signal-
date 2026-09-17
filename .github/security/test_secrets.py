@@ -16,6 +16,8 @@ IGNORED_DIRECTORIES = {
     ".venv",
     "venv",
     "node_modules",
+    "vendor",
+    "reports",
 }
 
 IGNORED_FILES = {
