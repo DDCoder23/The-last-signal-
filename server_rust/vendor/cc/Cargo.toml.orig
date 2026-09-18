@@ -1,6 +1,6 @@
 [package]
 name = "cc"
-version = "1.4.6"
+version = "1.4.7"
 edition.workspace = true
 rust-version.workspace = true
 description = """
@@ -48,12 +48,12 @@ missing_docs = "warn"
 unexpected_cfgs = { level = "allow", check-cfg = ["cfg(disable_clang_cl_tests)"] }
 
 [dependencies]
-find-msvc-tools = { path = "find-msvc-tools", version = "0.1.12" }
-jobserver = { version = "0.1.30", default-features = false, optional = true }
+find-msvc-tools = { path = "find-msvc-tools", version = "0.1.13" }
+jobserver = { version = "0.1.32", default-features = false, optional = true }
 shlex = "2.0.1"
 
 [dev-dependencies]
-tempfile = "3"
+tempfile = "3.0.4"
 
 [target.'cfg(unix)'.dependencies]
 # Don't turn on the feature "std" for this, see https://github.com/rust-lang/cargo/issues/4866
