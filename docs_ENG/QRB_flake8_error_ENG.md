@@ -13,14 +13,14 @@
 - [Family F - Logic Errors (PyFlakes)](#family-f---logic-errors-pyflakes)
 - [Family W - Style Warnings (PyCodestyle)](#family-w---style-warnings-pycodestyle)
 - [Family C90 - Cyclomatic Complexity (McCabe)](#family-c90---cyclomatic-complexity-mccabe)
-- [Family B - Bugbear (Security and Style Extensions)](#family-b---bugbear-security-and-style-extensions)
+- [Family B - Bugbear (Security & Style)](#family-b---bugbear-security--style)
 - [Family N - Naming (Naming Conventions)](#family-n---naming-naming-conventions)
 - [Family ANN - Annotations (Static Type Hints)](#family-ann---annotations-static-type-hints)
 - [Family COM - Comprehensions (Optimizations)](#family-com---comprehensions-optimizations)
 - [Family D - Docstrings (Documentation)](#family-d---docstrings-documentation)
 - [Family I - Isort (Import Sorting)](#family-i---isort-import-sorting)
-- [Family PIE - Pie (Miscellaneous Optimizations)](#family-pie---pie-miscellaneous-optimizations)
-- [Family SIM - Simplify (Code Simplification)](#family-sim---simplify-code-simplification)
+- [Family PIE - Pie (Optimizations)](#family-pie---pie-optimizations)
+- [Family SIM - Simplify (Code Simplifications)](#family-sim---simplify-code-simplifications)
 - [Family UP - Pyupgrade (Code Modernization)](#family-up---pyupgrade-code-modernization)
 - [Automated Formatting & Fixing Tools](#automated-formatting--fixing-tools)
 - [References & Bibliography](#references--bibliography)
@@ -585,7 +585,7 @@ def f(x):
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -801,7 +801,7 @@ def __init__(self):
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -866,7 +866,7 @@ x = 5
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -890,7 +890,7 @@ x = 5
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1138,7 +1138,7 @@ class MaClasse(ABC):
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1232,7 +1232,7 @@ MAX_VALUE = 100
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1329,7 +1329,7 @@ def fonction(x: Union[int, str]) -> Union[int, str]:
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1416,7 +1416,7 @@ for key in d:
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1496,7 +1496,7 @@ def f():
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1546,7 +1546,7 @@ import numpy
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1606,7 +1606,7 @@ if isinstance(x, int):
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1677,7 +1677,7 @@ if key in d:
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
@@ -1774,7 +1774,7 @@ with open("fichier.txt", encoding="utf-8") as f:
 
 ---
 
-[↑ Retour au sommaire](#sommaire)
+[↑ Back to Table of Contents](#table-of-contents)
 
 ---
 
