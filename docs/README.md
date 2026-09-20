@@ -1,4 +1,6 @@
 # 📚 The Last Signal Online
+![Uploading image.png…]()
+
 ## 🌐 **README languages**
 🇫🇷 **Français** — You are currently viewing the French version.<br>
 🇬🇧 **English** —  [English version](../docs_ENG/README_ENG.md)<br>
