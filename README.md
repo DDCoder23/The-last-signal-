@@ -5,8 +5,7 @@
 🇬🇧 **English** —  [English version](../docs_ENG/README_ENG.md)<br>
 🇪🇸 **Español** — ➡️ [Spanish version](README_ESP.md)<br>
 🇯🇵 **日本語** — ➡️ [Japanaseversion](README_JP.md)
-> MMORPG de survie post-apocalyptique en monde persistant
- 
+> MMORPG de survie post-apocalyptique en monde persistant 
 ![Status](https://img.shields.io/badge/status-prototype-orange)
 ![Documentation](https://img.shields.io/badge/docs-active-blue)
 ![Python](https://img.shields.io/badge/client-Python-yellow)
