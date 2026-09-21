@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1986
+Run : 1964
 Branch : main
-Commit : a10f654e397dc0c637cf23b6dafdbec0fd6a28a5
-Date : Mon Sep 21 00:30:17 UTC 2026
+Commit : cfcf4c8ed71af60edf48844ee9afc6a5383baf09
+Date : Sat Sep 19 20:37:22 UTC 2026
 
 ---
 
@@ -17,28 +17,28 @@ Date : Mon Sep 21 00:30:17 UTC 2026
 <summary>Show files</summary>
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
@@ -55,25 +55,25 @@ Date : Mon Sep 21 00:30:17 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_pipeline.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/open_report.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_state.py
 </details>
@@ -1186,7 +1186,7 @@ Average complexity: A (3.8121546961325965)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-21 00:30:24.729853+00:00
+Run started:2026-09-19 20:37:28.863819+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -4517,10 +4517,6 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 
         ciphertext.append(value)
         previous_ciphertext = value
-
-    # ========================================================
-    # DÉCHIFFREMENT
-    # ========================================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[375:401]
@@ -4712,15 +4708,14 @@ IGNORED_DIRECTORIES = {
 ==tests.test_crypto_rotor:[386:398]
         )
 
-    # Inverse : R16 -> R1
-    for rotor, position in reversed(
-        list(zip(rotors, positions))
-    ):
-        value = rotor_inverse(
-            value,
-            position,
-            rotor,
-        )
+        for rotor, position in reversed(
+            list(zip(rotors, positions))
+        ):
+            value = rotor_inverse(
+                value,
+                position,
+                rotor,
+            )
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
@@ -4737,15 +4732,15 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
-    ".env",
-    ".env.local",
-    ".env.production",
-    "master.key",
-    "id_rsa",
-    "id_ed25519",
-    "credentials.json",
-    "service-account.json",
-}
+        ".env",
+        ".env.local",
+        ".env.production",
+        "master.key",
+        "id_rsa",
+        "id_ed25519",
+        "credentials.json",
+        "service-account.json",
+    }
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[26:36]
@@ -4820,17 +4815,7 @@ def is_world_writable(mode: int) -> bool: (duplicate-code)
     return digest.hexdigest()
 
 
-'''
-============================================================
-                         Git
-============================================================
-'''
-
-
-def clone_repository(
-    destination: Path,
-) -> None:
- (duplicate-code)
+def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[28:36]
 ==tests.test_crypto_rotor:[200:208]
@@ -4875,9 +4860,7 @@ def clone_repository(
         for i in range(1000)
     )
 
-    ciphertext = []
-
-    # Chiffrement : un update par octet (duplicate-code)
+    ciphertext = [] (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[95:103]
 ==tests.test_rotor_vectors:[53:61]
@@ -4999,14 +4982,14 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
 Your code has been rated at 8.06/10
@@ -5037,7 +5020,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.84s ===============================
+=============================== 1 error in 0.81s ===============================
 
 </details>
 
