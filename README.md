@@ -118,7 +118,7 @@ Vous avez une question sur le projet ?
 |-------------|-------------|
 | 🦀 Rust | Serveur multijoueur |
 | 🌐 Networking | Communication client/serveur |
-| 🗄 PostgreSQL | Base de données |
+| 🗄 SQLite | Base de données |
 
 ---
 
