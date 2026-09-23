@@ -2,7 +2,7 @@ INSERT INTO objets_dispo (
     nom,
     type,
     image_path,
-    prix_vente
+    prix_base
 )
 VALUES
     ('épée de bois', 'armes', 'epee_bois.png', 20),
