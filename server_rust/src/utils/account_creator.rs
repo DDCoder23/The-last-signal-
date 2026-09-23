@@ -79,13 +79,23 @@ pub async fn create_account(
             role_id
         )
         VALUES (?, ?, ?)
+        RETURNING account_id
         "#,
     )
     .bind(&user_id)
     .bind(account_name)
     .bind(role_id)
-    .execute(&mut *tx)
+    .fetch_one(&mut *tx) 
     .await?;
+    sqlx::query( 
+        r#" INSERT INTO wallets ( 
+        account_id 
+        ) 
+        VALUES (?) 
+        "#, ) 
+        .bind(account_id) 
+        .execute(&mut *tx) 
+        .await?;
     if let Some(status) = status {
         sqlx::query(
             r#"
