@@ -127,7 +127,7 @@ impl Inventaire {
     }
 
     async fn construire_objet(pool: &SqlitePool, row: &StuffRow) -> Result<ObjetInventaire, sqlx::Error> {
-        let qte = row.quantity as u32;
+        let qte = row.quantity as u128;
         let image = row.image_path.as_deref();
 
         let result = match row.type_objet.as_str() {
@@ -195,6 +195,142 @@ impl Inventaire {
 
         Ok(result)
     }
+    pub async fn retirer_objet(
+    &mut self,
+    nom: &str,
+    quantite: u128,
+) -> Result<(), sqlx::Error> {
+    // Une quantité nulle n'est pas une opération valide.
+    if quantite == 0 {
+        return Err(sqlx::Error::Protocol(
+            "La quantité à retirer doit être supérieure à 0".into(),
+        ));
+    }
+
+    // ------------------------------------------------------------
+    // 1. Vérification de l'objet dans l'inventaire en mémoire
+    // ------------------------------------------------------------
+
+    let objet = self.objets.get(nom).ok_or_else(|| {
+        sqlx::Error::Protocol(
+            format!("Objet absent de l'inventaire : {nom}").into(),
+        )
+    })?;
+
+    let quantite_actuelle = match objet {
+        ObjetInventaire::Base(o) => o.quantite,
+        ObjetInventaire::Equipement(o) => o.quantite,
+        ObjetInventaire::Arme(o) => o.quantite,
+        ObjetInventaire::Potion(o) => o.quantite,
+        ObjetInventaire::Livre(o) => o.quantite,
+    };
+
+    // Impossible de retirer plus que ce que possède le joueur.
+    if quantite > quantite_actuelle {
+        return Err(sqlx::Error::Protocol(
+            format!(
+                "Quantité insuffisante pour {nom} : possède {quantite_actuelle}, \
+                 demande {quantite}"
+            )
+            .into(),
+        ));
+    }
+
+    // ------------------------------------------------------------
+    // 2. Récupération de l'identifiant de l'objet
+    // ------------------------------------------------------------
+
+    let objet_id: i64 = sqlx::query_scalar(
+        r#"
+        SELECT objet_id
+        FROM objets_dispo
+        WHERE nom = ?
+        "#,
+    )
+    .bind(nom)
+    .fetch_one(&self.pool)
+    .await?;
+
+    // ------------------------------------------------------------
+    // 3. Modification atomique de la base
+    // ------------------------------------------------------------
+
+    let mut tx = self.pool.begin().await?;
+
+    if quantite == quantite_actuelle {
+        // --------------------------------------------------------
+        // Toute la pile est retirée :
+        // on supprime directement la ligne.
+        // --------------------------------------------------------
+
+        let result = sqlx::query(
+            r#"
+            DELETE FROM stuff
+            WHERE account_id = ?
+              AND objet_id = ?
+              AND quantity = ?
+            "#,
+        )
+        .bind(self.account_id)
+        .bind(objet_id)
+        .bind(quantite)
+        .execute(&mut *tx)
+        .await?;
+
+        if result.rows_affected() == 0 {
+            tx.rollback().await?;
+
+            return Err(sqlx::Error::RowNotFound);
+        }
+    } else {
+        // --------------------------------------------------------
+        // Une partie seulement est retirée.
+        //
+        // La condition quantity >= ? protège contre un retrait
+        // supérieur à la quantité réellement présente en base.
+        // --------------------------------------------------------
+
+        let result = sqlx::query(
+            r#"
+            UPDATE stuff
+            SET quantity = quantity - ?
+            WHERE account_id = ?
+              AND objet_id = ?
+              AND quantity >= ?
+            "#,
+        )
+        .bind(quantite)
+        .bind(self.account_id)
+        .bind(objet_id)
+        .bind(quantite)
+        .execute(&mut *tx)
+        .await?;
+
+        if result.rows_affected() == 0 {
+            tx.rollback().await?;
+
+            return Err(sqlx::Error::RowNotFound);
+        }
+    }
+
+    // ------------------------------------------------------------
+    // 4. Validation de la transaction SQLite
+    // ------------------------------------------------------------
+
+    tx.commit().await?;
+
+    // ------------------------------------------------------------
+    // 5. Mise à jour du HashMap en mémoire
+    // ------------------------------------------------------------
+
+    if quantite == quantite_actuelle {
+        self.objets.remove(nom);
+    } else if let Some(objet) = self.objets.get_mut(nom) {
+        objet.retirer(quantite);
+    }
+
+    Ok(())
+            }
 
     pub fn objets(&self) -> &HashMap<String, ObjetInventaire> {
         &self.objets
