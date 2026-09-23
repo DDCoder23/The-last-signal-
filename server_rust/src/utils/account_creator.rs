@@ -71,7 +71,7 @@ pub async fn create_account(
     // 3. Créer le compte
     // ========================================================
 
-    sqlx::query(
+    let account_id: i64 = sqlx::query_scalar(
         r#"
         INSERT INTO accounts (
             user_id,
