@@ -331,6 +331,78 @@ impl Inventaire {
 
     Ok(())
             }
+    pub async fn ajouter_objet(
+    &mut self,
+    nom: &str,
+    quantite: u64,
+) -> Result<(), sqlx::Error> {
+    // ------------------------------------------------------------
+    // 1. Vérification de la quantité
+    // ------------------------------------------------------------
+
+    if quantite == 0 {
+        return Err(sqlx::Error::Protocol(
+            "La quantité à ajouter doit être supérieure à 0".into(),
+        ));
+    }
+
+    // ------------------------------------------------------------
+    // 2. Récupération de l'objet dans objets_dispo
+    // ------------------------------------------------------------
+
+    let objet_id: i64 = sqlx::query_scalar(
+        r#"
+        SELECT objet_id
+        FROM objets_dispo
+        WHERE nom = ?
+        "#,
+    )
+    .bind(nom)
+    .fetch_one(&self.pool)
+    .await?;
+
+    // ------------------------------------------------------------
+    // 3. Ajout atomique dans SQLite
+    // ------------------------------------------------------------
+
+    sqlx::query(
+        r#"
+        INSERT INTO stuff (
+            account_id,
+            objet_id,
+            quantity
+        )
+        VALUES (?, ?, ?)
+        ON CONFLICT(account_id, objet_id)
+        DO UPDATE SET
+            quantity = quantity + excluded.quantity
+        "#,
+    )
+    .bind(self.account_id)
+    .bind(objet_id)
+    .bind(quantite)
+    .execute(&self.pool)
+    .await?;
+
+    // ------------------------------------------------------------
+    // 4. Mise à jour de l'inventaire en mémoire
+    // ------------------------------------------------------------
+
+    if let Some(objet) = self.objets.get_mut(nom) {
+        objet.ajouter(quantite);
+    } else {
+        // L'objet n'était pas présent dans le HashMap.
+        // On recharge l'inventaire depuis SQLite afin de
+        // construire correctement ObjetInventaire selon son type.
+        self.objets = Self::charger_objets(
+            &self.pool,
+            self.account_id,
+        )
+        .await?;
+    }
+
+    Ok(())
+    }
 
     pub fn objets(&self) -> &HashMap<String, ObjetInventaire> {
         &self.objets
