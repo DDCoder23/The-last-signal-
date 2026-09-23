@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 2002
+Run : 1995
 Branch : main
-Commit : be0d7fa55652a3392473eb9a7651f123fd64c260
-Date : Wed Sep 23 00:47:33 UTC 2026
+Commit : 067127ec38ce66751bf76485d1a6e6fe2943d5ed
+Date : Mon Sep 21 21:10:30 UTC 2026
 
 
 ## Cargo fmt
@@ -4859,19 +4859,19 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling pin-project-lite v0.2.17
    Compiling typenum v1.20.1
    Compiling yoke v0.8.3
-   Compiling smallvec v1.16.1
+   Compiling writeable v0.6.4
    Compiling zerovec v0.11.8
    Compiling litemap v0.8.3
-   Compiling futures-core v0.3.34
-   Compiling writeable v0.6.4
    Compiling memchr v2.8.3
    Compiling tinystr v0.8.4
+   Compiling smallvec v1.16.1
+   Compiling futures-core v0.3.34
    Compiling icu_locale_core v2.3.0
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
    Compiling utf8_iter v1.0.4
-   Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
+   Compiling icu_collections v2.3.0
    Compiling lock_api v0.4.14
    Compiling icu_normalizer_data v2.3.0
    Compiling icu_properties_data v2.3.0
@@ -4881,50 +4881,50 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling bytes v1.12.1
    Compiling icu_provider v2.3.1
    Compiling serde_core v1.0.229
-   Compiling rand_core v0.10.1
    Compiling icu_normalizer v2.3.0
    Compiling icu_properties v2.3.0
-   Compiling equivalent v1.0.2
+   Compiling rand_core v0.10.1
    Compiling once_cell v1.21.4
-   Compiling generic-array v0.14.9
+   Compiling equivalent v1.0.2
    Compiling tracing-core v0.1.36
+   Compiling generic-array v0.14.9
    Compiling parking_lot_core v0.9.12
-   Compiling slab v0.4.12
-   Compiling futures-io v0.3.34
    Compiling idna_adapter v1.2.2
-   Compiling cpufeatures v0.2.17
+   Compiling allocator-api2 v0.2.21
    Compiling foldhash v0.2.0
+   Compiling cpufeatures v0.2.17
+   Compiling slab v0.4.12
    Compiling futures-task v0.3.34
    Compiling percent-encoding v2.3.2
-   Compiling allocator-api2 v0.2.21
-   Compiling form_urlencoded v1.2.2
+   Compiling futures-io v0.3.34
    Compiling futures-util v0.3.34
-   Compiling idna v1.1.0
+   Compiling form_urlencoded v1.2.2
    Compiling hashbrown v0.16.1
-   Compiling serde v1.0.229
    Compiling num-traits v0.2.19
+   Compiling serde v1.0.229
+   Compiling idna v1.1.0
    Compiling parking_lot v0.12.5
-   Compiling zmij v1.0.23
-   Compiling getrandom v0.4.3
    Compiling crossbeam-utils v0.8.23
-   Compiling crc-catalog v2.5.0
+   Compiling getrandom v0.4.3
+   Compiling zmij v1.0.23
    Compiling parking v2.2.1
-   Compiling itoa v1.0.18
+   Compiling crc-catalog v2.5.0
    Compiling hashbrown v0.17.1
-   Compiling serde_json v1.0.151
-   Compiling crossbeam-queue v0.3.14
-   Compiling event-listener v5.4.2
-   Compiling indexmap v2.14.2
+   Compiling itoa v1.0.18
    Compiling crc v3.4.0
-   Compiling either v1.18.0
+   Compiling serde_json v1.0.151
+   Compiling event-listener v5.4.2
+   Compiling crossbeam-queue v0.3.14
+   Compiling indexmap v2.14.2
    Compiling futures-intrusive v0.5.0
-   Compiling hashlink v0.11.1
+   Compiling either v1.18.0
    Compiling url v2.5.8
+   Compiling hashlink v0.11.1
    Compiling crypto-common v0.1.6
    Compiling block-buffer v0.10.4
    Compiling cmov v0.5.4
-   Compiling digest v0.10.7
    Compiling ctutils v0.4.2
+   Compiling digest v0.10.7
    Compiling tokio v1.53.1
    Compiling spin v0.9.9
    Compiling hybrid-array v0.4.15
@@ -4938,45 +4938,45 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
    Compiling thiserror v2.0.20
-   Compiling cpufeatures v0.3.1
    Compiling const-oid v0.10.2
+   Compiling cpufeatures v0.3.1
    Compiling base64 v0.22.1
    Compiling digest v0.11.3
    Compiling uuid v1.26.1
    Compiling aho-corasick v1.1.5
    Compiling foreign-types-shared v0.1.1
-   Compiling base64ct v1.8.3
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
-   Compiling regex-automata v0.4.18
    Compiling sqlx-core v0.9.0
+   Compiling base64ct v1.8.3
    Compiling phc v0.6.1
-   Compiling sqlx-sqlite v0.9.0
+   Compiling regex-automata v0.4.18
    Compiling foreign-types v0.3.2
    Compiling libsqlite3-sys v0.37.0
    Compiling openssl-sys v0.9.117
+   Compiling sqlx-sqlite v0.9.0
+   Compiling bitflags v2.13.2
    Compiling adler2 v2.0.1
    Compiling iana-time-zone v0.1.65
    Compiling sqlx-macros-core v0.9.0
    Compiling simd-adler32 v0.3.10
-   Compiling bitflags v2.13.2
-   Compiling openssl v0.10.81
    Compiling miniz_oxide v0.9.1
    Compiling chrono v0.4.45
+   Compiling openssl v0.10.81
    Compiling zeroize v1.9.0
    Compiling sqlx-macros v0.9.0
-   Compiling password-hash v0.6.1
    Compiling regex v1.13.1
    Compiling crc32fast v1.5.2
+   Compiling password-hash v0.6.1
    Compiling blake2 v0.11.0
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
-   Compiling byteorder v1.5.0
    Compiling nu-ansi-term v0.50.3
-   Compiling fernet v0.2.2
-   Compiling flexi_logger v0.31.10
+   Compiling byteorder v1.5.0
    Compiling sqlx v0.9.0
+   Compiling flexi_logger v0.31.10
    Compiling rand v0.10.3
+   Compiling fernet v0.2.2
    Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
    Compiling sha2 v0.11.0
@@ -5036,22 +5036,22 @@ warning: unused import: `std::collections::HashMap`
 9 | use std::collections::HashMap;
   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server --tests` to apply 2 suggestions)
 warning: `the-last-signal-server` (lib test) generated 5 warnings (5 duplicates)
-warning: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (2 duplicates)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.74s
+warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 2 warnings (2 duplicates)
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.28s
      Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-209a90ba53fd1f4f)
 
 running 12 tests
+test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
 test security::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
 test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
-test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
-test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
-test security::crypto::tests::fisher_yates_changes_with_seed ... ok
-test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
 test security::crypto::tests::fisher_yates_contains_all_values ... ok
 test security::crypto::tests::fisher_yates_is_deterministic ... ok
+test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
 test security::crypto::tests::splitmix64_max_seed ... ok
+test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
+test security::crypto::tests::fisher_yates_changes_with_seed ... ok
 test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
 test security::crypto::tests::splitmix64_state_changes ... ok
 test security::crypto::tests::splitmix64_zero_seed ... ok
