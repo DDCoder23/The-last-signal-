@@ -402,6 +402,7 @@ impl Tresor {
         ("pain".to_string(), 70.0),
         ("fruit et légumes".to_string(), 10.0),
         ("herbes et racines".to_string(), 10.0),
+        ("tacos".to_string(), 10.0),
         
     ]),
 );  
@@ -453,7 +454,10 @@ impl Tresor {
         sous_loot.insert(
     "Artefact militaire".to_string(),
     HashMap::from([
+        ("matos".to_string(), 5.0),
         ("parachute".to_string(), 5.0),
+        ("equi".to_string(), 5.0),
+        ("ogive".to_string(), 5.0),
         
         
     ]),
@@ -469,6 +473,7 @@ impl Tresor {
     "équi".to_string(),
     HashMap::from([
         ("armes".to_string(), 20.0),
+        ("armes explosives".to_string(), 20.0),
         ("outils".to_string(), 20.0),
         ("armure".to_string(), 20.0),
         ("véhicules".to_string(), 20.0),
@@ -477,7 +482,20 @@ impl Tresor {
         
     ]),
 );
-            
+           sous_loot.insert(
+    "véhicules".to_string(),
+    HashMap::from([
+        ("avions".to_string(), 20.0),
+        ("bus T2C".to_string(), 20.0),
+        ("sous-marin".to_string(), 20.0),
+        ("drones".to_string(), 20.0),
+        ("voitures".to_string(), 20.0),
+        ("tanks".to_string(), 20.0),
+        ("bateaux".to_string(), 20.0),
+        
+        
+    ]),
+); 
 
             
         let seuil_artefact_commun: HashMap<u32, u32> = HashMap::from([
