@@ -119,3 +119,24 @@ CREATE TABLE IF NOT EXISTS transactions_marche (
     CHECK (prix_unitaire > 0),
     CHECK (montant_total > 0)
 );
+CREATE INDEX IF NOT EXISTS idx_ordres_achat_matching
+ON ordres_achat (
+    objet_id,
+    statut,
+    prix_unitaire_max DESC,
+    date_creation ASC
+);
+
+CREATE INDEX IF NOT EXISTS idx_ordres_vente_matching
+ON ordres_vente (
+    objet_id,
+    statut,
+    prix_unitaire ASC,
+    date_creation ASC
+);
+
+CREATE INDEX IF NOT EXISTS idx_transactions_marche_objet
+ON transactions_marche (
+    objet_id,
+    date_transaction
+);
