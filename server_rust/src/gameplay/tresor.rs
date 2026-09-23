@@ -458,6 +458,7 @@ impl Tresor {
         ("parachute".to_string(), 5.0),
         ("equi".to_string(), 5.0),
         ("ogive".to_string(), 5.0),
+        ("combinaison anti g".to_string(), 5.0),
         
         
     ]),
@@ -478,6 +479,8 @@ impl Tresor {
         ("armure".to_string(), 20.0),
         ("véhicules".to_string(), 20.0),
         ("batiments".to_string(), 20.0),
+        ("combinaisons".to_string(), 3.0),
+        
         
         
     ]),
