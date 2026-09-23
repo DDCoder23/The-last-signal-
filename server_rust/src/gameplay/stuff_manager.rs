@@ -31,7 +31,7 @@ impl NomAffiche for ObjetInventaire {
 }
 
 impl AjouterRetirer for ObjetInventaire {
-    fn ajouter(&mut self, qte: u128) {
+    fn ajouter(&mut self, qte: u64) {
         match self {
             ObjetInventaire::Base(o) => o.ajouter(qte),
             ObjetInventaire::Equipement(e) => e.ajouter(qte),
@@ -41,7 +41,7 @@ impl AjouterRetirer for ObjetInventaire {
         }
     }
 
-    fn retirer(&mut self, qte: u128) {
+    fn retirer(&mut self, qte: u64) {
         match self {
             ObjetInventaire::Base(o) => o.retirer(qte),
             ObjetInventaire::Equipement(e) => e.retirer(qte),
@@ -65,7 +65,7 @@ pub struct Inventaire {
 #[derive(sqlx::FromRow)]
 struct StuffRow {
     stuff_id: i64,
-    quantity: u128,
+    quantity: u64,
     nom: String,
     type_objet: String,
     image_path: Option<String>,
@@ -127,7 +127,7 @@ impl Inventaire {
     }
 
     async fn construire_objet(pool: &SqlitePool, row: &StuffRow) -> Result<ObjetInventaire, sqlx::Error> {
-        let qte = row.quantity as u128;
+        let qte = row.quantity as u64;
         let image = row.image_path.as_deref();
 
         let result = match row.type_objet.as_str() {
@@ -198,7 +198,7 @@ impl Inventaire {
     pub async fn retirer_objet(
     &mut self,
     nom: &str,
-    quantite: u128,
+    quantite: u64,
 ) -> Result<(), sqlx::Error> {
     // Une quantité nulle n'est pas une opération valide.
     if quantite == 0 {
