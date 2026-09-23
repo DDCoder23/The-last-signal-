@@ -403,6 +403,34 @@ impl Inventaire {
 
     Ok(())
     }
+    pub async fn get_quantity(
+    &self,
+    nom: &str,
+) -> Result<u64, sqlx::Error> {
+    let quantity: Option<i64> = sqlx::query_scalar(
+        r#"
+        SELECT s.quantity
+        FROM stuff s
+        JOIN objets_dispo o
+            ON s.objet_id = o.objet_id
+        WHERE s.account_id = ?
+          AND o.nom = ?
+        "#,
+    )
+    .bind(self.account_id)
+    .bind(nom)
+    .fetch_optional(&self.pool)
+    .await?;
+
+    match quantity {
+        Some(value) => u64::try_from(value).map_err(|_| {
+            sqlx::Error::Protocol(
+                format!("Quantité invalide pour l'objet {nom}").into(),
+            )
+        }),
+        None => Ok(0),
+    }
+    }
 
     pub fn objets(&self) -> &HashMap<String, ObjetInventaire> {
         &self.objets
