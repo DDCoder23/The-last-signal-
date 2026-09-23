@@ -31,7 +31,7 @@ impl NomAffiche for ObjetInventaire {
 }
 
 impl AjouterRetirer for ObjetInventaire {
-    fn ajouter(&mut self, qte: u32) {
+    fn ajouter(&mut self, qte: u128) {
         match self {
             ObjetInventaire::Base(o) => o.ajouter(qte),
             ObjetInventaire::Equipement(e) => e.ajouter(qte),
@@ -41,7 +41,7 @@ impl AjouterRetirer for ObjetInventaire {
         }
     }
 
-    fn retirer(&mut self, qte: u32) {
+    fn retirer(&mut self, qte: u128) {
         match self {
             ObjetInventaire::Base(o) => o.retirer(qte),
             ObjetInventaire::Equipement(e) => e.retirer(qte),
@@ -65,7 +65,7 @@ pub struct Inventaire {
 #[derive(sqlx::FromRow)]
 struct StuffRow {
     stuff_id: i64,
-    quantity: i64,
+    quantity: u128,
     nom: String,
     type_objet: String,
     image_path: Option<String>,
