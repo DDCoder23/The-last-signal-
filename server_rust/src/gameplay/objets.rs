@@ -18,15 +18,15 @@ pub trait NomAffiche {
 
 // Trait pour les objets qui peuvent être ajoutés/retirés
 pub trait AjouterRetirer {
-    fn ajouter(&mut self, qte: u32);
-    fn retirer(&mut self, qte: u32);
+    fn ajouter(&mut self, qte: u128);
+    fn retirer(&mut self, qte: u128);
 }
 
 // Struct de base pour tous les objets
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct Objet {
     pub nom_base: String,
-    pub quantite: u32,
+    pub quantite: u128,
     pub type_objet: TypeObjet,
     pub nom_image: Option<String>,
     // Champs supplémentaires (stockés dans un HashMap pour simuler **kwargs)
@@ -37,7 +37,7 @@ impl Objet {
     pub fn new(
         nom: &str,
         image: Option<&str>,
-        quantite: u32,
+        quantite: u128,
         type_objet: TypeObjet,
     ) -> Self {
         Self {
@@ -82,11 +82,11 @@ impl NomAffiche for Objet {
 }
 
 impl AjouterRetirer for Objet {
-    fn ajouter(&mut self, qte: u32) {
+    fn ajouter(&mut self, qte: u128) {
         self.quantite += qte;
     }
 
-    fn retirer(&mut self, qte: u32) {
+    fn retirer(&mut self, qte: u128) {
         self.quantite = self.quantite.saturating_sub(qte);
     }
 }
@@ -112,7 +112,7 @@ impl Equipement {
     pub fn new(
         nom: &str,
         image: Option<&str>,
-        quantite: u32,
+        quantite: u128,
         niv: u32,
         bonus: i32,
         enchantements: Vec<String>,
@@ -143,11 +143,11 @@ impl NomAffiche for Equipement {
 }
 
 impl AjouterRetirer for Equipement {
-    fn ajouter(&mut self, qte: u32) {
+    fn ajouter(&mut self, qte: u128) {
         self.objet.ajouter(qte);
     }
 
-    fn retirer(&mut self, qte: u32) {
+    fn retirer(&mut self, qte: u128) {
         self.objet.retirer(qte);
     }
 }
@@ -174,7 +174,7 @@ impl Arme {
     pub fn new(
         nom: &str,
         image: Option<&str>,
-        quantite: u32,
+        quantite: u128,
         niv: u32,
         durabilite: u32,
         bonus: i32,
@@ -204,11 +204,11 @@ impl NomAffiche for Arme {
 }
 
 impl AjouterRetirer for Arme {
-    fn ajouter(&mut self, qte: u32) {
+    fn ajouter(&mut self, qte: u128) {
         self.equipement.ajouter(qte);
     }
 
-    fn retirer(&mut self, qte: u32) {
+    fn retirer(&mut self, qte: u128) {
         self.equipement.retirer(qte);
     }
 }
@@ -235,7 +235,7 @@ impl Potion {
     pub fn new(
         nom: &str,
         image: Option<&str>,
-        quantite: u32,
+        quantite: u128,
         effet: Option<&str>,
     ) -> Self {
         let objet = Objet::new(nom, image, quantite, TypeObjet::Potion);
@@ -258,11 +258,11 @@ impl NomAffiche for Potion {
 }
 
 impl AjouterRetirer for Potion {
-    fn ajouter(&mut self, qte: u32) {
+    fn ajouter(&mut self, qte: u128) {
         self.objet.ajouter(qte);
     }
 
-    fn retirer(&mut self, qte: u32) {
+    fn retirer(&mut self, qte: u128) {
         self.objet.retirer(qte);
     }
 }
@@ -280,7 +280,7 @@ impl Livre {
     pub fn new(
         nom: &str,
         image: Option<&str>,
-        quantite: u32,
+        quantite: u128,
         category: Option<&str>,
         enchantements: Option<Vec<String>>,
         niv: u32,
@@ -330,11 +330,11 @@ impl NomAffiche for Livre {
 }
 
 impl AjouterRetirer for Livre {
-    fn ajouter(&mut self, qte: u32) {
+    fn ajouter(&mut self, qte: u128) {
         self.objet.ajouter(qte);
     }
 
-    fn retirer(&mut self, qte: u32) {
+    fn retirer(&mut self, qte: u128) {
         self.objet.retirer(qte);
     }
 }
