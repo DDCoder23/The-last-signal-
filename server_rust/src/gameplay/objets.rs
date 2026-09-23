@@ -37,7 +37,7 @@ impl Objet {
     pub fn new(
         nom: &str,
         image: Option<&str>,
-        quantite: u128,
+        quantite: u64,
         type_objet: TypeObjet,
     ) -> Self {
         Self {
