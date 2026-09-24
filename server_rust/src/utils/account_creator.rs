@@ -89,9 +89,10 @@ pub async fn create_account(
     .await?;
     sqlx::query( 
         r#" INSERT INTO wallets ( 
-        account_id 
+        account_id,
+        balance
         ) 
-        VALUES (?) 
+        VALUES (?,1.5*10**19) 
         "#, ) 
         .bind(account_id) 
         .execute(&mut *tx) 
