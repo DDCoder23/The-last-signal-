@@ -17,7 +17,6 @@ impl WalletManager {
         self.account_id
     }
 
-    /// Retourne le solde actuel du compte.
     pub async fn get_balance(&self) -> Result<i64, sqlx::Error> {
         let balance: i64 = sqlx::query_scalar(
             r#"
@@ -33,7 +32,6 @@ impl WalletManager {
         Ok(balance)
     }
 
-    /// Crédite le portefeuille.
     pub async fn crediter(&self, montant: i64) -> Result<(), sqlx::Error> {
         if montant <= 0 {
             return Err(sqlx::Error::Protocol(
@@ -41,7 +39,7 @@ impl WalletManager {
             ));
         }
 
-        sqlx::query(
+        let result = sqlx::query(
             r#"
             UPDATE wallets
             SET balance = balance + ?
@@ -53,13 +51,15 @@ impl WalletManager {
         .execute(&self.pool)
         .await?;
 
+        if result.rows_affected() == 0 {
+            return Err(sqlx::Error::Protocol(
+                "Portefeuille inexistant".into(),
+            ));
+        }
+
         Ok(())
     }
 
-    /// Débite le portefeuille.
-    ///
-    /// Le `WHERE balance >= ?` empêche le solde de devenir négatif,
-    /// même en cas de concurrence entre plusieurs opérations.
     pub async fn debiter(&self, montant: i64) -> Result<(), sqlx::Error> {
         if montant <= 0 {
             return Err(sqlx::Error::Protocol(
