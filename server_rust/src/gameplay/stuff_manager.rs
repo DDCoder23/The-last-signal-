@@ -273,7 +273,7 @@ impl Inventaire {
         )
         .bind(self.account_id)
         .bind(objet_id)
-        .bind(quantite)
+        .bind(&quantite)
         .execute(&mut *tx)
         .await?;
 
