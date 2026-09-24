@@ -1,10 +1,10 @@
 # Build Report
 
-Run : 2027
+Run : 2033
 OS : macos-latest
 Branch : main
-Commit : 0ff93cae62b6ad72685ef32f73ce6a9c48cec45a
-Date : Thu Sep 24 04:35:29 UTC 2026
+Commit : 181febfd5b03827ecc7725c11a0ca4589d01b8ad
+Date : Thu Sep 24 10:02:18 UTC 2026
 
 
 ## Python
@@ -46,12 +46,13 @@ Compiling 'tests/test_splitmix64.py'...
 ## Rust
 [1m[92m    Updating[0m crates.io index
 [1m[92m Downloading[0m crates ...
-[1m[92m  Downloaded[0m core-foundation-sys v0.8.7
-[1m[92m  Downloaded[0m block-buffer v0.12.1
-[1m[92m  Downloaded[0m cfg-if v1.0.5
-[1m[92m  Downloaded[0m cpufeatures v0.3.1
+[1m[92m  Downloaded[0m find-msvc-tools v0.1.13
+[1m[92m  Downloaded[0m futures-io v0.3.34
+[1m[92m  Downloaded[0m heck v0.5.0
+[1m[92m  Downloaded[0m lock_api v0.4.14
+[1m[92m  Downloaded[0m openssl-macros v0.1.1
 [1m[92m  Downloaded[0m adler2 v2.0.1
-[1m[92m  Downloaded[0m crc v3.4.0
+[1m[92m  Downloaded[0m futures-task v0.c v3.4.0
 [1m[92m  Downloaded[0m potential_utf v0.1.6
 [1m[92m  Downloaded[0m base64ct v1.8.3
 [1m[92m  Downloaded[0m bytes v1.12.1
