@@ -302,7 +302,7 @@ impl Inventaire {
               AND quantity >= ?
             "#,
         )
-        .bind(quantite)
+        
         .bind(self.account_id)
         .bind(objet_id)
         .bind(quantite_i64)
