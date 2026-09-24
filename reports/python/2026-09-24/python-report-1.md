@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 1996
+Run : 653
 Branch : main
-Commit : 721c08f4eaa597bd503e488a26ad4d6eef6d5b8b
-Date : Tue Sep 22 00:09:17 UTC 2026
+Commit : 5780803c40b62ffc49424e829909a2e796a33300
+Date : Thu Sep 24 00:27:40 UTC 2026
 
 ---
 
@@ -17,22 +17,22 @@ Date : Tue Sep 22 00:09:17 UTC 2026
 <summary>Show files</summary>
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
@@ -43,15 +43,15 @@ Date : Tue Sep 22 00:09:17 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
@@ -1186,7 +1186,7 @@ Average complexity: A (3.8121546961325965)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-22 00:09:22.059312+00:00
+Run started:2026-09-24 00:27:47.763839+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -4517,6 +4517,10 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
 
         ciphertext.append(value)
         previous_ciphertext = value
+
+    # ========================================================
+    # DÉCHIFFREMENT
+    # ========================================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[375:401]
@@ -4585,6 +4589,10 @@ def test_rotor_state_multiple_updates(
         branch,
         commit
     )
+
+    # ==========================================
+    # Quality metrics
+    # ==========================================
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -4602,7 +4610,9 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
- (duplicate-code)
+
+
+def should_ignore(path: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_rotor_integration:[80:93]
 ==tests.test_rotor_vectors:[16:29]
@@ -4729,15 +4739,15 @@ IGNORED_DIRECTORIES = {
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[26:36]
@@ -4857,7 +4867,9 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
         for i in range(1000)
     )
 
-    ciphertext = [] (duplicate-code)
+    ciphertext = []
+
+    # Chiffrement : un update par octet (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[95:103]
 ==tests.test_rotor_vectors:[53:61]
@@ -4872,13 +4884,13 @@ def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[73:80]
 ==scripts.database_manager:[467:474]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
+        test,
+        severity,
+        confidence,
+        cwe,
+        info,
+        file,
+        line, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[39:46]
 ==scripts.documentation.markdown:[61:68]
@@ -4930,7 +4942,7 @@ IGNORED_DIRECTORIES = {
     )
 
 
-def looks_textual(data: bytes) -> bool: (duplicate-code)
+def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[55:60]
 ==tests.test_rotor_vectors:[53:58]
@@ -4966,11 +4978,11 @@ def looks_textual(data: bytes) -> bool: (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_security:[48:53]
 ==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
 .github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[8:13]
@@ -4979,11 +4991,11 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 .github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
@@ -5017,7 +5029,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.74s ===============================
+=============================== 1 error in 0.81s ===============================
 
 </details>
 
