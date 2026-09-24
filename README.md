@@ -245,4 +245,3 @@ Consultez :
 
 > **The Last Signal** — Quand le monde disparaît, un dernier signal demeure.
 
-<img width="1408" height="768" alt="1789741964801" src="https://github.com/user-attachments/assets/74976818-9f4e-4892-a7f1-fea508ab7abc" />
