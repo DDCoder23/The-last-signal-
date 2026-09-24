@@ -147,7 +147,7 @@ impl AjouterRetirer for Equipement {
         self.objet.ajouter(qte);
     }
 
-    fn retirer(&mut self, qte: u128) {
+    fn retirer(&mut self, qte: u64) {
         self.objet.retirer(qte);
     }
 }
