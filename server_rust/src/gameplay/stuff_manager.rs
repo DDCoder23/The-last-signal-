@@ -219,10 +219,10 @@ impl Inventaire {
 
     let quantite_actuelle = match objet {
         ObjetInventaire::Base(o) => o.quantite,
-        ObjetInventaire::Equipement(o) => o.quantite,
-        ObjetInventaire::Arme(o) => o.quantite,
-        ObjetInventaire::Potion(o) => o.quantite,
-        ObjetInventaire::Livre(o) => o.quantite,
+        ObjetInventaire::Equipement(e) => e.quantite,
+        ObjetInventaire::Arme(a) => a.quantite,
+        ObjetInventaire::Potion(p) => p.quantite,
+        ObjetInventaire::Livre(l) => l.quantite,
     };
 
     // Impossible de retirer plus que ce que possède le joueur.
