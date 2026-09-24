@@ -87,14 +87,16 @@ pub async fn create_account(
     .bind(role_id)
     .fetch_one(&mut *tx) 
     .await?;
+    let max_balance = i64::MAX;
     sqlx::query( 
         r#" INSERT INTO wallets ( 
         account_id,
         balance
         ) 
-        VALUES (?,pow(2, 63)-1) 
+        VALUES (?,?) 
         "#, ) 
-        .bind(account_id) 
+        .bind(account_id)
+        .bind(max_balance)
         .execute(&mut *tx) 
         .await?;
     if let Some(status) = status {
