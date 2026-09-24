@@ -210,6 +210,9 @@ impl Inventaire {
     // ------------------------------------------------------------
     // 1. Vérification de l'objet dans l'inventaire en mémoire
     // ------------------------------------------------------------
+    let quantite_i64 = i64::try_from(quantite)
+    .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+
 
     let objet = self.objets.get(nom).ok_or_else(|| {
         sqlx::Error::Protocol(
@@ -273,7 +276,7 @@ impl Inventaire {
         )
         .bind(self.account_id)
         .bind(objet_id)
-        .bind(&quantite)
+        .bind(quantite_i64)
         .execute(&mut *tx)
         .await?;
 
@@ -302,7 +305,7 @@ impl Inventaire {
         .bind(quantite)
         .bind(self.account_id)
         .bind(objet_id)
-        .bind(quantite)
+        .bind(quantite_i64)
         .execute(&mut *tx)
         .await?;
 
@@ -349,7 +352,9 @@ impl Inventaire {
     // ------------------------------------------------------------
     // 2. Récupération de l'objet dans objets_dispo
     // ------------------------------------------------------------
-
+    let quantite_i64 = i64::try_from(quantite)
+    .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+        
     let objet_id: i64 = sqlx::query_scalar(
         r#"
         SELECT objet_id
@@ -380,7 +385,7 @@ impl Inventaire {
     )
     .bind(self.account_id)
     .bind(objet_id)
-    .bind(quantite)
+    .bind(quantite_i64)
     .execute(&self.pool)
     .await?;
 
