@@ -92,7 +92,7 @@ pub async fn create_account(
         account_id,
         balance
         ) 
-        VALUES (?,1.5*10**19) 
+        VALUES (?,pow(2, 63)-1) 
         "#, ) 
         .bind(account_id) 
         .execute(&mut *tx) 
