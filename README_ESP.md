@@ -14,7 +14,7 @@
 
 **The Last Signal Online** es un MMORPG de supervivencia en un mundo postapocalíptico donde los jugadores deben colaborar, explorar y sobrevivir en un universo en constante evolución.
 
-Tras un misterioso acontecimiento que transformó la civilización, los últimos supervivientes intentan reconstruir un nuevo mundo mientras descubren el origen de la última señal emitida por una antigua infraestructura olvidada.
+Tras un misterioso acontecimiento que transformó la civilización, los últimos supervivientes intentan reconstruir un nuevo mundo mientras descubren el origen de la última señal emitida por una pieza olvidada de infraestructura antigua.
 
 El proyecto tiene como objetivo crear una experiencia multijugador inmersiva que combine:
 
@@ -31,7 +31,7 @@ El proyecto tiene como objetivo crear una experiencia multijugador inmersiva que
 
 ## 🤝 Contribución
 
-**The Last Signal** es un proyecto de código abierto y damos la bienvenida a las contribuciones de desarrolladores, testers, redactores y otros participantes interesados.
+**The Last Signal** es un proyecto de código abierto y damos la bienvenida a las contribuciones de desarrolladores, testers, escritores y otros participantes interesados.
 
 ### 🟢 ¿Eres principiante?
 
@@ -56,7 +56,12 @@ Se buscan especialmente contribuciones en:
 * 🔐 Seguridad
 * ⚙️ CI/CD
 
-👉 **Consulta las **[**Issues abiertas**](../../issues) para encontrar una tarea.
+👉 **Consulta las** [**Issues abiertas**](../../issues) para encontrar una tarea.
+
+➡️ [📜 Development Rules](docs_ESP/CODING_RULES_ESP.md)
+
+➡️ [📖 Documentation](docs_ESP/README_ESP.md)
+
 Para garantizar la calidad y la coherencia del proyecto, sigue estas reglas:
 
 * 📐 Respetar las convenciones del proyecto
@@ -111,7 +116,7 @@ El juego se desarrolla con un enfoque similar al de un verdadero estudio:
 | ------------- | ----------------------------- |
 | 🦀 Rust       | Servidor multijugador         |
 | 🌐 Networking | Comunicación cliente/servidor |
-| 🗄 PostgreSQL | Base de datos                 |
+| 🗄 SQLite | Base de datos                 |
 
 ---
 
@@ -120,22 +125,27 @@ El juego se desarrolla con un enfoque similar al de un verdadero estudio:
 ```text
 The-last-signal/
 │
+├── assets/                     # Recursos gráficos y de audio
+│
 ├── client_python/              # Cliente del juego
 │
-├── server_rust/              # Servidor Rust
+├── database/                   # Scripts de bases de datos
 │
-├── database/            # Scripts de base de datos
-│
-├── assets/              # Recursos gráficos y de audio
-│
-├── docs/                # Documentación completa
-│   ├── gdd/             # Game Design Document
-│   ├── tdd/             # Technical Design Document
+├── docs/                       # Documentación Completa (Francés)
+│   ├── gdd/                    # Game Design Document (GDD)
+│   ├── tdd/                    # Technical Design Document (TDD)
 │   └── ...
 │
-├── scripts/             # Herramientas de desarrollo
+├── docs_ENG/                   # Documentación Completa (Inglés)
+│   ├── gdd/                    # Game Design Document (GDD)
+│   ├── tdd/                    # Technical Design Document (TDD)
+│   └── ...
 │
-├── tests/               # Tests automatizados
+├── scripts/                    # Herramientas de Desarrollo
+│
+├── server_rust/                # Servidor Rust
+│
+├── tests/                      # Tests Automatizados
 │
 ├── README.md
 └── LICENSE
