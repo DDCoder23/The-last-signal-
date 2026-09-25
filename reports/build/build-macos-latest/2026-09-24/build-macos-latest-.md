@@ -44,8 +44,7 @@ Compiling 'tests/test_rotor_vectors.py'...
 Compiling 'tests/test_splitmix64.py'...
 
 ## Rust
-[1m[92m    Updating[0m crates.io index
-[1m[92m Downloading[0m crates ...
+[1m[92m loading[0m crates ...
 [1m[92m  Downloaded[0m block-buffer v0.10.4
 [1m[92m  Downloaded[0m adler2 v2.0.1
 [1m[92m  Downloaded[0m cfg-if v1.0.5
@@ -416,6 +415,19 @@ Compiling 'tests/test_splitmix64.py'...
   [1m[94m|[0m
 [1m[94m9[0m [1m[94m|[0m use std::collections::HashMap;
   [1m[94m|[0m     [1m[33m^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+
+[1m[33mwarning[0m: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 2m 16s
+
+## Godot
+No Godot project found.
+
+## Summary
+
+- Python build completed
+- Rust build completed
+- Godot build completed
+^^^^^^^^^^^^^^^^^^^[0m
 
 [1m[33mwarning[0m: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
 [1m[92m    Finished[0m `release` profile [optimized] target(s) in 2m 16s
