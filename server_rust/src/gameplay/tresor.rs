@@ -402,7 +402,8 @@ impl Tresor {
         ("pain".to_string(), 70.0),
         ("fruit et légumes".to_string(), 10.0),
         ("herbes et racines".to_string(), 10.0),
-        ("tacos".to_string(), 10.0),
+        ("tacos".to_string(), 5.0),
+        ("burger".to_string(), 5.0),
         
     ]),
 );  
