@@ -58,6 +58,10 @@ Se buscan especialmente contribuciones en:
 
 👉 **Consulta las** [**Issues abiertas**](../../issues) para encontrar una tarea.
 
+➡️ [📜 Development Rules](docs_ESP/CODING_RULES_ESP.md)
+
+➡️ [📖 Documentation](docs_ESP/README_ESP.md)
+
 Para garantizar la calidad y la coherencia del proyecto, sigue estas reglas:
 
 * 📐 Respetar las convenciones del proyecto
@@ -121,20 +125,20 @@ El juego se desarrolla con un enfoque similar al de un verdadero estudio:
 ```text
 The-last-signal/
 │
-├── assets/                     # Recursos Graficos y de Audio
+├── assets/                     # Recursos gráficos y de audio
 │
-├── client_python/              # Cliente del Juego
+├── client_python/              # Cliente del juego
 │
-├── database/                   # Scripts de Bases de Datos
+├── database/                   # Scripts de bases de datos
 │
 ├── docs/                       # Documentación Completa (Francés)
-│   ├── gdd/                    # Documentación del Diseño de Juego
-│   ├── tdd/                    # Documentación del Diseño Técnico
+│   ├── gdd/                    # Game Design Document (GDD)
+│   ├── tdd/                    # Technical Design Document (TDD)
 │   └── ...
 │
 ├── docs_ENG/                   # Documentación Completa (Inglés)
-│   ├── gdd/                    # Documentación del Diseño de Juego
-│   ├── tdd/                    # Documentación del Diseño Técnico
+│   ├── gdd/                    # Game Design Document (GDD)
+│   ├── tdd/                    # Technical Design Document (TDD)
 │   └── ...
 │
 ├── scripts/                    # Herramientas de Desarrollo
