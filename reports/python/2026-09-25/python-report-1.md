@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 2005
+Run : 654
 Branch : main
-Commit : 1199bc62c4f13ba12f586c77fb782e5ab4cc25b0
-Date : Wed Sep 23 05:59:56 UTC 2026
+Commit : 99ad0c9a934874f7f473b0dc4063093ac71caf49
+Date : Fri Sep 25 00:39:42 UTC 2026
 
 ---
 
@@ -22,36 +22,36 @@ Date : Wed Sep 23 05:59:56 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
@@ -72,8 +72,8 @@ Date : Wed Sep 23 05:59:56 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_state.py
 </details>
@@ -743,6 +743,31 @@ Date : Wed Sep 23 05:59:56 UTC 2026
 <details>
 <summary>Show complexity report</summary>
 
+server_rust/vendor/unicode-properties/scripts/unicode.py
+    F 375:0 emit_emoji_module - C
+    F 84:0 load_general_category_properties - B
+    F 187:0 emit_general_category_module - B
+    F 52:0 load_emoji_properties - A
+    F 169:0 emit_table - A
+    F 137:0 format_table_content - A
+    F 41:0 fetch_unidata - A
+    F 157:0 escape_char_list - A
+    F 152:0 escape_char - A
+    F 494:0 emit_util_mod - A
+server_rust/vendor/sqlx/examples/x.py
+    F 52:0 project - B
+    F 30:0 run - A
+    F 47:0 sqlx - A
+server_rust/vendor/sqlx/tests/docker.py
+    F 23:0 start_database - C
+    F 15:0 docker_compose_command - A
+server_rust/vendor/sqlx/tests/x.py
+    F 93:0 run - E
+    F 38:0 maybe_fetch_sqlite_extension - A
+    F 75:0 extract_features - A
+    F 83:0 core_tls_features - A
+    F 68:0 required_feature_for_test - A
+    F 174:0 postgres_env - A
 server_rust/vendor/unicode-normalization/scripts/unicode.py
     M 96:4 UnicodeData._load_unicode_data - C
     M 139:4 UnicodeData._load_cjk_compat_ideograph_variants - C
@@ -813,34 +838,132 @@ server_rust/vendor/libc/etc/libc-util.py
     M 955:4 RustcTarget.get_one - A
     C 984:0 PullRequest - A
     M 1046:4 E.u - A
-server_rust/vendor/unicode-properties/scripts/unicode.py
-    F 375:0 emit_emoji_module - C
-    F 84:0 load_general_category_properties - B
-    F 187:0 emit_general_category_module - B
-    F 52:0 load_emoji_properties - A
-    F 169:0 emit_table - A
-    F 137:0 format_table_content - A
-    F 41:0 fetch_unidata - A
-    F 157:0 escape_char_list - A
-    F 152:0 escape_char - A
-    F 494:0 emit_util_mod - A
-server_rust/vendor/sqlx/tests/docker.py
-    F 23:0 start_database - C
-    F 15:0 docker_compose_command - A
-server_rust/vendor/sqlx/tests/x.py
-    F 93:0 run - E
-    F 38:0 maybe_fetch_sqlite_extension - A
-    F 75:0 extract_features - A
-    F 83:0 core_tls_features - A
-    F 68:0 required_feature_for_test - A
-    F 174:0 postgres_env - A
-server_rust/vendor/sqlx/examples/x.py
-    F 52:0 project - B
-    F 30:0 run - A
-    F 47:0 sqlx - A
+security/vault.py
+    F 12:0 create_key - A
+    F 103:0 get_or_create_communication_key - A
+    F 30:0 load_key - A
+    F 68:0 add_secret - A
+    F 79:0 get_secret - A
+    F 40:0 encrypt_vault - A
+    F 54:0 decrypt_vault - A
+    F 94:0 generate_communication_key - A
+scripts/voir_database.py
+    F 14:0 afficher_database - C
+scripts/recherche.py
+    F 172:0 main - C
+    F 94:0 ecrire_fichier - B
+    F 34:0 rechercher - B
+scripts/database_manager.py
+    C 9:0 DatabaseManager - A
+    M 360:4 DatabaseManager.add_run - A
+    M 414:4 DatabaseManager.insert - A
+    M 11:4 DatabaseManager.__init__ - A
+    M 25:4 DatabaseManager.create_tables - A
+    M 436:4 DatabaseManager.close - A
+    M 438:4 DatabaseManager.add_security - A
+    M 462:4 DatabaseManager.add_security_issue - A
+    M 492:4 DatabaseManager.add_performance - A
+scripts/generate_problems_md.py
+    F 10:0 generate_problems_md - C
+scripts/update_database.py
+    F 9:0 update_database - A
+scripts/utils/file_chercheur.py
+    F 16:0 iter_files - A
+scripts/utils/calculateur.py
+    F 63:0 mettre_a_jour_excel_fichiers_et_dossiers - B
+    F 22:0 creer_fichier_vide_async - A
+    F 33:0 calculer_taille_dossier_async - A
+    F 13:0 log_erreur_async - A
+scripts/utils/open_report.py
+    F 387:0 find_available_archived_reports - C
+    F 595:0 main - C
+    F 242:0 find_archived_report - B
+    F 194:0 find_archive_member - B
+    F 134:0 find_available_html_reports - A
+    F 158:0 choose_html_report - A
+    F 48:0 find_project_root - A
+    F 88:0 ask_report_date - A
+    F 501:0 find_free_port - A
+    F 69:0 find_reports_root - A
+    F 534:0 start_server - A
+    F 28:0 print_header - A
+    F 35:0 print_error - A
+    F 40:0 print_info - A
+    F 116:0 get_python_report_directory - A
+scripts/documentation/markdown.py
+    F 93:0 check_empty_files - B
+    F 148:0 check_trailing_spaces - B
+    F 131:0 check_line_length - B
+    F 262:0 check_html - B
+    F 167:0 check_code_blocks - A
+    F 183:0 check_lists - A
+    F 225:0 check_tables - A
+    F 119:0 check_encoding - A
+    F 32:0 load_markdownlint_report - A
+    F 44:0 get_markdown_files - A
+    F 53:0 is_ignored - A
+    F 58:0 check_markdown - A
+scripts/documentation/score.py
+    F 11:0 generate_score - B
+scripts/documentation/organization.py
+    F 4:0 check_organization - C
+scripts/documentation/spelling.py
+    F 4:0 check_spelling - A
+scripts/documentation/links.py
+    F 16:0 check_links - B
+    F 114:0 check_local_links - B
+    F 194:0 check_images - B
+    F 144:0 check_external_links - A
+    F 88:0 check_empty_links - A
+    F 172:0 check_anchors - A
+    F 229:0 check_duplicate_links - A
+    F 71:0 extract_links - A
+scripts/documentation/python_docs.py
+    F 9:0 check_python_docs - D
+scripts/documentation/report.py
+    F 34:0 generate_report - C
+    F 11:0 _status - B
+scripts/documentation/problem.py
+    F 3:0 add_problem - A
+scripts/documentation/titles.py
+    F 93:0 check_heading_spacing - B
+    F 69:0 check_heading_order - B
+    F 134:0 check_title_length - A
+    F 156:0 check_duplicate_titles - A
+    F 116:0 check_empty_titles - A
+    F 17:0 check_titles - A
+    F 54:0 check_single_h1 - A
+scripts/documentation/rust_docs.py
+    F 10:0 check_rust_docs - C
+scripts/database/utils.py
+    F 5:0 read_report - A
+    F 15:0 extract_int - A
+    F 25:0 extract_float - A
+scripts/database/update_security.py
+    F 13:0 update_security_database - A
+scripts/database/update_python.py
+    F 18:0 update_python_database - A
+scripts/database/update_rust.py
+    F 19:0 update_rust_database - A
+scripts/database/update_docs.py
+    F 7:0 update_docs_database - B
+scripts/database/update_performance.py
+    F 1:0 update_performance_database - A
 tests/test_client.py
     F 5:0 test_main - A
     F 11:0 test_key - A
+tests/test_splitmix64.py
+    F 13:0 test_same_seed_same_sequence - A
+    F 35:0 test_different_seed_different_sequence - A
+    F 87:0 test_zero_seed - A
+    F 104:0 test_max_seed - A
+    F 57:0 test_output_is_u64 - A
+    F 72:0 test_state_changes - A
+tests/test_rotor_integration.py
+    F 132:0 test_rotor_stream_round_trip - B
+    F 74:0 test_rotor_state_multiple_updates - B
+    F 19:0 test_rotor_state_round_trip - A
+    F 198:0 test_mix_final_round_trip - A
 tests/test_rotor_state.py
     F 191:0 test_rotor_6_rotates_by_seed_every_two_bytes - A
     F 137:0 test_rotor_5_reacts_to_rotor_2_full_rotation - A
@@ -893,14 +1016,6 @@ tests/test_rotor_state.py
     F 890:0 test_rotor_15_depends_on_state - A
     F 915:0 test_rotor_16_changes_each_update - A
     F 967:0 test_rotor_16_depends_on_state - A
-tests/test_rotor_seeds.py
-    F 48:0 test_all_rotors_have_different_seeds - A
-    F 61:0 test_different_keys_produce_different_seeds - A
-    F 34:0 test_seed_is_u64 - A
-    F 24:0 test_seed_is_deterministic - A
-    F 79:0 test_rotor_id_changes_seed - A
-    F 89:0 test_invalid_key_length - A
-    F 9:0 derive_rotor_seed - A
 tests/test_crypto_rotor.py
     F 358:0 test_all_16_rotors_round_trip - B
     F 197:0 test_rotors_are_different - A
@@ -921,6 +1036,25 @@ tests/test_crypto_rotor.py
     F 236:0 test_rotor_forward_inverse - A
     F 34:0 communication_key - A
     F 400:0 test_invalid_communication_key - A
+tests/test_crypto_pipeline.py
+    F 16:0 test_full_crypto_pipeline - B
+tests/test_rotor_vectors.py
+    F 12:0 encrypt_reference - A
+    F 82:0 test_reference_vectors_all_packet_types - A
+tests/test_crypto_mix.py
+    F 54:0 test_rotor_groups - A
+    F 45:0 test_rotations_stay_u8 - A
+    F 19:0 test_rotl8_rotr8_round_trip - A
+    F 32:0 test_rotr8_rotl8_round_trip - A
+    F 64:0 test_mix_before_round_trip - A
+tests/test_rotor_seeds.py
+    F 48:0 test_all_rotors_have_different_seeds - A
+    F 61:0 test_different_keys_produce_different_seeds - A
+    F 34:0 test_seed_is_u64 - A
+    F 24:0 test_seed_is_deterministic - A
+    F 79:0 test_rotor_id_changes_seed - A
+    F 89:0 test_invalid_key_length - A
+    F 9:0 derive_rotor_seed - A
 tests/test_fisher_yates.py
     F 7:0 test_is_permutation - A
     F 31:0 test_contains_every_value_once - A
@@ -928,26 +1062,6 @@ tests/test_fisher_yates.py
     F 47:0 test_max_seed - A
     F 15:0 test_is_deterministic - A
     F 23:0 test_different_seeds_produce_different_permutations - A
-tests/test_crypto_pipeline.py
-    F 16:0 test_full_crypto_pipeline - B
-tests/test_splitmix64.py
-    F 13:0 test_same_seed_same_sequence - A
-    F 35:0 test_different_seed_different_sequence - A
-    F 87:0 test_zero_seed - A
-    F 104:0 test_max_seed - A
-    F 57:0 test_output_is_u64 - A
-    F 72:0 test_state_changes - A
-tests/test_rotor_integration.py
-    F 132:0 test_rotor_stream_round_trip - B
-    F 74:0 test_rotor_state_multiple_updates - B
-    F 19:0 test_rotor_state_round_trip - A
-    F 198:0 test_mix_final_round_trip - A
-tests/test_crypto_mix.py
-    F 54:0 test_rotor_groups - A
-    F 45:0 test_rotations_stay_u8 - A
-    F 19:0 test_rotl8_rotr8_round_trip - A
-    F 32:0 test_rotr8_rotl8_round_trip - A
-    F 64:0 test_mix_before_round_trip - A
 tests/test_client_class.py
     M 11:4 TestClientInitAndConnect.test_init_default_values - B
     M 20:4 TestClientInitAndConnect.test_init_custom_values - B
@@ -958,15 +1072,6 @@ tests/test_client_class.py
     M 83:4 TestClientInitAndConnect.test_connect_timeout_exception - A
     M 54:4 TestClientInitAndConnect.test_connect_timeout - A
     M 97:4 TestClientInitAndConnect.test_connect_runtime_exception - A
-tests/test_rotor_vectors.py
-    F 12:0 encrypt_reference - A
-    F 82:0 test_reference_vectors_all_packet_types - A
-tests/security/test_fuzzing.py
-    F 75:0 main - A
-    F 30:0 send_packet - A
-    F 17:0 create_packet - A
-    F 48:0 random_payload - A
-    F 55:0 random_packet - A
 tests/security/test_load.py
     F 50:0 run_test - A
     F 85:0 test_main - A
@@ -980,133 +1085,12 @@ tests/security/test_sql_injection.py
     F 410:0 open_database - A
     F 442:0 create_test_database - A
     C 51:0 AdvancedPayloads - A
-scripts/database_manager.py
-    C 9:0 DatabaseManager - A
-    M 360:4 DatabaseManager.add_run - A
-    M 414:4 DatabaseManager.insert - A
-    M 11:4 DatabaseManager.__init__ - A
-    M 25:4 DatabaseManager.create_tables - A
-    M 436:4 DatabaseManager.close - A
-    M 438:4 DatabaseManager.add_security - A
-    M 462:4 DatabaseManager.add_security_issue - A
-    M 492:4 DatabaseManager.add_performance - A
-scripts/voir_database.py
-    F 14:0 afficher_database - C
-scripts/generate_problems_md.py
-    F 10:0 generate_problems_md - C
-scripts/recherche.py
-    F 172:0 main - C
-    F 94:0 ecrire_fichier - B
-    F 34:0 rechercher - B
-scripts/update_database.py
-    F 9:0 update_database - A
-scripts/database/update_rust.py
-    F 19:0 update_rust_database - A
-scripts/database/update_performance.py
-    F 1:0 update_performance_database - A
-scripts/database/utils.py
-    F 5:0 read_report - A
-    F 15:0 extract_int - A
-    F 25:0 extract_float - A
-scripts/database/update_security.py
-    F 13:0 update_security_database - A
-scripts/database/update_python.py
-    F 18:0 update_python_database - A
-scripts/database/update_docs.py
-    F 7:0 update_docs_database - B
-scripts/utils/open_report.py
-    F 387:0 find_available_archived_reports - C
-    F 595:0 main - C
-    F 242:0 find_archived_report - B
-    F 194:0 find_archive_member - B
-    F 134:0 find_available_html_reports - A
-    F 158:0 choose_html_report - A
-    F 48:0 find_project_root - A
-    F 88:0 ask_report_date - A
-    F 501:0 find_free_port - A
-    F 69:0 find_reports_root - A
-    F 534:0 start_server - A
-    F 28:0 print_header - A
-    F 35:0 print_error - A
-    F 40:0 print_info - A
-    F 116:0 get_python_report_directory - A
-scripts/utils/calculateur.py
-    F 63:0 mettre_a_jour_excel_fichiers_et_dossiers - B
-    F 22:0 creer_fichier_vide_async - A
-    F 33:0 calculer_taille_dossier_async - A
-    F 13:0 log_erreur_async - A
-scripts/utils/file_chercheur.py
-    F 16:0 iter_files - A
-scripts/documentation/spelling.py
-    F 4:0 check_spelling - A
-scripts/documentation/report.py
-    F 34:0 generate_report - C
-    F 11:0 _status - B
-scripts/documentation/organization.py
-    F 4:0 check_organization - C
-scripts/documentation/score.py
-    F 11:0 generate_score - B
-scripts/documentation/links.py
-    F 16:0 check_links - B
-    F 114:0 check_local_links - B
-    F 194:0 check_images - B
-    F 144:0 check_external_links - A
-    F 88:0 check_empty_links - A
-    F 172:0 check_anchors - A
-    F 229:0 check_duplicate_links - A
-    F 71:0 extract_links - A
-scripts/documentation/rust_docs.py
-    F 10:0 check_rust_docs - C
-scripts/documentation/problem.py
-    F 3:0 add_problem - A
-scripts/documentation/python_docs.py
-    F 9:0 check_python_docs - D
-scripts/documentation/markdown.py
-    F 93:0 check_empty_files - B
-    F 148:0 check_trailing_spaces - B
-    F 131:0 check_line_length - B
-    F 262:0 check_html - B
-    F 167:0 check_code_blocks - A
-    F 183:0 check_lists - A
-    F 225:0 check_tables - A
-    F 119:0 check_encoding - A
-    F 32:0 load_markdownlint_report - A
-    F 44:0 get_markdown_files - A
-    F 53:0 is_ignored - A
-    F 58:0 check_markdown - A
-scripts/documentation/titles.py
-    F 93:0 check_heading_spacing - B
-    F 69:0 check_heading_order - B
-    F 134:0 check_title_length - A
-    F 156:0 check_duplicate_titles - A
-    F 116:0 check_empty_titles - A
-    F 17:0 check_titles - A
-    F 54:0 check_single_h1 - A
-security/vault.py
-    F 12:0 create_key - A
-    F 103:0 get_or_create_communication_key - A
-    F 30:0 load_key - A
-    F 68:0 add_secret - A
-    F 79:0 get_secret - A
-    F 40:0 encrypt_vault - A
-    F 54:0 decrypt_vault - A
-    F 94:0 generate_communication_key - A
-client_python/client.py
-    M 86:4 Client.receive_packet - B
-    M 25:4 Client.connect - B
-    C 6:0 Client - A
-    M 117:4 Client._recv_exact - A
-    M 66:4 Client.send_packet - A
-    M 154:4 Client.disconnect - A
-    M 11:4 Client.__init__ - A
-client_python/packet.py
-    M 53:4 Packet.decode - C
-    C 19:0 Packet - A
-    C 5:0 PacketType - A
-    M 21:4 Packet.__init__ - A
-    M 31:4 Packet.encode - A
-client_python/logs.py
-    F 4:0 log - A
+tests/security/test_fuzzing.py
+    F 75:0 main - A
+    F 30:0 send_packet - A
+    F 17:0 create_packet - A
+    F 48:0 random_payload - A
+    F 55:0 random_packet - A
 client_python/main.py
     F 21:0 main - B
     F 13:0 generate_random_password - A
@@ -1131,34 +1115,50 @@ client_python/crypto.py
     F 662:0 rotor_groups - A
     M 18:4 SplitMix64.__init__ - A
     M 21:4 SplitMix64.next - A
-client_python/packets/ping.py
-    C 4:0 PingPacket - A
-    M 6:4 PingPacket.__init__ - A
+client_python/packet.py
+    M 53:4 Packet.decode - C
+    C 19:0 Packet - A
+    C 5:0 PacketType - A
+    M 21:4 Packet.__init__ - A
+    M 31:4 Packet.encode - A
+client_python/logs.py
+    F 4:0 log - A
+client_python/client.py
+    M 86:4 Client.receive_packet - B
+    M 25:4 Client.connect - B
+    C 6:0 Client - A
+    M 117:4 Client._recv_exact - A
+    M 66:4 Client.send_packet - A
+    M 154:4 Client.disconnect - A
+    M 11:4 Client.__init__ - A
+client_python/packets/log.py
+    C 4:0 LogPacket - A
+    M 6:4 LogPacket.__init__ - A
+    M 12:4 LogPacket.from_payload - A
 client_python/packets/move.py
     C 6:0 MovePacket - A
     M 8:4 MovePacket.__init__ - A
     M 19:4 MovePacket.from_payload - A
-client_python/packets/login.py
-    M 29:4 LoginPacket.from_payload - A
-    C 6:0 LoginPacket - A
-    M 8:4 LoginPacket.__init__ - A
+client_python/packets/singup.py
+    M 29:4 SingupPacket.from_payload - A
+    C 6:0 SingupPacket - A
+    M 8:4 SingupPacket.__init__ - A
+client_python/packets/ping.py
+    C 4:0 PingPacket - A
+    M 6:4 PingPacket.__init__ - A
 client_python/packets/ban.py
     C 9:0 BanPacket - A
     M 23:4 BanPacket.from_payload - A
     C 4:0 BanType - A
     M 11:4 BanPacket.__init__ - A
-client_python/packets/singup.py
-    M 29:4 SingupPacket.from_payload - A
-    C 6:0 SingupPacket - A
-    M 8:4 SingupPacket.__init__ - A
-client_python/packets/log.py
-    C 4:0 LogPacket - A
-    M 6:4 LogPacket.__init__ - A
-    M 12:4 LogPacket.from_payload - A
 client_python/packets/Deco.py
     C 3:0 decoPacket - A
     F 19:0 from_payload - A
     M 5:2 decoPacket.__init__ - A
+client_python/packets/login.py
+    M 29:4 LoginPacket.from_payload - A
+    C 6:0 LoginPacket - A
+    M 8:4 LoginPacket.__init__ - A
 client_python/packets/chat.py
     C 4:0 ChatPacket - A
     M 6:4 ChatPacket.__init__ - A
@@ -1186,7 +1186,7 @@ Average complexity: A (3.8121546961325965)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-09-23 06:00:00.694651+00:00
+Run started:2026-09-25 00:39:48.393647+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -3504,6 +3504,117 @@ Files skipped (0):
 
 ************* Module setup
 setup.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module server_rust.vendor.unicode-properties.scripts.unicode
+server_rust/vendor/unicode-properties/scripts/unicode.py:122:0: C0325: Unnecessary parens after 'assert' keyword (superfluous-parens)
+server_rust/vendor/unicode-properties/scripts/unicode.py:123:0: C0325: Unnecessary parens after 'assert' keyword (superfluous-parens)
+server_rust/vendor/unicode-properties/scripts/unicode.py:364:0: C0301: Line too long (124/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:365:0: C0301: Line too long (116/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:366:0: C0301: Line too long (128/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:367:0: C0301: Line too long (117/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:370:0: C0301: Line too long (117/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:427:0: C0303: Trailing whitespace (trailing-whitespace)
+server_rust/vendor/unicode-properties/scripts/unicode.py:429:0: C0301: Line too long (140/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:430:0: C0301: Line too long (113/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:435:0: C0303: Trailing whitespace (trailing-whitespace)
+server_rust/vendor/unicode-properties/scripts/unicode.py:472:0: C0301: Line too long (125/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:473:0: C0301: Line too long (147/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:476:0: C0301: Line too long (143/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:483:0: C0301: Line too long (125/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:486:0: C0301: Line too long (127/100) (line-too-long)
+server_rust/vendor/unicode-properties/scripts/unicode.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:19:0: C0410: Multiple imports on one line (fileinput, re, os, sys, operator) (multiple-imports)
+server_rust/vendor/unicode-properties/scripts/unicode.py:21:0: C0103: Constant name "preamble" doesn't conform to UPPER_CASE naming style (invalid-name)
+server_rust/vendor/unicode-properties/scripts/unicode.py:38:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:41:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:43:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:47:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:48:8: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
+server_rust/vendor/unicode-properties/scripts/unicode.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:84:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:84:0: R0914: Too many local variables (19/15) (too-many-locals)
+server_rust/vendor/unicode-properties/scripts/unicode.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:152:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:157:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: R0913: Too many arguments (7/5) (too-many-arguments)
+server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+server_rust/vendor/unicode-properties/scripts/unicode.py:170:23: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:176:12: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:187:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:358:4: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
+server_rust/vendor/unicode-properties/scripts/unicode.py:371:27: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:375:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:444:8: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+server_rust/vendor/unicode-properties/scripts/unicode.py:443:4: R0911: Too many return statements (11/6) (too-many-return-statements)
+server_rust/vendor/unicode-properties/scripts/unicode.py:470:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+server_rust/vendor/unicode-properties/scripts/unicode.py:481:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
+server_rust/vendor/unicode-properties/scripts/unicode.py:491:27: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:494:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/unicode-properties/scripts/unicode.py:523:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+server_rust/vendor/unicode-properties/scripts/unicode.py:527:17: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
+server_rust/vendor/unicode-properties/scripts/unicode.py:19:0: W0611: Unused import operator (unused-import)
+************* Module server_rust.vendor.sqlx.examples.x
+server_rust/vendor/sqlx/examples/x.py:48:0: C0301: Line too long (103/100) (line-too-long)
+server_rust/vendor/sqlx/examples/x.py:87:0: C0301: Line too long (104/100) (line-too-long)
+server_rust/vendor/sqlx/examples/x.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server_rust/vendor/sqlx/examples/x.py:17:0: C0413: Import "import subprocess" should be placed at the top of the module (wrong-import-position)
+server_rust/vendor/sqlx/examples/x.py:18:0: C0413: Import "import time" should be placed at the top of the module (wrong-import-position)
+server_rust/vendor/sqlx/examples/x.py:19:0: C0413: Import "import argparse" should be placed at the top of the module (wrong-import-position)
+server_rust/vendor/sqlx/examples/x.py:20:0: C0413: Import "import runpy" should be placed at the top of the module (wrong-import-position)
+server_rust/vendor/sqlx/examples/x.py:21:0: E0401: Unable to import 'docker' (import-error)
+server_rust/vendor/sqlx/examples/x.py:21:0: C0413: Import "from docker import start_database" should be placed at the top of the module (wrong-import-position)
+server_rust/vendor/sqlx/examples/x.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/examples/x.py:37:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+server_rust/vendor/sqlx/examples/x.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/examples/x.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/examples/x.py:83:15: C0123: Use isinstance() rather than type() for a typecheck. (unidiomatic-typecheck)
+server_rust/vendor/sqlx/examples/x.py:18:0: W0611: Unused import time (unused-import)
+************* Module server_rust.vendor.sqlx.tests.docker
+server_rust/vendor/sqlx/tests/docker.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server_rust/vendor/sqlx/tests/docker.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/tests/docker.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/tests/docker.py:38:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+server_rust/vendor/sqlx/tests/docker.py:51:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+server_rust/vendor/sqlx/tests/docker.py:78:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+server_rust/vendor/sqlx/tests/docker.py:96:14: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+server_rust/vendor/sqlx/tests/docker.py:113:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+server_rust/vendor/sqlx/tests/docker.py:23:0: R0912: Too many branches (19/12) (too-many-branches)
+************* Module server_rust.vendor.sqlx.tests.x
+server_rust/vendor/sqlx/tests/x.py:127:0: C0301: Line too long (125/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:140:0: C0301: Line too long (116/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:199:0: C0301: Line too long (151/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:246:0: C0301: Line too long (122/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:260:0: C0301: Line too long (106/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:271:0: C0301: Line too long (110/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:282:0: C0301: Line too long (110/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:284:0: C0301: Line too long (181/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:295:0: C0301: Line too long (103/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:296:0: C0301: Line too long (112/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:312:0: C0301: Line too long (108/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:325:0: C0301: Line too long (107/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:348:0: C0301: Line too long (103/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:349:0: C0301: Line too long (112/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:366:0: C0301: Line too long (177/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:381:0: C0301: Line too long (111/100) (line-too-long)
+server_rust/vendor/sqlx/tests/x.py:380:1: W0511: TODO: Use [grcov] if available (fixme)
+server_rust/vendor/sqlx/tests/x.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+server_rust/vendor/sqlx/tests/x.py:11:0: E0401: Unable to import 'docker' (import-error)
+server_rust/vendor/sqlx/tests/x.py:45:4: C0103: Variable name "BASE_URL" doesn't conform to snake_case naming style (invalid-name)
+server_rust/vendor/sqlx/tests/x.py:61:18: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+server_rust/vendor/sqlx/tests/x.py:65:11: C0207: Use filename.split('.', maxsplit=1)[0] instead (use-maxsplit-arg)
+server_rust/vendor/sqlx/tests/x.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/tests/x.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/tests/x.py:83:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/tests/x.py:83:22: W0621: Redefining name 'tls' from outer scope (line 197) (redefined-outer-name)
+server_rust/vendor/sqlx/tests/x.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/tests/x.py:93:0: R0913: Too many arguments (7/5) (too-many-arguments)
+server_rust/vendor/sqlx/tests/x.py:93:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+server_rust/vendor/sqlx/tests/x.py:146:12: W0621: Redefining name 'features' from outer scope (line 297) (redefined-outer-name)
+server_rust/vendor/sqlx/tests/x.py:161:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+server_rust/vendor/sqlx/tests/x.py:93:0: R0912: Too many branches (24/12) (too-many-branches)
+server_rust/vendor/sqlx/tests/x.py:174:0: C0116: Missing function or method docstring (missing-function-docstring)
+server_rust/vendor/sqlx/tests/x.py:174:17: W0621: Redefining name 'version' from outer scope (line 257) (redefined-outer-name)
+server_rust/vendor/sqlx/tests/x.py:6:0: W0611: Unused import time (unused-import)
 ************* Module server_rust.vendor.unicode-normalization.scripts.unicode
 server_rust/vendor/unicode-normalization/scripts/unicode.py:104:0: W0301: Unnecessary semicolon (unnecessary-semicolon)
 server_rust/vendor/unicode-normalization/scripts/unicode.py:105:0: W0301: Unnecessary semicolon (unnecessary-semicolon)
@@ -3618,123 +3729,363 @@ server_rust/vendor/libc/etc/libc-util.py:1063:0: C0116: Missing function or meth
 server_rust/vendor/libc/etc/libc-util.py:1072:0: C0116: Missing function or method docstring (missing-function-docstring)
 server_rust/vendor/libc/etc/libc-util.py:1078:0: C0116: Missing function or method docstring (missing-function-docstring)
 server_rust/vendor/libc/etc/libc-util.py:1107:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module server_rust.vendor.unicode-properties.scripts.unicode
-server_rust/vendor/unicode-properties/scripts/unicode.py:122:0: C0325: Unnecessary parens after 'assert' keyword (superfluous-parens)
-server_rust/vendor/unicode-properties/scripts/unicode.py:123:0: C0325: Unnecessary parens after 'assert' keyword (superfluous-parens)
-server_rust/vendor/unicode-properties/scripts/unicode.py:364:0: C0301: Line too long (124/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:365:0: C0301: Line too long (116/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:366:0: C0301: Line too long (128/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:367:0: C0301: Line too long (117/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:370:0: C0301: Line too long (117/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:427:0: C0303: Trailing whitespace (trailing-whitespace)
-server_rust/vendor/unicode-properties/scripts/unicode.py:429:0: C0301: Line too long (140/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:430:0: C0301: Line too long (113/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:435:0: C0303: Trailing whitespace (trailing-whitespace)
-server_rust/vendor/unicode-properties/scripts/unicode.py:472:0: C0301: Line too long (125/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:473:0: C0301: Line too long (147/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:476:0: C0301: Line too long (143/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:483:0: C0301: Line too long (125/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:486:0: C0301: Line too long (127/100) (line-too-long)
-server_rust/vendor/unicode-properties/scripts/unicode.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:19:0: C0410: Multiple imports on one line (fileinput, re, os, sys, operator) (multiple-imports)
-server_rust/vendor/unicode-properties/scripts/unicode.py:21:0: C0103: Constant name "preamble" doesn't conform to UPPER_CASE naming style (invalid-name)
-server_rust/vendor/unicode-properties/scripts/unicode.py:38:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:41:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:43:18: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:47:25: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:48:8: R1722: Consider using 'sys.exit' instead (consider-using-sys-exit)
-server_rust/vendor/unicode-properties/scripts/unicode.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:84:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:84:0: R0914: Too many local variables (19/15) (too-many-locals)
-server_rust/vendor/unicode-properties/scripts/unicode.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:152:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:157:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: R0913: Too many arguments (7/5) (too-many-arguments)
-server_rust/vendor/unicode-properties/scripts/unicode.py:169:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
-server_rust/vendor/unicode-properties/scripts/unicode.py:170:23: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:176:12: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:187:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:358:4: C0200: Consider using enumerate instead of iterating with range and len (consider-using-enumerate)
-server_rust/vendor/unicode-properties/scripts/unicode.py:371:27: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:375:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:444:8: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
-server_rust/vendor/unicode-properties/scripts/unicode.py:443:4: R0911: Too many return statements (11/6) (too-many-return-statements)
-server_rust/vendor/unicode-properties/scripts/unicode.py:470:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
-server_rust/vendor/unicode-properties/scripts/unicode.py:481:12: R1724: Unnecessary "elif" after "continue", remove the leading "el" from "elif" (no-else-continue)
-server_rust/vendor/unicode-properties/scripts/unicode.py:491:27: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:494:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/unicode-properties/scripts/unicode.py:523:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-server_rust/vendor/unicode-properties/scripts/unicode.py:527:17: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
-server_rust/vendor/unicode-properties/scripts/unicode.py:19:0: W0611: Unused import operator (unused-import)
-************* Module server_rust.vendor.sqlx.tests.docker
-server_rust/vendor/sqlx/tests/docker.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/sqlx/tests/docker.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/docker.py:23:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/docker.py:38:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:51:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:78:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:96:14: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/docker.py:113:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
-server_rust/vendor/sqlx/tests/docker.py:23:0: R0912: Too many branches (19/12) (too-many-branches)
-************* Module server_rust.vendor.sqlx.tests.x
-server_rust/vendor/sqlx/tests/x.py:127:0: C0301: Line too long (125/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:140:0: C0301: Line too long (116/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:199:0: C0301: Line too long (151/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:246:0: C0301: Line too long (122/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:260:0: C0301: Line too long (106/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:271:0: C0301: Line too long (110/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:282:0: C0301: Line too long (110/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:284:0: C0301: Line too long (181/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:295:0: C0301: Line too long (103/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:296:0: C0301: Line too long (112/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:312:0: C0301: Line too long (108/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:325:0: C0301: Line too long (107/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:348:0: C0301: Line too long (103/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:349:0: C0301: Line too long (112/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:366:0: C0301: Line too long (177/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:381:0: C0301: Line too long (111/100) (line-too-long)
-server_rust/vendor/sqlx/tests/x.py:380:1: W0511: TODO: Use [grcov] if available (fixme)
-server_rust/vendor/sqlx/tests/x.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/sqlx/tests/x.py:11:0: E0401: Unable to import 'docker' (import-error)
-server_rust/vendor/sqlx/tests/x.py:45:4: C0103: Variable name "BASE_URL" doesn't conform to snake_case naming style (invalid-name)
-server_rust/vendor/sqlx/tests/x.py:61:18: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
-server_rust/vendor/sqlx/tests/x.py:65:11: C0207: Use filename.split('.', maxsplit=1)[0] instead (use-maxsplit-arg)
-server_rust/vendor/sqlx/tests/x.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:83:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:83:22: W0621: Redefining name 'tls' from outer scope (line 197) (redefined-outer-name)
-server_rust/vendor/sqlx/tests/x.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:93:0: R0913: Too many arguments (7/5) (too-many-arguments)
-server_rust/vendor/sqlx/tests/x.py:93:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
-server_rust/vendor/sqlx/tests/x.py:146:12: W0621: Redefining name 'features' from outer scope (line 297) (redefined-outer-name)
-server_rust/vendor/sqlx/tests/x.py:161:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/tests/x.py:93:0: R0912: Too many branches (24/12) (too-many-branches)
-server_rust/vendor/sqlx/tests/x.py:174:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/tests/x.py:174:17: W0621: Redefining name 'version' from outer scope (line 257) (redefined-outer-name)
-server_rust/vendor/sqlx/tests/x.py:6:0: W0611: Unused import time (unused-import)
-************* Module server_rust.vendor.sqlx.examples.x
-server_rust/vendor/sqlx/examples/x.py:48:0: C0301: Line too long (103/100) (line-too-long)
-server_rust/vendor/sqlx/examples/x.py:87:0: C0301: Line too long (104/100) (line-too-long)
-server_rust/vendor/sqlx/examples/x.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-server_rust/vendor/sqlx/examples/x.py:17:0: C0413: Import "import subprocess" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:18:0: C0413: Import "import time" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:19:0: C0413: Import "import argparse" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:20:0: C0413: Import "import runpy" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:21:0: E0401: Unable to import 'docker' (import-error)
-server_rust/vendor/sqlx/examples/x.py:21:0: C0413: Import "from docker import start_database" should be placed at the top of the module (wrong-import-position)
-server_rust/vendor/sqlx/examples/x.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/examples/x.py:37:10: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
-server_rust/vendor/sqlx/examples/x.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/examples/x.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-server_rust/vendor/sqlx/examples/x.py:83:15: C0123: Use isinstance() rather than type() for a typecheck. (unidiomatic-typecheck)
-server_rust/vendor/sqlx/examples/x.py:18:0: W0611: Unused import time (unused-import)
+************* Module .github.security.attack_test
+.github/security/attack_test.py:13:0: W0105: String statement has no effect (pointless-string-statement)
+.github/security/attack_test.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:72:0: W0105: String statement has no effect (pointless-string-statement)
+.github/security/attack_test.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:92:0: W0105: String statement has no effect (pointless-string-statement)
+.github/security/attack_test.py:99:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:181:0: W0105: String statement has no effect (pointless-string-statement)
+.github/security/attack_test.py:188:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:240:0: W0105: String statement has no effect (pointless-string-statement)
+.github/security/attack_test.py:247:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:292:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:326:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:359:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:383:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:421:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:461:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:480:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:533:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/attack_test.py:584:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module .github.security.test_filesystem
+.github/security/test_filesystem.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_filesystem.py:65:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module .github.security.test_secrets
+.github/security/test_secrets.py:102:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:139:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_secrets.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module .github.security.test_python_security
+.github/security/test_python_security.py:22:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:34:0: C0115: Missing class docstring (missing-class-docstring)
+.github/security/test_python_security.py:43:4: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:62:4: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:62:4: C0103: Method name "visit_Call" doesn't conform to snake_case naming style (invalid-name)
+.github/security/test_python_security.py:204:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_python_security.py:240:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module .github.security.test_web_security
+.github/security/test_web_security.py:466:0: C0303: Trailing whitespace (trailing-whitespace)
+.github/security/test_web_security.py:30:0: C0115: Missing class docstring (missing-class-docstring)
+.github/security/test_web_security.py:36:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:129:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:317:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_web_security.py:362:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module .github.security.test_rust_security
+.github/security/test_rust_security.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/test_rust_security.py:114:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module .github.security.integrity_check
+.github/security/integrity_check.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:121:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:162:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:185:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
+.github/security/integrity_check.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module .github.security.test_git_security
+.github/security/test_git_security.py:51:14: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
+************* Module security.vault
+security/vault.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:138:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:166:0: C0303: Trailing whitespace (trailing-whitespace)
+security/vault.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+security/vault.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
+security/vault.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module security.__init__
+security/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
+************* Module scripts.voir_database
+scripts/voir_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/voir_database.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/voir_database.py:14:22: W0621: Redefining name 'database' from outer scope (line 81) (redefined-outer-name)
+************* Module scripts.recherche
+scripts/recherche.py:197:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/recherche.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/recherche.py:37:4: W0621: Redefining name 'conn' from outer scope (line 9) (redefined-outer-name)
+scripts/recherche.py:38:4: W0621: Redefining name 'cursor' from outer scope (line 10) (redefined-outer-name)
+scripts/recherche.py:52:8: R1704: Redefining argument with the local name 'table' (redefined-argument-from-local)
+scripts/recherche.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/recherche.py:172:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.transformateur
+scripts/transformateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/transformateur.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
+************* Module scripts.docs_score
+scripts/docs_score.py:5:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/docs_score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/docs_score.py:1:0: E0401: Unable to import 'documentation.score' (import-error)
+************* Module scripts.database_manager
+scripts/database_manager.py:529:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database_manager.py:9:0: C0115: Missing class docstring (missing-class-docstring)
+scripts/database_manager.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:360:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:414:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:436:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:438:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:438:4: R0913: Too many arguments (6/5) (too-many-arguments)
+scripts/database_manager.py:438:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
+scripts/database_manager.py:462:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:462:4: R0913: Too many arguments (9/5) (too-many-arguments)
+scripts/database_manager.py:462:4: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
+scripts/database_manager.py:492:4: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database_manager.py:492:4: R0913: Too many arguments (7/5) (too-many-arguments)
+scripts/database_manager.py:492:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+************* Module scripts.generate_problems_md
+scripts/generate_problems_md.py:64:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/generate_problems_md.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/generate_problems_md.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/generate_problems_md.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/generate_problems_md.py:75:7: W0718: Catching too general exception Exception (broad-exception-caught)
+************* Module scripts.update_database
+scripts/update_database.py:15:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/update_database.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/update_database.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/update_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/update_database.py:1:0: E0401: Unable to import 'database.update_python' (import-error)
+scripts/update_database.py:1:0: E0611: No name 'update_python' in module 'database' (no-name-in-module)
+scripts/update_database.py:2:0: E0401: Unable to import 'database.update_docs' (import-error)
+scripts/update_database.py:2:0: E0611: No name 'update_docs' in module 'database' (no-name-in-module)
+scripts/update_database.py:3:0: E0401: Unable to import 'database.update_security' (import-error)
+scripts/update_database.py:3:0: E0611: No name 'update_security' in module 'database' (no-name-in-module)
+scripts/update_database.py:4:0: E0401: Unable to import 'database.update_rust' (import-error)
+scripts/update_database.py:4:0: E0611: No name 'update_rust' in module 'database' (no-name-in-module)
+scripts/update_database.py:5:0: E0401: Unable to import 'database.update_performance' (import-error)
+scripts/update_database.py:5:0: E0611: No name 'update_performance' in module 'database' (no-name-in-module)
+scripts/update_database.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/update_database.py:5:0: W0611: Unused update_performance_database imported from database.update_performance (unused-import)
+************* Module scripts.utils.file_chercheur
+scripts/utils/file_chercheur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/file_chercheur.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.utils.calculateur
+scripts/utils/calculateur.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:50:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:53:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/utils/calculateur.py:57:0: W0311: Bad indentation. Found 13 spaces, expected 8 (bad-indentation)
+scripts/utils/calculateur.py:63:0: C0301: Line too long (144/100) (line-too-long)
+scripts/utils/calculateur.py:65:0: C0301: Line too long (121/100) (line-too-long)
+scripts/utils/calculateur.py:111:0: C0301: Line too long (105/100) (line-too-long)
+scripts/utils/calculateur.py:116:0: C0305: Trailing newlines (trailing-newlines)
+scripts/utils/calculateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/calculateur.py:4:0: E0401: Unable to import 'pandas' (import-error)
+scripts/utils/calculateur.py:6:0: E0401: Unable to import 'gestionnaire_de_fichiers' (import-error)
+scripts/utils/calculateur.py:17:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+scripts/utils/calculateur.py:28:17: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+scripts/utils/calculateur.py:28:46: W0612: Unused variable 'fichier' (unused-variable)
+scripts/utils/calculateur.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/calculateur.py:51:23: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/utils/calculateur.py:41:20: W0612: Unused variable 'sous_dossiers' (unused-variable)
+scripts/utils/calculateur.py:57:69: E0602: Undefined variable 'fichier' (undefined-variable)
+scripts/utils/calculateur.py:56:8: W0612: Unused variable 'values' (unused-variable)
+scripts/utils/calculateur.py:107:8: W0612: Unused variable 'existing_sheets' (unused-variable)
+scripts/utils/calculateur.py:5:0: C0411: standard import "datetime.datetime" should be placed before third party import "pandas" (wrong-import-order)
+scripts/utils/calculateur.py:6:0: W0611: Unused gestionnaire_de_fichiers imported as gf (unused-import)
+************* Module scripts.utils.open_report
+scripts/utils/open_report.py:829:0: C0304: Final newline missing (missing-final-newline)
+scripts/utils/open_report.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/utils/open_report.py:13:0: E0401: Unable to import 'zstandard' (import-error)
+scripts/utils/open_report.py:28:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:234:11: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/utils/open_report.py:212:16: C0415: Import outside toplevel (tarfile) (import-outside-toplevel)
+scripts/utils/open_report.py:387:0: R0914: Too many local variables (17/15) (too-many-locals)
+scripts/utils/open_report.py:437:4: C0415: Import outside toplevel (tarfile) (import-outside-toplevel)
+scripts/utils/open_report.py:485:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/utils/open_report.py:545:14: C3001: Lambda expression assigned to a variable. Define a function using the "def" keyword instead. (unnecessary-lambda-assignment)
+scripts/utils/open_report.py:595:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/utils/open_report.py:595:0: R0915: Too many statements (52/50) (too-many-statements)
+scripts/utils/open_report.py:5:0: W0611: Unused import subprocess (unused-import)
+************* Module scripts.documentation.markdown
+scripts/documentation/markdown.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/markdown.py:197:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/markdown.py:234:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/markdown.py:277:0: C0305: Trailing newlines (trailing-newlines)
+scripts/documentation/markdown.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/markdown.py:27:0: C0413: Import "import json" should be placed at the top of the module (wrong-import-position)
+scripts/documentation/markdown.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:42:11: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:58:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:99:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:119:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:124:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:131:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:136:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:148:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:155:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:167:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:174:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:183:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:187:4: C0103: Variable name "LIST_RULES" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/markdown.py:225:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:229:4: C0103: Variable name "TABLE_RULES" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/markdown.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/markdown.py:269:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/markdown.py:27:0: C0411: standard import "json" should be placed before local import "problem.add_problem" (wrong-import-order)
+************* Module scripts.documentation.score
+scripts/documentation/score.py:56:0: C0301: Line too long (113/100) (line-too-long)
+scripts/documentation/score.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/score.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/score.py:33:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/score.py:51:12: C0415: Import outside toplevel (json) (import-outside-toplevel)
+scripts/documentation/score.py:33:8: W0612: Unused variable 'e' (unused-variable)
+scripts/documentation/score.py:10:0: C0411: standard import "traceback" should be placed before local imports "markdown.check_markdown", "titles.check_titles", "spelling.check_spelling" (...) "rust_docs.check_rust_docs", "organization.check_organization", "report.generate_report" (wrong-import-order)
+************* Module scripts.documentation.organization
+scripts/documentation/organization.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/organization.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.documentation.spelling
+scripts/documentation/spelling.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+************* Module scripts.documentation.links
+scripts/documentation/links.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/links.py:75:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/links.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/links.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:61:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
+scripts/documentation/links.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:88:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:114:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:144:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:172:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:194:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/links.py:229:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.documentation.python_docs
+scripts/documentation/python_docs.py:161:0: C0301: Line too long (116/100) (line-too-long)
+scripts/documentation/python_docs.py:175:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/python_docs.py:191:0: C0301: Line too long (106/100) (line-too-long)
+scripts/documentation/python_docs.py:220:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/python_docs.py:94:9: W0511: TODO / FIXME (fixme)
+scripts/documentation/python_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/python_docs.py:22:4: C0103: Variable name "MAX_SCORE" doesn't conform to snake_case naming style (invalid-name)
+scripts/documentation/python_docs.py:64:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/python_docs.py:9:0: R0912: Too many branches (17/12) (too-many-branches)
+scripts/documentation/python_docs.py:9:0: R0915: Too many statements (51/50) (too-many-statements)
+************* Module scripts.documentation.report
+scripts/documentation/report.py:36:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/report.py:37:0: C0301: Line too long (136/100) (line-too-long)
+scripts/documentation/report.py:39:0: C0301: Line too long (108/100) (line-too-long)
+scripts/documentation/report.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/report.py:41:0: C0301: Line too long (140/100) (line-too-long)
+scripts/documentation/report.py:42:0: C0301: Line too long (122/100) (line-too-long)
+scripts/documentation/report.py:57:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/report.py:70:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/report.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/report.py:11:0: R0911: Too many return statements (10/6) (too-many-return-statements)
+scripts/documentation/report.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/report.py:34:0: R0914: Too many local variables (17/15) (too-many-locals)
+************* Module scripts.documentation.problem
+scripts/documentation/problem.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/problem.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/problem.py:2:0: W0611: Unused Any imported from typing (unused-import)
+************* Module scripts.documentation.titles
+scripts/documentation/titles.py:63:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:85:0: C0301: Line too long (112/100) (line-too-long)
+scripts/documentation/titles.py:107:0: C0301: Line too long (102/100) (line-too-long)
+scripts/documentation/titles.py:128:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:149:0: C0301: Line too long (120/100) (line-too-long)
+scripts/documentation/titles.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:173:0: C0301: Line too long (129/100) (line-too-long)
+scripts/documentation/titles.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/titles.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/titles.py:4:0: E0401: Unable to import 'utils.file_chercheur' (import-error)
+scripts/documentation/titles.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:27:24: E0602: Undefined variable 'file' (undefined-variable)
+scripts/documentation/titles.py:43:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
+scripts/documentation/titles.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:69:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:134:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:156:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/documentation/titles.py:4:0: C0411: third party import "utils.file_chercheur.iter_files" should be placed before local import "problem.add_problem" (wrong-import-order)
+scripts/documentation/titles.py:1:0: W0611: Unused Path imported from pathlib (unused-import)
+************* Module scripts.documentation.rust_docs
+scripts/documentation/rust_docs.py:192:0: C0304: Final newline missing (missing-final-newline)
+scripts/documentation/rust_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/documentation/rust_docs.py:7:0: C0103: Constant name "max_score" doesn't conform to UPPER_CASE naming style (invalid-name)
+scripts/documentation/rust_docs.py:10:0: R0914: Too many local variables (26/15) (too-many-locals)
+scripts/documentation/rust_docs.py:181:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
+scripts/documentation/rust_docs.py:10:0: R0912: Too many branches (14/12) (too-many-branches)
+************* Module scripts.database.utils
+scripts/database/utils.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/utils.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/utils.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/utils.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module scripts.database.update_security
+scripts/database/update_security.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_security.py:96:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_security.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_security.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_security.py:13:0: R0914: Too many local variables (20/15) (too-many-locals)
+scripts/database/update_security.py:17:21: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
+************* Module scripts.database.update_python
+scripts/database/update_python.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_python.py:170:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_python.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_python.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_python.py:18:0: R0914: Too many local variables (23/15) (too-many-locals)
+************* Module scripts.database.update_rust
+scripts/database/update_rust.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_rust.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_rust.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_rust.py:19:0: R0914: Too many local variables (21/15) (too-many-locals)
+scripts/database/update_rust.py:28:8: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
+************* Module scripts.database.update_docs
+scripts/database/update_docs.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_docs.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/database/update_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_docs.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_docs.py:15:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+************* Module scripts.database.update_performance
+scripts/database/update_performance.py:2:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+scripts/database/update_performance.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/database/update_performance.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/database/update_performance.py:1:33: W0613: Unused argument 'db' (unused-argument)
 ************* Module tests.test_client
 tests/test_client.py:10:0: C0303: Trailing whitespace (trailing-whitespace)
 tests/test_client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_client.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_client.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_client.py:3:0: C0411: third party import "pytest" should be placed before first party imports "client_python.main.main", "security.vault"  (wrong-import-order)
+************* Module tests.test_splitmix64
+tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_splitmix64.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:72:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:87:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:104:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
+************* Module tests.test_rotor_integration
+tests/test_rotor_integration.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_rotor_integration.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_integration.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_integration.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_integration.py:198:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_integration.py:3:0: W0611: Unused inverse_mix_before imported from client_python.crypto (unused-import)
+tests/test_rotor_integration.py:3:0: W0611: Unused mix_before imported from client_python.crypto (unused-import)
+tests/test_rotor_integration.py:3:0: W0611: Unused rotl8 imported from client_python.crypto (unused-import)
+tests/test_rotor_integration.py:3:0: W0611: Unused rotr8 imported from client_python.crypto (unused-import)
+tests/test_rotor_integration.py:3:0: W0611: Unused rotor_groups imported from client_python.crypto (unused-import)
 ************* Module tests.test_rotor_state
 tests/test_rotor_state.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_rotor_state.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -3792,17 +4143,6 @@ tests/test_rotor_state.py:931:0: C0116: Missing function or method docstring (mi
 tests/test_rotor_state.py:946:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_rotor_state.py:967:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_rotor_state.py:1:0: W0611: Unused import pytest (unused-import)
-************* Module tests.__init__
-tests/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
-************* Module tests.test_rotor_seeds
-tests/test_rotor_seeds.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_seeds.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_seeds.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.test_crypto_rotor
 tests/test_crypto_rotor.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_crypto_rotor.py:7:0: C0413: Import "from client_python.crypto import SplitMix64, derive_rotor_seed, generate_rotor, generate_rotors, inverse_permutation, rotor_forward, rotor_inverse" should be placed at the top of the module (wrong-import-position)
@@ -3840,6 +4180,33 @@ tests/test_crypto_rotor.py:359:4: W0621: Redefining name 'communication_key' fro
 tests/test_crypto_rotor.py:400:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_crypto_rotor.py:1:0: W0611: Unused import hashlib (unused-import)
 tests/test_crypto_rotor.py:7:0: W0611: Unused inverse_permutation imported from client_python.crypto (unused-import)
+************* Module tests.test_crypto_pipeline
+tests/test_crypto_pipeline.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_crypto_pipeline.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_rotor_vectors
+tests/test_rotor_vectors.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_rotor_vectors.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_vectors.py:82:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_vectors.py:96:4: C0103: Variable name "EXPECTED_CIPHERTEXT_1024" doesn't conform to snake_case naming style (invalid-name)
+tests/test_rotor_vectors.py:130:4: W0612: Unused variable 'test_reference_vector_1024_bytes' (unused-variable)
+************* Module tests.test_crypto_mix
+tests/test_crypto_mix.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_crypto_mix.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_crypto_mix.py:64:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.test_rotor_seeds
+tests/test_rotor_seeds.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/test_rotor_seeds.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_seeds.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_seeds.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_seeds.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_seeds.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_seeds.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/test_rotor_seeds.py:89:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.__init__
+tests/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
 ************* Module tests.test_fisher_yates
 tests/test_fisher_yates.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_fisher_yates.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -3849,36 +4216,6 @@ tests/test_fisher_yates.py:31:0: C0116: Missing function or method docstring (mi
 tests/test_fisher_yates.py:39:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/test_fisher_yates.py:1:0: W0611: Unused SplitMix64 imported from client_python.crypto (unused-import)
-************* Module tests.test_crypto_pipeline
-tests/test_crypto_pipeline.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_crypto_pipeline.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module tests.test_splitmix64
-tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_splitmix64.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:72:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:87:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:104:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_splitmix64.py:1:0: W0611: Unused import pytest (unused-import)
-************* Module tests.test_rotor_integration
-tests/test_rotor_integration.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_integration.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:74:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:198:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_integration.py:3:0: W0611: Unused inverse_mix_before imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused mix_before imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused rotl8 imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused rotr8 imported from client_python.crypto (unused-import)
-tests/test_rotor_integration.py:3:0: W0611: Unused rotor_groups imported from client_python.crypto (unused-import)
-************* Module tests.test_crypto_mix
-tests/test_crypto_mix.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_crypto_mix.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:45:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_crypto_mix.py:64:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.test_client_class
 tests/test_client_class.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_client_class.py:1:0: C0410: Multiple imports on one line (sys, pytest, socket) (multiple-imports)
@@ -3886,20 +4223,6 @@ tests/test_client_class.py:33:8: E1128: Assigning result of a function call, whe
 tests/test_client_class.py:1:0: C0411: standard import "socket" should be placed before third party import "pytest" (wrong-import-order)
 tests/test_client_class.py:2:0: C0411: standard import "pathlib.Path" should be placed before third party import "pytest" (wrong-import-order)
 tests/test_client_class.py:3:0: C0411: standard import "unittest.mock.patch" should be placed before third party import "pytest" (wrong-import-order)
-************* Module tests.test_rotor_vectors
-tests/test_rotor_vectors.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/test_rotor_vectors.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_vectors.py:82:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/test_rotor_vectors.py:96:4: C0103: Variable name "EXPECTED_CIPHERTEXT_1024" doesn't conform to snake_case naming style (invalid-name)
-tests/test_rotor_vectors.py:130:4: W0612: Unused variable 'test_reference_vector_1024_bytes' (unused-variable)
-************* Module tests.security.test_fuzzing
-tests/security/test_fuzzing.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-tests/security/test_fuzzing.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
-tests/security/test_fuzzing.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
-tests/security/test_fuzzing.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module tests.security.test_load
 tests/security/test_load.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/security/test_load.py:9:0: C0103: Constant name "max_count" doesn't conform to UPPER_CASE naming style (invalid-name)
@@ -3962,310 +4285,14 @@ tests/security/test_sql_injection.py:719:11: W0718: Catching too general excepti
 tests/security/test_sql_injection.py:633:0: R0912: Too many branches (13/12) (too-many-branches)
 tests/security/test_sql_injection.py:710:19: W0612: Unused variable 'failures' (unused-variable)
 tests/security/test_sql_injection.py:23:0: W0611: Unused Any imported from typing (unused-import)
-************* Module scripts.database_manager
-scripts/database_manager.py:529:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database_manager.py:9:0: C0115: Missing class docstring (missing-class-docstring)
-scripts/database_manager.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:360:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:414:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:436:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:438:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:438:4: R0913: Too many arguments (6/5) (too-many-arguments)
-scripts/database_manager.py:438:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
-scripts/database_manager.py:462:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:462:4: R0913: Too many arguments (9/5) (too-many-arguments)
-scripts/database_manager.py:462:4: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
-scripts/database_manager.py:492:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:492:4: R0913: Too many arguments (7/5) (too-many-arguments)
-scripts/database_manager.py:492:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
-************* Module scripts.voir_database
-scripts/voir_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/voir_database.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/voir_database.py:14:22: W0621: Redefining name 'database' from outer scope (line 81) (redefined-outer-name)
-************* Module scripts.generate_problems_md
-scripts/generate_problems_md.py:64:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/generate_problems_md.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/generate_problems_md.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/generate_problems_md.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/generate_problems_md.py:75:7: W0718: Catching too general exception Exception (broad-exception-caught)
-************* Module scripts.recherche
-scripts/recherche.py:197:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/recherche.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/recherche.py:37:4: W0621: Redefining name 'conn' from outer scope (line 9) (redefined-outer-name)
-scripts/recherche.py:38:4: W0621: Redefining name 'cursor' from outer scope (line 10) (redefined-outer-name)
-scripts/recherche.py:52:8: R1704: Redefining argument with the local name 'table' (redefined-argument-from-local)
-scripts/recherche.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/recherche.py:172:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.docs_score
-scripts/docs_score.py:5:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/docs_score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/docs_score.py:1:0: E0401: Unable to import 'documentation.score' (import-error)
-************* Module scripts.transformateur
-scripts/transformateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/transformateur.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
-************* Module scripts.update_database
-scripts/update_database.py:15:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/update_database.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/update_database.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/update_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/update_database.py:1:0: E0401: Unable to import 'database.update_python' (import-error)
-scripts/update_database.py:1:0: E0611: No name 'update_python' in module 'database' (no-name-in-module)
-scripts/update_database.py:2:0: E0401: Unable to import 'database.update_docs' (import-error)
-scripts/update_database.py:2:0: E0611: No name 'update_docs' in module 'database' (no-name-in-module)
-scripts/update_database.py:3:0: E0401: Unable to import 'database.update_security' (import-error)
-scripts/update_database.py:3:0: E0611: No name 'update_security' in module 'database' (no-name-in-module)
-scripts/update_database.py:4:0: E0401: Unable to import 'database.update_rust' (import-error)
-scripts/update_database.py:4:0: E0611: No name 'update_rust' in module 'database' (no-name-in-module)
-scripts/update_database.py:5:0: E0401: Unable to import 'database.update_performance' (import-error)
-scripts/update_database.py:5:0: E0611: No name 'update_performance' in module 'database' (no-name-in-module)
-scripts/update_database.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/update_database.py:5:0: W0611: Unused update_performance_database imported from database.update_performance (unused-import)
-************* Module scripts.database.update_rust
-scripts/database/update_rust.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_rust.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_rust.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_rust.py:19:0: R0914: Too many local variables (21/15) (too-many-locals)
-scripts/database/update_rust.py:28:8: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
-************* Module scripts.database.update_performance
-scripts/database/update_performance.py:2:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-scripts/database/update_performance.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_performance.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_performance.py:1:33: W0613: Unused argument 'db' (unused-argument)
-************* Module scripts.database.utils
-scripts/database/utils.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/utils.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/utils.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/utils.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.database.update_security
-scripts/database/update_security.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_security.py:96:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_security.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_security.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_security.py:13:0: R0914: Too many local variables (20/15) (too-many-locals)
-scripts/database/update_security.py:17:21: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
-************* Module scripts.database.update_python
-scripts/database/update_python.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_python.py:170:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_python.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_python.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_python.py:18:0: R0914: Too many local variables (23/15) (too-many-locals)
-************* Module scripts.database.update_docs
-scripts/database/update_docs.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_docs.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_docs.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_docs.py:15:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-************* Module scripts.utils.open_report
-scripts/utils/open_report.py:829:0: C0304: Final newline missing (missing-final-newline)
-scripts/utils/open_report.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/utils/open_report.py:13:0: E0401: Unable to import 'zstandard' (import-error)
-scripts/utils/open_report.py:28:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/open_report.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/open_report.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/open_report.py:234:11: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/utils/open_report.py:212:16: C0415: Import outside toplevel (tarfile) (import-outside-toplevel)
-scripts/utils/open_report.py:387:0: R0914: Too many local variables (17/15) (too-many-locals)
-scripts/utils/open_report.py:437:4: C0415: Import outside toplevel (tarfile) (import-outside-toplevel)
-scripts/utils/open_report.py:485:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/utils/open_report.py:545:14: C3001: Lambda expression assigned to a variable. Define a function using the "def" keyword instead. (unnecessary-lambda-assignment)
-scripts/utils/open_report.py:595:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/open_report.py:595:0: R0915: Too many statements (52/50) (too-many-statements)
-scripts/utils/open_report.py:5:0: W0611: Unused import subprocess (unused-import)
-************* Module scripts.utils.calculateur
-scripts/utils/calculateur.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:50:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:53:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:57:0: W0311: Bad indentation. Found 13 spaces, expected 8 (bad-indentation)
-scripts/utils/calculateur.py:63:0: C0301: Line too long (144/100) (line-too-long)
-scripts/utils/calculateur.py:65:0: C0301: Line too long (121/100) (line-too-long)
-scripts/utils/calculateur.py:111:0: C0301: Line too long (105/100) (line-too-long)
-scripts/utils/calculateur.py:116:0: C0305: Trailing newlines (trailing-newlines)
-scripts/utils/calculateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/utils/calculateur.py:4:0: E0401: Unable to import 'pandas' (import-error)
-scripts/utils/calculateur.py:6:0: E0401: Unable to import 'gestionnaire_de_fichiers' (import-error)
-scripts/utils/calculateur.py:17:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-scripts/utils/calculateur.py:28:17: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-scripts/utils/calculateur.py:28:46: W0612: Unused variable 'fichier' (unused-variable)
-scripts/utils/calculateur.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/calculateur.py:51:23: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/utils/calculateur.py:41:20: W0612: Unused variable 'sous_dossiers' (unused-variable)
-scripts/utils/calculateur.py:57:69: E0602: Undefined variable 'fichier' (undefined-variable)
-scripts/utils/calculateur.py:56:8: W0612: Unused variable 'values' (unused-variable)
-scripts/utils/calculateur.py:107:8: W0612: Unused variable 'existing_sheets' (unused-variable)
-scripts/utils/calculateur.py:5:0: C0411: standard import "datetime.datetime" should be placed before third party import "pandas" (wrong-import-order)
-scripts/utils/calculateur.py:6:0: W0611: Unused gestionnaire_de_fichiers imported as gf (unused-import)
-************* Module scripts.utils.file_chercheur
-scripts/utils/file_chercheur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/utils/file_chercheur.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.documentation.spelling
-scripts/documentation/spelling.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-************* Module scripts.documentation.report
-scripts/documentation/report.py:36:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/report.py:37:0: C0301: Line too long (136/100) (line-too-long)
-scripts/documentation/report.py:39:0: C0301: Line too long (108/100) (line-too-long)
-scripts/documentation/report.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/report.py:41:0: C0301: Line too long (140/100) (line-too-long)
-scripts/documentation/report.py:42:0: C0301: Line too long (122/100) (line-too-long)
-scripts/documentation/report.py:57:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/report.py:70:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/report.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/report.py:11:0: R0911: Too many return statements (10/6) (too-many-return-statements)
-scripts/documentation/report.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/report.py:34:0: R0914: Too many local variables (17/15) (too-many-locals)
-************* Module scripts.documentation.organization
-scripts/documentation/organization.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/organization.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.documentation.score
-scripts/documentation/score.py:56:0: C0301: Line too long (113/100) (line-too-long)
-scripts/documentation/score.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/score.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/score.py:33:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/score.py:51:12: C0415: Import outside toplevel (json) (import-outside-toplevel)
-scripts/documentation/score.py:33:8: W0612: Unused variable 'e' (unused-variable)
-scripts/documentation/score.py:10:0: C0411: standard import "traceback" should be placed before local imports "markdown.check_markdown", "titles.check_titles", "spelling.check_spelling" (...) "rust_docs.check_rust_docs", "organization.check_organization", "report.generate_report" (wrong-import-order)
-************* Module scripts.documentation.links
-scripts/documentation/links.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/links.py:75:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/links.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/links.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:61:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
-scripts/documentation/links.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:88:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:114:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:144:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:172:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:194:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/links.py:229:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.documentation.rust_docs
-scripts/documentation/rust_docs.py:192:0: C0304: Final newline missing (missing-final-newline)
-scripts/documentation/rust_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/rust_docs.py:7:0: C0103: Constant name "max_score" doesn't conform to UPPER_CASE naming style (invalid-name)
-scripts/documentation/rust_docs.py:10:0: R0914: Too many local variables (26/15) (too-many-locals)
-scripts/documentation/rust_docs.py:181:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
-scripts/documentation/rust_docs.py:10:0: R0912: Too many branches (14/12) (too-many-branches)
-************* Module scripts.documentation.problem
-scripts/documentation/problem.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/problem.py:3:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/problem.py:2:0: W0611: Unused Any imported from typing (unused-import)
-************* Module scripts.documentation.python_docs
-scripts/documentation/python_docs.py:161:0: C0301: Line too long (116/100) (line-too-long)
-scripts/documentation/python_docs.py:175:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/python_docs.py:191:0: C0301: Line too long (106/100) (line-too-long)
-scripts/documentation/python_docs.py:220:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/python_docs.py:94:9: W0511: TODO / FIXME (fixme)
-scripts/documentation/python_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/python_docs.py:22:4: C0103: Variable name "MAX_SCORE" doesn't conform to snake_case naming style (invalid-name)
-scripts/documentation/python_docs.py:64:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/python_docs.py:9:0: R0912: Too many branches (17/12) (too-many-branches)
-scripts/documentation/python_docs.py:9:0: R0915: Too many statements (51/50) (too-many-statements)
-************* Module scripts.documentation.markdown
-scripts/documentation/markdown.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/markdown.py:197:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/markdown.py:234:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/markdown.py:277:0: C0305: Trailing newlines (trailing-newlines)
-scripts/documentation/markdown.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/markdown.py:27:0: C0413: Import "import json" should be placed at the top of the module (wrong-import-position)
-scripts/documentation/markdown.py:32:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:42:11: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:58:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:99:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:119:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:124:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:131:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:136:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:148:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:155:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:167:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:174:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:183:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:187:4: C0103: Variable name "LIST_RULES" doesn't conform to snake_case naming style (invalid-name)
-scripts/documentation/markdown.py:225:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:229:4: C0103: Variable name "TABLE_RULES" doesn't conform to snake_case naming style (invalid-name)
-scripts/documentation/markdown.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/markdown.py:269:15: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/documentation/markdown.py:27:0: C0411: standard import "json" should be placed before local import "problem.add_problem" (wrong-import-order)
-************* Module scripts.documentation.titles
-scripts/documentation/titles.py:63:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:85:0: C0301: Line too long (112/100) (line-too-long)
-scripts/documentation/titles.py:107:0: C0301: Line too long (102/100) (line-too-long)
-scripts/documentation/titles.py:128:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:149:0: C0301: Line too long (120/100) (line-too-long)
-scripts/documentation/titles.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:173:0: C0301: Line too long (129/100) (line-too-long)
-scripts/documentation/titles.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/titles.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/documentation/titles.py:4:0: E0401: Unable to import 'utils.file_chercheur' (import-error)
-scripts/documentation/titles.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:27:24: E0602: Undefined variable 'file' (undefined-variable)
-scripts/documentation/titles.py:43:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
-scripts/documentation/titles.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:69:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:93:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:116:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:134:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:156:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/documentation/titles.py:4:0: C0411: third party import "utils.file_chercheur.iter_files" should be placed before local import "problem.add_problem" (wrong-import-order)
-scripts/documentation/titles.py:1:0: W0611: Unused Path imported from pathlib (unused-import)
-************* Module security.__init__
-security/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
-************* Module security.vault
-security/vault.py:19:0: C0303: Trailing whitespace (trailing-whitespace)
-security/vault.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
-security/vault.py:138:0: C0303: Trailing whitespace (trailing-whitespace)
-security/vault.py:166:0: C0303: Trailing whitespace (trailing-whitespace)
-security/vault.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-security/vault.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
-security/vault.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
-security/vault.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-security/vault.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module client_python.client
-client_python/client.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:79:13: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:88:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:105:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:107:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:134:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:164:0: C0303: Trailing whitespace (trailing-whitespace)
-client_python/client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/client.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/client.py:81:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:86:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/client.py:108:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:144:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/client.py:154:4: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module client_python.__init__
-client_python/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
-************* Module client_python.packet
-client_python/packet.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packet.py:5:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packet.py:13:4: C0103: Class constant name "LoginResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
-client_python/packet.py:14:4: C0103: Class constant name "SignUpResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
-client_python/packet.py:19:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packet.py:31:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packet.py:53:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packet.py:66:12: C0415: Import outside toplevel (packets.login.LoginPacket) (import-outside-toplevel)
-client_python/packet.py:71:12: C0415: Import outside toplevel (packets.chat.ChatPacket) (import-outside-toplevel)
-client_python/packet.py:76:12: C0415: Import outside toplevel (packets.move.MovePacket) (import-outside-toplevel)
-client_python/packet.py:81:12: C0415: Import outside toplevel (packets.ping.PingPacket) (import-outside-toplevel)
-client_python/packet.py:84:12: C0415: Import outside toplevel (packets.log.LogPacket) (import-outside-toplevel)
-client_python/packet.py:87:12: C0415: Import outside toplevel (packets.singup.SingupPacket) (import-outside-toplevel)
-client_python/packet.py:90:12: C0415: Import outside toplevel (packets.ban.BanPacket) (import-outside-toplevel)
-client_python/packet.py:92:11: R1714: Consider merging these comparisons with 'in' by using 'packet_type in (PacketType.LoginResponse, PacketType.SignUpResponse)'. Use a set instead if elements are hashable. (consider-using-in)
-client_python/packet.py:98:12: C0415: Import outside toplevel (packets.Deco.decoPacket) (import-outside-toplevel)
-client_python/packet.py:99:19: E1101: Class 'decoPacket' has no 'frompayload' member (no-member)
-client_python/packet.py:53:4: R0911: Too many return statements (10/6) (too-many-return-statements)
-************* Module client_python.logs
-client_python/logs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/logs.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module tests.security.test_fuzzing
+tests/security/test_fuzzing.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+tests/security/test_fuzzing.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/security/test_fuzzing.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/security/test_fuzzing.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
+tests/security/test_fuzzing.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/security/test_fuzzing.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
+tests/security/test_fuzzing.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module client_python.main
 client_python/main.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/main.py:29:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -4332,17 +4359,62 @@ client_python/crypto.py:785:0: R0917: Too many positional arguments (6/5) (too-m
 client_python/crypto.py:841:0: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/crypto.py:841:0: R0913: Too many arguments (6/5) (too-many-arguments)
 client_python/crypto.py:841:0: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
-************* Module client_python.packets.ping
-client_python/packets/ping.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/ping.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+************* Module client_python.packet
+client_python/packet.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packet.py:5:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packet.py:13:4: C0103: Class constant name "LoginResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
+client_python/packet.py:14:4: C0103: Class constant name "SignUpResponse" doesn't conform to UPPER_CASE naming style (invalid-name)
+client_python/packet.py:19:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packet.py:31:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:53:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packet.py:66:12: C0415: Import outside toplevel (packets.login.LoginPacket) (import-outside-toplevel)
+client_python/packet.py:71:12: C0415: Import outside toplevel (packets.chat.ChatPacket) (import-outside-toplevel)
+client_python/packet.py:76:12: C0415: Import outside toplevel (packets.move.MovePacket) (import-outside-toplevel)
+client_python/packet.py:81:12: C0415: Import outside toplevel (packets.ping.PingPacket) (import-outside-toplevel)
+client_python/packet.py:84:12: C0415: Import outside toplevel (packets.log.LogPacket) (import-outside-toplevel)
+client_python/packet.py:87:12: C0415: Import outside toplevel (packets.singup.SingupPacket) (import-outside-toplevel)
+client_python/packet.py:90:12: C0415: Import outside toplevel (packets.ban.BanPacket) (import-outside-toplevel)
+client_python/packet.py:92:11: R1714: Consider merging these comparisons with 'in' by using 'packet_type in (PacketType.LoginResponse, PacketType.SignUpResponse)'. Use a set instead if elements are hashable. (consider-using-in)
+client_python/packet.py:98:12: C0415: Import outside toplevel (packets.Deco.decoPacket) (import-outside-toplevel)
+client_python/packet.py:99:19: E1101: Class 'decoPacket' has no 'frompayload' member (no-member)
+client_python/packet.py:53:4: R0911: Too many return statements (10/6) (too-many-return-statements)
+************* Module client_python.logs
+client_python/logs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/logs.py:4:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.client
+client_python/client.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:72:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:79:13: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:88:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:105:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:107:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:134:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:164:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/client.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/client.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/client.py:81:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:86:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/client.py:108:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:144:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/client.py:154:4: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.__init__
+client_python/__init__.py:1:0: C0305: Trailing newlines (trailing-newlines)
+************* Module client_python.packets.log
+client_python/packets/log.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/log.py:4:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/log.py:12:4: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/packets/log.py:13:15: E1121: Too many positional arguments for constructor call (too-many-function-args)
 ************* Module client_python.packets.move
 client_python/packets/move.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/move.py:6:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packets/move.py:19:4: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module client_python.packets.login
-client_python/packets/login.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/login.py:6:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/login.py:29:4: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.packets.singup
+client_python/packets/singup.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/singup.py:6:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/singup.py:29:4: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module client_python.packets.ping
+client_python/packets/ping.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/ping.py:4:0: C0115: Missing class docstring (missing-class-docstring)
 ************* Module client_python.packets.ban
 client_python/packets/ban.py:39:0: C0304: Final newline missing (missing-final-newline)
 client_python/packets/ban.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -4351,15 +4423,6 @@ client_python/packets/ban.py:4:0: R0903: Too few public methods (0/2) (too-few-p
 client_python/packets/ban.py:9:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packets/ban.py:23:4: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/packets/ban.py:9:0: R0903: Too few public methods (1/2) (too-few-public-methods)
-************* Module client_python.packets.singup
-client_python/packets/singup.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/singup.py:6:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/singup.py:29:4: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module client_python.packets.log
-client_python/packets/log.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/packets/log.py:4:0: C0115: Missing class docstring (missing-class-docstring)
-client_python/packets/log.py:12:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/packets/log.py:13:15: E1121: Too many positional arguments for constructor call (too-many-function-args)
 ************* Module client_python.packets.Deco
 client_python/packets/Deco.py:5:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
 client_python/packets/Deco.py:7:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -4376,78 +4439,15 @@ client_python/packets/Deco.py:3:0: R0903: Too few public methods (0/2) (too-few-
 client_python/packets/Deco.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
 client_python/packets/Deco.py:20:9: E1102: cls is not callable (not-callable)
 client_python/packets/Deco.py:1:0: W0611: Unused Packet imported from packet (unused-import)
+************* Module client_python.packets.login
+client_python/packets/login.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+client_python/packets/login.py:6:0: C0115: Missing class docstring (missing-class-docstring)
+client_python/packets/login.py:29:4: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module client_python.packets.chat
 client_python/packets/chat.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/packets/chat.py:4:0: C0115: Missing class docstring (missing-class-docstring)
 client_python/packets/chat.py:15:4: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_web_security
-.github/security/test_web_security.py:466:0: C0303: Trailing whitespace (trailing-whitespace)
-.github/security/test_web_security.py:30:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_web_security.py:36:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:129:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:262:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:317:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_web_security.py:362:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_filesystem
-.github/security/test_filesystem.py:35:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:47:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:53:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_filesystem.py:65:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_python_security
-.github/security/test_python_security.py:22:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:34:0: C0115: Missing class docstring (missing-class-docstring)
-.github/security/test_python_security.py:43:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:62:4: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:62:4: C0103: Method name "visit_Call" doesn't conform to snake_case naming style (invalid-name)
-.github/security/test_python_security.py:204:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_python_security.py:240:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.attack_test
-.github/security/attack_test.py:13:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:52:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:72:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:92:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:99:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:181:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:188:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:240:0: W0105: String statement has no effect (pointless-string-statement)
-.github/security/attack_test.py:247:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:292:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:326:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:359:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:383:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:421:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:461:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:480:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:533:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/attack_test.py:584:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_secrets
-.github/security/test_secrets.py:102:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:128:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:139:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_secrets.py:191:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.integrity_check
-.github/security/integrity_check.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:79:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:94:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:121:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:137:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:162:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:185:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:206:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/integrity_check.py:268:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_rust_security
-.github/security/test_rust_security.py:59:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
-.github/security/test_rust_security.py:114:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module .github.security.test_git_security
-.github/security/test_git_security.py:51:14: R1732: Consider using 'with' for resource-allocating operations (consider-using-with)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==client_python.packets.login:[39:77]
 ==client_python.packets.singup:[39:77]
         email_length = struct.unpack(
@@ -4488,7 +4488,7 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         ].decode("utf-8")
 
         return cls(email, password) (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[54:85]
 ==tests.test_rotor_vectors:[37:64]
         value = mix_before(
@@ -4518,7 +4518,35 @@ client_python/packets/chat.py:15:4: C0116: Missing function or method docstring 
         ciphertext.append(value)
         previous_ciphertext = value
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==scripts.database.update_docs:[37:62]
+==scripts.database.update_python:[25:54]
+    run_number = int(
+        os.environ.get(
+            "GITHUB_RUN_NUMBER",
+            0
+        )
+    )
+
+    branch = os.environ.get(
+        "GITHUB_REF",
+        "unknown"
+    )
+
+    commit = os.environ.get(
+        "GITHUB_SHA",
+        "unknown"
+    )
+
+
+
+    run_id = db.add_run(
+        run_number,
+        branch,
+        commit
+    )
+ (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[375:401]
 ==tests.test_rotor_integration:[41:78]
     original = value
@@ -4558,39 +4586,7 @@ def test_rotor_state_multiple_updates(
     packet_type,
 ):
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_docs:[37:62]
-==scripts.database.update_python:[25:54]
-    run_number = int(
-        os.environ.get(
-            "GITHUB_RUN_NUMBER",
-            0
-        )
-    )
-
-    branch = os.environ.get(
-        "GITHUB_REF",
-        "unknown"
-    )
-
-    commit = os.environ.get(
-        "GITHUB_SHA",
-        "unknown"
-    )
-
-
-
-    run_id = db.add_run(
-        run_number,
-        branch,
-        commit
-    )
-
-    # ==========================================
-    # Quality metrics
-    # ==========================================
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
 ==.github.security.test_python_security:[6:22]
 ROOT = Path.cwd().resolve()
@@ -4609,23 +4605,22 @@ IGNORED_DIRECTORIES = {
 
 
 def should_ignore(path: Path) -> bool: (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_rotor_integration:[80:93]
-==tests.test_rotor_vectors:[16:29]
-    state = RotorState(
-        communication_key=communication_key,
-        packet_type=packet_type,
-    )
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==.github.security.test_filesystem:[6:18]
+==.github.security.test_secrets:[6:18]
+ROOT = Path.cwd().resolve()
 
-    rotors = [
-        generate_rotor(
-            communication_key,
-            rotor_id,
-        )
-        for rotor_id in range(1, 17)
-    ]
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+IGNORED_DIRECTORIES = {
+    ".git",
+    "target",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".venv",
+    "venv",
+    "node_modules", (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.database.update_python:[99:116]
 ==scripts.database.update_rust:[96:113]
         report
@@ -4645,7 +4640,23 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
     # Détails Clippy
     # ==========================================
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_rotor_integration:[80:93]
+==tests.test_rotor_vectors:[16:29]
+    state = RotorState(
+        communication_key=communication_key,
+        packet_type=packet_type,
+    )
+
+    rotors = [
+        generate_rotor(
+            communication_key,
+            rotor_id,
+        )
+        for rotor_id in range(1, 17)
+    ]
+ (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==client_python.packets.login:[9:23]
 ==client_python.packets.singup:[9:23]
         self.email = email
@@ -4662,22 +4673,7 @@ def should_ignore(path: Path) -> bool: (duplicate-code)
         )
 
         super().__init__( (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[6:18]
-==.github.security.test_secrets:[6:18]
-ROOT = Path.cwd().resolve()
-
-IGNORED_DIRECTORIES = {
-    ".git",
-    "target",
-    "__pycache__",
-    ".pytest_cache",
-    ".mypy_cache",
-    ".ruff_cache",
-    ".venv",
-    "venv",
-    "node_modules", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[24:36]
 ==tests.test_rotor_integration:[81:93]
         communication_key=communication_key,
@@ -4692,7 +4688,7 @@ IGNORED_DIRECTORIES = {
         for rotor_id in range(1, 17)
     ]
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==server_rust.vendor.unicode-normalization.scripts.unicode:[28:38]
 ==server_rust.vendor.unicode-properties.scripts.unicode:[21:31]
 // file at the top-level directory of this distribution and at
@@ -4705,22 +4701,7 @@ IGNORED_DIRECTORIES = {
 // except according to those terms.
 
 // NOTE: The following code was generated by "scripts/unicode.py", do not edit directly (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[101:112]
-==tests.test_crypto_rotor:[386:398]
-        )
-
-    # Inverse : R16 -> R1
-    for rotor, position in reversed(
-        list(zip(rotors, positions))
-    ):
-        value = rotor_inverse(
-            value,
-            position,
-            rotor,
-        )
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:20]
 ==.github.security.test_filesystem:[8:17]
 IGNORED_DIRECTORIES = {
@@ -4732,7 +4713,7 @@ IGNORED_DIRECTORIES = {
     ".ruff_cache",
     ".venv",
     "venv", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
     ".env",
@@ -4745,64 +4726,21 @@ IGNORED_DIRECTORIES = {
     "service-account.json",
 }
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[26:36]
-==tests.test_rotor_integration:[27:37]
-    )
-
-    rotors = [
-        generate_rotor(
-            communication_key,
-            rotor_id,
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_pipeline:[101:112]
+==tests.test_rotor_integration:[52:64]
         )
-        for rotor_id in range(1, 17)
-    ]
+
+        for rotor, position in reversed(
+            list(zip(rotors, positions))
+        ):
+            value = rotor_inverse(
+                value,
+                position,
+                rotor,
+            )
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_python:[38:54]
-==scripts.database.update_rust:[36:52]
-        "GITHUB_SHA",
-        "unknown"
-    )
-
-
-
-    run_id = db.add_run(
-        run_number,
-        branch,
-        commit
-    )
-
-    # ==========================================
-    # Résumé Rust
-    # ==========================================
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.documentation.links:[19:27]
-==scripts.documentation.python_docs:[28:36]
-        if not any(
-            p in {
-                ".git",
-                "__pycache__",
-                ".venv",
-                "venv",
-                ".mypy_cache",
-                ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==.github.security.test_filesystem:[35:47]
-==.github.security.test_python_security:[22:33]
-    try:
-        relative = path.relative_to(ROOT)
-    except ValueError:
-        return True
-
-    return any(
-        part in IGNORED_DIRECTORIES
-        for part in relative.parts
-    )
-
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.attack_test:[79:102]
 ==.github.security.integrity_check:[54:67]
     digest = hashlib.sha256()
@@ -4828,9 +4766,55 @@ def clone_repository(
     destination: Path,
 ) -> None:
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[28:36]
-==tests.test_crypto_rotor:[200:208]
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==.github.security.test_filesystem:[35:47]
+==.github.security.test_python_security:[22:33]
+    try:
+        relative = path.relative_to(ROOT)
+    except ValueError:
+        return True
+
+    return any(
+        part in IGNORED_DIRECTORIES
+        for part in relative.parts
+    )
+
+ (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[19:27]
+==scripts.documentation.python_docs:[28:36]
+        if not any(
+            p in {
+                ".git",
+                "__pycache__",
+                ".venv",
+                "venv",
+                ".mypy_cache",
+                ".pytest_cache", (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==scripts.database.update_python:[38:54]
+==scripts.database.update_rust:[36:52]
+        "GITHUB_SHA",
+        "unknown"
+    )
+
+
+
+    run_id = db.add_run(
+        run_number,
+        branch,
+        commit
+    )
+
+    # ==========================================
+    # Résumé Rust
+    # ==========================================
+ (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_pipeline:[26:36]
+==tests.test_rotor_integration:[27:37]
+    )
+
     rotors = [
         generate_rotor(
             communication_key,
@@ -4839,8 +4823,28 @@ def clone_repository(
         for rotor_id in range(1, 17)
     ]
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_rotor:[302:310]
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==scripts.database.update_security:[73:80]
+==scripts.database_manager:[467:474]
+        test,
+        severity,
+        confidence,
+        cwe,
+        info,
+        file,
+        line, (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.links:[39:46]
+==scripts.documentation.markdown:[61:68]
+    if not files:
+        return {
+            "score": 0,
+            "max_score": MAX_SCORE,
+            "results": {},
+            "problems": [{
+                "file": "", (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_rotor:[200:208]
 ==tests.test_rotor_integration:[29:37]
     rotors = [
         generate_rotor(
@@ -4850,8 +4854,8 @@ def clone_repository(
         for rotor_id in range(1, 17)
     ]
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_rotor:[362:370]
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_rotor:[302:310]
 ==tests.test_rotor_integration:[85:93]
     rotors = [
         generate_rotor(
@@ -4861,7 +4865,7 @@ def clone_repository(
         for rotor_id in range(1, 17)
     ]
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[33:42]
 ==tests.test_rotor_integration:[141:152]
         for rotor_id in range(1, 17)
@@ -4875,7 +4879,18 @@ def clone_repository(
     ciphertext = []
 
     # Chiffrement : un update par octet (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_pipeline:[28:36]
+==tests.test_crypto_rotor:[362:370]
+    rotors = [
+        generate_rotor(
+            communication_key,
+            rotor_id,
+        )
+        for rotor_id in range(1, 17)
+    ]
+ (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[95:103]
 ==tests.test_rotor_vectors:[53:61]
             value,
@@ -4886,46 +4901,7 @@ def clone_repository(
             packet_type,
         )
  (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_security:[73:80]
-==scripts.database_manager:[467:474]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.documentation.links:[39:46]
-==scripts.documentation.markdown:[61:68]
-    if not files:
-        return {
-            "score": 0,
-            "max_score": MAX_SCORE,
-            "results": {},
-            "problems": [{
-                "file": "", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[113:120]
-==tests.test_rotor_vectors:[38:45]
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext,
-        )
- (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.documentation.links:[39:45]
-==scripts.documentation.titles:[20:26]
-    if not files:
-        return {
-            "score": 0,
-            "max_score": MAX_SCORE,
-            "results": {},
-            "problems": [{ (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:13]
 ==.github.security.test_rust_security:[6:13]
 ROOT = Path.cwd().resolve()
@@ -4935,7 +4911,7 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[69:79]
 ==.github.security.test_secrets:[107:117]
     if path.name in IGNORED_FILES:
@@ -4948,47 +4924,26 @@ IGNORED_DIRECTORIES = {
 
 
 def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[55:60]
-==tests.test_rotor_vectors:[53:58]
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==scripts.documentation.markdown:[61:67]
+==scripts.documentation.titles:[20:26]
+    if not files:
+        return {
+            "score": 0,
+            "max_score": MAX_SCORE,
+            "results": {},
+            "problems": [{ (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_pipeline:[113:120]
+==tests.test_rotor_vectors:[38:45]
             value,
             communication_key,
             positions,
             byte_counter,
-            previous_ciphertext, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_pipeline:[70:75]
-==tests.test_rotor_vectors:[38:43]
-            value,
-            communication_key,
-            positions,
-            byte_counter,
-            previous_ciphertext, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_mix:[68:73]
-==tests.test_rotor_integration:[202:207]
-        value,
-        communication_key,
-        rotor_positions,
-        42,
-        123, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==tests.test_crypto_mix:[76:81]
-==tests.test_rotor_integration:[211:216]
-        mixed,
-        communication_key,
-        rotor_positions,
-        42,
-        123, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_security:[48:53]
-==scripts.database_manager:[442:447]
-            run_id,
-            high,
-            medium,
-            low,
-            total, (duplicate-code)
-.github/security/test_git_security.py:1:0: R0801: Similar lines in 2 files
+            previous_ciphertext,
+        )
+ (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.integrity_check:[11:16]
 ==.github.security.test_rust_security:[8:13]
 IGNORED_DIRECTORIES = {
@@ -4996,14 +4951,54 @@ IGNORED_DIRECTORIES = {
     "target",
     "__pycache__",
     ".pytest_cache", (duplicate-code)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
-.github/security/test_git_security.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==scripts.database.update_security:[48:53]
+==scripts.database_manager:[442:447]
+        run_id,
+        high,
+        medium,
+        low,
+        total, (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_mix:[68:73]
+==tests.test_rotor_integration:[202:207]
+        value,
+        communication_key,
+        rotor_positions,
+        42,
+        123, (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_mix:[76:81]
+==tests.test_rotor_integration:[211:216]
+        mixed,
+        communication_key,
+        rotor_positions,
+        42,
+        123, (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_pipeline:[55:60]
+==tests.test_rotor_vectors:[53:58]
+            value,
+            communication_key,
+            positions,
+            byte_counter,
+            previous_ciphertext, (duplicate-code)
+client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
+==tests.test_crypto_pipeline:[70:75]
+==tests.test_rotor_vectors:[38:43]
+            value,
+            communication_key,
+            positions,
+            byte_counter,
+            previous_ciphertext, (duplicate-code)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 
 -----------------------------------
 Your code has been rated at 8.06/10
@@ -5034,7 +5029,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.58s ===============================
+=============================== 1 error in 0.84s ===============================
 
 </details>
 
