@@ -14,7 +14,7 @@
 
 **The Last Signal Online** es un MMORPG de supervivencia en un mundo postapocalíptico donde los jugadores deben colaborar, explorar y sobrevivir en un universo en constante evolución.
 
-Tras un misterioso acontecimiento que transformó la civilización, los últimos supervivientes intentan reconstruir un nuevo mundo mientras descubren el origen de la última señal emitida por una antigua infraestructura olvidada.
+Tras un misterioso acontecimiento que transformó la civilización, los últimos supervivientes intentan reconstruir un nuevo mundo mientras descubren el origen de la última señal emitida por una pieza olvidada de infraestructura antigua.
 
 El proyecto tiene como objetivo crear una experiencia multijugador inmersiva que combine:
 
@@ -31,7 +31,7 @@ El proyecto tiene como objetivo crear una experiencia multijugador inmersiva que
 
 ## 🤝 Contribución
 
-**The Last Signal** es un proyecto de código abierto y damos la bienvenida a las contribuciones de desarrolladores, testers, redactores y otros participantes interesados.
+**The Last Signal** es un proyecto de código abierto y damos la bienvenida a las contribuciones de desarrolladores, testers, escritores y otros participantes interesados.
 
 ### 🟢 ¿Eres principiante?
 
@@ -56,7 +56,8 @@ Se buscan especialmente contribuciones en:
 * 🔐 Seguridad
 * ⚙️ CI/CD
 
-👉 **Consulta las **[**Issues abiertas**](../../issues) para encontrar una tarea.
+👉 **Consulta las** [**Issues abiertas**](../../issues) para encontrar una tarea.
+
 Para garantizar la calidad y la coherencia del proyecto, sigue estas reglas:
 
 * 📐 Respetar las convenciones del proyecto
@@ -111,7 +112,7 @@ El juego se desarrolla con un enfoque similar al de un verdadero estudio:
 | ------------- | ----------------------------- |
 | 🦀 Rust       | Servidor multijugador         |
 | 🌐 Networking | Comunicación cliente/servidor |
-| 🗄 PostgreSQL | Base de datos                 |
+| 🗄 SQLite | Base de datos                 |
 
 ---
 
@@ -120,22 +121,27 @@ El juego se desarrolla con un enfoque similar al de un verdadero estudio:
 ```text
 The-last-signal/
 │
-├── client_python/              # Cliente del juego
+├── assets/                     # Recursos Graficos y de Audio
 │
-├── server_rust/              # Servidor Rust
+├── client_python/              # Cliente del Juego
 │
-├── database/            # Scripts de base de datos
+├── database/                   # Scripts de Bases de Datos
 │
-├── assets/              # Recursos gráficos y de audio
-│
-├── docs/                # Documentación completa
-│   ├── gdd/             # Game Design Document
-│   ├── tdd/             # Technical Design Document
+├── docs/                       # Documentación Completa (Francés)
+│   ├── gdd/                    # Documentación del Diseño de Juego
+│   ├── tdd/                    # Documentación del Diseño Técnico
 │   └── ...
 │
-├── scripts/             # Herramientas de desarrollo
+├── docs_ENG/                   # Documentación Completa (Inglés)
+│   ├── gdd/                    # Documentación del Diseño de Juego
+│   ├── tdd/                    # Documentación del Diseño Técnico
+│   └── ...
 │
-├── tests/               # Tests automatizados
+├── scripts/                    # Herramientas de Desarrollo
+│
+├── server_rust/                # Servidor Rust
+│
+├── tests/                      # Tests Automatizados
 │
 ├── README.md
 └── LICENSE
