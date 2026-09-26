@@ -49,7 +49,29 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Ouverture d'un trésor et ajout à l'inventaire (livres uniquement)
     // ------------------------------------------
 
-    let account_id: i64 = 1;
+    
+    
+    
+    let server =
+        Server::new(
+            "127.0.0.1:5000",
+            database,
+        )
+        .await?;
+
+
+    server.start().await;
+    
+
+    Ok(())
+}
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_tresor() {
+        let account_id: i64 = 1;
     let mut tresor = Tresor::new();
     let mut inventaire = Inventaire::new(database.pool().clone(), account_id).await?;
 
@@ -71,18 +93,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             inventaire.ajouter_objet(&nom_objet, u64::from(quantite)).await?;
             info!("✓ Livre ajouté à l'inventaire : {nom_objet} x{quantite}");
         }
+    
+        }
     }
-    
-    let server =
-        Server::new(
-            "127.0.0.1:5000",
-            database,
-        )
-        .await?;
-
-
-    server.start().await;
-    
-
-    Ok(())
 }
