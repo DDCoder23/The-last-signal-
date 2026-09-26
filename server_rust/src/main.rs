@@ -69,8 +69,18 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 mod tests {
     use super::*;
 
-    #[test]
-    fn test_tresor() {
+   #[tokio::test]
+    async fn test_tresor() -> Result<(), Box<dyn std::error::Error>> {
+        
+
+        let database_url = std::env::var("DATABASE_URL")?;
+        let database_path = std::env::var("DATABASE_PATH")?;
+
+        let database =
+            DatabaseManager::new(&database_path, &database_url)
+                .await?;
+
+        database.ping().await?;
         let account_id: i64 = 1;
     let mut tresor = Tresor::new();
     let mut inventaire = Inventaire::new(database.pool().clone(), account_id).await?;
