@@ -408,6 +408,115 @@ impl Inventaire {
 
     Ok(())
     }
+    pub async fn retirer_tx(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    account_id: i64,
+    objet_id: i64,
+    quantite: u64,
+) -> Result<(), sqlx::Error> {
+    if quantite == 0 {
+        return Err(sqlx::Error::Protocol(
+            "La quantité à retirer doit être supérieure à 0".into(),
+        ));
+    }
+
+    let quantite_i64 = i64::try_from(quantite).map_err(|_| {
+        sqlx::Error::Protocol(
+            "La quantité dépasse la capacité SQLite INTEGER".into(),
+        )
+    })?;
+
+    let quantity: i64 = sqlx::query_scalar(
+        r#"
+        SELECT quantity
+        FROM stuff
+        WHERE account_id = ?
+          AND objet_id = ?
+        "#,
+    )
+    .bind(account_id)
+    .bind(objet_id)
+    .fetch_optional(&mut **tx)
+    .await?
+    .unwrap_or(0);
+
+    if quantity < quantite_i64 {
+        return Err(sqlx::Error::Protocol(
+            "Quantité insuffisante".into(),
+        ));
+    }
+
+    if quantity == quantite_i64 {
+        sqlx::query(
+            r#"
+            DELETE FROM stuff
+            WHERE account_id = ?
+              AND objet_id = ?
+            "#,
+        )
+        .bind(account_id)
+        .bind(objet_id)
+        .execute(&mut **tx)
+        .await?;
+    } else {
+        sqlx::query(
+            r#"
+            UPDATE stuff
+            SET quantity = quantity - ?
+            WHERE account_id = ?
+              AND objet_id = ?
+              AND quantity >= ?
+            "#,
+        )
+        .bind(quantite_i64)
+        .bind(account_id)
+        .bind(objet_id)
+        .bind(quantite_i64)
+        .execute(&mut **tx)
+        .await?;
+    }
+
+    Ok(())
+    }
+    pub async fn ajouter_tx(
+    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
+    account_id: i64,
+    objet_id: i64,
+    quantite: u64,
+) -> Result<(), sqlx::Error> {
+    if quantite == 0 {
+        return Err(sqlx::Error::Protocol(
+            "La quantité à ajouter doit être supérieure à 0".into(),
+        ));
+    }
+
+    let quantite_i64 = i64::try_from(quantite).map_err(|_| {
+        sqlx::Error::Protocol(
+            "La quantité dépasse la capacité SQLite INTEGER".into(),
+        )
+    })?;
+
+    sqlx::query(
+        r#"
+        INSERT INTO stuff (
+            account_id,
+            objet_id,
+            quantity
+        )
+        VALUES (?, ?, ?)
+        ON CONFLICT(account_id, objet_id)
+        DO UPDATE SET
+            quantity = quantity + excluded.quantity
+        "#,
+    )
+    .bind(account_id)
+    .bind(objet_id)
+    .bind(quantite_i64)
+    .execute(&mut **tx)
+    .await?;
+
+    Ok(())
+    }
     pub async fn get_quantity(
     &self,
     nom: &str,
@@ -444,6 +553,7 @@ impl Inventaire {
     pub fn objets_mut(&mut self) -> &mut HashMap<String, ObjetInventaire> {
         &mut self.objets
     }
+    
 
     pub fn account_id(&self) -> i64 {
         self.account_id
