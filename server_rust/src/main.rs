@@ -60,7 +60,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             1,       // niveau du trésor
             true,   // is_admin
             false,   // is_militaire
-            Some(1.0),
+            Some(1.3),
         )
         .await?;
 
