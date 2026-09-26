@@ -1160,6 +1160,7 @@ let sous_loot_livre_admin = HashMap::from([
 
         return Ok(resultat);
     }
+}
     pub async fn tirer_livre(
     &mut self,
     pool: &SqlitePool,
