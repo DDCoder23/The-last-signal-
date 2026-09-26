@@ -388,6 +388,43 @@ impl Inventaire {
         format!("Objet absent de objets_dispo : {nom}").into(),
     )
 })?;
+        // ------------------------------------------------------------
+    // 3. Ajout atomique dans SQLite
+    // ------------------------------------------------------------
+
+    sqlx::query(
+        r#"
+        INSERT INTO stuff (
+            account_id,
+            objet_id,
+            quantity
+        )
+        VALUES (?, ?, ?)
+        ON CONFLICT(account_id, objet_id)
+        DO UPDATE SET
+            quantity = quantity + excluded.quantity
+        "#,
+    )
+    .bind(self.account_id)
+    .bind(objet_id)
+    .bind(quantite_i64)
+    .execute(&self.pool)
+    .await?;
+
+    // ------------------------------------------------------------
+    // 4. Mise à jour de l'inventaire en mémoire
+    // ------------------------------------------------------------
+
+    
+    
+        // L'objet n'était pas présent dans le HashMap.
+        // On recharge l'inventaire depuis SQLite afin de
+        // construire correctement ObjetInventaire selon son type.
+        self.objets = Self::charger_objets(
+            &self.pool,
+            self.account_id,
+        )
+        .await?;
     
         
 
