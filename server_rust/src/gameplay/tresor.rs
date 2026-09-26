@@ -2,7 +2,7 @@ use rand::{Rng,RngExt};
 use sqlx::SqlitePool;
 use std::collections::HashMap;
 use crate::gameplay::dice::jet_de_des;
-
+use log::{debug, error, info};
 
 const PA: u32 = 1;
 const PO: u32 = PA * 10;
@@ -1198,7 +1198,7 @@ let sous_loot_livre_admin = HashMap::from([
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
 
-        let objet_id: i64 = sqlx::query_scalar(
+        let objet_id: Option<i64> = sqlx::query_scalar(
             r#"
             SELECT objet_id
             FROM objets_dispo
@@ -1206,34 +1206,40 @@ let sous_loot_livre_admin = HashMap::from([
             "#,
         )
         .bind(objet)
-        .fetch_one(pool)
+        .fetch_optional(pool)
         .await?;
 
-        let echecs: i64 = sqlx::query_scalar(
-            r#"
-            SELECT nombre
-            FROM echecs_objets
-            WHERE account_id = ?
-              AND categorie = ?
-              AND sous_categorie = ?
-              AND objet_id = ?
-            "#,
-        )
-        .bind(account_id)
-        .bind(categorie)
-        .bind(categorie)
-        .bind(objet_id)
-        .fetch_optional(pool)
-        .await?
-        .unwrap_or(0);
+        let echecs = match objet_id {
+            Some(objet_id) => {
+                sqlx::query_scalar(
+                    r#"
+                    SELECT nombre
+                    FROM echecs_objets
+                    WHERE account_id = ?
+                      AND categorie = ?
+                      AND sous_categorie = ?
+                      AND objet_id = ?
+                    "#,
+                )
+                .bind(account_id)
+                .bind(categorie)
+                .bind(categorie)
+                .bind(objet_id)
+                .fetch_optional(pool)
+                .await?
+                .unwrap_or(0)
+            }
 
-        /*
-         * Seuls les livres ayant une probabilité
-         * originale < 3 % bénéficient de la pity.
-         *
-         * Le coefficient de loot est appliqué
-         * à tous les livres.
-         */
+            None => {
+                error!(
+                    "Livre absent de objets_dispo : {:?}",
+                    objet
+                );
+
+                0
+            }
+        };
+
         let poids_ajuste = if probabilite < 0.03 {
             *poids
                 * self.coeff_loot
@@ -1264,12 +1270,11 @@ let sous_loot_livre_admin = HashMap::from([
     for (objet, poids) in &table_originale {
         let probabilite = poids / total;
 
-        // Le pity ne concerne que les objets < 3 %
         if probabilite >= 0.03 {
             continue;
         }
 
-        let objet_id: i64 = sqlx::query_scalar(
+        let objet_id: Option<i64> = sqlx::query_scalar(
             r#"
             SELECT objet_id
             FROM objets_dispo
@@ -1277,8 +1282,17 @@ let sous_loot_livre_admin = HashMap::from([
             "#,
         )
         .bind(objet)
-        .fetch_one(pool)
+        .fetch_optional(pool)
         .await?;
+
+        let Some(objet_id) = objet_id else {
+            error!(
+                "Impossible de mettre à jour la pity : \
+                 livre absent de objets_dispo : {:?}",
+                objet
+            );
+            continue;
+        };
 
         if objet == &resultat {
             // ==================================
@@ -1312,6 +1326,7 @@ let sous_loot_livre_admin = HashMap::from([
             .bind(objet_id)
             .execute(pool)
             .await?;
+
         } else {
             // ==================================
             // PAS OBTENU → +1
