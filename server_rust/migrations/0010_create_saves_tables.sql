@@ -7,7 +7,10 @@ CREATE TABLE IF NOT EXISTS echecs (
     echec_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
     account_id INTEGER NOT NULL,
-    objet_id INTEGER NOT NULL,
+
+    categorie TEXT NOT NULL,
+
+    objet_id INTEGER,
 
     nombre INTEGER NOT NULL DEFAULT 0,
 
@@ -19,7 +22,7 @@ CREATE TABLE IF NOT EXISTS echecs (
         REFERENCES objets_dispo(objet_id)
         ON DELETE CASCADE,
 
-    UNIQUE (account_id, objet_id),
+    UNIQUE (account_id, categorie, objet_id),
 
     CHECK (nombre >= 0)
 );
