@@ -354,6 +354,45 @@ impl Inventaire {
     // ------------------------------------------------------------
     let quantite_i64 = i64::try_from(quantite)
     .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+    let objet_id: i64 = sqlx::query_scalar(
+    r#"
+    SELECT objet_id
+    FROM objets_dispo
+    WHERE nom = ?
+    "#,
+)
+.bind(nom)
+.fetch_optional(&self.pool)
+.await?
+.ok_or_else(|| {
+    sqlx::Error::Protocol(
+        format!("Objet absent de objets_dispo : {nom}").into(),
+    )
+})?;
+    // ------------------------------------------------------------
+    // 3. Ajout atomique dans SQLite
+    // ------------------------------------------------------------
+
+    let objet_id: i64 = sqlx::query_scalar(
+    r#"
+    SELECT objet_id
+    FROM objets_dispo
+    WHERE nom = ?
+    "#,
+)
+.bind(nom)
+.fetch_optional(&self.pool)
+.await?
+.ok_or_else(|| {
+    sqlx::Error::Protocol(
+        format!("Objet absent de objets_dispo : {nom}").into(),
+    )
+})?;
+    
+        
+
+    
+        
         
     
     Ok(())
