@@ -97,14 +97,7 @@ mod tests {
         .await?;
 
     info!("Trésor ouvert pour le compte {account_id}:");
-    for (nom_objet, quantite) in objets {
-        // Filtre : n'ajouter que les livres enchantés
-        if nom_objet.contains("livre enchant") {
-            inventaire.ajouter_objet(&nom_objet, u64::from(quantite)).await?;
-            info!("✓ Livre ajouté à l'inventaire : {nom_objet} x{quantite}");
-        }
     
-        }
     
         Ok(())
     }
