@@ -110,7 +110,7 @@ mod tests {
     info!("Trésor ouvert pour le compte {account_id}:");
         for (nom_objet, quantite) in objets {
         // Filtre : n'ajouter que les livres enchantés
-        if nom_objet.contains("livre enchant") {
+        if nom_objet.contains("livre enchant niv 1") {
             inventaire.insert("livre enchant niv 1".to_string(), 
                       Livre::new(
     "livre enchant niv 1",
