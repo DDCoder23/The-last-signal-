@@ -3,35 +3,26 @@
 -- ÉCHECS DE LOOT / PITY
 -- ============================================================
 
-CREATE TABLE IF NOT EXISTS echecs_categories (
-    echec_id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-    account_id INTEGER NOT NULL,
-
-    categorie TEXT NOT NULL,
-
-    nombre INTEGER NOT NULL DEFAULT 0,
-
-    FOREIGN KEY (account_id)
-        REFERENCES accounts(account_id)
-        ON DELETE CASCADE,
-
-    UNIQUE (account_id, categorie),
-
-    CHECK (nombre >= 0)
-);
 CREATE TABLE IF NOT EXISTS echecs_sous_categories (
     echec_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
     account_id INTEGER NOT NULL,
+
     categorie TEXT NOT NULL,
+
     sous_categorie TEXT NOT NULL,
+
     nombre INTEGER NOT NULL DEFAULT 0,
 
     FOREIGN KEY (account_id)
         REFERENCES accounts(account_id)
         ON DELETE CASCADE,
 
-    UNIQUE (account_id, categorie, sous_categorie),
+    UNIQUE (
+        account_id,
+        categorie,
+        sous_categorie
+    ),
 
     CHECK (nombre >= 0)
 );
@@ -43,6 +34,8 @@ CREATE TABLE IF NOT EXISTS echecs_objets (
 
     categorie TEXT NOT NULL,
 
+    sous_categorie TEXT NOT NULL,
+
     objet_id INTEGER NOT NULL,
 
     nombre INTEGER NOT NULL DEFAULT 0,
@@ -51,11 +44,12 @@ CREATE TABLE IF NOT EXISTS echecs_objets (
         REFERENCES accounts(account_id)
         ON DELETE CASCADE,
 
-    FOREIGN KEY (objet_id)
-        REFERENCES objets_dispo(objet_id)
-        ON DELETE CASCADE,
-
-    UNIQUE (account_id, categorie, objet_id),
+    UNIQUE (
+        account_id,
+        categorie,
+        sous_categorie,
+        objet_id
+    ),
 
     CHECK (nombre >= 0)
 );
