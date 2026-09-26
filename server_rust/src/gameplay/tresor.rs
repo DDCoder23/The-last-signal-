@@ -778,9 +778,7 @@ let sous_loot_livre_admin = HashMap::from([
 
     unreachable!("Le tirage n'a trouvé aucun résultat")
 }
-pub fn cle_echec(categorie: &str, objet: &str) -> String {
-    format!("{}::{}", categorie, objet)
-}
+
     pub async fn tirer_objet(
     &mut self,
     pool: &SqlitePool,
@@ -824,21 +822,20 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
             let probabilite = poids / total;
 
             let echecs: i64 = sqlx::query_scalar(
-                r#"
-                SELECT nombre
-                FROM echecs
-                WHERE account_id = ?
-                  AND categorie = ?
-                  AND objet = ?
-                "#,
-            )
-            .bind(account_id)
-            .bind(&categorie_actuelle)
-            .bind(objet)
-            .fetch_optional(pool)
-            .await?
-            .unwrap_or(0);
-
+    r#"
+    SELECT e.nombre
+    FROM echecs e
+    JOIN objets_dispo o
+        ON e.objet_id = o.objet_id
+    WHERE e.account_id = ?
+      AND o.nom = ?
+    "#,
+)
+.bind(account_id)
+.bind(objet)
+.fetch_optional(pool)
+.await?
+.unwrap_or(0);
             /*
              * PITY :
              *
@@ -875,75 +872,84 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
         // MISE À JOUR DES ÉCHECS
         // ==========================================
 
-        for (objet, poids) in &table_originale {
-            let probabilite = poids / total;
+       // ==========================================
+// MISE À JOUR DES ÉCHECS
+// ==========================================
 
-            // Le pity ne concerne que les objets < 3 %
-            if probabilite >= 0.03 {
-                continue;
-            }
+for (objet, poids) in &table_originale {
+    let probabilite = poids / total;
 
-            if objet == &resultat {
-                // ----------------------------------
-                // OBJET OBTENU → RESET
-                // ----------------------------------
+    // Le pity ne concerne que les objets < 3 %
+    if probabilite >= 0.03 {
+        continue;
+    }
 
-                sqlx::query(
-                    r#"
-                    INSERT INTO echecs (
-                        account_id,
-                        categorie,
-                        objet,
-                        nombre
-                    )
-                    VALUES (?, ?, ?, 0)
+    let objet_id: i64 = sqlx::query_scalar(
+        r#"
+        SELECT objet_id
+        FROM objets_dispo
+        WHERE nom = ?
+        "#,
+    )
+    .bind(objet)
+    .fetch_one(pool)
+    .await?;
 
-                    ON CONFLICT (
-                        account_id,
-                        categorie,
-                        objet
-                    )
-                    DO UPDATE SET
-                        nombre = 0
-                    "#,
-                )
-                .bind(account_id)
-                .bind(&categorie_actuelle)
-                .bind(objet)
-                .execute(pool)
-                .await?;
+    if objet == &resultat {
+        // ----------------------------------
+        // OBJET OBTENU → RESET
+        // ----------------------------------
 
-            } else {
-                // ----------------------------------
-                // OBJET NON OBTENU → +1 ÉCHEC
-                // ----------------------------------
+        sqlx::query(
+            r#"
+            INSERT INTO echecs (
+                account_id,
+                objet_id,
+                nombre
+            )
+            VALUES (?, ?, 0)
 
-                sqlx::query(
-                    r#"
-                    INSERT INTO echecs (
-                        account_id,
-                        categorie,
-                        objet,
-                        nombre
-                    )
-                    VALUES (?, ?, ?, 1)
+            ON CONFLICT (
+                account_id,
+                objet_id
+            )
+            DO UPDATE SET
+                nombre = 0
+            "#,
+        )
+        .bind(account_id)
+        .bind(objet_id)
+        .execute(pool)
+        .await?;
 
-                    ON CONFLICT (
-                        account_id,
-                        categorie,
-                        objet
-                    )
-                    DO UPDATE SET
-                        nombre = nombre + 1
-                    "#,
-                )
-                .bind(account_id)
-                .bind(&categorie_actuelle)
-                .bind(objet)
-                .execute(pool)
-                .await?;
-            }
-        }
+    } else {
+        // ----------------------------------
+        // OBJET NON OBTENU → +1 ÉCHEC
+        // ----------------------------------
+
+        sqlx::query(
+            r#"
+            INSERT INTO echecs (
+                account_id,
+                objet_id,
+                nombre
+            )
+            VALUES (?, ?, 1)
+
+            ON CONFLICT (
+                account_id,
+                objet_id
+            )
+            DO UPDATE SET
+                nombre = nombre + 1
+            "#,
+        )
+        .bind(account_id)
+        .bind(objet_id)
+        .execute(pool)
+        .await?;
+    }
+}
 
         // ==========================================
         // LIVRE ENCHANTÉ
@@ -1012,21 +1018,20 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
         let probabilite = poids / total;
 
         let echecs: i64 = sqlx::query_scalar(
-            r#"
-            SELECT nombre
-            FROM echecs
-            WHERE account_id = ?
-              AND categorie = ?
-              AND objet = ?
-            "#,
-        )
-        .bind(account_id)
-        .bind(categorie)
-        .bind(objet)
-        .fetch_optional(pool)
-        .await?
-        .unwrap_or(0);
-
+    r#"
+    SELECT e.nombre
+    FROM echecs e
+    JOIN objets_dispo o
+        ON e.objet_id = o.objet_id
+    WHERE e.account_id = ?
+      AND o.nom = ?
+    "#,
+)
+.bind(account_id)
+.bind(objet)
+.fetch_optional(pool)
+.await?
+.unwrap_or(0);
         /*
          * Seuls les livres ayant une probabilité
          * originale < 3 % bénéficient du pity.
@@ -1054,78 +1059,85 @@ pub fn cle_echec(categorie: &str, objet: &str) -> String {
         &table_ajustee,
         rng,
     );
+        // ==========================================
+// MISE À JOUR DES ÉCHECS
+// ==========================================
 
-    // ==========================================
-    // MISE À JOUR DES ÉCHECS
-    // ==========================================
+for (objet, poids) in &table_originale {
+    let probabilite = poids / total;
 
-    for (objet, poids) in &table_originale {
-        let probabilite = poids / total;
+    // Le pity ne concerne que les objets < 3 %
+    if probabilite >= 0.03 {
+        continue;
+    }
 
-        // Pas de pity pour les objets >= 1 %
-        if probabilite >= 0.03 {
-            continue;
-        }
+    let objet_id: i64 = sqlx::query_scalar(
+        r#"
+        SELECT objet_id
+        FROM objets_dispo
+        WHERE nom = ?
+        "#,
+    )
+    .bind(objet)
+    .fetch_one(pool)
+    .await?;
 
-        if objet == &resultat {
-            // ----------------------------------
-            // OBTENU → RESET
-            // ----------------------------------
+    if objet == &resultat {
+        // ----------------------------------
+        // OBTENU → RESET
+        // ----------------------------------
 
-            sqlx::query(
-                r#"
-                INSERT INTO echecs (
-                    account_id,
-                    categorie,
-                    objet,
-                    nombre
-                )
-                VALUES (?, ?, ?, 0)
-
-                ON CONFLICT (
-                    account_id,
-                    categorie,
-                    objet
-                )
-                DO UPDATE SET
-                    nombre = 0
-                "#,
+        sqlx::query(
+            r#"
+            INSERT INTO echecs (
+                account_id,
+                objet_id,
+                nombre
             )
-            .bind(account_id)
-            .bind(categorie)
-            .bind(objet)
-            .execute(pool)
-            .await?;
+            VALUES (?, ?, 0)
 
-        } else {
-            // ----------------------------------
-            // PAS OBTENU → +1
-            // ----------------------------------
-
-            sqlx::query(
-                r#"
-                INSERT INTO echecs (
-                    account_id,
-                    categorie,
-                    objet,
-                    nombre
-                )
-                VALUES (?, ?, ?, 1)
-
-                ON CONFLICT (
-                    account_id,
-                    categorie,
-                    objet
-                )
-                DO UPDATE SET
-                    nombre = nombre + 1
-                "#,
+            ON CONFLICT (
+                account_id,
+                objet_id
             )
-            .bind(account_id)
-            .bind(categorie)
-            .bind(objet)
-            .execute(pool)
-            .await?;
+            DO UPDATE SET
+                nombre = 0
+            "#,
+        )
+        .bind(account_id)
+        .bind(objet_id)
+        .execute(pool)
+        .await?;
+
+    } else {
+        // ----------------------------------
+        // PAS OBTENU → +1
+        // ----------------------------------
+
+        sqlx::query(
+            r#"
+            INSERT INTO echecs (
+                account_id,
+                objet_id,
+                nombre
+            )
+            VALUES (?, ?, 1)
+
+            ON CONFLICT (
+                account_id,
+                objet_id
+            )
+            DO UPDATE SET
+                nombre = nombre + 1
+            "#,
+        )
+        .bind(account_id)
+        .bind(objet_id)
+        .execute(pool)
+        .await?;
+
+
+   
         }
     }
 
