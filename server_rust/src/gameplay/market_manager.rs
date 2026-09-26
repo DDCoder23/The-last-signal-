@@ -192,4 +192,168 @@ impl MarketManager {
 
         Ok(ordre_id)
     }
+    /// Annule un ordre d'achat et restitue les fonds correspondant
+/// à la quantité restante.
+pub async fn annuler_ordre_achat(
+    &self,
+    account_id: i64,
+    ordre_id: i64,
+) -> Result<(), sqlx::Error> {
+    let mut tx = self.pool.begin().await?;
+
+    let ordre: Option<(i64, i64, i64, String)> = sqlx::query_as(
+        r#"
+        SELECT
+            objet_id,
+            quantity_remaining,
+            prix_unitaire_max,
+            statut
+        FROM ordres_achat
+        WHERE ordre_id = ?
+          AND account_id = ?
+        "#,
+    )
+    .bind(ordre_id)
+    .bind(account_id)
+    .fetch_optional(&mut *tx)
+    .await?;
+
+    let (objet_id, quantity_remaining, prix_unitaire_max, statut) =
+        ordre.ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "Ordre d'achat inexistant".into(),
+            )
+        })?;
+
+    if statut != "actif" {
+        return Err(sqlx::Error::Protocol(
+            "L'ordre d'achat n'est plus actif".into(),
+        ));
+    }
+
+    let montant_a_rembourser = prix_unitaire_max
+        .checked_mul(quantity_remaining)
+        .ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "Le montant du remboursement dépasse la capacité i64".into(),
+            )
+        })?;
+
+    // Marque l'ordre comme annulé.
+    let result = sqlx::query(
+        r#"
+        UPDATE ordres_achat
+        SET statut = 'annule'
+        WHERE ordre_id = ?
+          AND account_id = ?
+          AND statut = 'actif'
+        "#,
+    )
+    .bind(ordre_id)
+    .bind(account_id)
+    .execute(&mut *tx)
+    .await?;
+
+    if result.rows_affected() != 1 {
+        return Err(sqlx::Error::Protocol(
+            "Impossible d'annuler l'ordre d'achat".into(),
+        ));
+    }
+
+    // Restitue les fonds réservés.
+    if montant_a_rembourser > 0 {
+        WalletManager::crediter_tx(
+            &mut tx,
+            account_id,
+            montant_a_rembourser,
+        )
+        .await?;
+    }
+
+    tx.commit().await?;
+
+    let _ = objet_id;
+
+    Ok(())
+}
+    /// Annule un ordre de vente et restitue les objets restants
+/// dans l'inventaire du vendeur.
+pub async fn annuler_ordre_vente(
+    &self,
+    account_id: i64,
+    ordre_id: i64,
+) -> Result<(), sqlx::Error> {
+    let mut tx = self.pool.begin().await?;
+
+    let ordre: Option<(i64, i64, String)> = sqlx::query_as(
+        r#"
+        SELECT
+            objet_id,
+            quantity_remaining,
+            statut
+        FROM ordres_vente
+        WHERE ordre_id = ?
+          AND account_id = ?
+        "#,
+    )
+    .bind(ordre_id)
+    .bind(account_id)
+    .fetch_optional(&mut *tx)
+    .await?;
+
+    let (objet_id, quantity_remaining, statut) =
+        ordre.ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "Ordre de vente inexistant".into(),
+            )
+        })?;
+
+    if statut != "actif" {
+        return Err(sqlx::Error::Protocol(
+            "L'ordre de vente n'est plus actif".into(),
+        ));
+    }
+
+    let quantity_u64 = u64::try_from(quantity_remaining).map_err(|_| {
+        sqlx::Error::Protocol(
+            "Quantité invalide".into(),
+        )
+    })?;
+
+    // Restitue les objets réservés.
+    if quantity_u64 > 0 {
+        Inventaire::ajouter_tx(
+            &mut tx,
+            account_id,
+            objet_id,
+            quantity_u64,
+        )
+        .await?;
+    }
+
+    // Marque l'ordre comme annulé.
+    let result = sqlx::query(
+        r#"
+        UPDATE ordres_vente
+        SET statut = 'annule'
+        WHERE ordre_id = ?
+          AND account_id = ?
+          AND statut = 'actif'
+        "#,
+    )
+    .bind(ordre_id)
+    .bind(account_id)
+    .execute(&mut *tx)
+    .await?;
+
+    if result.rows_affected() != 1 {
+        return Err(sqlx::Error::Protocol(
+            "Impossible d'annuler l'ordre de vente".into(),
+        ));
+    }
+
+    tx.commit().await?;
+
+    Ok(())
+                       }
 }
