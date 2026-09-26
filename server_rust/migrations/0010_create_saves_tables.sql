@@ -3,14 +3,32 @@
 -- ÉCHECS DE LOOT / PITY
 -- ============================================================
 
-CREATE TABLE IF NOT EXISTS echecs (
+CREATE TABLE IF NOT EXISTS echecs_categories (
     echec_id INTEGER PRIMARY KEY AUTOINCREMENT,
 
     account_id INTEGER NOT NULL,
 
     categorie TEXT NOT NULL,
 
-    objet_id INTEGER,
+    nombre INTEGER NOT NULL DEFAULT 0,
+
+    FOREIGN KEY (account_id)
+        REFERENCES accounts(account_id)
+        ON DELETE CASCADE,
+
+    UNIQUE (account_id, categorie),
+
+    CHECK (nombre >= 0)
+);
+
+CREATE TABLE IF NOT EXISTS echecs_objets (
+    echec_id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+    account_id INTEGER NOT NULL,
+
+    categorie TEXT NOT NULL,
+
+    objet_id INTEGER NOT NULL,
 
     nombre INTEGER NOT NULL DEFAULT 0,
 
@@ -26,8 +44,6 @@ CREATE TABLE IF NOT EXISTS echecs (
 
     CHECK (nombre >= 0)
 );
-
-
 -- ============================================================
 -- STUFF DU JOUEUR
 -- ============================================================
