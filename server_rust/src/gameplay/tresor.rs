@@ -1210,8 +1210,8 @@ let sous_loot_livre_admin = HashMap::from([
             SELECT nombre
             FROM echecs_objets
             WHERE account_id = ?
-              AND categorie_racine = ?
-              AND categorie_parent = ?
+              AND categorie = ?
+              AND sous_categorie = ?
               AND objet_id = ?
             "#,
         )
@@ -1285,8 +1285,8 @@ let sous_loot_livre_admin = HashMap::from([
                 r#"
                 INSERT INTO echecs_objets (
                     account_id,
-                    categorie_racine,
-                    categorie_parent,
+                    categorie,
+                    sous_categorie,
                     objet_id,
                     nombre
                 )
@@ -1294,8 +1294,8 @@ let sous_loot_livre_admin = HashMap::from([
 
                 ON CONFLICT (
                     account_id,
-                    categorie_racine,
-                    categorie_parent,
+                    categorie,
+                    sous_categorie,
                     objet_id
                 )
                 DO UPDATE SET
@@ -1317,8 +1317,8 @@ let sous_loot_livre_admin = HashMap::from([
                 r#"
                 INSERT INTO echecs_objets (
                     account_id,
-                    categorie_racine,
-                    categorie_parent,
+                    categorie,
+                    sous_categorie,
                     objet_id,
                     nombre
                 )
@@ -1326,8 +1326,8 @@ let sous_loot_livre_admin = HashMap::from([
 
                 ON CONFLICT (
                     account_id,
-                    categorie_racine,
-                    categorie_parent,
+                    categorie,
+                    sous_categorie,
                     objet_id
                 )
                 DO UPDATE SET
