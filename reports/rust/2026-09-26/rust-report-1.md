@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 2027
+Run : 655
 Branch : main
-Commit : 0ff93cae62b6ad72685ef32f73ce6a9c48cec45a
-Date : Thu Sep 24 04:34:01 UTC 2026
+Commit : 40898e09d6686e9fcdb174f99acda0f0d3cb37f4
+Date : Sat Sep 26 00:45:24 UTC 2026
 
 
 ## Cargo fmt
@@ -326,6 +326,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -pub mod tresor;
  pub mod stuff_manager;
 +pub mod tresor;
+ pub mod wallet_manager;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:1:
 -use serde::{Serialize, Deserialize};
@@ -535,34 +536,39 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    // ------------------------------------------------------------
 -    // 1. Vérification de l'objet dans l'inventaire en mémoire
 -    // ------------------------------------------------------------
+-    let quantite_i64 = i64::try_from(quantite)
+-    .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
 +        // ------------------------------------------------------------
 +        // 1. Vérification de l'objet dans l'inventaire en mémoire
 +        // ------------------------------------------------------------
++        let quantite_i64 = i64::try_from(quantite)
++            .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+ 
++        let objet = self.objets.get(nom).ok_or_else(|| {
++            sqlx::Error::Protocol(format!("Objet absent de l'inventaire : {nom}").into())
++        })?;
  
 -    let objet = self.objets.get(nom).ok_or_else(|| {
 -        sqlx::Error::Protocol(
 -            format!("Objet absent de l'inventaire : {nom}").into(),
 -        )
 -    })?;
-+        let objet = self.objets.get(nom).ok_or_else(|| {
-+            sqlx::Error::Protocol(format!("Objet absent de l'inventaire : {nom}").into())
-+        })?;
++        let quantite_actuelle = match objet {
++            ObjetInventaire::Base(o) => o.quantite,
++            ObjetInventaire::Equipement(e) => e.objet.quantite,
++            ObjetInventaire::Arme(a) => a.equipement.objet.quantite,
++            ObjetInventaire::Potion(p) => p.objet.quantite,
++            ObjetInventaire::Livre(l) => l.objet.quantite,
++        };
  
 -    let quantite_actuelle = match objet {
 -        ObjetInventaire::Base(o) => o.quantite,
--        ObjetInventaire::Equipement(o) => o.quantite,
--        ObjetInventaire::Arme(o) => o.quantite,
--        ObjetInventaire::Potion(o) => o.quantite,
--        ObjetInventaire::Livre(o) => o.quantite,
+-        ObjetInventaire::Equipement(e) => e.objet.quantite,
+-        ObjetInventaire::Arme(a) => a.equipement.objet.quantite,
+-        ObjetInventaire::Potion(p) => p.objet.quantite,
+-        ObjetInventaire::Livre(l) => l.objet.quantite,
 -    };
-+        let quantite_actuelle = match objet {
-+            ObjetInventaire::Base(o) => o.quantite,
-+            ObjetInventaire::Equipement(o) => o.quantite,
-+            ObjetInventaire::Arme(o) => o.quantite,
-+            ObjetInventaire::Potion(o) => o.quantite,
-+            ObjetInventaire::Livre(o) => o.quantite,
-+        };
- 
+-
 -    // Impossible de retirer plus que ce que possède le joueur.
 -    if quantite > quantite_actuelle {
 -        return Err(sqlx::Error::Protocol(
@@ -597,7 +603,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          SELECT objet_id
          FROM objets_dispo
          WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:248:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:251:
          "#,
 -    )
 -    .bind(nom)
@@ -636,19 +642,19 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              DELETE FROM stuff
              WHERE account_id = ?
                AND objet_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:271:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:274:
                AND quantity = ?
              "#,
 -        )
 -        .bind(self.account_id)
 -        .bind(objet_id)
--        .bind(quantite)
+-        .bind(quantite_i64)
 -        .execute(&mut *tx)
 -        .await?;
 +            )
 +            .bind(self.account_id)
 +            .bind(objet_id)
-+            .bind(quantite)
++            .bind(quantite_i64)
 +            .execute(&mut *tx)
 +            .await?;
  
@@ -683,22 +689,21 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              UPDATE stuff
              SET quantity = quantity - ?
              WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:298:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:301:
                AND objet_id = ?
                AND quantity >= ?
              "#,
 -        )
--        .bind(quantite)
+-        
 -        .bind(self.account_id)
 -        .bind(objet_id)
--        .bind(quantite)
+-        .bind(quantite_i64)
 -        .execute(&mut *tx)
 -        .await?;
 +            )
-+            .bind(quantite)
 +            .bind(self.account_id)
 +            .bind(objet_id)
-+            .bind(quantite)
++            .bind(quantite_i64)
 +            .execute(&mut *tx)
 +            .await?;
  
@@ -734,12 +739,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        self.objets.remove(nom);
 -    } else if let Some(objet) = self.objets.get_mut(nom) {
 -        objet.retirer(quantite);
--    }
 +        if quantite == quantite_actuelle {
 +            self.objets.remove(nom);
 +        } else if let Some(objet) = self.objets.get_mut(nom) {
 +            objet.retirer(quantite);
 +        }
++
++        Ok(())
+     }
++    pub async fn ajouter_objet(&mut self, nom: &str, quantite: u64) -> Result<(), sqlx::Error> {
++        // ------------------------------------------------------------
++        // 1. Vérification de la quantité
++        // ------------------------------------------------------------
  
 -    Ok(())
 -            }
@@ -751,39 +762,37 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    // ------------------------------------------------------------
 -    // 1. Vérification de la quantité
 -    // ------------------------------------------------------------
--
--    if quantite == 0 {
--        return Err(sqlx::Error::Protocol(
--            "La quantité à ajouter doit être supérieure à 0".into(),
--        ));
-+        Ok(())
-     }
-+    pub async fn ajouter_objet(&mut self, nom: &str, quantite: u64) -> Result<(), sqlx::Error> {
-+        // ------------------------------------------------------------
-+        // 1. Vérification de la quantité
-+        // ------------------------------------------------------------
- 
--    // ------------------------------------------------------------
--    // 2. Récupération de l'objet dans objets_dispo
--    // ------------------------------------------------------------
 +        if quantite == 0 {
 +            return Err(sqlx::Error::Protocol(
 +                "La quantité à ajouter doit être supérieure à 0".into(),
 +            ));
 +        }
  
--    let objet_id: i64 = sqlx::query_scalar(
--        r#"
+-    if quantite == 0 {
+-        return Err(sqlx::Error::Protocol(
+-            "La quantité à ajouter doit être supérieure à 0".into(),
+-        ));
+-    }
 +        // ------------------------------------------------------------
 +        // 2. Récupération de l'objet dans objets_dispo
 +        // ------------------------------------------------------------
-+
++        let quantite_i64 = i64::try_from(quantite)
++            .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+ 
+-    // ------------------------------------------------------------
+-    // 2. Récupération de l'objet dans objets_dispo
+-    // ------------------------------------------------------------
+-    let quantite_i64 = i64::try_from(quantite)
+-    .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+-        
+-    let objet_id: i64 = sqlx::query_scalar(
+-        r#"
 +        let objet_id: i64 = sqlx::query_scalar(
 +            r#"
          SELECT objet_id
          FROM objets_dispo
          WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:358:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:363:
          "#,
 -    )
 -    .bind(nom)
@@ -808,14 +817,14 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          INSERT INTO stuff (
              account_id,
              objet_id,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:377:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:382:
          DO UPDATE SET
              quantity = quantity + excluded.quantity
          "#,
 -    )
 -    .bind(self.account_id)
 -    .bind(objet_id)
--    .bind(quantite)
+-    .bind(quantite_i64)
 -    .execute(&self.pool)
 -    .await?;
 -
@@ -835,7 +844,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          )
 +        .bind(self.account_id)
 +        .bind(objet_id)
-+        .bind(quantite)
++        .bind(quantite_i64)
 +        .execute(&self.pool)
          .await?;
 -    }
@@ -868,7 +877,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          SELECT s.quantity
          FROM stuff s
          JOIN objets_dispo o
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:416:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:421:
          WHERE s.account_id = ?
            AND o.nom = ?
          "#,
@@ -1144,7 +1153,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        ("pain".to_string(), 70.0),
 -        ("fruit et légumes".to_string(), 10.0),
 -        ("herbes et racines".to_string(), 10.0),
--        ("tacos".to_string(), 10.0),
+-        ("tacos".to_string(), 5.0),
+-        ("burger".to_string(), 5.0),
 -        
 -    ]),
 -);  
@@ -1154,7 +1164,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +                ("pain".to_string(), 70.0),
 +                ("fruit et légumes".to_string(), 10.0),
 +                ("herbes et racines".to_string(), 10.0),
-+                ("tacos".to_string(), 10.0),
++                ("tacos".to_string(), 5.0),
++                ("burger".to_string(), 5.0),
 +            ]),
 +        );
          // La liste de viande pourra être extendue
@@ -1398,7 +1409,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          Self {
              loot_par_niveau,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:555:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:556:
              sous_loot_livre_normal,
              sous_loot_livre_admin,
              coeff_loot: 1.0,
@@ -1817,7 +1828,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  SELECT nombre
                  FROM echecs
                  WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:830:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:831:
                    AND categorie = ?
                    AND objet = ?
                  "#,
@@ -1927,7 +1938,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:905:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:906:
                      DO UPDATE SET
                          nombre = 0
                      "#,
@@ -1960,7 +1971,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      INSERT INTO echecs (
                          account_id,
                          categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:935:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:936:
                      DO UPDATE SET
                          nombre = nombre + 1
                      "#,
@@ -2097,7 +2108,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              SELECT nombre
              FROM echecs
              WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1018:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1019:
                AND categorie = ?
                AND objet = ?
              "#,
@@ -2198,7 +2209,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1089:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1090:
                  DO UPDATE SET
                      nombre = 0
                  "#,
@@ -2231,7 +2242,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1119:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1120:
                  DO UPDATE SET
                      nombre = nombre + 1
                  "#,
@@ -2257,6 +2268,29 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -
  }
  
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/wallet_manager.rs:7:
+ 
+ impl WalletManager {
+     pub fn new(pool: SqlitePool, account_id: i64) -> Self {
+-        Self {
+-            pool,
+-            account_id,
+-        }
++        Self { pool, account_id }
+     }
+ 
+     pub fn account_id(&self) -> i64 {
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/wallet_manager.rs:52:
+         .await?;
+ 
+         if result.rows_affected() == 0 {
+-            return Err(sqlx::Error::Protocol(
+-                "Portefeuille inexistant".into(),
+-            ));
++            return Err(sqlx::Error::Protocol("Portefeuille inexistant".into()));
+         }
+ 
+         Ok(())
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.rs:1:
 +pub mod auth;
  pub mod database;
@@ -4645,26 +4679,30 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
 -    .fetch_one(&mut *tx) 
 +    .fetch_one(&mut *tx)
      .await?;
+     let max_balance = i64::MAX;
 -    sqlx::query( 
 +    sqlx::query(
          r#" INSERT INTO wallets ( 
-         account_id 
+         account_id,
+         balance
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:95:
          ) 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:94:
-         VALUES (?) 
+         VALUES (?,?) 
 -        "#, ) 
--        .bind(account_id) 
+-        .bind(account_id)
+-        .bind(max_balance)
 -        .execute(&mut *tx) 
 -        .await?;
 +        "#,
 +    )
 +    .bind(account_id)
++    .bind(max_balance)
 +    .execute(&mut *tx)
 +    .await?;
      if let Some(status) = status {
          sqlx::query(
              r#"
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:116:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:119:
  
      tx.commit().await?;
  
@@ -5318,13 +5356,13 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling pin-project-lite v0.2.17
    Compiling typenum v1.20.1
    Compiling yoke v0.8.3
-   Compiling litemap v0.8.3
+   Compiling futures-core v0.3.34
+   Compiling smallvec v1.16.2
    Compiling zerovec v0.11.8
+   Compiling litemap v0.8.3
    Compiling writeable v0.6.4
-   Compiling smallvec v1.16.1
    Compiling memchr v2.8.3
    Compiling tinystr v0.8.4
-   Compiling futures-core v0.3.34
    Compiling icu_locale_core v2.3.0
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
@@ -5332,59 +5370,59 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
-   Compiling icu_properties_data v2.3.0
    Compiling icu_normalizer_data v2.3.0
+   Compiling icu_properties_data v2.3.0
    Compiling socket2 v0.6.5
    Compiling mio v1.2.3
-   Compiling bytes v1.12.1
    Compiling icu_provider v2.3.1
+   Compiling bytes v1.12.1
    Compiling futures-sink v0.3.34
-   Compiling serde_core v1.0.229
-   Compiling once_cell v1.21.4
    Compiling icu_properties v2.3.0
    Compiling icu_normalizer v2.3.0
+   Compiling serde_core v1.0.229
+   Compiling once_cell v1.21.4
    Compiling equivalent v1.0.2
    Compiling rand_core v0.10.1
    Compiling generic-array v0.14.9
    Compiling tracing-core v0.1.36
-   Compiling parking_lot_core v0.9.12
-   Compiling futures-task v0.3.34
-   Compiling cpufeatures v0.2.17
-   Compiling foldhash v0.2.0
    Compiling idna_adapter v1.2.2
-   Compiling slab v0.4.12
+   Compiling parking_lot_core v0.9.12
    Compiling percent-encoding v2.3.2
-   Compiling allocator-api2 v0.2.21
+   Compiling cpufeatures v0.2.17
+   Compiling futures-task v0.3.34
+   Compiling slab v0.4.12
+   Compiling foldhash v0.2.0
    Compiling futures-io v0.3.34
-   Compiling form_urlencoded v1.2.2
-   Compiling futures-util v0.3.34
-   Compiling idna v1.1.0
-   Compiling hashbrown v0.16.1
-   Compiling serde v1.0.229
+   Compiling allocator-api2 v0.2.21
    Compiling parking_lot v0.12.5
+   Compiling futures-util v0.3.34
+   Compiling hashbrown v0.16.1
+   Compiling form_urlencoded v1.2.2
    Compiling num-traits v0.2.19
+   Compiling serde v1.0.229
    Compiling zmij v1.0.23
-   Compiling getrandom v0.4.3
+   Compiling idna v1.1.0
    Compiling crossbeam-utils v0.8.23
-   Compiling parking v2.2.1
+   Compiling getrandom v0.4.3
    Compiling hashbrown v0.17.1
    Compiling itoa v1.0.18
    Compiling crc-catalog v2.5.0
-   Compiling crc v3.4.0
-   Compiling crossbeam-queue v0.3.14
-   Compiling serde_json v1.0.151
+   Compiling parking v2.2.1
    Compiling event-listener v5.4.2
    Compiling indexmap v2.14.2
-   Compiling either v1.18.0
-   Compiling futures-intrusive v0.5.0
-   Compiling hashlink v0.11.1
+   Compiling crc v3.4.0
+   Compiling serde_json v1.0.151
+   Compiling crossbeam-queue v0.3.14
    Compiling url v2.5.8
+   Compiling either v1.18.0
+   Compiling hashlink v0.11.1
+   Compiling futures-intrusive v0.5.0
    Compiling crypto-common v0.1.6
    Compiling block-buffer v0.10.4
    Compiling cmov v0.5.4
-   Compiling ctutils v0.4.2
    Compiling digest v0.10.7
    Compiling tokio v1.53.1
+   Compiling ctutils v0.4.2
    Compiling spin v0.9.9
    Compiling hybrid-array v0.4.15
    Compiling tracing v0.1.44
@@ -5394,12 +5432,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling atoi v2.0.0
    Compiling futures-channel v0.3.34
    Compiling log v0.4.34
-   Compiling crypto-common v0.2.2
    Compiling block-buffer v0.12.1
-   Compiling thiserror v2.0.20
+   Compiling crypto-common v0.2.2
+   Compiling thiserror v2.0.21
+   Compiling cpufeatures v0.3.1
    Compiling base64 v0.22.1
    Compiling const-oid v0.10.2
-   Compiling cpufeatures v0.3.1
    Compiling digest v0.11.3
    Compiling uuid v1.26.1
    Compiling aho-corasick v1.1.5
@@ -5414,28 +5452,28 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling sqlx-sqlite v0.9.0
    Compiling libsqlite3-sys v0.37.0
    Compiling openssl-sys v0.9.117
-   Compiling iana-time-zone v0.1.65
    Compiling sqlx-macros-core v0.9.0
-   Compiling simd-adler32 v0.3.10
-   Compiling bitflags v2.13.2
    Compiling adler2 v2.0.1
+   Compiling bitflags v2.13.2
+   Compiling simd-adler32 v0.3.10
+   Compiling iana-time-zone v0.1.65
+   Compiling chrono v0.4.45
    Compiling miniz_oxide v0.9.1
    Compiling openssl v0.10.81
-   Compiling chrono v0.4.45
    Compiling zeroize v1.9.0
    Compiling sqlx-macros v0.9.0
+   Compiling crc32fast v1.5.2
    Compiling regex v1.13.1
    Compiling password-hash v0.6.1
-   Compiling crc32fast v1.5.2
    Compiling blake2 v0.11.0
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
-   Compiling byteorder v1.5.0
    Compiling nu-ansi-term v0.50.3
-   Compiling fernet v0.2.2
+   Compiling byteorder v1.5.0
+   Compiling sqlx v0.9.0
    Compiling flexi_logger v0.31.10
    Compiling rand v0.10.3
-   Compiling sqlx v0.9.0
+   Compiling fernet v0.2.2
    Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
    Compiling sha2 v0.11.0
@@ -5448,187 +5486,82 @@ warning: unused imports: `debug`, `error`, and `info`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-error[E0053]: method `retirer` has an incompatible type for trait
-   --> src/gameplay/objets.rs:150:32
-    |
-150 |     fn retirer(&mut self, qte: u128) {
-    |                                ^^^^ expected `u64`, found `u128`
-    |
-note: type in trait
-   --> src/gameplay/objets.rs:22:32
-    |
- 22 |     fn retirer(&mut self, qte: u64);
-    |                                ^^^
-    = note: expected signature `fn(&mut Equipement, u64)`
-               found signature `fn(&mut Equipement, u128)`
-help: change the parameter type to match the trait
-    |
-150 -     fn retirer(&mut self, qte: u128) {
-150 +     fn retirer(&mut self, qte: u64) {
-    |
+warning: fields `user_id` and `password_hash` are never read
+  --> src/network/handler.rs:41:5
+   |
+40 | pub struct User {
+   |            ---- fields in this struct
+41 |     user_id: String,
+   |     ^^^^^^^
+42 |     password_hash: String,
+   |     ^^^^^^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
-error[E0609]: no field `quantite` on type `&Equipement`
-   --> src/gameplay/stuff_manager.rs:222:45
-    |
-222 |         ObjetInventaire::Equipement(o) => o.quantite,
-    |                                             ^^^^^^^^ unknown field
-    |
-help: one of the expressions' fields has a field of the same name
-    |
-222 |         ObjetInventaire::Equipement(o) => o.objet.quantite,
-    |                                             ++++++
+warning: constant `PO` is never used
+ --> src/gameplay/tresor.rs:8:7
+  |
+8 | const PO: u32 = PA * 10;
+  |       ^^
 
-error[E0609]: no field `quantite` on type `&Arme`
-   --> src/gameplay/stuff_manager.rs:223:39
-    |
-223 |         ObjetInventaire::Arme(o) => o.quantite,
-    |                                       ^^^^^^^^ unknown field
-    |
-help: one of the expressions' fields has a field of the same name
-    |
-223 |         ObjetInventaire::Arme(o) => o.equipement.objet.quantite,
-    |                                       +++++++++++++++++
+warning: constant `PP` is never used
+ --> src/gameplay/tresor.rs:9:7
+  |
+9 | const PP: u32 = PO * 10;
+  |       ^^
 
-error[E0609]: no field `quantite` on type `&Potion`
-   --> src/gameplay/stuff_manager.rs:224:41
-    |
-224 |         ObjetInventaire::Potion(o) => o.quantite,
-    |                                         ^^^^^^^^ unknown field
-    |
-help: one of the expressions' fields has a field of the same name
-    |
-224 |         ObjetInventaire::Potion(o) => o.objet.quantite,
-    |                                         ++++++
+warning: `the-last-signal-server` (lib) generated 4 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 1 suggestion)
+warning: unused import: `the_last_signal_server::gameplay::objets::Livre`
+ --> src/main.rs:7:5
+  |
+7 | use the_last_signal_server::gameplay::objets::Livre;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-error[E0609]: no field `quantite` on type `&Livre`
-   --> src/gameplay/stuff_manager.rs:225:40
-    |
-225 |         ObjetInventaire::Livre(o) => o.quantite,
-    |                                        ^^^^^^^^ unknown field
-    |
-help: one of the expressions' fields has a field of the same name
-    |
-225 |         ObjetInventaire::Livre(o) => o.objet.quantite,
-    |                                        ++++++
+warning: unused import: `std::collections::HashMap`
+ --> src/main.rs:9:5
+  |
+9 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-error[E0277]: the trait bound `u64: sqlx::Encode<'_, Sqlite>` is not satisfied
-   --> src/gameplay/stuff_manager.rs:276:15
-    |
-276 |         .bind(quantite)
-    |          ---- ^^^^^^^^ the trait `sqlx::Encode<'_, Sqlite>` is not implemented for `u64`
-    |          |
-    |          required by a bound introduced by this call
-    |
-    = help: the following other types implement trait `sqlx::Encode<'q, DB>`:
-              `f32` implements `sqlx::Encode<'_, Sqlite>`
-              `f32` implements `sqlx::Encode<'_, sqlx::Any>`
-              `f64` implements `sqlx::Encode<'_, Sqlite>`
-              `f64` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i16` implements `sqlx::Encode<'_, Sqlite>`
-              `i16` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i32` implements `sqlx::Encode<'_, Sqlite>`
-              `i32` implements `sqlx::Encode<'_, sqlx::Any>`
-            and 6 others
-note: required by a bound in `Query::<'_, DB, <DB as sqlx::Database>::Arguments>::bind`
-   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/query.rs:87:24
-    |
- 87 |     pub fn bind<'t, T: Encode<'t, DB> + Type<DB>>(mut self, value: T) -> Self {
-    |                        ^^^^^^^^^^^^^^ required by this bound in `Query::<'_, DB, <DB as Database>::Arguments>::bind`
+warning: `the-last-signal-server` (lib test) generated 4 warnings (4 duplicates)
+warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 2 warnings (2 duplicates)
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.58s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-ff52b8c6a56edc60)
 
-error[E0277]: the trait bound `u64: sqlx::Encode<'_, Sqlite>` is not satisfied
-   --> src/gameplay/stuff_manager.rs:302:15
-    |
-302 |         .bind(quantite)
-    |          ---- ^^^^^^^^ the trait `sqlx::Encode<'_, Sqlite>` is not implemented for `u64`
-    |          |
-    |          required by a bound introduced by this call
-    |
-    = help: the following other types implement trait `sqlx::Encode<'q, DB>`:
-              `f32` implements `sqlx::Encode<'_, Sqlite>`
-              `f32` implements `sqlx::Encode<'_, sqlx::Any>`
-              `f64` implements `sqlx::Encode<'_, Sqlite>`
-              `f64` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i16` implements `sqlx::Encode<'_, Sqlite>`
-              `i16` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i32` implements `sqlx::Encode<'_, Sqlite>`
-              `i32` implements `sqlx::Encode<'_, sqlx::Any>`
-            and 6 others
-note: required by a bound in `Query::<'_, DB, <DB as sqlx::Database>::Arguments>::bind`
-   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/query.rs:87:24
-    |
- 87 |     pub fn bind<'t, T: Encode<'t, DB> + Type<DB>>(mut self, value: T) -> Self {
-    |                        ^^^^^^^^^^^^^^ required by this bound in `Query::<'_, DB, <DB as Database>::Arguments>::bind`
+running 12 tests
+test security::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
+test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
+test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
+test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
+test security::crypto::tests::fisher_yates_changes_with_seed ... ok
+test security::crypto::tests::fisher_yates_is_deterministic ... ok
+test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
+test security::crypto::tests::fisher_yates_contains_all_values ... ok
+test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
+test security::crypto::tests::splitmix64_max_seed ... ok
+test security::crypto::tests::splitmix64_state_changes ... ok
+test security::crypto::tests::splitmix64_zero_seed ... ok
 
-error[E0277]: the trait bound `u64: sqlx::Encode<'_, Sqlite>` is not satisfied
-   --> src/gameplay/stuff_manager.rs:305:15
-    |
-305 |         .bind(quantite)
-    |          ---- ^^^^^^^^ the trait `sqlx::Encode<'_, Sqlite>` is not implemented for `u64`
-    |          |
-    |          required by a bound introduced by this call
-    |
-    = help: the following other types implement trait `sqlx::Encode<'q, DB>`:
-              `f32` implements `sqlx::Encode<'_, Sqlite>`
-              `f32` implements `sqlx::Encode<'_, sqlx::Any>`
-              `f64` implements `sqlx::Encode<'_, Sqlite>`
-              `f64` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i16` implements `sqlx::Encode<'_, Sqlite>`
-              `i16` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i32` implements `sqlx::Encode<'_, Sqlite>`
-              `i32` implements `sqlx::Encode<'_, sqlx::Any>`
-            and 6 others
-note: required by a bound in `Query::<'_, DB, <DB as sqlx::Database>::Arguments>::bind`
-   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/query.rs:87:24
-    |
- 87 |     pub fn bind<'t, T: Encode<'t, DB> + Type<DB>>(mut self, value: T) -> Self {
-    |                        ^^^^^^^^^^^^^^ required by this bound in `Query::<'_, DB, <DB as Database>::Arguments>::bind`
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-error[E0277]: the trait bound `u64: sqlx::Encode<'_, Sqlite>` is not satisfied
-   --> src/gameplay/stuff_manager.rs:383:11
-    |
-383 |     .bind(quantite)
-    |      ---- ^^^^^^^^ the trait `sqlx::Encode<'_, Sqlite>` is not implemented for `u64`
-    |      |
-    |      required by a bound introduced by this call
-    |
-    = help: the following other types implement trait `sqlx::Encode<'q, DB>`:
-              `f32` implements `sqlx::Encode<'_, Sqlite>`
-              `f32` implements `sqlx::Encode<'_, sqlx::Any>`
-              `f64` implements `sqlx::Encode<'_, Sqlite>`
-              `f64` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i16` implements `sqlx::Encode<'_, Sqlite>`
-              `i16` implements `sqlx::Encode<'_, sqlx::Any>`
-              `i32` implements `sqlx::Encode<'_, Sqlite>`
-              `i32` implements `sqlx::Encode<'_, sqlx::Any>`
-            and 6 others
-note: required by a bound in `Query::<'_, DB, <DB as sqlx::Database>::Arguments>::bind`
-   --> /home/runner/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/sqlx-core-0.9.0/src/query.rs:87:24
-    |
- 87 |     pub fn bind<'t, T: Encode<'t, DB> + Type<DB>>(mut self, value: T) -> Self {
-    |                        ^^^^^^^^^^^^^^ required by this bound in `Query::<'_, DB, <DB as Database>::Arguments>::bind`
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-85900a01215628a7)
 
-error[E0308]: mismatched types
-   --> src/gameplay/objets.rs:151:28
-    |
-151 |         self.objet.retirer(qte);
-    |                    ------- ^^^ expected `u64`, found `u128`
-    |                    |
-    |                    arguments to this method are incorrect
-    |
-note: method defined here
-   --> src/gameplay/objets.rs:22:8
-    |
- 22 |     fn retirer(&mut self, qte: u64);
-    |        ^^^^^^^            ---
-help: you can convert a `u128` to a `u64` and panic if the converted value doesn't fit
-    |
-151 |         self.objet.retirer(qte.try_into().unwrap());
-    |                               ++++++++++++++++++++
+running 0 tests
 
-Some errors have detailed explanations: E0053, E0277, E0308, E0609.
-For more information about an error, try `rustc --explain E0053`.
-warning: `the-last-signal-server` (lib) generated 1 warning
-error: could not compile `the-last-signal-server` (lib) due to 10 previous errors; 1 warning emitted
-warning: build failed, waiting for other jobs to finish...
-warning: `the-last-signal-server` (lib test) generated 1 warning (1 duplicate)
-error: could not compile `the-last-signal-server` (lib test) due to 10 previous errors; 1 warning emitted
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-493e4ec7ec9a6b02)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests the_last_signal_server
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
