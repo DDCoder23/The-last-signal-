@@ -20,6 +20,21 @@ CREATE TABLE IF NOT EXISTS echecs_categories (
 
     CHECK (nombre >= 0)
 );
+CREATE TABLE IF NOT EXISTS echecs_sous_categories (
+    echec_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    account_id INTEGER NOT NULL,
+    categorie TEXT NOT NULL,
+    sous_categorie TEXT NOT NULL,
+    nombre INTEGER NOT NULL DEFAULT 0,
+
+    FOREIGN KEY (account_id)
+        REFERENCES accounts(account_id)
+        ON DELETE CASCADE,
+
+    UNIQUE (account_id, categorie, sous_categorie),
+
+    CHECK (nombre >= 0)
+);
 
 CREATE TABLE IF NOT EXISTS echecs_objets (
     echec_id INTEGER PRIMARY KEY AUTOINCREMENT,
