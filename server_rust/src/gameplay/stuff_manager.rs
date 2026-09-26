@@ -355,61 +355,7 @@ impl Inventaire {
     let quantite_i64 = i64::try_from(quantite)
     .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
         
-    let objet_id: i64 = sqlx::query_scalar(
-    r#"
-    SELECT objet_id
-    FROM objets_dispo
-    WHERE nom = ?
-    "#,
-)
-.bind(nom)
-.fetch_optional(&self.pool)
-.await?
-.ok_or_else(|| {
-    sqlx::Error::Protocol(
-        format!("Objet absent de objets_dispo : {nom}").into(),
-    )
-})?;
-    // ------------------------------------------------------------
-    // 3. Ajout atomique dans SQLite
-    // ------------------------------------------------------------
-
-    sqlx::query(
-        r#"
-        INSERT INTO stuff (
-            account_id,
-            objet_id,
-            quantity
-        )
-        VALUES (?, ?, ?)
-        ON CONFLICT(account_id, objet_id)
-        DO UPDATE SET
-            quantity = quantity + excluded.quantity
-        "#,
-    )
-    .bind(self.account_id)
-    .bind(objet_id)
-    .bind(quantite_i64)
-    .execute(&self.pool)
-    .await?;
-
-    // ------------------------------------------------------------
-    // 4. Mise à jour de l'inventaire en mémoire
-    // ------------------------------------------------------------
-
-    if let Some(objet) = self.objets.get_mut(nom) {
-        objet.ajouter(quantite);
-    } else {
-        // L'objet n'était pas présent dans le HashMap.
-        // On recharge l'inventaire depuis SQLite afin de
-        // construire correctement ObjetInventaire selon son type.
-        self.objets = Self::charger_objets(
-            &self.pool,
-            self.account_id,
-        )
-        .await?;
-    }
-
+    
     Ok(())
     }
     pub async fn retirer_tx(
