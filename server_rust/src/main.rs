@@ -5,8 +5,13 @@ use the_last_signal_server::database::{
 use log::info;
 use the_last_signal_server::network::server::Server;
 use the_last_signal_server::gameplay::objets::Livre;
+use the_last_signal_server::gameplay::{
+    stuff_manager::Inventaire,
+    tresor::Tresor};
+
 use the_last_signal_server::utils::logger::logger::ServerLogger;
 use std::collections::HashMap;
+
 #[tokio::main]
 
 /*
@@ -40,6 +45,33 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     info!("Base SQLite prête.");
     ServerLogger::set_database(database.pool().clone());
    
+    // ------------------------------------------
+    // Ouverture d'un trésor et ajout à l'inventaire (livres uniquement)
+    // ------------------------------------------
+
+    let account_id: i64 = 1;
+    let mut tresor = Tresor::new();
+    let mut inventaire = Inventaire::new(database.pool().clone(), account_id).await?;
+
+    let objets = tresor
+        .ouvrir(
+            database.pool(),
+            account_id,
+            1,       // niveau du trésor
+            true,   // is_admin
+            false,   // is_militaire
+            Some(1.0),
+        )
+        .await?;
+
+    info!("Trésor ouvert pour le compte {account_id}:");
+    for (nom_objet, quantite) in objets {
+        // Filtre : n'ajouter que les livres enchantés
+        if nom_objet.contains("livre enchant") {
+            inventaire.ajouter_objet(&nom_objet, u64::from(quantite)).await?;
+            info!("✓ Livre ajouté à l'inventaire : {nom_objet} x{quantite}");
+        }
+    }
     
     let server =
         Server::new(
