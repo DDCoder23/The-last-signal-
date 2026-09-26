@@ -553,6 +553,15 @@ impl Inventaire {
     pub fn objets_mut(&mut self) -> &mut HashMap<String, ObjetInventaire> {
         &mut self.objets
     }
+    pub async fn recharger(&mut self) -> Result<(), sqlx::Error> {
+    self.objets = Self::charger_objets(
+        &self.pool,
+        self.account_id,
+    )
+    .await?;
+
+    Ok(())
+    }
     
 
     pub fn account_id(&self) -> i64 {
