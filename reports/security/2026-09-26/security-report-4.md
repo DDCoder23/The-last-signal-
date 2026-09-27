@@ -1,7 +1,3 @@
-# Security Report
-
-Run : 594
-Branch : main
-Commit : 823ef3e9ec89804cbf5624b46d4c4174a567d377
-Date : Sat Sep 26 14:50:15 UTC 2026
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:55c6b1fe06856a9622f494049b5eae15ba1d3dbd8e4eb7ad919c4f137e12716e
+size 130
