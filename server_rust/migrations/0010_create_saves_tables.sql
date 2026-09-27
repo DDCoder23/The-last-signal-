@@ -62,6 +62,7 @@ CREATE TABLE IF NOT EXISTS stuff (
 
     account_id INTEGER NOT NULL,
     objet_id INTEGER NOT NULL,
+    stack_key TEXT NOT NULL,
 
     quantity INTEGER NOT NULL DEFAULT 1,
 
@@ -73,7 +74,8 @@ CREATE TABLE IF NOT EXISTS stuff (
         REFERENCES objets_dispo(objet_id)
         ON DELETE RESTRICT,
 
-    UNIQUE (account_id, objet_id),
+    UNIQUE (account_id, objet_id,
+        stack_key),
 
     CHECK (quantity > 0)
 );
