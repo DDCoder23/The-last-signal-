@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 2095
+Run : 654
 Branch : main
-Commit : e644d78fb18042d03fc5cbd1cceb6170540ad944
-Date : Sun Sep 27 03:02:45 UTC 2026
+Commit : 99ad0c9a934874f7f473b0dc4063093ac71caf49
+Date : Fri Sep 25 00:42:16 UTC 2026
 
 
 ## Cargo fmt
@@ -320,352 +320,13 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +    (0..nb).map(|_| rng.random_range(1..=face)).sum()
  }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:36:
-         }
- 
-         let quantity_i64 = i64::try_from(quantity).map_err(|_| {
--            sqlx::Error::Protocol(
--                "La quantité dépasse la capacité SQLite INTEGER".into(),
--            )
-+            sqlx::Error::Protocol("La quantité dépasse la capacité SQLite INTEGER".into())
-         })?;
- 
--        let montant_total = prix_unitaire_max
--            .checked_mul(quantity_i64)
--            .ok_or_else(|| {
--                sqlx::Error::Protocol(
--                    "Le montant total dépasse la capacité i64".into(),
--                )
--            })?;
-+        let montant_total = prix_unitaire_max.checked_mul(quantity_i64).ok_or_else(|| {
-+            sqlx::Error::Protocol("Le montant total dépasse la capacité i64".into())
-+        })?;
- 
-         let mut tx = self.pool.begin().await?;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:64:
-         .await?;
- 
-         if existe.is_none() {
--            return Err(sqlx::Error::Protocol(
--                "Objet inexistant".into(),
--            ));
-+            return Err(sqlx::Error::Protocol("Objet inexistant".into()));
-         }
- 
-         // Réserve l'argent.
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:73:
--        WalletManager::debiter_tx(
--            &mut tx,
--            account_id,
--            montant_total,
--        )
--        .await?;
-+        WalletManager::debiter_tx(&mut tx, account_id, montant_total).await?;
- 
-         // Crée l'ordre.
-         let result = sqlx::query(
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:130:
-         }
- 
-         let quantity_i64 = i64::try_from(quantity).map_err(|_| {
--            sqlx::Error::Protocol(
--                "La quantité dépasse la capacité SQLite INTEGER".into(),
--            )
-+            sqlx::Error::Protocol("La quantité dépasse la capacité SQLite INTEGER".into())
-         })?;
- 
-         let mut tx = self.pool.begin().await?;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:150:
-         .await?;
- 
-         if existe.is_none() {
--            return Err(sqlx::Error::Protocol(
--                "Objet inexistant".into(),
--            ));
-+            return Err(sqlx::Error::Protocol("Objet inexistant".into()));
-         }
- 
-         // Réserve les objets.
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:159:
--        Inventaire::retirer_tx(
--            &mut tx,
--            account_id,
--            objet_id,
--            quantity,
--        )
--        .await?;
-+        Inventaire::retirer_tx(&mut tx, account_id, objet_id, quantity).await?;
- 
-         // Crée l'ordre.
-         let result = sqlx::query(
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:193:
-         Ok(ordre_id)
-     }
-     /// Annule un ordre d'achat et restitue les fonds correspondant
--/// à la quantité restante.
--pub async fn annuler_ordre_achat(
--    &self,
--    account_id: i64,
--    ordre_id: i64,
--) -> Result<(), sqlx::Error> {
--    let mut tx = self.pool.begin().await?;
-+    /// à la quantité restante.
-+    pub async fn annuler_ordre_achat(
-+        &self,
-+        account_id: i64,
-+        ordre_id: i64,
-+    ) -> Result<(), sqlx::Error> {
-+        let mut tx = self.pool.begin().await?;
- 
--    let ordre: Option<(i64, i64, i64, String)> = sqlx::query_as(
--        r#"
-+        let ordre: Option<(i64, i64, i64, String)> = sqlx::query_as(
-+            r#"
-         SELECT
-             objet_id,
-             quantity_remaining,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:212:
-         WHERE ordre_id = ?
-           AND account_id = ?
-         "#,
--    )
--    .bind(ordre_id)
--    .bind(account_id)
--    .fetch_optional(&mut *tx)
--    .await?;
-+        )
-+        .bind(ordre_id)
-+        .bind(account_id)
-+        .fetch_optional(&mut *tx)
-+        .await?;
- 
--    let (objet_id, quantity_remaining, prix_unitaire_max, statut) =
--        ordre.ok_or_else(|| {
--            sqlx::Error::Protocol(
--                "Ordre d'achat inexistant".into(),
--            )
--        })?;
-+        let (objet_id, quantity_remaining, prix_unitaire_max, statut) =
-+            ordre.ok_or_else(|| sqlx::Error::Protocol("Ordre d'achat inexistant".into()))?;
- 
--    if statut != "actif" {
--        return Err(sqlx::Error::Protocol(
--            "L'ordre d'achat n'est plus actif".into(),
--        ));
--    }
-+        if statut != "actif" {
-+            return Err(sqlx::Error::Protocol(
-+                "L'ordre d'achat n'est plus actif".into(),
-+            ));
-+        }
- 
--    let montant_a_rembourser = prix_unitaire_max
--        .checked_mul(quantity_remaining)
--        .ok_or_else(|| {
--            sqlx::Error::Protocol(
--                "Le montant du remboursement dépasse la capacité i64".into(),
--            )
--        })?;
-+        let montant_a_rembourser = prix_unitaire_max
-+            .checked_mul(quantity_remaining)
-+            .ok_or_else(|| {
-+                sqlx::Error::Protocol("Le montant du remboursement dépasse la capacité i64".into())
-+            })?;
- 
--    // Marque l'ordre comme annulé.
--    let result = sqlx::query(
--        r#"
-+        // Marque l'ordre comme annulé.
-+        let result = sqlx::query(
-+            r#"
-         UPDATE ordres_achat
-         SET statut = 'annule'
-         WHERE ordre_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:248:
-           AND account_id = ?
-           AND statut = 'actif'
-         "#,
--    )
--    .bind(ordre_id)
--    .bind(account_id)
--    .execute(&mut *tx)
--    .await?;
--
--    if result.rows_affected() != 1 {
--        return Err(sqlx::Error::Protocol(
--            "Impossible d'annuler l'ordre d'achat".into(),
--        ));
--    }
--
--    // Restitue les fonds réservés.
--    if montant_a_rembourser > 0 {
--        WalletManager::crediter_tx(
--            &mut tx,
--            account_id,
--            montant_a_rembourser,
-         )
-+        .bind(ordre_id)
-+        .bind(account_id)
-+        .execute(&mut *tx)
-         .await?;
--    }
- 
--    tx.commit().await?;
-+        if result.rows_affected() != 1 {
-+            return Err(sqlx::Error::Protocol(
-+                "Impossible d'annuler l'ordre d'achat".into(),
-+            ));
-+        }
- 
--    let _ = objet_id;
-+        // Restitue les fonds réservés.
-+        if montant_a_rembourser > 0 {
-+            WalletManager::crediter_tx(&mut tx, account_id, montant_a_rembourser).await?;
-+        }
- 
--    Ok(())
--}
-+        tx.commit().await?;
-+
-+        let _ = objet_id;
-+
-+        Ok(())
-+    }
-     /// Annule un ordre de vente et restitue les objets restants
--/// dans l'inventaire du vendeur.
--pub async fn annuler_ordre_vente(
--    &self,
--    account_id: i64,
--    ordre_id: i64,
--) -> Result<(), sqlx::Error> {
--    let mut tx = self.pool.begin().await?;
-+    /// dans l'inventaire du vendeur.
-+    pub async fn annuler_ordre_vente(
-+        &self,
-+        account_id: i64,
-+        ordre_id: i64,
-+    ) -> Result<(), sqlx::Error> {
-+        let mut tx = self.pool.begin().await?;
- 
--    let ordre: Option<(i64, i64, String)> = sqlx::query_as(
--        r#"
-+        let ordre: Option<(i64, i64, String)> = sqlx::query_as(
-+            r#"
-         SELECT
-             objet_id,
-             quantity_remaining,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:295:
-         WHERE ordre_id = ?
-           AND account_id = ?
-         "#,
--    )
--    .bind(ordre_id)
--    .bind(account_id)
--    .fetch_optional(&mut *tx)
--    .await?;
-+        )
-+        .bind(ordre_id)
-+        .bind(account_id)
-+        .fetch_optional(&mut *tx)
-+        .await?;
- 
--    let (objet_id, quantity_remaining, statut) =
--        ordre.ok_or_else(|| {
--            sqlx::Error::Protocol(
--                "Ordre de vente inexistant".into(),
--            )
--        })?;
-+        let (objet_id, quantity_remaining, statut) =
-+            ordre.ok_or_else(|| sqlx::Error::Protocol("Ordre de vente inexistant".into()))?;
- 
--    if statut != "actif" {
--        return Err(sqlx::Error::Protocol(
--            "L'ordre de vente n'est plus actif".into(),
--        ));
--    }
-+        if statut != "actif" {
-+            return Err(sqlx::Error::Protocol(
-+                "L'ordre de vente n'est plus actif".into(),
-+            ));
-+        }
- 
--    let quantity_u64 = u64::try_from(quantity_remaining).map_err(|_| {
--        sqlx::Error::Protocol(
--            "Quantité invalide".into(),
--        )
--    })?;
-+        let quantity_u64 = u64::try_from(quantity_remaining)
-+            .map_err(|_| sqlx::Error::Protocol("Quantité invalide".into()))?;
- 
--    // Restitue les objets réservés.
--    if quantity_u64 > 0 {
--        Inventaire::ajouter_tx(
--            &mut tx,
--            account_id,
--            objet_id,
--            quantity_u64,
--        )
--        .await?;
--    }
-+        // Restitue les objets réservés.
-+        if quantity_u64 > 0 {
-+            Inventaire::ajouter_tx(&mut tx, account_id, objet_id, quantity_u64).await?;
-+        }
- 
--    // Marque l'ordre comme annulé.
--    let result = sqlx::query(
--        r#"
-+        // Marque l'ordre comme annulé.
-+        let result = sqlx::query(
-+            r#"
-         UPDATE ordres_vente
-         SET statut = 'annule'
-         WHERE ordre_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/market_manager.rs:340:
-           AND account_id = ?
-           AND statut = 'actif'
-         "#,
--    )
--    .bind(ordre_id)
--    .bind(account_id)
--    .execute(&mut *tx)
--    .await?;
-+        )
-+        .bind(ordre_id)
-+        .bind(account_id)
-+        .execute(&mut *tx)
-+        .await?;
- 
--    if result.rows_affected() != 1 {
--        return Err(sqlx::Error::Protocol(
--            "Impossible d'annuler l'ordre de vente".into(),
--        ));
--    }
-+        if result.rows_affected() != 1 {
-+            return Err(sqlx::Error::Protocol(
-+                "Impossible d'annuler l'ordre de vente".into(),
-+            ));
-+        }
- 
--    tx.commit().await?;
-+        tx.commit().await?;
- 
--    Ok(())
--                       }
-+        Ok(())
-+    }
- }
- 
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/mod.rs:1:
  pub mod dice;
-+pub mod market_manager;
  pub mod objets;
 -pub mod tresor;
  pub mod stuff_manager;
 +pub mod tresor;
  pub mod wallet_manager;
--pub mod market_manager;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/objets.rs:1:
 -use serde::{Serialize, Deserialize};
@@ -1078,12 +739,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        self.objets.remove(nom);
 -    } else if let Some(objet) = self.objets.get_mut(nom) {
 -        objet.retirer(quantite);
--    }
 +        if quantite == quantite_actuelle {
 +            self.objets.remove(nom);
 +        } else if let Some(objet) = self.objets.get_mut(nom) {
 +            objet.retirer(quantite);
 +        }
++
++        Ok(())
+     }
++    pub async fn ajouter_objet(&mut self, nom: &str, quantite: u64) -> Result<(), sqlx::Error> {
++        // ------------------------------------------------------------
++        // 1. Vérification de la quantité
++        // ------------------------------------------------------------
  
 -    Ok(())
 -            }
@@ -1095,94 +762,51 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    // ------------------------------------------------------------
 -    // 1. Vérification de la quantité
 -    // ------------------------------------------------------------
--
++        if quantite == 0 {
++            return Err(sqlx::Error::Protocol(
++                "La quantité à ajouter doit être supérieure à 0".into(),
++            ));
++        }
+ 
 -    if quantite == 0 {
 -        return Err(sqlx::Error::Protocol(
 -            "La quantité à ajouter doit être supérieure à 0".into(),
 -        ));
-+        Ok(())
-     }
-+    pub async fn ajouter_objet(&mut self, nom: &str, quantite: u64) -> Result<(), sqlx::Error> {
+-    }
 +        // ------------------------------------------------------------
-+        // 1. Vérification de la quantité
++        // 2. Récupération de l'objet dans objets_dispo
 +        // ------------------------------------------------------------
++        let quantite_i64 = i64::try_from(quantite)
++            .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
  
 -    // ------------------------------------------------------------
 -    // 2. Récupération de l'objet dans objets_dispo
 -    // ------------------------------------------------------------
 -    let quantite_i64 = i64::try_from(quantite)
 -    .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+-        
 -    let objet_id: i64 = sqlx::query_scalar(
--    r#"
-+        if quantite == 0 {
-+            return Err(sqlx::Error::Protocol(
-+                "La quantité à ajouter doit être supérieure à 0".into(),
-+            ));
-+        }
-+
-+        // ------------------------------------------------------------
-+        // 2. Récupération de l'objet dans objets_dispo
-+        // ------------------------------------------------------------
-+        let quantite_i64 = i64::try_from(quantite)
-+            .map_err(|_| sqlx::Error::Protocol("quantite trop grande pour SQLite".into()))?;
+-        r#"
 +        let objet_id: i64 = sqlx::query_scalar(
 +            r#"
-     SELECT objet_id
-     FROM objets_dispo
-     WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:362:
-     "#,
--)
--.bind(nom)
--.fetch_optional(&self.pool)
--.await?
--.ok_or_else(|| {
--    sqlx::Error::Protocol(
--        format!("Objet absent de objets_dispo : {nom}").into(),
+         SELECT objet_id
+         FROM objets_dispo
+         WHERE nom = ?
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:363:
+         "#,
 -    )
--})?;
--    // ------------------------------------------------------------
--    // 3. Ajout atomique dans SQLite
--    // ------------------------------------------------------------
+-    .bind(nom)
+-    .fetch_one(&self.pool)
+-    .await?;
 +        )
 +        .bind(nom)
-+        .fetch_optional(&self.pool)
-+        .await?
-+        .ok_or_else(|| {
-+            sqlx::Error::Protocol(format!("Objet absent de objets_dispo : {nom}").into())
-+        })?;
-+        // ------------------------------------------------------------
-+        // 3. Ajout atomique dans SQLite
-+        // ------------------------------------------------------------
++        .fetch_one(&self.pool)
++        .await?;
  
--    let objet_id: i64 = sqlx::query_scalar(
--    r#"
-+        let objet_id: i64 = sqlx::query_scalar(
-+            r#"
-     SELECT objet_id
-     FROM objets_dispo
-     WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:381:
-     "#,
--)
--.bind(nom)
--.fetch_optional(&self.pool)
--.await?
--.ok_or_else(|| {
--    sqlx::Error::Protocol(
--        format!("Objet absent de objets_dispo : {nom}").into(),
--    )
--})?;
-+        )
-+        .bind(nom)
-+        .fetch_optional(&self.pool)
-+        .await?
-+        .ok_or_else(|| {
-+            sqlx::Error::Protocol(format!("Objet absent de objets_dispo : {nom}").into())
-+        })?;
-         // ------------------------------------------------------------
+-    // ------------------------------------------------------------
 -    // 3. Ajout atomique dans SQLite
 -    // ------------------------------------------------------------
++        // ------------------------------------------------------------
 +        // 3. Ajout atomique dans SQLite
 +        // ------------------------------------------------------------
  
@@ -1193,7 +817,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          INSERT INTO stuff (
              account_id,
              objet_id,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:404:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:382:
          DO UPDATE SET
              quantity = quantity + excluded.quantity
          "#,
@@ -1203,215 +827,42 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    .bind(quantite_i64)
 -    .execute(&self.pool)
 -    .await?;
-+        )
+-
+-    // ------------------------------------------------------------
+-    // 4. Mise à jour de l'inventaire en mémoire
+-    // ------------------------------------------------------------
+-
+-    if let Some(objet) = self.objets.get_mut(nom) {
+-        objet.ajouter(quantite);
+-    } else {
+-        // L'objet n'était pas présent dans le HashMap.
+-        // On recharge l'inventaire depuis SQLite afin de
+-        // construire correctement ObjetInventaire selon son type.
+-        self.objets = Self::charger_objets(
+-            &self.pool,
+-            self.account_id,
+         )
 +        .bind(self.account_id)
 +        .bind(objet_id)
 +        .bind(quantite_i64)
 +        .execute(&self.pool)
-+        .await?;
+         .await?;
+-    }
  
--    // ------------------------------------------------------------
--    // 4. Mise à jour de l'inventaire en mémoire
--    // ------------------------------------------------------------
+-    Ok(())
 +        // ------------------------------------------------------------
 +        // 4. Mise à jour de l'inventaire en mémoire
 +        // ------------------------------------------------------------
- 
--    
--    
-         // L'objet n'était pas présent dans le HashMap.
-         // On recharge l'inventaire depuis SQLite afin de
-         // construire correctement ObjetInventaire selon son type.
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:423:
--        self.objets = Self::charger_objets(
--            &self.pool,
--            self.account_id,
--        )
--        .await?;
--    
--        
-+        self.objets = Self::charger_objets(&self.pool, self.account_id).await?;
- 
--    
--        
--        
--    
--    Ok(())
-+        Ok(())
-     }
-     pub async fn retirer_tx(
--    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
--    account_id: i64,
--    objet_id: i64,
--    quantite: u64,
--) -> Result<(), sqlx::Error> {
--    if quantite == 0 {
--        return Err(sqlx::Error::Protocol(
--            "La quantité à retirer doit être supérieure à 0".into(),
--        ));
--    }
-+        tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
-+        account_id: i64,
-+        objet_id: i64,
-+        quantite: u64,
-+    ) -> Result<(), sqlx::Error> {
-+        if quantite == 0 {
-+            return Err(sqlx::Error::Protocol(
-+                "La quantité à retirer doit être supérieure à 0".into(),
-+            ));
-+        }
- 
--    let quantite_i64 = i64::try_from(quantite).map_err(|_| {
--        sqlx::Error::Protocol(
--            "La quantité dépasse la capacité SQLite INTEGER".into(),
--        )
--    })?;
-+        let quantite_i64 = i64::try_from(quantite).map_err(|_| {
-+            sqlx::Error::Protocol("La quantité dépasse la capacité SQLite INTEGER".into())
-+        })?;
- 
--    let quantity: i64 = sqlx::query_scalar(
--        r#"
-+        let quantity: i64 = sqlx::query_scalar(
-+            r#"
-         SELECT quantity
-         FROM stuff
-         WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:460:
-           AND objet_id = ?
-         "#,
--    )
--    .bind(account_id)
--    .bind(objet_id)
--    .fetch_optional(&mut **tx)
--    .await?
--    .unwrap_or(0);
-+        )
-+        .bind(account_id)
-+        .bind(objet_id)
-+        .fetch_optional(&mut **tx)
-+        .await?
-+        .unwrap_or(0);
- 
--    if quantity < quantite_i64 {
--        return Err(sqlx::Error::Protocol(
--            "Quantité insuffisante".into(),
--        ));
--    }
-+        if quantity < quantite_i64 {
-+            return Err(sqlx::Error::Protocol("Quantité insuffisante".into()));
-+        }
- 
--    if quantity == quantite_i64 {
--        sqlx::query(
--            r#"
-+        if quantity == quantite_i64 {
-+            sqlx::query(
-+                r#"
-             DELETE FROM stuff
-             WHERE account_id = ?
-               AND objet_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:481:
-             "#,
--        )
--        .bind(account_id)
--        .bind(objet_id)
--        .execute(&mut **tx)
--        .await?;
--    } else {
--        sqlx::query(
--            r#"
-+            )
-+            .bind(account_id)
-+            .bind(objet_id)
-+            .execute(&mut **tx)
-+            .await?;
++
++        if let Some(objet) = self.objets.get_mut(nom) {
++            objet.ajouter(quantite);
 +        } else {
-+            sqlx::query(
-+                r#"
-             UPDATE stuff
-             SET quantity = quantity - ?
-             WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:493:
-               AND objet_id = ?
-               AND quantity >= ?
-             "#,
--        )
--        .bind(quantite_i64)
--        .bind(account_id)
--        .bind(objet_id)
--        .bind(quantite_i64)
--        .execute(&mut **tx)
--        .await?;
--    }
-+            )
-+            .bind(quantite_i64)
-+            .bind(account_id)
-+            .bind(objet_id)
-+            .bind(quantite_i64)
-+            .execute(&mut **tx)
-+            .await?;
++            // L'objet n'était pas présent dans le HashMap.
++            // On recharge l'inventaire depuis SQLite afin de
++            // construire correctement ObjetInventaire selon son type.
++            self.objets = Self::charger_objets(&self.pool, self.account_id).await?;
 +        }
- 
--    Ok(())
-+        Ok(())
-     }
-     pub async fn ajouter_tx(
--    tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
--    account_id: i64,
--    objet_id: i64,
--    quantite: u64,
--) -> Result<(), sqlx::Error> {
--    if quantite == 0 {
--        return Err(sqlx::Error::Protocol(
--            "La quantité à ajouter doit être supérieure à 0".into(),
--        ));
--    }
-+        tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
-+        account_id: i64,
-+        objet_id: i64,
-+        quantite: u64,
-+    ) -> Result<(), sqlx::Error> {
-+        if quantite == 0 {
-+            return Err(sqlx::Error::Protocol(
-+                "La quantité à ajouter doit être supérieure à 0".into(),
-+            ));
-+        }
- 
--    let quantite_i64 = i64::try_from(quantite).map_err(|_| {
--        sqlx::Error::Protocol(
--            "La quantité dépasse la capacité SQLite INTEGER".into(),
--        )
--    })?;
-+        let quantite_i64 = i64::try_from(quantite).map_err(|_| {
-+            sqlx::Error::Protocol("La quantité dépasse la capacité SQLite INTEGER".into())
-+        })?;
- 
--    sqlx::query(
--        r#"
-+        sqlx::query(
-+            r#"
-         INSERT INTO stuff (
-             account_id,
-             objet_id,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:534:
-         DO UPDATE SET
-             quantity = quantity + excluded.quantity
-         "#,
--    )
--    .bind(account_id)
--    .bind(objet_id)
--    .bind(quantite_i64)
--    .execute(&mut **tx)
--    .await?;
-+        )
-+        .bind(account_id)
-+        .bind(objet_id)
-+        .bind(quantite_i64)
-+        .execute(&mut **tx)
-+        .await?;
- 
--    Ok(())
++
 +        Ok(())
      }
 -    pub async fn get_quantity(
@@ -1426,7 +877,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          SELECT s.quantity
          FROM stuff s
          JOIN objets_dispo o
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:556:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:421:
          WHERE s.account_id = ?
            AND o.nom = ?
          "#,
@@ -1448,6 +899,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -            )
 -        }),
 -        None => Ok(0),
+-    }
 +        match quantity {
 +            Some(value) => u64::try_from(value).map_err(|_| {
 +                sqlx::Error::Protocol(format!("Quantité invalide pour l'objet {nom}").into())
@@ -1455,40 +907,20 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            None => Ok(0),
 +        }
      }
--    }
  
      pub fn objets(&self) -> &HashMap<String, ObjetInventaire> {
-         &self.objets
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/stuff_manager.rs:580:
-         &mut self.objets
-     }
-     pub async fn recharger(&mut self) -> Result<(), sqlx::Error> {
--    self.objets = Self::charger_objets(
--        &self.pool,
--        self.account_id,
--    )
--    .await?;
-+        self.objets = Self::charger_objets(&self.pool, self.account_id).await?;
- 
--    Ok(())
-+        Ok(())
-     }
--    
- 
-     pub fn account_id(&self) -> i64 {
-         self.account_id
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1:
 -use rand::{Rng,RngExt};
--use sqlx::SqlitePool;
--use std::collections::HashMap;
- use crate::gameplay::dice::jet_de_des;
- use log::{debug, error, info};
++use crate::gameplay::dice::jet_de_des;
 +use rand::{Rng, RngExt};
-+use sqlx::SqlitePool;
-+use std::collections::HashMap;
+ use sqlx::SqlitePool;
+ use std::collections::HashMap;
+-use crate::gameplay::dice::jet_de_des;
  
+-
  const PA: u32 = 1;
  const PO: u32 = PA * 10;
+ const PP: u32 = PO * 10;
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:22:
  
  #[derive(Debug, Clone)]
@@ -1721,8 +1153,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        ("pain".to_string(), 70.0),
 -        ("fruit et légumes".to_string(), 10.0),
 -        ("herbes et racines".to_string(), 10.0),
--        ("tacos".to_string(), 5.0),
--        ("burger".to_string(), 5.0),
+-        ("tacos".to_string(), 10.0),
 -        
 -    ]),
 -);  
@@ -1732,8 +1163,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +                ("pain".to_string(), 70.0),
 +                ("fruit et légumes".to_string(), 10.0),
 +                ("herbes et racines".to_string(), 10.0),
-+                ("tacos".to_string(), 5.0),
-+                ("burger".to_string(), 5.0),
++                ("tacos".to_string(), 10.0),
 +            ]),
 +        );
          // La liste de viande pourra être extendue
@@ -1752,9 +1182,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        ("crabe".to_string(), 10.0),
 -        ("saumon".to_string(), 10.0),
 -        ("thon".to_string(), 10.0),
--        ("fugu".to_string(), 10.0),
--        ("poisson globe".to_string(), 10.0),
--        
 -    ]),
 -);
 +            "viande".to_string(),
@@ -1771,8 +1198,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +                ("crabe".to_string(), 10.0),
 +                ("saumon".to_string(), 10.0),
 +                ("thon".to_string(), 10.0),
-+                ("fugu".to_string(), 10.0),
-+                ("poisson globe".to_string(), 10.0),
 +            ]),
 +        );
          sous_loot.insert(
@@ -1982,7 +1407,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          Self {
              loot_par_niveau,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:559:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:555:
              sous_loot_livre_normal,
              sous_loot_livre_admin,
              coeff_loot: 1.0,
@@ -2311,14 +1736,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +                return objet.clone();
 +            }
          }
-+
-+        unreachable!("Le tirage n'a trouvé aucun résultat")
-     }
+-    }
  
 -    unreachable!("Le tirage n'a trouvé aucun résultat")
 -}
--
--    
+-pub fn cle_echec(categorie: &str, objet: &str) -> String {
+-    format!("{}::{}", categorie, objet)
+-}
++        unreachable!("Le tirage n'a trouvé aucun résultat")
++    }
++    pub fn cle_echec(categorie: &str, objet: &str) -> String {
++        format!("{}::{}", categorie, objet)
++    }
      pub async fn tirer_objet(
 -    &mut self,
 -    pool: &SqlitePool,
@@ -2334,28 +1763,17 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +        rng: &mut impl Rng,
 +        is_admin: bool,
 +    ) -> Result<String, sqlx::Error> {
-+        // Catégorie principale du tirage.
-+        // Exemple : "Artefact rare"
-+        let categorie_racine = categorie.to_string();
- 
--    // Catégorie principale du tirage.
--    // Exemple : "Artefact rare"
--    let categorie_racine = categorie.to_string();
-+        // Catégorie actuellement parcourue.
-+        // Elle change lorsqu'on descend dans les sous-catégories.
 +        let mut categorie_actuelle = categorie.to_string();
  
--    // Catégorie actuellement parcourue.
--    // Elle change lorsqu'on descend dans les sous-catégories.
 -    let mut categorie_actuelle = categorie.to_string();
 +        loop {
 +            // ==========================================
-+            // RÉCUPÉRATION DE LA TABLE ACTUELLE
++            // RÉCUPÉRATION DE LA TABLE
 +            // ==========================================
  
 -    loop {
 -        // ==========================================
--        // RÉCUPÉRATION DE LA TABLE ACTUELLE
+-        // RÉCUPÉRATION DE LA TABLE
 -        // ==========================================
 +            let table_originale = self
 +                .sous_loot
@@ -2386,175 +1804,86 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -            panic!("Table de loot vide");
 -        }
 +            // ==========================================
-+            // CALCUL DES POIDS AVEC PITY
++            // CALCUL DES POIDS AVEC LE PITY SYSTEM
 +            // ==========================================
  
 -        // ==========================================
--        // CALCUL DES POIDS AVEC PITY
+-        // CALCUL DES POIDS AVEC LE PITY SYSTEM
 -        // ==========================================
 +            let mut table_ajustee = HashMap::new();
  
 -        let mut table_ajustee = HashMap::new();
-+            for (nom, poids) in &table_originale {
++            for (objet, poids) in &table_originale {
 +                let probabilite = poids / total;
  
--        for (nom, poids) in &table_originale {
-+                // Est-ce que cette entrée est une
-+                // sous-catégorie ?
-+                let est_sous_categorie = self.sous_loot.contains_key(nom);
- 
+-        for (objet, poids) in &table_originale {
 -            let probabilite = poids / total;
-+                let echecs: i64;
- 
--            // Est-ce que cette entrée est une
--            // sous-catégorie ?
--            let est_sous_categorie =
--                self.sous_loot.contains_key(nom);
-+                if est_sous_categorie {
-+                    // ==================================
-+                    // PITY SOUS-CATÉGORIE
-+                    // ==================================
- 
--            let echecs: i64;
 -
--            if est_sous_categorie {
--
--                // ==================================
--                // PITY SOUS-CATÉGORIE
--                // ==================================
--
--                echecs = sqlx::query_scalar(
--                    r#"
-+                    echecs = sqlx::query_scalar(
-+                        r#"
-                     SELECT nombre
-                     FROM echecs_sous_categories
-                     WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:853:
-                       AND categorie = ?
-                       AND sous_categorie = ?
-                     "#,
--                )
--                .bind(account_id)
--                .bind(&categorie_actuelle)
--                .bind(nom)
--                .fetch_optional(pool)
--                .await?
--                .unwrap_or(0);
-+                    )
-+                    .bind(account_id)
-+                    .bind(&categorie_actuelle)
-+                    .bind(nom)
-+                    .fetch_optional(pool)
-+                    .await?
-+                    .unwrap_or(0);
-+                } else {
-+                    // ==================================
-+                    // PITY OBJET
-+                    // ==================================
- 
--            } else {
--
--                // ==================================
--                // PITY OBJET
--                // ==================================
--
--                let objet_id: Option<i64> = sqlx::query_scalar(
--                    r#"
-+                    let objet_id: Option<i64> = sqlx::query_scalar(
-+                        r#"
-                     SELECT objet_id
-                     FROM objets_dispo
-                     WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:875:
-                     "#,
--                )
--                .bind(nom)
--                .fetch_optional(pool)
--                .await?;
-+                    )
-+                    .bind(nom)
-+                    .fetch_optional(pool)
-+                    .await?;
- 
--                // Si l'objet n'existe pas encore dans
--                // objets_dispo, il n'a simplement pas
--                // encore de pity.
--                echecs = match objet_id {
--                    Some(objet_id) => {
--                        sqlx::query_scalar(
-+                    // Si l'objet n'existe pas encore dans
-+                    // objets_dispo, il n'a simplement pas
-+                    // encore de pity.
-+                    echecs = match objet_id {
-+                        Some(objet_id) => sqlx::query_scalar(
-                             r#"
-                             SELECT nombre
-                             FROM echecs_objets
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:899:
-                         .bind(objet_id)
-                         .fetch_optional(pool)
-                         .await?
--                        .unwrap_or(0)
--                    }
-+                        .unwrap_or(0),
- 
--                    None => 0,
--                };
--            }
-+                        None => 0,
-+                    };
-+                }
- 
--            // ==================================
--            // APPLICATION DU PITY
--            // ==================================
-+                // ==================================
-+                // APPLICATION DU PITY
-+                // ==================================
+-            let echecs: i64 = sqlx::query_scalar(
+-                r#"
++                let echecs: i64 = sqlx::query_scalar(
++                    r#"
+                 SELECT nombre
+                 FROM echecs
+                 WHERE account_id = ?
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:830:
+                   AND categorie = ?
+                   AND objet = ?
+                 "#,
+-            )
+-            .bind(account_id)
+-            .bind(&categorie_actuelle)
+-            .bind(objet)
+-            .fetch_optional(pool)
+-            .await?
+-            .unwrap_or(0);
++                )
++                .bind(account_id)
++                .bind(&categorie_actuelle)
++                .bind(objet)
++                .fetch_optional(pool)
++                .await?
++                .unwrap_or(0);
  
 -            /*
--             * Le pity s'applique uniquement aux
--             * résultats ayant une probabilité
--             * originale strictement inférieure à 3 %.
+-             * PITY :
 -             *
--             * Chaque échec ajoute +7,5 % du poids
--             * original.
+-             * Un objet dont la probabilité originale
+-             * est strictement inférieure à 5 % bénéficie
+-             * du bonus.
 -             *
--             * Le coefficient de loot est également
--             * appliqué.
+-             * +7,5 % du poids original par échec.
+-             * 
+-             * Applique aussi le coefficient de loot
 -             */
-+                /*
-+                 * Le pity s'applique uniquement aux
-+                 * résultats ayant une probabilité
-+                 * originale strictement inférieure à 3 %.
-+                 *
-+                 * Chaque échec ajoute +7,5 % du poids
-+                 * original.
-+                 *
-+                 * Le coefficient de loot est également
-+                 * appliqué.
-+                 */
- 
--            let poids_ajuste = if probabilite < 0.03 {
--                *poids
--                    * self.coeff_loot
--                    * (1.0 + 0.075 * echecs as f64)
+-            let poids_ajuste = if probabilite < 0.05 {
+-                *poids * self.coeff_loot * (1.0 + 0.075 * echecs as f64)
 -            } else {
--                *poids * self.coeff_loot
+-                *poids
 -            };
-+                let poids_ajuste = if probabilite < 0.03 {
++                /*
++                 * PITY :
++                 *
++                 * Un objet dont la probabilité originale
++                 * est strictement inférieure à 5 % bénéficie
++                 * du bonus.
++                 *
++                 * +7,5 % du poids original par échec.
++                 *
++                 * Applique aussi le coefficient de loot
++                 */
++                let poids_ajuste = if probabilite < 0.05 {
 +                    *poids * self.coeff_loot * (1.0 + 0.075 * echecs as f64)
 +                } else {
-+                    *poids * self.coeff_loot
++                    *poids
 +                };
  
 -            table_ajustee.insert(
--                nom.clone(),
+-                objet.clone(),
 -                poids_ajuste,
 -            );
 -        }
-+                table_ajustee.insert(nom.clone(), poids_ajuste);
++                table_ajustee.insert(objet.clone(), poids_ajuste);
 +            }
  
 -        // ==========================================
@@ -2571,240 +1900,92 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            let resultat = Self::tirer_pondere(&table_ajustee, rng);
  
 -        // ==========================================
--        // LE RÉSULTAT EST-IL UNE SOUS-CATÉGORIE ?
+-        // MISE À JOUR DES ÉCHECS
 -        // ==========================================
 +            // ==========================================
-+            // LE RÉSULTAT EST-IL UNE SOUS-CATÉGORIE ?
++            // MISE À JOUR DES ÉCHECS
 +            // ==========================================
  
--        let resultat_est_sous_categorie =
--            self.sous_loot.contains_key(&resultat);
-+            let resultat_est_sous_categorie = self.sous_loot.contains_key(&resultat);
- 
--        // ==========================================
--        // MISE À JOUR DU PITY
--        // ==========================================
-+            // ==========================================
-+            // MISE À JOUR DU PITY
-+            // ==========================================
- 
--        for (nom, poids) in &table_originale {
-+            for (nom, poids) in &table_originale {
+-        for (objet, poids) in &table_originale {
+-            let probabilite = poids / total;
++            for (objet, poids) in &table_originale {
 +                let probabilite = poids / total;
  
--            let probabilite = poids / total;
-+                // Pas de pity pour les probabilités >= 3 %.
+-            // Le pity ne concerne que les objets < 3 %
+-            if probabilite >= 0.03 {
+-                continue;
+-            }
++                // Le pity ne concerne que les objets < 3 %
 +                if probabilite >= 0.03 {
 +                    continue;
 +                }
  
--            // Pas de pity pour les probabilités >= 3 %.
--            if probabilite >= 0.03 {
--                continue;
--            }
-+                // ======================================
-+                // SOUS-CATÉGORIE
-+                // ======================================
+-            if objet == &resultat {
+-                // ----------------------------------
+-                // OBJET OBTENU → RESET
+-                // ----------------------------------
++                if objet == &resultat {
++                    // ----------------------------------
++                    // OBJET OBTENU → RESET
++                    // ----------------------------------
  
--            // ======================================
--            // SOUS-CATÉGORIE
--            // ======================================
-+                if self.sous_loot.contains_key(nom) {
-+                    if nom == &resultat {
-+                        // ------------------------------
-+                        // SOUS-CATÉGORIE OBTENUE
-+                        // → RESET
-+                        // ------------------------------
- 
--            if self.sous_loot.contains_key(nom) {
--
--                if nom == &resultat {
--
--                    // ------------------------------
--                    // SOUS-CATÉGORIE OBTENUE
--                    // → RESET
--                    // ------------------------------
--
--                    sqlx::query(
--                        r#"
-+                        sqlx::query(
-+                            r#"
-                         INSERT INTO echecs_sous_categories (
-                             account_id,
-                             categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:996:
-                         DO UPDATE SET
-                             nombre = 0
-                         "#,
--                    )
--                    .bind(account_id)
--                    .bind(&categorie_actuelle)
--                    .bind(nom)
--                    .execute(pool)
--                    .await?;
-+                        )
-+                        .bind(account_id)
-+                        .bind(&categorie_actuelle)
-+                        .bind(nom)
-+                        .execute(pool)
-+                        .await?;
-+                    } else {
-+                        // ------------------------------
-+                        // SOUS-CATÉGORIE NON OBTENUE
-+                        // → +1 ÉCHEC
-+                        // ------------------------------
- 
--                } else {
--
--                    // ------------------------------
--                    // SOUS-CATÉGORIE NON OBTENUE
--                    // → +1 ÉCHEC
--                    // ------------------------------
--
--                    sqlx::query(
--                        r#"
-+                        sqlx::query(
-+                            r#"
-                         INSERT INTO echecs_sous_categories (
-                             account_id,
-                             categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1028:
-                         DO UPDATE SET
-                             nombre = nombre + 1
-                         "#,
--                    )
--                    .bind(account_id)
--                    .bind(&categorie_actuelle)
--                    .bind(nom)
--                    .execute(pool)
--                    .await?;
--                }
-+                        )
-+                        .bind(account_id)
-+                        .bind(&categorie_actuelle)
-+                        .bind(nom)
-+                        .execute(pool)
-+                        .await?;
-+                    }
- 
--            // ======================================
--            // OBJET FINAL
--            // ======================================
--
--            } else {
--
--                let objet_id: Option<i64> = sqlx::query_scalar(
+-                sqlx::query(
 -                    r#"
-+                // ======================================
-+                // OBJET FINAL
-+                // ======================================
-+                } else {
-+                    let objet_id: Option<i64> = sqlx::query_scalar(
++                    sqlx::query(
 +                        r#"
-                     SELECT objet_id
-                     FROM objets_dispo
-                     WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1050:
+                     INSERT INTO echecs (
+                         account_id,
+                         categorie,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:905:
+                     DO UPDATE SET
+                         nombre = 0
                      "#,
 -                )
--                .bind(nom)
--                .fetch_optional(pool)
+-                .bind(account_id)
+-                .bind(&categorie_actuelle)
+-                .bind(objet)
+-                .execute(pool)
 -                .await?;
 +                    )
-+                    .bind(nom)
-+                    .fetch_optional(pool)
++                    .bind(account_id)
++                    .bind(&categorie_actuelle)
++                    .bind(objet)
++                    .execute(pool)
 +                    .await?;
++                } else {
++                    // ----------------------------------
++                    // OBJET NON OBTENU → +1 ÉCHEC
++                    // ----------------------------------
  
--                // Si l'objet n'existe pas dans
--                // objets_dispo, on ne peut pas
--                // enregistrer son pity.
--                let Some(objet_id) = objet_id else {
--                    continue;
--                };
-+                    // Si l'objet n'existe pas dans
-+                    // objets_dispo, on ne peut pas
-+                    // enregistrer son pity.
-+                    let Some(objet_id) = objet_id else {
-+                        continue;
-+                    };
- 
--                if nom == &resultat {
-+                    if nom == &resultat {
-+                        // ------------------------------
-+                        // OBJET OBTENU
-+                        // → RESET
-+                        // ------------------------------
- 
--                    // ------------------------------
--                    // OBJET OBTENU
--                    // → RESET
--                    // ------------------------------
+-            } else {
+-                // ----------------------------------
+-                // OBJET NON OBTENU → +1 ÉCHEC
+-                // ----------------------------------
 -
--                    sqlx::query(
--                        r#"
-+                        sqlx::query(
-+                            r#"
-                         INSERT INTO echecs_objets (
-                             account_id,
-                             categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1087:
-                         DO UPDATE SET
-                             nombre = 0
-                         "#,
--                    )
--                    .bind(account_id)
--                    .bind(&categorie_racine)
--                    .bind(&categorie_actuelle)
--                    .bind(objet_id)
--                    .execute(pool)
--                    .await?;
-+                        )
-+                        .bind(account_id)
-+                        .bind(&categorie_racine)
-+                        .bind(&categorie_actuelle)
-+                        .bind(objet_id)
-+                        .execute(pool)
-+                        .await?;
-+                    } else {
-+                        // ------------------------------
-+                        // OBJET NON OBTENU
-+                        // → +1 ÉCHEC
-+                        // ------------------------------
- 
--                } else {
--
--                    // ------------------------------
--                    // OBJET NON OBTENU
--                    // → +1 ÉCHEC
--                    // ------------------------------
--
--                    sqlx::query(
--                        r#"
-+                        sqlx::query(
-+                            r#"
-                         INSERT INTO echecs_objets (
-                             account_id,
-                             categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1122:
-                         DO UPDATE SET
-                             nombre = nombre + 1
-                         "#,
--                    )
--                    .bind(account_id)
--                    .bind(&categorie_racine)
--                    .bind(&categorie_actuelle)
--                    .bind(objet_id)
--                    .execute(pool)
--                    .await?;
-+                        )
-+                        .bind(account_id)
-+                        .bind(&categorie_racine)
-+                        .bind(&categorie_actuelle)
-+                        .bind(objet_id)
-+                        .execute(pool)
-+                        .await?;
-+                    }
-                 }
+-                sqlx::query(
+-                    r#"
++                    sqlx::query(
++                        r#"
+                     INSERT INTO echecs (
+                         account_id,
+                         categorie,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:935:
+                     DO UPDATE SET
+                         nombre = nombre + 1
+                     "#,
+-                )
+-                .bind(account_id)
+-                .bind(&categorie_actuelle)
+-                .bind(objet)
+-                .execute(pool)
+-                .await?;
++                    )
++                    .bind(account_id)
++                    .bind(&categorie_actuelle)
++                    .bind(objet)
++                    .execute(pool)
++                    .await?;
++                }
              }
 -        }
  
@@ -2830,17 +2011,17 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            }
  
 -        // ==========================================
--        // DESCENTE DANS UNE SOUS-CATÉGORIE
+-        // SOUS-CATÉGORIE
 -        // ==========================================
 +            // ==========================================
-+            // DESCENTE DANS UNE SOUS-CATÉGORIE
++            // SOUS-CATÉGORIE
 +            // ==========================================
  
--        if resultat_est_sous_categorie {
+-        if self.sous_loot.contains_key(&resultat) {
 -            categorie_actuelle = resultat;
 -            continue;
 -        }
-+            if resultat_est_sous_categorie {
++            if self.sous_loot.contains_key(&resultat) {
 +                categorie_actuelle = resultat;
 +                continue;
 +            }
@@ -2856,7 +2037,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            return Ok(resultat);
 +        }
      }
--}
+-    }
      pub async fn tirer_livre(
 -    &mut self,
 -    pool: &SqlitePool,
@@ -2864,11 +2045,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    rng: &mut impl Rng,
 -    is_admin: bool,
 -) -> Result<String, sqlx::Error> {
--    let categorie = if is_admin {
--        "livre enchant admin"
--    } else {
--        "livre enchant normal"
--    };
 +        &mut self,
 +        pool: &SqlitePool,
 +        account_id: i64,
@@ -2881,10 +2057,10 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            "livre enchant normal"
 +        };
  
--    let table_originale = if is_admin {
--        self.sous_loot_livre_admin.clone()
+-    let categorie = if is_admin {
+-        "livre enchant admin"
 -    } else {
--        self.sous_loot_livre_normal.clone()
+-        "livre enchant normal"
 -    };
 +        let table_originale = if is_admin {
 +            self.sous_loot_livre_admin.clone()
@@ -2892,84 +2068,78 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            self.sous_loot_livre_normal.clone()
 +        };
  
--    let total: f64 = table_originale.values().sum();
+-    let table_originale = if is_admin {
+-        self.sous_loot_livre_admin.clone()
+-    } else {
+-        self.sous_loot_livre_normal.clone()
+-    };
 +        let total: f64 = table_originale.values().sum();
  
--    if total <= 0.0 {
--        panic!("Table de loot des livres vide");
--    }
+-    let total: f64 = table_originale.values().sum();
 +        if total <= 0.0 {
 +            panic!("Table de loot des livres vide");
 +        }
  
--    // ==========================================
--    // CALCUL DES POIDS AVEC PITY
--    // ==========================================
+-    if total <= 0.0 {
+-        panic!("Table de loot des livres vide");
+-    }
 +        // ==========================================
 +        // CALCUL DES POIDS AVEC PITY
 +        // ==========================================
  
--    let mut table_ajustee = HashMap::new();
+-    // ==========================================
+-    // CALCUL DES POIDS AVEC PITY
+-    // ==========================================
 +        let mut table_ajustee = HashMap::new();
  
--    for (objet, poids) in &table_originale {
--        let probabilite = poids / total;
+-    let mut table_ajustee = HashMap::new();
 +        for (objet, poids) in &table_originale {
 +            let probabilite = poids / total;
  
--        let objet_id: Option<i64> = sqlx::query_scalar(
+-    for (objet, poids) in &table_originale {
+-        let probabilite = poids / total;
+-
+-        let echecs: i64 = sqlx::query_scalar(
 -            r#"
-+            let objet_id: Option<i64> = sqlx::query_scalar(
++            let echecs: i64 = sqlx::query_scalar(
 +                r#"
-             SELECT objet_id
-             FROM objets_dispo
-             WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1206:
+             SELECT nombre
+             FROM echecs
+             WHERE account_id = ?
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1018:
+               AND categorie = ?
+               AND objet = ?
              "#,
 -        )
+-        .bind(account_id)
+-        .bind(categorie)
 -        .bind(objet)
 -        .fetch_optional(pool)
--        .await?;
+-        .await?
+-        .unwrap_or(0);
 +            )
++            .bind(account_id)
++            .bind(categorie)
 +            .bind(objet)
 +            .fetch_optional(pool)
-+            .await?;
++            .await?
++            .unwrap_or(0);
  
--        let echecs = match objet_id {
--            Some(objet_id) => {
--                sqlx::query_scalar(
-+            let echecs = match objet_id {
-+                Some(objet_id) => sqlx::query_scalar(
-                     r#"
-                     SELECT nombre
-                     FROM echecs_objets
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1227:
-                 .bind(objet_id)
-                 .fetch_optional(pool)
-                 .await?
--                .unwrap_or(0)
--            }
-+                .unwrap_or(0),
- 
--            None => {
--                error!(
--                    "Livre absent de objets_dispo : {:?}",
--                    objet
--                );
-+                None => {
-+                    error!("Livre absent de objets_dispo : {:?}", objet);
- 
--                0
--            }
--        };
-+                    0
-+                }
-+            };
+-        /*
+-         * Seuls les livres ayant une probabilité
+-         * originale < 3 % bénéficient du pity.
+-         * 
+-         * Applique aussi le coefficient de loot
+-         */
++            /*
++             * Seuls les livres ayant une probabilité
++             * originale < 3 % bénéficient du pity.
++             *
++             * Applique aussi le coefficient de loot
++             */
  
 -        let poids_ajuste = if probabilite < 0.03 {
--            *poids
--                * self.coeff_loot
--                * (1.0 + 0.075 * echecs as f64)
+-            *poids * self.coeff_loot * (1.0 + 0.075 * echecs as f64)
 -        } else {
 -            *poids * self.coeff_loot
 -        };
@@ -3012,114 +2182,78 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +        for (objet, poids) in &table_originale {
 +            let probabilite = poids / total;
  
+-        // Pas de pity pour les objets >= 1 %
 -        if probabilite >= 0.03 {
 -            continue;
 -        }
++            // Pas de pity pour les objets >= 1 %
 +            if probabilite >= 0.03 {
 +                continue;
 +            }
  
--        let objet_id: Option<i64> = sqlx::query_scalar(
--            r#"
-+            let objet_id: Option<i64> = sqlx::query_scalar(
-+                r#"
-             SELECT objet_id
-             FROM objets_dispo
-             WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1282:
-             "#,
--        )
--        .bind(objet)
--        .fetch_optional(pool)
--        .await?;
-+            )
-+            .bind(objet)
-+            .fetch_optional(pool)
-+            .await?;
- 
--        let Some(objet_id) = objet_id else {
--            error!(
--                "Impossible de mettre à jour la pity : \
-+            let Some(objet_id) = objet_id else {
-+                error!(
-+                    "Impossible de mettre à jour la pity : \
-                  livre absent de objets_dispo : {:?}",
--                objet
--            );
--            continue;
--        };
-+                    objet
-+                );
-+                continue;
-+            };
- 
 -        if objet == &resultat {
--            // ==================================
+-            // ----------------------------------
 -            // OBTENU → RESET
--            // ==================================
+-            // ----------------------------------
 +            if objet == &resultat {
-+                // ==================================
++                // ----------------------------------
 +                // OBTENU → RESET
-+                // ==================================
++                // ----------------------------------
  
 -            sqlx::query(
 -                r#"
 +                sqlx::query(
 +                    r#"
-                 INSERT INTO echecs_objets (
+                 INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1319:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1089:
                  DO UPDATE SET
                      nombre = 0
                  "#,
 -            )
 -            .bind(account_id)
 -            .bind(categorie)
--            .bind(categorie)
--            .bind(objet_id)
+-            .bind(objet)
 -            .execute(pool)
 -            .await?;
 +                )
 +                .bind(account_id)
 +                .bind(categorie)
-+                .bind(categorie)
-+                .bind(objet_id)
++                .bind(objet)
 +                .execute(pool)
 +                .await?;
 +            } else {
-+                // ==================================
++                // ----------------------------------
 +                // PAS OBTENU → +1
-+                // ==================================
++                // ----------------------------------
  
 -        } else {
--            // ==================================
+-            // ----------------------------------
 -            // PAS OBTENU → +1
--            // ==================================
+-            // ----------------------------------
 -
 -            sqlx::query(
 -                r#"
 +                sqlx::query(
 +                    r#"
-                 INSERT INTO echecs_objets (
+                 INSERT INTO echecs (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1352:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1119:
                  DO UPDATE SET
                      nombre = nombre + 1
                  "#,
 -            )
 -            .bind(account_id)
 -            .bind(categorie)
--            .bind(categorie)
--            .bind(objet_id)
+-            .bind(objet)
 -            .execute(pool)
 -            .await?;
 +                )
 +                .bind(account_id)
 +                .bind(categorie)
-+                .bind(categorie)
-+                .bind(objet_id)
++                .bind(objet)
 +                .execute(pool)
 +                .await?;
 +            }
@@ -3128,12 +2262,9 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
 -    Ok(resultat)
 +        Ok(resultat)
-+    }
+     }
+-
  }
--}
--   
--
--
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/wallet_manager.rs:7:
  
@@ -3148,26 +2279,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
      pub fn account_id(&self) -> i64 {
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/wallet_manager.rs:52:
-         .await?;
- 
-         if result.rows_affected() == 0 {
--            return Err(sqlx::Error::Protocol(
--                "Portefeuille inexistant".into(),
--            ));
-+            return Err(sqlx::Error::Protocol("Portefeuille inexistant".into()));
-         }
- 
-         Ok(())
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/wallet_manager.rs:89:
- 
-         Ok(())
-     }
--        /// Débite le portefeuille dans une transaction SQLite existante.
-+    /// Débite le portefeuille dans une transaction SQLite existante.
-     pub async fn debiter_tx(
-         tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
-         account_id: i64,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/wallet_manager.rs:149:
          .await?;
  
          if result.rows_affected() == 0 {
@@ -6172,28 +5283,22 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
 -};
  use log::info;
 -use the_last_signal_server::network::server::Server;
++use std::collections::HashMap;
 +use the_last_signal_server::database::{database_manager::DatabaseManager, migrations};
  use the_last_signal_server::gameplay::objets::Livre;
--use the_last_signal_server::gameplay::{
--    stuff_manager::Inventaire,
--    tresor::Tresor};
-+use the_last_signal_server::gameplay::{stuff_manager::Inventaire, tresor::Tresor};
 +use the_last_signal_server::network::server::Server;
- 
--use the_last_signal_server::utils::logger::logger::ServerLogger;
- use std::collections::HashMap;
-+use the_last_signal_server::utils::logger::logger::ServerLogger;
- 
+ use the_last_signal_server::utils::logger::logger::ServerLogger;
+-use std::collections::HashMap;
  #[tokio::main]
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:17:
  /*
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:13:
 -    Fonction asynchrone exécutée par le runtime Tokio. 
 +    Fonction asynchrone exécutée par le runtime Tokio.
      Point d'entrée principal du serveur.
  
      Initialise :
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:26:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:21:
  */
  async fn main() -> Result<(), Box<dyn std::error::Error>> {
      let _guard = ServerLogger::init();
@@ -6220,16 +5325,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
  
      info!("Base SQLite prête.");
      ServerLogger::set_database(database.pool().clone());
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:47:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:42:
 -   
-+
-     // ------------------------------------------
-     // Ouverture d'un trésor et ajout à l'inventaire (livres uniquement)
-     // ------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:51:
- 
--    
--    
 -    
 -    let server =
 -        Server::new(
@@ -6237,101 +5334,13 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
 -            database,
 -        )
 -        .await?;
+ 
 +    let server = Server::new("127.0.0.1:5000", database).await?;
  
--
      server.start().await;
 -    
  
      Ok(())
- }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:69:
- mod tests {
-     use super::*;
- 
--   #[tokio::test]
-+    #[tokio::test]
-     async fn test_tresor() -> Result<(), Box<dyn std::error::Error>> {
--        
--
-         let _guard = ServerLogger::init();
--    
--    
--    let database_url = 
--        std::env::var("DATABASE_URL")?;
--    let database_path =
--        std::env::var("DATABASE_PATH")?;
- 
--    let database =
--        DatabaseManager::new(&database_path,& database_url)
--            .await?;
-+        let database_url = std::env::var("DATABASE_URL")?;
-+        let database_path = std::env::var("DATABASE_PATH")?;
- 
--    database.ping().await?;
-+        let database = DatabaseManager::new(&database_path, &database_url).await?;
- 
--    migrations::run(&database.pool())
--        .await?;
-+        database.ping().await?;
- 
--    info!("Base SQLite prête.");
--    ServerLogger::set_database(database.pool().clone());
-+        migrations::run(&database.pool()).await?;
-+
-+        info!("Base SQLite prête.");
-+        ServerLogger::set_database(database.pool().clone());
-         let account_id: i64 = 1;
--    let mut tresor = Tresor::new();
--    let mut inventaire = Inventaire::new(database.pool().clone(), account_id).await?;
-+        let mut tresor = Tresor::new();
-+        let mut inventaire = Inventaire::new(database.pool().clone(), account_id).await?;
- 
--    let objets = tresor
--        .ouvrir(
--            database.pool(),
--            account_id,
--            1,       // niveau du trésor
--            true,   // is_admin
--            false,   // is_militaire
--            Some(1.3),
--        )
--        .await?;
-+        let objets = tresor
-+            .ouvrir(
-+                database.pool(),
-+                account_id,
-+                1,     // niveau du trésor
-+                true,  // is_admin
-+                false, // is_militaire
-+                Some(1.3),
-+            )
-+            .await?;
- 
--    info!("Trésor ouvert pour le compte {account_id}:");
-+        info!("Trésor ouvert pour le compte {account_id}:");
-         for (nom_objet, quantite) in objets {
--        // Filtre : n'ajouter que les livres enchantés
--        if nom_objet.contains("livre enchant") {
--    
--    
--            inventaire.ajouter_objet(&nom_objet, u64::from(quantite)).await?;
--            info!("✓ Livre ajouté à l'inventaire : {nom_objet} x{quantite}");
-+            // Filtre : n'ajouter que les livres enchantés
-+            if nom_objet.contains("livre enchant") {
-+                inventaire
-+                    .ajouter_objet(&nom_objet, u64::from(quantite))
-+                    .await?;
-+                info!("✓ Livre ajouté à l'inventaire : {nom_objet} x{quantite}");
-+            }
-         }
--    
--        }
--    
--    
-+
-         Ok(())
-     }
  }
 ⚠️ cargo fmt --check failed
 
@@ -6345,73 +5354,73 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling pin-project-lite v0.2.17
    Compiling typenum v1.20.1
    Compiling yoke v0.8.3
-   Compiling litemap v0.8.3
-   Compiling zerovec v0.11.8
    Compiling writeable v0.6.4
+   Compiling zerovec v0.11.8
    Compiling futures-core v0.3.34
-   Compiling smallvec v1.16.2
+   Compiling litemap v0.8.3
    Compiling memchr v2.8.3
    Compiling tinystr v0.8.4
+   Compiling smallvec v1.16.1
    Compiling icu_locale_core v2.3.0
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
    Compiling utf8_iter v1.0.4
    Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
-   Compiling lock_api v0.4.14
    Compiling icu_properties_data v2.3.0
+   Compiling lock_api v0.4.14
    Compiling icu_normalizer_data v2.3.0
-   Compiling mio v1.2.3
    Compiling socket2 v0.6.5
-   Compiling futures-sink v0.3.34
+   Compiling mio v1.2.3
    Compiling bytes v1.12.1
    Compiling icu_provider v2.3.1
+   Compiling futures-sink v0.3.34
    Compiling serde_core v1.0.229
-   Compiling equivalent v1.0.2
-   Compiling icu_normalizer v2.3.0
    Compiling icu_properties v2.3.0
+   Compiling icu_normalizer v2.3.0
    Compiling rand_core v0.10.1
+   Compiling equivalent v1.0.2
    Compiling once_cell v1.21.4
    Compiling tracing-core v0.1.36
    Compiling generic-array v0.14.9
    Compiling parking_lot_core v0.9.12
    Compiling idna_adapter v1.2.2
-   Compiling foldhash v0.2.0
-   Compiling allocator-api2 v0.2.21
+   Compiling percent-encoding v2.3.2
    Compiling cpufeatures v0.2.17
    Compiling futures-io v0.3.34
    Compiling futures-task v0.3.34
-   Compiling percent-encoding v2.3.2
+   Compiling foldhash v0.2.0
    Compiling slab v0.4.12
-   Compiling hashbrown v0.16.1
-   Compiling futures-util v0.3.34
+   Compiling allocator-api2 v0.2.21
    Compiling form_urlencoded v1.2.2
+   Compiling futures-util v0.3.34
    Compiling idna v1.1.0
+   Compiling hashbrown v0.16.1
    Compiling serde v1.0.229
    Compiling num-traits v0.2.19
    Compiling parking_lot v0.12.5
-   Compiling getrandom v0.4.3
    Compiling zmij v1.0.23
+   Compiling getrandom v0.4.3
    Compiling crossbeam-utils v0.8.23
    Compiling crc-catalog v2.5.0
-   Compiling itoa v1.0.18
    Compiling parking v2.2.1
    Compiling hashbrown v0.17.1
-   Compiling crossbeam-queue v0.3.14
+   Compiling itoa v1.0.18
    Compiling serde_json v1.0.151
+   Compiling crossbeam-queue v0.3.14
    Compiling event-listener v5.4.2
-   Compiling crc v3.4.0
-   Compiling futures-intrusive v0.5.0
    Compiling indexmap v2.14.2
+   Compiling crc v3.4.0
    Compiling either v1.18.0
+   Compiling futures-intrusive v0.5.0
    Compiling hashlink v0.11.1
    Compiling url v2.5.8
-   Compiling crypto-common v0.1.6
    Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.6
    Compiling cmov v0.5.4
    Compiling digest v0.10.7
-   Compiling ctutils v0.4.2
    Compiling tokio v1.53.1
+   Compiling ctutils v0.4.2
    Compiling spin v0.9.9
    Compiling hybrid-array v0.4.15
    Compiling tracing v0.1.44
@@ -6424,70 +5433,56 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
    Compiling thiserror v2.0.21
+   Compiling cpufeatures v0.3.1
    Compiling base64 v0.22.1
    Compiling const-oid v0.10.2
-   Compiling cpufeatures v0.3.1
    Compiling digest v0.11.3
    Compiling uuid v1.26.1
    Compiling aho-corasick v1.1.5
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
-   Compiling sqlx-core v0.9.0
-   Compiling base64ct v1.8.3
    Compiling foreign-types-shared v0.1.1
-   Compiling foreign-types v0.3.2
+   Compiling base64ct v1.8.3
    Compiling phc v0.6.1
+   Compiling sqlx-core v0.9.0
+   Compiling foreign-types v0.3.2
    Compiling regex-automata v0.4.18
-   Compiling libsqlite3-sys v0.37.0
-   Compiling openssl-sys v0.9.117
    Compiling sqlx-sqlite v0.9.0
-   Compiling adler2 v2.0.1
-   Compiling iana-time-zone v0.1.65
+   Compiling libsqlite3-sys v0.37.0
    Compiling sqlx-macros-core v0.9.0
+   Compiling openssl-sys v0.9.117
+   Compiling iana-time-zone v0.1.65
    Compiling bitflags v2.13.2
+   Compiling adler2 v2.0.1
    Compiling simd-adler32 v0.3.10
-   Compiling miniz_oxide v0.9.1
    Compiling openssl v0.10.81
+   Compiling miniz_oxide v0.9.1
    Compiling chrono v0.4.45
-   Compiling zeroize v1.9.0
    Compiling sqlx-macros v0.9.0
-   Compiling regex v1.13.1
+   Compiling zeroize v1.9.0
    Compiling crc32fast v1.5.2
+   Compiling regex v1.13.1
    Compiling password-hash v0.6.1
    Compiling blake2 v0.11.0
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
-   Compiling byteorder v1.5.0
    Compiling nu-ansi-term v0.50.3
-   Compiling fernet v0.2.2
+   Compiling byteorder v1.5.0
    Compiling flexi_logger v0.31.10
    Compiling rand v0.10.3
+   Compiling fernet v0.2.2
    Compiling sqlx v0.9.0
    Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
    Compiling sha2 v0.11.0
    Compiling the-last-signal-server v0.1.0 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
-warning: unused imports: `debug` and `info`
- --> src/gameplay/tresor.rs:5:11
-  |
-5 | use log::{debug, error, info};
-  |           ^^^^^         ^^^^
-  |
-  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
 warning: unused imports: `debug`, `error`, and `info`
  --> src/gameplay/stuff_manager.rs:4:11
   |
 4 | use log::{debug, error, info};
   |           ^^^^^  ^^^^^  ^^^^
-
-warning: unused variable: `objet_id`
-   --> src/gameplay/stuff_manager.rs:357:9
-    |
-357 |     let objet_id: i64 = sqlx::query_scalar(
-    |         ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_objet_id`
-    |
-    = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+  |
+  = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
 warning: fields `user_id` and `password_hash` are never read
   --> src/network/handler.rs:41:5
@@ -6513,7 +5508,7 @@ warning: constant `PP` is never used
 9 | const PP: u32 = PO * 10;
   |       ^^
 
-warning: `the-last-signal-server` (lib) generated 6 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 3 suggestions)
+warning: `the-last-signal-server` (lib) generated 4 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 1 suggestion)
 warning: unused import: `the_last_signal_server::gameplay::objets::Livre`
  --> src/main.rs:7:5
   |
@@ -6522,56 +5517,49 @@ warning: unused import: `the_last_signal_server::gameplay::objets::Livre`
   |
   = note: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
 
-warning: unused imports: `stuff_manager::Inventaire` and `tresor::Tresor`
-  --> src/main.rs:9:5
-   |
- 9 |     stuff_manager::Inventaire,
-   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
-10 |     tresor::Tresor};
-   |     ^^^^^^^^^^^^^^
-
 warning: unused import: `std::collections::HashMap`
-  --> src/main.rs:13:5
-   |
-13 | use std::collections::HashMap;
-   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+ --> src/main.rs:9:5
+  |
+9 | use std::collections::HashMap;
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-warning: `the-last-signal-server` (lib test) generated 6 warnings (6 duplicates)
-warning: `the-last-signal-server` (bin "the-last-signal-server") generated 3 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 3 suggestions)
 warning: `the-last-signal-server` (bin "the-last-signal-server" test) generated 2 warnings (2 duplicates)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.82s
-     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-ff52b8c6a56edc60)
+warning: `the-last-signal-server` (lib test) generated 4 warnings (4 duplicates)
+warning: `the-last-signal-server` (bin "the-last-signal-server") generated 2 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.95s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-5a63d4465a5e2bd9)
 
 running 12 tests
 test security::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
 test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
-test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
 test security::crypto::tests::fisher_yates_changes_with_seed ... ok
-test security::crypto::tests::splitmix64_max_seed ... ok
-test security::crypto::tests::fisher_yates_is_deterministic ... ok
-test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
+test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
 test security::crypto::tests::fisher_yates_contains_all_values ... ok
+test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
+test security::crypto::tests::fisher_yates_is_deterministic ... ok
+test security::crypto::tests::splitmix64_max_seed ... ok
 test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
 test security::crypto::tests::splitmix64_state_changes ... ok
 test security::crypto::tests::splitmix64_zero_seed ... ok
 
 test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-85900a01215628a7)
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-e3ce639f43cb1af3)
 
-running 1 test
-test tests::test_tresor ... FAILED
+running 0 tests
 
-failures:
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
----- tests::test_tresor stdout ----
-Error: NotPresent
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-c23509edae77aa6a)
 
+running 0 tests
 
-failures:
-    tests::test_tresor
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+   Doc-tests the_last_signal_server
 
-error: test failed, to rerun pass `--bin the-last-signal-server`
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
