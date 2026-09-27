@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Crafting
-
-> **Document:** Crafting  
-> **Code:** GDD-030  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Professions & Trades](29_METIERS_ENG.md)
-
-➡️ [Gathering & Harvesting](31_RECOLTE_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:f9b9ff120901f7ca32d8dcb0ee131640a42cd6e2f6ff411cb55128ae1196e060
+size 348

@@ -1,14 +1,3 @@
-# icu_properties_data [![crates.io](https://img.shields.io/crates/v/icu_properties_data)](https://crates.io/crates/icu_properties_data)
-
-<!-- cargo-rdme start -->
-
-Data for the `icu_properties` crate
-
-This data was generated with CLDR version 48.2.1, ICU version release-78.1rc, and
-LSTM segmenter version v0.1.0.
-
-<!-- cargo-rdme end -->
-
-## More Information
-
-For more information on development, authorship, contributing etc. please visit [`ICU4X home page`](https://github.com/unicode-org/icu4x).
+version https://git-lfs.github.com/spec/v1
+oid sha256:2cac1b4103dd6b941cffa36418d8fb746167900ab1908d4350421446c88613c6
+size 500

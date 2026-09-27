@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Day / Night Cycle
-
-> **Document:** Day / Night Cycle  
-> **Code:** GDD-035  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Weather System](34_METEO_ENG.md)
-
-➡️ [Guilds](36_GUILDES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:58d1d6ddacf29a4bc7b460485b0aac0462166c04601b2bb6572e702d3a5543b0
+size 342

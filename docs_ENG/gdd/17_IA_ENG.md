@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# AI Systems
-
-> **Document:** AI Systems  
-> **Code:** GDD-017  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Combat System](16_COMBAT_ENG.md)
-
-➡️ [Monsters & Mutants](18_MONSTRES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:dbbaa45c8b5e458f3cb0352851a50b23cedb0e26e891fb69d034d3299865e430
+size 341

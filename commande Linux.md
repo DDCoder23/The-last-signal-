@@ -1,12 +1,3 @@
-# Liste non exhaustive de commande Linux utile
-NB : les paramètres peuvent changer surtout pour touch et mkdir et grep
-
-grep -Hn -A 3 -B 2 "erreur" *.log
-
-cd ~ Documents/
-
-ls -l
-
-touch {fichier1,fichier2}.py
-
-mkdir -m tests
+version https://git-lfs.github.com/spec/v1
+oid sha256:7ad695265d71cc3efaece0b642193bcf88ab75d15ab08ae24d09d49d27d68d5a
+size 225

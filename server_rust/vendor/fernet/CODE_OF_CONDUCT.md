@@ -1,8 +1,3 @@
-# Community Participation Guidelines
-
-This repository is governed by Mozilla's code of conduct and etiquette guidelines. 
-For more details, please read the
-[Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/). 
-
-## How to Report
-For more information on how to report violations of the Community Participation Guidelines, please read our '[How to Report](https://www.mozilla.org/about/governance/policies/participation/reporting/)' page.
+version https://git-lfs.github.com/spec/v1
+oid sha256:402dcfab8421a326577f8355280758be08bcd8f7a9b6a9334deaf5a97a9573c1
+size 495

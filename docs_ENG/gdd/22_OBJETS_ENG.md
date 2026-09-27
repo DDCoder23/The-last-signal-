@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Items & Consumables
-
-> **Document:** Items & Consumables  
-> **Code:** GDD-022  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Equipment](21_EQUIPEMENT_ENG.md)
-
-➡️ [Bank & Storage](23_BANQUE_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:4a044941069e5123248ff77815602478927b37b6286f8e0ae14e9f0a967dda1c
+size 353

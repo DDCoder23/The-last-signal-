@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Trading
-
-> **Document:** Trading  
-> **Code:** GDD-026  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Economy](25_ECONOMIE_ENG.md)
-
-➡️ [Auction House](27_HOTEL_DES_VENTES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:704914dd428fddf70d9d0c56cab46fe24675a879d8718935492d396c475e5380
+size 334

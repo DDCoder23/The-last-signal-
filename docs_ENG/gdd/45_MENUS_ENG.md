@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Menus & Navigation
-
-> **Document:** Menus & Navigation  
-> **Code:** GDD-045  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Heads-Up Display (HUD)](44_HUD_ENG.md)
-
-➡️ [Accessibility](46_ACCESSIBILITE_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:3201c323cb8f7f44ffdc647144349c931f9be324f5efc21c96370ff977f179f9
+size 363

@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Gathering & Harvesting
-
-> **Document:** Gathering & Harvesting  
-> **Code:** GDD-031  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Crafting](30_CRAFT_ENG.md)
-
-➡️ [World Map](32_CARTE_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:3bf0f80449ef2784b2e900dd0125392a39e0054fc796e9dd754ab6f26f92fed4
+size 347

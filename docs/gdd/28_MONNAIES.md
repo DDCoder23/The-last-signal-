@@ -1,8 +1,3 @@
-[🏠 Documentation](../README.md) > [🎮 GDD](README.md)
-
-
-## Navigation
-
-⬅️ [Hotel des ventes](27_HOTEL_DES_VENTES.md)
-
-➡️ [Metiers](29_METIERS.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:86ecd8ba66c9bc7d56b2c7caeef5579e7702c7a19eb1f0008c0e2a07d59bf2fb
+size 159

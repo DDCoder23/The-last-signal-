@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Inventory System
-
-> **Document:** Inventory System  
-> **Code:** GDD-020  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Bosses](19_BOSS_ENG.md)
-
-➡️ [Equipment](21_EQUIPEMENT_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:90d8b7e33123eaf9edee65359aa3ee95cb4aa4216b4718787fbae453d95bf58a
+size 337

@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Dynamic Events
-
-> **Document:** Dynamic Events  
-> **Code:** GDD-042  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Quests & Missions](41_QUETES_ENG.md)
-
-➡️ [Achievements](43_SUCCES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:b32ad84b1cf11c3d2d7a486bf9483daa9548cec953b6acab67d61f80f956e470
+size 345

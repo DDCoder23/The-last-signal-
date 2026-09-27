@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Animations
-
-> **Document:** Animations  
-> **Code:** GDD-053  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [3D Models](52_MODELES_3D_ENG.md)
-
-➡️ [DLC & Expansions](54_EXTENSIONS_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:ab3cac87a28d1c0c7edc1a9ac69c6706347f389e4650d3751b0c7f3030d4e867
+size 341

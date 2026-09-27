@@ -1,7 +1,3 @@
-# Changelog
-All notable changes to this project will be documented in this file.
-
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
-## [Unreleased]
+version https://git-lfs.github.com/spec/v1
+oid sha256:886f8c688db0c22d24b650df0dc30a39d05d54d0e562c00d9574bf31cbf73251
+size 275

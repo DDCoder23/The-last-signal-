@@ -1,13 +1,3 @@
-# zerofrom [![crates.io](https://img.shields.io/crates/v/zerofrom)](https://crates.io/crates/zerofrom)
-
-<!-- cargo-rdme start -->
-
-This crate provides [`ZeroFrom`], a trait for converting types in a zero-copy way.
-
-See the documentation of [`ZeroFrom`] for more details.
-
-<!-- cargo-rdme end -->
-
-## More Information
-
-For more information on development, authorship, contributing etc. please visit [`ICU4X home page`](https://github.com/unicode-org/icu4x).
+version https://git-lfs.github.com/spec/v1
+oid sha256:cd9b9a57dff5012642ee535c46a9f05424eab903f0b9f62de8bf7f815bcd5082
+size 457

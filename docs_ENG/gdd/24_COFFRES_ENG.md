@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Chests & Containers
-
-> **Document:** Chests & Containers  
-> **Code:** GDD-024  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Bank & Storage](23_BANQUE_ENG.md)
-
-➡️ [Economy](25_ECONOMIE_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:03f82fb35e4c3129ef2e0fdce111ca4ce2ac1df1ae4d8a82e7c964752adf42aa
+size 349

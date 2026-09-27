@@ -1,9 +1,3 @@
-# Updating compile-fail test outputs
-
-`bitflags` uses the `trybuild` crate to integration test its macros. Since Rust error messages change frequently enough that `nightly` builds produce spurious failures, we only check the compiler output in `beta` builds. If you run:
-
-```
-TRYBUILD=overwrite cargo +beta test --all
-```
-
-it will run the tests and update the `trybuild` output files.
+version https://git-lfs.github.com/spec/v1
+oid sha256:6c9f96eacb20af877ae2d16f024904f3038b93448a8488e9dbcac0df7f6439a5
+size 385

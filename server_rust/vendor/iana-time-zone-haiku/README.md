@@ -1,8 +1,3 @@
-# iana-time-zone-haiku
-
-[![Crates.io](https://img.shields.io/crates/v/iana-time-zone-haiku.svg)](https://crates.io/crates/iana-time-zone-haiku)
-[![Documentation](https://docs.rs/iana-time-zone/badge.svg)](https://docs.rs/iana-time-zone/)
-[![Crate License](https://img.shields.io/crates/l/iana-time-zone-haiku.svg)](https://crates.io/crates/iana-time-zone-haiku)
-[![build](https://github.com/strawlab/iana-time-zone/workflows/build/badge.svg?branch=main)](https://github.com/strawlab/iana-time-zone/actions?query=branch%3Amain)
-
-[iana-time-zone](https://github.com/strawlab/iana-time-zone) support crate for Haiku OS.
+version https://git-lfs.github.com/spec/v1
+oid sha256:5b1ad9309b716374cc1bdcd025f525fac31b2f413e6c4d311e207fa6b1f96a83
+size 617

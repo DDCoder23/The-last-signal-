@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Currencies
-
-> **Document:** Currencies  
-> **Code:** GDD-028  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Auction House](27_HOTEL_DES_VENTES_ENG.md)
-
-➡️ [Professions & Trades](29_METIERS_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:24d8a5386897c1e4bd21def528f3f51dad93e1ccde07f219c120a413d10e152e
+size 352

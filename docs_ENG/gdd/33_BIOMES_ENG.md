@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Biomes
-
-> **Document:** Biomes  
-> **Code:** GDD-033  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [World Map](32_CARTE_ENG.md)
-
-➡️ [Weather System](34_METEO_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:d03758e251b97a6f0ae8dde9c919671c82bbf0010a10a6d7f0c35a24a9dc6610
+size 321

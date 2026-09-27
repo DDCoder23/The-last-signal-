@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# World Map
-
-> **Document:** World Map  
-> **Code:** GDD-032  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Gathering & Harvesting](31_RECOLTE_ENG.md)
-
-➡️ [Biomes](33_BIOMES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:1bb7a122152c2f998bd546ce0eefce05ce9576c4a9180ff1d6d390ff7393951c
+size 335

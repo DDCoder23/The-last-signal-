@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Statistics & Attributes
-
-> **Document:** Statistics & Attributes  
-> **Code:** GDD-012  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Progression](11_PROGRESSION_ENG.md)
-
-➡️ [Skills & Abilities](13_COMPETENCES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:9da78d61fe00d9bf81a098aba4e1f6c283444b8ec9d3dfd3ac7782dacc6cb28e
+size 373

@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Soundtrack & Music
-
-> **Document:** Soundtrack & Music  
-> **Code:** GDD-047  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Accessibility](46_ACCESSIBILITE_ENG.md)
-
-➡️ [Ambience & Soundscapes](48_AMBIANCES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:948e1708a47a8b9f0f46cc7884958832d24785aa23dcd22ad793ed1b6daf86ed
+size 369

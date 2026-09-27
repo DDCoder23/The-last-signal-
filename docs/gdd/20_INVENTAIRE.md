@@ -1,8 +1,3 @@
-[🏠 Documentation](../README.md) > [🎮 GDD](README.md)
-
-
-## Navigation
-
-⬅️ [Boss](19_BOSS.md)
-
-➡️ [Equipement](21_EQUIPEMENT.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:659eaaf0daf79768dad26e7f8b030dc01b074ecdeab28f5e0df867809f43ae59
+size 141

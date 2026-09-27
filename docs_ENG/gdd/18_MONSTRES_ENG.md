@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Monsters & Mutants
-
-> **Document:** Monsters & Mutants  
-> **Code:** GDD-018  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [AI Systems](17_IA_ENG.md)
-
-➡️ [Bosses](19_BOSS_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:bf889a8f9b95b91e16cf206d396e636129e0846bff25af4eebd8cb0a9afb4f91
+size 334

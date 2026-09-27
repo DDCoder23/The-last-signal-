@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Combat System
-
-> **Document:** Combat System  
-> **Code:** GDD-016  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [General Gameplay](15_GAMEPLAY_ENG.md)
-
-➡️ [AI Systems](17_IA_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:a00508922e06191fadd31a118739874cbac2b12c9f4e8adb73d1a10a7ab4c2e0
+size 338

@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Chat & Communication
-
-> **Document:** Chat & Communication  
-> **Code:** GDD-038  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Parties & Groups](37_GROUPES_ENG.md)
-
-➡️ [PvE Systems](39_PVE_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:24372385c61e9e9eb68f7550a1612693bd49c05a7b48a5fa1b128040c5044619
+size 353

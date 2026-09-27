@@ -1,17 +1,3 @@
-[🏠 Documentation](../README_ENG.md) > [🎮 GDD](README_ENG.md)
-
-# Ambience & Soundscapes
-
-> **Document:** Ambience & Soundscapes  
-> **Code:** GDD-048  
-> **Version:** 1.0.0  
-> **Status:** 🟡 In progress  
-> **Last updated:** September 13, 2026  
-
----
-
-## Navigation
-
-⬅️ [Soundtrack & Music](47_MUSIQUES_ENG.md)
-
-➡️ [Sound Effects (SFX)](49_EFFETS_SONORES_ENG.md)
+version https://git-lfs.github.com/spec/v1
+oid sha256:105a660c6ff52877f05b27c9cac49bd9ebd42f8a798337a225e5409b454229be
+size 379

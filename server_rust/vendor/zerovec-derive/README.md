@@ -1,11 +1,3 @@
-# zerovec-derive [![crates.io](https://img.shields.io/crates/v/zerovec-derive)](https://crates.io/crates/zerovec-derive)
-
-<!-- cargo-rdme start -->
-
-Proc macros for generating `ULE`, `VarULE` impls and types for the `zerovec` crate
-
-<!-- cargo-rdme end -->
-
-## More Information
-
-For more information on development, authorship, contributing etc. please visit [`ICU4X home page`](https://github.com/unicode-org/icu4x).
+version https://git-lfs.github.com/spec/v1
+oid sha256:bacbc17b2cb457c169257f5e22c78a45d1c4a399eadae383f7732af909616ebc
+size 418
