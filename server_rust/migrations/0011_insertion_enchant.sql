@@ -51,3 +51,21 @@ INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'pioche'
 FROM enchantments
 WHERE enchantment_name = 'luck';
+INSERT INTO enchantment_levels (
+    enchantment_id,
+    book_level,
+    max_enchantment_level
+)
+SELECT
+    e.enchantment_id,
+    niveau.book_level,
+    niveau.book_level
+FROM enchantments e
+CROSS JOIN (
+    SELECT 1 AS book_level
+    UNION ALL SELECT 2
+    UNION ALL SELECT 3
+    UNION ALL SELECT 4
+    UNION ALL SELECT 5
+    UNION ALL SELECT 6
+) AS niveau;
