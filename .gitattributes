@@ -1,2 +1,6 @@
+reports/**/*.md filter=lfs diff=lfs merge=lfs -text
+reports/**/*.html filter=lfs diff=lfs merge=lfs -text
+*.md filter=lfs diff=lfs merge=lfs -text
+*.html filter=lfs diff=lfs merge=lfs -text
 * !text !filter !merge !diff
 *.png filter=lfs diff=lfs merge=lfs -text
