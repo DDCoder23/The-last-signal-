@@ -396,6 +396,8 @@ pub async fn annuler_ordre_vente(
             return Ok(None);
         }
     };
+        let acheteur_id = achat.1;
+        
 
     // --------------------------------------------------------
     // Meilleur ordre de vente
