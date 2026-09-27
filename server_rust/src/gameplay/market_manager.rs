@@ -401,28 +401,30 @@ pub async fn annuler_ordre_vente(
     // Meilleur ordre de vente
     // --------------------------------------------------------
 
-    let vente: Option<(i64, i64, i64, i64, i64)> = sqlx::query_as(
-        r#"
-        SELECT
-            ordre_id,
-            account_id,
-            quantity_remaining,
-            prix_unitaire,
-            CAST(strftime('%s', date_creation) AS INTEGER)
-        FROM ordres_vente
-        WHERE objet_id = ?
-          AND statut = 'actif'
-          AND quantity_remaining > 0
-        ORDER BY
-            prix_unitaire ASC,
-            date_creation ASC,
-            ordre_id ASC
-        LIMIT 1
-        "#,
-    )
-    .bind(objet_id)
-    .fetch_optional(&mut *tx)
-    .await?;
+   let vente: Option<(i64, i64, i64, i64, i64)> = sqlx::query_as(
+    r#"
+    SELECT
+        ordre_id,
+        account_id,
+        quantity_remaining,
+        prix_unitaire,
+        CAST(strftime('%s', date_creation) AS INTEGER)
+    FROM ordres_vente
+    WHERE objet_id = ?
+      AND statut = 'actif'
+      AND quantity_remaining > 0
+      AND account_id != ?
+    ORDER BY
+        prix_unitaire ASC,
+        date_creation ASC,
+        ordre_id ASC
+    LIMIT 1
+    "#,
+)
+.bind(objet_id)
+.bind(acheteur_id)
+.fetch_optional(&mut *tx)
+.await?;
 
     let vente = match vente {
         Some(vente) => vente,
@@ -635,5 +637,24 @@ pub async fn annuler_ordre_vente(
     tx.commit().await?;
 
     Ok(Some(transaction_id))
+}
+    pub async fn matcher_tous(
+    &self,
+    objet_id: i64,
+) -> Result<u64, sqlx::Error> {
+    let mut nombre_transactions = 0u64;
+
+    loop {
+        match self.matcher_ordre(objet_id).await? {
+            Some(_) => {
+                nombre_transactions += 1;
+            }
+            None => {
+                break;
+            }
+        }
+    }
+
+    Ok(nombre_transactions)
 }
 }
