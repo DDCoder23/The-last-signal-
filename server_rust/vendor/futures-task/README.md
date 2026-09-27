@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:7a458e69ff008c35cffbbbcd2a14ad3ba7ad75201ce74df2d8f8d0fdcf6c4a89
-size 554
+# futures-task
+
+Tools for working with tasks.
+
+## Usage
+
+Add this to your `Cargo.toml`:
+
+```toml
+[dependencies]
+futures-task = "0.3"
+```
+
+The current `futures-task` requires Rust 1.71 or later.
+
+## License
+
+Licensed under either of [Apache License, Version 2.0](LICENSE-APACHE) or
+[MIT license](LICENSE-MIT) at your option.
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in the work by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.

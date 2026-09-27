@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:0f426dba1cf9f879c1a47a26706c4ca86a7f20809bef92d1dd132a2f2e5e39d1
-size 377
+## Core type support for COM and Windows
+
+The [windows-core](https://crates.io/crates/windows-core) crate provides core type support for the windows-* family of crates.
+
+* [Getting started](https://kennykerr.ca/rust-getting-started/)
+* [Samples](https://github.com/microsoft/windows-rs/tree/master/crates/samples)
+* [Releases](https://github.com/microsoft/windows-rs/releases)

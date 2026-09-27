@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20a540f52525683f4fdb4b01a696d2a7ae8e77e2392b3e9bd1569a1ef61fdf8e
-size 333
+# tokio-stream
+
+Utilities to work with `Stream` and `tokio`.
+
+## License
+
+This project is licensed under the [MIT license](LICENSE).
+
+### Contribution
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in Tokio by you, shall be licensed as MIT, without any additional
+terms or conditions.

@@ -1,3 +1,13 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:a86cd10fc70f167f8d00e9e4ce0c6b4ebdfa1865058390dffd1e0ad4d3e68d9d
-size 527
+# What to do to publish a new release
+
+1. Ensure all notable changes are in the changelog under "Unreleased".
+
+2. Execute `cargo release <level>` to bump version(s), tag and publish
+   everything. External subcommand, must be installed with `cargo install
+   cargo-release`.
+   
+   `<level>` can be one of `major|minor|patch`. If this is the first release
+   (`0.1.0`), use `minor`, since the version starts out as `0.0.0`.
+
+3. Go to the GitHub releases, edit the just-pushed tag. Copy the release notes
+   from the changelog.

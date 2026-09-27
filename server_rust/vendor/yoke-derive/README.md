@@ -1,3 +1,11 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5004c9b0aa6e1f4d0e5c8919e14e0bad0cc6753cc589d82aa9521e1bc1fd39bf
-size 379
+# yoke-derive [![crates.io](https://img.shields.io/crates/v/yoke-derive)](https://crates.io/crates/yoke-derive)
+
+<!-- cargo-rdme start -->
+
+Custom derives for `Yokeable` from the `yoke` crate.
+
+<!-- cargo-rdme end -->
+
+## More Information
+
+For more information on development, authorship, contributing etc. please visit [`ICU4X home page`](https://github.com/unicode-org/icu4x).

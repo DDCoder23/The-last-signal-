@@ -1,3 +1,30 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5e7b2b1f5ffc1da7695d3e151a2d4d0b8f681e65a24ddf85a353d4bcfa81967a
-size 1024
+# find-msvc-tools 
+
+> This crate is maintained by the library team, primarily for use by the `cc`
+> crate and not intended for external use (except as a transitive dependency).
+> This crate may make major changes to its APIs or be deprecated without
+> warning.
+
+An internal use library for finding windows-specific tools, reading MSVC
+versions from the registry and from COM interfaces.
+
+Refer to the [documentation](https://docs.rs/find-msvc-tools) for detailed usage
+instructions.
+
+## License
+
+This project is licensed under either of
+
+ * Apache License, Version 2.0, ([LICENSE-APACHE](LICENSE-APACHE) or
+   https://www.apache.org/licenses/LICENSE-2.0)
+ * MIT license ([LICENSE-MIT](LICENSE-MIT) or
+   https://opensource.org/license/mit)
+
+at your option.
+
+### Contribution
+
+Unless you explicitly state otherwise, any contribution transitively
+intentionally submitted for inclusion in find-msvc-tools by you, as defined in
+the Apache-2.0 license, shall be dual licensed as above, without any additional
+terms or conditions.
