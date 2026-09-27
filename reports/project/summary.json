@@ -1,15 +1,15 @@
 {
-    "generated": "2026-09-27T14:42:26.927066",
-    "score": 69,
+    "generated": "2026-09-27T18:33:55.318321",
+    "score": 64,
     "status": "Bon",
     "scores": {
         "markdown": 45,
-        "titles": 12,
+        "titles": 0,
         "spelling": 10,
         "links": 0,
         "python": 0,
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 123674
+    "problem_count": 128494
 }
