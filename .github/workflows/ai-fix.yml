@@ -115,38 +115,42 @@ jobs:
           wc -c ai-context.txt
 
       - name: Run local AI analysis
+        env:
+          AI_PROMPT: |
+            You are a Rust debugging assistant.
+
+            Analyze the cargo check failure below.
+
+            Your job is ONLY to diagnose the problem and propose a concrete fix.
+
+            Do not invent files or APIs.
+            Do not modify the repository.
+            Do not claim that a fix works unless the evidence supports it.
+
+            Give your answer in this structure:
+
+            1. Root cause
+            2. Exact file(s) concerned
+            3. Exact code change needed
+            4. Why this fixes the error
+            5. Any secondary errors that are likely to appear afterward
+
+            Here is the repository context:
+
         run: |
           set -euo pipefail
 
-          PROMPT=$(cat <<'EOF'
-You are a Rust debugging assistant.
+          {
+            printf '%s\n' "$AI_PROMPT"
+            cat ai-context.txt
+          } > ai-prompt.txt
 
-Analyze the cargo check failure below.
-
-Your job is ONLY to diagnose the problem and propose a concrete fix.
-
-Do not invent files or APIs.
-Do not modify the repository.
-Do not claim that a fix works unless the evidence supports it.
-
-Give your answer in this structure:
-
-1. Root cause
-2. Exact file(s) concerned
-3. Exact code change needed
-4. Why this fixes the error
-5. Any secondary errors that are likely to appear afterward
-
-Here is the repository context:
-
-EOF
-          )
-
-          PROMPT="${PROMPT}$(cat ai-context.txt)"
+          echo "Prompt généré :"
+          wc -c ai-prompt.txt
 
           llama-cli \
             -m "$HOME/models/qwen2.5-coder.gguf" \
-            -p "$PROMPT" \
+            -p "$(cat ai-prompt.txt)" \
             -n 2048 \
             -c 8192 \
             --temp 0.2 \
