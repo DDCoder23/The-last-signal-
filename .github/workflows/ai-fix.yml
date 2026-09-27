@@ -1,0 +1,164 @@
+name: AI Fix
+
+on:
+  workflow_call:
+    inputs:
+      error-artifact:
+        description: "Nom de l'artifact contenant l'erreur"
+        required: true
+        type: string
+      command:
+        description: "Commande qui a échoué"
+        required: true
+        type: string
+      working-directory:
+        description: "Répertoire de travail"
+        required: false
+        type: string
+        default: "."
+
+permissions:
+  contents: read
+
+jobs:
+  analyze:
+    name: Analyse locale avec llama.cpp
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Download error artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: ${{ inputs.error-artifact }}
+          path: ai-input
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl wget tar
+
+      - name: Install llama.cpp
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          LLAMA_VERSION=$(curl -fsSL \
+            https://api.github.com/repos/ggml-org/llama.cpp/releases/latest \
+            | grep '"tag_name":' \
+            | head -1 \
+            | cut -d '"' -f4)
+
+          echo "llama.cpp version: $LLAMA_VERSION"
+
+          mkdir -p "$HOME/llama"
+
+          wget -q --show-progress \
+            "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_VERSION}/llama-${LLAMA_VERSION}-bin-ubuntu-x64.tar.gz" \
+            -O /tmp/llama.tar.gz
+
+          tar -xzf /tmp/llama.tar.gz \
+            -C "$HOME/llama" \
+            --strip-components=1
+
+          echo "$HOME/llama" >> "$GITHUB_PATH"
+
+      - name: Download small coding model
+        run: |
+          set -euo pipefail
+
+          mkdir -p "$HOME/models"
+
+          wget -q --show-progress \
+            "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf?download=true" \
+            -O "$HOME/models/qwen2.5-coder.gguf"
+
+          ls -lh "$HOME/models/qwen2.5-coder.gguf"
+
+      - name: Prepare AI context
+        env:
+          AI_COMMAND: ${{ inputs.command }}
+          AI_WORKDIR: ${{ inputs.working-directory }}
+        run: |
+          set -euo pipefail
+
+          ERROR_FILE=$(find ai-input -type f | head -1)
+
+          {
+            echo "===== COMMAND ====="
+            printf '%s\n' "$AI_COMMAND"
+
+            echo
+            echo "===== WORKING DIRECTORY ====="
+            printf '%s\n' "$AI_WORKDIR"
+
+            echo
+            echo "===== CARGO CHECK ERROR ====="
+            cat "$ERROR_FILE"
+
+            echo
+            echo "===== CARGO.TOML ====="
+            if [ -f "$AI_WORKDIR/Cargo.toml" ]; then
+              cat "$AI_WORKDIR/Cargo.toml"
+            fi
+
+            echo
+            echo "===== RUST SOURCE FILES ====="
+            find "$AI_WORKDIR/src" -type f -name '*.rs' | sort
+
+          } > ai-context.txt
+
+          echo "Contexte préparé :"
+          wc -c ai-context.txt
+
+      - name: Run local AI analysis
+        run: |
+          set -euo pipefail
+
+          PROMPT=$(cat <<'EOF'
+You are a Rust debugging assistant.
+
+Analyze the cargo check failure below.
+
+Your job is ONLY to diagnose the problem and propose a concrete fix.
+
+Do not invent files or APIs.
+Do not modify the repository.
+Do not claim that a fix works unless the evidence supports it.
+
+Give your answer in this structure:
+
+1. Root cause
+2. Exact file(s) concerned
+3. Exact code change needed
+4. Why this fixes the error
+5. Any secondary errors that are likely to appear afterward
+
+Here is the repository context:
+
+EOF
+          )
+
+          PROMPT="${PROMPT}$(cat ai-context.txt)"
+
+          llama-cli \
+            -m "$HOME/models/qwen2.5-coder.gguf" \
+            -p "$PROMPT" \
+            -n 2048 \
+            -c 8192 \
+            --temp 0.2 \
+            --threads "$(nproc)" \
+            2>&1 | tee ai-analysis.txt
+
+      - name: Upload AI analysis
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ai-fix-analysis
+          path: |
+            ai-context.txt
+            ai-analysis.txt
+          retention-days: 7

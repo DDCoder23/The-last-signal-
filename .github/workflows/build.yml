@@ -785,6 +785,52 @@ jobs:
                 mkdir -p "/tmp/ci-worktree/reports/build"
                 rsync -a --delete   "$GITHUB_WORKSPACE/reports/build/"   "/tmp/ci-worktree/reports/build/" 2>/dev/null || true
                 cd /tmp/ci-worktree
+                git lfs install
+                echo "======================================"
+                echo "📦 Configuration Git LFS"
+                echo "======================================"
+
+                if [ -f .gitattributes ]
+                then
+                grep -vE '^reports/build/build-(ubuntu-latest|windows-latest|macos-latest)/[0-9]{4}-[0-9]{2}-[0-9]{2}/\*\.md ' \
+                .gitattributes > .gitattributes.tmp || true
+
+                mv .gitattributes.tmp .gitattributes 
+                fi
+
+                # Règles permanentes.
+                git lfs track "database/**/*.db"
+                git lfs track "*.png"
+
+                for OS in \
+                ubuntu-latest \
+                windows-latest \
+                macos-latest
+                do
+
+                ROOT="reports/build/build-${OS}"
+
+                [ -d "$ROOT" ] || continue
+
+                for DIR in "$ROOT"/*
+                do
+                [ -d "$DIR" ] || continue
+
+                NAME=$(basename "$DIR")
+
+                if [[ "$NAME" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]
+                then
+                echo "📝 Rapport temporaire LFS : $DIR/*.md"
+                git lfs track "$DIR/*.md"
+                fi
+                done
+
+                done
+
+                echo ""
+                echo "📄 Configuration LFS finale :"
+                cat .gitattributes
+                echo ""
                 git add -A
                 git status
                 if git diff --cached --quiet; then
