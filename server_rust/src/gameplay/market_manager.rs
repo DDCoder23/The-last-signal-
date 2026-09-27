@@ -356,4 +356,284 @@ pub async fn annuler_ordre_vente(
 
     Ok(())
                        }
+    pub async fn matcher_ordre(
+    &self,
+    objet_id: i64,
+) -> Result<Option<i64>, sqlx::Error> {
+    let mut tx = self.pool.begin().await?;
+
+    // --------------------------------------------------------
+    // Meilleur ordre d'achat
+    // --------------------------------------------------------
+
+    let achat: Option<(i64, i64, i64, i64, i64)> = sqlx::query_as(
+        r#"
+        SELECT
+            ordre_id,
+            account_id,
+            quantity_remaining,
+            prix_unitaire_max,
+            CAST(strftime('%s', date_creation) AS INTEGER)
+        FROM ordres_achat
+        WHERE objet_id = ?
+          AND statut = 'actif'
+          AND quantity_remaining > 0
+        ORDER BY
+            prix_unitaire_max DESC,
+            date_creation ASC,
+            ordre_id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(objet_id)
+    .fetch_optional(&mut *tx)
+    .await?;
+
+    let achat = match achat {
+        Some(achat) => achat,
+        None => {
+            tx.rollback().await?;
+            return Ok(None);
+        }
+    };
+
+    // --------------------------------------------------------
+    // Meilleur ordre de vente
+    // --------------------------------------------------------
+
+    let vente: Option<(i64, i64, i64, i64, i64)> = sqlx::query_as(
+        r#"
+        SELECT
+            ordre_id,
+            account_id,
+            quantity_remaining,
+            prix_unitaire,
+            CAST(strftime('%s', date_creation) AS INTEGER)
+        FROM ordres_vente
+        WHERE objet_id = ?
+          AND statut = 'actif'
+          AND quantity_remaining > 0
+        ORDER BY
+            prix_unitaire ASC,
+            date_creation ASC,
+            ordre_id ASC
+        LIMIT 1
+        "#,
+    )
+    .bind(objet_id)
+    .fetch_optional(&mut *tx)
+    .await?;
+
+    let vente = match vente {
+        Some(vente) => vente,
+        None => {
+            tx.rollback().await?;
+            return Ok(None);
+        }
+    };
+
+    let (
+        ordre_achat_id,
+        acheteur_id,
+        achat_remaining,
+        prix_achat,
+        _achat_timestamp,
+    ) = achat;
+
+    let (
+        ordre_vente_id,
+        vendeur_id,
+        vente_remaining,
+        prix_vente,
+        _vente_timestamp,
+    ) = vente;
+
+    // --------------------------------------------------------
+    // Vérification de compatibilité
+    // --------------------------------------------------------
+
+    if prix_achat < prix_vente {
+        tx.rollback().await?;
+        return Ok(None);
+    }
+
+    // --------------------------------------------------------
+    // Quantité exécutée
+    // --------------------------------------------------------
+
+    let quantity = achat_remaining.min(vente_remaining);
+
+    // --------------------------------------------------------
+    // Prix de transaction
+    // --------------------------------------------------------
+    //
+    // Le prix de vente est utilisé comme prix d'exécution.
+    //
+    let prix_execution = prix_vente;
+
+    let montant_total = prix_execution
+        .checked_mul(quantity)
+        .ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "Le montant de la transaction dépasse la capacité i64".into(),
+            )
+        })?;
+
+    // --------------------------------------------------------
+    // Remboursement de la différence pour l'acheteur
+    // --------------------------------------------------------
+    //
+    // L'acheteur avait réservé :
+    //
+    //     prix_achat × quantity
+    //
+    // mais paie réellement :
+    //
+    //     prix_execution × quantity
+    //
+    // La différence lui revient immédiatement.
+    //
+
+    let difference_unitaire = prix_achat - prix_execution;
+
+    let remboursement = difference_unitaire
+        .checked_mul(quantity)
+        .ok_or_else(|| {
+            sqlx::Error::Protocol(
+                "Le remboursement dépasse la capacité i64".into(),
+            )
+        })?;
+
+    // --------------------------------------------------------
+    // Crédit du vendeur
+    // --------------------------------------------------------
+
+    WalletManager::crediter_tx(
+        &mut tx,
+        vendeur_id,
+        montant_total,
+    )
+    .await?;
+
+    // --------------------------------------------------------
+    // Remboursement de l'acheteur
+    // --------------------------------------------------------
+
+    if remboursement > 0 {
+        WalletManager::crediter_tx(
+            &mut tx,
+            acheteur_id,
+            remboursement,
+        )
+        .await?;
+    }
+
+    // --------------------------------------------------------
+    // Transfert des objets
+    // --------------------------------------------------------
+
+    Inventaire::ajouter_tx(
+        &mut tx,
+        acheteur_id,
+        objet_id,
+        u64::try_from(quantity).map_err(|_| {
+            sqlx::Error::Protocol(
+                "Quantité invalide".into(),
+            )
+        })?,
+    )
+    .await?;
+
+    // --------------------------------------------------------
+    // Mise à jour de l'ordre d'achat
+    // --------------------------------------------------------
+
+    let nouveau_remaining_achat = achat_remaining - quantity;
+
+    let statut_achat = if nouveau_remaining_achat == 0 {
+        "execute"
+    } else {
+        "actif"
+    };
+
+    sqlx::query(
+        r#"
+        UPDATE ordres_achat
+        SET
+            quantity_remaining = ?,
+            statut = ?
+        WHERE ordre_id = ?
+          AND statut = 'actif'
+        "#,
+    )
+    .bind(nouveau_remaining_achat)
+    .bind(statut_achat)
+    .bind(ordre_achat_id)
+    .execute(&mut *tx)
+    .await?;
+
+    // --------------------------------------------------------
+    // Mise à jour de l'ordre de vente
+    // --------------------------------------------------------
+
+    let nouveau_remaining_vente = vente_remaining - quantity;
+
+    let statut_vente = if nouveau_remaining_vente == 0 {
+        "execute"
+    } else {
+        "actif"
+    };
+
+    sqlx::query(
+        r#"
+        UPDATE ordres_vente
+        SET
+            quantity_remaining = ?,
+            statut = ?
+        WHERE ordre_id = ?
+          AND statut = 'actif'
+        "#,
+    )
+    .bind(nouveau_remaining_vente)
+    .bind(statut_vente)
+    .bind(ordre_vente_id)
+    .execute(&mut *tx)
+    .await?;
+
+    // --------------------------------------------------------
+    // Historique
+    // --------------------------------------------------------
+
+    let result = sqlx::query(
+        r#"
+        INSERT INTO transactions_marche (
+            objet_id,
+            ordre_achat_id,
+            ordre_vente_id,
+            acheteur_id,
+            vendeur_id,
+            quantity,
+            prix_unitaire,
+            montant_total
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        "#,
+    )
+    .bind(objet_id)
+    .bind(ordre_achat_id)
+    .bind(ordre_vente_id)
+    .bind(acheteur_id)
+    .bind(vendeur_id)
+    .bind(quantity)
+    .bind(prix_execution)
+    .bind(montant_total)
+    .execute(&mut *tx)
+    .await?;
+
+    let transaction_id = result.last_insert_rowid();
+
+    tx.commit().await?;
+
+    Ok(Some(transaction_id))
+}
 }
