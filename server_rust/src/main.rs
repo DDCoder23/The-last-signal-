@@ -107,7 +107,7 @@ mod tests {
         )
         .await?;
 
-    info!("Trésor ouvert pour le compte {account_id}:");
+    info!("Trésor ouvert :");
         for (nom_objet, quantite) in objets {
     if nom_objet.contains("livre enchant") {
         inventaire
