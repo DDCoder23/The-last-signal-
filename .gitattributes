@@ -1,6 +1,8 @@
 database/**/*.db filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
-reports/rust/2026-09-28/*.md filter=lfs diff=lfs merge=lfs -text
 reports/build/build-ubuntu-latest/2026-09-28/*.md filter=lfs diff=lfs merge=lfs -text
 reports/build/build-windows-latest/2026-09-28/*.md filter=lfs diff=lfs merge=lfs -text
 reports/build/build-macos-latest/2026-09-28/*.md filter=lfs diff=lfs merge=lfs -text
+reports/rust/2026-09-25/*.md filter=lfs diff=lfs merge=lfs -text
+reports/rust/2026-09-26/*.md filter=lfs diff=lfs merge=lfs -text
+reports/rust/2026-09-28/*.md filter=lfs diff=lfs merge=lfs -text
