@@ -1380,12 +1380,12 @@ impl Inventaire {
 
     fn quantite_objet(objet: &ObjetInventaire) -> u64 {
         match objet {
-            ObjetInventaire::Base(o) => o.quantite,
-            ObjetInventaire::Equipement(e) => e.quantite,
-            ObjetInventaire::Arme(a) => a.quantite,
-            ObjetInventaire::Potion(p) => p.quantite,
-            ObjetInventaire::Livre(l) => l.quantite,
-        }
+            ObjetInventaire::Base(o) => o.ajouter(qte),
+            ObjetInventaire::Equipement(e) => e.objet.ajouter(qte),
+            ObjetInventaire::Arme(a) => a.equipement.objet.ajouter(qte),
+            ObjetInventaire::Potion(p) => p.objet.ajouter(qte),
+            ObjetInventaire::Livre(l) => l.objet.ajouter(qte),
+
     }
 
     // ========================================================
