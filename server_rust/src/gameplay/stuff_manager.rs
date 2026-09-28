@@ -1,3 +1,4 @@
+```rust
 use sqlx::SqlitePool;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -64,19 +65,6 @@ impl AjouterRetirer for ObjetInventaire {
 // ============================================================
 // STRUCT INVENTAIRE
 // ============================================================
-//
-// La clé du HashMap est maintenant stuff_id.
-//
-// C'est indispensable car deux armes identiques sont quand même
-// deux instances différentes.
-//
-// Exemple :
-//
-// 100 -> épée de bois
-// 101 -> épée de bois
-// 102 -> épée de bois
-//
-// ============================================================
 
 pub struct Inventaire {
     pool: SqlitePool,
@@ -120,6 +108,12 @@ struct BookRow {
 struct EnchantRow {
     enchantment_name: String,
     enchantment_level: i64,
+}
+
+#[derive(sqlx::FromRow)]
+struct GeneratedEnchant {
+    enchantment_id: i64,
+    max_level: i64,
 }
 
 // ============================================================
@@ -171,16 +165,12 @@ impl Inventaire {
         .fetch_all(pool)
         .await?;
 
-        let mut inventaire = HashMap::new();
+        let mut inventaire = HashMap::with_capacity(rows.len());
 
         for row in rows {
             let stuff_id = row.stuff_id;
 
-            let objet = Self::construire_objet(
-                pool,
-                &row,
-            )
-            .await?;
+            let objet = Self::construire_objet(pool, &row).await?;
 
             inventaire.insert(stuff_id, objet);
         }
@@ -196,17 +186,16 @@ impl Inventaire {
         pool: &SqlitePool,
         row: &StuffRow,
     ) -> Result<ObjetInventaire, sqlx::Error> {
-        let quantite = u64::try_from(row.quantity)
-            .map_err(|_| {
-                sqlx::Error::Protocol(
-                    format!(
-                        "Quantité invalide pour {} : {}",
-                        row.nom,
-                        row.quantity
-                    )
-                    .into(),
+        let quantite = u64::try_from(row.quantity).map_err(|_| {
+            sqlx::Error::Protocol(
+                format!(
+                    "Quantité invalide pour {} : {}",
+                    row.nom,
+                    row.quantity
                 )
-            })?;
+                .into(),
+            )
+        })?;
 
         let image = row.image_path.as_deref();
 
@@ -247,8 +236,8 @@ impl Inventaire {
                             image,
                             quantite,
                             1,
-                            eq.durability as u32,
-                            eq.attack as i32,
+                            u32::try_from(eq.durability).unwrap_or(0),
+                            i32::try_from(eq.attack).unwrap_or(0),
                             Vec::new(),
                         ),
                     )
@@ -259,7 +248,7 @@ impl Inventaire {
                             image,
                             quantite,
                             1,
-                            eq.defense as i32,
+                            i32::try_from(eq.defense).unwrap_or(0),
                             Vec::new(),
                         ),
                     )
@@ -354,7 +343,10 @@ impl Inventaire {
                                 "{} {}",
                                 e.enchantment_name,
                                 Livre::niv_to_roman(
-                                    e.enchantment_level as u32
+                                    u32::try_from(
+                                        e.enchantment_level
+                                    )
+                                    .unwrap_or(0),
                                 )
                             )
                         })
@@ -367,7 +359,8 @@ impl Inventaire {
                         quantite,
                         None,
                         Some(enchantements),
-                        book.book_level as u32,
+                        u32::try_from(book.book_level)
+                            .unwrap_or(0),
                     ),
                 )
             }
@@ -419,10 +412,8 @@ impl Inventaire {
         .await?
         .ok_or_else(|| {
             sqlx::Error::Protocol(
-                format!(
-                    "Objet absent de objets_dispo : {nom}"
-                )
-                .into(),
+                format!("Objet absent de objets_dispo : {nom}")
+                    .into(),
             )
         })?;
 
@@ -430,23 +421,14 @@ impl Inventaire {
         let type_objet = objet.1;
 
         match type_objet.as_str() {
-            // ================================================
-            // ARME / ÉQUIPEMENT
-            // ================================================
-
             "equipment" | "armes" => {
                 self.ajouter_non_stackable(
                     objet_id,
                     &type_objet,
-                    nom,
                     quantite,
                 )
                 .await?;
             }
-
-            // ================================================
-            // POTION
-            // ================================================
 
             "potion" => {
                 self.ajouter_potion(
@@ -457,10 +439,6 @@ impl Inventaire {
                 .await?;
             }
 
-            // ================================================
-            // LIVRE
-            // ================================================
-
             "enchanted_book" => {
                 self.ajouter_livre(
                     objet_id,
@@ -469,10 +447,6 @@ impl Inventaire {
                 )
                 .await?;
             }
-
-            // ================================================
-            // OBJET DE BASE
-            // ================================================
 
             _ => {
                 self.ajouter_objet_base(
@@ -483,6 +457,8 @@ impl Inventaire {
             }
         }
 
+        // Recharge une seule fois, après la totalité de
+        // l'opération d'écriture.
         self.recharger().await?;
 
         Ok(())
@@ -531,6 +507,25 @@ impl Inventaire {
     // ========================================================
     // AJOUT POTION
     // ========================================================
+    //
+    // IMPORTANT :
+    //
+    // Ancienne version :
+    //
+    // BEGIN
+    // SELECT
+    // UPDATE
+    // COMMIT
+    //
+    // Cette structure était exposée à SQLITE_BUSY_SNAPSHOT.
+    //
+    // Nouvelle version :
+    //
+    // INSERT ... ON CONFLICT DO UPDATE
+    //
+    // Il n'y a plus de lecture préalable dans une transaction
+    // avant l'écriture.
+    // ========================================================
 
     async fn ajouter_potion(
         &self,
@@ -539,91 +534,55 @@ impl Inventaire {
         quantite: u64,
     ) -> Result<(), sqlx::Error> {
         let effet = Self::effet_potion(nom)?;
-
         let stack_key = format!("potion:{effet}");
-
         let quantite = Self::quantite_sqlite(quantite)?;
 
         let mut tx = self.pool.begin().await?;
 
-        // ----------------------------------------------------
-        // Cherche une potion identique.
-        // ----------------------------------------------------
-
-        let stuff_id: Option<i64> = sqlx::query_scalar(
+        let stuff_id: i64 = sqlx::query_scalar(
             r#"
-            SELECT s.stuff_id
-            FROM stuff s
-            JOIN potions p
-                ON p.stuff_id = s.stuff_id
-            WHERE s.account_id = ?
-              AND s.objet_id = ?
-              AND p.effect = ?
-            LIMIT 1
+            INSERT INTO stuff (
+                account_id,
+                objet_id,
+                quantity,
+                stack_key
+            )
+            VALUES (?, ?, ?, ?)
+
+            ON CONFLICT (
+                account_id,
+                objet_id,
+                stack_key
+            )
+            DO UPDATE SET
+                quantity =
+                    quantity + excluded.quantity
+
+            RETURNING stuff_id
             "#,
         )
         .bind(self.account_id)
         .bind(objet_id)
-        .bind(&effet)
-        .fetch_optional(&mut *tx)
+        .bind(quantite)
+        .bind(&stack_key)
+        .fetch_one(&mut *tx)
         .await?;
 
-        if let Some(stuff_id) = stuff_id {
-            // ------------------------------------------------
-            // Potion identique : on stack.
-            // ------------------------------------------------
-
-            sqlx::query(
-                r#"
-                UPDATE stuff
-                SET quantity = quantity + ?
-                WHERE stuff_id = ?
-                  AND account_id = ?
-                "#,
+        // Si la ligne existait déjà, la ligne potions existe
+        // également. INSERT OR IGNORE évite donc toute collision.
+        sqlx::query(
+            r#"
+            INSERT OR IGNORE INTO potions (
+                stuff_id,
+                effect
             )
-            .bind(quantite)
-            .bind(stuff_id)
-            .bind(self.account_id)
-            .execute(&mut *tx)
-            .await?;
-        } else {
-            // ------------------------------------------------
-            // Nouvelle potion.
-            // ------------------------------------------------
-
-            let stuff_id: i64 = sqlx::query_scalar(
-                r#"
-                INSERT INTO stuff (
-                    account_id,
-                    objet_id,
-                    quantity,
-                    stack_key
-                )
-                VALUES (?, ?, ?, ?)
-                RETURNING stuff_id
-                "#,
-            )
-            .bind(self.account_id)
-            .bind(objet_id)
-            .bind(quantite)
-            .bind(&stack_key)
-            .fetch_one(&mut *tx)
-            .await?;
-
-            sqlx::query(
-                r#"
-                INSERT INTO potions (
-                    stuff_id,
-                    effect
-                )
-                VALUES (?, ?)
-                "#,
-            )
-            .bind(stuff_id)
-            .bind(&effet)
-            .execute(&mut *tx)
-            .await?;
-        }
+            VALUES (?, ?)
+            "#,
+        )
+        .bind(stuff_id)
+        .bind(&effet)
+        .execute(&mut *tx)
+        .await?;
 
         tx.commit().await?;
 
@@ -645,10 +604,7 @@ impl Inventaire {
 
             _ => {
                 return Err(sqlx::Error::Protocol(
-                    format!(
-                        "Potion inconnue : {nom}"
-                    )
-                    .into(),
+                    format!("Potion inconnue : {nom}").into(),
                 ));
             }
         };
@@ -659,20 +615,20 @@ impl Inventaire {
     // ========================================================
     // AJOUT ÉQUIPEMENT / ARME
     // ========================================================
-    //
-    // Chaque exemplaire possède son propre stack_key.
-    // quantity vaut toujours 1.
-    //
-    // ========================================================
 
     async fn ajouter_non_stackable(
         &self,
         objet_id: i64,
         type_objet: &str,
-        _nom: &str,
         quantite: u64,
     ) -> Result<(), sqlx::Error> {
         let mut tx = self.pool.begin().await?;
+
+        let equipment_type = if type_objet == "armes" {
+            "weapon"
+        } else {
+            "armor"
+        };
 
         for _ in 0..quantite {
             let stack_key =
@@ -695,12 +651,6 @@ impl Inventaire {
             .bind(&stack_key)
             .fetch_one(&mut *tx)
             .await?;
-
-            let equipment_type = if type_objet == "armes" {
-                "weapon"
-            } else {
-                "armor"
-            };
 
             sqlx::query(
                 r#"
@@ -725,6 +675,7 @@ impl Inventaire {
         Ok(())
     }
 
+    
     // ========================================================
     // AJOUT LIVRE ENCHANTÉ
     // ========================================================
@@ -735,13 +686,11 @@ impl Inventaire {
         nom: &str,
         quantite: u64,
     ) -> Result<(), sqlx::Error> {
-        let niveau =
-            Self::niveau_livre(nom)?;
+        let niveau = Self::niveau_livre(nom)?;
 
         for _ in 0..quantite {
             self.ajouter_un_livre(
                 objet_id,
-                nom,
                 niveau,
             )
             .await?;
@@ -753,17 +702,31 @@ impl Inventaire {
     // ========================================================
     // AJOUT D'UN SEUL LIVRE
     // ========================================================
+    //
+    // IMPORTANT :
+    //
+    // Toute la génération du livre est effectuée AVANT
+    // l'ouverture de la transaction d'écriture.
+    //
+    // Cela évite :
+    //
+    // BEGIN
+    // SELECT ...
+    // autre transaction COMMIT
+    // INSERT
+    // -> SQLITE_BUSY_SNAPSHOT (517)
+    //
+    // La transaction est donc volontairement très courte.
+    //
+    // ========================================================
 
     async fn ajouter_un_livre(
         &self,
         objet_id: i64,
-        _nom: &str,
         niveau: u32,
     ) -> Result<(), sqlx::Error> {
-        let mut tx = self.pool.begin().await?;
-
         // ----------------------------------------------------
-        // 1. Choisir une catégorie d'équipement
+        // 1. Chercher les catégories disponibles
         // ----------------------------------------------------
 
         let categories: Vec<String> =
@@ -774,42 +737,44 @@ impl Inventaire {
                 ORDER BY RANDOM()
                 "#,
             )
-            .fetch_all(&mut *tx)
+            .fetch_all(&self.pool)
             .await?;
 
         if categories.is_empty() {
             return Err(sqlx::Error::Protocol(
                 "Aucune catégorie d'équipement disponible \
-                 pour générer un livre".into(),
+                 pour générer un livre"
+                    .into(),
             ));
         }
 
         // ----------------------------------------------------
         // 2. Chercher une catégorie ayant suffisamment
-        //    d'enchantements pour le niveau du livre.
+        //    d'enchantements pour le niveau demandé
         // ----------------------------------------------------
 
         let mut categorie_selectionnee: Option<String> =
             None;
 
         for categorie in &categories {
-            let count: i64 = sqlx::query_scalar(
-                r#"
-                SELECT COUNT(DISTINCT et.enchantment_id)
-                FROM enchantment_types et
-                JOIN enchantment_levels el
-                    ON el.enchantment_id =
-                       et.enchantment_id
-                WHERE et.equipment_type = ?
-                  AND el.book_level = ?
-                "#,
-            )
-            .bind(categorie)
-            .bind(niveau as i64)
-            .fetch_one(&mut *tx)
-            .await?;
+            let count: i64 =
+                sqlx::query_scalar(
+                    r#"
+                    SELECT COUNT(DISTINCT et.enchantment_id)
+                    FROM enchantment_types et
+                    JOIN enchantment_levels el
+                        ON el.enchantment_id =
+                           et.enchantment_id
+                    WHERE et.equipment_type = ?
+                      AND el.book_level = ?
+                    "#,
+                )
+                .bind(categorie)
+                .bind(i64::from(niveau))
+                .fetch_one(&self.pool)
+                .await?;
 
-            if count >= niveau as i64 {
+            if count >= i64::from(niveau) {
                 categorie_selectionnee =
                     Some(categorie.clone());
 
@@ -818,8 +783,7 @@ impl Inventaire {
         }
 
         // ----------------------------------------------------
-        // 3. Si aucune catégorie ne possède N enchantements,
-        //    on prend quand même une catégorie valide.
+        // 3. Choisir une catégorie de secours si nécessaire
         // ----------------------------------------------------
 
         let categorie =
@@ -834,17 +798,8 @@ impl Inventaire {
                 })?;
 
         // ----------------------------------------------------
-        // 4. Sélection des enchantements.
-        //
-        // RANDOM() garantit que chaque enchantement choisi
-        // est distinct grâce à la requête.
+        // 4. Sélectionner les enchantements
         // ----------------------------------------------------
-
-        #[derive(sqlx::FromRow)]
-        struct GeneratedEnchant {
-            enchantment_id: i64,
-            max_level: i64,
-        }
 
         let enchantements: Vec<GeneratedEnchant> =
             sqlx::query_as(
@@ -863,9 +818,9 @@ impl Inventaire {
                 "#,
             )
             .bind(&categorie)
-            .bind(niveau as i64)
-            .bind(niveau as i64)
-            .fetch_all(&mut *tx)
+            .bind(i64::from(niveau))
+            .bind(i64::from(niveau))
+            .fetch_all(&self.pool)
             .await?;
 
         if enchantements.is_empty() {
@@ -879,24 +834,29 @@ impl Inventaire {
         }
 
         // ----------------------------------------------------
-        // 5. Génération du niveau de chaque enchantement.
-        //
-        // SQLite :
-        //
-        // 1 + abs(random()) % maximum
-        //
-        // donne une valeur entre 1 et maximum.
+        // 5. Générer le niveau de chaque enchantement
         // ----------------------------------------------------
 
         let mut enchantement_data: Vec<(i64, i64)> =
-            Vec::new();
+            Vec::with_capacity(enchantements.len());
 
         for enchantement in enchantements {
             let maximum =
                 std::cmp::min(
-                    niveau as i64,
+                    i64::from(niveau),
                     enchantement.max_level,
                 );
+
+            if maximum <= 0 {
+                return Err(sqlx::Error::Protocol(
+                    format!(
+                        "Niveau maximal invalide pour \
+                         enchantement_id={}",
+                        enchantement.enchantment_id
+                    )
+                    .into(),
+                ));
+            }
 
             let niveau_enchantement: i64 =
                 sqlx::query_scalar(
@@ -908,7 +868,7 @@ impl Inventaire {
                     "#,
                 )
                 .bind(maximum)
-                .fetch_one(&mut *tx)
+                .fetch_one(&self.pool)
                 .await?;
 
             enchantement_data.push((
@@ -918,9 +878,10 @@ impl Inventaire {
         }
 
         // ----------------------------------------------------
-        // 6. Génération de la clé canonique.
+        // 6. Trier les enchantements
         //
-        // L'ordre des enchantements ne compte pas.
+        // L'ordre des enchantements ne doit pas modifier
+        // l'identité du livre.
         // ----------------------------------------------------
 
         enchantement_data.sort_by_key(
@@ -928,6 +889,10 @@ impl Inventaire {
                 (*enchantment_id, *level)
             },
         );
+
+        // ----------------------------------------------------
+        // 7. Générer la stack_key canonique
+        // ----------------------------------------------------
 
         let contenu = enchantement_data
             .iter()
@@ -940,51 +905,24 @@ impl Inventaire {
         let stack_key =
             format!("book:{niveau}:{contenu}");
 
-        // ----------------------------------------------------
-        // 7. Le livre existe déjà ?
-        // ----------------------------------------------------
+        // ====================================================
+        // 8. TRANSACTION D'ÉCRITURE
+        // ====================================================
+        //
+        // IMPORTANT :
+        //
+        // Toutes les lectures/générations précédentes sont
+        // terminées avant BEGIN.
+        //
+        // La transaction ne contient maintenant que les
+        // opérations nécessaires à l'écriture.
+        //
+        // ====================================================
 
-        let stuff_existant: Option<i64> =
-            sqlx::query_scalar(
-                r#"
-                SELECT stuff_id
-                FROM stuff
-                WHERE account_id = ?
-                  AND objet_id = ?
-                  AND stack_key = ?
-                "#,
-            )
-            .bind(self.account_id)
-            .bind(objet_id)
-            .bind(&stack_key)
-            .fetch_optional(&mut *tx)
-            .await?;
-
-        if let Some(stuff_id) = stuff_existant {
-            // ------------------------------------------------
-            // Même livre : on stack.
-            // ------------------------------------------------
-
-            sqlx::query(
-                r#"
-                UPDATE stuff
-                SET quantity = quantity + 1
-                WHERE stuff_id = ?
-                  AND account_id = ?
-                "#,
-            )
-            .bind(stuff_id)
-            .bind(self.account_id)
-            .execute(&mut *tx)
-            .await?;
-
-            tx.commit().await?;
-
-            return Ok(());
-        }
+        let mut tx = self.pool.begin().await?;
 
         // ----------------------------------------------------
-        // 8. Création du nouveau stuff
+        // 9. Créer le stack ou augmenter sa quantité
         // ----------------------------------------------------
 
         let stuff_id: i64 =
@@ -997,6 +935,16 @@ impl Inventaire {
                     stack_key
                 )
                 VALUES (?, ?, 1, ?)
+
+                ON CONFLICT (
+                    account_id,
+                    objet_id,
+                    stack_key
+                )
+                DO UPDATE SET
+                    quantity =
+                        quantity + 1
+
                 RETURNING stuff_id
                 "#,
             )
@@ -1007,7 +955,35 @@ impl Inventaire {
             .await?;
 
         // ----------------------------------------------------
-        // 9. Création du livre
+        // 10. Vérifier si le livre existe déjà
+        // ----------------------------------------------------
+
+        let book_id: Option<i64> =
+            sqlx::query_scalar(
+                r#"
+                SELECT book_id
+                FROM enchanted_books
+                WHERE stuff_id = ?
+                "#,
+            )
+            .bind(stuff_id)
+            .fetch_optional(&mut *tx)
+            .await?;
+
+        // ----------------------------------------------------
+        // Le livre existait déjà.
+        //
+        // L'UPSERT précédent a déjà augmenté quantity.
+        // Il n'y a donc rien d'autre à créer.
+        // ----------------------------------------------------
+
+        if book_id.is_some() {
+            tx.commit().await?;
+            return Ok(());
+        }
+
+        // ----------------------------------------------------
+        // 11. Créer le livre
         // ----------------------------------------------------
 
         let book_id: i64 =
@@ -1022,12 +998,12 @@ impl Inventaire {
                 "#,
             )
             .bind(stuff_id)
-            .bind(niveau as i64)
+            .bind(i64::from(niveau))
             .fetch_one(&mut *tx)
             .await?;
 
         // ----------------------------------------------------
-        // 10. Ajout des enchantements
+        // 12. Insérer les enchantements
         // ----------------------------------------------------
 
         for (
@@ -1051,6 +1027,10 @@ impl Inventaire {
             .execute(&mut *tx)
             .await?;
         }
+
+        // ----------------------------------------------------
+        // 13. Validation
+        // ----------------------------------------------------
 
         tx.commit().await?;
 
@@ -1101,18 +1081,6 @@ impl Inventaire {
     // ========================================================
     // RETRAIT D'UN OBJET
     // ========================================================
-    //
-    // On utilise stuff_id.
-    //
-    // C'est obligatoire pour différencier :
-    //
-    // épée #1
-    // épée #2
-    // épée #3
-    //
-    // ou plusieurs variantes d'un livre.
-    //
-    // ========================================================
 
     pub async fn retirer_objet(
         &mut self,
@@ -1160,7 +1128,7 @@ impl Inventaire {
         }
 
         // ----------------------------------------------------
-        // Modification SQLite
+        // Transaction d'écriture
         // ----------------------------------------------------
 
         let mut tx = self.pool.begin().await?;
@@ -1226,13 +1194,6 @@ impl Inventaire {
 
     // ========================================================
     // RETRAIT DANS UNE TRANSACTION EXISTANTE
-    // ========================================================
-    //
-    // Cette version conserve la compatibilité avec les anciens
-    // appels qui retirent un objet de base.
-    //
-    // Pour une instance précise, utiliser stuff_id directement.
-    //
     // ========================================================
 
     pub async fn retirer_tx(
@@ -1313,13 +1274,6 @@ impl Inventaire {
     // ========================================================
     // AJOUT DANS UNE TRANSACTION EXISTANTE
     // ========================================================
-    //
-    // Cette fonction correspond aux objets de base.
-    //
-    // Les livres/potions/équipements qui possèdent des données
-    // spécifiques doivent passer par ajouter_objet().
-    //
-    // ========================================================
 
     pub async fn ajouter_tx(
         tx: &mut sqlx::Transaction<'_, sqlx::Sqlite>,
@@ -1369,24 +1323,12 @@ impl Inventaire {
     // ========================================================
     // QUANTITÉ TOTALE D'UN OBJET PAR NOM
     // ========================================================
-    //
-    // On utilise SUM car plusieurs stacks peuvent avoir le même
-    // nom.
-    //
-    // Exemple :
-    //
-    // livre niv 3 #1 -> 2
-    // livre niv 3 #2 -> 1
-    //
-    // get_quantity() -> 3
-    //
-    // ========================================================
 
     pub async fn get_quantity(
         &self,
         nom: &str,
     ) -> Result<u64, sqlx::Error> {
-        let quantity: Option<i64> =
+        let quantity: i64 =
             sqlx::query_scalar(
                 r#"
                 SELECT COALESCE(
@@ -1405,7 +1347,7 @@ impl Inventaire {
             .fetch_one(&self.pool)
             .await?;
 
-        u64::try_from(quantity.unwrap_or(0))
+        u64::try_from(quantity)
             .map_err(|_| {
                 sqlx::Error::Protocol(
                     format!(
@@ -1416,64 +1358,46 @@ impl Inventaire {
             })
     }
 
+    
     // ========================================================
-    // UTILITAIRE : QUANTITÉ SQLITE
+    // CONVERSION QUANTITÉ SQLITE
     // ========================================================
 
-    fn quantite_sqlite(
-        quantite: u64,
-    ) -> Result<i64, sqlx::Error> {
-        i64::try_from(quantite)
-            .map_err(|_| {
-                sqlx::Error::Protocol(
-                    "La quantité dépasse la capacité \
-                     SQLite INTEGER"
-                        .into(),
+    fn quantite_sqlite(quantite: u64) -> Result<i64, sqlx::Error> {
+        i64::try_from(quantite).map_err(|_| {
+            sqlx::Error::Protocol(
+                format!(
+                    "La quantité {} dépasse la capacité d'un INTEGER SQLite",
+                    quantite
                 )
-            })
+                .into(),
+            )
+        })
     }
 
     // ========================================================
-    // UTILITAIRE : QUANTITÉ D'UN OBJET EN MÉMOIRE
+    // QUANTITÉ D'UN OBJET
     // ========================================================
 
-    fn quantite_objet(
-        objet: &ObjetInventaire,
-    ) -> u64 {
+    fn quantite_objet(objet: &ObjetInventaire) -> u64 {
         match objet {
             ObjetInventaire::Base(o) => o.quantite,
-
-            ObjetInventaire::Equipement(e) => {
-                e.objet.quantite
-            }
-
-            ObjetInventaire::Arme(a) => {
-                a.equipement.objet.quantite
-            }
-
-            ObjetInventaire::Potion(p) => {
-                p.objet.quantite
-            }
-
-            ObjetInventaire::Livre(l) => {
-                l.objet.quantite
-            }
+            ObjetInventaire::Equipement(e) => e.quantite,
+            ObjetInventaire::Arme(a) => a.quantite,
+            ObjetInventaire::Potion(p) => p.quantite,
+            ObjetInventaire::Livre(l) => l.quantite,
         }
     }
 
     // ========================================================
-    // ACCÈS AUX OBJETS
+    // ACCÈS À L'INVENTAIRE
     // ========================================================
 
-    pub fn objets(
-        &self,
-    ) -> &HashMap<i64, ObjetInventaire> {
+    pub fn objets(&self) -> &HashMap<i64, ObjetInventaire> {
         &self.objets
     }
 
-    pub fn objets_mut(
-        &mut self,
-    ) -> &mut HashMap<i64, ObjetInventaire> {
+    pub fn objets_mut(&mut self) -> &mut HashMap<i64, ObjetInventaire> {
         &mut self.objets
     }
 
@@ -1481,15 +1405,12 @@ impl Inventaire {
     // RECHARGEMENT
     // ========================================================
 
-    pub async fn recharger(
-        &mut self,
-    ) -> Result<(), sqlx::Error> {
-        self.objets =
-            Self::charger_objets(
-                &self.pool,
-                self.account_id,
-            )
-            .await?;
+    pub async fn recharger(&mut self) -> Result<(), sqlx::Error> {
+        self.objets = Self::charger_objets(
+            &self.pool,
+            self.account_id,
+        )
+        .await?;
 
         Ok(())
     }
@@ -1501,4 +1422,4 @@ impl Inventaire {
     pub fn account_id(&self) -> i64 {
         self.account_id
     }
-}
+} 
