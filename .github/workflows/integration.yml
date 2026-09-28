@@ -30,6 +30,9 @@ jobs:
   integration:
     outputs:
       critical_failure: ${{ steps.critical-status.outputs.failed }}
+      cargo_check_failed: ${{ steps.cargo-check.outcome == 'failure' }}
+
+    
 
     name: Python ↔ Rust Integration
 
