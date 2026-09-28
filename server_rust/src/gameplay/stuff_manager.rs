@@ -31,10 +31,10 @@ impl NomAffiche for ObjetInventaire {
     fn nom_affiche(&self) -> String {
         match self {
             ObjetInventaire::Base(o) => o.nom_affiche(),
-            ObjetInventaire::Equipement(e) => e.nom_affiche(),
-            ObjetInventaire::Arme(a) => a.nom_affiche(),
-            ObjetInventaire::Potion(p) => p.nom_affiche(),
-            ObjetInventaire::Livre(l) => l.nom_affiche(),
+            ObjetInventaire::Equipement(e) => e.objet.nom_affiche(),
+            ObjetInventaire::Arme(a) => a.equipement.objet.nom_affiche(),
+            ObjetInventaire::Potion(p) => p.objet.nom_affiche(),
+            ObjetInventaire::Livre(l) => l.objet.nom_affiche(),
         }
     }
 }
@@ -43,20 +43,20 @@ impl AjouterRetirer for ObjetInventaire {
     fn ajouter(&mut self, qte: u64) {
         match self {
             ObjetInventaire::Base(o) => o.ajouter(qte),
-            ObjetInventaire::Equipement(e) => e.ajouter(qte),
-            ObjetInventaire::Arme(a) => a.ajouter(qte),
-            ObjetInventaire::Potion(p) => p.ajouter(qte),
-            ObjetInventaire::Livre(l) => l.ajouter(qte),
+            ObjetInventaire::Equipement(e) => e.objet.ajouter(qte),
+            ObjetInventaire::Arme(a) => a.equipement.objet.ajouter(qte),
+            ObjetInventaire::Potion(p) => p.objet.ajouter(qte),
+            ObjetInventaire::Livre(l) => l.objet.ajouter(qte),
         }
     }
 
     fn retirer(&mut self, qte: u64) {
         match self {
             ObjetInventaire::Base(o) => o.retirer(qte),
-            ObjetInventaire::Equipement(e) => e.retirer(qte),
-            ObjetInventaire::Arme(a) => a.retirer(qte),
-            ObjetInventaire::Potion(p) => p.retirer(qte),
-            ObjetInventaire::Livre(l) => l.retirer(qte),
+            ObjetInventaire::Equipement(e) => e.objet.retirer(qte),
+            ObjetInventaire::Arme(a) => a.equipement.objet.retirer(qte),
+            ObjetInventaire::Potion(p) => p.objet.retirer(qte),
+            ObjetInventaire::Livre(l) => l.objet.retirer(qte),
         }
     }
 }
