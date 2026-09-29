@@ -28,260 +28,259 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 180
 
-    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v7
+      - name: Checkout repository
+        uses: actions/checkout@v7
 
-    - name: Download error artifact
-      uses: actions/download-artifact@v7
-      with:
-        name: ${{ inputs.error-artifact }}
-        path: ai-input
+      - name: Download error artifact
+        uses: actions/download-artifact@v7
+        with:
+          name: ${{ inputs.error-artifact }}
+          path: ai-input
 
-   - name: Install dependencies
-     run: |
-      set -euo pipefail
+      - name: Install dependencies
+        run: |
+          set -euo pipefail
 
-      sudo apt-get update
-      sudo apt-get install -y curl wget tar jq
+          sudo apt-get update
+          sudo apt-get install -y curl wget tar jq
 
-   - name: Install llama.cpp
-     shell: bash
-     run: |
-      set -euo pipefail
+      - name: Install llama.cpp
+        shell: bash
+        run: |
+          set -euo pipefail
 
-      echo "Récupération de la dernière release llama.cpp..."
+          echo "Récupération de la dernière release llama.cpp..."
 
-      RELEASE_JSON=$(curl -fsSL \
-        --retry 3 \
-        --retry-all-errors \
-        https://api.github.com/repos/ggml-org/llama.cpp/releases/latest)
+          RELEASE_JSON=$(curl -fsSL \
+            --retry 3 \
+            --retry-all-errors \
+            https://api.github.com/repos/ggml-org/llama.cpp/releases/latest)
 
-      LLAMA_VERSION=$(printf '%s' "$RELEASE_JSON" |
-        jq -r '.tag_name')
+          LLAMA_VERSION=$(printf '%s' "$RELEASE_JSON" |
+            jq -r '.tag_name')
 
-      if [ -z "$LLAMA_VERSION" ] || [ "$LLAMA_VERSION" = "null" ]; then
-        echo "❌ Impossible de déterminer la version de llama.cpp."
-        exit 1
-      fi
+          if [ -z "$LLAMA_VERSION" ] || [ "$LLAMA_VERSION" = "null" ]; then
+            echo "❌ Impossible de déterminer la version de llama.cpp."
+            exit 1
+          fi
 
-      echo "llama.cpp version: $LLAMA_VERSION"
+          echo "llama.cpp version: $LLAMA_VERSION"
 
-      echo
-      echo "Assets disponibles :"
-      printf '%s' "$RELEASE_JSON" |
-        jq -r '.assets[].name'
+          echo
+          echo "Assets disponibles :"
+          printf '%s' "$RELEASE_JSON" |
+            jq -r '.assets[].name'
 
-      # Cherche une archive Linux x64.
-      # Les noms des assets de llama.cpp peuvent changer entre releases,
-      # donc on ne dépend pas d'un nom exact comme bin-ubuntu-x64.tar.gz.
-      DOWNLOAD_URL=$(printf '%s' "$RELEASE_JSON" |
-        jq -r '
-          .assets[]
-          | select(
-              (.name | ascii_downcase | test("ubuntu"))
-              and
-              (.name | ascii_downcase | test("x64|x86_64"))
-              and
-              (.name | ascii_downcase | test("\\.tar\\.gz$"))
-            )
-          | .browser_download_url
-        ' |
-        head -1)
+          # Cherche une archive Linux x64.
+          # Les noms des assets de llama.cpp peuvent changer entre releases,
+          # donc on ne dépend pas d'un nom exact comme bin-ubuntu-x64.tar.gz.
+          DOWNLOAD_URL=$(printf '%s' "$RELEASE_JSON" |
+            jq -r '
+              .assets[]
+              | select(
+                  (.name | ascii_downcase | test("ubuntu"))
+                  and
+                  (.name | ascii_downcase | test("x64|x86_64"))
+                  and
+                  (.name | ascii_downcase | test("\\.tar\\.gz$"))
+                )
+              | .browser_download_url
+            ' |
+            head -1)
 
-      if [ -z "$DOWNLOAD_URL" ]; then
-        echo
-        echo "❌ Aucun binaire Ubuntu x64 trouvé."
-        echo
-        echo "Assets disponibles :"
-        printf '%s' "$RELEASE_JSON" |
-          jq -r '.assets[] | .name'
-        exit 1
-      fi
-
-      echo
-      echo "Téléchargement : $DOWNLOAD_URL"
-
-      rm -rf "$HOME/llama"
-      mkdir -p "$HOME/llama"
-
-      curl -fL \
-        --retry 3 \
-        --retry-all-errors \
-        "$DOWNLOAD_URL" \
-        -o /tmp/llama.tar.gz
-
-      echo
-      echo "Taille de l'archive :"
-      ls -lh /tmp/llama.tar.gz
-
-      echo
-      echo "Extraction..."
-
-      tar -xzf /tmp/llama.tar.gz \
-        -C "$HOME/llama"
-
-      echo
-      echo "Contenu extrait :"
-      find "$HOME/llama" -maxdepth 4 -type f | sort
-
-      LLAMA_CLI=$(find "$HOME/llama" \
-        -type f \
-        \( -name 'llama-cli' -o -name 'llama-cli*' \) \
-        -print -quit)
-
-      if [ -z "$LLAMA_CLI" ]; then
-        echo
-        echo "❌ llama-cli introuvable après extraction."
-        echo
-        echo "Fichiers extraits :"
-        find "$HOME/llama" -maxdepth 5 -type f | sort
-        exit 1
-      fi
-
-      chmod +x "$LLAMA_CLI"
-
-      echo
-      echo "llama-cli trouvé : $LLAMA_CLI"
-
-      echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
-
-      echo
-      echo "Version de llama-cli :"
-      "$LLAMA_CLI" --version
-
-   - name: Download small coding model
-     run: |
-      set -euo pipefail
-
-      mkdir -p "$HOME/models"
-
-      wget \
-        --quiet \
-        --show-progress \
-        --tries=3 \
-        "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf?download=true" \
-        -O "$HOME/models/qwen2.5-coder.gguf"
-
-      echo
-      echo "Modèle téléchargé :"
-      ls -lh "$HOME/models/qwen2.5-coder.gguf"
-
-   - name: Prepare AI context
-     env:
-       AI_COMMAND: ${{ inputs.command }}
-       AI_WORKDIR: ${{ inputs.working-directory }}
-     run: |
-      set -euo pipefail
-
-      ERROR_FILE=$(find ai-input -type f -print -quit)
-
-      if [ -z "$ERROR_FILE" ]; then
-        echo "❌ Aucun fichier d'erreur trouvé dans ai-input."
-        find ai-input -maxdepth 3 -type f -print || true
-        exit 1
-      fi
-
-      {
-        echo "===== COMMAND ====="
-        printf '%s\n' "$AI_COMMAND"
-
-        echo
-        echo "===== WORKING DIRECTORY ====="
-        printf '%s\n' "$AI_WORKDIR"
-
-        echo
-        echo "===== CARGO CHECK ERROR ====="
-        cat "$ERROR_FILE"
-
-        echo
-        echo "===== CARGO.TOML ====="
-        if [ -f "$AI_WORKDIR/Cargo.toml" ]; then
-          cat "$AI_WORKDIR/Cargo.toml"
-        fi
-
-        echo
-        echo "===== RUST SOURCE FILES ====="
-        if [ -d "$AI_WORKDIR/src" ]; then
-          find "$AI_WORKDIR/src" \
-            -type f \
-            -name '*.rs' \
-            -print \
-            | sort
-        fi
-
-        echo
-        echo "===== SOURCE CONTENT ====="
-
-        if [ -d "$AI_WORKDIR/src" ]; then
-          while IFS= read -r file; do
+          if [ -z "$DOWNLOAD_URL" ]; then
             echo
-            echo "----- $file -----"
-            cat "$file"
-          done < <(
-            find "$AI_WORKDIR/src" \
-              -type f \
-              -name '*.rs' \
-              -print \
-              | sort
-          )
-        fi
+            echo "❌ Aucun binaire Ubuntu x64 trouvé."
+            echo
+            echo "Assets disponibles :"
+            printf '%s' "$RELEASE_JSON" |
+              jq -r '.assets[] | .name'
+            exit 1
+          fi
 
-      } > ai-context.txt
+          echo
+          echo "Téléchargement : $DOWNLOAD_URL"
 
-      echo "Contexte préparé :"
-      wc -c ai-context.txt
+          rm -rf "$HOME/llama"
+          mkdir -p "$HOME/llama"
 
-   - name: Run local AI analysis
-     env:
-      AI_PROMPT: |
-        You are a Rust debugging assistant.
+          curl -fL \
+            --retry 3 \
+            --retry-all-errors \
+            "$DOWNLOAD_URL" \
+            -o /tmp/llama.tar.gz
 
-        Analyze the cargo check failure below.
+          echo
+          echo "Taille de l'archive :"
+          ls -lh /tmp/llama.tar.gz
 
-        Your job is ONLY to diagnose the problem and propose a concrete fix.
+          echo
+          echo "Extraction..."
 
-        Do not invent files or APIs.
-        Do not modify the repository.
-        Do not claim that a fix works unless the evidence supports it.
+          tar -xzf /tmp/llama.tar.gz \
+            -C "$HOME/llama"
 
-        Give your answer in this structure:
+          echo
+          echo "Contenu extrait :"
+          find "$HOME/llama" -maxdepth 4 -type f | sort
 
-        1. Root cause
-        2. Exact file(s) concerned
-        3. Exact code change needed
-        4. Why this fixes the error
-        5. Any secondary errors that are likely to appear afterward
+          LLAMA_CLI=$(find "$HOME/llama" \
+            -type f \
+            \( -name 'llama-cli' -o -name 'llama-cli*' \) \
+            -print -quit)
 
-        Here is the repository context:
+          if [ -z "$LLAMA_CLI" ]; then
+            echo
+            echo "❌ llama-cli introuvable après extraction."
+            echo
+            echo "Fichiers extraits :"
+            find "$HOME/llama" -maxdepth 5 -type f | sort
+            exit 1
+          fi
 
-     run: |
-      set -euo pipefail
+          chmod +x "$LLAMA_CLI"
 
-      {
-        printf '%s\n' "$AI_PROMPT"
-        cat ai-context.txt
-      } > ai-prompt.txt
+          echo
+          echo "llama-cli trouvé : $LLAMA_CLI"
 
-      echo "Prompt généré :"
-      wc -c ai-prompt.txt
+          echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
 
-      "$LLAMA_CLI" \
-        -m "$HOME/models/qwen2.5-coder.gguf" \
-        -p "$(cat ai-prompt.txt)" \
-        -n 2048 \
-        -c 8192 \
-        --temp 0.2 \
-        --threads "$(nproc)" \
-        2>&1 | tee ai-analysis.txt
+          echo
+          echo "Version de llama-cli :"
+          "$LLAMA_CLI" --version
 
-   - name: Upload AI analysis
-     if: always()
-     uses: actions/upload-artifact@v7
-     with:
-      name: ai-fix-analysis
-      path: |
-        ai-context.txt
-        ai-analysis.txt
-      retention-days: 7
+      - name: Download small coding model
+        run: |
+          set -euo pipefail
+
+          mkdir -p "$HOME/models"
+
+          wget \
+            --quiet \
+            --show-progress \
+            --tries=3 \
+            "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf?download=true" \
+            -O "$HOME/models/qwen2.5-coder.gguf"
+
+          echo
+          echo "Modèle téléchargé :"
+          ls -lh "$HOME/models/qwen2.5-coder.gguf"
+
+      - name: Prepare AI context
+        env:
+          AI_COMMAND: ${{ inputs.command }}
+          AI_WORKDIR: ${{ inputs.working-directory }}
+        run: |
+          set -euo pipefail
+
+          ERROR_FILE=$(find ai-input -type f -print -quit)
+
+          if [ -z "$ERROR_FILE" ]; then
+            echo "❌ Aucun fichier d'erreur trouvé dans ai-input."
+            find ai-input -maxdepth 3 -type f -print || true
+            exit 1
+          fi
+
+          {
+            echo "===== COMMAND ====="
+            printf '%s\n' "$AI_COMMAND"
+
+            echo
+            echo "===== WORKING DIRECTORY ====="
+            printf '%s\n' "$AI_WORKDIR"
+
+            echo
+            echo "===== CARGO CHECK ERROR ====="
+            cat "$ERROR_FILE"
+
+            echo
+            echo "===== CARGO.TOML ====="
+            if [ -f "$AI_WORKDIR/Cargo.toml" ]; then
+              cat "$AI_WORKDIR/Cargo.toml"
+            fi
+
+            echo
+            echo "===== RUST SOURCE FILES ====="
+            if [ -d "$AI_WORKDIR/src" ]; then
+              find "$AI_WORKDIR/src" \
+                -type f \
+                -name '*.rs' \
+                -print \
+                | sort
+            fi
+
+            echo
+            echo "===== SOURCE CONTENT ====="
+
+            if [ -d "$AI_WORKDIR/src" ]; then
+              while IFS= read -r file; do
+                echo
+                echo "----- $file -----"
+                cat "$file"
+              done < <(
+                find "$AI_WORKDIR/src" \
+                  -type f \
+                  -name '*.rs' \
+                  -print \
+                  | sort
+              )
+            fi
+
+          } > ai-context.txt
+
+          echo "Contexte préparé :"
+          wc -c ai-context.txt
+
+      - name: Run local AI analysis
+        env:
+          AI_PROMPT: |
+            You are a Rust debugging assistant.
+
+            Analyze the cargo check failure below.
+
+            Your job is ONLY to diagnose the problem and propose a concrete fix.
+
+            Do not invent files or APIs.
+            Do not modify the repository.
+            Do not claim that a fix works unless the evidence supports it.
+
+            Give your answer in this structure:
+
+            1. Root cause
+            2. Exact file(s) concerned
+            3. Exact code change needed
+            4. Why this fixes the error
+            5. Any secondary errors that are likely to appear afterward
+
+            Here is the repository context:
+
+        run: |
+          set -euo pipefail
+
+          {
+            printf '%s\n' "$AI_PROMPT"
+            cat ai-context.txt
+          } > ai-prompt.txt
+
+          echo "Prompt généré :"
+          wc -c ai-prompt.txt
+
+          "$LLAMA_CLI" \
+            -m "$HOME/models/qwen2.5-coder.gguf" \
+            -p "$(cat ai-prompt.txt)" \
+            -n 2048 \
+            -c 8192 \
+            --temp 0.2 \
+            --threads "$(nproc)" \
+            2>&1 | tee ai-analysis.txt
+
+      - name: Upload AI analysis
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: ai-fix-analysis
+          path: |
+            ai-context.txt
+            ai-analysis.txt
+          retention-days: 7
