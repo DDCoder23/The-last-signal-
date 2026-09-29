@@ -23,10 +23,10 @@ permissions:
 
 jobs:
   analyze:
-  name: AI Fix Rust
-  runs-on: ubuntu-latest
-  timeout-minutes: 180
-  steps:
+    name: AI Fix Rust
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
     - name: Checkout repository
       uses: actions/checkout@v7
 
@@ -350,5 +350,5 @@ jobs:
         path: |
           ai-results/
           ai.patch
-        ai-prompt.txt
-      retention-days: 7
+          ai-prompt.txt
+
