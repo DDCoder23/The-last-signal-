@@ -1112,7 +1112,7 @@ impl Inventaire {
             })?;
 
         let quantite_actuelle =
-            Self::quantite_objet(objet);
+            Self::get_quantity(&objet);
 
         if quantite > quantite_actuelle {
             return Err(sqlx::Error::Protocol(
@@ -1374,20 +1374,7 @@ impl Inventaire {
         })
     }
 
-    // ========================================================
-    // QUANTITÉ D'UN OBJET
-    // ========================================================
-
-    fn quantite_objet(objet: &ObjetInventaire) -> u64 {
-        match objet {
-            ObjetInventaire::Base(o) => o.ajouter(qte),
-            ObjetInventaire::Equipement(e) => e.objet.ajouter(qte),
-            ObjetInventaire::Arme(a) => a.equipement.objet.ajouter(qte),
-            ObjetInventaire::Potion(p) => p.objet.ajouter(qte),
-            ObjetInventaire::Livre(l) => l.objet.ajouter(qte),
-
-    }
-}
+    
 
     // ========================================================
     // ACCÈS À L'INVENTAIRE
