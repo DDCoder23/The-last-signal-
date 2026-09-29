@@ -3,18 +3,18 @@ on:
  workflow_call:
    inputs:
         error-artifact:
-        description: "Nom de l'artifact contenant l'erreur"
-        required: true
-        type: string
+            description: "Nom de l'artifact contenant l'erreur"
+            required: true
+            type: string
         command:
-        description: "Commande qui a échoué"
-        required: true
-        type: string
+            description: "Commande qui a échoué"
+            required: true
+            type: string
         working-directory:
-        description: "Répertoire de travail"
-        required: false
-        type: string
-        default: "."
+            description: "Répertoire de travail"
+            required: false
+            type: string
+            default: "."
 
 permissions:
 contents: read
