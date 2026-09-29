@@ -1422,3 +1422,4 @@ impl Inventaire {
         self.account_id
     }
 } 
+}
