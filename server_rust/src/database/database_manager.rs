@@ -1,15 +1,24 @@
 use std::path::Path;
 use std::str::FromStr;
+use std::time::Duration;
 
-use sqlx::{
-    sqlite::{SqliteConnectOptions, SqlitePool, SqlitePoolOptions},
-};
+use sqlx::sqlite::{SqliteConnectOptions, SqlitePool, SqlitePoolOptions};
 
 pub struct DatabaseManager {
     pool: SqlitePool,
 }
 
 impl DatabaseManager {
+    /// 26 = SQLITE_NOTADB, 11 = SQLITE_CORRUPT
+    fn is_corruption_error(error: &sqlx::Error) -> bool {
+        match error {
+            sqlx::Error::Database(e) => {
+                matches!(e.code().as_deref(), Some("26") | Some("11"))
+            }
+            _ => false,
+        }
+    }
+
     /// Vérifie si une base SQLite existante est corrompue.
     pub async fn is_database_corrupted(
         database_url: &str,
@@ -17,20 +26,29 @@ impl DatabaseManager {
         let options = SqliteConnectOptions::from_str(database_url)?
             .create_if_missing(false);
 
-        let pool = SqlitePoolOptions::new()
+        let pool = match SqlitePoolOptions::new()
             .max_connections(1)
+            .acquire_timeout(Duration::from_secs(3))
             .connect_with(options)
-            .await?;
+            .await
+        {
+            Ok(pool) => pool,
+            Err(e) if Self::is_corruption_error(&e) => return Ok(true),
+            Err(e) => return Err(e),
+        };
 
-        let integrity: String = sqlx::query_scalar(
-            "PRAGMA integrity_check"
-        )
-        .fetch_one(&pool)
-        .await?;
+        let result: Result<String, sqlx::Error> =
+            sqlx::query_scalar("PRAGMA integrity_check")
+                .fetch_one(&pool)
+                .await;
 
         pool.close().await;
 
-        Ok(integrity.trim() != "ok")
+        match result {
+            Ok(integrity) => Ok(integrity.trim() != "ok"),
+            Err(e) if Self::is_corruption_error(&e) => Ok(true),
+            Err(e) => Err(e),
+        }
     }
 
     /// Crée ou ouvre la base SQLite.
@@ -42,6 +60,8 @@ impl DatabaseManager {
 
         let pool = SqlitePoolOptions::new()
             .max_connections(5)
+            // Échoue vite au lieu de boucler 30 s en cas d'erreur de connexion.
+            .acquire_timeout(Duration::from_secs(5))
             .after_connect(|conn, _meta| {
                 Box::pin(async move {
                     // Attend jusqu'à 30 secondes lorsqu'un autre
@@ -79,9 +99,7 @@ impl DatabaseManager {
     }
 
     pub async fn ping(&self) -> Result<(), sqlx::Error> {
-        sqlx::query("SELECT 1")
-            .execute(&self.pool)
-            .await?;
+        sqlx::query("SELECT 1").execute(&self.pool).await?;
 
         Ok(())
     }
@@ -98,12 +116,9 @@ impl DatabaseManager {
             .strip_prefix("sqlite:")
             .unwrap_or(database_url);
 
-        std::fs::create_dir_all(path)
-            .map_err(sqlx::Error::Io)?;
+        std::fs::create_dir_all(path).map_err(sqlx::Error::Io)?;
 
-        let mut pool =
-            Self::create_database(database_url).await?;
-
+        // 1. Vérifier AVANT d'ouvrir le pool avec les PRAGMA.
         if Path::new(database_file).exists() {
             match Self::is_database_corrupted(database_url).await {
                 Ok(true) => {
@@ -112,16 +127,10 @@ impl DatabaseManager {
                          Suppression et recréation..."
                     );
 
-                    // IMPORTANT :
-                    // fermer le pool avant de supprimer le fichier.
-                    pool.close().await;
-
                     std::fs::remove_file(database_file)
                         .map_err(sqlx::Error::Io)?;
-
-                    pool =
-                        Self::create_database(database_url)
-                            .await?;
+                    let _ = std::fs::remove_file(format!("{database_file}-wal"));
+                    let _ = std::fs::remove_file(format!("{database_file}-shm"));
                 }
 
                 Ok(false) => {
@@ -134,12 +143,13 @@ impl DatabaseManager {
                          de la base SQLite : {error}"
                     );
 
-                    pool.close().await;
-
                     return Err(error);
                 }
             }
         }
+
+        // 2. Ensuite seulement, création / ouverture normale.
+        let pool = Self::create_database(database_url).await?;
 
         Ok(Self { pool })
     }
