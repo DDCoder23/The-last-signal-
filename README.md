@@ -243,5 +243,8 @@ Consultez :
 
 ---
 
+<img width="1408" height="768" alt="Gemini_Generated_Image_oixkewoixkewoixk" src="https://github.com/user-attachments/assets/fa07c125-face-4ebe-ab7d-b19a83656369" />
+
+
 > **The Last Signal** — Quand le monde disparaît, un dernier signal demeure.
 
