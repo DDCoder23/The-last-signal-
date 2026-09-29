@@ -68,9 +68,9 @@ jobs:
            libegl1 \
            libgl1 \
            libxcb-cursor0 \
-           libxkbcommon-x11-0\
-           libxcb-icccm4\
-           libxcb-keysyms1\
+           libxkbcommon-x11-0 \
+           libxcb-icccm4 \
+           libxcb-keysyms1 \
            libxcb-shape0
             echo "=== Vérification des bibliothèques ==="
             dpkg -s libxcb-cursor0
