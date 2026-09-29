@@ -125,7 +125,7 @@ jobs:
          print('QApplication OK')
 
          app.quit()
-        "
+         "
 
       # ─────────────────────────────────────────────
       # 7. Test VisPy
