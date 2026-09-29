@@ -7,7 +7,6 @@ on:
         description: "Nom de l'artifact contenant l'erreur"
         required: true
         type: string
-
       command:
         description: "Commande qui a échoué"
         required: true
@@ -17,270 +16,339 @@ on:
         description: "Répertoire de travail"
         required: false
         type: string
-        default: "."
+        default: "server_rust"
 
 permissions:
   contents: read
 
 jobs:
   analyze:
-    name: Analyse locale avec llama.cpp
-    runs-on: ubuntu-latest
-    timeout-minutes: 180
+  name: AI Fix Rust
+  runs-on: ubuntu-latest
+  timeout-minutes: 180
+  steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
+    - name: Download error artifact
+      uses: actions/download-artifact@v7
+      with:
+        name: ${{ inputs.error-artifact }}
+        path: ai-input
 
-      - name: Download error artifact
-        uses: actions/download-artifact@v7
-        with:
-          name: ${{ inputs.error-artifact }}
-          path: ai-input
+    - name: Install dependencies
+      shell: bash
+      run: |
+        set -euo pipefail
 
-      - name: Install dependencies
-        run: |
-          set -euo pipefail
+        sudo apt-get update
 
-          sudo apt-get update
-          sudo apt-get install -y curl wget tar jq
+        sudo apt-get install -y \
+          build-essential \
+          cmake \
+          git \
+          curl \
+          jq \
+        patch
 
-      - name: Install llama.cpp
-        shell: bash
-        run: |
-          set -euo pipefail
+    - name: Install llama.cpp
+      shell: bash
+      run: |
+        set -euo pipefail
 
-          echo "Récupération de la dernière release llama.cpp..."
+        echo "Clonage de llama.cpp..."
 
-          RELEASE_JSON=$(curl -fsSL \
-            --retry 3 \
-            --retry-all-errors \
-            https://api.github.com/repos/ggml-org/llama.cpp/releases/latest)
+        rm -rf "$HOME/llama.cpp"
 
-          LLAMA_VERSION=$(printf '%s' "$RELEASE_JSON" |
-            jq -r '.tag_name')
+        git clone \
+        --depth 1 \
+        https://github.com/ggml-org/llama.cpp.git \
+        "$HOME/llama.cpp"
 
-          if [ -z "$LLAMA_VERSION" ] || [ "$LLAMA_VERSION" = "null" ]; then
-            echo "❌ Impossible de déterminer la version de llama.cpp."
-            exit 1
+        echo "Compilation de llama-cli..."
+
+        cmake \
+        -S "$HOME/llama.cpp" \
+        -B "$HOME/llama.cpp/build" \
+        -DCMAKE_BUILD_TYPE=Release \
+        -DGGML_NATIVE=OFF
+
+        cmake \
+        --build "$HOME/llama.cpp/build" \
+        --config Release \
+        --target llama-cli \
+        --parallel "$(nproc)"
+
+        LLAMA_CLI="$HOME/llama.cpp/build/bin/llama-cli"
+
+        if [ ! -x "$LLAMA_CLI" ]; then
+        echo "❌ llama-cli introuvable."
+
+        find "$HOME/llama.cpp/build" \
+          -type f \
+          -name 'llama-cli*' \
+          -print || true
+
+        exit 1
+        fi
+
+        echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
+
+        echo
+        echo "llama-cli installé :"
+        "$LLAMA_CLI" --version
+
+    - name: Download coding model
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        mkdir -p "$HOME/models"
+
+        MODEL_PATH="$HOME/models/qwen.gguf"
+
+        echo "Téléchargement du modèle..."
+
+        curl -fL \
+        --retry 3 \
+        --retry-all-errors \
+        "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf?download=true" \
+        -o "$MODEL_PATH"
+
+        echo
+        echo "Modèle téléchargé :"
+        ls -lh "$MODEL_PATH"
+
+    - name: AI repair loop
+      env:
+        AI_COMMAND: ${{ inputs.command }}
+        AI_WORKDIR: ${{ inputs.working-directory }}
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        ERROR_FILE=$(find ai-input -type f -print -quit)
+
+        if [ -z "$ERROR_FILE" ]; then
+          echo "❌ Aucun fichier d'erreur trouvé dans ai-input."
+
+        find ai-input \
+          -maxdepth 3 \
+          -type f \
+          -print || true
+
+        exit 1
+        fi
+
+        mkdir -p ai-results
+
+        MAX_ATTEMPTS=6
+        SUCCESS=0
+
+        for ATTEMPT in $(seq 1 "$MAX_ATTEMPTS"); do
+
+        echo
+        echo "========================================"
+        echo "AI FIX - TENTATIVE $ATTEMPT/$MAX_ATTEMPTS"
+        echo "========================================"
+        echo
+
+        if [ "$ATTEMPT" -gt 1 ]; then
+          echo "Re-exécution de cargo check..."
+
+          if cd "$AI_WORKDIR" && cargo check > "$GITHUB_WORKSPACE/ai-results/cargo-check-$ATTEMPT.txt" 2>&1; then
+            echo "✅ cargo check réussit."
+
+            SUCCESS=1
+            break
           fi
 
-          echo "llama.cpp version: $LLAMA_VERSION"
+          ERROR_FILE="$GITHUB_WORKSPACE/ai-results/cargo-check-$ATTEMPT.txt"
+        fi
+
+        echo "Construction du contexte IA..."
+
+        {
+          echo "You are an autonomous Rust debugging agent."
+          echo
+          echo "Your task is to fix a cargo check failure."
+          echo
+          echo "You MUST return ONLY a valid unified git diff."
+          echo
+          echo "Do not explain anything."
+          echo "Do not use Markdown."
+          echo "Do not use code fences."
+          echo "Do not invent files."
+          echo "Do not modify Cargo.lock unless absolutely necessary."
+          echo "Only modify files that are required to fix the compiler error."
+          echo
+          echo "The patch must be applicable with:"
+          echo "git apply ai.patch"
+          echo
+          echo "COMMAND:"
+          printf '%s\n' "$AI_COMMAND"
 
           echo
-          echo "Assets disponibles :"
-          printf '%s' "$RELEASE_JSON" |
-            jq -r '.assets[].name'
+          echo "WORKING DIRECTORY:"
+          printf '%s\n' "$AI_WORKDIR"
 
-          # Cherche une archive Linux x64.
-          # Les noms des assets de llama.cpp peuvent changer entre releases,
-          # donc on ne dépend pas d'un nom exact comme bin-ubuntu-x64.tar.gz.
-          DOWNLOAD_URL=$(printf '%s' "$RELEASE_JSON" |
-            jq -r '
-              .assets[]
-              | select(
-                  (.name | ascii_downcase | test("ubuntu"))
-                  and
-                  (.name | ascii_downcase | test("x64|x86_64"))
-                  and
-                  (.name | ascii_downcase | test("\\.tar\\.gz$"))
-                )
-              | .browser_download_url
-            ' |
-            head -1)
+          echo
+          echo "CARGO ERROR:"
+          cat "$ERROR_FILE"
 
-          if [ -z "$DOWNLOAD_URL" ]; then
-            echo
-            echo "❌ Aucun binaire Ubuntu x64 trouvé."
-            echo
-            echo "Assets disponibles :"
-            printf '%s' "$RELEASE_JSON" |
-              jq -r '.assets[] | .name'
-            exit 1
+          echo
+          echo "CARGO.TOML:"
+
+          if [ -f "$AI_WORKDIR/Cargo.toml" ]; then
+            cat "$AI_WORKDIR/Cargo.toml"
           fi
 
           echo
-          echo "Téléchargement : $DOWNLOAD_URL"
+          echo "RUST FILES:"
 
-          rm -rf "$HOME/llama"
-          mkdir -p "$HOME/llama"
-
-          curl -fL \
-            --retry 3 \
-            --retry-all-errors \
-            "$DOWNLOAD_URL" \
-            -o /tmp/llama.tar.gz
-
-          echo
-          echo "Taille de l'archive :"
-          ls -lh /tmp/llama.tar.gz
-
-          echo
-          echo "Extraction..."
-
-          tar -xzf /tmp/llama.tar.gz \
-            -C "$HOME/llama"
-
-          echo
-          echo "Contenu extrait :"
-          find "$HOME/llama" -maxdepth 4 -type f | sort
-
-          LLAMA_CLI=$(find "$HOME/llama" \
-            -type f \
-            \( -name 'llama-cli' -o -name 'llama-cli*' \) \
-            -print -quit)
-
-          if [ -z "$LLAMA_CLI" ]; then
-            echo
-            echo "❌ llama-cli introuvable après extraction."
-            echo
-            echo "Fichiers extraits :"
-            find "$HOME/llama" -maxdepth 5 -type f | sort
-            exit 1
+          if [ -d "$AI_WORKDIR/src" ]; then
+            find "$AI_WORKDIR/src" \
+              -type f \
+              -name '*.rs' \
+              -print \
+              | sort
           fi
 
-          chmod +x "$LLAMA_CLI"
-
           echo
-          echo "llama-cli trouvé : $LLAMA_CLI"
+          echo "SOURCE CODE:"
 
-          echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
-
-          echo
-          echo "Version de llama-cli :"
-          "$LLAMA_CLI" --version
-
-      - name: Download small coding model
-        run: |
-          set -euo pipefail
-
-          mkdir -p "$HOME/models"
-
-          wget \
-            --quiet \
-            --show-progress \
-            --tries=3 \
-            "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf?download=true" \
-            -O "$HOME/models/qwen2.5-coder.gguf"
-
-          echo
-          echo "Modèle téléchargé :"
-          ls -lh "$HOME/models/qwen2.5-coder.gguf"
-
-      - name: Prepare AI context
-        env:
-          AI_COMMAND: ${{ inputs.command }}
-          AI_WORKDIR: ${{ inputs.working-directory }}
-        run: |
-          set -euo pipefail
-
-          ERROR_FILE=$(find ai-input -type f -print -quit)
-
-          if [ -z "$ERROR_FILE" ]; then
-            echo "❌ Aucun fichier d'erreur trouvé dans ai-input."
-            find ai-input -maxdepth 3 -type f -print || true
-            exit 1
-          fi
-
-          {
-            echo "===== COMMAND ====="
-            printf '%s\n' "$AI_COMMAND"
-
-            echo
-            echo "===== WORKING DIRECTORY ====="
-            printf '%s\n' "$AI_WORKDIR"
-
-            echo
-            echo "===== CARGO CHECK ERROR ====="
-            cat "$ERROR_FILE"
-
-            echo
-            echo "===== CARGO.TOML ====="
-            if [ -f "$AI_WORKDIR/Cargo.toml" ]; then
-              cat "$AI_WORKDIR/Cargo.toml"
-            fi
-
-            echo
-            echo "===== RUST SOURCE FILES ====="
-            if [ -d "$AI_WORKDIR/src" ]; then
+          if [ -d "$AI_WORKDIR/src" ]; then
+            while IFS= read -r file; do
+              echo
+              echo "===== $file ====="
+              cat "$file"
+            done < <(
               find "$AI_WORKDIR/src" \
                 -type f \
                 -name '*.rs' \
                 -print \
                 | sort
-            fi
+            )
+          fi
 
-            echo
-            echo "===== SOURCE CONTENT ====="
+        } > ai-prompt.txt
 
-            if [ -d "$AI_WORKDIR/src" ]; then
-              while IFS= read -r file; do
-                echo
-                echo "----- $file -----"
-                cat "$file"
-              done < <(
-                find "$AI_WORKDIR/src" \
-                  -type f \
-                  -name '*.rs' \
-                  -print \
-                  | sort
-              )
-            fi
+        echo
+        echo "Taille du prompt :"
+        wc -c ai-prompt.txt
 
-          } > ai-context.txt
+        echo
+        echo "Analyse avec llama.cpp..."
 
-          echo "Contexte préparé :"
-          wc -c ai-context.txt
+        "$LLAMA_CLI" \
+          -m "$HOME/models/qwen.gguf" \
+          -p "$(cat ai-prompt.txt)" \
+          -n 2048 \
+          -c 8192 \
+          --temp 0.1 \
+          --threads "$(nproc)" \
+          > ai-results/model-output-$ATTEMPT.txt \
+          2>&1
 
-      - name: Run local AI analysis
-        env:
-          AI_PROMPT: |
-            You are a Rust debugging assistant.
+        echo
+        echo "Réponse du modèle :"
+        cat ai-results/model-output-$ATTEMPT.txt
 
-            Analyze the cargo check failure below.
+        echo
+        echo "Extraction du patch..."
 
-            Your job is ONLY to diagnose the problem and propose a concrete fix.
+        sed \
+          -e '/^```diff$/d' \
+          -e '/^```$/d' \
+          -e '/^Here is.*$/d' \
+          -e '/^Here.*patch.*$/d' \
+          ai-results/model-output-$ATTEMPT.txt \
+          > ai.patch
 
-            Do not invent files or APIs.
-            Do not modify the repository.
-            Do not claim that a fix works unless the evidence supports it.
+        if [ ! -s ai.patch ]; then
+          echo "❌ Le modèle n'a produit aucun patch."
 
-            Give your answer in this structure:
+          continue
+        fi
 
-            1. Root cause
-            2. Exact file(s) concerned
-            3. Exact code change needed
-            4. Why this fixes the error
-            5. Any secondary errors that are likely to appear afterward
+        echo
+        echo "Patch proposé :"
+        cat ai.patch
 
-            Here is the repository context:
+        echo
+        echo "Vérification du patch..."
 
-        run: |
-          set -euo pipefail
+        if ! git apply \
+          --check \
+          ai.patch; then
 
-          {
-            printf '%s\n' "$AI_PROMPT"
-            cat ai-context.txt
-          } > ai-prompt.txt
+          echo "❌ Patch invalide."
 
-          echo "Prompt généré :"
-          wc -c ai-prompt.txt
+          continue
+        fi
 
-          "$LLAMA_CLI" \
-            -m "$HOME/models/qwen2.5-coder.gguf" \
-            -p "$(cat ai-prompt.txt)" \
-            -n 2048 \
-            -c 8192 \
-            --temp 0.2 \
-            --threads "$(nproc)" \
-            2>&1 | tee ai-analysis.txt
+        echo
+        echo "Application du patch..."
 
-      - name: Upload AI analysis
-        if: always()
-        uses: actions/upload-artifact@v7
-        with:
-          name: ai-fix-analysis
-          path: |
-            ai-context.txt
-            ai-analysis.txt
-          retention-days: 7
+        git apply ai.patch
+
+        echo
+        echo "Fichiers modifiés :"
+        git status --short
+
+        echo
+        echo "Vérification cargo check..."
+
+        if cd "$AI_WORKDIR" && \
+          cargo check > "$GITHUB_WORKSPACE/ai-results/cargo-check-$ATTEMPT.txt" 2>&1; then
+
+          echo
+          echo "========================================"
+          echo "✅ CORRECTION RÉUSSIE"
+          echo "========================================"
+
+          SUCCESS=1
+          break
+        fi
+
+        echo
+        echo "❌ cargo check échoue encore."
+
+        cat "$GITHUB_WORKSPACE/ai-results/cargo-check-$ATTEMPT.txt"
+
+        done
+
+        echo
+        echo "========================================"
+
+        if [ "$SUCCESS" -eq 1 ]; then
+        echo "✅ AI FIX terminé avec succès."
+        else
+         echo "❌ AI FIX n'a pas réussi à corriger le projet."
+        fi
+
+        echo "========================================"
+
+        {
+        echo "===== FINAL GIT DIFF ====="
+        git diff
+
+        echo
+        echo "===== GIT STATUS ====="
+        git status --short
+        } > ai-results/final-result.txt
+
+        if [ "$SUCCESS" -ne 1 ]; then
+        exit 1
+        fi
+
+    - name: Upload AI results
+      if: always()
+      uses: actions/upload-artifact@v7
+      with:
+        name: ai-fix-results
+        path: |
+          ai-results/
+          ai.patch
+        ai-prompt.txt
+      retention-days: 7
