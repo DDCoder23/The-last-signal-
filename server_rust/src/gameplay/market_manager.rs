@@ -482,6 +482,22 @@ pub async fn annuler_ordre_vente(
                 "Le montant de la transaction dépasse la capacité i64".into(),
             )
         })?;
+    // --------------------------------------------------------
+// Mise à jour du prix du marché
+// --------------------------------------------------------
+
+sqlx::query(
+    r#"
+    UPDATE objets_dispo
+    SET prix_marche = ?
+    WHERE objet_id = ?
+    "#,
+)
+.bind(prix_execution)
+.bind(objet_id)
+.execute(&mut *tx)
+.await?;
+
 
     // --------------------------------------------------------
     // Remboursement de la différence pour l'acheteur
