@@ -72,7 +72,7 @@ class Client:
                 raise
     
     def send_packet(self, packet):
-       """Envoi d'un packet par le client"""
+        """Envoi d'un packet par le client"""
 
         if not self.connected:
         
