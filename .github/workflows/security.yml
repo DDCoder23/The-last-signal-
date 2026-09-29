@@ -71,8 +71,7 @@ jobs:
             pip-audit \
             semgrep \
             safety \
-            pip-licenses \
-            pytest
+            pip-licenses 
 
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
@@ -150,6 +149,7 @@ jobs:
       - name: update cargo vendor
         working-directory: server_rust
         run: | 
+             
              rm -rf vendor
              rm -f Cargo.lock
              cargo update
@@ -166,8 +166,7 @@ jobs:
              cargo check
              git config user.name github-actions
              git config user.email github-actions@github.com
-             
-
+             git fetch origin
              git add vendor Cargo.lock "../$REPORT"
              git stash --staged
              if git stash list | grep -q '^stash@{0}:'
