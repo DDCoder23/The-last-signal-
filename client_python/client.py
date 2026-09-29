@@ -165,7 +165,7 @@ class Client:
             return None
 
     def disconnect(self):
-         """
+        """
         Deconnexion du client
         """
         print("deconnexion")
