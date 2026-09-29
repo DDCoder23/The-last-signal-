@@ -3,16 +3,21 @@ import time
 import traceback
 from .packet import Packet
 from .logs import log
+
 class Client:
     """
     Client réseau de The Last Signal.
     """
+    
 
     def __init__(
         self,
         host="127.0.0.1",
         port=5000,
     ):
+        """
+        Initialisation du Client réseau de The Last Signal.
+        """
 
         self.host = host
         self.port = port
@@ -21,8 +26,11 @@ class Client:
         self.socket = None
 
         self.connected = False
-
+    
     def connect(self):
+        """
+        Connexion du client
+        """
         if self.connected:
             print(self.connected)
             return
@@ -62,11 +70,9 @@ class Client:
                 self.socket = None
                 self.connected = False
                 raise
-
+    
     def send_packet(self, packet):
-        """
-        Envoie un Packet.
-        """
+       """Envoi d'un packet par le client"""
 
         if not self.connected:
         
@@ -83,7 +89,9 @@ class Client:
             log(self,"ERROR",
                 f"Erreur d'envoi : {traceback.format_exc()}"
             )
+    
     def receive_packet(self):
+        """Réception d'un packet par le client"""
         if not self.connected:
             
             return None
@@ -114,7 +122,12 @@ class Client:
                      )
             return None
         return None
+    
     def _recv_exact(self, size):
+        """
+        Fonction auxilliaire de réception d'un packet par le client 
+        qui vérifie la taille exacte du packet
+        """
 
         if not self.connected:
             return None
@@ -152,6 +165,9 @@ class Client:
             return None
 
     def disconnect(self):
+         """
+        Deconnexion du client
+        """
         print("deconnexion")
 
         if self.socket:
