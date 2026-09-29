@@ -1,38 +1,43 @@
 name: AI Fix
+
 on:
- workflow_call:
-   inputs:
-        error-artifact:
-            description: "Nom de l'artifact contenant l'erreur"
-            required: true
-            type: string
-        command:
-            description: "Commande qui a échoué"
-            required: true
-            type: string
-        working-directory:
-            description: "Répertoire de travail"
-            required: false
-            type: string
-            default: "."
+  workflow_call:
+    inputs:
+      error-artifact:
+        description: "Nom de l'artifact contenant l'erreur"
+        required: true
+        type: string
+
+      command:
+        description: "Commande qui a échoué"
+        required: true
+        type: string
+
+      working-directory:
+        description: "Répertoire de travail"
+        required: false
+        type: string
+        default: "."
 
 permissions:
   contents: read
 
 jobs:
- analyze:
-   name: Analyse locale avec llama.cpp
-   runs-on: ubuntu-latest
-   timeout-minutes: 180
-  steps:
-   - name: Checkout repository
-     uses: actions/checkout@v7
+  analyze:
+    name: Analyse locale avec llama.cpp
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
 
-   - name: Download error artifact
-     uses: actions/download-artifact@v7
-     with:
-      name: ${{ inputs.error-artifact }}
-      path: ai-input
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v7
+
+    - name: Download error artifact
+      uses: actions/download-artifact@v7
+      with:
+        name: ${{ inputs.error-artifact }}
+        path: ai-input
 
    - name: Install dependencies
      run: |
