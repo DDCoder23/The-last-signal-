@@ -69,6 +69,9 @@ jobs:
            libgl1 \
            libxcb-cursor0 \
            libxkbcommon-x11-0
+            echo "=== Vérification des bibliothèques ==="
+            dpkg -s libxcb-cursor0
+            ldconfig -p | grep libxcb-cursor
 
       # ─────────────────────────────────────────────
       # 5. Vérification des versions
