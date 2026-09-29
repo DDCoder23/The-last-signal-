@@ -1100,19 +1100,39 @@ impl Inventaire {
         // Vérification mémoire
         // ----------------------------------------------------
 
-        let objet =
-            self.objets.get(&stuff_id).ok_or_else(|| {
+        if !self.objets.contains_key(&stuff_id) {
+            return Err(sqlx::Error::Protocol(
+                format!(
+                    "Objet absent de l'inventaire : \
+                     stuff_id={stuff_id}"
+                )
+                .into(),
+            ));
+        }
+
+        let quantite_db: i64 = sqlx::query_scalar(
+            r#"
+            SELECT quantity
+            FROM stuff
+            WHERE stuff_id = ?
+              AND account_id = ?
+            "#,
+        )
+        .bind(stuff_id)
+        .bind(self.account_id)
+        .fetch_optional(&self.pool)
+        .await?
+        .ok_or(sqlx::Error::RowNotFound)?;
+
+        let quantite_actuelle = u64::try_from(quantite_db)
+            .map_err(|_| {
                 sqlx::Error::Protocol(
                     format!(
-                        "Objet absent de l'inventaire : \
-                         stuff_id={stuff_id}"
+                        "Quantité invalide pour stuff_id={stuff_id}"
                     )
                     .into(),
                 )
             })?;
-
-        let quantite_actuelle =
-            Self::get_quantity(&objet);
 
         if quantite > quantite_actuelle {
             return Err(sqlx::Error::Protocol(
@@ -1409,5 +1429,4 @@ impl Inventaire {
     pub fn account_id(&self) -> i64 {
         self.account_id
     }
-} 
-
+}
