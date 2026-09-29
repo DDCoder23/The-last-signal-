@@ -86,26 +86,46 @@ jobs:
       # ─────────────────────────────────────────────
       - name: Test PySide6
         run: |
-          xvfb-run -a python -c "
-          from PySide6.QtWidgets import QApplication, QWidget
+         echo "=== Qt plugin directory ==="
 
-          app = QApplication([])
+         PLUGIN_DIR=$(python -c "
+         from PySide6.QtCore import QLibraryInfo
+         print(QLibraryInfo.path(QLibraryInfo.LibraryPath.PluginsPath))
+         ")
 
-          window = QWidget()
-          window.setWindowTitle('PySide6 CI test')
-          window.resize(400, 300)
+         echo "$PLUGIN_DIR"
 
-          print('PySide6 application created successfully')
+         echo "=== XCB plugin ==="
 
-          window.show()
+         XCB_PLUGIN=$(find "$PLUGIN_DIR" \
+         -name "libqxcb.so" \
+         -print -quit)
 
-          app.processEvents()
+         echo "XCB plugin: $XCB_PLUGIN"
 
-          print('PySide6 GUI initialized successfully')
+         echo "=== XCB dependencies ==="
 
-          window.close()
-          app.quit()
-          "
+         ldd "$XCB_PLUGIN" | grep "not found" || true
+
+         echo "=== Complete XCB dependencies ==="
+
+         ldd "$XCB_PLUGIN"
+
+         echo "=== libxcb-cursor ==="
+
+         ldconfig -p | grep libxcb-cursor || true
+
+         echo "=== Qt debug ==="
+
+         QT_DEBUG_PLUGINS=1 xvfb-run -a python -c "
+         from PySide6.QtWidgets import QApplication
+
+         app = QApplication([])
+
+         print('QApplication OK')
+
+         app.quit()
+        "
 
       # ─────────────────────────────────────────────
       # 7. Test VisPy
