@@ -175,3 +175,7 @@ Le jeu est destiné aux joueurs appréciant :
 ⬅️ [Retour au GDD](README.md)
 
 ➡️ [Univers](02_UNIVERS.md)
+
+
+----
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d96d0663-e01c-4911-841e-838f23e0e7cb" />
