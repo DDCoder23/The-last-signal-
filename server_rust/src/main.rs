@@ -11,7 +11,7 @@ use the_last_signal_server::gameplay::{
 
 use the_last_signal_server::utils::logger::logger::ServerLogger;
 use std::collections::HashMap;
-
+#[allow(dead_code)]
 #[tokio::main]
 
 /*
