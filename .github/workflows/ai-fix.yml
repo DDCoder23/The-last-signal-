@@ -46,26 +46,57 @@ jobs:
         run: |
           set -euo pipefail
 
-          LLAMA_VERSION=$(curl -fsSL \
-            https://api.github.com/repos/ggml-org/llama.cpp/releases/latest \
+          RELEASE_JSON=$(curl -fsSL \
+            https://api.github.com/repos/ggml-org/llama.cpp/releases/latest)
+
+          LLAMA_VERSION=$(printf '%s\n' "$RELEASE_JSON" \
             | grep '"tag_name":' \
             | head -1 \
             | cut -d '"' -f4)
 
           echo "llama.cpp version: $LLAMA_VERSION"
 
+          DOWNLOAD_URL=$(printf '%s\n' "$RELEASE_JSON" \
+            | grep '"browser_download_url":' \
+            | grep 'bin-ubuntu-x64.tar.gz' \
+            | head -1 \
+            | cut -d '"' -f4)
+
+          if [ -z "$DOWNLOAD_URL" ]; then
+            echo "❌ Asset Ubuntu x64 introuvable."
+            exit 1
+          fi
+
+          echo "Téléchargement : $DOWNLOAD_URL"
+
           mkdir -p "$HOME/llama"
 
-          wget -q --show-progress \
-            "https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_VERSION}/llama-${LLAMA_VERSION}-bin-ubuntu-x64.tar.gz" \
-            -O /tmp/llama.tar.gz
+          curl -fL --retry 3 \
+            "$DOWNLOAD_URL" \
+            -o /tmp/llama.tar.gz
+
+          echo "Extraction..."
 
           tar -xzf /tmp/llama.tar.gz \
-            -C "$HOME/llama" \
-            --strip-components=1
+            -C "$HOME/llama"
 
-          echo "$HOME/llama" >> "$GITHUB_PATH"
+          echo "Contenu de llama.cpp :"
+          find "$HOME/llama" -maxdepth 2 -type f -name 'llama-cli*' -print
 
+          LLAMA_CLI=$(find "$HOME/llama" -type f -name 'llama-cli' -print -quit)
+
+          if [ -z "$LLAMA_CLI" ]; then
+            echo "❌ llama-cli introuvable après extraction."
+            find "$HOME/llama" -maxdepth 3 -type f | sort
+            exit 1
+          fi
+
+          chmod +x "$LLAMA_CLI"
+
+          echo "llama-cli trouvé : $LLAMA_CLI"
+          echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
+
+          "$LLAMA_CLI" --version
       - name: Download small coding model
         run: |
           set -euo pipefail
