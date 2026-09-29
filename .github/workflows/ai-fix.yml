@@ -126,6 +126,18 @@ jobs:
       shell: bash
       run: |
         set -euo pipefail
+        echo "===== DIAGNOSTIC LLAMA CLI ====="
+        ls -lah "$LLAMA_CLI"
+        file "$LLAMA_CLI"
+        ldd "$LLAMA_CLI" || true
+
+        echo "===== PERMISSIONS ====="
+        stat "$LLAMA_CLI"
+
+        echo "===== TEST EXECUTION ====="
+        chmod +x "$LLAMA_CLI"
+        "$LLAMA_CLI" --version
+        ls -lh "$HOME/models/qwen.gguf"
 
         ERROR_FILE=$(find ai-input -type f -print -quit)
 
