@@ -144,7 +144,7 @@ jobs:
       working-directory: server_rust
       run: | 
              set -euxo pipefail
-
+             git fetch origin
              rm -rf vendor
              rm -f Cargo.lock
              cargo update
