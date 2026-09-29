@@ -170,9 +170,9 @@ jobs:
 
              git add vendor Cargo.lock "../$REPORT"
              git stash --staged
-             git pull
              if git stash list | grep -q '^stash@{0}:'
              then
+             git pull
              echo "stash@{0} trouvé → application"
              git stash pop --index 'stash@{0}'
              else
