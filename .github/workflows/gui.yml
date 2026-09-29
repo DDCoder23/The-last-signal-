@@ -61,6 +61,14 @@ jobs:
       - name: Install PySide6 and VisPy
         run: |
           python -m pip install PySide6 VisPy
+      - name: Install GUI system dependencies
+        run: |
+           sudo apt-get install -y \
+           libegl1 \
+           libgl1 \
+           libxkbcommon-x11-0 \
+           libxcb-cursor0 \
+           xvfb
 
       # ─────────────────────────────────────────────
       # 5. Vérification des versions
