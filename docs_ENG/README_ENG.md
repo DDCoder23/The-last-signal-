@@ -177,10 +177,8 @@ Build **The Last Signal Online**, an immersive post-apocalyptic survival MMORPG 
 |------|------|
 | Morgan Piva | Director & Founder |
 | Cyril Capiez | Assistant Director & Lead Developer |
-| Axel | 3D Modeler |
-| David | Concept Artist & Weapon 3D Modeler |
-| Louanne | Illustrator |
+
 
 ---
-
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d96d0663-e01c-4911-841e-838f23e0e7cb" />
 > **Documentation Version:** 1.0.0
