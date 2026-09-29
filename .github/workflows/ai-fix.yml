@@ -17,34 +17,33 @@ on:
             default: "."
 
 permissions:
-contents: read
+  contents: read
 
 jobs:
  analyze:
    name: Analyse locale avec llama.cpp
    runs-on: ubuntu-latest
    timeout-minutes: 180
-
   steps:
-  - name: Checkout repository
-    uses: actions/checkout@v7
+   - name: Checkout repository
+     uses: actions/checkout@v7
 
-  - name: Download error artifact
-    uses: actions/download-artifact@v7
-    with:
+   - name: Download error artifact
+     uses: actions/download-artifact@v7
+     with:
       name: ${{ inputs.error-artifact }}
       path: ai-input
 
-  - name: Install dependencies
-    run: |
+   - name: Install dependencies
+     run: |
       set -euo pipefail
 
       sudo apt-get update
       sudo apt-get install -y curl wget tar jq
 
-  - name: Install llama.cpp
-    shell: bash
-    run: |
+   - name: Install llama.cpp
+     shell: bash
+     run: |
       set -euo pipefail
 
       echo "Récupération de la dernière release llama.cpp..."
@@ -147,8 +146,8 @@ jobs:
       echo "Version de llama-cli :"
       "$LLAMA_CLI" --version
 
-  - name: Download small coding model
-    run: |
+   - name: Download small coding model
+     run: |
       set -euo pipefail
 
       mkdir -p "$HOME/models"
@@ -164,11 +163,11 @@ jobs:
       echo "Modèle téléchargé :"
       ls -lh "$HOME/models/qwen2.5-coder.gguf"
 
-  - name: Prepare AI context
-    env:
-      AI_COMMAND: ${{ inputs.command }}
-      AI_WORKDIR: ${{ inputs.working-directory }}
-    run: |
+   - name: Prepare AI context
+     env:
+       AI_COMMAND: ${{ inputs.command }}
+       AI_WORKDIR: ${{ inputs.working-directory }}
+     run: |
       set -euo pipefail
 
       ERROR_FILE=$(find ai-input -type f -print -quit)
@@ -229,8 +228,8 @@ jobs:
       echo "Contexte préparé :"
       wc -c ai-context.txt
 
-  - name: Run local AI analysis
-    env:
+   - name: Run local AI analysis
+     env:
       AI_PROMPT: |
         You are a Rust debugging assistant.
 
@@ -252,7 +251,7 @@ jobs:
 
         Here is the repository context:
 
-    run: |
+     run: |
       set -euo pipefail
 
       {
@@ -272,10 +271,10 @@ jobs:
         --threads "$(nproc)" \
         2>&1 | tee ai-analysis.txt
 
-  - name: Upload AI analysis
-    if: always()
-    uses: actions/upload-artifact@v7
-    with:
+   - name: Upload AI analysis
+     if: always()
+     uses: actions/upload-artifact@v7
+     with:
       name: ai-fix-analysis
       path: |
         ai-context.txt
