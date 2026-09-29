@@ -1387,6 +1387,7 @@ impl Inventaire {
             ObjetInventaire::Livre(l) => l.objet.ajouter(qte),
 
     }
+}
 
     // ========================================================
     // ACCÈS À L'INVENTAIRE
