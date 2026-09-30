@@ -250,9 +250,7 @@ Every major feature must be documented before implementation.
 |------|------|
 | Morgan Piva | Director |
 | Cyril Capiez | Deputy Director & Lead Developer |
-| Axel | 3D Modeler |
-| David | Artist & 3D Weapon Modeler |
-| Louanne | Illustrator |
+
 
 ---
 

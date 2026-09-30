@@ -218,9 +218,7 @@ Cada funcionalidad importante debe estar documentada antes de su implementación
 | ------------ | ------------------------------------------ |
 | Morgan Piva  | Director                                   |
 | Cyril Capiez | Director adjunto & Desarrollador principal |
-| Axel         | Modelador 3D                               |
-| David        | Dibujante & Modelador 3D de armas          |
-| Louanne      | Ilustradora                                |
+
 
 ---
 
