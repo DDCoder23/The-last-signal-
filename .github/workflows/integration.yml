@@ -443,8 +443,15 @@ jobs:
           echo "failed=false" >> "$GITHUB_OUTPUT"
           echo "✅ Aucune erreur critique"
         fi
+  Test-gui:
+    needs:
+       integration
+    uses: ./.github/workflows/gui.yml
+    
   cancel-critical:
-    needs: integration
+    needs: 
+        - integration
+        - Test-gui
 
     if: >-
       ${{
@@ -458,7 +465,10 @@ jobs:
       mode: global
   ai-fix:
     name: AI Rust Error Analysis
-    needs: integration
+    needs: 
+      - integration
+      - cancel-critical
+      - Test-gui
 
     if: >-
       ${{
