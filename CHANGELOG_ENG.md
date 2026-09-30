@@ -126,3 +126,12 @@ All notable changes to the **The Last Signal Online** project are documented in 
 - Splitmix64 for rust
 - Added  treasure level 10 
 ---
+## [1.0.12] - 2026-09-16 ~ 2026-09-30
+
+### Ajout
+
+- Added an AI correcting cargo check's errors
+- Added a test for rendering of Pyside and vispy
+- Added new objects
+- Added stuff manager, wallet manager and creation of the begining of market
+- Added 09_.PERSONNAGES.md,10_CREATION_PERSONNAGES.md,11_PROGRESSION.md and 12_STATISTIQUES.md
