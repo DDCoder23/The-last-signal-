@@ -1,11 +1,7 @@
 name: GUI - PySide6 + VisPy
 
 on:
-  push:
-    branches:
-      - main
-      - main-update
-  workflow_dispatch:
+  workflow_call: 
 
 permissions:
   contents: read
