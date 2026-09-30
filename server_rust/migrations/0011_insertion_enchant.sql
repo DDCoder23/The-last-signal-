@@ -12,6 +12,8 @@ INSERT INTO enchantments (enchantment_name) VALUES
     ('Vitality'),
     ('Protection'),
     ('Renvoie'),
+    ('Réparation'),
+    ('Blindage'),
     ('luck');
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'épée'
@@ -24,6 +26,7 @@ WHERE enchantment_name IN (
     'Foudre',
     'Critique',
     'Cryogenisation',
+    'Réparation',
     'Précision'
 );
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
@@ -34,12 +37,16 @@ WHERE enchantment_name IN (
     'Durability',
     'Vitality',
     'Protection',
+    'Réparation',
     'Renvoie'
 );
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'shield'
 FROM enchantments
-WHERE enchantment_name = 'Protection';
+WHERE enchantment_name IN ( 
+    'Protection',
+    'Blindage'
+    );
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'armes à feu'
 FROM enchantments
@@ -50,7 +57,10 @@ WHERE enchantment_name IN (
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'pioche'
 FROM enchantments
-WHERE enchantment_name = 'luck';
+WHERE enchantment_name IN (
+    'luck',
+    'Réparation'
+    );
 INSERT INTO enchantment_levels (
     enchantment_id,
     book_level,
