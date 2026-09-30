@@ -217,9 +217,7 @@ Chaque fonctionnalité importante doit être documentée avant son implémentati
 |------|----------|
 | Morgan Piva | Directeur |
 | Cyril Capiez | Directeur adjoint & Développeur principal |
-| Axel | Modélisateur 3D |
-| David | Dessinateur & Modélisateur 3D d'armes |
-| Louanne | Illustratrice |
+
 
 ---
 ## Commande de jeu 🎮
