@@ -49,7 +49,7 @@ jobs:
 
       - name: Cache llama.cpp
         id: cache-llama
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /home/runner/llama.cpp
           key: llama-cpp-${{ runner.os }}-v1
@@ -90,7 +90,7 @@ jobs:
           "$LLAMA_CLI" --version
 
       - name: Cache model
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /home/runner/models
           key: llm-model-${{ hashFiles('.github/workflows/ai-fix.yml') }}-${{ env.MODEL_URL }}
