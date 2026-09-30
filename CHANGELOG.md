@@ -127,3 +127,13 @@ l'espagnol et le japonais
 - ajout du trésor niveau 10 
 ---
 
+## [1.0.12] - 16/09/2026~30/09/2026
+
+### Ajout
+
+- ajout d'une IA qui corrige les erreurs de cargo check
+- ajout d'un test pour le rendu Pyside et vispy
+- ajout de nouveau objets
+- ajout du stuff manager, wallet manager et création du début du marché
+- ajout des fichiers 09_.PERSONNAGES.md,10_CREATION_PERSONNAGES.md,11_PROGRESSION.md et 12_STATISTIQUES.md
+---
