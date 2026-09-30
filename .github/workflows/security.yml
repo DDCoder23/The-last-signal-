@@ -1346,7 +1346,35 @@ jobs:
 
 
           cd /tmp/ci-worktree
+          git lfs install
+                echo "======================================"
+                echo "📦 Configuration Git LFS"
+                echo "======================================"
+                if [ -f .gitattributes ]
+                then
+                grep -vE '^reports/security/[0-9]{4}-[0-9]{2}-[0-9]{2}/\*\.md ' \
+                .gitattributes > .gitattributes.tmp || true
 
+                mv .gitattributes.tmp .gitattributes
+                fi
+                # Règles permanentes.
+                git lfs track "database/**/*.db"
+                git lfs track "*.png"
+                for DIR in reports/rust/*
+                do
+                [ -d "$DIR" ] || continue
+                NAME=$(basename "$DIR")
+                if [[ "$NAME" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]
+                then
+                echo "📝 Rapport temporaire LFS : $DIR/*.md"
+                git lfs track "$DIR/*.md"
+                fi
+                done
+
+                echo ""
+                echo "📄 Configuration LFS finale :"
+                cat .gitattributes
+                echo ""
 
           git add -A
 
