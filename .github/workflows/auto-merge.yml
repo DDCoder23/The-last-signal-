@@ -1,8 +1,7 @@
-
 name: Auto-merge trusted PRs
 
 on:
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - reopened
@@ -15,7 +14,7 @@ permissions:
 
 jobs:
   auto-merge:
-    name: Enable auto-merge
+    name: Auto-merge
     runs-on: ubuntu-latest
 
     if: >
@@ -26,7 +25,7 @@ jobs:
           github.event.pull_request.user.login == 'github-actions[bot]' &&
           contains(
             github.event.pull_request.body,
-            'Le push direct vers main a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request.'
+            'Le push direct vers `main` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request.'
           )
         )
       )
@@ -39,7 +38,10 @@ jobs:
         run: |
           set -euo pipefail
 
-          echo "PR autorisée pour l'auto-merge : $PR_URL"
+          echo "PR détectée : $PR_URL"
+          echo "Auteur : ${{ github.event.pull_request.user.login }}"
+          echo "Branche : ${{ github.event.pull_request.head.ref }}"
+          echo "Base : ${{ github.event.pull_request.base.ref }}"
 
           gh pr merge "$PR_URL" \
             --auto \
