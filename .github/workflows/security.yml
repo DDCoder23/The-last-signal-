@@ -1502,7 +1502,9 @@ jobs:
 
           fi
 
-
+          gh pr merge "$PR_URL" \
+          --auto \
+          --squash
           cd "$GITHUB_WORKSPACE"
 
 
