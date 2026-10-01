@@ -174,5 +174,8 @@ jobs:
               --title "Synchronize CI data #${GITHUB_RUN_NUMBER}" \
               --body "Le push direct vers main a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request."
              fi
+             gh pr merge "$PR_URL" \
+             --auto \
+             --squash
 
             
