@@ -1,4 +1,4 @@
-name: Auto-merge trusted PRs
+name: Dependabot Auto-merge
 
 on:
   pull_request:
@@ -6,29 +6,19 @@ on:
       - opened
       - reopened
       - synchronize
-      - ready_for_review
 
 permissions:
   contents: write
   pull-requests: write
 
 jobs:
-  auto-merge:
-    name: Auto-merge
+  dependabot:
+    name: Auto-merge Dependabot PR
     runs-on: ubuntu-latest
 
     if: >
-      github.event.pull_request.base.ref == 'main' &&
-      (
-        github.event.pull_request.user.login == 'dependabot[bot]' ||
-        (
-          github.event.pull_request.user.login == 'github-actions[bot]' &&
-          contains(
-            github.event.pull_request.body,
-            'Le push direct vers `main` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request.'
-          )
-        )
-      )
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.event.pull_request.base.ref == 'main'
 
     steps:
       - name: Enable auto-merge
@@ -38,10 +28,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          echo "PR détectée : $PR_URL"
-          echo "Auteur : ${{ github.event.pull_request.user.login }}"
-          echo "Branche : ${{ github.event.pull_request.head.ref }}"
-          echo "Base : ${{ github.event.pull_request.base.ref }}"
+          echo "Dependabot PR détectée : $PR_URL"
 
           gh pr merge "$PR_URL" \
             --auto \
