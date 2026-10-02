@@ -168,11 +168,11 @@ jobs:
              echo "Création de la Pull Request..."
              
 
-            gh pr create \
+            PR_URL=$(gh pr create \
               --base main \
               --head "$FALLBACK_BRANCH" \
               --title "Synchronize CI data #${GITHUB_RUN_NUMBER}" \
-              --body "Le push direct vers main a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request."
+              --body "Le push direct vers main a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request.")
              fi
              gh pr merge "$PR_URL" \
              --auto \
