@@ -418,11 +418,11 @@ jobs:
              else
              echo "Création de la Pull Request..."
 
-             gh pr create \
+             PR_URL=$(gh pr create \
               --base "${{ inputs.branch }}" \
               --head "$FALLBACK_BRANCH" \
               --title "${{ inputs.commit-message }}" \
-              --body "Le push direct vers \`${{ inputs.branch }}\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request."
+              --body "Le push direct vers \`${{ inputs.branch }}\` a échoué après 3 tentatives. Les changements générés par GitHub Actions sont disponibles dans cette Pull Request.")
              fi
              gh pr merge "$PR_URL" \
              --auto \
