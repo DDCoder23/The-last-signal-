@@ -14,6 +14,12 @@ permissions:
 
 
 jobs:
+  dependabot:
+  if: >
+    github.repository == 'DDCoder23/The-last-signal-' &&
+    github.event.pull_request.user.login == 'dependabot[bot]' &&
+    github.event.pull_request.base.ref == 'main'
+  runs-on: ubuntu-latest
   steps:
     - name: Display PR information
       env:
