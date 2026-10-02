@@ -11,25 +11,51 @@ permissions:
   contents: write
   pull-requests: write
 
+
+
 jobs:
-  dependabot:
-    name: Auto-merge Dependabot PR
-    runs-on: ubuntu-latest
+  steps:
+    - name: Display PR information
+      env:
+         PR_URL: ${{ github.event.pull_request.html_url }}
+         PR_NUMBER: ${{ github.event.pull_request.number }}
+         PR_TITLE: ${{ github.event.pull_request.title }}
+       run: |
+        echo "======================================"
+        echo "Dependabot PR détectée"
+        echo "======================================"
+        echo "PR     : #$PR_NUMBER"
+        echo "Titre  : $PR_TITLE"
+        echo "URL    : $PR_URL"
+        echo "Base   : main"
+        echo "======================================"
 
-    if: >
-      github.event.pull_request.user.login == 'dependabot[bot]' &&
-      github.event.pull_request.base.ref == 'main'
+    - name: Approve Dependabot PR
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_URL: ${{ github.event.pull_request.html_url }}
+      run: |
+        set -euo pipefail
 
-    steps:
-      - name: Enable auto-merge
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_URL: ${{ github.event.pull_request.html_url }}
-        run: |
-          set -euo pipefail
+        echo "Approbation automatique de la PR..."
 
-          echo "Dependabot PR détectée : $PR_URL"
+        gh pr review "$PR_URL" \
+        --approve
 
-          gh pr merge "$PR_URL" \
-            --auto \
-            --squash
+        echo "PR approuvée."
+
+    - name: Enable auto-merge
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PR_URL: ${{ github.event.pull_request.html_url }}
+      run: |
+        set -euo pipefail
+
+        echo "Activation de l'auto-merge..."
+
+        gh pr merge "$PR_URL" \
+        --auto \
+        --squash
+
+        echo "Auto-merge activé."
+        echo "La PR sera fusionnée lorsque toutes les conditions requises seront satisfaites."
