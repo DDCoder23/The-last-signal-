@@ -22,7 +22,7 @@ VALUES
     ('potion de délivrance', 'potion', 'potion_de_délivrance.png', 100),
     ('potion de mana', 'potion', 'potion_de_mana.png', 75),
 
-    ('gemmes', 'basic', 'gemmes.png', 66667),
+    ('gemmes', 'basic', 'gemmes.png', 100000),
     ('sac', 'material', 'sac.png', 5),
     ('corde', 'material', 'corde.png', 5),
 
