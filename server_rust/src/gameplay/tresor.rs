@@ -402,8 +402,11 @@ impl Tresor {
         ("pain".to_string(), 70.0),
         ("fruit et légumes".to_string(), 10.0),
         ("herbes et racines".to_string(), 10.0),
-        ("tacos".to_string(), 5.0),
-        ("burger".to_string(), 5.0),
+        ("tacos".to_string(), 10.0),
+        ("burger".to_string(), 10.0),
+        ("sushi".to_string(), 10.0),
+        ("boulette de riz".to_string(), 10.0),
+        ("sucrerie".to_string(), 10.0),
         
     ]),
 );  
@@ -425,6 +428,8 @@ impl Tresor {
         ("thon".to_string(), 10.0),
         ("fugu".to_string(), 10.0),
         ("poisson globe".to_string(), 10.0),
+        ("sashimi".to_string(), 10.0),
+
         
     ]),
 );
