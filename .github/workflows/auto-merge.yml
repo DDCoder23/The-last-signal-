@@ -1,11 +1,8 @@
 name: Dependabot Auto-merge
 
 on:
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
+  schedule:
+    - cron: "*/10 * * * *"
 
 permissions:
   contents: write
@@ -13,50 +10,41 @@ permissions:
 
 jobs:
   dependabot:
-    if: >
-      github.repository == 'DDCoder23/The-last-signal-' &&
-      github.event.pull_request.user.login == 'dependabot[bot]' &&
-      github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
 
-    env:
-      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      PR_URL: ${{ github.event.pull_request.html_url }}
-      PR_NUMBER: ${{ github.event.pull_request.number }}
-      PR_TITLE: ${{ github.event.pull_request.title }}
-
     steps:
-      - name: Display PR information
-        run: |
-          echo "======================================"
-          echo "Dependabot PR détectée"
-          echo "======================================"
-          echo "PR     : #$PR_NUMBER"
-          echo "Titre  : $PR_TITLE"
-          echo "URL    : $PR_URL"
-          echo "Base   : main"
-          echo "======================================"
-
-      - name: Approve Dependabot PR
+      - name: Find Dependabot PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
 
-          echo "Approbation automatique de la PR..."
+          PRS=$(gh pr list \
+            --repo DDCoder23/The-last-signal- \
+            --state open \
+            --author dependabot[bot] \
+            --base main \
+            --json number,url \
+            --jq '.[] | "\(.number) \(.url)"')
 
-          gh pr review "$PR_URL" \
-            --approve
+          if [ -z "$PRS" ]; then
+            echo "Aucune PR Dependabot trouvée."
+            exit 0
+          fi
 
-          echo "PR approuvée."
+          echo "PR Dependabot trouvées :"
+          echo "$PRS"
 
-      - name: Enable auto-merge
-        run: |
-          set -euo pipefail
+          while read -r PR_NUMBER PR_URL; do
+            echo "======================================"
+            echo "Traitement de la PR #$PR_NUMBER"
+            echo "======================================"
 
-          echo "Activation de l'auto-merge..."
+            echo "Approbation..."
+            gh pr review "$PR_URL" --approve
 
-          gh pr merge "$PR_URL" \
-            --auto \
-            --squash
+            echo "Activation de l'auto-merge..."
+            gh pr merge "$PR_URL" --auto --squash
 
-          echo "Auto-merge activé."
-          echo "La PR sera fusionnée lorsque toutes les conditions requises seront satisfaites."
+            echo "Terminé pour $PR_URL"
+          done <<< "$PRS"
