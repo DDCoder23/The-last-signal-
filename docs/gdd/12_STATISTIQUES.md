@@ -4,7 +4,7 @@
 
 > **Document :** Statistiques
 > **Code :** GDD-012
-> **Version :** 1.0.0
+> **Version :** 1.1.0
 > **Statut :** 🟡 En cours de définition
 
 ---
@@ -15,20 +15,21 @@
 2. [Objectifs](#2--objectifs)
 3. [Principes](#3--principes)
 4. [Catégories de statistiques](#4--catégories-de-statistiques)
-5. [Statistiques principales](#5--statistiques-principales)
-6. [Statistiques secondaires](#6--statistiques-secondaires)
-7. [Statistiques de combat](#7--statistiques-de-combat)
-8. [Statistiques défensives](#8--statistiques-défensives)
-9. [Statistiques liées à la survie](#9--statistiques-liées-à-la-survie)
-10. [Statistiques liées aux actions](#10--statistiques-liées-aux-actions)
-11. [Évolution des statistiques](#11--évolution-des-statistiques)
-12. [Influence de l'équipement](#12--influence-de-léquipement)
-13. [Influence des compétences](#13--influence-des-compétences)
-14. [Influence des états](#14--influence-des-états)
-15. [Limites et valeurs](#15--limites-et-valeurs)
-16. [Affichage des statistiques](#16--affichage-des-statistiques)
-17. [Tableau des statistiques](#17--tableau-des-statistiques)
-18. [Documents liés](#18--documents-liés)
+5. [Caractéristiques principales](#5--caractéristiques-principales)
+6. [Modificateurs](#6--modificateurs)
+7. [Points de vie](#7--points-de-vie)
+8. [Défense](#8--défense)
+9. [Mana](#9--mana)
+10. [Progression](#10--progression)
+11. [Bouff](#11--bouff)
+12. [Vitesse](#12--vitesse)
+13. [Grade](#13--grade)
+14. [Génération des statistiques](#14--génération-des-statistiques)
+15. [Influence de l'équipement](#15--influence-de-léquipement)
+16. [Influence des compétences](#16--influence-des-compétences)
+17. [Influence des états](#17--influence-des-états)
+18. [Tableau des statistiques](#18--tableau-des-statistiques)
+19. [Documents liés](#19--documents-liés)
 
 ---
 
@@ -36,9 +37,29 @@
 
 Les statistiques représentent les caractéristiques numériques utilisées pour décrire l'état et les capacités d'un personnage dans **The Last Signal**.
 
-Elles permettent aux différents systèmes du jeu de déterminer les capacités d'un personnage et leurs interactions avec le monde.
+Le modèle actuel du personnage utilise six caractéristiques principales :
 
-Les statistiques peuvent être influencées par la progression, les compétences, l'équipement, les états du personnage et certaines situations de jeu.
+* **FOR** — Force
+* **DEX** — Dextérité
+* **CON** — Constitution
+* **INT** — Intelligence
+* **SAG** — Sagesse
+* **CHA** — Charisme
+
+À ces caractéristiques s'ajoutent plusieurs statistiques dérivées ou de progression :
+
+* **MOD_*** — modificateurs des caractéristiques ;
+* **PV** — points de vie actuels ;
+* **PV_MAX** — points de vie maximum ;
+* **DEF** — défense ;
+* **MANA** — mana actuelle ;
+* **MANA_max** — mana maximale ;
+* **XP** — expérience ;
+* **niv** — niveau ;
+* **bouff** — valeur actuelle de bouff ;
+* **bouff_max** — valeur maximale de bouff ;
+* **vitesse** — vitesse de déplacement ;
+* **grade** — grade utilisé lorsque le mode armée est activé.
 
 ---
 
@@ -50,18 +71,14 @@ Le système de statistiques doit permettre de :
 * différencier les personnages ;
 * fournir des valeurs utilisables par les systèmes de jeu ;
 * permettre une progression cohérente ;
-* gérer les effets de l'équipement ;
+* calculer les statistiques dérivées ;
 * gérer les effets des compétences ;
-* permettre le calcul des actions et interactions ;
-* conserver un système compréhensible pour le joueur.
-
-Les statistiques doivent être suffisamment nombreuses pour représenter les différents systèmes du jeu sans créer une complexité inutile.
+* gérer les effets de l'équipement ;
+* représenter l'état actuel du personnage.
 
 ---
 
 ## 3. 🧭 Principes
-
-Les statistiques suivent plusieurs principes.
 
 ### Cohérence
 
@@ -69,7 +86,7 @@ Chaque statistique doit avoir une fonction clairement définie.
 
 ### Utilité
 
-Une statistique ne doit pas exister uniquement pour augmenter le nombre de paramètres.
+Les statistiques doivent être utilisées par les systèmes de gameplay auxquels elles correspondent.
 
 ### Interactions
 
@@ -77,270 +94,468 @@ Les statistiques peuvent être utilisées par plusieurs systèmes du jeu.
 
 ### Équilibrage
 
-Les valeurs doivent être équilibrées afin qu'aucune statistique ne rende les autres inutiles.
+Les valeurs et formules doivent être équilibrées afin d'éviter qu'une seule caractéristique rende les autres inutiles.
 
 ### Lisibilité
 
-Le joueur doit pouvoir comprendre l'effet général d'une statistique.
+Les statistiques importantes doivent être compréhensibles par le joueur.
 
 ---
 
 ## 4. 🧩 Catégories de statistiques
 
-Les statistiques peuvent être regroupées en plusieurs catégories :
+Les statistiques actuelles peuvent être réparties en plusieurs catégories.
 
-* statistiques principales ;
-* statistiques secondaires ;
-* statistiques de combat ;
-* statistiques défensives ;
-* statistiques de survie ;
-* statistiques liées aux actions.
+### Caractéristiques principales
 
-Cette organisation permet de distinguer les caractéristiques fondamentales des valeurs calculées.
+* FOR
+* DEX
+* CON
+* INT
+* SAG
+* CHA
 
----
+### Modificateurs
 
-## 5. 💪 Statistiques principales
+* MOD_FOR
+* MOD_DEX
+* MOD_CON
+* MOD_INT
+* MOD_SAG
+* MOD_CHA
 
-Les statistiques principales représentent les caractéristiques fondamentales du personnage.
+### Combat et état physique
 
-Les statistiques définitives seront déterminées lors de la conception détaillée du système.
+* PV
+* PV_MAX
+* DEF
+* MANA
+* MANA_max
+* bouff
+* bouff_max
 
-| ID         | Statistique | Description | Valeur initiale |   Maximum |
-| ---------- | ----------- | ----------- | --------------: | --------: |
-| `STAT-001` | À définir   | À définir   |       À définir | À définir |
-| `STAT-002` | À définir   | À définir   |       À définir | À définir |
-| `STAT-003` | À définir   | À définir   |       À définir | À définir |
-| `STAT-004` | À définir   | À définir   |       À définir | À définir |
-| `STAT-005` | À définir   | À définir   |       À définir | À définir |
+### Progression
 
-> Les statistiques ci-dessus sont des emplacements de conception et ne constituent pas encore une liste définitive.
+* XP
+* niv
 
----
+### Déplacement
 
-## 6. 📈 Statistiques secondaires
+* vitesse
 
-Les statistiques secondaires peuvent être calculées à partir de plusieurs paramètres.
+### Statut particulier
 
-Elles peuvent notamment représenter :
-
-* une capacité maximale ;
-* une vitesse ;
-* une efficacité ;
-* une résistance ;
-* une régénération ;
-* une probabilité ;
-* une valeur dérivée.
-
-Une statistique secondaire peut dépendre :
-
-* d'une ou plusieurs statistiques principales ;
-* du niveau ;
-* d'une compétence ;
-* d'un équipement ;
-* d'un état du personnage.
-
-Les formules définitives seront définies lors de l'équilibrage.
+* grade
 
 ---
 
-## 7. ⚔️ Statistiques de combat
+## 5. 💪 Caractéristiques principales
 
-Les statistiques de combat sont utilisées par le système de combat.
+Les six caractéristiques principales sont définies dans `PersoCore` :
 
-Elles peuvent notamment concerner :
+```python
+STATS = ["FOR", "DEX", "CON", "INT", "SAG", "CHA"]
+```
 
-* les dégâts ;
-* la précision ;
-* la vitesse d'action ;
-* les chances de réussite ;
-* les effets des attaques ;
-* les capacités offensives.
+### FOR — Force
 
-Les valeurs exactes et leurs formules seront définies dans **16_COMBAT.md**.
+Représente la force physique du personnage.
+
+**ID :** `STAT-001`
+
+**Valeur :** générée lors de la création du personnage.
+
+### DEX — Dextérité
+
+Représente l'agilité et la précision du personnage.
+
+**ID :** `STAT-002`
+
+**Valeur :** générée lors de la création du personnage.
+
+### CON — Constitution
+
+Représente la constitution physique du personnage.
+
+**ID :** `STAT-003`
+
+La Constitution intervient actuellement dans le calcul des points de vie maximum :
+
+```text
+PV_MAX = (CON // 2) + 12
+```
+
+### INT — Intelligence
+
+Représente l'intelligence du personnage.
+
+**ID :** `STAT-004`
+
+**Valeur :** générée lors de la création du personnage.
+
+### SAG — Sagesse
+
+Représente la sagesse du personnage.
+
+**ID :** `STAT-005`
+
+**Valeur :** générée lors de la création du personnage.
+
+### CHA — Charisme
+
+Représente le charisme du personnage.
+
+**ID :** `STAT-006`
+
+**Valeur :** générée lors de la création du personnage.
 
 ---
 
-## 8. 🛡️ Statistiques défensives
+## 6. 📈 Modificateurs
 
-Les statistiques défensives représentent la capacité du personnage à résister aux différentes menaces.
+Chaque caractéristique principale possède un modificateur associé.
 
-Elles peuvent notamment concerner :
+Les statistiques sont donc accompagnées de :
 
+* `MOD_FOR`
+* `MOD_DEX`
+* `MOD_CON`
+* `MOD_INT`
+* `MOD_SAG`
+* `MOD_CHA`
+
+Le modificateur est calculé à partir de la valeur de la caractéristique.
+
+La formule actuellement utilisée par `PersoCore` est basée sur la valeur de la statistique et sur la table suivante :
+
+| Plage de valeurs | Modificateur |
+| ---------------: | -----------: |
+|              1–2 |           -4 |
+|              3–4 |           -3 |
+|              5–6 |           -2 |
+|              7–8 |           -1 |
+|             9–10 |            0 |
+|            11–12 |           +1 |
+|            13–14 |           +2 |
+|            15–16 |           +3 |
+|            17–18 |           +4 |
+
+La fonction utilisée actuellement est :
+
+```python
+def get_modifier(value):
+    modifiers = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+    index = (value - 1) // 2
+    return modifiers[index] if 0 <= index < len(modifiers) else 0
+```
+
+Les valeurs situées en dehors de la plage couverte par cette table retournent actuellement un modificateur de `0`.
+
+---
+
+## 7. ❤️ Points de vie
+
+Le personnage possède deux statistiques liées aux points de vie :
+
+* `PV_MAX` — points de vie maximum ;
+* `PV` — points de vie actuels.
+
+La valeur maximale est actuellement calculée à partir de la Constitution :
+
+```text
+PV_MAX = (CON // 2) + 12
+```
+
+Lors de la génération initiale des statistiques :
+
+```text
+PV = PV_MAX
+```
+
+Le personnage commence donc avec ses points de vie maximum.
+
+---
+
+## 8. 🛡️ Défense
+
+La défense est représentée par :
+
+`DEF`
+
+La valeur initiale de défense est actuellement calculée à partir du modificateur de Dextérité :
+
+```text
+DEF = 10 + MOD_DEX
+```
+
+La Dextérité influence donc directement la défense de base du personnage.
+
+Les éventuels bonus supplémentaires provenant de l'équipement, des compétences ou d'autres systèmes restent à définir dans les documents correspondants.
+
+---
+
+## 9. 🔵 Mana
+
+Le personnage possède deux statistiques liées au mana :
+
+* `MANA_max` — mana maximum ;
+* `MANA` — mana actuelle.
+
+La valeur actuellement définie dans le code est :
+
+```text
+MANA_max = 100
+```
+
+Au moment de l'initialisation :
+
+```text
+MANA = MANA_max
+```
+
+Le personnage commence donc avec **100 points de mana**.
+
+La formule d'évolution de `MANA_max` n'est actuellement pas définie dans l'extrait de code fourni.
+
+---
+
+## 10. 📊 Progression
+
+Le personnage possède deux statistiques liées à sa progression :
+
+### XP
+
+`XP` représente l'expérience accumulée par le personnage.
+
+La valeur initiale est :
+
+```text
+XP = 0
+```
+
+### Niveau
+
+`niv` représente le niveau actuel du personnage.
+
+La valeur initiale est :
+
+```text
+niv = 1
+```
+
+La formule permettant de convertir l'XP en niveau n'est pas définie dans l'extrait actuel.
+
+Elle devra être définie dans **11_PROGRESSION.md**.
+
+---
+
+## 11. 🟢 Bouff
+
+Le personnage possède deux valeurs liées à la statistique `bouff` :
+
+* `bouff` — valeur actuelle ;
+* `bouff_max` — valeur maximale.
+
+La valeur maximale est actuellement calculée à partir du niveau :
+
+```text
+bouff_max = niv × 10
+```
+
+La valeur actuelle est ensuite initialisée à sa valeur maximale :
+
+```text
+bouff = bouff_max
+```
+
+Avec un personnage de niveau 1 :
+
+```text
+bouff_max = 10
+bouff = 10
+```
+
+La signification gameplay exacte de `bouff` devra être précisée dans le système concerné.
+
+---
+
+## 12. 🏃 Vitesse
+
+La vitesse du personnage est actuellement définie par :
+
+```text
+vitesse = 0.4
+```
+
+Cette valeur est actuellement utilisée comme valeur de vitesse du personnage.
+
+La relation entre cette valeur et :
+
+* la vitesse réelle du déplacement ;
+* les statistiques ;
+* l'équipement ;
+* les compétences ;
+* les effets temporaires ;
+
+reste à définir.
+
+---
+
+## 13. 🎖️ Grade
+
+Le personnage possède également une propriété :
+
+```python
+self.grade = grade
+```
+
+D'après le code fourni, le grade est lié à l'activation du **mode armée**.
+
+La fonction exacte du grade, ses valeurs possibles et ses effets sur les statistiques ne sont pas définis dans l'extrait fourni.
+
+Ces éléments devront donc être spécifiés dans la documentation du système militaire correspondant.
+
+---
+
+## 14. 🎲 Génération des statistiques
+
+Les six statistiques principales sont générées lors de la création du personnage.
+
+Le code actuel utilise :
+
+```python
+valeurs = [
+    sum(sorted([de.jet_de_des(6, 4)], reverse=True)[:3]) for _ in range(6)
+]
+```
+
+Les six valeurs obtenues sont ensuite associées aux six statistiques :
+
+```text
+FOR
+DEX
+CON
+INT
+SAG
+CHA
+```
+
+Les modificateurs sont ensuite générés pour chacune d'elles.
+
+Enfin, les statistiques dérivées suivantes sont initialisées :
+
+```text
+PV_MAX = (CON // 2) + 12
+PV = PV_MAX
+DEF = 10 + MOD_DEX
+```
+
+Les statistiques de progression et de ressources sont ensuite initialisées selon les valeurs actuellement définies :
+
+```text
+MANA_max = 100
+MANA = MANA_max
+XP = 0
+niv = 1
+bouff_max = niv × 10
+bouff = bouff_max
+```
+
+> **Remarque :** la génération exacte des caractéristiques dépend de l'implémentation actuelle de `de.jet_de_des(6, 4)`. Ce document ne modifie pas cette logique.
+
+---
+
+## 15. 🎒 Influence de l'équipement
+
+L'équipement pourra modifier certaines statistiques du personnage.
+
+Les statistiques susceptibles d'être modifiées devront être définies dans les documents d'équipement et d'objets.
+
+Les modifications pourront notamment concerner :
+
+* les caractéristiques principales ;
+* les modificateurs ;
+* les PV ;
 * la défense ;
-* les résistances ;
-* la réduction de dégâts ;
-* l'esquive ;
-* certaines protections spécifiques.
+* le mana ;
+* la vitesse ;
+* d'autres statistiques dérivées.
 
-Les statistiques défensives doivent être équilibrées avec les statistiques offensives.
-
----
-
-## 9. ❤️ Statistiques liées à la survie
-
-Le monde de **The Last Signal** étant basé sur la survie, certaines statistiques peuvent représenter l'état physique du personnage.
-
-Elles peuvent notamment concerner :
-
-* la santé ;
-* l'endurance ;
-* la faim ;
-* la soif ;
-* la fatigue ;
-* l'état général.
-
-Ces valeurs peuvent évoluer pendant l'exploration et les différentes activités du jeu.
-
----
-
-## 10. 🏃 Statistiques liées aux actions
-
-Certaines statistiques peuvent influencer les actions réalisées par le personnage.
-
-Elles peuvent notamment affecter :
-
-* la vitesse de déplacement ;
-* la capacité de transport ;
-* l'utilisation d'objets ;
-* la vitesse d'interaction ;
-* certaines actions physiques ;
-* la récupération.
-
-Les effets précis seront définis dans les systèmes concernés.
-
----
-
-## 11. 🔄 Évolution des statistiques
-
-Les statistiques peuvent évoluer au cours de la progression du personnage.
-
-Leur évolution peut dépendre :
-
-* du niveau ;
-* de points de statistiques ;
-* des compétences ;
-* des classes ;
-* de l'équipement ;
-* des effets temporaires ;
-* des effets permanents.
-
-Toutes les statistiques ne doivent pas nécessairement évoluer de la même manière.
-
----
-
-## 12. 🎒 Influence de l'équipement
-
-L'équipement peut modifier certaines statistiques.
-
-Un objet peut notamment fournir :
-
-* un bonus ;
-* une pénalité ;
-* une résistance ;
-* une modification d'une valeur secondaire ;
-* un effet particulier.
-
-Les règles détaillées concernant les objets et l'équipement sont définies dans :
+Les règles définitives sont à définir dans :
 
 * **20_INVENTAIRE.md** ;
 * **21_EQUIPEMENT.md** ;
 * **22_OBJETS.md**.
 
-Les bonus doivent être contrôlés afin d'éviter des valeurs excessives.
-
 ---
 
-## 13. 🧠 Influence des compétences
+## 16. 🧠 Influence des compétences
 
-Les compétences peuvent modifier les statistiques du personnage.
+Les compétences peuvent modifier certaines statistiques du personnage.
 
-Une compétence peut :
+Elles pourront notamment :
 
 * augmenter une statistique ;
-* réduire une pénalité ;
-* améliorer une valeur secondaire ;
-* modifier une formule ;
-* fournir un effet temporaire ;
-* fournir un effet permanent.
+* modifier une statistique dérivée ;
+* modifier temporairement une valeur ;
+* améliorer une résistance ;
+* modifier une capacité d'action.
 
-Le système détaillé est défini dans **13_COMPETENCES.md**.
-
----
-
-## 14. 🩹 Influence des états
-
-Les statistiques peuvent être temporairement modifiées par l'état du personnage.
-
-Ces modifications peuvent être provoquées par :
-
-* blessures ;
-* fatigue ;
-* faim ;
-* soif ;
-* effets environnementaux ;
-* contamination ;
-* effets de certains objets ;
-* effets de compétences ;
-* événements.
-
-Les effets doivent être clairement identifiables par le joueur.
+Le système de compétences est défini dans **13_COMPETENCES.md**.
 
 ---
 
-## 15. ⚖️ Limites et valeurs
+## 17. 🩹 Influence des états
 
-Chaque statistique doit posséder des limites adaptées à son fonctionnement.
+Certaines statistiques peuvent être affectées par l'état du personnage.
 
-Selon la statistique, il peut exister :
+Les effets possibles devront être définis dans les systèmes concernés.
 
-* une valeur minimale ;
-* une valeur maximale ;
-* une valeur de départ ;
-* une valeur normale ;
-* une valeur temporaire ;
-* une valeur calculée.
+Ils peuvent notamment être liés à :
 
-Les limites définitives seront déterminées pendant l'équilibrage.
+* des blessures ;
+* la fatigue ;
+* l'environnement ;
+* la contamination ;
+* des compétences ;
+* des objets ;
+* des événements.
 
-> **Valeurs définitives :** À définir.
-
----
-
-## 16. 🖥️ Affichage des statistiques
-
-Le joueur doit pouvoir consulter les statistiques importantes de son personnage.
-
-L'interface peut afficher :
-
-* la valeur actuelle ;
-* la valeur maximale ;
-* les bonus ;
-* les pénalités ;
-* les effets actifs ;
-* l'évolution récente ;
-* la description de la statistique.
-
-Les informations détaillées doivent être accessibles sans surcharger l'interface principale.
+Les valeurs temporaires et permanentes devront être distinguées lorsque cela sera nécessaire.
 
 ---
 
-## 17. 📋 Tableau des statistiques
+## 18. 📋 Tableau des statistiques
 
-| ID         | Nom       | Catégorie  | Type       | Modifiable    | Valeur    |
-| ---------- | --------- | ---------- | ---------- | ------------- | --------- |
-| `STAT-001` | À définir | Principale | Permanente | Oui           | À définir |
-| `STAT-002` | À définir | Principale | Permanente | Oui           | À définir |
-| `STAT-003` | À définir | Secondaire | Calculée   | Indirectement | À définir |
-| `STAT-004` | À définir | Combat     | Calculée   | Indirectement | À définir |
-| `STAT-005` | À définir | Défensive  | Calculée   | Indirectement | À définir |
-| `STAT-006` | À définir | Survie     | Variable   | Oui           | À définir |
-
-> Ce tableau sera complété lorsque les statistiques définitives seront validées.
+| ID         | Nom       | Catégorie    | Type       |       Valeur actuelle |
+| ---------- | --------- | ------------ | ---------- | --------------------: |
+| `STAT-001` | FOR       | Principale   | Permanente |               Générée |
+| `STAT-002` | DEX       | Principale   | Permanente |               Générée |
+| `STAT-003` | CON       | Principale   | Permanente |               Générée |
+| `STAT-004` | INT       | Principale   | Permanente |               Générée |
+| `STAT-005` | SAG       | Principale   | Permanente |               Générée |
+| `STAT-006` | CHA       | Principale   | Permanente |               Générée |
+| `STAT-007` | MOD_FOR   | Modificateur | Calculée   |             Selon FOR |
+| `STAT-008` | MOD_DEX   | Modificateur | Calculée   |             Selon DEX |
+| `STAT-009` | MOD_CON   | Modificateur | Calculée   |             Selon CON |
+| `STAT-010` | MOD_INT   | Modificateur | Calculée   |             Selon INT |
+| `STAT-011` | MOD_SAG   | Modificateur | Calculée   |             Selon SAG |
+| `STAT-012` | MOD_CHA   | Modificateur | Calculée   |             Selon CHA |
+| `STAT-013` | PV_MAX    | Combat       | Calculée   |     `(CON // 2) + 12` |
+| `STAT-014` | PV        | Combat       | Variable   |    `PV_MAX` au départ |
+| `STAT-015` | DEF       | Combat       | Calculée   |        `10 + MOD_DEX` |
+| `STAT-016` | MANA_max  | Ressource    | Variable   |                 `100` |
+| `STAT-017` | MANA      | Ressource    | Variable   |  `MANA_max` au départ |
+| `STAT-018` | XP        | Progression  | Variable   |                   `0` |
+| `STAT-019` | niv       | Progression  | Variable   |                   `1` |
+| `STAT-020` | bouff_max | Ressource    | Calculée   |            `niv × 10` |
+| `STAT-021` | bouff     | Ressource    | Variable   | `bouff_max` au départ |
+| `STAT-022` | vitesse   | Déplacement  | Variable   |                 `0.4` |
+| `STAT-023` | grade     | Statut       | Variable   |   Selon le mode armée |
 
 ---
 
-## 18. 📚 Documents liés
+## 19. 📚 Documents liés
 
 ### GDD
 
@@ -374,19 +589,15 @@ Les informations détaillées doivent être accessibles sans surcharger l'interf
 
 ## 📌 État du document
 
-**Version :** 1.0.0
+**Version :** 1.1.0
 **Statut :** 🟡 En cours de définition
-**Dernière mise à jour :** À définir
 
-Ce document définit la structure générale du système de statistiques. Les statistiques définitives, leurs valeurs, leurs formules et leurs limites seront précisées lors de la conception et de l'équilibrage des systèmes de jeu.
----
+Ce document intègre désormais les statistiques effectivement présentes dans le modèle actuel `PersoCore`.
+
+## Les formules et valeurs qui ne sont pas présentes dans le code fourni restent à définir.
 
 ## Navigation
 
 ⬅️ [Progression](11_PROGRESSION.md)
 
-➡️ [Competences](13_COMPETENCES.md)
-
-
-----
-<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d96d0663-e01c-4911-841e-838f23e0e7cb" />
+➡️ [Compétences](13_COMPETENCES.md)
