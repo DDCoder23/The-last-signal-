@@ -102,6 +102,7 @@ impl MarketManager {
         let ordre_id = result.last_insert_rowid();
 
         tx.commit().await?;
+        self.matcher_tous(objet_id).await?;
 
         Ok(ordre_id)
     }
@@ -189,6 +190,7 @@ impl MarketManager {
         let ordre_id = result.last_insert_rowid();
 
         tx.commit().await?;
+        self.matcher_tous(objet_id).await?;
 
         Ok(ordre_id)
     }
