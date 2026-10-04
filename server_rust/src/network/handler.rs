@@ -1,15 +1,16 @@
-use crate::network::packet::{
+use crate::network::{parser::{
+    parse_login_payload,
+    parse_signup_payload,},packet::{
     Packet,
     PacketType,
     LogLevel,
-    ClientLog,
+    ClientLog,},client::Client
+    
 };
 
-use crate::network::client::Client;
 
-use crate::network::parser::{
-    parse_login_payload,
-    parse_signup_payload,
+use crate::gameplay::market_manager::MarketManager;
+use crate::network
 };
 
 use crate::auth::password::{
@@ -50,7 +51,11 @@ struct LoginData {
     is_banned_temp: bool,
 }
 
-
+pub enum HandlerResult {
+    Response(Packet),
+    Disconnect,
+    Nothing,
+}
 pub struct PacketHandler;
 
 
@@ -64,7 +69,7 @@ impl PacketHandler {
         client: &mut Client,
         packet: Packet,
         pool: SqlitePool,
-    ) -> Option<Packet> {
+    ) -> HandlerResult {
 
         match packet.packet_type {
 
