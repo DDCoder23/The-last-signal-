@@ -14,6 +14,10 @@ class PacketType(IntEnum):
     SignUpResponse = 8
     BAN = 9
     DECO =10
+    MARKET_BUY = 11
+    MARKET_SELL = 12
+    MARKET_CANCEL_BUY = 13
+    MARKET_CANCEL_SELL = 14
 
 
 class Packet:
