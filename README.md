@@ -3,7 +3,7 @@
 
 ## 🌐 **README languages**
 🇫🇷 **Français** — You are currently viewing the French version.<br>
-🇬🇧 **English** —  [English version](../docs_ENG/README_ENG.md)<br>
+🇬🇧 **English** —  [English version](README_ENG.md)<br>
 🇪🇸 **Español** — ➡️ [Spanish version](README_ESP.md)<br>
 🇯🇵 **日本語** — ➡️ [Japanase　version](README_JP.md)
 
