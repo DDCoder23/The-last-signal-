@@ -24,6 +24,11 @@ pub enum PacketType {
      LoginResponse = 7,
     SignUpResponse = 8,
     BAN = 9,
+    DECO = 10,
+    MarketBuy = 11,
+    MarketSell = 12,
+    MarketCancelBuy = 13,
+    MarketCancelSell = 14,
 }
 #[derive(Debug, Clone, Copy)]
 pub enum BanType {
@@ -66,6 +71,11 @@ impl PacketType {
             7 => Some(PacketType::LoginResponse),
             8 => Some(PacketType::SignUpResponse),
             9 => Some(PacketType::BAN),
+            10 => Some(PacketType::DECO),
+            11 => Some(PacketType::MarketBuy),
+            12 => Some(PacketType::MarketSell),
+            13 => Some(PacketType::MarketCancelBuy),
+            14 => Some(PacketType::MarketCancelSell),
 
             _ => None,
         }
