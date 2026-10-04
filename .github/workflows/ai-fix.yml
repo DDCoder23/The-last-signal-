@@ -7,10 +7,12 @@ on:
         description: "Nom de l'artifact contenant l'erreur"
         required: true
         type: string
+
       command:
         description: "Commande qui a échoué"
         required: true
         type: string
+
       working-directory:
         description: "Répertoire de travail"
         required: false
@@ -25,14 +27,23 @@ jobs:
     name: AI Fix Rust
     runs-on: ubuntu-latest
     timeout-minutes: 180
+
     env:
-      # Pour un meilleur taux de réussite, remplace par le 7B :
-      # https://huggingface.co/Qwen/Qwen2.5-Coder-7B-Instruct-GGUF/resolve/main/qwen2.5-coder-7b-instruct-q4_k_m.gguf?download=true
       MODEL_URL: "https://huggingface.co/Qwen/Qwen2.5-Coder-1.5B-Instruct-GGUF/resolve/main/qwen2.5-coder-1.5b-instruct-q4_k_m.gguf?download=true"
       MODEL_PATH: "/home/runner/models/qwen.gguf"
+
     steps:
+
+      # ==========================================================
+      # CHECKOUT
+      # ==========================================================
+
       - name: Checkout repository
         uses: actions/checkout@v7
+
+      # ==========================================================
+      # ERROR ARTIFACT
+      # ==========================================================
 
       - name: Download error artifact
         uses: actions/download-artifact@v7
@@ -40,12 +51,28 @@ jobs:
           name: ${{ inputs.error-artifact }}
           path: ai-input
 
+      # ==========================================================
+      # DEPENDENCIES
+      # ==========================================================
+
       - name: Install dependencies
         shell: bash
         run: |
           set -euo pipefail
+
           sudo apt-get update
-          sudo apt-get install -y build-essential cmake git curl jq patch
+
+          sudo apt-get install -y \
+            build-essential \
+            cmake \
+            git \
+            curl \
+            jq \
+            patch
+
+      # ==========================================================
+      # CACHE LLAMA.CPP
+      # ==========================================================
 
       - name: Cache llama.cpp
         id: cache-llama
@@ -53,6 +80,10 @@ jobs:
         with:
           path: /home/runner/llama.cpp
           key: llama-cpp-${{ runner.os }}-v1
+
+      # ==========================================================
+      # INSTALL LLAMA.CPP
+      # ==========================================================
 
       - name: Install llama.cpp
         shell: bash
@@ -63,14 +94,24 @@ jobs:
 
           if [ ! -x "$LLAMA_DIR/build/bin/llama-cli" ]; then
             echo "Clonage de llama.cpp..."
+
             rm -rf "$LLAMA_DIR"
-            git clone --depth 1 https://github.com/ggml-org/llama.cpp.git "$LLAMA_DIR"
+
+            git clone \
+              --depth 1 \
+              https://github.com/ggml-org/llama.cpp.git \
+              "$LLAMA_DIR"
 
             echo "Compilation de llama-cli..."
-            cmake -S "$LLAMA_DIR" -B "$LLAMA_DIR/build" \
+
+            cmake \
+              -S "$LLAMA_DIR" \
+              -B "$LLAMA_DIR/build" \
               -DCMAKE_BUILD_TYPE=Release \
               -DGGML_NATIVE=OFF
-            cmake --build "$LLAMA_DIR/build" \
+
+            cmake \
+              --build "$LLAMA_DIR/build" \
               --config Release \
               --target llama-cli \
               --parallel "$(nproc)"
@@ -82,18 +123,32 @@ jobs:
 
           if [ ! -x "$LLAMA_CLI" ]; then
             echo "❌ llama-cli introuvable."
-            find "$LLAMA_DIR/build" -type f -name 'llama-cli*' -print || true
+
+            find "$LLAMA_DIR/build" \
+              -type f \
+              -name 'llama-cli*' \
+              -print || true
+
             exit 1
           fi
 
           echo "LLAMA_CLI=$LLAMA_CLI" >> "$GITHUB_ENV"
+
           "$LLAMA_CLI" --version
+
+      # ==========================================================
+      # CACHE MODEL
+      # ==========================================================
 
       - name: Cache model
         uses: actions/cache@v6
         with:
           path: /home/runner/models
           key: llm-model-${{ hashFiles('.github/workflows/ai-fix.yml') }}-${{ env.MODEL_URL }}
+
+      # ==========================================================
+      # DOWNLOAD MODEL
+      # ==========================================================
 
       - name: Download coding model
         shell: bash
@@ -106,198 +161,606 @@ jobs:
             echo "Modèle trouvé dans le cache."
           else
             echo "Téléchargement du modèle..."
-            curl -fL --retry 3 --retry-all-errors "$MODEL_URL" -o "$MODEL_PATH"
+
+            curl \
+              -fL \
+              --retry 3 \
+              --retry-all-errors \
+              "$MODEL_URL" \
+              -o "$MODEL_PATH"
           fi
 
           ls -lh "$MODEL_PATH"
+
+      # ==========================================================
+      # AI REPAIR LOOP
+      # ==========================================================
 
       - name: AI repair loop
         env:
           AI_COMMAND: ${{ inputs.command }}
           AI_WORKDIR: ${{ inputs.working-directory }}
+
         shell: bash
+
         run: |
           set -euo pipefail
 
           chmod +x "$LLAMA_CLI"
+
+          echo "================================================"
+          echo "LLAMA.CPP"
+          echo "================================================"
+
           "$LLAMA_CLI" --version
 
-          # Flag pour couper le mode conversation (le nom varie selon les versions)
-          CNV_FLAG=()
-          if "$LLAMA_CLI" --help 2>&1 | grep -q -- '-no-cnv'; then
-            CNV_FLAG=(-no-cnv)
-          elif "$LLAMA_CLI" --help 2>&1 | grep -q -- '--no-conversation'; then
-            CNV_FLAG=(--no-conversation)
-          fi
+          echo
+          echo "================================================"
+          echo "LLAMA CLI HELP"
+          echo "================================================"
+
+          "$LLAMA_CLI" --help > ai-results-llama-help.txt 2>&1 || true
+
+          cat ai-results-llama-help.txt
+
+          # ------------------------------------------------------
+          # Recherche du fichier d'erreur
+          # ------------------------------------------------------
 
           ERROR_FILE=$(find ai-input -type f -print -quit)
 
           if [ -z "$ERROR_FILE" ]; then
-            echo "❌ Aucun fichier d'erreur trouvé dans ai-input."
-            find ai-input -maxdepth 3 -type f -print || true
+            echo "❌ Aucun fichier d'erreur trouvé."
+
+            find ai-input \
+              -maxdepth 3 \
+              -type f \
+              -print || true
+
             exit 1
           fi
 
+          echo
+          echo "Fichier d'erreur : $ERROR_FILE"
+
           mkdir -p ai-results
+
+          # ------------------------------------------------------
+          # Variables
+          # ------------------------------------------------------
 
           MAX_ATTEMPTS=6
           SUCCESS=0
-          PREV_ERRORS=$(grep -c '^error' "$ERROR_FILE" || true)
+
+          # ------------------------------------------------------
+          # Nombre initial d'erreurs
+          # ------------------------------------------------------
+
+          PREV_ERRORS=$(grep -Ec '^error(\[[A-Z][0-9]+\])?:|^error:' "$ERROR_FILE" || true)
+
+          echo "Nombre initial d'erreurs : $PREV_ERRORS"
+
+          # ------------------------------------------------------
+          # Fonction : construire le contexte Cargo
+          # ------------------------------------------------------
+
+          build_error_context() {
+
+            local file="$1"
+
+            {
+              echo "===== CARGO ERROR CONTEXT ====="
+
+              # Les erreurs Rust importantes sont généralement
+              # situées vers la fin de la sortie cargo check.
+              tail -n 300 "$file"
+
+            } > ai-results/current-error-context.txt
+          }
+
+          # ------------------------------------------------------
+          # Fonction : extraire les fichiers Rust
+          # ------------------------------------------------------
+
+          extract_source_files() {
+
+            local file="$1"
+
+            grep -oE \
+              '(server_rust/)?[A-Za-z0-9_./-]+\.rs' \
+              "$file" \
+              | sort -u \
+              | head -n 5
+          }
+
+          # ------------------------------------------------------
+          # Fonction : résoudre un chemin source
+          # ------------------------------------------------------
+
+          resolve_source_file() {
+
+            local file="$1"
+
+            if [ -f "$file" ]; then
+              echo "$file"
+              return 0
+            fi
+
+            if [[ "$file" == server_rust/* ]] &&
+               [ -f "${file#server_rust/}" ]; then
+              echo "${file#server_rust/}"
+              return 0
+            fi
+
+            if [ -f "$AI_WORKDIR/$file" ]; then
+              echo "$AI_WORKDIR/$file"
+              return 0
+            fi
+
+            return 1
+          }
+
+          # ------------------------------------------------------
+          # Fonction : compter les erreurs
+          # ------------------------------------------------------
+
+          count_errors() {
+
+            local file="$1"
+
+            grep -Ec \
+              '^error(\[[A-Z][0-9]+\])?:|^error:' \
+              "$file" \
+              || true
+          }
+
+          # ------------------------------------------------------
+          # Boucle principale
+          # ------------------------------------------------------
 
           for ATTEMPT in $(seq 1 "$MAX_ATTEMPTS"); do
+
             echo
             echo "========================================"
             echo "AI FIX - TENTATIVE $ATTEMPT/$MAX_ATTEMPTS"
             echo "========================================"
 
-            # ---------- Construction du prompt (ChatML pour Qwen) ----------
+            # ----------------------------------------------------
+            # Construire contexte d'erreur
+            # ----------------------------------------------------
+
+            build_error_context "$ERROR_FILE"
+
+            # ----------------------------------------------------
+            # Construire prompt
+            # ----------------------------------------------------
+
             {
+
               echo "<|im_start|>system"
+
               echo "You are an autonomous Rust debugging agent."
-              echo "Fix the cargo check failure. Return ONLY a valid unified git diff."
-              echo "No explanation, no Markdown, no code fences, no invented files."
-              echo "Paths in the diff must be relative to the repository root (a/... b/...)."
-              echo "Do not modify Cargo.lock unless absolutely necessary."
-              echo "The patch must be applicable with: git apply ai.patch"
+
+              echo "Your task is to fix the Rust cargo check failure."
+
+              echo
+
+              echo "IMPORTANT RULES:"
+
+              echo "1. Work from the repository root."
+
+              echo "2. The Rust crate is located in: $AI_WORKDIR"
+
+              echo "3. Paths in the git diff MUST include '$AI_WORKDIR/' when the file is inside that directory."
+
+              echo "4. Do not invent files."
+
+              echo "5. Do not modify Cargo.lock unless absolutely necessary."
+
+              echo "6. Make the smallest possible correction."
+
+              echo "7. Do not change dependency versions unless the compiler error requires it."
+
+              echo "8. Do not modify unrelated files."
+
+              echo "9. Do not explain your answer."
+
+              echo
+
+              echo "OUTPUT FORMAT:"
+
+              echo "You MUST output exactly one patch between these markers:"
+
+              echo
+
+              echo "PATCH_BEGIN"
+
+              echo "diff --git a/server_rust/example.rs b/server_rust/example.rs"
+
+              echo "..."
+
+              echo "PATCH_END"
+
+              echo
+
+              echo "Nothing except the patch may appear between PATCH_BEGIN and PATCH_END."
+
+              echo "If you cannot determine a valid fix, output an empty patch between the markers."
+
+              echo
+
               echo "<|im_end|>"
+
               echo "<|im_start|>user"
-              echo "COMMAND: $AI_COMMAND"
-              echo "WORKING DIRECTORY: $AI_WORKDIR"
-              echo
-              echo "CARGO ERROR:"
-              head -c 6000 "$ERROR_FILE"
-              echo
-              echo "SOURCE FILES INVOLVED:"
 
-              grep -oE '[A-Za-z0-9_./-]+\.rs' "$ERROR_FILE" \
-                | sort -u \
-                | head -n 3 \
-                | while IFS= read -r f; do
-                    for cand in "$AI_WORKDIR/$f" "$f"; do
-                      if [ -f "$cand" ]; then
-                        echo
-                        echo "===== $cand ====="
-                        head -c 6000 "$cand"
-                        break
-                      fi
-                    done
-                  done || true
+              echo "COMMAND: $AI_COMMAND"
+
+              echo "WORKING DIRECTORY: $AI_WORKDIR"
+
+              echo
+
+              echo "===== COMPILER ERROR ====="
+
+              cat ai-results/current-error-context.txt
+
+              echo
+
+              echo "===== SOURCE FILES INVOLVED ====="
+
+              extract_source_files "$ERROR_FILE" |
+              while IFS= read -r f; do
+
+                [ -z "$f" ] && continue
+
+                if resolved=$(resolve_source_file "$f"); then
+
+                  echo
+                  echo "===== $resolved ====="
+
+                  # Donner suffisamment de contexte au modèle
+                  # sans envoyer des fichiers gigantesques.
+                  sed -n '1,500p' "$resolved"
+
+                fi
+
+              done
+
+              echo
 
               echo "<|im_end|>"
+
               echo "<|im_start|>assistant"
+
             } > ai-prompt.txt
 
+            echo
             echo "Taille du prompt :"
+
             wc -c ai-prompt.txt
 
-            # ---------- Appel du modèle ----------
-            TEMP=$(awk -v a="$ATTEMPT" 'BEGIN{printf "%.2f", 0.1 + 0.15 * (a - 1)}')
+            # ----------------------------------------------------
+            # Température
+            # ----------------------------------------------------
 
-            echo "Analyse avec llama.cpp (temp=$TEMP)..."
+            TEMP=$(awk \
+              -v a="$ATTEMPT" \
+              'BEGIN {
+                t = 0.1 + 0.10 * (a - 1)
+                if (t > 0.6) t = 0.6
+                printf "%.2f", t
+              }')
+
+            echo
+            echo "Température : $TEMP"
+
+            # ----------------------------------------------------
+            # Appel modèle
+            # ----------------------------------------------------
+
+            echo
+            echo "Appel de llama.cpp..."
 
             if ! "$LLAMA_CLI" \
               -m "$MODEL_PATH" \
               -f ai-prompt.txt \
-              -n 2048 \
+              -n 4096 \
               -c 16384 \
               --temp "$TEMP" \
               --seed "$ATTEMPT" \
               --threads "$(nproc)" \
-              "${CNV_FLAG[@]}" \
               --no-display-prompt \
               < /dev/null \
               > "ai-results/model-output-$ATTEMPT.txt" \
-              2> "ai-results/model-stderr-$ATTEMPT.txt"; then
-              echo "❌ llama-cli a échoué :"
-              tail -n 30 "ai-results/model-stderr-$ATTEMPT.txt"
+              2> "ai-results/model-stderr-$ATTEMPT.txt"
+            then
+
+              echo "❌ llama-cli a échoué."
+
+              tail -n 50 \
+                "ai-results/model-stderr-$ATTEMPT.txt"
+
+              continue
+
+            fi
+
+            # ----------------------------------------------------
+            # Affichage réponse
+            # ----------------------------------------------------
+
+            echo
+            echo "===== RÉPONSE DU MODÈLE ====="
+
+            cat \
+              "ai-results/model-output-$ATTEMPT.txt"
+
+            # ----------------------------------------------------
+            # EXTRACTION STRICTE DU PATCH
+            # ----------------------------------------------------
+
+            MODEL_OUTPUT="ai-results/model-output-$ATTEMPT.txt"
+
+            PATCH_BEGIN_COUNT=$(
+              grep -c '^PATCH_BEGIN$' "$MODEL_OUTPUT" || true
+            )
+
+            PATCH_END_COUNT=$(
+              grep -c '^PATCH_END$' "$MODEL_OUTPUT" || true
+            )
+
+            echo
+            echo "PATCH_BEGIN : $PATCH_BEGIN_COUNT"
+            echo "PATCH_END   : $PATCH_END_COUNT"
+
+            if [ "$PATCH_BEGIN_COUNT" -ne 1 ] ||
+               [ "$PATCH_END_COUNT" -ne 1 ]; then
+
+              echo "❌ Marqueurs PATCH_BEGIN/PATCH_END invalides."
+
+              # IMPORTANT :
+              # on garde le fichier d'erreur inchangé,
+              # mais on indique au modèle que la sortie précédente
+              # était invalide lors de la tentative suivante.
+
+              {
+                echo
+                echo "===== PREVIOUS MODEL OUTPUT INVALID ====="
+                echo "The previous response did not contain exactly one PATCH_BEGIN/PATCH_END block."
+                echo "You MUST follow the required output format."
+              } >> ai-results/current-error-context.txt
+
+              ERROR_FILE="ai-results/current-error-context.txt"
+
               continue
             fi
 
-            echo
-            echo "Réponse du modèle :"
-            cat "ai-results/model-output-$ATTEMPT.txt"
+            # ----------------------------------------------------
+            # Extraction
+            # ----------------------------------------------------
 
-            # ---------- Extraction du patch ----------
-            awk '/^(diff --git|--- )/{p=1} p' "ai-results/model-output-$ATTEMPT.txt" \
-              | sed -e '/^```/d' -e '/<|im_end|>/d' \
-              > ai.patch || true
+            sed \
+              -n \
+              '/^PATCH_BEGIN$/,/^PATCH_END$/p' \
+              "$MODEL_OUTPUT" |
+              sed \
+                '1d;$d' \
+              > ai.patch
 
-            # Un patch doit finir par un retour à la ligne
-            if [ -s ai.patch ] && [ "$(tail -c1 ai.patch | wc -l)" -eq 0 ]; then
+            # ----------------------------------------------------
+            # Nettoyage éventuel CRLF
+            # ----------------------------------------------------
+
+            sed -i 's/\r$//' ai.patch
+
+            # ----------------------------------------------------
+            # Vérification présence diff
+            # ----------------------------------------------------
+
+            if ! grep -q '^diff --git ' ai.patch; then
+
+              echo "❌ Le bloc ne contient aucun diff --git."
+
+              cat ai.patch
+
+              ERROR_FILE="ai-results/current-error-context.txt"
+
+              {
+                echo
+                echo "The previous patch block did not contain a valid 'diff --git' header."
+              } >> "$ERROR_FILE"
+
+              continue
+            fi
+
+            # ----------------------------------------------------
+            # Retour à la ligne final
+            # ----------------------------------------------------
+
+            if [ "$(tail -c1 ai.patch | wc -l)" -eq 0 ]; then
               echo >> ai.patch
             fi
 
-            if [ ! -s ai.patch ]; then
-              echo "❌ Le modèle n'a produit aucun patch."
-              continue
-            fi
-
-            cp ai.patch "ai-results/patch-$ATTEMPT.patch"
+            cp \
+              ai.patch \
+              "ai-results/patch-$ATTEMPT.patch"
 
             echo
-            echo "Patch proposé :"
+            echo "===== PATCH PROPOSÉ ====="
+
             cat ai.patch
 
-            # ---------- Application ----------
-            echo
-            echo "Vérification du patch..."
+            # ----------------------------------------------------
+            # Validation Git
+            # ----------------------------------------------------
 
-            if ! git apply --check --recount --ignore-whitespace ai.patch 2> "ai-results/apply-error-$ATTEMPT.txt"; then
+            echo
+            echo "===== VALIDATION DU PATCH ====="
+
+            if ! git apply \
+              --check \
+              --recount \
+              --ignore-whitespace \
+              ai.patch \
+              2> "ai-results/apply-error-$ATTEMPT.txt"
+            then
+
               echo "❌ Patch invalide :"
-              cat "ai-results/apply-error-$ATTEMPT.txt"
+
+              cat \
+                "ai-results/apply-error-$ATTEMPT.txt"
+
+              # Faire comprendre au modèle pourquoi son patch
+              # précédent était invalide.
+
+              {
+                echo
+                echo "===== PATCH APPLICATION ERROR ====="
+
+                cat \
+                  "ai-results/apply-error-$ATTEMPT.txt"
+
+              } >> ai-results/current-error-context.txt
+
+              ERROR_FILE="ai-results/current-error-context.txt"
+
               continue
             fi
 
-            git apply --recount --ignore-whitespace ai.patch
+            # ----------------------------------------------------
+            # Application
+            # ----------------------------------------------------
+
+            git apply \
+              --recount \
+              --ignore-whitespace \
+              ai.patch
 
             echo
-            echo "Fichiers modifiés :"
+            echo "===== FICHIERS MODIFIÉS ====="
+
             git status --short
 
-            # ---------- Vérification ----------
+            # ----------------------------------------------------
+            # Cargo check
+            # ----------------------------------------------------
+
             echo
-            echo "Vérification cargo check..."
+            echo "===== CARGO CHECK ====="
 
             CHECK_FILE="$GITHUB_WORKSPACE/ai-results/cargo-check-$ATTEMPT.txt"
 
-            if (cd "$AI_WORKDIR" && cargo check > "$CHECK_FILE" 2>&1); then
+            if (
+              cd "$AI_WORKDIR"
+              cargo check
+            ) > "$CHECK_FILE" 2>&1
+            then
+
               echo
               echo "========================================"
               echo "✅ CORRECTION RÉUSSIE"
               echo "========================================"
+
               SUCCESS=1
+
               break
+
             fi
 
-            NEW_ERRORS=$(grep -c '^error' "$CHECK_FILE" || true)
-            echo "❌ cargo check échoue encore ($NEW_ERRORS erreurs, avant : $PREV_ERRORS)."
-            tail -n 40 "$CHECK_FILE"
+            # ----------------------------------------------------
+            # Nouveau nombre d'erreurs
+            # ----------------------------------------------------
+
+            NEW_ERRORS=$(count_errors "$CHECK_FILE")
+
+            echo
+            echo "Anciennes erreurs : $PREV_ERRORS"
+            echo "Nouvelles erreurs : $NEW_ERRORS"
+
+            echo
+            echo "===== CARGO CHECK ====="
+
+            tail -n 100 "$CHECK_FILE"
+
+            # ----------------------------------------------------
+            # Pas d'amélioration
+            # ----------------------------------------------------
 
             if [ "$NEW_ERRORS" -ge "$PREV_ERRORS" ]; then
-              echo "↩️  Pas d'amélioration, patch annulé."
-              git apply -R --recount --ignore-whitespace ai.patch || git checkout -- .
+
+              echo
+              echo "↩️ Pas d'amélioration."
+
+              git apply \
+                -R \
+                --recount \
+                --ignore-whitespace \
+                ai.patch \
+                || git checkout -- .
+
+              # --------------------------------------------------
+              # IMPORTANT :
+              # même si le patch est annulé, on donne l'erreur
+              # au modèle pour qu'il ne répète pas la même chose.
+              # --------------------------------------------------
+
+              {
+                echo
+                echo "===== PREVIOUS PATCH DID NOT IMPROVE CARGO CHECK ====="
+
+                echo "Previous error count: $PREV_ERRORS"
+                echo "New error count: $NEW_ERRORS"
+
+                echo
+                echo "===== RESULT OF CARGO CHECK ====="
+
+                tail -n 300 "$CHECK_FILE"
+
+              } > ai-results/current-error-context.txt
+
+              ERROR_FILE="ai-results/current-error-context.txt"
+
             else
-              echo "📉 Amélioration, patch conservé."
+
+              echo
+              echo "📉 Amélioration détectée."
+
               PREV_ERRORS="$NEW_ERRORS"
+
               ERROR_FILE="$CHECK_FILE"
+
             fi
+
           done
+
+          # ======================================================
+          # FINAL RESULT
+          # ======================================================
 
           echo
           echo "========================================"
+
           if [ "$SUCCESS" -eq 1 ]; then
+
             echo "✅ AI FIX terminé avec succès."
+
           else
+
             echo "❌ AI FIX n'a pas réussi à corriger le projet."
+
           fi
+
           echo "========================================"
 
           {
             echo "===== FINAL GIT DIFF ====="
+
             git diff
+
             echo
+
             echo "===== GIT STATUS ====="
+
             git status --short
+
           } > ai-results/final-result.txt
 
           git diff > ai-results/final.patch
@@ -305,6 +768,10 @@ jobs:
           if [ "$SUCCESS" -ne 1 ]; then
             exit 1
           fi
+
+      # ==========================================================
+      # UPLOAD RESULTS
+      # ==========================================================
 
       - name: Upload AI results
         if: always()
@@ -315,3 +782,4 @@ jobs:
             ai-results/
             ai.patch
             ai-prompt.txt
+            ai-results-llama-help.txt
