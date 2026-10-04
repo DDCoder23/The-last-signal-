@@ -142,35 +142,42 @@ impl Client {
                             // -----------------------------------------
                             // Traitement du paquet
                             // -----------------------------------------
+                            match PacketHandler::handle(
+    self,
+    packet,
+    self.pool.clone()
+).await {
 
-                            if let Some(response) =
-                                PacketHandler::handle(
-                                    self,
-                                    packet,
-                                    self.pool.clone()
-                                ).await
-                            {
+    HandlerResult::Response(response) => {
 
-                                // -------------------------------------
-                                // Envoi de la réponse
-                                // -------------------------------------
+        if let Err(e) =
+            send_packet(
+                &mut self.stream,
+                &response
+            ).await
+        {
+            error!(
+                "Erreur d'envoi [{}] : {}",
+                self.session_id,
+                e
+            );
 
-                                if let Err(e) =
-                                    send_packet(
-                                        &mut self.stream,
-                                        &response
-                                    ).await
-                                {
+            break;
+        }
+    }
 
-                                    error!(
-                                        "Erreur d'envoi [{}] : {}",
-                                        self.session_id,
-                                        e
-                                    );
+    HandlerResult::Disconnect => {
 
-                                    break;
-                                }
-                            }
+        self.disconnect().await;
+
+        break;
+    }
+
+    HandlerResult::Nothing => {
+        // Aucun paquet de réponse.
+    }
+}
+                            
                         }
 
 
