@@ -1,7 +1,7 @@
 import socket
 import time
 import traceback
-from .packet import Packet
+from .packet import Packet,PacketType
 from .logs import log
 
 class Client:
@@ -48,10 +48,26 @@ class Client:
         )
             self.socket.settimeout(1)
             try:
+                print(
+                       f"[CLIENT] Tentative TCP vers "
+                       f"{self.host}:{self.port}"
+                       )
+
                 self.socket.connect(
                      (self.host, self.port)
             )
+                print(
+                        f"[CLIENT] TCP connecté à "
+                        f"{self.host}:{self.port}"
+                         )
+
                 self.connected = True
+                packet = self.receive_packet()
+                if packet.packet_type == PacketType.SESSION:
+                    
+                    self.session_id = packet.session_id
+                    print(self.session_id)
+                
                 self.socket.settimeout(None)
 
                 log(
