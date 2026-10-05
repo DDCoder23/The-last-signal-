@@ -7,10 +7,11 @@ use log::{
 };
 use crate::database::database_manager::DatabaseManager;
 use crate::network::client::Client;
-
+use crate::network::world::World;
 pub struct Server {
     listener: TcpListener,
     database: DatabaseManager,
+    world: World,
 }
 
 impl Server {
@@ -49,11 +50,12 @@ impl Server {
                     info!("Client connecté : {}", address);
 
                     let pool = self.database.pool().clone();
+                    let world = self.world.clone();
 
                     task::spawn(async move {
 
                         let mut client =
-                            Client::new(stream, pool);
+                            Client::new(stream, pool,world,);
 
                         client.run().await;
 
