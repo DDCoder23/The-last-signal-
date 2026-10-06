@@ -28,7 +28,7 @@ impl DatabaseManager {
 
         let pool = match SqlitePoolOptions::new()
             .max_connections(1)
-            .acquire_timeout(Duration::from_secs(3))
+            .acquire_timeout(Duration::from_secs(30))
             .connect_with(options)
             .await
         {
@@ -61,12 +61,12 @@ impl DatabaseManager {
         let pool = SqlitePoolOptions::new()
             .max_connections(5)
             // Échoue vite au lieu de boucler 30 s en cas d'erreur de connexion.
-            .acquire_timeout(Duration::from_secs(5))
+            .acquire_timeout(Duration::from_secs(30))
             .after_connect(|conn, _meta| {
                 Box::pin(async move {
-                    // Attend jusqu'à 30 secondes lorsqu'un autre
+                    // Attend jusqu'à 60 secondes lorsqu'un autre
                     // écrivain possède temporairement le verrou.
-                    sqlx::query("PRAGMA busy_timeout = 30000")
+                    sqlx::query("PRAGMA busy_timeout = 60000")
                         .execute(&mut *conn)
                         .await?;
 

@@ -1,6 +1,6 @@
 from ..packet import Packet, PacketType
 
-class decoPacket:
+class decoPacket(Packet):
 
   def __init__(
     self,
