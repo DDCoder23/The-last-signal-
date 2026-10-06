@@ -1,5 +1,6 @@
 database/**/*.db filter=lfs diff=lfs merge=lfs -text
 *.png filter=lfs diff=lfs merge=lfs -text
+*.html linguist-generated
 reports/python/2026-09-25/*.html filter=lfs diff=lfs merge=lfs -text
 reports/python/2026-09-26/*.html filter=lfs diff=lfs merge=lfs -text
 reports/python/2026-09-28/*.html filter=lfs diff=lfs merge=lfs -text
