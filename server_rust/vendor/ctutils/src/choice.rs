@@ -108,10 +108,8 @@ impl Choice {
     /// Returns [`Choice::TRUE`] if `x == y`, and [`Choice::FALSE`] otherwise.
     #[inline]
     #[must_use]
-    #[allow(clippy::cast_sign_loss)]
     pub const fn from_i64_eq(x: i64, y: i64) -> Self {
-        // TODO(tarcieri): use `cast_unsigned` when MSRV is 1.87
-        Self::from_u64_nz(x as u64 ^ y as u64).not()
+        Self::from_u64_nz(x.cast_unsigned() ^ y.cast_unsigned()).not()
     }
 
     // u8
@@ -309,10 +307,9 @@ impl Choice {
     /// and can't use the trait. The former will provide better constant-time assurances.
     #[inline]
     #[must_use]
-    #[allow(clippy::cast_possible_wrap, clippy::cast_sign_loss)]
     pub const fn select_i64(self, a: i64, b: i64) -> i64 {
-        // TODO(tarcieri): use `cast_signed` when MSRV is 1.87
-        self.select_u64(a as u64, b as u64) as i64
+        self.select_u64(a.cast_unsigned(), b.cast_unsigned())
+            .cast_signed()
     }
 
     /// `const fn` helper: return `b` if `self` is [`Choice::TRUE`], otherwise return `a`.
@@ -386,44 +383,42 @@ impl Choice {
     /// the small amount of timing variability it introduces can potentially be exploited. Whenever
     /// possible, prefer fully constant-time approaches instead.
     /// </div>
-    // TODO(tarcieri): `const fn` when MSRV 1.86
     #[must_use]
-    pub fn to_bool(self) -> bool {
+    pub const fn to_bool(self) -> bool {
         self.to_u8() != 0
     }
 
     /// Convert [`Choice`] to a `u8`, attempting to apply a "best effort" optimization barrier.
-    // TODO(tarcieri): `const fn` when MSRV 1.86
     #[must_use]
-    pub fn to_u8(self) -> u8 {
+    pub const fn to_u8(self) -> u8 {
         // `black_box` is documented as working on a "best effort" basis. That's fine, this type is
         // likewise documented as only working on a "best effort" basis itself. The only way we
         // rely on `black_box` for correctness is it behaving as the identity function.
         core::hint::black_box(self.0)
     }
 
-    /// HACK: workaround to allow `const fn` boolean support on Rust 1.85.
+    /// DEPRECATED: previously a workaround to allow `const fn` boolean support on Rust 1.85.
     ///
-    /// This does not apply `black_box` to the output.
+    /// Use [`Choice::to_bool`] instead.
     ///
     /// <div class = "warning">
     /// <b>Security Warning</b>
     ///
     /// See the security warnings for [`Choice::to_bool`].
     /// </div>
-    // TODO(tarcieri): deprecate/remove this in favor of `to_bool` when MSRV is Rust 1.86
+    #[deprecated(since = "0.4.3", note = "use `Choice::to_bool` instead")]
     #[must_use]
     pub const fn to_bool_vartime(self) -> bool {
-        self.0 != 0
+        self.to_bool()
     }
 
-    /// HACK: workaround to allow `const fn` boolean support on Rust 1.85.
+    /// DEPRECATED: previously a workaround to allow `const fn` boolean support on Rust 1.85.
     ///
-    /// This does not apply `black_box` to the output.
-    // TODO(tarcieri): deprecate/remove this in favor of `to_u8` when MSRV is Rust 1.86
+    /// Use [`Choice::to_u8`] instead.
+    #[deprecated(since = "0.4.3", note = "use `Choice::to_u8` instead")]
     #[must_use]
     pub const fn to_u8_vartime(self) -> u8 {
-        self.0
+        self.to_u8()
     }
 
     /// Create a `u8` bitmask.
