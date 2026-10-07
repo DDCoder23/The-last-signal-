@@ -1,245 +1,212 @@
 # 🎮 The Last Signal
-<img width="1408" height="768" alt="Gemini_Generated_Image_tig9jktig9jktig9" src="https://github.com/user-attachments/assets/b8f7d28b-d2b1-4b1b-96b1-6382d06b9b5d" />
 
-## 🌐 **Idiomas del README**
+<img width="1408" height="768" alt="The Last Signal" src="https://github.com/user-attachments/assets/b8f7d28b-d2b1-4b1b-96b1-6382d06b9b5d" />
+
+## 🌐 Idiomas del README
 
 🇪🇸 **Español** — Estás viendo actualmente la versión en español.<br>
-🇫🇷 **Français** — ➡️ [Versión francesa](README.md)<br>
-🇬🇧 **English** — ➡️ [Versión inglesa](README_ENG.md)<br>
-🇯🇵 **日本語** — ➡️ [Versión japonesa](README_JP.md)
+🇫🇷 **Français** — [Versión francesa](README.md)<br>
+🇬🇧 **English** — [Versión inglesa](README_ENG.md)<br>
+🇯🇵 **日本語** — [Versión japonesa](README_JP.md)
 
-> MMORPG de supervivencia postapocalíptica en un mundo persistente
+> **MMORPG de supervivencia postapocalíptica en un mundo persistente.**
 
-## 🌍 Presentación
-
-**The Last Signal Online** es un MMORPG de supervivencia en un mundo postapocalíptico donde los jugadores deben colaborar, explorar y sobrevivir en un universo en constante evolución.
-
-Tras un misterioso acontecimiento que transformó la civilización, los últimos supervivientes intentan reconstruir un nuevo mundo mientras descubren el origen de la última señal emitida por una pieza olvidada de infraestructura antigua.
-
-El proyecto tiene como objetivo crear una experiencia multijugador inmersiva que combine:
-
-* 🌍 Un mundo persistente
-* 👥 Cientos de jugadores conectados simultáneamente
-* ⚔️ Combates PvE y PvP
-* 🏰 Gremios y territorios
-* 💰 Una economía dirigida por los jugadores
-* 🛠 Un sistema de fabricación completo
-* 📖 Una historia evolutiva
-* 🔎 Exploración y descubrimiento
+![Estado](https://img.shields.io/badge/status-prototype-orange)
+![Documentación](https://img.shields.io/badge/docs-active-blue)
+![Python](https://img.shields.io/badge/client-Python-yellow)
+![Rust](https://img.shields.io/badge/server-Rust-orange)
 
 ---
 
-## 🤝 Contribución
+## 🎮 Estado actual del proyecto
 
-**The Last Signal** es un proyecto de código abierto y damos la bienvenida a las contribuciones de desarrolladores, testers, escritores y otros participantes interesados.
+**The Last Signal Online se encuentra actualmente en fase de prototipo.**
 
-### 🟢 ¿Eres principiante?
+El prototipo actual permite:
 
-No es necesario conocer todo el proyecto antes de contribuir.
+* 🎮 iniciar el cliente del juego;
+* 🌐 conectarse a un servidor local;
+* 🧭 desplazarse por el mundo;
+* 👥 ver a otros jugadores conectados;
+* 🧪 probar progresivamente los sistemas del juego.
+
+El servidor del juego funciona actualmente **en local**. Todavía no existe un servidor público accesible desde Internet.
+
+El juego completo sigue en desarrollo. Muchos sistemas importantes se añadirán y mejorarán progresivamente.
+
+> 💡 **El proyecto todavía es lo suficientemente joven como para que las contribuciones puedan tener un impacto real en su evolución.**
+
+---
+
+## 🚀 ¿Por qué contribuir ahora?
+
+The Last Signal no es un proyecto terminado.
+
+Precisamente por eso, los colaboradores pueden participar directamente en su construcción.
+
+Actualmente, las contribuciones pueden centrarse en:
+
+* 🦀 el servidor Rust;
+* 🐍 el cliente Python;
+* 🌐 la red y los protocolos;
+* 🧪 los tests;
+* 🔐 la seguridad;
+* ⚙️ CI/CD;
+* 📚 la documentación;
+* 🎮 el prototipo y el gameplay;
+* 🔧 las herramientas de desarrollo.
+
+No necesitas **conocer todo el proyecto** para empezar.
+
+Una pequeña contribución permite descubrir progresivamente la arquitectura y el código del proyecto.
+
+---
+
+# 🧪 Probar el prototipo
+
+El servidor del juego funciona actualmente **en local**.
+
+Para probar el prototipo, necesitas Python, Rust y las dependencias del proyecto.
+
+## 📋 Requisitos
+
+Necesitas:
+
+* 🐍 **Python 3.14**
+* 🦀 **Rust y Cargo**
+* 🌿 **Git**
+
+---
+
+## 📥 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/DDCoder23/The-last-signal-.git
+cd The-last-signal-
+```
+
+---
+
+## 🐍 2. Instalar las dependencias de Python
+
+Desde la **raíz del proyecto**:
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🦀 3. Iniciar el servidor Rust
+
+Abre un primer terminal y entra en el directorio del servidor:
+
+```bash
+cd server_rust
+```
+
+A continuación, inicia el servidor:
+
+```bash
+cargo run --locked
+```
+
+### 🧹 Compilación limpia — opcional
+
+`cargo clean` **no es necesario cada vez que se inicia el servidor**.
+
+Si quieres realizar una compilación completamente limpia:
+
+```bash
+cargo clean
+cargo run --locked
+```
+
+Deja el servidor funcionando en este terminal.
+
+---
+
+## 🎮 4. Iniciar el cliente
+
+Abre un **segundo terminal** y vuelve a la raíz del proyecto:
+
+```bash
+cd The-last-signal-
+```
+
+A continuación, inicia el cliente:
+
+```bash
+python -m client_python.main
+```
+
+El cliente se conectará al servidor local.
+
+---
+
+## 🌐 Arquitectura actual
+
+La configuración actual utiliza una arquitectura local cliente/servidor:
+
+```text
+┌─────────────────────────┐
+│      Cliente Python     │
+│         🎮 Juego        │
+└────────────┬────────────┘
+             │
+             │ Red
+             ▼
+┌─────────────────────────┐
+│      Servidor Rust      │
+│    🦀 Servidor de juego │
+└────────────┬────────────┘
+             │
+             ▼
+┌─────────────────────────┐
+│         SQLite          │
+│       🗄️ Datos          │
+└─────────────────────────┘
+```
+
+> 🌐 **Servidor público: todavía no disponible.**
+>
+> Por ahora, cada colaborador puede ejecutar su propio servidor local para probar y desarrollar el proyecto.
+
+---
+
+# 🤝 Contribuir
+
+**The Last Signal** es un proyecto de código abierto y acepta contribuciones de desarrolladores, testers, escritores, traductores y otros participantes interesados.
+
+## 🟢 ¿Eres nuevo en el proyecto?
+
+No necesitas dominar todo el proyecto.
 
 Puedes empezar por:
 
-* 🐛 Corregir un problema sencillo
-* 🧪 Añadir o mejorar un test
-* 📚 Mejorar la documentación
-* 🌍 Añadir una traducción
-* 🔧 Mejorar las herramientas de desarrollo
+* 🧪 añadir o mejorar un test;
+* 🐛 corregir un problema sencillo;
+* 📚 mejorar la documentación;
+* 🌍 mejorar una traducción;
+* 🔧 mejorar una herramienta de desarrollo;
+* 📝 mejorar la calidad del código.
 
-### 🛠️ ¿Eres desarrollador?
-
-Se buscan especialmente contribuciones en:
-
-* 🦀 Rust / servidor
-* 🐍 Python / cliente
-* 🌐 Redes y protocolos
-* 🧪 Tests
-* 🔐 Seguridad
-* ⚙️ CI/CD
-
-👉 **Consulta las** [**Issues abiertas**](../../issues) para encontrar una tarea.
-
-➡️ [📜 Development Rules](docs_ESP/CODING_RULES_ESP.md)
-
-➡️ [📖 Documentation](docs_ESP/README_ESP.md)
-
-Para garantizar la calidad y la coherencia del proyecto, sigue estas reglas:
-
-* 📐 Respetar las convenciones del proyecto
-* 📚 Documentar las nuevas funcionalidades
-* 🧪 Probar las modificaciones antes de proponer una integración
-* 🌿 Utilizar una rama Git dedicada para cada modificación
-
-Las reglas de desarrollo y la documentación estarán disponibles próximamente.
-
-## 🚀 Visión del proyecto
-
-El objetivo de **The Last Signal Online** es crear un MMORPG independiente que ofrezca:
-
-* Un universo rico y coherente
-* Una fuerte interacción entre jugadores
-* Decisiones que tengan un impacto en el mundo
-* Una progresión libre
-* Una arquitectura capaz de evolucionar a largo plazo
-
-El juego se desarrolla con un enfoque similar al de un verdadero estudio:
-
-* 📚 Documentación completa
-* 🏗 Arquitectura diseñada antes del desarrollo
-* 🔄 Integración continua
-* 🧪 Tests automatizados
-* 📊 Seguimiento de la calidad del código
+➡️ [Consultar las Issues abiertas](../../issues)
 
 ---
 
-## ❓ FAQ
+## 🛠️ ¿Eres desarrollador?
 
-¿Tienes alguna pregunta sobre el proyecto?
+Las contribuciones son especialmente bienvenidas en:
 
-➡️ [Consulta la FAQ completa](docs_ESP/FAQ_ESP.md)
-
----
-## 🛠 Tecnologías utilizadas
-
-### 🎮 Cliente
-
-| Tecnología                 | Uso                 |
-| -------------------------- | ------------------- |
-| 🐍 Python                  | Cliente principal   |
-| 🎨 VisPy                   | Renderizado gráfico |
-| 🖥 Qt for Python (PySide6) | Interfaz de usuario |
+* 🦀 **Rust** — servidor;
+* 🐍 **Python** — cliente;
+* 🌐 **Redes** — comunicación cliente/servidor y protocolos;
+* 🧪 **Tests** — tests unitarios y de integración;
+* 🔐 **Seguridad**;
+* ⚙️ **CI/CD**;
+* 📚 **Documentación**.
 
 ---
 
-### 🌐 Servidor
-
-| Tecnología    | Uso                           |
-| ------------- | ----------------------------- |
-| 🦀 Rust       | Servidor multijugador         |
-| 🌐 Networking | Comunicación cliente/servidor |
-| 🗄 SQLite | Base de datos                 |
-
----
-
-## 📂 Organización del proyecto
-
-```text
-The-last-signal/
-│
-├── assets/                     # Recursos gráficos y de audio
-│
-├── client_python/              # Cliente del juego
-│
-├── database/                   # Scripts de bases de datos
-│
-├── docs/                       # Documentación Completa (Francés)
-│   ├── gdd/                    # Game Design Document (GDD)
-│   ├── tdd/                    # Technical Design Document (TDD)
-│   └── ...
-│
-├── docs_ENG/                   # Documentación Completa (Inglés)
-│   ├── gdd/                    # Game Design Document (GDD)
-│   ├── tdd/                    # Technical Design Document (TDD)
-│   └── ...
-│
-├── scripts/                    # Herramientas de Desarrollo
-│
-├── server_rust/                # Servidor Rust
-│
-├── tests/                      # Tests Automatizados
-│
-├── README.md
-└── LICENSE
-```
-
----
-
-## 📚 Documentación
-
-La documentación completa del proyecto estará disponible próximamente.
-
-Contendrá:
-
-* 🎮 Game Design Document (GDD)
-* 🏗 Technical Design Document (TDD)
-* 🌍 Lore del mundo
-* ⚔️ Gameplay
-* 🌐 Arquitectura de red
-* 🗄 Estructura de datos
-* 📅 Roadmap
-
----
-
-## 📊 Estado del proyecto
-
-| Módulo            |      Estado      |
-| ----------------- | :--------------: |
-| 📚 Documentación  | 🟡 En desarrollo |
-| 🎮 Cliente Python | 🟡 En desarrollo |
-| 🦀 Servidor Rust  | 🟡 En desarrollo |
-| 🌐 Red            | 🟡 En desarrollo |
-| 🗄 Base de datos  | 🟡 En desarrollo |
-| 🎨 Assets         |  🟡 Preparación  |
-| 🎮 Gameplay       |   🟢 Prototipo   |
-| 🌍 Universo       |   🟢 Prototipo   |
-
-Leyenda:
-
-* 🟢 Terminado / Funcional
-* 🟡 En curso
-* ⚪ Previsto
-
----
-
-## 🏗 Arquitectura del desarrollo
-
-El proyecto sigue una organización inspirada en los estudios profesionales:
-
-```
-Diseño
-    ↓
-Documentación
-    ↓
-Prototipo
-    ↓
-Tests
-    ↓
-Desarrollo
-    ↓
-Optimización
-```
-
-Cada funcionalidad importante debe estar documentada antes de su implementación.
-
----
-
-## 👥 Equipo
-
-| Nombre       | Función                                    |
-| ------------ | ------------------------------------------ |
-| Morgan Piva  | Director                                   |
-| Cyril Capiez | Director adjunto & Desarrollador principal |
-
-
----
-
-## Comandos del juego 🎮
-
-Consulta el siguiente archivo:
-
-➡️ [🎮 Comandos](touches_de_commandes)
-
----
-
-## 📅 Roadmap
-
-Próximamente.
-
----
-
-## 📜 Licencia
-
-➡️ [📜 Licencia](LICENSE)
-
----
-
-> **The Last Signal** — Cuando el mundo desaparece, una última señal permanece.
+# 🟢 Tu primera contr
