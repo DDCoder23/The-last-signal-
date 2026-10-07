@@ -27,6 +27,7 @@ def check_rust_docs() -> Dict[str, Any]:
         ".git",
         "__pycache__",
         "venv",
+        "vendor"
     }
 
     # Trouve tous les fichiers .rs
