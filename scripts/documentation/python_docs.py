@@ -34,6 +34,7 @@ def check_python_docs() -> dict:
                 "venv",
                 ".mypy_cache",
                 ".pytest_cache",
+                "vendor"
             }
             for p in f.parts
         )
