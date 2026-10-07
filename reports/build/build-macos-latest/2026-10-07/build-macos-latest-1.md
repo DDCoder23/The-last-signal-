@@ -378,6 +378,13 @@ Compiling 'tests/test_splitmix64.py'...
 [1m[33mwarning[0m[1m: unused imports: `debug` and `info`[0m
  [1m[94m--> [0msrc/gameplay/tresor.rs:5:11
   [1m[94m|[0m
+[1m[[92m   Compiling[0m rand v0.10.3
+[1m[92m   Compiling[0m argon2 v0.6.0
+[1m[92m   Compiling[0m flate2 v1.1.10
+[1m[92m   Compiling[0m the-last-signal-server v1.0.13 (/Users/runner/work/The-last-signal-/The-last-signal-/server_rust)
+[1m[33mwarning[0m[1m: unused imports: `debug` and `info`[0m
+ [1m[94m--> [0msrc/gameplay/tresor.rs:5:11
+  [1m[94m|[0m
 [1m[94m5[0m [1m[94m|[0m use log::{debug, error, info};
   [1m[94m|[0m           [1m[33m^^^^^[0m         [1m[33m^^^^[0m
   [1m[94m|[0m
