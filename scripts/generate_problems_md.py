@@ -25,27 +25,27 @@ def generate_problems_md():
 
     md = []
 
-    md.append("# 📚 Documentation Problems\n\n")
+    md.append("# Documentation Problems\n\n")
     md.append(f"Generated: {datetime.now():%Y-%m-%d %H:%M:%S}\n\n")
 
     md.append("## Summary\n\n")
     md.append("|Type|Count|\n")
     md.append("|---|---:|\n")
-    md.append(f"|❌ Errors|{errors}|\n")
-    md.append(f"|⚠️ Warnings|{warnings}|\n")
+    md.append(f"|Errors|{errors}|\n")
+    md.append(f"|Warnings|{warnings}|\n")
     md.append(f"|**Total**|**{len(problems)}**|\n\n")
 
     md.append("---\n\n")
 
     for filename in sorted(by_file):
 
-        md.append(f"# 📄 {filename}\n\n")
+        md.append(f"# {filename}\n\n")
 
         for p in by_file[filename]:
 
-            icon = "❌" if p["severity"] == "error" else "⚠️"
+            
 
-            md.append(f"## {icon} {p['severity'].capitalize()}\n\n")
+            md.append(f"## {p['severity'].capitalize()}\n\n")
             md.append(f"- **Module :** {p['module']}\n")
             md.append(f"- **Message :** {p['message']}\n")
 
