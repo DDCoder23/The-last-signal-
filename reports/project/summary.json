@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-07T11:30:06.474936",
+    "generated": "2026-10-07T12:20:27.777661",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -11,5 +11,5 @@
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 130228
+    "problem_count": 7853
 }
