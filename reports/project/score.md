@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-08 20:12:05
+**Date :** 2026-10-08 20:31:31
 
 # 64/100
 
@@ -8143,49 +8143,13 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 16 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 19 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 30 > 120 caractères.
+- **Message :** Ligne 15 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
 - **Message :** Ligne 31 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 32 > 120 caractères.
 
 - **module :** markdown
 
@@ -8203,61 +8167,73 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** markdown
+- **Message :** Ligne 35 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 36 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 37 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 38 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 39 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 40 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 41 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 42 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 43 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
 - **Message :** Ligne 44 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 45 > 120 caractères.
+- **Message :** Ligne 70 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 46 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 47 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 48 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 58 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 59 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 60 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 61 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 62 > 120 caractères.
+- **Message :** Ligne 71 > 120 caractères.
 
 - **module :** markdown
 
@@ -8293,103 +8269,337 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 86 > 120 caractères.
+- **Message :** Ligne 77 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 87 > 120 caractères.
+- **Message :** Ligne 78 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 88 > 120 caractères.
+- **Message :** Ligne 108 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 90 > 120 caractères.
+- **Message :** Ligne 109 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 101 > 120 caractères.
+- **Message :** Ligne 110 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 102 > 120 caractères.
+- **Message :** Ligne 111 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Espace en fin de ligne (1).
+- **Message :** Ligne 112 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Espace en fin de ligne (89).
+- **Message :** Ligne 113 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 114 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 115 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 131 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 132 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 133 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 134 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 135 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 136 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 137 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 138 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 154 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 155 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 156 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 157 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 158 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 159 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 160 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 161 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 177 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 178 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 179 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 180 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 181 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 182 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 183 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 184 > 120 caractères.
+
+- **module :** markdown
+
+## ⚠️ Warning
+- **Module :** markdown
+- **Message :** Ligne 316 > 120 caractères.
 
 - **module :** markdown
 
 ## ❌ Error
-- **Module :** markdown
-- **Message :** Bloc de code non fermé.
-
-- **module :** markdown
-
-## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:54 titre sans ligne vide avant.
+- **Message :** docs/ROADMAP.md: contient 13 titres H1 (1 attendu).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:68 titre sans ligne vide avant.
+- **Message :** docs/ROADMAP.md:66 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:82 titre sans ligne vide avant.
+- **Message :** docs/ROADMAP.md:104 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:96 titre sans ligne vide avant.
+- **Message :** docs/ROADMAP.md:127 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:106 titre sans ligne vide avant.
+- **Message :** docs/ROADMAP.md:150 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:118 titre sans ligne vide avant.
+- **Message :** docs/ROADMAP.md:173 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:129 titre sans ligne vide avant.
+- **Message :** docs/ROADMAP.md:196 saut de niveau H1 → H3.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/ROADMAP.md:1 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:1).
+- **Message :** docs/ROADMAP.md:225 saut de niveau H1 → H3.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:66 titre dupliqué (déjà présent dans docs/ROADMAP.md:29).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:80 titre dupliqué (déjà présent dans docs/ROADMAP.md:46).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:104 titre dupliqué (déjà présent dans docs/ROADMAP.md:29).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:117 titre dupliqué (déjà présent dans docs/ROADMAP.md:46).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:127 titre dupliqué (déjà présent dans docs/ROADMAP.md:29).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:140 titre dupliqué (déjà présent dans docs/ROADMAP.md:46).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:150 titre dupliqué (déjà présent dans docs/ROADMAP.md:29).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:163 titre dupliqué (déjà présent dans docs/ROADMAP.md:46).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:173 titre dupliqué (déjà présent dans docs/ROADMAP.md:29).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:186 titre dupliqué (déjà présent dans docs/ROADMAP.md:46).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:196 titre dupliqué (déjà présent dans docs/ROADMAP.md:29).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:213 titre dupliqué (déjà présent dans docs/ROADMAP.md:46).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/ROADMAP.md:225 titre dupliqué (déjà présent dans docs/ROADMAP.md:29).
 
 - **module :** titles
 
