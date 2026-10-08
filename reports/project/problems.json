@@ -1142,31 +1142,43 @@
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 17 > 120 caractères.",
+        "message": "Ligne 11 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 18 > 120 caractères.",
+        "message": "Ligne 13 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 19 > 120 caractères.",
+        "message": "Ligne 27 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 20 > 120 caractères.",
+        "message": "Ligne 28 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 21 > 120 caractères.",
+        "message": "Ligne 29 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 30 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 31 > 120 caractères.",
         "module": "markdown"
     },
     {
@@ -1202,109 +1214,61 @@
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 47 > 120 caractères.",
+        "message": "Ligne 37 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 48 > 120 caractères.",
+        "message": "Ligne 38 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 49 > 120 caractères.",
+        "message": "Ligne 84 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 50 > 120 caractères.",
+        "message": "Ligne 85 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 51 > 120 caractères.",
+        "message": "Ligne 86 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 62 > 120 caractères.",
+        "message": "Ligne 87 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 63 > 120 caractères.",
+        "message": "Ligne 88 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 64 > 120 caractères.",
+        "message": "Ligne 89 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 65 > 120 caractères.",
+        "message": "Ligne 90 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 66 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 77 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 78 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 79 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 80 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 81 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 92 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 93 > 120 caractères.",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Ligne 94 > 120 caractères.",
+        "message": "Ligne 91 > 120 caractères.",
         "module": "markdown"
     },
     {
@@ -1316,13 +1280,67 @@
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 107 > 120 caractères.",
+        "message": "Ligne 116 > 120 caractères.",
         "module": "markdown"
     },
     {
         "file": "docs_ENG/ROADMAP_ENG.md",
         "severity": "warning",
-        "message": "Ligne 108 > 120 caractères.",
+        "message": "Ligne 183 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 227 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 235 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 236 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 237 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 238 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 239 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 240 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 241 > 120 caractères.",
+        "module": "markdown"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "Ligne 242 > 120 caractères.",
         "module": "markdown"
     },
     {
@@ -4620,24 +4638,6 @@
         "module": "markdown"
     },
     {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Espace en fin de ligne (2).",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Espace en fin de ligne (3).",
-        "module": "markdown"
-    },
-    {
-        "file": "docs_ENG/ROADMAP_ENG.md",
-        "severity": "warning",
-        "message": "Espace en fin de ligne (4).",
-        "module": "markdown"
-    },
-    {
         "file": "docs_ENG/QRB_flake8_error_ENG.md",
         "severity": "warning",
         "message": "Espace en fin de ligne (3).",
@@ -6630,6 +6630,12 @@
         "module": "titles"
     },
     {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "error",
+        "message": "docs_ENG/ROADMAP_ENG.md: contient 5 titres H1 (1 attendu).",
+        "module": "titles"
+    },
+    {
         "file": "docs_ENG/CODING_RULES_ENG.md",
         "severity": "error",
         "message": "docs_ENG/CODING_RULES_ENG.md: contient 23 titres H1 (1 attendu).",
@@ -8511,6 +8517,12 @@
         "file": "README.md",
         "severity": "warning",
         "message": "README.md:473 saut de niveau H1 → H3.",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:273 saut de niveau H1 → H3.",
         "module": "titles"
     },
     {
@@ -17595,6 +17607,48 @@
         "file": "CHANGELOG_ENG.md",
         "severity": "warning",
         "message": "CHANGELOG_ENG.md:131 titre dupliqué (déjà présent dans CHANGELOG.md:9).",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:70 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:93 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:114 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:135 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:156 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:181 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).",
+        "module": "titles"
+    },
+    {
+        "file": "docs_ENG/ROADMAP_ENG.md",
+        "severity": "warning",
+        "message": "docs_ENG/ROADMAP_ENG.md:189 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:164).",
         "module": "titles"
     },
     {
