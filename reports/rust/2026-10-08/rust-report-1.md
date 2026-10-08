@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 2327
+Run : 675
 Branch : main
-Commit : bca7ae44f9e8859af405709811ffecb11e55729e
-Date : Tue Oct  6 03:19:34 UTC 2026
+Commit : 674123abd1307942ced9006c827767255c37ece5
+Date : Thu Oct  8 01:54:34 UTC 2026
 
 
 ## Cargo fmt
@@ -3858,6 +3858,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/lib.
  pub mod security;
 -pub mod auth;
 +pub mod utils;
+ pub mod world;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:1:
  use tokio::{
@@ -3879,11 +3880,11 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -};
 +use crate::network::handler::{HandlerResult, PacketHandler};
 +use crate::network::packet::{BanInfo, BanType, Packet, PacketType, receive_packet, send_packet};
-+use crate::network::world::{Position, World};
++use crate::world::world::{Position, World};
 +use log::{debug, error, info};
  use rand::RngExt;
 -use crate::network::handler::{PacketHandler,HandlerResult};
--use crate::network::world::{World,Position};
+-use crate::world::world::{World,Position};
 -use crate::network::packet::{
 -    receive_packet,
 -    send_packet,
@@ -3940,14 +3941,14 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
              .map(|addr| addr.to_string())
              .unwrap_or_else(|_| "adresse inconnue".to_string());
  
-+        info!("Client connecté : {} | Session : {}", peer, self.session_id);
++        info!("Client connecté : {} ", peer,);
 +        let mut world_rx = self.world.subscribe();
 +        let session_packet = Packet::new(PacketType::Session, self.session_id.as_bytes().to_vec());
  
 -        info!(
--            "Client connecté : {} | Session : {}",
+-            "Client connecté : {} ",
 -            peer,
--            self.session_id
+-            
 -        );
 -        let mut world_rx =
 -         self.world.subscribe();
@@ -3956,10 +3957,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -    self.session_id.as_bytes().to_vec(),
 -);
 +        if let Err(e) = send_packet(&mut self.stream, &session_packet).await {
-+            error!(
-+                "Impossible d'envoyer le paquet SESSION [{}] : {}",
-+                self.session_id, e
-+            );
++            error!("Impossible d'envoyer le paquet SESSION: {}", e);
 +            self.world.remove_player(self.session_id).await;
  
 -if let Err(e) = send_packet(
@@ -3967,8 +3965,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -    &session_packet,
 -).await {
 -    error!(
--        "Impossible d'envoyer le paquet SESSION [{}] : {}",
--        self.session_id,
+-        "Impossible d'envoyer le paquet SESSION: {}",
+-        
 -        e
 -    );
 -    self.world
@@ -3995,6 +3993,10 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -    let mut rng = rand::rng();
 +            Position::new(rng.random_range(0..100), rng.random_range(0..100), 0)
 +        };
++        let snapshot = self.world.snapshot().await;
++        info!(" Synchronisation initiale : {} joueur(s)", snapshot.len());
++        for (player_id, position) in snapshot {
++            let packet = World::player_state_packet(player_id, position);
  
 -    Position::new(
 -        rng.random_range(0..100),
@@ -4002,39 +4004,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -        0,
 -    )
 -};
-+        self.world
-+            .set_position(self.session_id, spawn_position)
-+            .await;
-+        self.world
-+            .broadcast_player_state(self.session_id, spawn_position);
- 
--self.world
--    .set_position(
--        self.session_id,
--        spawn_position,
--    )
--    .await;
--         self.world.broadcast_player_state(
--    self.session_id,
--    spawn_position,
--);
-+        let snapshot = self.world.snapshot().await;
- 
--         let snapshot = self.world.snapshot().await;
-+        info!(
-+            "[{}] Synchronisation initiale : {} joueur(s)",
-+            self.session_id,
-+            snapshot.len()
-+        );
- 
+-let snapshot = self.world.snapshot().await;
 -info!(
--    "[{}] Synchronisation initiale : {} joueur(s)",
--    self.session_id,
+-    " Synchronisation initiale : {} joueur(s)",
+-    
 -    snapshot.len()
 -);
-+        for (player_id, position) in snapshot {
-+            let packet = World::player_state_packet(player_id, position);
- 
 -for (player_id, position) in snapshot {
 -    let packet = World::player_state_packet(
 -        player_id,
@@ -4050,12 +4025,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +            if let Err(e) = send_packet(&mut self.stream, &packet).await {
 +                error!(
 +                    "[{}] Erreur lors de l'envoi du snapshot \
-              du joueur {} : {}",
--            self.session_id,
+              du joueur : {}",
+-            
 -            player_id,
 -            e
 -        );
-+                    self.session_id, player_id, e
++                    player_id, e
 +                );
  
 -        return;
@@ -4065,10 +4040,35 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +            }
 +        }
  
+-self.world.set_position(
+-    self.session_id,
+-    spawn_position,
+-).await;
++        self.world
++            .set_position(self.session_id, spawn_position)
++            .await;
+ 
+-self.world.broadcast_player_state(
+-    self.session_id,
+-    spawn_position,
+-);
++        self.world
++            .broadcast_player_state(self.session_id, spawn_position);
+ 
+-
+-         
+-
+-
+-
+-
+-
+-    
+-
+-
          // --------------------------------------------------------
          // Timer de vérification du ban
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:175:
          // --------------------------------------------------------
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:182:
  
 -        let mut ban_checker =
 -            interval(Duration::from_secs(1));
@@ -4078,7 +4078,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          // interval() déclenche immédiatement son premier tick.
          //
          // On le consomme donc ici pour que la première véritable
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:184:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:190:
          // vérification ait lieu après 1 seconde.
          ban_checker.tick().await;
  
@@ -4086,7 +4086,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          // ========================================================
          // BOUCLE
          // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:191:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:197:
  
          loop {
 -
@@ -4449,8 +4449,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +                                    Err(e) => {
 +
 +                                        error!(
-+                                            "Erreur lors de la vérification du ban [{}] : {}",
-+                                            self.session_id,
++                                            "Erreur lors de la vérification du ban : {}",
++
 +                                            e
 +                                        );
 +
@@ -4472,12 +4472,14 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +                        {
 +
                              error!(
--                                "Erreur lors de la vérification du ban [{}] : {}",
-+                                "Erreur d'envoi du paquet monde [{}] : {}",
-                                 self.session_id,
+-                                "Erreur lors de la vérification du ban : {}",
+-                                
++                                "Erreur d'envoi du paquet monde : {}",
++
                                  e
                              );
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:408:
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:414:
                              break;
                          }
                      }
@@ -4493,11 +4495,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
  
 -        Ok(packet) => {
 +                        debug!(
-+                            "Client {} en retard de {} paquets monde",
-+                            self.session_id,
-+                            count
-+                        );
-+                    }
++                            "Client en retard de {} paquets monde",
  
 -            if let Err(e) =
 -                send_packet(
@@ -4505,26 +4503,25 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -                    &packet
 -                ).await
 -            {
++                            count
++                        );
++                    }
+ 
+-                error!(
+-                    "Erreur d'envoi du paquet monde : {}",
+-                    
+-                    e
+-                );
 +                    Err(
 +                        broadcast::error::RecvError::Closed
 +                    ) => {
  
--                error!(
--                    "Erreur d'envoi du paquet monde [{}] : {}",
--                    self.session_id,
--                    e
--                );
+-                break;
+-            }
+-        }
 +                        error!(
 +                            "Canal monde fermé"
 +                        );
- 
--                break;
-+                        break;
-+                    }
-+                }
-             }
-+                        }
-         }
  
 -        Err(
 -            broadcast::error::RecvError::Lagged(
@@ -4533,8 +4530,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -        ) => {
 -
 -            debug!(
--                "Client {} en retard de {} paquets monde",
--                self.session_id,
+-                "Client en retard de {} paquets monde",
+-                
 -                count
 -            );
 -        }
@@ -4551,14 +4548,18 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -        }
 -    }
 -}
--            }
--        }
--
++                        break;
++                    }
++                }
+             }
++                        }
+         }
+ 
 -
          // ========================================================
          // FIN DE SESSION
          // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:467:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:473:
 -        self.world
 -    .remove_player(self.session_id)
 -    .await;
@@ -4581,7 +4582,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
      // ============================================================
      // RÉCUPÉRATION DES INFORMATIONS DE BAN
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:486:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:492:
  
 -    pub async fn get_ban_info(
 -        &self,
@@ -4608,7 +4609,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          // ========================================================
          // BAN PERMANENT
          // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:505:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:511:
  
 -        if let Some((reason,)) =
 -            sqlx::query_as::<_, (Option<String>,)>(
@@ -4618,7 +4619,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                  SELECT raison
                  FROM bansperm
                  WHERE user_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:512:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:518:
                  LIMIT 1
 -                "#
 -            )
@@ -4658,7 +4659,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          // ========================================================
          // BAN TEMPORAIRE
          // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:541:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:547:
  
 -        if let Some((reason, date_deban)) =
 -            sqlx::query_as::<_, (Option<String>, String)>(
@@ -4668,7 +4669,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                  SELECT
                      raison,
                      date_deban
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:554:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:560:
                        > CURRENT_TIMESTAMP
  
                  LIMIT 1
@@ -4710,7 +4711,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          // ========================================================
          // PAS DE BAN
          // ========================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:586:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:592:
          Ok(None)
      }
  
@@ -4718,7 +4719,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
      // ============================================================
      // ENCODAGE DU PAQUET BAN
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:593:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:599:
  
 -    fn encode_ban_payload(
 -        ban: &BanInfo,
@@ -4728,7 +4729,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          format!(
              "{}\0{}\0{}",
              ban.ban_type as u8,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:601:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:607:
 -
              ban.reason,
 -
@@ -4739,13 +4740,13 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          )
          .into_bytes()
      }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:610:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:616:
  
 -
      // ============================================================
      // MARQUER COMME DÉCONNECTÉ
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:615:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:621:
  
 -    async fn mark_disconnected(
 -        &self,
@@ -4773,7 +4774,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
                  UPDATE users
  
                  SET status = 'DISCONNECTED'
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:636:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:642:
                  WHERE user_id = ?
  
                    AND status = 'CONNECTED'
@@ -4798,7 +4799,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
              );
  
              return;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:654:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:660:
          }
  
 -
@@ -4810,12 +4811,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          );
      }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:664:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:670:
 -
      // ============================================================
      // SET USER ID
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:668:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:674:
  
 -    pub fn set_user_id(
 -        &mut self,
@@ -4826,12 +4827,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          self.user_id = id;
      }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:677:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:683:
 -
      // ============================================================
      // GET USER ID
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:681:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:687:
  
 -    pub fn user_id(
 -        &self,
@@ -4847,7 +4848,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
      // ============================================================
      // SET CLIENT ID
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:694:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:700:
  
 -    pub fn set_client_id(
 -        &mut self,
@@ -4858,12 +4859,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          self.client_id = id;
      }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:703:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:709:
 -
      // ============================================================
      // GET CLIENT ID
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:707:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:713:
  
 -    pub fn client_id(
 -        &self,
@@ -4886,7 +4887,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
      // ============================================================
      // SET ACCOUNT ID
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:725:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:731:
  
 -    pub fn set_account_id(
 -        &mut self,
@@ -4897,12 +4898,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          self.account_id = id;
      }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:734:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:740:
 -
      // ============================================================
      // GET ACCOUNT ID
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:738:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:744:
  
 -    pub fn account_id(
 -        &self,
@@ -4912,12 +4913,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          self.account_id
      }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:746:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:752:
 -
      // ============================================================
      // DÉCONNEXION
      // ============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:750:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:756:
  
 -    pub async fn disconnect(
 -        &mut self,
@@ -4927,7 +4928,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          // --------------------------------------------------------
          // Mettre le compte hors ligne AVANT de fermer le socket
          // --------------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:758:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:764:
  
          self.mark_disconnected().await;
  
@@ -4935,7 +4936,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
          // --------------------------------------------------------
          // Fermeture du socket
          // --------------------------------------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:765:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/client.rs:771:
  
 -        if let Err(e) =
 -            self.stream.shutdown().await
@@ -4975,9 +4976,9 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 +    parser::{parse_login_payload, parse_signup_payload},
  };
  
--use crate::network::world::{World,Position};
+-use crate::world::world::{World,Position};
  use crate::gameplay::market_manager::MarketManager;
-+use crate::network::world::{Position, World};
++use crate::world::world::{Position, World};
  
 +use crate::auth::password::{hash_password, verify_password};
  
@@ -7090,10 +7091,10 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
  pub mod handler;
 +pub mod packet;
  pub mod parser;
+-
+-
+-
 +pub mod server;
- pub mod world;
--
--
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:1:
  use log::error;
@@ -7374,7 +7375,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -};
  use crate::database::database_manager::DatabaseManager;
  use crate::network::client::Client;
- use crate::network::world::World;
+ use crate::world::world::World;
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/server.rs:11:
 +use log::{debug, error, info};
 +use tokio::net::TcpListener;
@@ -7480,236 +7481,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
      }
  }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:2:
- use std::sync::Arc;
- 
- use log::{error, info};
--use tokio::sync::{broadcast, Mutex};
-+use tokio::sync::{Mutex, broadcast};
- use uuid::Uuid;
- 
- use crate::network::packet::{Packet, PacketType};
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:56:
-     // POSITIONS
-     // =============================================================
- 
--    pub async fn set_position(
--        &self,
--        player_id: Uuid,
--        position: Position,
--    ) {
-+    pub async fn set_position(&self, player_id: Uuid, position: Position) {
-         let mut positions = self.positions.lock().await;
- 
--        positions.insert(
--            player_id,
--            position,
--        );
-+        positions.insert(player_id, position);
- 
-         info!(
-             "WORLD: position enregistrée | \
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:73:
-              player={} | x={} y={} z={}",
--            player_id,
--            position.x,
--            position.y,
--            position.z
-+            player_id, position.x, position.y, position.z
-         );
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:81:
--    pub async fn remove_player(
--        &self,
--        player_id: Uuid,
--    ) {
-+    pub async fn remove_player(&self, player_id: Uuid) {
-         let mut positions = self.positions.lock().await;
- 
-         if positions.remove(&player_id).is_some() {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:88:
--            info!(
--                "WORLD: joueur supprimé | player={}",
--                player_id
--            );
-+            info!("WORLD: joueur supprimé | player={}", player_id);
-         }
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:95:
--    pub async fn get_position(
--        &self,
--        player_id: Uuid,
--    ) -> Option<Position> {
-+    pub async fn get_position(&self, player_id: Uuid) -> Option<Position> {
-         let positions = self.positions.lock().await;
- 
--        positions
--            .get(&player_id)
--            .copied()
-+        positions.get(&player_id).copied()
-     }
- 
--    pub async fn snapshot(
--        &self,
--    ) -> Vec<(Uuid, Position)> {
-+    pub async fn snapshot(&self) -> Vec<(Uuid, Position)> {
-         let positions = self.positions.lock().await;
- 
-         positions
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:112:
-             .iter()
--            .map(|(id, position)| {
--                (*id, *position)
--            })
-+            .map(|(id, position)| (*id, *position))
-             .collect()
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:120:
-     // PACKET PLAYER_STATE
-     // =============================================================
- 
--    pub fn player_state_packet(
--        player_id: Uuid,
--        position: Position,
--    ) -> Packet {
-+    pub fn player_state_packet(player_id: Uuid, position: Position) -> Packet {
-         let mut payload = Vec::with_capacity(28);
- 
-         // UUID = 16 octets
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:130:
--        payload.extend_from_slice(
--            player_id.as_bytes()
--        );
-+        payload.extend_from_slice(player_id.as_bytes());
- 
-         // x = 4 octets
--        payload.extend_from_slice(
--            &position.x.to_be_bytes()
--        );
-+        payload.extend_from_slice(&position.x.to_be_bytes());
- 
-         // y = 4 octets
--        payload.extend_from_slice(
--            &position.y.to_be_bytes()
--        );
-+        payload.extend_from_slice(&position.y.to_be_bytes());
- 
-         // z = 4 octets
--        payload.extend_from_slice(
--            &position.z.to_be_bytes()
--        );
-+        payload.extend_from_slice(&position.z.to_be_bytes());
- 
--        debug_assert_eq!(
--            payload.len(),
--            28
--        );
-+        debug_assert_eq!(payload.len(), 28);
- 
--        Packet::new(
--            PacketType::PlayerState,
--            payload,
--        )
-+        Packet::new(PacketType::PlayerState, payload)
-     }
- 
-     // =============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:161:
-     // BROADCAST PLAYER_STATE
-     // =============================================================
- 
--    pub fn broadcast_player_state(
--        &self,
--        player_id: Uuid,
--        position: Position,
--    ) {
--        let packet = Self::player_state_packet(
--            player_id,
--            position,
--        );
-+    pub fn broadcast_player_state(&self, player_id: Uuid, position: Position) {
-+        let packet = Self::player_state_packet(player_id, position);
- 
-         match self.tx.send(packet) {
-             Ok(receiver_count) => {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:177:
-                     "WORLD: PLAYER_STATE broadcasté | \
-                      player={} | x={} y={} z={} | \
-                      récepteurs={}",
--                    player_id,
--                    position.x,
--                    position.y,
--                    position.z,
--                    receiver_count
-+                    player_id, position.x, position.y, position.z, receiver_count
-                 );
-             }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:189:
-                 error!(
-                     "WORLD: échec du broadcast PLAYER_STATE | \
-                      player={} | erreur={}",
--                    player_id,
--                    error
-+                    player_id, error
-                 );
-             }
-         }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:200:
-     // PACKET PLAYER_REMOVE
-     // =============================================================
- 
--    pub fn player_remove_packet(
--        player_id: Uuid,
--    ) -> Packet {
--        Packet::new(
--            PacketType::PlayerRemove,
--            player_id.as_bytes().to_vec(),
--        )
-+    pub fn player_remove_packet(player_id: Uuid) -> Packet {
-+        Packet::new(PacketType::PlayerRemove, player_id.as_bytes().to_vec())
-     }
- 
-     // =============================================================
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:213:
-     // BROADCAST PLAYER_REMOVE
-     // =============================================================
- 
--    pub fn broadcast_player_remove(
--        &self,
--        player_id: Uuid,
--    ) {
--        let packet = Self::player_remove_packet(
--            player_id
--        );
-+    pub fn broadcast_player_remove(&self, player_id: Uuid) {
-+        let packet = Self::player_remove_packet(player_id);
- 
-         match self.tx.send(packet) {
-             Ok(receiver_count) => {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:226:
-                 info!(
-                     "WORLD: PLAYER_REMOVE broadcasté | \
-                      player={} | récepteurs={}",
--                    player_id,
--                    receiver_count
-+                    player_id, receiver_count
-                 );
-             }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/world.rs:235:
-                 error!(
-                     "WORLD: échec du broadcast PLAYER_REMOVE | \
-                      player={} | erreur={}",
--                    player_id,
--                    error
-+                    player_id, error
-                 );
-             }
-         }
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/security/crypto.rs:5:
  const ROTOR_DOMAIN: &[u8] = b"TheLastSignal-Rotor-v1";
  const ROTOR_SIZE: usize = 256;
@@ -8497,6 +8268,216 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
  
      let encrypted = fs::read_to_string("../security/vault.enc")?;
  
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/mod.rs:1:
+ pub mod world;
++
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:2:
+ use std::sync::Arc;
+ 
+ use log::{error, info};
+-use tokio::sync::{broadcast, Mutex};
++use tokio::sync::{Mutex, broadcast};
+ use uuid::Uuid;
+ 
+ use crate::network::packet::{Packet, PacketType};
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:56:
+     // POSITIONS
+     // =============================================================
+ 
+-    pub async fn set_position(
+-        &self,
+-        player_id: Uuid,
+-        position: Position,
+-    ) {
++    pub async fn set_position(&self, player_id: Uuid, position: Position) {
+         let mut positions = self.positions.lock().await;
+ 
+-        positions.insert(
+-            player_id,
+-            position,
+-        );
++        positions.insert(player_id, position);
+ 
+         info!(
+             "WORLD: position enregistrée | \
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:73:
+              x={} y={} z={}",
+-            
+-            position.x,
+-            position.y,
+-            position.z
++            position.x, position.y, position.z
+         );
+     }
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:81:
+-    pub async fn remove_player(
+-        &self,
+-        player_id: Uuid,
+-    ) {
++    pub async fn remove_player(&self, player_id: Uuid) {
+         let mut positions = self.positions.lock().await;
+ 
+         if positions.remove(&player_id).is_some() {
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:88:
+-            info!(
+-                "WORLD: joueur supprimé"
+-            );
++            info!("WORLD: joueur supprimé");
+         }
+     }
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:94:
+-    pub async fn get_position(
+-        &self,
+-        player_id: Uuid,
+-    ) -> Option<Position> {
++    pub async fn get_position(&self, player_id: Uuid) -> Option<Position> {
+         let positions = self.positions.lock().await;
+ 
+-        positions
+-            .get(&player_id)
+-            .copied()
++        positions.get(&player_id).copied()
+     }
+ 
+-    pub async fn snapshot(
+-        &self,
+-    ) -> Vec<(Uuid, Position)> {
++    pub async fn snapshot(&self) -> Vec<(Uuid, Position)> {
+         let positions = self.positions.lock().await;
+ 
+         positions
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:111:
+             .iter()
+-            .map(|(id, position)| {
+-                (*id, *position)
+-            })
++            .map(|(id, position)| (*id, *position))
+             .collect()
+     }
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:119:
+     // PACKET PLAYER_STATE
+     // =============================================================
+ 
+-    pub fn player_state_packet(
+-        player_id: Uuid,
+-        position: Position,
+-    ) -> Packet {
++    pub fn player_state_packet(player_id: Uuid, position: Position) -> Packet {
+         let mut payload = Vec::with_capacity(28);
+ 
+         // UUID = 16 octets
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:129:
+-        payload.extend_from_slice(
+-            player_id.as_bytes()
+-        );
++        payload.extend_from_slice(player_id.as_bytes());
+ 
+         // x = 4 octets
+-        payload.extend_from_slice(
+-            &position.x.to_be_bytes()
+-        );
++        payload.extend_from_slice(&position.x.to_be_bytes());
+ 
+         // y = 4 octets
+-        payload.extend_from_slice(
+-            &position.y.to_be_bytes()
+-        );
++        payload.extend_from_slice(&position.y.to_be_bytes());
+ 
+         // z = 4 octets
+-        payload.extend_from_slice(
+-            &position.z.to_be_bytes()
+-        );
++        payload.extend_from_slice(&position.z.to_be_bytes());
+ 
+-        debug_assert_eq!(
+-            payload.len(),
+-            28
+-        );
++        debug_assert_eq!(payload.len(), 28);
+ 
+-        Packet::new(
+-            PacketType::PlayerState,
+-            payload,
+-        )
++        Packet::new(PacketType::PlayerState, payload)
+     }
+ 
+     // =============================================================
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:160:
+     // BROADCAST PLAYER_STATE
+     // =============================================================
+ 
+-    pub fn broadcast_player_state(
+-        &self,
+-        player_id: Uuid,
+-        position: Position,
+-    ) {
+-        let packet = Self::player_state_packet(
+-            player_id,
+-            position,
+-        );
++    pub fn broadcast_player_state(&self, player_id: Uuid, position: Position) {
++        let packet = Self::player_state_packet(player_id, position);
+ 
+         match self.tx.send(packet) {
+             Ok(receiver_count) => {
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:176:
+                     "WORLD: PLAYER_STATE broadcasté | \
+                       x={} y={} z={} | \
+                      récepteurs={}",
+-                    
+-                    position.x,
+-                    position.y,
+-                    position.z,
+-                    receiver_count
++                    position.x, position.y, position.z, receiver_count
+                 );
+             }
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:188:
+                 error!(
+                     "WORLD: échec du broadcast PLAYER_STATE | \
+                       erreur={}",
+-                    
+                     error
+                 );
+             }
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:199:
+     // PACKET PLAYER_REMOVE
+     // =============================================================
+ 
+-    pub fn player_remove_packet(
+-        player_id: Uuid,
+-    ) -> Packet {
+-        Packet::new(
+-            PacketType::PlayerRemove,
+-            player_id.as_bytes().to_vec(),
+-        )
++    pub fn player_remove_packet(player_id: Uuid) -> Packet {
++        Packet::new(PacketType::PlayerRemove, player_id.as_bytes().to_vec())
+     }
+ 
+     // =============================================================
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/world/world.rs:212:
+     // BROADCAST PLAYER_REMOVE
+     // =============================================================
+ 
+-    pub fn broadcast_player_remove(
+-        &self,
+-        player_id: Uuid,
+-    ) {
+-        let packet = Self::player_remove_packet(
+-            player_id
+-        );
++    pub fn broadcast_player_remove(&self, player_id: Uuid) {
++        let packet = Self::player_remove_packet(player_id);
+ 
+         match self.tx.send(packet) {
+             Ok(receiver_count) => {
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main.rs:1:
 -use the_last_signal_server::database::{
 -    database_manager::DatabaseManager,
@@ -8864,72 +8845,72 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling pin-project-lite v0.2.17
    Compiling typenum v1.20.1
    Compiling yoke v0.8.3
-   Compiling writeable v0.6.4
-   Compiling zerovec v0.11.8
    Compiling memchr v2.8.3
+   Compiling zerovec v0.11.8
    Compiling tinystr v0.8.4
    Compiling futures-core v0.3.34
    Compiling litemap v0.8.3
    Compiling smallvec v1.16.2
+   Compiling writeable v0.6.4
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
-   Compiling icu_locale_core v2.3.0
    Compiling utf8_iter v1.0.4
    Compiling scopeguard v1.2.0
+   Compiling icu_locale_core v2.3.0
    Compiling icu_collections v2.3.0
    Compiling lock_api v0.4.14
-   Compiling icu_normalizer_data v2.3.0
    Compiling icu_properties_data v2.3.0
+   Compiling icu_normalizer_data v2.3.0
    Compiling socket2 v0.6.5
    Compiling mio v1.2.4
    Compiling futures-sink v0.3.34
    Compiling bytes v1.12.1
-   Compiling icu_provider v2.3.1
    Compiling serde_core v1.0.229
-   Compiling icu_normalizer v2.3.0
+   Compiling once_cell v1.21.4
+   Compiling icu_provider v2.3.1
    Compiling icu_properties v2.3.0
+   Compiling icu_normalizer v2.3.0
    Compiling rand_core v0.10.1
    Compiling equivalent v1.0.2
-   Compiling once_cell v1.21.4
-   Compiling tracing-core v0.1.36
    Compiling generic-array v0.14.9
+   Compiling tracing-core v0.1.36
    Compiling parking_lot_core v0.9.12
-   Compiling futures-task v0.3.34
-   Compiling idna_adapter v1.2.2
-   Compiling foldhash v0.2.0
    Compiling cpufeatures v0.2.17
-   Compiling futures-io v0.3.34
    Compiling percent-encoding v2.3.2
+   Compiling idna_adapter v1.2.2
    Compiling allocator-api2 v0.2.21
    Compiling slab v0.4.12
-   Compiling form_urlencoded v1.2.2
-   Compiling futures-util v0.3.34
-   Compiling idna v1.1.0
+   Compiling futures-task v0.3.34
+   Compiling foldhash v0.2.0
+   Compiling futures-io v0.3.34
    Compiling hashbrown v0.16.1
+   Compiling idna v1.1.0
+   Compiling futures-util v0.3.34
    Compiling serde v1.0.229
+   Compiling form_urlencoded v1.2.2
    Compiling parking_lot v0.12.5
    Compiling num-traits v0.2.19
-   Compiling crossbeam-utils v0.8.23
-   Compiling getrandom v0.4.3
    Compiling zmij v1.0.23
-   Compiling parking v2.2.1
+   Compiling getrandom v0.4.3
+   Compiling crossbeam-utils v0.8.23
    Compiling crc-catalog v2.5.0
    Compiling hashbrown v0.17.1
    Compiling itoa v1.0.18
-   Compiling crc v3.4.0
+   Compiling parking v2.2.1
    Compiling serde_json v1.0.151
    Compiling event-listener v5.4.2
-   Compiling crossbeam-queue v0.3.14
-   Compiling either v1.18.0
    Compiling indexmap v2.14.2
+   Compiling crossbeam-queue v0.3.14
+   Compiling crc v3.4.0
    Compiling futures-intrusive v0.5.0
-   Compiling hashlink v0.11.1
+   Compiling either v1.19.0
    Compiling url v2.5.8
+   Compiling hashlink v0.11.1
    Compiling block-buffer v0.10.4
    Compiling crypto-common v0.1.6
    Compiling cmov v0.5.4
-   Compiling ctutils v0.4.3
    Compiling digest v0.10.7
+   Compiling ctutils v0.4.3
    Compiling tokio v1.53.2
    Compiling spin v0.9.9
    Compiling hybrid-array v0.4.15
@@ -8943,45 +8924,45 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
    Compiling thiserror v2.0.21
-   Compiling const-oid v0.10.2
-   Compiling base64 v0.22.1
    Compiling cpufeatures v0.3.1
+   Compiling base64 v0.22.1
+   Compiling const-oid v0.10.2
    Compiling digest v0.11.3
    Compiling uuid v1.27.0
    Compiling aho-corasick v1.1.5
-   Compiling foreign-types-shared v0.1.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling sqlx-core v0.9.0
    Compiling base64ct v1.8.3
+   Compiling foreign-types-shared v0.1.1
+   Compiling foreign-types v0.3.2
    Compiling phc v0.6.1
    Compiling regex-automata v0.4.18
    Compiling sqlx-sqlite v0.9.0
-   Compiling foreign-types v0.3.2
    Compiling libsqlite3-sys v0.37.0
    Compiling openssl-sys v0.9.117
    Compiling sqlx-macros-core v0.9.0
    Compiling simd-adler32 v0.3.10
-   Compiling adler2 v2.0.1
    Compiling iana-time-zone v0.1.65
+   Compiling adler2 v2.0.1
    Compiling bitflags v2.13.2
-   Compiling chrono v0.4.45
-   Compiling openssl v0.10.81
    Compiling miniz_oxide v0.9.1
+   Compiling openssl v0.10.81
+   Compiling chrono v0.4.45
+   Compiling zeroize v1.9.1
    Compiling sqlx-macros v0.9.0
-   Compiling zeroize v1.9.0
    Compiling crc32fast v1.5.2
    Compiling regex v1.13.1
    Compiling password-hash v0.6.1
    Compiling blake2 v0.11.0
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
-   Compiling byteorder v1.5.0
    Compiling nu-ansi-term v0.50.3
-   Compiling rand v0.10.3
+   Compiling byteorder v1.5.0
    Compiling flexi_logger v0.31.10
-   Compiling fernet v0.2.2
    Compiling sqlx v0.9.0
+   Compiling fernet v0.2.2
+   Compiling rand v0.10.3
    Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
    Compiling sha2 v0.11.0
@@ -9051,33 +9032,33 @@ warning: constant `NOMBRE_CONFIGURATIONS` is never used
 
 warning: `the-last-signal-server` (lib test) generated 4 warnings (4 duplicates)
 warning: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 14.45s
-     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-e1627be326f98ef8)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 17.55s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-f2a187045a96b029)
 
 running 12 tests
-test security::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
-test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
-test security::crypto::tests::fisher_yates_changes_with_seed ... ok
+test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
+test security::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
+test security::crypto::tests::fisher_yates_changes_with_seed ... ok
 test security::crypto::tests::fisher_yates_is_deterministic ... ok
+test security::crypto::tests::splitmix64_max_seed ... ok
 test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
 test security::crypto::tests::fisher_yates_contains_all_values ... ok
-test security::crypto::tests::splitmix64_max_seed ... ok
 test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
 test security::crypto::tests::splitmix64_state_changes ... ok
 test security::crypto::tests::splitmix64_zero_seed ... ok
 
 test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-b239fb76e45d6462)
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-fc6e81fe715f24c8)
 
 running 1 test
 test tests::test_tresor ... ignored
 
 test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-a47add5958deb465)
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-220ee8e3ba0405c2)
 
 running 0 tests
 

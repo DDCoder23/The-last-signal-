@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 2337
+Run : 675
 Branch : main
-Commit : fedf3979cbd2ec63959408bad23c8c1143c643eb
-Date : Tue Oct  6 10:19:30 UTC 2026
+Commit : 674123abd1307942ced9006c827767255c37ece5
+Date : Thu Oct  8 01:52:03 UTC 2026
 
 ---
 
@@ -11,25 +11,25 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 
 ## ⚫ Black
 
-**Files to reformat:** 65
+**Files to reformat:** 57
 
 <details>
 <summary>Show files</summary>
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_filesystem.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_git_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
@@ -37,47 +37,39 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/player_remove.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/session.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/player_state.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_performance.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_python.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_rust.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database/update_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/database_manager.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/update_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/calculateur.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
-/home/runner/work/The-last-signal-/The-last-signal-/setup.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/setup.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_mix.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_pipeline.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/open_report.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_sql_injection.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_state.py
 </details>
@@ -88,39 +80,37 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 
 | Code | Nombre |
 |------|-------:|
-| E231 | 100 |
-| W293 | 94 |
-| E122 | 85 |
-| E501 | 66 |
-| E302 | 59 |
-| E303 | 57 |
-| E225 | 26 |
-| F401 | 16 |
-| E301 | 9 |
+| E231 | 84 |
+| W293 | 76 |
+| E122 | 76 |
+| E302 | 56 |
+| E501 | 55 |
+| E303 | 41 |
+| E225 | 23 |
+| F401 | 14 |
 | W292 | 8 |
 | E305 | 7 |
+| E301 | 6 |
 | E211 | 6 |
-| W391 | 5 |
-| W291 | 5 |
-| F841 | 5 |
 | F541 | 5 |
 | E128 | 5 |
+| W391 | 4 |
+| W291 | 4 |
 | E124 | 4 |
-| F821 | 3 |
+| F841 | 3 |
 | F811 | 3 |
 | E116 | 3 |
+| F821 | 2 |
 | E722 | 2 |
 | E402 | 2 |
 | E201 | 2 |
-| E117 | 2 |
-| E111 | 2 |
 | F824 | 1 |
 | E741 | 1 |
 | E731 | 1 |
 | E306 | 1 |
-| E271 | 1 |
 | E203 | 1 |
 | E131 | 1 |
+| E117 | 1 |
 
 <details>
 <summary>📋 Voir toutes les erreurs Flake8</summary>
@@ -256,57 +246,6 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 | ./client_python/packets/player_remove.py | 41 | W292 | no newline at end of file |
 | ./client_python/packets/player_state.py | 81 | W292 | no newline at end of file |
 | ./client_python/packets/session.py | 59 | W292 | no newline at end of file |
-| ./scripts/database/update_docs.py | 7 | E303 | too many blank lines (3) |
-| ./scripts/database/update_docs.py | 55 | W293 | blank line contains whitespace |
-| ./scripts/database/update_docs.py | 57 | E303 | too many blank lines (3) |
-| ./scripts/database/update_docs.py | 84 | W293 | blank line contains whitespace |
-| ./scripts/database/update_docs.py | 86 | E303 | too many blank lines (3) |
-| ./scripts/database/update_performance.py | 1 | E271 | multiple spaces after keyword |
-| ./scripts/database/update_performance.py | 2 | E111 | indentation is not a multiple of 4 |
-| ./scripts/database/update_python.py | 12 | E303 | too many blank lines (3) |
-| ./scripts/database/update_python.py | 43 | W293 | blank line contains whitespace |
-| ./scripts/database/update_python.py | 45 | E303 | too many blank lines (3) |
-| ./scripts/database/update_python.py | 170 | W293 | blank line contains whitespace |
-| ./scripts/database/update_python.py | 172 | E303 | too many blank lines (3) |
-| ./scripts/database/update_rust.py | 13 | E303 | too many blank lines (4) |
-| ./scripts/database/update_rust.py | 43 | E303 | too many blank lines (3) |
-| ./scripts/database/update_rust.py | 150 | W293 | blank line contains whitespace |
-| ./scripts/database/update_rust.py | 152 | E303 | too many blank lines (3) |
-| ./scripts/database/update_security.py | 21 | W293 | blank line contains whitespace |
-| ./scripts/database/update_security.py | 23 | E303 | too many blank lines (3) |
-| ./scripts/database/update_security.py | 96 | W293 | blank line contains whitespace |
-| ./scripts/database/update_security.py | 98 | E303 | too many blank lines (3) |
-| ./scripts/database_manager.py | 325 | W293 | blank line contains whitespace |
-| ./scripts/database_manager.py | 327 | W293 | blank line contains whitespace |
-| ./scripts/database_manager.py | 438 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 438 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 440 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 452 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 460 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 462 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 462 | E501 | line too long (91 > 79 characters) |
-| ./scripts/database_manager.py | 462 | E231 | missing whitespace after ',' |
-| ./scripts/database_manager.py | 464 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 479 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 490 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 492 | E301 | expected 1 blank line, found 0 |
-| ./scripts/database_manager.py | 504 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 517 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 526 | E122 | continuation line missing indentation or outdented |
-| ./scripts/database_manager.py | 529 | W293 | blank line contains whitespace |
 | ./scripts/docs_score.py | 5 | W293 | blank line contains whitespace |
 | ./scripts/documentation/links.py | 38 | W293 | blank line contains whitespace |
 | ./scripts/documentation/links.py | 40 | E303 | too many blank lines (3) |
@@ -361,17 +300,17 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 | ./scripts/documentation/problem.py | 2 | F401 | 'typing.Any' imported but unused |
 | ./scripts/documentation/problem.py | 3 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/problem.py | 3 | E501 | line too long (85 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 133 | E501 | line too long (95 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 161 | E501 | line too long (116 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 170 | E122 | continuation line missing indentation or outdented |
+| ./scripts/documentation/python_docs.py | 134 | E501 | line too long (95 > 79 characters) |
+| ./scripts/documentation/python_docs.py | 162 | E501 | line too long (116 > 79 characters) |
 | ./scripts/documentation/python_docs.py | 171 | E122 | continuation line missing indentation or outdented |
 | ./scripts/documentation/python_docs.py | 172 | E122 | continuation line missing indentation or outdented |
 | ./scripts/documentation/python_docs.py | 173 | E122 | continuation line missing indentation or outdented |
-| ./scripts/documentation/python_docs.py | 175 | W293 | blank line contains whitespace |
-| ./scripts/documentation/python_docs.py | 176 | E303 | too many blank lines (2) |
-| ./scripts/documentation/python_docs.py | 191 | E501 | line too long (106 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 212 | E501 | line too long (87 > 79 characters) |
-| ./scripts/documentation/python_docs.py | 220 | W293 | blank line contains whitespace |
+| ./scripts/documentation/python_docs.py | 174 | E122 | continuation line missing indentation or outdented |
+| ./scripts/documentation/python_docs.py | 176 | W293 | blank line contains whitespace |
+| ./scripts/documentation/python_docs.py | 177 | E303 | too many blank lines (2) |
+| ./scripts/documentation/python_docs.py | 192 | E501 | line too long (106 > 79 characters) |
+| ./scripts/documentation/python_docs.py | 213 | E501 | line too long (87 > 79 characters) |
+| ./scripts/documentation/python_docs.py | 221 | W293 | blank line contains whitespace |
 | ./scripts/documentation/report.py | 8 | E225 | missing whitespace around operator |
 | ./scripts/documentation/report.py | 9 | E231 | missing whitespace after ',' |
 | ./scripts/documentation/report.py | 11 | E302 | expected 2 blank lines, found 1 |
@@ -436,7 +375,7 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 | ./scripts/documentation/report.py | 71 | E303 | too many blank lines (2) |
 | ./scripts/documentation/report.py | 87 | E303 | too many blank lines (2) |
 | ./scripts/documentation/report.py | 89 | E231 | missing whitespace after ',' |
-| ./scripts/documentation/rust_docs.py | 192 | W292 | no newline at end of file |
+| ./scripts/documentation/rust_docs.py | 193 | W292 | no newline at end of file |
 | ./scripts/documentation/score.py | 11 | E302 | expected 2 blank lines, found 0 |
 | ./scripts/documentation/score.py | 13 | E122 | continuation line missing indentation or outdented |
 | ./scripts/documentation/score.py | 14 | E122 | continuation line missing indentation or outdented |
@@ -501,52 +440,13 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 | ./scripts/documentation/titles.py | 173 | E231 | missing whitespace after ',' |
 | ./scripts/documentation/titles.py | 173 | E501 | line too long (129 > 79 characters) |
 | ./scripts/documentation/titles.py | 174 | W293 | blank line contains whitespace |
+| ./scripts/generate_problems_md.py | 46 | W293 | blank line contains whitespace |
+| ./scripts/generate_problems_md.py | 48 | E303 | too many blank lines (3) |
 | ./scripts/generate_problems_md.py | 64 | W293 | blank line contains whitespace |
 | ./scripts/generate_problems_md.py | 66 | E303 | too many blank lines (2) |
 | ./scripts/generate_problems_md.py | 71 | W293 | blank line contains whitespace |
 | ./scripts/recherche.py | 197 | W293 | blank line contains whitespace |
 | ./scripts/recherche.py | 199 | E303 | too many blank lines (2) |
-| ./scripts/update_database.py | 5 | F401 | '.database.update_performance.update_performance_database' imported but unused |
-| ./scripts/update_database.py | 15 | W293 | blank line contains whitespace |
-| ./scripts/update_database.py | 17 | E303 | too many blank lines (3) |
-| ./scripts/update_database.py | 23 | W293 | blank line contains whitespace |
-| ./scripts/update_database.py | 26 | E303 | too many blank lines (4) |
-| ./scripts/update_database.py | 28 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 6 | F401 | 'gestionnaire_de_fichiers as gf' imported but unused |
-| ./scripts/utils/calculateur.py | 13 | E303 | too many blank lines (6) |
-| ./scripts/utils/calculateur.py | 14 | E501 | line too long (85 > 79 characters) |
-| ./scripts/utils/calculateur.py | 22 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/utils/calculateur.py | 28 | F841 | local variable 'fichier' is assigned to but never used |
-| ./scripts/utils/calculateur.py | 29 | E501 | line too long (80 > 79 characters) |
-| ./scripts/utils/calculateur.py | 33 | E302 | expected 2 blank lines, found 1 |
-| ./scripts/utils/calculateur.py | 34 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 35 | E225 | missing whitespace around operator |
-| ./scripts/utils/calculateur.py | 40 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 48 | E225 | missing whitespace around operator |
-| ./scripts/utils/calculateur.py | 49 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 50 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 51 | E303 | too many blank lines (2) |
-| ./scripts/utils/calculateur.py | 52 | E225 | missing whitespace around operator |
-| ./scripts/utils/calculateur.py | 53 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 54 | W293 | blank line contains whitespace |
-| ./scripts/utils/calculateur.py | 55 | E303 | too many blank lines (2) |
-| ./scripts/utils/calculateur.py | 56 | E231 | missing whitespace after ',' |
-| ./scripts/utils/calculateur.py | 57 | E111 | indentation is not a multiple of 4 |
-| ./scripts/utils/calculateur.py | 57 | E117 | over-indented |
-| ./scripts/utils/calculateur.py | 57 | F821 | undefined name 'fichier' |
-| ./scripts/utils/calculateur.py | 57 | E501 | line too long (80 > 79 characters) |
-| ./scripts/utils/calculateur.py | 61 | E303 | too many blank lines (3) |
-| ./scripts/utils/calculateur.py | 62 | E501 | line too long (81 > 79 characters) |
-| ./scripts/utils/calculateur.py | 63 | E302 | expected 2 blank lines, found 0 |
-| ./scripts/utils/calculateur.py | 63 | E501 | line too long (144 > 79 characters) |
-| ./scripts/utils/calculateur.py | 65 | E501 | line too long (121 > 79 characters) |
-| ./scripts/utils/calculateur.py | 77 | W291 | trailing whitespace |
-| ./scripts/utils/calculateur.py | 88 | E501 | line too long (84 > 79 characters) |
-| ./scripts/utils/calculateur.py | 96 | E501 | line too long (97 > 79 characters) |
-| ./scripts/utils/calculateur.py | 107 | E501 | line too long (84 > 79 characters) |
-| ./scripts/utils/calculateur.py | 109 | F841 | local variable 'existing_sheets' is assigned to but never used |
-| ./scripts/utils/calculateur.py | 111 | E501 | line too long (105 > 79 characters) |
-| ./scripts/utils/calculateur.py | 116 | W391 | blank line at end of file |
 | ./scripts/utils/file_chercheur.py | 16 | E302 | expected 2 blank lines, found 1 |
 | ./scripts/utils/open_report.py | 5 | F401 | 'subprocess' imported but unused |
 | ./scripts/utils/open_report.py | 545 | E731 | do not assign a lambda expression, use a def |
@@ -729,11 +629,11 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 | 3 | ./client_python/crypto.py | 55 |
 | 4 | ./scripts/documentation/markdown.py | 42 |
 | 5 | ./scripts/documentation/titles.py | 37 |
-| 6 | ./scripts/utils/calculateur.py | 35 |
-| 7 | ./tests/test_rotor_vectors.py | 33 |
-| 8 | ./scripts/database_manager.py | 31 |
-| 9 | ./client_python/client.py | 31 |
-| 10 | ./scripts/documentation/score.py | 26 |
+| 6 | ./tests/test_rotor_vectors.py | 33 |
+| 7 | ./client_python/client.py | 31 |
+| 8 | ./scripts/documentation/score.py | 26 |
+| 9 | ./tests/test_rotor_state.py | 23 |
+| 10 | ./client_python/packet.py | 14 |
 > 💡 Vous ne connaissez pas une erreur Flake8 ?
 >
 > Consultez le guide complet :
@@ -741,7 +641,7 @@ Date : Tue Oct  6 10:19:30 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (3.623342175066313)
+**Average complexity:**  A (3.7142857142857144)
 
 <details>
 <summary>Show complexity report</summary>
@@ -813,27 +713,10 @@ scripts/recherche.py
     F 172:0 main - C
     F 94:0 ecrire_fichier - B
     F 34:0 rechercher - B
-scripts/database_manager.py
-    C 9:0 DatabaseManager - A
-    M 360:4 DatabaseManager.add_run - A
-    M 414:4 DatabaseManager.insert - A
-    M 11:4 DatabaseManager.__init__ - A
-    M 25:4 DatabaseManager.create_tables - A
-    M 436:4 DatabaseManager.close - A
-    M 438:4 DatabaseManager.add_security - A
-    M 462:4 DatabaseManager.add_security_issue - A
-    M 492:4 DatabaseManager.add_performance - A
 scripts/generate_problems_md.py
     F 10:0 generate_problems_md - C
-scripts/update_database.py
-    F 9:0 update_database - A
 scripts/utils/file_chercheur.py
     F 16:0 iter_files - A
-scripts/utils/calculateur.py
-    F 63:0 mettre_a_jour_excel_fichiers_et_dossiers - B
-    F 22:0 creer_fichier_vide_async - A
-    F 33:0 calculer_taille_dossier_async - A
-    F 13:0 log_erreur_async - A
 scripts/utils/open_report.py
     F 387:0 find_available_archived_reports - C
     F 595:0 main - C
@@ -895,20 +778,6 @@ scripts/documentation/titles.py
     F 54:0 check_single_h1 - A
 scripts/documentation/rust_docs.py
     F 10:0 check_rust_docs - C
-scripts/database/utils.py
-    F 5:0 read_report - A
-    F 15:0 extract_int - A
-    F 25:0 extract_float - A
-scripts/database/update_security.py
-    F 13:0 update_security_database - A
-scripts/database/update_python.py
-    F 18:0 update_python_database - A
-scripts/database/update_rust.py
-    F 19:0 update_rust_database - A
-scripts/database/update_docs.py
-    F 7:0 update_docs_database - B
-scripts/database/update_performance.py
-    F 1:0 update_performance_database - A
 tests/test_splitmix64.py
     F 13:0 test_same_seed_same_sequence - A
     F 35:0 test_different_seed_different_sequence - A
@@ -1080,23 +949,25 @@ tests/security/test_fuzzing.py
 client_python/main.py
     F 10:0 main - A
 client_python/game.py
-    M 385:4 Game.update_game - C
-    M 149:4 Game.network_loop - A
+    M 531:4 Game.update_game - C
+    M 216:4 Game.network_loop - B
+    M 342:4 Game.handle_player_state - B
     C 17:0 Game - A
-    M 212:4 Game.handle_player_state - A
-    M 344:4 Game.get_local_player_id - A
-    M 553:4 Game.paintEvent - A
-    F 799:0 run_game - A
-    M 174:4 Game.handle_packet - A
-    M 457:4 Game.move_player - A
-    M 697:4 Game.draw_remote_player - A
-    M 778:4 Game.closeEvent - A
-    M 304:4 Game.handle_player_remove - A
-    M 525:4 Game.keyPressEvent - A
-    M 537:4 Game.keyReleaseEvent - A
-    M 44:4 Game.__init__ - A
-    M 509:4 Game.send_position_to_server - A
-    M 658:4 Game.draw_local_player - A
+    M 268:4 Game.process_network_queue - A
+    M 490:4 Game.get_local_player_id - A
+    F 1080:0 run_game - A
+    M 304:4 Game.handle_packet - A
+    M 443:4 Game.handle_player_remove - A
+    M 620:4 Game.move_player - A
+    M 681:4 Game.send_position_to_server - A
+    M 746:4 Game.paintEvent - A
+    M 940:4 Game.draw_remote_player - A
+    M 1029:4 Game.closeEvent - A
+    M 712:4 Game.keyPressEvent - A
+    M 727:4 Game.keyReleaseEvent - A
+    M 832:4 Game.draw_debug_info - A
+    M 74:4 Game.__init__ - A
+    M 898:4 Game.draw_local_player - A
 client_python/crypto.py
     C 235:0 RotorState - A
     M 252:4 RotorState.update - A
@@ -1185,8 +1056,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-377 blocks (classes, functions, methods) analyzed.
-Average complexity: A (3.623342175066313)
+357 blocks (classes, functions, methods) analyzed.
+Average complexity: A (3.7142857142857144)
 
 </details>
 
@@ -1195,8 +1066,8 @@ Average complexity: A (3.623342175066313)
 | Severity | Count |
 |----------|------:|
 | High | 1 |
-| Medium | 9 |
-| Low | 222 |
+| Medium | 8 |
+| Low | 221 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -1207,7 +1078,7 @@ Average complexity: A (3.623342175066313)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.7
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-10-06 10:19:34.625273+00:00
+Run started:2026-10-08 01:52:08.877877+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -1353,31 +1224,6 @@ Test results:
 280	                timeout=TIMEOUT,
 281	            ) as response:
 282	
-
---------------------------------------------------
->> Issue: [B110:try_except_pass] Try, Except, Pass detected.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
-   Location: ./client_python/game.py:787:8
-786	
-787	        except Exception:
-788	            pass
-789	
-
---------------------------------------------------
->> Issue: [B608:hardcoded_sql_expressions] Possible SQL injection vector through string-based query construction.
-   Severity: Medium   Confidence: Medium
-   CWE: CWE-89 (https://cwe.mitre.org/data/definitions/89.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b608_hardcoded_sql_expressions.html
-   Location: ./scripts/database_manager.py:420:16
-419	        self.cursor.execute(
-420	            f"""
-421	            INSERT INTO {table}
-422	            ({columns})
-423	            VALUES ({placeholders})
-424	            """,
-425	            tuple(values.values())
 
 --------------------------------------------------
 >> Issue: [B112:try_except_continue] Try, Except, Continue detected.
@@ -3687,28 +3533,28 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 10584
+	Total lines of code: 9938
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 222
-		Medium: 9
+		Low: 221
+		Medium: 8
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
-		Medium: 12
-		High: 219
+		Medium: 11
+		High: 218
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 7.94/10
+**Global score:** 8.16/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4005,75 +3851,16 @@ scripts/transformateur.py:43:11: W0718: Catching too general exception Exception
 scripts/docs_score.py:5:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/docs_score.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/docs_score.py:1:0: E0401: Unable to import 'documentation.score' (import-error)
-************* Module scripts.database_manager
-scripts/database_manager.py:529:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database_manager.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database_manager.py:9:0: C0115: Missing class docstring (missing-class-docstring)
-scripts/database_manager.py:25:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:360:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:414:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:436:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:438:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:438:4: R0913: Too many arguments (6/5) (too-many-arguments)
-scripts/database_manager.py:438:4: R0917: Too many positional arguments (6/5) (too-many-positional-arguments)
-scripts/database_manager.py:462:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:462:4: R0913: Too many arguments (9/5) (too-many-arguments)
-scripts/database_manager.py:462:4: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
-scripts/database_manager.py:492:4: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database_manager.py:492:4: R0913: Too many arguments (7/5) (too-many-arguments)
-scripts/database_manager.py:492:4: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
 ************* Module scripts.generate_problems_md
+scripts/generate_problems_md.py:46:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/generate_problems_md.py:64:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/generate_problems_md.py:71:0: C0303: Trailing whitespace (trailing-whitespace)
 scripts/generate_problems_md.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/generate_problems_md.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/generate_problems_md.py:75:7: W0718: Catching too general exception Exception (broad-exception-caught)
-************* Module scripts.update_database
-scripts/update_database.py:15:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/update_database.py:23:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/update_database.py:28:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/update_database.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/update_database.py:1:0: E0401: Unable to import 'database.update_python' (import-error)
-scripts/update_database.py:1:0: E0611: No name 'update_python' in module 'database' (no-name-in-module)
-scripts/update_database.py:2:0: E0401: Unable to import 'database.update_docs' (import-error)
-scripts/update_database.py:2:0: E0611: No name 'update_docs' in module 'database' (no-name-in-module)
-scripts/update_database.py:3:0: E0401: Unable to import 'database.update_security' (import-error)
-scripts/update_database.py:3:0: E0611: No name 'update_security' in module 'database' (no-name-in-module)
-scripts/update_database.py:4:0: E0401: Unable to import 'database.update_rust' (import-error)
-scripts/update_database.py:4:0: E0611: No name 'update_rust' in module 'database' (no-name-in-module)
-scripts/update_database.py:5:0: E0401: Unable to import 'database.update_performance' (import-error)
-scripts/update_database.py:5:0: E0611: No name 'update_performance' in module 'database' (no-name-in-module)
-scripts/update_database.py:9:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/update_database.py:5:0: W0611: Unused update_performance_database imported from database.update_performance (unused-import)
 ************* Module scripts.utils.file_chercheur
 scripts/utils/file_chercheur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/utils/file_chercheur.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.utils.calculateur
-scripts/utils/calculateur.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:40:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:50:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:53:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:54:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/utils/calculateur.py:57:0: W0311: Bad indentation. Found 13 spaces, expected 8 (bad-indentation)
-scripts/utils/calculateur.py:63:0: C0301: Line too long (144/100) (line-too-long)
-scripts/utils/calculateur.py:65:0: C0301: Line too long (121/100) (line-too-long)
-scripts/utils/calculateur.py:111:0: C0301: Line too long (105/100) (line-too-long)
-scripts/utils/calculateur.py:116:0: C0305: Trailing newlines (trailing-newlines)
-scripts/utils/calculateur.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/utils/calculateur.py:4:0: E0401: Unable to import 'pandas' (import-error)
-scripts/utils/calculateur.py:6:0: E0401: Unable to import 'gestionnaire_de_fichiers' (import-error)
-scripts/utils/calculateur.py:17:13: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-scripts/utils/calculateur.py:28:17: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-scripts/utils/calculateur.py:28:46: W0612: Unused variable 'fichier' (unused-variable)
-scripts/utils/calculateur.py:33:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/utils/calculateur.py:51:23: W0718: Catching too general exception Exception (broad-exception-caught)
-scripts/utils/calculateur.py:41:20: W0612: Unused variable 'sous_dossiers' (unused-variable)
-scripts/utils/calculateur.py:57:69: E0602: Undefined variable 'fichier' (undefined-variable)
-scripts/utils/calculateur.py:56:8: W0612: Unused variable 'values' (unused-variable)
-scripts/utils/calculateur.py:107:8: W0612: Unused variable 'existing_sheets' (unused-variable)
-scripts/utils/calculateur.py:5:0: C0411: standard import "datetime.datetime" should be placed before third party import "pandas" (wrong-import-order)
-scripts/utils/calculateur.py:6:0: W0611: Unused gestionnaire_de_fichiers imported as gf (unused-import)
 ************* Module scripts.utils.open_report
 scripts/utils/open_report.py:829:0: C0304: Final newline missing (missing-final-newline)
 scripts/utils/open_report.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -4147,14 +3934,14 @@ scripts/documentation/links.py:172:0: C0116: Missing function or method docstrin
 scripts/documentation/links.py:194:0: C0116: Missing function or method docstring (missing-function-docstring)
 scripts/documentation/links.py:229:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module scripts.documentation.python_docs
-scripts/documentation/python_docs.py:161:0: C0301: Line too long (116/100) (line-too-long)
-scripts/documentation/python_docs.py:175:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/python_docs.py:191:0: C0301: Line too long (106/100) (line-too-long)
-scripts/documentation/python_docs.py:220:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/documentation/python_docs.py:94:9: W0511: TODO / FIXME (fixme)
+scripts/documentation/python_docs.py:162:0: C0301: Line too long (116/100) (line-too-long)
+scripts/documentation/python_docs.py:176:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/python_docs.py:192:0: C0301: Line too long (106/100) (line-too-long)
+scripts/documentation/python_docs.py:221:0: C0303: Trailing whitespace (trailing-whitespace)
+scripts/documentation/python_docs.py:95:9: W0511: TODO / FIXME (fixme)
 scripts/documentation/python_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/documentation/python_docs.py:22:4: C0103: Variable name "MAX_SCORE" doesn't conform to snake_case naming style (invalid-name)
-scripts/documentation/python_docs.py:64:15: W0718: Catching too general exception Exception (broad-exception-caught)
+scripts/documentation/python_docs.py:65:15: W0718: Catching too general exception Exception (broad-exception-caught)
 scripts/documentation/python_docs.py:9:0: R0912: Too many branches (17/12) (too-many-branches)
 scripts/documentation/python_docs.py:9:0: R0915: Too many statements (51/50) (too-many-statements)
 ************* Module scripts.documentation.report
@@ -4197,47 +3984,12 @@ scripts/documentation/titles.py:156:0: C0116: Missing function or method docstri
 scripts/documentation/titles.py:4:0: C0411: third party import "utils.file_chercheur.iter_files" should be placed before local import "problem.add_problem" (wrong-import-order)
 scripts/documentation/titles.py:1:0: W0611: Unused Path imported from pathlib (unused-import)
 ************* Module scripts.documentation.rust_docs
-scripts/documentation/rust_docs.py:192:0: C0304: Final newline missing (missing-final-newline)
+scripts/documentation/rust_docs.py:193:0: C0304: Final newline missing (missing-final-newline)
 scripts/documentation/rust_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 scripts/documentation/rust_docs.py:7:0: C0103: Constant name "max_score" doesn't conform to UPPER_CASE naming style (invalid-name)
 scripts/documentation/rust_docs.py:10:0: R0914: Too many local variables (26/15) (too-many-locals)
-scripts/documentation/rust_docs.py:181:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
+scripts/documentation/rust_docs.py:182:4: R1731: Consider using 'score = max(score, 0)' instead of unnecessary if block (consider-using-max-builtin)
 scripts/documentation/rust_docs.py:10:0: R0912: Too many branches (14/12) (too-many-branches)
-************* Module scripts.database.utils
-scripts/database/utils.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/utils.py:5:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/utils.py:15:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/utils.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
-************* Module scripts.database.update_security
-scripts/database/update_security.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_security.py:96:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_security.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_security.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_security.py:13:0: R0914: Too many local variables (20/15) (too-many-locals)
-scripts/database/update_security.py:17:21: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
-************* Module scripts.database.update_python
-scripts/database/update_python.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_python.py:170:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_python.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_python.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_python.py:18:0: R0914: Too many local variables (23/15) (too-many-locals)
-************* Module scripts.database.update_rust
-scripts/database/update_rust.py:150:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_rust.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_rust.py:19:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_rust.py:19:0: R0914: Too many local variables (21/15) (too-many-locals)
-scripts/database/update_rust.py:28:8: W1508: os.getenv default type is builtins.int. Expected str or None. (invalid-envvar-default)
-************* Module scripts.database.update_docs
-scripts/database/update_docs.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_docs.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
-scripts/database/update_docs.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_docs.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_docs.py:15:16: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
-************* Module scripts.database.update_performance
-scripts/database/update_performance.py:2:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
-scripts/database/update_performance.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-scripts/database/update_performance.py:1:0: C0116: Missing function or method docstring (missing-function-docstring)
-scripts/database/update_performance.py:1:33: W0613: Unused argument 'db' (unused-argument)
 ************* Module tests.test_splitmix64
 tests/test_splitmix64.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 tests/test_splitmix64.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
@@ -4507,6 +4259,7 @@ client_python/main.py:10:0: C0116: Missing function or method docstring (missing
 client_python/main.py:11:4: W0602: Using global for 'raison' but no assignment is done (global-variable-not-assigned)
 client_python/main.py:37:11: W0718: Catching too general exception Exception (broad-exception-caught)
 ************* Module client_python.game
+client_python/game.py:1:0: C0302: Too many lines in module (1105/1000) (too-many-lines)
 client_python/game.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/game.py:8:0: E0611: No name 'QRectF' in module 'PySide6.QtCore' (no-name-in-module)
 client_python/game.py:8:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
@@ -4517,24 +4270,17 @@ client_python/game.py:9:0: E0611: No name 'QPainter' in module 'PySide6.QtGui' (
 client_python/game.py:9:0: E0611: No name 'QPen' in module 'PySide6.QtGui' (no-name-in-module)
 client_python/game.py:10:0: E0611: No name 'QApplication' in module 'PySide6.QtWidgets' (no-name-in-module)
 client_python/game.py:10:0: E0611: No name 'QMainWindow' in module 'PySide6.QtWidgets' (no-name-in-module)
-client_python/game.py:17:0: R0902: Too many instance attributes (10/7) (too-many-instance-attributes)
-client_python/game.py:166:19: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/game.py:385:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:457:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:509:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:525:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:525:4: C0103: Method name "keyPressEvent" doesn't conform to snake_case naming style (invalid-name)
-client_python/game.py:537:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:537:4: C0103: Method name "keyReleaseEvent" doesn't conform to snake_case naming style (invalid-name)
-client_python/game.py:553:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:553:4: C0103: Method name "paintEvent" doesn't conform to snake_case naming style (invalid-name)
-client_python/game.py:553:25: W0613: Unused argument 'event' (unused-argument)
-client_python/game.py:609:18: W0612: Unused variable 'z' (unused-variable)
-client_python/game.py:658:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:697:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:778:4: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/game.py:778:4: C0103: Method name "closeEvent" doesn't conform to snake_case naming style (invalid-name)
-client_python/game.py:787:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:17:0: R0902: Too many instance attributes (12/7) (too-many-instance-attributes)
+client_python/game.py:239:19: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:292:19: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:701:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:712:4: C0103: Method name "keyPressEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:727:4: C0103: Method name "keyReleaseEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:746:4: C0103: Method name "paintEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:746:25: W0613: Unused argument 'event' (unused-argument)
+client_python/game.py:801:18: W0612: Unused variable 'z' (unused-variable)
+client_python/game.py:1029:4: C0103: Method name "closeEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:1060:15: W0718: Catching too general exception Exception (broad-exception-caught)
 ************* Module client_python.crypto
 client_python/crypto.py:253:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/crypto.py:255:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -4756,41 +4502,17 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 
         ciphertext.append(value)
         previous_ciphertext = value
- (duplicate-code)
-client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_docs:[37:62]
-==scripts.database.update_python:[25:54]
-    run_number = int(
-        os.environ.get(
-            "GITHUB_RUN_NUMBER",
-            0
-        )
-    )
 
-    branch = os.environ.get(
-        "GITHUB_REF",
-        "unknown"
-    )
-
-    commit = os.environ.get(
-        "GITHUB_SHA",
-        "unknown"
-    )
-
-
-
-    run_id = db.add_run(
-        run_number,
-        branch,
-        commit
-    )
+    # ========================================================
+    # DÉCHIFFREMENT
+    # ========================================================
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_rotor:[375:401]
 ==tests.test_rotor_integration:[41:78]
     original = value
 
-    # Forward : R1 → R16
+    # Forward : R1 -> R16
     for rotor, position in zip(
         rotors,
         positions,
@@ -4801,7 +4523,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
             rotor,
         )
 
-    # Inverse : R16 → R1
+    # Inverse : R16 -> R1
     for rotor, position in reversed(
         list(zip(rotors, positions))
     ):
@@ -4812,18 +4534,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
         )
 
     assert value == original
-@pytest.mark.parametrize(
-    "packet_type",
-    range(1, 10),
-)
-@pytest.mark.parametrize(
-    "value",
-    range(256),
-)
-def test_rotor_state_multiple_updates(
-    value,
-    packet_type,
-):
+def test_invalid_communication_key():
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:20]
@@ -4841,7 +4552,9 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
- (duplicate-code)
+
+
+def should_ignore(path: Path) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:18]
 ==.github.security.test_secrets:[6:18]
@@ -4857,26 +4570,6 @@ IGNORED_DIRECTORIES = {
     ".venv",
     "venv",
     "node_modules", (duplicate-code)
-client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_python:[99:116]
-==scripts.database.update_rust:[96:113]
-        report
-    )
-
-    db.insert(
-        "test_summary",
-        run_id=run_id,
-        total=passed + failed + skipped,
-        passed=passed,
-        failed=failed,
-        skipped=skipped,
-        duration=duration
-    )
-
-    # ==========================================
-    # Flake8
-    # ==========================================
- (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==client_python.packets.login:[9:23]
 ==client_python.packets.singup:[9:23]
@@ -5000,7 +4693,8 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
         for part in relative.parts
     )
 
- (duplicate-code)
+
+def is_world_writable(mode: int) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
@@ -5012,25 +4706,6 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
                 "venv",
                 ".mypy_cache",
                 ".pytest_cache", (duplicate-code)
-client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_python:[38:54]
-==scripts.database.update_rust:[36:52]
-        "GITHUB_SHA",
-        "unknown"
-    )
-
-
-
-    run_id = db.add_run(
-        run_number,
-        branch,
-        commit
-    )
-
-    # ==========================================
-    # Résumé Rust
-    # ==========================================
- (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[26:36]
 ==tests.test_rotor_integration:[27:37]
@@ -5044,16 +4719,6 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
         for rotor_id in range(1, 17)
     ]
  (duplicate-code)
-client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_security:[73:80]
-==scripts.database_manager:[467:474]
-            test,
-            severity,
-            confidence,
-            cwe,
-            info,
-            file,
-            line, (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[39:46]
 ==scripts.documentation.markdown:[61:68]
@@ -5147,7 +4812,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
     )
 
 
-def looks_textual(data: bytes) -> bool: (duplicate-code)
+def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.markdown:[61:67]
 ==scripts.documentation.titles:[20:26]
@@ -5213,14 +4878,6 @@ IGNORED_DIRECTORIES = {
     "__pycache__",
     ".pytest_cache", (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
-==scripts.database.update_security:[48:53]
-==scripts.database_manager:[442:447]
-        run_id,
-        high,
-        medium,
-        low,
-        total, (duplicate-code)
-client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_mix:[68:73]
 ==tests.test_rotor_integration:[202:207]
         value,
@@ -5252,20 +4909,20 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
             positions,
             byte_counter,
             previous_ciphertext, (duplicate-code)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_state) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.session) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_remove) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 7.94/10
+Your code has been rated at 8.16/10
 
 
 </details>
@@ -5282,7 +4939,7 @@ platform linux -- Python 3.14.7, pytest-9.1.1, pluggy-1.6.0
 rootdir: /home/runner/work/The-last-signal-/The-last-signal-
 configfile: pytest.ini
 testpaths: tests
-plugins: platformdirs-4.12.3, cov-7.1.0
+plugins: platformdirs-4.12.4, cov-7.1.0
 collected 13710 items / 1 error
 
 ==================================== ERRORS ====================================
@@ -5293,7 +4950,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.49s ===============================
+=============================== 1 error in 0.80s ===============================
 
 </details>
 
