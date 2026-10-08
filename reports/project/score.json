@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-08T18:03:03.438369",
+    "generated": "2026-10-08T20:12:05.601144",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -1092,43 +1092,25 @@
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 33 > 120 caractères.",
+                    "message": "Ligne 48 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 179 > 120 caractères.",
+                    "message": "Ligne 317 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 249 > 120 caractères.",
+                    "message": "Ligne 363 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "Ligne 251 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "README.md",
-                    "severity": "warning",
-                    "message": "Ligne 271 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "README.md",
-                    "severity": "warning",
-                    "message": "Ligne 299 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "README.md",
-                    "severity": "warning",
-                    "message": "Ligne 478 > 120 caractères.",
+                    "message": "Ligne 546 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -6494,7 +6476,7 @@
                 {
                     "file": "README.md",
                     "severity": "error",
-                    "message": "README.md: contient 18 titres H1 (1 attendu).",
+                    "message": "README.md: contient 23 titres H1 (1 attendu).",
                     "module": "titles"
                 },
                 {
@@ -8426,7 +8408,13 @@
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "README.md:409 saut de niveau H1 → H3.",
+                    "message": "README.md:81 saut de niveau H1 → H3.",
+                    "module": "titles"
+                },
+                {
+                    "file": "README.md",
+                    "severity": "warning",
+                    "message": "README.md:473 saut de niveau H1 → H3.",
                     "module": "titles"
                 },
                 {
@@ -17420,19 +17408,19 @@
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "README.md:378 titre dupliqué (déjà présent dans CONTRIBUTING.md:206).",
+                    "message": "README.md:442 titre dupliqué (déjà présent dans CONTRIBUTING.md:206).",
                     "module": "titles"
                 },
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "README.md:439 titre dupliqué (déjà présent dans README_ESP.md:444).",
+                    "message": "README.md:503 titre dupliqué (déjà présent dans README_ESP.md:444).",
                     "module": "titles"
                 },
                 {
                     "file": "README.md",
                     "severity": "warning",
-                    "message": "README.md:455 titre dupliqué (déjà présent dans README_ESP.md:460).",
+                    "message": "README.md:523 titre dupliqué (déjà présent dans README_ESP.md:460).",
                     "module": "titles"
                 },
                 {
@@ -18326,7 +18314,19 @@
                 {
                     "file": "docs/README.md",
                     "severity": "warning",
-                    "message": "docs/README.md:178 titre dupliqué (déjà présent dans README.md:463).",
+                    "message": "docs/README.md:45 titre dupliqué (déjà présent dans README.md:361).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/README.md",
+                    "severity": "warning",
+                    "message": "docs/README.md:72 titre dupliqué (déjà présent dans README.md:460).",
+                    "module": "titles"
+                },
+                {
+                    "file": "docs/README.md",
+                    "severity": "warning",
+                    "message": "docs/README.md:178 titre dupliqué (déjà présent dans README.md:531).",
                     "module": "titles"
                 },
                 {
@@ -18392,7 +18392,7 @@
                 {
                     "file": "docs/gdd/02_UNIVERS.md",
                     "severity": "warning",
-                    "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:45).",
+                    "message": "docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans README.md:361).",
                     "module": "titles"
                 },
                 {
@@ -19058,7 +19058,7 @@
                 {
                     "file": "docs/gdd/README.md",
                     "severity": "warning",
-                    "message": "docs/gdd/README.md:36 titre dupliqué (déjà présent dans docs/README.md:45).",
+                    "message": "docs/gdd/README.md:36 titre dupliqué (déjà présent dans README.md:361).",
                     "module": "titles"
                 },
                 {
