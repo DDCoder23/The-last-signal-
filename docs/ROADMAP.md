@@ -1,140 +1,346 @@
-# 🗺️ **ROADMAP - The Last Signal** 
+# 🗺️ ROADMAP — The Last Signal
+
 > *MMORPG de survie post-apocalyptique en monde persistant*
-> **Dernière mise à jour** : 16 juillet 2026
-> **Version** : 0.1.0 (Pré-Prototype)
----
-
-
-## 📅 **Phases**
+> **Dernière mise à jour :** 8 octobre 2026
+> **Version actuelle :** 0.1.0 — Prototype
 
 ---
 
-### 🟡 **Phase 1 : Documentation & Préparation (JUILLET 2026 - **MARS 2027**)**
-**Objectif** : Finaliser **toute la documentation** et préparer le développement sans précipitation.
-   Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
- |-------|-------------|-------------|------|----------|-------------------|
- | **📚 Finaliser le GDD** | Terminer les 53 fichiers restants (mécaniques, lore, design des systèmes). | **Cyril/Morgan** | 🟡 En cours | **30/11/2026** | 100% du GDD validé par Morgan et partagé avec l’équipe. |
- | **🏗 Finaliser le TDD** | Architecture technique, schémas réseau, base de données. | **Cyril/Morgan** | ⚪ Non commencé | **15/01/2027** | 100% du GDD validé par Morgan et partagé avec l’équipe. |
- | **📖 Lore & Univers** | Histoire, factions, personnages, et événements du monde. | **Cyril/Morgan** + Louanne | ⚪ Non commencé | **28/02/2027** | Lore cohérent et intégré au GDD. |
- | **🎮 Design du Gameplay** | Système de survie, combat, craft, économie (spécifications détaillées). | **Cyril** | ⚪ Non commencé | **15/03/2027** | Tous les systèmes décrits dans le GDD. |
- | **📂 Organisation du Projet** | Structure des dossiers, conventions de code, et outils (CI/CD). | **Cyril/Morgan** | ⚪ Non commencé | **31/03/2027** | Repository prêt pour le développement. |
+## 🎯 Vision
 
-➡️ **Durée** : **9 mois** → **Priorité absolue à la documentation**.
+**The Last Signal** vise à devenir un MMORPG de survie post-apocalyptique en monde persistant.
+
+La priorité actuelle n'est pas de construire immédiatement toutes les fonctionnalités du jeu final.
+
+La priorité est de transformer progressivement le prototype technique actuel en une **expérience réellement jouable**, puis de la faire tester par des contributeurs et des joueurs.
+
+> **Objectif principal : passer d'un prototype technique à un prototype jouable.**
 
 ---
 
-### 🟡 **Phase 2 : Prototypage Minimal (AVRIL 2027 - **SEPTEMBRE 2027**)**
-**Objectif** : Un **prototype jouable** avec les mécaniques de base, **sans pression**.
- | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
- |-------|-------------|-------------|------|----------|-------------------|
- | **🎮 Prototype Client (Python)** | Affichage 2D basique, déplacement, interactions (ramasser un objet). | **Cyril/Morgan** | ⚪ Non commencé | **30/06/2027** | Joueur peut se déplacer et interagir avec 3 objets. |
- | **🦀 Serveur Rust (MVP)** | Gestion de 10 connexions, synchronisation des positions. | **Cyril/Morgan** | ⚪ Non commencé | **15/08/2027** | Serveur stable avec 10 joueurs simultanés. |
- | **🗄 Base de Données (PostgreSQL)** | Schéma pour joueurs, inventaire, et monde. | **Cyril/Morgan** | ⚪ Non commencé | **30/07/2027** | Base locale fonctionnelle. |
- | **🎨 Assets Minimaux** | 1 tilemap (biome "Ruines"), 1 sprite joueur, 3 sprites objets. | Axel, David | ⚪ Non commencé | **30/08/2027** | Assets intégrés et animés. |
- | **🔧 Outils de Build** | Scripts pour lancer le client/serveur en local. | **Cyril/Morgan** | ⚪ Non commencé | **30/09/2027** | 1 commande pour démarrer le jeu. |
-
-➡️ **Durée** : **6 mois** → **MVP jouable en local**.
+# 📅 Phases
 
 ---
 
-### 🟡 **Phase 3 : Alpha Fermée (OCTOBRE 2027 - **DÉCEMBRE 2027**)**
-**Objectif** : **Version jouable en interne** avec les mécaniques de survie.
- | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
- |-------|-------------|-------------|------|----------|-------------------|
- | **🌐 Communication Client-Serveur** | Protocole réseau finalisé (WebSockets), sync des actions. | **Cyril/Morgan**| ⚪ Non commencé | **31/10/2027** | 20 joueurs sans désynchronisation. |
- | **⚔️ Combat PvE (Basique)** | 1 type d’ennemi, attaques simples, gestion des dégâts. | **Cyril/Morgan** | ⚪ Non commencé | **30/11/2027** | Joueur peut tuer 3 ennemis différents. |
- | **🏺 Inventaire & Craft** | Ramassage, stock, et craft de 5 objets. | **Cyril/Morgan** | ⚪ Non commencé | **15/12/2027** | Joueur peut crafter une épée et une potion. |
- | **🌍 Monde Statique** | 1 biome ("Ruines") avec ressources et points d’intérêt. | **Cyril/Morgan** + Axel | ⚪ Non commencé | **31/12/2027** | Monde de 200x200 cases explorable. |
- | **👥 Système de Survie** | Faim et santé (2 besoins de base). | **Cyril/Morgan** | ⚪ Non commencé | **31/12/2027** | Joueur doit manger pour survivre. |
+## 🟢 Phase 1 — Prototype jouable
 
-➡️ **Durée** : **3 mois** → **Jeu jouable en interne**.
+**Période : octobre 2026 → décembre 2026**
 
----
----
-### 🟡 **Phase 4 : Alpha Ouverte (JANVIER 2028 - **JUIN 2028**)**
-**Objectif** : **Tests avec des amis/contributeurs**.
- | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
- |-------|-------------|-------------|------|----------|-------------------|
- | **👥 Système de Guildes (Basique)** | Création et gestion des membres. | **Cyril/Morgan** | ⚪ Non commencé | **29/02/2028** | 3 guildes créées. |
- | **💰 Économie Minimale** | Échange d’objets entre joueurs. | **Cyril/Morgan** | ⚪ Non commencé | **31/03/2028** | 10 objets échangeables. |
- | **🌑 2ème Biome ("Forêt")** | Nouveaux ennemis et ressources. | Axel, David | ⚪ Non commencé | **30/04/2028** | Biome intégré et testé. |
- | **🔒 Sauvegarde & Connexion** | Comptes locaux, sauvegarde des progrès. | **Cyril/Morgan** | ⚪ Non commencé | **31/05/2028** | Joueur peut reprendre sa partie. |
- | **🐛 Corrections & Optimisations** | Fix des bugs majeurs, amélioration des performances. | **Cyril/Morgan** | ⚪ Non commencé | **30/06/2028** | 60 FPS, 0 bugs critiques. |
+### Objectif
 
-➡️ **Durée** : **6 mois** → **Version stable pour tests externes**.
+Obtenir une première version suffisamment jouable pour qu'une personne extérieure puisse lancer le projet, se connecter au serveur, se déplacer et voir les autres joueurs dans un environnement 3D.
 
----
----
-### 🟡 **Phase 5 : Bêta Fermée (JUILLET 2028 - **DÉCEMBRE 2028**)**
-**Objectif** : **Ajout des fonctionnalités majeures**.
- | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
- |-------|-------------|-------------|------|----------|-------------------|
- | **⚔️ Combat PvP** | Duels et arènes. | **Cyril/Morgan** | ⚪ Non commencé | **31/08/2028** | 10 combats PvP sans bugs. |
- | **🌍 3ème Biome ("Désert")** | Boss, ressources rares. | Axel, David | ⚪ Non commencé | **30/09/2028** | Biome équilibré. |
- | **🛠 Craft Avancé** | 20 recettes, outils améliorés. | **Cyril/Morgan** | ⚪ Non commencé | **31/10/2028** | Joueur peut crafter 1 objet par catégorie. |
- | **🎭 2 Classes** | Survivant et Combattant (compétences uniques). | **Cyril/Morgan** | ⚪ Non commencé | **30/11/2028** | 2 classes jouables. |
- | **📖 Quêtes Principales** | 3 quêtes liées au lore. | Louanne + **Cyril/Morgan** | ⚪ Non commencé | **31/12/2028** | 1 quête terminée par testeur. |
+| Tâche                   | Sous-tâches                                             | État                | Critère de succès                                                    |
+| ----------------------- | ------------------------------------------------------- | ------------------- | -------------------------------------------------------------------- |
+| 🎮 **Client 3D**        | Finaliser la transition du prototype 2D vers VisPy      | 🟡 En cours         | Le joueur peut se déplacer dans l'environnement 3D                   |
+| 🗺️ **Carte 3D**        | Heightmap, couleurs et collisions                       | 🟡 En cours         | Une zone de jeu cohérente est affichée                               |
+| 👥 **Multijoueur**      | Synchronisation des joueurs                             | 🟡 En cours         | Les joueurs connectés apparaissent correctement                      |
+| 🌐 **Protocole réseau** | Connexion, session, déplacement, apparition/disparition | 🟡 En cours         | Les états des joueurs restent synchronisés                           |
+| 🔐 **Authentification** | Connexion et gestion des sessions                       | 🟢 Fonctionnel      | Un joueur peut créer/utiliser une session                            |
+| 🎒 **Inventaire**       | Gestion des objets et quantités                         | 🟢 Fonctionnel      | Les objets peuvent être gérés côté serveur                           |
+| 🛒 **Marché**           | Ordres d'achat/vente et gestion des fonds               | 🟡 En développement | Une transaction complète peut être exécutée                          |
+| 🧪 **Tests**            | Tests Python, Rust et réseau                            | 🟡 En cours         | Les systèmes critiques disposent de tests                            |
+| 📚 **Documentation**    | README, architecture, règles et documentation technique | 🟡 En cours         | Un nouveau contributeur peut comprendre comment commencer            |
+| 🚀 **Lancement local**  | Simplifier le démarrage client + serveur                | 🟡 En cours         | Un contributeur peut lancer le prototype sans configuration complexe |
 
-➡️ **Durée** : **6 mois** → **Contenu complet pour la bêta**.
+### 🎯 Jalon de sortie
 
----
----
-### 🟡 **Phase 6 : Bêta Ouverte (JANVIER 2029 - **JUIN 2029**)**
-**Objectif** : **Préparation au lancement**.
- | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
- |-------|-------------|-------------|------|----------|-------------------|
- | **🌎 4ème Biome ("Montagnes")** | Boss final et lore complet. | Axel, David | ⚪ Non commencé | **28/02/2029** | Biome testé. |
- | **🎵 Musique & Sons** | Bande-son et effets sonores. | À recruter | ⚪ Non commencé | **31/03/2029** | 5 musiques + 20 effets sonores. |
- | **🌐 Serveurs Cloud** | Déploiement sur AWS/Azure. | **Cyril/Morgan**| ⚪ Non commencé | **30/04/2029** | 100 joueurs simultanés stables. |
- 
- | **🎮 Tests Massifs** | Feedback et corrections finales. | Équipe | ⚪ Non commencé | **30/06/2029** | 90% de satisfaction. |
+**Prototype jouable localement**
 
-➡️ **Durée** : **6 mois**.
+Un nouveau contributeur doit pouvoir :
 
----
----
-### 🟢 **Phase 7 : Lancement Officiel (JUILLET 2029)**
-**Objectif** : **Version 1.0**.
- | Tâche | Sous-tâches | Responsable | État | Échéance | Critères de succès |
- |-------|-------------|-------------|------|----------|-------------------|
- | **🚀 Lancement v1.0** | Déploiement final. | Équipe | ⚪ Non commencé | **01/07/2029** | 500 joueurs le jour J. |
- | **📦 Mises à Jour Automatiques** | Système de patchs. | **Cyril/Morgan** | ⚪ Non commencé | **15/07/2029** | Mises à jour sans downtime. |
- | **🎁 Événements de Lancement** | Tournois, cadeaux. | **Cyril/Morgan** | ⚪ Non commencé | **31/07/2029** | 2000 joueurs actifs la 1ère semaine. |
-
----
----
-### 🟢 **Phase 8 : Post-Lancement (AOÛT 2029 - ...)**
-**Objectif** : **Améliorations continues**.
- | Tâche | Échéance | Notes |
- |-------|----------|-------|
- | Nouveau biome (tous les 6 mois) | À partir de 2030 | Selon la demande. |
- | Nouvelle classe (tous les ans) | 2030 | Ingénieur. |
- | Mode Hardcore | 2030 | Permadeath. |
- | Version Mobile (Optionnel) | 2031+ | Si ressources disponibles. |
+1. récupérer le projet ;
+2. lancer le serveur ;
+3. lancer le client ;
+4. se connecter ;
+5. apparaître dans le monde ;
+6. se déplacer ;
+7. voir les autres joueurs.
 
 ---
 
----
-## 📊 **Nouveaux KPIs Réalistes**
- | Métrique | Objectif Phase 1 | Objectif Phase 2 | Objectif Final |
- |----------|------------------|------------------|----------------|
- | **Joueurs simultanés** | - | 20 | 100+ (lancement) |
- | **Taux de rétention (7j)** | - | 20% | 50% |
- | **Nombre de bugs critiques** | 0 (doc) | 2 max | 0 |
- | **Satisfaction** | - | 70% | 90% |
- | **FPS moyen** | - | 45 | 60+ |
+# 🟢 Phase 2 — Boucle de jeu minimale
+
+**Période : janvier → mars 2027**
+
+### Objectif
+
+Passer d'un prototype technique à une véritable **boucle de gameplay**.
+
+| Tâche                     | Sous-tâches                                         | État      | Critère de succès                               |
+| ------------------------- | --------------------------------------------------- | --------- | ----------------------------------------------- |
+| 🎒 **Inventaire jouable** | Ramassage, ajout, retrait et utilisation des objets | ⚪ À faire | Le joueur peut récupérer et utiliser des objets |
+| 🧱 **Objets du monde**    | Ressources et objets interactifs                    | ⚪ À faire | Des objets existent réellement dans le monde    |
+| ❤️ **État du joueur**     | Santé et états de base                              | ⚪ À faire | Le serveur conserve l'état du joueur            |
+| 🍖 **Survie**             | Premiers besoins de survie                          | ⚪ À faire | Une boucle de survie minimale fonctionne        |
+| ⚔️ **Combat PvE**         | Premier ennemi et dégâts                            | ⚪ À faire | Le joueur peut combattre un ennemi              |
+| 🏚️ **Exploration**       | Points d'intérêt et environnement                   | ⚪ À faire | La carte contient des éléments à explorer       |
+| 💾 **Sauvegarde**         | Persistance des données du joueur                   | ⚪ À faire | La progression est conservée après reconnexion  |
+
+### 🎯 Jalon de sortie
+
+**Première boucle de gameplay**
+
+```text
+Explorer
+   ↓
+Trouver une ressource
+   ↓
+La récupérer
+   ↓
+La conserver dans l'inventaire
+   ↓
+L'utiliser / la transformer
+   ↓
+Continuer à explorer
+```
 
 ---
+
+# 🟡 Phase 3 — Prototype multijoueur
+
+**Période : avril → juin 2027**
+
+### Objectif
+
+Permettre à plusieurs joueurs de tester ensemble une petite partie du monde.
+
+| Tâche                             | Sous-tâches                         | État      | Critère de succès                                           |
+| --------------------------------- | ----------------------------------- | --------- | ----------------------------------------------------------- |
+| 👥 **Multijoueur renforcé**       | Synchronisation complète des états  | ⚪ À faire | Plusieurs joueurs peuvent jouer simultanément               |
+| 🌐 **Réseau**                     | Gestion des déconnexions et erreurs | ⚪ À faire | Les erreurs réseau ne cassent pas la partie                 |
+| 🗺️ **Monde persistant**          | État partagé du monde               | ⚪ À faire | Les éléments persistants sont conservés                     |
+| 🎒 **Inventaire partagé serveur** | Validation côté serveur             | ⚪ À faire | Les données critiques sont contrôlées par le serveur        |
+| ⚔️ **PvE multijoueur**            | Ennemis et interactions communes    | ⚪ À faire | Plusieurs joueurs peuvent participer au gameplay            |
+| 🧪 **Tests multi-joueurs**        | Tests automatisés et manuels        | ⚪ À faire | Les problèmes de synchronisation importants sont identifiés |
+
+### 🎯 Jalon de sortie
+
+**Première session multijoueur jouable.**
+
 ---
-## 🔗 **Dépendances (Mise à Jour)**
+
+# 🟡 Phase 4 — Alpha communautaire
+
+**Période : juillet → septembre 2027**
+
+### Objectif
+
+Faire tester le prototype par des **contributeurs et premiers joueurs externes**.
+
+| Tâche                  | Sous-tâches                         | État      | Critère de succès                                               |
+| ---------------------- | ----------------------------------- | --------- | --------------------------------------------------------------- |
+| 👥 **Tests externes**  | Inviter des contributeurs           | ⚪ À faire | Des personnes extérieures testent le jeu                        |
+| 🐛 **Feedback**        | Bugs, problèmes UX, suggestions     | ⚪ À faire | Les problèmes sont centralisés                                  |
+| 📊 **Instrumentation** | Suivi des erreurs et performances   | ⚪ À faire | Les problèmes importants sont mesurables                        |
+| ⚙️ **Optimisation**    | Client, serveur et réseau           | ⚪ À faire | Les performances sont acceptables                               |
+| 📚 **Onboarding**      | Installation et première partie     | ⚪ À faire | Un nouveau testeur peut commencer sans aide directe             |
+| 🔐 **Sécurité**        | Validation des données côté serveur | ⚪ À faire | Les actions critiques ne peuvent pas être falsifiées facilement |
+
+### 🎯 Jalon de sortie
+
+**Prototype testable par une petite communauté.**
+
+---
+
+# 🟠 Phase 5 — Gameplay étendu
+
+**Période : octobre 2027 → mars 2028**
+
+### Objectif
+
+Commencer à construire les systèmes qui donneront au jeu son identité.
+
+| Tâche                | Sous-tâches                          | État                | Critère de succès                            |
+| -------------------- | ------------------------------------ | ------------------- | -------------------------------------------- |
+| 🛠️ **Craft**        | Recettes et fabrication              | ⚪ À faire           | Plusieurs objets peuvent être fabriqués      |
+| 💰 **Économie**      | Commerce entre joueurs               | 🟡 En développement | Les échanges fonctionnent correctement       |
+| ⚔️ **Combat avancé** | Plusieurs ennemis et mécaniques      | ⚪ À faire           | Le combat offre plusieurs possibilités       |
+| 🌍 **Monde**         | Nouveaux environnements              | ⚪ À faire           | Le monde devient progressivement plus riche  |
+| 📖 **Lore**          | Intégration du lore dans le gameplay | ⚪ À faire           | Le joueur découvre progressivement l'univers |
+| 📜 **Quêtes**        | Premières quêtes                     | ⚪ À faire           | Les joueurs peuvent suivre des objectifs     |
+
+### 🎯 Jalon de sortie
+
+**Une expérience de survie cohérente et répétable.**
+
+---
+
+# 🟠 Phase 6 — Alpha avancée
+
+**Période : avril → septembre 2028**
+
+### Objectif
+
+Augmenter la profondeur du jeu et la taille des tests.
+
+| Tâche                    | Sous-tâches                           | État      | Critère de succès                                 |
+| ------------------------ | ------------------------------------- | --------- | ------------------------------------------------- |
+| 👥 **Groupes / guildes** | Création et gestion                   | ⚪ À faire | Plusieurs joueurs peuvent former un groupe        |
+| 🏪 **Économie avancée**  | Marché et circulation des ressources  | ⚪ À faire | L'économie peut fonctionner sur plusieurs joueurs |
+| 🗺️ **Nouveaux biomes**  | Environnements supplémentaires        | ⚪ À faire | Plusieurs zones distinctes sont jouables          |
+| 🎭 **Progression**       | Caractéristiques et spécialisations   | ⚪ À faire | Les joueurs ont des choix de progression          |
+| 📖 **Quêtes avancées**   | Missions liées au monde               | ⚪ À faire | Le lore influence le gameplay                     |
+| 🌐 **Serveur distant**   | Premier environnement de test distant | ⚪ À faire | Des joueurs externes peuvent se connecter         |
+
+### 🎯 Jalon de sortie
+
+**Alpha jouable à plus grande échelle.**
+
+---
+
+# 🔵 Phase 7 — Bêta
+
+**Période : à définir selon les résultats des phases précédentes**
+
+### Objectif
+
+Stabiliser le jeu avant une éventuelle sortie publique.
+
+Les priorités seront :
+
+* 🐛 Correction des bugs critiques
+* ⚡ Optimisation des performances
+* 🔐 Renforcement de la sécurité
+* 🌐 Stabilité réseau
+* 💾 Fiabilité de la persistance
+* 🧪 Tests à grande échelle
+* 🎮 Équilibrage du gameplay
+* 📚 Documentation joueur et développeur
+* 🛠️ Outils de déploiement
+* 📊 Analyse du comportement des joueurs
+
+### 🎯 Jalon de sortie
+
+**Version suffisamment stable pour envisager une sortie publique.**
+
+> La date de cette phase ne sera fixée qu'après les résultats des phases précédentes.
+
+---
+
+# 🚀 Phase 8 — Version 1.0
+
+**Date : à définir**
+
+### Objectif
+
+Publier une première version complète et stable du jeu.
+
+Les critères de lancement seront définis à partir des résultats de la bêta.
+
+La version 1.0 devra notamment disposer de :
+
+* 🌍 Un monde jouable
+* 👥 Un multijoueur stable
+* ⚔️ Des mécaniques de combat
+* 🎒 Un système d'inventaire
+* 🛠️ Un système de craft
+* 💰 Une économie fonctionnelle
+* 📖 Du contenu et du lore
+* 🔐 Une infrastructure sécurisée
+* 💾 Une persistance fiable
+* 🛠️ Une infrastructure de déploiement stable
+
+---
+
+# ♾️ Phase 9 — Post-lancement
+
+Après la version 1.0, le développement pourra évoluer selon les besoins réels de la communauté.
+
+Les futures possibilités comprennent notamment :
+
+* 🗺️ Nouveaux biomes
+* ⚔️ Nouvelles mécaniques de combat
+* 🎭 Nouvelles spécialisations
+* 📖 Nouvelles histoires et quêtes
+* 👥 Nouvelles fonctionnalités sociales
+* 🎉 Événements
+* 🏆 Nouveaux objectifs
+* 📱 Éventuellement une version mobile
+* 🧩 Nouvelles fonctionnalités proposées par la communauté
+
+Aucune fréquence fixe n'est imposée à ce stade.
+
+---
+
+# 📊 KPIs
+
+Les objectifs seront adaptés progressivement au niveau de maturité du projet.
+
+| Métrique              |              Prototype |                                   Alpha |            Bêta / 1.0 |
+| --------------------- | ---------------------: | --------------------------------------: | --------------------: |
+| 👥 Joueurs simultanés |                     2+ |                                     10+ |             À définir |
+| 🧪 Tests automatisés  |         En progression | Forte couverture des systèmes critiques |     Couverture stable |
+| 🐛 Bugs critiques     |             0 bloquant |                             Très faible |            0 bloquant |
+| ⚡ Performance         |          Fonctionnelle |                               Optimisée |                Stable |
+| 👤 Testeurs externes  | Quelques contributeurs |                          Groupe de test | Communauté plus large |
+| 🔄 Rétention          |              À mesurer |                               À mesurer |             À définir |
+
+> Les chiffres seront ajustés à partir de données réelles plutôt que fixés plusieurs années à l'avance.
+
+---
+
+# 🔗 Dépendances
+
 ```mermaid
 graph TD
-    A[GDD] --> B[TDD]
-    B --> C[Prototype Client]
-    C --> D[Serveur Rust]
-    D --> E[Communication Client-Serveur]
-    E --> F[Alpha Fermée]
-    F --> G[Alpha Ouverte]
-    G --> H[Bêta Fermée]
-    H --> I[Bêta Ouverte]
-    I --> J[Lancement v1.0]
+    A[Prototype actuel] --> B[Client 3D jouable]
+    B --> C[Multijoueur stable]
+    C --> D[Boucle de gameplay]
+    D --> E[Persistance]
+    E --> F[Prototype multijoueur]
+    F --> G[Alpha communautaire]
+    G --> H[Gameplay étendu]
+    H --> I[Alpha avancée]
+    I --> J[Bêta]
+    J --> K[Lancement v1.0]
+    K --> L[Post-lancement]
+```
+
+---
+
+# 🧭 Priorité actuelle
+
+> ## 🎯 **Rendre The Last Signal jouable.**
+
+Les prochaines priorités sont donc :
+
+1. 🎮 **Finaliser le client 3D**
+2. 👥 **Stabiliser le multijoueur**
+3. 🗺️ **Obtenir un environnement explorable**
+4. 🎒 **Construire la première boucle de gameplay**
+5. 🧪 **Tester avec des contributeurs**
+6. 🐛 **Corriger selon les retours**
+7. 🔁 **Répéter le cycle**
+
+Les fonctionnalités plus lointaines — guildes, classes, PvP avancé, nouveaux biomes, événements, etc. — pourront être développées lorsque les fondations seront suffisamment solides.
+
+---
+
+## 💡 Principe de développement
+
+**The Last Signal ne cherche pas à tout construire d'un coup.**
+
+Le projet avance par étapes :
+
+```text
+Prototype technique
+        ↓
+Prototype jouable
+        ↓
+Boucle de gameplay
+        ↓
+Multijoueur
+        ↓
+Tests communautaires
+        ↓
+Alpha
+        ↓
+Bêta
+        ↓
+Version 1.0
+        ↓
+Évolution du monde
+```
+
+> **Construire → Tester → Corriger → Améliorer → Recommencer.** 🚀
