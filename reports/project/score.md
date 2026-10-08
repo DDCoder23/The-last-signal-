@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-08 18:03:03
+**Date :** 2026-10-08 20:12:05
 
 # 64/100
 
@@ -6799,55 +6799,43 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 33 > 120 caractères.
+- **Message :** Ligne 48 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 179 > 120 caractères.
+- **Message :** Ligne 317 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 249 > 120 caractères.
+- **Message :** Ligne 363 > 120 caractères.
 
 - **module :** markdown
 
 ## ⚠️ Warning
 - **Module :** markdown
-- **Message :** Ligne 251 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 271 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 299 > 120 caractères.
-
-- **module :** markdown
-
-## ⚠️ Warning
-- **Module :** markdown
-- **Message :** Ligne 478 > 120 caractères.
+- **Message :** Ligne 546 > 120 caractères.
 
 - **module :** markdown
 
 ## ❌ Error
 - **Module :** titles
-- **Message :** README.md: contient 18 titres H1 (1 attendu).
+- **Message :** README.md: contient 23 titres H1 (1 attendu).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:409 saut de niveau H1 → H3.
+- **Message :** README.md:81 saut de niveau H1 → H3.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** README.md:473 saut de niveau H1 → H3.
 
 - **module :** titles
 
@@ -6865,19 +6853,19 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:378 titre dupliqué (déjà présent dans CONTRIBUTING.md:206).
+- **Message :** README.md:442 titre dupliqué (déjà présent dans CONTRIBUTING.md:206).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:439 titre dupliqué (déjà présent dans README_ESP.md:444).
+- **Message :** README.md:503 titre dupliqué (déjà présent dans README_ESP.md:444).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** README.md:455 titre dupliqué (déjà présent dans README_ESP.md:460).
+- **Message :** README.md:523 titre dupliqué (déjà présent dans README_ESP.md:460).
 
 - **module :** titles
 
@@ -8135,7 +8123,19 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/README.md:178 titre dupliqué (déjà présent dans README.md:463).
+- **Message :** docs/README.md:45 titre dupliqué (déjà présent dans README.md:361).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/README.md:72 titre dupliqué (déjà présent dans README.md:460).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** docs/README.md:178 titre dupliqué (déjà présent dans README.md:531).
 
 - **module :** titles
 
@@ -8559,7 +8559,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans docs/README.md:45).
+- **Message :** docs/gdd/02_UNIVERS.md:3 titre dupliqué (déjà présent dans README.md:361).
 
 - **module :** titles
 
@@ -10773,7 +10773,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** docs/gdd/README.md:36 titre dupliqué (déjà présent dans docs/README.md:45).
+- **Message :** docs/gdd/README.md:36 titre dupliqué (déjà présent dans README.md:361).
 
 - **module :** titles
 
