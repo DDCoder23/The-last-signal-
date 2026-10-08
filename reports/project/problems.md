@@ -1,14 +1,14 @@
 # Documentation Problems
 
-Generated: 2026-10-08 20:31:32
+Generated: 2026-10-08 20:50:14
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|Errors|473|
-|Warnings|7355|
-|**Total**|**7833**|
+|Errors|474|
+|Warnings|7363|
+|**Total**|**7842**|
 
 ---
 
@@ -9445,27 +9445,37 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 17 > 120 caractères.
+- **Message :** Ligne 11 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 18 > 120 caractères.
+- **Message :** Ligne 13 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 19 > 120 caractères.
+- **Message :** Ligne 27 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 20 > 120 caractères.
+- **Message :** Ligne 28 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 21 > 120 caractères.
+- **Message :** Ligne 29 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 30 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 31 > 120 caractères.
 
 ## Warning
 
@@ -9495,92 +9505,52 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 47 > 120 caractères.
+- **Message :** Ligne 37 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 48 > 120 caractères.
+- **Message :** Ligne 38 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 49 > 120 caractères.
+- **Message :** Ligne 84 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 50 > 120 caractères.
+- **Message :** Ligne 85 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 51 > 120 caractères.
+- **Message :** Ligne 86 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 62 > 120 caractères.
+- **Message :** Ligne 87 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 63 > 120 caractères.
+- **Message :** Ligne 88 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 64 > 120 caractères.
+- **Message :** Ligne 89 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 65 > 120 caractères.
+- **Message :** Ligne 90 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 66 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 77 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 78 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 79 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 80 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 81 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 92 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 93 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 94 > 120 caractères.
+- **Message :** Ligne 91 > 120 caractères.
 
 ## Warning
 
@@ -9590,27 +9560,102 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 107 > 120 caractères.
+- **Message :** Ligne 116 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 108 > 120 caractères.
+- **Message :** Ligne 183 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Espace en fin de ligne (2).
+- **Message :** Ligne 227 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Espace en fin de ligne (3).
+- **Message :** Ligne 235 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Espace en fin de ligne (4).
+- **Message :** Ligne 236 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 237 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 238 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 239 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 240 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 241 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 242 > 120 caractères.
+
+## Error
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md: contient 5 titres H1 (1 attendu).
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:273 saut de niveau H1 → H3.
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:70 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:93 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:114 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:135 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:156 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:181 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:40).
+
+## Warning
+
+- **Module :** titles
+- **Message :** docs_ENG/ROADMAP_ENG.md:189 titre dupliqué (déjà présent dans docs_ENG/ROADMAP_ENG.md:164).
 
 ---
 
