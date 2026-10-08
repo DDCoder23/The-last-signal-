@@ -1,149 +1,285 @@
-# 🗺️ **ROADMAP - The Last Signal**
-> *Post-apocalyptic survival MMORPG in a persistent world*  
-> **Last updated**: July 16, 2026  
-> **Version**: 0.1.0 (Pre-Prototype)  
+# 🗺️ **ROADMAP — The Last Signal**
+
+> *Post-apocalyptic survival MMORPG in a persistent world*
+> **Last updated:** October 8, 2026
+> **Current version:** 1.0.13 — Prototype
 
 ---
 
-## 📅 **Development Phases**
+## 🎯 **Project Vision**
+
+The goal of **The Last Signal** is to turn the current technical prototype into a **playable multiplayer survival experience**, then progressively expand it through testing with contributors and players.
+
+The priority is not to predict every feature years in advance, but to build a solid foundation, make it playable, test it, and improve it continuously.
+
+> **Build → Test → Fix → Improve → Repeat**
 
 ---
 
-### 🟡 **Phase 1: Documentation & Preparation (JULY 2026 - MARCH 2027)**
-**Objective**: Finalize **all project documentation** and prepare the development pipeline without rushing.
+# 📅 **Development Phases**
 
-| Task | Subtasks | Owner | Status | Target Date | Success Criteria |
-|------|----------|-------|--------|-------------|------------------|
-| **📚 Finalize GDD** | Complete the remaining 53 files (mechanics, lore, system designs). | **Cyril / Morgan** | 🟡 In progress | **2026-11-30** | 100% of GDD validated by Morgan and shared with the team. |
-| **🏗 Finalize TDD** | Technical architecture, network protocols, database schemas. | **Cyril / Morgan** | ⚪ Not started | **2027-01-15** | 100% of TDD validated by Morgan and shared with the team. |
-| **📖 Lore & Universe** | World history, factions, key characters, and global events. | **Cyril / Morgan** + Louanne | ⚪ Not started | **2027-02-28** | Consistent lore integrated into GDD. |
-| **🎮 Gameplay Design** | Survival systems, combat, crafting, economy (detailed specs). | **Cyril** | ⚪ Not started | **2027-03-15** | All gameplay systems specified in GDD. |
-| **📂 Project Setup** | Directory layout, coding standards, CI/CD pipelines. | **Cyril / Morgan** | ⚪ Not started | **2027-03-31** | Repository fully prepared for development. |
+## 🟡 **Phase 1 — Playable Prototype**
 
-➡️ **Duration**: **9 months** → **Absolute priority on documentation and design clarity**.
+### **October 2026 – December 2026**
 
----
+**Objective:** Turn the current prototype into a coherent and playable local multiplayer experience.
 
-### 🟡 **Phase 2: Minimal Prototyping (APRIL 2027 - SEPTEMBER 2027)**
-**Objective**: Build a **playable prototype** featuring core survival mechanics.
+| Task                    | Subtasks                                                                     | Status                     | Target  |
+| ----------------------- | ---------------------------------------------------------------------------- | -------------------------- | ------- |
+| **🎮 3D Client**        | Continue the transition from the 2D prototype to the VisPy-based 3D client.  | 🟡 In progress             | Q4 2026 |
+| **🌍 3D Map**           | Heightmap, colors, collisions and basic environment rendering.               | 🟡 In progress             | Q4 2026 |
+| **👥 Multiplayer**      | Player connection, movement synchronization and visibility of other players. | 🟡 In progress             | Q4 2026 |
+| **🌐 Network Protocol** | Stabilize packets and player/session synchronization.                        | 🟡 In progress             | Q4 2026 |
+| **🔐 Authentication**   | Login, authentication and temporary protection against repeated failures.    | 🟢 Implemented / improving | Q4 2026 |
+| **🎒 Inventory**        | Continue stabilizing inventory and item management.                          | 🟢 Implemented / improving | Q4 2026 |
+| **💰 Market**           | Stabilize the existing market and transaction systems.                       | 🟡 In progress             | Q4 2026 |
+| **🧪 Tests**            | Maintain and expand Python, Rust and network tests.                          | 🟡 In progress             | Q4 2026 |
+| **📚 Documentation**    | Keep technical and contributor documentation synchronized with the codebase. | 🟡 In progress             | Q4 2026 |
+| **▶️ Local Launch**     | Make it easy for a contributor to launch the server and client locally.      | 🟡 In progress             | Q4 2026 |
 
-| Task | Subtasks | Owner | Status | Target Date | Success Criteria |
-|------|----------|-------|--------|-------------|------------------|
-| **🎮 Client Prototype (Python)** | Basic 2D rendering, player movement, interaction (picking up items). | **Cyril / Morgan** | ⚪ Not started | **2027-06-30** | Player can move and interact with 3 items. |
-| **🦀 Rust Server (MVP)** | Support 10 concurrent connections, position synchronization. | **Cyril / Morgan** | ⚪ Not started | **2027-08-15** | Stable server with 10 simultaneous players. |
-| **🗄 Database (PostgreSQL)** | Schema for players, inventories, and persistent world state. | **Cyril / Morgan** | ⚪ Not started | **2027-07-30** | Functional local database. |
-| **🎨 Minimal Assets** | 1 tilemap ("Ruins" biome), 1 player sprite, 3 item sprites. | Axel, David | ⚪ Not started | **2027-08-30** | Assets integrated and animated. |
-| **🔧 Build Tooling** | Automation scripts to launch client/server locally. | **Cyril / Morgan** | ⚪ Not started | **2027-09-30** | Single command to start the full game environment. |
+### 🎯 Milestone
 
-➡️ **Duration**: **6 months** → **Playable local MVP**.
+A new contributor should be able to:
 
----
-
-### 🟡 **Phase 3: Closed Alpha (OCTOBER 2027 - DECEMBER 2027)**
-**Objective**: **Internal playable release** with complete survival mechanics.
-
-| Task | Subtasks | Owner | Status | Target Date | Success Criteria |
-|------|----------|-------|--------|-------------|------------------|
-| **🌐 Client-Server Protocol** | Finalized network protocol (WebSockets/TCP), action synchronization. | **Cyril / Morgan** | ⚪ Not started | **2027-10-31** | 20 players without desynchronization. |
-| **⚔️ PvE Combat (Basic)** | 1 enemy archetype, basic attack patterns, damage resolution. | **Cyril / Morgan** | ⚪ Not started | **2027-11-30** | Player can defeat 3 different enemy types. |
-| **🏺 Inventory & Crafting** | Gathering, storage, and crafting 5 items. | **Cyril / Morgan** | ⚪ Not started | **2027-12-15** | Player can craft a sword and a potion. |
-| **🌍 Static World** | 1 biome ("Ruins") with resources and points of interest. | **Cyril / Morgan** + Axel | ⚪ Not started | **2027-12-31** | Explorable 200x200 tile world. |
-| **👥 Survival System** | Hunger and health (2 core survival metrics). | **Cyril / Morgan** | ⚪ Not started | **2027-12-31** | Player must manage nutrition to survive. |
-
-➡️ **Duration**: **3 months** → **Playable internal build**.
+1. Clone the repository.
+2. Start the server.
+3. Start the client.
+4. Connect to the server.
+5. See their character in the world.
+6. Move around.
+7. See other connected players.
 
 ---
 
-### 🟡 **Phase 4: Open Alpha (JANUARY 2028 - JUNE 2028)**
-**Objective**: **Playtesting with friends and community contributors**.
+## 🟡 **Phase 2 — Minimal Gameplay Loop**
 
-| Task | Subtasks | Owner | Status | Target Date | Success Criteria |
-|------|----------|-------|--------|-------------|------------------|
-| **👥 Guild System (Basic)** | Guild creation and member management. | **Cyril / Morgan** | ⚪ Not started | **2028-02-29** | 3 active guilds created. |
-| **💰 Minimal Economy** | Player-to-player item trading. | **Cyril / Morgan** | ⚪ Not started | **2028-03-31** | 10 tradable items. |
-| **🌑 2nd Biome ("Forest")** | New enemy types and gathering resources. | Axel, David | ⚪ Not started | **2028-04-30** | Biome integrated and tested. |
-| **🔒 Persistence & Auth** | Account management, progress save/load. | **Cyril / Morgan** | ⚪ Not started | **2028-05-31** | Players can reliably resume saved sessions. |
-| **🐛 Fixes & Optimizations** | Major bug resolution, latency and frame rate optimizations. | **Cyril / Morgan** | ⚪ Not started | **2028-06-30** | Stable 60 FPS, 0 critical blockers. |
+### **January 2027 – March 2027**
 
-➡️ **Duration**: **6 months** → **Stable external test release**.
+**Objective:** Add the first complete gameplay loop on top of the playable prototype.
 
----
+| Task                      | Subtasks                                                        | Status    |
+| ------------------------- | --------------------------------------------------------------- | --------- |
+| **🎒 Inventory Gameplay** | Make inventory interactions usable during gameplay.             | ⚪ Planned |
+| **🧱 World Objects**      | Add interactable resources and objects.                         | ⚪ Planned |
+| **👤 Player State**       | Health, basic survival state and persistent player information. | ⚪ Planned |
+| **🍖 Survival**           | Introduce the first survival mechanics.                         | ⚪ Planned |
+| **⚔️ Basic PvE**          | Introduce simple enemies and basic combat interactions.         | ⚪ Planned |
+| **🧭 Exploration**        | Give players reasons to explore the environment.                | ⚪ Planned |
+| **💾 Save System**        | Save and restore relevant player progress.                      | ⚪ Planned |
 
-### 🟡 **Phase 5: Closed Beta (JULY 2028 - DECEMBER 2028)**
-**Objective**: **Major feature expansion**.
+### 🎯 Milestone
 
-| Task | Subtasks | Owner | Status | Target Date | Success Criteria |
-|------|----------|-------|--------|-------------|------------------|
-| **⚔️ PvP Combat** | Duels and designated combat arenas. | **Cyril / Morgan** | ⚪ Not started | **2028-08-31** | 10 bug-free PvP encounters. |
-| **🌍 3rd Biome ("Desert")** | Biome boss, rare mineral deposits. | Axel, David | ⚪ Not started | **2028-09-30** | Balanced biome gameplay. |
-| **🛠 Advanced Crafting** | 20 recipes, upgraded crafting stations. | **Cyril / Morgan** | ⚪ Not started | **2028-10-31** | 1 craftable item per gear category. |
-| **🎭 2 Character Classes** | Survivor and Fighter (unique skill trees). | **Cyril / Morgan** | ⚪ Not started | **2028-11-30** | 2 fully functional classes. |
-| **📖 Main Quests** | 3 narrative quests tied to core lore. | Louanne + **Cyril / Morgan** | ⚪ Not started | **2028-12-31** | 1 quest completed per playtester. |
+The first complete gameplay loop should be possible:
 
-➡️ **Duration**: **6 months** → **Feature-complete beta build**.
+**Explore → Find a resource → Collect it → Manage it in the inventory → Use or transform it → Continue exploring**
 
 ---
 
-### 🟡 **Phase 6: Open Beta (JANUARY 2029 - JUNE 2029)**
-**Objective**: **Scale testing and launch preparation**.
+## 🟡 **Phase 3 — Multiplayer Prototype**
 
-| Task | Subtasks | Owner | Status | Target Date | Success Criteria |
-|------|----------|-------|--------|-------------|------------------|
-| **🌎 4th Biome ("Mountains")** | Endgame world boss and narrative climax. | Axel, David | ⚪ Not started | **2029-02-28** | Biome fully tested. |
-| **🎵 Audio & Sound Design** | Original soundtrack and immersive sound effects. | To be recruited | ⚪ Not started | **2029-03-31** | 5 music tracks + 20 sound effects. |
-| **🌐 Cloud Infrastructure** | Multi-server deployment on AWS / Azure. | **Cyril / Morgan** | ⚪ Not started | **2029-04-30** | 100 concurrent players stable. |
-| **🎮 Stress Testing** | Community feedback and final polish. | Team | ⚪ Not started | **2029-06-30** | 90%+ positive feedback rate. |
+### **April 2027 – June 2027**
 
-➡️ **Duration**: **6 months**.
+**Objective:** Make the multiplayer architecture reliable enough to support real gameplay.
 
----
+| Task                               | Subtasks                                                                      | Status    |
+| ---------------------------------- | ----------------------------------------------------------------------------- | --------- |
+| **👥 Multiplayer Synchronization** | Synchronize relevant player states reliably.                                  | ⚪ Planned |
+| **🌐 Network Reliability**         | Handle disconnects, invalid packets and network errors.                       | ⚪ Planned |
+| **🌍 Persistent World**            | Move from a purely technical multiplayer prototype toward a persistent world. | ⚪ Planned |
+| **🎒 Server-side Inventory**       | Ensure inventory state is correctly managed by the server.                    | ⚪ Planned |
+| **⚔️ Multiplayer PvE**             | Allow multiple players to interact with the PvE environment.                  | ⚪ Planned |
+| **🧪 Multiplayer Tests**           | Expand automated and integration tests for multiplayer systems.               | ⚪ Planned |
 
-### 🟢 **Phase 7: Official Launch (JULY 2029)**
-**Objective**: **Release Version 1.0**.
+### 🎯 Milestone
 
-| Task | Subtasks | Owner | Status | Target Date | Success Criteria |
-|------|----------|-------|--------|-------------|------------------|
-| **🚀 Release v1.0** | Production deployment. | Team | ⚪ Not started | **2029-07-01** | 500 players on Day 1. |
-| **📦 Live Patching System** | Seamless automated updates. | **Cyril / Morgan** | ⚪ Not started | **2029-07-15** | Zero-downtime updates. |
-| **🎁 Launch Events** | Community tournaments and in-game rewards. | **Cyril / Morgan** | ⚪ Not started | **2029-07-31** | 2,000 active players in Week 1. |
+The multiplayer prototype should support a stable gameplay session where several players can interact with the same world.
 
 ---
 
-### 🟢 **Phase 8: Post-Launch (AUGUST 2029+)**
-**Objective**: **Continuous content updates and live operations**.
+## 🟡 **Phase 4 — Community Alpha**
 
-| Task | Target Date | Notes |
-|------|-------------|-------|
-| New Biome (every 6 months) | Starting 2030 | Driven by player demand. |
-| New Class (annual) | 2030 | Engineer archetype. |
-| Hardcore Mode | 2030 | Permadeath ruleset. |
-| Mobile Companion / Client | 2031+ | Optional, resource-dependent. |
+### **July 2027 – September 2027**
 
----
+**Objective:** Put the project in the hands of external contributors and early testers.
 
-## 📊 **Realistic Target KPIs**
+| Task                    | Subtasks                                                             | Status    |
+| ----------------------- | -------------------------------------------------------------------- | --------- |
+| **🧪 External Testing** | Test the playable build with contributors and early players.         | ⚪ Planned |
+| **💬 Feedback**         | Collect and organize gameplay and technical feedback.                | ⚪ Planned |
+| **📊 Instrumentation**  | Add useful measurements for performance and stability.               | ⚪ Planned |
+| **⚡ Optimization**      | Improve client, server and network performance.                      | ⚪ Planned |
+| **📖 Onboarding**       | Make installation, contribution and testing easier for newcomers.    | ⚪ Planned |
+| **🔐 Security**         | Continue reviewing authentication, networking and sensitive systems. | ⚪ Planned |
 
-| Metric | Phase 1 Target | Phase 2 Target | Final Target (v1.0) |
-|:-------|:--------------:|:--------------:|:-------------------:|
-| **Concurrent Players (CCU)** | — | 20 | 100+ (launch) |
-| **7-Day Retention Rate** | — | 20% | 50% |
-| **Critical Blocker Bugs** | 0 (doc) | Max 2 | 0 |
-| **Player Satisfaction** | — | 70% | 90% |
-| **Average Frame Rate** | — | 45 FPS | 60+ FPS |
+### 🎯 Milestone
+
+External contributors should be able to **play the prototype, report problems and contribute improvements without requiring extensive assistance from the maintainers**.
 
 ---
 
-## 🔗 **Milestone Dependencies**
+## 🟡 **Phase 5 — Extended Gameplay**
+
+### **October 2027 – March 2028**
+
+**Objective:** Expand the gameplay systems once the core loop has been validated.
+
+| Task                   | Subtasks                                               | Status    |
+| ---------------------- | ------------------------------------------------------ | --------- |
+| **🛠 Crafting**        | Expand gathering and crafting mechanics.               | ⚪ Planned |
+| **💰 Economy**         | Expand the market and player economy.                  | ⚪ Planned |
+| **⚔️ Advanced Combat** | Improve combat depth and progression.                  | ⚪ Planned |
+| **🌍 World Expansion** | Add more points of interest and environmental content. | ⚪ Planned |
+| **📖 Lore**            | Integrate the universe and narrative into gameplay.    | ⚪ Planned |
+| **📜 Quests**          | Introduce structured objectives and quests.            | ⚪ Planned |
+
+### 🎯 Milestone
+
+The project should provide a broader gameplay experience instead of only a technical prototype.
+
+---
+
+## 🟡 **Phase 6 — Advanced Alpha**
+
+### **April 2028 – September 2028**
+
+**Objective:** Expand the multiplayer and progression systems.
+
+| Task                    | Subtasks                                            | Status    |
+| ----------------------- | --------------------------------------------------- | --------- |
+| **👥 Groups & Guilds**  | Introduce social organization systems.              | ⚪ Planned |
+| **💰 Advanced Economy** | Expand trading and economic systems.                | ⚪ Planned |
+| **🌲 New Biomes**       | Introduce additional environments.                  | ⚪ Planned |
+| **📈 Progression**      | Develop long-term player progression.               | ⚪ Planned |
+| **📜 Advanced Quests**  | Expand narrative and gameplay objectives.           | ⚪ Planned |
+| **🌐 Remote Server**    | Prepare the project for remote multiplayer testing. | ⚪ Planned |
+
+### 🎯 Milestone
+
+The project should be ready for larger-scale testing and a transition toward beta development.
+
+---
+
+## 🟠 **Phase 7 — Beta**
+
+### **Date: To Be Defined**
+
+**Objective:** Stabilize the complete gameplay experience before a potential 1.0 release.
+
+The beta phase will focus primarily on:
+
+* 🧪 Large-scale testing
+* 🔐 Security
+* 🌐 Network stability
+* 💾 Persistence
+* ⚔️ Gameplay balancing
+* 🐛 Bug fixing
+* ⚡ Performance
+* 📚 Documentation
+* 🚀 Deployment
+* 📊 Player and server metrics
+
+### 🎯 Milestone
+
+The game must be stable enough that development can focus primarily on **polish, balancing and reliability rather than foundational systems**.
+
+---
+
+## 🟢 **Phase 8 — Version 1.0**
+
+### **Date: To Be Defined**
+
+**Objective:** Release the first stable version of **The Last Signal Online**.
+
+The final 1.0 scope will be defined according to the results of the beta.
+
+Potential requirements include:
+
+* Stable multiplayer infrastructure
+* Reliable persistence
+* Complete core gameplay loop
+* Stable combat and survival systems
+* Sufficient world content
+* Contributor and player documentation
+* Reliable deployment process
+* No known critical blockers
+
+> **The 1.0 release date will be determined by project readiness, not by an arbitrary calendar deadline.**
+
+---
+
+## 🟢 **Phase 9 — Post-Launch**
+
+### **After 1.0**
+
+**Objective:** Continue improving the game according to player and community feedback.
+
+Potential future additions include:
+
+* 🌍 New biomes
+* ⚔️ New combat systems
+* 🎭 New specializations or classes
+* 📖 Additional stories and quests
+* 👥 Social features
+* 🎉 Community events
+* 📱 Optional mobile companion/client
+* 🛠 Community-driven improvements
+
+The post-launch roadmap will remain flexible and will depend on the project's community, technical capacity and player feedback.
+
+---
+
+# 📊 **Development Metrics**
+
+Rather than fixing arbitrary long-term player numbers now, metrics will evolve with the project.
+
+| Metric                       | Prototype            | Alpha                        | Beta / 1.0                        |
+| ---------------------------- | -------------------- | ---------------------------- | --------------------------------- |
+| **Concurrent Players (CCU)** | 2+                   | 10+                          | TBD                               |
+| **Automated Tests**          | Increasing           | Increasing                   | High coverage of critical systems |
+| **Critical Bugs**            | Minimize             | 0 blockers for test sessions | 0 known critical blockers         |
+| **Performance**              | Playable             | Stable                       | Production-ready                  |
+| **External Testers**         | Initial contributors | Growing community            | Larger testing pool               |
+| **Retention**                | Not yet meaningful   | Measured                     | Used for balancing and evaluation |
+
+These metrics are intended to **measure progress**, not to force development toward arbitrary numbers.
+
+---
+
+# 🔗 **Milestone Dependencies**
 
 ```mermaid
 graph TD
-    A[GDD] --> B[TDD]
-    B --> C[Client Prototype]
-    C --> D[Rust Server MVP]
-    D --> E[Client-Server Protocol]
-    E --> F[Closed Alpha]
-    F --> G[Open Alpha]
-    G --> H[Closed Beta]
-    H --> I[Open Beta]
-    I --> J[Official Launch v1.0]
+    A[Current Prototype] --> B[3D Client]
+    B --> C[Stable Multiplayer]
+    C --> D[Gameplay Loop]
+    D --> E[Persistence]
+    E --> F[Multiplayer Prototype]
+    F --> G[Community Alpha]
+    G --> H[Extended Gameplay]
+    H --> I[Advanced Alpha]
+    I --> J[Beta]
+    J --> K[Version 1.0]
+    K --> L[Post-Launch]
 ```
+
+---
+
+# 🎯 **Current Priority**
+
+The immediate priority is **not adding a large number of new features**.
+
+The priority is to make the existing project **playable, understandable and testable**.
+
+### Current focus:
+
+1. 🎮 Finish stabilizing the 3D client.
+2. 👥 Stabilize multiplayer synchronization.
+3. 🌍 Provide an explorable environment.
+4. 🎒 Establish the first real gameplay loop.
+5. 🧪 Make it easy for contributors to test the project.
+6. 🐛 Fix blockers and regressions.
+7. 🔁 Repeat the cycle with feedback.
+
+> **Build → Test → Fix → Improve → Repeat**
+
+The roadmap will be updated as the project reaches each milestone.
