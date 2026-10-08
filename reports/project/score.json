@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-08T21:23:49.546616",
+    "generated": "2026-10-08T21:40:46.027452",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -11,7 +11,7 @@
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 7825,
+    "problem_count": 7824,
     "details": {
         "markdown": {
             "score": 45,
@@ -42019,7 +42019,7 @@
                 "functions": 317,
                 "documented_modules": 10,
                 "documented_classes": 19,
-                "documented_functions": 53,
+                "documented_functions": 54,
                 "typed_functions": 96,
                 "todo": 4,
                 "long_functions": 17
@@ -43846,13 +43846,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
                     "severity": "warning",
-                    "message": "La fonction 'show'ligne 937 ne possède pas de docstring.",
-                    "module": "python"
-                },
-                {
-                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
-                    "severity": "warning",
-                    "message": "La fonction 'show' ne possède pas d'annotations de type.",
+                    "message": "La fonction 'on_close' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
