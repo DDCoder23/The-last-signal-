@@ -1,14 +1,14 @@
 # Documentation Problems
 
-Generated: 2026-10-08 21:23:50
+Generated: 2026-10-08 21:40:46
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |Errors|474|
-|Warnings|7346|
-|**Total**|**7825**|
+|Warnings|7345|
+|**Total**|**7824**|
 
 ---
 
@@ -598,12 +598,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'show'ligne 937 ne possède pas de docstring.
-
-## Warning
-
-- **Module :** python
-- **Message :** La fonction 'show' ne possède pas d'annotations de type.
+- **Message :** La fonction 'on_close' ne possède pas d'annotations de type.
 
 ---
 

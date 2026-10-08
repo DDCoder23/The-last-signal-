@@ -43772,13 +43772,7 @@
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
         "severity": "warning",
-        "message": "La fonction 'show'ligne 937 ne possède pas de docstring.",
-        "module": "python"
-    },
-    {
-        "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
-        "severity": "warning",
-        "message": "La fonction 'show' ne possède pas d'annotations de type.",
+        "message": "La fonction 'on_close' ne possède pas d'annotations de type.",
         "module": "python"
     },
     {
