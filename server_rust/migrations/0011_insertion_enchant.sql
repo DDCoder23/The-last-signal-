@@ -14,6 +14,8 @@ INSERT INTO enchantments (enchantment_name) VALUES
     ('Renvoie'),
     ('Réparation'),
     ('Blindage'),
+    ('Tranchant'),
+    ('Capturing item'),
     ('luck');
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'épée'
@@ -27,7 +29,9 @@ WHERE enchantment_name IN (
     'Critique',
     'Cryogenisation',
     'Réparation',
-    'Précision'
+    'Précision',
+    'Tranchant'
+    'Capturing item'
 );
 INSERT INTO enchantment_types (enchantment_id, equipment_type)
 SELECT enchantment_id, 'armure'
