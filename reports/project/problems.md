@@ -1,14 +1,14 @@
 # Documentation Problems
 
-Generated: 2026-10-09 19:19:34
+Generated: 2026-10-09 19:32:31
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |Errors|474|
-|Warnings|7344|
-|**Total**|**7823**|
+|Warnings|7363|
+|**Total**|**7842**|
 
 ---
 
@@ -598,7 +598,97 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'on_close' ne possède pas d'annotations de type.
+- **Message :** La fonction 'network_loop' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'process_network_queue' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'handle_packet' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'handle_player_state' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'handle_player_state' dépasse 80 lignes.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'handle_player_remove' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_local_player_id' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_game' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'update_game' dépasse 80 lignes.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'move_player' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'send_position_to_server' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'keyPressEvent' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'keyReleaseEvent' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'paintEvent' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'draw_debug_info' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'draw_local_player' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'draw_remote_player' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'draw_remote_player' dépasse 80 lignes.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'closeEvent' ne possède pas d'annotations de type.
 
 ---
 
@@ -632,6 +722,11 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 - **Module :** python
 - **Message :** La fonction 'main'ligne 10 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
 
 ---
 
