@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-09 16:28:51
+**Date :** 2026-10-09 19:19:33
 
 # 64/100
 
@@ -731,13 +731,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'main'ligne 13 ne possède pas de docstring.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'main' ne possède pas d'annotations de type.
+- **Message :** La fonction 'main'ligne 10 ne possède pas de docstring.
 
 - **module :** python
 
