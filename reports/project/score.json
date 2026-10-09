@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-09T16:28:51.153016",
+    "generated": "2026-10-09T19:32:30.932120",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -11,7 +11,7 @@
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 7824,
+    "problem_count": 7842,
     "details": {
         "markdown": {
             "score": 45,
@@ -42016,13 +42016,13 @@
             "results": {
                 "modules": 63,
                 "classes": 34,
-                "functions": 317,
+                "functions": 332,
                 "documented_modules": 10,
                 "documented_classes": 19,
-                "documented_functions": 54,
+                "documented_functions": 69,
                 "typed_functions": 96,
                 "todo": 4,
-                "long_functions": 17
+                "long_functions": 20
             },
             "problems": [
                 {
@@ -43828,7 +43828,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py",
                     "severity": "warning",
-                    "message": "La fonction 'main'ligne 13 ne possède pas de docstring.",
+                    "message": "La fonction 'main'ligne 10 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
@@ -43846,7 +43846,115 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
                     "severity": "warning",
-                    "message": "La fonction 'on_close' ne possède pas d'annotations de type.",
+                    "message": "La fonction 'network_loop' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'process_network_queue' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'handle_packet' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'handle_player_state' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'handle_player_state' dépasse 80 lignes.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'handle_player_remove' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'get_local_player_id' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_game' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'update_game' dépasse 80 lignes.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'move_player' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'send_position_to_server' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'keyPressEvent' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'keyReleaseEvent' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'paintEvent' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'draw_debug_info' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'draw_local_player' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'draw_remote_player' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'draw_remote_player' dépasse 80 lignes.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py",
+                    "severity": "warning",
+                    "message": "La fonction 'closeEvent' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
