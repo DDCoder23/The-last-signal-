@@ -2,6 +2,7 @@ use std::{
     cell::UnsafeCell,
     ffi::{OsStr, OsString},
     fmt::{self, Write},
+    hash::Hasher,
     marker::PhantomData,
     mem::MaybeUninit,
     panic::{RefUnwindSafe, UnwindSafe},
@@ -101,6 +102,14 @@ impl<T> OnceLock<T> {
     }
 }
 
+impl<T> From<T> for OnceLock<T> {
+    fn from(value: T) -> Self {
+        let cell = Self::new();
+        cell.get_or_init(|| value);
+        cell
+    }
+}
+
 impl<T: Clone> Clone for OnceLock<T> {
     fn clone(&self) -> Self {
         let cell = Self::new();
@@ -164,5 +173,86 @@ pub(crate) fn cargo_env_var(key: &str) -> Result<String, Error> {
             ErrorKind::EnvVarNotFound,
             format!("environment variable {key} not defined"),
         ))
+    }
+}
+
+/// `contains`, `starts_with` and `ends_with` that ignore ASCII case, like
+/// `str::eq_ignore_ascii_case`. Check program names with these (or with
+/// `eq_ignore_ascii_case`), since file names are case insensitive on Windows.
+pub(crate) trait IgnoreAsciiCase {
+    fn contains_ignore_ascii_case(&self, needle: &str) -> bool;
+    fn starts_with_ignore_ascii_case(&self, prefix: &str) -> bool;
+    fn ends_with_ignore_ascii_case(&self, suffix: &str) -> bool;
+}
+
+impl IgnoreAsciiCase for str {
+    fn contains_ignore_ascii_case(&self, needle: &str) -> bool {
+        needle.is_empty()
+            || self
+                .as_bytes()
+                .windows(needle.len())
+                .any(|window| window.eq_ignore_ascii_case(needle.as_bytes()))
+    }
+
+    fn starts_with_ignore_ascii_case(&self, prefix: &str) -> bool {
+        self.as_bytes()
+            .get(..prefix.len())
+            .map_or(false, |start| start.eq_ignore_ascii_case(prefix.as_bytes()))
+    }
+
+    fn ends_with_ignore_ascii_case(&self, suffix: &str) -> bool {
+        self.len().checked_sub(suffix.len()).map_or(false, |start| {
+            self.as_bytes()[start..].eq_ignore_ascii_case(suffix.as_bytes())
+        })
+    }
+}
+
+/// A [`Hasher`] that keeps what is written to it, to turn a value into bytes
+/// that are equal exactly when the values are, as long as its `Hash` impl is
+/// prefix-free like those of `OsStr`, `str` and slices.
+#[derive(Default)]
+pub(crate) struct HashRecorder(Vec<u8>);
+
+impl HashRecorder {
+    pub(crate) fn into_bytes(self) -> Box<[u8]> {
+        self.0.into_boxed_slice()
+    }
+}
+
+impl Hasher for HashRecorder {
+    fn write(&mut self, bytes: &[u8]) {
+        self.0.extend_from_slice(bytes);
+    }
+
+    fn finish(&self) -> u64 {
+        unreachable!("only records what is written")
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::IgnoreAsciiCase;
+
+    #[test]
+    fn ignore_ascii_case() {
+        assert!("x86_64-w64-mingw32-CLANG".contains_ignore_ascii_case("mingw32-clang"));
+        assert!("Clang-CL.exe".contains_ignore_ascii_case("clang-cl"));
+        assert!("zig".contains_ignore_ascii_case(""));
+        assert!(!"zi".contains_ignore_ascii_case("zig"));
+        assert!(!"clang".contains_ignore_ascii_case("clang-cl"));
+
+        assert!("LLVM-ML64".starts_with_ignore_ascii_case("llvm-ml"));
+        assert!(!"llvm-m".starts_with_ignore_ascii_case("llvm-ml"));
+        assert!(!"my-llvm-ml".starts_with_ignore_ascii_case("llvm-ml"));
+
+        assert!("x86_64-w64-mingw32-Clang++".ends_with_ignore_ascii_case("-mingw32-clang++"));
+        assert!("CL".ends_with_ignore_ascii_case("cl"));
+        assert!(!"l".ends_with_ignore_ascii_case("cl"));
+        assert!(!"cl.exe".ends_with_ignore_ascii_case("cl"));
+
+        // Only ASCII letters are folded, and other characters still compare.
+        assert!("Ünïcode-CLANG".contains_ignore_ascii_case("Ünïcode-clang"));
+        assert!(!"ÜNÏCODE-clang".contains_ignore_ascii_case("ünïcode-clang"));
+        assert!(!"\u{212A}ache".starts_with_ignore_ascii_case("kache"));
     }
 }
