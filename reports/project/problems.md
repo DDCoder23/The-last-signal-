@@ -1,6 +1,6 @@
 # Documentation Problems
 
-Generated: 2026-10-10 14:20:56
+Generated: 2026-10-10 14:34:30
 
 ## Summary
 
@@ -2559,28 +2559,28 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 - **Module :** rust
 - **Message :** Function 'ouvrir' sans documentation
-- **line :** 694
+- **line :** 695
 - **suggestion :** Ajoutez /// avant cette function
 
 ## Warning
 
 - **Module :** rust
 - **Message :** Function 'tirer_pondere' sans documentation
-- **line :** 888
+- **line :** 889
 - **suggestion :** Ajoutez /// avant cette function
 
 ## Warning
 
 - **Module :** rust
 - **Message :** Function 'tirer_objet' sans documentation
-- **line :** 914
+- **line :** 915
 - **suggestion :** Ajoutez /// avant cette function
 
 ## Warning
 
 - **Module :** rust
 - **Message :** Function 'tirer_livre' sans documentation
-- **line :** 1295
+- **line :** 1296
 - **suggestion :** Ajoutez /// avant cette function
 
 ---
