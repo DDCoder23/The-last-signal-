@@ -45899,7 +45899,7 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-        "line": 43,
+        "line": 44,
         "severity": "warning",
         "message": "Impl 'Tresor ' sans documentation",
         "suggestion": "Ajoutez /// avant cette impl",
@@ -45907,7 +45907,7 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-        "line": 44,
+        "line": 45,
         "severity": "warning",
         "message": "Function 'new' sans documentation",
         "suggestion": "Ajoutez /// avant cette function",
@@ -45915,7 +45915,7 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-        "line": 636,
+        "line": 694,
         "severity": "warning",
         "message": "Function 'ouvrir' sans documentation",
         "suggestion": "Ajoutez /// avant cette function",
@@ -45923,7 +45923,7 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-        "line": 830,
+        "line": 888,
         "severity": "warning",
         "message": "Function 'tirer_pondere' sans documentation",
         "suggestion": "Ajoutez /// avant cette function",
@@ -45931,7 +45931,7 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-        "line": 856,
+        "line": 914,
         "severity": "warning",
         "message": "Function 'tirer_objet' sans documentation",
         "suggestion": "Ajoutez /// avant cette function",
@@ -45939,7 +45939,7 @@
     },
     {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-        "line": 1237,
+        "line": 1295,
         "severity": "warning",
         "message": "Function 'tirer_livre' sans documentation",
         "suggestion": "Ajoutez /// avant cette function",
@@ -46986,6 +46986,182 @@
         "module": "rust"
     },
     {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 143,
+        "severity": "warning",
+        "message": "Mod 'tests' sans documentation",
+        "suggestion": "Ajoutez /// avant cette mod",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 146,
+        "severity": "warning",
+        "message": "Function 'build_payload' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 156,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_valid' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 164,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_empty' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 170,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_truncated_email_length' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 176,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_truncated_email_body' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 184,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_invalid_email_utf8' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 192,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_missing_password_length' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 200,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_truncated_password_length' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 209,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_truncated_password_body' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 219,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_invalid_password_utf8' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 227,
+        "severity": "warning",
+        "message": "Function 'test_login_payload_trailing_bytes_accepted' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 236,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_valid' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 244,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_empty' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 250,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_truncated_email_length' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 256,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_truncated_email_body' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 264,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_invalid_email_utf8' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 272,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_missing_password_length' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 280,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_truncated_password_length' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 289,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_truncated_password_body' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 299,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_invalid_password_utf8' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs",
+        "line": 307,
+        "severity": "warning",
+        "message": "Function 'test_signup_payload_trailing_bytes_accepted' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
         "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
         "line": 17,
         "severity": "warning",
@@ -47070,6 +47246,118 @@
         "line": 109,
         "severity": "warning",
         "message": "Function 'encode_ban' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 225,
+        "severity": "warning",
+        "message": "Mod 'tests' sans documentation",
+        "suggestion": "Ajoutez /// avant cette mod",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 230,
+        "severity": "warning",
+        "message": "Function 'create_tcp_pair' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 247,
+        "severity": "warning",
+        "message": "Function 'test_packet_type_from_u16_all_valid' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 268,
+        "severity": "warning",
+        "message": "Function 'test_packet_type_from_u16_invalid_values' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 277,
+        "severity": "warning",
+        "message": "Function 'test_encode_ban_temporary' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 283,
+        "severity": "warning",
+        "message": "Function 'test_encode_ban_permanent' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 289,
+        "severity": "warning",
+        "message": "Function 'test_receive_packet_size_zero_fails' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 305,
+        "severity": "warning",
+        "message": "Function 'test_receive_packet_size_one_fails' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 321,
+        "severity": "warning",
+        "message": "Function 'test_receive_packet_exceeds_max_size' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 337,
+        "severity": "warning",
+        "message": "Function 'test_receive_packet_unknown_packet_type' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 355,
+        "severity": "warning",
+        "message": "Function 'test_receive_packet_truncated_header' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 371,
+        "severity": "warning",
+        "message": "Function 'test_receive_packet_truncated_payload' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 389,
+        "severity": "warning",
+        "message": "Function 'test_send_packet_exceeds_max_size' sans documentation",
+        "suggestion": "Ajoutez /// avant cette function",
+        "module": "rust"
+    },
+    {
+        "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs",
+        "line": 403,
+        "severity": "warning",
+        "message": "Function 'test_send_and_receive_roundtrip' sans documentation",
         "suggestion": "Ajoutez /// avant cette function",
         "module": "rust"
     },

@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-10 07:37:07
+**Date :** 2026-10-10 09:09:18
 
 # 64/100
 
@@ -3101,7 +3101,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Impl 'Tresor ' sans documentation
 
-- **line :** 43
+- **line :** 44
 
 - **suggestion :** Ajoutez /// avant cette impl
 
@@ -3111,7 +3111,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'new' sans documentation
 
-- **line :** 44
+- **line :** 45
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3121,7 +3121,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'ouvrir' sans documentation
 
-- **line :** 636
+- **line :** 694
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3131,7 +3131,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'tirer_pondere' sans documentation
 
-- **line :** 830
+- **line :** 888
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3141,7 +3141,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'tirer_objet' sans documentation
 
-- **line :** 856
+- **line :** 914
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3151,7 +3151,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'tirer_livre' sans documentation
 
-- **line :** 1237
+- **line :** 1295
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3731,6 +3731,146 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 - **module :** rust
 
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Mod 'tests' sans documentation
+
+- **line :** 225
+
+- **suggestion :** Ajoutez /// avant cette mod
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'create_tcp_pair' sans documentation
+
+- **line :** 230
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_packet_type_from_u16_all_valid' sans documentation
+
+- **line :** 247
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_packet_type_from_u16_invalid_values' sans documentation
+
+- **line :** 268
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_encode_ban_temporary' sans documentation
+
+- **line :** 277
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_encode_ban_permanent' sans documentation
+
+- **line :** 283
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_receive_packet_size_zero_fails' sans documentation
+
+- **line :** 289
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_receive_packet_size_one_fails' sans documentation
+
+- **line :** 305
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_receive_packet_exceeds_max_size' sans documentation
+
+- **line :** 321
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_receive_packet_unknown_packet_type' sans documentation
+
+- **line :** 337
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_receive_packet_truncated_header' sans documentation
+
+- **line :** 355
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_receive_packet_truncated_payload' sans documentation
+
+- **line :** 371
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_send_packet_exceeds_max_size' sans documentation
+
+- **line :** 389
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_send_and_receive_roundtrip' sans documentation
+
+- **line :** 403
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
 # 📄 /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs
 
 ## ⚠️ Warning
@@ -3748,6 +3888,226 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Message :** Function 'parse_signup_payload' sans documentation
 
 - **line :** 71
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Mod 'tests' sans documentation
+
+- **line :** 143
+
+- **suggestion :** Ajoutez /// avant cette mod
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'build_payload' sans documentation
+
+- **line :** 146
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_valid' sans documentation
+
+- **line :** 156
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_empty' sans documentation
+
+- **line :** 164
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_truncated_email_length' sans documentation
+
+- **line :** 170
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_truncated_email_body' sans documentation
+
+- **line :** 176
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_invalid_email_utf8' sans documentation
+
+- **line :** 184
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_missing_password_length' sans documentation
+
+- **line :** 192
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_truncated_password_length' sans documentation
+
+- **line :** 200
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_truncated_password_body' sans documentation
+
+- **line :** 209
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_invalid_password_utf8' sans documentation
+
+- **line :** 219
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_login_payload_trailing_bytes_accepted' sans documentation
+
+- **line :** 227
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_valid' sans documentation
+
+- **line :** 236
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_empty' sans documentation
+
+- **line :** 244
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_truncated_email_length' sans documentation
+
+- **line :** 250
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_truncated_email_body' sans documentation
+
+- **line :** 256
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_invalid_email_utf8' sans documentation
+
+- **line :** 264
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_missing_password_length' sans documentation
+
+- **line :** 272
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_truncated_password_length' sans documentation
+
+- **line :** 280
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_truncated_password_body' sans documentation
+
+- **line :** 289
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_invalid_password_utf8' sans documentation
+
+- **line :** 299
+
+- **suggestion :** Ajoutez /// avant cette function
+
+- **module :** rust
+
+## ⚠️ Warning
+- **Module :** rust
+- **Message :** Function 'test_signup_payload_trailing_bytes_accepted' sans documentation
+
+- **line :** 307
 
 - **suggestion :** Ajoutez /// avant cette function
 
