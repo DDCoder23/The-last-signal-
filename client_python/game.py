@@ -1079,13 +1079,76 @@ class Game(scene.SceneCanvas):
         print("[GAME] Client 3D arrêté.")
 
 
-def run_game(client: Client | None = None) -> None:
-    """Lance le client 3D."""
+
+
+class VispyWidget:
+    """
+    Adaptateur de lancement : héberge le canvas VisPy existant dans une
+    fenêtre Qt. Le terrain en chunks et le réseau restent gérés par Game.
+
+    joueur_obj est facultatif : il permet de garder une référence vers
+    l'objet métier du joueur si le reste de l'application en possède un.
+    """
+    def __init__(self, client: Client, joueur_obj=None):
+        from PySide6 import QtWidgets, QtCore
+
+        self.joueur = joueur_obj
+        self.open_tresors = []
+        self.game = Game(client)
+
+        self.window = QtWidgets.QMainWindow()
+        self.window.setWindowTitle("The Last Signal")
+        self.window.resize(1280, 760)
+
+        central = QtWidgets.QWidget(self.window)
+        layout = QtWidgets.QVBoxLayout(central)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.setSpacing(4)
+
+        # Game est un SceneCanvas VisPy ; .native est son widget Qt.
+        layout.addWidget(self.game.native, stretch=1)
+
+        self.info_text = QtWidgets.QTextEdit(central)
+        self.info_text.setReadOnly(True)
+        self.info_text.setMaximumHeight(80)
+        self.info_text.setPlainText(
+            "The Last Signal — Échap : quitter. "
+            "Le déplacement et la synchronisation réseau sont gérés par le client 3D."
+        )
+        layout.addWidget(self.info_text)
+
+        self.window.setCentralWidget(central)
+        self.window.installEventFilter(self)
+
+        # Le canvas reçoit les événements clavier pour garder les contrôles VisPy.
+        self.game.native.setFocusPolicy(QtCore.Qt.FocusPolicy.StrongFocus)
+        self.game.native.setFocus()
+
+    def show(self):
+        self.window.show()
+        self.game.native.setFocus()
+
+    def close(self):
+        self.game.close()
+        self.window.close()
+
+    def eventFilter(self, watched, event):
+        # La fermeture de la fenêtre doit également arrêter le thread réseau.
+        from PySide6 import QtCore
+        if (
+            watched is self.window
+            and event.type() == QtCore.QEvent.Type.Close
+        ):
+            self.game.close()
+        return False
+
+
+def run_game(client: Client | None = None, joueur_obj=None) -> None:
+    """Lance le client 3D dans une fenêtre Qt."""
 
     if client is None:
         client = Client()
 
-    game = Game(client)
-    game.show()
-
+    widget = VispyWidget(client, joueur_obj=joueur_obj)
+    widget.show()
     app.run()
