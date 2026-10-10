@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 2384
+Run : 2400
 Branch : main
-Commit : 253b298d9fd84826dcfbb640f0d4cc1dfba34a7d
-Date : Thu Oct  8 22:19:34 UTC 2026
+Commit : fdc4b7d71c5151dc2e6360821c0e8cba42726ea9
+Date : Sat Oct 10 07:27:18 UTC 2026
 
 ---
 
@@ -20,12 +20,12 @@ Date : Thu Oct  8 22:19:34 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/integrity_check.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_rust_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_python_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/attack_test.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_secrets.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/client.py
+/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
-/home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
@@ -39,23 +39,23 @@ Date : Thu Oct  8 22:19:34 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/player_state.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
-/home/runner/work/The-last-signal-/The-last-signal-/setup.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/titles.py
+/home/runner/work/The-last-signal-/The-last-signal-/setup.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/recherche.py
 /home/runner/work/The-last-signal-/The-last-signal-/security/vault.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_fuzzing.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/security/test_load.py
@@ -65,8 +65,8 @@ Date : Thu Oct  8 22:19:34 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_splitmix64.py
@@ -81,20 +81,20 @@ Date : Thu Oct  8 22:19:34 UTC 2026
 | Code | Nombre |
 |------|-------:|
 | E231 | 84 |
+| W293 | 76 |
 | E122 | 76 |
-| W293 | 72 |
+| E302 | 56 |
 | E501 | 55 |
-| E302 | 55 |
-| E303 | 40 |
-| E225 | 21 |
-| F401 | 15 |
-| W292 | 7 |
+| E303 | 41 |
+| E225 | 23 |
+| F401 | 14 |
+| W292 | 9 |
 | E305 | 7 |
 | E301 | 6 |
 | E211 | 6 |
-| W391 | 5 |
 | F541 | 5 |
 | E128 | 5 |
+| W391 | 4 |
 | W291 | 4 |
 | E124 | 4 |
 | F841 | 3 |
@@ -104,6 +104,7 @@ Date : Thu Oct  8 22:19:34 UTC 2026
 | E722 | 2 |
 | E402 | 2 |
 | E201 | 2 |
+| F824 | 1 |
 | E741 | 1 |
 | E731 | 1 |
 | E306 | 1 |
@@ -208,9 +209,18 @@ Date : Thu Oct  8 22:19:34 UTC 2026
 | ./client_python/crypto.py | 732 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/crypto.py | 785 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/crypto.py | 841 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/game.py | 1181 | W391 | blank line at end of file |
+| ./client_python/game.py | 1105 | W292 | no newline at end of file |
 | ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
-| ./client_python/main.py | 1 | F401 | 'sys' imported but unused |
+| ./client_python/main.py | 10 | E302 | expected 2 blank lines, found 1 |
+| ./client_python/main.py | 11 | F824 | `global raison` is unused |
+| ./client_python/main.py | 12 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 13 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 14 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 15 | E303 | too many blank lines (3) |
+| ./client_python/main.py | 15 | E225 | missing whitespace around operator |
+| ./client_python/main.py | 36 | E225 | missing whitespace around operator |
+| ./client_python/main.py | 41 | W293 | blank line contains whitespace |
+| ./client_python/main.py | 45 | W292 | no newline at end of file |
 | ./client_python/packet.py | 16 | E225 | missing whitespace around operator |
 | ./client_python/packet.py | 38 | E303 | too many blank lines (2) |
 | ./client_python/packet.py | 59 | E303 | too many blank lines (2) |
@@ -632,7 +642,7 @@ Date : Thu Oct  8 22:19:34 UTC 2026
 
 ## 🧠 Complexity (Radon)
 
-**Average complexity:**  A (3.6630434782608696)
+**Average complexity:**  A (3.7142857142857144)
 
 <details>
 <summary>Show complexity report</summary>
@@ -938,38 +948,27 @@ tests/security/test_fuzzing.py
     F 48:0 random_payload - A
     F 55:0 random_packet - A
 client_python/main.py
-    F 13:0 main - A
+    F 10:0 main - A
 client_python/game.py
-    M 608:4 Game._network_loop - B
-    M 1125:4 Game.on_close - B
-    M 687:4 Game._handle_packet - A
-    M 760:4 Game._handle_player_state - A
-    M 959:4 Game._sync_camera_to_server - A
-    C 19:0 Game - A
-    M 208:4 Game._load_terrain - A
-    M 665:4 Game._process_network_queue - A
-    M 723:4 Game._handle_session - A
-    M 825:4 Game._handle_player_remove - A
-    M 870:4 Game._get_local_player_id - A
-    M 368:4 Game._build_faces - A
-    M 487:4 Game._update_camera_position - A
-    M 1020:4 Game._send_position_to_server - A
-    M 1078:4 Game._on_key_press - A
-    F 1165:0 run_game - A
-    M 181:4 Game._assets_directory - A
-    M 330:4 Game._downsample_height - A
-    M 396:4 Game._load_terrain_colors - A
-    M 513:4 Game._terrain_height_at - A
-    M 903:4 Game._create_or_update_remote_player - A
-    M 1052:4 Game._update - A
+    M 531:4 Game.update_game - C
+    M 216:4 Game.network_loop - B
+    M 342:4 Game.handle_player_state - B
+    C 17:0 Game - A
+    M 268:4 Game.process_network_queue - A
+    M 490:4 Game.get_local_player_id - A
+    F 1080:0 run_game - A
+    M 304:4 Game.handle_packet - A
+    M 443:4 Game.handle_player_remove - A
+    M 620:4 Game.move_player - A
+    M 681:4 Game.send_position_to_server - A
+    M 746:4 Game.paintEvent - A
+    M 940:4 Game.draw_remote_player - A
+    M 1029:4 Game.closeEvent - A
+    M 712:4 Game.keyPressEvent - A
+    M 727:4 Game.keyReleaseEvent - A
+    M 832:4 Game.draw_debug_info - A
     M 74:4 Game.__init__ - A
-    M 461:4 Game._place_camera_initially - A
-    M 561:4 Game._server_x_to_world - A
-    M 574:4 Game._server_y_to_world - A
-    M 584:4 Game._world_x_to_server - A
-    M 594:4 Game._world_z_to_server - A
-    M 1107:4 Game._on_key_release - A
-    M 1114:4 Game._on_mouse_press - A
+    M 898:4 Game.draw_local_player - A
 client_python/crypto.py
     C 235:0 RotorState - A
     M 252:4 RotorState.update - A
@@ -1058,8 +1057,8 @@ client_python/packets/chat.py
     M 6:4 ChatPacket.__init__ - A
     M 15:4 ChatPacket.from_payload - A
 
-368 blocks (classes, functions, methods) analyzed.
-Average complexity: A (3.6630434782608696)
+357 blocks (classes, functions, methods) analyzed.
+Average complexity: A (3.7142857142857144)
 
 </details>
 
@@ -1069,7 +1068,7 @@ Average complexity: A (3.6630434782608696)
 |----------|------:|
 | High | 1 |
 | Medium | 8 |
-| Low | 223 |
+| Low | 221 |
 
 <details>
 <summary>Show Bandit report</summary>
@@ -1080,7 +1079,7 @@ Average complexity: A (3.6630434782608696)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.8
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-10-08 22:19:41.465628+00:00
+Run started:2026-10-10 07:27:24.800844+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -1226,28 +1225,6 @@ Test results:
 280	                timeout=TIMEOUT,
 281	            ) as response:
 282	
-
---------------------------------------------------
->> Issue: [B110:try_except_pass] Try, Except, Pass detected.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
-   Location: ./client_python/game.py:750:12
-749	                self.client.session_id = session_id
-750	            except Exception:
-751	                pass
-752	
-
---------------------------------------------------
->> Issue: [B110:try_except_pass] Try, Except, Pass detected.
-   Severity: Low   Confidence: High
-   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
-   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
-   Location: ./client_python/game.py:1139:8
-1138	            self.timer.stop()
-1139	        except Exception:
-1140	            pass
-1141	
 
 --------------------------------------------------
 >> Issue: [B112:try_except_continue] Try, Except, Continue detected.
@@ -3557,28 +3534,28 @@ Test results:
 --------------------------------------------------
 
 Code scanned:
-	Total lines of code: 10085
+	Total lines of code: 9938
 	Total lines skipped (#nosec): 0
 	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
 
 Run metrics:
 	Total issues (by severity):
 		Undefined: 0
-		Low: 223
+		Low: 221
 		Medium: 8
 		High: 1
 	Total issues (by confidence):
 		Undefined: 0
 		Low: 1
 		Medium: 11
-		High: 220
+		High: 218
 Files skipped (0):
 
 </details>
 
 ##  📏 Pylint
 
-**Global score:** 8.26/10
+**Global score:** 8.15/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4271,34 +4248,41 @@ tests/security/test_fuzzing.py:48:0: C0116: Missing function or method docstring
 tests/security/test_fuzzing.py:55:0: C0116: Missing function or method docstring (missing-function-docstring)
 tests/security/test_fuzzing.py:75:0: C0116: Missing function or method docstring (missing-function-docstring)
 ************* Module client_python.main
+client_python/main.py:12:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:13:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:14:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:41:0: C0303: Trailing whitespace (trailing-whitespace)
+client_python/main.py:45:0: C0304: Final newline missing (missing-final-newline)
 client_python/main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/main.py:9:0: C0103: Constant name "client" doesn't conform to UPPER_CASE naming style (invalid-name)
-client_python/main.py:13:0: C0116: Missing function or method docstring (missing-function-docstring)
-client_python/main.py:14:4: W0603: Using the global statement (global-statement)
-client_python/main.py:25:11: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/main.py:45:11: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/main.py:55:19: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/main.py:1:0: W0611: Unused import sys (unused-import)
+client_python/main.py:3:0: E0611: No name 'QApplication' in module 'PySide6.QtWidgets' (no-name-in-module)
+client_python/main.py:7:0: C0103: Constant name "client" doesn't conform to UPPER_CASE naming style (invalid-name)
+client_python/main.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+client_python/main.py:11:4: W0602: Using global for 'raison' but no assignment is done (global-variable-not-assigned)
+client_python/main.py:37:11: W0718: Catching too general exception Exception (broad-exception-caught)
 ************* Module client_python.game
-client_python/game.py:1:0: C0302: Too many lines in module (1181/1000) (too-many-lines)
-client_python/game.py:1181:0: C0305: Trailing newlines (trailing-newlines)
+client_python/game.py:1105:0: C0304: Final newline missing (missing-final-newline)
+client_python/game.py:1:0: C0302: Too many lines in module (1105/1000) (too-many-lines)
 client_python/game.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-client_python/game.py:19:0: R0902: Too many instance attributes (15/7) (too-many-instance-attributes)
-client_python/game.py:167:8: E1101: Instance of 'EmitterGroup' has no 'key_press' member (no-member)
-client_python/game.py:168:8: E1101: Instance of 'EmitterGroup' has no 'key_release' member (no-member)
-client_python/game.py:169:8: E1101: Instance of 'EmitterGroup' has no 'mouse_press' member (no-member)
-client_python/game.py:208:4: R0914: Too many local variables (18/15) (too-many-locals)
-client_python/game.py:623:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/game.py:653:19: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/game.py:682:19: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/game.py:750:19: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/game.py:908:8: W0613: Unused argument 'z' (unused-argument)
-client_python/game.py:1042:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/game.py:1052:22: W0613: Unused argument 'event' (unused-argument)
-client_python/game.py:1112:8: W0107: Unnecessary pass statement (unnecessary-pass)
-client_python/game.py:1119:8: W0107: Unnecessary pass statement (unnecessary-pass)
-client_python/game.py:1139:15: W0718: Catching too general exception Exception (broad-exception-caught)
-client_python/game.py:1148:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:8:0: E0611: No name 'QRectF' in module 'PySide6.QtCore' (no-name-in-module)
+client_python/game.py:8:0: E0611: No name 'Qt' in module 'PySide6.QtCore' (no-name-in-module)
+client_python/game.py:8:0: E0611: No name 'QTimer' in module 'PySide6.QtCore' (no-name-in-module)
+client_python/game.py:9:0: E0611: No name 'QBrush' in module 'PySide6.QtGui' (no-name-in-module)
+client_python/game.py:9:0: E0611: No name 'QKeyEvent' in module 'PySide6.QtGui' (no-name-in-module)
+client_python/game.py:9:0: E0611: No name 'QPainter' in module 'PySide6.QtGui' (no-name-in-module)
+client_python/game.py:9:0: E0611: No name 'QPen' in module 'PySide6.QtGui' (no-name-in-module)
+client_python/game.py:10:0: E0611: No name 'QApplication' in module 'PySide6.QtWidgets' (no-name-in-module)
+client_python/game.py:10:0: E0611: No name 'QMainWindow' in module 'PySide6.QtWidgets' (no-name-in-module)
+client_python/game.py:17:0: R0902: Too many instance attributes (12/7) (too-many-instance-attributes)
+client_python/game.py:239:19: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:292:19: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:701:15: W0718: Catching too general exception Exception (broad-exception-caught)
+client_python/game.py:712:4: C0103: Method name "keyPressEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:727:4: C0103: Method name "keyReleaseEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:746:4: C0103: Method name "paintEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:746:25: W0613: Unused argument 'event' (unused-argument)
+client_python/game.py:801:18: W0612: Unused variable 'z' (unused-variable)
+client_python/game.py:1029:4: C0103: Method name "closeEvent" doesn't conform to snake_case naming style (invalid-name)
+client_python/game.py:1060:15: W0718: Catching too general exception Exception (broad-exception-caught)
 ************* Module client_python.crypto
 client_python/crypto.py:253:0: C0303: Trailing whitespace (trailing-whitespace)
 client_python/crypto.py:255:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -4644,29 +4628,30 @@ IGNORED_DIRECTORIES = {
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
-    ".env",
-    ".env.local",
-    ".env.production",
-    "master.key",
-    "id_rsa",
-    "id_ed25519",
-    "credentials.json",
-    "service-account.json",
-}
+        ".env",
+        ".env.local",
+        ".env.production",
+        "master.key",
+        "id_rsa",
+        "id_ed25519",
+        "credentials.json",
+        "service-account.json",
+    }
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[101:112]
 ==tests.test_rotor_integration:[52:64]
         )
 
-        for rotor, position in reversed(
-            list(zip(rotors, positions))
-        ):
-            value = rotor_inverse(
-                value,
-                position,
-                rotor,
-            )
+    # Inverse : R16 → R1
+    for rotor, position in reversed(
+        list(zip(rotors, positions))
+    ):
+        value = rotor_inverse(
+            value,
+            position,
+            rotor,
+        )
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.attack_test:[79:102]
@@ -4683,17 +4668,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
     return digest.hexdigest()
 
 
-'''
-============================================================
-                         Git
-============================================================
-'''
-
-
-def clone_repository(
-    destination: Path,
-) -> None:
- (duplicate-code)
+def should_ignore(path: Path, root: Path) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[35:47]
 ==.github.security.test_python_security:[22:33]
@@ -4707,7 +4682,8 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
         for part in relative.parts
     )
 
- (duplicate-code)
+
+def is_world_writable(mode: int) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
@@ -4825,7 +4801,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
     )
 
 
-def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
+def looks_textual(data: bytes) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.markdown:[61:67]
 ==scripts.documentation.titles:[20:26]
@@ -4922,20 +4898,20 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
             positions,
             byte_counter,
             previous_ciphertext, (duplicate-code)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.session) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_state) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_remove) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 8.26/10
+Your code has been rated at 8.15/10
 
 
 </details>
@@ -4963,7 +4939,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.86s ===============================
+=============================== 1 error in 0.85s ===============================
 
 </details>
 

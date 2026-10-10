@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 2375
+Run : 677
 Branch : main
-Commit : 9ddd666996cd11515f828742b141b30d22d0b169
-Date : Thu Oct  8 16:36:18 UTC 2026
+Commit : 157c924e63691ec86dea09595f2324bc9553bb4b
+Date : Sat Oct 10 04:20:38 UTC 2026
 
 ---
 
@@ -27,10 +27,10 @@ Date : Thu Oct  8 16:36:18 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/login.py
@@ -40,16 +40,16 @@ Date : Thu Oct  8 16:36:18 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
@@ -64,8 +64,8 @@ Date : Thu Oct  8 16:36:18 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/open_report.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_fisher_yates.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_packet.py
-/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_client_class.py
+/home/runner/work/The-last-signal-/The-last-signal-/tests/test_crypto_rotor.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_integration.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_seeds.py
 /home/runner/work/The-last-signal-/The-last-signal-/tests/test_rotor_vectors.py
@@ -88,7 +88,7 @@ Date : Thu Oct  8 16:36:18 UTC 2026
 | E303 | 41 |
 | E225 | 23 |
 | F401 | 14 |
-| W292 | 8 |
+| W292 | 9 |
 | E305 | 7 |
 | E301 | 6 |
 | E211 | 6 |
@@ -209,6 +209,7 @@ Date : Thu Oct  8 16:36:18 UTC 2026
 | ./client_python/crypto.py | 732 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/crypto.py | 785 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/crypto.py | 841 | E302 | expected 2 blank lines, found 0 |
+| ./client_python/game.py | 1105 | W292 | no newline at end of file |
 | ./client_python/logs.py | 4 | E302 | expected 2 blank lines, found 0 |
 | ./client_python/main.py | 10 | E302 | expected 2 blank lines, found 1 |
 | ./client_python/main.py | 11 | F824 | `global raison` is unused |
@@ -1078,7 +1079,7 @@ Average complexity: A (3.7142857142857144)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.8
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-10-08 16:36:23.495260+00:00
+Run started:2026-10-10 04:20:43.601794+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -3554,7 +3555,7 @@ Files skipped (0):
 
 ##  📏 Pylint
 
-**Global score:** 8.16/10
+**Global score:** 8.15/10
 
 <details>
 <summary>Show Pylint report</summary>
@@ -4259,6 +4260,7 @@ client_python/main.py:10:0: C0116: Missing function or method docstring (missing
 client_python/main.py:11:4: W0602: Using global for 'raison' but no assignment is done (global-variable-not-assigned)
 client_python/main.py:37:11: W0718: Catching too general exception Exception (broad-exception-caught)
 ************* Module client_python.game
+client_python/game.py:1105:0: C0304: Final newline missing (missing-final-newline)
 client_python/game.py:1:0: C0302: Too many lines in module (1105/1000) (too-many-lines)
 client_python/game.py:1:0: C0114: Missing module docstring (missing-module-docstring)
 client_python/game.py:8:0: E0611: No name 'QRectF' in module 'PySide6.QtCore' (no-name-in-module)
@@ -4563,7 +4565,9 @@ IGNORED_DIRECTORIES = {
     "venv",
     "node_modules",
 }
- (duplicate-code)
+
+
+def should_ignore(path: Path) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[6:18]
 ==.github.security.test_secrets:[6:18]
@@ -4692,8 +4696,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
         for part in relative.parts
     )
 
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
+ (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
@@ -4813,7 +4816,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
     )
 
 
-def looks_textual(data: bytes) -> bool: (duplicate-code)
+def is_watched(path: Path, root: Path) -> bool: (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.markdown:[61:67]
 ==scripts.documentation.titles:[20:26]
@@ -4910,20 +4913,20 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
             positions,
             byte_counter,
             previous_ciphertext, (duplicate-code)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_state) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.session) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_remove) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
-Your code has been rated at 8.16/10
+Your code has been rated at 8.15/10
 
 
 </details>
@@ -4951,7 +4954,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.75s ===============================
+=============================== 1 error in 0.67s ===============================
 
 </details>
 
