@@ -79,6 +79,12 @@
 //!   For other custom `CC` wrapper, just set `CC_KNOWN_WRAPPER_CUSTOM`
 //!   to the custom wrapper used in `CC`.
 //! * `AR` - the `ar` (archiver) executable to use to build the static library.
+//! * `CC_MASM_ASM` - the assembler for `.asm` files on MSVC targets, used
+//!   instead of `ml64.exe`, `ml.exe`, `armasm.exe` or `armasm64.exe`. Like `AR`,
+//!   it can include arguments, for example `llvm-ml -m64`. For `llvm-ml`, cc
+//!   passes `-m64` or `-m32` to match the target. When it is not set and
+//!   `ml64.exe` or `ml.exe` can't be found, as when cross compiling, cc uses
+//!   `llvm-ml` from next to `clang-cl` or from `PATH` instead.
 //! * `CRATE_CC_NO_DEFAULTS` - the default compiler flags may cause conflicts in
 //!   some cross compiling scenarios. Setting this variable
 //!   will disable the generation of default compiler
@@ -184,7 +190,25 @@
 //!
 //! For C++ libraries, the `CXX` and `CXXFLAGS` environment variables are used instead of `CC` and `CFLAGS`.
 //!
-//! The C++ standard library may be linked to the crate target. By default it's `libc++` for macOS, FreeBSD, and OpenBSD, `libc++_shared` for Android, nothing for MSVC, and `libstdc++` for anything else. It can be changed in one of two ways:
+//! The C++ standard library may be linked to the crate target. By default it's `libc++` for macOS, FreeBSD, and OpenBSD, `libc++_shared` for Android, nothing for MSVC, and `libstdc++` for anything else.
+//!
+//! On those other targets, except `wasm32`, a Clang compiler can use `libc++`
+//! instead, when it was built to default to it or is given `-stdlib=libc++`
+//! through `CXXFLAGS` or [`Build::flag`]. For a Clang compiler, `cc` therefore
+//! preprocesses a file that includes a C++ header with the same command and
+//! flags it compiles with, and links `libc++` if the header comes from
+//! `libc++`. If this check fails, `libstdc++` is linked as before. It is not
+//! done for CUDA, when [`Build::cargo_metadata`] is off, or when the flags
+//! include `-nostdinc++` or `-nostdinc`, since the build then picks the C++
+//! headers itself.
+//!
+//! If `libc++` is linked statically (see `CXXSTDLIB_STATIC` below), the build
+//! will probably also need `c++abi`, since `libc++.a` usually doesn't contain
+//! it. `cc` doesn't link it, so link it from the build script, for example with
+//! `cargo:rustc-link-lib=static:-bundle=c++abi`.
+//!
+//! The C++ standard library can be changed in one of two ways, which also skip
+//! the check above:
 //!
 //! 1. by using the `cpp_link_stdlib` method on `Build`:
 //! ```rust,no_run
@@ -358,7 +382,7 @@ use build_env::{BuildEnv, EnvSnapshot, EnvVars};
 
 mod tool;
 pub use tool::Tool;
-use tool::{CompilerFamilyLookupCache, ToolFamily};
+use tool::{CompilerFamilyLookupCache, CppStdlibLookupCache, ToolFamily};
 
 mod tempfile;
 
@@ -396,8 +420,9 @@ struct BuildCache {
     apple_sdk_root_cache: RwLock<HashMap<Box<str>, Arc<OsStr>>>,
     apple_versions_cache: RwLock<HashMap<Box<str>, Arc<str>>>,
     cached_compiler_family: RwLock<CompilerFamilyLookupCache>,
+    cached_uses_libcxx: RwLock<CppStdlibLookupCache>,
     emitted_cpp_link_stdlibs: Mutex<HashSet<Box<str>>>,
-    known_flag_support_status_cache: RwLock<HashMap<Box<OsStr>, BTreeMap<CompilerFlag, bool>>>,
+    known_flag_support_status_cache: RwLock<BTreeMap<CompilerFlag, HashMap<Box<OsStr>, bool>>>,
     target_info_parser: target::TargetInfoParser,
     warned_about_msvc_linker_flags: AtomicBool,
 }
@@ -907,7 +932,8 @@ impl Build {
     /// 1. If [`cpp_link_stdlib`](Build::cpp_link_stdlib) is set, use its value.
     /// 2. Else if the `CXXSTDLIB` environment variable is set, use its value.
     /// 3. Else the default is `c++` for OS X and BSDs, `c++_shared` for Android,
-    ///    `None` for MSVC and `stdc++` for anything else.
+    ///    `None` for MSVC and `stdc++` for anything else, or `c++` there if the
+    ///    compiler is a Clang that uses libc++, see [C++ support](crate#c-support).
     ///
     /// On MSVC this also passes `-Tp` immediately before each `.cc` source file
     /// to ensure that they are compiled as C++ rather than assumed to be
@@ -1071,6 +1097,9 @@ impl Build {
     ///
     /// A value of `None` indicates that no automatic linking should happen,
     /// otherwise cargo will link against the specified library.
+    ///
+    /// Setting this, or `CXXSTDLIB`, also skips checking whether a Clang
+    /// compiler uses libc++, see [C++ support](crate#c-support).
     ///
     /// The given library name must not contain the `lib` prefix.
     ///
@@ -1547,6 +1576,42 @@ impl Build {
         self
     }
 
+    /// Use `vars` as the environment of this `Build` instead of the process
+    /// environment.
+    ///
+    /// By default, a `Build` copies the process environment the first time it
+    /// needs it. With this, cc instead looks up the variables it reads itself,
+    /// such as `CC`, `CFLAGS` or `CC_FORCE_DISABLE`, in `vars`, and the
+    /// compiler and the other tools it runs get `vars` instead of the process
+    /// environment, with [`Build::env`] still applied on top. A variable given
+    /// more than once takes its last value.
+    ///
+    /// This replaces the environment rather than adding to it. Call it before
+    /// using the `Build`. A later call still replaces the environment for what
+    /// cc looks up and runs from then on, but a [`Tool`] returned earlier keeps
+    /// its environment, and the Apple SDK path and deployment target are not
+    /// looked up again once found.
+    ///
+    /// The variables Cargo sets for build scripts, such as `OUT_DIR`, `TARGET`
+    /// and `CARGO_CFG_*`, are read from the process environment either way,
+    /// and so is `CC_ENABLE_DEBUG_OUTPUT`, which [`Build::new`] reads. On
+    /// Windows, the `vswhere` and `cl.exe` that cc runs to find Visual Studio
+    /// also still get the process environment.
+    #[doc(hidden)]
+    pub fn set_envs_snapshot<I, K, V>(&mut self, vars: I) -> &mut Build
+    where
+        I: IntoIterator<Item = (K, V)>,
+        K: AsRef<OsStr>,
+        V: AsRef<OsStr>,
+    {
+        self.env.set_inherited(EnvSnapshot::from_vars(
+            &mut vars
+                .into_iter()
+                .map(|(key, value)| (key.as_ref().into(), value.as_ref().into())),
+        ));
+        self
+    }
+
     // retained for backwards compatibility only
     #[doc(hidden)]
     #[deprecated = "use `env` instead"]
@@ -1701,8 +1766,8 @@ impl Build {
             .known_flag_support_status_cache
             .read()
             .unwrap()
-            .get(flag)
-            .and_then(|answers| answers.get(key))
+            .get(key)
+            .and_then(|answers| answers.get(flag))
             .copied()
         {
             return Ok(is_supported);
@@ -1766,7 +1831,7 @@ impl Build {
         }
 
         let mut cmd = compiler.to_command();
-        cmd.set_flag_supported_env(compiler.env());
+        cmd.set_flag_supported_env(&compiler.env);
         command_add_output_file(
             &mut cmd,
             &probe.obj,
@@ -1797,7 +1862,7 @@ impl Build {
             // On MSVC we need to make sure the LIB directory is included
             // so the CRT can be found.
             for (key, value) in &tool.env {
-                if key == "LIB" {
+                if &**key == "LIB" {
                     cmd.env("LIB", value);
                     break;
                 }
@@ -1811,13 +1876,21 @@ impl Build {
         drop(probe);
         let is_supported = output.status.success() && output.stderr.is_empty();
 
-        self.build_cache
+        let mut cache = self
+            .build_cache
             .known_flag_support_status_cache
             .write()
-            .unwrap()
-            .entry(flag.into())
-            .or_default()
-            .insert(key.clone(), is_supported);
+            .unwrap();
+        // Only clone the key the first time it is seen.
+        match cache.get_mut(key) {
+            Some(answers) => {
+                answers.insert(flag.into(), is_supported);
+            }
+            None => {
+                let answers = HashMap::from([(flag.into(), is_supported)]);
+                cache.insert(key.clone(), answers);
+            }
+        }
 
         Ok(is_supported)
     }
@@ -1852,9 +1925,9 @@ impl Build {
         if target.env == "msvc" {
             let compiler = self.get_base_compiler()?;
             let atlmfc_lib = compiler
-                .env()
+                .env
                 .iter()
-                .find(|&(var, _)| var.as_os_str() == OsStr::new("LIB"))
+                .find(|&(var, _)| &**var == OsStr::new("LIB"))
                 .and_then(|(_, lib_paths)| {
                     env::split_paths(lib_paths).find(|path| {
                         let sub = Path::new("atlmfc/lib");
@@ -2166,6 +2239,8 @@ impl Build {
         // Every object is compiled with the same compiler and flags, so work
         // them out once.
         let compiler = self.try_get_compiler()?;
+        // Likewise for the assembler of `.asm` files, once the first one needs it.
+        let mut msvc_asm_tool = None;
 
         #[cfg(feature = "parallel")]
         if objs.len() > 1 {
@@ -2173,20 +2248,27 @@ impl Build {
                 &self.cargo_output,
                 &mut objs
                     .iter()
-                    .map(|obj| self.create_compile_object_cmd(obj, &compiler)),
+                    .map(|obj| self.create_compile_object_cmd(obj, &compiler, &mut msvc_asm_tool)),
             );
         }
 
         for obj in objs {
-            let mut cmd = self.create_compile_object_cmd(obj, &compiler)?;
+            let mut cmd = self.create_compile_object_cmd(obj, &compiler, &mut msvc_asm_tool)?;
             run(&mut cmd, &self.cargo_output)?;
         }
 
         Ok(())
     }
 
-    /// `compiler` is the result of [`Build::try_get_compiler`].
-    fn create_compile_object_cmd(&self, obj: &Object, compiler: &Tool) -> Result<Command, Error> {
+    /// `compiler` is the result of [`Build::try_get_compiler`]. `msvc_asm_tool`
+    /// is the result of [`Build::msvc_macro_assembler`] once an `.asm` file
+    /// needed it.
+    fn create_compile_object_cmd(
+        &self,
+        obj: &Object,
+        compiler: &Tool,
+        msvc_asm_tool: &mut Option<Tool>,
+    ) -> Result<Command, Error> {
         let asm_ext = AsmFileExt::from_path(&obj.src);
         let is_asm = asm_ext.is_some();
         let target = self.get_target()?;
@@ -2194,7 +2276,11 @@ impl Build {
 
         let is_assembler_msvc = msvc && asm_ext == Some(AsmFileExt::DotAsm);
         let mut cmd = if is_assembler_msvc {
-            self.msvc_macro_assembler()?
+            let assembler = match msvc_asm_tool {
+                Some(assembler) => assembler,
+                None => msvc_asm_tool.insert(self.msvc_macro_assembler(compiler)?),
+            };
+            assembler.to_command()
         } else {
             compiler.to_command()
         };
@@ -2383,9 +2469,11 @@ impl Build {
         // This should be acceptable because other messages from rustc are in English anyway,
         // and may also be desirable to improve searchability of the compiler diagnostics.
         if matches!(cmd.family, ToolFamily::Msvc { clang_cl: false }) {
-            cmd.env.push(("VSLANG".into(), "1033".into()));
+            cmd.env
+                .push((OsStr::new("VSLANG").into(), OsStr::new("1033").into()));
         } else {
-            cmd.env.push(("LC_ALL".into(), "C".into()));
+            cmd.env
+                .push((OsStr::new("LC_ALL").into(), OsStr::new("C").into()));
         }
 
         // Disable default flag generation via `no_default_flags` or environment variable
@@ -2502,9 +2590,7 @@ impl Build {
         // Set custom env vars that the user specified with `Build::env`.
         //
         // Do this last, to allow overwriting the other values above.
-        for (key, val) in &self.env.explicit {
-            cmd.env.push((key.into(), val.into()));
-        }
+        cmd.env.extend_from_slice(&self.env.explicit);
 
         Ok(cmd)
     }
@@ -3228,7 +3314,10 @@ impl Build {
         supported
     }
 
-    fn msvc_macro_assembler(&self) -> Result<Command, Error> {
+    /// The assembler for `.asm` files on MSVC targets, with the arguments every
+    /// `.asm` file of this build gets. `compiler` is the result of
+    /// [`Build::try_get_compiler`].
+    fn msvc_macro_assembler(&self, compiler: &Tool) -> Result<Tool, Error> {
         let target = self.get_target()?;
         let tool = match target.arch {
             "x86_64" => "ml64.exe",
@@ -3236,55 +3325,115 @@ impl Build {
             "aarch64" | "arm64ec" => "armasm64.exe",
             _ => "ml.exe",
         };
-        let mut cmd = self
-            .find_msvc_tools_find(&target, tool)
-            .unwrap_or_else(|| self.cmd(tool));
-        cmd.arg("-nologo"); // undocumented, yet working with armasm[64]
+        let (mut cmd, args) = match self.env_tool("CC_MASM_ASM") {
+            Some((program, _wrapper, args)) => (self.msvc_macro_assembler_tool(program), args),
+            None => (
+                self.default_msvc_macro_assembler(&target, tool, compiler),
+                Vec::new(),
+            ),
+        };
+        let is_llvm_ml = cmd
+            .path
+            .file_stem()
+            .and_then(OsStr::to_str)
+            .map_or(false, |stem| stem.starts_with_ignore_ascii_case("llvm-ml"));
+        if is_llvm_ml {
+            // llvm-ml assembles for 32-bit x86 unless it is told otherwise or
+            // runs as `llvm-ml64`. It takes the last `-m`, so one in the
+            // user's arguments still wins.
+            match target.arch {
+                "x86_64" => cmd.args.push("-m64".into()),
+                "x86" => cmd.args.push("-m32".into()),
+                _ => {}
+            }
+        }
+        cmd.args.extend(args.into_iter().map(OsString::from));
+        cmd.args.push("-nologo".into()); // undocumented, yet working with armasm[64]
         for directory in self.include_directories.iter() {
-            cmd.arg("-I").arg(&**directory);
+            cmd.args.push("-I".into());
+            cmd.args.push(directory.as_os_str().into());
         }
         if is_arm(&target) {
             if self.get_debug() {
-                cmd.arg("-g");
+                cmd.args.push("-g".into());
             }
 
             if target.arch == "arm64ec" {
-                cmd.args(["-machine", "ARM64EC"]);
+                cmd.args.push("-machine".into());
+                cmd.args.push("ARM64EC".into());
             }
 
             for (key, value) in self.definitions.iter() {
-                cmd.arg("-PreDefine");
+                cmd.args.push("-PreDefine".into());
                 if let Some(ref value) = *value {
                     if let Ok(i) = value.parse::<i32>() {
-                        cmd.arg(format!("{key} SETA {i}"));
+                        cmd.args.push(format!("{key} SETA {i}").into());
                     } else if value.starts_with('"') && value.ends_with('"') {
-                        cmd.arg(format!("{key} SETS {value}"));
+                        cmd.args.push(format!("{key} SETS {value}").into());
                     } else {
-                        cmd.arg(format!("{key} SETS \"{value}\""));
+                        cmd.args.push(format!("{key} SETS \"{value}\"").into());
                     }
                 } else {
-                    cmd.arg(format!("{} SETL {}", key, "{TRUE}"));
+                    cmd.args.push(format!("{} SETL {}", key, "{TRUE}").into());
                 }
             }
         } else {
-            if self.get_debug() {
-                cmd.arg("-Zi");
+            // llvm-ml ignores `-Zi` with a warning.
+            if self.get_debug() && !is_llvm_ml {
+                cmd.args.push("-Zi".into());
             }
 
             for (key, value) in self.definitions.iter() {
                 if let Some(ref value) = *value {
-                    cmd.arg(format!("-D{key}={value}"));
+                    cmd.args.push(format!("-D{key}={value}").into());
                 } else {
-                    cmd.arg(format!("-D{key}"));
+                    cmd.args.push(format!("-D{key}").into());
                 }
             }
         }
 
         if target.arch == "x86" {
-            cmd.arg("-safeseh");
+            cmd.args.push("-safeseh".into());
         }
 
         Ok(cmd)
+    }
+
+    /// The assembler for `.asm` files when `CC_MASM_ASM` is not set: `tool`
+    /// from Visual Studio or `PATH`. Where neither has it, x86 targets fall back
+    /// to llvm-ml, next to clang-cl or on `PATH`.
+    fn default_msvc_macro_assembler(
+        &self,
+        target: &TargetInfo<'_>,
+        tool: &str,
+        compiler: &Tool,
+    ) -> Tool {
+        if let Some(assembler) = self.find_msvc_tools_find_tool(target, tool) {
+            return assembler;
+        }
+        // The `PATH` the assembler will run with.
+        let path = self.get_env_overridable("PATH").map(|path| &**path);
+        if matches!(target.arch, "x86" | "x86_64") && self.which(Path::new(tool), path).is_none() {
+            let llvm_ml = self
+                .find_llvm_tool_next_to_clang_cl(compiler, "llvm-ml")
+                .or_else(|| self.which(Path::new("llvm-ml"), path));
+            if let Some(llvm_ml) = llvm_ml {
+                return self.msvc_macro_assembler_tool(llvm_ml);
+            }
+        }
+        self.msvc_macro_assembler_tool(tool.into())
+    }
+
+    /// The assembler `program`, run in this build's environment the way
+    /// [`Build::cmd`] runs its programs.
+    fn msvc_macro_assembler_tool(&self, program: PathBuf) -> Tool {
+        let mut tool = Tool::with_family(
+            program,
+            ToolFamily::Msvc { clang_cl: false },
+            self.env.inherited().clone(),
+        );
+        tool.env.extend_from_slice(&self.env.explicit);
+        tool
     }
 
     fn assemble<'a>(
@@ -3394,7 +3543,10 @@ impl Build {
         let target = self.get_target()?;
 
         let (mut cmd, program, any_flags) = self.try_get_archiver_and_flags()?;
-        if target.env == "msvc" && !program.to_string_lossy().contains("llvm-ar") {
+        let is_llvm_ar = program.file_name().map_or(false, |name| {
+            name.to_string_lossy().contains_ignore_ascii_case("llvm-ar")
+        });
+        if target.env == "msvc" && !is_llvm_ar {
             // NOTE: -out: here is an I/O flag, and so must be included even if $ARFLAGS/ar_flag is
             // in use. -nologo on the other hand is just a regular flag, and one that we'll skip if
             // the caller has explicitly dictated the flags they want. See
@@ -3505,7 +3657,7 @@ impl Build {
             cmd.args.push("-isysroot".into());
             cmd.args.push(OsStr::new(&sdk_path).to_owned());
             cmd.env
-                .push(("SDKROOT".into(), OsStr::new(&sdk_path).to_owned()));
+                .push((OsStr::new("SDKROOT").into(), Arc::clone(&sdk_path)));
 
             if target.env == "macabi" {
                 // Mac Catalyst uses the macOS SDK, but to compile against and
@@ -3763,7 +3915,7 @@ impl Build {
         // `--target=` ourselves.
         if cfg!(windows) && android_clang_compiler_uses_target_arg_internally(&tool.path) {
             if let Some(path) = tool.path.file_name() {
-                let file_name = path.to_str().unwrap().to_owned();
+                let file_name = path.to_string_lossy().to_ascii_lowercase();
                 let (target, clang) = file_name.split_at(file_name.rfind('-').unwrap());
 
                 tool.has_internal_target_arg = true;
@@ -3816,9 +3968,7 @@ impl Build {
                 && tool.env.is_empty()
                 && target.env == "msvc"
             {
-                for (k, v) in cl_exe.env.iter() {
-                    tool.env.push((k.to_owned(), v.to_owned()));
-                }
+                tool.env = cl_exe.env;
             }
         }
 
@@ -3859,7 +4009,8 @@ impl Build {
         let wrapper_stem = wrapper_path.file_stem()?;
 
         VALID_WRAPPERS
-            .contains(&wrapper_stem.to_str()?)
+            .iter()
+            .any(|wrapper| wrapper_stem.eq_ignore_ascii_case(wrapper))
             .then_some(Cow::Owned(rustc_wrapper))
     }
 
@@ -3917,7 +4068,10 @@ impl Build {
         let maybe_wrapper = parts.next()?;
 
         let file_stem = Path::new(maybe_wrapper).file_stem()?.to_str()?;
-        if known_wrappers.contains(&file_stem) {
+        if known_wrappers
+            .iter()
+            .any(|wrapper| wrapper.eq_ignore_ascii_case(file_stem))
+        {
             if let Some(compiler) = parts.next() {
                 return Some((
                     compiler.into(),
@@ -3938,7 +4092,8 @@ impl Build {
     /// 1. If [`cpp_link_stdlib`](cc::Build::cpp_link_stdlib) is set, uses its value.
     /// 2. Else if the `CXXSTDLIB` environment variable is set, uses its value.
     /// 3. Else the default is `c++` for OS X and BSDs, `c++_shared` for Android,
-    ///    `None` for MSVC and `stdc++` for anything else.
+    ///    `None` for MSVC, `c++` for a Clang that uses libc++ and `stdc++` for
+    ///    anything else.
     fn get_cpp_link_stdlib(&self) -> Result<Option<&Path>, Error> {
         match &self.cpp_link_stdlib {
             Some(s) => Ok(s.as_deref().map(Path::new)),
@@ -3960,12 +4115,58 @@ impl Build {
                         Ok(Some(Path::new("c++")))
                     } else if target.os == "android" {
                         Ok(Some(Path::new("c++_shared")))
+                    } else if self.compiler_uses_libcxx(&target) {
+                        Ok(Some(Path::new("c++")))
                     } else {
                         Ok(Some(Path::new("stdc++")))
                     }
                 }
             }
         }
+    }
+
+    /// Whether the C++ compiler is a Clang that uses libc++, on a target whose
+    /// C++ stdlib is otherwise `stdc++`. Clang uses libc++ there when it was
+    /// built to default to it or is given `-stdlib=libc++`, and the stdlib it
+    /// compiled against is the one to link. Any failure answers `false`, which
+    /// keeps `stdc++`.
+    fn compiler_uses_libcxx(&self, target: &TargetInfo<'_>) -> bool {
+        // Without metadata the stdlib isn't linked, and CUDA and `wasm32` link
+        // it their own way.
+        if !self.cargo_output.metadata || self.cuda || target.arch == "wasm32" {
+            return false;
+        }
+        // Work out the compiler again without printing its `cargo:` lines a
+        // second time: when called from `compile`, this `Build` has already
+        // printed the variables it reads and the warnings that come up on the
+        // way.
+        let mut quiet = self.clone();
+        quiet.cargo_output.metadata = false;
+        quiet.cargo_output.warnings = false;
+        if quiet.is_disabled() {
+            return false;
+        }
+        let compiler = match quiet.try_get_compiler() {
+            Ok(compiler) if compiler.is_like_clang() => compiler,
+            _ => return false,
+        };
+        // With `-nostdinc++` the build picks the C++ headers itself, often from
+        // a libc++ it links some other way, so they don't tell which library
+        // to link.
+        if compiler
+            .args()
+            .iter()
+            .any(|arg| arg == "-nostdinc++" || arg == "-nostdinc")
+        {
+            return false;
+        }
+        compiler
+            .uses_libcxx(
+                &self.build_cache.cached_uses_libcxx,
+                &quiet.cargo_output,
+                quiet.get_out_dir().ok().as_deref(),
+            )
+            .unwrap_or(false)
     }
 
     /// Returns whether the C++ standard library is linked statically: if
@@ -4144,27 +4345,7 @@ impl Build {
                     // here.
 
                     let compiler = self.get_base_compiler()?;
-                    let lib = if compiler.family == (ToolFamily::Msvc { clang_cl: true }) {
-                        self.search_programs(
-                            &compiler.path,
-                            Path::new("llvm-lib"),
-                            &self.cargo_output,
-                        )
-                        .or_else(|| {
-                            // See if there is 'llvm-lib' next to 'clang-cl'
-                            if let Some(mut cmd) = self.which(&compiler.path, None) {
-                                cmd.pop();
-                                cmd.push("llvm-lib");
-                                self.which(&cmd, None)
-                            } else {
-                                None
-                            }
-                        })
-                    } else {
-                        None
-                    };
-
-                    if let Some(lib) = lib {
+                    if let Some(lib) = self.find_llvm_tool_next_to_clang_cl(&compiler, "llvm-lib") {
                         name = lib;
                         self.cmd(&name)
                     } else {
@@ -4956,6 +5137,21 @@ impl Build {
         None
     }
 
+    /// Find the LLVM tool `tool`, such as `llvm-lib`, that comes with
+    /// `compiler` if it is clang-cl: on its program search path, or next to it.
+    fn find_llvm_tool_next_to_clang_cl(&self, compiler: &Tool, tool: &str) -> Option<PathBuf> {
+        if !compiler.is_like_clang_cl() {
+            return None;
+        }
+        self.search_programs(&compiler.path, Path::new(tool), &self.cargo_output)
+            .or_else(|| {
+                let mut path = self.which(&compiler.path, None)?;
+                path.pop();
+                path.push(tool);
+                self.which(&path, None)
+            })
+    }
+
     fn find_msvc_tools_find(&self, target: &TargetInfo<'_>, tool: &str) -> Option<Command> {
         self.find_msvc_tools_find_tool(target, tool)
             .map(|c| c.to_command())
@@ -5175,7 +5371,7 @@ fn android_clang_compiler_uses_target_arg_internally(clang_path: &Path) -> bool 
     if let Some(filename) = clang_path.file_name() {
         if let Some(filename_str) = filename.to_str() {
             if let Some(idx) = filename_str.rfind('-') {
-                return filename_str.split_at(idx).0.contains("android");
+                return filename_str[..idx].contains_ignore_ascii_case("android");
             }
         }
     }
@@ -5187,7 +5383,8 @@ fn is_llvm_mingw_wrapper(clang_path: &Path) -> bool {
         .file_name()
         .and_then(|file_name| file_name.to_str())
     {
-        filename.ends_with("-w64-mingw32-clang") || filename.ends_with("-w64-mingw32-clang++")
+        filename.ends_with_ignore_ascii_case("-w64-mingw32-clang")
+            || filename.ends_with_ignore_ascii_case("-w64-mingw32-clang++")
     } else {
         false
     }
