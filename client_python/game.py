@@ -66,6 +66,8 @@ class Game(scene.SceneCanvas):
         self.local_x = 100.0
         self.local_y = 100.0
         self.local_z = 0.0
+        self._pressed_keys: set[str] = set()
+        self._last_sent_position: tuple[int, int, int] | None = None
 
         # Joueurs distants.
         self.remote_players: dict[
@@ -96,15 +98,16 @@ class Game(scene.SceneCanvas):
 
         self.view = self.central_widget.add_view()
 
-        self.view.camera = scene.cameras.FlyCamera(
+        self.view.camera = scene.cameras.TurntableCamera(
+            elevation=45,
+            azimuth=45,
+            distance=150,
             fov=70.0,
             up="y",
             parent=self.view.scene,
         )
 
         self.camera = self.view.camera
-        self.camera.scale_factor = self.PLAYER_SPEED
-        self.camera.auto_roll = False
 
         # ==========================================================
         # TERRAIN DATA
@@ -325,8 +328,9 @@ class Game(scene.SceneCanvas):
             dtype=np.uint32,
         )
 
-        faces[0::2] = np.column_stack((a, b, c))
-        faces[1::2] = np.column_stack((b, d, c))
+        # Normales orientées vers le haut (axe Y).
+        faces[0::2] = np.column_stack((a, c, b))
+        faces[1::2] = np.column_stack((b, c, d))
 
         return faces
 
@@ -519,21 +523,12 @@ class Game(scene.SceneCanvas):
         if self.heightmap is None:
             return
 
-        center = self.camera.center
+        # Le streaming dépend de la position du joueur, pas de la
+        # position orbitale de la caméra.
+        world_x = self._server_x_to_world(self.local_x)
+        world_z = self._server_y_to_world(self.local_y)
 
-        if center is None:
-            return
-
-        try:
-            world_x = float(center[0])
-            world_z = float(center[2])
-        except (TypeError, ValueError, IndexError):
-            return
-
-        center_chunk = self._chunk_coordinates(
-            world_x,
-            world_z,
-        )
+        center_chunk = self._chunk_coordinates(world_x, world_z)
 
         # Inutile de recalculer la zone si le joueur n'a pas
         # changé de chunk.
@@ -587,16 +582,14 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _place_camera_initially(self) -> None:
-        """Positionne initialement la caméra au-dessus du terrain."""
-
+        """Centre la TurntableCamera sur le joueur au démarrage."""
         world_x = self._server_x_to_world(self.local_x)
         world_z = self._server_y_to_world(self.local_y)
+        terrain_y = self._terrain_height_at(world_x, world_z)
 
-        terrain_y = self._terrain_height_at(
-            world_x,
-            world_z,
-        )
-
+        self.camera.elevation = 45
+        self.camera.azimuth = 45
+        self.camera.distance = 150
         self.camera.center = (
             world_x,
             terrain_y + self.PLAYER_HEIGHT,
@@ -605,31 +598,20 @@ class Game(scene.SceneCanvas):
 
         print(
             "[GAME] Position initiale : "
-            f"({world_x:.1f}, "
-            f"{terrain_y + self.PLAYER_HEIGHT:.1f}, "
+            f"({world_x:.1f}, {terrain_y + self.PLAYER_HEIGHT:.1f}, "
             f"{world_z:.1f})"
         )
 
     def _update_camera_position(self) -> None:
-        """Maintient le point central de la caméra au-dessus du terrain."""
-
-        center = self.camera.center
-
-        if center is None:
-            return
-
-        try:
-            x = float(center[0])
-            z = float(center[2])
-        except (TypeError, ValueError, IndexError):
-            return
-
-        terrain_y = self._terrain_height_at(x, z)
+        """Fait suivre au centre de la caméra la position du joueur."""
+        world_x = self._server_x_to_world(self.local_x)
+        world_z = self._server_y_to_world(self.local_y)
+        terrain_y = self._terrain_height_at(world_x, world_z)
 
         self.camera.center = (
-            x,
+            world_x,
             terrain_y + self.PLAYER_HEIGHT,
-            z,
+            world_z,
         )
 
     def _terrain_height_at(
@@ -934,46 +916,49 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _sync_camera_to_server(self) -> None:
-        """Envoie les changements de position au serveur."""
+        """Synchronise la position du joueur, jamais celle de la caméra."""
+        server_x = int(round(self.local_x))
+        server_y = int(round(self.local_y))
+        server_z = int(round(self.local_z))
+        position = (server_x, server_y, server_z)
 
-        center = self.camera.center
-
-        if center is None:
+        if position == self._last_sent_position:
             return
 
-        try:
-            world_x = float(center[0])
-            world_z = float(center[2])
-        except (TypeError, ValueError, IndexError):
+        if not getattr(self.client, "connected", False):
             return
 
-        server_x = self._world_x_to_server(world_x)
-        server_y = self._world_z_to_server(world_z)
+        self._send_position_to_server(*position)
+        self._last_sent_position = position
 
-        server_x = max(
-            0,
-            min(int(self.WORLD_WIDTH), server_x),
-        )
-
-        server_y = max(
-            0,
-            min(int(self.WORLD_DEPTH), server_y),
-        )
-
-        if (
-            server_x == int(self.local_x)
-            and server_y == int(self.local_y)
-        ):
+    def _move_local_player(self, forward: float, strafe: float) -> None:
+        """Déplace le joueur dans le plan X/Z selon l'azimut caméra."""
+        if forward == 0 and strafe == 0:
             return
 
-        self.local_x = float(server_x)
-        self.local_y = float(server_y)
+        angle = np.deg2rad(float(self.camera.azimuth))
+        forward_x = np.sin(angle)
+        forward_z = -np.cos(angle)
+        right_x = np.cos(angle)
+        right_z = np.sin(angle)
 
-        self._send_position_to_server(
-            server_x,
-            server_y,
-            int(self.local_z),
-        )
+        move_x = forward * forward_x + strafe * right_x
+        move_z = forward * forward_z + strafe * right_z
+        length = float(np.hypot(move_x, move_z))
+        if length > 0:
+            move_x /= length
+            move_z /= length
+
+        world_x = self._server_x_to_world(self.local_x) + move_x * self.PLAYER_SPEED
+        world_z = self._server_y_to_world(self.local_y) + move_z * self.PLAYER_SPEED
+
+        world_x = float(np.clip(world_x, -self.WORLD_WIDTH / 2, self.WORLD_WIDTH / 2))
+        world_z = float(np.clip(world_z, -self.WORLD_DEPTH / 2, self.WORLD_DEPTH / 2))
+
+        self.local_x = float(self._world_x_to_server(world_x))
+        self.local_y = float(self._world_z_to_server(world_z))
+        self.local_z = self._terrain_height_at(world_x, world_z) + self.PLAYER_HEIGHT
+        self._last_sent_position = None
 
     def _send_position_to_server(
         self,
@@ -1020,19 +1005,29 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _on_key_press(self, event) -> None:
-        """Traite les touches supplémentaires."""
-
+        """Déplacement clavier et fermeture."""
         key = getattr(event, "key", None)
-
         if key is None:
             return
 
-        key_name = str(
-            getattr(key, "name", key)
-        ).lower()
+        key_name = str(getattr(key, "name", key)).lower()
+        key_name = key_name.replace("key.", "").replace("arrow", "")
 
-        if key_name == "escape":
+        if key_name in ("escape", "esc"):
             self.close()
+            event.handled = True
+            return
+
+        # Flèches ou WASD : avancer/reculer et se déplacer latéralement.
+        movements = {
+            "up": (1.0, 0.0), "w": (1.0, 0.0),
+            "down": (-1.0, 0.0), "s": (-1.0, 0.0),
+            "left": (0.0, -1.0), "a": (0.0, -1.0),
+            "right": (0.0, 1.0), "d": (0.0, 1.0),
+        }
+        if key_name in movements:
+            self._move_local_player(*movements[key_name])
+            event.handled = True
 
     def _on_key_release(self, event) -> None:
         """Réservé aux contrôles personnalisés."""
