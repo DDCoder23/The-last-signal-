@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-10 08:44:59
+**Date :** 2026-10-10 09:09:18
 
 # 64/100
 
@@ -3101,7 +3101,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Impl 'Tresor ' sans documentation
 
-- **line :** 43
+- **line :** 44
 
 - **suggestion :** Ajoutez /// avant cette impl
 
@@ -3111,7 +3111,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'new' sans documentation
 
-- **line :** 44
+- **line :** 45
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3121,7 +3121,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'ouvrir' sans documentation
 
-- **line :** 636
+- **line :** 694
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3131,7 +3131,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'tirer_pondere' sans documentation
 
-- **line :** 830
+- **line :** 888
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3141,7 +3141,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'tirer_objet' sans documentation
 
-- **line :** 856
+- **line :** 914
 
 - **suggestion :** Ajoutez /// avant cette function
 
@@ -3151,7 +3151,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** rust
 - **Message :** Function 'tirer_livre' sans documentation
 
-- **line :** 1237
+- **line :** 1295
 
 - **suggestion :** Ajoutez /// avant cette function
 
