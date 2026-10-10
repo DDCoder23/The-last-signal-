@@ -16094,97 +16094,85 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:29 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:30 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:39 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:49 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:62 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:59 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:76 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:82 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:94 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:96 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:108 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:114 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:115 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:128 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:122 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:135 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:129 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:142 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:145 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:149 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:151 titre très long (87 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:165 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:157 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:171 titre très long (87 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:166 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:177 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:174 titre très long (89 caractères).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/cc/CHANGELOG.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:180 titre très long (89 caractères).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/cc/CHANGELOG.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:188 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:186 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16196,37 +16184,37 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:203 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:200 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:209 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:208 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:215 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:214 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:226 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:223 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:232 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:229 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:239 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:235 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16238,85 +16226,91 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:254 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:252 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:261 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:259 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:267 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:266 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:276 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:274 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:283 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:281 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:290 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:287 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:299 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:296 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:305 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:303 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:311 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:310 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:317 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:319 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:324 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:325 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:332 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:331 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:338 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:337 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:348 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:344 titre très long (89 caractères).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:352 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16328,7 +16322,7 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:367 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:368 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16340,31 +16334,31 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:384 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:387 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:392 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:398 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:403 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:404 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:417 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:412 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:428 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:423 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16376,49 +16370,43 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:450 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:448 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:459 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:457 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:465 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:470 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:471 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:479 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:478 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:485 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:486 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:491 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:494 titre très long (89 caractères).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/cc/CHANGELOG.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:500 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:498 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16430,37 +16418,43 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:512 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:514 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:518 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:520 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:524 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:526 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:531 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:532 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:537 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:538 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:546 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:544 titre très long (89 caractères).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:551 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16472,121 +16466,115 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:572 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:566 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:580 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:577 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:588 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:592 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:594 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:600 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:601 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:608 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:611 titre très long (88 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:614 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:619 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:621 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:627 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:631 titre très long (88 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:638 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:639 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:648 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:647 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:654 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:658 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:660 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:668 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:667 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:674 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:675 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:680 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:689 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:687 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:695 titre très long (87 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:695 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:706 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:709 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:713 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:715 titre très long (87 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:719 titre très long (89 caractères).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/cc/CHANGELOG.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:727 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:726 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16604,49 +16592,49 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:746 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:747 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:752 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:753 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:758 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:759 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:764 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:766 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:770 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:772 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:777 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:778 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:783 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:784 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:789 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:790 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16670,37 +16658,31 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:815 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:817 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:821 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:823 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:827 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:829 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:832 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:835 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:837 titre très long (89 caractères).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/cc/CHANGELOG.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:842 titre très long (89 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:841 titre très long (89 caractères).",
         "module": "titles"
     },
     {
@@ -16730,31 +16712,31 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:868 titre très long (88 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:867 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:873 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:872 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:878 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:877 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:883 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:882 titre très long (89 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:888 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:888 titre très long (88 caractères).",
         "module": "titles"
     },
     {
@@ -16778,61 +16760,85 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:911 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:908 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:916 titre très long (86 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:913 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:921 titre très long (88 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:918 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:926 titre très long (92 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:923 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:935 titre très long (92 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:931 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:944 titre très long (92 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:936 titre très long (86 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:949 titre très long (92 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:941 titre très long (88 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:954 titre très long (92 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:946 titre très long (92 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:960 titre très long (92 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:955 titre très long (92 caractères).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:965 titre très long (91 caractères).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:964 titre très long (92 caractères).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:969 titre très long (92 caractères).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:974 titre très long (92 caractères).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:980 titre très long (92 caractères).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:985 titre très long (91 caractères).",
         "module": "titles"
     },
     {
@@ -29000,61 +29006,61 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:19 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:18 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:24 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:23 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:31 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:32 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:35 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:39 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:41 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:44 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:45 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:51 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:52 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:55 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:58 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:61 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:64 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:65 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:69 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:72 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29066,37 +29072,37 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:83 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:84 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:96 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:89 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:100 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:98 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:104 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:103 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:110 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:116 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:117 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:120 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29108,55 +29114,55 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:131 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:130 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:136 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:137 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:147 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:144 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:153 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:151 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:159 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:156 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:168 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:167 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:176 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:173 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:182 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:179 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:190 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:188 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29168,37 +29174,37 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:205 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:202 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:211 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:210 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:217 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:216 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:221 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:225 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:228 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:231 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:234 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:237 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
@@ -29216,85 +29222,91 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:256 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:254 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:263 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:261 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:269 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:268 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:278 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:276 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:285 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:283 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:292 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:289 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:301 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:298 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:307 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:305 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:313 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:312 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:319 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:321 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:326 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:327 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:334 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:333 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:340 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:339 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:350 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:346 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:354 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29306,7 +29318,7 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:369 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:370 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29318,37 +29330,31 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:386 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:389 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:394 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:400 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:405 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:406 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:410 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:414 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:419 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/cc/CHANGELOG.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:423 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:425 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
@@ -29372,49 +29378,49 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:452 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:450 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:461 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:459 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:467 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:463 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:473 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:472 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:480 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:481 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:488 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:487 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:496 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:493 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:502 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:500 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29426,163 +29432,163 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:514 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:516 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:520 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:522 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:526 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:528 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:533 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:534 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:539 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:540 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:548 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:546 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:559 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:553 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:563 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:559 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:574 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:568 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:582 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:579 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:590 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:583 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:596 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:594 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:603 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:602 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:613 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:610 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:621 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:616 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:629 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:623 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:640 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:633 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:650 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:641 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:656 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:649 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:662 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:660 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:669 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:670 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:677 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:676 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:691 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:682 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:697 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:689 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:701 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:697 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:708 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:711 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:715 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:717 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
         "module": "titles"
     },
     {
@@ -29594,7 +29600,7 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:729 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:728 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29612,49 +29618,49 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:748 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:749 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:754 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:755 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:760 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:761 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:766 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:768 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:772 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:774 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:779 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:780 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:785 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:786 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:791 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:792 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29678,37 +29684,31 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:817 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:819 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:823 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:825 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:829 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:831 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:834 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:837 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:839 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
-        "module": "titles"
-    },
-    {
-        "file": "server_rust/vendor/cc/CHANGELOG.md",
-        "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:844 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:843 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29720,7 +29720,7 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:854 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:854 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).",
         "module": "titles"
     },
     {
@@ -29738,25 +29738,25 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:870 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:869 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:875 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:874 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:880 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:879 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:885 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:884 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
@@ -29786,61 +29786,85 @@
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:913 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:910 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:918 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:915 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:923 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:920 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:928 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:925 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:937 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:933 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:946 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:938 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:951 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:943 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:956 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:948 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:962 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:957 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
         "file": "server_rust/vendor/cc/CHANGELOG.md",
         "severity": "warning",
-        "message": "server_rust/vendor/cc/CHANGELOG.md:967 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:966 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:971 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:976 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:982 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
+        "module": "titles"
+    },
+    {
+        "file": "server_rust/vendor/cc/CHANGELOG.md",
+        "severity": "warning",
+        "message": "server_rust/vendor/cc/CHANGELOG.md:987 titre dupliqué (déjà présent dans server_rust/vendor/rand/CHANGELOG.md:218).",
         "module": "titles"
     },
     {
