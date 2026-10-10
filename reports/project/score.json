@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-10T14:20:55.645312",
+    "generated": "2026-10-10T14:34:30.099546",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -46000,7 +46000,7 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-                    "line": 694,
+                    "line": 695,
                     "severity": "warning",
                     "message": "Function 'ouvrir' sans documentation",
                     "suggestion": "Ajoutez /// avant cette function",
@@ -46008,7 +46008,7 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-                    "line": 888,
+                    "line": 889,
                     "severity": "warning",
                     "message": "Function 'tirer_pondere' sans documentation",
                     "suggestion": "Ajoutez /// avant cette function",
@@ -46016,7 +46016,7 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-                    "line": 914,
+                    "line": 915,
                     "severity": "warning",
                     "message": "Function 'tirer_objet' sans documentation",
                     "suggestion": "Ajoutez /// avant cette function",
@@ -46024,7 +46024,7 @@
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs",
-                    "line": 1295,
+                    "line": 1296,
                     "severity": "warning",
                     "message": "Function 'tirer_livre' sans documentation",
                     "suggestion": "Ajoutez /// avant cette function",
