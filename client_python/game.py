@@ -4,12 +4,10 @@ import struct
 import threading
 import uuid
 from pathlib import Path
-
 import numpy as np
 from PIL import Image
 from vispy import app, scene
 from vispy.scene import visuals
-
 from .client import Client
 from .packet import PacketType
 from .packets.move import MovePacket
