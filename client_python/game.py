@@ -13,6 +13,7 @@ from .packet import PacketType
 from .packets.move import MovePacket
 from PySide6 import QtWidgets, QtCore
 
+
 class Game(scene.SceneCanvas):
     """Client 3D de The Last Signal avec terrain découpé en chunks."""
 
