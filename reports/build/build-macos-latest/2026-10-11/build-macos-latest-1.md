@@ -115,9 +115,7 @@ Compiling 'tests/test_splitmix64.py'...
 [1m[92m  Downloaded[0m yoke-derive v0.8.4
 [1m[92m  Downloaded[0m zerovec-derive v0.11.6
 [1m[92m  Downloaded[0m base64ct v1.8.3
-[1m[92m  Downloaded[0m const-oid v0.10.2
-[1m[92m  Downloaded[0m crossbeam-queue v0.3.14
-[1m[92m  Downloaded[0m crossbeam-utils v0.8.23
+[1m[92m  Downloaded[0m3
 [1m[92m  Downloaded[0m displaydoc v0.2.7
 [1m[92m  Downloaded[0m form_urlencoded v1.2.2
 [1m[92m  Downloaded[0m futures-channel v0.3.34
@@ -431,6 +429,19 @@ Compiling 'tests/test_splitmix64.py'...
    [1m[94m|[0m
 [1m[94m17[0m [1m[94m|[0m const NOMBRE_CONFIGURATIONS: u32 = 12 * 2 * 2; // niveaux × admin × militaire
    [1m[94m|[0m       [1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
+
+[1m[33mwarning[0m: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
+[1m[92m    Finished[0m `release` profile [optimized] target(s) in 1m 09s
+
+## Godot
+No Godot project found.
+
+## Summary
+
+- Python build completed
+- Rust build completed
+- Godot build completed
+    [1m[33m^^^^^^^^^^^^^^^^^^^^^[0m
 
 [1m[33mwarning[0m: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
 [1m[92m    Finished[0m `release` profile [optimized] target(s) in 1m 09s
