@@ -1,9 +1,9 @@
 # 🐍 Python CI Report
 
-Run : 678
+Run : 2408
 Branch : main
 Commit : 4df79599c0003acf68916267352c3a75ce10ee59
-Date : Sun Oct 11 02:14:07 UTC 2026
+Date : Sun Oct 11 03:43:47 UTC 2026
 
 ---
 
@@ -26,10 +26,10 @@ Date : Sun Oct 11 02:14:07 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/logs.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/main.py
 /home/runner/work/The-last-signal-/The-last-signal-/.github/security/test_web_security.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packet.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/Deco.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/chat.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ban.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/log.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/move.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/ping.py
@@ -39,17 +39,17 @@ Date : Sun Oct 11 02:14:07 UTC 2026
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/player_state.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/docs_score.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/packets/singup.py
+/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
 /home/runner/work/The-last-signal-/The-last-signal-/client_python/game.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/links.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/problem.py
-/home/runner/work/The-last-signal-/The-last-signal-/client_python/crypto.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/markdown.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/organization.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/report.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/python_docs.py
+/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/score.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/rust_docs.py
-/home/runner/work/The-last-signal-/The-last-signal-/scripts/documentation/spelling.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/utils/file_chercheur.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_problems_md.py
 /home/runner/work/The-last-signal-/The-last-signal-/scripts/voir_database.py
@@ -1079,7 +1079,7 @@ Average complexity: A (3.7142857142857144)
 [main]	INFO	cli exclude tests: None
 [main]	INFO	running on Python 3.14.8
 Working... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 100% 0:00:00
-Run started:2026-10-11 02:14:12.116054+00:00
+Run started:2026-10-11 03:43:52.413135+00:00
 
 Test results:
 >> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
@@ -4626,15 +4626,15 @@ IGNORED_DIRECTORIES = {
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==.github.security.test_filesystem:[21:31]
 ==.github.security.test_git_security:[166:176]
-        ".env",
-        ".env.local",
-        ".env.production",
-        "master.key",
-        "id_rsa",
-        "id_ed25519",
-        "credentials.json",
-        "service-account.json",
-    }
+    ".env",
+    ".env.local",
+    ".env.production",
+    "master.key",
+    "id_rsa",
+    "id_ed25519",
+    "credentials.json",
+    "service-account.json",
+}
  (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==tests.test_crypto_pipeline:[101:112]
@@ -4680,8 +4680,7 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
         for part in relative.parts
     )
 
-
-def is_world_writable(mode: int) -> bool: (duplicate-code)
+ (duplicate-code)
 client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
 ==scripts.documentation.links:[19:27]
 ==scripts.documentation.python_docs:[28:36]
@@ -4898,17 +4897,17 @@ client_python/packets/chat.py:1:0: R0801: Similar lines in 2 files
             positions,
             byte_counter,
             previous_ciphertext, (duplicate-code)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_remove) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.session) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.log) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.move) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.singup) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ping) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.ban) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_state) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.Deco) (cyclic-import)
 client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.login) (cyclic-import)
-client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.player_remove) (cyclic-import)
+client_python/packets/chat.py:1:0: R0401: Cyclic import (client_python.packet -> client_python.packets.chat) (cyclic-import)
 
 -----------------------------------
 Your code has been rated at 8.15/10
@@ -4939,7 +4938,7 @@ E   RuntimeError: DATABASE_PATH n'est pas définie
 =========================== short test summary info ============================
 ERROR tests/security/test_sql_injection.py - RuntimeError: DATABASE_PATH n'est pas définie
 !!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!
-=============================== 1 error in 0.66s ===============================
+=============================== 1 error in 0.69s ===============================
 
 </details>
 

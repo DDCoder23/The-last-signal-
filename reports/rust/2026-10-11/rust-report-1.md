@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 678
+Run : 2408
 Branch : main
 Commit : 4df79599c0003acf68916267352c3a75ce10ee59
-Date : Sun Oct 11 02:16:49 UTC 2026
+Date : Sun Oct 11 03:47:39 UTC 2026
 
 
 ## Cargo fmt
@@ -8997,51 +8997,51 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling futures-sink v0.3.34
    Compiling bytes v1.12.1
    Compiling serde_core v1.0.229
-   Compiling equivalent v1.0.2
+   Compiling rand_core v0.10.1
    Compiling icu_provider v2.3.1
    Compiling icu_normalizer v2.3.0
    Compiling icu_properties v2.3.0
-   Compiling rand_core v0.10.1
+   Compiling equivalent v1.0.2
    Compiling once_cell v1.21.4
    Compiling tracing-core v0.1.36
    Compiling generic-array v0.14.9
    Compiling parking_lot_core v0.9.12
    Compiling foldhash v0.2.0
-   Compiling futures-io v0.3.34
-   Compiling idna_adapter v1.2.2
    Compiling cpufeatures v0.2.17
    Compiling percent-encoding v2.3.2
+   Compiling futures-io v0.3.34
+   Compiling idna_adapter v1.2.2
    Compiling allocator-api2 v0.2.21
    Compiling slab v0.4.12
    Compiling futures-task v0.3.34
-   Compiling form_urlencoded v1.2.2
-   Compiling hashbrown v0.16.1
    Compiling futures-util v0.3.34
    Compiling idna v1.1.0
+   Compiling hashbrown v0.16.1
    Compiling serde v1.0.229
+   Compiling form_urlencoded v1.2.2
    Compiling parking_lot v0.12.5
    Compiling num-traits v0.2.19
    Compiling crossbeam-utils v0.8.23
-   Compiling getrandom v0.4.3
    Compiling zmij v1.0.23
-   Compiling crc-catalog v2.5.0
-   Compiling hashbrown v0.17.1
-   Compiling itoa v1.0.18
+   Compiling getrandom v0.4.3
    Compiling parking v2.2.1
-   Compiling event-listener v5.4.2
-   Compiling serde_json v1.0.152
+   Compiling hashbrown v0.17.1
+   Compiling crc-catalog v2.5.0
+   Compiling itoa v1.0.18
    Compiling crc v3.4.0
-   Compiling indexmap v2.14.2
+   Compiling serde_json v1.0.152
+   Compiling event-listener v5.4.2
    Compiling crossbeam-queue v0.3.14
+   Compiling indexmap v2.14.2
    Compiling either v1.19.0
    Compiling futures-intrusive v0.5.0
-   Compiling hashlink v0.11.1
    Compiling url v2.5.8
+   Compiling hashlink v0.11.1
    Compiling block-buffer v0.10.4
    Compiling crypto-common v0.1.6
    Compiling cmov v0.5.4
-   Compiling digest v0.10.7
    Compiling ctutils v0.4.3
+   Compiling digest v0.10.7
    Compiling tokio v1.53.2
    Compiling spin v0.9.9
    Compiling hybrid-array v0.4.15
@@ -9052,8 +9052,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling atoi v2.0.0
    Compiling futures-channel v0.3.34
    Compiling log v0.4.34
-   Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
    Compiling thiserror v2.0.21
    Compiling const-oid v0.10.2
    Compiling cpufeatures v0.3.1
@@ -9061,40 +9061,40 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling digest v0.11.3
    Compiling uuid v1.28.0
    Compiling aho-corasick v1.1.5
+   Compiling base64ct v1.8.3
+   Compiling foreign-types-shared v0.1.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling sqlx-core v0.9.0
-   Compiling foreign-types-shared v0.1.1
-   Compiling base64ct v1.8.3
-   Compiling phc v0.6.1
-   Compiling foreign-types v0.3.2
    Compiling regex-automata v0.4.18
+   Compiling foreign-types v0.3.2
+   Compiling phc v0.6.1
    Compiling sqlx-sqlite v0.9.0
    Compiling libsqlite3-sys v0.37.0
    Compiling openssl-sys v0.9.117
    Compiling sqlx-macros-core v0.9.0
    Compiling simd-adler32 v0.3.10
-   Compiling iana-time-zone v0.1.65
    Compiling adler2 v2.0.1
+   Compiling iana-time-zone v0.1.65
    Compiling bitflags v2.13.2
-   Compiling miniz_oxide v0.9.1
    Compiling openssl v0.10.81
    Compiling chrono v0.4.45
-   Compiling zeroize v1.9.1
+   Compiling miniz_oxide v0.9.1
    Compiling sqlx-macros v0.9.0
-   Compiling crc32fast v1.5.2
+   Compiling zeroize v1.9.1
    Compiling regex v1.13.1
    Compiling password-hash v0.6.1
+   Compiling crc32fast v1.5.2
    Compiling blake2 v0.11.0
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
    Compiling nu-ansi-term v0.50.3
    Compiling byteorder v1.5.0
-   Compiling fernet v0.2.2
    Compiling flexi_logger v0.31.10
    Compiling rand v0.10.3
-   Compiling argon2 v0.6.0
    Compiling sqlx v0.9.0
+   Compiling fernet v0.2.2
+   Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
    Compiling sha2 v0.11.0
    Compiling the-last-signal-server v1.0.13 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
@@ -9157,7 +9157,7 @@ warning: constant `NOMBRE_CONFIGURATIONS` is never used
 
 warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
 warning: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 19.61s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 25.52s
      Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-8251dd5c7cbe8166)
 
 running 44 tests
@@ -9165,18 +9165,18 @@ test network::packet::tests::test_encode_ban_permanent ... ok
 test network::packet::tests::test_encode_ban_temporary ... ok
 test network::packet::tests::test_packet_type_from_u16_all_valid ... ok
 test network::packet::tests::test_packet_type_from_u16_invalid_values ... ok
+test network::packet::tests::test_receive_packet_exceeds_max_size ... ok
 test network::packet::tests::test_receive_packet_size_zero_fails ... ok
 test network::packet::tests::test_receive_packet_size_one_fails ... ok
 test network::packet::tests::test_receive_packet_truncated_header ... ok
-test network::packet::tests::test_receive_packet_exceeds_max_size ... ok
 test network::packet::tests::test_receive_packet_truncated_payload ... ok
 test network::packet::tests::test_receive_packet_unknown_packet_type ... ok
-test network::packet::tests::test_send_packet_exceeds_max_size ... ok
 test network::packet::tests::test_send_and_receive_roundtrip ... ok
 test network::parser::tests::test_login_payload_empty ... ok
+test network::packet::tests::test_send_packet_exceeds_max_size ... ok
+test network::parser::tests::test_login_payload_invalid_email_utf8 ... ok
 test network::parser::tests::test_login_payload_invalid_password_utf8 ... ok
 test network::parser::tests::test_login_payload_missing_password_length ... ok
-test network::parser::tests::test_login_payload_invalid_email_utf8 ... ok
 test network::parser::tests::test_login_payload_trailing_bytes_accepted ... ok
 test network::parser::tests::test_login_payload_truncated_email_body ... ok
 test network::parser::tests::test_login_payload_truncated_email_length ... ok
@@ -9199,8 +9199,8 @@ test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... o
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
 test security::crypto::tests::fisher_yates_changes_with_seed ... ok
 test security::crypto::tests::fisher_yates_is_deterministic ... ok
-test security::crypto::tests::splitmix64_max_seed ... ok
 test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
+test security::crypto::tests::splitmix64_max_seed ... ok
 test security::crypto::tests::fisher_yates_contains_all_values ... ok
 test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
 test security::crypto::tests::splitmix64_state_changes ... ok
