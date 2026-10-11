@@ -1,6 +1,6 @@
 use core::marker::PhantomData;
 
-use crate::{utilities::OnceLock, Error};
+use crate::{parallel::reactor::Reactor, utilities::OnceLock, Error};
 
 pub(crate) struct JobToken(PhantomData<()>);
 
@@ -60,9 +60,9 @@ impl ActiveJobTokenServer {
         }
     }
 
-    pub(crate) async fn acquire(&mut self) -> Result<JobToken, Error> {
+    pub(crate) async fn acquire(&mut self, reactor: &Reactor) -> Result<JobToken, Error> {
         match self {
-            Self::Inherited(jobserver) => jobserver.acquire().await,
+            Self::Inherited(jobserver) => jobserver.acquire(reactor).await,
             Self::InProcess(jobserver) => Ok(jobserver.acquire().await),
         }
     }
@@ -71,8 +71,13 @@ impl ActiveJobTokenServer {
 mod inherited_jobserver {
     use super::JobToken;
 
-    use crate::{parallel::async_executor::YieldOnce, Error, ErrorKind};
+    use crate::{
+        parallel::{async_executor::YieldOnce, reactor::Reactor},
+        Error, ErrorKind,
+    };
 
+    #[cfg(unix)]
+    use std::os::unix::io::{AsRawFd, BorrowedFd, OwnedFd, RawFd};
     use std::{
         io, mem,
         sync::{mpsc, Mutex, MutexGuard, PoisonError},
@@ -99,14 +104,46 @@ mod inherited_jobserver {
         /// incorrect, hence we use a `Mutex` here.
         global_implicit_token: Mutex<bool>,
         inner: jobserver::Client,
+        #[cfg(unix)]
+        fd: Option<OwnedFd>,
     }
 
     impl JobServer {
         pub(super) unsafe fn from_env() -> Option<Self> {
             jobserver::Client::from_env().map(|inner| Self {
+                #[cfg(unix)]
+                fd: Self::jobserver_fd(&inner),
                 inner,
                 global_implicit_token: Mutex::new(true),
             })
+        }
+
+        /// `jobserver::Client` doesn't expose its pipe or fifo, so take it from
+        /// the `MAKEFLAGS` it passes to child processes, which is what they use.
+        #[cfg(unix)]
+        fn jobserver_fd(client: &jobserver::Client) -> Option<OwnedFd> {
+            use std::{fs::OpenOptions, process::Command};
+
+            let mut cmd = Command::new("");
+            client.configure(&mut cmd);
+            let (_, flags) = cmd.get_envs().find(|(key, _)| *key == "CARGO_MAKEFLAGS")?;
+            // Last in the flags, so a fifo path may contain spaces.
+            let (_, auth) = flags?.to_str()?.split_once("--jobserver-auth=")?;
+
+            if let Some(path) = auth.strip_prefix("fifo:") {
+                // Read and write, as opening a fifo read-only blocks until it has
+                // a writer.
+                let fifo = OpenOptions::new().read(true).write(true).open(path);
+                Some(fifo.ok()?.into())
+            } else {
+                let (read, _) = auth.split_once(',')?;
+                let read = read.parse::<RawFd>().ok().filter(|fd| *fd >= 0)?;
+                // `from_env` has just opened the client from this fd, and left it
+                // open.
+                unsafe { BorrowedFd::borrow_raw(read) }
+                    .try_clone_to_owned()
+                    .ok()
+            }
         }
 
         fn get_global_implicit_token(&self) -> MutexGuard<'_, bool> {
@@ -144,6 +181,12 @@ mod inherited_jobserver {
         inner: jobserver::HelperThread,
         /// When rx is dropped, all the token stored within it will be dropped.
         rx: mpsc::Receiver<io::Result<jobserver::Acquired>>,
+        /// Whether a token was requested and is yet to be received.
+        ///
+        /// Kept across `acquire`s: one that ends up with another token leaves
+        /// its request pending, and requesting again would make the helper
+        /// thread take more tokens than are ever used.
+        has_requested_token: bool,
     }
 
     impl HelperThread {
@@ -155,7 +198,31 @@ mod inherited_jobserver {
                 inner: jobserver.inner.clone().into_helper_thread(move |res| {
                     let _ = tx.send(res);
                 })?,
+                has_requested_token: false,
             })
+        }
+
+        fn try_recv(&mut self) -> Result<Option<JobToken>, Error> {
+            match self.rx.try_recv() {
+                Ok(res) => {
+                    self.has_requested_token = false;
+                    res?.drop_without_releasing();
+                    Ok(Some(JobToken::new()))
+                }
+                Err(mpsc::TryRecvError::Disconnected) => Err(Error::new(
+                    ErrorKind::JobserverHelpThreadError,
+                    "jobserver help thread has returned before ActiveJobServer is dropped",
+                )),
+                Err(mpsc::TryRecvError::Empty) => Ok(None),
+            }
+        }
+
+        /// At most one at a time, see `has_requested_token`.
+        fn request_token(&mut self) {
+            if !self.has_requested_token {
+                self.inner.request_token();
+                self.has_requested_token = true;
+            }
         }
     }
 
@@ -165,8 +232,11 @@ mod inherited_jobserver {
     }
 
     impl ActiveJobServer<'_> {
-        pub(super) async fn acquire(&mut self) -> Result<JobToken, Error> {
-            let mut has_requested_token = false;
+        pub(super) async fn acquire(&mut self, _reactor: &Reactor) -> Result<JobToken, Error> {
+            // Kept while waiting, dropped once a token is acquired: a
+            // jobserver with tokens to spare would wake every wait at once.
+            #[cfg(unix)]
+            let mut _registration = None;
 
             loop {
                 // Fast path
@@ -179,34 +249,35 @@ mod inherited_jobserver {
                         acquired.drop_without_releasing();
                         break Ok(JobToken::new());
                     }
-                    Ok(None) => YieldOnce::default().await,
+                    Ok(None) => {
+                        // Other processes, such as rustc, other build
+                        // scripts or make, put the tokens they release back
+                        // into the jobserver.
+                        #[cfg(unix)]
+                        if _registration.is_none() {
+                            _registration = self
+                                .jobserver
+                                .fd
+                                .as_ref()
+                                .map(|fd| _reactor.register_fd(fd.as_raw_fd()));
+                        }
+                        YieldOnce::default().await
+                    }
                     Err(err) if err.kind() == io::ErrorKind::Unsupported => {
                         // Fallback to creating a help thread with blocking acquire
-                        let helper_thread = if let Some(thread) = self.helper_thread.as_ref() {
+                        let helper_thread = if let Some(thread) = self.helper_thread.as_mut() {
                             thread
                         } else {
                             self.helper_thread
                                 .insert(HelperThread::new(self.jobserver)?)
                         };
 
-                        match helper_thread.rx.try_recv() {
-                            Ok(res) => {
-                                let acquired = res?;
-                                acquired.drop_without_releasing();
-                                break Ok(JobToken::new());
-                            }
-                            Err(mpsc::TryRecvError::Disconnected) => break Err(Error::new(
-                                ErrorKind::JobserverHelpThreadError,
-                                "jobserver help thread has returned before ActiveJobServer is dropped",
-                            )),
-                            Err(mpsc::TryRecvError::Empty) => {
-                                if !has_requested_token {
-                                    helper_thread.inner.request_token();
-                                    has_requested_token = true;
-                                }
-                                YieldOnce::default().await
-                            }
+                        if let Some(token) = helper_thread.try_recv()? {
+                            break Ok(token);
                         }
+
+                        helper_thread.request_token();
+                        YieldOnce::default().await
                     }
                     Err(err) => break Err(err.into()),
                 }
