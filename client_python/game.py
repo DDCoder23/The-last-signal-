@@ -11,7 +11,7 @@ from vispy.scene import visuals
 from .client import Client
 from .packet import PacketType
 from .packets.move import MovePacket
-
+from PySide6 import QtWidgets, QtCore
 
 class Game(scene.SceneCanvas):
     """Client 3D de The Last Signal avec terrain découpé en chunks."""
@@ -66,8 +66,8 @@ class Game(scene.SceneCanvas):
         self.local_x = 100.0
         self.local_y = 100.0
         self.local_z = 0.0
-        self._pressed_keys: set[str] = set()
         self._last_sent_position: tuple[int, int, int] | None = None
+        self.local_marker: visuals.Markers | None = None
 
         # Joueurs distants.
         self.remote_players: dict[
@@ -98,6 +98,9 @@ class Game(scene.SceneCanvas):
 
         self.view = self.central_widget.add_view()
 
+        # Caméra orbitale demandée. Le terrain du jeu utilise Y comme axe
+        # vertical ; up="y" garde donc la caméra cohérente avec les sommets
+        # du terrain (X, hauteur Y, profondeur Z).
         self.view.camera = scene.cameras.TurntableCamera(
             elevation=45,
             azimuth=45,
@@ -106,7 +109,6 @@ class Game(scene.SceneCanvas):
             up="y",
             parent=self.view.scene,
         )
-
         self.camera = self.view.camera
 
         # ==========================================================
@@ -328,7 +330,8 @@ class Game(scene.SceneCanvas):
             dtype=np.uint32,
         )
 
-        # Normales orientées vers le haut (axe Y).
+        # Ordre des sommets orienté vers le haut (+Y). Avec X horizontal
+        # et Z profondeur, l'ancien ordre produisait des normales vers -Y.
         faces[0::2] = np.column_stack((a, c, b))
         faces[1::2] = np.column_stack((b, c, d))
 
@@ -523,12 +526,21 @@ class Game(scene.SceneCanvas):
         if self.heightmap is None:
             return
 
-        # Le streaming dépend de la position du joueur, pas de la
-        # position orbitale de la caméra.
-        world_x = self._server_x_to_world(self.local_x)
-        world_z = self._server_y_to_world(self.local_y)
+        center = self.camera.center
 
-        center_chunk = self._chunk_coordinates(world_x, world_z)
+        if center is None:
+            return
+
+        try:
+            world_x = float(center[0])
+            world_z = float(center[2])
+        except (TypeError, ValueError, IndexError):
+            return
+
+        center_chunk = self._chunk_coordinates(
+            world_x,
+            world_z,
+        )
 
         # Inutile de recalculer la zone si le joueur n'a pas
         # changé de chunk.
@@ -582,37 +594,48 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _place_camera_initially(self) -> None:
-        """Centre la TurntableCamera sur le joueur au démarrage."""
+        """Centre la caméra orbitale sur la position initiale du joueur."""
         world_x = self._server_x_to_world(self.local_x)
         world_z = self._server_y_to_world(self.local_y)
         terrain_y = self._terrain_height_at(world_x, world_z)
+        target = (world_x, terrain_y + self.PLAYER_HEIGHT, world_z)
+        self.camera.center = target
 
-        self.camera.elevation = 45
-        self.camera.azimuth = 45
-        self.camera.distance = 150
-        self.camera.center = (
-            world_x,
-            terrain_y + self.PLAYER_HEIGHT,
-            world_z,
+        marker_pos = np.array(
+            [[world_x, terrain_y + self.PLAYER_HEIGHT, world_z]],
+            dtype=np.float32,
+        )
+        self.local_marker = visuals.Markers(
+            pos=marker_pos,
+            size=14,
+            face_color=(1.0, 0.1, 0.1, 1.0),
+            edge_color="white",
+            parent=self.view.scene,
         )
 
         print(
-            "[GAME] Position initiale : "
-            f"({world_x:.1f}, {terrain_y + self.PLAYER_HEIGHT:.1f}, "
-            f"{world_z:.1f})"
+            "[GAME] Caméra TurntableCamera prête : "
+            f"position joueur=({world_x:.1f}, {terrain_y:.1f}, {world_z:.1f}), "
+            "elevation=45, azimuth=45, distance=150, fov=70"
         )
 
     def _update_camera_position(self) -> None:
-        """Fait suivre au centre de la caméra la position du joueur."""
+        """Suit le joueur avec le centre de l'orbite sans déplacer le terrain."""
         world_x = self._server_x_to_world(self.local_x)
         world_z = self._server_y_to_world(self.local_y)
         terrain_y = self._terrain_height_at(world_x, world_z)
+        target_y = terrain_y + self.PLAYER_HEIGHT
 
-        self.camera.center = (
-            world_x,
-            terrain_y + self.PLAYER_HEIGHT,
-            world_z,
-        )
+        # Le centre est le point autour duquel TurntableCamera orbite.
+        self.camera.center = (world_x, target_y, world_z)
+
+        if self.local_marker is not None:
+            self.local_marker.set_data(
+                pos=np.array([[world_x, target_y, world_z]], dtype=np.float32),
+                size=14,
+                face_color=(1.0, 0.1, 0.1, 1.0),
+                edge_color="white",
+            )
 
     def _terrain_height_at(
         self,
@@ -802,9 +825,10 @@ class Game(scene.SceneCanvas):
         local_id = self._get_local_player_id()
 
         if local_id is not None and player_id == local_id:
-            self.local_x = float(x)
-            self.local_y = float(y)
+            self.local_x = float(np.clip(x, 0, self.WORLD_WIDTH))
+            self.local_y = float(np.clip(y, 0, self.WORLD_DEPTH))
             self.local_z = float(z)
+            self._last_sent_position = (int(x), int(y), int(z))
             return
 
         self.remote_players[player_id] = (x, y, z)
@@ -916,49 +940,44 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _sync_camera_to_server(self) -> None:
-        """Synchronise la position du joueur, jamais celle de la caméra."""
-        server_x = int(round(self.local_x))
-        server_y = int(round(self.local_y))
+        """Envoie uniquement les nouvelles coordonnées du joueur au serveur."""
+        server_x = max(0, min(int(self.WORLD_WIDTH), int(round(self.local_x))))
+        server_y = max(0, min(int(self.WORLD_DEPTH), int(round(self.local_y))))
         server_z = int(round(self.local_z))
         position = (server_x, server_y, server_z)
 
         if position == self._last_sent_position:
             return
 
-        if not getattr(self.client, "connected", False):
-            return
-
         self._send_position_to_server(*position)
         self._last_sent_position = position
 
-    def _move_local_player(self, forward: float, strafe: float) -> None:
-        """Déplace le joueur dans le plan X/Z selon l'azimut caméra."""
-        if forward == 0 and strafe == 0:
+    def _move_player(self, dx: float, dz: float) -> None:
+        """Déplace le joueur dans le plan X/Z, relativement à l'azimut caméra."""
+        length = float(np.hypot(dx, dz))
+        if length == 0:
             return
+        dx /= length
+        dz /= length
 
-        angle = np.deg2rad(float(self.camera.azimuth))
-        forward_x = np.sin(angle)
-        forward_z = -np.cos(angle)
-        right_x = np.cos(angle)
-        right_z = np.sin(angle)
+        # La caméra tourne autour du joueur ; ses rotations ne modifient pas
+        # les coordonnées du monde. Seul l'azimut sert à orienter le déplacement.
+        azimuth = np.deg2rad(float(self.camera.azimuth))
+        forward_x = np.sin(azimuth)
+        forward_z = np.cos(azimuth)
+        right_x = np.cos(azimuth)
+        right_z = -np.sin(azimuth)
 
-        move_x = forward * forward_x + strafe * right_x
-        move_z = forward * forward_z + strafe * right_z
-        length = float(np.hypot(move_x, move_z))
-        if length > 0:
-            move_x /= length
-            move_z /= length
+        world_dx = (right_x * dx + forward_x * dz) * self.PLAYER_SPEED
+        world_dz = (right_z * dx + forward_z * dz) * self.PLAYER_SPEED
 
-        world_x = self._server_x_to_world(self.local_x) + move_x * self.PLAYER_SPEED
-        world_z = self._server_y_to_world(self.local_y) + move_z * self.PLAYER_SPEED
-
-        world_x = float(np.clip(world_x, -self.WORLD_WIDTH / 2, self.WORLD_WIDTH / 2))
-        world_z = float(np.clip(world_z, -self.WORLD_DEPTH / 2, self.WORLD_DEPTH / 2))
-
-        self.local_x = float(self._world_x_to_server(world_x))
-        self.local_y = float(self._world_z_to_server(world_z))
-        self.local_z = self._terrain_height_at(world_x, world_z) + self.PLAYER_HEIGHT
-        self._last_sent_position = None
+        # Les coordonnées serveur sont 0..WORLD_WIDTH/DEPTH ; conversion
+        # équivalente en unités monde car l'échelle est de 1 unité par unité.
+        self.local_x = float(np.clip(self.local_x + world_dx, 0, self.WORLD_WIDTH))
+        self.local_y = float(np.clip(self.local_y + world_dz, 0, self.WORLD_DEPTH))
+        self._update_camera_position()
+        self._update_terrain_chunks()
+        self._sync_camera_to_server()
 
     def _send_position_to_server(
         self,
@@ -1005,38 +1024,35 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _on_key_press(self, event) -> None:
-        """Déplacement clavier et fermeture."""
+        """Contrôles : flèches/WASD pour se déplacer, Échap pour quitter."""
         key = getattr(event, "key", None)
         if key is None:
             return
 
         key_name = str(getattr(key, "name", key)).lower()
-        key_name = key_name.replace("key.", "").replace("arrow", "")
+        key_name = key_name.replace("key_", "").replace("arrow", "")
 
         if key_name in ("escape", "esc"):
             self.close()
-            event.handled = True
             return
 
-        # Flèches ou WASD : avancer/reculer et se déplacer latéralement.
-        movements = {
-            "up": (1.0, 0.0), "w": (1.0, 0.0),
-            "down": (-1.0, 0.0), "s": (-1.0, 0.0),
-            "left": (0.0, -1.0), "a": (0.0, -1.0),
-            "right": (0.0, 1.0), "d": (0.0, 1.0),
+        # Flèches ou WASD. La caméra reste orbitale ; elle ne se déplace
+        # pas librement et ne contrôle plus directement les coordonnées joueur.
+        movement = {
+            "up": (0.0, 1.0), "w": (0.0, 1.0),
+            "down": (0.0, -1.0), "s": (0.0, -1.0),
+            "left": (-1.0, 0.0), "a": (-1.0, 0.0),
+            "right": (1.0, 0.0), "d": (1.0, 0.0),
         }
-        if key_name in movements:
-            self._move_local_player(*movements[key_name])
-            event.handled = True
+        if key_name in movement:
+            self._move_player(*movement[key_name])
 
     def _on_key_release(self, event) -> None:
-        """Réservé aux contrôles personnalisés."""
-
+        """Aucun état de touche maintenue n'est nécessaire pour le moment."""
         pass
 
     def _on_mouse_press(self, event) -> None:
-        """La caméra gère les interactions souris."""
-
+        """TurntableCamera gère l'orbite et le zoom à la souris."""
         pass
 
     # ==============================================================
@@ -1085,7 +1101,7 @@ class VispyWidget:
     l'objet métier du joueur si le reste de l'application en possède un.
     """
     def __init__(self, client: Client, joueur_obj=None):
-        from PySide6 import QtWidgets, QtCore
+        
 
         self.joueur = joueur_obj
         self.open_tresors = []
@@ -1129,7 +1145,7 @@ class VispyWidget:
 
     def eventFilter(self, watched, event):
         # La fermeture de la fenêtre doit également arrêter le thread réseau.
-        from PySide6 import QtCore
+        
         if (
             watched is self.window
             and event.type() == QtCore.QEvent.Type.Close
