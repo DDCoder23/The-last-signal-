@@ -26,18 +26,25 @@ class Game(scene.SceneCanvas):
     WORLD_HEIGHT = 120.0
 
     # Taille maximale de la heightmap après réduction.
-    MAX_TERRAIN_SIZE = 512
+    MAX_TERRAIN_SIZE = 1024
 
     # Taille d'un chunk en unités du monde.
     CHUNK_SIZE = 64.0
 
     # Nombre de chunks dans chaque direction autour du joueur.
     # 2 = jusqu'à 25 chunks actifs.
-    RENDER_DISTANCE = 2
+    RENDER_DISTANCE = 0
 
     # Caméra et joueur.
     PLAYER_HEIGHT = 2.0
     PLAYER_SPEED = 5.0
+    WATER_SPEED_MULTIPLIER = 0.20
+    SAND_SPEED_MULTIPLIER = 0.70
+    MOUNTAIN_UPHILL_MULTIPLIER = 0.40
+    MAX_WALKABLE_SLOPE_DEGREES = 38.0
+    MOUNTAIN_BLOCK_SLOPE_DEGREES = 52.0
+    HEIGHT_SMOOTH_RADIUS = 1.25
+    COLLISION_SAMPLE_STEP = 1.5
 
     # Réseau.
     NETWORK_QUEUE_LIMIT = 100
@@ -52,7 +59,7 @@ class Game(scene.SceneCanvas):
 
     def __init__(self, client: Client):
         super().__init__(
-            keys="interactive",
+            keys=None,
             title="The Last Signal",
             size=(1280, 720),
             bgcolor="black",
@@ -103,13 +110,16 @@ class Game(scene.SceneCanvas):
         # vertical ; up="y" garde donc la caméra cohérente avec les sommets
         # du terrain (X, hauteur Y, profondeur Z).
         self.view.camera = scene.cameras.TurntableCamera(
-            elevation=45,
+            elevation=42,
             azimuth=45,
-            distance=150,
-            fov=70.0,
+            distance=38,
+            fov=48.0,
             up="y",
             parent=self.view.scene,
         )
+        # La caméra est pilotée exclusivement par le code : aucun drag/zoom
+        # souris ni raccourci hérité du contrôleur VisPy.
+        self.view.camera.interactive = False
         self.camera = self.view.camera
 
         # ==========================================================
@@ -117,7 +127,12 @@ class Game(scene.SceneCanvas):
         # ==============================================================
 
         self.heightmap: np.ndarray | None = None
+        # Couleurs et classes de biome sont conservées en uint8, sans conversion
+        # RGB/BGR ni interpolation de couleurs qui inventerait des teintes.
         self.color_map: np.ndarray | None = None
+        self.biome_map: np.ndarray | None = None
+        self.collision_map: np.ndarray | None = None
+        self._last_update_time = None
 
         # (chunk_x, chunk_z) -> maillage VisPy.
         self.terrain_chunks: dict[
@@ -184,123 +199,88 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _load_terrain(self) -> None:
-        """
-        Charge les données du terrain en mémoire.
-
-        Aucun maillage global n'est créé ici. Les maillages seront
-        construits uniquement pour les chunks proches du joueur.
-        """
-
+        """Charge les cartes et prépare une heightmap lissée et des biomes."""
         assets = self._assets_directory()
-
         height_path = assets / "map_height.png"
         color_path = assets / "map_color.png"
-
+        collision_path = assets / "map_collision.png"
         if not height_path.is_file():
-            raise FileNotFoundError(
-                f"Heightmap introuvable : {height_path}"
-            )
-
-        print(f"[GAME] Chargement heightmap : {height_path}")
+            raise FileNotFoundError(f"Heightmap introuvable : {height_path}")
 
         with Image.open(height_path) as image:
-            height_image = image.convert("L")
-            height = np.asarray(
-                height_image,
-                dtype=np.float32,
-            ).copy()
+            print(f"[GAME] Heightmap source : {image.size}, mode={image.mode}")
+            raw = image.convert("L")
+            source = np.asarray(raw, dtype=np.uint8)
+            low, high = int(source.min()), int(source.max())
+            if high > low:
+                normalized = np.uint8(np.clip((source.astype(np.float32) - low)
+                                              * (255.0 / (high - low)), 0, 255))
+            else:
+                normalized = np.zeros_like(source, dtype=np.uint8)
+            raw = Image.fromarray(normalized)
+            # Un flou spatial léger atténue les marches de hauteur avant
+            # l'échantillonnage du maillage ; map_color reste intacte.
+            if self.HEIGHT_SMOOTH_RADIUS > 0:
+                from PIL import ImageFilter
+                raw = raw.filter(ImageFilter.GaussianBlur(self.HEIGHT_SMOOTH_RADIUS))
+            height = np.asarray(raw, dtype=np.float32) / 255.0
 
-        if height.ndim != 2 or min(height.shape) < 2:
-            raise ValueError(
-                "map_height.png doit être une image "
-                "en niveaux de gris d'au moins 2 x 2 pixels."
-            )
+        self.heightmap = self._downsample_height(height)
+        terrain_height, terrain_width = self.heightmap.shape
 
-        # Normalisation entre 0 et 1.
-        height_min = float(height.min())
-        height_max = float(height.max())
-
-        if height_max > height_min:
-            height = (
-                (height - height_min)
-                / (height_max - height_min)
-            )
-        else:
-            height.fill(0.0)
-
-        # Réduction facultative de la résolution.
-        height = self._downsample_height(height)
-
-        self.heightmap = height
-
-        terrain_height, terrain_width = height.shape
-
-        # Chargement des couleurs à la même résolution.
         if color_path.is_file():
-            print(f"[GAME] Chargement couleurs : {color_path}")
-
             with Image.open(color_path) as image:
-                color_image = image.convert("RGB")
-                color_image = color_image.resize(
-                    (terrain_width, terrain_height),
-                    Image.Resampling.BILINEAR,
+                print(f"[GAME] Couleurs source : {image.size}, mode={image.mode}")
+                # NEAREST préserve les couleurs de référence au lieu de créer
+                # des couleurs intermédiaires par interpolation bilinéaire.
+                color = image.convert("RGB").resize(
+                    (terrain_width, terrain_height), Image.Resampling.NEAREST
                 )
-
-                self.color_map = (
-                    np.asarray(
-                        color_image,
-                        dtype=np.float32,
-                    )
-                    / 255.0
-                )
+                self.color_map = np.asarray(color, dtype=np.uint8).copy()
+            self.biome_map = self._classify_biomes(self.color_map)
         else:
             self.color_map = None
+            self.biome_map = np.zeros((terrain_height, terrain_width), dtype=np.uint8)
+            print("[GAME] map_color.png absent : collisions de biome désactivées.")
 
-            print(
-                "[GAME] map_color.png absent : "
-                "couleur verte par défaut."
-            )
+        # Le fichier est inspecté (dimensions/mode), mais son encodage n'est pas
+        # interprété arbitrairement : aucune sémantique n'est supposée.
+        if collision_path.is_file():
+            with Image.open(collision_path) as image:
+                print(f"[GAME] Collision source : {image.size}, mode={image.mode}; "
+                      "non utilisée sans convention de codage documentée.")
+                self.collision_map = np.asarray(image.convert("L"), dtype=np.uint8)
+        else:
+            self.collision_map = None
+            print("[GAME] map_collision.png absent.")
 
-        print(
-            f"[GAME] Données terrain : "
-            f"{terrain_width} x {terrain_height}"
-        )
+        print(f"[GAME] Terrain préparé : {terrain_width} x {terrain_height}; "
+              f"chunk={self.CHUNK_SIZE:g}; rendu=1 chunk")
 
-        print(
-            f"[GAME] Taille des chunks : "
-            f"{self.CHUNK_SIZE:.0f} x "
-            f"{self.CHUNK_SIZE:.0f}"
-        )
+    def _classify_biomes(self, rgb: np.ndarray) -> np.ndarray:
+        """Classes 0=normal, 1=eau bleue, 2=sable clair, 3=montagne grise."""
+        colors = rgb.astype(np.int16)
+        r, g, b = colors[..., 0], colors[..., 1], colors[..., 2]
+        blue = (b >= 75) & (b > r * 1.18) & (b > g * 1.10)
+        light = (r >= 170) & (g >= 155) & (b >= 125) & ((r - b) <= 100)
+        gray = (np.abs(r - g) <= 22) & (np.abs(g - b) <= 22) & (r >= 65) & (r <= 205)
+        result = np.zeros(rgb.shape[:2], dtype=np.uint8)
+        result[blue] = 1
+        result[light & ~blue] = 2
+        result[gray & ~blue & ~light] = 3
+        return result
 
-    def _downsample_height(
-        self,
-        height: np.ndarray,
-    ) -> np.ndarray:
-        """Réduit la résolution si la heightmap est trop grande."""
-
+    def _downsample_height(self, height: np.ndarray) -> np.ndarray:
+        """Réduit la heightmap sans parcourir l'image complète à chaque frame."""
         h, w = height.shape
-
         if max(h, w) <= self.MAX_TERRAIN_SIZE:
-            return height
-
+            return height.astype(np.float32, copy=False)
         scale = max(h, w) / self.MAX_TERRAIN_SIZE
-
         new_w = max(2, int(round(w / scale)))
         new_h = max(2, int(round(h / scale)))
-
-        image = Image.fromarray(
-            np.uint8(np.clip(height, 0.0, 1.0) * 255.0),
-        )
-
-        image = image.resize(
-            (new_w, new_h),
-            Image.Resampling.BILINEAR,
-        )
-
-        return (
-            np.asarray(image, dtype=np.float32)
-            / 255.0
-        )
+        image = Image.fromarray(np.uint8(np.clip(height, 0.0, 1.0) * 255.0))
+        image = image.resize((new_w, new_h), Image.Resampling.BILINEAR)
+        return np.asarray(image, dtype=np.float32) / 255.0
 
     # ==============================================================
     # MESH HELPERS
@@ -484,10 +464,10 @@ class Game(scene.SceneCanvas):
 
         # Couleurs du chunk.
         if self.color_map is not None:
-            rgb = self.color_map[
-                row0:row1 + 1,
-                col0:col1 + 1,
-            ].reshape(-1, 3)
+            rgb = (
+                self.color_map[row0:row1 + 1, col0:col1 + 1]
+                .astype(np.float32) / 255.0
+            ).reshape(-1, 3)
 
             alpha = np.ones(
                 (rgb.shape[0], 1),
@@ -522,73 +502,24 @@ class Game(scene.SceneCanvas):
     # ==============================================================
 
     def _update_terrain_chunks(self) -> None:
-        """Charge les chunks proches et décharge les autres."""
-
+        """Ne conserve qu'un unique maillage : celui du chunk du joueur."""
         if self.heightmap is None:
             return
-
-        center = self.camera.center
-
-        if center is None:
+        world_x = self._server_x_to_world(self.local_x)
+        world_z = self._server_y_to_world(self.local_y)
+        center_chunk = self._chunk_coordinates(world_x, world_z)
+        if center_chunk == self._last_chunk_center and len(self.terrain_chunks) <= 1:
             return
-
-        try:
-            world_x = float(center[0])
-            world_z = float(center[2])
-        except (TypeError, ValueError, IndexError):
-            return
-
-        center_chunk = self._chunk_coordinates(
-            world_x,
-            world_z,
-        )
-
-        # Inutile de recalculer la zone si le joueur n'a pas
-        # changé de chunk.
-        if center_chunk == self._last_chunk_center:
-            return
-
         self._last_chunk_center = center_chunk
-
-        cx, cz = center_chunk
-        count_x, count_z = self._chunk_counts()
-
-        wanted: set[tuple[int, int]] = set()
-
-        for dx in range(
-            -self.RENDER_DISTANCE,
-            self.RENDER_DISTANCE + 1,
-        ):
-            for dz in range(
-                -self.RENDER_DISTANCE,
-                self.RENDER_DISTANCE + 1,
-            ):
-                x = cx + dx
-                z = cz + dz
-
-                if 0 <= x < count_x and 0 <= z < count_z:
-                    wanted.add((x, z))
-
-        # Décharger les chunks éloignés.
-        for key in list(self.terrain_chunks):
-            if key not in wanted:
-                mesh = self.terrain_chunks.pop(key)
+        for key, mesh in list(self.terrain_chunks.items()):
+            if key != center_chunk:
                 mesh.parent = None
-
-        # Charger les chunks manquants.
-        for key in sorted(wanted):
-            if key in self.terrain_chunks:
-                continue
-
-            mesh = self._create_terrain_chunk(*key)
-
+                del self.terrain_chunks[key]
+        if center_chunk not in self.terrain_chunks:
+            mesh = self._create_terrain_chunk(*center_chunk)
             if mesh is not None:
-                self.terrain_chunks[key] = mesh
-
-        print(
-            f"[GAME] Chunk central : {center_chunk} | "
-            f"Chunks actifs : {len(self.terrain_chunks)}"
-        )
+                self.terrain_chunks[center_chunk] = mesh
+        print(f"[GAME] Chunk actif : {center_chunk}; maillages={len(self.terrain_chunks)}")
 
     # ==============================================================
     # CAMERA
@@ -615,9 +546,9 @@ class Game(scene.SceneCanvas):
         )
 
         print(
-            "[GAME] Caméra TurntableCamera prête : "
-            f"position joueur=({world_x:.1f}, {terrain_y:.1f}, {world_z:.1f}), "
-            "elevation=45, azimuth=45, distance=150, fov=70"
+            "[GAME] Caméra fixe de suivi prête : "
+            f"joueur=({world_x:.1f}, {terrain_y:.1f}, {world_z:.1f}), "
+            "distance=38, fov=48"
         )
 
     def _update_camera_position(self) -> None:
@@ -689,6 +620,46 @@ class Game(scene.SceneCanvas):
         return value * self.WORLD_HEIGHT
 
     # ==============================================================
+    def _sample_map_index(self, world_x: float, world_z: float) -> tuple[int, int]:
+        """Coordonnées source cohérentes avec le maillage (colonne, ligne)."""
+        assert self.heightmap is not None
+        h, w = self.heightmap.shape
+        col = int(round(np.clip((world_x + self.WORLD_WIDTH / 2) / self.WORLD_WIDTH, 0, 1) * (w - 1)))
+        row = int(round(np.clip((world_z + self.WORLD_DEPTH / 2) / self.WORLD_DEPTH, 0, 1) * (h - 1)))
+        return col, row
+
+    def _slope_degrees_at(self, world_x: float, world_z: float) -> float:
+        if self.heightmap is None:
+            return 0.0
+        step_x = self.WORLD_WIDTH / max(1, self.heightmap.shape[1] - 1)
+        step_z = self.WORLD_DEPTH / max(1, self.heightmap.shape[0] - 1)
+        gx = (self._terrain_height_at(world_x + step_x, world_z) -
+              self._terrain_height_at(world_x - step_x, world_z)) / (2 * step_x)
+        gz = (self._terrain_height_at(world_x, world_z + step_z) -
+              self._terrain_height_at(world_x, world_z - step_z)) / (2 * step_z)
+        return float(np.degrees(np.arctan(np.hypot(gx, gz))))
+
+    def _terrain_multiplier(self, world_x: float, world_z: float,
+                            old_world_x: float, old_world_z: float) -> float:
+        biome = 0
+        if self.biome_map is not None:
+            col, row = self._sample_map_index(world_x, world_z)
+            biome = int(self.biome_map[row, col])
+        if biome == 1:
+            return self.WATER_SPEED_MULTIPLIER
+        if biome == 2:
+            return self.SAND_SPEED_MULTIPLIER
+        slope = self._slope_degrees_at(world_x, world_z)
+        if slope >= self.MOUNTAIN_BLOCK_SLOPE_DEGREES:
+            return 0.0
+        if slope > self.MAX_WALKABLE_SLOPE_DEGREES:
+            return 0.0
+        old_h = self._terrain_height_at(old_world_x, old_world_z)
+        new_h = self._terrain_height_at(world_x, world_z)
+        if (biome == 3 or new_h > old_h + 0.05) and slope > 8.0:
+            return self.MOUNTAIN_UPHILL_MULTIPLIER
+        return 1.0
+
     # COORDINATE CONVERSION
     # ==============================================================
 
@@ -954,28 +925,53 @@ class Game(scene.SceneCanvas):
         self._last_sent_position = position
 
     def _move_player(self, dx: float, dz: float) -> None:
-        """Déplace le joueur dans le plan X/Z, relativement à l'azimut caméra."""
+        """Déplace le joueur avec ralentissement de biome et collisions de pente."""
         length = float(np.hypot(dx, dz))
         if length == 0:
             return
         dx /= length
         dz /= length
+        azimuth = np.deg2rad(45.0)
+        forward_x, forward_z = np.sin(azimuth), np.cos(azimuth)
+        right_x, right_z = np.cos(azimuth), -np.sin(azimuth)
+        direction_x = right_x * dx + forward_x * dz
+        direction_z = right_z * dx + forward_z * dz
+        old_x = self._server_x_to_world(self.local_x)
+        old_z = self._server_y_to_world(self.local_y)
 
-        # La caméra tourne autour du joueur ; ses rotations ne modifient pas
-        # les coordonnées du monde. Seul l'azimut sert à orienter le déplacement.
-        azimuth = np.deg2rad(float(self.camera.azimuth))
-        forward_x = np.sin(azimuth)
-        forward_z = np.cos(azimuth)
-        right_x = np.cos(azimuth)
-        right_z = -np.sin(azimuth)
+        # Le biome est évalué à l'emplacement visé ; son multiplicateur agit
+        # réellement sur la distance, pas seulement sur l'affichage.
+        probe_x = float(np.clip(self.local_x + direction_x * self.PLAYER_SPEED,
+                                0, self.WORLD_WIDTH))
+        probe_y = float(np.clip(self.local_y + direction_z * self.PLAYER_SPEED,
+                                0, self.WORLD_DEPTH))
+        probe_wx = self._server_x_to_world(probe_x)
+        probe_wz = self._server_y_to_world(probe_y)
+        multiplier = self._terrain_multiplier(probe_wx, probe_wz, old_x, old_z)
+        if multiplier <= 0:
+            # Une pente trop raide bloque le mouvement vers l'avant, mais le
+            # joueur peut toujours glisser latéralement le long de l'obstacle.
+            return
+        distance = self.PLAYER_SPEED * multiplier
+        candidate_x = float(np.clip(self.local_x + direction_x * distance, 0, self.WORLD_WIDTH))
+        candidate_y = float(np.clip(self.local_y + direction_z * distance, 0, self.WORLD_DEPTH))
+        new_x = self._server_x_to_world(candidate_x)
+        new_z = self._server_y_to_world(candidate_y)
 
-        world_dx = (right_x * dx + forward_x * dz) * self.PLAYER_SPEED
-        world_dz = (right_z * dx + forward_z * dz) * self.PLAYER_SPEED
+        travel = float(np.hypot(new_x - old_x, new_z - old_z))
+        steps = max(1, int(np.ceil(travel / self.COLLISION_SAMPLE_STEP)))
+        accepted_x, accepted_z = old_x, old_z
+        for i in range(1, steps + 1):
+            t = i / steps
+            test_x = old_x + (new_x - old_x) * t
+            test_z = old_z + (new_z - old_z) * t
+            if self._terrain_multiplier(test_x, test_z, accepted_x, accepted_z) <= 0:
+                break
+            accepted_x, accepted_z = test_x, test_z
 
-        # Les coordonnées serveur sont 0..WORLD_WIDTH/DEPTH ; conversion
-        # équivalente en unités monde car l'échelle est de 1 unité par unité.
-        self.local_x = float(np.clip(self.local_x + world_dx, 0, self.WORLD_WIDTH))
-        self.local_y = float(np.clip(self.local_y + world_dz, 0, self.WORLD_DEPTH))
+        self.local_x = float(np.clip(accepted_x + self.WORLD_WIDTH / 2, 0, self.WORLD_WIDTH))
+        self.local_y = float(np.clip(accepted_z + self.WORLD_DEPTH / 2, 0, self.WORLD_DEPTH))
+        self.local_z = self._terrain_height_at(accepted_x, accepted_z)
         self._update_camera_position()
         self._update_terrain_chunks()
         self._sync_camera_to_server()
