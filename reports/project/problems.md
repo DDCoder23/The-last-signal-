@@ -1,6 +1,6 @@
 # Documentation Problems
 
-Generated: 2026-10-12 04:15:05
+Generated: 2026-10-12 07:03:49
 
 ## Summary
 
@@ -41637,7 +41637,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** titles
-- **Message :** server_rust/vendor/unicode-ident/README.md:256 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).
+- **Message :** server_rust/vendor/unicode-ident/README.md:262 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).
 
 ---
 
