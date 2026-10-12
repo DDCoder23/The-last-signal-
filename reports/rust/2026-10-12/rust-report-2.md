@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 677
+Run : 679
 Branch : main
-Commit : 157c924e63691ec86dea09595f2324bc9553bb4b
-Date : Sat Oct 10 04:23:31 UTC 2026
+Commit : 2dfe03a8c3b7fe64df85ea6d5dd608fa7cca4fd4
+Date : Mon Oct 12 04:06:47 UTC 2026
 
 
 ## Cargo fmt
@@ -138,7 +138,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/data
 -use sqlx::SqlitePool;
 -use crate::utils::vault::decrypt_vault;
  use crate::auth::password::hash_password;
- use crate::utils::account_creator::create_account;
+ use crate::utils::special_account_creator::create_account;
 +use crate::utils::vault::decrypt_vault;
 +use log::debug;
 +use sqlx::SqlitePool;
@@ -2094,9 +2094,9 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
      pub loot_par_niveau: HashMap<u32, Loot>,
  
      pub objets_garantis: HashMap<u32, HashMap<String, u32>>,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:33:
-     pub seuil_artefact_peu_commun: HashMap<u32, u32>,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:34:
      pub seuil_artefact_rare: HashMap<u32, u32>,
+     pub seuil_artefact_super_rare: HashMap<u32, u32>,
      pub sous_loot: HashMap<String, HashMap<String, f64>>,
 -    
 +
@@ -2107,7 +2107,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
      pub coeff_loot: f64,
  }
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:171:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:172:
                  militaire: 2,
              },
          );
@@ -2116,7 +2116,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              10,
              Loot {
                  commun: 2,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:220:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:247:
          // Niveau 1
          let mut niveau_1 = HashMap::new();
  
@@ -2128,7 +2128,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_1.insert("torche".to_string(), 2);
          niveau_1.insert("sac".to_string(), 3);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:236:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:263:
  
          // 17 chances sur 20 : pain
          if jet_de_des(20, 1) >= 4 {
@@ -2140,7 +2140,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          }
  
          objets_garantis.insert(1, niveau_1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:247:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:274:
          // Niveau 2
          let mut niveau_2 = HashMap::new();
  
@@ -2152,7 +2152,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_2.insert("torche".to_string(), 1);
          niveau_2.insert("sac".to_string(), 2);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:265:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:292:
          // Niveau 3
          let mut niveau_3 = HashMap::new();
  
@@ -2164,7 +2164,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          niveau_3.insert("torche".to_string(), 2);
          niveau_3.insert("sac".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:283:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:310:
          // Niveau 4
          let mut niveau_4 = HashMap::new();
  
@@ -2176,7 +2176,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 12 {
              niveau_4.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:297:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:324:
          // Niveau 5
          let mut niveau_5 = HashMap::new();
  
@@ -2188,7 +2188,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 10 {
              niveau_5.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:309:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:336:
          objets_garantis.insert(5, niveau_5);
          let mut niveau_6 = HashMap::new();
  
@@ -2200,7 +2200,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 8 {
              niveau_6.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:321:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:348:
          objets_garantis.insert(6, niveau_6);
          let mut niveau_7 = HashMap::new();
  
@@ -2212,7 +2212,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 6 {
              niveau_7.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:333:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:360:
          objets_garantis.insert(7, niveau_7);
          let mut niveau_8 = HashMap::new();
  
@@ -2224,7 +2224,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 4 {
              niveau_8.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:345:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:372:
          objets_garantis.insert(8, niveau_8);
          let mut niveau_9 = HashMap::new();
  
@@ -2236,7 +2236,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          if jet_de_des(20, 1) >= 2 {
              niveau_9.insert("gemmes".to_string(), 1);
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:357:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:384:
          objets_garantis.insert(9, niveau_9);
          let mut niveau_10 = HashMap::new();
  
@@ -2251,7 +2251,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          objets_garantis.insert(10, niveau_10);
          let mut niveau_11 = HashMap::new();
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:369:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:396:
 -        niveau_11.insert(
 -            "argent".to_string(),
 -            jet_de_des(6, 4) * 100 * PA,
@@ -2263,7 +2263,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
          objets_garantis.insert(11, niveau_11);
          let mut niveau_12 = HashMap::new();
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:378:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:405:
 -        niveau_12.insert(
 -            "argent".to_string(),
 -            jet_de_des(6, 5) * 100 * PA,
@@ -2273,11 +2273,37 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        
 +
          objets_garantis.insert(12, niveau_12);
--        
+         let mut niveau_13 = HashMap::new();
  
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:414:
+-        niveau_13.insert(
+-            "argent".to_string(),
+-            jet_de_des(6, 1) * 100 * PO,
+-        );
++        niveau_13.insert("argent".to_string(), jet_de_des(6, 1) * 100 * PO);
+         niveau_13.insert("gemmes".to_string(), 1);
+-        
++
+         objets_garantis.insert(13, niveau_13);
+         let mut niveau_14 = HashMap::new();
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:423:
+-        niveau_14.insert(
+-            "argent".to_string(),
+-            jet_de_des(6, 2) * 100 * PO,
+-        );
++        niveau_14.insert("argent".to_string(), jet_de_des(6, 2) * 100 * PO);
+         niveau_14.insert("gemmes".to_string(), 1);
+-        
++
+         objets_garantis.insert(14, niveau_14);
+ 
+-        
+-
          // -------------------------------------------------
          // QUANTITÉS DES OBJETS
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:408:
+         // -------------------------------------------------
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:454:
              "flèches épiques",
              "flèches légendaires",
          ] {
@@ -2372,6 +2398,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -        ("sanglier".to_string(), 2.0),
 -        ("pigeon".to_string(), 4.0),
 -        ("poulet".to_string(), 10.0),
+-        ("porc".to_string(), 10.0),
 -        ("boeuf".to_string(), 10.0),
 -        ("agneau".to_string(), 10.0),
 -        ("veau".to_string(), 10.0),
@@ -2395,6 +2422,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +                ("sanglier".to_string(), 2.0),
 +                ("pigeon".to_string(), 4.0),
 +                ("poulet".to_string(), 10.0),
++                ("porc".to_string(), 10.0),
 +                ("boeuf".to_string(), 10.0),
 +                ("agneau".to_string(), 10.0),
 +                ("veau".to_string(), 10.0),
@@ -2577,6 +2605,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    (10,11),
 -    (11,10),
 -    (12,10),
+-    (13,9),
+-    (14,8),
 -]);
 +            (2, 20),
 +            (3, 19),
@@ -2589,6 +2619,8 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            (10, 11),
 +            (11, 10),
 +            (12, 10),
++            (13, 9),
++            (14, 8),
 +        ]);
          let seuil_artefact_peu_commun: HashMap<u32, u32> = HashMap::from([
 -    (6, 20),
@@ -2598,12 +2630,21 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 -    (10,15),
 -    (11,14),
 -    (12,13),
+-    (13,12),
+-    (14,11),
+-
 -
 -]);
 -        let seuil_artefact_rare: HashMap<u32, u32> = HashMap::from([
 -    (10, 20),
 -    (11,19),
 -    (12,17),
+-    (13,15),
+-    (14,15),
+-
+-]);
+-let seuil_artefact_super_rare: HashMap<u32, u32> = HashMap::from([
+-    (14, 20),
 -    
 -
 -]);
@@ -2614,8 +2655,12 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
 +            (10, 15),
 +            (11, 14),
 +            (12, 13),
++            (13, 12),
++            (14, 11),
 +        ]);
-+        let seuil_artefact_rare: HashMap<u32, u32> = HashMap::from([(10, 20), (11, 19), (12, 17)]);
++        let seuil_artefact_rare: HashMap<u32, u32> =
++            HashMap::from([(10, 20), (11, 19), (12, 17), (13, 15), (14, 15)]);
++        let seuil_artefact_super_rare: HashMap<u32, u32> = HashMap::from([(14, 20)]);
          let sous_loot_livre_normal = HashMap::from([
 -    ("livre enchant niv 1".to_string(), 70.0),
 -    ("livre enchant niv 2".to_string(), 20.0),
@@ -2652,7 +2697,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
  
          Self {
              loot_par_niveau,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:629:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:688:
              sous_loot_livre_normal,
              sous_loot_livre_admin,
              coeff_loot: 1.0,
@@ -3100,7 +3145,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      SELECT nombre
                      FROM echecs_sous_categories
                      WHERE account_id = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:923:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:982:
                        AND categorie = ?
                        AND sous_categorie = ?
                      "#,
@@ -3136,7 +3181,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      SELECT objet_id
                      FROM objets_dispo
                      WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:945:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1004:
                      "#,
 -                )
 -                .bind(nom)
@@ -3161,7 +3206,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                              r#"
                              SELECT nombre
                              FROM echecs_objets
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:969:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1028:
                          .bind(objet_id)
                          .fetch_optional(pool)
                          .await?
@@ -3302,7 +3347,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                          INSERT INTO echecs_sous_categories (
                              account_id,
                              categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1066:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1125:
                          DO UPDATE SET
                              nombre = 0
                          "#,
@@ -3338,7 +3383,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                          INSERT INTO echecs_sous_categories (
                              account_id,
                              categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1098:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1157:
                          DO UPDATE SET
                              nombre = nombre + 1
                          "#,
@@ -3374,7 +3419,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      SELECT objet_id
                      FROM objets_dispo
                      WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1120:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1179:
                      "#,
 -                )
 -                .bind(nom)
@@ -3417,7 +3462,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                          INSERT INTO echecs_objets (
                              account_id,
                              categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1157:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1216:
                          DO UPDATE SET
                              nombre = 0
                          "#,
@@ -3455,7 +3500,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                          INSERT INTO echecs_objets (
                              account_id,
                              categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1192:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1251:
                          DO UPDATE SET
                              nombre = nombre + 1
                          "#,
@@ -3594,7 +3639,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              SELECT objet_id
              FROM objets_dispo
              WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1276:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1335:
              "#,
 -        )
 -        .bind(objet)
@@ -3613,7 +3658,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                      r#"
                      SELECT nombre
                      FROM echecs_objets
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1297:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1356:
                  .bind(objet_id)
                  .fetch_optional(pool)
                  .await?
@@ -3696,7 +3741,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
              SELECT objet_id
              FROM objets_dispo
              WHERE nom = ?
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1352:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1411:
              "#,
 -        )
 -        .bind(objet)
@@ -3739,7 +3784,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs_objets (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1389:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1448:
                  DO UPDATE SET
                      nombre = 0
                  "#,
@@ -3774,7 +3819,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/game
                  INSERT INTO echecs_objets (
                      account_id,
                      categorie,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1422:
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/gameplay/tresor.rs:1481:
                  DO UPDATE SET
                      nombre = nombre + 1
                  "#,
@@ -7096,275 +7141,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -
 +pub mod server;
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:1:
- use log::error;
- use std::io;
- 
--use tokio::io::{
--    AsyncReadExt,
--    AsyncWriteExt,
--};
--use tokio::net::TcpStream;
- use serde::{Deserialize, Serialize};
-+use tokio::io::{AsyncReadExt, AsyncWriteExt};
-+use tokio::net::TcpStream;
- 
--
- pub const MAX_PACKET_SIZE: usize = 10 * 1024 * 1024;
- 
- /// Types de paquets.
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:21:
-     Move = 4,
-     Log = 5,
-     SignUp = 6,
--     LoginResponse = 7,
-+    LoginResponse = 7,
-     SignUpResponse = 8,
-     BAN = 9,
-     DECO = 10,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:53:
-     ERROR,
- }
- 
--
- #[derive(Debug, Serialize, Deserialize)]
- pub struct ClientLog {
-     pub level: LogLevel,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:96:
- }
- 
- impl Packet {
--    pub fn new(
--        packet_type: PacketType,
--        payload: Vec<u8>,
--    ) -> Self {
-+    pub fn new(packet_type: PacketType, payload: Vec<u8>) -> Self {
-         Self {
-             packet_type,
-             payload,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:106:
-         }
-     }
- }
--pub fn encode_ban(
--    ban_type: BanType,
--    reason: &str,
--    date_deban: Option<&str>,
--) -> Vec<u8> {
--
-+pub fn encode_ban(ban_type: BanType, reason: &str, date_deban: Option<&str>) -> Vec<u8> {
-     format!(
-         "{}\0{}\0{}",
-         ban_type as u8,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:122:
- }
- 
- /// Envoie un paquet.
--pub async fn send_packet(
--    stream: &mut TcpStream,
--    packet: &Packet,
--) -> io::Result<()> {
--
-+pub async fn send_packet(stream: &mut TcpStream, packet: &Packet) -> io::Result<()> {
-     let payload_size = 2 + packet.payload.len();
- 
-     if payload_size > MAX_PACKET_SIZE {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:141:
- 
-     stream.write_all(&size).await?;
- 
--    let packet_type =
--        (packet.packet_type as u16).to_be_bytes();
-+    let packet_type = (packet.packet_type as u16).to_be_bytes();
- 
-     stream.write_all(&packet_type).await?;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:152:
- }
- 
- /// Reçoit exactement `size` octets.
--async fn recv_exact(
--    stream: &mut TcpStream,
--    size: usize,
--) -> io::Result<Vec<u8>> {
--
-+async fn recv_exact(stream: &mut TcpStream, size: usize) -> io::Result<Vec<u8>> {
-     let mut buffer = vec![0u8; size];
- 
-     stream.read_exact(&mut buffer).await?;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:165:
- }
- 
- /// Reçoit un paquet.
--pub async fn receive_packet(
--    stream: &mut TcpStream,
--) -> io::Result<Packet> {
--
-+pub async fn receive_packet(stream: &mut TcpStream) -> io::Result<Packet> {
-     // Taille
-     let header = recv_exact(stream, 4).await?;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:175:
--    let size = u32::from_be_bytes([
--        header[0],
--        header[1],
--        header[2],
--        header[3],
--    ]) as usize;
-+    let size = u32::from_be_bytes([header[0], header[1], header[2], header[3]]) as usize;
- 
-     if size < 2 {
-         error!("paquet invalide");
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:199:
-     let data = recv_exact(stream, size).await?;
- 
-     // Type
--    let packet_type =
--        u16::from_be_bytes([data[0], data[1]]);
-+    let packet_type = u16::from_be_bytes([data[0], data[1]]);
- 
--    let packet_type =
--        PacketType::from_u16(packet_type)
--            .ok_or_else(|| {
--                error!("Type de paquet inconnu");
--                io::Error::new(
--                    io::ErrorKind::InvalidData,
--                    "Type de paquet inconnu.",
--                )
--            })?;
-+    let packet_type = PacketType::from_u16(packet_type).ok_or_else(|| {
-+        error!("Type de paquet inconnu");
-+        io::Error::new(io::ErrorKind::InvalidData, "Type de paquet inconnu.")
-+    })?;
- 
-     // Payload
-     let payload = data[2..].to_vec();
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:1:
--pub fn parse_login_payload(
--    payload: &[u8],
--) -> Result<(String, String), String> {
--
-+pub fn parse_login_payload(payload: &[u8]) -> Result<(String, String), String> {
-     let mut offset = 0;
- 
-     // -------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:12:
-         return Err("Email length manquante".into());
-     }
- 
--    let email_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let email_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:28:
-         return Err("Email incomplet".into());
-     }
- 
--    let email = String::from_utf8(
--        payload[offset..offset + email_length]
--            .to_vec()
--    )
--    .map_err(|_| "Email UTF-8 invalide")?;
-+    let email = String::from_utf8(payload[offset..offset + email_length].to_vec())
-+        .map_err(|_| "Email UTF-8 invalide")?;
- 
-     offset += email_length;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:44:
-         return Err("Password length manquante".into());
-     }
- 
--    let password_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let password_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:60:
-         return Err("Password incomplet".into());
-     }
- 
--    let password = String::from_utf8(
--        payload[offset..offset + password_length]
--            .to_vec()
--    )
--    .map_err(|_| "Password UTF-8 invalide")?;
-+    let password = String::from_utf8(payload[offset..offset + password_length].to_vec())
-+        .map_err(|_| "Password UTF-8 invalide")?;
- 
-     Ok((email, password))
- }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:71:
--pub fn parse_signup_payload(
--    payload: &[u8],
--) -> Result<(String, String), String> {
--
-+pub fn parse_signup_payload(payload: &[u8]) -> Result<(String, String), String> {
-     let mut offset = 0;
- 
-     // -------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:82:
-         return Err("Email length manquante".into());
-     }
- 
--    let email_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let email_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:98:
-         return Err("Email incomplet".into());
-     }
- 
--    let email = String::from_utf8(
--        payload[offset..offset + email_length]
--            .to_vec()
--    )
--    .map_err(|_| "Email UTF-8 invalide")?;
-+    let email = String::from_utf8(payload[offset..offset + email_length].to_vec())
-+        .map_err(|_| "Email UTF-8 invalide")?;
- 
-     offset += email_length;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:114:
-         return Err("Password length manquante".into());
-     }
- 
--    let password_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let password_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:130:
-         return Err("Password incomplet".into());
-     }
- 
--    let password = String::from_utf8(
--        payload[offset..offset + password_length]
--            .to_vec()
--    )
--    .map_err(|_| "Password UTF-8 invalide")?;
-+    let password = String::from_utf8(payload[offset..offset + password_length].to_vec())
-+        .map_err(|_| "Password UTF-8 invalide")?;
- 
-     Ok((email, password))
- }
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/server.rs:1:
 -use tokio::net::TcpListener;
 -use tokio::task;
@@ -7654,51 +7430,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/secu
  }
 -}
 -
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:1:
--use uuid::Uuid;
- use sqlx::SqlitePool;
-+use uuid::Uuid;
- pub async fn create_account(
-     pool: &SqlitePool,
-     email: &str,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:85:
-     .bind(&user_id)
-     .bind(account_name)
-     .bind(role_id)
--    .fetch_one(&mut *tx) 
-+    .fetch_one(&mut *tx)
-     .await?;
-     let max_balance = i64::MAX;
--    sqlx::query( 
-+    sqlx::query(
-         r#" INSERT INTO wallets ( 
-         account_id,
-         balance
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:95:
-         ) 
-         VALUES (?,?) 
--        "#, ) 
--        .bind(account_id)
--        .bind(max_balance)
--        .execute(&mut *tx) 
--        .await?;
-+        "#,
-+    )
-+    .bind(account_id)
-+    .bind(max_balance)
-+    .execute(&mut *tx)
-+    .await?;
-     if let Some(status) = status {
-         sqlx::query(
-             r#"
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:119:
- 
-     tx.commit().await?;
- 
--    Ok(())}
-+    Ok(())
-+}
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/logger/compressor.rs:1:
 -use flate2::{
@@ -8253,10 +7984,55 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
  pub mod macros;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/mod.rs:1:
-+pub mod account_creator;
  pub mod logger;
- pub mod vault;
--pub mod account_creator;
+-pub mod vault;
+ pub mod special_account_creator;
++pub mod vault;
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:1:
+-use uuid::Uuid;
+ use sqlx::SqlitePool;
++use uuid::Uuid;
+ pub async fn create_account(
+     pool: &SqlitePool,
+     email: &str,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:85:
+     .bind(&user_id)
+     .bind(account_name)
+     .bind(role_id)
+-    .fetch_one(&mut *tx) 
++    .fetch_one(&mut *tx)
+     .await?;
+     let max_balance = i64::MAX;
+-    sqlx::query( 
++    sqlx::query(
+         r#" INSERT INTO wallets ( 
+         account_id,
+         balance
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:95:
+         ) 
+         VALUES (?,?) 
+-        "#, ) 
+-        .bind(account_id)
+-        .bind(max_balance)
+-        .execute(&mut *tx) 
+-        .await?;
++        "#,
++    )
++    .bind(account_id)
++    .bind(max_balance)
++    .execute(&mut *tx)
++    .await?;
+     if let Some(status) = status {
+         sqlx::query(
+             r#"
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:119:
+ 
+     tx.commit().await?;
+ 
+-    Ok(())}
++    Ok(())
++}
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/vault.rs:8:
          Err(_) => fs::read_to_string("../security/master.key")?,
@@ -8845,44 +8621,44 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling pin-project-lite v0.2.17
    Compiling typenum v1.20.1
    Compiling yoke v0.8.3
-   Compiling writeable v0.6.4
-   Compiling zerovec v0.11.8
-   Compiling memchr v2.8.3
-   Compiling tinystr v0.8.4
    Compiling futures-core v0.3.34
    Compiling litemap v0.8.3
-   Compiling smallvec v1.16.2
+   Compiling zerovec v0.11.8
+   Compiling smallvec v1.16.3
+   Compiling writeable v0.6.4
+   Compiling tinystr v0.8.4
+   Compiling memchr v2.8.3
+   Compiling icu_locale_core v2.3.0
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
-   Compiling icu_locale_core v2.3.0
    Compiling utf8_iter v1.0.4
+   Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
    Compiling lock_api v0.4.14
-   Compiling icu_collections v2.3.0
-   Compiling icu_properties_data v2.3.0
    Compiling icu_normalizer_data v2.3.0
-   Compiling mio v1.2.4
+   Compiling icu_properties_data v2.3.0
    Compiling socket2 v0.6.5
-   Compiling bytes v1.12.1
+   Compiling mio v1.2.4
    Compiling futures-sink v0.3.34
-   Compiling serde_core v1.0.229
-   Compiling equivalent v1.0.2
+   Compiling bytes v1.12.1
    Compiling icu_provider v2.3.1
-   Compiling icu_normalizer v2.3.0
-   Compiling icu_properties v2.3.0
-   Compiling once_cell v1.21.4
+   Compiling serde_core v1.0.229
    Compiling rand_core v0.10.1
-   Compiling tracing-core v0.1.36
+   Compiling once_cell v1.21.4
+   Compiling icu_properties v2.3.0
+   Compiling icu_normalizer v2.3.0
+   Compiling equivalent v1.0.2
    Compiling generic-array v0.14.9
+   Compiling tracing-core v0.1.36
    Compiling parking_lot_core v0.9.12
-   Compiling foldhash v0.2.0
-   Compiling futures-io v0.3.34
    Compiling allocator-api2 v0.2.21
-   Compiling cpufeatures v0.2.17
    Compiling idna_adapter v1.2.2
    Compiling slab v0.4.12
-   Compiling percent-encoding v2.3.2
    Compiling futures-task v0.3.34
+   Compiling foldhash v0.2.0
+   Compiling cpufeatures v0.2.17
+   Compiling percent-encoding v2.3.2
+   Compiling futures-io v0.3.34
    Compiling futures-util v0.3.34
    Compiling form_urlencoded v1.2.2
    Compiling hashbrown v0.16.1
@@ -8890,27 +8666,27 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling serde v1.0.229
    Compiling parking_lot v0.12.5
    Compiling num-traits v0.2.19
-   Compiling crossbeam-utils v0.8.23
    Compiling zmij v1.0.23
+   Compiling crossbeam-utils v0.8.23
    Compiling getrandom v0.4.3
-   Compiling crc-catalog v2.5.0
    Compiling itoa v1.0.18
-   Compiling hashbrown v0.17.1
    Compiling parking v2.2.1
-   Compiling serde_json v1.0.151
+   Compiling crc-catalog v2.5.0
+   Compiling hashbrown v0.17.1
    Compiling event-listener v5.4.2
    Compiling crc v3.4.0
-   Compiling indexmap v2.14.2
+   Compiling serde_json v1.0.154
    Compiling crossbeam-queue v0.3.14
    Compiling either v1.19.0
    Compiling futures-intrusive v0.5.0
+   Compiling indexmap v2.14.2
    Compiling hashlink v0.11.1
    Compiling url v2.5.8
    Compiling block-buffer v0.10.4
    Compiling crypto-common v0.1.6
    Compiling cmov v0.5.4
-   Compiling digest v0.10.7
    Compiling ctutils v0.4.3
+   Compiling digest v0.10.7
    Compiling tokio v1.53.2
    Compiling spin v0.9.9
    Compiling hybrid-array v0.4.15
@@ -8921,29 +8697,29 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling atoi v2.0.0
    Compiling futures-channel v0.3.34
    Compiling log v0.4.34
-   Compiling crypto-common v0.2.2
    Compiling block-buffer v0.12.1
+   Compiling crypto-common v0.2.2
    Compiling thiserror v2.0.21
+   Compiling const-oid v0.10.2
    Compiling cpufeatures v0.3.1
    Compiling base64 v0.22.1
-   Compiling const-oid v0.10.2
    Compiling digest v0.11.3
    Compiling uuid v1.28.0
    Compiling aho-corasick v1.1.5
-   Compiling foreign-types-shared v0.1.1
    Compiling base64ct v1.8.3
+   Compiling foreign-types-shared v0.1.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling regex-automata v0.4.18
    Compiling sqlx-core v0.9.0
-   Compiling sqlx-sqlite v0.9.0
-   Compiling phc v0.6.1
    Compiling foreign-types v0.3.2
+   Compiling phc v0.6.1
+   Compiling sqlx-sqlite v0.9.0
    Compiling libsqlite3-sys v0.37.0
-   Compiling sqlx-macros-core v0.9.0
    Compiling openssl-sys v0.9.117
    Compiling simd-adler32 v0.3.10
    Compiling adler2 v2.0.1
+   Compiling sqlx-macros-core v0.9.0
    Compiling iana-time-zone v0.1.65
    Compiling bitflags v2.13.2
    Compiling openssl v0.10.81
@@ -8987,19 +8763,13 @@ warning: fields `user_id` and `password_hash` are never read
    |
    = note: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
-warning: constant `PO` is never used
- --> src/gameplay/tresor.rs:8:7
-  |
-8 | const PO: u32 = PA * 10;
-  |       ^^
-
 warning: constant `PP` is never used
  --> src/gameplay/tresor.rs:9:7
   |
 9 | const PP: u32 = PO * 10;
   |       ^^
 
-warning: `the-last-signal-server` (lib) generated 4 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 1 suggestion)
+warning: `the-last-signal-server` (lib) generated 3 warnings (run `cargo fix --lib -p the-last-signal-server` to apply 1 suggestion)
 warning: unused import: `sqlx::Row`
  --> src/main.rs:6:5
   |
@@ -9030,35 +8800,75 @@ warning: constant `NOMBRE_CONFIGURATIONS` is never used
 17 | const NOMBRE_CONFIGURATIONS: u32 = 12 * 2 * 2; // niveaux × admin × militaire
    |       ^^^^^^^^^^^^^^^^^^^^^
 
-warning: `the-last-signal-server` (lib test) generated 4 warnings (4 duplicates)
 warning: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 18.90s
-     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-ab0b6f744d4046ff)
+warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.79s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-6a14e8b544218208)
 
-running 12 tests
+running 52 tests
+test network::packet::tests::test_encode_ban_permanent ... ok
+test network::packet::tests::test_encode_ban_temporary ... ok
+test network::packet::tests::test_packet_parse_body_empty_payload ... ok
+test network::packet::tests::test_packet_parse_body_unknown_type ... ok
+test network::packet::tests::test_packet_parse_body_with_payload ... ok
+test network::packet::tests::test_packet_type_from_u16_all_valid ... ok
+test network::packet::tests::test_packet_parse_body_too_short ... ok
+test network::packet::tests::test_packet_type_from_u16_invalid_values ... ok
+test network::packet::tests::test_receive_packet_truncated_header ... ok
+test network::packet::tests::test_receive_packet_exceeds_max_size ... ok
+test network::packet::tests::test_receive_packet_size_zero_fails ... ok
+test network::packet::tests::test_receive_packet_size_one_fails ... ok
+test network::packet::tests::test_receive_packet_truncated_payload ... ok
+test network::packet::tests::test_receive_packet_unknown_packet_type ... ok
+test network::packet::tests::test_send_packet_exceeds_max_size ... ok
+test network::packet::tests::test_send_and_receive_roundtrip ... ok
+test network::parser::tests::test_login_payload_empty ... ok
+test network::parser::tests::test_login_payload_empty_strings ... ok
+test network::parser::tests::test_login_payload_invalid_email_utf8 ... ok
+test network::parser::tests::test_login_payload_invalid_password_utf8 ... ok
+test network::parser::tests::test_login_payload_large_u16_length_incomplet ... ok
+test network::parser::tests::test_login_payload_missing_password_length ... ok
+test network::parser::tests::test_login_payload_trailing_bytes_accepted ... ok
+test network::parser::tests::test_login_payload_truncated_email_body ... ok
+test network::parser::tests::test_login_payload_truncated_email_length ... ok
+test network::parser::tests::test_login_payload_truncated_password_body ... ok
+test network::parser::tests::test_login_payload_truncated_password_length ... ok
+test network::parser::tests::test_login_payload_valid ... ok
+test network::parser::tests::test_signup_payload_empty ... ok
+test network::parser::tests::test_signup_payload_empty_strings ... ok
+test network::parser::tests::test_signup_payload_invalid_email_utf8 ... ok
+test network::parser::tests::test_signup_payload_invalid_password_utf8 ... ok
+test network::parser::tests::test_signup_payload_large_u16_length_incomplet ... ok
+test network::parser::tests::test_signup_payload_missing_password_length ... ok
+test network::parser::tests::test_signup_payload_trailing_bytes_accepted ... ok
+test network::parser::tests::test_signup_payload_truncated_email_body ... ok
+test network::parser::tests::test_signup_payload_truncated_email_length ... ok
+test network::parser::tests::test_signup_payload_truncated_password_body ... ok
+test network::parser::tests::test_signup_payload_truncated_password_length ... ok
+test network::parser::tests::test_signup_payload_valid ... ok
 test security::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
-test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
 test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
-test security::crypto::tests::fisher_yates_changes_with_seed ... ok
+test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
-test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
-test security::crypto::tests::splitmix64_max_seed ... ok
+test security::crypto::tests::fisher_yates_changes_with_seed ... ok
 test security::crypto::tests::fisher_yates_is_deterministic ... ok
+test security::crypto::tests::splitmix64_max_seed ... ok
+test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
 test security::crypto::tests::fisher_yates_contains_all_values ... ok
 test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
 test security::crypto::tests::splitmix64_state_changes ... ok
 test security::crypto::tests::splitmix64_zero_seed ... ok
 
-test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-1384f0f424ac1281)
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-fec268bc39a78d8d)
 
 running 1 test
 test tests::test_tresor ... ignored
 
 test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-c20eb2dfb79399c6)
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-d24d305192721f57)
 
 running 0 tests
 
