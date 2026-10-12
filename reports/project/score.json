@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-12T04:15:04.365756",
+    "generated": "2026-10-12T07:03:48.681378",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -23456,7 +23456,7 @@
                 {
                     "file": "server_rust/vendor/unicode-ident/README.md",
                     "severity": "warning",
-                    "message": "server_rust/vendor/unicode-ident/README.md:256 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).",
+                    "message": "server_rust/vendor/unicode-ident/README.md:262 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).",
                     "module": "titles"
                 },
                 {

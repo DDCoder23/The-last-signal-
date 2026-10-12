@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-12 04:15:04
+**Date :** 2026-10-12 07:03:48
 
 # 64/100
 
@@ -48711,7 +48711,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/unicode-ident/README.md:256 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).
+- **Message :** server_rust/vendor/unicode-ident/README.md:262 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).
 
 - **module :** titles
 
