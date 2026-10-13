@@ -1,7 +1,7 @@
 use sha2::{Digest, Sha256};
 const MASK_64: u64 = 0xFFFF_FFFF_FFFF_FFFF;
 const COMMUNICATION_KEY_SIZE: usize = 64;
-const ROTOR_COUNT: u8 = 16;
+const ROTOR_COUNT: usize = 16;
 const ROTOR_DOMAIN: &[u8] = b"TheLastSignal-Rotor-v1";
 const ROTOR_SIZE: usize = 256;
 
@@ -45,7 +45,7 @@ pub fn derive_rotor_seed(
         return Err("Communication_key must be exactly 64 bytes");
     }
 
-    if !(1..=ROTOR_COUNT).contains(&rotor_id) {
+    if !(1..=ROTOR_COUNT as u8).contains(&rotor_id) {
         return Err("rotor_id must be between 1 and 16");
     }
 
@@ -82,6 +82,33 @@ pub fn fisher_yates(seed: u64) -> [u8; ROTOR_SIZE] {
     }
 
     rotor
+}
+
+
+pub fn generate_rotor(
+    communication_key: &[u8],
+    rotor_id: u8,
+) -> Result<[u8; ROTOR_SIZE], &'static str> {
+    let seed = derive_rotor_seed(communication_key, rotor_id)?;
+
+    Ok(fisher_yates(seed))
+}
+
+pub fn generate_rotors(
+    communication_key: &[u8],
+) -> Result<[[u8; ROTOR_SIZE]; ROTOR_COUNT], &'static str> {
+    if communication_key.len() != COMMUNICATION_KEY_SIZE {
+        return Err("Communication_key must be exactly 64 bytes");
+    }
+
+    let mut rotors = [[0u8; ROTOR_SIZE]; ROTOR_COUNT];
+
+    for rotor_id in 1..=ROTOR_COUNT {
+        rotors[rotor_id - 1] =
+            generate_rotor(communication_key, rotor_id as u8)?;
+    }
+
+    Ok(rotors)
 }
 #[cfg(test)]
 mod tests {
@@ -206,6 +233,55 @@ fn fisher_yates_changes_with_seed() {
     let rotor2 = fisher_yates(1);
 
     assert_ne!(rotor1, rotor2);
+}
+#[test]
+fn generate_rotor_is_deterministic() {
+    let key = [0u8; COMMUNICATION_KEY_SIZE];
+
+    let rotor1 = generate_rotor(&key, 1).unwrap();
+    let rotor2 = generate_rotor(&key, 1).unwrap();
+
+    assert_eq!(rotor1, rotor2);
+}
+
+#[test]
+fn generate_rotors_creates_sixteen_rotors() {
+    let key = [0u8; COMMUNICATION_KEY_SIZE];
+
+    let rotors = generate_rotors(&key).unwrap();
+
+    assert_eq!(rotors.len(), ROTOR_COUNT);
+}
+
+#[test]
+fn generate_rotors_are_permutations() {
+    let key = [0u8; COMMUNICATION_KEY_SIZE];
+
+    let rotors = generate_rotors(&key).unwrap();
+
+    for rotor in rotors {
+        let mut sorted = rotor;
+
+        sorted.sort_unstable();
+
+        let expected: [u8; ROTOR_SIZE] =
+            core::array::from_fn(|i| i as u8);
+
+        assert_eq!(sorted, expected);
+    }
+}
+
+#[test]
+fn generate_rotors_are_different() {
+    let key = [0u8; COMMUNICATION_KEY_SIZE];
+
+    let rotors = generate_rotors(&key).unwrap();
+
+    for i in 0..ROTOR_COUNT {
+        for j in (i + 1)..ROTOR_COUNT {
+            assert_ne!(rotors[i], rotors[j]);
+        }
+    }
 }
 }
 
