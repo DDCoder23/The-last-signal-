@@ -2,9 +2,10 @@ import json
 import os
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 import xml.sax.saxutils as saxutils
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 OWNER = "The-last-signal-project"
@@ -15,131 +16,270 @@ TOKEN = os.environ.get("GITHUB_TOKEN", "")
 OUT = Path("stats/repository-stats.svg")
 
 
-def esc(value):
-    """Échappe les caractères spéciaux pour le XML/SVG."""
-    return saxutils.escape(str(value))
+# --------------------------------------------------
+# API GITHUB
+# --------------------------------------------------
 
+def api_get(endpoint, params=None):
+    """Récupère des données GitHub avec gestion des réponses temporaires."""
+    url = API + endpoint
 
-def api_get(endpoint):
-    """Récupère les données de l'API GitHub."""
+    if params:
+        url += "?" + urllib.parse.urlencode(params)
+
     headers = {
         "Accept": "application/vnd.github+json",
         "X-GitHub-Api-Version": "2022-11-28",
+        "User-Agent": "The-Last-Signal-Stats",
     }
 
     if TOKEN:
         headers["Authorization"] = f"Bearer {TOKEN}"
 
-    request = urllib.request.Request(API + endpoint, headers=headers)
+    request = urllib.request.Request(url, headers=headers)
 
-    for attempt in range(8):
+    for attempt in range(6):
         try:
             with urllib.request.urlopen(request, timeout=30) as response:
-                return json.loads(response.read().decode("utf-8"))
+                body = response.read().decode("utf-8")
+                return json.loads(body) if body else None
 
         except urllib.error.HTTPError as error:
-            if error.code == 202 and attempt < 7:
-                time.sleep(5)
-                continue
+            if error.code == 202:
+                print(f"Statistiques en cours de calcul : {endpoint}")
+                if attempt < 5:
+                    time.sleep(10)
+                    continue
+                return None
+
+            if error.code == 204:
+                return None
+
+            if error.code == 403 and error.headers.get(
+                "X-RateLimit-Remaining"
+            ) == "0":
+                raise RuntimeError("Limite de requêtes GitHub atteinte.")
+
+            if error.code == 404:
+                raise RuntimeError(
+                    f"Endpoint introuvable : {endpoint}. "
+                    "Vérifie le propriétaire et le nom du dépôt."
+                )
 
             raise RuntimeError(
-                f"Erreur API GitHub sur {endpoint}: HTTP {error.code}"
+                f"Erreur API GitHub : HTTP {error.code} sur {endpoint}"
             ) from error
 
-    raise RuntimeError(f"Statistiques indisponibles : {endpoint}")
+        except urllib.error.URLError as error:
+            if attempt < 5:
+                time.sleep(3)
+                continue
+            raise RuntimeError(f"Connexion à GitHub impossible : {error}") from error
+
+    return None
 
 
-def text_element(x, y, content, size=12, color="#c9d1d9",
-                 weight="normal", anchor="start"):
-    """Construit un élément texte SVG valide."""
+def api_pages(endpoint, params=None, max_pages=10):
+    """Récupère plusieurs pages de résultats."""
+    results = []
+
+    for page in range(1, max_pages + 1):
+        query = dict(params or {})
+        query["per_page"] = 100
+        query["page"] = page
+
+        data = api_get(endpoint, query)
+
+        if not isinstance(data, list):
+            break
+
+        results.extend(data)
+
+        if len(data) < 100:
+            break
+
+    return results
+
+
+# --------------------------------------------------
+# STATISTIQUES
+# --------------------------------------------------
+
+def get_commit_fallback():
+    """Compte les commits récents si les statistiques hebdomadaires manquent."""
+    since = (
+        datetime.now(timezone.utc) - timedelta(weeks=52)
+    ).isoformat()
+
+    commits = api_pages(
+        "/commits",
+        params={"since": since},
+        max_pages=10,
+    )
+
+    weekly = [0] * 52
+    now = datetime.now(timezone.utc)
+
+    for commit in commits:
+        date = (
+            commit.get("commit", {})
+            .get("committer", {})
+            .get("date")
+        )
+
+        if not date:
+            continue
+
+        try:
+            committed_at = datetime.fromisoformat(
+                date.replace("Z", "+00:00")
+            )
+            weeks_ago = (now - committed_at).days // 7
+
+            if 0 <= weeks_ago < 52:
+                weekly[51 - weeks_ago] += 1
+        except ValueError:
+            continue
+
+    return sum(weekly), weekly
+
+
+def get_statistics():
+    repo = api_get("")
+
+    activity = api_get("/stats/commit_activity")
+    frequency = api_get("/stats/code_frequency")
+    contributors = api_get("/stats/contributors")
+
+    # Commits : statistiques hebdomadaires ou solution de secours.
+    if isinstance(activity, list) and activity:
+        weekly = [week.get("total", 0) for week in activity[-52:]]
+        commits = sum(weekly)
+        commits_source = "GitHub weekly statistics"
+    else:
+        commits, weekly = get_commit_fallback()
+        commits_source = "Recent commits fallback"
+
+    # Contributeurs : endpoint statistique, puis liste des contributeurs.
+    if isinstance(contributors, list) and contributors:
+        contributor_count = len(contributors)
+        contributor_source = "GitHub statistics"
+    else:
+        contributor_list = api_pages(
+            "/contributors",
+            params={"anon": "true"},
+            max_pages=10,
+        )
+        contributor_count = (
+            len(contributor_list) if contributor_list else None
+        )
+        contributor_source = (
+            "Contributors API" if contributor_list else "Unavailable"
+        )
+
+    # Modifications du code : N/A si GitHub n'a pas fourni les données.
+    additions = None
+    deletions = None
+
+    if isinstance(frequency, list) and frequency:
+        additions = sum(
+            max(0, row[1])
+            for row in frequency
+            if isinstance(row, list) and len(row) >= 3
+        )
+        deletions = sum(
+            abs(min(0, row[2]))
+            for row in frequency
+            if isinstance(row, list) and len(row) >= 3
+        )
+
+    return {
+        "commits": commits,
+        "weekly": weekly,
+        "contributors": contributor_count,
+        "additions": additions,
+        "deletions": deletions,
+        "stars": repo.get("stargazers_count", 0),
+        "forks": repo.get("forks_count", 0),
+        "issues": repo.get("open_issues_count", 0),
+        "language": repo.get("language") or "Not detected",
+        "commits_source": commits_source,
+        "contributors_source": contributor_source,
+    }
+
+
+# --------------------------------------------------
+# DESSIN SVG
+# --------------------------------------------------
+
+def esc(value):
+    return saxutils.escape(str(value))
+
+
+def text(x, y, value, size=12, color="#c9d1d9",
+         weight="normal", anchor="start"):
     return (
-        f'<text x="{x}" y="{y}" '
-        f'fill="{color}" '
+        f'<text x="{x}" y="{y}" fill="{color}" '
         f'font-family="Arial, Helvetica, sans-serif" '
-        f'font-size="{size}" '
-        f'font-weight="{weight}" '
-        f'text-anchor="{anchor}">'
-        f'{esc(content)}</text>'
+        f'font-size="{size}" font-weight="{weight}" '
+        f'text-anchor="{anchor}">{esc(value)}</text>'
     )
 
 
-def rect(x, y, width, height, fill, radius=10, stroke=None):
-    """Construit un rectangle SVG."""
+def rect(x, y, width, height, fill,
+         radius=10, stroke=None):
     border = f' stroke="{stroke}"' if stroke else ""
     return (
-        f'<rect x="{x}" y="{y}" width="{width}" height="{height}" '
-        f'rx="{radius}" fill="{fill}"{border}/>'
+        f'<rect x="{x}" y="{y}" width="{width}" '
+        f'height="{height}" rx="{radius}" '
+        f'fill="{fill}"{border}/>'
     )
 
 
-def format_number(number):
-    return f"{number:,}"
+def number(value):
+    if value is None:
+        return "N/A"
+    return f"{value:,}"
 
 
-def main():
-    print(f"Récupération des statistiques de {OWNER}/{REPO}...")
+def generate_svg(stats):
+    width, height = 920, 440
 
-    repo = api_get("")
-    activity = api_get("/stats/commit_activity") or []
-    frequency = api_get("/stats/code_frequency") or []
-    contributors = api_get("/stats/contributors") or []
-
-    # Activité hebdomadaire sur les 52 dernières semaines disponibles.
-    weekly_commits = [week.get("total", 0) for week in activity]
-    commits_year = sum(weekly_commits)
-
-    # Ajouts et suppressions selon les données hebdomadaires de GitHub.
-    additions = sum(max(0, row[1]) for row in frequency if len(row) >= 3)
-    deletions = sum(abs(min(0, row[2])) for row in frequency if len(row) >= 3)
-
-    contributor_count = len(contributors)
-    all_time_commits = sum(c.get("total", 0) for c in contributors)
-
-    stars = repo.get("stargazers_count", 0)
-    forks = repo.get("forks_count", 0)
-    open_issues = repo.get("open_issues_count", 0)
-    language = repo.get("language") or "Non renseigné"
-
-    # Les douze dernières semaines.
-    bars = weekly_commits[-12:]
-    max_bar = max(bars, default=0) or 1
-
-    width = 920
-    height = 430
     parts = [
         f'<svg xmlns="http://www.w3.org/2000/svg" '
         f'width="{width}" height="{height}" '
         f'viewBox="0 0 {width} {height}">',
-        '<title>Statistiques du dépôt The Last Signal</title>',
-        '<desc>Commits, contributeurs, lignes modifiées et activité du dépôt.</desc>',
+        '<title>The Last Signal Repository Statistics</title>',
+        '<desc>Statistiques exclusives du dépôt GitHub.</desc>',
         rect(0, 0, width, height, "#0d1117", 18),
-        text_element(32, 42, "The Last Signal", 25, "#f0f6fc", "bold"),
-        text_element(32, 66, "REPOSITORY STATISTICS", 11, "#8b949e"),
-        text_element(
-            888, 42, f"{OWNER}/{REPO}", 10, "#8b949e", anchor="end"
+        text(30, 40, "The Last Signal", 25, "#f0f6fc", "bold"),
+        text(30, 63, "REPOSITORY ANALYTICS", 11, "#8b949e"),
+        text(
+            890, 40, f"{OWNER}/{REPO}",
+            10, "#8b949e", anchor="end"
         ),
     ]
 
-    # Six indicateurs propres au dépôt.
     cards = [
-        ("COMMITS · 52 WEEKS", format_number(commits_year), "#58a6ff"),
-        ("CONTRIBUTORS", format_number(contributor_count), "#3fb950"),
-        ("LINES ADDED", format_number(additions), "#3fb950"),
-        ("LINES DELETED", format_number(deletions), "#f85149"),
-        ("STARS", format_number(stars), "#d29922"),
-        ("OPEN ISSUES", format_number(open_issues), "#bc8cff"),
+        ("COMMITS · 52 WEEKS", number(stats["commits"]), "#58a6ff"),
+        ("CONTRIBUTORS", number(stats["contributors"]), "#3fb950"),
+        ("LINES ADDED", number(stats["additions"]), "#3fb950"),
+        ("LINES DELETED", number(stats["deletions"]), "#f85149"),
+        ("STARS", number(stats["stars"]), "#d29922"),
+        ("FORKS", number(stats["forks"]), "#bc8cff"),
     ]
 
-    card_width = 270
-    card_height = 78
-    start_x = 32
-    start_y = 88
-    gap_x = 18
-    gap_y = 12
+    card_width = 276
+    card_height = 72
+    start_x = 24
+    start_y = 82
+    gap_x = 22
+    gap_y = 10
 
     for index, (label, value, color) in enumerate(cards):
         col = index % 3
         row = index // 3
+
         x = start_x + col * (card_width + gap_x)
         y = start_y + row * (card_height + gap_y)
 
@@ -147,66 +287,85 @@ def main():
             x, y, card_width, card_height,
             "#161b22", 10, "#30363d"
         ))
-        parts.append(text_element(
-            x + 16, y + 25, label, 10, "#8b949e", "bold"
+        parts.append(text(
+            x + 15, y + 23, label, 10, "#8b949e", "bold"
         ))
-        parts.append(text_element(
-            x + 16, y + 57, value, 23, color, "bold"
+        parts.append(text(
+            x + 15, y + 53, value, 22, color, "bold"
         ))
 
-    # Graphique d'activité.
-    chart_top = 280
-    chart_bottom = 375
-    chart_left = 42
-
-    parts.append(text_element(
-        32, 275, "Weekly commits · last 12 weeks",
+    parts.append(text(
+        30, 258, "Weekly commits · last 12 weeks",
         14, "#c9d1d9", "bold"
     ))
 
-    bar_width = 48
-    gap = 22
+    bars = stats["weekly"][-12:]
+    max_bar = max(bars, default=0) or 1
+
+    base_y = 365
+    bar_width = 45
+    gap = 25
 
     for index, value in enumerate(bars):
-        x = chart_left + index * (bar_width + gap)
-        bar_height = max(3, int(70 * value / max_bar))
-        y = chart_bottom - bar_height
+        x = 38 + index * (bar_width + gap)
+        bar_height = max(2, int(65 * value / max_bar))
+        y = base_y - bar_height
 
         parts.append(rect(
             x, y, bar_width, bar_height, "#388bfd", 5
         ))
-        parts.append(text_element(
-            x + bar_width / 2, y - 7,
+        parts.append(text(
+            x + bar_width / 2, y - 6,
             value, 10, "#c9d1d9", anchor="middle"
         ))
 
-    # Informations complémentaires.
-    parts.append(text_element(
-        32, 405,
-        f"Recognized commits: {format_number(all_time_commits)}",
+    parts.append(text(
+        30, 400,
+        f"Main language: {stats['language']}",
         11, "#8b949e"
     ))
-    parts.append(text_element(
-        32, 422,
-        f"Main language: {language}  |  Forks: {forks}",
-        11, "#8b949e"
+    parts.append(text(
+        890, 400,
+        f"Open issues: {stats['issues']}",
+        11, "#8b949e", anchor="end"
     ))
-    parts.append(text_element(
-        888, 405,
+    parts.append(text(
+        30, 423,
         "Updated " + datetime.now(timezone.utc).strftime("%Y-%m-%d UTC"),
+        10, "#8b949e"
+    ))
+    parts.append(text(
+        890, 423,
+        "Data provided by GitHub API",
         10, "#8b949e", anchor="end"
     ))
 
     parts.append("</svg>")
+    return "\n".join(parts)
+
+
+# --------------------------------------------------
+# EXECUTION
+# --------------------------------------------------
+
+def main():
+    print(f"Repository: {OWNER}/{REPO}")
+
+    stats = get_statistics()
+
+    print("Commits:", stats["commits"])
+    print("Commits source:", stats["commits_source"])
+    print("Contributors:", stats["contributors"])
+    print("Contributors source:", stats["contributors_source"])
+    print("Lines added:", stats["additions"])
+    print("Lines deleted:", stats["deletions"])
+    print("Stars:", stats["stars"])
+    print("Forks:", stats["forks"])
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text("\n".join(parts), encoding="utf-8")
+    OUT.write_text(generate_svg(stats), encoding="utf-8")
 
-    print(f"Carte générée : {OUT}")
-    print(f"Commits sur 52 semaines : {commits_year}")
-    print(f"Contributeurs : {contributor_count}")
-    print(f"Lignes ajoutées : {additions}")
-    print(f"Lignes supprimées : {deletions}")
+    print(f"SVG generated successfully: {OUT}")
 
 
 if __name__ == "__main__":
