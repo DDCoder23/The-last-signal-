@@ -1,14 +1,14 @@
 # Documentation Problems
 
-Generated: 2026-10-13 08:10:48
+Generated: 2026-10-13 10:12:30
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |Errors|475|
-|Warnings|7427|
-|**Total**|**7907**|
+|Warnings|7435|
+|**Total**|**7915**|
 
 ---
 
@@ -1482,6 +1482,50 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 - **Module :** python
 - **Message :** La fonction 'generate_problems_md' ne possède pas d'annotations de type.
+
+---
+
+# /home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py
+
+## Warning
+
+- **Module :** python
+- **Message :** Le module ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'api_get'ligne 17 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'api_get' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'esc'ligne 43 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'esc' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 47 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'main' dépasse 80 lignes.
 
 ---
 
@@ -15751,32 +15795,32 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 39 > 120 caractères.
+- **Message :** Ligne 44 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 63 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 64 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 68 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 72 > 120 caractères.
+- **Message :** Ligne 73 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
 - **Message :** Ligne 74 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 78 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 84 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 88 > 120 caractères.
 
 ---
 

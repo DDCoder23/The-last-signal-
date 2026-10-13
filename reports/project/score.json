@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-13T08:10:47.840791",
+    "generated": "2026-10-13T10:12:30.356209",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -11,7 +11,7 @@
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 7907,
+    "problem_count": 7915,
     "details": {
         "markdown": {
             "score": 45,
@@ -1140,37 +1140,37 @@
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
-                    "message": "Ligne 39 > 120 caractères.",
+                    "message": "Ligne 44 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
-                    "message": "Ligne 63 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "lychee/out.md",
-                    "severity": "warning",
-                    "message": "Ligne 64 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "lychee/out.md",
-                    "severity": "warning",
-                    "message": "Ligne 68 > 120 caractères.",
-                    "module": "markdown"
-                },
-                {
-                    "file": "lychee/out.md",
-                    "severity": "warning",
-                    "message": "Ligne 72 > 120 caractères.",
+                    "message": "Ligne 73 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
                     "file": "lychee/out.md",
                     "severity": "warning",
                     "message": "Ligne 74 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 78 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 84 > 120 caractères.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "lychee/out.md",
+                    "severity": "warning",
+                    "message": "Ligne 88 > 120 caractères.",
                     "module": "markdown"
                 },
                 {
@@ -42128,15 +42128,15 @@
             "score": 0,
             "max_score": 30,
             "results": {
-                "modules": 63,
+                "modules": 64,
                 "classes": 34,
-                "functions": 332,
+                "functions": 335,
                 "documented_modules": 10,
                 "documented_classes": 19,
                 "documented_functions": 69,
                 "typed_functions": 96,
                 "todo": 4,
-                "long_functions": 20
+                "long_functions": 21
             },
             "problems": [
                 {
@@ -42287,6 +42287,54 @@
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/transformateur.py",
                     "severity": "warning",
                     "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "Le module ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'api_get'ligne 17 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'api_get' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'esc'ligne 43 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'esc' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main'ligne 47 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main' dépasse 80 lignes.",
                     "module": "python"
                 },
                 {
