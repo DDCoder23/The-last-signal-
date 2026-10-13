@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-13 11:18:22
+**Date :** 2026-10-13 11:30:42
 
 # 64/100
 
@@ -1695,37 +1695,31 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'api_get' ne possède pas d'annotations de type.
+- **Message :** La fonction 'git' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'api_pages' ne possède pas d'annotations de type.
+- **Message :** La fonction 'get_git_stats' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'get_commit_fallback' ne possède pas d'annotations de type.
+- **Message :** La fonction 'get_repo_info'ligne 114 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'get_statistics'ligne 147 ne possède pas de docstring.
+- **Message :** La fonction 'get_repo_info' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'get_statistics' ne possède pas d'annotations de type.
-
-- **module :** python
-
-## ⚠️ Warning
-- **Module :** python
-- **Message :** La fonction 'esc'ligne 215 ne possède pas de docstring.
+- **Message :** La fonction 'esc'ligne 140 ne possède pas de docstring.
 
 - **module :** python
 
@@ -1737,7 +1731,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'text'ligne 219 ne possède pas de docstring.
+- **Message :** La fonction 'text'ligne 144 ne possède pas de docstring.
 
 - **module :** python
 
@@ -1749,7 +1743,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'rect'ligne 229 ne possède pas de docstring.
+- **Message :** La fonction 'rect'ligne 157 ne possède pas de docstring.
 
 - **module :** python
 
@@ -1761,19 +1755,19 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'number'ligne 239 ne possède pas de docstring.
+- **Message :** La fonction 'fmt'ligne 167 ne possède pas de docstring.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'number' ne possède pas d'annotations de type.
+- **Message :** La fonction 'fmt' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'generate_svg'ligne 245 ne possède pas de docstring.
+- **Message :** La fonction 'generate_svg'ligne 171 ne possède pas de docstring.
 
 - **module :** python
 
@@ -1791,7 +1785,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'main'ligne 351 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 298 ne possède pas de docstring.
 
 - **module :** python
 
