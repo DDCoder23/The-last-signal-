@@ -1,14 +1,14 @@
 # Documentation Problems
 
-Generated: 2026-10-13 10:51:16
+Generated: 2026-10-13 11:05:08
 
 ## Summary
 
 |Type|Count|
 |---|---:|
 |Errors|475|
-|Warnings|7437|
-|**Total**|**7917**|
+|Warnings|7446|
+|**Total**|**7926**|
 
 ---
 
@@ -1495,17 +1495,52 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'esc' ne possède pas d'annotations de type.
-
-## Warning
-
-- **Module :** python
 - **Message :** La fonction 'api_get' ne possède pas d'annotations de type.
 
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'text_element' ne possède pas d'annotations de type.
+- **Message :** La fonction 'api_pages' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_commit_fallback' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_statistics'ligne 147 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'get_statistics' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'esc'ligne 215 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'esc' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'text'ligne 219 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'text' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'rect'ligne 229 ne possède pas de docstring.
 
 ## Warning
 
@@ -1515,27 +1550,37 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'format_number'ligne 75 ne possède pas de docstring.
+- **Message :** La fonction 'number'ligne 239 ne possède pas de docstring.
 
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'format_number' ne possède pas d'annotations de type.
+- **Message :** La fonction 'number' ne possède pas d'annotations de type.
 
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'main'ligne 79 ne possède pas de docstring.
+- **Message :** La fonction 'generate_svg'ligne 245 ne possède pas de docstring.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_svg' ne possède pas d'annotations de type.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'generate_svg' dépasse 80 lignes.
+
+## Warning
+
+- **Module :** python
+- **Message :** La fonction 'main'ligne 351 ne possède pas de docstring.
 
 ## Warning
 
 - **Module :** python
 - **Message :** La fonction 'main' ne possède pas d'annotations de type.
-
-## Warning
-
-- **Module :** python
-- **Message :** La fonction 'main' dépasse 80 lignes.
 
 ---
 
