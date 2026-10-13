@@ -137,3 +137,17 @@ l'espagnol et le japonais
 - ajout du stuff manager, wallet manager et cr√©ation du d√©but du march√©
 - ajout des fichiers 09_.PERSONNAGES.md,10_CREATION_PERSONNAGES.md,11_PROGRESSION.md et 12_STATISTIQUES.md
 ---
+
+## [1.0.13] - 01/10/2026~13/10/2026
+
+### Ajout
+- ajout de t®¶sor niveau 11 ®§ 14
+- ajout du prototype 2D et d®¶but du prototype 3D
+- dev des menus du jeu 
+
+
+
+###Supression
+-suppression de l'IA car trop consommatrice 
+----
+

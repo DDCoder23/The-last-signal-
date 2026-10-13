@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 2410
+Run : 2419
 Branch : main
-Commit : dca6365cb3108dac53dbb61f95f36f36b0b27971
-Date : Sun Oct 11 15:42:55 UTC 2026
+Commit : 201d346d863ca4aa6deaf1fcd1422610010635a0
+Date : Tue Oct 13 07:49:51 UTC 2026
 
 
 ## Cargo fmt
@@ -138,7 +138,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/data
 -use sqlx::SqlitePool;
 -use crate::utils::vault::decrypt_vault;
  use crate::auth::password::hash_password;
- use crate::utils::account_creator::create_account;
+ use crate::utils::special_account_creator::create_account;
 +use crate::utils::vault::decrypt_vault;
 +use log::debug;
 +use sqlx::SqlitePool;
@@ -7141,361 +7141,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/netw
 -
 +pub mod server;
  
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:1:
- use log::error;
- use std::io;
- 
--use tokio::io::{
--    AsyncReadExt,
--    AsyncWriteExt,
--};
--use tokio::net::TcpStream;
- use serde::{Deserialize, Serialize};
-+use tokio::io::{AsyncReadExt, AsyncWriteExt};
-+use tokio::net::TcpStream;
- 
--
- pub const MAX_PACKET_SIZE: usize = 10 * 1024 * 1024;
- 
- /// Types de paquets.
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:21:
-     Move = 4,
-     Log = 5,
-     SignUp = 6,
--     LoginResponse = 7,
-+    LoginResponse = 7,
-     SignUpResponse = 8,
-     BAN = 9,
-     DECO = 10,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:53:
-     ERROR,
- }
- 
--
- #[derive(Debug, Serialize, Deserialize)]
- pub struct ClientLog {
-     pub level: LogLevel,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:96:
- }
- 
- impl Packet {
--    pub fn new(
--        packet_type: PacketType,
--        payload: Vec<u8>,
--    ) -> Self {
-+    pub fn new(packet_type: PacketType, payload: Vec<u8>) -> Self {
-         Self {
-             packet_type,
-             payload,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:106:
-         }
-     }
- }
--pub fn encode_ban(
--    ban_type: BanType,
--    reason: &str,
--    date_deban: Option<&str>,
--) -> Vec<u8> {
--
-+pub fn encode_ban(ban_type: BanType, reason: &str, date_deban: Option<&str>) -> Vec<u8> {
-     format!(
-         "{}\0{}\0{}",
-         ban_type as u8,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:122:
- }
- 
- /// Envoie un paquet.
--pub async fn send_packet(
--    stream: &mut TcpStream,
--    packet: &Packet,
--) -> io::Result<()> {
--
-+pub async fn send_packet(stream: &mut TcpStream, packet: &Packet) -> io::Result<()> {
-     let payload_size = 2 + packet.payload.len();
- 
-     if payload_size > MAX_PACKET_SIZE {
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:141:
- 
-     stream.write_all(&size).await?;
- 
--    let packet_type =
--        (packet.packet_type as u16).to_be_bytes();
-+    let packet_type = (packet.packet_type as u16).to_be_bytes();
- 
-     stream.write_all(&packet_type).await?;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:152:
- }
- 
- /// Reçoit exactement `size` octets.
--async fn recv_exact(
--    stream: &mut TcpStream,
--    size: usize,
--) -> io::Result<Vec<u8>> {
--
-+async fn recv_exact(stream: &mut TcpStream, size: usize) -> io::Result<Vec<u8>> {
-     let mut buffer = vec![0u8; size];
- 
-     stream.read_exact(&mut buffer).await?;
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:165:
- }
- 
- /// Reçoit un paquet.
--pub async fn receive_packet(
--    stream: &mut TcpStream,
--) -> io::Result<Packet> {
--
-+pub async fn receive_packet(stream: &mut TcpStream) -> io::Result<Packet> {
-     // Taille
-     let header = recv_exact(stream, 4).await?;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:175:
--    let size = u32::from_be_bytes([
--        header[0],
--        header[1],
--        header[2],
--        header[3],
--    ]) as usize;
-+    let size = u32::from_be_bytes([header[0], header[1], header[2], header[3]]) as usize;
- 
-     if size < 2 {
-         error!("paquet invalide");
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:199:
-     let data = recv_exact(stream, size).await?;
- 
-     // Type
--    let packet_type =
--        u16::from_be_bytes([data[0], data[1]]);
-+    let packet_type = u16::from_be_bytes([data[0], data[1]]);
- 
--    let packet_type =
--        PacketType::from_u16(packet_type)
--            .ok_or_else(|| {
--                error!("Type de paquet inconnu");
--                io::Error::new(
--                    io::ErrorKind::InvalidData,
--                    "Type de paquet inconnu.",
--                )
--            })?;
-+    let packet_type = PacketType::from_u16(packet_type).ok_or_else(|| {
-+        error!("Type de paquet inconnu");
-+        io::Error::new(io::ErrorKind::InvalidData, "Type de paquet inconnu.")
-+    })?;
- 
-     // Payload
-     let payload = data[2..].to_vec();
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:275:
- 
-     #[test]
-     fn test_encode_ban_temporary() {
--        let encoded = encode_ban(BanType::Temporary, "Cheating detected", Some("2026-12-31 23:59:59"));
-+        let encoded = encode_ban(
-+            BanType::Temporary,
-+            "Cheating detected",
-+            Some("2026-12-31 23:59:59"),
-+        );
-         assert_eq!(encoded, b"1\0Cheating detected\02026-12-31 23:59:59");
-     }
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:374:
-         tokio::spawn(async move {
-             let size = 10u32;
-             let _ = client.write_all(&size.to_be_bytes()).await;
--            let _ = client.write_all(&(PacketType::Ping as u16).to_be_bytes()).await;
-+            let _ = client
-+                .write_all(&(PacketType::Ping as u16).to_be_bytes())
-+                .await;
-             let _ = client.write_all(b"123").await;
-             drop(client);
-         });
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:406:
-         let test_payload = b"hello signal network".to_vec();
-         let sent_packet = Packet::new(PacketType::Chat, test_payload.clone());
- 
--        let client_task = tokio::spawn(async move {
--            send_packet(&mut client, &sent_packet).await
--        });
-+        let client_task = tokio::spawn(async move { send_packet(&mut client, &sent_packet).await });
- 
--        let server_task = tokio::spawn(async move {
--            receive_packet(&mut server).await
--        });
-+        let server_task = tokio::spawn(async move { receive_packet(&mut server).await });
- 
-         let (client_res, server_res) = tokio::join!(client_task, server_task);
-         assert!(client_res.unwrap().is_ok());
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/packet.rs:422:
-         assert_eq!(received.payload, test_payload);
-     }
- }
--
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:1:
--pub fn parse_login_payload(
--    payload: &[u8],
--) -> Result<(String, String), String> {
--
-+pub fn parse_login_payload(payload: &[u8]) -> Result<(String, String), String> {
-     let mut offset = 0;
- 
-     // -------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:12:
-         return Err("Email length manquante".into());
-     }
- 
--    let email_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let email_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:28:
-         return Err("Email incomplet".into());
-     }
- 
--    let email = String::from_utf8(
--        payload[offset..offset + email_length]
--            .to_vec()
--    )
--    .map_err(|_| "Email UTF-8 invalide")?;
-+    let email = String::from_utf8(payload[offset..offset + email_length].to_vec())
-+        .map_err(|_| "Email UTF-8 invalide")?;
- 
-     offset += email_length;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:44:
-         return Err("Password length manquante".into());
-     }
- 
--    let password_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let password_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:60:
-         return Err("Password incomplet".into());
-     }
- 
--    let password = String::from_utf8(
--        payload[offset..offset + password_length]
--            .to_vec()
--    )
--    .map_err(|_| "Password UTF-8 invalide")?;
-+    let password = String::from_utf8(payload[offset..offset + password_length].to_vec())
-+        .map_err(|_| "Password UTF-8 invalide")?;
- 
-     Ok((email, password))
- }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:71:
--pub fn parse_signup_payload(
--    payload: &[u8],
--) -> Result<(String, String), String> {
--
-+pub fn parse_signup_payload(payload: &[u8]) -> Result<(String, String), String> {
-     let mut offset = 0;
- 
-     // -------------------------
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:82:
-         return Err("Email length manquante".into());
-     }
- 
--    let email_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let email_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:98:
-         return Err("Email incomplet".into());
-     }
- 
--    let email = String::from_utf8(
--        payload[offset..offset + email_length]
--            .to_vec()
--    )
--    .map_err(|_| "Email UTF-8 invalide")?;
-+    let email = String::from_utf8(payload[offset..offset + email_length].to_vec())
-+        .map_err(|_| "Email UTF-8 invalide")?;
- 
-     offset += email_length;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:114:
-         return Err("Password length manquante".into());
-     }
- 
--    let password_length =
--        u16::from_be_bytes([
--            payload[offset],
--            payload[offset + 1],
--        ]) as usize;
-+    let password_length = u16::from_be_bytes([payload[offset], payload[offset + 1]]) as usize;
- 
-     offset += 2;
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:130:
-         return Err("Password incomplet".into());
-     }
- 
--    let password = String::from_utf8(
--        payload[offset..offset + password_length]
--            .to_vec()
--    )
--    .map_err(|_| "Password UTF-8 invalide")?;
-+    let password = String::from_utf8(payload[offset..offset + password_length].to_vec())
-+        .map_err(|_| "Password UTF-8 invalide")?;
- 
-     Ok((email, password))
- }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:155:
-     #[test]
-     fn test_login_payload_valid() {
-         let payload = build_payload(b"player@signal.com", b"p@ssword123");
--        let (email, password) = parse_login_payload(&payload).expect("valid login payload should succeed");
-+        let (email, password) =
-+            parse_login_payload(&payload).expect("valid login payload should succeed");
-         assert_eq!(email, "player@signal.com");
-         assert_eq!(password, "p@ssword123");
-     }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:227:
-     fn test_login_payload_trailing_bytes_accepted() {
-         let mut payload = build_payload(b"user@test.com", b"mypassword");
-         payload.extend_from_slice(&[0xAA, 0xBB, 0xCC, 0xDD]);
--        let (email, password) = parse_login_payload(&payload).expect("trailing bytes should not panic or fail");
-+        let (email, password) =
-+            parse_login_payload(&payload).expect("trailing bytes should not panic or fail");
-         assert_eq!(email, "user@test.com");
-         assert_eq!(password, "mypassword");
-     }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:235:
-     #[test]
-     fn test_signup_payload_valid() {
-         let payload = build_payload(b"newuser@signal.com", b"securepass99");
--        let (email, password) = parse_signup_payload(&payload).expect("valid signup payload should succeed");
-+        let (email, password) =
-+            parse_signup_payload(&payload).expect("valid signup payload should succeed");
-         assert_eq!(email, "newuser@signal.com");
-         assert_eq!(password, "securepass99");
-     }
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/parser.rs:307:
-     fn test_signup_payload_trailing_bytes_accepted() {
-         let mut payload = build_payload(b"admin@signal.com", b"rootpass");
-         payload.extend_from_slice(b"extraneous data");
--        let (email, password) = parse_signup_payload(&payload).expect("trailing bytes should not panic or fail");
-+        let (email, password) =
-+            parse_signup_payload(&payload).expect("trailing bytes should not panic or fail");
-         assert_eq!(email, "admin@signal.com");
-         assert_eq!(password, "rootpass");
-     }
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/network/server.rs:1:
 -use tokio::net::TcpListener;
 -use tokio::task;
@@ -7785,51 +7430,6 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/secu
  }
 -}
 -
- 
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:1:
--use uuid::Uuid;
- use sqlx::SqlitePool;
-+use uuid::Uuid;
- pub async fn create_account(
-     pool: &SqlitePool,
-     email: &str,
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:85:
-     .bind(&user_id)
-     .bind(account_name)
-     .bind(role_id)
--    .fetch_one(&mut *tx) 
-+    .fetch_one(&mut *tx)
-     .await?;
-     let max_balance = i64::MAX;
--    sqlx::query( 
-+    sqlx::query(
-         r#" INSERT INTO wallets ( 
-         account_id,
-         balance
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:95:
-         ) 
-         VALUES (?,?) 
--        "#, ) 
--        .bind(account_id)
--        .bind(max_balance)
--        .execute(&mut *tx) 
--        .await?;
-+        "#,
-+    )
-+    .bind(account_id)
-+    .bind(max_balance)
-+    .execute(&mut *tx)
-+    .await?;
-     if let Some(status) = status {
-         sqlx::query(
-             r#"
-Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/account_creator.rs:119:
- 
-     tx.commit().await?;
- 
--    Ok(())}
-+    Ok(())
-+}
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/logger/compressor.rs:1:
 -use flate2::{
@@ -8384,10 +7984,55 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/util
  pub mod macros;
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/mod.rs:1:
-+pub mod account_creator;
  pub mod logger;
- pub mod vault;
--pub mod account_creator;
+-pub mod vault;
+ pub mod special_account_creator;
++pub mod vault;
+ 
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:1:
+-use uuid::Uuid;
+ use sqlx::SqlitePool;
++use uuid::Uuid;
+ pub async fn create_account(
+     pool: &SqlitePool,
+     email: &str,
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:85:
+     .bind(&user_id)
+     .bind(account_name)
+     .bind(role_id)
+-    .fetch_one(&mut *tx) 
++    .fetch_one(&mut *tx)
+     .await?;
+     let max_balance = i64::MAX;
+-    sqlx::query( 
++    sqlx::query(
+         r#" INSERT INTO wallets ( 
+         account_id,
+         balance
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:95:
+         ) 
+         VALUES (?,?) 
+-        "#, ) 
+-        .bind(account_id)
+-        .bind(max_balance)
+-        .execute(&mut *tx) 
+-        .await?;
++        "#,
++    )
++    .bind(account_id)
++    .bind(max_balance)
++    .execute(&mut *tx)
++    .await?;
+     if let Some(status) = status {
+         sqlx::query(
+             r#"
+Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/special_account_creator.rs:119:
+ 
+     tx.commit().await?;
+ 
+-    Ok(())}
++    Ok(())
++}
  
 Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/utils/vault.rs:8:
          Err(_) => fs::read_to_string("../security/master.key")?,
@@ -8976,64 +8621,64 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling pin-project-lite v0.2.17
    Compiling typenum v1.20.1
    Compiling yoke v0.8.3
-   Compiling writeable v0.6.4
-   Compiling zerovec v0.11.8
    Compiling memchr v2.8.3
+   Compiling zerovec v0.11.8
    Compiling tinystr v0.8.4
+   Compiling writeable v0.6.4
    Compiling futures-core v0.3.34
    Compiling litemap v0.8.3
    Compiling smallvec v1.16.3
    Compiling potential_utf v0.1.6
-   Compiling icu_locale_core v2.3.0
    Compiling zerotrie v0.2.5
+   Compiling icu_locale_core v2.3.0
    Compiling utf8_iter v1.0.4
    Compiling scopeguard v1.2.0
-   Compiling lock_api v0.4.14
    Compiling icu_collections v2.3.0
+   Compiling lock_api v0.4.14
    Compiling icu_properties_data v2.3.0
    Compiling icu_normalizer_data v2.3.0
-   Compiling socket2 v0.6.5
    Compiling mio v1.2.4
+   Compiling socket2 v0.6.5
    Compiling futures-sink v0.3.34
    Compiling bytes v1.12.1
-   Compiling icu_provider v2.3.1
    Compiling serde_core v1.0.229
+   Compiling once_cell v1.21.4
+   Compiling icu_provider v2.3.1
    Compiling icu_properties v2.3.0
    Compiling icu_normalizer v2.3.0
    Compiling rand_core v0.10.1
-   Compiling once_cell v1.21.4
    Compiling equivalent v1.0.2
    Compiling generic-array v0.14.9
    Compiling tracing-core v0.1.36
    Compiling parking_lot_core v0.9.12
+   Compiling allocator-api2 v0.2.21
    Compiling idna_adapter v1.2.2
+   Compiling slab v0.4.12
    Compiling cpufeatures v0.2.17
    Compiling percent-encoding v2.3.2
-   Compiling allocator-api2 v0.2.21
-   Compiling slab v0.4.12
    Compiling futures-task v0.3.34
    Compiling foldhash v0.2.0
    Compiling futures-io v0.3.34
-   Compiling hashbrown v0.16.1
    Compiling form_urlencoded v1.2.2
    Compiling futures-util v0.3.34
+   Compiling hashbrown v0.16.1
    Compiling idna v1.1.0
    Compiling serde v1.0.229
    Compiling parking_lot v0.12.5
    Compiling num-traits v0.2.19
    Compiling zmij v1.0.23
-   Compiling crossbeam-utils v0.8.23
    Compiling getrandom v0.4.3
+   Compiling crossbeam-utils v0.8.23
    Compiling crc-catalog v2.5.0
-   Compiling hashbrown v0.17.1
    Compiling itoa v1.0.18
    Compiling parking v2.2.1
-   Compiling serde_json v1.0.152
+   Compiling hashbrown v0.17.1
    Compiling event-listener v5.4.2
-   Compiling indexmap v2.14.2
    Compiling crossbeam-queue v0.3.14
+   Compiling serde_json v1.0.154
    Compiling crc v3.4.0
    Compiling either v1.19.0
+   Compiling indexmap v2.14.2
    Compiling futures-intrusive v0.5.0
    Compiling hashlink v0.11.1
    Compiling url v2.5.8
@@ -9055,35 +8700,35 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling crypto-common v0.2.2
    Compiling block-buffer v0.12.1
    Compiling thiserror v2.0.21
+   Compiling base64 v0.22.1
    Compiling const-oid v0.10.2
    Compiling cpufeatures v0.3.1
-   Compiling base64 v0.22.1
    Compiling digest v0.11.3
    Compiling uuid v1.28.0
    Compiling aho-corasick v1.1.5
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling sqlx-core v0.9.0
-   Compiling foreign-types-shared v0.1.1
    Compiling base64ct v1.8.3
+   Compiling foreign-types-shared v0.1.1
    Compiling foreign-types v0.3.2
    Compiling phc v0.6.1
    Compiling regex-automata v0.4.18
-   Compiling sqlx-sqlite v0.9.0
    Compiling libsqlite3-sys v0.37.0
-   Compiling sqlx-macros-core v0.9.0
+   Compiling sqlx-sqlite v0.9.0
    Compiling openssl-sys v0.9.117
-   Compiling bitflags v2.13.2
+   Compiling sqlx-macros-core v0.9.0
    Compiling iana-time-zone v0.1.65
+   Compiling bitflags v2.13.2
    Compiling simd-adler32 v0.3.10
    Compiling adler2 v2.0.1
-   Compiling chrono v0.4.45
    Compiling openssl v0.10.81
    Compiling miniz_oxide v0.9.1
-   Compiling sqlx-macros v0.9.0
+   Compiling chrono v0.4.45
    Compiling zeroize v1.9.1
-   Compiling crc32fast v1.5.2
+   Compiling sqlx-macros v0.9.0
    Compiling regex v1.13.1
+   Compiling crc32fast v1.5.2
    Compiling password-hash v0.6.1
    Compiling blake2 v0.11.0
    Compiling chacha20 v0.10.2
@@ -9096,7 +8741,7 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling sqlx v0.9.0
    Compiling argon2 v0.6.0
    Compiling flate2 v1.1.10
-   Compiling sha2 v0.11.0
+   Compiling sha2 v0.11.1
    Compiling the-last-signal-server v1.0.13 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
 warning: unused imports: `debug` and `info`
  --> src/gameplay/tresor.rs:5:11
@@ -9157,25 +8802,31 @@ warning: constant `NOMBRE_CONFIGURATIONS` is never used
 
 warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
 warning: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 26.09s
-     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-8251dd5c7cbe8166)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 25.02s
+     Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-937885ce9ce8e75b)
 
-running 44 tests
+running 52 tests
+test network::packet::tests::test_packet_parse_body_empty_payload ... ok
 test network::packet::tests::test_encode_ban_permanent ... ok
 test network::packet::tests::test_encode_ban_temporary ... ok
+test network::packet::tests::test_packet_parse_body_unknown_type ... ok
+test network::packet::tests::test_packet_parse_body_with_payload ... ok
+test network::packet::tests::test_packet_parse_body_too_short ... ok
 test network::packet::tests::test_packet_type_from_u16_all_valid ... ok
 test network::packet::tests::test_packet_type_from_u16_invalid_values ... ok
-test network::packet::tests::test_receive_packet_size_one_fails ... ok
 test network::packet::tests::test_receive_packet_truncated_header ... ok
-test network::packet::tests::test_receive_packet_size_zero_fails ... ok
 test network::packet::tests::test_receive_packet_exceeds_max_size ... ok
+test network::packet::tests::test_receive_packet_size_zero_fails ... ok
+test network::packet::tests::test_receive_packet_size_one_fails ... ok
+test network::packet::tests::test_send_packet_exceeds_max_size ... ok
 test network::packet::tests::test_receive_packet_truncated_payload ... ok
 test network::packet::tests::test_receive_packet_unknown_packet_type ... ok
 test network::packet::tests::test_send_and_receive_roundtrip ... ok
 test network::parser::tests::test_login_payload_empty ... ok
-test network::packet::tests::test_send_packet_exceeds_max_size ... ok
+test network::parser::tests::test_login_payload_empty_strings ... ok
 test network::parser::tests::test_login_payload_invalid_email_utf8 ... ok
 test network::parser::tests::test_login_payload_invalid_password_utf8 ... ok
+test network::parser::tests::test_login_payload_large_u16_length_incomplet ... ok
 test network::parser::tests::test_login_payload_missing_password_length ... ok
 test network::parser::tests::test_login_payload_trailing_bytes_accepted ... ok
 test network::parser::tests::test_login_payload_truncated_email_body ... ok
@@ -9184,38 +8835,40 @@ test network::parser::tests::test_login_payload_truncated_password_body ... ok
 test network::parser::tests::test_login_payload_truncated_password_length ... ok
 test network::parser::tests::test_login_payload_valid ... ok
 test network::parser::tests::test_signup_payload_empty ... ok
+test network::parser::tests::test_signup_payload_empty_strings ... ok
 test network::parser::tests::test_signup_payload_invalid_email_utf8 ... ok
 test network::parser::tests::test_signup_payload_invalid_password_utf8 ... ok
+test network::parser::tests::test_signup_payload_large_u16_length_incomplet ... ok
 test network::parser::tests::test_signup_payload_missing_password_length ... ok
 test network::parser::tests::test_signup_payload_trailing_bytes_accepted ... ok
 test network::parser::tests::test_signup_payload_truncated_email_body ... ok
 test network::parser::tests::test_signup_payload_truncated_email_length ... ok
 test network::parser::tests::test_signup_payload_truncated_password_body ... ok
 test network::parser::tests::test_signup_payload_truncated_password_length ... ok
-test network::parser::tests::test_signup_payload_valid ... ok
 test security::crypto::tests::derive_rotor_seed_differs_between_rotors ... ok
-test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
 test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
+test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
+test network::parser::tests::test_signup_payload_valid ... ok
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
 test security::crypto::tests::fisher_yates_changes_with_seed ... ok
 test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
-test security::crypto::tests::fisher_yates_is_deterministic ... ok
 test security::crypto::tests::splitmix64_max_seed ... ok
-test security::crypto::tests::fisher_yates_contains_all_values ... ok
+test security::crypto::tests::fisher_yates_is_deterministic ... ok
 test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
+test security::crypto::tests::fisher_yates_contains_all_values ... ok
 test security::crypto::tests::splitmix64_state_changes ... ok
 test security::crypto::tests::splitmix64_zero_seed ... ok
 
-test result: ok. 44 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+test result: ok. 52 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-3cfa116f156bf2fb)
+     Running unittests src/main.rs (server_rust/target/debug/deps/the_last_signal_server-8792c6988e0a0505)
 
 running 1 test
 test tests::test_tresor ... ignored
 
 test result: ok. 0 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.00s
 
-     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-39a06aa8d9796ae3)
+     Running tests/integration_test.rs (server_rust/target/debug/deps/integration_test-a3e73b6971b4e529)
 
 running 0 tests
 
