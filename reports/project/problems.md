@@ -1,6 +1,6 @@
 # Documentation Problems
 
-Generated: 2026-10-13 11:30:43
+Generated: 2026-10-13 12:47:15
 
 ## Summary
 
@@ -1283,7 +1283,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'add_problem'ligne 3 ne possède pas de docstring.
+- **Message :** La fonction 'add_problem'ligne 2 ne possède pas de docstring.
 
 ## Warning
 
@@ -1397,7 +1397,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_titles'ligne 17 ne possède pas de docstring.
+- **Message :** La fonction 'check_titles'ligne 16 ne possède pas de docstring.
 
 ## Warning
 
@@ -1407,7 +1407,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_single_h1'ligne 54 ne possède pas de docstring.
+- **Message :** La fonction 'check_single_h1'ligne 53 ne possède pas de docstring.
 
 ## Warning
 
@@ -1417,7 +1417,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_heading_order'ligne 69 ne possède pas de docstring.
+- **Message :** La fonction 'check_heading_order'ligne 68 ne possède pas de docstring.
 
 ## Warning
 
@@ -1427,7 +1427,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_heading_spacing'ligne 93 ne possède pas de docstring.
+- **Message :** La fonction 'check_heading_spacing'ligne 92 ne possède pas de docstring.
 
 ## Warning
 
@@ -1437,7 +1437,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_empty_titles'ligne 116 ne possède pas de docstring.
+- **Message :** La fonction 'check_empty_titles'ligne 115 ne possède pas de docstring.
 
 ## Warning
 
@@ -1447,7 +1447,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_title_length'ligne 134 ne possède pas de docstring.
+- **Message :** La fonction 'check_title_length'ligne 133 ne possède pas de docstring.
 
 ## Warning
 
@@ -1457,7 +1457,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'check_duplicate_titles'ligne 156 ne possède pas de docstring.
+- **Message :** La fonction 'check_duplicate_titles'ligne 155 ne possède pas de docstring.
 
 ## Warning
 
@@ -1651,17 +1651,17 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'print_header'ligne 28 ne possède pas de docstring.
+- **Message :** La fonction 'print_header'ligne 27 ne possède pas de docstring.
 
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'print_error'ligne 35 ne possède pas de docstring.
+- **Message :** La fonction 'print_error'ligne 34 ne possède pas de docstring.
 
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'print_info'ligne 40 ne possède pas de docstring.
+- **Message :** La fonction 'print_info'ligne 39 ne possède pas de docstring.
 
 ## Warning
 
@@ -1676,7 +1676,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'main'ligne 595 ne possède pas de docstring.
+- **Message :** La fonction 'main'ligne 594 ne possède pas de docstring.
 
 ## Warning
 
@@ -4548,7 +4548,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'communication_key'ligne 34 ne possède pas de docstring.
+- **Message :** La fonction 'communication_key'ligne 17 ne possède pas de docstring.
 
 ## Warning
 
@@ -4558,7 +4558,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_splitmix64_deterministic'ligne 45 ne possède pas de docstring.
+- **Message :** La fonction 'test_splitmix64_deterministic'ligne 28 ne possède pas de docstring.
 
 ## Warning
 
@@ -4568,7 +4568,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_splitmix64_different_seeds'ligne 57 ne possède pas de docstring.
+- **Message :** La fonction 'test_splitmix64_different_seeds'ligne 40 ne possède pas de docstring.
 
 ## Warning
 
@@ -4578,7 +4578,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_splitmix64_is_u64'ligne 68 ne possède pas de docstring.
+- **Message :** La fonction 'test_splitmix64_is_u64'ligne 51 ne possède pas de docstring.
 
 ## Warning
 
@@ -4588,7 +4588,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_seed_deterministic'ligne 86 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_seed_deterministic'ligne 69 ne possède pas de docstring.
 
 ## Warning
 
@@ -4598,7 +4598,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_seeds_are_different'ligne 103 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_seeds_are_different'ligne 86 ne possède pas de docstring.
 
 ## Warning
 
@@ -4608,7 +4608,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_seed_is_u64'ligne 118 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_seed_is_u64'ligne 101 ne possède pas de docstring.
 
 ## Warning
 
@@ -4618,7 +4618,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_has_256_values'ligne 136 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_has_256_values'ligne 119 ne possède pas de docstring.
 
 ## Warning
 
@@ -4628,7 +4628,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_is_permutation'ligne 148 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_is_permutation'ligne 131 ne possède pas de docstring.
 
 ## Warning
 
@@ -4638,7 +4638,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_all_16_rotors_are_valid'ligne 162 ne possède pas de docstring.
+- **Message :** La fonction 'test_all_16_rotors_are_valid'ligne 145 ne possède pas de docstring.
 
 ## Warning
 
@@ -4648,7 +4648,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_is_deterministic'ligne 180 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_is_deterministic'ligne 163 ne possède pas de docstring.
 
 ## Warning
 
@@ -4658,7 +4658,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotors_are_different'ligne 197 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotors_are_different'ligne 180 ne possède pas de docstring.
 
 ## Warning
 
@@ -4668,7 +4668,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_forward_inverse'ligne 236 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_forward_inverse'ligne 219 ne possède pas de docstring.
 
 ## Warning
 
@@ -4678,7 +4678,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_all_16_rotors_forward_inverse'ligne 270 ne possède pas de docstring.
+- **Message :** La fonction 'test_all_16_rotors_forward_inverse'ligne 253 ne possède pas de docstring.
 
 ## Warning
 
@@ -4688,7 +4688,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotors_are_valid_permutations'ligne 299 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotors_are_valid_permutations'ligne 282 ne possède pas de docstring.
 
 ## Warning
 
@@ -4698,7 +4698,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotors_are_deterministic'ligne 315 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotors_are_deterministic'ligne 298 ne possède pas de docstring.
 
 ## Warning
 
@@ -4708,7 +4708,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotors_depend_on_key'ligne 336 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotors_depend_on_key'ligne 319 ne possède pas de docstring.
 
 ## Warning
 
@@ -4718,7 +4718,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_all_16_rotors_round_trip'ligne 358 ne possède pas de docstring.
+- **Message :** La fonction 'test_all_16_rotors_round_trip'ligne 341 ne possède pas de docstring.
 
 ## Warning
 
@@ -4728,7 +4728,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_invalid_communication_key'ligne 400 ne possède pas de docstring.
+- **Message :** La fonction 'test_invalid_communication_key'ligne 383 ne possède pas de docstring.
 
 ## Warning
 
@@ -4747,7 +4747,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_is_permutation'ligne 7 ne possède pas de docstring.
+- **Message :** La fonction 'test_is_permutation'ligne 4 ne possède pas de docstring.
 
 ## Warning
 
@@ -4757,7 +4757,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_is_deterministic'ligne 15 ne possède pas de docstring.
+- **Message :** La fonction 'test_is_deterministic'ligne 12 ne possède pas de docstring.
 
 ## Warning
 
@@ -4767,7 +4767,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_different_seeds_produce_different_permutations'ligne 23 ne possède pas de docstring.
+- **Message :** La fonction 'test_different_seeds_produce_different_permutations'ligne 20 ne possède pas de docstring.
 
 ## Warning
 
@@ -4777,7 +4777,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_contains_every_value_once'ligne 31 ne possède pas de docstring.
+- **Message :** La fonction 'test_contains_every_value_once'ligne 28 ne possède pas de docstring.
 
 ## Warning
 
@@ -4787,7 +4787,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_zero_seed'ligne 39 ne possède pas de docstring.
+- **Message :** La fonction 'test_zero_seed'ligne 36 ne possède pas de docstring.
 
 ## Warning
 
@@ -4797,7 +4797,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_max_seed'ligne 47 ne possède pas de docstring.
+- **Message :** La fonction 'test_max_seed'ligne 44 ne possède pas de docstring.
 
 ## Warning
 
@@ -4816,7 +4816,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_state_round_trip'ligne 19 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_state_round_trip'ligne 14 ne possède pas de docstring.
 
 ## Warning
 
@@ -4826,7 +4826,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_state_multiple_updates'ligne 74 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_state_multiple_updates'ligne 69 ne possède pas de docstring.
 
 ## Warning
 
@@ -4836,7 +4836,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_stream_round_trip'ligne 132 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_stream_round_trip'ligne 127 ne possède pas de docstring.
 
 ## Warning
 
@@ -4846,7 +4846,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_mix_final_round_trip'ligne 198 ne possède pas de docstring.
+- **Message :** La fonction 'test_mix_final_round_trip'ligne 193 ne possède pas de docstring.
 
 ## Warning
 
@@ -4939,7 +4939,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_state_has_16_positions'ligne 10 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_state_has_16_positions'ligne 8 ne possède pas de docstring.
 
 ## Warning
 
@@ -4949,7 +4949,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_state_starts_at_zero'ligne 20 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_state_starts_at_zero'ligne 18 ne possède pas de docstring.
 
 ## Warning
 
@@ -4959,7 +4959,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_1_rotates_by_one_each_byte'ligne 34 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_1_rotates_by_one_each_byte'ligne 32 ne possède pas de docstring.
 
 ## Warning
 
@@ -4969,7 +4969,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_1_wraps'ligne 50 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_1_wraps'ligne 48 ne possède pas de docstring.
 
 ## Warning
 
@@ -4979,7 +4979,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_1_full_rotation'ligne 68 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_1_full_rotation'ligne 66 ne possède pas de docstring.
 
 ## Warning
 
@@ -4989,7 +4989,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_4_reacts_to_rotor_1_full_rotation'ligne 81 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_4_reacts_to_rotor_1_full_rotation'ligne 79 ne possède pas de docstring.
 
 ## Warning
 
@@ -4999,7 +4999,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_2_rotates_by_key_each_byte'ligne 96 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_2_rotates_by_key_each_byte'ligne 94 ne possède pas de docstring.
 
 ## Warning
 
@@ -5009,7 +5009,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_2_wraps'ligne 119 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_2_wraps'ligne 117 ne possède pas de docstring.
 
 ## Warning
 
@@ -5019,7 +5019,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_5_reacts_to_rotor_2_full_rotation'ligne 137 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_5_reacts_to_rotor_2_full_rotation'ligne 135 ne possède pas de docstring.
 
 ## Warning
 
@@ -5029,7 +5029,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_3_rotates_by_packet_type'ligne 155 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_3_rotates_by_packet_type'ligne 153 ne possède pas de docstring.
 
 ## Warning
 
@@ -5039,7 +5039,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_3_wraps'ligne 173 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_3_wraps'ligne 171 ne possède pas de docstring.
 
 ## Warning
 
@@ -5049,7 +5049,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_6_rotates_by_seed_every_two_bytes'ligne 191 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_6_rotates_by_seed_every_two_bytes'ligne 189 ne possède pas de docstring.
 
 ## Warning
 
@@ -5059,7 +5059,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_7_rotation'ligne 237 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_7_rotation'ligne 235 ne possède pas de docstring.
 
 ## Warning
 
@@ -5069,7 +5069,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_7_wraps'ligne 255 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_7_wraps'ligne 253 ne possède pas de docstring.
 
 ## Warning
 
@@ -5079,7 +5079,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_8'ligne 273 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_8'ligne 271 ne possède pas de docstring.
 
 ## Warning
 
@@ -5089,7 +5089,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_8_stays_in_u8'ligne 289 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_8_stays_in_u8'ligne 287 ne possède pas de docstring.
 
 ## Warning
 
@@ -5099,7 +5099,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_9'ligne 308 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_9'ligne 306 ne possède pas de docstring.
 
 ## Warning
 
@@ -5109,7 +5109,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_9_stays_in_u8'ligne 324 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_9_stays_in_u8'ligne 322 ne possède pas de docstring.
 
 ## Warning
 
@@ -5119,7 +5119,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_8_depends_on_state'ligne 337 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_8_depends_on_state'ligne 335 ne possède pas de docstring.
 
 ## Warning
 
@@ -5129,7 +5129,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_9_depends_on_state'ligne 359 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_9_depends_on_state'ligne 357 ne possède pas de docstring.
 
 ## Warning
 
@@ -5139,7 +5139,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_8_depends_on_state'ligne 379 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_8_depends_on_state'ligne 377 ne possède pas de docstring.
 
 ## Warning
 
@@ -5149,7 +5149,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_9_depends_on_state'ligne 401 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_9_depends_on_state'ligne 399 ne possède pas de docstring.
 
 ## Warning
 
@@ -5159,7 +5159,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_state_reference_r1_r16'ligne 421 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_state_reference_r1_r16'ligne 419 ne possède pas de docstring.
 
 ## Warning
 
@@ -5169,7 +5169,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_10_changes'ligne 456 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_10_changes'ligne 454 ne possède pas de docstring.
 
 ## Warning
 
@@ -5179,7 +5179,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_10_stays_in_u8'ligne 472 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_10_stays_in_u8'ligne 470 ne possède pas de docstring.
 
 ## Warning
 
@@ -5189,7 +5189,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_10_is_deterministic'ligne 487 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_10_is_deterministic'ligne 485 ne possède pas de docstring.
 
 ## Warning
 
@@ -5199,7 +5199,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_10_depends_on_state'ligne 508 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_10_depends_on_state'ligne 506 ne possède pas de docstring.
 
 ## Warning
 
@@ -5209,7 +5209,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_11_changes_each_update'ligne 532 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_11_changes_each_update'ligne 530 ne possède pas de docstring.
 
 ## Warning
 
@@ -5219,7 +5219,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_11_stays_in_u8'ligne 548 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_11_stays_in_u8'ligne 546 ne possède pas de docstring.
 
 ## Warning
 
@@ -5229,7 +5229,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_11_is_deterministic'ligne 563 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_11_is_deterministic'ligne 561 ne possède pas de docstring.
 
 ## Warning
 
@@ -5239,7 +5239,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_11_depends_on_state'ligne 584 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_11_depends_on_state'ligne 582 ne possède pas de docstring.
 
 ## Warning
 
@@ -5249,7 +5249,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_12_changes_each_update'ligne 608 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_12_changes_each_update'ligne 606 ne possède pas de docstring.
 
 ## Warning
 
@@ -5259,7 +5259,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_12_stays_in_u8'ligne 624 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_12_stays_in_u8'ligne 622 ne possède pas de docstring.
 
 ## Warning
 
@@ -5269,7 +5269,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_12_is_deterministic'ligne 639 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_12_is_deterministic'ligne 637 ne possède pas de docstring.
 
 ## Warning
 
@@ -5279,7 +5279,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_12_depends_on_state'ligne 660 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_12_depends_on_state'ligne 658 ne possède pas de docstring.
 
 ## Warning
 
@@ -5289,7 +5289,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_13_changes_each_update'ligne 684 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_13_changes_each_update'ligne 682 ne possède pas de docstring.
 
 ## Warning
 
@@ -5299,7 +5299,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_13_stays_in_u8'ligne 700 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_13_stays_in_u8'ligne 698 ne possède pas de docstring.
 
 ## Warning
 
@@ -5309,7 +5309,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_13_is_deterministic'ligne 715 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_13_is_deterministic'ligne 713 ne possède pas de docstring.
 
 ## Warning
 
@@ -5319,7 +5319,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_13_depends_on_state'ligne 736 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_13_depends_on_state'ligne 734 ne possède pas de docstring.
 
 ## Warning
 
@@ -5329,7 +5329,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_14_changes_each_update'ligne 761 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_14_changes_each_update'ligne 759 ne possède pas de docstring.
 
 ## Warning
 
@@ -5339,7 +5339,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_14_stays_in_u8'ligne 777 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_14_stays_in_u8'ligne 775 ne possède pas de docstring.
 
 ## Warning
 
@@ -5349,7 +5349,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_14_is_deterministic'ligne 792 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_14_is_deterministic'ligne 790 ne possède pas de docstring.
 
 ## Warning
 
@@ -5359,7 +5359,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_14_depends_on_state'ligne 813 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_14_depends_on_state'ligne 811 ne possède pas de docstring.
 
 ## Warning
 
@@ -5369,7 +5369,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_15_changes_each_update'ligne 838 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_15_changes_each_update'ligne 836 ne possède pas de docstring.
 
 ## Warning
 
@@ -5379,7 +5379,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_15_stays_in_u8'ligne 854 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_15_stays_in_u8'ligne 852 ne possède pas de docstring.
 
 ## Warning
 
@@ -5389,7 +5389,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_15_is_deterministic'ligne 869 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_15_is_deterministic'ligne 867 ne possède pas de docstring.
 
 ## Warning
 
@@ -5399,7 +5399,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_15_depends_on_state'ligne 890 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_15_depends_on_state'ligne 888 ne possède pas de docstring.
 
 ## Warning
 
@@ -5409,7 +5409,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_16_changes_each_update'ligne 915 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_16_changes_each_update'ligne 913 ne possède pas de docstring.
 
 ## Warning
 
@@ -5419,7 +5419,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_16_stays_in_u8'ligne 931 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_16_stays_in_u8'ligne 929 ne possède pas de docstring.
 
 ## Warning
 
@@ -5429,7 +5429,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_16_is_deterministic'ligne 946 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_16_is_deterministic'ligne 944 ne possède pas de docstring.
 
 ## Warning
 
@@ -5439,7 +5439,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_16_depends_on_state'ligne 967 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_16_depends_on_state'ligne 965 ne possède pas de docstring.
 
 ## Warning
 
@@ -5449,7 +5449,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_rotor_6_wraps'ligne 224 ne possède pas de docstring.
+- **Message :** La fonction 'test_rotor_6_wraps'ligne 222 ne possède pas de docstring.
 
 ## Warning
 
@@ -5516,7 +5516,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_same_seed_same_sequence'ligne 13 ne possède pas de docstring.
+- **Message :** La fonction 'test_same_seed_same_sequence'ligne 8 ne possède pas de docstring.
 
 ## Warning
 
@@ -5526,7 +5526,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_different_seed_different_sequence'ligne 35 ne possède pas de docstring.
+- **Message :** La fonction 'test_different_seed_different_sequence'ligne 30 ne possède pas de docstring.
 
 ## Warning
 
@@ -5536,7 +5536,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_output_is_u64'ligne 57 ne possède pas de docstring.
+- **Message :** La fonction 'test_output_is_u64'ligne 52 ne possède pas de docstring.
 
 ## Warning
 
@@ -5546,7 +5546,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_state_changes'ligne 72 ne possède pas de docstring.
+- **Message :** La fonction 'test_state_changes'ligne 67 ne possède pas de docstring.
 
 ## Warning
 
@@ -5556,7 +5556,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_zero_seed'ligne 87 ne possède pas de docstring.
+- **Message :** La fonction 'test_zero_seed'ligne 82 ne possède pas de docstring.
 
 ## Warning
 
@@ -5566,7 +5566,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** python
-- **Message :** La fonction 'test_max_seed'ligne 104 ne possède pas de docstring.
+- **Message :** La fonction 'test_max_seed'ligne 99 ne possède pas de docstring.
 
 ## Warning
 
@@ -15845,32 +15845,32 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 44 > 120 caractères.
+- **Message :** Ligne 39 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
-- **Message :** Ligne 73 > 120 caractères.
+- **Message :** Ligne 63 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 64 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 68 > 120 caractères.
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Ligne 72 > 120 caractères.
 
 ## Warning
 
 - **Module :** markdown
 - **Message :** Ligne 74 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 78 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 84 > 120 caractères.
-
-## Warning
-
-- **Module :** markdown
-- **Message :** Ligne 88 > 120 caractères.
 
 ---
 
