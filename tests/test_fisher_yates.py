@@ -1,7 +1,4 @@
-from client_python.crypto import SplitMix64,fisher_yates
-
-
-
+from client_python.crypto import fisher_yates
 
 
 def test_is_permutation():
