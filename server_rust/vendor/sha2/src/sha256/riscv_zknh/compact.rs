@@ -1,15 +1,9 @@
 use super::{sha256sig0, sha256sig1, sha256sum0, sha256sum1};
 use crate::consts::K32;
 
+#[inline]
 #[target_feature(enable = "zknh")]
-pub(in super::super) fn compress(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
-    for block in blocks.iter().map(super::utils::load_block) {
-        compress_block(state, block);
-    }
-}
-
-#[target_feature(enable = "zknh")]
-fn compress_block(state: &mut [u32; 8], mut block: [u32; 16]) {
+pub(super) fn compress_block(state: &mut [u32; 8], mut block: [u32; 16]) {
     let mut s = *state;
 
     for r in 0..64 {
@@ -24,6 +18,7 @@ fn compress_block(state: &mut [u32; 8], mut block: [u32; 16]) {
     }
 }
 
+#[inline]
 #[target_feature(enable = "zknh")]
 fn schedule(block: &mut [u32; 16], r: usize) {
     block[r % 16] = block[r % 16]
@@ -32,18 +27,11 @@ fn schedule(block: &mut [u32; 16], r: usize) {
         .wrapping_add(sha256sig0(block[(r + 1) % 16]));
 }
 
+#[inline]
 #[target_feature(enable = "zknh")]
 fn round(state: &mut [u32; 8], block: &[u32; 16], r: usize) {
     let n = K32.len() - r;
-    #[allow(clippy::identity_op)]
-    let a = (n + 0) % 8;
-    let b = (n + 1) % 8;
-    let c = (n + 2) % 8;
-    let d = (n + 3) % 8;
-    let e = (n + 4) % 8;
-    let f = (n + 5) % 8;
-    let g = (n + 6) % 8;
-    let h = (n + 7) % 8;
+    let [a, b, c, d, e, f, g, h] = core::array::from_fn(|i| (n + i) % 8);
 
     state[h] = state[h]
         .wrapping_add(sha256sum1(state[e]))

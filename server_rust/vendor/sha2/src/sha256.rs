@@ -5,11 +5,8 @@ cfg_if::cfg_if! {
     } else if #[cfg(any(sha2_backend = "riscv-zknh", sha2_256_backend = "riscv-zknh"))] {
         mod riscv_zknh;
 
-        #[cfg(not(all(
-            target_feature = "zknh",
-            any(target_feature = "zbb", target_feature = "zbkb")
-        )))]
-        compile_error!("riscv-zknh backend requires zknh and zbkb (or zbb) target features");
+        #[cfg(not(target_feature = "zknh"))]
+        compile_error!("riscv-zknh backend requires `zknh` target feature");
 
         fn compress(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
             // SAFETY: we checked above that the required target features are enabled
@@ -20,11 +17,9 @@ cfg_if::cfg_if! {
 
         #[cfg(not(all(
             target_feature = "sha",
-            target_feature = "sse2",
-            target_feature = "ssse3",
             target_feature = "sse4.1",
         )))]
-        compile_error!("x86-sha backend requires sha, sse2, ssse3, sse4.1 target features");
+        compile_error!("x86-sha backend requires `sha` and `sse4.1` target features");
 
         fn compress(state: &mut [u32; 8], blocks: &[[u8; 64]]) {
             // SAFETY: we checked above that the required target features are enabled
@@ -34,7 +29,7 @@ cfg_if::cfg_if! {
         mod aarch64_sha2;
 
         #[cfg(not(target_feature = "sha2"))]
-        compile_error!("aarch64-sha2 backend requires sha2 target feature");
+        compile_error!("aarch64-sha2 backend requires `sha2` target feature");
 
         fn compress(state: &mut [u64; 8], blocks: &[[u8; 128]]) {
             // SAFETY: we checked above that the required target features are enabled
@@ -52,7 +47,7 @@ cfg_if::cfg_if! {
         cfg_if::cfg_if! {
             if #[cfg(any(target_arch = "x86", target_arch = "x86_64"))] {
                 mod x86_sha;
-                cpufeatures::new!(shani_cpuid, "sha", "sse2", "ssse3", "sse4.1");
+                cpufeatures::new!(shani_cpuid, "sha", "sse4.1");
             } else if #[cfg(target_arch = "aarch64")] {
                 mod aarch64_sha2;
                 cpufeatures::new!(sha2_hwcap, "sha2");

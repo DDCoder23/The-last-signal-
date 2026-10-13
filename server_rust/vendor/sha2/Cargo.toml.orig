@@ -1,11 +1,10 @@
 [package]
 name = "sha2"
-version = "0.11.0"
+version = "0.11.1"
 authors = ["RustCrypto Developers"]
 edition = "2024"
-rust-version = "1.85"
+rust-version = "1.88"
 documentation = "https://docs.rs/sha2"
-readme = "README.md"
 repository = "https://github.com/RustCrypto/hashes"
 license = "MIT OR Apache-2.0"
 keywords = ["sha2", "hash", "digest"]
