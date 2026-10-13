@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-13 00:51:02
+**Date :** 2026-10-13 05:45:52
 
 # 64/100
 
@@ -40513,73 +40513,67 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:38 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:22 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:44 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:51 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:50 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:57 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:56 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:63 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:62 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:69 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:68 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:75 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:74 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:81 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:80 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:87 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:86 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:93 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:90 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:99 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:97 titre sans ligne vide avant.
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:104 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:103 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -40591,49 +40585,61 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:116 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:117 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:122 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:123 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:128 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:129 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:139 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:135 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:145 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:141 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:155 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:152 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:161 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:158 titre sans ligne vide avant.
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:175 titre sans ligne vide avant.
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:168 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:174 titre sans ligne vide avant.
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:188 titre sans ligne vide avant.
 
 - **module :** titles
 
@@ -40651,259 +40657,247 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:18 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:14 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:22 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:73).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:22 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:37 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:8).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:31 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:38 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:35 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:73).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:43 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:15).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:50 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:8).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:44 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:51 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:49 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:21).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:56 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:15).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:50 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:57 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:55 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:27).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:62 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:21).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:56 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:63 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:61 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:33).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:68 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:27).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:62 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:69 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:67 titre dupliqué (déjà présent dans server_rust/vendor/sha1/CHANGELOG.md:42).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:74 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:33).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:68 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:75 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:73 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:45).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:80 titre dupliqué (déjà présent dans server_rust/vendor/sha1/CHANGELOG.md:42).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:74 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:81 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:79 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:51).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:86 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:45).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:80 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:87 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:85 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:57).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:92 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:51).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:86 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:93 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:89 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:147).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:98 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:57).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:90 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:99 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:96 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:68).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:102 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:147).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:97 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:103 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:103 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:75).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:109 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:68).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:104 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:110 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:109 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:81).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:116 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:75).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:110 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:117 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:98).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:115 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:87).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:122 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:81).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:116 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:123 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:121 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:93).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:128 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:87).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:122 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:129 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:127 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:99).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:134 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:93).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:128 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:135 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:131 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:140 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:99).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:138 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:110).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:141 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:139 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:144 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:144 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:116).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:151 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:110).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:145 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:152 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:148 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:157 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:116).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:154 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:126).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:155 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
-
-- **module :** titles
-
-## ⚠️ Warning
-- **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:160 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:156).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:158 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
@@ -40915,115 +40909,139 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:174 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:146).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:167 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:126).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:175 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:168 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:178 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:173 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:156).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:186 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:158).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:174 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:188 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:160).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:187 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:146).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:190 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:162).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:188 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:192 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:208).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:191 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/CHANGELOG.md:13).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:194 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:166).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:199 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:158).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:196 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:168).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:201 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:160).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:198 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:170).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:203 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:162).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:200 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:214).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:205 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:208).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:202 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:174).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:207 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:166).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:204 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:176).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:209 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:168).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:206 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:216).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:211 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:170).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:208 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:220).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:213 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:214).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:210 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:182).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:215 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:174).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:212 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:184).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:217 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:176).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:214 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:186).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:219 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:216).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/CHANGELOG.md:216 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:188).
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:221 titre dupliqué (déjà présent dans server_rust/vendor/digest/CHANGELOG.md:220).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:223 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:182).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:225 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:184).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:227 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:186).
+
+- **module :** titles
+
+## ⚠️ Warning
+- **Module :** titles
+- **Message :** server_rust/vendor/sha2/CHANGELOG.md:229 titre dupliqué (déjà présent dans server_rust/vendor/sha2-0.10.9/CHANGELOG.md:188).
 
 - **module :** titles
 
@@ -41061,13 +41079,13 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/README.md:106 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).
+- **Message :** server_rust/vendor/sha2/README.md:115 titre dupliqué (déjà présent dans server_rust/vendor/futures-core/README.md:16).
 
 - **module :** titles
 
 ## ⚠️ Warning
 - **Module :** titles
-- **Message :** server_rust/vendor/sha2/README.md:115 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/README.md:17).
+- **Message :** server_rust/vendor/sha2/README.md:124 titre dupliqué (déjà présent dans server_rust/vendor/openssl-sys/README.md:17).
 
 - **module :** titles
 
