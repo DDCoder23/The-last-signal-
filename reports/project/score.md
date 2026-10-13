@@ -1,6 +1,6 @@
 Documentation Quality Report
 
-**Date :** 2026-10-13 10:24:37
+**Date :** 2026-10-13 10:38:55
 
 # 64/100
 
@@ -1695,7 +1695,7 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'api_get'ligne 17 ne possède pas de docstring.
+- **Message :** La fonction 'esc' ne possède pas d'annotations de type.
 
 - **module :** python
 
@@ -1707,19 +1707,31 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'esc'ligne 43 ne possède pas de docstring.
+- **Message :** La fonction 'text_element' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'esc' ne possède pas d'annotations de type.
+- **Message :** La fonction 'rect' ne possède pas d'annotations de type.
 
 - **module :** python
 
 ## ⚠️ Warning
 - **Module :** python
-- **Message :** La fonction 'main'ligne 47 ne possède pas de docstring.
+- **Message :** La fonction 'format_number'ligne 75 ne possède pas de docstring.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'format_number' ne possède pas d'annotations de type.
+
+- **module :** python
+
+## ⚠️ Warning
+- **Module :** python
+- **Message :** La fonction 'main'ligne 79 ne possède pas de docstring.
 
 - **module :** python
 

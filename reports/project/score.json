@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-13T10:24:37.703130",
+    "generated": "2026-10-13T10:38:55.787996",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -11,7 +11,7 @@
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 7915,
+    "problem_count": 7917,
     "details": {
         "markdown": {
             "score": 45,
@@ -42130,10 +42130,10 @@
             "results": {
                 "modules": 64,
                 "classes": 34,
-                "functions": 335,
+                "functions": 338,
                 "documented_modules": 10,
                 "documented_classes": 19,
-                "documented_functions": 69,
+                "documented_functions": 73,
                 "typed_functions": 96,
                 "todo": 4,
                 "long_functions": 21
@@ -42298,7 +42298,7 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
                     "severity": "warning",
-                    "message": "La fonction 'api_get'ligne 17 ne possède pas de docstring.",
+                    "message": "La fonction 'esc' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
@@ -42310,19 +42310,31 @@
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
                     "severity": "warning",
-                    "message": "La fonction 'esc'ligne 43 ne possède pas de docstring.",
+                    "message": "La fonction 'text_element' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
                     "severity": "warning",
-                    "message": "La fonction 'esc' ne possède pas d'annotations de type.",
+                    "message": "La fonction 'rect' ne possède pas d'annotations de type.",
                     "module": "python"
                 },
                 {
                     "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
                     "severity": "warning",
-                    "message": "La fonction 'main'ligne 47 ne possède pas de docstring.",
+                    "message": "La fonction 'format_number'ligne 75 ne possède pas de docstring.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'format_number' ne possède pas d'annotations de type.",
+                    "module": "python"
+                },
+                {
+                    "file": "/home/runner/work/The-last-signal-/The-last-signal-/scripts/generate_stats.py",
+                    "severity": "warning",
+                    "message": "La fonction 'main'ligne 79 ne possède pas de docstring.",
                     "module": "python"
                 },
                 {
