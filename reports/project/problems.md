@@ -1,14 +1,14 @@
 # Documentation Problems
 
-Generated: 2026-10-13 07:56:40
+Generated: 2026-10-13 08:10:48
 
 ## Summary
 
 |Type|Count|
 |---|---:|
-|Errors|474|
-|Warnings|7420|
-|**Total**|**7899**|
+|Errors|475|
+|Warnings|7427|
+|**Total**|**7907**|
 
 ---
 
@@ -5483,6 +5483,11 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 # CHANGELOG.md
 
+## Error
+
+- **Module :** markdown
+- **Message :** Encodage UTF-8 invalide.
+
 ## Warning
 
 - **Module :** markdown
@@ -5522,6 +5527,16 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 - **Module :** markdown
 - **Message :** Espace en fin de ligne (127).
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (146).
+
+## Warning
+
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (151).
 
 ## Warning
 
@@ -5638,6 +5653,11 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 - **Module :** titles
 - **Message :** CHANGELOG.md:132 titre dupliqué (déjà présent dans CHANGELOG.md:9).
 
+## Warning
+
+- **Module :** titles
+- **Message :** CHANGELOG.md:143 titre dupliqué (déjà présent dans CHANGELOG.md:9).
+
 ---
 
 # CHANGELOG_ENG.md
@@ -5679,6 +5699,11 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 ## Warning
 
+- **Module :** markdown
+- **Message :** Espace en fin de ligne (150).
+
+## Warning
+
 - **Module :** titles
 - **Message :** CHANGELOG_ENG.md:84 titre sans ligne vide avant.
 
@@ -5701,6 +5726,11 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 - **Module :** titles
 - **Message :** CHANGELOG_ENG.md:129 titre sans ligne vide avant.
+
+## Warning
+
+- **Module :** titles
+- **Message :** CHANGELOG_ENG.md:139 titre sans ligne vide avant.
 
 ## Warning
 
@@ -5766,6 +5796,16 @@ UnboundLocalError: cannot access local variable 'score' where it is not associat
 
 - **Module :** titles
 - **Message :** CHANGELOG_ENG.md:131 titre dupliqué (déjà présent dans CHANGELOG.md:9).
+
+## Warning
+
+- **Module :** titles
+- **Message :** CHANGELOG_ENG.md:141 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).
+
+## Warning
+
+- **Module :** titles
+- **Message :** CHANGELOG_ENG.md:149 titre dupliqué (déjà présent dans CHANGELOG.md:150).
 
 ---
 

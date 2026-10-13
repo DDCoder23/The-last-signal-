@@ -1,5 +1,5 @@
 {
-    "generated": "2026-10-13T07:56:39.207741",
+    "generated": "2026-10-13T08:10:47.840791",
     "score": 64,
     "status": "Bon",
     "scores": {
@@ -11,7 +11,7 @@
         "rust": 0,
         "organization": 95
     },
-    "problem_count": 7899,
+    "problem_count": 7907,
     "details": {
         "markdown": {
             "score": 45,
@@ -907,6 +907,12 @@
                     "file": "docs_JP/tdd/README_JP.md",
                     "severity": "error",
                     "message": "Fichier vide.",
+                    "module": "markdown"
+                },
+                {
+                    "file": "CHANGELOG.md",
+                    "severity": "error",
+                    "message": "Encodage UTF-8 invalide.",
                     "module": "markdown"
                 },
                 {
@@ -4630,6 +4636,18 @@
                     "module": "markdown"
                 },
                 {
+                    "file": "CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (146).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (151).",
+                    "module": "markdown"
+                },
+                {
                     "file": "CHANGELOG_ENG.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (95).",
@@ -4663,6 +4681,12 @@
                     "file": "CHANGELOG_ENG.md",
                     "severity": "warning",
                     "message": "Espace en fin de ligne (127).",
+                    "module": "markdown"
+                },
+                {
+                    "file": "CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "Espace en fin de ligne (150).",
                     "module": "markdown"
                 },
                 {
@@ -11085,6 +11109,12 @@
                     "file": "CHANGELOG_ENG.md",
                     "severity": "warning",
                     "message": "CHANGELOG_ENG.md:129 titre sans ligne vide avant.",
+                    "module": "titles"
+                },
+                {
+                    "file": "CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "CHANGELOG_ENG.md:139 titre sans ligne vide avant.",
                     "module": "titles"
                 },
                 {
@@ -17526,6 +17556,12 @@
                     "module": "titles"
                 },
                 {
+                    "file": "CHANGELOG.md",
+                    "severity": "warning",
+                    "message": "CHANGELOG.md:143 titre dupliqué (déjà présent dans CHANGELOG.md:9).",
+                    "module": "titles"
+                },
+                {
                     "file": "CONTRIBUTING.md",
                     "severity": "warning",
                     "message": "CONTRIBUTING.md:395 titre dupliqué (déjà présent dans CONTRIBUTING.md:305).",
@@ -17667,6 +17703,18 @@
                     "file": "CHANGELOG_ENG.md",
                     "severity": "warning",
                     "message": "CHANGELOG_ENG.md:131 titre dupliqué (déjà présent dans CHANGELOG.md:9).",
+                    "module": "titles"
+                },
+                {
+                    "file": "CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "CHANGELOG_ENG.md:141 titre dupliqué (déjà présent dans CHANGELOG_ENG.md:9).",
+                    "module": "titles"
+                },
+                {
+                    "file": "CHANGELOG_ENG.md",
+                    "severity": "warning",
+                    "message": "CHANGELOG_ENG.md:149 titre dupliqué (déjà présent dans CHANGELOG.md:150).",
                     "module": "titles"
                 },
                 {
