@@ -303,13 +303,6 @@ Compiling 'tests/test_splitmix64.py'...
 [1m[92m   Compiling[0m idna v1.1.0
 [1m[92m   Compiling[0m cpufeatures v0.2.17
 [1m[92m   Compiling[0m hybrid-array v0.4.15
-[1m[92m   Compilrm_urlencoded v1.2.2
-[1m[92m   Compiling[0m ctutils v0.4.3
-[1m[92m   Compiling[0m digest v0.10.7
-[1m[92m   Compiling[0m parking_lot v0.12.5
-[1m[92m   Compiling[0m idna v1.1.0
-[1m[92m   Compiling[0m cpufeatures v0.2.17
-[1m[92m   Compiling[0m hybrid-array v0.4.15
 [1m[92m   Compiling[0m libsqlite3-sys v0.37.0
 [1m[92m   Compiling[0m itoa v1.0.18
 [1m[92m   Compiling[0m log v0.4.34
