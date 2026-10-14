@@ -13,11 +13,12 @@ The Last Signal is maintained and developed by the core team and the community.
 These contributors have helped improve the project through code, documentation, testing, translation, or feedback.
 
 - vedafactor — Documentation and English translation improvements
-- Juan520dlc — Documentation and Spanish localization
+- Juan520dlc — Documentation and Spanish translation improvements
 - VatsalRaina01 — Testing, packet/unit test coverage
 - Furikawari — Community and technical contributions
 - OMD-123 — Community and technical contributions
 - wingkuitsoi — Community and technical contributions
+- asxxb — Documentation and Japanese translation improvements
 
 ## Contribution areas
 
