@@ -116,6 +116,17 @@ jobs:
       )
      }}
     uses: ./.github/workflows/sync-ci.yml
+  stats-update:
+    needs: sync
+    if: >-
+     ${{
+       always() &&
+       (
+        needs.sync.result == 'success' ||
+        needs.sync.result == 'failure'
+      )
+     }}
+    uses: ./.github/workflows/repository-stats.yml
   cancel-launcher:
     needs:
 
@@ -126,6 +137,7 @@ jobs:
       - project_scheduled
       - project_other
       - sync
+      - stats-update
     if: >-
      ${{
       always() &&
@@ -136,7 +148,8 @@ jobs:
         needs.build.result == 'failure' ||
         needs.project_scheduled.result == 'failure' ||
         needs.project_other.result == 'failure' ||
-        needs.sync.result == 'failure'
+        needs.sync.result == 'failure' ||
+        needs.stats-update.result == 'failure'
       )
      }}
     uses: ./.github/workflows/cancel-pending.yml
