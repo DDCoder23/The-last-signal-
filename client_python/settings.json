@@ -1,0 +1,9 @@
+{
+  "lang": "fr",
+  "volume": 100,
+  "last_bg": "background.jpg",
+  "bg_seen": [
+    "background2.jpg",
+    "background.jpg"
+  ]
+}

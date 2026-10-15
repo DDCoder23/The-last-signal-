@@ -202,34 +202,60 @@ def fmt_duration(sec):
     return f"{h} h {m:02d} min" if h else f"{m} min"
 
 
+
 def find_asset(*parts):
-    for base in (DATA_DIR, RES_DIR):
-        p = os.path.join(base, *parts)
-        if os.path.exists(p):
-            return p
-    return os.path.join(RES_DIR, *parts)
+    """Cherche les ressources dans le dossier du jeu et dans assets/."""
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    assets_dir = os.path.join(project_dir, "assets")
+
+    for base in (DATA_DIR, RES_DIR, assets_dir):
+        path = os.path.join(base, *parts)
+        if os.path.exists(path):
+            return path
+
+    return os.path.join(assets_dir, *parts)
+
 
 
 BG_EXTS = (".jpg", ".jpeg", ".png", ".webp")
 
 
+
 def list_backgrounds():
-    """background.jpg / background.png + toutes les images du dossier backgrounds/ (ajoute une image = un fond de plus)."""
+    """Recherche les fonds dans le dossier du script et dans assets/."""
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    assets_dir = os.path.join(project_dir, "assets")
+
+    # Recherche dans les trois emplacements possibles.
+    bases = (DATA_DIR, RES_DIR, assets_dir)
     found = []
-    for base in (DATA_DIR, RES_DIR):
-        for name in ("background.jpg", "background.png"):
-            p = os.path.join(base, name)
-            if os.path.exists(p):
-                found.append(p)
+
+    for base in bases:
+        for name in ("background.jpg", "background.jpeg",
+                     "background.png", "background.webp"):
+            path = os.path.join(base, name)
+            if os.path.isfile(path):
+                found.append(path)
+
+        # Dossier backgrounds/ classique.
         folder = os.path.join(base, "backgrounds")
         if os.path.isdir(folder):
-            found += [os.path.join(folder, f) for f in sorted(os.listdir(folder)) if f.lower().endswith(BG_EXTS)]
-    out, seen = [], set()
-    for p in found:
-        if os.path.basename(p).lower() not in seen:
-            seen.add(os.path.basename(p).lower())
-            out.append(p)
-    return out
+            for name in sorted(os.listdir(folder)):
+                path = os.path.join(folder, name)
+                if os.path.isfile(path) and name.lower().endswith(BG_EXTS):
+                    found.append(path)
+
+    # Évite les doublons tout en conservant les chemins distincts.
+    unique = []
+    seen = set()
+    for path in found:
+        key = os.path.normcase(os.path.abspath(path))
+        if key not in seen:
+            seen.add(key)
+            unique.append(path)
+
+    return unique
+
 
 
 def find_background(settings=None):
@@ -327,21 +353,43 @@ def google_profile(creds):
 
 
 def find_playlist():
-    """Liste des musiques : dossier music/ (toutes les pistes), sinon music.ogg/mp3/wav, sinon ambient.wav."""
+    """Recherche les musiques dans le dossier du jeu et dans assets/music/."""
     exts = (".ogg", ".mp3", ".wav")
-    for base in (DATA_DIR, RES_DIR):
+
+    # Dossier racine du projet :
+    # The-last-signal/
+    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    assets_dir = os.path.join(project_dir, "assets")
+
+    # Cherche d'abord dans les dossiers habituels, puis dans assets/
+    bases = (DATA_DIR, RES_DIR, assets_dir)
+
+    # Recherche des fichiers audio dans les dossiers music/
+    for base in bases:
         folder = os.path.join(base, "music")
+
         if os.path.isdir(folder):
-            tracks = [os.path.join(folder, f) for f in sorted(os.listdir(folder)) if f.lower().endswith(exts)]
+            tracks = [
+                os.path.join(folder, f)
+                for f in sorted(os.listdir(folder))
+                if f.lower().endswith(exts)
+                and os.path.isfile(os.path.join(folder, f))
+            ]
+
             if tracks:
                 return tracks
-    for base in (DATA_DIR, RES_DIR):
+
+    # Recherche d'un fichier audio unique
+    for base in bases:
         for ext in exts:
-            p = os.path.join(base, "music" + ext)
-            if os.path.exists(p):
-                return [p]
-    p = find_asset("ambient.wav")
-    return [p] if os.path.exists(p) else []
+            path = os.path.join(base, "music" + ext)
+
+            if os.path.isfile(path):
+                return [path]
+
+    # Dernier recours : musique d'ambiance
+    path = find_asset("ambient.wav")
+    return [path] if os.path.isfile(path) else []
 
 
 # --------------------------------------------------------------------------- #
@@ -1807,7 +1855,7 @@ class App:
             if isinstance(saved, list) and len(saved) == 2 and all(isinstance(v, int) for v in saved) \
                     and self.pos_visible(saved[0], saved[1]):
                 px, py = saved                                  # on rouvre exactement la ou le joueur l'avait laisse
-            glfw.set_window_pos(self.win, px, py)
+            
         except Exception:
             pass
         self.screen = (sw, sh)
