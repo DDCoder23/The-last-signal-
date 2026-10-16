@@ -31,6 +31,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin \
+            git@github.com:The-last-signal-project/The-last-signal-.git
+          git remote -v
           git add stats/repository-stats.svg
           git stash --staged
           git fetch origin main

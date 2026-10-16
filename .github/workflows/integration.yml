@@ -96,6 +96,9 @@ jobs:
              fi
              git config user.name github-actions
              git config user.email github-actions@github.com
+             git remote set-url origin \
+              git@github.com:The-last-signal-project/The-last-signal-.git
+             git remote -v
              
 
              git add .python-version
@@ -175,6 +178,9 @@ jobs:
              echo 'directory = "vendor"' >> .cargo/config.toml
              git config user.name github-actions
              git config user.email github-actions@github.com
+             git remote set-url origin \
+               git@github.com:The-last-signal-project/The-last-signal-.git
+             git remote -v
              
              
 
