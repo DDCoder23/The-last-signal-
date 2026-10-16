@@ -1,4 +1,3 @@
-from pathlib import Path
 import re
 from .problem import add_problem
 from utils.file_chercheur import iter_files

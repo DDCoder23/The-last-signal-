@@ -8,8 +8,8 @@
 use tokio::sync;
 use tracing_mock::{expect, subscriber};
 
-#[tokio::test]
-async fn test_barrier_creates_span() {
+#[test]
+fn test_barrier_creates_span() {
     let barrier_span = expect::span()
         .named("runtime.resource")
         .with_target("tokio::sync::barrier");
@@ -43,8 +43,8 @@ async fn test_barrier_creates_span() {
     handle.assert_finished();
 }
 
-#[tokio::test]
-async fn test_mutex_creates_span() {
+#[test]
+fn test_mutex_creates_span() {
     let mutex_span = expect::span()
         .named("runtime.resource")
         .with_target("tokio::sync::mutex");
@@ -87,8 +87,8 @@ async fn test_mutex_creates_span() {
     handle.assert_finished();
 }
 
-#[tokio::test]
-async fn test_oneshot_creates_span() {
+#[test]
+fn test_oneshot_creates_span() {
     let oneshot_span_id = expect::id();
     let oneshot_span = expect::span()
         .with_id(oneshot_span_id.clone())
@@ -186,8 +186,8 @@ async fn test_oneshot_creates_span() {
     handle.assert_finished();
 }
 
-#[tokio::test]
-async fn test_rwlock_creates_span() {
+#[test]
+fn test_rwlock_creates_span() {
     let rwlock_span = expect::span()
         .named("runtime.resource")
         .with_target("tokio::sync::rwlock");
@@ -242,8 +242,8 @@ async fn test_rwlock_creates_span() {
     handle.assert_finished();
 }
 
-#[tokio::test]
-async fn test_semaphore_creates_span() {
+#[test]
+fn test_semaphore_creates_span() {
     let semaphore_span = expect::span()
         .named("runtime.resource")
         .with_target("tokio::sync::semaphore");
@@ -288,10 +288,15 @@ mod subscriber_panic {
     use std::future::Future;
     use std::panic::{catch_unwind, AssertUnwindSafe};
     use std::sync::atomic::{AtomicBool, Ordering};
+    use std::sync::Mutex;
     use tokio::sync;
     use tokio_test::{assert_pending, assert_ready_ok, task};
     use tracing::span::{Attributes, Id, Record};
     use tracing::{Event, Metadata, Subscriber};
+
+    // Serialize tests that run instrumented operations outside `with_default`
+    // so they cannot race with `tracing-core` callsite interest registration.
+    static TEST_MUTEX: Mutex<()> = Mutex::new(());
 
     /// A subscriber that panics on the first event with the given target.
     ///
@@ -336,6 +341,8 @@ mod subscriber_panic {
 
     #[test]
     fn semaphore_release() {
+        let _guard = TEST_MUTEX.lock();
+
         let sem = sync::Semaphore::new(0);
         let mut acquire = task::spawn(sem.acquire());
         assert_pending!(acquire.poll());
@@ -360,6 +367,8 @@ mod subscriber_panic {
 
     #[test]
     fn semaphore_acquire() {
+        let _guard = TEST_MUTEX.lock();
+
         // Polls `acquire` with a subscriber that panics on the event emitted
         // once the permits have been taken from the semaphore. The `Acquire`
         // future is dropped while unwinding, which must return the permits.
