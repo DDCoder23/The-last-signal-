@@ -4,1091 +4,1093 @@ import queue
 import struct
 import threading
 import uuid
-from pathlib import Path
 
-import numpy as np
-from PIL import Image
-from vispy import app, scene
-from vispy.scene import visuals
+from PySide6.QtCore import QRectF, Qt, QTimer
+from PySide6.QtGui import QBrush, QKeyEvent, QPainter, QPen
+from PySide6.QtWidgets import QApplication, QMainWindow
 
 from .client import Client
 from .packet import PacketType
 from .packets.move import MovePacket
 
 
-class Game(scene.SceneCanvas):
-    """Client 3D de The Last Signal avec terrain découpé en chunks."""
+class Game(QMainWindow):
+    """
+    Prototype 2D jouable de The Last Signal.
 
-    # ==============================================================
-    # WORLD
-    # ==============================================================
+    Le client 2D est une étape intermédiaire avant la transition
+    progressive vers le client 3D.
 
-    WORLD_WIDTH = 1000.0
-    WORLD_DEPTH = 1000.0
-    WORLD_HEIGHT = 120.0
+    Réseau :
 
-    # Taille maximale de la heightmap après réduction.
-    MAX_TERRAIN_SIZE = 512
+        MOVE
+            x : i32
+            y : i32
+            z : i32
 
-    # Taille d'un chunk en unités du monde.
-    CHUNK_SIZE = 64.0
+        PLAYER_STATE
+            player_id : UUID (16 octets)
+            x         : i32
+            y         : i32
+            z         : i32
 
-    # Nombre de chunks dans chaque direction autour du joueur.
-    # 2 = jusqu'à 25 chunks actifs.
-    RENDER_DISTANCE = 2
+        PLAYER_REMOVE
+            player_id : UUID (16 octets)
 
-    # Caméra et joueur.
-    PLAYER_HEIGHT = 2.0
-    PLAYER_SPEED = 5.0
+    Architecture :
 
-    # Réseau.
-    NETWORK_QUEUE_LIMIT = 100
+        Thread réseau
+              |
+              v
+        network_queue
+              |
+              v
+        Thread Qt / QTimer
+              |
+              v
+        état du jeu
+              |
+              v
+        rendu Qt
+    """
 
-    # Joueurs distants.
-    REMOTE_PLAYER_RADIUS = 2.0
-    REMOTE_PLAYER_SIZE = 14
+    # =============================================================
+    # CONFIGURATION
+    # =============================================================
 
-    # ==============================================================
-    # INITIALIZATION
-    # ==============================================================
+    PLAYER_SIZE = 30
+    PLAYER_SPEED = 5
 
-    def __init__(self, client: Client):
-        super().__init__(
-            keys="interactive",
-            title="The Last Signal",
-            size=(1280, 720),
-            bgcolor="black",
-        )
+    WORLD_WIDTH = 1000
+    WORLD_HEIGHT = 700
 
-        self.unfreeze()
+    GAME_TIMER_INTERVAL = 16
+    NETWORK_TIMER_INTERVAL = 16
+
+    # =============================================================
+    # INITIALISATION
+    # =============================================================
+
+    def __init__(self, client: Client) -> None:
+        super().__init__()
 
         self.client = client
-        self.running = True
 
-        # Position initiale côté serveur.
-        self.local_x = 100.0
-        self.local_y = 100.0
-        self.local_z = 0.0
-
-        # Joueurs distants.
-        self.remote_players: dict[
-            uuid.UUID, tuple[int, int, int]
-        ] = {}
-
-        self.remote_visuals: dict[
-            uuid.UUID, visuals.Markers
-        ] = {}
-
-        # ==========================================================
-        # NETWORK
-        # ==========================================================
-
-        self.network_queue: queue.Queue = queue.Queue(
-            maxsize=self.NETWORK_QUEUE_LIMIT
+        self.setWindowTitle(
+            "The Last Signal - Prototype 2D"
         )
 
+        self.setFixedSize(
+            self.WORLD_WIDTH,
+            self.WORLD_HEIGHT,
+        )
+
+        # =========================================================
+        # ÉTAT DU JOUEUR LOCAL
+        # =========================================================
+
+        self.player_x = 100
+        self.player_y = 100
+        self.player_z = 0
+
+        # =========================================================
+        # JOUEURS DISTANTS
+        #
+        # UUID -> (x, y, z)
+        # =========================================================
+
+        self.remote_players: dict[
+            uuid.UUID,
+            tuple[int, int, int],
+        ] = {}
+
+        # =========================================================
+        # FILE RÉSEAU
+        #
+        # Le thread réseau ne modifie jamais directement l'état
+        # graphique Qt.
+        #
+        # Il place uniquement les paquets dans cette file.
+        # =========================================================
+
+        self.network_queue: queue.Queue = queue.Queue()
+
+        # =========================================================
+        # ÉTAT DES TOUCHES
+        # =========================================================
+
+        self.keys: set[int] = set()
+
+        self.setFocusPolicy(
+            Qt.StrongFocus
+        )
+
+        self.setFocus()
+
+        # =========================================================
+        # MURS
+        # =========================================================
+
+        self.walls = [
+            QRectF(
+                250,
+                150,
+                500,
+                30,
+            ),
+            QRectF(
+                250,
+                520,
+                500,
+                30,
+            ),
+            QRectF(
+                250,
+                180,
+                30,
+                340,
+            ),
+            QRectF(
+                720,
+                180,
+                30,
+                340,
+            ),
+        ]
+
+        # =========================================================
+        # ÉTAT DU JEU
+        # =========================================================
+
+        self.running = True
+
+        # =========================================================
+        # THREAD RÉSEAU
+        # =========================================================
+
         self.network_thread = threading.Thread(
-            target=self._network_loop,
+            target=self.network_loop,
             name="GameNetworkThread",
             daemon=True,
         )
 
-        # ==========================================================
-        # SCENE AND CAMERA
-        # ==============================================================
-
-        self.view = self.central_widget.add_view()
-
-        self.view.camera = scene.cameras.FlyCamera(
-            fov=70.0,
-            up="y",
-            parent=self.view.scene,
-        )
-
-        self.camera = self.view.camera
-        self.camera.scale_factor = self.PLAYER_SPEED
-        self.camera.auto_roll = False
-
-        # ==========================================================
-        # TERRAIN DATA
-        # ==============================================================
-
-        self.heightmap: np.ndarray | None = None
-        self.color_map: np.ndarray | None = None
-
-        # (chunk_x, chunk_z) -> maillage VisPy.
-        self.terrain_chunks: dict[
-            tuple[int, int], visuals.Mesh
-        ] = {}
-
-        self._last_chunk_center: tuple[int, int] | None = None
-
-        self._load_terrain()
-        self._place_camera_initially()
-        self._update_terrain_chunks()
-
-        # ==========================================================
-        # TIMER
-        # ==============================================================
-
-        self.timer = app.Timer(
-            interval=1.0 / 60.0,
-            connect=self._update,
-            start=True,
-        )
-
-        # ==========================================================
-        # EVENTS
-        # ==============================================================
-
-        self.events.key_press.connect(self._on_key_press)
-        self.events.key_release.connect(self._on_key_release)
-        self.events.mouse_press.connect(self._on_mouse_press)
-
-        # ==========================================================
-        # NETWORK THREAD
-        # ==============================================================
-
         self.network_thread.start()
 
-    # ==============================================================
-    # ASSETS
-    # ==============================================================
+        # =========================================================
+        # TIMER RÉSEAU
+        #
+        # Le thread Qt récupère les paquets depuis la queue.
+        #
+        # Cela garantit que les modifications de l'état du jeu
+        # restent dans le thread Qt.
+        # =========================================================
 
-    def _assets_directory(self) -> Path:
-        """Retourne le dossier assets du projet."""
+        self.network_timer = QTimer(self)
 
-        current_file = Path(__file__).resolve()
-        project_root = current_file.parent.parent
-
-        assets = project_root / "assets"
-
-        if assets.is_dir():
-            return assets
-
-        fallback = Path("assets")
-
-        if fallback.is_dir():
-            return fallback
-
-        raise FileNotFoundError(
-            "Dossier assets introuvable. "
-            f"Chemin recherché : {assets}"
+        self.network_timer.timeout.connect(
+            self.process_network_queue
         )
 
-    # ==============================================================
-    # TERRAIN DATA
-    # ==============================================================
+        self.network_timer.start(
+            self.NETWORK_TIMER_INTERVAL
+        )
 
-    def _load_terrain(self) -> None:
+        # =========================================================
+        # TIMER DE JEU
+        # =========================================================
+
+        self.game_timer = QTimer(self)
+
+        self.game_timer.timeout.connect(
+            self.update_game
+        )
+
+        self.game_timer.start(
+            self.GAME_TIMER_INTERVAL
+        )
+
+    # =============================================================
+    # RÉSEAU
+    # =============================================================
+
+    def network_loop(self) -> None:
         """
-        Charge les données du terrain en mémoire.
+        Attend les paquets envoyés par le serveur.
 
-        Aucun maillage global n'est créé ici. Les maillages seront
-        construits uniquement pour les chunks proches du joueur.
+        IMPORTANT :
+
+        Ce thread ne modifie pas directement l'état du jeu Qt.
+
+        Il place simplement les paquets reçus dans network_queue.
         """
 
-        assets = self._assets_directory()
-
-        height_path = assets / "map_height.png"
-        color_path = assets / "map_color.png"
-
-        if not height_path.is_file():
-            raise FileNotFoundError(
-                f"Heightmap introuvable : {height_path}"
-            )
-
-        print(f"[GAME] Chargement heightmap : {height_path}")
-
-        with Image.open(height_path) as image:
-            height_image = image.convert("L")
-            height = np.asarray(
-                height_image,
-                dtype=np.float32,
-            ).copy()
-
-        if height.ndim != 2 or min(height.shape) < 2:
-            raise ValueError(
-                "map_height.png doit être une image "
-                "en niveaux de gris d'au moins 2 x 2 pixels."
-            )
-
-        # Normalisation entre 0 et 1.
-        height_min = float(height.min())
-        height_max = float(height.max())
-
-        if height_max > height_min:
-            height = (
-                (height - height_min)
-                / (height_max - height_min)
-            )
-        else:
-            height.fill(0.0)
-
-        # Réduction facultative de la résolution.
-        height = self._downsample_height(height)
-
-        self.heightmap = height
-
-        terrain_height, terrain_width = height.shape
-
-        # Chargement des couleurs à la même résolution.
-        if color_path.is_file():
-            print(f"[GAME] Chargement couleurs : {color_path}")
-
-            with Image.open(color_path) as image:
-                color_image = image.convert("RGB")
-                color_image = color_image.resize(
-                    (terrain_width, terrain_height),
-                    Image.Resampling.BILINEAR,
-                )
-
-                self.color_map = (
-                    np.asarray(
-                        color_image,
-                        dtype=np.float32,
-                    )
-                    / 255.0
-                )
-        else:
-            self.color_map = None
-
-            print(
-                "[GAME] map_color.png absent : "
-                "couleur verte par défaut."
-            )
-
         print(
-            f"[GAME] Données terrain : "
-            f"{terrain_width} x {terrain_height}"
+            "[GAME] Thread réseau démarré."
         )
-
-        print(
-            f"[GAME] Taille des chunks : "
-            f"{self.CHUNK_SIZE:.0f} x "
-            f"{self.CHUNK_SIZE:.0f}"
-        )
-
-    def _downsample_height(
-        self,
-        height: np.ndarray,
-    ) -> np.ndarray:
-        """Réduit la résolution si la heightmap est trop grande."""
-
-        h, w = height.shape
-
-        if max(h, w) <= self.MAX_TERRAIN_SIZE:
-            return height
-
-        scale = max(h, w) / self.MAX_TERRAIN_SIZE
-
-        new_w = max(2, int(round(w / scale)))
-        new_h = max(2, int(round(h / scale)))
-
-        image = Image.fromarray(
-            np.uint8(np.clip(height, 0.0, 1.0) * 255.0),
-        )
-
-        image = image.resize(
-            (new_w, new_h),
-            Image.Resampling.BILINEAR,
-        )
-
-        return (
-            np.asarray(image, dtype=np.float32)
-            / 255.0
-        )
-
-    # ==============================================================
-    # MESH HELPERS
-    # ==============================================================
-
-    @staticmethod
-    def _build_faces(
-        width: int,
-        height: int,
-    ) -> np.ndarray:
-        """Construit deux triangles pour chaque cellule du maillage."""
-
-        if width < 2 or height < 2:
-            return np.empty((0, 3), dtype=np.uint32)
-
-        grid = np.arange(
-            width * height,
-            dtype=np.uint32,
-        ).reshape(height, width)
-
-        a = grid[:-1, :-1].ravel()
-        b = grid[:-1, 1:].ravel()
-        c = grid[1:, :-1].ravel()
-        d = grid[1:, 1:].ravel()
-
-        faces = np.empty(
-            (a.size * 2, 3),
-            dtype=np.uint32,
-        )
-
-        faces[0::2] = np.column_stack((a, b, c))
-        faces[1::2] = np.column_stack((b, d, c))
-
-        return faces
-
-    def _chunk_counts(self) -> tuple[int, int]:
-        """Nombre de chunks sur les axes X et Z."""
-
-        count_x = int(
-            np.ceil(self.WORLD_WIDTH / self.CHUNK_SIZE)
-        )
-
-        count_z = int(
-            np.ceil(self.WORLD_DEPTH / self.CHUNK_SIZE)
-        )
-
-        return count_x, count_z
-
-    def _chunk_coordinates(
-        self,
-        world_x: float,
-        world_z: float,
-    ) -> tuple[int, int]:
-        """Convertit une position du monde en coordonnées de chunk."""
-
-        count_x, count_z = self._chunk_counts()
-
-        chunk_x = int(
-            np.floor(
-                (world_x + self.WORLD_WIDTH / 2.0)
-                / self.CHUNK_SIZE
-            )
-        )
-
-        chunk_z = int(
-            np.floor(
-                (world_z + self.WORLD_DEPTH / 2.0)
-                / self.CHUNK_SIZE
-            )
-        )
-
-        return (
-            int(np.clip(chunk_x, 0, count_x - 1)),
-            int(np.clip(chunk_z, 0, count_z - 1)),
-        )
-
-    # ==============================================================
-    # CHUNK MESH CREATION
-    # ==============================================================
-
-    def _create_terrain_chunk(
-        self,
-        chunk_x: int,
-        chunk_z: int,
-    ) -> visuals.Mesh | None:
-        """Construit un seul chunk du terrain."""
-
-        if self.heightmap is None:
-            return None
-
-        heightmap = self.heightmap
-        map_height, map_width = heightmap.shape
-
-        # Limites mondiales du chunk.
-        world_x0 = (
-            -self.WORLD_WIDTH / 2.0
-            + chunk_x * self.CHUNK_SIZE
-        )
-
-        world_z0 = (
-            -self.WORLD_DEPTH / 2.0
-            + chunk_z * self.CHUNK_SIZE
-        )
-
-        world_x1 = min(
-            world_x0 + self.CHUNK_SIZE,
-            self.WORLD_WIDTH / 2.0,
-        )
-
-        world_z1 = min(
-            world_z0 + self.CHUNK_SIZE,
-            self.WORLD_DEPTH / 2.0,
-        )
-
-        # Conversion des limites mondiales en indices de heightmap.
-        col0 = int(round(
-            (world_x0 + self.WORLD_WIDTH / 2.0)
-            / self.WORLD_WIDTH
-            * (map_width - 1)
-        ))
-
-        col1 = int(round(
-            (world_x1 + self.WORLD_WIDTH / 2.0)
-            / self.WORLD_WIDTH
-            * (map_width - 1)
-        ))
-
-        row0 = int(round(
-            (world_z0 + self.WORLD_DEPTH / 2.0)
-            / self.WORLD_DEPTH
-            * (map_height - 1)
-        ))
-
-        row1 = int(round(
-            (world_z1 + self.WORLD_DEPTH / 2.0)
-            / self.WORLD_DEPTH
-            * (map_height - 1)
-        ))
-
-        col0 = int(np.clip(col0, 0, map_width - 2))
-        col1 = int(np.clip(col1, col0 + 1, map_width - 1))
-
-        row0 = int(np.clip(row0, 0, map_height - 2))
-        row1 = int(np.clip(row1, row0 + 1, map_height - 1))
-
-        heights = heightmap[
-            row0:row1 + 1,
-            col0:col1 + 1,
-        ]
-
-        rows, cols = heights.shape
-
-        # Coordonnées calculées à partir des indices réels :
-        # les sommets des chunks voisins coïncident exactement.
-        x = (
-            -self.WORLD_WIDTH / 2.0
-            + np.arange(col0, col1 + 1, dtype=np.float32)
-            / (map_width - 1)
-            * self.WORLD_WIDTH
-        )
-
-        z = (
-            -self.WORLD_DEPTH / 2.0
-            + np.arange(row0, row1 + 1, dtype=np.float32)
-            / (map_height - 1)
-            * self.WORLD_DEPTH
-        )
-
-        xx, zz = np.meshgrid(x, z)
-        yy = heights * self.WORLD_HEIGHT
-
-        vertices = np.column_stack((
-            xx.ravel(),
-            yy.ravel(),
-            zz.ravel(),
-        )).astype(np.float32)
-
-        faces = self._build_faces(cols, rows)
-
-        # Couleurs du chunk.
-        if self.color_map is not None:
-            rgb = self.color_map[
-                row0:row1 + 1,
-                col0:col1 + 1,
-            ].reshape(-1, 3)
-
-            alpha = np.ones(
-                (rgb.shape[0], 1),
-                dtype=np.float32,
-            )
-
-            colors = np.concatenate(
-                (rgb, alpha),
-                axis=1,
-            )
-        else:
-            colors = np.empty(
-                (rows * cols, 4),
-                dtype=np.float32,
-            )
-
-            colors[:, 0] = 0.25
-            colors[:, 1] = 0.55
-            colors[:, 2] = 0.25
-            colors[:, 3] = 1.0
-
-        return visuals.Mesh(
-            vertices=vertices,
-            faces=faces,
-            vertex_colors=colors,
-            shading="smooth",
-            parent=self.view.scene,
-        )
-
-    # ==============================================================
-    # CHUNK STREAMING
-    # ==============================================================
-
-    def _update_terrain_chunks(self) -> None:
-        """Charge les chunks proches et décharge les autres."""
-
-        if self.heightmap is None:
-            return
-
-        center = self.camera.center
-
-        if center is None:
-            return
-
-        try:
-            world_x = float(center[0])
-            world_z = float(center[2])
-        except (TypeError, ValueError, IndexError):
-            return
-
-        center_chunk = self._chunk_coordinates(
-            world_x,
-            world_z,
-        )
-
-        # Inutile de recalculer la zone si le joueur n'a pas
-        # changé de chunk.
-        if center_chunk == self._last_chunk_center:
-            return
-
-        self._last_chunk_center = center_chunk
-
-        cx, cz = center_chunk
-        count_x, count_z = self._chunk_counts()
-
-        wanted: set[tuple[int, int]] = set()
-
-        for dx in range(
-            -self.RENDER_DISTANCE,
-            self.RENDER_DISTANCE + 1,
-        ):
-            for dz in range(
-                -self.RENDER_DISTANCE,
-                self.RENDER_DISTANCE + 1,
-            ):
-                x = cx + dx
-                z = cz + dz
-
-                if 0 <= x < count_x and 0 <= z < count_z:
-                    wanted.add((x, z))
-
-        # Décharger les chunks éloignés.
-        for key in list(self.terrain_chunks):
-            if key not in wanted:
-                mesh = self.terrain_chunks.pop(key)
-                mesh.parent = None
-
-        # Charger les chunks manquants.
-        for key in sorted(wanted):
-            if key in self.terrain_chunks:
-                continue
-
-            mesh = self._create_terrain_chunk(*key)
-
-            if mesh is not None:
-                self.terrain_chunks[key] = mesh
-
-        print(
-            f"[GAME] Chunk central : {center_chunk} | "
-            f"Chunks actifs : {len(self.terrain_chunks)}"
-        )
-
-    # ==============================================================
-    # CAMERA
-    # ==============================================================
-
-    def _place_camera_initially(self) -> None:
-        """Positionne initialement la caméra au-dessus du terrain."""
-
-        world_x = self._server_x_to_world(self.local_x)
-        world_z = self._server_y_to_world(self.local_y)
-
-        terrain_y = self._terrain_height_at(
-            world_x,
-            world_z,
-        )
-
-        self.camera.center = (
-            world_x,
-            terrain_y + self.PLAYER_HEIGHT,
-            world_z,
-        )
-
-        print(
-            "[GAME] Position initiale : "
-            f"({world_x:.1f}, "
-            f"{terrain_y + self.PLAYER_HEIGHT:.1f}, "
-            f"{world_z:.1f})"
-        )
-
-    def _update_camera_position(self) -> None:
-        """Maintient le point central de la caméra au-dessus du terrain."""
-
-        center = self.camera.center
-
-        if center is None:
-            return
-
-        try:
-            x = float(center[0])
-            z = float(center[2])
-        except (TypeError, ValueError, IndexError):
-            return
-
-        terrain_y = self._terrain_height_at(x, z)
-
-        self.camera.center = (
-            x,
-            terrain_y + self.PLAYER_HEIGHT,
-            z,
-        )
-
-    def _terrain_height_at(
-        self,
-        world_x: float,
-        world_z: float,
-    ) -> float:
-        """Interpole la hauteur du terrain à une position mondiale."""
-
-        if self.heightmap is None:
-            return 0.0
-
-        height, width = self.heightmap.shape
-
-        normalized_x = float(np.clip(
-            (world_x + self.WORLD_WIDTH / 2.0)
-            / self.WORLD_WIDTH,
-            0.0,
-            1.0,
-        ))
-
-        normalized_z = float(np.clip(
-            (world_z + self.WORLD_DEPTH / 2.0)
-            / self.WORLD_DEPTH,
-            0.0,
-            1.0,
-        ))
-
-        px = normalized_x * (width - 1)
-        pz = normalized_z * (height - 1)
-
-        x0 = int(np.floor(px))
-        z0 = int(np.floor(pz))
-
-        x1 = min(x0 + 1, width - 1)
-        z1 = min(z0 + 1, height - 1)
-
-        fx = px - x0
-        fz = pz - z0
-
-        h00 = float(self.heightmap[z0, x0])
-        h10 = float(self.heightmap[z0, x1])
-        h01 = float(self.heightmap[z1, x0])
-        h11 = float(self.heightmap[z1, x1])
-
-        h0 = h00 * (1.0 - fx) + h10 * fx
-        h1 = h01 * (1.0 - fx) + h11 * fx
-
-        value = h0 * (1.0 - fz) + h1 * fz
-
-        return value * self.WORLD_HEIGHT
-
-    # ==============================================================
-    # COORDINATE CONVERSION
-    # ==============================================================
-
-    def _server_x_to_world(self, x: float) -> float:
-        """Serveur X -> VisPy X."""
-
-        return x - self.WORLD_WIDTH / 2.0
-
-    def _server_y_to_world(self, y: float) -> float:
-        """Serveur Y horizontal -> VisPy Z."""
-
-        return y - self.WORLD_DEPTH / 2.0
-
-    def _world_x_to_server(self, x: float) -> int:
-        return int(round(x + self.WORLD_WIDTH / 2.0))
-
-    def _world_z_to_server(self, z: float) -> int:
-        return int(round(z + self.WORLD_DEPTH / 2.0))
-
-    # ==============================================================
-    # NETWORK RECEIVE THREAD
-    # ==============================================================
-
-    def _network_loop(self) -> None:
-        """Reçoit les paquets sans bloquer la boucle graphique."""
-
-        try:
-            print("[GAME] Connexion au serveur...")
-            self.client.connect()
-            print("[GAME] Connecté au serveur.")
-        except Exception as exc:
-            if self.running:
-                print(f"[GAME] Connexion impossible : {exc}")
-            return
 
         while self.running:
-            try:
-                if not self.client.connected:
-                    break
 
-                packet = self.client.receive_packet()
-
-                if packet is None:
-                    continue
-
-                try:
-                    self.network_queue.put_nowait(packet)
-                except queue.Full:
-                    # La file est pleine : supprimer le paquet le
-                    # plus ancien pour garder les données récentes.
-                    try:
-                        self.network_queue.get_nowait()
-                    except queue.Empty:
-                        pass
-
-                    try:
-                        self.network_queue.put_nowait(packet)
-                    except queue.Full:
-                        pass
-
-            except Exception as exc:
-                if self.running:
-                    print(f"[GAME] Erreur réseau : {exc}")
+            if not self.client.connected:
                 break
 
-    # ==============================================================
-    # NETWORK PACKET PROCESSING
-    # ==============================================================
+            try:
+                packet = self.client.receive_packet()
 
-    def _process_network_queue(self) -> None:
-        """Traite les paquets sur le thread graphique."""
+            except Exception as exc:
+                print(
+                    "[GAME] Erreur réception réseau :",
+                    repr(exc),
+                )
 
-        for _ in range(100):
+                break
+
+            if packet is None:
+                continue
+
+            try:
+                self.network_queue.put_nowait(
+                    packet
+                )
+
+            except queue.Full:
+                print(
+                    "[GAME] File réseau pleine."
+                )
+
+        print(
+            "[GAME] Thread réseau arrêté."
+        )
+
+    # =============================================================
+    # TRAITEMENT FILE RÉSEAU
+    # =============================================================
+
+    def process_network_queue(self) -> None:
+        """
+        Traite les paquets reçus par le thread réseau.
+
+        Cette méthode est appelée par QTimer et s'exécute donc
+        dans le thread Qt principal.
+
+        Les modifications de l'état du jeu et les appels à update()
+        restent ainsi dans le thread graphique.
+        """
+
+        processed = 0
+
+        while processed < 100:
+
             try:
                 packet = self.network_queue.get_nowait()
+
             except queue.Empty:
                 break
 
             try:
-                self._handle_packet(packet)
+                self.handle_packet(packet)
+
             except Exception as exc:
-                print(f"[GAME] Erreur de traitement réseau : {exc}")
+                print(
+                    "[GAME] Erreur traitement paquet :",
+                    repr(exc),
+                )
 
-    def _handle_packet(self, packet) -> None:
-        """Distribue les paquets selon leur type."""
+            processed += 1
 
-        packet_type = getattr(packet, "packet_type", None)
-        payload = getattr(packet, "payload", b"")
+    # =============================================================
+    # TRAITEMENT PAQUETS
+    # =============================================================
 
-        if packet_type is None:
-            packet_type = getattr(packet, "type", None)
+    def handle_packet(self, packet) -> None:
+        """
+        Traite un paquet reçu du serveur.
 
-        if packet_type == PacketType.SESSION:
-            self._handle_session(payload)
+        Cette méthode doit être exécutée uniquement dans le thread
+        Qt principal.
+        """
 
-        elif packet_type == PacketType.PLAYER_STATE:
-            self._handle_player_state(payload)
+        packet_type = packet.packet_type
 
-        elif packet_type == PacketType.PLAYER_REMOVE:
-            self._handle_player_remove(payload)
+        # ---------------------------------------------------------
+        # PLAYER_STATE
+        # ---------------------------------------------------------
 
-    def _handle_session(self, payload: bytes) -> None:
-        """Traite le paquet SESSION contenant un UUID de 16 octets."""
+        if packet_type == PacketType.PLAYER_STATE:
 
-        if len(payload) != 16:
-            print(
-                f"[GAME] SESSION invalide : {len(payload)} octets"
+            self.handle_player_state(
+                packet.payload
             )
+
             return
 
-        try:
-            session_id = uuid.UUID(bytes=payload)
-            self.client.session_id = session_id
-            print(f"[GAME] Session : {session_id}")
-        except (ValueError, AttributeError, TypeError) as exc:
-            print(f"[GAME] SESSION invalide : {exc}")
+        # ---------------------------------------------------------
+        # PLAYER_REMOVE
+        # ---------------------------------------------------------
 
-    def _handle_player_state(self, payload: bytes) -> None:
-        """Traite UUID + x/y/z sous forme de trois entiers signés."""
+        if packet_type == PacketType.PLAYER_REMOVE:
+
+            self.handle_player_remove(
+                packet.payload
+            )
+
+            return
+
+    # =============================================================
+    # PLAYER STATE
+    # =============================================================
+
+    def handle_player_state(
+        self,
+        payload: bytes,
+    ) -> None:
+        """
+        Traite un PLAYER_STATE.
+
+        Format :
+
+            16 octets : UUID
+             4 octets : x
+             4 octets : y
+             4 octets : z
+
+        Total : 28 octets.
+        """
 
         if len(payload) != 28:
+
             print(
                 "[GAME] PLAYER_STATE invalide : "
-                f"{len(payload)} octets"
+                f"{len(payload)} octets "
+                "au lieu de 28."
             )
+
             return
+
+        # ---------------------------------------------------------
+        # UUID
+        # ---------------------------------------------------------
 
         try:
-            player_id = uuid.UUID(bytes=payload[:16])
-            x, y, z = struct.unpack("!iii", payload[16:28])
-        except (ValueError, struct.error):
-            print("[GAME] PLAYER_STATE invalide.")
+
+            player_id = uuid.UUID(
+                bytes=payload[:16]
+            )
+
+        except ValueError:
+
+            print(
+                "[GAME] UUID PLAYER_STATE invalide."
+            )
+
             return
 
-        local_id = self._get_local_player_id()
+        # ---------------------------------------------------------
+        # POSITION
+        # ---------------------------------------------------------
 
-        if local_id is not None and player_id == local_id:
-            self.local_x = float(x)
-            self.local_y = float(y)
-            self.local_z = float(z)
+        try:
+
+            x, y, z = struct.unpack(
+                "!iii",
+                payload[16:28],
+            )
+
+        except struct.error:
+
+            print(
+                "[GAME] Position PLAYER_STATE invalide."
+            )
+
             return
 
-        self.remote_players[player_id] = (x, y, z)
+        # ---------------------------------------------------------
+        # JOUEUR LOCAL
+        # ---------------------------------------------------------
 
-        self._create_or_update_remote_player(
-            player_id,
+        local_id = self.get_local_player_id()
+
+        if (
+            local_id is not None
+            and player_id == local_id
+        ):
+
+            self.player_x = x
+            self.player_y = y
+            self.player_z = z
+
+            self.update()
+
+            return
+
+        # ---------------------------------------------------------
+        # JOUEUR DISTANT
+        #
+        # L'identité repose exclusivement sur l'UUID.
+        # ---------------------------------------------------------
+
+        self.remote_players[player_id] = (
             x,
             y,
             z,
         )
 
-    def _handle_player_remove(self, payload: bytes) -> None:
-        """Supprime un joueur distant."""
+        self.update()
+
+    # =============================================================
+    # PLAYER REMOVE
+    # =============================================================
+
+    def handle_player_remove(
+        self,
+        payload: bytes,
+    ) -> None:
+        """
+        Traite un PLAYER_REMOVE.
+
+        Format :
+
+            16 octets : UUID
+        """
 
         if len(payload) != 16:
+
             print(
                 "[GAME] PLAYER_REMOVE invalide : "
-                f"{len(payload)} octets"
+                f"{len(payload)} octets "
+                "au lieu de 16."
             )
+
             return
 
         try:
-            player_id = uuid.UUID(bytes=payload)
+
+            player_id = uuid.UUID(
+                bytes=payload
+            )
+
         except ValueError:
-            print("[GAME] UUID PLAYER_REMOVE invalide.")
+
+            print(
+                "[GAME] UUID PLAYER_REMOVE invalide."
+            )
+
             return
 
-        self.remote_players.pop(player_id, None)
+        self.remote_players.pop(
+            player_id,
+            None,
+        )
 
-        visual = self.remote_visuals.pop(player_id, None)
+        self.update()
 
-        if visual is not None:
-            visual.parent = None
+    # =============================================================
+    # UUID LOCAL
+    # =============================================================
 
-        print(f"[GAME] Joueur supprimé : {player_id}")
+    def get_local_player_id(
+        self,
+    ) -> uuid.UUID | None:
+        """
+        Retourne l'UUID local si Client.session_id
+        est renseigné.
+        """
 
-    def _get_local_player_id(self) -> uuid.UUID | None:
-        """Retourne l'identifiant de session local."""
-
-        session_id = getattr(self.client, "session_id", None)
+        session_id = getattr(
+            self.client,
+            "session_id",
+            None,
+        )
 
         if session_id is None:
             return None
 
-        if isinstance(session_id, uuid.UUID):
+        if isinstance(
+            session_id,
+            uuid.UUID,
+        ):
             return session_id
 
         try:
-            return uuid.UUID(str(session_id))
-        except (ValueError, TypeError, AttributeError):
+
+            return uuid.UUID(
+                str(session_id)
+            )
+
+        except (
+            ValueError,
+            TypeError,
+            AttributeError,
+        ):
+
             return None
 
-    # ==============================================================
-    # REMOTE PLAYERS
-    # ==============================================================
+    # =============================================================
+    # BOUCLE DE JEU
+    # =============================================================
 
-    def _create_or_update_remote_player(
-        self,
-        player_id: uuid.UUID,
-        x: int,
-        y: int,
-        z: int,
-    ) -> None:
-        """Crée ou met à jour le marqueur d'un joueur distant."""
+    def update_game(self) -> None:
+        """
+        Met à jour le joueur local.
 
-        world_x = self._server_x_to_world(x)
-        world_z = self._server_y_to_world(y)
+        Le déplacement reste actuellement client-side pour le
+        prototype.
 
-        terrain_y = self._terrain_height_at(
-            world_x,
-            world_z,
-        )
+        Le protocole conserve x/y/z afin de préparer la future
+        transition vers le monde 3D.
+        """
 
-        # Le serveur reste la source de la position verticale.
-        # Le terrain sert de solution de repli si Z vaut zéro.
-        world_y = (
-            float(z)
-            if z != 0
-            else terrain_y + self.REMOTE_PLAYER_RADIUS
-        )
+        old_x = self.player_x
+        old_y = self.player_y
+        old_z = self.player_z
 
-        position = np.array(
-            [[world_x, world_y, world_z]],
-            dtype=np.float32,
-        )
+        dx = 0
+        dy = 0
 
-        visual = self.remote_visuals.get(player_id)
-
-        if visual is None:
-            visual = visuals.Markers(
-                pos=position,
-                size=self.REMOTE_PLAYER_SIZE,
-                face_color="red",
-                edge_color="white",
-                parent=self.view.scene,
-            )
-
-            self.remote_visuals[player_id] = visual
-        else:
-            visual.set_data(
-                pos=position,
-                size=self.REMOTE_PLAYER_SIZE,
-                face_color="red",
-                edge_color="white",
-            )
-
-    # ==============================================================
-    # MOVEMENT AND SERVER SYNCHRONIZATION
-    # ==============================================================
-
-    def _sync_camera_to_server(self) -> None:
-        """Envoie les changements de position au serveur."""
-
-        center = self.camera.center
-
-        if center is None:
-            return
-
-        try:
-            world_x = float(center[0])
-            world_z = float(center[2])
-        except (TypeError, ValueError, IndexError):
-            return
-
-        server_x = self._world_x_to_server(world_x)
-        server_y = self._world_z_to_server(world_z)
-
-        server_x = max(
-            0,
-            min(int(self.WORLD_WIDTH), server_x),
-        )
-
-        server_y = max(
-            0,
-            min(int(self.WORLD_DEPTH), server_y),
-        )
+        # ---------------------------------------------------------
+        # HAUT
+        # ---------------------------------------------------------
 
         if (
-            server_x == int(self.local_x)
-            and server_y == int(self.local_y)
+            Qt.Key_Z in self.keys
+            or Qt.Key_W in self.keys
         ):
-            return
 
-        self.local_x = float(server_x)
-        self.local_y = float(server_y)
+            dy -= self.PLAYER_SPEED
 
-        self._send_position_to_server(
-            server_x,
-            server_y,
-            int(self.local_z),
-        )
+        # ---------------------------------------------------------
+        # BAS
+        # ---------------------------------------------------------
 
-    def _send_position_to_server(
-        self,
-        x: int,
-        y: int,
-        z: int,
-    ) -> None:
-        """Envoie un paquet MOVE."""
+        if Qt.Key_S in self.keys:
 
-        try:
-            if not self.client.connected:
-                return
+            dy += self.PLAYER_SPEED
 
-            packet = MovePacket(
-                int(x),
-                int(y),
-                int(z),
+        # ---------------------------------------------------------
+        # GAUCHE
+        # ---------------------------------------------------------
+
+        if (
+            Qt.Key_Q in self.keys
+            or Qt.Key_A in self.keys
+        ):
+
+            dx -= self.PLAYER_SPEED
+
+        # ---------------------------------------------------------
+        # DROITE
+        # ---------------------------------------------------------
+
+        if Qt.Key_D in self.keys:
+
+            dx += self.PLAYER_SPEED
+
+        # ---------------------------------------------------------
+        # DÉPLACEMENT
+        # ---------------------------------------------------------
+
+        if dx != 0 or dy != 0:
+
+            self.move_player(
+                dx,
+                dy,
             )
 
-            self.client.send_packet(packet)
+        # ---------------------------------------------------------
+        # ENVOI AU SERVEUR
+        # ---------------------------------------------------------
 
-        except Exception as exc:
-            print(f"[GAME] Impossible d'envoyer MOVE : {exc}")
+        if (
+            self.player_x != old_x
+            or self.player_y != old_y
+            or self.player_z != old_z
+        ):
 
-    # ==============================================================
-    # GAME LOOP
-    # ==============================================================
+            self.send_position_to_server()
 
-    def _update(self, event) -> None:
-        """Boucle principale exécutée sur le thread VisPy."""
-
-        if not self.running:
-            return
-
-        self._process_network_queue()
-        self._update_camera_position()
-        self._update_terrain_chunks()
-        self._sync_camera_to_server()
+        # ---------------------------------------------------------
+        # RENDU
+        # ---------------------------------------------------------
 
         self.update()
 
-    # ==============================================================
-    # INPUT
-    # ==============================================================
+    # =============================================================
+    # DÉPLACEMENT LOCAL
+    # =============================================================
 
-    def _on_key_press(self, event) -> None:
-        """Traite les touches supplémentaires."""
+    def move_player(
+        self,
+        dx: int,
+        dy: int,
+    ) -> None:
+        """
+        Déplace le joueur local avec limites du monde
+        et collisions avec les murs.
+        """
 
-        key = getattr(event, "key", None)
+        new_x = self.player_x + dx
+        new_y = self.player_y + dy
 
-        if key is None:
+        # ---------------------------------------------------------
+        # LIMITES DU MONDE
+        # ---------------------------------------------------------
+
+        new_x = max(
+            0,
+            min(
+                new_x,
+                self.WORLD_WIDTH - self.PLAYER_SIZE,
+            ),
+        )
+
+        new_y = max(
+            0,
+            min(
+                new_y,
+                self.WORLD_HEIGHT - self.PLAYER_SIZE,
+            ),
+        )
+
+        player_rect = QRectF(
+            new_x,
+            new_y,
+            self.PLAYER_SIZE,
+            self.PLAYER_SIZE,
+        )
+
+        # ---------------------------------------------------------
+        # COLLISIONS
+        # ---------------------------------------------------------
+
+        for wall in self.walls:
+
+            if player_rect.intersects(wall):
+
+                return
+
+        # ---------------------------------------------------------
+        # VALIDATION DU DÉPLACEMENT
+        # ---------------------------------------------------------
+
+        self.player_x = new_x
+        self.player_y = new_y
+
+    # =============================================================
+    # ENVOI MOVE
+    # =============================================================
+
+    def send_position_to_server(self) -> None:
+        """
+        Envoie la position actuelle au serveur.
+        """
+
+        if not self.client.connected:
             return
 
-        key_name = str(
-            getattr(key, "name", key)
-        ).lower()
+        packet = MovePacket(
+            int(self.player_x),
+            int(self.player_y),
+            int(self.player_z),
+        )
 
-        if key_name == "escape":
-            self.close()
+        try:
 
-    def _on_key_release(self, event) -> None:
-        """Réservé aux contrôles personnalisés."""
+            self.client.send_packet(
+                packet
+            )
 
-        pass
+        except Exception as exc:
 
-    def _on_mouse_press(self, event) -> None:
-        """La caméra gère les interactions souris."""
+            print(
+                "[GAME] Erreur envoi position :",
+                repr(exc),
+            )
 
-        pass
+    # =============================================================
+    # CLAVIER
+    # =============================================================
 
-    # ==============================================================
-    # SHUTDOWN
-    # ==============================================================
+    def keyPressEvent(
+        self,
+        event: QKeyEvent,
+    ) -> None:
+        """
+        Enregistre une touche enfoncée.
+        """
 
-    def on_close(self, event) -> None:
-        """Arrête proprement le client et son thread réseau."""
-
-        if not self.running:
+        if event.isAutoRepeat():
             return
+
+        self.keys.add(
+            event.key()
+        )
+
+    def keyReleaseEvent(
+        self,
+        event: QKeyEvent,
+    ) -> None:
+        """
+        Retire une touche lorsqu'elle est relâchée.
+        """
+
+        if event.isAutoRepeat():
+            return
+
+        self.keys.discard(
+            event.key()
+        )
+
+    # =============================================================
+    # AFFICHAGE
+    # =============================================================
+
+    def paintEvent(self, event) -> None:
+        """
+        Dessine le monde 2D actuel.
+
+        Ce rendu est volontairement simple :
+        la 2D sert de prototype avant la transition vers la 3D.
+        """
+
+        painter = QPainter(self)
+
+        painter.setRenderHint(
+            QPainter.Antialiasing
+        )
+
+        # ---------------------------------------------------------
+        # FOND
+        # ---------------------------------------------------------
+
+        painter.fillRect(
+            self.rect(),
+            QBrush(Qt.black),
+        )
+
+        # ---------------------------------------------------------
+        # MURS
+        # ---------------------------------------------------------
+
+        painter.setBrush(
+            QBrush(Qt.darkGray)
+        )
+
+        painter.setPen(
+            QPen(
+                Qt.gray,
+                2,
+            )
+        )
+
+        for wall in self.walls:
+
+            painter.drawRect(
+                wall
+            )
+
+        # ---------------------------------------------------------
+        # JOUEURS DISTANTS
+        #
+        # Les joueurs distants sont dessinés avant le joueur local.
+        # Cela permet au joueur local de rester clairement visible.
+        # ---------------------------------------------------------
+
+        for player_id, position in list(
+            self.remote_players.items()
+        ):
+
+            x, y, z = position
+
+            self.draw_remote_player(
+                painter,
+                player_id,
+                x,
+                y,
+            )
+
+        # ---------------------------------------------------------
+        # JOUEUR LOCAL
+        # ---------------------------------------------------------
+
+        self.draw_local_player(
+            painter
+        )
+
+        # ---------------------------------------------------------
+        # INFORMATIONS DEBUG
+        # ---------------------------------------------------------
+
+        self.draw_debug_info(
+            painter
+        )
+
+        painter.end()
+
+    # =============================================================
+    # INFORMATIONS DEBUG
+    # =============================================================
+
+    def draw_debug_info(
+        self,
+        painter: QPainter,
+    ) -> None:
+        """
+        Affiche les informations utiles pendant le développement.
+        """
+
+        painter.setPen(
+            QPen(Qt.white)
+        )
+
+        painter.drawText(
+            10,
+            20,
+            (
+                "Joueurs distants : "
+                f"{len(self.remote_players)}"
+            ),
+        )
+
+        local_id = self.get_local_player_id()
+
+        if local_id is None:
+
+            painter.drawText(
+                10,
+                40,
+                "UUID local : inconnu",
+            )
+
+        else:
+
+            painter.drawText(
+                10,
+                40,
+                (
+                    "UUID local : "
+                    f"{str(local_id)[:8]}"
+                ),
+            )
+
+        painter.drawText(
+            10,
+            60,
+            (
+                "Position : "
+                f"{self.player_x}, "
+                f"{self.player_y}, "
+                f"{self.player_z}"
+            ),
+        )
+
+        painter.drawText(
+            10,
+            80,
+            (
+                "Contrôles : "
+                "ZQSD / WASD"
+            ),
+        )
+
+    # =============================================================
+    # JOUEUR LOCAL
+    # =============================================================
+
+    def draw_local_player(
+        self,
+        painter: QPainter,
+    ) -> None:
+        """
+        Dessine le joueur local.
+        """
+
+        painter.setBrush(
+            QBrush(Qt.green)
+        )
+
+        painter.setPen(
+            QPen(
+                Qt.white,
+                2,
+            )
+        )
+
+        painter.drawRect(
+            QRectF(
+                self.player_x,
+                self.player_y,
+                self.PLAYER_SIZE,
+                self.PLAYER_SIZE,
+            )
+        )
+
+        painter.setPen(
+            QPen(Qt.white)
+        )
+
+        painter.drawText(
+            int(self.player_x),
+            int(self.player_y - 5),
+            "MOI",
+        )
+
+    # =============================================================
+    # JOUEUR DISTANT
+    # =============================================================
+
+    def draw_remote_player(
+        self,
+        painter: QPainter,
+        player_id: uuid.UUID,
+        x: int,
+        y: int,
+    ) -> None:
+        """
+        Dessine un joueur distant.
+        """
+
+        same_position = (
+            abs(x - self.player_x)
+            < self.PLAYER_SIZE
+            and
+            abs(y - self.player_y)
+            < self.PLAYER_SIZE
+        )
+
+        # ---------------------------------------------------------
+        # JOUEUR SUPERPOSÉ AU JOUEUR LOCAL
+        # ---------------------------------------------------------
+
+        if same_position:
+
+            painter.setBrush(
+                QBrush(Qt.red)
+            )
+
+            painter.setPen(
+                QPen(
+                    Qt.yellow,
+                    4,
+                )
+            )
+
+            painter.drawEllipse(
+                QRectF(
+                    x - 8,
+                    y - 8,
+                    self.PLAYER_SIZE + 16,
+                    self.PLAYER_SIZE + 16,
+                )
+            )
+
+        # ---------------------------------------------------------
+        # JOUEUR NORMAL
+        # ---------------------------------------------------------
+
+        else:
+
+            painter.setBrush(
+                QBrush(Qt.red)
+            )
+
+            painter.setPen(
+                QPen(
+                    Qt.white,
+                    2,
+                )
+            )
+
+            painter.drawRect(
+                QRectF(
+                    x,
+                    y,
+                    self.PLAYER_SIZE,
+                    self.PLAYER_SIZE,
+                )
+            )
+
+        # ---------------------------------------------------------
+        # IDENTIFIANT
+        # ---------------------------------------------------------
+
+        painter.setPen(
+            QPen(Qt.white)
+        )
+
+        painter.drawText(
+            int(x),
+            int(y - 5),
+            str(player_id)[:8],
+        )
+
+    # =============================================================
+    # FERMETURE
+    # =============================================================
+
+    def closeEvent(
+        self,
+        event,
+    ) -> None:
+        """
+        Ferme proprement le jeu et arrête les threads/timers.
+        """
 
         self.running = False
 
-        print("[GAME] Arrêt du client 3D...")
+        # ---------------------------------------------------------
+        # ARRÊT DES TIMERS
+        # ---------------------------------------------------------
 
-        try:
-            self.timer.stop()
-        except Exception:
-            pass
+        self.game_timer.stop()
+        self.network_timer.stop()
 
-        # Déconnecter le client débloque normalement la réception.
-        try:
-            if self.client.connected:
-                self.client.disconnect("Arrêt normal")
-        except Exception as exc:
-            print(f"[GAME] Erreur déconnexion : {exc}")
+        # ---------------------------------------------------------
+        # VIDAGE DES TOUCHES
+        # ---------------------------------------------------------
 
-        if (
-            self.network_thread.is_alive()
-            and threading.current_thread() is not self.network_thread
-        ):
-            self.network_thread.join(timeout=1.0)
+        self.keys.clear()
 
-        print("[GAME] Client 3D arrêté.")
+        # ---------------------------------------------------------
+        # DÉCONNEXION
+        # ---------------------------------------------------------
+
+        
+
+        # ---------------------------------------------------------
+        # ATTENTE DU THREAD RÉSEAU
+        # ---------------------------------------------------------
+
+        if self.network_thread.is_alive():
+
+            self.network_thread.join(
+                timeout=1.0
+            )
+
+        event.accept()
 
 
-def run_game(client: Client | None = None) -> None:
-    """Lance le client 3D."""
+def run_game(
+    client: Client,
+) -> None:
+    """
+    Lance le prototype 2D.
+    """
 
-    if client is None:
-        client = Client()
+    app = QApplication.instance()
 
-    game = Game(client)
-    game.show()
+    owns_app = app is None
 
-    app.run()
+    if app is None:
+
+        app = QApplication([])
+
+    window = Game(client)
+
+    window.show()
+
+    window.activateWindow()
+    window.raise_()
+    window.setFocus()
+
+    if owns_app:
+
+        app.exec()

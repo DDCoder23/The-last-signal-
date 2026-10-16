@@ -1,5 +1,3 @@
-import pytest
-
 from client_python.crypto import RotorState,derive_rotor_seed
 
 
