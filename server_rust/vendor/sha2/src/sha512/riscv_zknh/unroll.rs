@@ -1,15 +1,9 @@
 use super::{sha512sig0, sha512sig1, sha512sum0, sha512sum1};
 use crate::consts::K64;
 
+#[inline]
 #[target_feature(enable = "zknh")]
-pub(in super::super) fn compress(state: &mut [u64; 8], blocks: &[[u8; 128]]) {
-    for block in blocks.iter().map(super::utils::load_block) {
-        compress_block(state, block);
-    }
-}
-
-#[target_feature(enable = "zknh")]
-fn compress_block(state: &mut [u64; 8], mut block: [u64; 16]) {
+pub(super) fn compress_block(state: &mut [u64; 8], mut block: [u64; 16]) {
     let s = &mut state.clone();
     let b = &mut block;
 
@@ -56,6 +50,7 @@ fn compress_block(state: &mut [u64; 8], mut block: [u64; 16]) {
     }
 }
 
+#[inline]
 #[target_feature(enable = "zknh")]
 fn round_schedule<const R: usize>(state: &mut [u64; 8], block: &mut [u64; 16], k: &[u64]) {
     round::<R>(state, block, k);
@@ -66,23 +61,16 @@ fn round_schedule<const R: usize>(state: &mut [u64; 8], block: &mut [u64; 16], k
         .wrapping_add(sha512sig0(block[(R + 1) % 16]));
 }
 
+#[inline]
 #[target_feature(enable = "zknh")]
 fn round<const R: usize>(state: &mut [u64; 8], block: &[u64; 16], k: &[u64]) {
     let n = K64.len() - R;
-    #[allow(clippy::identity_op)]
-    let a = (n + 0) % 8;
-    let b = (n + 1) % 8;
-    let c = (n + 2) % 8;
-    let d = (n + 3) % 8;
-    let e = (n + 4) % 8;
-    let f = (n + 5) % 8;
-    let g = (n + 6) % 8;
-    let h = (n + 7) % 8;
+    let [a, b, c, d, e, f, g, h] = core::array::from_fn(|i| (n + i) % 8);
 
     state[h] = state[h]
         .wrapping_add(sha512sum1(state[e]))
         .wrapping_add(ch(state[e], state[f], state[g]))
-        .wrapping_add(super::utils::opaque_load::<R>(k))
+        .wrapping_add(opaque_load::<R>(k))
         .wrapping_add(block[R]);
     state[d] = state[d].wrapping_add(state[h]);
     state[h] = state[h]
@@ -98,4 +86,36 @@ fn ch(x: u64, y: u64, z: u64) -> u64 {
 #[inline(always)]
 fn maj(x: u64, y: u64, z: u64) -> u64 {
     (x & y) ^ (x & z) ^ (y & z)
+}
+
+/// This function returns `k[R]`, but prevents compiler from inlining the indexed value
+#[inline(always)]
+fn opaque_load<const R: usize>(k: &[u64]) -> u64 {
+    assert!(R < k.len());
+    #[cfg(target_arch = "riscv64")]
+    unsafe {
+        let dst;
+        core::arch::asm!(
+            "ld {dst}, 8 * {R}({k})",
+            R = const R,
+            k = in(reg) k.as_ptr(),
+            dst = out(reg) dst,
+            options(pure, readonly, nostack, preserves_flags),
+        );
+        dst
+    }
+    #[cfg(target_arch = "riscv32")]
+    unsafe {
+        let [hi, lo]: [u32; 2];
+        core::arch::asm!(
+            "lw {lo}, 8 * {R}({k})",
+            "lw {hi}, 8 * {R} + 4({k})",
+            R = const R,
+            k = in(reg) k.as_ptr(),
+            lo = out(reg) lo,
+            hi = out(reg) hi,
+            options(pure, readonly, nostack, preserves_flags),
+        );
+        ((hi as u64) << 32) | (lo as u64)
+    }
 }
