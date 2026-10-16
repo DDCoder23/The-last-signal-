@@ -60,9 +60,9 @@ jobs:
         fetch-depth: 0
         ssh-key: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
     - name: Debug SSH authentication
-        env:
-          DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
-        run: |
+      env:
+        DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
+      run: |
           set -eu
 
           if [ -z "$DEPLOY_KEY" ]; then
