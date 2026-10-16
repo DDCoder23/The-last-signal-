@@ -53,7 +53,7 @@ jobs:
               fetch-depth: 0
               token: ${{ secrets.GITHUB_TOKEN }}
               persist-credentials: true
-              ssh-key: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
+              ssh-key: ${{ secrets.DEPLOY_KEY }}
       ##########################################################
       # Python
       ##########################################################
