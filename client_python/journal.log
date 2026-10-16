@@ -37,3 +37,17 @@
 16/10 10:56:50  lecture : 07_ville_au_crepuscule.wav
 16/10 11:00:30  playlist (10) : ['01_frequence_morte.wav', '02_battement.wav', '03_chuchotements.wav', '04_radio_fantome.wav', '05_sentier_de_cendres.wav', '06_horizon_brise.wav', '07_brouillard_noir.wav', '07_ville_au_crepuscule.wav', '08_le_phare_eteint.wav', '09_expedition_oubliee.wav']
 16/10 11:00:30  lecture : 02_battement.wav
+16/10 11:04:46  playlist (10) : ['01_frequence_morte.wav', '02_battement.wav', '03_chuchotements.wav', '04_radio_fantome.wav', '05_sentier_de_cendres.wav', '06_horizon_brise.wav', '07_brouillard_noir.wav', '07_ville_au_crepuscule.wav', '08_le_phare_eteint.wav', '09_expedition_oubliee.wav']
+16/10 11:04:46  lecture : 08_le_phare_eteint.wav
+16/10 11:06:35  playlist (10) : ['01_frequence_morte.wav', '02_battement.wav', '03_chuchotements.wav', '04_radio_fantome.wav', '05_sentier_de_cendres.wav', '06_horizon_brise.wav', '07_brouillard_noir.wav', '07_ville_au_crepuscule.wav', '08_le_phare_eteint.wav', '09_expedition_oubliee.wav']
+16/10 11:06:35  lecture : 02_battement.wav
+16/10 11:06:49  playlist (10) : ['01_frequence_morte.wav', '02_battement.wav', '03_chuchotements.wav', '04_radio_fantome.wav', '05_sentier_de_cendres.wav', '06_horizon_brise.wav', '07_brouillard_noir.wav', '07_ville_au_crepuscule.wav', '08_le_phare_eteint.wav', '09_expedition_oubliee.wav']
+16/10 11:06:50  lecture : 09_expedition_oubliee.wav
+16/10 11:06:51  lecture : 05_sentier_de_cendres.wav
+16/10 11:06:56  playlist (10) : ['01_frequence_morte.wav', '02_battement.wav', '03_chuchotements.wav', '04_radio_fantome.wav', '05_sentier_de_cendres.wav', '06_horizon_brise.wav', '07_brouillard_noir.wav', '07_ville_au_crepuscule.wav', '08_le_phare_eteint.wav', '09_expedition_oubliee.wav']
+16/10 11:06:58  lecture : 03_chuchotements.wav
+16/10 11:06:58  lecture : 05_sentier_de_cendres.wav
+16/10 11:07:33  lecture : 08_le_phare_eteint.wav
+16/10 11:07:33  erreur de lecture : error("Audio device hasn't been opened")
+16/10 11:07:41  playlist (10) : ['01_frequence_morte.wav', '02_battement.wav', '03_chuchotements.wav', '04_radio_fantome.wav', '05_sentier_de_cendres.wav', '06_horizon_brise.wav', '07_brouillard_noir.wav', '07_ville_au_crepuscule.wav', '08_le_phare_eteint.wav', '09_expedition_oubliee.wav']
+16/10 11:07:41  lecture : 01_frequence_morte.wav

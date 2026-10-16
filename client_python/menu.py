@@ -4088,22 +4088,42 @@ class App:
 
 
     # ----- lancement du jeu ------------------------------------------------ #
+    
     def launch_game(self, mode, save=None):
-        """mode : "solo" ou "multi"   |   save : chemin de la sauvegarde, ou None = nouvelle partie.
-        Renseigne GAME_COMMAND (en haut du fichier) pour brancher ton jeu."""
+        """Lance le jeu sans rouvrir le menu."""
+
         label = f"{mode} / {os.path.basename(save) if save else 'new'}"
         self.toast(self.t("launching").format(label))
         self.play_sfx("launch")
-        self.fade_out_music(1800)           # la musique du menu s'eteint en douceur
-        if GAME_COMMAND:
-            cmd = list(GAME_COMMAND) + ["--mode", mode] + (["--save", save] if save else [])
-            try:
-                proc = subprocess.Popen(cmd)
-                threading.Thread(target=self._watch_game, args=(proc, time.time()), daemon=True).start()
-                return
-            except Exception as e:
-                log(f"lancement du jeu : {e!r}")
-        self.after(4200, self.restore_music)   # aucun jeu branche : on remet la musique
+        self.fade_out_music(1800)
+
+        try:
+            project_root = os.path.dirname(
+                os.path.dirname(os.path.abspath(__file__))
+            )
+
+            cmd = [
+            sys.executable,
+            "-m",
+            "client_python.game_launcher",
+            "--mode", mode,
+            ]
+
+            if save:
+                cmd += ["--save", save]
+
+            proc = subprocess.Popen(cmd, cwd=project_root)
+
+            threading.Thread(
+            target=self._watch_game,
+            args=(proc, time.time()),
+            daemon=True,
+            ).start()
+
+        except Exception as e:
+            log(f"lancement du jeu : {e!r}")
+
+            self.after(4200, self.restore_music)   # aucun jeu branche : on remet la musique
 
     def _watch_game(self, proc, t0):
         proc.wait()
