@@ -59,6 +59,35 @@ jobs:
         lfs: true
         fetch-depth: 0
         ssh-key: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
+    - name: Debug SSH authentication
+        env:
+          DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
+        run: |
+          set -eu
+
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "ERREUR: le secret CI_SYNC_DEPLOY_KEY est vide ou inaccessible."
+            exit 1
+          fi
+
+          echo "Secret présent."
+          printf '%s\n' "$DEPLOY_KEY" > "$RUNNER_TEMP/deploy_key"
+          chmod 600 "$RUNNER_TEMP/deploy_key"
+
+          ssh-keygen -y -f "$RUNNER_TEMP/deploy_key" \
+            > "$RUNNER_TEMP/deploy_key.pub"
+
+          echo "Empreinte de la clé privée utilisée :"
+          ssh-keygen -lf "$RUNNER_TEMP/deploy_key.pub"
+
+          echo "Authentification GitHub :"
+          ssh -i "$RUNNER_TEMP/deploy_key" \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=accept-new \
+            -T git@github.com || true
+
+          rm -f "$RUNNER_TEMP/deploy_key" \
+                "$RUNNER_TEMP/deploy_key.pub"
     
     
     
