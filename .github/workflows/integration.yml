@@ -30,7 +30,7 @@ jobs:
   integration:
     outputs:
       critical_failure: ${{ steps.critical-status.outputs.failed }}
-      cargo_check_failed: ${{ steps.cargo-check.outcome == 'failure' }}
+      
 
     
 
@@ -42,6 +42,7 @@ jobs:
       
       GH_TOKEN: ${{ github.token }}
       VAULT_KEY: ${{ secrets.VAULT_KEY }}
+      DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
       DATABASE_PATH: ${{ github.workspace }}/database
       DATABASE_URL: sqlite:${{ github.workspace }}/database/the_last_signal.db
       
