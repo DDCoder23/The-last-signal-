@@ -2,7 +2,8 @@ name: Update Repository Statistics
 
 on:
   workflow_call:
-    DEPLOY_KEY:
+   secrets:
+      DEPLOY_KEY:
         required: true
   
 permissions:
