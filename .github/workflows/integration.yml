@@ -6,6 +6,8 @@ on:
     secrets:
       VAULT_KEY:
         required: true
+      DEPLOY_KEY:
+        required: true
     inputs:
        commit-message:
           description: Message du commit

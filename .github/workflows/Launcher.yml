@@ -12,6 +12,8 @@ on:
    secrets:
       VAULT_KEY:
         required: true
+      DEPLOY_KEY:
+        required: true
 
   schedule:
     - cron: "7 * * * *"
@@ -32,6 +34,7 @@ jobs:
     uses: ./.github/workflows/integration.yml
     secrets:
         VAULT_KEY: ${{ secrets.VAULT_KEY }}
+        DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
     
   python:
     needs: integration
@@ -116,6 +119,8 @@ jobs:
       )
      }}
     uses: ./.github/workflows/sync-ci.yml
+    secrets:
+        DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
   stats-update:
     needs: sync
     if: >-
@@ -127,6 +132,8 @@ jobs:
       )
      }}
     uses: ./.github/workflows/repository-stats.yml
+    secrets:
+        DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
   cancel-launcher:
     needs:
 

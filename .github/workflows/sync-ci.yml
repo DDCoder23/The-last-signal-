@@ -3,6 +3,8 @@ name: Sync CI Data to Main
 on:
   workflow_dispatch:
   workflow_call:
+    DEPLOY_KEY:
+        required: true
 
   
 permissions:
