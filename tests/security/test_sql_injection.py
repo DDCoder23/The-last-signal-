@@ -20,7 +20,7 @@ import shutil
 import sqlite3
 import tempfile
 from pathlib import Path
-from typing import Tuple, List, Any
+from typing import Tuple, List
 import socket
 import struct
 import threading

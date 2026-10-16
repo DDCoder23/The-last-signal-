@@ -1,15 +1,10 @@
-import pytest
 from client_python.crypto import SplitMix64
-
-MASK64 = 0xFFFFFFFFFFFFFFFF
-
-
 
 
 # ============================================================
 # DÉTERMINISME
 # ============================================================
-
+MASK64 = 0xFFFFFFFFFFFFFFFF
 def test_same_seed_same_sequence():
 
     a = SplitMix64(123456789)

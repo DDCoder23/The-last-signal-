@@ -1,35 +1,18 @@
-import hashlib
-
 import pytest
-
-
-MASK_64 = 0xFFFFFFFFFFFFFFFF
 from client_python.crypto import (
     SplitMix64,
     derive_rotor_seed,
     generate_rotor,
     generate_rotors,
-    inverse_permutation,
     rotor_forward,
     rotor_inverse,
 )
 
 
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
 # FIXTURE
 # ============================================================
-
+MASK_64 = 0xFFFFFFFFFFFFFFFF
 @pytest.fixture
 def communication_key():
 
