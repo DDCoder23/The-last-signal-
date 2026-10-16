@@ -54,7 +54,9 @@ import threading
 import subprocess
 import webbrowser
 import urllib.request
+import tempfile
 from datetime import datetime
+
 
 os.environ.setdefault("PYGAME_HIDE_SUPPORT_PROMPT", "1")
 FROZEN = getattr(sys, "frozen", False)
@@ -4101,34 +4103,70 @@ class App:
             project_root = os.path.dirname(
                 os.path.dirname(os.path.abspath(__file__))
             )
-
+            signal_file = os.path.join(
+             tempfile.gettempdir(),
+             f"last_signal_connected_{os.getpid()}.txt",
+             ) 
+            if os.path.exists(signal_file):
+                os.remove(signal_file)
             cmd = [
             sys.executable,
             "-m",
             "client_python.game_launcher",
             "--mode", mode,
+            "--signal-file", signal_file,
             ]
 
             if save:
                 cmd += ["--save", save]
 
             proc = subprocess.Popen(cmd, cwd=project_root)
+            
 
             threading.Thread(
             target=self._watch_game,
-            args=(proc, time.time()),
+            args=(proc, time.time(),signal_file),
             daemon=True,
             ).start()
+            
+            
 
         except Exception as e:
             log(f"lancement du jeu : {e!r}")
 
             self.after(4200, self.restore_music)   # aucun jeu branche : on remet la musique
 
-    def _watch_game(self, proc, t0):
-        proc.wait()
+    
+    def _watch_game(self, proc, t0, signal_file):
+        menu_closed = False
+
+        while proc.poll() is None:
+            if os.path.exists(signal_file) and not menu_closed:
+                menu_closed = True
+
+                def close_menu():
+                    if hasattr(self, "stop") and callable(self.stop):
+                        self.stop()
+                    elif hasattr(self, "destroy") and callable(self.destroy):
+                        self.destroy()
+                    elif hasattr(self, "root") and hasattr(self.root, "destroy"):
+                        self.root.destroy()
+
+                self.jobs.put(close_menu)
+
+            time.sleep(0.1)
+
         secs = time.time() - t0
-        self.jobs.put(lambda: (self.add_playtime(secs), self.restore_music()))
+
+        def finish():
+            self.add_playtime(secs)
+            self.restore_music()
+
+        self.jobs.put(finish)
+
+        if os.path.exists(signal_file):
+            os.remove(signal_file)
+
 
 
 # --------------------------------------------------------------------------- #
@@ -4180,7 +4218,4 @@ def run_setup(report, tr):
 
 
 
-if __name__ == "__main__":
-    for sub in ("solo", "multi"):
-        os.makedirs(os.path.join(SAVES_DIR, sub), exist_ok=True)
-    App().run()
+

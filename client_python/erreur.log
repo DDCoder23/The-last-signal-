@@ -264,3 +264,82 @@ Traceback (most recent call last):
     func = getattr(gl, funcname)
 KeyboardInterrupt
 
+[16/10/2026 11:40:48] Python 3.13.9 - linux2
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/media/cyril/External2/The-last-signal-/client_python/main.py", line 28, in <module>
+    client.disconnect(raison)
+    ^^^^^^
+NameError: name 'client' is not defined
+
+[16/10/2026 11:42:38] Python 3.13.9 - linux2
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/media/cyril/External2/The-last-signal-/client_python/main.py", line 28, in <module>
+    client.disconnect(raison)
+    ^^^^^^
+NameError: name 'client' is not defined
+
+[16/10/2026 11:43:51] Python 3.13.9 - linux2
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/media/cyril/External2/The-last-signal-/client_python/main.py", line 30, in <module>
+    sys.exit(0)
+    ^^^
+NameError: name 'sys' is not defined. Did you forget to import 'sys'?
+
+[16/10/2026 12:05:55] Python 3.13.9 - linux2
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/media/cyril/External2/The-last-signal-/client_python/main.py", line 14, in <module>
+    main()
+    ~~~~^^
+  File "/media/cyril/External2/The-last-signal-/client_python/main.py", line 10, in main
+    App().run()
+    ~~~~~~~~~^^
+  File "/media/cyril/External2/The-last-signal-/client_python/menu.py", line 2090, in run
+    self.vapp.process_events()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/vispy/app/application.py", line 74, in process_events
+    return self._backend._vispy_process_events()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/vispy/app/backends/_glfw.py", line 183, in _vispy_process_events
+    win._on_draw()
+    ~~~~~~~~~~~~^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/vispy/app/backends/_glfw.py", line 407, in _on_draw
+    self._vispy_canvas.events.draw(region=None)  # (0, 0, w, h))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/vispy/util/event.py", line 453, in __call__
+    self._invoke_callback(cb, event)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/vispy/util/event.py", line 469, in _invoke_callback
+    cb(event)
+    ~~^^^^^^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/vispy/app/canvas.py", line 432, in swap_buffers
+    self._backend._vispy_swap_buffers()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/vispy/app/backends/_glfw.py", line 318, in _vispy_swap_buffers
+    glfw.swap_buffers(self._id)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/glfw/__init__.py", line 2380, in swap_buffers
+    _glfw.glfwSwapBuffers(window)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/site-packages/glfw/__init__.py", line 687, in errcheck
+    def errcheck(result, *args):
+    
+KeyboardInterrupt
+
+[16/10/2026 12:30:07] Python 3.13.9 - linux2
+Traceback (most recent call last):
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/media/cyril/External2/Linux/Raspberry pi 4,5/python-full-3.13.9-linux-aarch64/lib/python3.13/threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: App._watch_game() missing 1 required positional argument: 'signal_file'
+

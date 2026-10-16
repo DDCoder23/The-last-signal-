@@ -1,6 +1,6 @@
 from .menu import App,SAVES_DIR
 import os
-
+import sys
 
 def main():
     for sub in ("solo", "multi"):
@@ -12,6 +12,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+    
+        
+
+        
 
 
 
