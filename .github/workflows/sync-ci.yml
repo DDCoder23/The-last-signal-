@@ -24,6 +24,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+          ssh-key: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
 
       - name: Configure Git
         run: |
