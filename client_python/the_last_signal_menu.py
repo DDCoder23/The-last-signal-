@@ -204,16 +204,29 @@ def fmt_duration(sec):
 
 
 def find_asset(*parts):
-    """Cherche les ressources dans le dossier du jeu et dans assets/."""
-    project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    assets_dir = os.path.join(project_dir, "assets")
+    """Cherche les ressources dans DATA_DIR, RES_DIR et les assets du projet."""
+    script_dir = os.path.dirname(os.path.abspath(__file__))
 
-    for base in (DATA_DIR, RES_DIR, assets_dir):
+    # Remonte plusieurs niveaux pour retrouver la racine du projet.
+    project_dirs = [
+        script_dir,
+        os.path.dirname(script_dir),
+        os.path.dirname(os.path.dirname(script_dir)),
+        os.path.dirname(os.path.dirname(os.path.dirname(script_dir))),
+    ]
+
+    bases = [DATA_DIR, RES_DIR]
+
+    for project_dir in project_dirs:
+        bases.append(os.path.join(project_dir, "assets"))
+
+    for base in bases:
         path = os.path.join(base, *parts)
         if os.path.exists(path):
             return path
 
-    return os.path.join(assets_dir, *parts)
+    # Retourne le chemin attendu, même si le fichier n'existe pas.
+    return os.path.join(project_dirs[2], "assets", *parts)
 
 
 
@@ -704,16 +717,51 @@ def get_controls(settings):
 # --------------------------------------------------------------------------- #
 def _font_dirs():
     dirs = []
+
     if os.name == "nt":
-        dirs += [os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts"),
-                 os.path.join(os.environ.get("LOCALAPPDATA", ""), "Microsoft", "Windows", "Fonts")]
+        dirs += [
+            os.path.join(os.environ.get("WINDIR", r"C:\Windows"), "Fonts"),
+            os.path.join(
+                os.environ.get("LOCALAPPDATA", ""),
+                "Microsoft", "Windows", "Fonts"
+            ),
+        ]
     elif sys.platform == "darwin":
-        dirs += ["/System/Library/Fonts", "/System/Library/Fonts/Supplemental", "/Library/Fonts",
-                 os.path.expanduser("~/Library/Fonts")]
+        dirs += [
+            "/System/Library/Fonts",
+            "/System/Library/Fonts/Supplemental",
+            "/Library/Fonts",
+            os.path.expanduser("~/Library/Fonts"),
+        ]
     else:
-        dirs += ["/usr/share/fonts", "/usr/local/share/fonts", os.path.expanduser("~/.fonts"),
-                 os.path.expanduser("~/.local/share/fonts")]
-    return [d for d in dirs if d and os.path.isdir(d)]
+        dirs += [
+            "/usr/share/fonts",
+            "/usr/local/share/fonts",
+            os.path.expanduser("~/.fonts"),
+            os.path.expanduser("~/.local/share/fonts"),
+        ]
+
+    # Polices embarquées dans le projet.
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    for folder in (
+        script_dir,
+        os.path.dirname(script_dir),
+        os.path.dirname(os.path.dirname(script_dir)),
+        os.path.dirname(os.path.dirname(os.path.dirname(script_dir))),
+    ):
+        dirs.append(os.path.join(folder, "assets", "fonts"))
+
+    # Supprime les doublons et garde uniquement les dossiers existants.
+    result = []
+    seen = set()
+
+    for folder in dirs:
+        folder = os.path.abspath(folder)
+        if os.path.isdir(folder) and folder not in seen:
+            seen.add(folder)
+            result.append(folder)
+
+    return result
 
 
 _FONT_INDEX = {}
@@ -1140,23 +1188,93 @@ class Skin:
     def __init__(self, app):
         self.app = app
         self._fonts, self._glyph, self._notdef = {}, {}, {}
-        stencil = find_asset("fonts", "SairaStencilOne-Regular.ttf")
-        self.stencil = stencil if os.path.exists(stencil) else find_system_font("impact.ttf")
-        raj_r, raj_b = find_asset("fonts", "Rajdhani-Medium.ttf"), find_asset("fonts", "Rajdhani-Bold.ttf")
-        self.raj = os.path.exists(raj_r) and os.path.exists(raj_b)
-        self.body_reg = raj_r if self.raj else find_system_font("bahnschrift.ttf", "segoeui.ttf", "Helvetica.ttc", "HelveticaNeue.ttc",
-                                         "DejaVuSans.ttf", "arial.ttf", "NotoSans-Regular.ttf")
-        self.body_bold = None if self.raj else find_system_font("bahnschrift.ttf")   # variable : on choisit "Bold"
-        self.body_bold_file = raj_b if self.raj else find_system_font("segoeuib.ttf", "arialbd.ttf",
-                                                                      "DejaVuSans-Bold.ttf", "NotoSans-Bold.ttf")
-        self.jp = find_system_font("YuGothM.ttc", "YuGothR.ttc", "meiryo.ttc", "msgothic.ttc",
-                                   "NotoSansCJK-Regular.ttc", "NotoSansCJKjp-Regular.otf",
-                                   "NotoSansJP-Regular.otf", "Hiragino Sans GB.ttc", "ヒラギノ角ゴシック W3.ttc",
-                                   "NotoSerifCJK-Regular.ttc", "NotoSerifCJK-Bold.ttc")
-        self.jp_bold = find_system_font("YuGothB.ttc", "meiryob.ttc", "NotoSansCJK-Bold.ttc",
-                                        "NotoSansCJKjp-Bold.otf", "NotoSerifCJK-Bold.ttc") or self.jp
-        self.fallback = find_system_font("seguisym.ttf", "DejaVuSans.ttf", "arial.ttf", "NotoSans-Regular.ttf")
 
+        # Polices du jeu : on cherche aussi dans les sous-dossiers de fonts/.
+        font_dir = find_asset("fonts")
+        project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        font_dirs = [
+            font_dir,
+            os.path.join(project_dir, "assets", "fonts"),
+            os.path.join(os.path.dirname(os.path.abspath(__file__)), "fonts"),
+            os.path.join(DATA_DIR, "fonts"),
+            os.path.join(RES_DIR, "fonts"),
+        ]
+
+        def local_font(*names):
+            for folder in font_dirs:
+                if not os.path.isdir(folder):
+                    continue
+                for root, dirs, files in os.walk(folder):
+                    dirs.sort()
+                    for name in names:
+                        for filename in files:
+                            if filename.lower() == name.lower():
+                                return os.path.join(root, filename)
+            return None
+
+        # Le titre utilise Saira si elle existe, sinon Rajdhani Bold.
+        self.stencil = (
+            local_font("SairaStencilOne-Regular.ttf", "Rajdhani-Bold.ttf")
+            or find_system_font(
+                "impact.ttf",
+                "DejaVuSans-Bold.ttf",
+                "NotoSans-Bold.ttf",
+            )
+        )
+
+        # Rajdhani reste utilisable même si sa variante Medium est absente.
+        raj_r = local_font("Rajdhani-Medium.ttf", "Rajdhani-Regular.ttf")
+        raj_b = local_font("Rajdhani-Bold.ttf")
+        self.raj = bool(raj_r or raj_b)
+        self.body_reg = (
+            raj_r or raj_b
+            or find_system_font(
+                "bahnschrift.ttf",
+                "segoeui.ttf",
+                "DejaVuSans.ttf",
+                "NotoSans-Regular.ttf",
+            )
+        )
+        self.body_bold = (
+            None if self.raj
+            else find_system_font("bahnschrift.ttf")
+        )
+        self.body_bold_file = (
+            raj_b or find_system_font(
+                "segoeuib.ttf",
+                "arialbd.ttf",
+                "DejaVuSans-Bold.ttf",
+                "NotoSans-Bold.ttf",
+            )
+        )
+
+        jp_local = find_asset("fonts", "NotoSansJP-Regular.ttf")
+        if os.path.isfile(jp_local):
+            try:
+                ImageFont.truetype(jp_local, 16)
+                self.jp = jp_local
+            except Exception as exc:
+                log(f"Erreur chargement police japonaise : {exc}")
+                self.jp = find_system_font(
+                "NotoSansCJK-Regular.ttc",
+                "NotoSansCJKjp-Regular.otf",
+                "NotoSansJP-Regular.otf",
+            )
+        else:
+            self.jp = find_system_font(
+            "NotoSansCJK-Regular.ttc",
+            "NotoSansCJKjp-Regular.otf",
+            "NotoSansJP-Regular.otf",
+            )
+
+        self.jp_bold = self.jp
+
+        self.fallback = find_system_font(
+            "seguisym.ttf",
+            "DejaVuSans.ttf",
+            "arial.ttf",
+            "NotoSans-Regular.ttf",
+        )
     # ----- polices --------------------------------------------------------- #
     def _load(self, path, px, var=None):
         key = (path, px, var)
@@ -2191,9 +2309,18 @@ class App:
         except Exception:
             pass
         try:
-            path = find_asset("fonts", "titre.ttf")
-            if not os.path.exists(path):
-                path = find_asset("fonts", "SairaStencilOne-Regular.ttf")
+            path = (
+                    find_asset("fonts", "titre.ttf")
+                    if os.path.isfile(find_asset("fonts", "titre.ttf"))
+                    else None
+                    )
+
+            if not path or not os.path.isfile(path):
+                path = (
+                         find_asset("fonts", "SairaStencilOne-Regular.ttf")
+                         if os.path.isfile(find_asset("fonts", "SairaStencilOne-Regular.ttf"))
+                         else find_asset("fonts", "Rajdhani-Bold.ttf")
+                          )
             halo, core = render_title_parts("THE LAST SIGNAL", path, 38, hex_rgb(p["accent"]))
             tit = Image.alpha_composite(halo, core)
             bg.alpha_composite(tit, (int(W / 2 - tit.width / 2), int(175 - tit.height / 2)))
@@ -2874,9 +3001,16 @@ class App:
     # ----- banniere -------------------------------------------------------- #
     def make_title(self, bw):
         """Rend le titre (halo + coeur) pour qu'il tienne entre les deux eclairs, centre."""
-        path = find_asset("fonts", "titre.ttf")
-        if not os.path.exists(path):
-            path = find_asset("fonts", "SairaStencilOne-Regular.ttf")
+        path = (find_asset("fonts", "titre.ttf")
+        if os.path.isfile(find_asset("fonts", "titre.ttf"))
+        else None
+         )
+        if not path or not os.path.isfile(path):
+            path = (
+            find_asset("fonts", "SairaStencilOne-Regular.ttf")
+            if os.path.isfile(find_asset("fonts", "SairaStencilOne-Regular.ttf"))
+            else find_asset("fonts", "Rajdhani-Bold.ttf")
+            ) 
         glow = hex_rgb(self.pal["accent"])
         text = "THE LAST SIGNAL"
         target = bw - 2 * 118
