@@ -44,7 +44,7 @@ jobs:
       
       GH_TOKEN: ${{ github.token }}
       VAULT_KEY: ${{ secrets.VAULT_KEY }}
-      DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
+      DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       DATABASE_PATH: ${{ github.workspace }}/database
       DATABASE_URL: sqlite:${{ github.workspace }}/database/the_last_signal.db
       
@@ -61,10 +61,10 @@ jobs:
       with:
         lfs: true
         fetch-depth: 0
-        ssh-key: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
+        ssh-key: ${{ secrets.DEPLOY_KEY }}
     - name: Debug SSH authentication
       env:
-        DEPLOY_KEY: ${{ secrets.CI_SYNC_DEPLOY_KEY }}
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
       run: |
           set -eu
 
