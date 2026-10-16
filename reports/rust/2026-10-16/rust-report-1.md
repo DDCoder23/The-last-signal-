@@ -1,9 +1,9 @@
 # Rust Report
 
-Run : 683
+Run : 2450
 Branch : main
 Commit : 7db6a311f766c7bd0b245088483d5a98b24b872e
-Date : Fri Oct 16 01:42:28 UTC 2026
+Date : Fri Oct 16 02:17:14 UTC 2026
 
 
 ## Cargo fmt
@@ -8620,66 +8620,66 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling zerofrom v0.1.8
    Compiling pin-project-lite v0.2.17
    Compiling typenum v1.20.1
-   Compiling futures-core v0.3.34
    Compiling yoke v0.8.3
-   Compiling litemap v0.8.3
-   Compiling zerovec v0.11.8
-   Compiling smallvec v1.16.3
    Compiling writeable v0.6.4
+   Compiling zerovec v0.11.8
    Compiling memchr v2.8.3
    Compiling tinystr v0.8.4
-   Compiling icu_locale_core v2.3.0
+   Compiling futures-core v0.3.34
+   Compiling litemap v0.8.3
+   Compiling smallvec v1.16.3
    Compiling potential_utf v0.1.6
    Compiling zerotrie v0.2.5
+   Compiling icu_locale_core v2.3.0
    Compiling utf8_iter v1.0.4
-   Compiling icu_collections v2.3.0
    Compiling scopeguard v1.2.0
+   Compiling icu_collections v2.3.0
    Compiling lock_api v0.4.14
    Compiling icu_normalizer_data v2.3.0
    Compiling icu_properties_data v2.3.0
    Compiling socket2 v0.6.5
    Compiling mio v1.2.4
-   Compiling futures-sink v0.3.34
    Compiling bytes v1.12.1
-   Compiling icu_provider v2.3.1
+   Compiling futures-sink v0.3.34
    Compiling serde_core v1.0.229
-   Compiling icu_properties v2.3.0
-   Compiling icu_normalizer v2.3.0
-   Compiling once_cell v1.21.4
-   Compiling rand_core v0.10.1
    Compiling equivalent v1.0.3
-   Compiling generic-array v0.14.9
+   Compiling once_cell v1.21.4
+   Compiling icu_provider v2.3.1
+   Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling rand_core v0.10.1
    Compiling tracing-core v0.1.36
+   Compiling generic-array v0.14.9
    Compiling parking_lot_core v0.9.12
+   Compiling cpufeatures v0.2.17
    Compiling allocator-api2 v0.2.21
    Compiling idna_adapter v1.2.2
    Compiling slab v0.4.12
-   Compiling cpufeatures v0.2.17
    Compiling percent-encoding v2.3.2
    Compiling futures-task v0.3.34
    Compiling foldhash v0.2.0
    Compiling futures-io v0.3.34
-   Compiling form_urlencoded v1.2.2
    Compiling hashbrown v0.16.1
    Compiling futures-util v0.3.34
+   Compiling form_urlencoded v1.2.2
    Compiling idna v1.1.0
    Compiling serde v1.0.229
-   Compiling parking_lot v0.12.5
    Compiling num-traits v0.2.19
+   Compiling parking_lot v0.12.5
+   Compiling crossbeam-utils v0.8.23
    Compiling zmij v1.0.23
    Compiling getrandom v0.4.3
-   Compiling crossbeam-utils v0.8.23
    Compiling itoa v1.0.18
    Compiling parking v2.2.1
    Compiling hashbrown v0.17.1
    Compiling crc-catalog v2.5.0
-   Compiling crc v3.4.0
-   Compiling crossbeam-queue v0.3.14
    Compiling event-listener v5.4.2
+   Compiling crc v3.4.0
    Compiling serde_json v1.0.154
-   Compiling either v1.19.0
-   Compiling indexmap v2.14.2
+   Compiling crossbeam-queue v0.3.14
    Compiling futures-intrusive v0.5.0
+   Compiling indexmap v2.14.2
+   Compiling either v1.19.0
    Compiling hashlink v0.11.1
    Compiling url v2.5.8
    Compiling block-buffer v0.10.4
@@ -8700,46 +8700,46 @@ Diff in /home/runner/work/The-last-signal-/The-last-signal-/server_rust/src/main
    Compiling block-buffer v0.12.1
    Compiling crypto-common v0.2.2
    Compiling thiserror v2.0.21
-   Compiling cpufeatures v0.3.1
-   Compiling base64 v0.22.1
    Compiling const-oid v0.10.2
+   Compiling base64 v0.22.1
+   Compiling cpufeatures v0.3.1
    Compiling digest v0.11.3
    Compiling uuid v1.28.0
    Compiling aho-corasick v1.1.5
+   Compiling base64ct v1.8.3
+   Compiling foreign-types-shared v0.1.1
    Compiling regex-syntax v0.8.11
    Compiling tokio-stream v0.1.19
    Compiling sqlx-core v0.9.0
-   Compiling foreign-types-shared v0.1.1
-   Compiling base64ct v1.8.3
+   Compiling regex-automata v0.4.18
    Compiling foreign-types v0.3.2
    Compiling phc v0.6.1
-   Compiling regex-automata v0.4.18
-   Compiling libsqlite3-sys v0.37.0
    Compiling sqlx-sqlite v0.9.0
+   Compiling libsqlite3-sys v0.37.0
    Compiling openssl-sys v0.9.117
    Compiling sqlx-macros-core v0.9.0
+   Compiling bitflags v2.13.2
    Compiling iana-time-zone v0.1.65
    Compiling simd-adler32 v0.3.10
    Compiling adler2 v2.0.1
-   Compiling bitflags v2.13.2
+   Compiling chrono v0.4.45
    Compiling miniz_oxide v0.9.1
    Compiling openssl v0.10.81
-   Compiling chrono v0.4.45
    Compiling zeroize v1.9.1
    Compiling sqlx-macros v0.9.0
-   Compiling regex v1.13.1
    Compiling crc32fast v1.5.2
+   Compiling regex v1.13.1
    Compiling password-hash v0.6.1
    Compiling blake2 v0.11.0
    Compiling chacha20 v0.10.2
    Compiling getrandom v0.2.17
-   Compiling nu-ansi-term v0.50.3
    Compiling byteorder v1.5.0
-   Compiling flexi_logger v0.31.10
-   Compiling sqlx v0.9.0
+   Compiling nu-ansi-term v0.50.3
    Compiling rand v0.10.3
-   Compiling fernet v0.2.2
+   Compiling sqlx v0.9.0
+   Compiling flexi_logger v0.31.10
    Compiling argon2 v0.6.0
+   Compiling fernet v0.2.2
    Compiling flate2 v1.1.10
    Compiling sha2 v0.11.1
    Compiling the-last-signal-server v1.0.14 (/home/runner/work/The-last-signal-/The-last-signal-/server_rust)
@@ -8802,16 +8802,16 @@ warning: constant `NOMBRE_CONFIGURATIONS` is never used
 
 warning: `the-last-signal-server` (bin "the-last-signal-server") generated 4 warnings (run `cargo fix --bin "the-last-signal-server" -p the-last-signal-server` to apply 2 suggestions)
 warning: `the-last-signal-server` (lib test) generated 3 warnings (3 duplicates)
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 24.52s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 26.50s
      Running unittests src/lib.rs (server_rust/target/debug/deps/the_last_signal_server-63e7f2f90acc9500)
 
 running 74 tests
 test network::packet::tests::test_encode_ban_empty_reason ... ok
 test network::packet::tests::test_encode_ban_multibyte_utf8 ... ok
 test network::packet::tests::test_encode_ban_none_vs_empty_expiration ... ok
-test network::packet::tests::test_encode_ban_permanent ... ok
 test network::packet::tests::test_encode_ban_reason_with_nul_documents_delimiter_collision ... ok
 test network::packet::tests::test_encode_ban_temporary ... ok
+test network::packet::tests::test_encode_ban_permanent ... ok
 test network::packet::tests::test_packet_clone ... ok
 test network::packet::tests::test_packet_new_empty_payload ... ok
 test network::packet::tests::test_packet_new_non_empty_payload ... ok
@@ -8826,25 +8826,25 @@ test network::packet::tests::test_parse_body_realistic_move_payload ... ok
 test network::packet::tests::test_parse_body_realistic_player_state_payload ... ok
 test network::packet::tests::test_parse_body_realistic_session_payload ... ok
 test network::packet::tests::test_parse_body_unknown_type_boundary_cases ... ok
-test network::packet::tests::test_receive_packet_size_zero_fails ... ok
-test network::packet::tests::test_receive_packet_exceeds_max_size ... ok
 test network::packet::tests::test_receive_packet_size_one_fails ... ok
+test network::packet::tests::test_receive_packet_exceeds_max_size ... ok
 test network::packet::tests::test_receive_packet_oversized_header_rejected_without_waiting ... ok
+test network::packet::tests::test_receive_packet_size_zero_fails ... ok
 test network::packet::tests::test_receive_packet_truncated_header ... ok
 test network::packet::tests::test_receive_packet_unknown_packet_type ... ok
 test network::packet::tests::test_receive_packet_truncated_payload ... ok
 test network::packet::tests::test_send_and_receive_empty_payload_roundtrip ... ok
+test network::packet::tests::test_send_packet_exceeds_max_size ... ok
+test network::packet::tests::test_send_packet_wire_format_inspection ... ok
 test network::packet::tests::test_send_and_receive_roundtrip ... ok
 test network::parser::tests::test_login_payload_empty ... ok
-test network::packet::tests::test_send_packet_wire_format_inspection ... ok
-test network::packet::tests::test_send_packet_exceeds_max_size ... ok
 test network::parser::tests::test_login_payload_empty_strings ... ok
-test network::parser::tests::test_login_payload_invalid_email_utf8 ... ok
-test network::parser::tests::test_login_payload_missing_password_length ... ok
 test network::parser::tests::test_login_payload_invalid_password_utf8 ... ok
+test network::parser::tests::test_login_payload_invalid_email_utf8 ... ok
 test network::parser::tests::test_login_payload_large_u16_length_incomplet ... ok
-test network::parser::tests::test_login_payload_trailing_bytes_accepted ... ok
+test network::parser::tests::test_login_payload_missing_password_length ... ok
 test network::parser::tests::test_login_payload_truncated_email_body ... ok
+test network::parser::tests::test_login_payload_trailing_bytes_accepted ... ok
 test network::parser::tests::test_login_payload_truncated_email_length ... ok
 test network::parser::tests::test_login_payload_truncated_password_body ... ok
 test network::parser::tests::test_login_payload_truncated_password_length ... ok
@@ -8853,14 +8853,14 @@ test network::parser::tests::test_parse_credentials_char_count_prefix_misaligns_
 test network::parser::tests::test_parse_credentials_long_strings ... ok
 test network::parser::tests::test_parse_credentials_mid_codepoint_slice_rejected ... ok
 test network::parser::tests::test_parse_credentials_multibyte_utf8_success ... ok
-test network::parser::tests::test_parse_credentials_special_ascii_symbols ... ok
 test network::parser::tests::test_parse_credentials_preserves_whitespace ... ok
+test network::parser::tests::test_parse_credentials_special_ascii_symbols ... ok
+test network::parser::tests::test_signup_payload_empty ... ok
 test network::parser::tests::test_signup_payload_empty_strings ... ok
 test network::parser::tests::test_signup_payload_invalid_email_utf8 ... ok
-test network::parser::tests::test_signup_payload_empty ... ok
+test network::parser::tests::test_signup_payload_invalid_password_utf8 ... ok
 test network::parser::tests::test_signup_payload_large_u16_length_incomplet ... ok
 test network::parser::tests::test_signup_payload_missing_password_length ... ok
-test network::parser::tests::test_signup_payload_invalid_password_utf8 ... ok
 test network::parser::tests::test_signup_payload_trailing_bytes_accepted ... ok
 test network::parser::tests::test_signup_payload_truncated_email_body ... ok
 test network::parser::tests::test_signup_payload_truncated_email_length ... ok
@@ -8872,9 +8872,9 @@ test security::crypto::tests::derive_rotor_seed_is_deterministic ... ok
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_key_length ... ok
 test security::crypto::tests::derive_rotor_seed_rejects_invalid_rotor_id ... ok
 test security::crypto::tests::fisher_yates_changes_with_seed ... ok
-test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
 test security::crypto::tests::fisher_yates_is_deterministic ... ok
 test security::crypto::tests::fisher_yates_contains_all_values ... ok
+test security::crypto::tests::splitmix64_different_seed_different_sequence ... ok
 test security::crypto::tests::splitmix64_max_seed ... ok
 test security::crypto::tests::splitmix64_same_seed_same_sequence ... ok
 test security::crypto::tests::splitmix64_state_changes ... ok
