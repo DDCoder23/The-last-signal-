@@ -1549,6 +1549,8 @@ jobs:
       )
      }}
     uses: ./.github/workflows/sync-ci.yml
+    secrets:
+      inherit
 
   cancel-security:
     needs:
