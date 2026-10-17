@@ -110,6 +110,39 @@ pub fn generate_rotors(
 
     Ok(rotors)
 }
+pub fn rotor_forward(
+    value: u8,
+    position: u8,
+    permutation: &[u8; ROTOR_SIZE],
+) -> u8 {
+    let shifted = value.wrapping_add(position);
+    let permuted = permutation[shifted as usize];
+    permuted.wrapping_sub(position)
+}
+
+pub fn inverse_permutation(
+    permutation: &[u8; ROTOR_SIZE],
+) -> [u8; ROTOR_SIZE] {
+    let mut inverse = [0u8; ROTOR_SIZE];
+
+    for (index, &value) in permutation.iter().enumerate() {
+        inverse[value as usize] = index as u8;
+    }
+
+    inverse
+}
+
+pub fn rotor_inverse(
+    value: u8,
+    position: u8,
+    permutation: &[u8; ROTOR_SIZE],
+) -> u8 {
+    let inverse = inverse_permutation(permutation);
+    let shifted = value.wrapping_add(position);
+    let permuted = inverse[shifted as usize];
+
+    permuted.wrapping_sub(position)
+}
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -281,6 +314,34 @@ fn generate_rotors_are_different() {
         for j in (i + 1)..ROTOR_COUNT {
             assert_ne!(rotors[i], rotors[j]);
         }
+    }
+}
+#[test]
+fn rotor_forward_inverse_round_trip_all_values_and_positions() {
+    let key = [0u8; COMMUNICATION_KEY_SIZE];
+    let rotor = generate_rotor(&key, 1).unwrap();
+
+    for position in 0..=u8::MAX {
+        for value in 0..=u8::MAX {
+            let encrypted = rotor_forward(value, position, &rotor);
+            let decrypted = rotor_inverse(encrypted, position, &rotor);
+
+            assert_eq!(
+                decrypted, value,
+                "Échec pour value={value}, position={position}"
+            );
+        }
+    }
+}
+
+#[test]
+fn inverse_permutation_restores_original_values() {
+    let key = [0u8; COMMUNICATION_KEY_SIZE];
+    let rotor = generate_rotor(&key, 1).unwrap();
+    let inverse = inverse_permutation(&rotor);
+
+    for value in 0..=u8::MAX {
+        assert_eq!(inverse[rotor[value as usize] as usize], value);
     }
 }
 }
